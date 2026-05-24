@@ -1,0 +1,117 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "quid pro quo",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a favor or advantage given in return for something; a mutual exchange, especially one that is expected or implied",
+        "ptDefinition": "favor ou vantagem dada em troca de outra coisa; uma troca mútua, especialmente quando é esperada ou implícita",
+        "examples": [
+          {
+            "enExample": "The deal was a simple quid pro quo: I help you with the report, and you cover my shift.",
+            "ptExample": "O acordo foi uma troca simples: eu te ajudo com o relatório e você cobre meu turno."
+          },
+          {
+            "enExample": "There was no quid pro quo involved in the decision.",
+            "ptExample": "Não houve troca de favores envolvida na decisão."
+          }
+        ],
+        "synonyms": [
+          "exchange",
+          "trade-off",
+          "mutual favor",
+          "you scratch my back and I'll scratch yours"
+        ],
+        "antonyms": ["selfless act", "charity", "no strings attached"],
+        "seeAlso": [
+          "you scratch my back and I'll scratch yours",
+          "give and take",
+          "tit for tat"
+        ],
+        "notes": [
+          {
+            "enNote": "Originally a Latin phrase meaning 'something for something'. Often used in legal, political, and business contexts.",
+            "ptNote": "Expressão em latim que significa 'algo por algo'. Usada com frequência em contextos jurídicos, políticos e de negócios."
+          }
+        ]
+      },
+      {
+        "word": "qualm",
+        "phonetics": "/kwɑːm/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a sudden feeling of doubt, worry, or uneasiness",
+        "ptDefinition": "um sentimento repentino de dúvida, preocupação ou desconforto",
+        "examples": [
+          {
+            "enExample": "She had no qualms about telling the truth.",
+            "ptExample": "Ela não teve nenhuma dúvida em dizer a verdade."
+          },
+          {
+            "enExample": "He felt a qualm of guilt after the argument.",
+            "ptExample": "Ele sentiu um momento de culpa após a discussão."
+          }
+        ],
+        "synonyms": "misgiving, doubt, uneasiness",
+        "antonyms": "confidence, certainty",
+        "seeAlso": "misgiving",
+        "notes": [
+          {
+            "enNote": "Commonly used in the expression 'have no qualms about'.",
+            "ptNote": "Usado com frequência na expressão 'have no qualms about' (não ter nenhuma dúvida ou receio)."
+          }
+        ]
+      },
+      {
+        "word": "quest",
+        "phonetics": "/kwest/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a long search for something that is difficult to find, or an attempt to achieve something important",
+        "ptDefinition": "uma longa busca por algo difícil de encontrar, ou uma tentativa de alcançar algo importante",
+        "examples": [
+          {
+            "enExample": "The knight went on a quest to find the lost treasure.",
+            "ptExample": "O cavaleiro partiu em uma busca para encontrar o tesouro perdido."
+          },
+          {
+            "enExample": "Her quest for knowledge never ends.",
+            "ptExample": "Sua busca por conhecimento nunca acaba."
+          }
+        ],
+        "synonyms": ["search", "pursuit", "mission", "journey"],
+        "antonyms": ["idleness", "inaction"],
+        "seeAlso": ["adventure", "expedition"],
+        "notes": [
+          {
+            "enNote": "Often used in literature, fantasy, or gaming contexts to describe a heroic or challenging mission.",
+            "ptNote": "Frequentemente usado em literatura, fantasia ou jogos para descrever uma missão heroica ou desafiadora."
+          }
+        ]
+      },
+      {
+        "word": "out of the question",
+        "partOfSpeech": "idiom",
+        "enDefinition": "impossible; not to be considered; absolutely not",
+        "ptDefinition": "impossível; nem pensar; absolutamente não",
+        "examples": [
+          {
+            "enExample": "Buying a new car this year is out of the question - we can't afford it.",
+            "ptExample": "Comprar um carro novo este ano está fora de questão - não podemos pagar."
+          },
+          {
+            "enExample": "Working overtime is out of the question, I need to pick up my kids from school.",
+            "ptExample": "Fazer hora extra está fora de questão, preciso buscar meus filhos na escola."
+          }
+        ],
+        "synonyms": ["impossible", "unthinkable", "not possible"],
+        "antonyms": ["possible", "feasible", "doable"],
+        "seeAlso": ["no way", "impossible"],
+        "notes": [
+          {
+            "enNote": "Used to express that something is absolutely impossible or cannot be considered as an option.",
+            "ptNote": "Usado para expressar que algo é absolutamente impossível ou não pode ser considerado como uma opção."
+          }
+        ]
+      }
+    ]
+  }
+]

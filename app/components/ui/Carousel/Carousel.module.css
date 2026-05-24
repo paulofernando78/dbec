@@ -1,0 +1,136 @@
+.title {
+  display: block;
+  text-align: center;
+  font-family: var(--font-rampart-one);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  position: relative;
+  padding-inline: 1.6rem;
+
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.carousel {
+  display: flex;
+  gap: 0.7em;
+
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  aspect-ratio: 4/4;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.card :global(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.leftArrow,
+.rightArrow {
+  position: absolute;
+
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+
+  height: 100%;
+  background: var(--slate-4);
+  border: 1px solid var(--slate-3);
+}
+
+.leftArrow {
+  left: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.rightArrow {
+  right: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.rightArrow:hover,
+.leftArrow:hover {
+  background: var(--slate-5);
+}
+
+.arrow {
+  display: block;
+}
+
+.back {
+  transform: translateX(6px);
+}
+
+.forward {
+  transform: rotate(180deg) translateX(6px);
+}
+
+/* .cardPagination {
+  position: absolute;
+  top: 5;
+  left: 5;
+  z-index: 11;
+
+  display: grid;
+  place-items: center;
+
+  font-size: .9rem;
+  width: 1.6rem;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  border: 1px solid var(--slate-4);
+  background: var(--slate-3);
+} */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.pagination button {
+  font-size: .9rem;
+  width: 1.6rem;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  border: 1px solid var(--slate-4);
+  background: var(--slate-1);
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: var(--slate-3);
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+  margin-inline: clamp(0px, calc(48.57vw - 194.28px), 340px);
+}
+}

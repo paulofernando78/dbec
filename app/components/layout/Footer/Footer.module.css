@@ -1,0 +1,7 @@
+.footer {
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  text-align: center;
+}

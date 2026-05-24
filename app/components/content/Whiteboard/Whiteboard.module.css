@@ -1,0 +1,20 @@
+.frame {
+  background-color: var(--gray-2);
+  color: var(--text-color-fixed);
+  border: 5px solid var(--slate-4);
+  border-radius: var(--border-radius);
+  padding: 2px 8px 4px 6px;
+  margin-bottom: 30px;
+}
+
+.frame span {
+  display: block;
+}
+
+.subtitle {
+  margin-bottom: 2px;
+}
+
+.book {
+  margin-bottom: 2px;
+}

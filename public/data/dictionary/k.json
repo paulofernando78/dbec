@@ -1,0 +1,439 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "kid around",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to joke, behave playfully, or not be serious",
+        "ptDefinition": "brincar; fazer graça; não agir seriamente",
+        "examples": [
+          {
+            "enExample": "Stop kidding around and finish your homework.",
+            "ptExample": "Pare de brincar e termine sua lição de casa."
+          },
+          {
+            "enExample": "They were just kidding around during the meeting.",
+            "ptExample": "Eles estavam apenas brincando durante a reunião."
+          }
+        ],
+        "synonyms": ["joke", "mess around", "fool around"],
+        "antonyms": ["be serious", "focus"],
+        "seeAlso": ["just kidding", "mess around"],
+        "notes": [
+          {
+            "enNote": "Informal expression commonly used when someone is not taking a situation seriously.",
+            "ptNote": "Expressão informal usada quando alguém não está levando algo a sério."
+          }
+        ]
+      },
+      {
+        "word": "just kidding",
+        "partOfSpeech": "idiom / expression",
+        "enDefinition": "used to say that something you said was a joke and not meant to be taken seriously",
+        "ptDefinition": "estou brincando; é brincadeira; usado para indicar que algo dito não era sério",
+        "examples": [
+          {
+            "enExample": "You have to work all weekend… just kidding!",
+            "ptExample": "Você vai ter que trabalhar o fim de semana inteiro… brincadeira!"
+          },
+          {
+            "enExample": "I was serious for a moment, but then I said I was just kidding.",
+            "ptExample": "Eu falei sério por um momento, mas depois disse que estava brincando."
+          }
+        ],
+        "synonyms": ["just joking", "only joking", "I'm joking"],
+        "antonyms": ["seriously", "I'm serious"],
+        "seeAlso": ["just joking", "kidding aside"],
+        "notes": [
+          {
+            "enNote": "Commonly used in informal conversation to avoid misunderstandings after saying something humorous or exaggerated.",
+            "ptNote": "Usado com frequência em conversas informais para evitar mal-entendidos depois de dizer algo humorístico ou exagerado."
+          }
+        ]
+      },
+      {
+        "word": "keep one’s chin up",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to remain positive, confident, or cheerful in a difficult or disappointing situation",
+        "ptDefinition": "manter o ânimo; permanecer positivo ou confiante em uma situação difícil ou decepcionante",
+        "examples": [
+          {
+            "enExample": "Keep your chin up — things will get better soon.",
+            "ptExample": "Mantenha o ânimo — as coisas vão melhorar em breve."
+          },
+          {
+            "enExample": "She kept her chin up despite all the criticism.",
+            "ptExample": "Ela manteve a cabeça erguida apesar de todas as críticas."
+          },
+          {
+            "enExample": "He’s trying to keep his chin up after losing his job.",
+            "ptExample": "Ele está tentando manter o ânimo depois de perder o emprego."
+          }
+        ],
+        "synonyms": [
+          "stay positive",
+          "keep your head up",
+          "stay strong",
+          "remain hopeful"
+        ],
+        "antonyms": ["give up", "lose hope", "feel discouraged"],
+        "seeAlso": ["chin up", "stay positive", "look on the bright side"],
+        "notes": [
+          {
+            "enNote": "Often used as encouragement. It is very common in spoken English and informal writing.",
+            "ptNote": "Frequentemente usado como encorajamento. É muito comum no inglês falado e na escrita informal."
+          }
+        ]
+      },
+      {
+        "word": "knife",
+        "phonetics": "/naɪf/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a tool or weapon with a sharp blade used for cutting",
+        "ptDefinition": "uma ferramenta ou arma com uma lâmina afiada usada para cortar",
+        "examples": [
+          {
+            "enExample": "He used a knife to cut the vegetables.",
+            "ptExample": "Ele usou uma faca para cortar os legumes."
+          },
+          {
+            "enExample": "Carrying a knife without reason can be illegal.",
+            "ptExample": "Carregar uma faca sem motivo pode ser ilegal."
+          }
+        ],
+        "synonyms": ["blade", "cutter", "dagger"],
+        "seeAlso": ["scissors", "blade", "dagger"],
+        "notes": [
+          {
+            "enNote": "The plural of 'knife' is 'knives'.",
+            "ptNote": "O plural de 'knife' é 'knives'."
+          }
+        ]
+      },
+      {
+        "word": "key",
+        "phonetics": "/kiː/",
+        "partOfSpeech": "noun, adjective",
+        "enDefinition": "a small piece of metal used to open or lock something; something important or crucial",
+        "ptDefinition": "um pequeno pedaço de metal usado para abrir ou trancar algo; algo importante ou crucial",
+        "examples": [
+          {
+            "enExample": "She lost the key to her apartment.",
+            "ptExample": "Ela perdeu a chave do apartamento."
+          },
+          {
+            "enExample": "Communication is key to a successful relationship.",
+            "ptExample": "A comunicação é fundamental para um relacionamento bem-sucedido."
+          }
+        ],
+        "synonyms": ["crucial", "essential", "important", "lock opener"],
+        "antonyms": ["unimportant", "irrelevant"],
+        "seeAlso": ["lock", "crucial", "essential", "password"],
+        "notes": [
+          {
+            "enNote": "‘Key’ can refer to both a physical object and something of great importance.",
+            "ptNote": "‘Key’ pode se referir tanto a um objeto físico quanto a algo de grande importância."
+          }
+        ]
+      },
+      {
+        "word": "king",
+        "phonetics": "/kɪŋ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a male ruler of a country, especially one who inherits the position by birth",
+        "ptDefinition": "um governante masculino de um país, especialmente aquele que herda a posição por nascimento",
+        "examples": [
+          {
+            "enExample": "The king addressed his subjects from the palace balcony.",
+            "ptExample": "O rei falou aos seus súditos da varanda do palácio."
+          },
+          {
+            "enExample": "He was crowned king after his father's death.",
+            "ptExample": "Ele foi coroado rei após a morte de seu pai."
+          }
+        ],
+        "synonyms": ["monarch", "sovereign", "ruler"],
+        "antonyms": ["queen", "subject", "commoner"],
+        "seeAlso": ["queen", "monarchy", "emperor"],
+        "notes": [
+          {
+            "enNote": "In chess, the king is the most important piece but the weakest in terms of movement.",
+            "ptNote": "No xadrez, o rei é a peça mais importante, mas a mais fraca em termos de movimento."
+          }
+        ]
+      },
+      {
+        "word": "know",
+        "phonetics": "/noʊ/",
+        "partOfSpeech": "irregular verb (past: knew / participle: known)",
+        "enDefinition": "to have information in your mind; to be aware of something through experience, observation, or education",
+        "ptDefinition": "ter informação na mente; estar ciente de algo por meio de experiência, observação ou educação",
+        "examples": [
+          {
+            "enExample": "I know the answer to this question.",
+            "ptExample": "Eu sei a resposta para esta pergunta."
+          },
+          {
+            "enExample": "He knows a lot about computers.",
+            "ptExample": "Ele entende muito de computadores."
+          }
+        ],
+        "synonyms": [
+          "understand",
+          "realize",
+          "be aware of",
+          "be familiar with"
+        ],
+        "antonyms": ["ignore", "forget", "not know"],
+        "seeAlso": ["learn", "understand", "recognize"],
+        "notes": [
+          {
+            "enNote": "‘Know’ is an irregular verb: know – knew – known.",
+            "ptNote": "‘Know’ é um verbo irregular: know – knew – known."
+          }
+        ]
+      },
+      {
+        "word": "know something inside and out",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to know something very thoroughly; to be extremely familiar with all aspects of it",
+        "ptDefinition": "conhecer algo por completo; estar extremamente familiarizado com todos os aspectos",
+        "examples": [
+          {
+            "enExample": "She knows the system inside and out.",
+            "ptExample": "Ela conhece o sistema de cabo a rabo."
+          },
+          {
+            "enExample": "You have to know the product inside and out before you try to sell it.",
+            "ptExample": "Você precisa conhecer o produto profundamente antes de tentar vendê-lo."
+          }
+        ],
+        "synonyms": ["be well-versed in", "be an expert in", "master"],
+        "antonyms": ["be unfamiliar with", "be new to"],
+        "seeAlso": ["know like the back of one's hand", "be an expert"],
+        "notes": [
+          {
+            "enNote": "Often used in professional or technical contexts to describe deep expertise.",
+            "ptNote": "Frequentemente usado em contextos profissionais ou técnicos para descrever domínio completo de algo."
+          }
+        ]
+      },
+      {
+        "word": "keep up the good work",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to continue doing something well and with effort",
+        "ptDefinition": "continuar fazendo algo bem e com esforço",
+        "examples": [
+          {
+            "enExample": "Keep up the good work! Your progress is impressive.",
+            "ptExample": "Continue com o bom trabalho! Seu progresso é impressionante."
+          },
+          {
+            "enExample": "The manager told the team to keep up the good work during the project.",
+            "ptExample": "O gerente disse à equipe para continuar com o bom trabalho durante o projeto."
+          }
+        ],
+        "synonyms": ["continue performing well", "maintain effort"],
+        "antonyms": ["slack off", "give up"],
+        "seeAlso": ["well done", "good job"],
+        "notes": [
+          {
+            "enNote": "Often used to encourage or praise continued effort.",
+            "ptNote": "Usado frequentemente para incentivar ou elogiar o esforço contínuo."
+          }
+        ]
+      },
+      {
+        "word": "keep someone in the loop",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to keep someone informed about something",
+        "ptDefinition": "manter alguém informado sobre algo",
+        "examples": [
+          {
+            "enExample": "Please keep me in the loop about any changes to the schedule.",
+            "ptExample": "Por favor, me mantenha informado sobre quaisquer mudanças no cronograma."
+          },
+          {
+            "enExample": "We need to keep the client in the loop throughout the project.",
+            "ptExample": "Precisamos manter o cliente informado durante todo o projeto."
+          }
+        ],
+        "synonyms": ["keep informed", "update", "notify"],
+        "antonyms": ["leave out", "exclude"],
+        "seeAlso": ["bring someone up to speed", "loop someone in"],
+        "notes": [
+          {
+            "enNote": "Commonly used in business and communication contexts.",
+            "ptNote": "Comumente usada em contextos de negócios e comunicação."
+          }
+        ]
+      },
+      {
+        "word": "keep one’s nose to the grindstone",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to work hard and continuously without distraction",
+        "ptDefinition": "trabalhar duro e continuamente, sem distrações",
+        "examples": [
+          {
+            "enExample": "If you keep your nose to the grindstone, you'll finish the project on time.",
+            "ptExample": "Se você mantiver o foco, vai terminar o projeto no prazo."
+          },
+          {
+            "enExample": "She kept her nose to the grindstone to pass all her exams.",
+            "ptExample": "Ela trabalhou duro para passar em todas as provas."
+          }
+        ],
+        "synonyms": ["work hard, stay focused, persevere"],
+        "antonyms": ["slack off, procrastinate, get distracted"],
+        "seeAlso": "hang in there, keep going",
+        "notes": [
+          {
+            "enNote": "A common expression encouraging diligence and focus.",
+            "ptNote": "Expressão comum que incentiva diligência e foco."
+          }
+        ]
+      },
+      {
+        "word": "keep one’s head above water",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to manage to survive, especially in difficult financial or personal situations",
+        "ptDefinition": "conseguir sobreviver, especialmente em situações financeiras ou pessoais difíceis",
+        "examples": [
+          {
+            "enExample": "Despite all the debts, they managed to keep their heads above water.",
+            "ptExample": "Apesar de todas as dívidas, eles conseguiram se manter à tona."
+          },
+          {
+            "enExample": "During tough times, she just tries to keep her head above water.",
+            "ptExample": "Durante os tempos difíceis, ela apenas tenta se manter."
+          }
+        ],
+        "synonyms": ["manage, survive, cope"],
+        "antonyms": ["struggle, drown, fail"],
+        "seeAlso": "stay afloat, hold on",
+        "notes": [
+          {
+            "enNote": "Often used metaphorically for surviving challenges.",
+            "ptNote": "Frequentemente usada metaforicamente para sobreviver a desafios."
+          }
+        ]
+      },
+      {
+        "word": "kiss up (to someone)",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "To try to please someone, especially a person in authority, by behaving in an overly flattering or submissive way.",
+        "ptDefinition": "Tentar agradar alguém, especialmente uma pessoa em posição de autoridade, comportando-se de maneira excessivamente bajuladora ou submissa.",
+        "examples": [
+          {
+            "enExample": "He's always kissing up to the boss to get a promotion.",
+            "ptExample": "Ele está sempre puxando o saco do chefe para conseguir uma promoção."
+          },
+          {
+            "enExample": "Stop kissing up and just do your work.",
+            "ptExample": "Pare de bajular e apenas faça seu trabalho."
+          }
+        ],
+        "synonyms": ["brown-nose, suck up, flatter"],
+        "antonyms": ["be independent, speak honestly"],
+        "seeAlso": "brown noser, yes man, bootlicker",
+        "notes": [
+          {
+            "enNote": "Informal phrase often used negatively to describe insincere flattery.",
+            "ptNote": "Expressão informal frequentemente usada de forma negativa para descrever bajulação insincera."
+          }
+        ]
+      },
+      {
+        "word": "kick off",
+        "phonetics": "kɪk ɔf",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to begin or start something, such as an event or activityt",
+        "ptDefinition": "começar ou iniciar algo, como um evento ou atividade",
+        "examples": [
+          {
+            "enExample": "The meeting will kick off at 9 AM sharp.",
+            "ptExample": "A reunião começará às 9h em ponto."
+          },
+          {
+            "enExample": "The football match will kick off at noon.",
+            "ptExample": "O jogo de futebol começará ao meio-dia."
+          }
+        ],
+        "synonyms": ["begin", "start", "initiate"],
+        "antonyms": ["end", "finish", "conclude"]
+      },
+      {
+        "word": "keep an open mind",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to be willing to consider new ideas, perspectives, and opportunities without prejudice or bias",
+        "ptDefinition": "estar disposto a considerar novas ideias, perspectivas e oportunidades sem preconceitos ou vieses",
+        "examples": [
+          {
+            "enExample": "Successful leaders keep an open mind when receiving feedback from their team.",
+            "ptExample": "Líderes de sucesso mantêm a mente aberta ao receber feedback de sua equipe."
+          }
+        ],
+        "synonyms": ["be receptive", "stay flexible", "remain unbiased"],
+        "antonyms": ["be close-minded", "reject ideas", "be inflexible"],
+        "seeAlso": [
+          "embrace change",
+          "think outside the box",
+          "be open to feedback"
+        ]
+      },
+      {
+        "word": "keep something under wraps",
+        "phonetics": "",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to keep something secret or hidden from others; to not reveal information.",
+        "ptDefinition": "manter algo em segredo ou escondido dos outros; não revelar informações.",
+        "examples": [
+          {
+            "enExample": "They managed to keep the new product under wraps until the official launch.",
+            "ptExample": "Eles conseguiram manter o novo produto em segredo até o lançamento oficial."
+          },
+          {
+            "enExample": "The company is keeping the details of the merger under wraps.",
+            "ptExample": "A empresa está mantendo os detalhes da fusão em segredo."
+          }
+        ],
+        "synonyms": ["keep secret", "conceal", "hide"],
+        "antonyms": ["reveal", "disclose", "make public"],
+        "seeAlso": ["keep quiet", "hush up", "cover up"],
+        "notes": [
+          {
+            "enNote": "Often used when referring to confidential information or surprises.",
+            "ptNote": "Frequentemente usado ao se referir a informações confidenciais ou surpresas."
+          }
+        ]
+      },
+      {
+        "word": "kudos",
+        "phonetics": "/ˈkuːdoʊz/",
+        "partOfSpeech": "noun",
+        "enDefinition": "praise, recognition, or respect given for an achievement or good work",
+        "ptDefinition": "elogios, reconhecimento ou respeito dado por uma conquista ou bom trabalho",
+        "examples": [
+          {
+            "enExample": "Kudos to the team for delivering the project ahead of schedule.",
+            "ptExample": "Parabéns à equipe por entregar o projeto antes do prazo."
+          },
+          {
+            "enExample": "She received kudos from her colleagues for her innovative ideas.",
+            "ptExample": "Ela recebeu elogios dos colegas por suas ideias inovadoras."
+          }
+        ],
+        "synonyms": ["praise", "acclaim", "commendation"],
+        "antonyms": ["criticism", "disapproval", "reproach"],
+        "notes": [
+          {
+            "enNote": "Kudos is the Greek word for \"praise.\""
+          },
+          {
+            "ptNote": "Kudos é a palavra grega para \"elogio\""
+          }
+        ]
+      }
+    ]
+  }
+]

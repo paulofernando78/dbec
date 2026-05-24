@@ -1,0 +1,18 @@
+.coffee {
+  border-radius: 5px;
+  width: max-content;
+  background-color: #FFDD00;
+  color: black;
+  font-family: var(--font-allura);
+  font-size: 1.3rem;
+  transition: .2s;
+}
+
+.coffee:hover {
+  box-shadow: 1px 1px 10px var(--yellow-5);
+}
+
+.img {
+  height: 37px;
+  border-radius: 20px;
+}

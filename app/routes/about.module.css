@@ -1,0 +1,23 @@
+.about {
+  margin-inline: min(200px, max(0px, calc((100vw - 380px) * 0.135)));
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.me {
+  border-radius: 100%;
+  border: 5px solid var(--slate-3);
+}
+
+.info {
+  text-align: justify;
+}
+
+.details {
+  display: block;
+}

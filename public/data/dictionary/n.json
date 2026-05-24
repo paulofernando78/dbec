@@ -1,0 +1,768 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "novelty",
+        "phonetics": "/ˈnɑː.vəl.ti/ (US), /ˈnɒv.əl.ti/ (UK)",
+        "partOfSpeech": "noun",
+        "enDefinition": "something new, unusual, or interesting, especially something that attracts attention for being different",
+        "ptDefinition": "novidade; algo novo, incomum ou interessante, especialmente por chamar atenção por ser diferente",
+        "examples": [
+          {
+            "enExample": "The novelty of the new phone wore off after a few weeks.",
+            "ptExample": "A novidade do novo celular perdeu a graça depois de algumas semanas."
+          },
+          {
+            "enExample": "At first, working from home was a novelty.",
+            "ptExample": "No começo, trabalhar de casa era uma novidade."
+          }
+        ],
+        "synonyms": ["newness", "originality", "curiosity"],
+        "antonyms": ["familiarity", "routine", "monotony"],
+        "seeAlso": ["novel", "innovation", "fad"],
+        "notes": [
+          {
+            "enNote": "Often used to describe something that is exciting at first but may lose its appeal over time.",
+            "ptNote": "Frequentemente usado para descrever algo que empolga no início, mas pode perder o encanto com o tempo."
+          }
+        ]
+      },
+      {
+        "word": "novel",
+        "phonetics": "/ˈnɑː.vəl/ (US), /ˈnɒv.əl/ (UK)",
+        "partOfSpeech": "noun",
+        "enDefinition": "a long written story, usually involving imaginary characters and events, in the form of a book",
+        "ptDefinition": "romance; obra literária longa, geralmente fictícia, apresentada em forma de livro",
+        "examples": [
+          {
+            "enExample": "She is writing a novel based on her childhood.",
+            "ptExample": "Ela está escrevendo um romance baseado na infância dela."
+          },
+          {
+            "enExample": "This novel became a bestseller worldwide.",
+            "ptExample": "Esse romance se tornou um best-seller mundial."
+          }
+        ],
+        "synonyms": ["book", "fiction", "story"],
+        "antonyms": ["nonfiction", "textbook"],
+        "seeAlso": ["short story", "novella", "fiction"],
+        "notes": [
+          {
+            "enNote": "A novel is usually longer and more complex than a short story or a novella.",
+            "ptNote": "Um romance geralmente é mais longo e mais complexo do que um conto ou uma novela curta."
+          }
+        ]
+      },
+      {
+        "word": "there’s no point in",
+        "partOfSpeech": "phrase / expression",
+        "enDefinition": "used to say that something is not useful, effective, or worth doing because it will not change the situation or achieve anything",
+        "ptDefinition": "usado para dizer que algo não é útil, eficaz ou que não vale a pena ser feito porque não mudará a situação nem trará resultado",
+        "examples": [
+          {
+            "enExample": "There’s no point in arguing with him — he never listens.",
+            "ptExample": "Não adianta discutir com ele — ele nunca escuta."
+          },
+          {
+            "enExample": "There’s no point in trying to fix it; we should just buy a new one.",
+            "ptExample": "Não faz sentido tentar consertar; devemos simplesmente comprar um novo."
+          },
+          {
+            "enExample": "There’s no point in crying over spilled milk.",
+            "ptExample": "Não adianta chorar pelo leite derramado."
+          }
+        ],
+        "synonyms": [
+          "it’s useless to",
+          "there’s no sense in",
+          "it’s pointless to"
+        ],
+        "antonyms": ["worth doing", "makes sense to", "useful to"],
+        "seeAlso": ["what’s the use", "a waste of time", "no use"],
+        "notes": [
+          {
+            "enNote": "Commonly followed by a verb in the -ing form (e.g., 'no point in waiting').",
+            "ptNote": "Normalmente seguido por um verbo terminado em -ing (por exemplo, 'no point in waiting')."
+          }
+        ]
+      },
+      {
+        "word": "neck",
+        "phonetics": "/nek/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the part of the body connecting the head to the rest of the body; also, a narrow part of something resembling this shape",
+        "ptDefinition": "a parte do corpo que liga a cabeça ao restante do corpo; também, uma parte estreita de algo que lembra esse formato",
+        "examples": [
+          {
+            "enExample": "He wore a scarf around his neck.",
+            "ptExample": "Ele usava um cachecol em volta do pescoço."
+          },
+          {
+            "enExample": "The bottle has a long neck.",
+            "ptExample": "A garrafa tem um gargalo longo."
+          }
+        ],
+        "synonyms": ["cervix", "nape", "throat (in some contexts)"],
+        "antonyms": [],
+        "seeAlso": ["throat", "nape", "neckline"],
+        "notes": [
+          {
+            "enNote": "In anatomy, 'neck' refers specifically to the region between the head and shoulders. In objects, it can refer to any narrow connecting part.",
+            "ptNote": "Em anatomia, 'neck' refere-se especificamente à região entre a cabeça e os ombros. Em objetos, pode se referir a qualquer parte estreita de ligação."
+          }
+        ]
+      },
+      {
+        "word": "newspaper",
+        "phonetics": "/ˈnuːzˌpeɪpər/ (US), /ˈnjuːzˌpeɪpə/ (UK)",
+        "partOfSpeech": "noun",
+        "enDefinition": "a printed publication (usually issued daily or weekly) containing news, articles, advertisements, and other items of general interest",
+        "ptDefinition": "publicação impressa (geralmente diária ou semanal) que contém notícias, artigos, anúncios e outros itens de interesse geral",
+        "examples": [
+          {
+            "enExample": "She reads the newspaper every morning with her coffee.",
+            "ptExample": "Ela lê o jornal todas as manhãs com seu café."
+          },
+          {
+            "enExample": "The story was reported in all the major newspapers.",
+            "ptExample": "A história foi noticiada em todos os principais jornais."
+          }
+        ],
+        "synonyms": "daily, paper, gazette, journal",
+        "seeAlso": "magazine, periodical, tabloid"
+      },
+      {
+        "word": "nail file",
+        "phonetics": "/ˈneɪl faɪl/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a small tool used to shape, smooth, or shorten fingernails or toenails",
+        "ptDefinition": "uma pequena ferramenta usada para lixar, dar forma ou encurtar as unhas das mãos ou dos pés",
+        "examples": [
+          {
+            "enExample": "She used a nail file to smooth the edges of her nails.",
+            "ptExample": "Ela usou uma lixa de unha para alisar as bordas das unhas."
+          }
+        ],
+        "synonyms": "emery board",
+        "seeAlso": "nail clippers, manicure",
+        "notes": [
+          {
+            "enNote": "Often made of metal, glass, or cardboard with a rough surface; 'emery board' refers to a cardboard type.",
+            "ptNote": "Geralmente feita de metal, vidro ou papelão com superfície áspera; 'emery board' se refere ao tipo de papelão."
+          }
+        ]
+      },
+      {
+        "word": "nail polish",
+        "phonetics": "/ˈneɪl ˌpɒlɪʃ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a colored or clear liquid applied to fingernails or toenails to decorate or protect them",
+        "ptDefinition": "um líquido colorido ou transparente aplicado nas unhas das mãos ou dos pés para decorá-las ou protegê-las",
+        "examples": [
+          {
+            "enExample": "She painted her nails with red nail polish.",
+            "ptExample": "Ela pintou as unhas com esmalte vermelho."
+          }
+        ],
+        "synonyms": "nail varnish (UK)",
+        "antonyms": "",
+        "seeAlso": "manicure, pedicure",
+        "notes": [
+          {
+            "enNote": "Commonly used in beauty and cosmetic contexts; 'nail varnish' is the more frequent term in British English.",
+            "ptNote": "Mais usado em contextos de beleza e cosmética; em inglês britânico, usa-se mais 'nail varnish'."
+          }
+        ]
+      },
+      {
+        "word": "numb",
+        "phonetics": "/nʌm/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "deprived of the power of sensation or feeling; unable to think, feel, or react normally",
+        "ptDefinition": "privado da capacidade de sentir; sem sensibilidade física ou emocional; incapaz de reagir normalmente",
+        "examples": [
+          {
+            "enExample": "After sitting in the cold for hours, her fingers were completely numb.",
+            "ptExample": "Depois de ficar sentada no frio por horas, seus dedos estavam completamente dormentes."
+          },
+          {
+            "enExample": "He was numb with shock when he heard the bad news.",
+            "ptExample": "Ele ficou entorpecido de choque quando ouviu a má notícia."
+          }
+        ],
+        "synonyms": "insensitive, frozen, unfeeling, dazed, paralyzed",
+        "antonyms": "sensitive, responsive, aware, alert",
+        "seeAlso": "paralyzed, anesthetized",
+        "notes": [
+          {
+            "enNote": "Can describe both physical loss of sensation (like in limbs) and emotional detachment.",
+            "ptNote": "Pode descrever tanto a perda física de sensibilidade (como em membros) quanto um distanciamento emocional."
+          }
+        ]
+      },
+      {
+        "word": "nymph",
+        "phonetics": "/nɪmf/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a minor female nature deity or spirit in Greek and Roman mythology, often associated with a particular location or landform such as forests, rivers, or mountains",
+        "ptDefinition": "uma deusa ou espírito feminino menor da natureza na mitologia grega e romana, frequentemente associada a um local específico como florestas, rios ou montanhas",
+        "examples": [
+          {
+            "enExample": "The nymph of the forest was said to protect all the animals living there.",
+            "ptExample": "Dizia-se que a ninfa da floresta protegia todos os animais que ali viviam."
+          },
+          {
+            "enExample": "In Greek myths, nymphs often guided heroes through enchanted places.",
+            "ptExample": "Nos mitos gregos, as ninfas frequentemente guiavam heróis por lugares encantados."
+          }
+        ],
+        "synonyms": "spirit, dryad, fairy",
+        "antonyms": "giant, ogre",
+        "seeAlso": "dryad, satyr, fairy",
+        "notes": [
+          {
+            "enNote": "Nymphs are typically depicted as beautiful maidens and are connected to natural elements, unlike fairies which are more whimsical.",
+            "ptNote": "As ninfas geralmente são retratadas como belas jovens e estão conectadas a elementos naturais, diferentemente das fadas, que são mais fantásticas e encantadoras."
+          }
+        ]
+      },
+      {
+        "word": "noisy",
+        "phonetics": "/ˈnɔɪ.zi/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "making a lot of loud or unpleasant sounds; full of noise",
+        "ptDefinition": "que faz muito barulho; cheio de ruído",
+        "examples": [
+          {
+            "enExample": "The children were very noisy during the party.",
+            "ptExample": "As crianças estavam muito barulhentas durante a festa."
+          },
+          {
+            "enExample": "We moved to the countryside to get away from the noisy city.",
+            "ptExample": "Nós nos mudamos para o interior para fugir da cidade barulhenta."
+          }
+        ],
+        "synonyms": "loud, boisterous, rowdy, clamorous",
+        "antonyms": "quiet, silent, peaceful, calm",
+        "seeAlso": "noise, noiseless, noisily",
+        "notes": [
+          {
+            "enNote": "Often used to describe places, people, or activities that produce a lot of sound.",
+            "ptNote": "Frequentemente usado para descrever lugares, pessoas ou atividades que produzem muito som."
+          }
+        ]
+      },
+      {
+        "word": "noise",
+        "phonetics": "/nɔɪz/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a sound, especially one that is loud, unpleasant, or causes disturbance",
+        "ptDefinition": "som, especialmente quando é alto, desagradável ou causa incômodo",
+        "examples": [
+          {
+            "enExample": "The noise from the construction site kept me awake all night.",
+            "ptExample": "O barulho da obra me manteve acordado a noite toda."
+          },
+          {
+            "enExample": "I can't concentrate with so much noise around me.",
+            "ptExample": "Não consigo me concentrar com tanto barulho ao meu redor."
+          }
+        ],
+        "synonyms": "sound, din, racket, uproar",
+        "antonyms": "silence, quiet, hush",
+        "seeAlso": "noisy, noiseless",
+        "notes": [
+          {
+            "enNote": "In technical contexts, 'noise' can also mean random or unwanted signals that interfere with communication or data.",
+            "ptNote": "Em contextos técnicos, 'noise' também pode significar sinais aleatórios ou indesejados que interferem na comunicação ou nos dados."
+          }
+        ]
+      },
+      {
+        "word": "Is there any room to negotiate?",
+        "partOfSpeech": "phrase (question)",
+        "enDefinition": "a question asked to find out if there is flexibility to adjust terms or conditions",
+        "ptDefinition": "pergunta feita para saber se há flexibilidade para ajustar termos ou condições",
+        "examples": [
+          {
+            "enExample": "Is there any room to negotiate on the price?",
+            "ptExample": "Há possibilidade de negociação no preço?"
+          },
+          {
+            "enExample": "Before we sign the contract, is there any room to negotiate the deadlines?",
+            "ptExample": "Antes de assinarmos o contrato, há espaço para negociar os prazos?"
+          }
+        ],
+        "synonyms": [
+          "Can we negotiate?",
+          "Is negotiation possible?",
+          "Any flexibility?"
+        ],
+        "antonyms": ["Take it or leave it", "Non-negotiable"],
+        "seeAlso": ["negotiation", "bargaining", "compromise"],
+        "notes": [
+          {
+            "enNote": "Commonly used in business, sales, and contract discussions.",
+            "ptNote": "Usado com frequência em negócios, vendas e discussões contratuais."
+          }
+        ]
+      },
+      {
+        "word": "nitty-gritty",
+        "phonetics": "/ˈnɪti ˈɡrɪti/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "the most important, basic, or practical details of a subject or situation",
+        "ptDefinition": "os detalhes mais importantes, básicos ou práticos de um assunto ou situação",
+        "examples": [
+          {
+            "enExample": "Let's get down to the nitty-gritty and discuss the budget.",
+            "ptExample": "Vamos direto ao ponto e discutir o orçamento."
+          },
+          {
+            "enExample": "The meeting focused on the nitty-gritty of the contract terms.",
+            "ptExample": "A reunião focou nos detalhes essenciais dos termos do contrato."
+          }
+        ],
+        "synonyms": ["essentials", "basics", "core details", "fundamentals"],
+        "antonyms": ["superficial details", "frills", "extras"],
+        "seeAlso": ["get down to business", "bottom line"],
+        "notes": [
+          {
+            "enNote": "Often used to emphasize the practical or fundamental parts of a discussion.",
+            "ptNote": "Frequentemente usada para enfatizar as partes práticas ou fundamentais de uma discussão."
+          }
+        ]
+      },
+      {
+        "word": "nickel-and-dime",
+        "phonetics": "/ˌnɪk.əl.ənˈdaɪm/",
+        "partOfSpeech": "adjective / verb / idiom",
+        "enDefinition": "involving very small amounts of money or trivial matters, especially in a way that is annoying or petty",
+        "ptDefinition": "envolvendo pequenas quantias de dinheiro ou questões triviais, especialmente de forma irritante ou mesquinha",
+        "examples": [
+          {
+            "enExample": "The company kept nickel-and-diming its employees with unnecessary charges.",
+            "ptExample": "A empresa continuava cobrando pequenas taxas desnecessárias dos funcionários."
+          },
+          {
+            "enExample": "I’m tired of all these nickel-and-dime expenses adding up.",
+            "ptExample": "Estou cansado de todas essas despesas pequenas se acumulando."
+          }
+        ],
+        "synonyms": ["petty", "trivial", "insignificant"],
+        "antonyms": ["major", "significant", "substantial"],
+        "seeAlso": "penny-pinching",
+        "notes": [
+          {
+            "enNote": "Can also be used as a verb meaning to treat someone unfairly by charging many small amounts.",
+            "ptNote": "Também pode ser usado como verbo, significando tratar alguém de forma injusta cobrando pequenas quantias."
+          }
+        ]
+      },
+      {
+        "word": "in a nutshell",
+        "partOfSpeech": "expression",
+        "enDefinition": "used to introduce a short summary of something",
+        "ptDefinition": "usado para introduzir um resumo breve de algo",
+        "examples": [
+          {
+            "enExample": "In a nutshell, we lost the contract because of budget issues.",
+            "ptExample": "Resumidamente, perdemos o contrato por causa de questões orçamentárias."
+          },
+          {
+            "enExample": "He explained the whole process in a nutshell.",
+            "ptExample": "Ele explicou todo o processo em poucas palavras."
+          }
+        ],
+        "synonyms": ["briefly", "in short", "to sum up"],
+        "antonyms": ["in detail", "at length"],
+        "seeAlso": ["to make a long story short", "in brief"],
+        "notes": [
+          {
+            "enNote": "Commonly used before summarizing a complex explanation.",
+            "ptNote": "Usado com frequência antes de resumir uma explicação complexa."
+          }
+        ]
+      },
+      {
+        "word": "brown noser",
+        "phonetics": "ˈbraʊn ˌnoʊzər",
+        "partOfSpeech": "noun",
+        "enDefinition": "a person who tries to gain favor with someone, especially a superior, by excessive flattery or sycophantic behavior",
+        "ptDefinition": "pessoa que tenta ganhar favores de alguém, especialmente um superior, por meio de elogios excessivos ou comportamento bajulador",
+        "examples": [
+          {
+            "enExample": "He's such a brown noser that he always agrees with the manager, no matter what.",
+            "ptExample": "Ele é tão puxa-saco que sempre concorda com o gerente, não importa o que seja."
+          },
+          {
+            "enExample": "Nobody likes a brown noser in the office.",
+            "ptExample": "Ninguém gosta de um puxa-saco no escritório."
+          }
+        ],
+        "synonyms": ["yes man, sycophant, toady"],
+        "antonyms": ["independent thinker, critic"],
+        "seeAlso": "bootlicker, suck-up, flatterer",
+        "notes": [
+          {
+            "enNote": "Informal and often derogatory term used to describe someone who flatters excessively to gain advantage.",
+            "ptNote": "Termo informal e frequentemente pejorativo usado para descrever alguém que bajula excessivamente para obter vantagens."
+          }
+        ]
+      },
+      {
+        "word": "no big deal",
+        "phonetics": "/nəʊ bɪɡ diːl/",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to indicate that something is not important or not a problem",
+        "ptDefinition": "usado para indicar que algo não é importante ou não é um problema",
+        "examples": [
+          {
+            "enExample": "Don't worry about breaking the glass, it's no big deal.",
+            "ptExample": "Não se preocupe por ter quebrado o copo, não é nada demais."
+          }
+        ],
+        "synonyms": ["not important", "no problem", "no worries"],
+        "antonyms": ["big deal", "major issue"],
+        "seeAlso": ["no problem", "don't worry about it"],
+        "notes": [
+          {
+            "enNote": "A casual expression used to minimize concerns",
+            "ptNote": "Uma expressão casual usada para minimizar preocupações"
+          }
+        ]
+      },
+      {
+        "word": "not see eye-to-eye",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to disagree with someone or have different opinions",
+        "ptDefinition": "não concordar com alguém ou ter opiniões diferentes",
+        "examples": [
+          {
+            "enExample": "They don't see eye-to-eye on the new policy.",
+            "ptExample": "Eles não concordam com a nova política."
+          },
+          {
+            "enExample": "We rarely see eye-to-eye on how to raise the children.",
+            "ptExample": "Raramente concordamos sobre como criar os filhos."
+          }
+        ],
+        "synonyms": ["disagree", "differ", "clash"],
+        "antonyms": ["agree", "concur", "see things the same way"],
+        "seeAlso": ["dispute", "conflict"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used to describe a situation where two people have different opinions or perspectives.",
+            "ptNote": "Este idiom é frequentemente usado para descrever uma situação em que duas pessoas têm opiniões ou perspectivas diferentes."
+          }
+        ]
+      },
+      {
+        "word": "nervous",
+        "phonetics": "/ˈnɜːrvəs/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "easily agitated or alarmed; tending to be anxious; highly strung",
+        "ptDefinition": "facilmente agitado ou alarmado; tendendo a ser ansioso; muito tenso",
+        "examples": [
+          {
+            "enExample": "She was nervous about her job interview.",
+            "ptExample": "Ela estava nervosa com a entrevista de emprego."
+          },
+          {
+            "enExample": "He gave a nervous laugh.",
+            "ptExample": "Ele deu uma risada nervosa."
+          }
+        ],
+        "synonyms": ["anxious", "apprehensive", "tense"],
+        "antonyms": ["calm", "relaxed", "confident"],
+        "seeAlso": ["anxiety", "stress"],
+        "notes": [
+          {
+            "enNote": "The word 'nervous' can describe both a temporary state of anxiety and a more general tendency to be anxious.",
+            "ptNote": "A palavra 'nervoso' pode descrever tanto um estado temporário de ansiedade quanto uma tendência mais geral de ser ansioso."
+          }
+        ]
+      },
+      {
+        "word": "nothing ventured, nothing gained",
+        "partOfSpeech": "idiom",
+        "enDefinition": "you can't achieve anything without taking risks or trying",
+        "ptDefinition": "você não pode alcançar nada sem correr riscos ou tentar",
+        "examples": [
+          {
+            "enExample": "I know starting a new business is risky, but nothing ventured, nothing gained.",
+            "ptExample": "Eu sei que começar um novo negócio é arriscado, mas quem não arrisca, não petisca."
+          },
+          {
+            "enExample": "He decided to ask for the promotion, thinking 'nothing ventured, nothing gained'.",
+            "ptExample": "Ele decidiu pedir a promoção, pensando 'quem não arrisca, não petisca'."
+          }
+        ],
+        "synonyms": [
+          "take a chance",
+          "no risk, no reward",
+          "step out of one's comfort zone"
+        ],
+        "antonyms": ["play it safe", "avoid risk"],
+        "seeAlso": ["take risks", "dare to try"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used to encourage someone to take chances or embrace new opportunities.",
+            "ptNote": "Essa expressão é frequentemente usada para encorajar alguém a correr riscos ou abraçar novas oportunidades."
+          }
+        ]
+      },
+      {
+        "word": "need something like a hole in the head",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to emphasize that something is completely unnecessary or undesirable",
+        "ptDefinition": "usado para enfatizar que algo é completamente desnecessário ou indesejado",
+        "examples": [
+          {
+            "enExample": "I need more paperwork like a hole in the head.",
+            "ptExample": "Eu preciso de mais papelada \"como de um buraco na cabeça.\""
+          },
+          {
+            "enExample": "He says he needs another meeting like a hole in the head.",
+            "ptExample": "Ele diz que precisa de mais uma reunião \"como de um buraco na cabeça.\""
+          }
+        ],
+        "synonyms": ["not want", "unnecessary", "undesirable"],
+        "antonyms": ["welcome", "necessary", "desirable"],
+        "notes": [
+          {
+            "enNote": "This phrase is often used sarcastically to stress how unwanted or unnecessary something is.",
+            "ptNote": "Esta frase é frequentemente usada sarcasticamente para enfatizar o quão indesejado ou desnecessário algo é."
+          }
+        ]
+      },
+      {
+        "word": "no ifs, ands, or buts",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to emphasize that there are no excuses, exceptions, or compromises allowed in a situation",
+        "ptDefinition": "usado para enfatizar que não há desculpas, exceções ou concessões permitidas em uma situação",
+        "examples": [
+          {
+            "enExample": "You need to finish your report by tomorrow—no ifs, ands, or buts.",
+            "ptExample": "Você precisa terminar o relatório até amanhã — sem desculpas ou negociações."
+          },
+          {
+            "enExample": "The rules are clear, and everyone must follow them, no ifs, ands, or buts.",
+            "ptExample": "As regras são claras e todos devem segui-las, sem exceções ou argumentos."
+          }
+        ],
+        "synonyms": [
+          "no excuses",
+          "no exceptions",
+          "no compromises",
+          "absolutely"
+        ],
+        "antonyms": ["with exceptions", "with conditions", "negotiable"],
+        "notes": [
+          {
+            "enNote": "This expression is often used to establish firm boundaries or emphasize strict adherence to a rule or decision."
+          },
+          {
+            "ptNote": "Esta expressão é frequentemente usada para estabelecer limites firmes ou enfatizar a estrita adesão a uma regra ou decisão."
+          }
+        ]
+      },
+      {
+        "word": "near",
+        "phonetics": "/nɪr/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to come closer to someone or something",
+        "ptDefinition": "aproximar-se de alguém ou algo",
+        "examples": [
+          {
+            "enExample": "The train neared the station.",
+            "ptExample": "O trem se aproximou da estação."
+          }
+        ],
+        "synonyms": ["approach", "advance"],
+        "antonyms": ["recede", "withdraw"],
+        "seeAlso": ["come closer", "draw near"]
+      },
+      {
+        "word": "near",
+        "phonetics": "/nɪr/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "Located a short distance away; close.",
+        "ptDefinition": "Localizado a uma curta distância; próximo.",
+        "examples": [
+          {
+            "enExample": "The nearest hospital is just a mile away.",
+            "ptExample": "O hospital mais próximo fica a apenas um quilômetro."
+          }
+        ],
+        "synonyms": ["close", "neighboring"],
+        "antonyms": ["distant", "remote"],
+        "seeAlso": ["proximal", "nearby"]
+      },
+      {
+        "word": "near",
+        "phonetics": "/nɪr/",
+        "partOfSpeech": "adverb",
+        "enDefinition": "At or to a short distance away.",
+        "ptDefinition": "A uma curta distância.",
+        "examples": [
+          {
+            "enExample": "We moved nearer to the stage.",
+            "ptExample": "Nós nos movemos mais perto do palco."
+          }
+        ],
+        "synonyms": ["closely", "nearby"],
+        "antonyms": ["far", "distantly"],
+        "seeAlso": ["close", "approximately"]
+      },
+      {
+        "word": "near",
+        "phonetics": "/nɪr/",
+        "partOfSpeech": "preposition",
+        "enDefinition": "Close to someone or something in distance or time.",
+        "ptDefinition": "Perto de alguém ou algo em distância ou tempo.",
+        "examples": [
+          {
+            "enExample": "She sat near the window.",
+            "ptExample": "Ela se sentou perto da janela."
+          }
+        ],
+        "synonyms": ["by", "beside", "next to"],
+        "antonyms": ["far from", "away from"],
+        "seeAlso": ["adjacent", "alongside"]
+      },
+      {
+        "word": "new blood",
+        "partOfSpeech": "idiom",
+        "enDefinition": "new people or ideas brought into a group, organization, or situation, often to invigorate or refresh it",
+        "ptDefinition": "novas pessoas ou ideias introduzidas em um grupo, organização ou situação, geralmente para revigorá-lo ou atualizá-lo",
+        "examples": [
+          {
+            "enExample": "The company hired new blood to help innovate their outdated processes.",
+            "ptExample": "A empresa contratou novas pessoas para ajudar a inovar seus processos desatualizados."
+          },
+          {
+            "enExample": "The team is looking for some new blood to bring fresh perspectives to the project.",
+            "ptExample": "A equipe está procurando por novas pessoas para trazer perspectivas frescas para o projeto."
+          }
+        ],
+        "synonyms": ["fresh talent", "new faces", "new recruits"],
+        "antonyms": ["old guard", "stagnation", "status quo"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used in professional contexts to refer to the infusion of new talent or ideas into a group."
+          },
+          {
+            "ptNote": "Este idiom é frequentemente usado em contextos profissionais para se referir à infusão de novos talentos ou ideias em um grupo."
+          }
+        ]
+      },
+      {
+        "word": "New Zealand",
+        "partOfSpeech": "noun",
+        "enDefinition": "a country in the southern Pacific Ocean",
+        "ptDefinition": "Nova Zelândia"
+      },
+      {
+        "word": "nip ",
+        "phonetics": " /nɪp/",
+        "partOfSpeech": "verb",
+        "enDefinition": "bite sharply",
+        "ptDefinition": "abocanhar, morder",
+        "examples": [
+          {
+            "enExample": "The puppy nipped me on the leg.",
+            "ptExample": "O cachorrinho me mordeu na perna."
+          }
+        ],
+        "synonyms": ["bite", "pinch", "snap"]
+      },
+      {
+        "word": "nip ",
+        "phonetics": " /nɪp/",
+        "partOfSpeech": "verb",
+        "enDefinition": "frost",
+        "ptDefinition": "congelar",
+        "examples": [
+          {
+            "enExample": "The frost nipped the flowers.",
+            "ptExample": "A geada congelou as flores"
+          }
+        ]
+      },
+      {
+        "word": "nip ",
+        "phonetics": " /nɪp/",
+        "partOfSpeech": "verb",
+        "enDefinition": "[UK informal] to go somewhere quickly or be somewhere for only a short time",
+        "ptDefinition": "dar uma saída rápida",
+        "examples": [
+          {
+            "enExample": "Can you nip out/round/down to the shop for me?",
+            "ptExample": "Você pode ir rapidinho na loja para mim?"
+          }
+        ],
+        "synonyms": ["go", "rush", "dash", "stop by"]
+      },
+      {
+        "word": "nip off",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "remove something by pinching or squeezing sharply",
+        "ptDefinition": "arrancar, cortar",
+        "examples": [
+          {
+            "enExample": "He nipped off a length of wire with the cutters.",
+            "ptExample": "Ele cortou um pedaço de arame com o alicate."
+          }
+        ],
+        "synonyms": ["cut off", "trim", "remove"]
+      },
+      {
+        "word": "nip and tuck",
+        "partOfSpeech": "noun",
+        "enDefinition": "cosmetic surgery",
+        "ptDefinition": "cirurgia plástica",
+        "examples": [
+          {
+            "enExample": "Tessa has consulted a cosmetic surgeon about having a nip and tuck.",
+            "ptExample": "Tessa consultou um cirurgião plástico sobre fazer uma cirurgia plástica."
+          }
+        ],
+        "synonyms": ["neck and neck", "even", "drawn", "tied", "balanced"],
+        "antonyms": []
+      },
+      {
+        "word": "nip and tuck",
+        "partOfSpeech": "adjective",
+        "enDefinition": "If a competition is nip and tuck, first one side seems to be winning and then the other, so that the result is not certain.",
+        "ptDefinition": "acirrado, indefinido",
+        "examples": [
+          {
+            "enExample": "It was nip and tuck as to who would win the playoffs.",
+            "ptExample": "A competição estava taco a taco, então era difícil saber quem venceria as finais."
+          },
+          {
+            "enExample": "That race was so nip and tuck that I had no idea who would win until the very end.",
+            "ptExample": "Aquela corrida foi tão acirrada que eu não tinha ideia de quem venceria até o final."
+          }
+        ],
+        "synonyms": ["neck and neck", "even", "drawn", "tied", "balanced"],
+        "antonyms": []
+      },
+      {
+        "word": "nip (something) in the bud",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to stop (something) as soon as it starts",
+        "ptDefinition": "cortar pela raiz",
+        "examples": [
+          {
+            "enExample": "The managers nipped the strike in the bud.",
+            "ptExample": "Os dirigentes cortaram a greve pela raiz."
+          }
+        ],
+        "synonyms": ["abort"],
+        "antonyms": ["cut off", "cut short"]
+      }
+    ]
+  }
+]

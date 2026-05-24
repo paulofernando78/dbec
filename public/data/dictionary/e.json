@@ -1,0 +1,554 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "earth axis",
+        "phonetics": "/ɝːθ ˈæk.sɪs/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the imaginary line through Earth that runs from the North Pole to the South Pole and around which the planet rotates",
+        "ptDefinition": "eixo da Terra; a linha imaginária que atravessa a Terra do Polo Norte ao Polo Sul e em torno da qual o planeta gira",
+        "examples": [
+          {
+            "enExample": "Earth rotates around its axis once every 24 hours.",
+            "ptExample": "A Terra gira em torno de seu eixo uma vez a cada 24 horas."
+          },
+          {
+            "enExample": "The tilt of Earth's axis affects the seasons.",
+            "ptExample": "A inclinação do eixo da Terra afeta as estações do ano."
+          }
+        ],
+        "synonyms": ["rotational axis", "planetary axis"],
+        "antonyms": [""],
+        "seeAlso": ["orbit", "rotation", "North Pole", "South Pole"],
+        "notes": [
+          {
+            "enNote": "Earth's axis is tilted about 23.5 degrees, which is one reason why Earth has seasons.",
+            "ptNote": "O eixo da Terra é inclinado cerca de 23,5 graus, o que é uma das razões pelas quais a Terra possui estações do ano."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "earth-axis.avif",
+            "alt": "Planet Earth with a glowing tilted axis running through the poles"
+          }
+        ]
+      },
+      {
+        "word": "earn one’s keep",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to do work or provide a service in return for food, accommodation, or the benefits one receives; to justify one’s position or usefulness",
+        "ptDefinition": "trabalhar ou prestar um serviço em troca de comida, hospedagem ou dos benefícios recebidos; justificar a própria posição ou utilidade",
+        "examples": [
+          {
+            "enExample": "He helped out on the farm to earn his keep.",
+            "ptExample": "Ele ajudava na fazenda para ganhar o sustento."
+          },
+          {
+            "enExample": "In this company, you have to earn your keep by showing real results.",
+            "ptExample": "Nesta empresa, você precisa justificar sua presença mostrando resultados reais."
+          }
+        ],
+        "synonyms": ["pull one’s weight", "contribute", "justify one’s role"],
+        "antonyms": ["be a burden", "freeload"],
+        "seeAlso": ["pull one’s weight", "pay one’s way"],
+        "notes": [
+          {
+            "enNote": "Often used both literally (working for food/shelter) and figuratively (justifying one’s role or usefulness).",
+            "ptNote": "Pode ser usado de forma literal (trabalhar em troca de comida/abrigo) ou figurada (justificar o próprio papel ou utilidade)."
+          }
+        ]
+      },
+      {
+        "word": "earthly",
+        "phonetics": "/ˈɜːrθli/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "relating to the world or human life on Earth; worldly rather than spiritual",
+        "ptDefinition": "relativo ao mundo ou à vida humana na Terra; mundano, em contraste com espiritual",
+        "examples": [
+          {
+            "enExample": "He had no earthly idea what she was talking about.",
+            "ptExample": "Ele não tinha a menor ideia do que ela estava falando."
+          },
+          {
+            "enExample": "Earthly pleasures can be enjoyable but fleeting.",
+            "ptExample": "Os prazeres terrenos podem ser agradáveis, mas passageiros."
+          },
+          {
+            "enExample": "She gave up all earthly possessions to live a simple life.",
+            "ptExample": "Ela renunciou a todas as posses terrenas para viver uma vida simples."
+          },
+          {
+            "enExample": "There is no earthly reason to be so angry over this.",
+            "ptExample": "Não há a menor razão para ficar tão bravo com isso."
+          }
+        ],
+        "synonyms": "worldly, terrestrial, mundane",
+        "antonyms": "spiritual, heavenly, otherworldly",
+        "seeAlso": "mortal, temporal",
+        "notes": [
+          {
+            "enNote": "Often used in expressions like 'no earthly reason' or 'no earthly way' to emphasize impossibility.",
+            "ptNote": "Freqüentemente usado em expressões como 'no earthly reason' ou 'no earthly way' para enfatizar impossibilidade."
+          }
+        ]
+      },
+      {
+        "word": "up to one’s ears in work",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to be extremely busy with work",
+        "ptDefinition": "estar extremamente ocupado com trabalho",
+        "examples": [
+          {
+            "enExample": "I’m up to my ears in work this week and barely have time to rest.",
+            "ptExample": "Estou atolado de trabalho esta semana e mal tenho tempo para descansar."
+          },
+          {
+            "enExample": "She’s up to her ears in work preparing for the big event.",
+            "ptExample": "Ela está atolada de trabalho preparando para o grande evento."
+          }
+        ],
+        "synonyms": ["overloaded, swamped, very busy"],
+        "antonyms": ["free, relaxed, unoccupied"],
+        "seeAlso": "busy, overwhelmed",
+        "notes": [
+          {
+            "enNote": "Commonly used to describe a heavy workload.",
+            "ptNote": "Usado comumente para descrever uma carga de trabalho pesada."
+          }
+        ]
+      },
+      {
+        "word": "80/20 rule",
+        "phonetics": "ˈeɪti ˈtwɛnti ruːl",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "the principle that 80% of results come from 20% of efforts or causes",
+        "ptDefinition": "o princípio de que 80% dos resultados vêm de 20% dos esforços ou causas",
+        "examples": [
+          {
+            "enExample": "According to the 80/20 rule, most of your sales come from a small number of customers.",
+            "ptExample": "Segundo a regra 80/20, a maior parte das suas vendas vem de um pequeno número de clientes."
+          },
+          {
+            "enExample": "Focus on the vital few tasks that follow the 80/20 rule to maximize productivity.",
+            "ptExample": "Concentre-se nas poucas tarefas vitais que seguem a regra 80/20 para maximizar a produtividade."
+          }
+        ],
+        "synonyms": ["Pareto principle, law of the vital few"],
+        "seeAlso": ["efficiency, prioritization"],
+        "notes": [
+          {
+            "enNote": "Widely used in business and productivity contexts.",
+            "ptNote": "Ampliamente usada em contextos de negócios e produtividade."
+          }
+        ]
+      },
+      {
+        "word": "the walls have ears",
+        "partOfSpeech": "idiom",
+        "enDefinition": "B]be careful what you say because someone might be listening secretly",
+        "ptDefinition": "tenha cuidado com o que diz, pois alguém pode estar ouvindo em segredo",
+        "examples": [
+          {
+            "enExample": "Don't talk about it here—the walls have ears.",
+            "ptExample": "Não fale sobre isso aqui—as paredes têm ouvidos."
+          },
+          {
+            "enExample": "He whispered because he knew the walls had ears.",
+            "ptExample": "Ele sussurrou porque sabia que as paredes tinham ouvidos."
+          }
+        ],
+        "synonyms": ["be discreet, speak cautiously"],
+        "antonyms": ["speak freely, talk openly"],
+        "seeAlso": "watch your mouth, loose lips sink ships",
+        "notes": [
+          {
+            "enNote": "This idiom is often used in situations involving secrecy or surveillance.",
+            "ptNote": "Esse idiom é usado em contextos que envolvem segredo ou vigilância."
+          }
+        ]
+      },
+      {
+        "word": "at one’s expense",
+        "partOfSpeech": "idiom / prepositional phrase",
+        "enDefinition": "to be the cause of someone's loss, embarrassment, or disadvantage, often implying that the cost is borne by that person",
+        "ptDefinition": "ser a causa da perda, constrangimento ou desvantagem de alguém, frequentemente implicando que o custo é suportado por essa pessoa",
+        "examples": [
+          {
+            "enExample": "He made a joke at her expense, and she didn't find it funny.",
+            "ptExample": "Ele fez uma piada às custas dela, e ela não achou engraçado."
+          },
+          {
+            "enExample": "The company gained profit at the employees’ expense.",
+            "ptExample": "A empresa lucrou às custas dos funcionários."
+          }
+        ],
+        "synonyms": ["at someone's cost, to someone's detriment"],
+        "antonyms": ["to someone's benefit, for someone's gain"],
+        "seeAlso": "make fun of, laugh at",
+        "notes": [
+          {
+            "enNote": "Often used to indicate someone is negatively affected by an action or event.",
+            "ptNote": "Frequentemente usada para indicar que alguém é afetado negativamente por uma ação ou evento."
+          }
+        ]
+      },
+      {
+        "word": "give somebody an earful",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to angrily tell someone in detail what you think about their mistakes or behavior; to scold or reprimand someone at length",
+        "ptDefinition": "repreender alguém de forma detalhada e irritada; dar uma bronca longa em alguém",
+        "examples": [
+          {
+            "enExample": "When he got home late, his mother gave him an earful.",
+            "ptExample": "Quando ele chegou tarde em casa, sua mãe lhe deu uma bronca."
+          },
+          {
+            "enExample": "The boss gave the team an earful after the project failed.",
+            "ptExample": "O chefe deu uma bronca na equipe depois que o projeto fracassou."
+          }
+        ],
+        "synonyms": ["scold", "reprimand", "lecture", "berate"],
+        "antonyms": ["praise", "compliment", "commend"],
+        "seeAlso": [
+          "tell off",
+          "chew out",
+          "give someone a piece of your mind"
+        ],
+        "notes": [
+          {
+            "enNote": "This idiom is informal and often used to describe a situation where someone is criticized at length.",
+            "ptNote": "Este idiom é informal e geralmente usado para descrever uma situação em que alguém é criticado por um longo tempo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "definitions": [
+      {
+        "word": "push the envelope",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to go beyond the usual or expected limits, especially in a creative or innovative way",
+        "ptDefinition": "ir além dos limites usuais ou esperados, especialmente de maneira criativa ou inovadora",
+        "examples": [
+          {
+            "enExample": "The company is known for pushing the envelope in terms of technology and design.",
+            "ptExample": "A empresa é conhecida por ir além dos limites em termos de tecnologia e design."
+          },
+          {
+            "enExample": "The director pushed the envelope with his latest film, exploring new and controversial themes.",
+            "ptExample": "O diretor foi além dos limites com seu último filme, explorando temas novos e controversos."
+          }
+        ],
+        "synonyms": ["innovate", "break new ground", "go beyond"],
+        "antonyms": ["conform", "stick to the norm", "play it safe"],
+        "seeAlso": ["think outside the box", "break the mold"],
+        "notes": [
+          {
+            "enNote": "This idiom originated from the field of aviation, where 'envelope' refers to the performance limits of an aircraft.",
+            "ptNote": "Este idiom originou-se no campo da aviação, onde 'envelope' se refere aos limites de desempenho de uma aeronave."
+          }
+        ]
+      },
+      {
+        "word": "I can't believe my ears!",
+        "partOfSpeech": "phrase",
+        "enDefinition": "used to express great surprise or disbelief at something heard",
+        "ptDefinition": "usado para expressar grande surpresa ou descrença em algo ouvido",
+        "examples": [
+          {
+            "enExample": "When she told me the news, I couldn't believe my ears!",
+            "ptExample": "Quando ela me contou a notícia, eu não pude acreditar no que ouvi!"
+          },
+          {
+            "enExample": "I can't believe my ears! Did he really say that?",
+            "ptExample": "Eu não posso acreditar no que ouvi! Ele realmente disse isso?"
+          }
+        ],
+        "synonyms": ["astonished", "shocked", "amazed"],
+        "antonyms": ["unsurprised", "unimpressed"],
+        "seeAlso": "I can't believe my eyes",
+        "notes": [
+          {
+            "enNote": "This phrase is often used in situations where the speaker is hearing something unexpected or unbelievable.",
+            "ptNote": "Esta frase é frequentemente usada em situações onde o falante está ouvindo algo inesperado ou inacreditável."
+          }
+        ]
+      },
+      {
+        "word": "enthral",
+        "phonetics": "/ɪnˈθrɔːl/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to capture the fascinated attention of someone; to charm or captivate completely",
+        "ptDefinition": "cativar ou fascinar completamente; encantar",
+        "examples": [
+          {
+            "enExample": "The magician's performance enthralled the audience.",
+            "ptExample": "A apresentação do mágico encantou a plateia."
+          }
+        ],
+        "synonyms": ["captivate", "fascinate", "spellbind", "enchant"],
+        "antonyms": ["bore", "repel", "disinterest"],
+        "seeAlso": ["charm", "mesmerize"],
+        "notes": [
+          {
+            "enNote": "British spelling variant of 'enthrall'",
+            "ptNote": "Variante britânica de 'enthrall'"
+          }
+        ]
+      },
+      {
+        "word": "every time I turn around",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to describe something that happens very frequently or constantly",
+        "ptDefinition": "usado para descrever algo que acontece com muita frequência ou constantemente",
+        "examples": [
+          {
+            "enExample": "Every time I turn around, there's another problem to solve.",
+            "ptExample": "Mal resolvo um problema, já aparece outro."
+          },
+          {
+            "enExample": "Every time I turn around, my kids are asking for something new.",
+            "ptExample": "Mal me viro e meus filhos já estão pedindo algo novo."
+          }
+        ],
+        "synonyms": ["constantly", "frequently", "repeatedly"],
+        "antonyms": ["rarely", "seldom"],
+        "seeAlso": ["all the time", "at every turn"],
+        "notes": [
+          {
+            "enNote": "Often used to express frustration with the frequency of occurrences.",
+            "ptNote": "Frequentemente usado para expressar frustração com a frequência das ocorrências."
+          }
+        ]
+      },
+      {
+        "word": "embarrassing",
+        "phonetics": "/ɪmˈbærəsɪŋ/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "causing someone to feel awkward, self-conscious, or ashamed",
+        "ptDefinition": "causando em alguém um sentimento de constrangimento, vergonha ou embaraço",
+        "examples": [
+          {
+            "enExample": "The situation was embarrassing for everyone involved.",
+            "ptExample": "A situação foi constrangedora para todos os envolvidos."
+          },
+          {
+            "enExample": "It was embarrassing to admit that I had forgotten her name.",
+            "ptExample": "Foi embaraçoso admitir que eu tinha esquecido o nome dela."
+          }
+        ],
+        "synonyms": ["awkward", "humiliating", "uncomfortable"],
+        "antonyms": ["comfortable", "reassuring", "pleasant"],
+        "seeAlso": ["mortifying", "shameful"],
+        "notes": [
+          {
+            "enNote": "Often used to describe situations that cause social discomfort.",
+            "ptNote": "Frequentemente usado para descrever situações que causam desconforto social."
+          }
+        ]
+      },
+      {
+        "word": "embarrassed",
+        "phonetics": "/ɪmˈbærəst/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "feeling awkward, self-conscious, or ashamed",
+        "ptDefinition": "sentindo-se constrangido, envergonhado ou embaraçado",
+        "examples": [
+          {
+            "enExample": "She felt embarrassed when she realized her mistake.",
+            "ptExample": "Ela se sentiu envergonhada quando percebeu seu erro."
+          },
+          {
+            "enExample": "He was embarrassed by the unexpected attention.",
+            "ptExample": "Ele ficou constrangido com a atenção inesperada."
+          }
+        ],
+        "synonyms": ["ashamed", "self-conscious", "humiliated"],
+        "antonyms": ["confident", "assured", "unashamed"],
+        "seeAlso": ["abashed", "flustered"],
+        "notes": [
+          {
+            "enNote": "Often used to describe a feeling of discomfort in social situations.",
+            "ptNote": "Frequentemente usado para descrever um sentimento de desconforto em situações sociais."
+          }
+        ]
+      },
+      {
+        "word": "embarrass",
+        "phonetics": "/ɪmˈbærəs/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to cause someone to feel awkward, self-conscious, or ashamed",
+        "ptDefinition": "causar em alguém um sentimento de constrangimento, vergonha ou embaraço",
+        "examples": [
+          {
+            "enExample": "His comments embarrassed her in front of her friends.",
+            "ptExample": "Os comentários dele a deixaram constrangida na frente dos amigos."
+          },
+          {
+            "enExample": "She was embarrassed by her mistake.",
+            "ptExample": "Ela ficou envergonhada pelo seu erro."
+          }
+        ],
+        "synonyms": ["humiliate", "shame", "mortify"],
+        "antonyms": ["comfort", "reassure", "encourage"],
+        "seeAlso": ["abash", "disconcert"],
+        "notes": [
+          {
+            "enNote": "Often used to describe situations where someone feels socially awkward or self-conscious.",
+            "ptNote": "Frequentemente usado para descrever situações em que alguém se sente socialmente desconfortável ou constrangido."
+          }
+        ]
+      },
+      {
+        "word": "exhaust",
+        "phonetics": "/ɪɡˈzɑːst/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to make someone extremely tired",
+        "ptDefinition": "fazer alguém ficar extremamente cansado; exaurir, esgotar",
+        "examples": [
+          {
+            "enExample": "The long journey exhausted the children.",
+            "ptExample": "A longa viagem exauriu as crianças."
+          }
+        ],
+        "synonyms": ["tire out", "wear out", "fatigue"],
+        "antonyms": ["energize", "refresh", "invigorate"],
+        "seeAlso": ["drain", "deplete"],
+        "notes": [
+          {
+            "enNote": "Often used to describe a state of extreme physical or mental fatigue.",
+            "ptNote": "Frequentemente usado para descrever um estado de fadiga física ou mental extrema."
+          }
+        ]
+      },
+      {
+        "word": "exhausted",
+        "phonetics": "/ɪɡˈzɑːstɪd/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "extremely tired",
+        "ptDefinition": "extremamente cansado",
+        "examples": [
+          {
+            "enExample": "After the marathon, she was completely exhausted.",
+            "ptExample": "Depois da maratona, ela estava completamente exausta."
+          },
+          {
+            "enExample": "He felt exhausted after working all night.",
+            "ptExample": "Ele se sentiu exausto depois de trabalhar a noite toda."
+          }
+        ],
+        "synonyms": ["tired", "fatigued", "worn out"],
+        "antonyms": ["energetic", "rested", "refreshed"],
+        "seeAlso": ["weary", "drained"]
+      },
+      {
+        "word": "eating one's lunch",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to outperform or take advantage of someone, often in a competitive or business context",
+        "ptDefinition": "superar ou tirar vantagem de alguém, geralmente em um contexto competitivo ou de negócios",
+        "examples": [
+          {
+            "enExample": "Their competitor is eating their lunch by offering lower prices and better customer service.",
+            "ptExample": "O concorrente está superando eles oferecendo preços mais baixos e um atendimento ao cliente melhor."
+          },
+          {
+            "enExample": "If we don’t innovate, smaller companies will start eating our lunch in this market.",
+            "ptExample": "Se não inovarmos, empresas menores vão começar a nos superar neste mercado."
+          }
+        ],
+        "synonyms": ["outperform", "surpass", "dominate"],
+        "antonyms": ["fall behind", "ose to", "be outdone"]
+      },
+      {
+        "word": "educated guess",
+        "partOfSpeech": "noun",
+        "enDefinition": "a guess based on knowledge and experience, rather than a random guess",
+        "ptDefinition": "um palpite baseado em conhecimento e experiência, em vez de um palpite aleatório; suposição",
+        "examples": [
+          {
+            "enExample": "After reviewing the data, I made an educated guess about the company's future growth.",
+            "ptExample": "Após revisar os dados, fiz uma suposição sobre o crescimento futuro da empresa."
+          }
+        ],
+        "synonyms": ["informed guess", "reasoned guess"],
+        "antonyms": ["wild guess", "shot in the dark"],
+        "seeAlso": ["hypothesis"]
+      },
+      {
+        "word": "escarole",
+        "phonetics": "/ˈes.kə.roʊl/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a type of endive or chicory (= a plant with a slightly bitter taste that is eaten uncooked in salads or as a vegetable) with wide, curly green leaves",
+        "ptDefinition": "um tipo de chicória ou endívia com folhas verdes largas e encaracoladas",
+        "examples": [
+          {
+            "enExample": "Add a drained can of chickpeas and the coarsely chopped escarole.",
+            "ptExample": "Adicione uma lata de grão-de-bico escorrida e a escarola bem picada (grosseiramente)."
+          }
+        ]
+      },
+      {
+        "word": "ethical",
+        "phonetics": "/ˈeθ.ɪ.kəl/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "relating to beliefs about what is morally right and wrong",
+        "ptDefinition": "ético",
+        "examples": [
+          {
+            "enExample": "Ensuring patient confidentiality is an essential aspect of ethical practice in the medical profession.",
+            "ptExample": "Assegurar / Garantir a confidencialidade do paciente é uma parte fundamental da conduta ética na medicina."
+          }
+        ],
+        "synonyms": ["honest", "honoroble", "humane", "proper"],
+        "antonyms": ["dishonest", "immoral", "corrupt", "improper", "unjust"]
+      },
+      {
+        "word": "everyone",
+        "phonetics": "ˈɛvrɪwʌn",
+        "partOfSpeech": "pronoun",
+        "enDefinition": "every person; all people",
+        "ptDefinition": "toda pessoa; todas as pessoas",
+        "examples": [
+          {
+            "enExample": "Everyone is invited to the party.",
+            "ptExample": "Todos estão convidados para a festa."
+          },
+          {
+            "enExample": "Everyone agreed with the decision.",
+            "ptExample": "Todos concordaram com a decisão."
+          }
+        ],
+        "synonyms": ["everybody", "all"],
+        "antonyms": ["nobody", "no one"],
+        "seeAlso": ["all", "anyone", "somebody"],
+        "notes": [
+          {
+            "enNote": "Used to refer to all individuals collectively.",
+            "ptNote": "Usado para se referir a todas as pessoas coletivamente."
+          }
+        ]
+      },
+      {
+        "word": "excite",
+        "phonetics": "/ɪkˈsaɪt/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to cause someone to feel very enthusiastic and eager",
+        "ptDefinition": "causar em alguém um sentimento de muito entusiasmo e animação",
+        "examples": [
+          {
+            "enExample": "The news of the concert excited her.",
+            "ptExample": "A notícia do show a animou."
+          },
+          {
+            "enExample": "The discovery excited the scientific community.",
+            "ptExample": "A descoberta entusiasmou a comunidade científica."
+          }
+        ],
+        "synonyms": ["thrill", "elate", "stimulate", "energize"],
+        "antonyms": ["bore", "depress", "calm", "discourage"],
+        "seeAlso": ["arouse", "inspire", "provoke"]
+      }
+    ]
+  }
+]

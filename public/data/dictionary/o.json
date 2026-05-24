@@ -1,0 +1,297 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "orbit",
+        "phonetics": "/ˈɔːr.bɪt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the curved path that an object in space follows around a planet, star, or moon because of gravity",
+        "ptDefinition": "órbita; o caminho curvo que um objeto no espaço segue ao redor de um planeta, estrela ou lua devido à gravidade",
+        "examples": [
+          {
+            "enExample": "The Moon stays in orbit around Earth.",
+            "ptExample": "A Lua permanece em órbita ao redor da Terra."
+          },
+          {
+            "enExample": "Satellites are placed into orbit to collect information.",
+            "ptExample": "Satélites são colocados em órbita para coletar informações."
+          }
+        ],
+        "synonyms": ["trajectory", "path", "rotation"],
+        "antonyms": ["collision", "crash"],
+        "seeAlso": ["planet", "gravity", "axis", "satellite"],
+        "notes": [
+          {
+            "enNote": "Objects remain in orbit because gravity pulls them toward another object while they continue moving forward.",
+            "ptNote": "Os objetos permanecem em órbita porque a gravidade os puxa em direção a outro objeto enquanto continuam se movendo para frente."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "orbit.avif",
+            "alt": "A planet moving around a bright star along a curved orbital path"
+          }
+        ]
+      },
+      {
+        "word": "out of this world",
+        "partOfSpeech": "idiom",
+        "enDefinition": "extremely good, impressive, or enjoyable; much better than usual",
+        "ptDefinition": "incrível; fantástico; extraordinário; muito melhor do que o normal",
+        "examples": [
+          {
+            "enExample": "The dessert was out of this world.",
+            "ptExample": "A sobremesa estava incrível."
+          },
+          {
+            "enExample": "The special effects in the movie were out of this world.",
+            "ptExample": "Os efeitos especiais do filme estavam extraordinários."
+          }
+        ],
+        "synonyms": ["amazing", "fantastic", "incredible", "outstanding"],
+        "antonyms": ["terrible", "awful", "ordinary"],
+        "seeAlso": ["amazing", "blow someone's mind", "incredible"],
+        "notes": [
+          {
+            "enNote": "Informal expression often used to strongly praise food, experiences, or performances.",
+            "ptNote": "Expressão informal frequentemente usada para elogiar fortemente comida, experiências ou performances."
+          }
+        ]
+      },
+      {
+        "word": "obnoxious",
+        "phonetics": "/əbˈnɑːk.ʃəs/ (US), /əbˈnɒk.ʃəs/ (UK)",
+        "partOfSpeech": "adjective",
+        "enDefinition": "extremely unpleasant, annoying, or offensive in behavior",
+        "ptDefinition": "extremamente desagradável, irritante ou ofensivo no comportamento",
+        "examples": [
+          {
+            "enExample": "He was so obnoxious during the meeting that everyone felt uncomfortable.",
+            "ptExample": "Ele foi tão desagradável durante a reunião que todos ficaram desconfortáveis."
+          },
+          {
+            "enExample": "The obnoxious noise kept us awake all night.",
+            "ptExample": "O barulho irritante nos manteve acordados a noite toda."
+          }
+        ],
+        "synonyms": ["annoying", "offensive", "irritating", "unpleasant"],
+        "antonyms": ["pleasant", "agreeable", "likeable"],
+        "seeAlso": ["annoying", "irritating", "rude"],
+        "notes": [
+          {
+            "enNote": "Often used to describe people, behavior, or sounds that strongly annoy others.",
+            "ptNote": "Frequentemente usado para descrever pessoas, comportamentos ou sons que incomodam intensamente."
+          }
+        ]
+      },
+      {
+        "word": "over one’s head",
+        "partOfSpeech": "idiom",
+        "enDefinition": "too difficult for someone to understand; beyond someone’s ability or comprehension.",
+        "ptDefinition": "difícil demais para alguém entender; além da capacidade ou compreensão de alguém.",
+        "examples": [
+          {
+            "enExample": "That lecture on quantum mechanics went completely over my head.",
+            "ptExample": "Aquela palestra sobre mecânica quântica passou completamente acima da minha compreensão."
+          },
+          {
+            "enExample": "The movie’s plot was so complex that it went over most people’s heads.",
+            "ptExample": "O enredo do filme era tão complexo que passou acima da cabeça da maioria das pessoas."
+          },
+          {
+            "enExample": "Don’t worry if you didn’t get the joke — it went over everyone’s head.",
+            "ptExample": "Não se preocupe se você não entendeu a piada — passou despercebida por todos."
+          }
+        ],
+        "synonyms": [
+          "beyond comprehension",
+          "too complex",
+          "hard to understand"
+        ],
+        "antonyms": ["easy to understand", "clear", "simple"],
+        "seeAlso": [
+          "out of one's depth",
+          "fly over someone's head",
+          "beyond one's grasp"
+        ],
+        "notes": [
+          {
+            "enNote": "Often used when something is intellectually challenging or too advanced for the listener.",
+            "ptNote": "Usado frequentemente quando algo é intelectualmente desafiador ou muito avançado para o ouvinte."
+          }
+        ]
+      },
+      {
+        "word": "out of one’s range",
+        "partOfSpeech": "idiom",
+        "enDefinition": "beyond someone’s ability, knowledge, or financial capacity",
+        "ptDefinition": "além da habilidade, conhecimento ou capacidade financeira de alguém",
+        "examples": [
+          {
+            "enExample": "That task is out of my range; I don’t have the necessary skills.",
+            "ptExample": "Essa tarefa está fora do meu alcance; não tenho as habilidades necessárias."
+          },
+          {
+            "enExample": "The house is beautiful but out of their price range.",
+            "ptExample": "A casa é linda, mas está fora da faixa de preço deles."
+          }
+        ],
+        "synonyms": ["beyond capability", "too expensive", "not affordable"],
+        "antonyms": ["within reach", "affordable", "manageable"],
+        "seeAlso": ["beyond one’s means", "out of budget"],
+        "notes": [
+          {
+            "enNote": "Can refer to skills, knowledge, or financial limits depending on context.",
+            "ptNote": "Pode se referir a habilidades, conhecimento ou limites financeiros, dependendo do contexto."
+          }
+        ]
+      },
+      {
+        "word": "opportunity areas",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "specific domains or aspects where improvements or growth can be made",
+        "ptDefinition": "áreas específicas ou aspectos onde melhorias ou crescimento podem ser feitos",
+        "examples": [
+          {
+            "enExample": "The manager identified several opportunity areas for improving customer satisfaction.",
+            "ptExample": "O gerente identificou várias áreas de oportunidade para melhorar a satisfação do cliente."
+          },
+          {
+            "enExample": "Market research revealed new opportunity areas for product development.",
+            "ptExample": "A pesquisa de mercado revelou novas áreas de oportunidade para desenvolvimento de produtos."
+          }
+        ],
+        "synonyms": [
+          "potential areas",
+          "growth opportunities",
+          "improvement zones"
+        ],
+        "antonyms": ["threat areas", "problem areas"],
+        "seeAlso": ["business opportunities", "growth areas"],
+        "notes": [
+          {
+            "enNote": "Often used in business and strategy contexts.",
+            "ptNote": "Frequentemente usada em contextos de negócios e estratégia."
+          }
+        ]
+      },
+      {
+        "word": "out for oneself",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to act in one's own self-interest, often disregarding the needs or interests of others",
+        "ptDefinition": "agir em benefício próprio, frequentemente desconsiderando as necessidades ou interesses dos outros",
+        "examples": [
+          {
+            "enExample": "He’s only out for himself and doesn’t care about the team.",
+            "ptExample": "Ele só pensa em si mesmo e não se importa com a equipe."
+          },
+          {
+            "enExample": "In politics, some people are just out for themselves.",
+            "ptExample": "Na política, algumas pessoas agem apenas em benefício próprio."
+          }
+        ],
+        "synonyms": ["selfish, self-centered, egotistic"],
+        "antonyms": ["selfless, altruistic, considerate"],
+        "seeAlso": "look out for number one, put oneself first",
+        "notes": [
+          {
+            "enNote": "Often used to describe selfish or self-serving behavior.",
+            "ptNote": "Frequentemente usada para descrever comportamento egoísta ou interesseiro."
+          }
+        ]
+      },
+      {
+        "word": "open",
+        "phonetics": "/ˈoʊ.pən/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "not closed or blocked; allowing passage or access",
+        "ptDefinition": "não fechado ou bloqueado; permitindo passagem ou acesso",
+        "examples": [
+          {
+            "enExample": "The door was left open all night.",
+            "ptExample": "A porta ficou aberta a noite toda."
+          },
+          {
+            "enExample": "The store is open from 9 AM to 9 PM.",
+            "ptExample": "A loja está aberta das 9h às 21h."
+          }
+        ],
+        "synonyms": ["unlocked", "accessible", "clear"],
+        "antonyms": ["closed", "shut", "blocked"],
+        "seeAlso": ["accessible", "unlocked"],
+        "notes": [
+          {
+            "enNote": "Often used to describe accessibility or availability.",
+            "ptNote": "Frequentemente usado para descrever acessibilidade ou disponibilidade."
+          }
+        ]
+      },
+      {
+        "word": "open",
+        "phonetics": "/ˈoʊ.pən/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to move or change something so that it is no longer closed or blocked",
+        "ptDefinition": "mover ou mudar algo para que não esteja mais fechado ou bloqueado",
+        "examples": [
+          {
+            "enExample": "Please open the window to let some fresh air in.",
+            "ptExample": "Por favor, abra a janela para deixar entrar um pouco de ar fresco."
+          },
+          {
+            "enExample": "He opened the book to read the first chapter.",
+            "ptExample": "Ele abriu o livro para ler o primeiro capítulo."
+          }
+        ],
+        "synonyms": ["unseal", "uncover", "unfasten"],
+        "antonyms": ["close", "shut", "seal"],
+        "seeAlso": ["unbolt", "unlock", "reveal"],
+        "notes": [
+          {
+            "enNote": "Can refer to physical or metaphorical actions.",
+            "ptNote": "Pode se referir a ações físicas ou metafóricas."
+          }
+        ]
+      },
+      {
+        "word": "open",
+        "phonetics": "/ˈoʊ.pən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a public or unrestricted space or condition",
+        "ptDefinition": "um espaço ou condição público ou irrestrito",
+        "examples": [
+          {
+            "enExample": "The event was held in the open for everyone to attend.",
+            "ptExample": "O evento foi realizado ao ar livre para todos participarem."
+          },
+          {
+            "enExample": "They camped in the open under the stars.",
+            "ptExample": "Eles acamparam ao ar livre sob as estrelas."
+          }
+        ],
+        "synonyms": ["outdoors", "open air", "clear space"],
+        "antonyms": ["enclosed", "confined", "indoor"],
+        "seeAlso": ["nature", "wilderness", "exterior"],
+        "notes": [
+          {
+            "enNote": "Often associated with outdoor or unrestricted environments.",
+            "ptNote": "Frequentemente associado a ambientes ao ar livre ou irrestritos."
+          }
+        ]
+      },
+      {
+        "word": "outage",
+        "phonetics": "/ˈaʊ.t̬ɪdʒ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a period when a service, such as electricity, is not available",
+        "ptDefinition": "corte de energia, apagão",
+        "examples": [
+          {
+            "enExample": "The radio news reported power outages affecting 50 homes.",
+            "ptExample": "O noticiário no rádio relatou quedas de energia afetando 50 casas."
+          }
+        ],
+        "synonyms": ["blackout"]
+      }
+    ]
+  }
+]

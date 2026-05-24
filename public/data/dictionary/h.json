@@ -1,0 +1,756 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "hard times",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a period of difficulty, especially involving lack of money, problems, or suffering",
+        "ptDefinition": "período difícil; fase de dificuldades, especialmente financeiras ou pessoais",
+        "examples": [
+          {
+            "enExample": "Many families are going through hard times because of the economic crisis.",
+            "ptExample": "Muitas famílias estão passando por tempos difíceis por causa da crise econômica."
+          },
+          {
+            "enExample": "She supported her friends during their hard times.",
+            "ptExample": "Ela apoiou seus amigos durante seus momentos difíceis."
+          }
+        ],
+        "synonyms": ["difficult times", "tough times", "rough times"],
+        "antonyms": ["good times", "prosperity", "easy times"],
+        "seeAlso": ["tough times", "hardship", "financial difficulty"],
+        "notes": [
+          {
+            "enNote": "Often used to describe financial or emotional difficulty affecting individuals or society.",
+            "ptNote": "Frequentemente usado para descrever dificuldades financeiras ou emocionais que afetam pessoas ou a sociedade."
+          }
+        ]
+      },
+      {
+        "word": "hoot",
+        "phonetics": "/huːt/",
+        "partOfSpeech": "noun / verb",
+        "enDefinition": "1) (noun) a short, loud sound made by an owl or a horn; 2) (verb) to make a loud sound or to laugh loudly, often in amusement.",
+        "ptDefinition": "1) (substantivo) som curto e alto feito por uma coruja ou buzina; 2) (verbo) fazer um som alto ou rir alto, geralmente por diversão.",
+        "examples": [
+          {
+            "enExample": "We heard the hoot of an owl in the forest.",
+            "ptExample": "Ouvimos o pio de uma coruja na floresta."
+          },
+          {
+            "enExample": "The driver hooted at the pedestrians crossing the street.",
+            "ptExample": "O motorista buzinou para os pedestres que atravessavam a rua."
+          },
+          {
+            "enExample": "Everyone hooted with laughter at his silly jokes.",
+            "ptExample": "Todos riram alto das piadas bobas dele."
+          }
+        ],
+        "synonyms": ["toot", "honk", "laugh", "chuckle"],
+        "antonyms": ["silence", "quiet"],
+        "seeAlso": ["hoot with laughter", "not give a hoot"],
+        "notes": [
+          {
+            "enNote": "As a noun, 'hoot' often refers to a short sound made by owls or horns. As a verb, it can also mean to laugh loudly or to make a noise as a signal.",
+            "ptNote": "Como substantivo, 'hoot' geralmente se refere a um som curto feito por corujas ou buzinas. Como verbo, também pode significar rir alto ou fazer um som como sinal."
+          }
+        ]
+      },
+      {
+        "word": "not give a hoot",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to not care at all about something; to show complete lack of interest or concern.",
+        "ptDefinition": "não se importar nem um pouco com algo; demonstrar total falta de interesse ou preocupação.",
+        "examples": [
+          {
+            "enExample": "I don’t give a hoot what people think about my clothes.",
+            "ptExample": "Eu não dou a mínima para o que as pessoas pensam sobre minhas roupas."
+          },
+          {
+            "enExample": "She doesn’t give a hoot about politics.",
+            "ptExample": "Ela não está nem aí para política."
+          },
+          {
+            "enExample": "They don’t give a hoot if we’re late.",
+            "ptExample": "Eles não se importam se a gente se atrasar."
+          }
+        ],
+        "synonyms": [
+          "not care",
+          "not give a damn",
+          "not give a fig",
+          "not mind",
+          "be indifferent"
+        ],
+        "antonyms": ["care", "worry about", "be concerned", "take interest"],
+        "seeAlso": ["couldn’t care less", "not give a toss", "not bat an eye"],
+        "notes": [
+          {
+            "enNote": "Informal and often humorous way to express indifference. Variations include 'not give a damn' or 'not give a fig'.",
+            "ptNote": "Forma informal e frequentemente bem-humorada de expressar indiferença. Variações incluem 'not give a damn' ou 'not give a fig'."
+          }
+        ]
+      },
+      {
+        "word": "hit the books",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to begin studying very hard; to devote time and effort to academic work.",
+        "ptDefinition": "começar a estudar com afinco; dedicar tempo e esforço aos estudos.",
+        "examples": [
+          {
+            "enExample": "I can’t go out tonight. I need to hit the books for my math exam.",
+            "ptExample": "Não posso sair esta noite. Preciso estudar muito para minha prova de matemática."
+          },
+          {
+            "enExample": "After the holiday break, students are ready to hit the books again.",
+            "ptExample": "Após as férias, os alunos estão prontos para voltar a estudar."
+          },
+          {
+            "enExample": "If you want to pass the test, you’d better hit the books now.",
+            "ptExample": "Se você quer passar na prova, é melhor começar a estudar agora."
+          }
+        ],
+        "synonyms": ["study hard", "cram", "review", "prepare for exams"],
+        "antonyms": ["slack off", "procrastinate", "goof off"],
+        "seeAlso": [
+          "burn the midnight oil",
+          "study session",
+          "cram for a test"
+        ],
+        "notes": [
+          {
+            "enNote": "Commonly used by students to express the need to study intensively, especially before exams.",
+            "ptNote": "Usado comumente por estudantes para expressar a necessidade de estudar intensamente, especialmente antes de provas."
+          }
+        ]
+      },
+      {
+        "word": "have one’s heart set on",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to want something very much; to be determined to achieve or obtain something.",
+        "ptDefinition": "querer algo intensamente; estar determinado a alcançar ou conseguir algo.",
+        "examples": [
+          {
+            "enExample": "She has her heart set on studying abroad next year.",
+            "ptExample": "Ela está decidida a estudar no exterior no próximo ano."
+          },
+          {
+            "enExample": "He had his heart set on becoming a pilot since he was a child.",
+            "ptExample": "Ele sempre quis ser piloto desde criança."
+          },
+          {
+            "enExample": "If you have your heart set on that job, don’t give up so easily.",
+            "ptExample": "Se você realmente quer esse emprego, não desista tão facilmente."
+          }
+        ],
+        "synonyms": [
+          "desire strongly",
+          "be determined",
+          "long for",
+          "yearn for"
+        ],
+        "antonyms": ["lose interest", "give up on", "be indifferent"],
+        "seeAlso": ["set your sights on", "dream of", "aim for"],
+        "notes": [
+          {
+            "enNote": "This idiom emphasizes strong desire or emotional investment in achieving a goal.",
+            "ptNote": "Esse idiom enfatiza um forte desejo ou envolvimento emocional para alcançar um objetivo."
+          }
+        ]
+      },
+      {
+        "word": "haggle",
+        "phonetics": "/ˈhæɡ.əl/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to argue or negotiate persistently over the cost of something",
+        "ptDefinition": "discutir ou negociar insistentemente sobre o preço de algo; pechichar",
+        "examples": [
+          {
+            "enExample": "They spent the whole morning haggling over the price of the car.",
+            "ptExample": "Eles passaram a manhã inteira discutindo o preço do carro."
+          },
+          {
+            "enExample": "She haggled with the street vendor until the price was half.",
+            "ptExample": "Ela negociou com o vendedor de rua até que o preço fosse pela metade."
+          }
+        ],
+        "synonyms": ["bargain", "negotiate", "barter"],
+        "antonyms": ["agree", "accept", "comply"],
+        "seeAlso": ["drive a bargain", "deal", "trade"],
+        "notes": [
+          {
+            "enNote": "Haggling is common in markets and informal shops, especially in some cultures.",
+            "ptNote": "Barganhar é comum em mercados e lojas informais, especialmente em algumas culturas."
+          }
+        ]
+      },
+      {
+        "word": "hinder",
+        "phonetics": "/ˈhɪn.dər/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to make it difficult for something to happen or for someone to do something",
+        "ptDefinition": "dificultar que algo aconteça ou que alguém faça algo",
+        "examples": [
+          {
+            "enExample": "High winds hindered the progress of the climbers.",
+            "ptExample": "Os ventos fortes dificultaram o progresso dos alpinistas."
+          },
+          {
+            "enExample": "His lack of experience may hinder his chances of getting the job.",
+            "ptExample": "Sua falta de experiência pode atrapalhar suas chances de conseguir o emprego."
+          }
+        ],
+        "synonyms": ["impede", "obstruct", "block", "hamper"],
+        "antonyms": ["help", "assist", "facilitate", "aid"],
+        "seeAlso": ["prevent", "delay"],
+        "notes": [
+          {
+            "enNote": "Commonly used in both formal and everyday contexts to describe obstacles or difficulties.",
+            "ptNote": "Comumente usado em contextos formais e do dia a dia para descrever obstáculos ou dificuldades."
+          }
+        ]
+      },
+      {
+        "word": "hide",
+        "phonetics": "/haɪd/",
+        "partOfSpeech": "verb (hid: past / hidden: participle)",
+        "enDefinition": "to put something in a place where it cannot easily be seen or found",
+        "ptDefinition": "colocar algo em um lugar onde não possa ser facilmente visto ou encontrado",
+        "examples": [
+          {
+            "enExample": "I hide the key under the mat every morning.",
+            "ptExample": "Eu escondo a chave debaixo do tapete todas as manhãs."
+          },
+          {
+            "enExample": "She hides her diary in a drawer.",
+            "ptExample": "Ela esconde seu diário em uma gaveta."
+          },
+          {
+            "enExample": "They hide behind the trees when playing hide-and-seek.",
+            "ptExample": "Eles se escondem atrás das árvores quando brincam de esconde-esconde."
+          }
+        ],
+        "synonyms": "conceal, cover, put away",
+        "antonyms": "reveal, show, display"
+      },
+      {
+        "word": "have in mind",
+        "phonetics": "/hæv ɪn maɪnd/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to think about or plan something; to consider as an idea or intention",
+        "ptDefinition": "pensar ou planejar algo; considerar como uma ideia ou intenção",
+        "examples": [
+          {
+            "enExample": "I have something special in mind for your birthday.",
+            "ptExample": "Tenho algo especial pensado para o seu aniversário."
+          },
+          {
+            "enExample": "Do you have a specific restaurant in mind for dinner?",
+            "ptExample": "Você tem algum restaurante específico em mente para o jantar?"
+          }
+        ],
+        "synonyms": ["consider", "plan", "think about"],
+        "antonyms": ["ignore", "overlook"],
+        "seeAlso": ["keep in mind", "bear in mind"],
+        "notes": [
+          {
+            "enNote": "Often used when discussing intentions or plans.",
+            "ptNote": "Usado frequentemente ao falar sobre intenções ou planos."
+          }
+        ]
+      },
+      {
+        "word": "hands-off",
+        "partOfSpeech": "adjective",
+        "enDefinition": "not actively involved; allowing others to make decisions or take control",
+        "ptDefinition": "não interferente; que permite que outros tomem decisões ou assumam o controle",
+        "examples": [
+          {
+            "enExample": "He has a hands-off approach to management.",
+            "ptExample": "Ele tem uma abordagem não interventiva na gestão."
+          },
+          {
+            "enExample": "The teacher took a hands-off role and let the students lead the discussion.",
+            "ptExample": "O professor adotou uma postura de não interferência e deixou os alunos conduzirem a discussão."
+          }
+        ],
+        "synonyms": ["non-interfering", "laissez-faire", "uninvolved"],
+        "antonyms": ["hands-on", "controlling", "involved"],
+        "seeAlso": ["hands-on", "laissez-faire"],
+        "notes": [
+          {
+            "enNote": "Commonly used in leadership and parenting styles.",
+            "ptNote": "Comumente usado para descrever estilos de liderança e educação."
+          }
+        ]
+      },
+      {
+        "word": "reduce headcount",
+        "partOfSpeech": "verb phrase",
+        "enDefinition": "to decrease the number of employees in an organization",
+        "ptDefinition": "reduzir o número de funcionários em uma empresa",
+        "examples": [
+          {
+            "enExample": "The company had to reduce headcount due to budget cuts.",
+            "ptExample": "A empresa precisou cortar o número de funcionários por causa do orçamento."
+          },
+          {
+            "enExample": "They are planning to reduce headcount by 10% next year.",
+            "ptExample": "Eles estão planejando reduzir o quadro de funcionários em 10% no próximo ano."
+          }
+        ],
+        "synonyms": ["lay off", "downsize", "cut staff"],
+        "antonyms": ["hire", "expand workforce", "increase staff"],
+        "seeAlso": ["restructuring", "staff reduction"],
+        "notes": [
+          {
+            "enNote": "Commonly used in business contexts related to layoffs or company restructuring.",
+            "ptNote": "Usado com frequência em contextos empresariais relacionados a demissões ou reestruturações."
+          }
+        ]
+      },
+      {
+        "word": "my hands are tied",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to say that you are unable to act or help because of rules, obligations, or circumstances beyond your control",
+        "ptDefinition": "usado para dizer que você não pode agir ou ajudar por causa de regras, obrigações ou circunstâncias fora do seu controle; mãos atadas",
+        "examples": [
+          {
+            "enExample": "I'd love to help you, but my hands are tied.",
+            "ptExample": "Eu gostaria muito de ajudar, mas não posso fazer nada."
+          },
+          {
+            "enExample": "She wanted to approve the request, but her hands were tied by company policy.",
+            "ptExample": "Ela queria aprovar o pedido, mas a política da empresa não permitia."
+          }
+        ],
+        "synonyms": ["powerless", "unable to act", "restricted"],
+        "antonyms": ["free to act", "unrestricted", "in control"],
+        "seeAlso": ["out of my hands", "have no say"],
+        "notes": [
+          {
+            "enNote": "Often used to express frustration with limitations imposed by authority or external factors.",
+            "ptNote": "Frequentemente usado para expressar frustração com limitações impostas por autoridades ou fatores externos."
+          }
+        ]
+      },
+      {
+        "word": "hit the ground running",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to start a task or activity with great energy and immediate effectiveness",
+        "ptDefinition": "começar uma tarefa ou atividade com grande energia e eficácia imediata",
+        "examples": [
+          {
+            "enExample": "She hit the ground running on her first day at the new job.",
+            "ptExample": "Ela começou com tudo já no primeiro dia no novo emprego."
+          },
+          {
+            "enExample": "We need someone who can hit the ground running with minimal training.",
+            "ptExample": "Precisamos de alguém que consiga começar com tudo, com o mínimo de treinamento."
+          }
+        ],
+        "synonyms": ["start strong", "get off to a fast start"],
+        "antonyms": ["start slowly", "struggle to begin"],
+        "seeAlso": ["off to a flying start"],
+        "notes": [
+          {
+            "enNote": "Common in business and work-related contexts.",
+            "ptNote": "Comum em contextos de trabalho ou negócios."
+          }
+        ]
+      },
+      {
+        "word": "have a knack for something",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to have a natural talent or ability for doing something well",
+        "ptDefinition": "ter um talento natural ou habilidade especial para fazer algo bem",
+        "examples": [
+          {
+            "enExample": "She has a knack for storytelling that captivates everyone.",
+            "ptExample": "Ela tem um talento natural para contar histórias que cativa todos."
+          },
+          {
+            "enExample": "He really has a knack for fixing things around the house.",
+            "ptExample": "Ele realmente tem jeito para consertar coisas em casa."
+          }
+        ],
+        "synonyms": ["be talented at", "have a gift for", "be good at"],
+        "antonyms": ["lack skill", "struggle with"],
+        "seeAlso": "have a talent for",
+        "notes": [
+          {
+            "enNote": "Usually refers to a skill that seems effortless or instinctive.",
+            "ptNote": "Geralmente se refere a uma habilidade que parece natural ou instintiva."
+          }
+        ]
+      },
+      {
+        "word": "not so hot",
+        "partOfSpeech": "idiom",
+        "enDefinition": "not very good; poor in quality, condition, or performance",
+        "ptDefinition": "não muito bom; de qualidade, condição ou desempenho ruins",
+        "examples": [
+          {
+            "enExample": "The movie was not so hot — I wouldn’t recommend it.",
+            "ptExample": "O filme não foi lá essas coisas — eu não recomendaria."
+          },
+          {
+            "enExample": "I’m feeling not so hot today. I might be coming down with something.",
+            "ptExample": "Não estou me sentindo muito bem hoje. Acho que estou ficando doente."
+          }
+        ],
+        "synonyms": ["so-so", "mediocre", "not great"],
+        "antonyms": ["great", "excellent", "impressive"],
+        "seeAlso": "under the weather",
+        "notes": [
+          {
+            "enNote": "Can refer to physical health or general quality.",
+            "ptNote": "Pode se referir à saúde física ou à qualidade em geral."
+          }
+        ]
+      },
+      {
+        "word": "happy medium",
+        "partOfSpeech": "noun phrase / idiom",
+        "expressionType": "idiom",
+        "enDefinition": "a compromise or a middle ground between two extremes",
+        "ptDefinition": "um meio-termo ou equilíbrio entre dois extremos",
+        "examples": [
+          {
+            "enExample": "We need to find a happy medium between working too much and not working at all.",
+            "ptExample": "Precisamos encontrar um meio-termo entre trabalhar demais e não trabalhar nada."
+          },
+          {
+            "enExample": "The designer struck a happy medium between elegance and functionality.",
+            "ptExample": "O designer encontrou um equilíbrio entre elegância e funcionalidade."
+          }
+        ],
+        "synonyms": ["middle ground", "compromise", "balance"],
+        "antonyms": ["extreme", "polarization"],
+        "seeAlso": ["middle of the road", "meet halfway"],
+        "notes": [
+          {
+            "enNote": "Often used when two opposing options are too extreme.",
+            "ptNote": "Frequentemente usado quando duas opções opostas são extremas demais."
+          }
+        ]
+      },
+      {
+        "word": "hard sell",
+        "phonetics": "/ˌhɑːrd ˈsel/",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a method of selling that is very direct and often pressure-based",
+        "ptDefinition": "uma técnica de venda muito direta e frequentemente baseada em pressão",
+        "examples": [
+          {
+            "enExample": "The salesman was really pushy — definitely a hard sell.",
+            "ptExample": "O vendedor foi muito insistente — sem dúvida, uma venda forçada."
+          },
+          {
+            "enExample": "Their advertising campaign was a hard sell and turned many customers away.",
+            "ptExample": "A campanha publicitária foi muito agressiva e afastou muitos clientes."
+          }
+        ],
+        "synonyms": ["aggressive selling", "pushy tactics"],
+        "antonyms": ["soft sell", "subtle approach"],
+        "seeAlso": ["sales pitch", "soft sell"],
+        "notes": [
+          {
+            "enNote": "Often used to describe overly forceful sales tactics.",
+            "ptNote": "Frequentemente usado para descrever táticas de venda muito insistentes."
+          }
+        ]
+      },
+      {
+        "word": "hang in there",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to persevere and not give up, even in difficult circumstances",
+        "ptDefinition": "perseverar e não desistir, mesmo em circunstâncias difíceis",
+        "examples": [
+          {
+            "enExample": "I know it’s tough, but hang in there—you’ll get through it.",
+            "ptExample": "Eu sei que está difícil, mas aguente firme—você vai superar isso."
+          },
+          {
+            "enExample": "Hang in there during the final stretch of the project.",
+            "ptExample": "Aguente firme durante a reta final do projeto."
+          }
+        ],
+        "synonyms": ["persevere, endure, keep going"],
+        "antonyms": ["give up, quit, surrender"],
+        "seeAlso": "keep going, stay strong",
+        "notes": [
+          {
+            "enNote": "Often used to encourage someone to keep trying.",
+            "ptNote": "Frequentemente usado para encorajar alguém a continuar tentando."
+          }
+        ]
+      },
+      {
+        "word": "have a lot on one’s plate",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To have many tasks or responsibilities to deal with.",
+        "ptDefinition": "Ter muitas tarefas ou responsabilidades para lidar.",
+        "examples": [
+          {
+            "enExample": "She has a lot on her plate right now with work and family commitments.",
+            "ptExample": "Ela está com muitas coisas para resolver agora, com trabalho e compromissos familiares."
+          },
+          {
+            "enExample": "I can’t take on more projects; I already have a lot on my plate.",
+            "ptExample": "Não posso assumir mais projetos; já tenho muitas responsabilidades."
+          }
+        ],
+        "synonyms": ["be busy, have many responsibilities, be overloaded"],
+        "antonyms": ["be free, have little to do"],
+        "seeAlso": "overwhelmed, swamped",
+        "notes": [
+          {
+            "enNote": "Commonly used to describe being busy or overwhelmed with duties.",
+            "ptNote": "Comumente usado para descrever estar ocupado ou sobrecarregado com deveres."
+          }
+        ]
+      },
+      {
+        "word": "(to be or to get) on one’s high horse",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To act as if you are morally superior to others; to behave in a self-righteous, arrogant, or condescending way.",
+        "ptDefinition": "Agir como se fosse moralmente superior aos outros; comportar-se de forma arrogante, prepotente ou condescendente.",
+        "examples": [
+          {
+            "enExample": "She got on her high horse and started lecturing everyone about ethics.",
+            "ptExample": "Ela subiu no salto e começou a dar sermão em todo mundo sobre ética."
+          },
+          {
+            "enExample": "Don't get on your high horse — we all make mistakes.",
+            "ptExample": "Não fique se achando superior — todos nós cometemos erros."
+          }
+        ],
+        "synonyms": ["act superior, be condescending, be self-righteous"],
+        "antonyms": ["be humble, act modestly"],
+        "seeAlso": "holier-than-thou, arrogant, condescending",
+        "notes": [
+          {
+            "enNote": "Originally referred to literal high horses ridden by nobility, now used figuratively to describe arrogance.",
+            "ptNote": "Originalmente referia-se a cavalos altos montados pela nobreza; hoje é usado de forma figurada para descrever arrogância."
+          }
+        ]
+      },
+      {
+        "word": "hot-head",
+        "phonetics": "/ˈhɑːtˌhed/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a person who easily becomes angry or loses their temper quickly",
+        "ptDefinition": "uma pessoa que se irrita facilmente ou perde a calma rapidamente",
+        "examples": [
+          {
+            "enExample": "He's a bit of a hot-head and often gets into arguments.",
+            "ptExample": "Ele é meio cabeça-quente e frequentemente entra em discussões."
+          },
+          {
+            "enExample": "Try not to be a hot-head during the negotiations.",
+            "ptExample": "Tente não ser cabeça-quente durante as negociações."
+          }
+        ],
+        "synonyms": ["quick-tempered person", "firebrand", "irascible person"],
+        "antonyms": ["calm person", "level-headed person", "peacemaker"],
+        "seeAlso": ["short fuse", "lose one's temper", "impulsive"],
+        "notes": [
+          {
+            "enNote": "Often used to describe someone who reacts emotionally or impulsively, especially in stressful situations.",
+            "ptNote": "Frequentemente usado para descrever alguém que reage de forma emocional ou impulsiva, especialmente em situações de estresse."
+          }
+        ]
+      },
+      {
+        "word": "have or get out of hand",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to become difficult or impossible to control",
+        "ptDefinition": "tornar-se difícil ou impossível de controlar",
+        "examples": [
+          {
+            "enExample": "The party got out of hand and the police had to be called.",
+            "ptExample": "A festa saiu do controle e a polícia teve que ser chamada."
+          },
+          {
+            "enExample": "If we don't address the issue now, it could get out of hand.",
+            "ptExample": "Se não abordarmos o problema agora, ele pode sair do controle."
+          }
+        ],
+        "synonyms": ["uncontrollable", "chaotic", "unmanageable"],
+        "antonyms": ["manageable", "controlled", "under control"],
+        "seeAlso": ["out of control", "run wild"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used to describe situations that escalate quickly and become difficult to manage.",
+            "ptNote": "Este idiom é frequentemente usado para descrever situações que escalam rapidamente e se tornam difíceis de gerenciar."
+          }
+        ]
+      },
+      {
+        "word": "have a rough night",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to experience a night that is difficult, unpleasant, or filled with problems such as lack of sleep, stress, or discomfort",
+        "ptDefinition": "passar por uma noite difícil, desagradável ou cheia de problemas, como falta de sono, estresse ou desconforto",
+        "examples": [
+          {
+            "enExample": "I had a rough night and barely got any sleep.",
+            "ptExample": "Tive uma noite difícil e mal consegui dormir."
+          },
+          {
+            "enExample": "She looked tired because she had a rough night with the baby.",
+            "ptExample": "Ela parecia cansada porque teve uma noite difícil com o bebê."
+          }
+        ],
+        "synonyms": ["bad night", "sleepless night", "tough night"],
+        "antonyms": ["good night", "restful night", "peaceful night"],
+        "seeAlso": ["restless night", "tough day"]
+      },
+      {
+        "word": "hunker down",
+        "phonetics": "/ˈhʌŋkɚ daʊn/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to settle in a place for a long period of time, especially for protection or to wait for something to happen",
+        "ptDefinition": "se estabelecer em um lugar por um longo período de tempo, especialmente para proteção ou para esperar que algo aconteça",
+        "examples": [
+          {
+            "enExample": "We decided to hunker down and wait out the storm.",
+            "ptExample": "Decidimos nos abrigar e esperar a tempestade passar."
+          },
+          {
+            "enExample": "The soldiers hunkered down in their trenches.",
+            "ptExample": "Os soldados se agacharam em suas trincheiras."
+          }
+        ],
+        "synonyms": ["settle in", "bunker down", "take cover"],
+        "antonyms": ["move out", "evacuate"],
+        "seeAlso": ["shelter", "stay put"],
+        "notes": [
+          {
+            "enNote": "Often used in the context of preparing for a difficult or dangerous situation.",
+            "ptNote": "Frequentemente usado no contexto de se preparar para uma situação difícil ou perigosa."
+          }
+        ]
+      },
+      {
+        "word": "house",
+        "phonetics": "haʊs",
+        "partOfSpeech": "noun",
+        "enDefinition": "a building for human habitation, especially one that is lived in by a family or small group of people",
+        "ptDefinition": "um edifício para habitação humana, especialmente um que é habitado por uma família ou pequeno grupo de pessoas",
+        "examples": [
+          {
+            "enExample": "The house has three bedrooms and two bathrooms.",
+            "ptExample": "A casa tem três quartos e dois banheiros."
+          }
+        ],
+        "synonyms": ["home", "residence", "dwelling"],
+        "antonyms": ["apartment", "condominium"],
+        "seeAlso": ["building", "home", "residence"],
+        "notes": [
+          {
+            "enNote": "A house can be a single-family home, a townhouse, or a row house.",
+            "ptNote": "Uma casa pode ser uma residência unifamiliar, uma casa geminada ou uma casa em banda."
+          }
+        ]
+      },
+      {
+        "word": "half-baked ideas",
+        "partOfSpeech": "idiom",
+        "enDefinition": "ideas or plans that are still underdeveloped or not fully thought through, often requiring further refinement or consideration",
+        "ptDefinition": "ideias ou planos que ainda não estão totalmente desenvolvidos ou que precisam de mais reflexão e ajustes",
+        "examples": [
+          {
+            "enExample": "In creative brainstorming sessions, half-baked ideas can lead to unexpected breakthroughs when refined.",
+            "ptExample": "Em sessões de brainstorming criativo, ideias inacabadas podem levar a descobertas inesperadas quando aperfeiçoadas."
+          }
+        ],
+        "synonyms": [
+          "unfinished ideas",
+          "rough concepts",
+          "early-stage thoughts"
+        ],
+        "antonyms": [
+          "well-developed ideas",
+          "polished solutions",
+          "concrete plans"
+        ],
+        "seeAlso": ["brainstorming", "creative process", "idea development"]
+      },
+      {
+        "word": "happy",
+        "phonetics": "ˈhæpi",
+        "partOfSpeech": "adjective",
+        "enDefinition": "feeling or showing pleasure, contentment, or joy",
+        "ptDefinition": "sentindo ou demonstrando prazer, satisfação ou alegria",
+        "examples": [
+          {
+            "enExample": "She felt happy when she saw her family after a long time.",
+            "ptExample": "Ela se sentiu feliz ao ver sua família depois de muito tempo."
+          },
+          {
+            "enExample": "The children were happy playing in the park.",
+            "ptExample": "As crianças estavam felizes brincando no parque."
+          },
+          {
+            "enExample": "He was happy with the results of his hard work.",
+            "ptExample": "Ele ficou feliz com os resultados de seu trabalho árduo."
+          }
+        ],
+        "synonyms": ["joyful", "cheerful", "content"],
+        "antonyms": ["sad", "unhappy", "miserable"]
+      },
+      {
+        "word": "hard stop",
+        "phonetics": "hɑrd stɑp",
+        "partOfSpeech": "noun",
+        "enDefinition": "a firm and non-negotiable deadline or ending time",
+        "ptDefinition": "um prazo ou horário de término firme e inegociável",
+        "examples": [
+          {
+            "enExample": "I have a hard stop at 3 PM for another meeting.",
+            "ptExample": "Tenho um horário final às 15h para outra reunião."
+          },
+          {
+            "enExample": "Let's make sure we cover all the points before the hard stop.",
+            "ptExample": "Vamos garantir que cobrimos todos os pontos antes do horário final."
+          },
+          {
+            "enExample": "The team agreed on a hard stop to keep the project on schedule.",
+            "ptExample": "A equipe concordou em um prazo final para manter o projeto dentro do cronograma."
+          }
+        ],
+        "synonyms": ["deadline", "cutoff", "endpoint"],
+        "antonyms": ["flexible timing", "open-ended"],
+        "notes": [
+          {
+            "enNote": "Commonly used in business or scheduling contexts to emphasize strict time management.",
+            "ptNote": "Comumente usado em contextos de negócios ou planejamento para enfatizar a gestão rigorosa do tempo."
+          }
+        ]
+      },
+      {
+        "word": "one's head on the chopping block",
+        "partOfSpeech": "idiom",
+        "enDefinition": "in a position where one is at risk of being criticized, blamed, or punished for something",
+        "ptDefinition": "em uma posição de risco de ser criticado, culpado ou punido por algo",
+        "examples": [
+          {
+            "enExample": "If this project fails, it's my head on the chopping block.",
+            "ptExample": "Se este projeto falhar, será a minha cabeça na guilhotina."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "A chopping block is a piece of wood on which food or wood is chopped. Having your head on the block would suggest that it is going to be cut off. Fortunately, the meeting here is not literal. If your head is on the chopping block, you might lose your job, but at least you'll still have your head!"
+          },
+          {
+            "ptNote": "Uma \"tábua de cortar\" é um pedaço de madeira onde alimentos ou madeira são cortados. Ter sua cabeça na tábua sugeriria que ela seria cortada. Felizmente, o significado aqui não é literal. Se sua cabeça estiver na tábua de cortar, você pode perder seu emprego, mas pelo menos ainda terá sua cabeça!"
+          }
+        ],
+        "synonyms": ["at risk", "on the line", "under threat", "in jeopardy"],
+        "antonyms": ["safe", "out of harm's way"]
+      }
+    ]
+  }
+]

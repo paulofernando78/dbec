@@ -1,0 +1,81 @@
+.header {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 40px;
+  padding-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+
+  /* border-bottom: 1px solid var(--gray-4); */
+}
+
+.homeAbout {
+  font-family: var(--font-oswald);
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.divider {
+  width: 3px;
+  height: 22px;
+  background: #1D283B;
+}
+
+.homeAbout,
+.darkMode {
+  display: flex;
+  gap: 7px;
+}
+
+.logInOutBtn:hover .logInArrow path:nth-child(1),
+.logInOutBtn:hover .logInArrow path:nth-child(2) {
+  animation: logIn 1s ease infinite;
+
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes logIn {
+  0% {
+    transform: translateX(0px);
+  }
+  33% {
+    transform: translateX(-5px);
+  }
+  66% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.logInOutBtn:hover .logOutArrow path:nth-child(1),
+.logInOutBtn:hover .logOutArrow path:nth-child(2) {
+  animation: logOut 1s ease infinite;
+
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes logOut {
+  0% {
+    transform: translateX(0px);
+  }
+  33% {
+    transform: translateX(-5px);
+  }
+  66% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

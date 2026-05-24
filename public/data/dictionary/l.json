@@ -1,0 +1,598 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "lollygagging",
+        "phonetics": "/ˈlɒliɡæɡɪŋ/",
+        "partOfSpeech": "verb (informal), gerund",
+        "enDefinition": "to dawdle or waste time; to move or act slowly or aimlessly instead of getting things done.",
+        "ptDefinition": "perder tempo sem propósito; demorar-se ou agir lentamente em vez de realizar tarefas.",
+        "examples": [
+          {
+        "enExample": "Stop lollygagging and finish your homework.",
+        "ptExample": "Pare de enrolar e termine sua lição de casa."
+          },
+          {
+        "enExample": "We were lollygagging on the way to the airport and almost missed our flight.",
+        "ptExample": "Ficamos enrolando no caminho para o aeroporto e quase perdemos o voo."
+          },
+          {
+        "enExample": "The kids spent the afternoon lollygagging in the park instead of studying.",
+        "ptExample": "As crianças passaram a tarde enrolando no parque em vez de estudar."
+          }
+        ],
+        "synonyms": ["dawdling", "dilly-dallying", "loitering", "stalling", "procrastinating"],
+        "antonyms": ["hurrying", "being productive", "getting on with it", "acting promptly"],
+        "seeAlso": ["dilly-dally", "procrastinate", "kill time", "loiter"],
+        "notes": [
+          {
+        "enNote": "Informal, chiefly American; often used to scold someone for wasting time or not being decisive.",
+        "ptNote": "Informal, principalmente nos EUA; frequentemente usado para repreender alguém por perder tempo ou não agir com decisão."
+          }
+        ]
+      },
+      {
+        "word": "lost cause",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a person or thing that is certain to fail or that can no longer be helped or improved.",
+        "ptDefinition": "uma pessoa ou coisa que está destinada ao fracasso ou que não pode mais ser ajudada ou melhorada.",
+        "examples": [
+          {
+            "enExample": "Trying to convince him to study is a lost cause.",
+            "ptExample": "Tentar convencê-lo a estudar é uma causa perdida."
+          },
+          {
+            "enExample": "I thought the project was a lost cause, but somehow we made it work.",
+            "ptExample": "Achei que o projeto fosse uma causa perdida, mas de alguma forma conseguimos fazê-lo funcionar."
+          },
+          {
+            "enExample": "Some people think learning grammar is a lost cause, but it’s actually possible with practice.",
+            "ptExample": "Algumas pessoas acham que aprender gramática é uma causa perdida, mas na verdade é possível com prática."
+          }
+        ],
+        "synonyms": ["hopeless case", "failure", "no hope", "dead end"],
+        "antonyms": ["success", "hopeful case", "achievable goal"],
+        "seeAlso": ["give up", "waste of time", "beyond help"],
+        "notes": [
+          {
+            "enNote": "Often used to describe efforts or people that seem impossible to change or improve.",
+            "ptNote": "Usado frequentemente para descrever esforços ou pessoas que parecem impossíveis de mudar ou melhorar."
+          }
+        ]
+      },
+      {
+        "word": "lose one’s temper",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to suddenly become very angry or lose control of one’s emotions",
+        "ptDefinition": "ficar muito bravo ou perder o controle das próprias emoções de forma repentina",
+        "examples": [
+          {
+            "enExample": "He lost his temper when he saw the mess in the kitchen.",
+            "ptExample": "Ele perdeu a paciência quando viu a bagunça na cozinha."
+          },
+          {
+            "enExample": "Try not to lose your temper during the meeting.",
+            "ptExample": "Tente não perder a calma durante a reunião."
+          },
+          {
+            "enExample": "She rarely loses her temper, but this time she couldn’t help it.",
+            "ptExample": "Ela raramente perde a cabeça, mas desta vez não conseguiu se controlar."
+          }
+        ],
+        "synonyms": [
+          "get angry",
+          "blow up",
+          "fly off the handle",
+          "lose control"
+        ],
+        "antonyms": ["stay calm", "keep one’s cool", "control oneself"],
+        "seeAlso": ["lose it", "blow one’s top", "hit the roof"],
+        "notes": [
+          {
+            "enNote": "Commonly used when someone reacts emotionally or angrily, often without thinking.",
+            "ptNote": "Usado comumente quando alguém reage emocionalmente ou com raiva, muitas vezes sem pensar."
+          },
+          {
+            "enNote": "Can describe both mild irritation and explosive anger, depending on context.",
+            "ptNote": "Pode descrever tanto uma irritação leve quanto uma explosão de raiva, dependendo do contexto."
+          }
+        ]
+      },
+      {
+        "word": "license plate",
+        "phonetics": "/ˈlaɪsəns pleɪt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a metal or plastic plate attached to a vehicle that displays its official registration number",
+        "ptDefinition": "placa de metal ou plástico fixada em um veículo que exibe seu número oficial de registro",
+        "examples": [
+          {
+            "enExample": "The police officer checked the car's license plate.",
+            "ptExample": "O policial verificou a placa do carro."
+          },
+          {
+            "enExample": "You must renew your license plate every year.",
+            "ptExample": "Você deve renovar sua placa todos os anos."
+          }
+        ],
+        "synonyms": ["number plate", "registration plate", "tag"],
+        "antonyms": [],
+        "seeAlso": ["vehicle registration", "car plate"],
+        "notes": [
+          {
+            "enNote": "In British English, 'number plate' is more commonly used.",
+            "ptNote": "Em inglês britânico, 'number plate' é mais comum."
+          }
+        ]
+      },
+      {
+        "word": "let go",
+        "phonetics": "/let ɡoʊ/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to release or stop holding something; to stop thinking about or worrying over something; to dismiss someone from a job",
+        "ptDefinition": "soltar ou deixar de segurar algo; parar de pensar ou se preocupar com algo; demitir alguém de um emprego",
+        "examples": [
+          {
+            "enExample": "She let go of the rope and fell into the water.",
+            "ptExample": "Ela soltou a corda e caiu na água."
+          },
+          {
+            "enExample": "You need to let go of your anger to move on.",
+            "ptExample": "Você precisa deixar de lado sua raiva para seguir em frente."
+          },
+          {
+            "enExample": "The company had to let go several employees due to budget cuts.",
+            "ptExample": "A empresa teve que demitir vários funcionários devido a cortes no orçamento."
+          }
+        ],
+        "synonyms": ["release", "free", "dismiss", "give up", "move on"],
+        "antonyms": ["hold on", "retain", "keep", "cling to"],
+        "seeAlso": ["move on", "set free", "dismiss"],
+        "notes": [
+          {
+            "enNote": "Can be used literally (physically releasing something) or figuratively (emotionally or professionally).",
+            "ptNote": "Pode ser usado de forma literal (soltar fisicamente algo) ou figurada (emocionalmente ou profissionalmente)."
+          }
+        ]
+      },
+      {
+        "word": "land",
+        "phonetics": "/lænd/",
+        "partOfSpeech": "noun, verb",
+        "enDefinition": "noun: the solid part of the earth's surface; verb: to arrive on the ground, especially after moving through air or water",
+        "ptDefinition": "substantivo: a parte sólida da superfície da Terra; verbo: chegar ao solo, especialmente após se mover pelo ar ou pela água",
+        "examples": [
+          {
+            "enExample": "The plane will land in Paris at 8 a.m.",
+            "ptExample": "O avião vai aterrissar em Paris às 8h."
+          },
+          {
+            "enExample": "They bought a piece of land to build their house.",
+            "ptExample": "Eles compraram um terreno para construir a casa."
+          }
+        ],
+        "synonyms": ["ground", "soil", "earth", "touch down", "arrive"],
+        "antonyms": ["sea", "water", "take off", "depart"],
+        "seeAlso": ["terrain", "territory", "property", "touch down"],
+        "notes": [
+          {
+            "enNote": "As a verb, 'land' is often used in aviation and travel. As a noun, it refers to physical ground or property.",
+            "ptNote": "Como verbo, 'land' é frequentemente usado em aviação e viagens. Como substantivo, refere-se ao solo físico ou propriedade."
+          }
+        ]
+      },
+      {
+        "word": "lose one’s shirt",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to lose a large amount of money, especially through bad investments or business deals",
+        "ptDefinition": "perder muito dinheiro, especialmente em investimentos ruins ou negócios mal sucedidos",
+        "examples": [
+          {
+            "enExample": "He lost his shirt when the stock market crashed.",
+            "ptExample": "Ele perdeu tudo quando a bolsa de valores despencou."
+          },
+          {
+            "enExample": "Many people lost their shirts during the financial crisis.",
+            "ptExample": "Muitas pessoas perderam tudo durante a crise financeira."
+          }
+        ],
+        "synonyms": ["go broke", "lose a fortune", "take a big loss"],
+        "antonyms": ["make a profit", "earn money", "gain wealth"],
+        "seeAlso": ["break even", "financial loss"],
+        "notes": [
+          {
+            "enNote": "Commonly used in financial contexts to describe severe losses.",
+            "ptNote": "Usada com frequência em contextos financeiros para descrever perdas severas."
+          }
+        ]
+      },
+      {
+        "word": "let",
+        "phonetics": "/let/",
+        "partOfSpeech": "irregular verb (past nad participle: let)",
+        "enDefinition": "to allow or permit someone to do something",
+        "ptDefinition": "permitir que alguém faça algo",
+        "examples": [
+          {
+            "enExample": "Let me help you with that.",
+            "ptExample": "Deixe-me te ajudar com isso."
+          },
+          {
+            "enExample": "Her parents let her stay out late on weekends.",
+            "ptExample": "Os pais dela deixam que ela fique fora até tarde nos fins de semana."
+          }
+        ],
+        "synonyms": ["allow", "permit", "authorize"],
+        "antonyms": ["forbid", "prohibit", "deny"],
+        "seeAlso": ["give permission"],
+        "notes": [
+          {
+            "ptNote": "‘Let’ é seguido pelo verbo no infinitivo sem ‘to’: ‘Let him go’, e não ‘Let him to go’."
+          }
+        ]
+      },
+      {
+        "word": "not lift a finger",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to not make any effort to help or do something",
+        "ptDefinition": "não fazer nenhum esforço para ajudar ou fazer algo",
+        "examples": [
+          {
+            "enExample": "He didn’t lift a finger to help me move the furniture.",
+            "ptExample": "Ele não mexeu um dedo para me ajudar a mover os móveis."
+          },
+          {
+            "enExample": "She expects others to do everything for her and never lifts a finger.",
+            "ptExample": "Ela espera que os outros façam tudo por ela e nunca move um dedo."
+          }
+        ],
+        "synonyms": ["do nothing", "make no effort", "stay idle"],
+        "antonyms": ["go out of one's way", "make an effort", "help out"],
+        "seeAlso": ["sit back", "hands-off"],
+        "notes": [
+          {
+            "enNote": "Often used to criticize someone's lack of help or effort.",
+            "ptNote": "Frequentemente usado para criticar a falta de esforço ou ajuda de alguém."
+          }
+        ]
+      },
+      {
+        "word": "likely story",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a sarcastic way to express disbelief in what someone has said.",
+        "ptDefinition": "uma forma sarcástica de expressar descrença no que alguém disse",
+        "examples": [
+          {
+            "enExample": "you missed the meeting because your alarm didn’t go off? Likely story.",
+            "ptExample": "você perdeu a reunião porque o alarme não tocou? Sei... conta outra"
+          },
+          {
+            "enExample": "He said he didn’t eat the cake? Likely story!",
+            "ptExample": "Ele disse que não comeu o bolo? Sei... bem provável!"
+          }
+        ],
+        "synonyms": ["yeah, right; sure thing (sarcastic)"],
+        "antonyms": ["I believe you, sounds legit"],
+        "seeAlso": "pulling my leg, sounds fishy",
+        "notes": [
+          {
+            "enNote": "Used sarcastically to show doubt or disbelief.",
+            "ptNote": "Usado de forma sarcástica para mostrar dúvida ou descrença."
+          }
+        ]
+      },
+      {
+        "word": "look at oneself in the mirror",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To reflect honestly on one's own behavior, actions, or character.",
+        "ptDefinition": "Refletir honestamente sobre o próprio comportamento, ações ou caráter.",
+        "examples": [
+          {
+            "enExample": "Before blaming others, you should look at yourself in the mirror.",
+            "ptExample": "Antes de culpar os outros, você deveria se olhar no espelho."
+          },
+          {
+            "enExample": "She needed to look at herself in the mirror and recognize her mistakes.",
+            "ptExample": "Ela precisava se olhar no espelho e reconhecer seus erros."
+          }
+        ],
+        "synonyms": ["self-reflect, introspect, examine oneself"],
+        "antonyms": ["ignore, avoid self-reflection"],
+        "seeAlso": "self-awareness, introspection",
+        "notes": [
+          {
+            "enNote": "Often used to encourage self-examination and personal responsibility.",
+            "ptNote": "Frequentemente usada para incentivar autoexame e responsabilidade pessoal."
+          }
+        ]
+      },
+      {
+        "word": "out of the loop",
+        "phonetics": "",
+        "partOfSpeech": "idiom",
+        "enDefinition": "not informed or not involved in something, especially information or decisions that others are aware of",
+        "ptDefinition": "não estar informado ou envolvido em algo, especialmente informações ou decisões que outros conhecem",
+        "examples": [
+          {
+            "enExample": "I was out of the loop during the meeting and didn't know about the new changes.",
+            "ptExample": "Eu estava por fora durante a reunião e não soube das novas mudanças."
+          },
+          {
+            "enExample": "If you don't check your emails, you'll be out of the loop.",
+            "ptExample": "Se você não verificar seus e-mails, ficará por fora."
+          }
+        ],
+        "synonyms": ["uninformed", "excluded", "not in the know"],
+        "antonyms": ["informed", "in the loop", "aware"],
+        "seeAlso": ["in the loop", "left out"],
+        "notes": [
+          {
+            "enNote": "Commonly used in workplaces or groups to describe someone who is not updated or included in communication.",
+            "ptNote": "Comumente usado em ambientes de trabalho ou grupos para descrever alguém que não está atualizado ou incluído na comunicação."
+          }
+        ]
+      },
+      {
+        "word": "last straw",
+        "phonetics": "/læst strɔː/",
+        "partOfSpeech": "idiom",
+        "enDefinition": "the final problem or annoyance that makes a situation unbearable or causes someone to lose patience",
+        "ptDefinition": "a última gota; o problema final que torna uma situação insuportável ou faz alguém perder a paciência",
+        "examples": [
+          {
+            "enExample": "When he arrived late again, it was the last straw and she decided to fire him.",
+            "ptExample": "Quando ele chegou atrasado de novo, foi a gota d'água e ela decidiu demiti-lo."
+          },
+          {
+            "enExample": "The constant noise was bad enough, but the broken elevator was the last straw.",
+            "ptExample": "O barulho constante já era ruim, mas o elevador quebrado foi a gota d'água."
+          }
+        ],
+        "synonyms": ["breaking point", "final straw", "limit", "tipping point"],
+        "antonyms": ["tolerance", "patience", "endurance"],
+        "seeAlso": ["breaking point", "the straw that broke the camel's back"],
+        "notes": [
+          {
+            "enNote": "Often used in the phrase 'the last straw' or 'the straw that broke the camel's back' to indicate a final, small burden that causes a collapse.",
+            "ptNote": "Frequentemente usada na expressão 'a gota d'água' para indicar o último problema que faz alguém perder a paciência."
+          }
+        ]
+      },
+      {
+        "word": "leniency",
+        "phonetics": "/ˈliːniənsi/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the quality of being more merciful or tolerant than expected; showing mildness or forgiveness in judging or punishing someone",
+        "ptDefinition": "a qualidade de ser mais misericordioso ou tolerante do que o esperado; demonstrar brandura ou perdão ao julgar ou punir alguém",
+        "examples": [
+          {
+            "enExample": "The judge showed leniency and gave him a lighter sentence.",
+            "ptExample": "O juiz mostrou leniência e deu a ele uma sentença mais branda."
+          },
+          {
+            "enExample": "Teachers are often asked to exercise leniency with students facing personal difficulties.",
+            "ptExample": "Muitas vezes, pede-se aos professores que exerçam leniência com alunos que enfrentam dificuldades pessoais."
+          }
+        ],
+        "synonyms": [
+          "mercy",
+          "clemency",
+          "forgiveness",
+          "tolerance",
+          "indulgence"
+        ],
+        "antonyms": ["harshness", "severity", "strictness", "rigor"],
+        "seeAlso": ["clemency", "forgiveness", "tolerance"],
+        "notes": [
+          {
+            "enNote": "Leniency is often discussed in legal or disciplinary contexts, where it refers to a decision to be less severe than the norm.",
+            "ptNote": "A leniência é frequentemente discutida em contextos legais ou disciplinares, referindo-se a uma decisão de ser menos severo do que o normal."
+          }
+        ]
+      },
+      {
+        "word": "let's agree to disagree",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a phrase used to end a discussion when both parties cannot reach an agreement but wish to remain cordial",
+        "ptDefinition": "uma frase usada para encerrar uma discussão quando ambas as partes não conseguem chegar a um acordo mas desejam manter a cordialidade",
+        "examples": [
+          {
+            "enExample": "We clearly have different views on this political issue, so let's agree to disagree.",
+            "ptExample": "Claramente temos visões diferentes sobre esta questão política, então vamos concordar em discordar."
+          },
+          {
+            "enExample": "After debating for hours, they decided to agree to disagree about the best approach.",
+            "ptExample": "Depois de debater por horas, eles decidiram concordar em discordar sobre a melhor abordagem."
+          }
+        ],
+        "synonyms": ["agree to differ", "accept our differences"],
+        "antonyms": ["insist on agreement", "force consensus"],
+        "notes": [
+          {
+            "enNote": "This phrase is used to maintain respect and civility when two parties have irreconcilable views",
+            "ptNote": "Esta frase é usada para manter o respeito e a civilidade quando duas partes têm visões irreconciliáveis"
+          }
+        ]
+      },
+      {
+        "word": "last resort",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "something that is tried after everything else has failed; the final possibility or option",
+        "ptDefinition": "último recurso; última alternativa quando todas as outras opções falharam",
+        "examples": [
+          {
+            "enExample": "Surgery should be used as a last resort when all other treatments have failed.",
+            "ptExample": "A cirurgia deve ser usada como último recurso quando todos os outros tratamentos falharem."
+          },
+          {
+            "enExample": "Bankruptcy was their last resort after trying everything to save the business.",
+            "ptExample": "A falência foi seu último recurso depois de tentar tudo para salvar o negócio."
+          }
+        ],
+        "synonyms": ["final option", "last choice", "final alternative"],
+        "antonyms": ["first choice", "preferred option", "primary solution"],
+        "notes": [
+          {
+            "enNote": "The phrase implies that this option should only be considered when all other possibilities have been exhausted",
+            "ptNote": "A frase implica que esta opção só deve ser considerada quando todas as outras possibilidades foram esgotadas"
+          }
+        ]
+      },
+      {
+        "word": "Louvre",
+        "enDefinition": "the world's largest art museum located in Paris, France, housed in a historic palace and home to many famous works including the Mona Lisa",
+        "ptDefinition": "o maior museu de arte do mundo localizado em Paris, França, instalado em um palácio histórico e lar de muitas obras famosas, incluindo a Mona Lisa",
+        "notes": [
+          {
+            "enNote": "Originally built as a fortress in the 12th century, later served as a royal residence before becoming a museum in 1793.",
+            "ptNote": "Originalmente construído como uma fortaleza no século XII, posteriormente serviu como residência real antes de se tornar um museu em 1793."
+          }
+        ]
+      },
+      {
+        "word": "look",
+        "phonetics": "/lʊk/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to direct your eyes in order to see",
+        "ptDefinition": "direcionar os olhos para ver",
+        "examples": [
+          {
+            "enExample": "Look at that beautiful sunset!",
+            "ptExample": "Olhe aquele lindo pôr do sol!"
+          },
+          {
+            "enExample": "She looked out the window and saw it was snowing.",
+            "ptExample": "Ela olhou pela janela e viu que estava nevando."
+          }
+        ],
+        "synonyms": [
+          "see",
+          "watch",
+          "observe",
+          "gaze",
+          "stare",
+          "glance",
+          "peer",
+          "inspect",
+          "view"
+        ],
+        "antonyms": ["ignore", "overlook", "be blind to"],
+        "notes": [
+          {
+            "enNote": "Often followed by prepositions like 'at', 'into', 'through'.",
+            "ptNote": "Frequentemente seguido de preposições como 'at', 'into', 'through'."
+          }
+        ]
+      },
+      {
+        "word": "look",
+        "phonetics": "/lʊk/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to appear or seem to be something based on visual impression",
+        "ptDefinition": "parecer ser algo com base na aparência",
+        "examples": [
+          {
+            "enExample": "You look tired today.",
+            "ptExample": "Você parece cansado hoje."
+          },
+          {
+            "enExample": "That soup looks delicious.",
+            "ptExample": "Essa sopa parece deliciosa."
+          }
+        ],
+        "synonyms": ["seem", "appear", "come across as", "sound", "feel"],
+        "antonyms": [],
+        "notes": [
+          {
+            "enNote": "'Look' in this sense is used to describe someone's or something's appearance.",
+            "ptNote": "'Look', nesse sentido, é usado para descrever a aparência de alguém ou algo."
+          }
+        ]
+      },
+      {
+        "word": "look",
+        "phonetics": "/lʊk/",
+        "partOfSpeech": "noun",
+        "enDefinition": "an act of directing one's gaze in a particular direction",
+        "ptDefinition": "ato de direcionar o olhar para uma direção específica",
+        "examples": [
+          {
+            "enExample": "He gave me a strange look.",
+            "ptExample": "Ele me lançou um olhar estranho."
+          },
+          {
+            "enExample": "She has a unique look.",
+            "ptExample": "Ela tem um visual único."
+          }
+        ],
+        "synonyms": ["glance", "gaze", "stare", "appearance", "expression"],
+        "antonyms": [],
+        "seeAlso": "get a look, take a look"
+      },
+      {
+        "word": "let down",
+        "phonetics": "/let daʊn/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to disappoint someone by failing to do what they expected or hoped for",
+        "ptDefinition": "decepcionar alguém ao não fazer o que esperavam ou esperavam",
+        "examples": [
+          {
+            "enExample": "I promised to help him, and I can't let him down.",
+            "ptExample": "Eu prometi ajudá-lo, e não posso decepcioná-lo."
+          },
+          {
+            "enExample": "She felt let down when her friends didn't show up to her party.",
+            "ptExample": "Ela se sentiu decepcionada quando seus amigos não apareceram na festa."
+          }
+        ],
+        "synonyms": ["disappoint", "fail", "betray"],
+        "antonyms": ["support", "uplift", "encourage"],
+        "notes": [
+          {
+            "enNote": "This phrasal verb is often used when someone does not meet expectations or fulfill a promise.",
+            "ptNote": "Este verbo frasal é frequentemente usado quando alguém não atende às expectativas ou cumpre uma promessa."
+          }
+        ]
+      },
+      {
+        "word": "live to regret this decision",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to eventually regret a decision, especially after experiencing its negative consequences",
+        "ptDefinition": "eventualmente se arrepender de uma decisão, especialmente após vivenciar suas consequências negativas",
+        "examples": [
+          {
+            "enExample": "He might live to regret this decision of quitting his job without a backup plan.",
+            "ptExample": "Ele pode se arrepender dessa decisão de sair do emprego sem um plano de contingência."
+          },
+          {
+            "enExample": "You could live to regret this decision if you don't take the time to consider all the options.",
+            "ptExample": "Você pode se arrepender dessa decisão se não dedicar um tempo para considerar todas as opções."
+          }
+        ],
+        "synonyms": ["regret later", "feel sorry", "pay the price"],
+        "antonyms": ["make the right choice", "have no regrets", "be satisfied"]
+      },
+      {
+        "word": "leapfrog one's competitors",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to surpass or outdo one's competitors by making a significant advance or breakthrough",
+        "ptDefinition": "superar ou ultrapassar os concorrentes com um avanço ou inovação significativa",
+        "examples": [
+          {
+            "enExample": "The company managed to leapfrog its competitors by introducing a revolutionary new technology.",
+            "ptExample": "A empresa conseguiu superar seus concorrentes ao lançar uma tecnologia revolucionária."
+          }
+        ],
+        "synonyms": ["outpace", "surpass", "outstrip"],
+        "antonyms": ["lag behind", "fall short", "trail"],
+        "notes": [
+          {
+            "enNote": "The term comes from the idea of one person leaping over another in a race, symbolizing a major leap forward. It's also a popular children's game in which one child bends down and another jumps over him or her."
+          },
+          {
+            "ptNote": "O termo vem da ideia de uma pessoa saltando sobre outra em uma corrida, simbolizando um grande avanço. Também é um jogo popular entre crianças em que uma criança se agacha e a outra pula sobre ela."
+          }
+        ]
+      }
+    ]
+  }
+]

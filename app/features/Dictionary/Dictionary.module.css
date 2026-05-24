@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: var(--dictionary-bg);
+
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 5px 5px 1px 5px;
+  width: max-content;
+  margin-bottom: 5px;
+  margin-left: auto;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.keyWrapper {
+  display: flex;
+  gap: 5px;
+  transform: translate(-2px, 1px);
+}
+
+.key {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 1.5px;
+}
+
+.wordCard,
+.emptyState {
+  background-color: var(--slate-2);
+  margin-bottom: 5px;
+  /* border: var(--border); */
+  /* border-radius: var(--border-radius); */
+  padding: 5px 5px 3px 8px;
+  color: black;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  background-color: var(--dictionary-bg);
+}
+
+.input {
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 5px 5px 4px 6px;
+}
+
+.results {
+  width: 70%;
+  height: 300px;
+  margin-left: auto;
+  background-color: var(--slate-2);
+  border: 2px solid var(--slate-3);
+  border-radius: var(--border-radius);
+  overflow-y: scroll;
+}
+
+.word,
+.partOfSpeech,
+.enDefinition,
+.synomyms,
+.antonyms,
+.seeAlso,
+.enNote {
+  margin-right: var(--margin-right);
+}
+
+.partOfSpeech,
+.phonetics,
+.synomyms,
+.antonyms,
+.seeAlso,
+.notes {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.word {
+  font-weight: bold;
+}
+
+.phonetics {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--blue-6);
+}
+
+.ptDefinition,
+.ptExample {
+  display: block;
+}
+
+.enExample {
+  margin-inline: var(--margin-inline);
+}
+
+.seeAlso {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.images > * {
+  margin: 0;
+}
+
+@media (width < 600px) {
+  .results {
+    width: 100%;
+    padding-right: 10px;
+  }
+}

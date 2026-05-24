@@ -1,0 +1,1551 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "bowel movement",
+        "phonetics": "/ˈbaʊ.əl ˌmuːv.mənt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the act of emptying waste from the intestines through the rectum; passing stool.",
+        "ptDefinition": "evacuação; ato de eliminar fezes do intestino pelo reto.",
+        "examples": [
+          {
+            "enExample": "Drinking enough water can help improve regular bowel movements.",
+            "ptExample": "Beber água suficiente pode ajudar a melhorar evacuações regulares."
+          },
+          {
+            "enExample": "He had not had a bowel movement for three days.",
+            "ptExample": "Ele não evacuava há três dias."
+          }
+        ],
+        "synonyms": ["defecation", "stool passage", "pooping"],
+        "antonyms": ["constipation", "retention"],
+        "seeAlso": [
+          "constipation",
+          "stool",
+          "intestine",
+          "colon",
+          "digestive system"
+        ],
+        "notes": [
+          {
+            "enNote": "This is a polite and common medical term used instead of more informal words like 'poop'.",
+            "ptNote": "Este é um termo educado e comum na área médica, usado no lugar de palavras mais informais como 'cocô'."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "bowel-movement.avif",
+            "alt": "Illustration representing a healthy bowel movement and digestive regularity."
+          }
+        ]
+      },
+      {
+        "word": "ballpark figure",
+        "partOfSpeech": "idiom",
+        "enDefinition": "an approximate or rough estimate of a number, cost, or amount, not intended to be exact",
+        "ptDefinition": "estimativa aproximada; valor aproximado, não exato",
+        "examples": [
+          {
+            "enExample": "Can you give me a ballpark figure for the total cost?",
+            "ptExample": "Você pode me dar uma estimativa aproximada do custo total?"
+          },
+          {
+            "enExample": "I don't need the exact number, just a ballpark figure.",
+            "ptExample": "Não preciso do número exato, apenas uma estimativa aproximada."
+          }
+        ],
+        "synonyms": ["rough estimate", "approximation", "guesstimate"],
+        "antonyms": ["exact figure", "precise calculation"],
+        "seeAlso": ["estimate", "rough estimate", "approximate"],
+        "notes": [
+          {
+            "enNote": "Common in business and informal conversations when an exact number is not yet available.",
+            "ptNote": "Comum em contextos de negócios e conversas informais quando um número exato ainda não está disponível."
+          }
+        ]
+      },
+      {
+        "word": "by far",
+        "phonetics": "/baɪ fɑːr/",
+        "partOfSpeech": "adverbial phrase",
+        "enDefinition": "by a large amount or to a great degree; used to emphasize that something is much more than others",
+        "ptDefinition": "de longe; em grande medida; usado para enfatizar que algo é muito mais do que os outros",
+        "examples": [
+          {
+            "enExample": "She is by far the best student in the class.",
+            "ptExample": "Ela é de longe a melhor aluna da turma."
+          },
+          {
+            "enExample": "This is by far the most difficult test I’ve ever taken.",
+            "ptExample": "Este é de longe o teste mais difícil que eu já fiz."
+          }
+        ],
+        "synonyms": ["by a long way", "easily", "far and away"],
+        "antonyms": ["slightly", "barely", "just"],
+        "seeAlso": ["far and away", "much", "to a great extent"],
+        "notes": [
+          {
+            "enNote": "Commonly used before superlatives or with expressions like 'the best', 'the most', or 'the worst' to add strong emphasis.",
+            "ptNote": "Usado com frequência antes de superlativos ou expressões como 'the best', 'the most' ou 'the worst' para dar forte ênfase."
+          }
+        ]
+      },
+      {
+        "word": "beat around the bush",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to avoid talking about what is important or getting to the main point, often intentionally",
+        "ptDefinition": "enrolar; evitar falar diretamente sobre o assunto principal",
+        "examples": [
+          {
+            "enExample": "Stop beating around the bush and tell me what you really want.",
+            "ptExample": "Pare de enrolar e me diga o que você realmente quer."
+          },
+          {
+            "enExample": "He didn’t beat around the bush — he told her the truth immediately.",
+            "ptExample": "Ele não enrolou — disse a verdade imediatamente."
+          }
+        ],
+        "synonyms": ["avoid the point", "be evasive", "hem and haw"],
+        "antonyms": [
+          "get straight to the point",
+          "be direct",
+          "come right out and say it"
+        ],
+        "seeAlso": ["get to the point", "come straight out", "speak plainly"],
+        "notes": [
+          {
+            "enNote": "Often used in negative or imperative forms (e.g. 'don’t beat around the bush').",
+            "ptNote": "Frequentemente usado na forma negativa ou imperativa (ex.: 'don’t beat around the bush')."
+          }
+        ]
+      },
+      {
+        "word": "look on the bright side",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to try to see the positive aspects of a situation; to focus on good things rather than bad ones",
+        "ptDefinition": "tentar ver os aspectos positivos de uma situação; focar nas coisas boas em vez das ruins",
+        "examples": [
+          {
+            "enExample": "I know you lost your job, but look on the bright side – you'll have more time for your family.",
+            "ptExample": "Sei que você perdeu seu emprego, mas veja o lado positivo – você terá mais tempo para sua família."
+          },
+          {
+            "enExample": "The project failed, but we can look on the bright side and learn from our mistakes.",
+            "ptExample": "O projeto falhou, mas podemos ver o lado positivo e aprender com nossos erros."
+          }
+        ],
+        "synonyms": [
+          "see the silver lining",
+          "accentuate the positive",
+          "focus on the good"
+        ],
+        "antonyms": ["dwell on negatives", "be pessimistic"],
+        "seeAlso": ["silver lining", "optimism", "glass half full"],
+        "notes": [
+          {
+            "enNote": "Often used to encourage someone to maintain a positive perspective during difficult times.",
+            "ptNote": "Frequentemente usado para encorajar alguém a manter uma perspectiva positiva durante tempos difíceis."
+          }
+        ]
+      },
+      {
+        "word": "buckle down",
+        "phonetics": "/ˈbʌkəl daʊn/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to start to work or study in a serious and determined way",
+        "ptDefinition": "começar a trabalhar ou estudar de maneira séria e determinada",
+        "examples": [
+          {
+            "enExample": "You need to buckle down and study if you want to pass the exam.",
+            "ptExample": "Você precisa se dedicar e estudar se quiser passar no exame."
+          },
+          {
+            "enExample": "It's time to buckle down and finish this project.",
+            "ptExample": "É hora de se concentrar e terminar este projeto."
+          }
+        ],
+        "synonyms": "concentrate, focus, apply oneself",
+        "antonyms": "slack off, procrastinate",
+        "seeAlso": "get down to work, knuckle down",
+        "notes": [
+          {
+            "enNote": "Often used to encourage someone to focus on a task or responsibility that requires serious attention.",
+            "ptNote": "Frequentemente usado para encorajar alguém a focar em uma tarefa ou responsabilidade que requer atenção séria."
+          }
+        ]
+      },
+      {
+        "word": "blow something",
+        "phonetics": "/bloʊ ˈsʌmθɪŋ/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to destroy, ruin, or waste something; to cause something to fail or be lost; sometimes used informally for losing an opportunity or making a mistake.",
+        "ptDefinition": "destruir, arruinar ou desperdiçar algo; causar a falha ou perda de algo; usado informalmente para perder uma oportunidade ou cometer um erro.",
+        "examples": [
+          {
+            "enExample": "He blew his chance at getting the job by arriving late to the interview.",
+            "ptExample": "Ele perdeu a chance de conseguir o emprego ao chegar atrasado para a entrevista."
+          },
+          {
+            "enExample": "Don’t blow your money on useless things.",
+            "ptExample": "Não desperdice seu dinheiro com coisas inúteis."
+          },
+          {
+            "enExample": "The explosion blew the roof off the building.",
+            "ptExample": "A explosão arrancou o telhado do prédio."
+          }
+        ],
+        "synonyms": ["ruin", "destroy", "waste", "lose", "mess up"],
+        "antonyms": ["preserve", "save", "maintain"],
+        "seeAlso": ["blow up", "blow off", "mess up"],
+        "notes": [
+          {
+            "enNote": "‘Blow something’ can mean either a literal explosion or a figurative failure, depending on the context.",
+            "ptNote": "‘Blow something’ pode significar tanto uma explosão literal quanto um fracasso figurado, dependendo do contexto."
+          }
+        ]
+      },
+      {
+        "word": "besides the point",
+        "partOfSpeech": "idiom",
+        "enDefinition": "not relevant to the main subject or issue being discussed; irrelevant.",
+        "ptDefinition": "não relevante para o assunto principal em discussão; irrelevante.",
+        "examples": [
+          {
+            "enExample": "You’re right that the food was delicious, but that’s beside the point — we were talking about the service.",
+            "ptExample": "Você tem razão que a comida estava deliciosa, mas isso não vem ao caso — estávamos falando do atendimento."
+          },
+          {
+            "enExample": "His personal opinion is beside the point; we need to focus on the facts.",
+            "ptExample": "A opinião pessoal dele não vem ao caso; precisamos focar nos fatos."
+          }
+        ],
+        "synonyms": ["irrelevant", "off-topic", "immaterial"],
+        "antonyms": ["relevant", "pertinent", "to the point"],
+        "seeAlso": ["off the topic", "beside the mark", "not the issue"],
+        "notes": [
+          {
+            "enNote": "Commonly used to dismiss comments that do not relate to the main issue being discussed.",
+            "ptNote": "Usado comumente para descartar comentários que não se relacionam ao assunto principal em discussão."
+          }
+        ]
+      },
+      {
+        "word": "boat",
+        "phonetics": "US /boʊt/, UK /bəʊt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A small vessel used for traveling on water, usually not as large as a ship.",
+        "ptDefinition": "Embarcação pequena usada para viajar sobre a água, geralmente menor que um navio.",
+        "examples": [
+          {
+            "enExample": "They crossed the river in a small boat.",
+            "ptExample": "Eles atravessaram o rio em um pequeno barco."
+          },
+          {
+            "enExample": "We rented a boat to explore the lake.",
+            "ptExample": "Nós alugamos um barco para explorar o lago."
+          }
+        ],
+        "synonyms": "vessel",
+        "antonyms": "",
+        "seeAlso": "ship, ferry, yacht, canoe",
+        "notes": [
+          {
+            "enNote": "The phrase ‘in the same boat’ means to be in the same difficult situation as someone else.",
+            "ptNote": "A expressão ‘in the same boat’ significa estar na mesma situação difícil que outra pessoa."
+          }
+        ]
+      },
+      {
+        "word": "bag",
+        "phonetics": "/bæɡ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a flexible container with an opening at the top, used for carrying things",
+        "ptDefinition": "um recipiente flexível com uma abertura na parte superior, usado para carregar coisas",
+        "examples": [
+          {
+            "enExample": "She put her groceries in a reusable bag.",
+            "ptExample": "Ela colocou suas compras em uma sacola reutilizável."
+          },
+          {
+            "enExample": "He packed his clothes into a travel bag.",
+            "ptExample": "Ele colocou suas roupas em uma bolsa de viagem."
+          }
+        ],
+        "synonyms": ["sack", "pouch", "satchel", "tote"],
+        "antonyms": ["box", "case", "container"],
+        "seeAlso": ["backpack", "purse", "suitcase"],
+        "notes": [
+          {
+            "enNote": "Bags come in many forms, such as plastic bags, paper bags, handbags, and backpacks.",
+            "ptNote": "Bolsas existem em várias formas, como sacolas plásticas, sacos de papel, bolsas de mão e mochilas."
+          }
+        ]
+      },
+      {
+        "word": "bookcase",
+        "phonetics": "/ˈbʊk.keɪs/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a piece of furniture with shelves for storing books",
+        "ptDefinition": "um móvel com prateleiras para guardar livros",
+        "examples": [
+          {
+            "enExample": "She arranged her favorite novels on the top shelf of the bookcase.",
+            "ptExample": "Ela organizou seus romances favoritos na prateleira de cima da estante."
+          },
+          {
+            "enExample": "The bookcase in his office is filled with reference materials.",
+            "ptExample": "A estante no escritório dele está cheia de materiais de referência."
+          }
+        ],
+        "synonyms": ["bookshelf", "shelving unit", "library shelf"],
+        "notes": [
+          {
+            "enNote": "Bookcases can be made of wood, metal, or other materials and come in various sizes.",
+            "ptNote": "Estantes podem ser feitas de madeira, metal ou outros materiais e existem em vários tamanhos."
+          }
+        ]
+      },
+      {
+        "word": "bottle",
+        "phonetics": "/ˈbɒt.əl/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a container, typically made of glass or plastic, with a narrow neck, used for storing liquids",
+        "ptDefinition": "recipiente, geralmente de vidro ou plástico, com gargalo estreito, usado para armazenar líquidos",
+        "examples": [
+          {
+            "enExample": "She poured water into the bottle.",
+            "ptExample": "Ela colocou água na garrafa."
+          },
+          {
+            "enExample": "The wine bottle was empty after the party.",
+            "ptExample": "A garrafa de vinho estava vazia depois da festa."
+          }
+        ],
+        "synonyms": ["container", "flask", "vial"],
+        "antonyms": ["can", "box", "jar"],
+        "seeAlso": ["jar", "flask", "jug"],
+        "notes": [
+          {
+            "enNote": "Bottles are commonly used for beverages, chemicals, and other liquids.",
+            "ptNote": "Garrafas são usadas comumente para bebidas, produtos químicos e outros líquidos."
+          }
+        ]
+      },
+      {
+        "word": "bulk",
+        "phonetics": "/bʌlk/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the mass or size of something large; the majority or greater part of something",
+        "ptDefinition": "volume ou tamanho de algo grande; a maior parte ou maioria de algo",
+        "examples": [
+          {
+            "enExample": "The bulk of the shipment arrived on time.",
+            "ptExample": "A maior parte da remessa chegou no prazo."
+          },
+          {
+            "enExample": "Buying in bulk is usually cheaper.",
+            "ptExample": "Comprar em grande quantidade geralmente é mais barato."
+          }
+        ],
+        "synonyms": ["majority", "mass", "volume", "main", "part"],
+        "antonyms": ["minority", "small", "portion"],
+        "seeAlso": ["mass", "majority", "wholesale"],
+        "notes": [
+          {
+            "enNote": "Often used in contexts involving large quantities or sizes, such as bulk buying or bulk materials.",
+            "ptNote": "Frequentemente usado em contextos envolvendo grandes quantidades ou tamanhos, como compra em grande quantidade ou materiais a granel."
+          }
+        ]
+      },
+      {
+        "word": "beach",
+        "phonetics": "/biːtʃ/ (US), /biːtʃ/ (UK)",
+        "partOfSpeech": "noun",
+        "enDefinition": "an area where people go to relax, sunbathe, or swim",
+        "ptDefinition": "área onde as pessoas vão para relaxar, tomar sol ou nadar",
+        "examples": [
+          {
+            "enExample": "We spent the afternoon playing volleyball on the beach.",
+            "ptExample": "Passamos a tarde jogando vôlei na praia."
+          },
+          {
+            "enExample": "The children built a sandcastle on the beach.",
+            "ptExample": "As crianças construíram um castelo de areia na praia."
+          }
+        ],
+        "synonyms": ["seashore", "coast", "shore", "sandy area"],
+        "seeAlso": ["sea", "ocean", "coastline"],
+        "notes": [
+          {
+            "enNote": "Beaches can be made of sand, pebbles, or rocks, and are often popular recreational areas.",
+            "ptNote": "As praias podem ser de areia, seixos ou pedras, e frequentemente são áreas de lazer populares."
+          }
+        ]
+      },
+      {
+        "word": "bus station",
+        "phonetics": "/bʌs ˈsteɪʃən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a place where buses regularly stop to pick up and drop off passengers",
+        "ptDefinition": "um local onde os ônibus param regularmente para pegar e deixar passageiros",
+        "examples": [
+          {
+            "enExample": "We arrived at the bus station just in time to catch the express bus.",
+            "ptExample": "Chegamos na estação de ônibus a tempo de pegar o ônibus expresso."
+          },
+          {
+            "enExample": "The bus station was crowded with travelers waiting for their departures.",
+            "ptExample": "A estação de ônibus estava lotada de viajantes esperando suas partidas."
+          }
+        ],
+        "synonyms": "coach station, terminal",
+        "seeAlso": "train station, subway station",
+        "notes": [
+          {
+            "enNote": "A bus station can be used for both local and long-distance buses.",
+            "ptNote": "Uma estação de ônibus pode ser usada tanto para ônibus locais quanto de longa distância."
+          }
+        ]
+      },
+      {
+        "word": "brush up",
+        "phonetics": "/brʌʃ ʌp/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to improve your knowledge or skill in something you have learned before but partly forgotten",
+        "ptDefinition": "revisar ou aprimorar um conhecimento ou habilidade que já foi aprendida, mas parcialmente esquecida",
+        "examples": [
+          {
+            "enExample": "I need to brush up on my Spanish before the trip to Mexico.",
+            "ptExample": "Preciso revisar meu espanhol antes da viagem ao México."
+          },
+          {
+            "enExample": "She took a course to brush up her computer skills.",
+            "ptExample": "Ela fez um curso para aprimorar suas habilidades em informática."
+          }
+        ],
+        "synonyms": ["refresh", "revise", "improve", "polish up"],
+        "antonyms": ["forget", "neglect"],
+        "seeAlso": ["brush up on", "review"],
+        "notes": [
+          {
+            "enNote": "Often used with 'on' to indicate the specific subject, e.g., 'brush up on math'.",
+            "ptNote": "Frequentemente usado com 'on' para indicar o assunto específico, ex.: 'brush up on math' (revisar matemática)."
+          }
+        ]
+      },
+      {
+        "word": "in the bag",
+        "partOfSpeech": "idiom",
+        "enDefinition": "certain to be achieved or won; guaranteed",
+        "ptDefinition": "certo de ser alcançado ou ganho; garantido",
+        "examples": [
+          {
+            "enExample": "Don’t worry about the contract — it’s in the bag.",
+            "ptExample": "Não se preocupe com o contrato — já está garantido."
+          },
+          {
+            "enExample": "They thought the game was in the bag, but they lost in the last minute.",
+            "ptExample": "Eles achavam que o jogo estava ganho, mas perderam no último minuto."
+          }
+        ],
+        "synonyms": ["guaranteed", "secured", "certain"],
+        "antonyms": ["uncertain", "at risk", "doubtful"],
+        "seeAlso": ["sure thing", "done deal"],
+        "notes": [
+          {
+            "enNote": "Used to express high confidence that a success or result is already secured.",
+            "ptNote": "Usado para expressar grande confiança de que o sucesso ou resultado já está garantido."
+          }
+        ]
+      },
+      {
+        "word": "the big picture",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "the overall perspective or comprehensive view of a situation",
+        "ptDefinition": "a visão geral ou entendimento amplo de uma situação",
+        "examples": [
+          {
+            "enExample": "It's important to look at the big picture before making a decision.",
+            "ptExample": "É importante ver o panorama geral antes de tomar uma decisão."
+          },
+          {
+            "enExample": "She tends to focus on details, but he always considers the big picture.",
+            "ptExample": "Ela tende a focar nos detalhes, mas ele sempre considera a visão geral."
+          }
+        ],
+        "synonyms": ["overview", "broad view", "general perspective"],
+        "antonyms": ["details", "specifics", "narrow view"],
+        "seeAlso": ["zoom out", "long-term view"],
+        "notes": [
+          {
+            "enNote": "Used to remind people to think broadly and consider all factors.",
+            "ptNote": "Usada para lembrar as pessoas a pensar de forma ampla e considerar todos os fatores."
+          }
+        ]
+      },
+      {
+        "word": "go belly up",
+        "phonetics": "/ɡoʊ ˈbɛli ʌp/",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to fail completely, especially used when a business goes bankrupt",
+        "ptDefinition": "fracassar completamente; falir (especialmente usado para empresas)",
+        "examples": [
+          {
+            "enExample": "The company went belly up after just six months in business.",
+            "ptExample": "A empresa faliu depois de apenas seis meses de operação."
+          },
+          {
+            "enExample": "Their investment plan went belly up during the market crash.",
+            "ptExample": "O plano de investimento deles quebrou durante a crise do mercado."
+          }
+        ],
+        "synonyms": ["go bankrupt", "fail", "collapse"],
+        "antonyms": ["succeed", "thrive", "prosper"],
+        "seeAlso": ["go under", "fold", "go bust"],
+        "notes": [
+          {
+            "enNote": "This expression is informal and often used in financial or business contexts.",
+            "ptNote": "Expressão informal usada com frequência em contextos financeiros ou de negócios."
+          }
+        ]
+      },
+      {
+        "word": "buy",
+        "phonetics": "/baɪ/",
+        "partOfSpeech": "irregular verb (past and participle: bought)",
+        "enDefinition": "to get something by paying money for it",
+        "ptDefinition": "adquirir algo pagando por isso; comprar",
+        "examples": [
+          {
+            "enExample": "I need to buy a new phone.",
+            "ptExample": "Eu preciso comprar um celular novo."
+          },
+          {
+            "enExample": "She bought a gift for her friend.",
+            "ptExample": "Ela comprou um presente para a amiga."
+          }
+        ],
+        "synonyms": ["purchase", "acquire", "get"],
+        "antonyms": ["sell", "return", "give away"],
+        "seeAlso": ["buy out", "buy up", "buy into"]
+      },
+      {
+        "word": "buy out",
+        "phonetics": "/baɪ aʊt/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to purchase someone's share in a business or property, usually to gain full control",
+        "ptDefinition": "comprar a parte ou participação de alguém em um negócio ou propriedade, geralmente para obter controle total",
+        "examples": [
+          {
+            "enExample": "She bought out her partner and became the sole owner of the company.",
+            "ptExample": "Ela comprou a parte do sócio e se tornou a única dona da empresa."
+          },
+          {
+            "enExample": "The larger corporation plans to buy out its smaller competitor.",
+            "ptExample": "A corporação maior planeja adquirir completamente sua concorrente menor."
+          }
+        ],
+        "synonyms": ["acquire", "purchase", "take over"],
+        "antonyms": ["sell out", "divest", "give up ownership"],
+        "seeAlso": ["take over", "buy up", "merger"],
+        "notes": [
+          {
+            "enNote": "Often used in business contexts when one party gains full ownership by purchasing the other's share.",
+            "ptNote": "Frequentemente usado em contextos de negócios quando uma parte adquire total propriedade comprando a participação da outra."
+          }
+        ]
+      },
+      {
+        "word": "built",
+        "phonetics": "/bɪlt/",
+        "partOfSpeech": "verb (past tense and past participle)",
+        "examples": [
+          {
+            "enExample": "They built this bridge in just two years.",
+            "ptExample": "Eles construíram esta ponte em apenas dois anos."
+          },
+          {
+            "enExample": "This house was built to last.",
+            "ptExample": "Esta casa foi construída para durar."
+          }
+        ],
+        "synonyms": ["constructed", "created", "assembled"],
+        "antonyms": ["demolished", "destroyed", "dismantled"],
+        "seeAlso": ["build", "rebuilt"],
+        "notes": [
+          {
+            "enNote": "‘Built’ is the regular past form of the irregular verb ‘build’.",
+            "ptNote": "‘Built’ é a forma no passado e particípio do verbo irregular ‘build’."
+          }
+        ]
+      },
+      {
+        "word": "build",
+        "phonetics": "/bɪld/",
+        "partOfSpeech": "irregular verb (past and participle: built)",
+        "enDefinition": "to construct something by putting parts or materials together",
+        "ptDefinition": "construir algo juntando partes ou materiais",
+        "examples": [
+          {
+            "enExample": "They are building a new hospital downtown.",
+            "ptExample": "Eles estão construindo um novo hospital no centro."
+          },
+          {
+            "enExample": "She built a strong reputation over the years.",
+            "ptExample": "Ela construiu uma reputação sólida ao longo dos anos."
+          }
+        ],
+        "synonyms": ["construct", "create", "assemble", "develop"],
+        "antonyms": ["destroy", "demolish", "tear down"],
+        "seeAlso": ["construct", "establish"],
+        "notes": [
+          {
+            "enNote": "Can be used both literally (build a house) and figuratively (build a career).",
+            "ptNote": "Pode ser usado de forma literal (construir uma casa) ou figurada (construir uma carreira)."
+          }
+        ]
+      },
+      {
+        "word": "build something from the ground up",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to create something completely from the beginning, often with great effort",
+        "ptDefinition": "criar algo totalmente do zero, geralmente com muito esforço",
+        "examples": [
+          {
+            "enExample": "They built the company from the ground up with no outside help.",
+            "ptExample": "Eles construíram a empresa do zero sem ajuda externa."
+          },
+          {
+            "enExample": "This house was built from the ground up after the fire.",
+            "ptExample": "Esta casa foi construída do zero depois do incêndio."
+          }
+        ],
+        "synonyms": [
+          "start from scratch",
+          "create from zero",
+          "construct completely"
+        ],
+        "antonyms": ["inherit", "modify", "remodel"],
+        "seeAlso": ["start from scratch", "lay the foundation"],
+        "notes": [
+          {
+            "enNote": "Often used for businesses, systems, or projects that are started entirely anew.",
+            "ptNote": "Frequentemente usado para empresas, sistemas ou projetos iniciados totalmente do zero."
+          }
+        ]
+      },
+      {
+        "word": "be burned out",
+        "partOfSpeech": "adjective phrase",
+        "enDefinition": "feeling extremely tired or stressed, especially due to work or prolonged effort",
+        "ptDefinition": "sentir-se extremamente cansado ou estressado, especialmente devido ao trabalho ou esforço prolongado",
+        "examples": [
+          {
+            "enExample": "After months of overtime, she felt completely burned out.",
+            "ptExample": "Depois de meses fazendo horas extras, ela se sentiu completamente exausta."
+          },
+          {
+            "enExample": "Many professionals suffer from being burned out in high-pressure jobs.",
+            "ptExample": "Muitos profissionais sofrem de esgotamento em empregos de alta pressão."
+          }
+        ],
+        "synonyms": ["exhausted", "overworked", "fatigued"],
+        "antonyms": ["energized", "refreshed", "rested"],
+        "seeAlso": ["burnout syndrome", "stress"],
+        "notes": [
+          {
+            "enNote": "Commonly used in workplace and mental health contexts.",
+            "ptNote": "Usado frequentemente em contextos de trabalho e saúde mental."
+          }
+        ]
+      },
+      {
+        "word": "break the news",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to tell someone important or surprising information, often bad news",
+        "ptDefinition": "contar a alguém uma informação importante ou surpreendente, muitas vezes uma má notícia",
+        "examples": [
+          {
+            "enExample": "She had to break the news to her parents about the accident.",
+            "ptExample": "Ela teve que contar aos pais sobre o acidente."
+          },
+          {
+            "enExample": "He didn't know how to break the news of the company's closure to the employees.",
+            "ptExample": "Ele não sabia como dar a notícia do fechamento da empresa aos funcionários."
+          }
+        ],
+        "synonyms": ["inform", "announce", "reveal"],
+        "antonyms": ["hide", "conceal", "withhold"],
+        "seeAlso": ["deliver the news", "break it to someone gently"],
+        "notes": [
+          {
+            "enNote": "Often used when the news is difficult, emotional, or unexpected.",
+            "ptNote": "Frequentemente usada quando a notícia é difícil, emocional ou inesperada."
+          }
+        ]
+      },
+      {
+        "word": "beyond the call of duty",
+        "partOfSpeech": "idiom",
+        "enDefinition": "going above and beyond what is normally required or expected",
+        "ptDefinition": "fazer mais do que o exigido ou esperado",
+        "examples": [
+          {
+            "enExample": "The firefighter went beyond the call of duty to save the children.",
+            "ptExample": "O bombeiro foi além do dever para salvar as crianças."
+          },
+          {
+            "enExample": "Her dedication was truly beyond the call of duty.",
+            "ptExample": "A dedicação dela foi realmente além do dever."
+          }
+        ],
+        "synonyms": ["go the extra mile", "exceed expectations"],
+        "antonyms": ["bare minimum", "neglect responsibility"],
+        "seeAlso": ["above and beyond"],
+        "notes": [
+          {
+            "enNote": "Often used to praise someone for exceptional effort, especially in service roles.",
+            "ptNote": "Usada para elogiar esforços excepcionais, especialmente em cargos de serviço."
+          }
+        ]
+      },
+      {
+        "word": "on a tight budget",
+        "partOfSpeech": "idiom",
+        "enDefinition": "having very little money to spend; needing to spend money carefully",
+        "ptDefinition": "ter pouco dinheiro para gastar; precisar gastar com cautela",
+        "examples": [
+          {
+            "enExample": "As a student, I’m on a tight budget, so I rarely eat out.",
+            "ptExample": "Como estudante, estou com o orçamento apertado, então raramente como fora."
+          },
+          {
+            "enExample": "They managed to plan a wedding on a tight budget.",
+            "ptExample": "Eles conseguiram planejar um casamento com um orçamento apertado."
+          }
+        ],
+        "synonyms": ["low on funds", "financially limited", "on a shoestring"],
+        "antonyms": ["flush with cash", "financially comfortable"],
+        "seeAlso": ["tighten the belt", "on a shoestring budget"],
+        "notes": [
+          {
+            "enNote": "Often used when discussing financial constraints or frugal living.",
+            "ptNote": "Frequentemente usado ao falar sobre limitações financeiras ou vida econômica."
+          }
+        ]
+      },
+      {
+        "word": "more bang for the buck",
+        "partOfSpeech": "idiom",
+        "enDefinition": "getting better value for the money spent; more return for the same investment",
+        "ptDefinition": "obter mais valor pelo dinheiro gasto; melhor custo-benefício",
+        "examples": [
+          {
+            "enExample": "We chose the second supplier because they offered more bang for the buck.",
+            "ptExample": "Escolhemos o segundo fornecedor porque oferecia melhor custo-benefício."
+          },
+          {
+            "enExample": "Streaming services are giving viewers more bang for their buck these days.",
+            "ptExample": "Os serviços de streaming estão oferecendo mais valor pelo dinheiro hoje em dia."
+          }
+        ],
+        "synonyms": ["value for money", "good deal", "cost-effective"],
+        "antonyms": ["overpriced", "poor value"],
+        "seeAlso": ["worth every penny", "get your money’s worth"],
+        "notes": [
+          {
+            "enNote": "Originally from marketing and military jargon.",
+            "ptNote": "Originou-se de jargão militar e de marketing."
+          }
+        ]
+      },
+      {
+        "word": "break one’s budget",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to cost more money than someone can afford or has planned to spend",
+        "ptDefinition": "custar mais do que alguém pode pagar ou havia planejado gastar",
+        "examples": [
+          {
+            "enExample": "Buying that designer bag would definitely break my budget.",
+            "ptExample": "Comprar aquela bolsa de grife definitivamente estouraria meu orçamento."
+          },
+          {
+            "enExample": "They wanted a big wedding, but they didn't want to break their budget.",
+            "ptExample": "Eles queriam um casamento grande, mas não queriam ultrapassar o orçamento."
+          }
+        ],
+        "synonyms": ["go over budget", "overspend", "exceed budget"],
+        "antonyms": ["stay within budget", "be economical"],
+        "seeAlso": ["on a tight budget", "cut costs"],
+        "notes": [
+          {
+            "enNote": "Often used in financial or shopping contexts to describe overspending.",
+            "ptNote": "Usado frequentemente em contextos financeiros ou de compras para descrever gastos excessivos."
+          }
+        ]
+      },
+      {
+        "word": "no-brainer",
+        "phonetics": "/ˈnoʊˌbreɪ.nɚ/",
+        "partOfSpeech": "noun (informal)",
+        "enDefinition": "something that is very obvious or requires little thought",
+        "ptDefinition": "algo muito óbvio ou que exige pouco pensamento",
+        "examples": [
+          {
+            "enExample": "Accepting the job offer was a no-brainer — great salary and location.",
+            "ptExample": "Aceitar a oferta de emprego foi uma decisão óbvia — ótimo salário e localização."
+          },
+          {
+            "enExample": "Wearing a seatbelt is a no-brainer — it keeps you safe.",
+            "ptExample": "Usar o cinto de segurança é uma decisão óbvia — ele te mantém seguro."
+          }
+        ],
+        "synonyms": ["obvious choice", "easy decision"],
+        "antonyms": ["dilemma", "tough call"],
+        "seeAlso": ["slam dunk", "walk in the park"],
+        "notes": [
+          {
+            "enNote": "Often used in casual conversation to describe easy decisions.",
+            "ptNote": "Usado frequentemente em conversas informais para descrever decisões fáceis."
+          }
+        ]
+      },
+      {
+        "word": "began",
+        "phonetics": "/bɪˈɡæn/",
+        "partOfSpeech": "irregular verb (past of begin) ",
+        "examples": [
+          {
+            "enExample": "She began working at the company last year.",
+            "ptExample": "Ela começou a trabalhar na empresa no ano passado."
+          },
+          {
+            "enExample": "The movie began at exactly 8 p.m.",
+            "ptExample": "O filme começou exatamente às 20h."
+          }
+        ]
+      },
+      {
+        "word": "begin",
+        "phonetics": "/bɪˈɡɪn/",
+        "partOfSpeech": "verb (present tense)",
+        "enDefinition": "to start doing something",
+        "ptDefinition": "começar a fazer algo",
+        "examples": [
+          {
+            "enExample": "We will begin the meeting at 9 a.m.",
+            "ptExample": "Vamos começar a reunião às 9 da manhã."
+          }
+        ],
+        "synonyms": ["start, commence, initiate"],
+        "antonyms": ["end, finish, conclude"],
+        "seeAlso": "get started"
+      },
+      {
+        "word": "I wasn’t born yesterday",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to say that you're not easily fooled because you're not naive or inexperienced",
+        "ptDefinition": "usado para dizer que você não é facilmente enganado porque não é ingênuo ou inexperiente",
+        "examples": [
+          {
+            "enExample": "You expect me to believe that? I wasn’t born yesterday.",
+            "ptExample": "Você espera que eu acredite nisso? Eu não nasci ontem."
+          },
+          {
+            "enExample": "Don’t try to trick me – I wasn’t born yesterday.",
+            "ptExample": "Não tente me enganar – eu não nasci ontem."
+          }
+        ],
+        "synonyms": ["I’m not stupid, I know what’s going on"],
+        "antonyms": ["naive, gullible"],
+        "seeAlso": "pull the wool over someone’s eyes, fool me once",
+        "notes": [
+          {
+            "enNote": "Often said with sarcasm or irritation when someone tries to deceive you.",
+            "ptNote": "Frequentemente dito com sarcasmo ou irritação quando alguém tenta enganar você."
+          }
+        ]
+      },
+      {
+        "word": "butter up",
+        "phonetics": "ˈbʌtər ʌp",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to flatter someone excessively or ingratiate oneself to gain favor or advantage",
+        "ptDefinition": "bajular alguém excessivamente ou agradar para ganhar favor ou vantagem",
+        "examples": [
+          {
+            "enExample": "He’s trying to butter up his teacher to get a better grade.",
+            "ptExample": "Ele está tentando puxar o saco da professora para conseguir uma nota melhor."
+          },
+          {
+            "enExample": "Don’t butter me up; just tell me the truth.",
+            "ptExample": "Não me puxe o saco; apenas me diga a verdade."
+          }
+        ],
+        "synonyms": ["flatter, ingratiate oneself, suck up to"],
+        "antonyms": ["criticize, offend, insult"],
+        "seeAlso": "brown-nose, kiss up, suck up",
+        "notes": [
+          {
+            "enNote": "Informal phrase often used in casual conversation.",
+            "ptNote": "Expressão informal frequentemente usada em conversas casuais."
+          }
+        ]
+      },
+      {
+        "word": "brownie points",
+        "phonetics": "ˈbraʊni pɔɪnts",
+        "partOfSpeech": "idiom",
+        "enDefinition": "informal term referring to credit or approval earned for doing something good or helpful.",
+        "ptDefinition": "termo informal que se refere a crédito ou aprovação conquistada por fazer algo bom ou útil",
+        "examples": [
+          {
+            "enExample": "She earned brownie points with her boss by staying late to finish the project.",
+            "ptExample": "Ela ganhou pontos com o chefe por ficar até tarde para terminar o projeto."
+          },
+          {
+            "enExample": "Helping out around the house will get you some brownie points with your parents.",
+            "ptExample": "Ajudar nas tarefas de casa vai te render alguns pontos com seus pais."
+          }
+        ],
+        "synonyms": ["credit, approval, recognition"],
+        "antonyms": ["disapproval, criticism"],
+        "seeAlso": "kudos, praise, recognition",
+        "notes": [
+          {
+            "enNote": "Often used humorously to describe informal rewards for good behavior.",
+            "ptNote": "Frequentemente usado de forma humorística para descrever recompensas informais por bom comportamento."
+          }
+        ]
+      },
+      {
+        "word": "not a bad guy",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to describe someone who is generally good, kind, or decent, even if they have some flaws or make mistakes",
+        "ptDefinition": "usado para descrever alguém que é geralmente bom, gentil ou decente, mesmo que tenha alguns defeitos ou cometa erros",
+        "examples": [
+          {
+            "enExample": "He may seem strict, but he's not a bad guy once you get to know him.",
+            "ptExample": "Ele pode parecer rígido, mas não é uma má pessoa quando você o conhece melhor."
+          },
+          {
+            "enExample": "People think he's unfriendly, but honestly, he's not a bad guy.",
+            "ptExample": "As pessoas acham que ele é antipático, mas sinceramente, ele não é uma má pessoa."
+          }
+        ],
+        "synonyms": ["decent person", "good person", "nice guy"],
+        "antonyms": ["bad person", "villain", "wrongdoer"],
+        "seeAlso": ["good guy", "not so bad", "decent"],
+        "notes": [
+          {
+            "enNote": "This phrase is often used to defend or excuse someone who may be misunderstood or judged harshly.",
+            "ptNote": "Esta frase é frequentemente usada para defender ou desculpar alguém que pode ser mal compreendido ou julgado com severidade."
+          }
+        ]
+      },
+      {
+        "word": "push one’s buttons",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to deliberately say or do something to annoy or provoke someone; to trigger a strong emotional reaction in someone, often irritation or anger",
+        "ptDefinition": "deliberadamente dizer ou fazer algo para irritar ou provocar alguém; desencadear uma reação emocional forte em alguém, geralmente irritação ou raiva",
+        "examples": [
+          {
+            "enExample": "He knows exactly how to push my buttons and make me angry.",
+            "ptExample": "Ele sabe exatamente como me provocar e me deixar irritado."
+          },
+          {
+            "enExample": "Don’t let her push your buttons—just ignore her comments.",
+            "ptExample": "Não deixe ela te provocar—apenas ignore os comentários dela."
+          }
+        ],
+        "synonyms": [
+          "provoke",
+          "annoy",
+          "irritate",
+          "get under someone's skin"
+        ],
+        "antonyms": ["calm", "soothe", "comfort"],
+        "seeAlso": ["wind up", "get on someone's nerves"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used when someone intentionally tries to elicit a reaction, especially negative, from another person.",
+            "ptNote": "Este idiom é frequentemente usado quando alguém tenta intencionalmente provocar uma reação, especialmente negativa, em outra pessoa."
+          }
+        ]
+      },
+      {
+        "word": "on board",
+        "phonetics": "/ɒn bɔːrd/",
+        "partOfSpeech": "adjective,",
+        "enDefinition": "1. being a member of a team or group 2. to agree or support a plan or idea.",
+        "ptDefinition": "1. ser membro de uma equipe ou grupo 2. concordar ou apoiar um plano ou ideia.",
+        "examples": [
+          {
+            "enExample": "The new employee is on board with our project and ready to contribute.",
+            "ptExample": "O novo funcionário está a bordo com nosso projeto e pronto para contribuir."
+          },
+          {
+            "enExample": "We need to make sure everyone is on board with the changes before moving forward.",
+            "ptExample": "Precisamos garantir que todos estejam a bordo com as mudanças antes de seguir em frente."
+          }
+        ],
+        "synonyms": ["in agreement", "supportive", "aligned", "with us"],
+        "antonyms": ["opposed", "against", "disagreeing"],
+        "seeAlso": ["team", "collaboration", "agreement"],
+        "notes": [
+          {
+            "enNote": "'On board' is often used in business and team settings to describe someone's agreement or readiness to participate in a plan or project.",
+            "ptNote": "'On board' é frequentemente usado em ambientes de negócios e equipes para descrever o acordo ou disposição de alguém em participar de um plano ou projeto."
+          }
+        ]
+      },
+      {
+        "word": "burn one's bridges",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to do something that makes it impossible to go back to a previous situation or relationship; to destroy one's path, connections, or opportunities, often intentionally and irreversibly",
+        "ptDefinition": "fazer algo que torna impossível voltar a uma situação ou relacionamento anterior; destruir seu próprio caminho, conexões ou oportunidades, muitas vezes de forma intencional e irreversível",
+        "examples": [
+          {
+            "enExample": "He burned his bridges when he insulted his boss before quitting.",
+            "ptExample": "Ele feichou as portas quando insultou seu chefe antes de pedir demissão."
+          },
+          {
+            "enExample": "Be careful not to burn your bridges with former colleagues—you might need their help in the future.",
+            "ptExample": "Cuidado para não fechar as portas com antigos colegas — você pode precisar da ajuda deles no futuro."
+          }
+        ],
+        "synonyms": ["cut ties", "leave no way back", "sever connections"],
+        "antonyms": [
+          "keep options open",
+          "maintain relationships",
+          "leave the door open"
+        ],
+        "seeAlso": ["cross the Rubicon", "point of no return"],
+        "notes": [
+          {
+            "enNote": "This idiom comes from the military practice of burning bridges after crossing them to prevent retreat.",
+            "ptNote": "Este idiom vem da prática militar de queimar pontes após atravessá-las para impedir a retirada."
+          }
+        ]
+      },
+      {
+        "word": "bat around some ideas",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to discuss different ideas or possibilities in an informal way",
+        "ptDefinition": "discutir diferentes ideias ou possibilidades de maneira informal",
+        "examples": [
+          {
+            "enExample": "Let's bat around some ideas for the new marketing campaign.",
+            "ptExample": "Vamos discutir algumas ideias para a nova campanha de marketing."
+          },
+          {
+            "enExample": "The team spent an hour batting around ideas for the project.",
+            "ptExample": "A equipe passou uma hora discutindo ideias para o projeto."
+          }
+        ],
+        "synonyms": ["brainstorm", "discuss", "bounce ideas"],
+        "antonyms": ["decide", "conclude", "finalize"],
+        "seeAlso": ["brainstorming", "think tank"],
+        "notes": [
+          {
+            "enNote": "This informal phrase suggests a casual, collaborative discussion of possibilities without making immediate decisions.",
+            "ptNote": "Esta frase informal sugere uma discussão casual e colaborativa de possibilidades sem tomar decisões imediatas."
+          }
+        ]
+      },
+      {
+        "word": "between a rock and a hard place",
+        "partOfSpeech": "idiom",
+        "enDefinition": "in a difficult situation where both possible choices or actions are unpleasant",
+        "ptDefinition": "em uma situação difícil onde ambas as escolhas ou ações possíveis são desagradáveis",
+        "examples": [
+          {
+            "enExample": "He was between a rock and a hard place: either lie to his boss or betray his friend.",
+            "ptExample": "Ele estava entre a cruz e a espada: ou mentia para seu chefe ou traía seu amigo."
+          },
+          {
+            "enExample": "The company is between a rock and a hard place - they must either cut jobs or face bankruptcy.",
+            "ptExample": "A empresa está em uma situação difícil - deve cortar empregos ou enfrentar a falência."
+          }
+        ],
+        "synonyms": ["in a dilemma", "in a bind", "caught in the middle"],
+        "antonyms": ["in an easy situation", "having clear choices"],
+        "seeAlso": ["catch-22", "no-win situation"],
+        "notes": [
+          {
+            "enNote": "This idiom emphasizes being faced with two equally undesirable alternatives with no good outcome.",
+            "ptNote": "Este idioma enfatiza estar enfrentando duas alternativas igualmente indesejáveis sem nenhum resultado bom."
+          }
+        ]
+      },
+      {
+        "word": "belt-tightening",
+        "phonetics": "/ˈbelt ˌtaɪtnɪŋ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "reduction in spending; measures taken to reduce costs or spending",
+        "ptDefinition": "redução de gastos; medidas tomadas para reduzir custos ou despesas",
+        "examples": [
+          {
+            "enExample": "The company announced some belt-tightening measures due to the economic downturn.",
+            "ptExample": "A empresa anunciou algumas medidas de redução de gastos devido à desaceleração econômica."
+          },
+          {
+            "enExample": "The family had to do some belt-tightening after the loss of income.",
+            "ptExample": "A família teve que fazer algumas reduções de gastos após a perda de renda."
+          }
+        ],
+        "synonyms": ["austerity", "budget cuts", "cost reduction"],
+        "antonyms": ["spending increase", "expansion"],
+        "seeAlso": ["budget", "economize", "cost-cutting"],
+        "notes": [
+          {
+            "enNote": "This metaphorical expression comes from the act of tightening one's belt when losing weight, suggesting having to make do with less.",
+            "ptNote": "Esta expressão metafórica vem do ato de apertar o cinto ao perder peso, sugerindo ter que se contentar com menos."
+          }
+        ]
+      },
+      {
+        "word": "bottom line",
+        "partOfSpeech": "idiom",
+        "enDefinition": "the final total of an account or financial statement; the most important or fundamental factor",
+        "ptDefinition": "o resultado final de uma conta ou demonstração financeira; o fator mais importante ou fundamental",
+        "examples": [
+          {
+            "enExample": "The bottom line is that we need to cut costs to remain profitable.",
+            "ptExample": "O resultado final é que precisamos cortar custos para permanecer lucrativos."
+          },
+          {
+            "enExample": "When it comes to the bottom line, quality is more important than quantity.",
+            "ptExample": "Quando se trata do que realmente importa, qualidade é mais importante que quantidade."
+          }
+        ],
+        "synonyms": ["final result", "ultimate outcome", "essential point"],
+        "antonyms": ["preliminary result", "initial consideration"],
+        "seeAlso": ["net profit", "final analysis"],
+        "notes": [
+          {
+            "enNote": "This phrase originated from accounting, where the bottom line refers to the final line of a financial statement showing the net profit or loss.",
+            "ptNote": "Esta frase originou-se da contabilidade, onde a linha inferior refere-se à última linha de uma demonstração financeira mostrando o lucro ou prejuízo líquido."
+          }
+        ]
+      },
+      {
+        "word": "burn the midnight oil",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to stay up late working on a project or task",
+        "ptDefinition": "ficar acordado até tarde trabalhando em um projeto ou tarefa",
+        "examples": [
+          {
+            "enExample": "She had to burn the midnight oil to finish the report on time.",
+            "ptExample": "Ela teve que queimar o óleo da meia-noite para terminar o relatório a tempo."
+          },
+          {
+            "enExample": "He often burns the midnight oil to meet his deadlines.",
+            "ptExample": "Ele frequentemente queima o óleo da meia-noite para cumprir seus prazos."
+          }
+        ],
+        "synonyms": ["work late", "stay up late", "work overtime"],
+        "antonyms": ["rest", "relax", "take it easy"],
+        "seeAlso": ["pull an all-nighter", "work around the clock"],
+        "notes": [
+          {
+            "enNote": "This idiom originates from the time when oil lamps were used for lighting, and working late into the night required burning more oil.",
+            "ptNote": "Este idiom se origina da época em que lâmpadas a óleo eram usadas para iluminação, e trabalhar até tarde da noite exigia queimar mais óleo."
+          }
+        ]
+      },
+      {
+        "word": "bitter pill to swallow",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a difficult or unpleasant fact or situation that must be accepted",
+        "ptDefinition": "uma verdade ou situação difícil ou desagradável que deve ser aceita",
+        "examples": [
+          {
+            "enExample": "Losing the championship game was a bitter pill to swallow for the team.",
+            "ptExample": "Perder o jogo do campeonato foi uma verdade difícil de aceitar para o time."
+          },
+          {
+            "enExample": "The news of the company's bankruptcy was a bitter pill to swallow for the employees.",
+            "ptExample": "A notícia da falência da empresa foi uma verdade difícil de aceitar para os funcionários."
+          }
+        ],
+        "synonyms": ["hard truth", "unpleasant reality"],
+        "antonyms": ["pleasant surprise", "easy to accept"],
+        "seeAlso": ["hard to take", "tough to accept"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used to describe situations where acceptance is necessary despite the difficulty.",
+            "ptNote": "Este idiom é frequentemente usado para descrever situações em que a aceitação é necessária apesar da dificuldade."
+          }
+        ]
+      },
+      {
+        "word": "blow things out of proportion",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to exaggerate the importance or impact of a situation beyond what is reasonable or necessary",
+        "ptDefinition": "exagerar a importância ou o impacto de uma situação além do que é razoável ou necessário",
+        "examples": [
+          {
+            "enExample": "She tends to blow things out of proportion whenever there's a minor issue.",
+            "ptExample": "Ela tende a exagerar as coisas sempre que há um problema menor."
+          },
+          {
+            "enExample": "Don't blow things out of proportion; it's not as bad as it seems.",
+            "ptExample": "Não exagere as coisas; não é tão ruim quanto parece."
+          }
+        ],
+        "synonyms": ["exaggerate", "overstate", "overreact"],
+        "antonyms": ["understate", "downplay", "minimize"],
+        "seeAlso": ["make a mountain out of a molehill", "overblow"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used to describe situations where someone reacts excessively to a relatively minor issue.",
+            "ptNote": "Este idiom é frequentemente usado para descrever situações em que alguém reage de forma excessiva a um problema relativamente menor."
+          }
+        ]
+      },
+      {
+        "word": "big",
+        "phonetics": "/bɪɡ/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "of considerable size, extent, or intensity",
+        "ptDefinition": "de tamanho, extensão ou intensidade considerável; grande",
+        "examples": [
+          {
+            "enExample": "The elephant is a big animal.",
+            "ptExample": "O elefante é um animal grande."
+          },
+          {
+            "enExample": "She has big dreams for her future.",
+            "ptExample": "Ela tem grandes sonhos para o seu futuro."
+          }
+        ],
+        "synonyms": ["large", "huge", "enormous"],
+        "antonyms": ["small", "tiny", "little"],
+        "seeAlso": ["large", "massive"],
+        "notes": [
+          {
+            "enNote": "The word 'big' can describe physical size as well as abstract concepts like dreams or ideas.",
+            "ptNote": "A palavra 'grande' pode descrever o tamanho físico, bem como conceitos abstratos como sonhos ou ideias."
+          }
+        ]
+      },
+      {
+        "word": "bore",
+        "phonetics": "/bɔːr/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to make someone feel weary and uninterested by being dull or tedious",
+        "ptDefinition": "fazer alguém se sentir cansado e desinteressado por ser chato ou tedioso",
+        "examples": [
+          {
+            "enExample": "The lecture on ancient pottery bored the students to tears.",
+            "ptExample": "A palestra sobre cerâmica antiga entediou os alunos até as lágrimas."
+          },
+          {
+            "enExample": "He always bores me with his endless stories about his job.",
+            "ptExample": "Ele sempre me entedia com suas intermináveis histórias sobre seu trabalho."
+          }
+        ],
+        "synonyms": ["dull", "weary", "tire"],
+        "antonyms": ["interest", "excite", "entertain"],
+        "seeAlso": ["tedious", "monotonous"]
+      },
+      {
+        "word": "bored",
+        "phonetics": "/bɔːrd/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "feeling weary and impatient because one is unoccupied or lacks interest in one's current activity",
+        "ptDefinition": "sentindo-se cansado e impaciente porque está desocupado ou não tem interesse na atividade atual",
+        "examples": [
+          {
+            "enExample": "She was bored during the long meeting.",
+            "ptExample": "Ela estava entediada durante a longa reunião."
+          },
+          {
+            "enExample": "He felt bored after finishing all his work early.",
+            "ptExample": "Ele se sentiu entediado depois de terminar todo o seu trabalho cedo."
+          }
+        ],
+        "synonyms": ["uninterested", "weary", "disinterested"],
+        "antonyms": ["engaged", "interested", "entertained"],
+        "seeAlso": ["bore", "boring"],
+        "notes": [
+          {
+            "enNote": "The feeling of boredom can often lead to a desire for new or stimulating activities.",
+            "ptNote": "O sentimento de tédio pode frequentemente levar a um desejo por atividades novas ou estimulantes."
+          }
+        ]
+      },
+      {
+        "word": "boring",
+        "phonetics": "/ˈbɔːrɪŋ/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "not interesting; tedious",
+        "ptDefinition": "não interessante; tedioso",
+        "examples": [
+          {
+            "enExample": "The movie was so boring that I fell asleep.",
+            "ptExample": "O filme era tão chato que eu adormeci."
+          },
+          {
+            "enExample": "He found the lecture boring and struggled to stay awake.",
+            "ptExample": "Ele achou a palestra chata e lutou para ficar acordado."
+          }
+        ],
+        "synonyms": ["tedious", "dull", "uninteresting"],
+        "antonyms": ["exciting", "interesting", "engaging"],
+        "seeAlso": ["bore", "bored"],
+        "notes": [
+          {
+            "enNote": "Something that is boring fails to hold attention or interest.",
+            "ptNote": "Algo que é chato não consegue prender a atenção ou interesse."
+          }
+        ]
+      },
+      {
+        "word": "bigwig",
+        "phonetics": "/ˈbɪɡwɪɡ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "an important or influential person, especially in a particular organization or industry",
+        "ptDefinition": "uma pessoa importante ou influente, especialmente em uma organização ou setor específico",
+        "examples": [
+          {
+            "enExample": "The company invited all the bigwigs from the tech industry to the launch event.",
+            "ptExample": "A empresa convidou todas as figuras importantes da indústria de tecnologia para o evento de lançamento."
+          },
+          {
+            "enExample": "As a bigwig in the financial sector, he had the power to influence major decisions.",
+            "ptExample": "Como uma figura importante no setor financeiro, ele tinha o poder de influenciar grandes decisões."
+          }
+        ],
+        "synonyms": [
+          "important person",
+          "high-ranking official",
+          "influential figure",
+          "VIP"
+        ],
+        "antonyms": ["ordinary person", "subordinate", "underling"],
+        "seeAlso": ["executive", "leader", "authority"],
+        "notes": [
+          {
+            "enNote": "This term originally referred to the elaborate wigs worn by high-ranking individuals in the past, signifying their status.",
+            "ptNote": "Esse termo originalmente se referia às perucas elaboradas usadas por indivíduos de alta posição no passado, simbolizando seu status."
+          }
+        ]
+      },
+      {
+        "word": "bite the bullet",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to endure a painful or unpleasant situation that is unavoidable, often with determination or courage",
+        "ptDefinition": "enfrentar uma situação dolorosa ou desagradável que é inevitável, muitas vezes com determinação ou coragem",
+        "examples": [
+          {
+            "enExample": "She didn’t want to leave her job, but she knew she had to bite the bullet and move on.",
+            "ptExample": "Ela não queria deixar o emprego, mas sabia que precisava enfrentar a situação e seguir em frente."
+          },
+          {
+            "enExample": "Sometimes you just have to bite the bullet and deal with the consequences of your actions.",
+            "ptExample": "Às vezes, você precisa apenas enfrentar a situação e lidar com as consequências de suas ações."
+          }
+        ],
+        "synonyms": ["face the music", "tough it out", "take the plunge"],
+        "antonyms": ["avoid", "run away", "evade"],
+        "notes": [
+          {
+            "enNote": "It has been suggested that it is derived historically from the practice of having a patient clench a bullet in their teeth as a way to cope with the pain of a surgical procedure without anesthetic."
+          },
+          {
+            "ptNote": "Foi sugerido que esta expressão tem origem histórica na prática de fazer com que o paciente mordesse uma bala com os dentes como uma forma de lidar com a dor de um procedimento cirúrgico sem anestesia."
+          }
+        ]
+      },
+      {
+        "word": "beef up",
+        "phonetics": "/biːf ʌp/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to strengthen or improve something, often by adding more resources or support",
+        "ptDefinition": "reforçar ou melhorar algo, geralmente adicionando mais recursos ou apoio",
+        "examples": [
+          {
+            "enExample": "The company decided to beef up its security after the data breach.",
+            "ptExample": "A empresa decidiu reforçar sua segurança após a violação de dados."
+          },
+          {
+            "enExample": "To beef up their marketing strategy, they hired a top advertising agency.",
+            "ptExample": "Para reforçar sua estratégia de marketing, contrataram uma das melhores agências de publicidade."
+          }
+        ],
+        "synonyms": ["strengthen", "enhance", "improve"],
+        "antonyms": ["weaken", "diminish"],
+        "notes": [
+          {
+            "enNote": "The phrase can be applied to various situations, from security to marketing or even physical training."
+          },
+          {
+            "ptNote": "A expressão pode ser aplicada a várias situações, desde segurança até marketing ou até treinamento físico."
+          }
+        ]
+      },
+      {
+        "word": "back-of-the-envelope calculations",
+        "partOfSpeech": "idiom",
+        "enDefinition": "quick, approximate calculations done informally, often on any available scrap of paper",
+        "ptDefinition": "cálculos rápidos e aproximados feitos informalmente, muitas vezes em qualquer pedaço de papel disponível",
+        "examples": [
+          {
+            "enExample": "He did some back-of-the-envelope calculations to estimate the cost of the project.",
+            "ptExample": "Ele fez alguns cálculos rápidos para estimar o custo do projeto."
+          }
+        ],
+        "synonyms": ["rough estimate", "quick calculation"],
+        "antonyms": ["detailed analysis", "precise calculation"],
+        "seeAlso": ["ballpark figure", "guesstimate"]
+      },
+      {
+        "word": "back and forth on an issue",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to move or happen in one direction and then the opposite, repeatedly or alternately",
+        "ptDefinition": "mover-se ou acontecer em uma direção e depois na direção oposta, repetidamente ou alternadamente",
+        "examples": [
+          {
+            "enExample": "We had a back-and-forth discussion about the best way to handle the project.",
+            "ptExample": "Tivemos uma discussão de vai-e-vem sobre a melhor forma de lidar com o projeto."
+          },
+          {
+            "enExample": "The negotiations went back and forth for hours before a deal was finally reached.",
+            "ptExample": "As negociações se arrastaram por horas antes que um acordo fosse finalmente alcançado."
+          }
+        ],
+        "synonyms": ["alternately"],
+        "antonyms": ["settled", "resolved", "straightforward"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used to describe discussions, debates, or movements that are repetitive or constantly shifting between two points."
+          },
+          {
+            "ptNote": "Este idiom é frequentemente usado para descrever discussões, debates ou movimentos que são repetitivos ou que mudam constantemente entre dois pontos."
+          }
+        ]
+      },
+      {
+        "word": "bells and whistles",
+        "partOfSpeech": "idiom",
+        "enDefinition": "extra product features, usually using the latest technology; product features which are attractive, but not essential for the product to function",
+        "ptDefinition": "recursos extras do produto, geralmente utilizando a tecnologia mais recente; recursos do produto que são atraentes, mas não essenciais para o funcionamento do produto",
+        "examples": [
+          {
+            "enExample": "Our office just got a new copier with all the bells and whistles. I'll probably never learn how to use all of its features!",
+            "ptExample": "Nosso escritório acaba de receber uma nova copiadora com todos os acessórios. Provavelmente nunca aprenderei como usar todos os seus recursos!"
+          }
+        ]
+      },
+      {
+        "word": "big win",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a huge success; a successful product",
+        "ptDefinition": "um grande sucesso; um produto bem-sucedido",
+        "examples": [
+          {
+            "enExample": "The drug company spent millions on research and development, hoping that one of their new products would be a big win.",
+            "ptExample": "A empresa farmacêutica gastou milhões em pesquisa e desenvolvimento, esperando que um de seus novos produtos fosse um grande sucesso."
+          }
+        ]
+      },
+      {
+        "word": "bring a product to the market",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to launch or introduce a new product or service for sale to the public",
+        "ptDefinition": "lançar ou introduzir um novo produto ou serviço para venda ao público",
+        "examples": [
+          {
+            "enExample": "The company worked hard to bring their new smartphone to the market before the holiday season.",
+            "ptExample": "A empresa trabalhou arduamente para lançar seu novo smartphone no mercado antes da temporada de festas."
+          },
+          {
+            "enExample": "They are planning to bring a line of eco-friendly products to the market next year.",
+            "ptExample": "Eles estão planejando lançar uma linha de produtos ecológicos no mercado no próximo ano."
+          }
+        ],
+        "synonyms": ["launch", "introduce", "roll out"],
+        "antonyms": ["withdraw", "recall", "discontinue"],
+        "notes": [
+          {
+            "enNote": "This phrase is commonly used in business and product development contexts to describe the process of making a product available to consumers."
+          },
+          {
+            "ptNote": "Esta expressão é comumente usada em contextos de negócios e desenvolvimento de produtos para descrever o processo de disponibilizar um produto para os consumidores."
+          }
+        ]
+      },
+      {
+        "word": "bladder",
+        "phonetics": "/ˈblæd.ɚ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "an organ like a bag inside the body of a person or animal, where urine is stored before it leaves the body",
+        "ptDefinition": "bexiga"
+      },
+      {
+        "word": "bladder stones",
+        "ptDefinition": "cálculos na bexiga"
+      },
+      {
+        "word": "blockbuster",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a big success, something or someone that is forcefully or overwhelmingly impressive, effective or influential",
+        "ptDefinition": "um grande sucesso, algo ou alguém que é impressionante, eficaz ou influente de forma esmagadora",
+        "examples": [
+          {
+            "enExample": "The campaign was a blockbuster.",
+            "ptExample": "A campanha foi um grande sucesso."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Origin: This term comes from the \"blockbuster\" bombs used during World War Two by the British Royal Air Force. They were huge and created an explosive force. Blockbuster ideas similarly create a big impact — and hopefully don't cause destruction like blockbuster bombs!"
+          },
+          {
+            "ptNote": "Este termo vem das bombas \"blockbuster\" usadas durante a Segunda Guerra Mundial pela Força Aérea Real Britânica. Elas eram enormes e criavam uma força explosiva. Ideias \"blockbuster\", de forma similar, criam um grande impacto — e esperançosamente não causam destruição como as bombas blockbuster!"
+          }
+        ]
+      },
+      {
+        "word": "blow one's mind",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to amaze or overwhelm someone with something incredible or surprising",
+        "ptDefinition": "impressionar ou surpreender alguém com algo incrível ou inesperado",
+        "examples": [
+          {
+            "enExample": "It blows my mind how advanced technology has become in such a short time.",
+            "ptExample": "Me impressiona como a tecnologia avançou tanto em tão pouco tempo."
+          },
+          {
+            "enExample": "The breathtaking view of the mountains really blew my mind.",
+            "ptExample": "A vista deslumbrante das montanhas realmente me impressionou."
+          }
+        ],
+        "synonyms": ["amaze", "astonish", "overwhelm"],
+        "antonyms": ["bore", "disappoint", "underwhelm"],
+        "seeAlso": ["leave speechless", "take one's breath away"]
+      },
+      {
+        "word": "break even",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to reach a point where total revenue equals total costs, resulting in neither profit nor loss",
+        "ptDefinition": "atingir um ponto onde a receita total é igual ao custo total, resultando sem lucro e sem prejuízo",
+        "examples": [
+          {
+            "enExample": "The company expects to break even by the end of the second quarter.",
+            "ptExample": "A empresa espera alcançar o ponto de equilíbrio até o final do segundo trimestre."
+          },
+          {
+            "enExample": "After the initial investment, the business was finally able to break even.",
+            "ptExample": "Após o investimento inicial, o negócio finalmente conseguiu atingir o ponto de equilíbrio."
+          }
+        ],
+        "synonyms": ["balance", "reach equilibrium", "make no profit or loss"],
+        "antonyms": ["lose money", "make a profit"],
+        "seeAlso": ["in the black", "in the red"]
+      }
+    ]
+  }
+]

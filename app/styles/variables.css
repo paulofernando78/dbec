@@ -1,0 +1,26 @@
+@import "@fontsource/anton";
+/* Supports weights 100-900 */
+@import "@fontsource-variable/montserrat/wght.css";
+@import "@fontsource/luckiest-guy";
+/* Supports weights 200-700 */
+@import "@fontsource-variable/oswald/wght.css";
+
+@theme {
+  --font-anton: "Anton", sans-serif;
+  --font-montserrat: "Montserrat Variable", sans-serif;
+  --font-luckiest-guy: "Luckiest Guy", system-ui;
+  --font-oswald: 'Oswald Variable', sans-serif;
+}
+
+:root {
+  --background: #e8e8e8;
+  --background-nav: linear-gradient(140deg, var(--slate-4), var(--slate-0));
+  --text-color: var(--slate-8);
+  --text-color-fixed: var(--slate-8);
+}
+
+.dark {
+  --background: #212121;
+  --text-color: var(--slate-2);
+  --text-color-fixed: var(--slate-2);
+}

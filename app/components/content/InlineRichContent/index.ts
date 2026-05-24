@@ -1,0 +1,1 @@
+export { InlineRichContent } from "./InlineRichContent";

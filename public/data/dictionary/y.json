@@ -1,0 +1,94 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "year's time",
+        "phonetics": "/jɪrz taɪm/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "a period of one year from now or from a specified point in time; one year later",
+        "ptDefinition": "daqui a um ano; dentro de um ano; um período de um ano a partir de agora ou de um momento específico",
+        "examples": [
+          {
+            "enExample": "We hope to move into our new house in a year's time.",
+            "ptExample": "Esperamos nos mudar para nossa nova casa daqui a um ano."
+          },
+          {
+            "enExample": "A lot can change in a year's time.",
+            "ptExample": "Muita coisa pode mudar em um ano."
+          }
+        ],
+        "synonyms": [
+          "in one year",
+          "one year later",
+          "within a year",
+          "a year from now"
+        ],
+        "antonyms": ["now", "immediately", "at once"],
+        "seeAlso": ["in no time", "in time", "a month's time", "from now"],
+        "notes": [
+          {
+            "enNote": "Often used after 'in': 'in a year's time'. Common in British and general English.",
+            "ptNote": "Frequentemente usado após 'in': 'in a year's time'. Comum no inglês britânico e no inglês geral."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "years-time.avif",
+            "alt": "calendar showing one year passing over time"
+          }
+        ]
+      },
+      {
+        "word": "you can say that again",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to strongly agree with what someone has just said",
+        "ptDefinition": "com certeza; pode apostar; concordo totalmente",
+        "examples": [
+          {
+            "enExample": "“This project is harder than we expected.” — “You can say that again.”",
+            "ptExample": "“Este projeto está mais difícil do que esperávamos.” — “Com certeza.”"
+          },
+          {
+            "enExample": "“It’s really hot today.” — “You can say that again.”",
+            "ptExample": "“Está muito quente hoje.” — “Pode apostar.”"
+          }
+        ],
+        "synonyms": ["absolutely", "exactly", "I agree", "tell me about it"],
+        "antonyms": ["I disagree", "not really"],
+        "seeAlso": ["I couldn't agree more", "exactly", "tell me about it"],
+        "notes": [
+          {
+            "enNote": "Common in informal conversation to emphasize strong agreement.",
+            "ptNote": "Comum em conversas informais para enfatizar forte concordância."
+          }
+        ]
+      },
+      {
+        "word": "yes man",
+        "phonetics": "ˈjɛs mæn",
+        "partOfSpeech": "noun",
+        "enDefinition": "a person who agrees with everything their superior says, often without questioning or thinking independently",
+        "ptDefinition": "pessoa que concorda com tudo que seu superior diz, geralmente sem questionar ou pensar de forma independente",
+        "examples": [
+          {
+            "enExample": "He's just a yes man who never challenges the boss's decisions.",
+            "ptExample": "Ele é apenas um puxa-saco que nunca questiona as decisões do chefe."
+          },
+          {
+            "enExample": "Don't be a yes man; share your own ideas and opinions.",
+            "ptExample": "Não seja um puxa-saco; compartilhe suas próprias ideias e opiniões."
+          }
+        ],
+        "synonyms": ["sycophant, follower, toady"],
+        "antonyms": ["rebel, critic, independent thinker"],
+        "seeAlso": "brown-noser, bootlicker, suck-up",
+        "notes": [
+          {
+            "enNote": "Often used in a negative sense to describe lack of independent judgment.",
+            "ptNote": "Frequentemente usado de forma negativa para descrever falta de julgamento independente."
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1062 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "What’s up?",
+        "partOfSpeech": "idiom / informal greeting",
+        "enDefinition": "used as an informal greeting to ask how someone is or what is happening",
+        "ptDefinition": "e aí?; o que está acontecendo?; tudo bem? (cumprimento informal)",
+        "examples": [
+          {
+            "enExample": "Hey, what’s up?",
+            "ptExample": "E aí?"
+          },
+          {
+            "enExample": "You look worried. What’s up?",
+            "ptExample": "Você parece preocupado. O que houve?"
+          }
+        ],
+        "synonyms": ["what’s going on", "how’s it going", "what’s new"],
+        "antonyms": [],
+        "seeAlso": ["how’s it going", "what’s going on"],
+        "notes": [
+          {
+            "enNote": "Very common in informal spoken English as a casual greeting or to ask what is happening.",
+            "ptNote": "Muito comum no inglês falado informal como cumprimento casual ou para perguntar o que está acontecendo."
+          }
+        ]
+      },
+      {
+        "word": "wise guy",
+        "partOfSpeech": "noun (informal)",
+        "enDefinition": "a person who acts as if they know everything, often in an annoying, sarcastic, or disrespectful way",
+        "ptDefinition": "sabichão; pessoa que se acha esperta demais, geralmente de forma irritante ou sarcástica",
+        "examples": [
+          {
+            "enExample": "Don’t be a wise guy — just answer the question.",
+            "ptExample": "Não seja sabichão — apenas responda à pergunta."
+          },
+          {
+            "enExample": "He made a wise guy comment during the meeting.",
+            "ptExample": "Ele fez um comentário sarcástico durante a reunião."
+          }
+        ],
+        "synonyms": ["smart-aleck", "know-it-all", "smartass"],
+        "antonyms": ["humble person", "respectful person"],
+        "seeAlso": ["smart-aleck", "know-it-all", "sarcastic"],
+        "notes": [
+          {
+            "enNote": "Usually used negatively to criticize someone who is sarcastic or shows off their knowledge.",
+            "ptNote": "Normalmente usado de forma negativa para criticar alguém que é sarcástico ou gosta de se mostrar esperto."
+          }
+        ]
+      },
+      {
+        "word": "When pigs fly!",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to say that something will never happen or is extremely unlikely",
+        "ptDefinition": "usado para dizer que algo nunca vai acontecer ou é extremamente improvável",
+        "examples": [
+          {
+            "enExample": "He says he’ll apologize — yeah, when pigs fly!",
+            "ptExample": "Ele diz que vai pedir desculpas — sei, só quando porcos voarem!"
+          },
+          {
+            "enExample": "You think she’ll agree to that? When pigs fly!",
+            "ptExample": "Você acha que ela vai concordar com isso? Nunca!"
+          }
+        ],
+        "synonyms": ["never", "no chance", "not in a million years"],
+        "antonyms": ["definitely", "for sure", "certainly"],
+        "seeAlso": ["not a chance", "over my dead body", "in your dreams"],
+        "notes": [
+          {
+            "enNote": "Very informal and often humorous. Common in spoken English to express strong disbelief.",
+            "ptNote": "Muito informal e geralmente humorístico. Usado no inglês falado para expressar forte descrença."
+          }
+        ]
+      },
+      {
+        "word": "waive",
+        "phonetics": "/weɪv/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To officially give up a right, rule, or claim, especially by stating that it is not required or will not be enforced.",
+        "ptDefinition": "Renunciar oficialmente a um direito, regra ou exigência, declarando que ela não será aplicada ou cobrada.",
+        "examples": [
+          {
+            "enExample": "The U.S. government may waive certain requirements for the National Interest Waiver category.",
+            "ptExample": "O governo dos EUA pode dispensar certos requisitos para a categoria National Interest Waiver."
+          },
+          {
+            "enExample": "He decided to waive his right to remain silent during the interview.",
+            "ptExample": "Ele decidiu renunciar ao seu direito de permanecer em silêncio durante a entrevista."
+          }
+        ],
+        "synonyms": "relinquish, forgo, renounce, give up, surrender",
+        "antonyms": "enforce, demand, require, claim",
+        "seeAlso": "waiver, exempt, renounce",
+        "notes": [
+          {
+            "enNote": "Used often in legal, financial, and immigration contexts to indicate that someone voluntarily gives up a right or condition.",
+            "ptNote": "Usado frequentemente em contextos jurídicos, financeiros e de imigração para indicar que alguém renuncia voluntariamente a um direito ou condição."
+          }
+        ]
+      },
+      {
+        "word": "waiver",
+        "phonetics": "US /ˈweɪ.vɚ/, UK /ˈweɪ.vər",
+        "partOfSpeech": "noun",
+        "enDefinition": "An official decision stating that a rule, requirement, or right can be ignored or not applied.",
+        "ptDefinition": "dispensa oficial que permite não seguir uma regra, requisito ou obrigação; renúncia, declaração de renúncia",
+        "examples": [
+          {
+            "enExample": "The National Interest Waiver allows applicants to bypass the job offer requirement.",
+            "ptExample": "O National Interest Waiver permite que os candidatos dispensem a exigência de uma oferta de emprego."
+          },
+          {
+            "enExample": "She signed a waiver giving up her right to a refund.",
+            "ptExample": "Ela assinou uma dispensa abrindo mão do direito ao reembolso."
+          }
+        ],
+        "synonyms": "exemption, release, dispensation, renunciation",
+        "antonyms": "requirement, obligation, mandate",
+        "seeAlso": "waive, exemption, permission",
+        "notes": [
+          {
+            "enNote": "Commonly used in legal, academic, and immigration contexts to indicate that a formal rule or condition is being set aside.",
+            "ptNote": "Comumente usado em contextos jurídicos, acadêmicos e de imigração para indicar que uma exigência formal foi dispensada."
+          }
+        ]
+      },
+      {
+        "word": "watch",
+        "phonetics": "/wɑːtʃ/",
+        "partOfSpeech": "verb / noun",
+        "enDefinition": "Verb: to look at or observe attentively over a period of time; to monitor. Noun: a small timepiece worn typically on the wrist; the act of observing.",
+        "ptDefinition": "Verbo: olhar ou observar atentamente por um período de tempo; monitorar. Substantivo: um pequeno relógio geralmente usado no pulso; o ato de observar.",
+        "examples": [
+          {
+            "enExample": "She likes to watch movies on weekends.",
+            "ptExample": "Ela gosta de assistir filmes nos finais de semana."
+          },
+          {
+            "enExample": "He checked his watch to see the time.",
+            "ptExample": "Ele olhou para o relógio para ver as horas."
+          },
+          {
+            "enExample": "The guard kept watch all night.",
+            "ptExample": "O guarda ficou de vigia a noite toda."
+          }
+        ],
+        "synonyms": ["observe", "monitor", "look at", "timepiece"],
+        "antonyms": ["ignore", "neglect", "overlook"],
+        "seeAlso": ["look", "see", "view", "clock"],
+        "notes": [
+          {
+            "enNote": "As a verb, 'watch' often implies paying close attention for a period of time. As a noun, it refers to a device for telling time or the act of keeping guard.",
+            "ptNote": "Como verbo, 'watch' geralmente implica prestar atenção por um período de tempo. Como substantivo, refere-se a um dispositivo para marcar o tempo ou ao ato de vigiar."
+          }
+        ]
+      },
+      {
+        "word": "whale",
+        "phonetics": "/weɪl/ (US)",
+        "partOfSpeech": "noun",
+        "enDefinition": "a very large marine mammal that lives in the ocean",
+        "ptDefinition": "um mamífero marinho muito grande que vive no oceano",
+        "examples": [
+          {
+            "enExample": "The whale swam gracefully near the surface of the water",
+            "ptExample": "A baleia nadava graciosamente perto da superfície da água"
+          },
+          {
+            "enExample": "We saw a whale breaching while on the boat tour",
+            "ptExample": "Vimos uma baleia saltando enquanto estávamos no passeio de barco"
+          }
+        ],
+        "images": [
+          {
+            "width": "100%",
+            "src": "/assets/images/general/whale.avif",
+            "alt": "A picture of a whale"
+          }
+        ],
+        "synonyms": ["cetacean, leviathan"],
+        "seeAlso": ["dolphin, porpoise"],
+        "notes": [
+          {
+            "enNote": "Whales are among the largest animals on Earth and include species such as the blue whale and humpback whale",
+            "ptNote": "As baleias estão entre os maiores animais da Terra e incluem espécies como a baleia azul e a jubarte"
+          }
+        ]
+      },
+      {
+        "word": "wear many hats",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to have many different roles or responsibilities, especially within a job or organization",
+        "ptDefinition": "ter muitas funções ou responsabilidades diferentes, especialmente em um trabalho ou organização",
+        "examples": [
+          {
+            "enExample": "In a small company, employees often have to wear many hats.",
+            "ptExample": "Em uma empresa pequena, os funcionários frequentemente precisam desempenhar várias funções."
+          },
+          {
+            "enExample": "As a parent, she wears many hats: chef, teacher, nurse, and more.",
+            "ptExample": "Como mãe, ela exerce muitos papéis: cozinheira, professora, enfermeira e outros."
+          }
+        ],
+        "synonyms": ["multitask", "juggle roles", "be versatile"],
+        "antonyms": ["specialize", "focus on one role"],
+        "seeAlso": ["jack of all trades", "multitasking", "versatile"],
+        "notes": [
+          {
+            "enNote": "This idiom is commonly used in workplaces or situations where people must handle a variety of tasks.",
+            "ptNote": "Este idiom é comumente usado em ambientes de trabalho ou situações em que as pessoas precisam lidar com várias tarefas."
+          }
+        ]
+      },
+      {
+        "word": "wolf in sheep’s clothing",
+        "phonetics": "/wʊlf ɪn ʃiːps ˈkloʊðɪŋ/",
+        "partOfSpeech": "idiom",
+        "enDefinition": "someone who hides malicious intent under a harmless or innocent appearance; a person who pretends to be kind or trustworthy but is actually dangerous or deceitful",
+        "ptDefinition": "alguém que esconde intenções maliciosas sob uma aparência inocente ou inofensiva; pessoa que finge ser gentil ou confiável, mas na verdade é perigosa ou enganadora",
+        "examples": [
+          {
+            "enExample": "He seemed friendly, but turned out to be a wolf in sheep’s clothing.",
+            "ptExample": "Ele parecia amigável, mas acabou sendo um lobo em pele de cordeiro."
+          },
+          {
+            "enExample": "Beware of wolves in sheep’s clothing when making business deals.",
+            "ptExample": "Cuidado com lobos em pele de cordeiro ao fazer negócios."
+          }
+        ],
+        "synonyms": ["deceiver", "impostor", "pretender", "fraud"],
+        "antonyms": ["honest person", "straightforward", "genuine"],
+        "seeAlso": ["snake in the grass", "double-faced", "two-faced"],
+        "notes": [
+          {
+            "enNote": "This idiom comes from an ancient fable and is often used to warn against people who are not what they seem.",
+            "ptNote": "Este idiom vem de uma fábula antiga e é frequentemente usado para alertar contra pessoas que não são o que parecem."
+          }
+        ]
+      },
+      {
+        "word": "patch",
+        "phonetics": "/pætʃ/",
+        "partOfSpeech": "noun / verb",
+        "enDefinition": "Noun: a small piece of material used to mend or cover a hole; a small area that is different from the surrounding area. Verb: to mend or cover a hole with a piece of material.",
+        "ptDefinition": "Substantivo: um pequeno pedaço de material usado para remendar ou cobrir um buraco; uma pequena área diferente do entorno. Verbo: remendar ou cobrir um buraco com um pedaço de material.",
+        "examples": [
+          {
+            "enExample": "She sewed a patch onto her torn jeans.",
+            "ptExample": "Ela costurou um remendo na sua calça jeans rasgada."
+          },
+          {
+            "enExample": "The garden had a patch of colorful flowers.",
+            "ptExample": "O jardim tinha um canteiro de flores coloridas."
+          },
+          {
+            "enExample": "He patched the hole in the roof before the rain came.",
+            "ptExample": "Ele remendou o buraco no telhado antes da chuva chegar."
+          },
+          {
+            "enExample": "The software company released a patch to fix the security bug.",
+            "ptExample": "A empresa de software lançou uma atualização para corrigir o bug de segurança."
+          }
+        ],
+        "synonyms": ["mend, repair, fix, piece, area"],
+        "antonyms": ["tear, damage, break"],
+        "seeAlso": "mend, fix, repair",
+        "notes": [
+          {
+            "enNote": "Can refer to physical material, areas of land, or software updates.",
+            "ptNote": "Pode se referir a material físico, áreas de terra ou atualizações de software."
+          }
+        ]
+      },
+      {
+        "word": "wander",
+        "phonetics": "/ˈwɑːndər/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To walk or move in a leisurely, aimless, or irregular way; to stray from a path or topic.",
+        "ptDefinition": "Andar ou se mover de forma descontraída, sem rumo ou irregular; desviar-se de um caminho ou assunto.",
+        "examples": [
+          {
+            "enExample": "He wandered through the streets of the old city, taking in the sights.",
+            "ptExample": "Ele vagou pelas ruas da cidade velha, apreciando as paisagens."
+          },
+          {
+            "enExample": "Her thoughts began to wander during the long meeting.",
+            "ptExample": "Seus pensamentos começaram a divagar durante a longa reunião."
+          },
+          {
+            "enExample": "The child wandered away from the playground.",
+            "ptExample": "A criança se afastou do parquinho."
+          },
+          {
+            "enExample": "Sometimes I like to wander in the forest to clear my mind.",
+            "ptExample": "Às vezes gosto de passear pela floresta para clarear a mente."
+          }
+        ],
+        "synonyms": ["roam, drift, meander, stray"],
+        "antonyms": ["stay, remain, focus"],
+        "seeAlso": "roam, drift, meander",
+        "notes": [
+          {
+            "enNote": "Can refer to physical movement or mental distraction.",
+            "ptNote": "Pode se referir a movimento físico ou distração mental."
+          }
+        ]
+      },
+      {
+        "word": "walkthrough",
+        "phonetics": "/ˈwɔːkˌθruː/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A detailed explanation or demonstration of how to do something, often presented step by step. It can also refer to a rehearsal or practice run of an activity.",
+        "ptDefinition": "Uma explicação ou demonstração detalhada de como fazer algo, geralmente apresentada passo a passo. Também pode se referir a um ensaio ou simulação de uma atividade.",
+        "examples": [
+          {
+            "enExample": "The software includes a walkthrough to help new users get started.",
+            "ptExample": "O software inclui um guia passo a passo para ajudar novos usuários a começarem."
+          },
+          {
+            "enExample": "The team did a walkthrough of the presentation before the big meeting.",
+            "ptExample": "A equipe fez um ensaio da apresentação antes da grande reunião."
+          },
+          {
+            "enExample": "I watched a game walkthrough on YouTube to figure out how to beat the final boss.",
+            "ptExample": "Assisti a um walkthrough do jogo no YouTube para descobrir como derrotar o chefe final."
+          }
+        ],
+        "synonyms": ["guide, tutorial, rehearsal, run-through, demonstration"],
+        "seeAlso": ["walk somebody through, tutorial, run-through, demo"],
+        "notes": [
+          {
+            "enNote": "Common in video games, where 'walkthroughs' explain how to complete levels or challenges.",
+            "ptNote": "Muito comum em videogames, onde 'walkthroughs' explicam como completar fases ou desafios."
+          },
+          {
+            "enNote": "Also used in business or training to mean a practice session or detailed review.",
+            "ptNote": "Também usado em negócios ou treinamentos para se referir a um ensaio ou revisão detalhada."
+          }
+        ]
+      },
+      {
+        "word": "walk somebody through",
+        "phonetics": "/wɔːk ˈsʌmbədi θruː/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "To carefully explain something to someone step by step so that they understand how to do it.",
+        "ptDefinition": "Explicar algo cuidadosamente para alguém, passo a passo, para que a pessoa entenda como fazer.",
+        "examples": [
+          {
+            "enExample": "The teacher walked us through the process of writing an essay.",
+            "ptExample": "A professora nos explicou passo a passo o processo de escrever uma redação."
+          },
+          {
+            "enExample": "Can you walk me through how to install this software?",
+            "ptExample": "Você pode me explicar passo a passo como instalar este software?"
+          },
+          {
+            "enExample": "He walked her through the contract before she signed it.",
+            "ptExample": "Ele a orientou passo a passo sobre o contrato antes que ela o assinasse."
+          }
+        ],
+        "synonyms": ["guide, explain, demonstrate, instruct"],
+        "antonyms": ["confuse, mislead"],
+        "seeAlso": "talk someone through, show someone the ropes, go over",
+        "notes": [
+          {
+            "enNote": "Often used in teaching, training, or technical contexts where clarity is important.",
+            "ptNote": "Frequentemente usado em contextos de ensino, treinamento ou técnicos, onde a clareza é importante."
+          },
+          {
+            "enNote": "Can also be used figuratively, for guiding someone through a difficult situation.",
+            "ptNote": "Também pode ser usado de forma figurada, para orientar alguém em uma situação difícil."
+          }
+        ]
+      },
+      {
+        "word": "worthwhile",
+        "phonetics": "/ˌwɜːrθˈwaɪl/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "Worth the time, money, or effort spent; rewarding or valuable.",
+        "ptDefinition": "Que vale o tempo, o dinheiro ou o esforço despendido; gratificante ou valioso.",
+        "examples": [
+          {
+            "enExample": "It’s worthwhile to learn a new language.",
+            "ptExample": "Vale a pena aprender um novo idioma."
+          },
+          {
+            "enExample": "They found the experience worthwhile despite the difficulties.",
+            "ptExample": "Eles acharam a experiência válida apesar das dificuldades."
+          }
+        ],
+        "synonyms": ["valuable, rewarding, beneficial, profitable"],
+        "antonyms": ["worthless, pointless, futile"],
+        "seeAlso": "while, worthwhile investment",
+        "notes": [
+          {
+            "enNote": "‘Worthwhile’ is often used before ‘to’ + verb or after ‘be’. It emphasizes that something deserves the time or effort invested.",
+            "ptNote": "‘Worthwhile’ é frequentemente usado antes de ‘to’ + verbo ou após ‘be’. Enfatiza que algo merece o tempo ou esforço investido."
+          }
+        ]
+      },
+      {
+        "word": "while",
+        "phonetics": "/waɪl/",
+        "partOfSpeech": "conjunction, noun, verb",
+        "enDefinition": "As a conjunction: during the time that; although; whereas. As a noun: a short time. As a verb (rare/archaic): to spend time in a leisurely way.",
+        "ptDefinition": "Como conjunção: durante o tempo em que; embora; ao passo que. Como substantivo: um curto período de tempo. Como verbo (raro/arcaico): passar o tempo de forma agradável.",
+        "examples": [
+          {
+            "enExample": "She was reading while he cooked dinner.",
+            "ptExample": "Ela estava lendo enquanto ele preparava o jantar."
+          },
+          {
+            "enExample": "It’s been a while since we last met.",
+            "ptExample": "Faz um tempo desde a última vez que nos encontramos."
+          },
+          {
+            "enExample": "He whiled away the afternoon by listening to music.",
+            "ptExample": "Ele passou a tarde ouvindo música."
+          }
+        ],
+        "synonyms": ["during, although, whereas, time, moment"],
+        "seeAlso": ["meanwhile, worthwhile, awhile"],
+        "notes": [
+          {
+            "enNote": "‘While’ as a conjunction is very common in both spoken and written English. The noun form usually appears with 'a' (e.g., 'a while').",
+            "ptNote": "‘While’ como conjunção é muito comum no inglês falado e escrito. A forma substantiva geralmente aparece com o artigo 'a' (ex.: 'a while')."
+          }
+        ]
+      },
+      {
+        "word": "witch",
+        "phonetics": "/wɪtʃ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A woman thought to have magic powers, often depicted in folklore as evil or mysterious.",
+        "ptDefinition": "Uma mulher considerada capaz de fazer magia, frequentemente retratada no folclore como má ou misteriosa.",
+        "examples": [
+          {
+            "enExample": "The witch cast a spell on the villagers in the old tale.",
+            "ptExample": "A bruxa lançou um feitiço nos aldeões no velho conto."
+          },
+          {
+            "enExample": "Stories about witches and their magic have been told for centuries.",
+            "ptExample": "Histórias sobre bruxas e sua magia vêm sendo contadas há séculos."
+          }
+        ],
+        "synonyms": ["sorceress, enchantress, hag"],
+        "antonyms": ["priestess, fairy"],
+        "seeAlso": ["sorcerer, wizard"]
+      },
+      {
+        "word": "weigh another offer",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to evaluate or consider a different proposal or offer before making a decision",
+        "ptDefinition": "avaliar ou considerar uma proposta diferente antes de tomar uma decisão",
+        "examples": [
+          {
+            "enExample": "Before accepting the job, she wanted to weigh another offer.",
+            "ptExample": "Antes de aceitar o emprego, ela quis avaliar outra proposta."
+          },
+          {
+            "enExample": "They’re still weighing other offers before deciding on the partnership.",
+            "ptExample": "Eles ainda estão avaliando outras propostas antes de decidir sobre a parceria."
+          }
+        ],
+        "synonyms": [
+          ["consider another proposal"],
+          ["evaluate alternative offer"],
+          ["review options"]
+        ],
+        "antonyms": ["accept immediately", "ignore alternatives"],
+        "seeAlso": ["consider", "evaluate", "compare offers"],
+        "notes": [
+          {
+            "enNote": "Commonly used in business and job negotiation contexts.",
+            "ptNote": "Usado com frequência em contextos de negócios e negociações de emprego."
+          }
+        ]
+      },
+      {
+        "word": "one’s work has slipped",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to say that someone’s work quality or performance has declined",
+        "ptDefinition": "usado para dizer que a qualidade ou o desempenho do trabalho de alguém diminuiu",
+        "examples": [
+          {
+            "enExample": "His work has slipped since he started taking on extra projects.",
+            "ptExample": "O desempenho dele piorou desde que começou a assumir projetos extras."
+          },
+          {
+            "enExample": "The manager noticed that her work had slipped over the past few months.",
+            "ptExample": "O gerente percebeu que o trabalho dela havia piorado nos últimos meses."
+          }
+        ],
+        "synonyms": ["decline in performance", "drop in quality", "slack off"],
+        "antonyms": ["improve", "excel", "perform well"],
+        "seeAlso": ["fall behind", "lose focus"],
+        "notes": [
+          {
+            "enNote": "Commonly used in workplace evaluations or feedback.",
+            "ptNote": "Usado com frequência em avaliações ou feedbacks de trabalho."
+          }
+        ]
+      },
+      {
+        "word": "under the weather",
+        "partOfSpeech": "idiom",
+        "enDefinition": "feeling ill or unwell",
+        "ptDefinition": "sentir-se doente ou indisposto",
+        "examples": [
+          {
+            "enExample": "I'm feeling a bit under the weather today, so I’m going to rest.",
+            "ptExample": "Estou me sentindo um pouco mal hoje, então vou descansar."
+          },
+          {
+            "enExample": "She was under the weather and couldn't come to work.",
+            "ptExample": "Ela estava indisposta e não pôde ir trabalhar."
+          }
+        ],
+        "synonyms": ["ill, sick, unwell"],
+        "antonyms": ["healthy, well, fit"],
+        "seeAlso": ["feeling off, out of sorts"],
+        "notes": [
+          {
+            "enNote": "Common informal expression to describe mild illness.",
+            "ptNote": "Expressão informal comum para descrever doença leve."
+          }
+        ]
+      },
+      {
+        "word": "wiped out",
+        "phonetics": "waɪpt aʊt",
+        "partOfSpeech": "adjective / phrasal verb",
+        "enDefinition": "extremely tired or exhausted; completely destroyed or defeated",
+        "ptDefinition": "extremamente cansado ou exausto; completamente destruído ou derrotado",
+        "examples": [
+          {
+            "enExample": "After the marathon, I was completely wiped out.",
+            "ptExample": "Depois da maratona, eu estava completamente exausto."
+          },
+          {
+            "enExample": "The company's profits were wiped out by the recent crisis.",
+            "ptExample": "Os lucros da empresa foram completamente eliminados pela recente crise."
+          }
+        ],
+        "synonyms": ["exhausted, drained, defeated"],
+        "antonyms": ["energized, refreshed, victorious"],
+        "seeAlso": ["burned out, worn out"],
+        "notes": [
+          {
+            "enNote": "Used informally to express extreme fatigue or total loss.",
+            "ptNote": "Usado informalmente para expressar fadiga extrema ou perda total."
+          }
+        ]
+      },
+      {
+        "word": "no wonder",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to express that something is not surprising or that the reason for something is obvious",
+        "ptDefinition": "usado para expressar que algo não é surpreendente ou que a razão de algo é óbvia",
+        "examples": [
+          {
+            "enExample": "No wonder she was tired after running a marathon!",
+            "ptExample": "Não é de se admirar que ela estivesse cansada depois de correr uma maratona!"
+          }
+        ]
+      },
+      {
+        "word": "You took the words right out of my mouth",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to indicate that someone has said exactly what you were thinking or about to say",
+        "ptDefinition": "usado para indicar que alguém disse exatamente o que você estava pensando ou prestes a dizer",
+        "examples": [
+          {
+            "enExample": "When she suggested going for pizza, I said, 'You took the words right out of my mouth!'",
+            "ptExample": "Quando ela sugeriu comer pizza, eu disse: 'Você tirou as palavras da minha boca!'"
+          }
+        ]
+      },
+      {
+        "word": "What’s the deal?",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a question used to ask for an explanation or clarification about a situation, event, or someone's behavior; can also express curiosity, confusion, or skepticism",
+        "ptDefinition": "uma pergunta usada para pedir explicação ou esclarecimento sobre uma situação, evento ou comportamento de alguém; também pode expressar curiosidade, confusão ou ceticismo",
+        "examples": [
+          {
+            "enExample": "What’s the deal with all the noise next door?",
+            "ptExample": "Qual é o motivo de tanto barulho ao lado?"
+          },
+          {
+            "enExample": "You’ve been acting strange lately — what’s the deal?",
+            "ptExample": "Você tem agido estranho ultimamente—o que está acontecendo?"
+          }
+        ],
+        "synonyms": [
+          "what's going on?",
+          "what's happening?",
+          "what's up?",
+          "what's the matter?"
+        ],
+        "antonyms": ["all is clear", "everything is fine"],
+        "seeAlso": ["what's up?", "what gives?", "what's the story?"],
+        "notes": [
+          {
+            "enNote": "This phrase is informal and commonly used in conversational English to seek clarification or express surprise.",
+            "ptNote": "Esta frase é informal e comumente usada no inglês falado para pedir esclarecimento ou expressar surpresa."
+          }
+        ]
+      },
+      {
+        "word": "wash one's hands of",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to refuse to have anything more to do with someone or something; to disassociate oneself from a situation",
+        "ptDefinition": "recusar-se a ter mais qualquer coisa a ver com alguém ou algo; dissociar-se de uma situação",
+        "examples": [
+          {
+            "enExample": "After the scandal, he decided to wash his hands of the company.",
+            "ptExample": "Após o escândalo, ele decidiu lavar as mãos em relação à empresa."
+          },
+          {
+            "enExample": "She washed her hands of the project after it became too complicated.",
+            "ptExample": "Ela lavou as mãos do projeto depois que ele se tornou muito complicado."
+          }
+        ],
+        "synonyms": ["disown", "disassociate", "abandon"],
+        "antonyms": ["engage", "involve", "commit"],
+        "seeAlso": ["cut ties", "walk away", "step back"],
+        "notes": [
+          {
+            "enNote": "This idiom is often used when someone wants to distance themselves from a problematic or controversial situation.",
+            "ptNote": "Este idiom é frequentemente usado quando alguém quer se distanciar de uma situação problemática ou controversa."
+          }
+        ]
+      },
+      {
+        "word": "weigh in on",
+        "phonetics": "/weɪ ɪn ɑn/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to give an opinion or enter a discussion or debate",
+        "ptDefinition": "dar uma opinião ou entrar em uma discussão ou debate",
+        "examples": [
+          {
+            "enExample": "Experts were invited to weigh in on the issue.",
+            "ptExample": "Especialistas foram convidados a opinar sobre a questão."
+          },
+          {
+            "enExample": "She decided to weigh in on the conversation with her own perspective.",
+            "ptExample": "Ela decidiu entrar na conversa com sua própria perspectiva."
+          }
+        ],
+        "synonyms": ["contribute", "participate", "comment"],
+        "antonyms": ["stay silent", "withhold opinion"],
+        "seeAlso": ["chime in", "join in", "speak up"],
+        "notes": [
+          {
+            "enNote": "This phrase is often used in contexts where someone is asked to provide their input or opinion on a matter.",
+            "ptNote": "Esta frase é frequentemente usada em contextos onde alguém é solicitado a fornecer sua opinião sobre um assunto."
+          }
+        ]
+      },
+      {
+        "word": "write",
+        "phonetics": "/raɪt/",
+        "partOfSpeech": "verb (past: wrote / participle: written)",
+        "enDefinition": "to mark letters, words, or other symbols on a surface, typically paper, with a pen, pencil, or similar implement",
+        "ptDefinition": "marcar letras, palavras ou outros símbolos em uma superfície, tipicamente papel, com uma caneta, lápis ou implemento similar; escrever",
+        "examples": [
+          {
+            "enExample": "She writes in her journal every night.",
+            "ptExample": "Ela escreve em seu diário todas as noites."
+          },
+          {
+            "enExample": "He wrote a letter to his friend.",
+            "ptExample": "Ele escreveu uma carta para seu amigo."
+          }
+        ],
+        "synonyms": ["compose", "inscribe", "pen"],
+        "antonyms": ["erase", "delete"],
+        "seeAlso": ["scribble", "note", "record"],
+        "notes": [
+          {
+            "enNote": "The act of writing can be both a physical and a creative process.",
+            "ptNote": "O ato de escrever pode ser tanto um processo físico quanto criativo."
+          }
+        ]
+      },
+      {
+        "word": "writing",
+        "phonetics": "/ˈraɪtɪŋ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the activity or skill of marking coherent words on paper and composing text",
+        "ptDefinition": "a atividade ou habilidade de marcar palavras coerentes no papel e compor texto; escrita",
+        "examples": [
+          {
+            "enExample": "She has a passion for writing.",
+            "ptExample": "Ela tem uma paixão por escrever."
+          },
+          {
+            "enExample": "His writing is very clear and concise.",
+            "ptExample": "A escrita dele é muito clara e concisa."
+          }
+        ],
+        "synonyms": ["composing", "penning", "scribing"],
+        "antonyms": ["erasing", "deleting"],
+        "seeAlso": ["authoring", "drafting", "typing"],
+        "notes": [
+          {
+            "enNote": "Writing can be a form of communication, expression, and creativity.",
+            "ptNote": "Escrever pode ser uma forma de comunicação, expressão e criatividade."
+          }
+        ]
+      },
+      {
+        "word": "work",
+        "phonetics": "/wɝːrk/",
+        "partOfSpeech": "noun",
+        "enDefinition": "activity involving mental or physical effort done in order to achieve a purpose or result",
+        "ptDefinition": "atividade que envolve esforço mental ou físico realizado para alcançar um propósito ou resultado",
+        "examples": [
+          {
+            "enExample": "He has a lot of work to do.",
+            "ptExample": "Ele tem muito trabalho a fazer."
+          },
+          {
+            "enExample": "Her work as a teacher is very rewarding.",
+            "ptExample": "O trabalho dela como professora é muito gratificante."
+          }
+        ],
+        "synonyms": ["employment", "job", "task"],
+        "antonyms": ["leisure", "rest", "relaxation"],
+        "seeAlso": ["labor", "occupation", "profession"],
+        "notes": [
+          {
+            "enNote": "The term 'work' can refer to both the place where one is employed and the tasks one performs.",
+            "ptNote": "O termo 'work' pode se referir tanto ao local onde alguém está empregado quanto às tarefas que alguém realiza."
+          }
+        ]
+      },
+      {
+        "word": "work",
+        "phonetics": "/wɝːrk/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to engage in physical or mental activity in order to achieve a purpose or result, especially in one's job",
+        "ptDefinition": "engajar-se em atividade física ou mental para alcançar um propósito ou resultado, especialmente no trabalho; trabalhar",
+        "examples": [
+          {
+            "enExample": "She works at a bank.",
+            "ptExample": "Ela trabalha em um banco."
+          },
+          {
+            "enExample": "He worked all night to finish the report.",
+            "ptExample": "Ele trabalhou a noite toda para terminar o relatório."
+          }
+        ],
+        "synonyms": ["labor", "toil", "perform"],
+        "antonyms": ["rest", "relax", "idle"],
+        "seeAlso": ["job", "task", "employment"],
+        "notes": [
+          {
+            "enNote": "The term 'work' can also be used as a noun to refer to a place of employment or the tasks one performs.",
+            "ptNote": "O termo 'work' também pode ser usado como substantivo para se referir a um local de trabalho ou às tarefas que alguém realiza."
+          }
+        ]
+      },
+      {
+        "word": "work",
+        "phonetics": "/wɝːrk/",
+        "enDefinition": "to be effective or successful",
+        "ptDefinition": "funcionar, dar certo",
+        "examples": [
+          {
+            "enExample": "The plan worked perfectly.",
+            "ptExample": "O plano funcionou perfeitamente."
+          },
+          {
+            "enExample": "Does this method work for everyone?",
+            "ptExample": "Esse método funciona para todos?"
+          },
+          {
+            "enExample": "Her strategy worked in the end.",
+            "ptExample": "A estratégia dela deu certo no final."
+          },
+          {
+            "enExample": "My new diet seems to be working. I've lost weight already.",
+            "ptExample": "Minha nova dieta parece estar funcionando. Já perdi peso."
+          },
+          {
+            "enExample": "Her idea for reorganizing the department will never work in practice.",
+            "ptExample": "A ideia dela para reorganizar o departamento nunca funcionará na prática."
+          }
+        ],
+        "synonyms": ["succeed", "function", "achieve"],
+        "antonyms": ["fail", "flop", "break down"],
+        "seeAlso": ["operate", "perform", "execute"],
+        "notes": [
+          {
+            "enNote": "In this context, 'work' means to achieve the desired result or to function as intended.",
+            "ptNote": "Neste contexto, 'work' significa alcançar o resultado desejado ou funcionar como pretendido."
+          }
+        ]
+      },
+      {
+        "word": "wacky",
+        "phonetics": "/ˈwæki/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "funny or amusing in a slightly odd or peculiar way",
+        "ptDefinition": "engraçado ou divertido de uma maneira um pouco estranha ou peculiar",
+        "examples": [
+          {
+            "enExample": "She wore a wacky hat to the party.",
+            "ptExample": "Ela usou um chapéu estranho na festa."
+          },
+          {
+            "enExample": "His wacky sense of humor always makes us laugh.",
+            "ptExample": "Seu senso de humor estranho sempre nos faz rir."
+          }
+        ],
+        "synonyms": ["zany", "quirky", "eccentric"],
+        "antonyms": ["normal", "conventional", "serious"],
+        "seeAlso": ["bizarre", "odd"],
+        "notes": [
+          {
+            "enNote": "The term 'wacky' is often used in a light-hearted or affectionate way to describe someone or something that is unconventional or amusingly strange.",
+            "ptNote": "O termo 'wacky' é frequentemente usado de maneira leve ou afetuosa para descrever alguém ou algo que é não convencional ou estranhamente divertido."
+          }
+        ]
+      },
+      {
+        "word": "well",
+        "phonetics": "/wɛl/",
+        "partOfSpeech": "adverb",
+        "enDefinition": "in a good or satisfactory way",
+        "ptDefinition": "de uma maneira boa ou satisfatória",
+        "examples": [
+          {
+            "enExample": "She did well on her exams.",
+            "ptExample": "Ela foi bem nas provas."
+          },
+          {
+            "enExample": "He speaks English very well.",
+            "ptExample": "Ele fala inglês muito bem."
+          }
+        ],
+        "synonyms": ["successfully", "admirably", "excellently"],
+        "antonyms": ["badly", "poorly", "unsatisfactorily"],
+        "seeAlso": ["good", "fine"],
+        "notes": [
+          {
+            "enNote": "The word 'well' can also be used as an adjective, noun, interjection, and verb, depending on the context.",
+            "ptNote": "A palavra 'well' também pode ser usada como adjetivo, substantivo, interjeição e verbo, dependendo do contexto."
+          }
+        ]
+      },
+      {
+        "word": "work one's tail off",
+        "partOfSpeech": "idiomatic expression",
+        "enDefinition": "to work very hard, often to the point of exhaustion",
+        "ptDefinition": "trabalhar muito, geralmente até o ponto de exaustão",
+        "examples": [
+          {
+            "enExample": "She worked her tail off to finish the project on time.",
+            "ptExample": "Ela trabalhou muito para terminar o projeto a tempo."
+          },
+          {
+            "enExample": "He's been working his tail off all week to get ahead in his job.",
+            "ptExample": "Ele tem trabalhado muito a semana toda para se destacar no trabalho."
+          }
+        ],
+        "synonyms": ["bust one's hump", "put in a lot of effort", "work hard"],
+        "antonyms": ["slack off", "take it easy"],
+        "seeAlso": ["burn the midnight oil", "break a sweat"],
+        "notes": [
+          {
+            "enNote": "This phrase is often used informally to describe someone who is putting in a lot of effort, especially in a demanding or tiring task.",
+            "ptNote": "Essa expressão é usada de maneira informal para descrever alguém que está colocando muito esforço, especialmente em uma tarefa exigente ou cansativa."
+          }
+        ]
+      },
+      {
+        "word": "where to begin?",
+        "partOfSpeech": "idiom",
+        "enDefinition": "an expression used when someone is unsure how to start explaining something complicated or overwhelming",
+        "ptDefinition": "uma expressão usada quando alguém não sabe por onde começar a explicar algo complicado ou esmagador",
+        "examples": [
+          {
+            "enExample": "After hearing all the issues, I didn’t even know where to begin.",
+            "ptExample": "Depois de ouvir todos os problemas, eu nem sabia por onde começar."
+          },
+          {
+            "enExample": "With so many tasks on my list, I'm not sure where to begin.",
+            "ptExample": "Com tantas tarefas na minha lista, não sei por onde começar."
+          }
+        ],
+        "synonyms": ["how to start", "where to start", "where do I even begin"],
+        "antonyms": [
+          "clear starting point",
+          "easy beginning",
+          "straightforward"
+        ],
+        "notes": [
+          {
+            "enNote": "This phrase often conveys a sense of being overwhelmed or unsure about the complexity of a situation.",
+            "ptNote": "Esta frase frequentemente transmite a sensação de estar sobrecarregado ou inseguro sobre a complexidade de uma situação."
+          }
+        ]
+      },
+      {
+        "word": "wishy-washy",
+        "phonetics": "/ˈwɪʃi ˈwɒʃi/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "indecisive, weak, or lacking in strength or conviction, often in relation to opinions or decisions",
+        "ptDefinition": "indeciso, fraco ou sem firmeza, muitas vezes em relação a opiniões ou decisões",
+        "examples": [
+          {
+            "enExample": "His wishy-washy attitude made it difficult to trust his decisions.",
+            "ptExample": "A sua atitude indecisa dificultava confiar nas suas decisões."
+          },
+          {
+            "enExample": "The manager’s wishy-washy response to the situation left the team feeling uncertain about the next steps.",
+            "ptExample": "A resposta indecisa do gerente à situação deixou a equipe insegura sobre os próximos passos."
+          }
+        ],
+        "synonyms": ["indecisive", "uncertain", "weak-willed"],
+        "antonyms": ["decisive", "strong-willed", "confident"],
+        "notes": [
+          {
+            "enNote": "This term is often used in a negative sense to describe someone who is unable to make firm decisions or take clear positions."
+          },
+          {
+            "ptNote": "Este termo é frequentemente usado de forma negativa para descrever alguém que é incapaz de tomar decisões firmes ou adotar posições claras."
+          }
+        ]
+      },
+      {
+        "word": "Why mess with success?",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a rhetorical question suggesting that one should not change or interfere with something that is already working well or is successful",
+        "ptDefinition": "uma pergunta retórica sugerindo que não se deve mudar ou interferir em algo que já está funcionando bem ou é bem-sucedido",
+        "examples": [
+          {
+            "enExample": "The project has been going great, so why mess with success?",
+            "ptExample": "O projeto está indo muito bem, então por que mexer no que já está funcionando?"
+          }
+        ],
+        "synonyms": ["don’t rock the boat"],
+        "antonyms": ["take risks", "try something new", "innovate"]
+      },
+      {
+        "word": "work down to the wire",
+        "partOfSpeech": "idiom",
+        "enDefinition": "working on something until the very last moment, typically because of a tight deadline",
+        "ptDefinition": "trabalhar em algo até o último momento, geralmente devido a um prazo apertado",
+        "examples": [
+          {
+            "enExample": "We’re working down to the wire to finalize the presentation before the meeting tomorrow.",
+            "ptExample": "Estamos trabalhando até o último segundo para finalizar a apresentação antes da reunião de amanhã."
+          },
+          {
+            "enExample": "They were still adjusting the software features, working down to the wire before the product launch.",
+            "ptExample": "Eles ainda estavam ajustando as funcionalidades do software, trabalhando até o limite antes do lançamento do produto."
+          }
+        ],
+        "synonyms": [
+          "last-minute effort",
+          "racing against the clock",
+          "under pressure"
+        ],
+        "antonyms": [
+          "ahead of schedule",
+          "with plenty of time",
+          "well-prepared"
+        ],
+        "notes": [
+          {
+            "enNote": "This phrase is often used in contexts where time management is critical, and tasks are completed just before a deadline."
+          },
+          {
+            "ptNote": "Esta expressão é frequentemente usada em contextos onde o gerenciamento de tempo é crítico, e as tarefas são concluídas pouco antes do prazo."
+          }
+        ]
+      },
+      {
+        "word": "work out the kinks",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to resolve problems or difficulties, especially minor ones, in order to make something function smoothly",
+        "ptDefinition": "resolver problemas ou dificuldades, especialmente os menores, para fazer algo funcionar perfeitamente",
+        "examples": [
+          {
+            "enExample": "The new software is almost ready, but we still need to work out the kinks before the official launch.",
+            "ptExample": "O novo software está quase pronto, mas ainda precisamos resolver alguns ajustes antes do lançamento oficial."
+          },
+          {
+            "enExample": "The team spent the weekend working out the kinks in the project plan to avoid any issues during implementation.",
+            "ptExample": "A equipe passou o fim de semana ajustando os detalhes do plano do projeto para evitar problemas durante a implementação."
+          }
+        ],
+        "synonyms": ["fix problems", "iron out issues", "resolve", "refine"],
+        "antonyms": ["complicate", "overlook", "neglect"],
+        "notes": [
+          {
+            "note": "This phrase is often used in contexts where something is in progress and requires minor fixes or refinements before completion."
+          }
+        ]
+      },
+      {
+        "word": "weird",
+        "phonetics": "/wɪrd/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "suggesting something supernatural; uncanny",
+        "ptDefinition": "sugerindo algo sobrenatural; estranho",
+        "examples": [
+          {
+            "enExample": "She had a weird feeling that something bad was going to happen.",
+            "ptExample": "Ela teve uma sensação estranha de que algo ruim ia acontecer."
+          },
+          {
+            "enExample": "The movie was really weird, with lots of unexpected twists.",
+            "ptExample": "O filme foi realmente estranho, com muitos reviravoltas inesperadas."
+          }
+        ],
+        "synonyms": ["strange", "bizarre", "unusual"],
+        "antonyms": ["normal", "ordinary", "common"],
+        "seeAlso": ["odd", "peculiar", "eerie"],
+        "notes": [
+          {
+            "enNote": "The term 'weird' can have both positive and negative connotations, depending on the context.",
+            "ptNote": "O termo 'weird' pode ter conotações positivas e negativas, dependendo do contexto."
+          }
+        ]
+      },
+      {
+        "word": "weirdo",
+        "phonetics": "/ˈwɪərdoʊ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a person who is extraordinarily strange or eccentric",
+        "ptDefinition": "uma pessoa que é extraordinariamente estranha ou excêntrica",
+        "examples": [
+          {
+            "enExample": "He was considered a weirdo by his classmates because of his unusual habits.",
+            "ptExample": "Ele era considerado um esquisitão pelos colegas de classe por causa de seus hábitos incomuns."
+          },
+          {
+            "enExample": "She felt like a weirdo at the party because she didn't know anyone.",
+            "ptExample": "Ela se sentiu uma esquisita na festa porque não conhecia ninguém."
+          }
+        ],
+        "synonyms": ["eccentric", "oddball", "freak"],
+        "antonyms": ["normal", "conventional", "ordinary"],
+        "seeAlso": ["oddity", "peculiar", "strange"],
+        "notes": [
+          {
+            "enNote": "The term 'weirdo' is often used informally and can be considered pejorative.",
+            "ptNote": "O termo 'weirdo' é frequentemente usado de maneira informal e pode ser considerado pejorativo."
+          }
+        ]
+      }
+    ]
+  }
+]

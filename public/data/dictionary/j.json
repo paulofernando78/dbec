@@ -1,0 +1,169 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "jungle",
+        "phonetics": "/ˈdʒʌŋɡəl/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a dense forest in a tropical region with many plants and animals",
+        "ptDefinition": "uma floresta densa em uma região tropical com muitas plantas e animais",
+        "examples": [
+          {
+            "enExample": "They went on an expedition deep into the jungle.",
+            "ptExample": "Eles fizeram uma expedição para o interior da selva."
+          },
+          {
+            "enExample": "The jungle is home to many exotic species of birds and mammals.",
+            "ptExample": "A selva abriga muitas espécies exóticas de aves e mamíferos."
+          }
+        ],
+        "synonyms": "rainforest, tropical forest",
+        "antonyms": "desert, plain",
+        "seeAlso": "forest, vegetation, wildlife",
+        "notes": [
+          {
+            "enNote": "Jungles often have a hot, humid climate and thick vegetation that can be difficult to navigate.",
+            "ptNote": "As selvas frequentemente possuem clima quente e úmido e vegetação densa que pode ser difícil de atravessar."
+          }
+        ]
+      },
+      {
+        "word": "jump through hoops",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to go through many complicated, difficult, or unnecessary steps to achieve something",
+        "ptDefinition": "passar por muitas etapas complicadas, difíceis ou desnecessárias para conseguir algo",
+        "examples": [
+          {
+            "enExample": "We had to jump through hoops to get the permit approved.",
+            "ptExample": "Tivemos que passar por mil burocracias para conseguir a aprovação da licença."
+          },
+          {
+            "enExample": "She jumped through hoops just to schedule an appointment.",
+            "ptExample": "Ela teve que enfrentar muita dificuldade só para marcar uma consulta."
+          }
+        ],
+        "images": [
+          {
+            "width": "100%",
+            "src": "/assets/images/general/jump-through-hoops.avif",
+            "alt": "A picture of an employee jumping through the hoops."
+          }
+        ],
+        "synonyms": ["go through red tape", "struggle", "make an effort"],
+        "antonyms": ["have it easy", "breeze through"],
+        "seeAlso": ["red tape", "hurdles"],
+        "notes": [
+          {
+            "enNote": "Often used to criticize overly complex procedures or requirements.",
+            "ptNote": "Frequentemente usado para criticar processos ou exigências excessivamente complexos."
+          }
+        ]
+      },
+      {
+        "word": "jump ship",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to leave an organization, project, or situation abruptly, especially when it starts to fail",
+        "ptDefinition": "abandonar repentinamente um trabalho, projeto ou grupo, especialmente quando há sinais de fracasso",
+        "examples": [
+          {
+            "enExample": "Several investors jumped ship when the company began to struggle.",
+            "ptExample": "Vários investidores pularam fora quando a empresa começou a ter dificuldades."
+          },
+          {
+            "enExample": "He jumped ship to work for a competitor offering a better salary.",
+            "ptExample": "Ele deixou o emprego para trabalhar em um concorrente que oferecia um salário melhor."
+          }
+        ],
+        "synonyms": ["quit", "leave abruptly", "bail out"],
+        "antonyms": ["stay loyal", "stick with", "remain committed"],
+        "seeAlso": ["bail out", "abandon ship", "walk away"],
+        "notes": [
+          {
+            "enNote": "Commonly used in business contexts, but also in any group or project setting.",
+            "ptNote": "Usado com frequência no contexto de negócios, mas também em projetos ou grupos em geral."
+          }
+        ]
+      },
+      {
+        "word": "between jobs",
+        "partOfSpeech": "idiom",
+        "enDefinition": "temporarily unemployed and looking for work",
+        "ptDefinition": "temporariamente desempregado e procurando emprego",
+        "examples": [
+          {
+            "enExample": "He's been between jobs for a few months now but is optimistic about finding something soon.",
+            "ptExample": "Ele está desempregado há alguns meses, mas está otimista em encontrar algo em breve."
+          },
+          {
+            "enExample": "Being between jobs can be stressful, but it’s also an opportunity to rethink your career.",
+            "ptExample": "Estar entre empregos pode ser estressante, mas também é uma oportunidade para repensar a carreira."
+          }
+        ],
+        "synonyms": ["unemployed", "jobless", "out of work"],
+        "antonyms": ["employed", "working", "hired"],
+        "seeAlso": ["looking for work", "job hunting"],
+        "notes": [
+          {
+            "enNote": "Commonly used as a polite or softer way to say someone is unemployed.",
+            "ptNote": "Usado com frequência como uma forma educada ou mais suave de dizer que alguém está desempregado."
+          }
+        ]
+      },
+      {
+        "word": "jump the gun",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to do something too soon, especially without thinking carefully about it",
+        "ptDefinition": "agir precipitadamente",
+        "examples": [
+          {
+            "enExample": "They've only just met - isn't it jumping the gun to be talking about marriage already?",
+            "ptExample": "Eles acabaram de se conhecer - não é precipitado já estarem falando sobre casamento?"
+          }
+        ],
+        "synonyms": ["act prematurely"],
+        "antonyms": ["wait", "be patient"],
+        "seeAlso": ["rush", "hurry"],
+        "notes": [
+          {
+            "enNote": "This idiom comes from track and field races, where starting before the gun is fired results in a false start.",
+            "ptNote": "Este idiom vem das corridas de atletismo, onde começar antes do tiro resulta em uma largada falsa."
+          }
+        ]
+      },
+      {
+        "word": "junk",
+        "phonetics": "/dʒʌŋk/",
+        "partOfSpeech": "noun",
+        "enDefinition": "things that are considered to be of no use or value, or of low quality",
+        "ptDefinition": "tralhas, trastes; lixo; besteira, porcaria",
+        "examples": [
+          {
+            "enExample": "We ought to clear out this cupboard - it's full of junk.",
+            "ptExample": "Temos que limpar este armário, está cheio de tralha."
+          },
+          {
+            "enExample": "There are too much junk in his room.",
+            "ptExample": "Tem muito lixo no quarto dele"
+          },
+          {
+            "enExample": "I can't stand watching the junk that's on TV these days.",
+            "ptExample": "Eu não suporto assistir as porcarias que estão passando na TV hoje em dia."
+          }
+        ],
+        "synonyms": ["trash"]
+      },
+      {
+        "word": "(just) for the record",
+        "partOfSpeech": "idiom",
+        "enDefinition": "let me make my opinion clear",
+        "ptDefinition": "deixar claro; só para constar",
+        "examples": [
+          {
+            "enExample": "I know that everybody else likes the idea of using a bear for a mascot, but, just for the record, I think it's a lousy idea.",
+            "ptExample": "Eu sei que todo mundo gosta da ideia de usar um urso como mascote, mas, só para constar, acho que é uma péssima ideia."
+          }
+        ]
+      }
+    ]
+  }
+]
