@@ -75,7 +75,7 @@ const experience = [
 
 export default function About() {
   return (
-    <div className={styles.about}>
+    <div className={styles.frame}>
       <div className={styles.wrapper}>
         <Image
           src="/assets/img/about/me.png"
@@ -97,12 +97,11 @@ export default function About() {
         <ul>
           {formation.map((item, index) => (
             <>
-              <li key={index}>
+              <li key={index} className={styles.li}>
                 <strong>{item.institution}</strong>
                 <span className={styles.details}>{item.period}</span>
                 <span className={styles.details}>{item.program}</span>
               </li>
-              <LineBreak />
             </>
           ))}
         </ul>
@@ -116,7 +115,6 @@ export default function About() {
                 <span className={styles.details}>{item.period}</span>
                 <span className={styles.details}>{item.program}</span>
               </li>
-              <LineBreak />
             </>
           ))}
         </ul>

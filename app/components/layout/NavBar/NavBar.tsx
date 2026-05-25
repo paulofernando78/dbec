@@ -1,7 +1,35 @@
-import styles from "./NavBar.module.css"
+import { NavLink } from "react-router";
+import { links } from "./NavBarLinks";
 
-export const NavBar = () => {
+import styles from "./NavBar.module.css";
+
+export type NavItem = {
+  label: string;
+  href: string;
+  attention?: boolean;
+};
+
+export type NavGroup = {
+  title?: string;
+  links: NavItem[];
+};
+
+export function NavBar() {
   return (
-    <div>NavBar</div>
-  )
+    <nav className={styles.nav}>
+      {links.map((group) => (
+        <div key={group.title}>
+          {group.title && <span className={styles.navTitle}>{group.title}</span>}
+
+          <div>
+            {group.links.map((item) => (
+              <NavLink key={item.href} to={item.href} end>
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      ))}
+    </nav>
+  );
 }

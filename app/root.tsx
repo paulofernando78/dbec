@@ -5,11 +5,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigation,
 } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 
+import { Loading } from "@/components/ui/Loading";
 import { Header } from "@/components/layout/Header";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -31,10 +33,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const navigation = useNavigation();
+
+  const isLoading = navigation.state === "loading";
+
   return (
-    <div className="layout">
-      <Header />
-      <Outlet />
+    <div className="app">
+      <div className="container">
+        <Header />
+        <div className="content">
+          {isLoading ? <Loading /> : <Outlet />}
+        </div>
+      </div>
     </div>
   );
 }

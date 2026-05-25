@@ -1,0 +1,36 @@
+.nav {
+  font-family: var(--font-oswald);
+  font-size: 1.1rem;
+  border-radius: 10px;
+  background-color: var(--slate-3);
+  box-shadow: 2px 2px 5px var(--slate-5);
+  margin: 5px;
+  padding: 12px 15px;
+  overflow-y: auto;
+}
+
+.navTitle {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-transform: upperCase;
+}
+
+.navTitle:not(:first-child) {
+  display: block;
+}
+
+.nav a {
+  display: block;
+}
+
+.nav a:global(.active) {
+  color: blue;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    position: absolute;
+    translate: -320px;
+  }
+}

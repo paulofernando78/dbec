@@ -1,4 +1,4 @@
-.about {
+.frame {
   margin-inline: min(200px, max(0px, calc((100vw - 380px) * 0.135)));
 }
 
@@ -16,6 +16,11 @@
 
 .info {
   text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.li {
+  margin-bottom: .5rem;
 }
 
 .details {

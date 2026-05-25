@@ -4,12 +4,15 @@
 @import "@fontsource/luckiest-guy";
 /* Supports weights 200-700 */
 @import "@fontsource-variable/oswald/wght.css";
+@import '@fontsource/bebas-neue';
 
 @theme {
   --font-anton: "Anton", sans-serif;
   --font-montserrat: "Montserrat Variable", sans-serif;
   --font-luckiest-guy: "Luckiest Guy", system-ui;
   --font-oswald: 'Oswald Variable', sans-serif;
+  --font-bebas-neue: 'Bebas Neue', sans-serif;
+
 }
 
 :root {

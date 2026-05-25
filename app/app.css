@@ -1,6 +1,61 @@
 @import "./styles/colors.css";
-@import "./styles/global.css";
 @import "./styles/reset.css";
 @import "./styles/variables.css";
 
 @import "tailwindcss";
+
+::-webkit-scrollbar {
+  width: 0.6vw;
+  height: 0.6vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-4);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: var(--font-montserrat);
+  background: var(--background);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+.app {
+  /* min-height WRONG!!! It has to be HEIGHT ONLY*/
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1100px;
+
+  /* IMPORTANT */
+  min-height: 0; 
+
+  margin: 0 auto;
+  padding: 5px;
+  
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+   /* IMPORTANT */
+  min-height: 0;
+}

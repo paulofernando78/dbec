@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button";
 
-import { Sun, MoonStar, LogIn, LogOut } from "lucide-react";
+import { Menu, Sun, MoonStar, LogIn, LogOut } from "lucide-react";
 
 import styles from "./Header.module.css";
 
@@ -20,24 +20,31 @@ export const Header = () => {
     setIsDarkMode((prev) => !prev);
   };
 
+  const navigate = useNavigate();
+
   const handleLogin = () => {
-    setIsLoggedIn((prev) => !prev);
+    setIsLoggedIn((prev) => {
+      const next = !prev;
+      navigate(next ? "/dashboard" : "/");
+      return next;
+    });
   };
 
   const location = useLocation();
   const pathname = location.pathname;
-
   const isPresentationPage = pathname === "/" || pathname === "/about";
 
   return (
     <div className={styles.header}>
-      {/* {isPresentationPage && <Button icon={<Menu />} />} */}
+      {!isPresentationPage && <Button icon={<Menu />} />}
 
-      <div className={styles.homeAbout}>
-        <Link to="/">HOME</Link>
-        <span className={styles.divider}></span>
-        <Link to="/about">ABOUT</Link>
-      </div>
+      {isPresentationPage && (
+        <div className={styles.homeAbout}>
+          <Link to="/">HOME</Link>
+          <span className={styles.divider}></span>
+          <Link to="/about">ABOUT</Link>
+        </div>
+      )}
 
       <div className={styles.darkMode}>
         <Button
