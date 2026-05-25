@@ -1,4 +1,16 @@
-.title {
-  display: block;
-  margin-top: var(--line-break);
+.wrapper {
+  margin-bottom: 2rem;
+}
+
+.titleWrapper {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 0.3rem;
+}
+
+.topicWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 17px;
 }

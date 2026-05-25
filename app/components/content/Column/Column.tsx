@@ -1,13 +1,16 @@
 import { useRef } from "react";
 
 import { Ribbon } from "@/components/ui/Ribbon";
-import { InlineRichContent } from "@/components/content/InlineRichContent";
+import {
+  InlineRichContent,
+  type InlineRichContentValue,
+} from "@/components/content/InlineRichContent";
 import { useDragScroll } from "@/hooks/useDragScroll";
 
 import styles from "./Column.module.css";
 
 type ColumnBlockItem = {
-  text?: React.ReactNode;
+  value?: InlineRichContentValue[];
 };
 
 type ColumnBlock = {
@@ -62,7 +65,7 @@ export const Column = ({
                     className={bs.lineBreak ? "line-break-item" : ""}
                   >
                     {(bs.block || []).map((b, bIndex) => (
-                      <InlineRichContent key={bIndex} text={b.text} />
+                      <InlineRichContent key={bIndex} value={b.value ?? []} />
                     ))}
                   </div>
                 ))}

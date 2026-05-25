@@ -20,6 +20,8 @@
   --background-nav: linear-gradient(140deg, var(--slate-4), var(--slate-0));
   --text-color: var(--slate-8);
   --text-color-fixed: var(--slate-8);
+  --border: 7px solid var(--slate-5);
+  --border-radius: 10px;
 }
 
 .dark {

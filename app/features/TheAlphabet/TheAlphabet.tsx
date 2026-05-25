@@ -4,6 +4,7 @@ import { Ribbon } from "@/components/ui/Ribbon"
 // import { Line } from "@/components/molecules/Line";
 import { Card } from "@/components/ui/Card";
 import { Audio } from "@/components/ui/Audio";
+import { Line } from "@/components/content/Line";
 import { LineBreak } from "@/components/content/LineBreak";
 import {
   content,

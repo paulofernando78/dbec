@@ -2,7 +2,6 @@
 // icons
 // audio
 // bullet
-// square
 // lineBreak
 
 //! Content tokens
@@ -36,19 +35,19 @@ export type ContentToken = {
   icons?: string[];
   audio?: string;
   bullet?: boolean;
-  square?: boolean;
   lineBreak?: boolean;
 };
+
+export type ContentValue = string | ContentToken;
 
 export type BaseTokenProps = {
   icons?: string[];
   audio?: string;
   audioSrc?: string;
   bullet?: boolean;
-  parts?: ContentToken[];
+  parts?: ContentValue[];
   phonetics?: string;
   connector?: string;
-  square?: boolean;
   lineBreak?: boolean;
 };
 
@@ -61,10 +60,9 @@ export function baseToken({
   parts = [],
   phonetics,
   connector,
-  square = true,
   lineBreak,
-}: BaseTokenProps): ContentToken[] {
-  const blocks: ContentToken[] = [];
+}: BaseTokenProps): ContentValue[] {
+  const blocks: ContentValue[] = [];
 
   if (icons.length) {
     blocks.push({ icons });
@@ -87,12 +85,6 @@ export function baseToken({
 
   if (connector) {
     blocks.push({ part: connector, type: "connector" });
-  }
-
-  if (square) {
-    blocks.push({ part: " " });
-    blocks.push({ square: true });
-    blocks.push({ part: " " });
   }
 
   if (lineBreak) {
@@ -191,7 +183,6 @@ export const example = (
 ): ContentToken => ({
   part: ` ${text}`,
   bullet: true,
-  square: false,
 });
 
 // portuguese
@@ -214,49 +205,45 @@ export const connector = (
 export const content = ({
   icons = [],
   ...opts
-}: BaseTokenProps): ContentToken[] =>
+}: BaseTokenProps): ContentValue[] =>
   baseToken({
     icons,
     ...opts,
     bullet: false,
-    square: false,
   });
 
 export const text = (
-  parts: ContentToken[] = []
-): ContentToken[] => parts;
+  parts: ContentValue[] = []
+): ContentValue[] => parts;
 
 export const attention = ({
   icons = [],
   ...opts
-}: BaseTokenProps): ContentToken[] =>
+}: BaseTokenProps): ContentValue[] =>
   baseToken({
     ...opts,
     icons: ["attention", ...icons],
     bullet: false,
-    square: false,
   });
 
 export const word = (
   opts: BaseTokenProps
-): ContentToken[] =>
+): ContentValue[] =>
   baseToken({
     ...opts,
-    square: false,
   });
 
 export const wordRowList = (
   opts: BaseTokenProps
-): ContentToken[] =>
+): ContentValue[] =>
   baseToken({
-    bullet: false,
-    square: true,
+    bullet: true,
     ...opts,
   });
 
 export const wordColumnList = (
   opts: BaseTokenProps
-): ContentToken[] =>
+): ContentValue[] =>
   baseToken({
     ...opts,
     bullet: false,
@@ -270,24 +257,24 @@ export type WordComparisonProps = {
 export const wordVariant = ({
   left,
   right,
-}: WordComparisonProps): ContentToken[] => [
-  ...wordRowList({ ...left, square: false }),
+}: WordComparisonProps): ContentValue[] => [
+  ...wordRowList({ ...left, bullet: false }),
   {
     part: "or ",
     type: "connector",
   },
-  ...wordRowList({ ...right, square: false }),
+  ...wordRowList({ ...right, bullet: false }),
 ];
 export const wordComparison = ({
   left,
   right,
-}: WordComparisonProps): ContentToken[] => [
-  ...wordRowList({ ...left, square: false }),
+}: WordComparisonProps): ContentValue[] => [
+  ...wordRowList({ ...left, bullet: false }),
   {
     part: "vs. ",
     type: "connector",
   },
-  ...wordRowList({ ...right, square: false }),
+  ...wordRowList({ ...right, bullet: false }),
 ];
 
 export const dictionary = (

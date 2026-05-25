@@ -1,10 +1,10 @@
 .frame {
-  background-color: var(--gray-2);
+  background-color: var(--gray-3);
   color: var(--text-color-fixed);
-  border: 5px solid var(--slate-4);
+  border: var(--border);
   border-radius: var(--border-radius);
   padding: 2px 8px 4px 6px;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 .frame span {

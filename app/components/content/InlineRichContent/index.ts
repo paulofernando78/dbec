@@ -1,1 +1,4 @@
-export { InlineRichContent } from "./InlineRichContent";
+export {
+  InlineRichContent,
+  type InlineRichContentValue,
+} from "./InlineRichContent";

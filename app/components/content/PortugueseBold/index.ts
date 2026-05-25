@@ -1,0 +1,1 @@
+export { PortugueseBold } from "./PortugueseBold"

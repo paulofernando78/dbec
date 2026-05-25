@@ -1,17 +1,19 @@
 import styles from "./TableOfContents.module.css";
 
 import { Fragment } from "react";
-import type { ReactNode } from "react";
-import { InlineRichContent } from "@/components/content/InlineRichContent";
+import {
+  InlineRichContent,
+  type InlineRichContentValue,
+} from "@/components/content/InlineRichContent";
 // import { Content, ContentLink } from "@/lib/svg-imports.js";
 
 import { Notebook, NotebookText } from "lucide-react";
 
 type TableOfContentsItem = {
-  title?: ReactNode[] | string;
+  title?: InlineRichContentValue[] | string;
   href?: string;
   id?: string;
-  label?: ReactNode[] | string;
+  label?: InlineRichContentValue[] | string;
 };
 
 type TableOfContentsProps = {
@@ -21,12 +23,15 @@ type TableOfContentsProps = {
 export const TableOfContents = ({
   items = [],
 }: TableOfContentsProps) => {
+  const toValue = (value: InlineRichContentValue[] | string) =>
+    Array.isArray(value) ? value : [value];
+
   return (
-    <>
-      <div className="flex-align">
+    <div className={styles.wrapper}>
+      <div className={styles.titleWrapper}>
         <Notebook />
         <span>
-          <b>Contents</b>
+          <b>Table of Contents</b>
         </span>
       </div>
       <nav>
@@ -38,18 +43,16 @@ export const TableOfContents = ({
               <Fragment key={key}>
                 {item.title && (
                   <span className={styles.title}>
-                    <InlineRichContent text={item.title} />
+                    <InlineRichContent value={toValue(item.title)} />
                   </span>
                 )}
 
                 {item.href && (
-                  <li className="flex-align">
+                  <li className={styles.topicWrapper}>
                     <NotebookText />
                     <a href={`#${item.href}`}>
-                      {Array.isArray(item.label) ? (
-                        <InlineRichContent text={item.label} />
-                      ) : (
-                        item.label
+                      {item.label && (
+                        <InlineRichContent value={toValue(item.label)} />
                       )}
                     </a>
                   </li>
@@ -59,6 +62,6 @@ export const TableOfContents = ({
           })}
         </ul>
       </nav>
-    </>
+    </div>
   );
 };

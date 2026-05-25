@@ -1,11 +1,16 @@
 "use client";
 
 import { InlineRichContent } from "@/components/content/InlineRichContent";
+import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
 
-export const Paragraph = ({ ...props }) => {
+type ParagraphProps = {
+  value?: InlineRichContentValue[];
+};
+
+export const Paragraph = ({ value = [] }: ParagraphProps) => {
   return (
     <p>
-      <InlineRichContent {...props} />
+      <InlineRichContent value={value} />
     </p>
   );
 };

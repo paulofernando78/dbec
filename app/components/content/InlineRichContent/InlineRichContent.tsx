@@ -8,56 +8,63 @@ import { Stressed } from "@/components/content/Stressed";
 import { Portuguese } from "@/components/content/Portuguese";
 import { PortugueseBold } from "@/components/content/PortugueseBold";
 import { Phonetics } from "@/components/content/Phonetics";
-import { BulletPoint } from "@/components/content/BulletPoint";
-import { SquarePoint } from "@/components/content/SquarePoint";
-import { Connector } from "@/components/content/Connector";
-import {
-  Attention,
-  USflag,
-  UKflag,
-  Correct,
-  Incorrect,
-  Arrow,
-  Compare,
-  Variation,
-  Square,
-} from "@/lib/svg-imports";
+import { CircleCheck, CircleX, Dot, } from "lucide-react";
 
 import styles from "./InlineRichContent.module.css";
 
-type InlineRichContentValue =
-  | string
-  | {
-      part?: string;
-      type?: string;
-      icons?: string[];
-      audio?: string;
-      bullet?: boolean;
-      square?: boolean;
-    };
+export type InlineRichContentValue = string | InlineRichContentToken;
 
-type InlineRichContentProps = {
-  value?: InlineRichContentValue[];
-  text?: ReactNode;
-  phonetics?: ReactNode;
-  portuguese?: ReactNode;
+type InlineRichContentToken = {
+  part?: string;
+  type?: string;
+  icons?: string[];
+  audio?: string;
+  bullet?: boolean;
 };
 
-export const InlineRichContent = ({ value, text }: InlineRichContentProps) => {
-  const raw = value ?? text;
-  const contentArray = Array.isArray(raw) ? raw : [raw];
+type InlineRichContentProps = {
+  value: InlineRichContentValue[];
+};
 
-  const squareCount = contentArray.filter(
-    (part) => typeof part === "object" && part?.square,
+export const InlineRichContent = ({ value }: InlineRichContentProps) => {
+  const contentArray = value;
+
+  const bulletCount = contentArray.filter(
+    (part) => typeof part === "object" && part?.bullet,
   ).length;
 
-  const iconMap: Record<string, React.ComponentType> = {
-    attention: Attention,
-    us: USflag,
-    uk: UKflag,
+const FlagIcon = ({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) => (
+  <img
+    src={src}
+    alt={alt}
+    className={`${styles.flagIcon} ${className}`}
+  />
+);
+
+  const iconMap = {
+    us: () => (
+      <FlagIcon
+        src="/assets/img/icons/flags/us.svg"
+        alt="US Flag icon"
+      />
+    ),
+    uk: () => (
+      <FlagIcon
+        src="/assets/img/icons/flags/uk.svg"
+        alt="UK Flag icon"
+      />
+    )
   };
 
-  const renderIcons = (part: Exclude<InlineRichContentValue, string>) => {
+  const renderIcons = (part: InlineRichContentToken) => {
     const icons: ReactNode[] = [];
 
     if (Array.isArray(part.icons)) {
@@ -78,15 +85,15 @@ export const InlineRichContent = ({ value, text }: InlineRichContentProps) => {
       {contentArray.map((part, i) => {
         if (typeof part === "string") return part;
 
-        let content = part.part;
+        let content: ReactNode = part.part;
 
-        const isSquare = part.square;
-        const isLastSquare =
-          isSquare &&
-          squareCount > 1 &&
+        const isBullet = part.bullet;
+        const isLastBullet =
+          isBullet &&
+          bulletCount > 1 &&
           !contentArray
             .slice(i + 1)
-            .some((v) => typeof v === "object" && v?.square);
+            .some((v) => typeof v === "object" && v?.bullet);
 
         switch (part.type) {
           case "bold":
@@ -127,21 +134,17 @@ export const InlineRichContent = ({ value, text }: InlineRichContentProps) => {
           case "portuguese-bold":
             content = <PortugueseBold>{part.part}</PortugueseBold>;
             break;
-          case "connector":
-            content = <Connector>{part.part}</Connector>;
-            break;
         }
 
         return (
-          <span key={i}>
-            {typeof part === "object" && renderIcons(part)}
+          <span key={i} className={styles.inlineItem}>
+            {renderIcons(part)}
             {part.audio && (
               <span className="inline-audio">
-                <Audio src={part.audio} />
+                <Audio src={part.audio} className={styles.iconPosition}/>
               </span>
             )}
-            {part.bullet && <BulletPoint />}
-            {part.square && !isLastSquare && <SquarePoint />}
+            {part.bullet && !isLastBullet && <Dot />}
             {content}
           </span>
         );

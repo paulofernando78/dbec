@@ -6,11 +6,12 @@ import { Play, Square } from "lucide-react";
 
 type AudioProps = {
   src: string
+  className?: string
 }
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
 
-export const Audio = ({ src }: AudioProps) => {
+export const Audio = ({ src, className }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -80,9 +81,15 @@ export const Audio = ({ src }: AudioProps) => {
   return (
     <>
       {playing ? (
-        <Square onClick={handleStop} />
+        <Square onClick={handleStop}
+        size={16}
+        className={className}
+        />
       ) : (
-        <Play onClick={handlePlay} />
+        <Play onClick={handlePlay}
+        size={18}
+        className={className}
+        />
       )}
 
       <audio
