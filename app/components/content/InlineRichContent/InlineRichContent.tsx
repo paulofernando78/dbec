@@ -8,7 +8,7 @@ import { Stressed } from "@/components/content/Stressed";
 import { Portuguese } from "@/components/content/Portuguese";
 import { PortugueseBold } from "@/components/content/PortugueseBold";
 import { Phonetics } from "@/components/content/Phonetics";
-import { CircleCheck, CircleX, Dot, } from "lucide-react";
+import { CircleCheck, CircleX, Dot, Spotlight } from "lucide-react";
 
 import styles from "./InlineRichContent.module.css";
 
@@ -33,35 +33,29 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
     (part) => typeof part === "object" && part?.bullet,
   ).length;
 
-const FlagIcon = ({
-  src,
-  alt,
-  className,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-}) => (
-  <img
-    src={src}
-    alt={alt}
-    className={`${styles.flagIcon} ${className}`}
-  />
-);
+  const FlagIcon = ({
+    src,
+    alt,
+    className,
+  }: {
+    src: string;
+    alt: string;
+    className?: string;
+  }) => (
+    <img src={src} alt={alt} className={`${styles.flagIcon} ${className}`} />
+  );
 
   const iconMap = {
     us: () => (
-      <FlagIcon
-        src="/assets/img/icons/flags/us.svg"
-        alt="US Flag icon"
-      />
+      <FlagIcon src="/assets/img/icons/flags/us.svg" alt="US Flag icon" />
     ),
     uk: () => (
-      <FlagIcon
-        src="/assets/img/icons/flags/uk.svg"
-        alt="UK Flag icon"
-      />
-    )
+      <FlagIcon src="/assets/img/icons/flags/uk.svg" alt="UK Flag icon" />
+    ),
+    correct: () => <CircleCheck size={19} className={styles.iconPosition} />,
+    incorrect: () => <CircleX size={19} className={styles.iconPosition} />,
+    spotlight: () => <Spotlight size={19} className={styles.iconPosition} />,
+    bullet: () => <Dot size={19} className={styles.iconPosition} />,
   };
 
   const renderIcons = (part: InlineRichContentToken) => {
@@ -141,10 +135,9 @@ const FlagIcon = ({
             {renderIcons(part)}
             {part.audio && (
               <span className="inline-audio">
-                <Audio src={part.audio} className={styles.iconPosition}/>
+                <Audio src={part.audio} className={styles.iconPosition} />
               </span>
             )}
-            {part.bullet && !isLastBullet && <Dot />}
             {content}
           </span>
         );

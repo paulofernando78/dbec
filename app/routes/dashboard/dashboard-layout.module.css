@@ -1,7 +1,6 @@
 .dashboardLayout {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
-  gap: 10px;
   overflow: hidden;
 }
 
@@ -21,5 +20,6 @@
 
   .main {
     margin-left: 0;
+    padding: 0;
   }
 }

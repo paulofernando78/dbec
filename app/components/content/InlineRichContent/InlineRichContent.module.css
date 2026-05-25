@@ -1,16 +1,16 @@
 .inlineItem {
   display: inline-flex;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .flagIcon {
   width: 20px;
-  height: 20px;
-  transform: translateY(5px);
+  height: 19px;
+  transform: translateY(3px);
   margin-right: 7px;
 }
 
 .iconPosition {
   transform: translate(-2px, 3px);
-  margin-right: 3px;
+  margin-right: 2px;
 }
