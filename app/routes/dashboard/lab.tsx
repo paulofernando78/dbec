@@ -5,6 +5,7 @@ import { Line } from "@/components/content/Line";
 import { LineBreak } from "@/components/content/LineBreak";
 import { Paragraph } from "@/components/content/Paragraph";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { Carousel } from "@/components/ui/Carousel";
 
 import {
   content,
@@ -147,10 +148,18 @@ export default function Playground() {
             <Image src="/assets/img/home/home-me.png" alt="..." width={250} />
           </Section>
 
-          <Section id="media-wrapper" label="Media Wrapper: Top | Right | Bottom | Left" heading={3}>
+          <Section
+            id="media-wrapper"
+            label="Media Wrapper: Top | Right | Bottom | Left"
+            heading={3}
+          >
             <MediaWrapper mediaPosition="left">
               <MediaWrapper.Item>
-                <Image src="/assets/img/home/home-me.png" alt="..." width={250} />
+                <Image
+                  src="/assets/img/home/home-me.png"
+                  alt="..."
+                  width={250}
+                />
               </MediaWrapper.Item>
               <MediaWrapper.Content>
                 <Paragraph
@@ -162,6 +171,15 @@ export default function Playground() {
                 />
               </MediaWrapper.Content>
             </MediaWrapper>
+          </Section>
+
+          <Section id="carousel" heading={3}>
+            <Carousel
+              imgs={[
+                { word: "cat", img: 0 },
+                { word: "cat", img: 1 },
+              ]}
+            />
           </Section>
         </PageSections>
       </div>

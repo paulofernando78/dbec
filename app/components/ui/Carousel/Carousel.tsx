@@ -7,7 +7,6 @@ import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { Image } from "@/components/ui/Image";
 
 import { useState, useRef, useEffect } from "react";
-import type { ReactNode } from "react";
 
 type ArrowProps = {
   direction?: "back" | "forward";
@@ -20,6 +19,12 @@ type CarouselImage = {
   dictionary?: string;
   word?: string;
   img?: number;
+};
+
+type ResolvedWord = {
+  imgs?: {
+    src?: string;
+  }[];
 };
 
 const Arrow = ({ direction = "back", className }: ArrowProps) => (
@@ -43,7 +48,9 @@ export const Carousel = ({ imgs = [] }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [resolvedWords, setResolvedWords] = useState<Record<string, unknown>>({});
+  const [resolvedWords, setResolvedWords] = useState<
+    Record<string, ResolvedWord>
+  >({});
 
   useEffect(() => {
     const loadWords = async () => {
@@ -59,7 +66,9 @@ export const Carousel = ({ imgs = [] }: CarouselProps) => {
 
       setResolvedWords(
         Object.fromEntries(
-          entries.filter((entry): entry is [string, any] => entry !== null),
+          entries.filter(
+            (entry): entry is [string, ResolvedWord] => entry !== null,
+          ),
         ),
       );
     };
@@ -92,39 +101,43 @@ export const Carousel = ({ imgs = [] }: CarouselProps) => {
           />
         </button>
         <div className={styles.carousel} ref={carouselRef}>
-          {imgs.map((img, index) => (
-            <div
-              key={index}
-              ref={(el) => {
-                cardRef.current[index] = el;
-              }}
-              className={styles.card}
-            >
-              {/* <div className={styles.cardPagination}>
+          {imgs.map((img, index) => {
+            const resolvedSrc =
+              resolvedWords[img.word ?? ""]?.imgs?.[img.img ?? 0]?.src;
+
+            return (
+              <div
+                key={index}
+                ref={(el) => {
+                  cardRef.current[index] = el;
+                }}
+                className={styles.card}
+              >
+                {/* <div className={styles.cardPagination}>
                 {index + 1}
               </div> */}
-              {img.src && (
-                <Image
-                  src={img.src}
-                  alt={img.alt || `carousel-image-${index}`}
-                />
-              )}
-              {img.dictionary && (
-                <Image
-                  src={dictionary(img.dictionary)}
-                  alt={img.alt || `carousel-image-${index}`}
-                />
-              )}
-              {img.word && resolvedWords[img.word] && (
-                <Image
-                  src={dictionary(
-                    resolvedWords[img.word]?.imgs?.[img.img ?? 0]?.src,
-                  )}
-                  alt={img.alt || img.word}
-                />
-              )}
-            </div>
-          ))}
+                {img.src && (
+                  <Image
+                    src={img.src}
+                    alt={img.alt || `carousel-image-${index}`}
+                  />
+                )}
+                {img.dictionary && (
+                  <Image
+                    src={dictionary(img.dictionary)}
+                    alt={img.alt || `carousel-image-${index}`}
+                  />
+                )}
+
+                {img.word && resolvedSrc && (
+                  <Image
+                    src={dictionary(resolvedSrc)}
+                    alt={img.alt || img.word}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
         <button className={styles.rightArrow} onClick={scrollRight}>
           <Arrow
