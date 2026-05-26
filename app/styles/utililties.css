@@ -3,3 +3,7 @@
   flex-direction: column;
   gap: 0.9rem;
 }
+
+.line-break-item{
+  margin-bottom: 1rem;
+}

@@ -6,7 +6,9 @@ import styles from "./dashboard-layout.module.css";
 export default function DashBoardLayout() {
   return (
     <div className={styles.dashboardLayout}>
-      <NavBar />
+      <aside className={styles.sidebar}>
+        <NavBar />
+      </aside>
       <main className={styles.main}>
         <Outlet />
       </main>

@@ -43,7 +43,9 @@ export default function App() {
       <div className="container">
         <Header />
         <div className="content">
-          {isLoading ? <Loading /> : <Outlet />}
+          <div className="scrollArea">
+            {isLoading ? <Loading /> : <Outlet />}
+          </div>
         </div>
         <Footer />
       </div>

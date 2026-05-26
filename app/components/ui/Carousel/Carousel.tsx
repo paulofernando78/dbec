@@ -9,7 +9,6 @@ import { Image } from "@/components/ui/Image";
 import { useState, useRef, useEffect } from "react";
 
 type ArrowProps = {
-  direction?: "back" | "forward";
   className?: string;
 };
 
@@ -27,7 +26,7 @@ type ResolvedWord = {
   }[];
 };
 
-const Arrow = ({ direction = "back", className }: ArrowProps) => (
+const Arrow = ({ className }: ArrowProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 -960 960 960"
@@ -41,10 +40,11 @@ const Arrow = ({ direction = "back", className }: ArrowProps) => (
 );
 
 type CarouselProps = {
+  instruction: string
   imgs?: CarouselImage[];
 };
 
-export const Carousel = ({ imgs = [] }: CarouselProps) => {
+export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -92,11 +92,10 @@ export const Carousel = ({ imgs = [] }: CarouselProps) => {
 
   return (
     <>
-      <span className={styles.title}>Remember?</span>
+      <p className="line-break-item"><b>{instruction}</b></p>
       <div className={styles.wrapper}>
         <button className={styles.leftArrow} onClick={scrollLeft}>
           <Arrow
-            direction="back"
             className={`${styles.arrow} ${styles.back}`}
           />
         </button>
@@ -141,7 +140,6 @@ export const Carousel = ({ imgs = [] }: CarouselProps) => {
         </div>
         <button className={styles.rightArrow} onClick={scrollRight}>
           <Arrow
-            direction="forward"
             className={`${styles.arrow} ${styles.forward}`}
           />
         </button>

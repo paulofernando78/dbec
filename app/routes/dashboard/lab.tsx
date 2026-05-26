@@ -175,6 +175,7 @@ export default function Playground() {
 
           <Section id="carousel" heading={3}>
             <Carousel
+              instruction= "Describe what you see."
               imgs={[
                 { word: "cat", img: 0 },
                 { word: "cat", img: 1 },
