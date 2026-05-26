@@ -1,3 +1,8 @@
 .scrollOffset {
   scroll-margin-top: 5px;
 }
+
+.content {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { Audio } from "@/components/ui/Audio";
 import { Mark } from "@/components/content/Mark";
+import { BoldMark } from "@/components/content/BoldMark";
 import { Underline } from "@/components/content/Underline";
 import { PartOfSpeech } from "@/components/content/PartOfSpeech";
 import { Stressed } from "@/components/content/Stressed";
@@ -52,10 +53,32 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
     uk: () => (
       <FlagIcon src="/assets/img/icons/flags/uk.svg" alt="UK Flag icon" />
     ),
-    correct: () => <CircleCheck size={19} className={styles.iconPosition} />,
-    incorrect: () => <CircleX size={19} className={styles.iconPosition} />,
+    correct: () => (
+      <CircleCheck
+        size={19}
+        color="green"
+        className={`
+          ${styles.iconPosition}
+          ${styles.extraIconPosition}`}
+      />
+    ),
+    incorrect: () => (
+      <CircleX
+        size={19}
+        color="red"
+        className={`${styles.iconPosition} ${styles.extraIconPosition}`}
+      />
+    ),
     spotlight: () => <Spotlight size={19} className={styles.iconPosition} />,
-    bullet: () => <Dot size={19} className={styles.iconPosition} />,
+    bullet: () => (
+      <Dot size={19} strokeWidth={4} className={styles.iconPosition} />
+    ),
+  };
+
+  type IconName = keyof typeof iconMap;
+  
+  const isIconName = (name: string): name is IconName => {
+    return name in iconMap;
   };
 
   const renderIcons = (part: InlineRichContentToken) => {
@@ -63,11 +86,10 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
 
     if (Array.isArray(part.icons)) {
       part.icons.forEach((name) => {
-        const Icon = iconMap[name];
+        if (!isIconName(name)) return;
 
-        if (Icon) {
-          icons.push(<Icon key={`icon-${name}`} />);
-        }
+        const Icon = iconMap[name];
+        icons.push(<Icon key={`icon-${name}`} />);
       });
     }
 
@@ -103,11 +125,7 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
             content = <Mark>{part.part}</Mark>;
             break;
           case "bold-mark":
-            content = (
-              <b>
-                <Mark>{part.part}</Mark>
-              </b>
-            );
+            content = <BoldMark>{part.part}</BoldMark>;
             break;
           case "underline":
             content = <Underline>{part.part}</Underline>;

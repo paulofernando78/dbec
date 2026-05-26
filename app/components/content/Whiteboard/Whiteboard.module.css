@@ -1,7 +1,7 @@
 .frame {
   background-color: var(--gray-3);
   color: var(--text-color-fixed);
-  border: var(--border);
+  border: 7px solid var(--gray-4);
   border-radius: var(--border-radius);
   padding: 2px 8px 4px 6px;
   margin-bottom: 2rem;

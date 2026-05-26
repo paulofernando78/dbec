@@ -13,6 +13,7 @@ import "./app.css";
 
 import { Loading } from "@/components/ui/Loading";
 import { Header } from "@/components/layout/Header";
+import Footer from "./components/layout/Footer/Footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -44,6 +45,7 @@ export default function App() {
         <div className="content">
           {isLoading ? <Loading /> : <Outlet />}
         </div>
+        <Footer />
       </div>
     </div>
   );

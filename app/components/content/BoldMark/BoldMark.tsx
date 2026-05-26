@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
-import styles from "./Mark.module.css"
+import styles from "./BoldMark.module.css"
 
-type MarkedProps = {
+type BoldMarkedProps = {
   children: ReactNode
 }
 
-export const Mark = ({ children }: MarkedProps) => {
+export const BoldMark = ({ children }: BoldMarkedProps) => {
   return <mark className={styles.marked}>{children}</mark>;
 };

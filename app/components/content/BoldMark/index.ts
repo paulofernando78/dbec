@@ -1,0 +1,1 @@
+export { BoldMark } from "./BoldMark"

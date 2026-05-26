@@ -1,3 +1,4 @@
+import styles from "./Image.module.css"
 
 type ImageProps = {
   src: string
@@ -9,7 +10,7 @@ type ImageProps = {
 
 export const Image = ({src, alt, width, height, className}: ImageProps) => {
   return (
-    <div>
+    <div className={styles.container}>
       <img src={src} alt={alt} width={width} height={height} className={className}/>
     </div>
   )

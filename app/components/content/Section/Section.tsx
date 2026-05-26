@@ -1,7 +1,4 @@
-import type {
-  ElementType,
-  ReactNode,
-} from "react";
+import type { ElementType, ReactNode } from "react";
 
 import { Ribbon } from "@/components/ui/Ribbon/";
 
@@ -21,29 +18,18 @@ type SectionProps = {
   children: ReactNode;
 };
 
-export const Section = ({
-  id,
-  label,
-  heading = 2,
-  children,
-}: SectionProps) => {
+export const Section = ({ id, label, heading = 2, children }: SectionProps) => {
   const HeadingTag = `h${heading}` as ElementType;
 
   // If no label is passed, build one from the id
-  const resolvedLabel =
-    label ?? formatSectionLabel(id);
+  const resolvedLabel = label ?? formatSectionLabel(id);
 
   return (
-    <section
-      id={id}
-      className={styles.scrollOffset}
-    >
+    <section id={id} className={`${styles.section} ${styles.scrollOffset}`}>
       <Ribbon>
-        <HeadingTag>
-          {resolvedLabel}
-        </HeadingTag>
+        <HeadingTag>{resolvedLabel}</HeadingTag>
       </Ribbon>
-      {children}
+      <div className={styles.content}>{children}</div>
     </section>
   );
 };

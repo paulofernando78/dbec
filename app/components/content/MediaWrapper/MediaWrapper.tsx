@@ -2,28 +2,33 @@ import type { ReactNode } from "react";
 
 import styles from "./MediaWrapper.module.css";
 
-import { MediaLayout } from "@/components/content/MediaLayout";
-
 type MediaWrapperProps = {
   children: ReactNode;
-  instruction?: string;
+  mediaPosition?: "left" | "right" | "top" | "bottom";
 };
 
 export const MediaWrapper = ({
   children,
-  instruction,
+  mediaPosition = "left",
 }: MediaWrapperProps) => {
   return (
-    <div className="line-break">
-      {instruction && (
-        <p className={styles.instruction}>
-          <b>{instruction}</b>
-        </p>
-      )}
+    <div className={`${styles.wrapper} ${styles[mediaPosition]}`}>
+      {children}
+    </div> );
+};
 
-      <MediaLayout>
-        {children}
-      </MediaLayout>
-    </div>
-  );
+MediaWrapper.Item = function MediaWrapperItem({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return <div className={styles.item}>{children}</div>;
+};
+
+MediaWrapper.Content = function MediaWrapperContent({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return <div className={styles.content}>{children}</div>;
 };

@@ -1,4 +1,21 @@
-.instruction {
-  display: block;
-  margin-bottom: 1rem;
+.wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.top {
+  flex-direction: column;
+}
+
+
+.right {
+  flex-direction: row-reverse;
+}
+
+.bottom {
+  flex-direction: column-reverse;
+}
+
+.left {
+  flex-direction: row;
 }
