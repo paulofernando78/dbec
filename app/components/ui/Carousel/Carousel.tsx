@@ -40,7 +40,7 @@ const Arrow = ({ className }: ArrowProps) => (
 );
 
 type CarouselProps = {
-  instruction: string
+  instruction: string;
   imgs?: CarouselImage[];
 };
 
@@ -77,6 +77,8 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
   }, [imgs]);
 
   const scrollLeft = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+
     carouselRef.current?.scrollBy({
       left: -320,
       behavior: "smooth",
@@ -84,6 +86,8 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
   };
 
   const scrollRight = () => {
+    setCurrentIndex((prev) => (prev < imgs.length - 1 ? prev + 1 : prev));
+
     carouselRef.current?.scrollBy({
       left: 320,
       behavior: "smooth",
@@ -92,12 +96,12 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
 
   return (
     <>
-      <p className="line-break-item"><b>{instruction}</b></p>
+      <p className="line-break-item">
+        <b>{instruction}</b>
+      </p>
       <div className={styles.wrapper}>
         <button className={styles.leftArrow} onClick={scrollLeft}>
-          <Arrow
-            className={`${styles.arrow} ${styles.back}`}
-          />
+          <Arrow className={`${styles.arrow} ${styles.back}`} />
         </button>
         <div className={styles.carousel} ref={carouselRef}>
           {imgs.map((img, index) => {
@@ -139,9 +143,7 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
           })}
         </div>
         <button className={styles.rightArrow} onClick={scrollRight}>
-          <Arrow
-            className={`${styles.arrow} ${styles.forward}`}
-          />
+          <Arrow className={`${styles.arrow} ${styles.forward}`} />
         </button>
       </div>
       <div className={styles.pagination}>
