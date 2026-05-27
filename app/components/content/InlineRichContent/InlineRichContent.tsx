@@ -69,7 +69,7 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
         className={`${styles.iconPosition} ${styles.extraIconPosition}`}
       />
     ),
-    spotlight: () => <Spotlight size={19} className={styles.iconPosition} />,
+    spotlight: () => <Spotlight size={19} className={styles.iconPosition} color="var(--icon-color)"/>,
     bullet: () => (
       <Dot size={19} strokeWidth={4} className={styles.iconPosition} />
     ),

@@ -29,7 +29,7 @@ export const TableOfContents = ({
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleWrapper}>
-        <Notebook />
+        <Notebook color="var(--icon-color)"/>
         <span>
           <b>Table of Contents</b>
         </span>
@@ -49,7 +49,7 @@ export const TableOfContents = ({
 
                 {item.href && (
                   <li className={styles.topicWrapper}>
-                    <NotebookText />
+                    <NotebookText color="var(--icon-color)"/>
                     <a href={`#${item.href}`}>
                       {item.label && (
                         <InlineRichContent value={toValue(item.label)} />
