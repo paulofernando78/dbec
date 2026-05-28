@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   isRouteErrorResponse,
   Links,
@@ -38,13 +40,23 @@ export default function App() {
 
   const isLoading = navigation.state === "loading";
 
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+   const toggleNav = () => {
+    setIsNavBarOpen((prev) => !prev)
+  }
+
+  const closeNavBar = () => {
+    setIsNavBarOpen(false)
+  }
+
   return (
     <div className="app">
       <div className="app-container">
-        <Header />
+        <Header onClick={toggleNav} />
         <div className="app-content">
           <div className="app-scrollArea">
-            {isLoading ? <Loading /> : <Outlet />}
+            {isLoading ? <Loading /> : <Outlet context={{isNavBarOpen, closeNavBar}} />}
           </div>
         </div>
         <Footer />

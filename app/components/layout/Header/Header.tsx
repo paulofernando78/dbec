@@ -8,7 +8,11 @@ import { Menu, Sun, MoonStar, LogIn, LogOut } from "lucide-react";
 
 import styles from "./Header.module.css";
 
-export const Header = () => {
+interface HeadersProps {
+  onClick: () => void;
+}
+
+export const Header = ({ onClick }: HeadersProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -36,7 +40,12 @@ export const Header = () => {
 
   return (
     <div className={styles.header}>
-      {!isPresentationPage && <Button icon={<Menu />} />}
+      {!isPresentationPage && (
+        <Button
+        icon={<Menu />}
+        onClick={onClick}
+        className={styles.menuBtn} />
+      )}
 
       {isPresentationPage && (
         <div className={styles.homeAbout}>

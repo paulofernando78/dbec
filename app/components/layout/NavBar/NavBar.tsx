@@ -14,16 +14,22 @@ export type NavGroup = {
   links: NavItem[];
 };
 
-export function NavBar() {
+type NavBarProps = {
+  closeNavBar: () => void;
+};
+
+export function NavBar({ closeNavBar }: NavBarProps) {
   return (
     <nav className={styles.nav}>
       {links.map((group) => (
         <div key={group.title}>
-          {group.title && <span className={styles.navTitle}>{group.title}</span>}
+          {group.title && (
+            <span className={styles.navTitle}>{group.title}</span>
+          )}
 
           <div>
             {group.links.map((item) => (
-              <NavLink key={item.href} to={item.href} end>
+              <NavLink key={item.href} to={item.href} end onClick={closeNavBar}>
                 {item.label}
               </NavLink>
             ))}

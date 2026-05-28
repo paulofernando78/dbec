@@ -28,10 +28,3 @@
 .nav a:global(.active) {
   color: blue;
 }
-
-@media (max-width: 700px) {
-  .nav {
-    position: absolute;
-    translate: -320px;
-  }
-}
