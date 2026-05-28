@@ -6,6 +6,7 @@ import { LineBreak } from "@/components/content/LineBreak";
 import { Paragraph } from "@/components/content/Paragraph";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { Carousel } from "@/components/ui/Carousel";
+import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 
@@ -185,12 +186,25 @@ export default function Playground() {
             />
           </Section>
 
+          <Section id="guess" heading={3}>
+            <Guess
+              words={[
+                {
+                  word: "cat",
+                  img: 0,
+                },
+                {
+                  word: "cat",
+                  img: 1,
+                },
+              ]}
+            />
+          </Section>
+
           {/* Radio */}
           <Section id="radio" heading={3}>
             <Radio
               exercise={{
-                instruction: "Choose the best response.",
-                description: "description",
                 questions: [
                   {
                     question: "1. Question",
@@ -211,8 +225,6 @@ export default function Playground() {
               showWordBank={true}
               numbered={true}
               exercise={{
-                instruction: "Fill in the blanks.",
-                description: "description",
                 blocks: [
                   {
                     block: [

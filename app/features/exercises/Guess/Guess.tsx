@@ -7,7 +7,7 @@ import { dictionary } from "@/helpers/content";
 
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 
-import { RotateCcw} from 'lucide-react';
+import { RotateCcw } from 'lucide-react';
 
 import styles from "./Guess.module.css";
 
@@ -32,28 +32,28 @@ type GuessProps = {
 };
 
 export const Guess = ({ words }: GuessProps) => {
-  // STEP 1: Create alphabet letters for all keyboard buttons
+  // STEP 1: Create all keyboard letters
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ'".split("");
 
-  // STEP 2: State to store clicked/used letters
+  // STEP 2: Store clicked/used letters
   const [usedLetters, setUsedLetters] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  // STEP 3: Future state for the selected secret word
+  // STEP 3: Store current selected word
   const [selected, setSelectedWord] = useState<DictionaryWord | null>(null);
 
   const [message, setMessage] = useState<string>("");
 
-  // STEP 4: Future state for attempts/errors
+  // STEP 4: Store attempts/errors count
   const [attempts, setAttempts] = useState<number>(0);
   const maxAttempts = selected ? Math.max(5, selected.word.length + 1) : 5;
 
-  // STEP 5: Future state for game result
+  // STEP 5: Store current game status
   const [status, setStatus] = useState<
     "playing" | "win" | "lose"
   >("playing");
 
-  // STEP ???
+  // STEP 6: Store completed words
   const [completeWords, setCompleteWords] = useState<string[]>([]);
 
   const loadWord = async (word: string) => {
@@ -65,7 +65,7 @@ export const Guess = ({ words }: GuessProps) => {
     loadWord(words[currentIndex].word);
   }, [currentIndex, words]);
 
-  // STEP 5.1: Move to next word and reset round state
+  // STEP 7: Move to next word and reset round state
   const nextWord = () => {
     const nextIndex = currentIndex + 1;
 
@@ -83,7 +83,7 @@ export const Guess = ({ words }: GuessProps) => {
     setStatus("playing");
   };
 
-  // STEP 5.2: Restart full game from first word
+  // STEP 8: Restart full game
   const resetGame = () => {
     setCurrentIndex(0);
     loadWord(words[0].word);
@@ -94,7 +94,7 @@ export const Guess = ({ words }: GuessProps) => {
     setCompleteWords([]);
   };
 
-  // STEP 11: Build click function logic
+  // STEP 9: Handle letter click logic
   const handleLetterClick = (
     letter: string
   ) => {
@@ -167,10 +167,9 @@ export const Guess = ({ words }: GuessProps) => {
 
   return (
     <>
-      <p>
+      <p className="mb-2">
         <b>Click the letters to reveal the answer.</b>
       </p>
-      <span className={styles.title}>Guess?</span>
       <div className={styles.container}>
         <div className={styles.imgHint}>
           {/* Pics */}
@@ -195,11 +194,11 @@ export const Guess = ({ words }: GuessProps) => {
           </span>
         </div>
         <div className={styles.containerLetters}>
-          {/* STEP 9: Show attempts counter */}
+          {/* STEP 10: Show attempts counter */}
           <span>
             <b>Attempts:</b> {attempts} | {maxAttempts}
           </span>
-          {/* STEP 10: Show hidden/revealed word here */}
+          {/* STEP 11: Display hidden/revealed word */}
           <div className={styles.message}>
             {message && <span>{message}</span>}
           </div>
@@ -219,10 +218,10 @@ export const Guess = ({ words }: GuessProps) => {
               ))}
           </span>
           <div className={styles.letters}>
-            {/* STEP 7: Create one button for each letter */}
+            {/* STEP 12: Create one button for each letter */}
             {letters.map((letter, index) => (
               <Button
-                // STEP 8: Later add:
+                // STEP 13: Disable used letters and stop clicks after win/lose
                 disabled={usedLetters.includes(letter) || status !== "playing"}
                 onClick={() => {
                   handleLetterClick(letter);

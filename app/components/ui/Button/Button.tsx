@@ -13,6 +13,7 @@ type ButtonProps = {
 export const Button = ({
   icon,
   children,
+  disabled,
   onClick,
   className = ""
 }: ButtonProps) => {
@@ -20,6 +21,7 @@ export const Button = ({
     <button
       className={`${styles.button} ${className}`}
       onClick={onClick}
+      disabled={disabled}
     >
       {icon}
       {children}

@@ -42,3 +42,9 @@
   height: 21px;
   stroke: var(--gray-4);
 }
+
+.button:disabled {
+  opacity: 0.55;
+  filter: brightness(1.15);
+  cursor: not-allowed;
+}
