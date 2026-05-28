@@ -1,8 +1,4 @@
-.title {
-  display: block;
-  text-align: center;
-  /* font-family: var(--font-luckiest-guy); */
-  font-size: 3rem;
+.instruction {
   margin-bottom: 1rem;
 }
 

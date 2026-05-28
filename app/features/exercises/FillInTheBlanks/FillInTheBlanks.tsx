@@ -155,13 +155,7 @@ export const FillInTheBlanks = ({
   }, 0);
 
   return (
-    <div className="line-break">
-      <div>
-        <b>
-          <p>Fill in blanks with the correct answer.</p>
-        </b>
-        {exercise.description && <em className="display-block">{exercise.description}</em>}
-      </div>
+    <div className="flex flex-col gap-4">
       {showWordBank && description && (
         <Card maxContent>
           <span>{description}</span>
@@ -219,7 +213,7 @@ export const FillInTheBlanks = ({
         Score: {totalScore} out of {totalBlanks}
       </span>
 
-      <div className="button-wrapper">
+      <div className="flex gap-2">
         <Button icon={<Check />} onClick={handleCheck} />
         <Button icon={<RotateCcw />} onClick={handleReset} />
       </div>

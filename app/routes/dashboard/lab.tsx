@@ -6,6 +6,8 @@ import { LineBreak } from "@/components/content/LineBreak";
 import { Paragraph } from "@/components/content/Paragraph";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { Carousel } from "@/components/ui/Carousel";
+import { Radio } from "@/features/exercises/Radio";
+import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 
 import {
   content,
@@ -40,13 +42,13 @@ export default function Playground() {
               value={[
                 ...content({
                   parts: [
-                    icon("bullet"),
+                    icon("inbullet"),
                     icon("us"),
                     icon("uk"),
                     icon("correct"),
                     icon("incorrect"),
                     icon("spotlight"),
-                    audio("/"),
+                    audio("/assets/audio/welcome.mp3"),
                     "Normal",
                     " ",
                     bold("bold"),
@@ -139,9 +141,9 @@ export default function Playground() {
             />
           </Section>
 
-          {/* Audio Playmediaer */}
+          {/* Audio Player */}
           <Section id="audio-player" heading={3}>
-            <AudioPlayer src="/assets/audio/words/a/about-to.mp3" />
+            <AudioPlayer src="/assets/audio/welcome.mp3" />
           </Section>
 
           <Section id="image" heading={3}>
@@ -175,11 +177,67 @@ export default function Playground() {
 
           <Section id="carousel" heading={3}>
             <Carousel
-              instruction= "Describe what you see."
+              instruction="Describe what you see."
               imgs={[
                 { word: "cat", img: 0 },
                 { word: "cat", img: 1 },
               ]}
+            />
+          </Section>
+
+          {/* Radio */}
+          <Section id="radio" heading={3}>
+            <Radio
+              exercise={{
+                instruction: "Choose the best response.",
+                description: "description",
+                questions: [
+                  {
+                    question: "1. Question",
+                    options: [
+                      { option: "option 1", isCorrect: true },
+                      { option: "option 2", isCorrect: false },
+                      { option: "option 3", isCorrect: false },
+                    ],
+                  },
+                ],
+              }}
+            />
+          </Section>
+
+          {/* Fill in the Blanks */}
+          <Section id="fill-in-the-blanks" heading={3}>
+            <FillInTheBlanks
+              showWordBank={true}
+              numbered={true}
+              exercise={{
+                instruction: "Fill in the blanks.",
+                description: "description",
+                blocks: [
+                  {
+                    block: [
+                      { text: "He" },
+                      { blank: "is" },
+                      { text: "a teacher." },
+                    ],
+                    lineBreak: true,
+                  },
+                  {
+                    block: [
+                      { text: "He" },
+                      { blank: "teaches" },
+                      { text: "in the morning." },
+                    ],
+                  },
+                  {
+                    block: [
+                      { text: "He" },
+                      { blank: "walks" },
+                      { text: "to school." },
+                    ],
+                  },
+                ],
+              }}
             />
           </Section>
         </PageSections>

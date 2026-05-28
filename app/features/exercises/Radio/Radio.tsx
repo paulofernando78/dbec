@@ -64,13 +64,7 @@ export const Radio = ({
   };
 
   return (
-    <div className="line-break">
-      <div>
-        <b>
-          <p>Choose the correct answer.</p>
-        </b>
-        {exercise.description && <em className="display-block">{exercise.description}</em>}
-      </div>
+    <div className="flex flex-col gap-4">
       {questions.map((q, qIndex) => (
         <div key={qIndex}>
           <p className={styles.question}>{qIndex + 1}. {q.question}</p>
@@ -126,7 +120,7 @@ export const Radio = ({
         </span>
       )}
 
-      <div className="button-wrapper">
+      <div className="flex gap-2">
         <Button icon={<Check />} onClick={handleCheck} />
         <Button icon={<RotateCcw />} onClick={handleReset} />
       </div>

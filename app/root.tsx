@@ -40,10 +40,10 @@ export default function App() {
 
   return (
     <div className="app">
-      <div className="container">
+      <div className="app-container">
         <Header />
-        <div className="content">
-          <div className="scrollArea">
+        <div className="app-content">
+          <div className="app-scrollArea">
             {isLoading ? <Loading /> : <Outlet />}
           </div>
         </div>

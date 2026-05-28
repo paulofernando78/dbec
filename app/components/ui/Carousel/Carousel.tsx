@@ -96,9 +96,6 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
 
   return (
     <>
-      <p className="line-break-item">
-        <b>{instruction}</b>
-      </p>
       <div className={styles.wrapper}>
         <button className={styles.leftArrow} onClick={scrollLeft}>
           <Arrow className={`${styles.arrow} ${styles.back}`} />

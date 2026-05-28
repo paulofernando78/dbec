@@ -86,13 +86,15 @@ export const Audio = ({ src, className }: AudioProps) => {
           size={16}
           className={className}
           color="var(--icon-color)"
+          fill="var(--icon-color)"
         />
       ) : (
         <Play
           onClick={handlePlay}
-          size={18}
+          size={16}
           className={className}
           color="var(--icon-color)"
+          fill="var(--icon-color)"
         />
       )}
 

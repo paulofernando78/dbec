@@ -153,7 +153,7 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
             {renderIcons(part)}
             {part.audio && (
               <span className="inline-audio">
-                <Audio src={part.audio} className={styles.iconPosition} />
+                <Audio src={part.audio} className={`${styles.iconPosition} ${styles.iconPositionAudio}`} />
               </span>
             )}
             {content}
