@@ -216,7 +216,7 @@ export const FillInTheBlanks = ({
         Score: {totalScore} out of {totalBlanks}
       </span>
 
-      <div className="flex gap-2">
+      <div className="flex gap-2 mb-2">
         <Button icon={<Check />} onClick={handleCheck} />
         <Button icon={<RotateCcw />} onClick={handleReset} />
       </div>
