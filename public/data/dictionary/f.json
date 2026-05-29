@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "forget",
+        "phonetics": "/fərˈɡet/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to fail to remember something; to be unable to bring information, facts, or experiences back to your mind",
+        "ptDefinition": "esquecer; não conseguir se lembrar de algo ou trazer uma informação de volta à mente",
+        "examples": [
+          {
+            "enExample": "I always forget people's names when I meet them for the first time.",
+            "ptExample": "Eu sempre esqueço o nome das pessoas quando as conheço pela primeira vez."
+          },
+          {
+            "enExample": "Don't forget to lock the door before you leave.",
+            "ptExample": "Não se esqueça de trancar a porta antes de sair."
+          }
+        ],
+        "synonyms": ["overlook", "fail to remember", "leave out"],
+        "antonyms": ["remember", "recall", "recollect"],
+        "seeAlso": ["memory", "remember", "recall", "memorize", "forgetful"],
+        "notes": [
+          {
+            "enNote": "Forget is an irregular verb: forget → forgot → forgotten.",
+            "ptNote": "Forget é um verbo irregular: forget → forgot → forgotten."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "forget.avif",
+            "alt": "a person trying to remember something they have forgotten"
+          }
+        ]
+      },
+      {
         "word": "fossil",
         "phonetics": "/ˈfɑː.səl/",
         "partOfSpeech": "noun",

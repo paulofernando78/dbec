@@ -19,8 +19,18 @@ export default [
     // A1 BEGINNER
     route("cefr/a1/introduction", "routes/cefr/a1/introduction.tsx"),
 
-    // Ted-ED
     route("c1-c2/random-topics", "routes/cefr/c1-c2/random-topics.tsx"),
+
+    // Ted-ED
     route("c1-c2/ted-ed", "routes/cefr/c1-c2/ted-ed.tsx"),
+
+    route(
+      "/cefr/c1-c2/ted-ed/what-causes-constipation",
+      "routes/cefr/c1-c2/ted-ed/what-causes-constipation.tsx",
+    ),
+    route(
+      "/cefr/c1-c2/ted-ed/how-your-memory-works",
+      "routes/cefr/c1-c2/ted-ed/how-your-memory-works.tsx",
+    ),
   ]),
 ] satisfies RouteConfig;

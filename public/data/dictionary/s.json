@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "storage",
+        "phonetics": "/ˈstɔːr.ɪdʒ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the act of keeping or storing something for future use; a place or system where information, goods, or materials are kept",
+        "ptDefinition": "armazenamento; o ato de guardar algo para uso futuro; local ou sistema onde informações, produtos ou materiais são armazenados",
+        "examples": [
+          {
+            "enExample": "The brain uses different types of storage for short-term and long-term memories.",
+            "ptExample": "O cérebro utiliza diferentes tipos de armazenamento para memórias de curto e longo prazo."
+          },
+          {
+            "enExample": "Cloud storage allows users to access their files from anywhere.",
+            "ptExample": "O armazenamento em nuvem permite que os usuários acessem seus arquivos de qualquer lugar."
+          }
+        ],
+        "synonyms": ["keeping", "warehousing", "retention", "preservation"],
+        "antonyms": ["disposal", "removal", "deletion"],
+        "seeAlso": ["memory", "information", "data", "archive", "store"],
+        "notes": [
+          {
+            "enNote": "Storage can refer to physical storage (boxes, warehouses) or digital storage (hard drives, cloud services). In psychology, it refers to the retention of information in memory.",
+            "ptNote": "Storage pode se referir ao armazenamento físico (caixas, depósitos) ou digital (discos rígidos, serviços em nuvem). Em psicologia, refere-se à retenção de informações na memória."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "storage.avif",
+            "alt": "digital and physical storage systems used to keep information and materials for future use"
+          }
+        ]
+      },
+      {
         "word": "stool",
         "phonetics": "/stuːl/",
         "partOfSpeech": "noun",

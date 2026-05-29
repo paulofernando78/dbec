@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "information",
+        "phonetics": "/ˌɪn.fəˈmeɪ.ʃən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "facts, details, knowledge, or data about someone or something",
+        "ptDefinition": "informação; fatos, detalhes, conhecimento ou dados sobre alguém ou alguma coisa",
+        "examples": [
+          {
+            "enExample": "The website provides useful information about healthy habits.",
+            "ptExample": "O site fornece informações úteis sobre hábitos saudáveis."
+          },
+          {
+            "enExample": "Scientists collect information to better understand the world.",
+            "ptExample": "Os cientistas coletam informações para compreender melhor o mundo."
+          }
+        ],
+        "synonyms": ["data", "details", "knowledge", "facts"],
+        "antonyms": ["misinformation", "ignorance"],
+        "seeAlso": ["knowledge", "data", "fact", "evidence", "memory"],
+        "notes": [
+          {
+            "enNote": "Information is usually uncountable in English. We say 'some information' or 'a piece of information', not 'an information' or 'informations'.",
+            "ptNote": "Information geralmente é incontável em inglês. Dizemos 'some information' ou 'a piece of information', e não 'an information' ou 'informations'."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "information.avif",
+            "alt": "digital information represented by data, documents, and communication networks"
+          }
+        ]
+      },
+      {
         "word": "ice age",
         "phonetics": "/ˈaɪs ˌeɪdʒ/",
         "partOfSpeech": "noun",

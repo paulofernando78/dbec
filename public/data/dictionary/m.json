@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "memory",
+        "phonetics": "/ˈmeməri/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the ability to remember information, experiences, people, or events from the past",
+        "ptDefinition": "a capacidade de lembrar informações, experiências, pessoas ou acontecimentos do passado; memória",
+        "examples": [
+          {
+            "enExample": "My memory of that day is still very clear.",
+            "ptExample": "Minha memória daquele dia ainda é muito clara."
+          },
+          {
+            "enExample": "Regular practice can improve your memory.",
+            "ptExample": "A prática regular pode melhorar sua memória."
+          }
+        ],
+        "synonyms": ["recall", "remembrance", "recollection"],
+        "antonyms": ["forgetfulness", "amnesia"],
+        "seeAlso": ["remember", "forget", "recall", "memorize"],
+        "notes": [
+          {
+            "enNote": "Memory is commonly divided into short-term memory and long-term memory.",
+            "ptNote": "A memória é comumente dividida em memória de curto prazo e memória de longo prazo."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "memory.avif",
+            "alt": "a human brain representing memory and learning"
+          }
+        ]
+      },
+      {
         "word": "make a pig of oneself",
         "partOfSpeech": "idiom",
         "enDefinition": "to eat too much or behave in a greedy or excessive way, especially when eating",

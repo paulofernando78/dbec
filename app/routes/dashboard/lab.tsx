@@ -176,16 +176,7 @@ export default function Playground() {
             </MediaWrapper>
           </Section>
 
-          <Section id="carousel" heading={3}>
-            <Carousel
-              instruction="Describe what you see."
-              imgs={[
-                { word: "cat", img: 0 },
-                { word: "cat", img: 1 },
-              ]}
-            />
-          </Section>
-
+        line
           <Section id="guess" heading={3}>
             <Guess
               words={[

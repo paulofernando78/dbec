@@ -2,6 +2,44 @@
   {
     "definitions": [
       {
+        "word": "learning",
+        "phonetics": "/ˈlɜːrnɪŋ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the process of gaining knowledge, skills, understanding, or experience through study, practice, or teaching",
+        "ptDefinition": "aprendizagem; o processo de adquirir conhecimento, habilidades, compreensão ou experiência por meio de estudo, prática ou ensino",
+        "examples": [
+          {
+            "enExample": "Learning a new language takes time and consistent practice.",
+            "ptExample": "Aprender um novo idioma exige tempo e prática consistente."
+          },
+          {
+            "enExample": "Online learning has become increasingly popular in recent years.",
+            "ptExample": "A aprendizagem online tornou-se cada vez mais popular nos últimos anos."
+          }
+        ],
+        "synonyms": [
+          "education",
+          "study",
+          "training",
+          "knowledge acquisition",
+          "instruction"
+        ],
+        "antonyms": ["ignorance", "unawareness"],
+        "seeAlso": ["learn", "education", "teaching", "knowledge", "memory"],
+        "notes": [
+          {
+            "enNote": "Learning can refer both to the process of acquiring knowledge and to the knowledge that has been acquired.",
+            "ptNote": "Learning pode se referir tanto ao processo de aquisição de conhecimento quanto ao conhecimento já adquirido."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "learning.avif",
+            "alt": "a student learning through reading, studying, and acquiring knowledge"
+          }
+        ]
+      },
+      {
         "word": "lollygagging",
         "phonetics": "/ˈlɒliɡæɡɪŋ/",
         "partOfSpeech": "verb (informal), gerund",
@@ -9,25 +47,36 @@
         "ptDefinition": "perder tempo sem propósito; demorar-se ou agir lentamente em vez de realizar tarefas.",
         "examples": [
           {
-        "enExample": "Stop lollygagging and finish your homework.",
-        "ptExample": "Pare de enrolar e termine sua lição de casa."
+            "enExample": "Stop lollygagging and finish your homework.",
+            "ptExample": "Pare de enrolar e termine sua lição de casa."
           },
           {
-        "enExample": "We were lollygagging on the way to the airport and almost missed our flight.",
-        "ptExample": "Ficamos enrolando no caminho para o aeroporto e quase perdemos o voo."
+            "enExample": "We were lollygagging on the way to the airport and almost missed our flight.",
+            "ptExample": "Ficamos enrolando no caminho para o aeroporto e quase perdemos o voo."
           },
           {
-        "enExample": "The kids spent the afternoon lollygagging in the park instead of studying.",
-        "ptExample": "As crianças passaram a tarde enrolando no parque em vez de estudar."
+            "enExample": "The kids spent the afternoon lollygagging in the park instead of studying.",
+            "ptExample": "As crianças passaram a tarde enrolando no parque em vez de estudar."
           }
         ],
-        "synonyms": ["dawdling", "dilly-dallying", "loitering", "stalling", "procrastinating"],
-        "antonyms": ["hurrying", "being productive", "getting on with it", "acting promptly"],
+        "synonyms": [
+          "dawdling",
+          "dilly-dallying",
+          "loitering",
+          "stalling",
+          "procrastinating"
+        ],
+        "antonyms": [
+          "hurrying",
+          "being productive",
+          "getting on with it",
+          "acting promptly"
+        ],
         "seeAlso": ["dilly-dally", "procrastinate", "kill time", "loiter"],
         "notes": [
           {
-        "enNote": "Informal, chiefly American; often used to scold someone for wasting time or not being decisive.",
-        "ptNote": "Informal, principalmente nos EUA; frequentemente usado para repreender alguém por perder tempo ou não agir com decisão."
+            "enNote": "Informal, chiefly American; often used to scold someone for wasting time or not being decisive.",
+            "ptNote": "Informal, principalmente nos EUA; frequentemente usado para repreender alguém por perder tempo ou não agir com decisão."
           }
         ]
       },

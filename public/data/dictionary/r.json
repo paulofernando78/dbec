@@ -1,7 +1,38 @@
 [
   {
     "definitions": [
-      
+      {
+        "word": "recall",
+        "phonetics": "/rɪˈkɔːl/",
+        "partOfSpeech": "verb, noun",
+        "enDefinition": "to remember or bring information back into your mind; the ability or act of remembering something",
+        "ptDefinition": "lembrar; trazer uma informação de volta à mente; capacidade ou ato de recordar algo",
+        "examples": [
+          {
+            "enExample": "I can clearly recall my first day at school.",
+            "ptExample": "Eu consigo me lembrar claramente do meu primeiro dia de aula."
+          },
+          {
+            "enExample": "The witness was unable to recall the details of the incident.",
+            "ptExample": "A testemunha não conseguiu se lembrar dos detalhes do incidente."
+          }
+        ],
+        "synonyms": ["remember", "recollect", "reminisce", "retrieve"],
+        "antonyms": ["forget", "overlook", "misremember"],
+        "seeAlso": ["memory", "remember", "recollection", "forget", "memorize"],
+        "notes": [
+          {
+            "enNote": "Recall is often used in psychology and education to describe the ability to retrieve information from memory. As a noun, it refers to the act or power of remembering.",
+            "ptNote": "Recall é frequentemente usado em psicologia e educação para descrever a capacidade de recuperar informações da memória. Como substantivo, refere-se ao ato ou à capacidade de recordar."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "recall.avif",
+            "alt": "a person recalling information from memory"
+          }
+        ]
+      },
       {
         "word": "right-hand man",
         "partOfSpeech": "expression",

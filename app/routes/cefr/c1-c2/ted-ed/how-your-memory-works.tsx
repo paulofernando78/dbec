@@ -17,7 +17,7 @@ import { content, bold } from "@/helpers/content";
 export const metadata = {
   title: "Advanced | How Your Memory Works",
   description:
-    "Advanced listening and discussion practice based on a TED-Ed video about how memory functions and how we remember things.",
+    "Advanced listening and discussion practice based on a TED-Ed video about memory, forgetting, and how the brain stores information.",
 };
 
 export default function HowYourMemoryWorks() {
@@ -26,24 +26,23 @@ export default function HowYourMemoryWorks() {
       <Whiteboard
         title="Advanced"
         subtitle="How Your Memory Works"
-        description="Watch the video, learn about memory processes, and discuss how we remember and forget."
+        description="Watch the video, understand how memory works, and discuss why forgetting is important."
       />
-
       <div className="line-break">
         <PageSections>
-          <Card>
-            <Paragraph
-              value={[
-                ...content({
-                  parts: [
-                    "By the end of this lesson, you will understand how memory works and discuss ways to improve it.",
-                  ],
-                }),
-              ]}
-            />
-          </Card>
-          <LineBreak />
           <Section id="introduction" heading={3}>
+            <Card>
+              <Paragraph
+                value={[
+                  ...content({
+                    parts: [
+                      "In this lesson, you will watch a TED-Ed video that explains how memory works, why forgetting is important, and how the brain stores information. You will also discuss questions, practice vocabulary, and complete exercises to improve your understanding of the topic.",
+                    ],
+                  }),
+                ]}
+              />
+            </Card>
+            <LineBreak />
             <Line
               value={[
                 ...content({
@@ -58,21 +57,21 @@ export default function HowYourMemoryWorks() {
                 {
                   value: [
                     ...content({
-                      parts: ["What do you know about how memory works?"],
+                      parts: ["Why do people forget important information?"],
                     }),
                   ],
                 },
                 {
                   value: [
                     ...content({
-                      parts: ["How do you remember important information?"],
+                      parts: ["Would you like to remember everything forever?"],
                     }),
                   ],
                 },
                 {
                   value: [
                     ...content({
-                      parts: ["What causes people to forget things?"],
+                      parts: ["What techniques help you remember things?"],
                     }),
                   ],
                 },
@@ -86,11 +85,11 @@ export default function HowYourMemoryWorks() {
               imgs={[
                 { word: "memory", img: 0 },
                 { word: "brain", img: 0 },
-                { word: "neurons", img: 0 },
+                { word: "forget", img: 0 },
+                { word: "neuron", img: 0 },
+                { word: "information", img: 0 },
+                { word: "learning", img: 0 },
                 { word: "recall", img: 0 },
-                { word: "forgetting", img: 0 },
-                { word: "attention", img: 0 },
-                { word: "encoding", img: 0 },
                 { word: "storage", img: 0 },
               ]}
             />
@@ -109,10 +108,7 @@ export default function HowYourMemoryWorks() {
               ]}
             />
             <LineBreak />
-            <VideoPlayer
-              videoId="RdTUSdcj3sM"
-              title="How Your Memory Works"
-            />
+            <VideoPlayer videoId="TqFtWwQCzFI" title="How Your Memory Works" />
             <Radio
               score={false}
               exercise={{
@@ -120,7 +116,8 @@ export default function HowYourMemoryWorks() {
                   {
                     options: [
                       {
-                        option: "How the brain remembers and forgets information.",
+                        option:
+                          "How the brain remembers and forgets information.",
                         isCorrect: true,
                       },
                       {
@@ -150,58 +147,22 @@ export default function HowYourMemoryWorks() {
             />
             <LineBreak />
             <Radio
+              score={false}
               exercise={{
                 questions: [
                   {
-                    question:
-                      "1. What helps the brain store memories?",
                     options: [
                       {
-                        option: "Neurons connecting.",
+                        option:
+                          "How the brain remembers and forgets information.",
                         isCorrect: true,
                       },
                       {
-                        option: "Sleeping less.",
+                        option: "How to become a professional doctor.",
                         isCorrect: false,
                       },
                       {
-                        option: "Eating sugar.",
-                        isCorrect: false,
-                      },
-                    ],
-                  },
-                  {
-                    question:
-                      "2. What can cause forgetting?",
-                    options: [
-                      {
-                        option: "Lack of attention.",
-                        isCorrect: true,
-                      },
-                      {
-                        option: "Watching TV.",
-                        isCorrect: false,
-                      },
-                      {
-                        option: "Reading books.",
-                        isCorrect: false,
-                      },
-                    ],
-                  },
-                  {
-                    question:
-                      "3. What process is important for memory?",
-                    options: [
-                      {
-                        option: "Encoding information.",
-                        isCorrect: true,
-                      },
-                      {
-                        option: "Ignoring details.",
-                        isCorrect: false,
-                      },
-                      {
-                        option: "Skipping meals.",
+                        option: "How computers store files.",
                         isCorrect: false,
                       },
                     ],
@@ -212,19 +173,79 @@ export default function HowYourMemoryWorks() {
           </Section>
 
           <Section id="practice" heading={3}>
+            <Radio
+              exercise={{
+                questions: [
+                  {
+                    question: "1. What helps create stronger memories?",
+                    options: [
+                      {
+                        option: "Repeated use of neural pathways.",
+                        isCorrect: true,
+                      },
+                      {
+                        option: "Sleeping less.",
+                        isCorrect: false,
+                      },
+                      {
+                        option: "Ignoring information.",
+                        isCorrect: false,
+                      },
+                    ],
+                  },
+
+                  {
+                    question: "2. Why is forgetting useful?",
+                    options: [
+                      {
+                        option: "It removes unnecessary information.",
+                        isCorrect: true,
+                      },
+                      {
+                        option: "It damages the brain.",
+                        isCorrect: false,
+                      },
+                      {
+                        option: "It prevents learning.",
+                        isCorrect: false,
+                      },
+                    ],
+                  },
+
+                  {
+                    question: "3. What is one way to improve memory?",
+                    options: [
+                      {
+                        option: "Reviewing information regularly.",
+                        isCorrect: true,
+                      },
+                      {
+                        option: "Avoiding practice.",
+                        isCorrect: false,
+                      },
+                      {
+                        option: "Studying only once.",
+                        isCorrect: false,
+                      },
+                    ],
+                  },
+                ],
+              }}
+            />
+
             <Guess
               words={[
-                { word: "memory", img: 1 },
                 { word: "brain", img: 0 },
-                { word: "neurons", img: 0 },
-                { word: "recall", img: 0 },
-                { word: "forgetting", img: 0 },
-                { word: "attention", img: 0 },
-                { word: "encoding", img: 0 },
                 { word: "storage", img: 0 },
+                { word: "recall", img: 0 },
+                { word: "neuron", img: 0 },
+                { word: "memory", img: 0 },
+                { word: "information", img: 0 },
+                { word: "forget", img: 0 },
+                { word: "learning", img: 0 },
               ]}
             />
-            <LineBreak />
+
             <FillInTheBlanks
               showWordBank={false}
               numbered={true}
@@ -232,95 +253,72 @@ export default function HowYourMemoryWorks() {
                 blocks: [
                   {
                     block: [
-                      {
-                        text: "The ",
-                      },
+                      { text: "The " },
                       { blank: "brain" },
-                      { text: " stores memories." },
+                      { text: " stores information." },
                     ],
                     lineBreak: true,
                   },
+
                   {
                     block: [
-                      {
-                        text: "Memory involves ",
-                      },
-                      { blank: "encoding" },
-                      {
-                        text: " and storage processes.",
-                      },
+                      { text: "Good " },
+                      { blank: "memory" },
+                      { text: " helps people learn." },
                     ],
                     lineBreak: true,
                   },
+
                   {
                     block: [
-                      {
-                        text: "Good ",
-                      },
-                      { blank: "attention" },
-                      {
-                        text: " helps with memory.",
-                      },
+                      { text: "A " },
+                      { blank: "neuron" },
+                      { text: " sends signals in the nervous system." },
                     ],
                     lineBreak: true,
                   },
+
                   {
                     block: [
-                      {
-                        text: " ",
-                      },
-                      { blank: "neurons" },
-                      {
-                        text: " connect to form memories.",
-                      },
-                    ],
-                    lineBreak: true,
-                  },
-                  {
-                    block: [
-                      {
-                        text: " ",
-                      },
+                      { text: "Trying to " },
                       { blank: "recall" },
-                      {
-                        text: " is the process of remembering.",
-                      },
+                      { text: " information strengthens memory." },
                     ],
                     lineBreak: true,
                   },
+
                   {
                     block: [
-                      {
-                        text: " ",
-                      },
-                      { blank: "forgetting" },
-                      {
-                        text: " can happen naturally.",
-                      },
+                      { text: "People sometimes " },
+                      { blank: "forget" },
+                      { text: " unnecessary details." },
                     ],
                     lineBreak: true,
                   },
+
                   {
                     block: [
-                      {
-                        text: "Memory can be improved by practice and ",
-                      },
-                      { blank: "attention" },
-                      {
-                        text: ".",
-                      },
-                    ],
-                    lineBreak: true,
-                  },
-                  {
-                    block: [
-                      {
-                        text: " ",
-                      },
+                      { text: "Information can remain in long-term " },
                       { blank: "storage" },
-                      {
-                        text: " is where memories are kept.",
-                      },
+                      { text: "." },
+                    ],
+                    lineBreak: true,
+                  },
+
+                  {
+                    block: [
+                      { text: "Practice improves " },
+                      { blank: "learning" },
+                      { text: "." },
+                    ],
+                    lineBreak: true,
+                  },
+
+                  {
+                    block: [
+                      { text: "Neural " },
+                      { blank: "pathway" },
+                      { text: " connections become stronger with use." },
                     ],
                     lineBreak: true,
                   },
@@ -348,29 +346,36 @@ export default function HowYourMemoryWorks() {
                 {
                   value: [
                     ...content({
-                      parts: ["What surprised you most in the video?"],
+                      parts: [
+                        "Would it be a good thing to remember everything forever?",
+                      ],
                     }),
                   ],
                 },
-                {
-                  value: [
-                    ...content({
-                      parts: ["Why do many people ignore memory health?"],
-                    }),
-                  ],
-                },
-                {
-                  value: [
-                    ...content({
-                      parts: ["What habits can improve memory?"],
-                    }),
-                  ],
-                },
+
                 {
                   value: [
                     ...content({
                       parts: [
-                        "Should schools teach more about how memory works? Why?",
+                        "Why do you think the brain forgets information?",
+                      ],
+                    }),
+                  ],
+                },
+
+                {
+                  value: [
+                    ...content({
+                      parts: ["What study techniques work best for you?"],
+                    }),
+                  ],
+                },
+
+                {
+                  value: [
+                    ...content({
+                      parts: [
+                        "How could understanding memory help students learn better?",
                       ],
                     }),
                   ],

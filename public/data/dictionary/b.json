@@ -2,6 +2,44 @@
   {
     "definitions": [
       {
+        "word": "brain",
+        "phonetics": "/breɪn/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the organ inside the head that controls thought, memory, feelings, movement, and the body's functions",
+        "ptDefinition": "o órgão dentro da cabeça que controla o pensamento, a memória, as emoções, os movimentos e as funções do corpo",
+        "examples": [
+          {
+            "enExample": "The human brain contains billions of neurons.",
+            "ptExample": "O cérebro humano contém bilhões de neurônios."
+          },
+          {
+            "enExample": "Learning new skills helps keep your brain active.",
+            "ptExample": "Aprender novas habilidades ajuda a manter o cérebro ativo."
+          }
+        ],
+        "synonyms": ["mind", "intellect", "head"],
+        "antonyms": ["mindlessness", "stupidity"],
+        "seeAlso": [
+          "memory",
+          "mind",
+          "neuron",
+          "nervous system",
+          "intelligence"
+        ],
+        "notes": [
+          {
+            "enNote": "The brain is part of the central nervous system and is responsible for processing information from the body and the environment.",
+            "ptNote": "O cérebro faz parte do sistema nervoso central e é responsável por processar informações do corpo e do ambiente."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "brain.avif",
+            "alt": "human brain showing the organ responsible for thought, memory, and learning"
+          }
+        ]
+      },
+      {
         "word": "bowel movement",
         "phonetics": "/ˈbaʊ.əl ˌmuːv.mənt/",
         "partOfSpeech": "noun",

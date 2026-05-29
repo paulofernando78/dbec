@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "neuron",
+        "phonetics": "/ˈnʊr.ɑːn/ (US), /ˈnjʊə.rɒn/ (UK)",
+        "partOfSpeech": "noun",
+        "enDefinition": "a specialized nerve cell that carries information through the brain and nervous system using electrical and chemical signals",
+        "ptDefinition": "neurônio; célula nervosa especializada que transmite informações pelo cérebro e sistema nervoso por meio de sinais elétricos e químicos",
+        "examples": [
+          {
+            "enExample": "Neurons communicate with each other through complex networks in the brain.",
+            "ptExample": "Os neurônios se comunicam entre si por meio de redes complexas no cérebro."
+          },
+          {
+            "enExample": "Learning new skills can strengthen connections between neurons.",
+            "ptExample": "Aprender novas habilidades pode fortalecer as conexões entre os neurônios."
+          }
+        ],
+        "synonyms": ["nerve cell"],
+        "antonyms": [],
+        "seeAlso": ["brain", "memory", "nervous system", "synapse", "nerve"],
+        "notes": [
+          {
+            "enNote": "Neurons are the basic functional units of the nervous system and are responsible for transmitting information throughout the body.",
+            "ptNote": "Os neurônios são as unidades funcionais básicas do sistema nervoso e são responsáveis por transmitir informações por todo o corpo."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "neuron.avif",
+            "alt": "a neuron showing the cell body, dendrites, and axon transmitting signals"
+          }
+        ]
+      },
+      {
         "word": "novelty",
         "phonetics": "/ˈnɑː.vəl.ti/ (US), /ˈnɒv.əl.ti/ (UK)",
         "partOfSpeech": "noun",
