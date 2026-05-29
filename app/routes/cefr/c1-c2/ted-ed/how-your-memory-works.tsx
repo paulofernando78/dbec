@@ -98,7 +98,7 @@ export default function HowYourMemoryWorks() {
               exercise={{
                 questions: [
                   {
-                    question: "1. What is the video mainly about?",
+                    question: "What is the video mainly about?",
                     options: [
                       {
                         option: "How to become a professional doctor.",
@@ -126,7 +126,7 @@ export default function HowYourMemoryWorks() {
               exercise={{
                 questions: [
                   {
-                    question: "1. What helps create stronger memories?",
+                    question: "What helps create stronger memories?",
                     options: [
                       {
                         option: "Sleeping less.",
@@ -144,7 +144,7 @@ export default function HowYourMemoryWorks() {
                   },
 
                   {
-                    question: "2. Why is forgetting useful?",
+                    question: "Why is forgetting useful?",
                     options: [
                       {
                         option: "It removes unnecessary information.",
@@ -162,7 +162,7 @@ export default function HowYourMemoryWorks() {
                   },
 
                   {
-                    question: "3. What is one way to improve memory?",
+                    question: "What is one way to improve memory?",
                     options: [
                       {
                         option: "Avoiding practice.",
