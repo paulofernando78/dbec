@@ -1,4 +1,3 @@
-import styles from "./Whiteboard.module.css";
 
 type WhiteboardProps = {
   title?: string;
@@ -18,10 +17,19 @@ export const Whiteboard = ({
   description,
 }: WhiteboardProps) => {
   return (
-    <div className={styles.frame}>
-      <h1 className="text-4xl">{title}</h1>
-      {subtitle && <h2 className="text-3xl">{subtitle}</h2>}
-      <span className="text-2xl">{description}</span>
+    <div
+      className="
+        pt-3 pr-4 pb-3 pl-4
+        mb-8
+        text-[var(--text-color-fixed)]
+        border-[7px]
+        border-[var(--gray-4)]
+        rounded-[var(--border-radius)]
+      "
+    >
+      <h1 className="text-3xl font-bold">{title}</h1>
+      {subtitle && <h2 className="text-2xl">{subtitle}</h2>}
+      <span className="text-1xl">{description}</span>
     </div>
   );
 };

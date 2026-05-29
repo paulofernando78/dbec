@@ -1,5 +1,3 @@
-import styles from "./VideoPlayer.module.css";
-
 const getEmbedUrl = (src?: string, videoId?: string): string => {
   if (videoId) {
     return `https://www.youtube.com/embed/${videoId}`;
@@ -36,10 +34,15 @@ type VideoPlayerProps = {
   src?: string;
   videoId?: string;
   title?: string;
-
+  instruction: string;
 };
 
-export const VideoPlayer = ({ src, videoId, title = "YouTube video" }: VideoPlayerProps) => {
+export const VideoPlayer = ({
+  src,
+  videoId,
+  title = "YouTube video",
+  instruction,
+}: VideoPlayerProps) => {
   const embedUrl = getEmbedUrl(src, videoId);
 
   if (!embedUrl) {
@@ -47,14 +50,27 @@ export const VideoPlayer = ({ src, videoId, title = "YouTube video" }: VideoPlay
   }
 
   return (
-    <div className={styles.wrapper}>
-      <iframe
-        className={styles.video}
-        src={embedUrl}
-        title={title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-    </div>
+    <>
+      <p className="font-bold">{instruction}</p>
+      <div
+        className="
+        w-full
+        aspect-video
+        border
+        border-[var(--gray-3)]
+        rounded-[var(--border-radius)]
+        overflow-hidden
+        bg-[var(--slate-10)]
+    "
+      >
+        <iframe
+          className="w-full h-full border-0"
+          src={embedUrl}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </>
   );
 };

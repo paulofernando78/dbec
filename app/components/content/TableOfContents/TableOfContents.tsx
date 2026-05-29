@@ -1,11 +1,9 @@
-import styles from "./TableOfContents.module.css";
 
 import { Fragment } from "react";
 import {
   InlineRichContent,
   type InlineRichContentValue,
 } from "@/components/content/InlineRichContent";
-// import { Content, ContentLink } from "@/lib/svg-imports.js";
 
 import { Notebook, NotebookText } from "lucide-react";
 
@@ -27,8 +25,8 @@ export const TableOfContents = ({
     Array.isArray(value) ? value : [value];
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.titleWrapper}>
+    <div className="mb-4">
+      <div className="flex gap-2 mb-2">
         <Notebook color="var(--icon-color)"/>
         <span>
           <b>Table of Contents</b>
@@ -42,13 +40,13 @@ export const TableOfContents = ({
             return (
               <Fragment key={key}>
                 {item.title && (
-                  <span className={styles.title}>
+                  <span>
                     <InlineRichContent value={toValue(item.title)} />
                   </span>
                 )}
 
                 {item.href && (
-                  <li className={styles.topicWrapper}>
+                  <li className="flex gap-2 ml-4">
                     <NotebookText color="var(--icon-color)"/>
                     <a href={`#${item.href}`}>
                       {item.label && (

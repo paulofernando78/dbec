@@ -1,23 +1,14 @@
 import type { ReactNode } from "react";
 
-import styles from "./Card.module.css";
-
 type CardProps = {
   children: ReactNode
   className?: string
   maxContent?: boolean
 }
 
-export const Card = ({ children, className = "", maxContent = false }: CardProps) => {
+export const Card = ({ children, maxContent = false }: CardProps) => {
   return <div
-    className={[
-      styles.card,
-      maxContent && styles.maxContent,
-      className
-    ]
-    .filter(Boolean)
-    .join(" ")
-    }>
+    className={`border border-gray-400 bg-gray-300 rounded-xl px-4 pt-4 pb-3${maxContent ? "w-fit max-w-full" : ""}`}>
       {children}
     </div>;
 };

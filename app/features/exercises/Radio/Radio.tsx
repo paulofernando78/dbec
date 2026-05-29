@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/Button";
 
 import { Check, RotateCcw} from 'lucide-react';
 
-import styles from "./Radio.module.css";
-
 type RadioOption = {
   option?: string;
   isCorrect?: boolean;
@@ -26,11 +24,13 @@ type RadioExercise = {
 };
 
 type RadioProps = {
+  instruction: string
   exercise?: RadioExercise;
   score?: boolean;
 };
 
 export const Radio = ({
+  instruction,
   exercise = {},
   score = true,
 }: RadioProps) => {
@@ -65,9 +65,10 @@ export const Radio = ({
 
   return (
     <div className="flex flex-col gap-4">
+      <p className="font-bold">{instruction}</p>
       {questions.map((q, qIndex) => (
         <div key={qIndex}>
-          <p className={styles.question}>{qIndex + 1}. {q.question}</p>
+          <p className="mb-px">{qIndex + 1}. {q.question}</p>
 
           {(q.options || []).map((opt, optIndex) => {
             const isActive = selected[qIndex] === optIndex;
@@ -77,9 +78,9 @@ export const Radio = ({
             const isCorrect = isChecked && isActive && opt.isCorrect;
 
             return (
-              <label key={optIndex} className={styles.label}>
+              <label key={optIndex} className="flex gap-[5px] mt-[7px] mr-[5px]">
                 <input
-                  className={styles.input}
+                  className="hidden"
                   type="radio"
                   name={`radio-${qIndex}`}
                   checked={selected[qIndex] === optIndex}
@@ -94,17 +95,25 @@ export const Radio = ({
 
                 <span
                   className={[
-                    styles.radio,
-                    isActive && styles.radioActive,
-                    isCorrect && styles.radioGreen,
-                    isWrong && styles.radioRed,
-                    isDisabled && styles.radioDisabled,
+                    "relative min-w-[20px] h-[20px] border border-[var(--gray-5)] rounded-full",
+                    isDisabled && "pointer-events-none opacity-50 grayscale-[40%]",
                   ]
                     .filter(Boolean)
                     .join(" ")}
                 >
                   {selected[qIndex] === optIndex && (
-                    <span className={styles.radioInner} />
+                    <span
+                      className={[
+                        "absolute left-1/2 top-1/2 w-[13px] h-[13px] rounded-full -translate-x-1/2 -translate-y-1/2",
+                        isCorrect
+                          ? "bg-[var(--green-7)]"
+                          : isWrong
+                            ? "bg-[var(--red-6)]"
+                            : "bg-[var(--gray-5)]",
+                      ]
+                        .filter(Boolean)
+                        .join(" ")}
+                    />
                   )}
                 </span>
 

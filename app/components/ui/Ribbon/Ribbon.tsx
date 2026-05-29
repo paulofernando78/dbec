@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-import style from "./Ribbon.module.css";
-
 type RibbonProps = {
   label?: string
   bgColor?: string
@@ -19,7 +17,7 @@ export const Ribbon = ({
 }: RibbonProps) => {
   return (
     <div
-      className={`${style.ribbon} ${className ?? ""}`}
+      className={`text-lg font-bold px-3 py-2 rounded-lg mt-4 mb-4${className ?? ""}`}
       style={{ backgroundColor: bgColor ?? "#222", color: textColor }}
     >
       {children ?? label}

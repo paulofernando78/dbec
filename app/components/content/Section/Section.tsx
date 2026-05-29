@@ -4,13 +4,6 @@ import { Ribbon } from "@/components/ui/Ribbon/";
 
 import { formatSectionLabel } from "@/utils/formatSectionLabel";
 
-import styles from "./Section.module.css";
-
-type RibbonProps = {
-  children: ReactNode;
-  className?: string;
-};
-
 type SectionProps = {
   id: string;
   label?: string;
@@ -25,11 +18,11 @@ export const Section = ({ id, label, heading = 2, children }: SectionProps) => {
   const resolvedLabel = label ?? formatSectionLabel(id);
 
   return (
-    <section id={id} className={`${styles.section} ${styles.scrollOffset}`}>
+    <section id={id} className="scroll-mt-2">
       <Ribbon>
         <HeadingTag>{resolvedLabel}</HeadingTag>
       </Ribbon>
-      <div className={styles.content}>{children}</div>
+      <div className="space-y-4">{children}</div>
     </section>
   );
 };

@@ -83,6 +83,7 @@
 
 @media (min-width: 700px) {
   .menuBtn {
-    translate: -45px;
+    translate: -55px;
+    transition: 1s ease;
   }
 }

@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/Button";
 
 import { Check, RotateCcw} from 'lucide-react';
 
-import styles from "./FillInTheBlanks.module.css";
 
 type FillBlankBlockItem = {
   text?: string;
@@ -28,9 +27,10 @@ type FillInTheBlanksExercise = {
 };
 
 type FillInTheBlanksProps = {
-  exercise?: FillInTheBlanksExercise;
   showWordBank?: boolean;
+  instruction: string
   numbered?: boolean;
+  exercise?: FillInTheBlanksExercise;
 };
 
 const shuffleItems = (items: string[]) => {
@@ -82,9 +82,10 @@ const buildDescription = (
 };
 
 export const FillInTheBlanks = ({
-  exercise,
   showWordBank = true,
+  instruction,
   numbered = true,
+  exercise,
 }: FillInTheBlanksProps) => {
   const descriptionText = exercise?.description;
   const rawBlocks = exercise?.blocks;
@@ -163,10 +164,11 @@ export const FillInTheBlanks = ({
       )}
 
       <div>
+        <p className="mb-4">{instruction}</p>
         {blocks.map((bs, bsIndex) => (
           <div
             key={bsIndex}
-            className={bs.lineBreak ? styles.block : styles.inline}
+            className={bs.lineBreak ? "block" : "inline"}
           >
             {(bs.block || []).map((b, bIndex) => {
               const key = `${bsIndex}-${bIndex}`;
@@ -178,7 +180,7 @@ export const FillInTheBlanks = ({
                 : 2;
 
               return (
-                <div key={key} className={styles.inline}>
+                <div key={key} className="inline">
                   {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
                   {b.text && <span>{b.text}</span>}
                   {b.blank && (
@@ -193,9 +195,10 @@ export const FillInTheBlanks = ({
                         }))
                       }
                       className={[
-                        styles.blank,
-                        checked && results[key] === true && styles.correct,
-                        checked && results[key] === false && styles.incorrect,
+                        "font-mono text-[var(--gray-9)] box-content mx-[5px] mb-[2px] px-[4px] py-[2px] border border-[var(--slate-3)] rounded-[5px] bg-white",
+                        "focus:outline-none focus:border-[var(--slate-4)]",
+                        checked && results[key] === true && "border-[var(--green-5)] bg-[var(--green-1)]",
+                        checked && results[key] === false && "border-[var(--red-5)] bg-[var(--red-1)]",
                       ]
                         .filter(Boolean)
                         .join(" ")}

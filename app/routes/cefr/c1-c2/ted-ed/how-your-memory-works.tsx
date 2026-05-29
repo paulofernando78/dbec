@@ -8,7 +8,6 @@ import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
-import { LineBreak } from "@/components/content/LineBreak";
 
 import { List } from "@/components/content/List";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
@@ -28,7 +27,7 @@ export default function HowYourMemoryWorks() {
         subtitle="How Your Memory Works"
         description="Watch the video, understand how memory works, and discuss why forgetting is important."
       />
-      <div className="line-break">
+      <div>
         <PageSections>
           <Section id="introduction" heading={3}>
             <Card>
@@ -42,16 +41,8 @@ export default function HowYourMemoryWorks() {
                 ]}
               />
             </Card>
-            <LineBreak />
-            <Line
-              value={[
-                ...content({
-                  parts: [bold("Discuss these questions.")],
-                }),
-              ]}
-            />
-            <LineBreak />
             <List
+              instruction="Discuss these questions."
               ordered
               items={[
                 {
@@ -79,7 +70,7 @@ export default function HowYourMemoryWorks() {
             />
           </Section>
 
-          <Section id="carousel" heading={3}>
+          <Section id="Vocabulary Guess" heading={3}>
             <Carousel
               instruction="Describe what you see."
               imgs={[
@@ -96,33 +87,27 @@ export default function HowYourMemoryWorks() {
           </Section>
 
           <Section id="gist" heading={3}>
-            <Line
-              value={[
-                ...content({
-                  parts: [
-                    bold(
-                      "What is the video mainly about? Watch it and answer the question below.",
-                    ),
-                  ],
-                }),
-              ]}
+            <VideoPlayer
+              videoId="TqFtWwQCzFI"
+              title="How Your Memory Works"
+              instruction="Watch the video."
             />
-            <LineBreak />
-            <VideoPlayer videoId="TqFtWwQCzFI" title="How Your Memory Works" />
             <Radio
               score={false}
+              instruction="Now choose the correct answer."
               exercise={{
                 questions: [
                   {
+                    question: "1. What is the video mainly about?",
                     options: [
+                      {
+                        option: "How to become a professional doctor.",
+                        isCorrect: false,
+                      },
                       {
                         option:
                           "How the brain remembers and forgets information.",
                         isCorrect: true,
-                      },
-                      {
-                        option: "How to become a professional doctor.",
-                        isCorrect: false,
                       },
                       {
                         option: "How computers store files.",
@@ -136,53 +121,13 @@ export default function HowYourMemoryWorks() {
           </Section>
 
           <Section id="details" heading={3}>
-            <Line
-              value={[
-                ...content({
-                  parts: [
-                    bold("Watch again and listen for specific information."),
-                  ],
-                }),
-              ]}
-            />
-            <LineBreak />
             <Radio
-              score={false}
-              exercise={{
-                questions: [
-                  {
-                    options: [
-                      {
-                        option:
-                          "How the brain remembers and forgets information.",
-                        isCorrect: true,
-                      },
-                      {
-                        option: "How to become a professional doctor.",
-                        isCorrect: false,
-                      },
-                      {
-                        option: "How computers store files.",
-                        isCorrect: false,
-                      },
-                    ],
-                  },
-                ],
-              }}
-            />
-          </Section>
-
-          <Section id="practice" heading={3}>
-            <Radio
+              instruction="Watch again and listen for specific information."
               exercise={{
                 questions: [
                   {
                     question: "1. What helps create stronger memories?",
                     options: [
-                      {
-                        option: "Repeated use of neural pathways.",
-                        isCorrect: true,
-                      },
                       {
                         option: "Sleeping less.",
                         isCorrect: false,
@@ -190,6 +135,10 @@ export default function HowYourMemoryWorks() {
                       {
                         option: "Ignoring information.",
                         isCorrect: false,
+                      },
+                      {
+                        option: "Repeated use of neural pathways.",
+                        isCorrect: true,
                       },
                     ],
                   },
@@ -216,12 +165,12 @@ export default function HowYourMemoryWorks() {
                     question: "3. What is one way to improve memory?",
                     options: [
                       {
-                        option: "Reviewing information regularly.",
-                        isCorrect: true,
-                      },
-                      {
                         option: "Avoiding practice.",
                         isCorrect: false,
+                      },
+                      {
+                        option: "Reviewing information regularly.",
+                        isCorrect: true,
                       },
                       {
                         option: "Studying only once.",
@@ -232,7 +181,9 @@ export default function HowYourMemoryWorks() {
                 ],
               }}
             />
+          </Section>
 
+          <Section id="practice" heading={3}>
             <Guess
               words={[
                 { word: "brain", img: 0 },
@@ -245,9 +196,9 @@ export default function HowYourMemoryWorks() {
                 { word: "learning", img: 0 },
               ]}
             />
-
             <FillInTheBlanks
               showWordBank={false}
+              instruction="Fill in the blanks with the words from previous exercises."
               numbered={true}
               exercise={{
                 blocks: [
@@ -259,7 +210,6 @@ export default function HowYourMemoryWorks() {
                     ],
                     lineBreak: true,
                   },
-
                   {
                     block: [
                       { text: "Good " },
@@ -277,7 +227,6 @@ export default function HowYourMemoryWorks() {
                     ],
                     lineBreak: true,
                   },
-
                   {
                     block: [
                       { text: "Trying to " },
@@ -286,7 +235,6 @@ export default function HowYourMemoryWorks() {
                     ],
                     lineBreak: true,
                   },
-
                   {
                     block: [
                       { text: "People sometimes " },
@@ -295,7 +243,6 @@ export default function HowYourMemoryWorks() {
                     ],
                     lineBreak: true,
                   },
-
                   {
                     block: [
                       { text: "Information can remain in long-term " },
@@ -304,7 +251,6 @@ export default function HowYourMemoryWorks() {
                     ],
                     lineBreak: true,
                   },
-
                   {
                     block: [
                       { text: "Practice improves " },
@@ -313,7 +259,6 @@ export default function HowYourMemoryWorks() {
                     ],
                     lineBreak: true,
                   },
-
                   {
                     block: [
                       { text: "Neural " },
@@ -332,15 +277,8 @@ export default function HowYourMemoryWorks() {
             label="Follow-up Discussion"
             heading={3}
           >
-            <Line
-              value={[
-                ...content({
-                  parts: [bold("Discuss the questions below.")],
-                }),
-              ]}
-            />
-            <LineBreak />
             <List
+              instruction="Discuss the questions below."
               ordered
               items={[
                 {
@@ -352,7 +290,6 @@ export default function HowYourMemoryWorks() {
                     }),
                   ],
                 },
-
                 {
                   value: [
                     ...content({
@@ -362,15 +299,6 @@ export default function HowYourMemoryWorks() {
                     }),
                   ],
                 },
-
-                {
-                  value: [
-                    ...content({
-                      parts: ["What study techniques work best for you?"],
-                    }),
-                  ],
-                },
-
                 {
                   value: [
                     ...content({

@@ -2,7 +2,6 @@ import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { Line } from "@/components/content/Line";
-import { LineBreak } from "@/components/content/LineBreak";
 import { Paragraph } from "@/components/content/Paragraph";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { Carousel } from "@/components/ui/Carousel";
@@ -176,7 +175,6 @@ export default function Playground() {
             </MediaWrapper>
           </Section>
 
-        line
           <Section id="guess" heading={3}>
             <Guess
               words={[
@@ -195,6 +193,7 @@ export default function Playground() {
           {/* Radio */}
           <Section id="radio" heading={3}>
             <Radio
+            instruction="Choose the correct answer."
               exercise={{
                 questions: [
                   {
@@ -214,6 +213,7 @@ export default function Playground() {
           <Section id="fill-in-the-blanks" heading={3}>
             <FillInTheBlanks
               showWordBank={true}
+              instruction="..."
               numbered={true}
               exercise={{
                 blocks: [

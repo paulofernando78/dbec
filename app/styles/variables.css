@@ -17,9 +17,9 @@
 
 :root {
   --background: #e8e8e8;
-  --background-nav: linear-gradient(140deg, var(--slate-4), var(--slate-0));
+  --ribbon: var(--gray-8);
   --text-color: var(--slate-8);
-  --text-color-fixed: var(--slate-8);
+  --text-color-fixed: var(--slate-7);
   --border: 1px solid var(--slate-5);
   --border-radius: 10px;
   --icon-color: var(--gray-4)
@@ -27,6 +27,7 @@
 
 .dark {
   --background: #212121;
+  --ribbon: var(--gray-5);
   --text-color: var(--slate-2);
-  --text-color-fixed: var(--slate-2);
+  --text-color-fixed: var(--slate-7);
 }
