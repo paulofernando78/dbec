@@ -1,5 +1,3 @@
-import styles from "./home.module.css";
-
 import type { Route } from "./+types/home";
 import { useEffect, useState } from "react";
 
@@ -21,6 +19,15 @@ const greetingsList = [
   "How are things with you?",
   "What's up?",
 ];
+
+const dbecCSS = {
+  fontFamily: "var(--font-anton)",
+  color: "#222222",
+  WebkitTextStroke: "12px var(--gray-2)",
+  paintOrder: "stroke fill" as const,
+  filter: "drop-shadow(2px 2px 1px var(--gray-4))",
+  textShadow: "1px 1px 1px var(--gray-4)",
+};
 
 export default function Home() {
   const [greetingIndex, setGreetingIndex] = useState(0);
@@ -45,24 +52,31 @@ export default function Home() {
   });
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.dbec}>
-        <h1 className={styles.db}>DAILY BAISIS</h1>
-        <h1 className={styles.ec}>ENGLISH COURSE</h1>
+    <div className="mt-[50px] flex flex-col gap-[40px]">
+      <div className="w-max mx-auto leading-[1.13]">
+        <h1 style={dbecCSS} className="text-[4rem]">
+          DAILY BAISIS
+        </h1>
+        <h1 style={dbecCSS} className="text-[3.06rem]">
+          ENGLISH COURSE
+        </h1>
       </div>
-      <ul className={styles.greetingsWrapper}>
-        <li className={styles.greetings} style={{ opacity }}>
+      <ul className="w-max mx-auto">
+        <li
+          className="font-luckiest-guy text-[1.5rem] m-5 transition-opacity duration-500 ease-in-out"
+          style={{ opacity }}
+        >
           {greetingsList[greetingIndex]}
         </li>
       </ul>
-      <p className={styles.presentation}>
+      <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
         <b>DAILY BASIS ENGLISH COURSE</b> offers specialized English classes
         focused on the four core language skills: Speaking (with an emphasis on
         conversation), Listening (listening comprehension), Reading, and
         Writing. On this web site, you’ll find a variety of useful learning
         materials. Please use them wisely.
       </p>
-      <div className={styles.contact}>
+      <div className="w-max mx-auto">
         <Contact />
       </div>
     </div>

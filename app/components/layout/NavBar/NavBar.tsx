@@ -24,18 +24,17 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         h-full
         font-oswald
         text-lg
-        rounded-tl-xl
-        rounded-tr-xl
-        rounded-br-xl
-        bg-slate-300
-        shadow-[2px_2px_5px_var(--slate-5)]
         mt-[5px]
         mx-[5px]
         mb-[10px]
-        py-[12px]
-        px-[15px]
+        px-5
+        py-4
+        rounded-tl-lg
+        rounded-tr-lg
+        rounded-br-lg
+        bg-slate-300
+        shadow-[2px_2px_5px_var(--slate-5)]
         overflow-y-auto
-        text-[var(--text-color-fixed)]
         "
     >
       {links.map((group) => (

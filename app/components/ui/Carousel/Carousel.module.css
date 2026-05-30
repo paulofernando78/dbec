@@ -104,7 +104,7 @@
 }
 
 .pagination button {
-  font-size: .9rem;
+  font-size: 0.9rem;
   width: 1.6rem;
   aspect-ratio: 1;
   border-radius: 5px;
@@ -117,8 +117,8 @@
   background-color: var(--slate-3);
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .wrapper {
-  margin-inline: clamp(0px, calc(48.57vw - 194.28px), 340px);
-}
-}
+    margin-inline: clamp(0px, calc(48.57vw - 194.28px), 340px);
+  }
+} */

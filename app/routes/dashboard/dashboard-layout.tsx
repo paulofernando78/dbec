@@ -15,7 +15,7 @@ export default function DashBoardLayout() {
   
   return (
     <div className={styles.dashboardLayout}>
-      <aside className={`${styles.sidebar} ${isNavBarOpen ? styles.open : ""}`}>
+      <aside className={`${styles.aside} ${isNavBarOpen ? styles.open : ""}`}>
         <NavBar closeNavBar={closeNavBar}/>
       </aside>
       <main className={styles.main}>

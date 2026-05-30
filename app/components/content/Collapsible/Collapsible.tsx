@@ -15,10 +15,10 @@ export const Collapsible = ({ title, children }: CollapsibleProps) => {
   return (
     <div>
       <div
-        className={`font-bold border rounded-xl px-3 pt-2 pb-[0.4rem] bg-gray-300 ${isOpen ? "rounded-b-none" : " rounded-t-xl"}`}
+        className={`font-bold border rounded-lg px-3 pt-2 pb-[0.4rem] bg-gray-300 ${isOpen ? "rounded-b-none" : " rounded-t-lg"}`}
       >
         <div className="flex items-center gap-2" onClick={toggleCollapsible}>
-          {isOpen ? <Minus strokeWidth={3} /> : <Plus strokeWidth={3} />}
+          {isOpen ? <Minus strokeWidth={3} size={22}/> : <Plus strokeWidth={3}  size={22}/>}
           <button>{title}</button>
         </div>
       </div>

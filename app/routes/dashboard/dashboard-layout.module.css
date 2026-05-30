@@ -10,10 +10,11 @@
   overflow: hidden;
 }
 
-.sidebar {
+.aside {
   min-height: 0;
   height: 100%;
   transition: 0.5s ease;
+  z-index: 20;
 }
 
 .main {
@@ -29,7 +30,7 @@
     grid-template-columns: 1fr;
   }
 
-  .sidebar {
+  .aside {
     position: absolute;
     width: 260px;
     translate: -265px;

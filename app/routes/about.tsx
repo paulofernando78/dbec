@@ -1,5 +1,3 @@
-import styles from "./about.module.css";
-
 import { Image } from "@/components/ui/Image";
 import { LineBreak } from "@/components/content/LineBreak";
 import { Section } from "@/components/content/Section";
@@ -75,16 +73,16 @@ const experience = [
 
 export default function About() {
   return (
-    <div className={styles.frame}>
-      <div className={styles.wrapper}>
+    <div className="mx-[min(200px,max(0px,calc((100vw-380px)*0.135)))]">
+      <div className="flex flex-col items-center gap-[30px]">
         <Image
           src="/assets/img/about/me.png"
           alt="My picture"
           width={150}
           height={150}
-          className={styles.me}
+          className="rounded-full border-[5px] border-[var(--slate-3)]"
         />
-        <p className={styles.info}>
+        <p className="text-justify mb-4">
           Fundador do <b>Daily Basis English Course</b>, é apaixonado pelos
           estudos da língua inglesa desde 96. Começou a lecionar aulas de inglês
           particulares em meados de 2004. Já morou nos EUA - Califórnia. Estuda
@@ -97,10 +95,10 @@ export default function About() {
         <ul>
           {formation.map((item, index) => (
             <>
-              <li key={index} className={styles.li}>
+              <li key={index} className="mb-2">
                 <strong>{item.institution}</strong>
-                <span className={styles.details}>{item.period}</span>
-                <span className={styles.details}>{item.program}</span>
+                <span className="block">{item.period}</span>
+                <span className="block">{item.program}</span>
               </li>
             </>
           ))}
@@ -112,8 +110,8 @@ export default function About() {
             <>
               <li key={index}>
                 <strong>{item.institution}</strong>
-                <span className={styles.details}>{item.period}</span>
-                <span className={styles.details}>{item.program}</span>
+                <span className="block">{item.period}</span>
+                <span className="block">{item.program}</span>
               </li>
             </>
           ))}

@@ -28,7 +28,7 @@
 }
 
 .dark {
-  --background: #212121;
+  --background: #0A0A0A;
   --ribbon: var(--gray-5);
   --text-color: var(--slate-2);
   --text-color-fixed: var(--slate-7);

@@ -1,5 +1,3 @@
-import styles from "./Contact.module.css"
-
 import { Image } from "@/components/ui/Image"
 
 const contacts: ContactItem[] = [
@@ -26,7 +24,7 @@ const contacts: ContactItem[] = [
     link: "https://www.buymeacoffee.com/paulofernando78",
     icon: "/assets/img/icons/contacts/coffee.gif",
     alt: "By me a coffee",
-    className: styles.coffeeIcon
+    className: "mx-auto w-[27.5px]! h-[27.5px]! border-[1.2px] border-black rounded-full shadow-[0_0_0_2px_#F2F2F2,2px_2px_0_#9B9FA3,0_3px_1px_#9B9FA3,2px_2px_1px_#9B9FA3] translate-y-[3px]"
   },
   // whatsapp
   {
@@ -49,10 +47,16 @@ type ContactItem = {
 
 export const Contact = ({className}: ContactProps) => {
   return (
-    <ul className={`${styles.contactContainer} ${className}`}>
+    <ul className={`flex gap-2.5 p-2.5 ${className ?? ""}`}>
       {contacts.map((contact, index) => (
-        <li key={index} className={styles.scaleAnimation}>
-          <a href={contact.link}>
+        <li key={index} className="">
+          <a
+            href={contact.link}
+            className="
+            transition-transform duration-300 [cubic-bezier(0.54,3,0.57,0.96)]
+            hover:-translate-y-2.5
+            hover:scale-[1.3]"
+          >
             <Image src={contact.icon} alt={contact.alt} className={contact.className} width={35} height={35} />
           </a>
         </li>
