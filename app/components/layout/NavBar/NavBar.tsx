@@ -24,15 +24,16 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         h-full
         font-oswald
         text-lg
-        mt-[5px]
-        mx-[5px]
-        mb-[10px]
+        mt-1.25
+        mx-1.25
+        mb-2.5
         px-5
         py-4
+        text-white
+        bg-gray-800
         rounded-tl-lg
         rounded-tr-lg
         rounded-br-lg
-        bg-slate-300
         shadow-[2px_2px_5px_var(--slate-5)]
         overflow-y-auto
         "
@@ -53,7 +54,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 end
                 onClick={closeNavBar}
                 className={({ isActive }) =>
-                  `block ${isActive ? "text-blue-500" : ""}`
+                  `block ${isActive ? "text-blue-400" : ""}`
                 }
               >
                 {item.label}

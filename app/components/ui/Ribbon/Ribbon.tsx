@@ -10,15 +10,21 @@ type RibbonProps = {
 
 export const Ribbon = ({
   label,
-  bgColor,
-  textColor = "#ffffff",
-  className,
   children,
 }: RibbonProps) => {
   return (
     <div
-      className={`text-lg font-bold px-3 py-2 rounded-lg mt-4 mb-4${className ?? ""}`}
-      style={{ backgroundColor: bgColor ?? "#222", color: textColor }}
+      className="
+      text-lg
+      font-bold
+      my-4
+      px-3
+      py-2 
+      text-white
+      bg-gray-800
+      border
+      border-gray-700
+      rounded-lg"
     >
       {children ?? label}
     </div>

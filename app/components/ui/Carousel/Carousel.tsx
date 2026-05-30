@@ -1,7 +1,3 @@
-"use client";
-
-import styles from "./Carousel.module.css";
-
 import { dictionary } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { Image } from "@/components/ui/Image";
@@ -96,13 +92,42 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
 
   return (
     <>
-      <div className={styles.wrapper}>
-        <button className={styles.leftArrow} onClick={scrollLeft}>
-          <Arrow className={`${styles.arrow} ${styles.back}`} />
+      <p className="font-bold">{instruction}</p>
+      <div className="relative mx-auto max-w-100 px-[1.6rem]">
+        <button
+          className="
+          absolute
+          left-0
+          top-1/2
+          -translate-y-1/2
+          z-10
+          flex
+          h-full
+          w-6
+          cursor-pointer
+          items-center
+          justify-center
+          rounded-l-[5px]
+          bg-gray-400
+          text-[1.7rem]
+          hover:bg-slate-500
+        "
+          onClick={scrollLeft}
+        >
+          <Arrow className="block translate-x-1.5" />
         </button>
 
         <div
-          className={styles.carousel}
+          className="
+            flex
+            w-full
+            gap-[0.7em]
+            overflow-x-auto
+            scroll-smooth
+            snap-x
+            snap-mandatory
+            [&::-webkit-scrollbar]:hidden
+          "
           ref={carouselRef}
           onScroll={() => {
             const carousel = carouselRef.current;
@@ -132,11 +157,8 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
                 ref={(el) => {
                   cardRef.current[index] = el;
                 }}
-                className={styles.card}
+                className="relative flex-none basis-full aspect-square overflow-hidden snap-start"
               >
-                {/* <div className={styles.cardPagination}>
-                {index + 1}
-              </div> */}
                 {img.src && (
                   <Image
                     src={img.src}
@@ -161,11 +183,30 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
           })}
         </div>
 
-        <button className={styles.rightArrow} onClick={scrollRight}>
-          <Arrow className={`${styles.arrow} ${styles.forward}`} />
+        <button
+          className="
+          absolute
+          right-0
+          top-1/2
+          -translate-y-1/2
+          z-10
+          flex
+          h-full
+          w-6
+          cursor-pointer
+          items-center
+          justify-center
+          rounded-r-[5px]
+          bg-gray-400
+          text-[1.7rem]
+          hover:bg-slate-500
+        "
+          onClick={scrollRight}
+        >
+          <Arrow className="block rotate-180 -translate-x-1.5" />
         </button>
       </div>
-      <div className={styles.pagination}>
+      <div className="mt-2 flex justify-center gap-2">
         {imgs.map((_, index) => (
           <button
             key={index}
@@ -176,7 +217,16 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
                 inline: "start",
               });
             }}
-            className={currentIndex === index ? styles.active : ""}
+            className={`
+              aspect-square
+              w-[1.6rem]
+              cursor-pointer
+              rounded-[5px]
+              border
+              border-slate-400
+              text-[0.9rem]
+              ${currentIndex === index ? "bg-slate-300" : "bg-slate-100"}
+            `}
           >
             {index + 1}
           </button>

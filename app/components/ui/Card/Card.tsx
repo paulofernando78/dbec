@@ -8,7 +8,16 @@ type CardProps = {
 
 export const Card = ({ children, maxContent = false }: CardProps) => {
   return <div
-    className={`border border-gray-400 bg-gray-300 rounded-xl p-4 pb-3${maxContent ? "w-fit max-w-full" : ""}`}>
+    className={`
+    p-4
+    pb-3
+    text-gray-800
+    border 
+    border-gray-400 
+    bg-gray-300
+    rounded-xl 
+    ${maxContent ? "w-fit max-w-full" : ""}`}
+    >
       {children}
     </div>;
 };
