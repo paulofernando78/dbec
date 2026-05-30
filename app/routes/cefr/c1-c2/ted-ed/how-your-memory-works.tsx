@@ -11,7 +11,22 @@ import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 
 import { List } from "@/components/content/List";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
-import { content, bold } from "@/helpers/content";
+import {
+  content,
+  icon,
+  audio,
+  bold,
+  italic,
+  mark,
+  boldMark,
+  underline,
+  stressed,
+  phonetics,
+  portuguese,
+} from "@/helpers/content";
+import { Collapsible } from "@/components/content/Collapsible";
+
+
 
 export const metadata = {
   title: "Advanced | How Your Memory Works",
@@ -117,6 +132,27 @@ export default function HowYourMemoryWorks() {
                   },
                 ],
               }}
+            />
+            <Collapsible />
+            <Paragraph
+              value={[
+                ...content({
+                  audio: "",
+                  parts: [
+                    "Thank you to brilliant dot org for supporting PBS Digital Studios."
+                  ],
+                }),
+              ]}
+            />
+            <Paragraph
+              value={[
+                ...content({
+                  audio: "",
+                  parts: [
+                    "Sherlock Holmes, the legendary detective, had a theory that the brain is like an attic"
+                  ],
+                }),
+              ]}
             />
           </Section>
 

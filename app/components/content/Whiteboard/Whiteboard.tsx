@@ -1,3 +1,4 @@
+import styles from "./Whiteboard.module.css";
 
 type WhiteboardProps = {
   title?: string;
@@ -18,16 +19,24 @@ export const Whiteboard = ({
 }: WhiteboardProps) => {
   return (
     <div
-      className="
-        pt-3 pr-4 pb-3 pl-4
-        mb-8
-        text-[var(--text-color-fixed)]
-        border-[7px]
-        border-[var(--gray-4)]
-        rounded-[var(--border-radius)]
-      "
+      className={styles.whiteboard}
     >
-      <h1 className="text-3xl font-bold">{title}</h1>
+      <span className={styles.frameTop} />
+      <span className={styles.frameRight} />
+      <span className={styles.frameBottom} />
+      <span className={styles.frameLeft} />
+      {/*  */}
+      {/* <span className={styles.divisionTopLeft} />
+      <span className={styles.divisionTopRight} />
+      <span className={styles.divisionBottomLeft} />
+      <span className={styles.divisionBottomRight} /> */}
+      {/*  */}
+      <span className={styles.screwTopLeft} />
+      <span className={styles.screwTopRight} />
+      <span className={styles.screwBottomLeft} />
+      <span className={styles.screwBottomRight} />
+      {/* - */}
+      <h1 className="text-3xl font-bold mb-4">{title}</h1>
       {subtitle && <h2 className="text-2xl">{subtitle}</h2>}
       <span className="text-1xl">{description}</span>
     </div>

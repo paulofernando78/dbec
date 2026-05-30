@@ -1,0 +1,141 @@
+.whiteboard {
+  position: relative;
+  font-family: var(--font-permanent-marker);
+  background: #f7f7f5;
+  padding: 12px 17px;
+  margin-bottom: 20px;
+  border: 1px solid var(--gray-4);
+  box-shadow: 0 0 2px rgb(0, 0, 10);
+}
+
+.whiteboard {
+  position: relative;
+}
+
+/* FRAMES */
+
+.frameTop,
+.frameRight,
+.frameBottom,
+.frameLeft {
+  z-index: 1;
+}
+
+.frameTop {
+  position: absolute;
+  top: 0px;
+  left: 0.5px;
+  right: 1px;
+  height: 8px;
+
+  background: linear-gradient(to bottom, rgb(221, 213, 213), #d8d8d8, #eae9e9);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  clip-path: polygon(
+    0 0, /* top-left */
+    100% 0, /* top-right */
+    98.6% 100%, /* bottom-right inset */
+    1.4% 100% /* bottom-left inset */
+  );
+}
+
+.frameRight {
+  position: absolute;
+  left: 0;
+  top: 0.5px;
+
+  width: 8px;
+  height: 99%;
+
+  background: linear-gradient(to bottom, rgb(221, 213, 213), #d8d8d8, #eae9e9);
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.25);
+  clip-path: polygon(
+    0% 0%, /* top-left */
+    100% 5%, /* top-right */
+    100% 95%, /* bottom-right inset */
+    0% 100% /* bottom-left inset */
+  );
+}
+
+.frameBottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 8px;
+
+  background: linear-gradient(to bottom, rgb(221, 213, 213), #d8d8d8, #eae9e9);
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.25);
+  clip-path: polygon(
+    1.5% 0%, /* top-left */
+    98.5% 0%, /* top-right */
+    100% 100%, /* bottom-right inset */
+    0% 100% /* bottom-left inset */
+  );
+}
+
+.frameLeft {
+  position: absolute;
+  top: 0px;
+  right: 0;
+
+  width: 8px;
+  height: 99%;
+
+  background: linear-gradient(to bottom, rgb(221, 213, 213), #d8d8d8, #eae9e9);
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.25);
+  clip-path: polygon(
+    0% 5.5%, /* top-left */
+    100% 0%, /* top-right */
+    100% 100%, /* bottom-right inset */
+    0% 95.4% /* bottom-left inset */
+  );
+}
+
+/* DIVISION */
+
+.divisionTopLeft,
+.divisionTopRight,
+.divisionBottomRight,
+.divisionBottomLeft {
+  z-index: 2;
+}
+
+.divisionTopLeft {
+  position: absolute;
+  width: 9px;
+  height: 1px;
+  background: var(--gray-5);
+  top: 3px;
+  left: -1px;
+  transform: rotate(45deg);
+}
+
+.divisionTopRight {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background: var(--gray-5);
+  top: 3px;
+  right: -1px;
+  transform: rotate(135deg);
+}
+
+.divisionBottomRight {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background: var(--gray-5);
+  bottom: 3px;
+  right: -1px;
+  transform: rotate(45deg);
+}
+
+.divisionBottomLeft {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  background: var(--gray-5);
+  bottom: 3px;
+  left: -1px;
+  transform: rotate(135deg);
+}

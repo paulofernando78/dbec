@@ -15,6 +15,7 @@
     "@fontsource/anton": "^5.2.7",
     "@fontsource/bebas-neue": "^5.2.7",
     "@fontsource/luckiest-guy": "^5.2.8",
+    "@fontsource/permanent-marker": "^5.2.7",
     "@react-router/node": "7.15.1",
     "@react-router/serve": "7.15.1",
     "isbot": "^5.1.36",

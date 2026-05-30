@@ -4,6 +4,8 @@ import { Section } from "@/components/content/Section";
 import { Line } from "@/components/content/Line";
 import { Paragraph } from "@/components/content/Paragraph";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { MediaWrapper } from "@/components/content/MediaWrapper";
+import { Image } from "@/components/ui/Image";
 import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
@@ -22,8 +24,6 @@ import {
   phonetics,
   portuguese,
 } from "@/helpers/content";
-import { MediaWrapper } from "@/components/content/MediaWrapper";
-import { Image } from "@/components/ui/Image";
 
 export default function Playground() {
   return (
