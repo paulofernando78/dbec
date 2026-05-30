@@ -100,11 +100,32 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
         <button className={styles.leftArrow} onClick={scrollLeft}>
           <Arrow className={`${styles.arrow} ${styles.back}`} />
         </button>
-        <div className={styles.carousel} ref={carouselRef}>
+
+        <div
+          className={styles.carousel}
+          ref={carouselRef}
+          onScroll={() => {
+            const carousel = carouselRef.current;
+
+            if (!carousel) return;
+
+            const closestIndex = cardRef.current.findIndex((card) => {
+              if (!card) return false;
+
+              return (
+                Math.abs(card.offsetLeft - carousel.scrollLeft) <
+                card.offsetWidth / 2
+              );
+            });
+
+            if (closestIndex !== -1) {
+              setCurrentIndex(closestIndex);
+            }
+          }}
+        >
           {imgs.map((img, index) => {
             const resolvedSrc =
               resolvedWords[img.word ?? ""]?.imgs?.[img.img ?? 0]?.src;
-
             return (
               <div
                 key={index}
@@ -139,6 +160,7 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
             );
           })}
         </div>
+
         <button className={styles.rightArrow} onClick={scrollRight}>
           <Arrow className={`${styles.arrow} ${styles.forward}`} />
         </button>

@@ -26,8 +26,6 @@ import {
 } from "@/helpers/content";
 import { Collapsible } from "@/components/content/Collapsible";
 
-
-
 export const metadata = {
   title: "Advanced | How Your Memory Works",
   description:
@@ -133,27 +131,28 @@ export default function HowYourMemoryWorks() {
                 ],
               }}
             />
-            <Collapsible />
-            <Paragraph
-              value={[
-                ...content({
-                  audio: "",
-                  parts: [
-                    "Thank you to brilliant dot org for supporting PBS Digital Studios."
-                  ],
-                }),
-              ]}
-            />
-            <Paragraph
-              value={[
-                ...content({
-                  audio: "",
-                  parts: [
-                    "Sherlock Holmes, the legendary detective, had a theory that the brain is like an attic"
-                  ],
-                }),
-              ]}
-            />
+            <Collapsible title="Script">
+              <Paragraph
+                value={[
+                  ...content({
+                    audio: "",
+                    parts: [
+                      "Thank you to brilliant dot org for supporting PBS Digital Studios.",
+                    ],
+                  }),
+                ]}
+              />
+              <Paragraph
+                value={[
+                  ...content({
+                    audio: "",
+                    parts: [
+                      "Sherlock Holmes, the legendary detective, had a theory that the brain is like an attic",
+                    ],
+                  }),
+                ]}
+              />
+            </Collapsible>
           </Section>
 
           <Section id="details" heading={3}>

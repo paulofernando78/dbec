@@ -49,7 +49,7 @@
   cursor: pointer;
 
   height: 100%;
-  background: var(--slate-4);
+  background: var(--gray-4);
 }
 
 .leftArrow {
