@@ -1,4 +1,4 @@
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent } from "react";
 
 import { Button } from "@/components/ui/Button";
 
@@ -83,7 +83,7 @@ export const Unscramble = ({
           const key = String(index);
 
           return (
-            <div key={key} className="mb-4">
+            <div key={key} className={index !== items.length - 1 ? "mb-4" : ""}>
               <p>
                 {numbered && `${index + 1}. `}
                 {item.prompt}
@@ -99,7 +99,7 @@ export const Unscramble = ({
                   }))
                 }
                 className={[
-                  "font-mono text-gray-900 w-full mt-2 px-2 py-1 border rounded-lg",
+                  "font-mono text-gray-900 w-full px-2 py-1 border rounded-lg",
                   "focus:outline-none focus:border-slate-400",
                   checked
                     ? results[key]
@@ -110,7 +110,9 @@ export const Unscramble = ({
                   .filter(Boolean)
                   .join(" ")}
               />
-              {isShown && <p className="text-sm"><em>{item.answer}</em></p>}
+              <p className="text-sm min-h-5 mt-1">
+                {isShown ? item.answer : ""}
+              </p>
             </div>
           );
         })}
