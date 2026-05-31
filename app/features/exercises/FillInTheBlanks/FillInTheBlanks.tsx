@@ -1,19 +1,15 @@
-import {
-  useEffect,
-  useState,
-  type ChangeEvent,
-} from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 
-import { Check, RotateCcw} from 'lucide-react';
-
+import { Check, RotateCcw } from "lucide-react";
 
 type FillBlankBlockItem = {
   text?: string;
   blank?: string | string[];
   placeholder?: string;
+  stack?: boolean;
 };
 
 type FillBlankBlock = {
@@ -28,7 +24,7 @@ type FillInTheBlanksExercise = {
 
 type FillInTheBlanksProps = {
   showWordBank?: boolean;
-  instruction: string
+  instruction: string;
   numbered?: boolean;
   exercise?: FillInTheBlanksExercise;
 };
@@ -137,6 +133,9 @@ export const FillInTheBlanks = ({
       });
     });
 
+    console.log("newResults", newResults);
+    console.log("score", score);
+
     setResults(newResults);
     setTotalScore(score);
     setChecked(true);
@@ -166,10 +165,7 @@ export const FillInTheBlanks = ({
       <div>
         <p className="font-bold mb-4">{instruction}</p>
         {blocks.map((bs, bsIndex) => (
-          <div
-            key={bsIndex}
-            className={bs.lineBreak ? "block" : "inline"}
-          >
+          <div key={bsIndex} className={bs.lineBreak ? "block" : "inline"}>
             {(bs.block || []).map((b, bIndex) => {
               const key = `${bsIndex}-${bIndex}`;
 
@@ -180,9 +176,22 @@ export const FillInTheBlanks = ({
                 : 2;
 
               return (
-                <div key={key} className="inline">
-                  {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
-                  {b.text && <span>{b.text}</span>}
+                <div
+                  key={key}
+                  className="inline mb-2"
+                >
+                  {b.text &&
+                    (b.stack ? (
+                      <p className="mt-4">
+                        {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
+                        {b.text}
+                      </p>
+                    ) : (
+                      <span>
+                        {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
+                        {b.text}
+                      </span>
+                    ))}
                   {b.blank && (
                     <input
                       type="text"
@@ -195,10 +204,13 @@ export const FillInTheBlanks = ({
                         }))
                       }
                       className={[
-                        "font-mono text-[var(--gray-9)] box-content mx-[5px] mb-[2px] px-[4px] py-[2px] border border-[var(--slate-3)] rounded-[5px] bg-white",
-                        "focus:outline-none focus:border-[var(--slate-4)]",
-                        checked && results[key] === true && "border-[var(--green-5)] bg-[var(--green-1)]",
-                        checked && results[key] === false && "border-[var(--red-5)] bg-[var(--red-1)]",
+                        "font-mono text-gray-900 box-content mx-1.25 mb-0.5 px-1 py-0.5 border rounded-lg",
+                        "focus:outline-none focus:border-slate-400",
+                        checked
+                          ? results[key]
+                            ? "border-green-200 bg-green-100"
+                            : "border-red-200 bg-red-100"
+                          : "border-slate-300 bg-white",
                       ]
                         .filter(Boolean)
                         .join(" ")}
