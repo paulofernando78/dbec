@@ -9,7 +9,6 @@ type FillBlankBlockItem = {
   text?: string;
   blank?: string | string[];
   placeholder?: string;
-  stack?: boolean;
 };
 
 type FillBlankBlock = {
@@ -175,23 +174,14 @@ export const FillInTheBlanks = ({
                   : b.blank.length
                 : 2;
 
+
               return (
                 <div
                   key={key}
                   className="inline mb-2"
                 >
-                  {b.text &&
-                    (b.stack ? (
-                      <p className="mt-4">
-                        {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
-                        {b.text}
-                      </p>
-                    ) : (
-                      <span>
-                        {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
-                        {b.text}
-                      </span>
-                    ))}
+                  {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
+                  {b.text && <span>{b.text}</span>}
                   {b.blank && (
                     <input
                       type="text"

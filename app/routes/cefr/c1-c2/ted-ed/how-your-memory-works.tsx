@@ -8,6 +8,7 @@ import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
+import { Unscramble } from "@/features/exercises/Unscramble";
 
 import { List } from "@/components/content/List";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
@@ -817,7 +818,7 @@ export default function HowYourMemoryWorks() {
                 blocks: [
                   {
                     block: [
-                      { text: "A smell can trigger the " },
+                      { text: "A smell can trigger the "},
                       { blank: "recall" },
                       { text: " of a memory." },
                     ],
@@ -884,85 +885,31 @@ export default function HowYourMemoryWorks() {
                 ],
               }}
             />
-            <FillInTheBlanks
+            <Unscramble
               showWordBank={false}
               instruction="Unscramble the sentences."
               numbered={true}
               exercise={{
-                blocks: [
+                items: [
                   {
-                    block: [
-                      {
-                        text: "helps / forgetting / focus / us / present / the / on",
-                        stack: true
-                      },
-                      {
-                        blank: "Forgetting helps us focus on the present.",
-                      },
-                      {text: "."}
-                    ],
-                    lineBreak: true,
+                    prompt: "helps / forgetting / focus / us / present / the / on",
+                    answer: "Forgetting helps us focus on the present.",
                   },
                   {
-                    block: [
-                      {
-                        text: "brain / like / is / an / the / attic",
-                        stack: true
-                      },
-                      {
-                        blank: "The brain is like an attic.",
-                      },
-                      {
-                        text: ".",
-                      },
-                    ],
-                    lineBreak: true,
+                    prompt: "brain / like / is / an / the / attic",
+                    answer: "The brain is like an attic.",
                   },
                   {
-                    block: [
-                      {
-                        text: "new / memories / storage / long-term / to / commit / animals",
-                        stack: true
-                      },
-                      {
-                        blank:
-                          "Animals commit new memories to long-term storage.",
-                      },
-                      {
-                        text: ".",
-                      },
-                    ],
-                    lineBreak: true,
+                    prompt: "new / memories / storage / long-term / to / commit / animals",
+                    answer: "Animals commit new memories to long-term storage.",
                   },
                   {
-                    block: [
-                      {
-                        text: "memory / object / a / not / is / action / an / a",
-                        stack: true
-                      },
-                      {
-                        blank: "A memory is an action not an object.",
-                      },
-                      {
-                        text: ".",
-                      },
-                    ],
-                    lineBreak: true,
+                    prompt: "memory / object / a / not / is / action / an / a",
+                    answer: "A memory is an action not an object.",
                   },
                   {
-                    block: [
-                      {
-                        text: "memories / brain / over / scattered / are / the / all",
-                        stack: true
-                      },
-                      {
-                        blank: "Memories are scattered all over the brain.",
-                      },
-                      {
-                        text: ".",
-                      },
-                    ],
-                    lineBreak: true,
+                    prompt: "memories / brain / over / scattered / are / the / all",
+                    answer: "Memories are scattered all over the brain.",
                   },
                 ],
               }}
