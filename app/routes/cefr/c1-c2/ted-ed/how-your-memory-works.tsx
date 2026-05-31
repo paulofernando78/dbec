@@ -883,6 +883,23 @@ export default function HowYourMemoryWorks() {
                 ],
               }}
             />
+            <FillInTheBlanks
+              showWordBank={false}
+              instruction="Unscrable...."
+              numbered={true}
+              exercise={{
+                blocks: [
+                  {
+                    block: [
+                      { text: "The " },
+                      { blank: "brain" },
+                      { text: " stores information." },
+                    ],
+                    lineBreak: true,
+                  },
+                ],
+              }}
+            />
           </Section>
 
           <Section

@@ -164,7 +164,7 @@ export const FillInTheBlanks = ({
       )}
 
       <div>
-        <p className="mb-4">{instruction}</p>
+        <p className="font-bold mb-4">{instruction}</p>
         {blocks.map((bs, bsIndex) => (
           <div
             key={bsIndex}
