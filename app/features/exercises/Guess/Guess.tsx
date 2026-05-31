@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 
-
 import { Button } from "@/components/ui/Button";
 import { Image } from "@/components/ui/Image/";
 import { dictionary } from "@/helpers/content";
 
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 
-import { RotateCcw } from 'lucide-react';
-
-import styles from "./Guess.module.css";
+import { RotateCcw } from "lucide-react";
 
 type GuessWord = {
   word: string;
@@ -49,9 +46,7 @@ export const Guess = ({ words }: GuessProps) => {
   const maxAttempts = selected ? Math.max(5, selected.word.length + 1) : 5;
 
   // STEP 5: Store current game status
-  const [status, setStatus] = useState<
-    "playing" | "win" | "lose"
-  >("playing");
+  const [status, setStatus] = useState<"playing" | "win" | "lose">("playing");
 
   // STEP 6: Store completed words
   const [completeWords, setCompleteWords] = useState<string[]>([]);
@@ -95,10 +90,8 @@ export const Guess = ({ words }: GuessProps) => {
   };
 
   // STEP 9: Handle letter click logic
-  const handleLetterClick = (
-    letter: string
-  ) => {
-    if (!selected) return 
+  const handleLetterClick = (letter: string) => {
+    if (!selected) return;
 
     // 1. Check if letter was already used - if yes -> stop function
     if (usedLetters.includes(letter)) return;
@@ -167,13 +160,13 @@ export const Guess = ({ words }: GuessProps) => {
 
   return (
     <>
-      <p className="mb-2">
+      <p>
         <b>Click the letters to reveal the answer.</b>
       </p>
-      <div className={styles.container}>
-        <div className={styles.imgHint}>
+      <div className="grid grid-cols-2 gap-2 max-[920px]:grid-cols-1">
+        <div className="flex flex-col gap-4 justify-between">
           {/* Pics */}
-          <span className={styles.pics}>
+          <span className="text-center">
             <b>Pics:</b> {currentIndex + 1} | {words.length}
           </span>
           <Image
@@ -186,29 +179,33 @@ export const Guess = ({ words }: GuessProps) => {
             }
             width={300}
             height={300}
+            className="rounded-lg"
           />
 
           {/* Hints */}
-          <span className={styles.hint}>
+          <span className="w-full h-20 p-2 border border-gray-400 rounded-lg overflow-scroll">
             <b>Hint:</b> {selected?.enDefinition}
           </span>
         </div>
-        <div className={styles.containerLetters}>
+
+        {/* !!! */}
+
+        <div className="flex flex-col items-center gap-4 justify-between">
           {/* STEP 10: Show attempts counter */}
           <span>
             <b>Attempts:</b> {attempts} | {maxAttempts}
           </span>
           {/* STEP 11: Display hidden/revealed word */}
-          <div className={styles.message}>
+          <div className="h-[35px]">
             {message && <span>{message}</span>}
           </div>
           {/* _ _ _ _ _ */}
-          <span className={styles.wordDisplay}>
+          <span>
             {selected.word
               .toUpperCase()
               .split("")
               .map((char, index) => (
-                <span key={index} className={styles.word}>
+                <span key={index} className="inline-flex items-center justify-center w-8 text-2xl">
                   {char === " "
                     ? "\u2002"
                     : usedLetters.includes(char)
@@ -217,7 +214,7 @@ export const Guess = ({ words }: GuessProps) => {
                 </span>
               ))}
           </span>
-          <div className={styles.letters}>
+          <div className=" flex flex-wrap justify-center gap-4">
             {/* STEP 12: Create one button for each letter */}
             {letters.map((letter, index) => (
               <Button
@@ -232,7 +229,7 @@ export const Guess = ({ words }: GuessProps) => {
             ))}
           </div>
           <Button icon={<RotateCcw />} onClick={resetGame} />
-          <div className={styles.completed}>
+          <div className="w-full h-20 p-2 border border-gray-400 rounded-lg overflow-scroll">
             <b>Completed:</b>
             {completeWords.length > 0 && <div>{completeWords.join(" • ")}</div>}
           </div>

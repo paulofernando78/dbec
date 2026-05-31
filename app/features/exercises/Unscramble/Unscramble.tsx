@@ -1,15 +1,8 @@
 import { useEffect, useState, type ChangeEvent } from "react";
 
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 
-import { Check, RotateCcw } from "lucide-react";
-
-type UnscrambleItem = {
-  prompt: string;
-  answer: string;
-  placeholder?: string;
-};
+import { Check, Eye, EyeClosed, RotateCcw } from "lucide-react";
 
 type UnscrambleBlock = {
   prompt: string;
@@ -41,7 +34,7 @@ export const Unscramble = ({
   const [results, setResults] = useState<Record<string, boolean>>({});
   const [checked, setChecked] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
-  const [description, setDescription] = useState<string>("");
+  const [isShown, setIsShown] = useState(false)
 
   const normalizeAnswer = (value: string | undefined) =>
     String(value ?? "")
@@ -49,10 +42,6 @@ export const Unscramble = ({
       .toLowerCase()
       .replaceAll("’", "'")
       .replaceAll("‘", "'");
-
-  useEffect(() => {
-    setDescription(typeof descriptionText === "string" ? descriptionText : "");
-  }, [descriptionText]);
 
   if (!exercise || !rawItems) {
     return null;
@@ -74,23 +63,20 @@ export const Unscramble = ({
     setChecked(true);
   };
 
+  const handleShowAnswers = () => {
+    setIsShown((prev) => !prev)
+  }
+
   const handleReset = () => {
     setAnswers({});
     setResults({});
     setChecked(false);
-    setDescription(typeof descriptionText === "string" ? descriptionText : "");
   };
 
   const totalBlanks = items.length;
 
   return (
     <div className="flex flex-col gap-4">
-      {showWordBank && description && (
-        <Card maxContent>
-          <span>{description}</span>
-        </Card>
-      )}
-
       <div>
         <p className="font-bold mb-4">{instruction}</p>
         {items.map((item, index) => {
@@ -124,6 +110,7 @@ export const Unscramble = ({
                   .filter(Boolean)
                   .join(" ")}
               />
+              {isShown && <p className="text-sm"><em>{item.answer}</em></p>}
             </div>
           );
         })}
@@ -135,6 +122,7 @@ export const Unscramble = ({
 
       <div className="flex gap-2 mb-2">
         <Button icon={<Check />} onClick={handleCheck} />
+        <Button icon={isShown ? <EyeClosed /> : <Eye />} onClick={handleShowAnswers} />
         <Button icon={<RotateCcw />} onClick={handleReset} />
       </div>
     </div>
