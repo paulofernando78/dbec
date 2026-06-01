@@ -46,7 +46,7 @@ export const TableOfContents = ({
                 )}
 
                 {item.href && (
-                  <li className="flex gap-2 ml-4">
+                  <li className="flex gap-2 ml-4 space-y-1">
                     <NotebookText color="var(--icon-color)"/>
                     <a href={`#${item.href}`}>
                       {item.label && (
