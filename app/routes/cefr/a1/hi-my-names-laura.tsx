@@ -1,5 +1,5 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { LessonObjective } from "@/components/content/LessonObjective"
+import { LessonObjective } from "@/components/content/LessonObjective";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { Line } from "@/components/content/Line";
@@ -16,7 +16,6 @@ import { Collapsible } from "@/components/content/Collapsible";
 
 import { lesson } from "@/data/lessons/cefr/a1/hi-my-names-laura";
 
-
 export default function Introduction() {
   return (
     <>
@@ -31,9 +30,30 @@ export default function Introduction() {
           value={[
             ...content({
               parts: [lesson.objective[0]],
-              }),
-            ]}
+            }),
+          ]}
         />
+        <PageSections>
+          <Section id="introduction" heading={3}>
+          
+          </Section>
+
+          <Section id="Presention" heading={3}>
+           
+          </Section>
+
+          <Section id="Language Focus" heading={3}>
+          
+          </Section>
+
+          <Section id="Practice" heading={3}>
+  
+          </Section>
+
+          <Section id="Production" heading={3}>
+           
+          </Section>
+        </PageSections>
       </div>
     </>
   );
