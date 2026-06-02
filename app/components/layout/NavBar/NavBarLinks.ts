@@ -17,7 +17,7 @@ export const links = [
     links: [
       {
         href: "/cefr/a1/introduction",
-        label: "Introduction",
+        label: "Hi, my name’s Laura.",
       },
       // {
       //   href: "/cefr/a1/talk-about-yourself",

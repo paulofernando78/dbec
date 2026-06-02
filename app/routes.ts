@@ -17,7 +17,15 @@ export default [
     route("cefr", "routes/cefr/whats-cefr.tsx"),
 
     // A1 BEGINNER
-    route("cefr/a1/introduction", "routes/cefr/a1/introduction.tsx"),
+    route("cefr/a1/introduction", "routes/cefr/a1/hi-my-names-laura.tsx"),
+
+    // A2 ELEMENTARY
+
+    // B1 PRE-INTERMEDIATE
+
+    // B2 INTERMEDIATE
+
+    // ADVANCED
 
     route("c1-c2/random-topics", "routes/cefr/c1-c2/random-topics.tsx"),
 

@@ -1,19 +1,22 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
+import { LessonObjective } from "@/components/content/LessonObjective"
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
-import { Card } from "@/components/ui/Card";
+import { List } from "@/components/content/List";
 import { Line } from "@/components/content/Line";
-import { Objective } from "@/components/content/Objective";
+
+import { VideoPlayer } from "@/components/ui/VideoPlayer";
+import { Collapsible } from "@/components/content/Collapsible";
+
 import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
-import { List } from "@/components/content/List";
-import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { content, portuguese } from "@/helpers/content";
-import { Collapsible } from "@/components/content/Collapsible";
+
+import { lesson } from "@/data/lessons/cefr/advanced/ted-ed/how-your-memory-works";
 
 export const metadata = {
   title: "Advanced | How Your Memory Works",
@@ -21,7 +24,7 @@ export const metadata = {
     "Advanced listening and discussion practice based on a TED-Ed video about memory, forgetting, and how the brain stores information.",
 };
 
-import { lesson } from "@/data/lessons/cefr/advanced/ted-ed/how-your-memory-works";
+
 
 export default function HowYourMemoryWorks() {
   return (
@@ -31,8 +34,8 @@ export default function HowYourMemoryWorks() {
         subtitle="How Your Memory Works"
         description="Watch the video, understand how memory works, and discuss why forgetting is important."
       />
-      <Objective
-        value={[
+      <LessonObjective
+         value={[
           ...content({
             parts: [lesson.objective[0]],
           }),
@@ -122,7 +125,7 @@ export default function HowYourMemoryWorks() {
           label="Follow-up Discussion"
           heading={3}
         >
-         <List
+          <List
             instruction="Discuss these questions."
             ordered
             items={lesson.followUp.map((question) => ({

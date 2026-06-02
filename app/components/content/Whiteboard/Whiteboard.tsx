@@ -12,9 +12,6 @@ type WhiteboardProps = {
 export const Whiteboard = ({
   title,
   subtitle,
-  book,
-  lesson,
-  descriptions,
   description,
 }: WhiteboardProps) => {
   return (
