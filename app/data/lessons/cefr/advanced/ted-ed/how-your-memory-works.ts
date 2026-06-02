@@ -1,4 +1,25 @@
 export const lesson = {
+  objective: [
+    "In this lesson, you will watch a TED-Ed video that explains how memory works, why forgetting is important, and how the brain stores information. You will also discuss questions, practice vocabulary, and complete exercises to improve your understanding of the topic.",
+  ],
+
+  introduction: [
+    "Why do people forget important information?",
+    "Would you like to remember everything forever?",
+    "What techniques help you remember things?",
+  ],
+
+  vocabulary: [
+    { word: "memory", img: 0 },
+    { word: "brain", img: 0 },
+    { word: "forget", img: 0 },
+    { word: "neuron", img: 0 },
+    { word: "information", img: 0 },
+    { word: "learning", img: 0 },
+    { word: "recall", img: 0 },
+    { word: "storage", img: 0 },
+  ],
+
   script: [
     {
       en: "Thank you to brilliant dot org for supporting PBS Digital Studios.",
@@ -338,17 +359,6 @@ export const lesson = {
     },
   ],
 
-  vocabulary: [
-    { word: "memory", img: 0 },
-    { word: "brain", img: 0 },
-    { word: "forget", img: 0 },
-    { word: "neuron", img: 0 },
-    { word: "information", img: 0 },
-    { word: "learning", img: 0 },
-    { word: "recall", img: 0 },
-    { word: "storage", img: 0 },
-  ],
-
   radio: {
     gist: {
       questions: [
@@ -493,17 +503,9 @@ export const lesson = {
     ],
   },
 
-  discussion: {
-    introduction: [
-      "Why do people forget important information?",
-      "Would you like to remember everything forever?",
-      "What techniques help you remember things?",
-    ],
-
-    followUp: [
-      "Would it be a good thing to remember everything forever?",
-      "Why do you think the brain forgets information?",
-      "How could understanding memory help students learn better?",
-    ],
-  },
+  followUp: [
+    "Would it be a good thing to remember everything forever?",
+    "Why do you think the brain forgets information?",
+    "How could understanding memory help students learn better?",
+  ],
 };

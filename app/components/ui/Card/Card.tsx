@@ -6,7 +6,7 @@ type CardProps = {
   maxContent?: boolean
 }
 
-export const Card = ({ children, maxContent = false }: CardProps) => {
+export const Card = ({ children, maxContent = false, className }: CardProps) => {
   return <div
     className={`
     p-4
@@ -16,7 +16,7 @@ export const Card = ({ children, maxContent = false }: CardProps) => {
     border-gray-400 
     bg-gray-300
     rounded-xl 
-    ${maxContent ? "w-fit max-w-full" : ""}`}
+    ${maxContent ? "w-fit max-w-full" : ""} ${className}`}
     >
       {children}
     </div>;
