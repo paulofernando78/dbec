@@ -12,11 +12,15 @@ import { Unscramble } from "@/features/exercises/Unscramble";
 
 import { List } from "@/components/content/List";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
-import { content, portuguese } from "@/helpers/content";
 import { Collapsible } from "@/components/content/Collapsible";
 
-import { lesson } from "@/data/lessons/cefr/a1/hi-my-names-laura";
 import { MediaWrapper } from "@/components/content/MediaWrapper";
+
+import {
+  content,
+} from "@/helpers/content";
+
+import { lesson } from "@/data/lessons/cefr/a1/hi-my-names-laura";
 
 export default function Introduction() {
   return (
@@ -46,7 +50,9 @@ export default function Introduction() {
                 />
               </MediaWrapper.Item>
               <MediaWrapper.Content>
-                <p>aaa</p>
+                <Line
+                  value={lesson.introduction}
+                />
               </MediaWrapper.Content>
             </MediaWrapper>
           </Section>

@@ -493,8 +493,8 @@ export const lesson = {
         answer: "Animals commit new memories to long-term storage.",
       },
       {
-        prompt: "memory / object / a / not / is / action / an / a",
-        answer: "A memory is an action not an object.",
+        prompt: "memory / object / an / a / not / is / action, / an",
+        answer: "A memory is an action, not an object.",
       },
       {
         prompt: "memories / brain / over / scattered / are / the / all",
