@@ -2,6 +2,7 @@ import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonObjective } from "@/components/content/LessonObjective";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
+import { Image } from "@/components/ui/Image";
 import { Line } from "@/components/content/Line";
 import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
@@ -15,6 +16,7 @@ import { content, portuguese } from "@/helpers/content";
 import { Collapsible } from "@/components/content/Collapsible";
 
 import { lesson } from "@/data/lessons/cefr/a1/hi-my-names-laura";
+import { MediaWrapper } from "@/components/content/MediaWrapper";
 
 export default function Introduction() {
   return (
@@ -35,23 +37,34 @@ export default function Introduction() {
         />
         <PageSections>
           <Section id="introduction" heading={3}>
-          
+            <MediaWrapper mediaPosition="top">
+              <MediaWrapper.Item>
+                <Image
+                  ratio16x9
+                  src="/assets/img/lessons/cefr/a1/introductions/introduction/laura-eric-mr-smith.avif"
+                  alt=""
+                />
+              </MediaWrapper.Item>
+              <MediaWrapper.Content>
+                <p>aaa</p>
+              </MediaWrapper.Content>
+            </MediaWrapper>
           </Section>
 
           <Section id="Presention" heading={3}>
-           
+            <p>aaa</p>
           </Section>
 
           <Section id="Language Focus" heading={3}>
-          
+            <p>aaa</p>
           </Section>
 
           <Section id="Practice" heading={3}>
-  
+            <p>aaa</p>
           </Section>
 
           <Section id="Production" heading={3}>
-           
+            <p>aaa</p>
           </Section>
         </PageSections>
       </div>
