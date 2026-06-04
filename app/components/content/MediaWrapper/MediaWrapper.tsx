@@ -14,7 +14,8 @@ export const MediaWrapper = ({
   return (
     <div className={`${styles.wrapper} ${styles[mediaPosition]}`}>
       {children}
-    </div> );
+    </div>
+  );
 };
 
 MediaWrapper.Item = function MediaWrapperItem({
@@ -22,7 +23,15 @@ MediaWrapper.Item = function MediaWrapperItem({
 }: {
   children: ReactNode;
 }) {
-  return <div className={styles.item}>{children}</div>;
+  return (
+    <div
+      style={{
+        paddingInline: "clamp(0px, calc(25vw - 160px), 100px)",
+      }}
+    >
+      {children}
+    </div>
+  );
 };
 
 MediaWrapper.Content = function MediaWrapperContent({
@@ -30,5 +39,5 @@ MediaWrapper.Content = function MediaWrapperContent({
 }: {
   children: ReactNode;
 }) {
-  return <div className={styles.content}>{children}</div>;
+  return <div>{children}</div>;
 };

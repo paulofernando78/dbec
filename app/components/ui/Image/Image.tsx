@@ -4,13 +4,12 @@ type ImageProps = {
   width?: number;
   height?: number;
   className?: string;
-  ratio16x9?: boolean
+  // ratio16x9?: boolean
 };
 
-export const Image = ({ src, alt, width, height, className, ratio16x9 }: ImageProps) => {
+export const Image = ({ src, alt, width, height, className }: ImageProps) => {
   return (
     <div
-      className={` ${ratio16x9 ? "w-1/2" : "w-full"} h-full mx-auto`}
       style={{ width, height }}>
       <img
         src={src}
