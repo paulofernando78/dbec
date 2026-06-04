@@ -16,9 +16,7 @@ import { Collapsible } from "@/components/content/Collapsible";
 
 import { MediaWrapper } from "@/components/content/MediaWrapper";
 
-import {
-  content,
-} from "@/helpers/content";
+import { content } from "@/helpers/content";
 
 import { lesson } from "@/data/lessons/cefr/a1/hi-my-names-laura";
 
@@ -41,18 +39,18 @@ export default function Introduction() {
         />
         <PageSections>
           <Section id="introduction" heading={3}>
+            <Line value={lesson.intro} />
             <MediaWrapper mediaPosition="top">
               <MediaWrapper.Item>
                 <Image
-                  ratio16x9
                   src="/assets/img/lessons/cefr/a1/introductions/introduction/laura-eric-mr-smith.avif"
                   alt=""
                 />
               </MediaWrapper.Item>
               <MediaWrapper.Content>
-                <Line
-                  value={lesson.introduction}
-                />
+                {lesson.introduction.map((line, index) => (
+                  <Line key={index} value={line} as="p" />
+                ))}
               </MediaWrapper.Content>
             </MediaWrapper>
           </Section>

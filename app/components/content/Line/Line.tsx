@@ -8,10 +8,10 @@ type LineProps = {
   value?: InlineRichContentValue[];
 };
 
-export const Line = ({ as: Component = "div", value = [] }: LineProps) => {
+export const Line = ({ as: Tag = "div", value = [] }: LineProps) => {
   return (
-    <Component>
+    <Tag>
       <InlineRichContent value={value} />
-    </Component>
+    </Tag>
   );
 };
