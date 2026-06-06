@@ -7,11 +7,20 @@ import { Image } from "@/components/ui/Image";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { MediaWrapper } from "@/components/content/MediaWrapper";
 import { Dialogue } from "@/features/Dialogue/Dialogue";
+import { ColumnDrag } from "@/components/content/Column";
 import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
+
+import {
+  content,
+  icon,
+  audio,
+  bold,
+  mark,
+} from "@/helpers/content";
 
 import {
   line,
@@ -54,7 +63,7 @@ export default function Playground() {
 
           {/* Image */}
           <Section id="image" heading={3}>
-            <Image {...image}/>
+            <Image {...image} />
           </Section>
 
           {/* Caroseul */}
@@ -85,6 +94,96 @@ export default function Playground() {
           {/* Dialogue */}
           <Section id="dialogue" heading={3}>
             <Dialogue {...dialogue} />
+          </Section>
+
+          <Section id="Column Drag" heading={3}>
+            <ColumnDrag
+              width="300"
+              cols={[
+                // Column 1
+                {
+                  bgColor: "var(--green-6)",
+                  textColor: "white",
+                  column: "Column 1",
+                  blocks: [
+                    {
+                      block: [
+                        {
+                          value: [
+                            {
+                              icons: [
+                                "us",
+                                "uk",
+                                "spotlight",
+                                "correct",
+                                "incorrect",
+                              ],
+                              audio: "/assets/audio/",
+                              part: "normal",
+                            },
+                            "1 ",
+                          ],
+                        },
+                      ],
+                      lineBreak: true,
+                    },
+                  ],
+                },
+
+                // Column 2
+                {
+                  bgColor: "var(--red-4)",
+                  textColor: "white",
+                  column: "Column 2",
+                  blocks: [
+                    {
+                      block: [
+                        {
+                          value: [
+                            ...content({
+                              parts: [
+                                icon("us"),
+                                icon("uk"),
+                                audio("/assets/audio/..."),
+                                "Normal ",
+                                bold("bold"),
+                                " ",
+                                mark("mark"),
+                                "2 ",
+                              ],
+                            }),
+                          ],
+                        },
+                      ],
+                      lineBreak: true,
+                    },
+                  ],
+                },
+
+                // Column 3
+                {
+                  bgColor: "var(--yellow-4)",
+                  textColor: "white",
+                  column: "Column 3",
+                  blocks: [
+                    {
+                      block: [
+                        {
+                          value: [
+                            {
+                              audio: "/assets/audio/",
+                              part: "normal",
+                            },
+                            "3 ",
+                          ],
+                        },
+                      ],
+                      lineBreak: true,
+                    },
+                  ],
+                },
+              ]}
+            />
           </Section>
 
           {/* Guess */}

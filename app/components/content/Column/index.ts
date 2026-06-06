@@ -1,1 +1,1 @@
-export { Column } from "./Column"
+export { ColumnDrag } from "./ColumnDrag"

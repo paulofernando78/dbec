@@ -25,17 +25,17 @@ type ColumnItem = {
   blocks?: ColumnBlock[];
 };
 
-type ColumnProps = {
+type ColumnDragProps = {
   cols?: ColumnItem[];
   maxCols?: number;
   width?: number;
 };
 
-export const Column = ({
+export const ColumnDrag = ({
   cols = [],
   maxCols,
   width = 250,
-}: ColumnProps) => {
+}: ColumnDragProps) => {
   const visibleCols = maxCols ? cols.slice(0, maxCols) : cols;
   const scrollRef = useRef<HTMLDivElement | null>(null);
   useDragScroll(scrollRef);
@@ -62,7 +62,7 @@ export const Column = ({
                 {(c.blocks || []).map((bs, bsIndex) => (
                   <div
                     key={bsIndex}
-                    className={bs.lineBreak ? "line-break-item" : ""}
+                    className={bs.lineBreak ? "mb-4" : ""}
                   >
                     {(bs.block || []).map((b, bIndex) => (
                       <InlineRichContent key={bIndex} value={b.value ?? []} />
