@@ -25,9 +25,6 @@ MediaWrapper.Item = function MediaWrapperItem({
 }) {
   return (
     <div
-      style={{
-        paddingInline: "clamp(0px, calc(25vw - 160px), 100px)",
-      }}
     >
       {children}
     </div>

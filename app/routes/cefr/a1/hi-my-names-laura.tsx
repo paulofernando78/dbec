@@ -39,12 +39,12 @@ export default function Introduction() {
         />
         <PageSections>
           <Section id="introduction" heading={3}>
-            <Line value={lesson.intro} />
+            <Line value={lesson.introPrompt} />
             <MediaWrapper mediaPosition="top">
               <MediaWrapper.Item>
                 <Image
                   src="/assets/img/lessons/cefr/a1/introductions/introduction/laura-eric-mr-smith.avif"
-                  alt=""
+                  alt="..."
                 />
               </MediaWrapper.Item>
               <MediaWrapper.Content>
@@ -53,6 +53,22 @@ export default function Introduction() {
                 ))}
               </MediaWrapper.Content>
             </MediaWrapper>
+
+            <Radio
+            instruction="Choose the correct answer."
+              exercise={{
+                questions: [
+                  {
+                    question: "1. Question",
+                    options: [
+                      { option: "option 1", isCorrect: true },
+                      { option: "option 2", isCorrect: false },
+                      { option: "option 3", isCorrect: false },
+                    ],
+                  },
+                ],
+              }}
+            />
           </Section>
 
           <Section id="Presention" heading={3}>

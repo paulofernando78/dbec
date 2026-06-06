@@ -1,43 +1,40 @@
-import type {
-  FC,
-  ReactNode,
-} from "react";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
+import { Image } from "@/components/ui/Image";
+import { AudioPlayer } from "@/components/ui/AudioPlayer";
 
-import styles from "./Dialogue.module.css";
+import type { ContentToken } from "@/helpers/content";
 
-type ChildrenProps = {
-  children: ReactNode;
+type DialogueLine = {
+  speaker?: string;
+  line: (ContentToken | string)[];
 };
 
-type DialogueComponent = FC<ChildrenProps> & {
-  Line: FC<ChildrenProps>;
-  Speaker: FC<ChildrenProps>;
+type DialogueProps = {
+  instruction: string;
+  imgSrc: string,
+  imgAlt: string,
+  audioSrc: string,
+  lines: DialogueLine[];
 };
 
-export const Dialogue: DialogueComponent = ({
-  children,
-}) => {
+export const Dialogue = ({
+  instruction,
+  imgSrc,
+  imgAlt,
+  audioSrc,
+  lines = [],
+}: DialogueProps) => {
   return (
-    <div className="line-break">
-      {children}
+    <div className="space-y-4">
+      <p><b>{instruction}</b></p>
+      <Image src={imgSrc} alt={imgAlt} applyPadding/>
+      <AudioPlayer src={audioSrc} />
+      {lines.map((line, index) => (
+        <p key={index}>
+          <b>{line.speaker}:{" "}</b>
+          <InlineRichContent value={line.line ?? []} />
+        </p>
+      ))}
     </div>
   );
 };
-
-Dialogue.Speaker = function DialogueSpeaker({
-  children,
-}) {
-  return <strong>{children}: </strong>;
-};
-
-Dialogue.Line = function DialogueLine({
-  children,
-}) {
-  return (
-    <p className={styles.lines}>
-      {children}
-    </p>
-  );
-};
-
-

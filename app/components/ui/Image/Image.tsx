@@ -4,13 +4,28 @@ type ImageProps = {
   width?: number;
   height?: number;
   className?: string;
-  // ratio16x9?: boolean
+  applyPadding?: boolean
 };
 
-export const Image = ({ src, alt, width, height, className }: ImageProps) => {
+export const Image = ({
+  src,
+  alt,
+  width,
+  height,
+  className,
+  applyPadding = false,
+ }: ImageProps) => {
   return (
     <div
-      style={{ width, height }}>
+      style={{
+        width,
+        height,
+        ...(applyPadding && {
+          paddingInline: "clamp(0px, calc(25vw - 160px), 100px)",
+        }),
+      }}
+      className="mx-auto"
+    >
       <img
         src={src}
         alt={alt}
