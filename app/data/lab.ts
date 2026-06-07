@@ -89,6 +89,31 @@ export const carousel = {
   ],
 };
 
+export const flipCards = {
+  cards: [
+    {
+      frontLine: ["What's the past of ask?"],
+      backLine: [mark("asked")],
+    },
+    {
+      frontLine: ["aaa"],
+      backImg: "dog",
+    },
+    {
+      frontLine: ["aaa"],
+      backImg: "/assets/img/dictionary/b/brain.avif",
+    },
+    {
+      frontLine: ["aaa"],
+      backImg: "https://www.kia.com/content/dam/kwcms/au/en/images/category/kia-sorento.webp",
+    },
+    {
+      frontImg: "cat",
+      backImg: "dog",
+    },
+  ],
+};
+
 export const mediaWrapper = {
   paragraph: [...content({ parts: ["Example paragraph"] })],
 };

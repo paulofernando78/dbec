@@ -16,7 +16,7 @@ import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
-import { icon, audio, mark } from "@/helpers/content";
+import { icon, audio } from "@/helpers/content";
 
 import {
   line,
@@ -25,6 +25,7 @@ import {
   video,
   image,
   carousel,
+  flipCards,
   mediaWrapper,
   dialogue,
   guess,
@@ -65,22 +66,7 @@ export default function Playground() {
 
           {/* Flip Card */}
           <Section id="flip-cards" heading={3}>
-            <FlipCards
-              cards={[
-                {
-                  frontLine: ["What's the past of ask?"],
-                  backLine: [mark("asked")],
-                },
-                {
-                  frontLine: ["aaa"],
-                  backImg: "dog",
-                },
-                {
-                  frontImg: "cat",
-                  backImg: "dog",
-                },
-              ]}
-            />
+            <FlipCards {...flipCards} />
           </Section>
 
           {/* Media Wrapper */}

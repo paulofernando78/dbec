@@ -36,7 +36,10 @@ type FlipCardsProps = {
 
 const isDirectImageSrc = (
   value: string = "",
-) => value.startsWith("/");
+) =>
+  value.startsWith("/") ||
+  value.startsWith("http://") ||
+  value.startsWith("https://");
 
 const resolveCardImage = async (
   value?: string,
@@ -111,7 +114,7 @@ const SingleFlipCard = ({
         onClick={() => setFlipped((prev) => !prev)}
       >
         <div className="absolute w-full h-full [backface-visibility:hidden] grid place-items-center bg-[var(--slate-2)] rounded-[5px] [transform:rotateY(0deg)]">
-          <FlipHorizontal2 className="absolute top-[6px] right-[5px] border-2 border-[var(--slate-4)] rounded-full outline outline-2 outline-white bg-[aliceblue] z-[2]" />
+          <FlipHorizontal2 className="absolute top-[6px] right-[5px] border-2 border-[var(--slate-4)] rounded-full outline outline-2 outline-white bg-[aliceblue] z-2" />
           {frontContent ? (
             <div className="text-center text-black text-[1.7rem]">{frontContent}</div>
           ) : frontLine ? (
@@ -156,7 +159,7 @@ export const FlipCards = ({
   cards = [],
 }: FlipCardsProps) => {
   return (
-    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
       {cards.map((card, index) => (
         <div
           key={index}
