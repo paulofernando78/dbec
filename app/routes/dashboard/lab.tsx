@@ -4,28 +4,25 @@ import { Section } from "@/components/content/Section";
 import { Line } from "@/components/content/Line";
 import { Paragraph } from "@/components/content/Paragraph";
 import { Image } from "@/components/ui/Image";
-import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { Carousel } from "@/components/ui/Carousel";
+import { FlipCards } from "@/components/content/FlipCards";
 import { MediaWrapper } from "@/components/content/MediaWrapper";
+import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { Dialogue } from "@/features/Dialogue/Dialogue";
 import { ColumnDrag } from "@/components/content/Column";
-import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
-import {
-  content,
-  icon,
-  audio,
-  bold,
-  mark,
-} from "@/helpers/content";
+import { icon, audio, mark } from "@/helpers/content";
 
 import {
   line,
   paragraph,
   audioPlayer,
+  video,
   image,
   carousel,
   mediaWrapper,
@@ -56,11 +53,6 @@ export default function Playground() {
             <Paragraph value={paragraph} />
           </Section>
 
-          {/* Audio Player */}
-          <Section id="audio-player" heading={3}>
-            <AudioPlayer {...audioPlayer} />
-          </Section>
-
           {/* Image */}
           <Section id="image" heading={3}>
             <Image {...image} />
@@ -69,6 +61,26 @@ export default function Playground() {
           {/* Caroseul */}
           <Section id="caroseul" heading={3}>
             <Carousel {...carousel} />
+          </Section>
+
+          {/* Flip Card */}
+          <Section id="flip-cards" heading={3}>
+            <FlipCards
+              cards={[
+                {
+                  frontLine: ["What's the past of ask?"],
+                  backLine: [mark("asked")],
+                },
+                {
+                  frontLine: ["aaa"],
+                  backImg: "dog",
+                },
+                {
+                  frontImg: "cat",
+                  backImg: "dog",
+                },
+              ]}
+            />
           </Section>
 
           {/* Media Wrapper */}
@@ -91,69 +103,72 @@ export default function Playground() {
             </MediaWrapper>
           </Section>
 
+          {/* Audio Player */}
+          <Section id="audio-player" heading={3}>
+            <AudioPlayer {...audioPlayer} />
+          </Section>
+
+          <Section id="video-player" heading={3}>
+            <VideoPlayer {...video} />
+          </Section>
+
           {/* Dialogue */}
           <Section id="dialogue" heading={3}>
             <Dialogue {...dialogue} />
           </Section>
 
+          {/* Column Drag */}
           <Section id="Column Drag" heading={3}>
             <ColumnDrag
-              width="300"
+              width={300}
               cols={[
                 // Column 1
                 {
                   bgColor: "var(--green-6)",
                   textColor: "white",
                   column: "Column 1",
-                  blocks: [
+                  items: [
                     {
-                      block: [
-                        {
-                          value: [
-                            {
-                              icons: [
-                                "us",
-                                "uk",
-                                "spotlight",
-                                "correct",
-                                "incorrect",
-                              ],
-                              audio: "/assets/audio/",
-                              part: "normal",
-                            },
-                            "1 ",
-                          ],
-                        },
+                      parts: [
+                        icon("us"),
+                        icon("uk"),
+                        icon("spotlight"),
+                        icon("correct"),
+                        icon("incorrect"),
+                        audio("/assets/audio/..."),
+                        "Normal",
+                      ],
+                      lineBreak: true,
+                    },
+                    {
+                      parts: [
+                        icon("us"),
+                        icon("uk"),
+                        icon("spotlight"),
+                        icon("correct"),
+                        icon("incorrect"),
+                        audio("/assets/audio/..."),
+                        "Normal",
                       ],
                       lineBreak: true,
                     },
                   ],
                 },
-
                 // Column 2
                 {
                   bgColor: "var(--red-4)",
                   textColor: "white",
                   column: "Column 2",
-                  blocks: [
+                  items: [
                     {
-                      block: [
-                        {
-                          value: [
-                            ...content({
-                              parts: [
-                                icon("us"),
-                                icon("uk"),
-                                audio("/assets/audio/..."),
-                                "Normal ",
-                                bold("bold"),
-                                " ",
-                                mark("mark"),
-                                "2 ",
-                              ],
-                            }),
-                          ],
-                        },
+                      parts: [
+                        icon("us"),
+                        icon("uk"),
+                        icon("spotlight"),
+                        icon("correct"),
+                        icon("incorrect"),
+                        audio("/assets/audio/..."),
+                        "Normal",
                       ],
                       lineBreak: true,
                     },
@@ -165,18 +180,16 @@ export default function Playground() {
                   bgColor: "var(--yellow-4)",
                   textColor: "white",
                   column: "Column 3",
-                  blocks: [
+                  items: [
                     {
-                      block: [
-                        {
-                          value: [
-                            {
-                              audio: "/assets/audio/",
-                              part: "normal",
-                            },
-                            "3 ",
-                          ],
-                        },
+                      parts: [
+                        icon("us"),
+                        icon("uk"),
+                        icon("spotlight"),
+                        icon("correct"),
+                        icon("incorrect"),
+                        audio("/assets/audio/..."),
+                        "Normal",
                       ],
                       lineBreak: true,
                     },

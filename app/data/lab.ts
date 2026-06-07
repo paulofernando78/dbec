@@ -23,14 +23,22 @@ export const line = [
       icon("incorrect"),
       icon("spotlight"),
       audio("/assets/audio/welcome.mp3"),
-      "Normal", " ",
-      bold("bold"), " ",
-      italic("italic"), " ",
-      underline("underline"), " ",
-      mark("mark"), " ",
-      boldMark("bold mark"), " ",
-      stressed("stressed"), " ",
-      phonetics("phonetics"), " ",
+      "Normal",
+      " ",
+      bold("bold"),
+      " ",
+      italic("italic"),
+      " ",
+      underline("underline"),
+      " ",
+      mark("mark"),
+      " ",
+      boldMark("bold mark"),
+      " ",
+      stressed("stressed"),
+      " ",
+      phonetics("phonetics"),
+      " ",
       portuguese("portuguese"),
     ],
   }),
@@ -46,25 +54,29 @@ export const paragraph = [
       icon("incorrect"),
       icon("spotlight"),
       audio("/"),
-      "normal", " ",
-      bold("bold"), " ",
-      italic("italic"), " ",
-      underline("underline"), " ",
-      mark("mark"), " ",
-      boldMark("bold mark"), " ",
-      stressed("stressed"), " ",
-      phonetics("phonetics"), " ",
+      "normal",
+      " ",
+      bold("bold"),
+      " ",
+      italic("italic"),
+      " ",
+      underline("underline"),
+      " ",
+      mark("mark"),
+      " ",
+      boldMark("bold mark"),
+      " ",
+      stressed("stressed"),
+      " ",
+      phonetics("phonetics"),
+      " ",
       portuguese("portuguese"),
     ],
   }),
 ];
 
-export const audioPlayer = {
-  src: "/assets/audio/welcome.mp3",
-};
-
 export const image = {
-  src: "/assets/img/lessons/cefr/a1/introductions/introduction/laura-eric-mr-smith.avif",
+  src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-mr-smith.avif",
   alt: "...",
   applyPadding: true,
 };
@@ -81,9 +93,19 @@ export const mediaWrapper = {
   paragraph: [...content({ parts: ["Example paragraph"] })],
 };
 
+export const audioPlayer = {
+  src: "/assets/audio/welcome.mp3",
+};
+
+export const video = {
+  instruction: "Watch the video.",
+  videoId: "C8rU4dv2w8Q",
+};
+
 export const dialogue = {
   instruction: "Listen to the dialogue.",
-  imgSrc: "https://t4.ftcdn.net/jpg/09/69/46/43/360_F_969464328_BsABgg6gLMxYgY3iL74cuteW7s2YrMTP.jpg",
+  imgSrc:
+    "https://t4.ftcdn.net/jpg/09/69/46/43/360_F_969464328_BsABgg6gLMxYgY3iL74cuteW7s2YrMTP.jpg",
   imgAlt: "...",
   audioSrc: "/assets/audio/welcome.mp3",
   lines: [
@@ -136,7 +158,11 @@ export const fillInTheBlanks = {
         lineBreak: true,
       },
       {
-        block: [{ text: "He" }, { blank: "teaches" }, { text: "in the morning." }],
+        block: [
+          { text: "He" },
+          { blank: "teaches" },
+          { text: "in the morning." },
+        ],
       },
       {
         block: [{ text: "He" }, { blank: "walks" }, { text: "to school." }],

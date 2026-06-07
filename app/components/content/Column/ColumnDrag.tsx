@@ -9,20 +9,14 @@ import { useDragScroll } from "@/hooks/useDragScroll";
 
 import styles from "./Column.module.css";
 
-type ColumnBlockItem = {
-  value?: InlineRichContentValue[];
-};
-
-type ColumnBlock = {
-  lineBreak?: boolean;
-  block?: ColumnBlockItem[];
-};
-
 type ColumnItem = {
   bgColor: string;
   textColor?: string;
   column: string;
-  blocks?: ColumnBlock[];
+  items?: {
+    parts: InlineRichContentValue[];
+    lineBreak?: boolean;
+  }[];
 };
 
 type ColumnDragProps = {
@@ -42,37 +36,35 @@ export const ColumnDrag = ({
 
   return (
     <>
-        <div>
-          <div
-            ref={scrollRef}
-            className={styles.wrapper}
-            style={{
-              gridTemplateColumns: `repeat(${visibleCols.length}, ${width}px)`,
-            }}
-          >
-            {visibleCols.map((c, cIndex) => (
-              <div key={cIndex}>
-                <Ribbon
-                  bgColor={c.bgColor}
-                  textColor={c.textColor}
-                  label={c.column}
-                  className={styles.column}
-                />
-  
-                {(c.blocks || []).map((bs, bsIndex) => (
-                  <div
-                    key={bsIndex}
-                    className={bs.lineBreak ? "mb-4" : ""}
-                  >
-                    {(bs.block || []).map((b, bIndex) => (
-                      <InlineRichContent key={bIndex} value={b.value ?? []} />
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+      <div>
+        <div
+          ref={scrollRef}
+          className={styles.wrapper}
+          style={{
+            gridTemplateColumns: `repeat(${visibleCols.length}, ${width}px)`,
+          }}
+        >
+          {visibleCols.map((c, cIndex) => (
+            <div key={cIndex}>
+              <Ribbon
+                bgColor={c.bgColor}
+                textColor={c.textColor}
+                label={c.column}
+                className={styles.column}
+              />
+
+              {(c.items ?? []).map((item, index) => (
+                <div
+                  key={index}
+                  className={item.lineBreak ? "mb-4" : ""}
+                >
+                  <InlineRichContent value={item.parts} />
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
+      </div>
     </>
   );
 };

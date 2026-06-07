@@ -97,22 +97,16 @@ export function baseToken({
 //! Tokens
 
 // Icon
-export const icon = (
-  name: string
-): ContentToken => ({
+export const icon = (name: string): ContentToken => ({
   icons: [name],
 });
 
 // audio
-export const audio = (
-  src: string
-): ContentToken => ({
+export const audio = (src: string): ContentToken => ({
   audio: src,
 });
 
-export const wordAudio = (
-  file: string
-): string => {
+export const wordAudio = (file: string): string => {
   const first = file?.[0]?.toLowerCase();
 
   if (!first || !/[a-z]/.test(first)) {
@@ -123,80 +117,60 @@ export const wordAudio = (
 };
 
 // bold
-export const bold = (
-  text: string
-): ContentToken => ({
+export const bold = (text: string): ContentToken => ({
   part: text,
   type: "bold",
 });
 
 // bold
-export const italic = (
-  text: string
-): ContentToken => ({
+export const italic = (text: string): ContentToken => ({
   part: text,
   type: "italic",
 });
 
 // mark
-export const stressed = (
-  text: string
-): ContentToken => ({
+export const stressed = (text: string): ContentToken => ({
   part: text,
   type: "stressed",
 });
 
 // mark
-export const mark = (
-  text: string
-): ContentToken => ({
+export const mark = (text: string): ContentToken => ({
   part: text,
   type: "mark",
 });
 
 // underline
-export const underline = (
-  text: string
-): ContentToken => ({
+export const underline = (text: string): ContentToken => ({
   part: text,
   type: "underline",
 });
 
 // bold mark
-export const boldMark = (
-  text: string
-): ContentToken => ({
+export const boldMark = (text: string): ContentToken => ({
   part: text,
   type: "bold-mark",
 });
 
 // phonetics
-export const phonetics = (
-  text: string
-): ContentToken => ({
+export const phonetics = (text: string): ContentToken => ({
   part: text,
   type: "phonetics",
 });
 
-export const example = (
-  text: string
-): ContentToken => ({
+export const example = (text: string): ContentToken => ({
   part: ` ${text}`,
   bullet: true,
 });
 
 // portuguese
-export const portuguese = (
-  text: string
-): ContentToken => ({
+export const portuguese = (text: string): ContentToken => ({
   part: text,
   type: "portuguese",
 });
 
 // portuguese
-export const connector = (
-  text: string
-): ContentToken => ({
+export const connector = (text: string): ContentToken => ({
   part: text,
   type: "connector",
 });
@@ -212,9 +186,7 @@ export const content = ({
     bullet: false,
   });
 
-export const text = (
-  parts: ContentValue[] = []
-): ContentValue[] => parts;
+export const text = (parts: ContentValue[] = []): ContentValue[] => parts;
 
 export const attention = ({
   icons = [],
@@ -226,24 +198,18 @@ export const attention = ({
     bullet: false,
   });
 
-export const word = (
-  opts: BaseTokenProps
-): ContentValue[] =>
+export const word = (opts: BaseTokenProps): ContentValue[] =>
   baseToken({
     ...opts,
   });
 
-export const wordRowList = (
-  opts: BaseTokenProps
-): ContentValue[] =>
+export const wordRowList = (opts: BaseTokenProps): ContentValue[] =>
   baseToken({
     bullet: true,
     ...opts,
   });
 
-export const wordColumnList = (
-  opts: BaseTokenProps
-): ContentValue[] =>
+export const wordColumnList = (opts: BaseTokenProps): ContentValue[] =>
   baseToken({
     ...opts,
     bullet: false,
@@ -277,9 +243,7 @@ export const wordComparison = ({
   ...wordRowList({ ...right, bullet: false }),
 ];
 
-export const dictionary = (
-  file: string
-): string => {
+export const dictionary = (file: string): string => {
   const first = file?.[0]?.toLowerCase();
 
   return `/assets/img/dictionary/${first}/${file}`;

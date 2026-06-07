@@ -43,8 +43,9 @@ export default function Introduction() {
             <MediaWrapper mediaPosition="top">
               <MediaWrapper.Item>
                 <Image
-                  src="/assets/img/lessons/cefr/a1/introductions/introduction/laura-eric-mr-smith.avif"
+                  src="/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction.avif"
                   alt="..."
+                  applyPadding
                 />
               </MediaWrapper.Item>
               <MediaWrapper.Content>

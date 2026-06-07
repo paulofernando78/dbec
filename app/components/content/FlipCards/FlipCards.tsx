@@ -10,21 +10,28 @@ import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 
 import { FlipHorizontal2 } from "lucide-react";
 
-import styles from "./FlipCard.module.css";
+import { Line } from "@/components/content/Line";
+import type { ContentValue } from "@/helpers/content";
+
 
 type ResolvedCardImage = {
   src: string;
   alt: string;
 };
 
-type FlipCardProps = {
+type FlipCardItem = {
   frontContent?: ReactNode;
   frontImg?: string;
   frontAlt?: string;
-
+  frontLine?: ContentValue[];
   backContent?: ReactNode;
   backImg?: string;
   backAlt?: string;
+  backLine?: ContentValue[];
+};
+
+type FlipCardsProps = {
+  cards?: FlipCardItem[];
 };
 
 const isDirectImageSrc = (
@@ -57,14 +64,16 @@ const resolveCardImage = async (
   };
 };
 
-export const FlipCard = ({
+const SingleFlipCard = ({
   frontContent,
   frontImg,
   frontAlt,
+  frontLine,
   backContent,
   backImg,
   backAlt,
-}: FlipCardProps) => {
+  backLine,
+}: FlipCardItem) => {
   const [flipped, setFlipped] = useState(false);
   const [resolvedFrontImg, setResolvedFrontImg] =
     useState<ResolvedCardImage | null>(null);
@@ -96,41 +105,66 @@ export const FlipCard = ({
   }, [backAlt, backImg]);
 
   return (
-    <div className={styles.cardContainer}>
+    <div className="w-full aspect-square [perspective:5000px] rounded-[5px] overflow-hidden p-[5px] relative">
       <div
-        className={`${styles.card} ${flipped ? styles.flipped : ""}`}
+        className={`w-full h-full border border-[var(--slate-3)] rounded-[5px] [transform-style:preserve-3d] transition-transform duration-1000 relative ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
         onClick={() => setFlipped((prev) => !prev)}
       >
-        <div className={styles.front}>
-          <FlipHorizontal2 className={styles.flipIcon} />
+        <div className="absolute w-full h-full [backface-visibility:hidden] grid place-items-center bg-[var(--slate-2)] rounded-[5px] [transform:rotateY(0deg)]">
+          <FlipHorizontal2 className="absolute top-[6px] right-[5px] border-2 border-[var(--slate-4)] rounded-full outline outline-2 outline-white bg-[aliceblue] z-[2]" />
           {frontContent ? (
-            <div className={styles.content}>{frontContent}</div>
+            <div className="text-center text-black text-[1.7rem]">{frontContent}</div>
+          ) : frontLine ? (
+            <div className="text-center text-black text-[1.7rem]">
+              <Line value={frontLine} />
+            </div>
           ) : resolvedFrontImg ? (
             <Image
               src={resolvedFrontImg.src}
               alt={resolvedFrontImg.alt}
-              className={styles.img}
+              className="w-full h-full border-0"
             />
           ) : (
             <Image
               src="/assets/img/ui/question-mark.gif"
               alt="Question mark gif"
-              className={styles.placeholderImg}
+              className="w-[150px] h-auto border-0 mx-auto"
             />
           )}
         </div>
-        <div className={styles.back}>
+        <div className="absolute w-full h-full [backface-visibility:hidden] grid place-items-center bg-[var(--slate-2)] rounded-[5px] [transform:rotateY(180deg)]">
           {backContent ? (
-            <div className={styles.content}>{backContent}</div>
+            <div className="text-center text-black text-[1.7rem]">{backContent}</div>
+          ) : backLine ? (
+            <div className="text-center text-black text-[1.7rem]">
+              <Line value={backLine} />
+            </div>
           ) : resolvedBackImg ? (
             <Image
               src={resolvedBackImg.src}
               alt={resolvedBackImg.alt}
-              className={styles.img}
+              className="w-full h-full border-0"
             />
           ) : null}
         </div>
       </div>
+    </div>
+  );
+};
+
+export const FlipCards = ({
+  cards = [],
+}: FlipCardsProps) => {
+  return (
+    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="w-full max-w-[350px]"
+        >
+          <SingleFlipCard {...card} />
+        </div>
+      ))}
     </div>
   );
 };
