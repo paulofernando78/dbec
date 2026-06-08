@@ -92,6 +92,12 @@ export const carousel = {
 export const flipCards = {
   cards: [
     {
+      backLine: [mark("asked")],
+    },
+    {
+      backImg: "dog",
+    },
+    {
       frontLine: ["What's the past of ask?"],
       backLine: [mark("asked")],
     },

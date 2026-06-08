@@ -108,45 +108,111 @@ const SingleFlipCard = ({
   }, [backAlt, backImg]);
 
   return (
-    <div className="w-full aspect-square [perspective:5000px] rounded-[5px] overflow-hidden p-[5px] relative">
+    <div className="
+      relative
+      w-full
+      aspect-square
+      perspective-[5000px]
+      rounded-[5px]
+      overflow-hidden
+      p-1.25
+      ">
       <div
-        className={`w-full h-full border border-[var(--slate-3)] rounded-[5px] [transform-style:preserve-3d] transition-transform duration-1000 relative ${flipped ? "[transform:rotateY(180deg)]" : ""}`}
+        className={`
+          relative
+          w-full h-full border 
+          transition-transform duration-1000
+          border-slate-300
+          rounded-lg
+          transform-3d
+          ${flipped ?
+            "transform-[rotateY(180deg)]"
+            :
+            ""}`
+          }
         onClick={() => setFlipped((prev) => !prev)}
       >
-        <div className="absolute w-full h-full [backface-visibility:hidden] grid place-items-center bg-[var(--slate-2)] rounded-[5px] [transform:rotateY(0deg)]">
-          <FlipHorizontal2 className="absolute top-[6px] right-[5px] border-2 border-[var(--slate-4)] rounded-full outline outline-2 outline-white bg-[aliceblue] z-2" />
+        <div className="
+          absolute
+          w-full
+          h-full
+          backface-hidden
+          grid place-items-center
+        bg-slate-200 rounded-[5px]
+          transform-[rotateY(0deg)]
+        ">
+          <FlipHorizontal2 className="
+            absolute
+            top-1.5
+            right-1.25
+            border-2 
+            border-slate-400
+            rounded-full
+            outline-2
+            outline-white
+            bg-[aliceblue] z-2"
+          />
           {frontContent ? (
-            <div className="text-center text-black text-[1.7rem]">{frontContent}</div>
+            <span className="
+              text-center 
+              text-black 
+              text-[1rem]
+            ">
+              {frontContent}
+            </span>
           ) : frontLine ? (
-            <div className="text-center text-black text-[1.7rem]">
+            <span className="
+              text-center
+              text-black
+              text-[1rem]
+            ">
               <Line value={frontLine} />
-            </div>
+            </span>
           ) : resolvedFrontImg ? (
             <Image
               src={resolvedFrontImg.src}
               alt={resolvedFrontImg.alt}
-              className="w-full h-full border-0"
+              className="
+                w-full
+                h-full
+                border-0"
             />
           ) : (
             <Image
-              src="/assets/img/ui/question-mark.gif"
+              src="/assets/img/icons/question-mark.gif"
               alt="Question mark gif"
-              className="w-[150px] h-auto border-0 mx-auto"
+              width={100}
             />
           )}
         </div>
-        <div className="absolute w-full h-full [backface-visibility:hidden] grid place-items-center bg-[var(--slate-2)] rounded-[5px] [transform:rotateY(180deg)]">
+        <div className="
+          absolute
+          w-full
+          h-full
+          grid place-items-center
+          bg-slate-200 rounded-1.25
+          backface-hidden
+          transform-[rotateY(180deg)]">
           {backContent ? (
-            <div className="text-center text-black text-[1.7rem]">{backContent}</div>
+            <div className="
+              text-center 
+              text-black
+              text-[1rem]">{backContent}</div>
           ) : backLine ? (
-            <div className="text-center text-black text-[1.7rem]">
+            <div className="t
+              ext-center 
+              text-black
+              text-[1rem]">
               <Line value={backLine} />
             </div>
           ) : resolvedBackImg ? (
             <Image
               src={resolvedBackImg.src}
               alt={resolvedBackImg.alt}
-              className="w-full h-full border-0"
+              className="
+                w-full
+                h-full
+                border-0"
             />
           ) : null}
         </div>
@@ -163,7 +229,7 @@ export const FlipCards = ({
       {cards.map((card, index) => (
         <div
           key={index}
-          className="w-full max-w-[350px]"
+          className="w-full max-w-87.5"
         >
           <SingleFlipCard {...card} />
         </div>
