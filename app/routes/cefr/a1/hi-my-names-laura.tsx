@@ -4,6 +4,10 @@ import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { Image } from "@/components/ui/Image";
 import { Line } from "@/components/content/Line";
+import { MediaWrapper } from "@/components/content/MediaWrapper";
+import { Dialogue } from "@/features/Dialogue/Dialogue";
+
+import { ColumnDrag } from "@/components/content/Column";
 import { Carousel } from "@/components/ui/Carousel";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
@@ -13,8 +17,6 @@ import { Unscramble } from "@/features/exercises/Unscramble";
 import { List } from "@/components/content/List";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { Collapsible } from "@/components/content/Collapsible";
-
-import { MediaWrapper } from "@/components/content/MediaWrapper";
 
 import { content } from "@/helpers/content";
 
@@ -39,53 +41,43 @@ export default function Introduction() {
         />
         <PageSections>
           <Section id="introduction" heading={3}>
-            <Line value={lesson.introPrompt} />
+            <Line value={lesson.introduction.prompt} />
+
             <MediaWrapper mediaPosition="top">
               <MediaWrapper.Item>
-                <Image
-                  src="/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction.avif"
-                  alt="..."
-                  applyPadding
-                />
+                <Image {...lesson.introduction.image} />
               </MediaWrapper.Item>
+
               <MediaWrapper.Content>
-                {lesson.introduction.map((line, index) => (
+                {lesson.introduction.sentences.map((line, index) => (
                   <Line key={index} value={line} as="p" />
                 ))}
               </MediaWrapper.Content>
             </MediaWrapper>
 
-            <Radio
-            instruction="Choose the correct answer."
-              exercise={{
-                questions: [
-                  {
-                    question: "1. Question",
-                    options: [
-                      { option: "option 1", isCorrect: true },
-                      { option: "option 2", isCorrect: false },
-                      { option: "option 3", isCorrect: false },
-                    ],
-                  },
-                ],
-              }}
-            />
+            <Radio {...lesson.introduction.radio} />
           </Section>
 
-          <Section id="Presention" heading={3}>
-            <p>aaa</p>
+          <Section id="Presentation" heading={3}>
+            <Dialogue {...lesson.presentation.dialogue} />
           </Section>
 
           <Section id="Language Focus" heading={3}>
-            <p>aaa</p>
+            <ColumnDrag {...lesson.languageFocus.columnDrag} />
           </Section>
 
           <Section id="Practice" heading={3}>
-            <p>aaa</p>
+            <Guess {...lesson.practice.guess} />
+
+            <Radio {...lesson.practice.radio} />
+
+            <FillInTheBlanks {...lesson.practice.fillInTheBlanks} />
+
+            <Unscramble {...lesson.practice.scramble} />
           </Section>
 
           <Section id="Production" heading={3}>
-            <p>aaa</p>
+            <Line value={lesson.production.prompt} />
           </Section>
         </PageSections>
       </div>

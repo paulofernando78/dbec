@@ -1,4 +1,3 @@
-import { ColumnDrag } from "@/components/content/Column";
 import {
   audio,
   bold,
@@ -160,7 +159,8 @@ export const columnDrag = {
   width: 300,
   cols: [
     {
-      bgColor: "var(--green-6)",
+      borderColor: "border-green-800",
+      bgColor: "bg-green-600",
       textColor: "white",
       column: "Column 1",
       items: [
@@ -188,7 +188,8 @@ export const columnDrag = {
     },
 
     {
-      bgColor: "var(--red-4)",
+      borderColor: "border-red-800",
+      bgColor: "bg-red-400",
       textColor: "white",
       column: "Column 2",
       items: [
@@ -206,7 +207,8 @@ export const columnDrag = {
     },
 
     {
-      bgColor: "var(--yellow-4)",
+      borderColor: "border-yellow-800",
+      bgColor: "bg-yellow-400",
       textColor: "white",
       column: "Column 3",
       items: [

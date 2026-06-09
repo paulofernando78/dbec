@@ -16,8 +16,6 @@ import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
-import { icon, audio } from "@/helpers/content";
-
 import {
   line,
   paragraph,

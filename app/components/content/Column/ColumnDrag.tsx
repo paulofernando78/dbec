@@ -11,8 +11,9 @@ type ColumnItem = {
 };
 
 type ColumnData = {
-  bgColor: string;
-  textColor: string;
+  borderColor?: string;
+  bgColor?: string;
+  textColor?: string;
   column: string;
   items: ColumnItem[];
 };
@@ -41,6 +42,7 @@ export const ColumnDrag = ({ cols = [], maxCols, width = 250 }: ColumnDragProps)
             {visibleCols.map((c, cIndex) => (
               <div key={cIndex}>
                 <Ribbon
+                  borderColor={c.borderColor}
                   bgColor={c.bgColor}
                   textColor={c.textColor}
                   label={c.column}
