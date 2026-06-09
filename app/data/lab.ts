@@ -111,7 +111,8 @@ export const flipCards = {
     },
     {
       frontLine: ["aaa"],
-      backImg: "https://www.kia.com/content/dam/kwcms/au/en/images/category/kia-sorento.webp",
+      backImg:
+        "https://www.kia.com/content/dam/kwcms/au/en/images/category/kia-sorento.webp",
     },
     {
       frontImg: "cat",
@@ -134,10 +135,17 @@ export const video = {
 };
 
 export const dialogue = {
-  instruction: "Listen to the dialogue.",
+  prompt: "Listen to the dialogue.",
   imgSrc:
     "https://t4.ftcdn.net/jpg/09/69/46/43/360_F_969464328_BsABgg6gLMxYgY3iL74cuteW7s2YrMTP.jpg",
   imgAlt: "...",
+  sentences: [
+    [
+      ...content({
+        parts: ["..."],
+      }),
+    ],
+  ],
   audioSrc: "/assets/audio/welcome.mp3",
   lines: [
     {

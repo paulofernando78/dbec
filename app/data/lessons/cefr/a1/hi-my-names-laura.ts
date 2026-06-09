@@ -34,22 +34,40 @@ export const lesson = {
     sentences: [
       [
         ...content({
-          parts: [audio("/"), "This is an ", mark("English School"), "."],
+          parts: [
+            audio("/"),
+            "Laura",
+            " ",
+            mark("introduces"),
+            " ",
+            "herself.",
+          ],
         }),
       ],
       [
         ...content({
-          parts: [audio("/"), "Laura and Eric are ", mark("students"), "."],
+          parts: [audio("/"), "Eric", " ", mark("introduces"), " ", "himself."],
         }),
       ],
       [
         ...content({
-          parts: [audio("/"), "They're in the ", mark("classroom"), "."],
+          parts: [audio("/"), "They", " ", mark("shake"), " ", "hands."],
         }),
       ],
       [
         ...content({
-          parts: [audio("/"), "Mr. Smith is the ", mark("teacher"), "."],
+          parts: [
+            audio("/"),
+            "They say their names",
+            " ",
+            mark("teacher"),
+            ".",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "They are", " ", mark("new friends"), "."],
         }),
       ],
     ],
@@ -59,11 +77,10 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "1. Question",
+            question: "1. Are they old friends?",
             options: [
-              { option: "option 1", isCorrect: true },
-              { option: "option 2", isCorrect: false },
-              { option: "option 3", isCorrect: false },
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
             ],
           },
         ],
@@ -72,17 +89,40 @@ export const lesson = {
   },
 
   presentation: {
-    dialoguePrompt: [
-      ...content({
-        parts: [bold("Listen and follow the dialogue.")],
-      }),
-    ],
-
     dialogue: {
-      instruction: "Look at the picture, listen to the sentences and answer the questions. Then, listen to the dialogue.",
+      prompt:
+        "Look at the picture, listen to the sentences and answer the questions. Then, listen to the dialogue.",
       imgSrc:
-        "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction.avif",
+        "/assets/img/lessons/cefr/a1/hi-my-names-laura/presentation/laura-eric-school.avif",
       imgAlt: "Laura and Eric",
+      sentences: [
+        [
+          ...content({
+            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/this-is-an-english-school.mp3"), "This is an ", mark("English school"), "."],
+          }),
+        ],
+
+        [
+          ...content({
+            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/laura-and-eric-are-students.mp3"), "Laura and Eric are ", mark("students"), "."],
+          }),
+        ],
+        [
+          ...content({
+            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-in-the-classroom.mp3"), "They're in the ", mark("classroom"), "."],
+          }),
+        ],
+        [
+          ...content({
+            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-classmates.mp3"), "They are ", mark("classmates"), "."],
+          }),
+        ],
+        [
+          ...content({
+            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/mr-smith-is-the-teacher.mp3"), "Mr. Smith is the ", mark("teacher"), "."],
+          }),
+        ],
+      ],
       audioSrc: "/",
       lines: [
         {
@@ -120,8 +160,8 @@ export const lesson = {
         },
 
         {
-          borderColor: "border-blue-800",
-          bgColor: "bg-blue-600",
+          borderColor: "border-red-800",
+          bgColor: "bg-red-600",
           textColor: "text-white",
           column: "Questions",
           items: [
@@ -182,11 +222,7 @@ export const lesson = {
       exercise: {
         blocks: [
           {
-            block: [
-              { text: "My name" },
-              { blank: "is" },
-              { text: "Laura." },
-            ],
+            block: [{ text: "My name" }, { blank: "is" }, { text: "Laura." }],
           },
         ],
       },
@@ -212,7 +248,7 @@ export const lesson = {
       ...content({
         parts: [
           bold(
-            "Introduce yourself to your classmates using the expressions from the lesson."
+            "Introduce yourself to your classmates using the expressions from the lesson.",
           ),
         ],
       }),
