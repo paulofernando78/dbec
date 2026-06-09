@@ -32,6 +32,7 @@ import {
   radio,
   fillInTheBlanks,
   scramble,
+  columnDrag,
 } from "@/data/lab";
 
 export default function Playground() {
@@ -105,84 +106,7 @@ export default function Playground() {
 
           {/* Column Drag */}
           <Section id="Column Drag" heading={3}>
-            <ColumnDrag
-              width={300}
-              cols={[
-                // Column 1
-                {
-                  bgColor: "var(--green-6)",
-                  textColor: "white",
-                  column: "Column 1",
-                  items: [
-                    {
-                      parts: [
-                        icon("us"),
-                        icon("uk"),
-                        icon("spotlight"),
-                        icon("correct"),
-                        icon("incorrect"),
-                        audio("/assets/audio/..."),
-                        "Normal",
-                      ],
-                      lineBreak: true,
-                    },
-                    {
-                      parts: [
-                        icon("us"),
-                        icon("uk"),
-                        icon("spotlight"),
-                        icon("correct"),
-                        icon("incorrect"),
-                        audio("/assets/audio/..."),
-                        "Normal",
-                      ],
-                      lineBreak: true,
-                    },
-                  ],
-                },
-                // Column 2
-                {
-                  bgColor: "var(--red-4)",
-                  textColor: "white",
-                  column: "Column 2",
-                  items: [
-                    {
-                      parts: [
-                        icon("us"),
-                        icon("uk"),
-                        icon("spotlight"),
-                        icon("correct"),
-                        icon("incorrect"),
-                        audio("/assets/audio/..."),
-                        "Normal",
-                      ],
-                      lineBreak: true,
-                    },
-                  ],
-                },
-
-                // Column 3
-                {
-                  bgColor: "var(--yellow-4)",
-                  textColor: "white",
-                  column: "Column 3",
-                  items: [
-                    {
-                      parts: [
-                        icon("us"),
-                        icon("uk"),
-                        icon("spotlight"),
-                        icon("correct"),
-                        icon("incorrect"),
-                        audio("/assets/audio/..."),
-                        "Normal",
-                      ],
-                      lineBreak: true,
-                    },
-                  ],
-                },
-              ]}
-            />
+            <ColumnDrag {...columnDrag} />
           </Section>
 
           {/* Guess */}

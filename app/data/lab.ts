@@ -1,3 +1,4 @@
+import { ColumnDrag } from "@/components/content/Column";
 import {
   audio,
   bold,
@@ -151,6 +152,75 @@ export const dialogue = {
     {
       speaker: "Eric",
       line: text(["Nice to meet you!"]),
+    },
+  ],
+};
+
+export const columnDrag = {
+  width: 300,
+  cols: [
+    {
+      bgColor: "var(--green-6)",
+      textColor: "white",
+      column: "Column 1",
+      items: [
+        {
+          parts: [
+            icon("us"),
+            icon("uk"),
+            icon("correct"),
+            icon("incorrect"),
+            audio("/assets/audio/welcome.mp3"),
+            "Normal",
+          ],
+        },
+        {
+          parts: [
+            icon("us"),
+            icon("uk"),
+            icon("correct"),
+            icon("incorrect"),
+            audio("/assets/audio/welcome.mp3"),
+            "Normal",
+          ],
+        },
+      ],
+    },
+
+    {
+      bgColor: "var(--red-4)",
+      textColor: "white",
+      column: "Column 2",
+      items: [
+        {
+          parts: [
+            icon("us"),
+            icon("uk"),
+            icon("correct"),
+            icon("incorrect"),
+            audio("/assets/audio/welcome.mp3"),
+            "Normal",
+          ],
+        },
+      ],
+    },
+
+    {
+      bgColor: "var(--yellow-4)",
+      textColor: "white",
+      column: "Column 3",
+      items: [
+        {
+          parts: [
+            icon("us"),
+            icon("uk"),
+            icon("correct"),
+            icon("incorrect"),
+            audio("/assets/audio/welcome.mp3"),
+            "Normal",
+          ],
+        },
+      ],
     },
   ],
 };

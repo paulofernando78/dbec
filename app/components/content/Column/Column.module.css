@@ -3,13 +3,12 @@
   gap: 10px;
 
   overflow-x: auto;
+  overflow-y: hidden;
+
   cursor: grab;
   user-select: none;
 }
 
-.wrapper:active {
-  cursor: grabbing;
-}
 .column {
   margin-bottom: 5px;
 }
