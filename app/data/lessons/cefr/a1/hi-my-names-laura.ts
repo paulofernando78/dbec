@@ -35,39 +35,48 @@ export const lesson = {
       [
         ...content({
           parts: [
-            audio("/"),
-            "Laura",
+            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/laura-says-hi-im-laura.mp3"),
+            "Laura says, “Hi! I'm Laura.”",
             " ",
-            mark("introduces"),
-            " ",
-            "herself.",
+            portuguese("Laura diz: “Oi! Eu sou a Laura.”"),
           ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "Eric", " ", mark("introduces"), " ", "himself."],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "They", " ", mark("shake"), " ", "hands."],
         }),
       ],
       [
         ...content({
           parts: [
-            audio("/"),
-            "They say their names",
+            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/eric-says-hello-im-eric.mp3"),
+            "Eric says, “Hello! I'm Eric.”",
             " ",
-            mark("teacher"),
-            ".",
+            portuguese("Eric diz: “Olá! Eu sou o Eric.”"),
           ],
         }),
       ],
       [
         ...content({
-          parts: [audio("/"), "They are", " ", mark("new friends"), "."],
+          parts: [
+            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/they-shake-hands.mp3"),
+            "They",
+            " ",
+            mark("shake"),
+            " ",
+            "hands.",
+            " ",
+            portuguese("Eles apertam as mãos."),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/they-are-new-friends.mp3"),
+            "They are",
+            " ",
+            mark("new friends"),
+            ".",
+            " ",
+            portuguese("Eles são novos amigos."),
+          ],
         }),
       ],
     ],
@@ -98,28 +107,63 @@ export const lesson = {
       sentences: [
         [
           ...content({
-            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/this-is-an-english-school.mp3"), "This is an ", mark("English school"), "."],
+            parts: [
+              audio(
+                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/this-is-an-english-school.mp3",
+              ),
+              "This is an ",
+              mark("English school"),
+              ".",
+            ],
           }),
         ],
 
         [
           ...content({
-            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/laura-and-eric-are-students.mp3"), "Laura and Eric are ", mark("students"), "."],
+            parts: [
+              audio(
+                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/laura-and-eric-are-students.mp3",
+              ),
+              "Laura and Eric are ",
+              mark("students"),
+              ".",
+            ],
           }),
         ],
         [
           ...content({
-            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-in-the-classroom.mp3"), "They're in the ", mark("classroom"), "."],
+            parts: [
+              audio(
+                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-in-the-classroom.mp3",
+              ),
+              "They're in the ",
+              mark("classroom"),
+              ".",
+            ],
           }),
         ],
         [
           ...content({
-            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-classmates.mp3"), "They are ", mark("classmates"), "."],
+            parts: [
+              audio(
+                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-classmates.mp3",
+              ),
+              "They are ",
+              mark("classmates"),
+              ".",
+            ],
           }),
         ],
         [
           ...content({
-            parts: [audio("/assets/audio/cefr/a1/hi-my-names-laura/presentation/mr-smith-is-the-teacher.mp3"), "Mr. Smith is the ", mark("teacher"), "."],
+            parts: [
+              audio(
+                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/mr-smith-is-the-teacher.mp3",
+              ),
+              "Mr. Smith is the ",
+              mark("teacher"),
+              ".",
+            ],
           }),
         ],
       ],
