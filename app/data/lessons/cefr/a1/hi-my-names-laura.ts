@@ -19,18 +19,6 @@ export const lesson = {
   ],
 
   introduction: {
-    prompt: [
-      ...content({
-        parts: [bold("Look at the picture and listen to the sentences.")],
-      }),
-    ],
-
-    image: {
-      src: "",
-      alt: "Laura and Eric introducing themselves.",
-      applyPadding: true,
-    },
-
     carouselWide: {
       prompt: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -113,6 +101,28 @@ export const lesson = {
   },
 
   presentation: {
+    carouselWide: {
+      prompt: "Look at the pictures and listen to the sentences.",
+      imgs: [
+        {
+          src: "/",
+          alt: "...",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  "/",
+                ),
+                "”",
+                " ",
+                portuguese("”"),
+              ],
+            }),
+          ],
+        },
+      ],
+    },
+
     dialogue: {
       prompt:
         "Look at the picture, listen to the sentences and answer the questions. Then, listen to the dialogue.",

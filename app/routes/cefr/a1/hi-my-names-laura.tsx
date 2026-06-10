@@ -42,11 +42,11 @@ export default function Introduction() {
         <PageSections>
           <Section id="introduction" heading={4}>
             <Carousel aspectRatio="wide" {...lesson.introduction.carouselWide} />
-
             <Radio {...lesson.introduction.radio} />
           </Section>
 
           <Section id="Presentation" heading={4}>
+            <Carousel aspectRatio="wide" {...lesson.presentation.carouselWide} />
             <Dialogue {...lesson.presentation.dialogue} />
           </Section>
 
