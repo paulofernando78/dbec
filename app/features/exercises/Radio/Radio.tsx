@@ -78,7 +78,7 @@ export const Radio = ({
             const isCorrect = isChecked && isActive && opt.isCorrect;
 
             return (
-              <label key={optIndex} className="flex gap-[5px] mt-[7px] mr-[5px]">
+              <label key={optIndex} className="flex gap-1.25 mt-1.75 mr-1.25">
                 <input
                   className="hidden"
                   type="radio"
@@ -95,8 +95,8 @@ export const Radio = ({
 
                 <span
                   className={[
-                    "relative min-w-[20px] h-[20px] border border-[var(--gray-5)] rounded-full",
-                    isDisabled && "pointer-events-none opacity-50 grayscale-[40%]",
+                    "relative min-w-5 h-5 border border-gray-5 rounded-full",
+                    isDisabled && "pointer-events-none opacity-50 grayscale-40",
                   ]
                     .filter(Boolean)
                     .join(" ")}
@@ -104,12 +104,12 @@ export const Radio = ({
                   {selected[qIndex] === optIndex && (
                     <span
                       className={[
-                        "absolute left-1/2 top-1/2 w-[13px] h-[13px] rounded-full -translate-x-1/2 -translate-y-1/2",
+                        "absolute left-1/2 top-1/2 w-3.25 h-3.25 rounded-full -translate-x-1/2 -translate-y-1/2",
                         isCorrect
-                          ? "bg-[var(--green-7)]"
+                          ? "bg-green-700"
                           : isWrong
-                            ? "bg-[var(--red-6)]"
-                            : "bg-[var(--gray-5)]",
+                            ? "bg-red-700"
+                            : "bg-gray-500",
                       ]
                         .filter(Boolean)
                         .join(" ")}

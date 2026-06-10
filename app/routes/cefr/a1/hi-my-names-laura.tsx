@@ -40,33 +40,21 @@ export default function Introduction() {
           ]}
         />
         <PageSections>
-          <Section id="introduction" heading={3}>
-            <Line value={lesson.introduction.prompt} />
-
-            <MediaWrapper mediaPosition="top">
-              <MediaWrapper.Item>
-                <Image {...lesson.introduction.image} />
-              </MediaWrapper.Item>
-
-              <MediaWrapper.Content>
-                {lesson.introduction.sentences.map((line, index) => (
-                  <Line key={index} value={line} as="p" />
-                ))}
-              </MediaWrapper.Content>
-            </MediaWrapper>
+          <Section id="introduction" heading={4}>
+            <Carousel aspectRatio="wide" {...lesson.introduction.carouselWide} />
 
             <Radio {...lesson.introduction.radio} />
           </Section>
 
-          <Section id="Presentation" heading={3}>
+          <Section id="Presentation" heading={4}>
             <Dialogue {...lesson.presentation.dialogue} />
           </Section>
 
-          <Section id="Language Focus" heading={3}>
+          <Section id="Language Focus" heading={4}>
             <ColumnDrag {...lesson.languageFocus.columnDrag} />
           </Section>
 
-          <Section id="Practice" heading={3}>
+          <Section id="Practice" heading={4}>
             <Guess {...lesson.practice.guess} />
 
             <Radio {...lesson.practice.radio} />
@@ -76,7 +64,7 @@ export default function Introduction() {
             <Unscramble {...lesson.practice.scramble} />
           </Section>
 
-          <Section id="Production" heading={3}>
+          <Section id="Production" heading={4}>
             <Line value={lesson.production.prompt} />
           </Section>
         </PageSections>

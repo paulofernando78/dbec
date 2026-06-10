@@ -26,60 +26,68 @@ export const lesson = {
     ],
 
     image: {
-      src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction.avif",
+      src: "",
       alt: "Laura and Eric introducing themselves.",
       applyPadding: true,
     },
 
-    sentences: [
-      [
-        ...content({
-          parts: [
-            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/laura-says-hi-im-laura.mp3"),
-            "Laura says, “Hi! I'm Laura.”",
-            " ",
-            portuguese("Laura diz: “Oi! Eu sou a Laura.”"),
+    carouselWide: {
+      prompt: "Look at the pictures and listen to the sentences.",
+      imgs: [
+        {
+          src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction1.avif",
+          alt: "...",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/introduction/laura-says-hi-im-laura.mp3",
+                ),
+                "Laura says, “Hi! I'm Laura.”",
+                " ",
+                portuguese("Laura diz: “Oi! Eu sou a Laura.”"),
+              ],
+            }),
           ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/eric-says-hello-im-eric.mp3"),
-            "Eric says, “Hello! I'm Eric.”",
-            " ",
-            portuguese("Eric diz: “Olá! Eu sou o Eric.”"),
+        },
+        {
+          src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction2.avif",
+          alt: "...",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/introduction/eric-says-hello-im-eric.mp3",
+                ),
+                "Eric says, “Hello! I'm Eric.”",
+                " ",
+                portuguese("Eric diz: “Olá! Eu sou o Eric.”"),
+              ],
+            }),
           ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/they-shake-hands.mp3"),
-            "They",
-            " ",
-            mark("shake"),
-            " ",
-            "hands.",
-            " ",
-            portuguese("Eles se cumprimentam."),
+        },
+        {
+          src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-shake-hands.avif",
+          alt: "...",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/introduction/they-shake-hands.mp3",
+                ),
+                "They",
+                " ",
+                mark("shake"),
+                " ",
+                "hands.",
+                " ",
+                portuguese("Eles se cumprimentam."),
+              ],
+            }),
           ],
-        }),
+        },
       ],
-      [
-        ...content({
-          parts: [
-            audio("/assets/audio/cefr/a1/hi-my-names-laura/introduction/they-are-new-friends.mp3"),
-            "They are",
-            " ",
-            mark("new friends"),
-            ".",
-            " ",
-            portuguese("Eles são novos amigos."),
-          ],
-        }),
-      ],
-    ],
+    },
 
     radio: {
       instruction: "Choose the correct answer.",
@@ -114,67 +122,17 @@ export const lesson = {
       sentences: [
         [
           ...content({
-            parts: [
-              audio(
-                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/this-is-an-english-school.mp3",
-              ),
-              "This is an ",
-              mark("English school"),
-              ".",
-            ],
-          }),
-        ],
-
-        [
-          ...content({
-            parts: [
-              audio(
-                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/laura-and-eric-are-students.mp3",
-              ),
-              "Laura and Eric are ",
-              mark("students"),
-              ".",
-            ],
+            parts: [audio(""), "They are ", mark("classmates"), "."],
           }),
         ],
         [
           ...content({
-            parts: [
-              audio(
-                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-in-the-classroom.mp3",
-              ),
-              "They're in the ",
-              mark("classroom"),
-              ".",
-            ],
-          }),
-        ],
-        [
-          ...content({
-            parts: [
-              audio(
-                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/theyre-classmates.mp3",
-              ),
-              "They are ",
-              mark("classmates"),
-              ".",
-            ],
-          }),
-        ],
-        [
-          ...content({
-            parts: [
-              audio(
-                "/assets/audio/cefr/a1/hi-my-names-laura/presentation/mr-smith-is-the-teacher.mp3",
-              ),
-              "Mr. Smith is the ",
-              mark("teacher"),
-              ".",
-            ],
+            parts: [audio(""), "Mr. Smith is the ", mark("teacher"), "."],
           }),
         ],
       ],
-      audioSrc: "/assets/audio/cefr/a1/hi-my-names-laura/presentation/dialogue.mp3",
+      audioSrc:
+        "/assets/audio/cefr/a1/hi-my-names-laura/presentation/dialogue.mp3",
       lines: [
         {
           speaker: "Laura",
@@ -227,7 +185,7 @@ export const lesson = {
         {
           speaker: "Laura",
           line: text(["Yes. I am. Let's go."]),
-        }
+        },
       ],
     },
   },
