@@ -62,7 +62,7 @@ export const lesson = {
             " ",
             "hands.",
             " ",
-            portuguese("Eles apertam as mãos."),
+            portuguese("Eles se cumprimentam."),
           ],
         }),
       ],
@@ -87,6 +87,13 @@ export const lesson = {
         questions: [
           {
             question: "1. Are they old friends?",
+            options: [
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
+            ],
+          },
+          {
+            question: "1. Are they brothers and sisters?",
             options: [
               { option: "true", isCorrect: false },
               { option: "false", isCorrect: true },
@@ -167,16 +174,60 @@ export const lesson = {
           }),
         ],
       ],
-      audioSrc: "/",
+      audioSrc: "/assets/audio/cefr/a1/hi-my-names-laura/presentation/dialogue.mp3",
       lines: [
         {
           speaker: "Laura",
-          line: text(["Hi! I'm Laura. What's your name?"]),
+          line: text(["Hi there! How are you doing?"]),
         },
         {
           speaker: "Eric",
-          line: text(["Hi Laura. I'm Eric."]),
+          line: text(["Hello, I'm pretty good. How about you?"]),
         },
+        {
+          speaker: "Laura",
+          line: text(["I'm great, thanks. I'm Laura."]),
+        },
+        {
+          speaker: "Eric",
+          line: text(["Hello, Laura. I'm Eric."]),
+        },
+        {
+          speaker: "Laura",
+          line: text(["Nice to meet you."]),
+        },
+        {
+          speaker: "Eric",
+          line: text(["Nice to meet you too. What's your last name?"]),
+        },
+        {
+          speaker: "Laura",
+          line: text(["It's Palmer."]),
+        },
+        {
+          speaker: "Eric",
+          line: text(["How do you spell it?"]),
+        },
+        {
+          speaker: "Laura",
+          line: text(["P-A-L-M-E-R."]),
+        },
+        {
+          speaker: "Eric",
+          line: text(["Are you a new student here?"]),
+        },
+        {
+          speaker: "Laura",
+          line: text(["Yes, I am. How about you?"]),
+        },
+        {
+          speaker: "Eric",
+          line: text(["Me too. So, class starts in 5 minutes, right? Ready?"]),
+        },
+        {
+          speaker: "Laura",
+          line: text(["Yes. I am. Let's go."]),
+        }
       ],
     },
   },

@@ -22,7 +22,7 @@ import {
   audioPlayer,
   video,
   image,
-  carousel,
+  carouselSquare,
   flipCards,
   mediaWrapper,
   dialogue,
@@ -31,6 +31,7 @@ import {
   fillInTheBlanks,
   scramble,
   columnDrag,
+  carouselWide,
 } from "@/data/lab";
 
 export default function Playground() {
@@ -59,8 +60,13 @@ export default function Playground() {
           </Section>
 
           {/* Caroseul */}
-          <Section id="caroseul" heading={3}>
-            <Carousel {...carousel} />
+          <Section id="caroseul-square-aspect-ratio" heading={3}>
+            <Carousel aspectRatio="square" {...carouselSquare} />
+          </Section>
+
+          {/* Caroseul */}
+          <Section id="caroseul-wide-aspect-ratio" heading={3}>
+            <Carousel aspectRatio="wide" {...carouselWide} />
           </Section>
 
           {/* Flip Card */}

@@ -1,5 +1,5 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { LessonObjective } from "@/components/content/LessonObjective"
+import { LessonObjective } from "@/components/content/LessonObjective";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { List } from "@/components/content/List";
@@ -24,8 +24,6 @@ export const metadata = {
     "Advanced listening and discussion practice based on a TED-Ed video about memory, forgetting, and how the brain stores information.",
 };
 
-
-
 export default function HowYourMemoryWorks() {
   return (
     <>
@@ -35,7 +33,7 @@ export default function HowYourMemoryWorks() {
         description="Watch the video, understand how memory works, and discuss why forgetting is important."
       />
       <LessonObjective
-         value={[
+        value={[
           ...content({
             parts: [lesson.objective[0]],
           }),

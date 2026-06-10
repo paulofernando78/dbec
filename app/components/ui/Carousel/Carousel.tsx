@@ -36,11 +36,12 @@ const Arrow = ({ className }: ArrowProps) => (
 );
 
 type CarouselProps = {
-  instruction: string;
+  prompt: string;
   imgs?: CarouselImage[];
+  aspectRatio?: "square" | "wide";
 };
 
-export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
+export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -92,25 +93,35 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
 
   return (
     <>
-      <p className="font-bold">{instruction}</p>
-      <div className="relative mx-auto max-w-100 px-[1.6rem]">
+      <p className="font-bold">{prompt}</p>
+      <div
+        className={`
+        relative
+        mx-auto
+        ${aspectRatio === "wide"
+          ? "max-w-150"
+          : "max-w-100"
+        }
+        px-[1.6rem]
+        `}
+      >
         <button
           className="
+          w-6
+          h-full
           absolute
           left-0
           top-1/2
-          -translate-y-1/2
-          z-10
+          text-[1.7rem]
           flex
-          h-full
-          w-6
           cursor-pointer
           items-center
           justify-center
           rounded-l-[5px]
           bg-gray-400
-          text-[1.7rem]
           hover:bg-slate-500
+          -translate-y-1/2
+          z-10
         "
           onClick={scrollLeft}
         >
@@ -118,16 +129,15 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
         </button>
 
         <div
-          className="
+          className={`
             flex
-            w-full
             gap-[0.7em]
             overflow-x-auto
             scroll-smooth
             snap-x
             snap-mandatory
             [&::-webkit-scrollbar]:hidden
-          "
+          `}
           ref={carouselRef}
           onScroll={() => {
             const carousel = carouselRef.current;
@@ -157,18 +167,26 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
                 ref={(el) => {
                   cardRef.current[index] = el;
                 }}
-                className="relative flex-none basis-full aspect-square overflow-hidden snap-start"
+                className={`
+                  flex-none
+                  basis-full
+                  overflow-hidden
+                  snap-start
+                   ${aspectRatio === "wide" ? "aspect-video" : "aspect-square"}
+                  `}
               >
                 {img.src && (
                   <Image
                     src={img.src}
                     alt={img.alt || `carousel-image-${index}`}
+                    rounded={false}
                   />
                 )}
                 {img.dictionary && (
                   <Image
                     src={dictionary(img.dictionary)}
                     alt={img.alt || `carousel-image-${index}`}
+                    rounded={false}
                   />
                 )}
 
@@ -176,6 +194,7 @@ export const Carousel = ({ instruction, imgs = [] }: CarouselProps) => {
                   <Image
                     src={dictionary(resolvedSrc)}
                     alt={img.alt || img.word}
+                    rounded={false}
                   />
                 )}
               </div>

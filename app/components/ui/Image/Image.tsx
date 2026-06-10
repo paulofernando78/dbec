@@ -4,7 +4,8 @@ type ImageProps = {
   width?: number;
   height?: number;
   className?: string;
-  applyPadding?: boolean
+  applyPadding?: boolean;
+  rounded?: boolean;
 };
 
 export const Image = ({
@@ -14,7 +15,8 @@ export const Image = ({
   height,
   className,
   applyPadding = false,
- }: ImageProps) => {
+  rounded = true,
+}: ImageProps) => {
   return (
     <div
       style={{
@@ -24,12 +26,17 @@ export const Image = ({
           paddingInline: "clamp(0px, calc(25vw - 160px), 100px)",
         }),
       }}
-      className="mx-auto"
+      className="mx-auto h-full"
     >
       <img
         src={src}
         alt={alt}
-        className={`w-full h-full object-cover block rounded-lg ${className ?? ""}`}
+        className={`
+          w-full
+          h-full
+          block
+          ${rounded ? "rounded-lg" : ""}
+          ${className ?? ""}`}
       />
     </div>
   );

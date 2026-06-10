@@ -109,10 +109,7 @@ export default function HowYourMemoryWorks() {
               ]}
             />
             <LineBreak />
-            <VideoPlayer
-              videoId="RdTUSdcj3sM"
-              title="How Your Memory Works"
-            />
+            <VideoPlayer videoId="RdTUSdcj3sM" title="How Your Memory Works" />
             <Radio
               score={false}
               exercise={{
@@ -120,7 +117,8 @@ export default function HowYourMemoryWorks() {
                   {
                     options: [
                       {
-                        option: "How the brain remembers and forgets information.",
+                        option:
+                          "How the brain remembers and forgets information.",
                         isCorrect: true,
                       },
                       {
@@ -153,8 +151,7 @@ export default function HowYourMemoryWorks() {
               exercise={{
                 questions: [
                   {
-                    question:
-                      "1. What helps the brain store memories?",
+                    question: "1. What helps the brain store memories?",
                     options: [
                       {
                         option: "Neurons connecting.",
@@ -171,8 +168,7 @@ export default function HowYourMemoryWorks() {
                     ],
                   },
                   {
-                    question:
-                      "2. What can cause forgetting?",
+                    question: "2. What can cause forgetting?",
                     options: [
                       {
                         option: "Lack of attention.",
@@ -189,8 +185,7 @@ export default function HowYourMemoryWorks() {
                     ],
                   },
                   {
-                    question:
-                      "3. What process is important for memory?",
+                    question: "3. What process is important for memory?",
                     options: [
                       {
                         option: "Encoding information.",

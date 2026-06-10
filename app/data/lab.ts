@@ -76,15 +76,25 @@ export const paragraph = [
 ];
 
 export const image = {
-  src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-mr-smith.avif",
+  src: "/assets/img/aspect-ratio-square.png",
   alt: "...",
   applyPadding: true,
 };
 
-export const carousel = {
-  instruction: "Slide the pictures and describe what you see.",
+export const carouselSquare = {
+  prompt: "Slide the pictures and describe what you see.",
   imgs: [
-    { src: "/assets/img/home/home-me.png", alt: "..." },
+    { src: "/assets/img/aspect-ratio-square.png", alt: "..." },
+    { src: "https://images.unsplash.com/photo-1597838816882-4435b1977fbe?q=80&w=849&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "..." },
+    { word: "memory", img: 0 },
+  ],
+};
+
+export const carouselWide = {
+  prompt: "Slide the pictures and describe what you see.",
+  imgs: [
+    { src: "/assets/img/aspect-ratio-16-9.png", alt: "..." },
+    { src: "https://plus.unsplash.com/premium_photo-1707353402003-effbc48c547d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "..." },
     { word: "memory", img: 0 },
   ],
 };
