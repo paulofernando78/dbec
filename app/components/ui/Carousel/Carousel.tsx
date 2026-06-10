@@ -1,6 +1,10 @@
 import { dictionary } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { Image } from "@/components/ui/Image";
+import {
+  InlineRichContent,
+  type InlineRichContentValue,
+} from "@/components/content/InlineRichContent";
 
 import { useState, useRef, useEffect } from "react";
 
@@ -14,6 +18,7 @@ type CarouselImage = {
   dictionary?: string;
   word?: string;
   img?: number;
+  content?: InlineRichContentValue[];
 };
 
 type ResolvedWord = {
@@ -43,6 +48,8 @@ type CarouselProps = {
 
 export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleContentIndex, setVisibleContentIndex] = useState(0);
+  const [isContentVisible, setIsContentVisible] = useState(true);
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<(HTMLDivElement | null)[]>([]);
   const [resolvedWords, setResolvedWords] = useState<
@@ -73,6 +80,22 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
     loadWords();
   }, [imgs]);
 
+  useEffect(() => {
+    if (currentIndex === visibleContentIndex) {
+      setIsContentVisible(true);
+      return;
+    }
+
+    setIsContentVisible(false);
+
+    const timeout = window.setTimeout(() => {
+      setVisibleContentIndex(currentIndex);
+      setIsContentVisible(true);
+    }, 180);
+
+    return () => window.clearTimeout(timeout);
+  }, [currentIndex, visibleContentIndex]);
+
   const scrollLeft = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
 
@@ -98,10 +121,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
         className={`
         relative
         mx-auto
-        ${aspectRatio === "wide"
-          ? "max-w-150"
-          : "max-w-100"
-        }
+        ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
         px-[1.6rem]
         `}
       >
@@ -154,7 +174,9 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
             });
 
             if (closestIndex !== -1) {
-              setCurrentIndex(closestIndex);
+              setCurrentIndex((current) =>
+                current === closestIndex ? current : closestIndex,
+              );
             }
           }}
         >
@@ -170,10 +192,9 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
                 className={`
                   flex-none
                   basis-full
-                  overflow-hidden
                   snap-start
                    ${aspectRatio === "wide" ? "aspect-video" : "aspect-square"}
-                  `}
+                `}
               >
                 {img.src && (
                   <Image
@@ -251,6 +272,31 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
           </button>
         ))}
       </div>
+      {imgs[visibleContentIndex]?.content && (
+        <div
+          className={`
+          mx-auto
+          h-22.5
+          py-1 px-2
+          overflow-x-auto
+          border
+          border-gray-300
+          rounded-lg
+        ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+        `}
+        >
+          <div
+            className={`
+              transition-opacity
+              duration-200
+              ease-in-out
+              ${isContentVisible ? "opacity-100" : "opacity-0"}
+            `}
+          >
+            <InlineRichContent value={imgs[visibleContentIndex].content} />
+          </div>
+        </div>
+      )}
     </>
   );
 };
