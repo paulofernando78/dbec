@@ -10,22 +10,17 @@ type DialogueLine = {
   line: (ContentToken | string)[];
 };
 
-type DialogueSentence = (ContentToken | string)[];;
+type DialogueSentence = (ContentToken | string)[];
 
 type DialogueProps = {
   prompt: string;
-  imgSrc: string;
-  imgAlt: string;
-  sentences: DialogueSentence[];
   audioSrc: string;
   lines: DialogueLine[];
 };
 
 export const Dialogue = ({
   prompt,
-  imgSrc,
-  imgAlt,
-  sentences = [],
+
   audioSrc,
   lines = [],
 }: DialogueProps) => {
@@ -34,12 +29,6 @@ export const Dialogue = ({
       <p>
         <b>{prompt}</b>
       </p>
-      <Image src={imgSrc} alt={imgAlt} applyPadding />
-      <div>
-        {sentences.map((sentence, index) => (
-          <Line key={index} value={sentence} as="p" />
-        ))}
-      </div>
       <AudioPlayer src={audioSrc} />
       {lines.map((line, index) => (
         <p key={index}>

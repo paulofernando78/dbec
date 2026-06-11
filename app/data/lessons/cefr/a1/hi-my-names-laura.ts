@@ -101,48 +101,10 @@ export const lesson = {
   },
 
   presentation: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  "/",
-                ),
-                "”",
-                " ",
-                portuguese("”"),
-              ],
-            }),
-          ],
-        },
-      ],
-    },
-
     dialogue: {
-      prompt:
-        "Look at the picture, listen to the sentences and answer the questions. Then, listen to the dialogue.",
-      imgSrc:
-        "/assets/img/lessons/cefr/a1/hi-my-names-laura/presentation/laura-eric-school.avif",
-      imgAlt: "Laura and Eric",
-      sentences: [
-        [
-          ...content({
-            parts: [audio(""), "They are ", mark("classmates"), "."],
-          }),
-        ],
-        [
-          ...content({
-            parts: [audio(""), "Mr. Smith is the ", mark("teacher"), "."],
-          }),
-        ],
-      ],
+      prompt: "Listen to the dialogue.",
       audioSrc:
-        "/assets/audio/cefr/a1/hi-my-names-laura/presentation/dialogue.mp3",
+        "/assets/audio/lessons/cefr/a1/hi-my-names-laura/presentation/dialogue.mp3",
       lines: [
         {
           speaker: "Laura",
@@ -211,13 +173,57 @@ export const lesson = {
           column: "Greetings",
           items: [
             {
-              parts: ["Hi"],
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hi.mp3",
+                ),
+                "Hi!",
+              ],
             },
             {
-              parts: ["Hello"],
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hi.mp3",
+                ),
+                "Hi, there!",
+              ],
             },
             {
-              parts: ["Good morning"],
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hello.mp3",
+                ),
+                "Hello!",
+              ],
+            },
+            {
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hey.mp3",
+                ),
+                "Hey!",
+              ],
+            },
+            {
+              lineBreak: true,
+            },
+            {
+              parts: [audio("/"), "Good morning."],
+            },
+            {
+              parts: [audio("/"), "Morning."],
+            },
+            {
+              parts: [audio("/"), "Good afternoon."],
+            },
+            {
+              parts: [audio("/"), "Afternoon."],
+            },
+            {
+              parts: [audio("/"), "Good evening."],
+            },
+            {
+              parts: [audio("/"), "Evening."],
             },
           ],
         },
@@ -226,13 +232,68 @@ export const lesson = {
           borderColor: "border-red-800",
           bgColor: "bg-red-600",
           textColor: "text-white",
-          column: "Questions",
+          column: "Common Questions",
           items: [
             {
-              parts: ["What's your name?"],
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/how-are-you.mp3",
+                ),
+                "How are you?",
+              ],
             },
             {
-              parts: ["How are you?"],
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/how-are-you-doing.mp3",
+                ),
+                "How are you doing?",
+              ],
+            },
+            {
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/hows-it-going.mp3",
+                ),
+                "How’s it going?",
+              ],
+            },
+            {
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/hows-everything.mp3",
+                ),
+                "How’s everything",
+              ],
+            },
+            {
+              lineBreak: true,
+            },
+            {
+              parts: [italic("Informal")],
+            },
+            {
+              parts: [
+                audio(
+                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/whats-up.mp3",
+                ),
+                "What’s up",
+              ],
+            },
+            {
+              lineBreak: true,
+            },
+            {
+              parts: [audio("/"), "What’s your name?"],
+            },
+            {
+              parts: [audio("/"), "What’s your first name?"],
+            },
+            {
+              parts: [audio("/"), "What’s your last name?"],
+            },
+            {
+              parts: [audio("/"), "How do you spell it?"],
             },
           ],
         },
@@ -241,13 +302,22 @@ export const lesson = {
           borderColor: "border-yellow-800",
           bgColor: "bg-yellow-500",
           textColor: "text-black",
-          column: "Answers",
+          column: "Possible Answers",
           items: [
             {
-              parts: ["I'm Laura."],
+              parts: [audio("/"), "I'm well."],
             },
             {
-              parts: ["I'm Eric."],
+              parts: [audio("/"), "I'm fine."],
+            },
+            {
+              parts: [audio("/"), "My first name is Laura."],
+            },
+            {
+              parts: [audio("/"), "My last name is Palmer."],
+            },
+            {
+              parts: [audio("/"), "(Its) P-A-L-M-E-R."],
             },
           ],
         },
@@ -256,13 +326,6 @@ export const lesson = {
   },
 
   practice: {
-    guess: {
-      words: [
-        { word: "teacher", img: 0 },
-        { word: "student", img: 1 },
-      ],
-    },
-
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -272,6 +335,20 @@ export const lesson = {
             options: [
               { option: "Laura", isCorrect: true },
               { option: "Eric", isCorrect: false },
+            ],
+          },
+          {
+            question: "What is Laura's last name?",
+            options: [
+              { option: "Palmer", isCorrect: true },
+              { option: "Eric", isCorrect: false },
+            ],
+          },
+          {
+            question: "How is Eric?",
+            options: [
+              { option: "He is pretty good.", isCorrect: true },
+              { option: "His name is Palmer.", isCorrect: false },
             ],
           },
         ],
@@ -286,6 +363,22 @@ export const lesson = {
         blocks: [
           {
             block: [{ text: "My name" }, { blank: "is" }, { text: "Laura." }],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "My first" },
+              { blank: "name" },
+              { text: "is Laura." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "My last name" },
+              { blank: "is" },
+              { text: "Palmer." },
+            ],
           },
         ],
       },
@@ -300,6 +393,14 @@ export const lesson = {
           {
             prompt: "name / my / Laura / is",
             answer: "My name is Laura.",
+          },
+          {
+            prompt: "your / what / name / last / is",
+            answer: "What is your last name?",
+          },
+          {
+            prompt: "spell / how / it / do / you",
+            answer: "How do you spell it?",
           },
         ],
       },

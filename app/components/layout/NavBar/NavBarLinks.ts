@@ -19,6 +19,10 @@ export const links = [
         href: "/cefr/a1/introduction",
         label: "Hi, my name’s Laura.",
       },
+      {
+        href: "/cefr/a1/welcome-to-the-classroom",
+        label: "Welcome to the Classroom",
+      },
       // {
       //   href: "/cefr/a1/talk-about-yourself",
       //   label: "Talk about yourself",

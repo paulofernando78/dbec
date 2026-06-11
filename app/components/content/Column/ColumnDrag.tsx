@@ -6,7 +6,7 @@ import { InlineRichContent } from "../InlineRichContent";
 import { useDragScroll } from "@/hooks/useDragScroll";
 
 type ColumnItem = {
-  parts: any[];
+  parts?: any[];
   lineBreak?: boolean;
 };
 
@@ -52,9 +52,9 @@ export const ColumnDrag = ({ cols = [], maxCols, width = 250 }: ColumnDragProps)
                 {(c.items || []).map((item, index) => (
                   <div
                     key={index}
-                    className={item.lineBreak ? "line-break-item" : ""}
+                    className={item.lineBreak ? "mb-4" : ""}
                   >
-                    <InlineRichContent value={item.parts} />
+                    {item.parts && <InlineRichContent value={item.parts} />}
                   </div>
                 ))}
               </div>

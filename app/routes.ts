@@ -18,6 +18,10 @@ export default [
 
     // A1 BEGINNER
     route("cefr/a1/introduction", "routes/cefr/a1/hi-my-names-laura.tsx"),
+    route(
+      "cefr/a1/welcome-to-the-classroom",
+      "routes/cefr/a1/welcome-to-the-classroom.tsx",
+    ),
 
     // A2 ELEMENTARY
 
