@@ -163,10 +163,10 @@ export const lesson = {
   },
 
   languageFocus: {
-    columnDrag: {
+    greetings: {
       width: 300,
       cols: [
-        // Greetings
+        // Saying hi!
         {
           borderColor: "border-green-800",
           bgColor: "bg-green-600",
@@ -282,9 +282,56 @@ export const lesson = {
                 "What’s up",
               ],
             },
+          ],
+        },
+        // Possible Answers
+        {
+          borderColor: "border-yellow-800",
+          bgColor: "bg-yellow-500",
+          textColor: "text-black",
+          column: "Possible Answers",
+          items: [
             {
-              lineBreak: true,
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-well.mp3"), "I’m well."],
             },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-great.mp3"), "I’m great."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-fine.mp3"), "I’m fine."],
+              lineBreak: true
+            },
+            {
+              parts: [italic("informal.")],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-good.mp3"), "I’m good."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-pretty-good.mp3"), "I’m pretty good."],
+              lineBreak: true
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/.mp3"), "."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/.mp3"), "."],
+              lineBreak: true
+            },
+          ],
+        },
+      ],
+    },
+    personalInformation: {
+      width: 300,
+      cols: [
+        // Common Questions
+        {
+          borderColor: "border-red-800",
+          bgColor: "bg-red-600",
+          textColor: "text-white",
+          column: "Common Questions",
+          items: [
             {
               parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-your-name.mp3"), "What’s your name?"],
             },
@@ -316,6 +363,9 @@ export const lesson = {
               parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-well.mp3"), "I’m well."],
             },
             {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-great.mp3"), "I’m great."],
+            },
+            {
               parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-fine.mp3"), "I’m fine."],
               lineBreak: true
             },
@@ -324,6 +374,9 @@ export const lesson = {
             },
             {
               parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-good.mp3"), "I’m good."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-pretty-good.mp3"), "I’m pretty good."],
               lineBreak: true
             },
             {

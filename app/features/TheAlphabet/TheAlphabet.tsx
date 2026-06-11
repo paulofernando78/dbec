@@ -1,5 +1,3 @@
-import styles from "./TheAlphabet.module.css";
-
 import { Ribbon } from "@/components/ui/Ribbon"
 // import { Line } from "@/components/molecules/Line";
 import { Card } from "@/components/ui/Card";
@@ -176,7 +174,7 @@ const alphabet = [
 export const TheAlphabet = () => {
   return (
     <>
-      <Ribbon label="The Alphabet" bgColor="var(--slate-6)" />
+      <Ribbon label="The Alphabet" bgColor="bg-slate-500" />
       <LineBreak />
       <Line
         as="p"
@@ -188,12 +186,15 @@ export const TheAlphabet = () => {
         ]}
       />
       <LineBreak />
-      <div className={styles.container}>
+      <div className="flex justify-center flex-wrap gap-2">
         {alphabet.map((a, i) => (
-          <div key={i} className={styles.wrapper}>
+          <div
+            key={i}
+            className="w-25.5 px-1.25 py-2.25  flex flex-col items-center justify-center gap-1.25 border border-gray-400 rounded-lg"
+          >
             <>
-              <span className={styles.number}>{a.number}</span>
-              <span className={styles.letter}>{a.letter}</span>
+              <span className="text-[0.8rem]">{a.number}</span>
+              <span className="text-[1.4rem] font-bold">{a.letter}</span>
               <span className="phonetics">{a.phonetics}</span>
               <Audio src={a.audio} />
             </>

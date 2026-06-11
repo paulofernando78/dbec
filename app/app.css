@@ -62,3 +62,8 @@ body {
   flex: 1;
   overflow-y: auto;
 }
+
+.phonetics {
+  font-family: 'Times New Roman', Times, serif;
+  @apply text-blue-500
+}
