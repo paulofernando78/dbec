@@ -166,6 +166,7 @@ export const lesson = {
     columnDrag: {
       width: 300,
       cols: [
+        // Greetings
         {
           borderColor: "border-green-800",
           bgColor: "bg-green-600",
@@ -175,7 +176,7 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hi.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hi.mp3",
                 ),
                 "Hi!",
               ],
@@ -183,7 +184,7 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hi-there.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hi-there.mp3",
                 ),
                 "Hi, there!",
               ],
@@ -191,7 +192,7 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hello.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hello.mp3",
                 ),
                 "Hello!",
               ],
@@ -199,7 +200,7 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hey.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/hey.mp3",
                 ),
                 "Hey!",
               ],
@@ -208,26 +209,26 @@ export const lesson = {
               lineBreak: true,
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/good-morning.mp3"), "Good morning."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/good-morning.mp3"), "Good morning."],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/morning.mp3"), "Morning."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/morning.mp3"), "Morning."],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/good-afternoon.mp3"), "Good afternoon."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/good-afternoon.mp3"), "Good afternoon."],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/afternoon.mp3"), "Afternoon."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/afternoon.mp3"), "Afternoon."],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/good-evening.mp3"), "Good evening."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/good-evening.mp3"), "Good evening."],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/evening.mp3"), "Evening."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/evening.mp3"), "Evening."],
             },
           ],
         },
-
+        // Common Questions
         {
           borderColor: "border-red-800",
           bgColor: "bg-red-600",
@@ -237,7 +238,7 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/how-are-you.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-are-you.mp3",
                 ),
                 "How are you?",
               ],
@@ -245,15 +246,16 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/how-are-you-doing.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-are-you-doing.mp3",
                 ),
                 "How are you doing?",
               ],
+              lineBreak: true
             },
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/hows-it-going.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/hows-it-going.mp3",
                 ),
                 "How’s it going?",
               ],
@@ -261,7 +263,7 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/hows-everything.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/hows-everything.mp3",
                 ),
                 "How’s everything",
               ],
@@ -275,7 +277,7 @@ export const lesson = {
             {
               parts: [
                 audio(
-                  "/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/questions/whats-up.mp3",
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-up.mp3",
                 ),
                 "What’s up",
               ],
@@ -284,26 +286,26 @@ export const lesson = {
               lineBreak: true,
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-your-name.mp3"), "What’s your name?"],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-your-name.mp3"), "What’s your name?"],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-your-first-name.mp3"), "What’s your first name?"],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-your-first-name.mp3"), "What’s your first name?"],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-do-you-spell-your-first-name.mp3"), "How do you spell your first name?"],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-do-you-spell-your-first-name.mp3"), "How do you spell your first name?"],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-your-last-name.mp3"), "What’s your last name?"],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/whats-your-last-name.mp3"), "What’s your last name?"],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-do-you-spell-your-last-name.mp3"), "How do you spell your last name?"],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-do-you-spell-your-last-name.mp3"), "How do you spell your last name?"],
             },
             {
-              parts: [audio("/assets/img/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-do-you-spell-it.mp3"), "How do you spell it? (it = first/last)"],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/common-questions/how-do-you-spell-it.mp3"), "How do you spell it? (it = first/last)"],
             },
           ],
         },
-
+        // Possible Answers
         {
           borderColor: "border-yellow-800",
           bgColor: "bg-yellow-500",
@@ -311,19 +313,37 @@ export const lesson = {
           column: "Possible Answers",
           items: [
             {
-              parts: [audio("/"), "I'm well."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-well.mp3"), "I’m well."],
             },
             {
-              parts: [audio("/"), "I'm fine."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-fine.mp3"), "I’m fine."],
+              lineBreak: true
             },
             {
-              parts: [audio("/"), "My first name is Laura."],
+              parts: [italic("informal.")],
             },
             {
-              parts: [audio("/"), "My last name is Palmer."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/im-good.mp3"), "I’m good."],
+              lineBreak: true
             },
             {
-              parts: [audio("/"), "(Its) P-A-L-M-E-R."],
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/.mp3"), "."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/.mp3"), "."],
+              lineBreak: true
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/laura-palmer.mp3"), "Laura Palmer."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/my-first-name-is-laura.mp3"), "My first name is Laura."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/my-last-name-is-palmer.mp3"), "My last name is Palmer."],
+            },
+            {
+              parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/possible-answers/p-a-l-m-e-r.mp3"), "(It’s) P-A-L-M-E-R."],
             },
           ],
         },
