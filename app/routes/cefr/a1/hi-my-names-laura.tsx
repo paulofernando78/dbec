@@ -5,6 +5,11 @@ import { Section } from "@/components/content/Section";
 import { Line } from "@/components/content/Line";
 import { Dialogue } from "@/features/Dialogue/Dialogue";
 
+import { TheAlphabet } from "@/features/TheAlphabet";
+import { Ribbon } from "@/components/ui/Ribbon";
+import { Notes } from "@/components/content/Notes";
+
+
 import { ColumnDrag } from "@/components/content/Column";
 import { Carousel } from "@/components/ui/Carousel";
 import { Radio } from "@/features/exercises/Radio";
@@ -14,8 +19,6 @@ import { Unscramble } from "@/features/exercises/Unscramble";
 import { content } from "@/helpers/content";
 
 import { lesson } from "@/data/lessons/cefr/a1/hi-my-names-laura";
-import { TheAlphabet } from "@/features/TheAlphabet";
-import { Ribbon } from "@/components/ui/Ribbon";
 
 export default function Introduction() {
   return (
@@ -50,6 +53,7 @@ export default function Introduction() {
             <TheAlphabet />
             <Ribbon label="Personal Information" bgColor="bg-slate-500"/>
             <ColumnDrag {...lesson.languageFocus.personalInformation} />
+            <Notes value={lesson.languageFocus.notes}/>
           </Section>
 
           <Section id="Practice" heading={4}>

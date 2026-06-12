@@ -555,11 +555,48 @@ export const lesson = {
                 ),
                 "(It’s) P-A-L-M-E-R.",
               ],
+              lineBreak: true,
+            },
+            {
+              parts: [
+                audio(
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-to-meet-you-1.mp3",
+                ),
+                "Nice to meet you.",
+              ],
+            },
+            {
+              parts: [
+                audio(
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-to-meet-you-2.mp3",
+                ),
+                "Nice to mee",
+                underline("t y"),
+                "ou.",
+              ],
+            },
+            {
+              parts: [
+                audio(
+                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-meeting-you.mp3",
+                ),
+                "Nice to meeting you.",
+              ],
             },
           ],
         },
       ],
     },
+    notes: [
+      {
+        as: "span",
+        parts: [bold("first name"), " = given name"],
+      },
+      {
+        as: "p",
+        parts: [bold("last name"), " = family name"],
+      },
+    ],
   },
 
   practice: {

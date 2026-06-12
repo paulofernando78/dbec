@@ -146,12 +146,12 @@ export const links = [
     title: "C1-C2 Advanced",
     links: [
       {
-        href: "/c1-c2/random-topics",
-        label: "Random Topics",
-      },
-      {
         href: "/c1-c2/ted-ed",
         label: "TED-Ed",
+      },
+      {
+        href: "/c1-c2/games",
+        label: "Games",
       },
     ],
   },
