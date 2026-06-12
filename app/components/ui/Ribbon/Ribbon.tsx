@@ -30,6 +30,8 @@ export const Ribbon = ({
         border
         border-gray-400
         rounded-lg
+        shadow
+        shadow-slate-400
         ${borderColor ?? ""}
         ${bgColor ?? ""}
         ${textColor ?? ""}

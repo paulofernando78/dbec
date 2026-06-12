@@ -8,10 +8,6 @@ import {
   content,
 } from "@/helpers/content";
 
-type TheAlphabetProps = {
-
-}
-
 const alphabet = [
   {
     number: "1",
