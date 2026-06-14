@@ -31,11 +31,9 @@ export default function Introduction() {
 
       <div className="line-break">
         <LessonObjective
-          value={[
-            ...content({
-              parts: [lesson.objective[0]],
-            }),
-          ]}
+          objective="By the end of this class, students will be able to greet someone, say their name, ask for basic personal information, and introduce themselves clearly."
+          grammar="aaa"
+          vocabulary="aaa"
         />
         <PageSections>
           <Section id="introduction" heading={4}>

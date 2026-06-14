@@ -1,4 +1,4 @@
-import { Image } from "@/components/ui/Image"
+import { Image } from "@/components/ui/Image/Image"
 
 const contacts: ContactItem[] = [
   // email

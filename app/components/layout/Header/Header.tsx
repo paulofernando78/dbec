@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useLocation, useNavigate } from "react-router";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button/Button";
 
 import { Menu, Sun, MoonStar, LogIn, LogOut } from "lucide-react";
 

@@ -1,18 +1,17 @@
-import { InlineRichContent } from "@/components/content/InlineRichContent";
 import { Card } from "@/components/ui/Card";
 
-import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
-
 type ObjectiveProps = {
-  value?: InlineRichContentValue[];
+  objective: string
+  grammar: string
+  vocabulary: string
 };
 
-export const LessonObjective = ({ value = [] }: ObjectiveProps) => {
+export const LessonObjective = ({ objective, grammar, vocabulary }: ObjectiveProps) => {
   return (
     <Card className="mt-10 mb-5 bg-amber-100 border">
-      <p>
-        <InlineRichContent value={value} />
-      </p>
+      <p><span className="font-bold">Objective:</span>{" "}{objective}</p>
+      <p><span className="font-bold">Grammar:</span>{" "}{grammar}</p>
+      <p><span className="font-bold">Vocabulary:</span>{" "}{vocabulary}</p>
     </Card>
   );
 };

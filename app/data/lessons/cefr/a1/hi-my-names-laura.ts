@@ -593,7 +593,7 @@ export const lesson = {
         parts: [bold("first name"), " = given name"],
       },
       {
-        as: "p",
+        as: "span",
         parts: [bold("last name"), " = family name"],
       },
     ],
