@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "tumbleweed",
+        "phonetics": "/ˈtʌm.bəl.wiːd/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a dry plant that breaks away from its roots and is blown across the ground by the wind, especially in deserts and open plains",
+        "ptDefinition": "erva-do-vento; planta seca que se desprende das raízes e é carregada pelo vento, comum em desertos e regiões áridas",
+        "examples": [
+          {
+            "enExample": "A tumbleweed rolled across the empty road in the desert.",
+            "ptExample": "Uma erva-do-vento atravessou a estrada vazia no deserto."
+          },
+          {
+            "enExample": "The old western town looked abandoned, with tumbleweeds blowing through the streets.",
+            "ptExample": "A velha cidade do faroeste parecia abandonada, com ervas-do-vento passando pelas ruas."
+          }
+        ],
+        "synonyms": ["Russian thistle", "windblown plant"],
+        "antonyms": [],
+        "seeAlso": ["desert", "weed", "prairie", "western"],
+        "notes": [
+          {
+            "enNote": "Tumbleweeds are strongly associated with American Western movies and ghost towns.",
+            "ptNote": "As tumbleweeds são fortemente associadas aos filmes de faroeste americanos e às cidades fantasmas."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "tumbleweed.avif",
+            "alt": "A tumbleweed rolling across a desert road"
+          }
+        ]
+      },
+      {
         "word": "temperature",
         "phonetics": "/ˈtem.prə.tʃɚ/",
         "partOfSpeech": "noun",
