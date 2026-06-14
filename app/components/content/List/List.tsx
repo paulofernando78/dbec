@@ -10,7 +10,7 @@ type ListItem = {
 };
 
 type ListProps = {
-  instruction: string
+  instruction?: string
   items?: ListItem[];
   ordered?: boolean;
 };

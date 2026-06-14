@@ -349,13 +349,4 @@ export const links = [
   //     },
   //   ],
   // },
-  // {
-  //   title: "Games",
-  //   links: [
-  //     {
-  //       href: "/games/minecraft",
-  //       label: "Minecraft",
-  //     },
-  //   ],
-  // },
 ];

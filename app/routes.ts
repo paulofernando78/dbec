@@ -8,16 +8,26 @@ import {
 export default [
   index("routes/home.tsx"),
 
-  route("/about", "routes/about.tsx"),
+  route(
+    "/about",
+    "routes/about.tsx"),
 
-  layout("routes/dashboard/dashboard-layout.tsx", [
-    route("/lab", "routes/dashboard/lab.tsx"),
+  layout(
+    "routes/dashboard/dashboard-layout.tsx", [
+    
+    route(
+      "/lab",
+      "routes/dashboard/lab.tsx"),
 
-    route("dashboard", "routes/dashboard/profile.tsx"),
+    route(
+      "dashboard",
+      "routes/dashboard/profile.tsx"),
     route("cefr", "routes/cefr/whats-cefr.tsx"),
 
     // A1 BEGINNER
-    route("cefr/a1/introduction", "routes/cefr/a1/hi-my-names-laura.tsx"),
+    route(
+      "cefr/a1/introduction",
+      "routes/cefr/a1/hi-my-names-laura.tsx"),
     route(
       "cefr/a1/welcome-to-the-classroom",
       "routes/cefr/a1/welcome-to-the-classroom.tsx",
@@ -31,10 +41,14 @@ export default [
 
     // ADVANCED
 
-    route("c1-c2/random-topics", "routes/cefr/c1-c2/random-topics.tsx"),
+    route(
+      "c1-c2/random-topics",
+      "routes/cefr/c1-c2/random-topics.tsx"),
 
     // Ted-ED
-    route("c1-c2/ted-ed", "routes/cefr/c1-c2/ted-ed.tsx"),
+    route(
+      "c1-c2/ted-ed",
+      "routes/cefr/c1-c2/ted-ed.tsx"),
 
     route(
       "/cefr/c1-c2/ted-ed/what-causes-constipation",
@@ -43,6 +57,16 @@ export default [
     route(
       "/cefr/c1-c2/ted-ed/how-your-memory-works",
       "routes/cefr/c1-c2/ted-ed/how-your-memory-works.tsx",
+    ),
+
+    // Games
+    route(
+      "c1-c2/games",
+      "routes/cefr/c1-c2/games.tsx",
+    ),
+    route(
+      "/cefr/c1-c2/games/thimbleweed-park",
+      "routes/cefr/c1-c2/games/thimbleweed-park.tsx",
     ),
   ]),
 ] satisfies RouteConfig;

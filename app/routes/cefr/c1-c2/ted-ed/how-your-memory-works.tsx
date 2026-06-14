@@ -24,13 +24,13 @@ export const metadata = {
     "Advanced listening and discussion practice based on a TED-Ed video about memory, forgetting, and how the brain stores information.",
 };
 
-export default function HowYourMemoryWorks() {
+export default function ThimbleweedPark() {
   return (
     <>
       <Whiteboard
         title="Advanced"
-        subtitle="How Your Memory Works"
-        description="Watch the video, understand how memory works, and discuss why forgetting is important."
+        subtitle="Games"
+        description="Thimbleweed Park"
       />
       <LessonObjective
         value={[
@@ -54,12 +54,7 @@ export default function HowYourMemoryWorks() {
           />
         </Section>
 
-        <Section id="Vocabulary Guess" heading={3}>
-          <Carousel
-            instruction="Describe what you see."
-            imgs={lesson.vocabulary}
-          />
-        </Section>
+     
 
         <Section id="gist" heading={3}>
           <VideoPlayer
