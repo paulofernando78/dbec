@@ -40,7 +40,7 @@ export default function Playground() {
       <Whiteboard
         title="Title (Mock)"
         subtitle="Subtitle"
-        description="Description"
+        descriptions={["Thimbleweed park",]}
       />
       <div className="line-break">
         <PageSections>

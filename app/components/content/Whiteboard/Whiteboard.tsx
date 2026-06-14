@@ -7,17 +7,17 @@ type WhiteboardProps = {
   lesson?: string;
   descriptions?: string[];
   description?: string;
+  date?: string;
 };
 
 export const Whiteboard = ({
   title,
   subtitle,
-  description,
+  descriptions = [],
+  date,
 }: WhiteboardProps) => {
   return (
-    <div
-      className={styles.whiteboard}
-    >
+    <div className={styles.whiteboard}>
       <span className={styles.frameTop} />
       <span className={styles.frameRight} />
       <span className={styles.frameBottom} />
@@ -33,9 +33,19 @@ export const Whiteboard = ({
       <span className={styles.screwBottomLeft} />
       <span className={styles.screwBottomRight} />
       {/* - */}
-      <h1 className="text-3xl font-bold mb-4">{title}</h1>
-      {subtitle && <h2 className="text-2xl">{subtitle}</h2>}
-      <span className="text-1xl">{description}</span>
+      <h1 className="text-4xl font-bold mb-4">{title}</h1>
+      {subtitle && <h2 className="text-3xl">{subtitle}</h2>}
+      {descriptions?.length > 0 &&
+        descriptions.map((description, index) => (
+          <p key={index} className="text-1xl">
+            {description}
+          </p>
+        ))}
+      {date && (
+        <span className="text-sm">
+          <em>release date: {date}</em>
+        </span>
+      )}
     </div>
   );
 };
