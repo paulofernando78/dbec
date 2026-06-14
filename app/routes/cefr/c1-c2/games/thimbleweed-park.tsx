@@ -15,13 +15,14 @@ export default function HowYourMemoryWorks() {
     <>
       <Whiteboard
         title="Advanced"
-        subtitle="How Your Memory Works"
-        description="Watch the video, understand how memory works, and discuss why forgetting is important."
+        subtitle="Games"
+        description="Thimbleweed park"
       />
 
       <PageSections>
         <Section id="part-one-•-the-meeting" heading={3}>
           <List
+          type="checkbox"
             items={thimbleweedPark.partOne.items}
           />
         </Section>

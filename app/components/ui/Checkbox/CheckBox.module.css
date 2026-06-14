@@ -1,0 +1,28 @@
+.input {
+  display: none;
+}
+
+.box {
+  min-width: 20px;
+  height: 20px;
+  border: 1px solid var(--slate-4);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 1px
+}
+
+.box svg {
+  opacity: 0;
+}
+
+.input:checked + .box {
+  background: var(--green-7);
+}
+
+.input:checked + .box svg {
+  opacity: 1;
+  color: white;
+}
