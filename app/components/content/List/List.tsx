@@ -10,7 +10,7 @@ type ListItem = {
   value: InlineRichContentValue[];
 };
 
-type ListProps = {
+export type ListProps = {
   instruction?: string
   items?: ListItem[];
   type?: "ul" | "ol" | "checkbox" ;

@@ -10,13 +10,13 @@ export type CCQ = {
   parts: InlineRichContentValue[];
 };
 
-type CCQProps = {
+export type CCQProps = {
   value?: CCQ[];
 };
 
 export const CCQ = ({ value = [] }: CCQProps) => {
   return (
-    <Card className="mt-10 mb-5 bg-amber-100 border">
+    <Card className="bg-amber-100 border">
       <div className="flex gap-2">
         <CircleQuestionMark className="text-gray-400" />
         <span className="block mb-4 relative top-0.5">

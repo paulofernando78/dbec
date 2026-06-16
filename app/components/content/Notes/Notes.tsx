@@ -5,18 +5,18 @@ import type { InlineRichContentValue } from "@/components/content/InlineRichCont
 
 import { Megaphone } from 'lucide-react';
 
-export type Note = {
+export type Notes = {
   as?: "div" | "p" | "span";
   parts: InlineRichContentValue[];
 };
 
-type NotesProps = {
-  value?: Note[];
+export type NotesProps = {
+  value?: Notes[];
 };
 
 export const Notes = ({ value = [] }: NotesProps) => {
   return (
-    <Card className="mt-10 mb-5 bg-amber-100 border">
+    <Card className="bg-amber-100 border">
       <div className="flex gap-2">
         <Megaphone className="text-gray-400" />
         <span className="block mb-4 relative top-0.5">

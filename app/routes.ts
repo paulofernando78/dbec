@@ -22,15 +22,20 @@ export default [
     route(
       "dashboard",
       "routes/dashboard/profile.tsx"),
-    route("cefr", "routes/cefr/whats-cefr.tsx"),
+    route("cefr", "routes/lessons/cefr/whats-cefr.tsx"),
+
+    // A1 BEGINNER
+    route(
+      "cefr/lesson-blank",
+      "routes/lessons/cefr/lesson-blank.tsx"),
 
     // A1 BEGINNER
     route(
       "cefr/a1/introduction",
-      "routes/cefr/a1/hi-my-names-laura.tsx"),
+      "routes/lessons/cefr/a1/hi-my-names-laura.tsx"),
     route(
       "cefr/a1/welcome-to-the-classroom",
-      "routes/cefr/a1/welcome-to-the-classroom.tsx",
+      "routes/lessons/cefr/a1/welcome-to-the-classroom.tsx",
     ),
 
     // A2 ELEMENTARY
@@ -43,30 +48,30 @@ export default [
 
     route(
       "c1-c2/random-topics",
-      "routes/cefr/c1-c2/random-topics.tsx"),
+      "routes/lessons/cefr/c1-c2/random-topics.tsx"),
 
     // Ted-ED
     route(
       "c1-c2/ted-ed",
-      "routes/cefr/c1-c2/ted-ed.tsx"),
+      "routes/lessons/cefr/c1-c2/ted-ed.tsx"),
 
     route(
       "/cefr/c1-c2/ted-ed/what-causes-constipation",
-      "routes/cefr/c1-c2/ted-ed/what-causes-constipation.tsx",
+      "routes/lessons/cefr/c1-c2/ted-ed/what-causes-constipation.tsx",
     ),
     route(
       "/cefr/c1-c2/ted-ed/how-your-memory-works",
-      "routes/cefr/c1-c2/ted-ed/how-your-memory-works.tsx",
+      "routes/lessons/cefr/c1-c2/ted-ed/how-your-memory-works.tsx",
     ),
 
     // Games
     route(
       "c1-c2/games",
-      "routes/cefr/c1-c2/games.tsx",
+      "routes/lessons/cefr/c1-c2/games.tsx",
     ),
     route(
       "/cefr/c1-c2/games/thimbleweed-park",
-      "routes/cefr/c1-c2/games/thimbleweed-park.tsx",
+      "routes/lessons/cefr/c1-c2/games/thimbleweed-park.tsx",
     ),
   ]),
 ] satisfies RouteConfig;
