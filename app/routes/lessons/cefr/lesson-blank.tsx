@@ -2,9 +2,9 @@ import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonObjective } from "@/components/content/LessonObjective";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
-import { Ribbon } from "@/components/ui/Ribbon";
-import { Line } from "@/components/content/Line";
+import { Meaning } from "@/components/content/Meaning";
 import { Notes } from "@/components/content/Notes";
+import { List } from "@/components/content/List";
 import { CCQ } from "@/components/content/CCQ";
 
 import { Dialogue } from "@/features/Dialogue/Dialogue";
@@ -14,7 +14,6 @@ import { Carousel } from "@/components/ui/Carousel";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
-import { List } from "@/components/content/List";
 
 import { lesson } from "@/data/lessons/lesson-blank";
 
@@ -29,7 +28,7 @@ export default function Introduction() {
       />
 
       <div className="line-break">
-        <LessonObjective {...lesson.lessonObjective}/>
+        <LessonObjective {...lesson.lessonObjective} />
         <PageSections>
           <Section id="introduction" heading={4}>
             <Carousel
@@ -44,8 +43,8 @@ export default function Introduction() {
           </Section>
 
           <Section id="Language Focus" heading={4}>
-            <Ribbon label="Greetings" bgColor="bg-slate-500" />
-            <ColumnDrag {...lesson.languageFocus.greetings} />
+            <Meaning value={lesson.languageFocus.meaning} />
+            <ColumnDrag {...lesson.languageFocus.column} />
             <Notes value={lesson.languageFocus.notes} />
             <CCQ value={lesson.languageFocus.ccq} />
           </Section>

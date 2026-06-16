@@ -1,3 +1,8 @@
+import type { Meaning } from "@/components/content/Meaning";
+import type { Notes } from "@/components/content/Notes";
+import type { ListProps } from "@/components/content/List";
+import type { CCQ } from "@/components/content/CCQ/";
+
 import {
   content,
   text,
@@ -603,7 +608,7 @@ export const lesson = {
         as: "span",
         parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/last-name-surname-family-name.mp3"), bold("last name / surname name"), " = family name"],
       },
-    ],
+    ] satisfies Notes[],
     ccq: [
       {
         as: "span",
@@ -613,7 +618,7 @@ export const lesson = {
         as: "span",
         parts: ["..."],
       },
-    ],
+    ] satisfies CCQ[],
   },
 
   practice: {
@@ -699,14 +704,20 @@ export const lesson = {
   },
 
   production: {
-    prompt: [
-      ...content({
-        parts: [
-          bold(
-            "Introduce yourself to your classmates using the expressions from the lesson.",
-          ),
-        ],
-      }),
-    ],
+    task: {
+      instruction: "Complete the tasks:",
+      type: "checkbox",
+      items: [
+        {
+          value: text(["..."]),
+        },
+        {
+          value: text(["..."]),
+        },
+        {
+          value: text(["..."]),
+        },
+      ],
+    } satisfies ListProps,
   },
 };

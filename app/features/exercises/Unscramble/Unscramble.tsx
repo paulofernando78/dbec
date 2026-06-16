@@ -123,9 +123,19 @@ export const Unscramble = ({
       </span>
 
       <div className="flex gap-2 mb-2">
-        <Button icon={<Check />} onClick={handleCheck} />
-        <Button icon={isShown ? <EyeClosed /> : <Eye />} onClick={handleShowAnswers} />
-        <Button icon={<RotateCcw />} onClick={handleReset} />
+        <Button
+        variant="check"
+        icon={<Check />}
+        onClick={handleCheck}
+        />
+        <Button
+        variant="answer"
+        icon={isShown ? <EyeClosed /> : <Eye />}
+        onClick={handleShowAnswers} />
+        <Button
+        variant="reset"
+        icon={<RotateCcw />}
+        onClick={handleReset} />
       </div>
     </div>
   );

@@ -7,7 +7,8 @@ type ButtonProps = {
   children?: ReactNode;
   disabled?: boolean;
   onClick?: () => void;
-  className?: string
+  className?: string;
+  variant?: "default" | "check" | "answer" | "reset";
 };
 
 export const Button = ({
@@ -15,11 +16,12 @@ export const Button = ({
   children,
   disabled,
   onClick,
-  className = ""
+  className = "",
+  variant = "default"
 }: ButtonProps) => {
   return (
     <button
-      className={`${styles.button} ${className}`}
+      className={`${styles.button} ${styles[variant]} ${className}`}
       onClick={onClick}
       disabled={disabled}
     >

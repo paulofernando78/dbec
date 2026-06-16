@@ -219,8 +219,14 @@ export const FillInTheBlanks = ({
       </span>
 
       <div className="flex gap-2 mb-2">
-        <Button icon={<Check />} onClick={handleCheck} />
-        <Button icon={<RotateCcw />} onClick={handleReset} />
+        <Button
+        variant="check"
+        icon={<Check />}
+        onClick={handleCheck} />
+        <Button
+        variant="reset"
+        icon={<RotateCcw />}
+        onClick={handleReset} />
       </div>
     </div>
   );

@@ -1,12 +1,8 @@
-import {
-  useState,
-  type ChangeEvent,
-} from "react";
-
+import { useState, type ChangeEvent } from "react";
 
 import { Button } from "@/components/ui/Button";
 
-import { Check, RotateCcw} from 'lucide-react';
+import { Check, RotateCcw } from "lucide-react";
 
 type RadioOption = {
   option?: string;
@@ -24,7 +20,7 @@ type RadioExercise = {
 };
 
 type RadioProps = {
-  instruction: string
+  instruction: string;
   exercise?: RadioExercise;
   score?: boolean;
 };
@@ -38,9 +34,7 @@ export const Radio = ({
   const [checked, setChecked] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
 
-  const questions = Array.isArray(exercise.questions)
-    ? exercise.questions
-    : [];
+  const questions = Array.isArray(exercise.questions) ? exercise.questions : [];
 
   const handleCheck = () => {
     let score = 0;
@@ -68,7 +62,9 @@ export const Radio = ({
       <p className="font-bold">{instruction}</p>
       {questions.map((q, qIndex) => (
         <div key={qIndex}>
-          <p className="mb-px">{qIndex + 1}. {q.question}</p>
+          <p className="mb-px">
+            {qIndex + 1}. {q.question}
+          </p>
 
           {(q.options || []).map((opt, optIndex) => {
             const isActive = selected[qIndex] === optIndex;
@@ -130,8 +126,14 @@ export const Radio = ({
       )}
 
       <div className="flex gap-2 mb-2">
-        <Button icon={<Check />} onClick={handleCheck} />
-        <Button icon={<RotateCcw />} onClick={handleReset} />
+        <Button
+        variant="check"
+        icon={<Check />}
+        onClick={handleCheck} />
+        <Button
+        variant="reset"
+        icon={<RotateCcw />}
+        onClick={handleReset} />
       </div>
     </div>
   );

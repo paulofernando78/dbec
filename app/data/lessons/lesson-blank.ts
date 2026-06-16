@@ -1,7 +1,7 @@
-import type { ListProps } from "@/components/content/List";
+import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
+import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
-
 
 import {
   content,
@@ -78,7 +78,13 @@ export const lesson = {
   },
 
   languageFocus: {
-    greetings: {
+    meaning: [
+      {
+        as: "span",
+        parts: [audio("/"), "..."],
+      },
+    ] satisfies Meaning[],
+    column: {
       width: 300,
       cols: [
         // Column 1
@@ -119,183 +125,10 @@ export const lesson = {
         },
       ],
     },
-    personalInformation: {
-      width: 300,
-      cols: [
-        // Common Questions
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Common Questions",
-          items: [
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/whats-your-name.mp3",
-                ),
-                "What’s your name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/whats-your-first-name.mp3",
-                ),
-                "What’s your first name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/how-do-you-spell-your-first-name.mp3",
-                ),
-                "How do you spell your first name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/whats-your-last-name.mp3",
-                ),
-                "What’s your last name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/how-do-you-spell-your-last-name.mp3",
-                ),
-                "How do you spell your last name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/how-do-you-spell-it.mp3",
-                ),
-                "How do you spell it? (it = first/last)",
-              ],
-            },
-          ],
-        },
-        // Possible Answers
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-black",
-          column: "Possible Answers",
-          items: [
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-name-is.mp3",
-                ),
-                "My name is...",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-names.mp3",
-                ),
-                "My name’s...",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-first-name-is.mp3",
-                ),
-                "My first name is...",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-first-names.mp3",
-                ),
-                "My first name’s...",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-last-name-is.mp3",
-                ),
-                "My last name is...",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-last-names.mp3",
-                ),
-                "My last name’s...",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/its-p-a-l-m-e-r.mp3",
-                ),
-                "(It’s) P-A-L-M-E-R.",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-to-meet-you-1.mp3",
-                ),
-                "Nice to meet you.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-to-meet-you-2.mp3",
-                ),
-                "Nice to mee",
-                underline("t y"),
-                "ou.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-meeting-you.mp3",
-                ),
-                "Nice to meeting you.",
-              ],
-            },
-          ],
-        },
-      ],
-    },
     notes: [
       {
         as: "span",
-        parts: [
-          audio(
-            "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/first-name-given-name.mp3",
-          ),
-          bold("first name"),
-          " = given name",
-        ]
-      },
-      {
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/last-name-surname-family-name.mp3",
-          ),
-          bold("last name / surname name"),
-          " = family name",
-        ]
+        parts: [audio("/"), "..."],
       },
     ] satisfies Notes[],
     ccq: [
