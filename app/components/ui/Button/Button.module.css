@@ -64,6 +64,10 @@
     0 0.425em 0.5em 0 var(--color-green-800);
 }
 
+.check svg {
+  stroke: var(--color-green-500);
+}
+
 .check:active {
   transform: translateY(0.225em);
 
@@ -80,7 +84,6 @@
 
 .answer {
   background-color: var(--color-yellow-300);
-
   box-shadow:
     inset 0 0.0625em 0 0 var(--color-yellow-100),
     0 0.0625em 0 0 var(--color-yellow-200),
@@ -92,9 +95,12 @@
     0 0.425em 0.5em 0 var(--color-yellow-800);
 }
 
+.answer svg {
+  stroke: var(--color-yellow-500);
+}
+
 .answer:active {
   transform: translateY(0.225em);
-
   box-shadow:
     inset 0 0.03em 0 0 var(--color-yellow-100),
     0 0.03em 0 0 var(--color-yellow-200),
@@ -118,6 +124,10 @@
     0 0.375em 0 0 var(--color-blue-600),
     0 0.425em 0 0 var(--color-blue-700),
     0 0.425em 0.5em 0 var(--color-blue-800);
+}
+
+.reset svg {
+  stroke: var(--color-blue-500);
 }
 
 .reset:active {
