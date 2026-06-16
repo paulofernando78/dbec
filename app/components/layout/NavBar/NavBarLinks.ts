@@ -17,130 +17,184 @@ export const links = [
     links: [
       {
         href: "/cefr/a1/introduction",
-        label: "Hi, my name’s Laura.",
+        label: "Unit 1 • Hi, my name’s Laura.",
       },
       {
-        href: "/cefr/a1/welcome-to-the-classroom",
-        label: "Welcome to the Classroom",
+        href: "/cefr/a1/",
+        label: "Unit 2 • My Family",
       },
-      // {
-      //   href: "/cefr/a1/talk-about-yourself",
-      //   label: "Talk about yourself",
-      // },
-      // {
-      //   href: "/cefr/a1/talk-about-your-free-time",
-      //   label: "Talk about your free time",
-      // },
-      // {
-      //   href: "/cefr/a1/places-and-objects",
-      //   label: "Places & Objects",
-      // },
-      // {
-      //   href: "/cefr/a1/numbers",
-      //   label: "Numbers",
-      // },
-      // {
-      //   href: "/cefr/a1/telling-the-time",
-      //   label: "Telling the time",
-      // },
-      // {
-      //   href: "/cefr/a1/describe-people",
-      //   label: "Describe people",
-      // },
-      // {
-      //   href: "/cefr/a1/audiobooks",
-      //   label: "Audiobooks",
-      // },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 3 • My house",
+      },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 4 • Daily Routine",
+      },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 5 • My week",
+      },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 6 • Food and Drinks",
+      },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 7 • Shopping",
+      },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 8 • Around Town",
+      },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 9 • What are you doing?",
+      },
+      {
+        href: "/cefr/a1/",
+        label: "Unit 10 • Abilities",
+      },
     ],
   },
   // A2 (Elementary)
-  // {
-  //   title: "A2 Elementary",
-  //   links: [
-  //     {
-  //       href: "/cefr/a2/talk-about-likes-and-dislikes",
-  //       label: "Talk about likes and dislikes",
-  //     },
-  //     {
-  //       href: "/cefr/a2/describe-past-experiences",
-  //       label: "Describe past experiences",
-  //     },
-  //     {
-  //       href: "/cefr/a2/talk-about-your-future-plans",
-  //       label: "Talk about your future plans",
-  //     },
-  //     {
-  //       href: "/cefr/a2/talk-about-food",
-  //       label: "Talk about food",
-  //     },
-  //     {
-  //       href: "/cefr/a2/describe-your-home",
-  //       label: "Describe your home",
-  //     },
-  //     {
-  //       href: "/cefr/a2/give-advice",
-  //       label: "Give advice",
-  //     },
-  //     {
-  //       href: "/cefr/a2/shopping-and-money",
-  //       label: "Shopping and money",
-  //     },
-  //     {
-  //       href: "/cefr/a2/describe-your-neighborhood",
-  //       label: "Describe your neighborhood",
-  //     },
-  //   ],
-  // },
+  {
+    title: "A2 Elementary",
+    links: [
+      {
+        href: "/cefr/a2/",
+        label: "Unit 1 • Last Weekend",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 2 • Travel Plans",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 3 • Future Predictions",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 4 • City Life",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 5 • The Best Place",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 6 • Healthy Habits",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 7 • Rules",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 8 • Shopping Smart",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 9 • Experiences",
+      },
+      {
+        href: "/cefr/a2/",
+        label: "Unit 10 • Hobbies",
+      },
+    ],
+  },
   // B1 (Intermediate)
-  // {
-  //   title: "B1 Intermediate",
-  //   links: [
-  //     { href: "/cefr/b1/tell-a-story", label: "Tell a story" },
-  //     { href: "/cefr/b1/express-opinions", label: "Express opinions" },
-  //     { href: "/cefr/b1/compare-things", label: "Compare things" },
-  //     {
-  //       href: "/cefr/b1/hypothetical-situations",
-  //       label: "Hypothetical situations",
-  //     },
-  //     {
-  //       href: "/cefr/b1/describe-problems-and-solutions",
-  //       label: "Describe problems and solutions",
-  //     },
-  //     {
-  //       href: "/cefr/b1/talk-about-health-and-lifestyle",
-  //       label: "Talk about health and lifestyle",
-  //     },
-  //     {
-  //       href: "/cefr/b1/discuss-work-and-study",
-  //       label: "Discuss work and study",
-  //     },
-  //   ],
-  // },
+  {
+    title: "B1 Intermediate",
+    links: [
+      {
+        href: "/cefr/b1/",
+        label: "Unit 1 • Life Expiriences",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 2 • Storytelling",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 3 • Making Plans",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 4 • What If?",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 5 • Green Planet",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 6 • Technology Today",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 7 • New Report",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 8 • What Did They Say?",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 9 • Career Path",
+      },
+      {
+        href: "/cefr/b1/",
+        label: "Unit 10 • Relationships",
+      },
+    ],
+  },
   // B2 (Upper-Intermediate)
-  // {
-  //   title: "B2 Upper-Intermediate",
-  //   links: [
-  //     { href: "/cefr/b2/debate-and-argue", label: "Debate and argue a point" },
-  //     {
-  //       href: "/cefr/b2/formal-vs-informal",
-  //       label: "Formal vs informal register",
-  //     },
-  //     { href: "/cefr/b2/current-events", label: "Discuss current events" },
-  //     { href: "/cefr/b2/complex-emotions", label: "Express complex emotions" },
-  //     {
-  //       href: "/cefr/b2/idiomatic-language",
-  //       label: "Idiomatic language in context",
-  //     },
-  //     {
-  //       href: "/cefr/b2/hypothetical-and-regret",
-  //       label: "Hypothetical and regret structures",
-  //     },
-  //     {
-  //       href: "/cefr/b2/media-and-technology",
-  //       label: "Discuss media and technology",
-  //     },
-  //   ],
-  // },
+  {
+    title: "B2 Upper-Intermediate",
+    links: [
+      {
+        href: "/cefr/b2/",
+        label: "Unit 1 • Dream Scenarios",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 2 • Regrets",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 3 • Business Communication",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 4 • Leadership",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 5 • Innovation",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 6 • Global Issues",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 7 • Debate Club",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 8 • Media and Marketing",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 9 • Native-Like English",
+      },
+      {
+        href: "/cefr/b2/",
+        label: "Unit 10 • Natural English",
+      },
+    ],
+  },
   // Advanced
   {
     title: "C1-C2 Advanced",

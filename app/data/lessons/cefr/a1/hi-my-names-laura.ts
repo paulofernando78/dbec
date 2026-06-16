@@ -82,14 +82,21 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "1. Are they old friends?",
+            question: "Laura and Jessica at home?",
+            options: [
+              { option: "at home", isCorrect: false },
+              { option: "at scool", isCorrect: true },
+            ],
+          },
+          {
+            question: "Are they old friends?",
             options: [
               { option: "true", isCorrect: false },
               { option: "false", isCorrect: true },
             ],
           },
           {
-            question: "1. Are they brothers and sisters?",
+            question: "Are they brothers and sisters?",
             options: [
               { option: "true", isCorrect: false },
               { option: "false", isCorrect: true },
@@ -102,7 +109,7 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "Listen to the dialogue.",
+      prompt: "Laura and Eric meet for the first time. Listen to the dialogue.",
       audioSrc:
         "/assets/audio/lessons/cefr/a1/hi-my-names-laura/presentation/dialogue.mp3",
       lines: [
@@ -590,11 +597,21 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: [bold("first name"), " = given name"],
+        parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/first-name-given-name.mp3"), bold("first name"), " = given name"],
       },
       {
         as: "span",
-        parts: [bold("last name"), " = family name"],
+        parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/last-name-surname-family-name.mp3"), bold("last name / surname name"), " = family name"],
+      },
+    ],
+    ccq: [
+      {
+        as: "span",
+        parts: ["..."],
+      },
+      {
+        as: "span",
+        parts: ["..."],
       },
     ],
   },

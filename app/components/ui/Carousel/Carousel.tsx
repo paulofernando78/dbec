@@ -276,7 +276,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
         <div
           className={`
           mx-auto
-          h-22.5
+          h-20
           py-1 px-2
           overflow-x-auto
           border

@@ -3,24 +3,24 @@ import { Card } from "@/components/ui/Card";
 
 import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
 
-import { Megaphone } from 'lucide-react';
+import { ClipboardList } from 'lucide-react';
 
-export type Note = {
+export type ICQ = {
   as?: "div" | "p" | "span";
   parts: InlineRichContentValue[];
 };
 
-type NotesProps = {
-  value?: Note[];
+type ICQProps = {
+  value?: ICQ[];
 };
 
-export const Notes = ({ value = [] }: NotesProps) => {
+export const ICQ = ({ value = [] }: ICQProps) => {
   return (
     <Card className="mt-10 mb-5 bg-amber-100 border">
       <div className="flex gap-2">
-        <Megaphone className="text-gray-400" />
+        <ClipboardList className="text-gray-400" />
         <span className="block mb-4 relative top-0.5">
-          <b>NOTES</b>
+          <b>INSTRUCTIONS</b>
         </span>
       </div>
       {value.map((note, index) => (

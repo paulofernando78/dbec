@@ -8,9 +8,9 @@ type LineProps = {
   value?: InlineRichContentValue[];
 };
 
-export const Line = ({ as: Tag = "div", value = [] }: LineProps) => {
+export const Line = ({as: Tag = "div", value = [] }: LineProps) => {
   return (
-    <Tag>
+    <Tag className={Tag === "span" ? "block" : ""}>
       <InlineRichContent value={value} />
     </Tag>
   );
