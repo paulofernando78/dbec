@@ -25,6 +25,7 @@ export default [
     route("cefr", "routes/lessons/cefr/whats-cefr.tsx"),
 
     // A1 BEGINNER
+    
     route(
       "cefr/lesson-blank",
       "routes/lessons/cefr/lesson-blank.tsx"),
@@ -72,9 +73,144 @@ export default [
 
     // A2 ELEMENTARY
 
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+
     // B1 PRE-INTERMEDIATE
 
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/a2/unit-1-",
+      "routes/lessons/cefr/b1/unit-1-.tsx",
+    ),
+
     // B2 INTERMEDIATE
+
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
+    route(
+      "/lessons/cefr/b2/unit-1-",
+      "routes/lessons/cefr/a1/unit-1-.tsx",
+    ),
 
     // ADVANCED
 
