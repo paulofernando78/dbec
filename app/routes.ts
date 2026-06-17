@@ -31,42 +31,42 @@ export default [
 
     // A1 BEGINNER
     route(
-      "cefr/a1/hello",
-      "routes/lessons/cefr/a1/hello.tsx"),
+      "/lessons/cefr/a1/unit-1-hello",
+      "routes/lessons/cefr/a1/unit-1-hello.tsx"),
     route(
-      "cefr/a1/unit-2-my-family",
-      "routes/lessons/cefr/a1/my-family.tsx",
+      "/lessons/cefr/a1/unit-2-my-family",
+      "routes/lessons/cefr/a1/unit-2-my-family.tsx",
     ),
     route(
-      "cefr/a1/unit-3-my-house",
+      "/lessons/cefr/a1/unit-3-my-house",
       "routes/lessons/cefr/a1/unit-3-my-house.tsx",
     ),
     route(
-      "cefr/a1/unit-4-daily-routine",
-      "routes/lessons/cefr/a1/unit-4-dialy-routine.tsx",
+      "/lessons/cefr/a1/unit-4-daily-routine",
+      "routes/lessons/cefr/a1/unit-4-daily-routine.tsx",
     ),
     route(
-      "cefr/a1/unit-5-my-week",
+      "/lessons/cefr/a1/unit-5-my-week",
       "routes/lessons/cefr/a1/unit-5-my-week.tsx",
     ),
     route(
-      "cefr/a1/unit-6-food-and-drink",
-      "routes/lessons/cefr/a1/unit-6-food-and-drink.tsx",
+      "/lessons/cefr/a1/unit-6-food-and-drinks",
+      "routes/lessons/cefr/a1/unit-6-food-and-drinks.tsx",
     ),
     route(
-      "cefr/a1/unit-7-shopping",
+      "/lessons/cefr/a1/unit-7-shopping",
       "routes/lessons/cefr/a1/unit-7-shopping.tsx",
     ),
     route(
-      "cefr/a1/unit-8-around-town",
+      "/lessons/cefr/a1/unit-8-around-town",
       "routes/lessons/cefr/a1/unit-8-around-town.tsx",
     ),
     route(
-      "cefr/a1/unit-9-what-are-you-doing",
+      "/lessons/cefr/a1/unit-9-what-are-you-doing",
       "routes/lessons/cefr/a1/unit-9-what-are-you-doing.tsx",
     ),
     route(
-      "cefr/a1/unit-10-abilities",
+      "/lessons/cefr/a1/unit-10-abilities",
       "routes/lessons/cefr/a1/unit-10-abilities.tsx",
     ),
 

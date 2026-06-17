@@ -16,43 +16,43 @@ export const links = [
     title: "A1 Beginner",
     links: [
       {
-        href: "/cefr/a1/introduction",
-        label: "Unit 1 • Hi, my name’s Laura.",
+        href: "/lessons/cefr/a1/unit-1-hello",
+        label: "Unit 1 • Hello!",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-2-my-family",
         label: "Unit 2 • My Family",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-3-my-house",
         label: "Unit 3 • My house",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-4-daily-routine",
         label: "Unit 4 • Daily Routine",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-5-my-week",
         label: "Unit 5 • My week",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-6-food-and-drinks",
         label: "Unit 6 • Food and Drinks",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-7-shopping",
         label: "Unit 7 • Shopping",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-8-around-town",
         label: "Unit 8 • Around Town",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-9-what-are-you-doing",
         label: "Unit 9 • What are you doing?",
       },
       {
-        href: "/cefr/a1/",
+        href: "/lessons/cefr/a1/unit-10-abilities",
         label: "Unit 10 • Abilities",
       },
     ],

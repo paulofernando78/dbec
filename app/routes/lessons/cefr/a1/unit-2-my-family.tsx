@@ -15,7 +15,7 @@ import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
-import { lesson } from "@/data/lessons/lesson-blank";
+import { lesson } from "@/data/lessons/cefr/a1/unit-2-my-family";
 
 export default function Introduction() {
   return (

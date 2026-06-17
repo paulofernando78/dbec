@@ -3,7 +3,6 @@ import { LessonObjective } from "@/components/content/LessonObjective";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { Ribbon } from "@/components/ui/Ribbon";
-import { Line } from "@/components/content/Line";
 import { List } from "@/components/content/List";
 import { Notes } from "@/components/content/Notes";
 import { CCQ } from "@/components/content/CCQ";
