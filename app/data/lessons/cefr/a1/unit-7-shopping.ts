@@ -20,8 +20,8 @@ import {
 
 export const lesson = {
   whiteboard: {
-    title: "...",
-    subtitle: "...",
+    title: "A1 BEGINNER",
+    subtitle: "Unit 7 • Shopping",
     descriptions: ["...", "..."],
     date: "...",
   },

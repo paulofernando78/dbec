@@ -19,9 +19,19 @@ import {
 } from "@/helpers/content";
 
 export const lesson = {
-  objective: [
-    "By the end of this class, students will be able to greet someone, say their name, ask for basic personal information, and introduce themselves clearly.",
-  ],
+  whiteboard: {
+    title: "A1 Beginner",
+    subtitle: "Unit 1 • Hi, my name’s Laura.",
+    descriptions: ["What's your name? I’m Laura. Nice to meet you.", "..."],
+    date: "...",
+  },
+
+  lessonObjective: {
+    objective:
+      "By the end of this class, students will be able to greet someone, say their name, ask for basic personal information, and introduce themselves clearly.",
+    grammar: "Verb to be, Subject pronouns",
+    vocabulary: "Greetings, Naes, Countries",
+  },
 
   introduction: {
     carouselWide: {
@@ -602,11 +612,23 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/first-name-given-name.mp3"), bold("first name"), " = given name"],
+        parts: [
+          audio(
+            "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/first-name-given-name.mp3",
+          ),
+          bold("first name"),
+          " = given name",
+        ],
       },
       {
         as: "span",
-        parts: [audio("/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/last-name-surname-family-name.mp3"), bold("last name / surname name"), " = family name"],
+        parts: [
+          audio(
+            "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/last-name-surname-family-name.mp3",
+          ),
+          bold("last name / surname name"),
+          " = family name",
+        ],
       },
     ] satisfies Notes[],
     ccq: [

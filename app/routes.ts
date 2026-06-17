@@ -31,11 +31,43 @@ export default [
 
     // A1 BEGINNER
     route(
-      "cefr/a1/introduction",
-      "routes/lessons/cefr/a1/hi-my-names-laura.tsx"),
+      "cefr/a1/hello",
+      "routes/lessons/cefr/a1/hello.tsx"),
     route(
-      "cefr/a1/welcome-to-the-classroom",
-      "routes/lessons/cefr/a1/welcome-to-the-classroom.tsx",
+      "cefr/a1/unit-2-my-family",
+      "routes/lessons/cefr/a1/my-family.tsx",
+    ),
+    route(
+      "cefr/a1/unit-3-my-house",
+      "routes/lessons/cefr/a1/unit-3-my-house.tsx",
+    ),
+    route(
+      "cefr/a1/unit-4-daily-routine",
+      "routes/lessons/cefr/a1/unit-4-dialy-routine.tsx",
+    ),
+    route(
+      "cefr/a1/unit-5-my-week",
+      "routes/lessons/cefr/a1/unit-5-my-week.tsx",
+    ),
+    route(
+      "cefr/a1/unit-6-food-and-drink",
+      "routes/lessons/cefr/a1/unit-6-food-and-drink.tsx",
+    ),
+    route(
+      "cefr/a1/unit-7-shopping",
+      "routes/lessons/cefr/a1/unit-7-shopping.tsx",
+    ),
+    route(
+      "cefr/a1/unit-8-around-town",
+      "routes/lessons/cefr/a1/unit-8-around-town.tsx",
+    ),
+    route(
+      "cefr/a1/unit-9-what-are-you-doing",
+      "routes/lessons/cefr/a1/unit-9-what-are-you-doing.tsx",
+    ),
+    route(
+      "cefr/a1/unit-10-abilities",
+      "routes/lessons/cefr/a1/unit-10-abilities.tsx",
     ),
 
     // A2 ELEMENTARY
