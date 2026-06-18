@@ -14,6 +14,7 @@ import {
   text,
   underline,
 } from "@/helpers/content";
+import type { thimbleweedPark } from "../cefr/advanced/games/thimbleweed-park";
 
 export const lessons = {
   beginner: {
@@ -546,6 +547,34 @@ export const lessons = {
       lessonObjective: "...",
       grammar: "Collocations & Advanced Phrasal Verbs",
       vocabulary: "High-frequency B2 language",
+    },
+  },
+  advanced: {
+    tedED: {
+      task: {
+        type: "none",
+        items: [
+          {
+            value: text(["TED-ED"]),
+          },
+        ],
+      } satisfies ListProps,
+      lessonObjective:
+        "Ted-ED videos",
+    },
+  },
+  games: {
+    thimbleWeedPark: {
+      task: {
+        type: "checkbox",
+        items: [
+          {
+            value: text(["Thimbleweed Park"]),
+          },
+        ],
+      } satisfies ListProps,
+      lessonObjective:
+        "In Thimbleweed Park, a dead body is the least of your problems. Switch between five playable characters to uncover the surreal secrets of this strange town in a modern mystery adventure game from the creators of Monkey Island and Maniac Mansion. The deeper you go, the weirder it gets.",
     },
   },
 };

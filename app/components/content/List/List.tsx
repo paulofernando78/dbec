@@ -13,13 +13,13 @@ type ListItem = {
 export type ListProps = {
   instruction?: string
   items?: ListItem[];
-  type?: "ul" | "ol" | "checkbox" ;
+  type?: "none"| "ul" | "ol" | "checkbox" ;
 };
 
 export const List = ({
   instruction,
   items = [],
-  type = "ul",
+  type = "none",
 }: ListProps) => {
   if (type === "checkbox") {
     return (
@@ -42,9 +42,14 @@ export const List = ({
 
   return (
     <>
-      <p className="font-bold mb-4">{instruction}</p>
+      <p className="font-bold first:mb-0 mb-4">{instruction}</p>
 
-      <Tag className={type === "ol" ? styles.ordered : styles.bulleted}>
+      <Tag className={
+          type === "none"
+          ? styles.none
+          : type === "ol"
+            ? styles.ordered
+            : styles.bulleted}>
         {items.map((item, index) => (
           <li key={index}>
             <InlineRichContent value={item.value} />

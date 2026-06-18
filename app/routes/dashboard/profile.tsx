@@ -65,6 +65,15 @@ export default function Dashboard() {
             <LessonCard lesson={lessons.upperIntermediate.unitNine} />
             <LessonCard lesson={lessons.upperIntermediate.unitTen} />
           </Section>
+          <Section id="advanced" heading={3}>
+            <LessonCard lesson={lessons.advanced.tedED} />
+          </Section>
+          <Section id="lucasArts-games" heading={3}>
+            <LessonCard lesson={lessons.games.thimbleWeedPark} />
+          </Section>
+          <Section id="sierra-games" heading={3}>
+            {/* <LessonCard lesson={lessons.games.kingsQuest} /> */}
+          </Section>
         </PageSections>
       </div>
     </>

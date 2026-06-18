@@ -23,8 +23,8 @@ export const LessonCard = ({ lesson }: LessonCardProps) => {
       </b>
       <p>{lesson.lessonObjective}</p>
       <div className="italic">
-        <span className="block">Grammar: {lesson.grammar}</span>
-        <span>Vocabulary: {lesson.vocabulary}</span>
+        {lesson.grammar && <span className="block">Grammar: {lesson.grammar}</span>}
+        {lesson.vocabulary && <span>Vocabulary: {lesson.vocabulary}</span>}
       </div>
     </Card>
   );
