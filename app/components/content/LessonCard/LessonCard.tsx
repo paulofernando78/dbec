@@ -1,14 +1,13 @@
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/content/List";
 
+import type { ListProps } from "@/components/content/List";
+
 type Lesson = {
-  task: {
-    type: string;
-    items: string[];
-  };
+  task: ListProps;
   lessonObjective: string;
-  grammar: string;
-  vocabulary: string;
+  grammar?: string;
+  vocabulary?: string;
 };
 
 type LessonCardProps = {
@@ -23,7 +22,9 @@ export const LessonCard = ({ lesson }: LessonCardProps) => {
       </b>
       <p>{lesson.lessonObjective}</p>
       <div className="italic">
-        {lesson.grammar && <span className="block">Grammar: {lesson.grammar}</span>}
+        {lesson.grammar && (
+          <span className="block">Grammar: {lesson.grammar}</span>
+        )}
         {lesson.vocabulary && <span>Vocabulary: {lesson.vocabulary}</span>}
       </div>
     </Card>
