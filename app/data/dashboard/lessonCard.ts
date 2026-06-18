@@ -17,6 +17,47 @@ import {
 
 export const lessons = {
   beginner: {
+    unitOne: {
+      lessonObjective:
+        "By the end of this class, students will be able to greet someone, say their name, ask for basic personal information, and introduce themselves clearly.",
+      grammar: "Verb to be, Subject pronouns",
+      vocabulary: "Greetings, Names, Countries",
+      task: {
+        type: "checkbox",
+        items: [
+          {
+            value: text(["Unit 1 • Hello!"]),
+          },
+        ],
+      } satisfies ListProps,
+    },
+    unitTwo: {
+      lessonObjective: "...",
+      grammar: "...",
+      vocabulary: "...",
+      task: {
+        type: "checkbox",
+        items: [
+          {
+            value: text(["Unit 2 • My Family"]),
+          },
+        ],
+      } satisfies ListProps,
+    },
+    unitThree: {
+      lessonObjective: "...",
+      grammar: "...",
+      vocabulary: "...",
+      task: {
+        type: "checkbox",
+        items: [
+          {
+            value: text(["Unit 3 • "]),
+          },
+        ],
+      } satisfies ListProps,
+    },
+
     task: {
       type: "checkbox",
       items: [

@@ -330,7 +330,7 @@ export const lesson = {
                 audio(
                   "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/common-questions/whats-up.mp3",
                 ),
-                "What’s up",
+                "What’s up?",
               ],
             },
           ],

@@ -1,10 +1,10 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
-import { Line } from "@/components/content/Line";
 import { List } from "@/components/content/List";
+import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
-import { lessons } from "@/data/dashboard/profile";
+import { lessons } from "@/data/dashboard/lessonCard";
 
 export default function Dashboard() {
   return (
@@ -17,10 +17,16 @@ export default function Dashboard() {
       <div className="line-break">
         <PageSections>
           <Section id="a1-beginner" heading={3}>
-            <List
-              type={lessons.beginner.task.type}
-              items={lessons.beginner.task.items}
-            />
+            <LessonCard lesson={lessons.beginner.unitOne} />
+            <LessonCard lesson={lessons.beginner.unitTwo} />
+            <LessonCard lesson={lessons.beginner.unitThree} />
+            {/* <LessonCard lesson={lessons.beginner.unitFour} />
+            <LessonCard lesson={lessons.beginner.unitFive} />
+            <LessonCard lesson={lessons.beginner.unitSix} />
+            <LessonCard lesson={lessons.beginner.unitSeven} />
+            <LessonCard lesson={lessons.beginner.unitEight} />
+            <LessonCard lesson={lessons.beginner.unitNine} />
+            <LessonCard lesson={lessons.beginner.unitTen} /> */}
           </Section>
           <Section id="a2-elementary" heading={3}>
             <List
