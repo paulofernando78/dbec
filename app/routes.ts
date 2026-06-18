@@ -22,224 +22,215 @@ export default [
     route(
       "dashboard",
       "routes/dashboard/profile.tsx"),
-    route("cefr", "routes/lessons/cefr/whats-cefr.tsx"),
+
+    route(
+      "cefr",
+      "routes/cefr/whats-cefr.tsx"),
 
     // A1 BEGINNER
-    
+
     route(
       "cefr/lesson-blank",
-      "routes/lessons/cefr/lesson-blank.tsx"),
+      "routes/cefr/lesson-blank.tsx"),
 
     // A1 BEGINNER
     route(
-      "/lessons/cefr/a1/unit-1-hello",
-      "routes/lessons/cefr/a1/unit-1-hello.tsx"),
+      "/cefr/a1/unit-1-hello",
+      "routes/cefr/a1/unit-1-hello.tsx"),
     route(
-      "/lessons/cefr/a1/unit-2-my-family",
-      "routes/lessons/cefr/a1/unit-2-my-family.tsx",
+      "/cefr/a1/unit-2-my-family",
+      "routes/cefr/a1/unit-2-my-family.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-3-my-house",
-      "routes/lessons/cefr/a1/unit-3-my-house.tsx",
+      "/cefr/a1/unit-3-my-house",
+      "routes/cefr/a1/unit-3-my-house.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-4-daily-routine",
-      "routes/lessons/cefr/a1/unit-4-daily-routine.tsx",
+      "/cefr/a1/unit-4-daily-routine",
+      "routes/cefr/a1/unit-4-daily-routine.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-5-my-week",
-      "routes/lessons/cefr/a1/unit-5-my-week.tsx",
+      "/cefr/a1/unit-5-my-week",
+      "routes/cefr/a1/unit-5-my-week.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-6-food-and-drinks",
-      "routes/lessons/cefr/a1/unit-6-food-and-drinks.tsx",
+      "/cefr/a1/unit-6-food-and-drinks",
+      "routes/cefr/a1/unit-6-food-and-drinks.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-7-shopping",
-      "routes/lessons/cefr/a1/unit-7-shopping.tsx",
+      "/cefr/a1/unit-7-shopping",
+      "routes/cefr/a1/unit-7-shopping.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-8-around-town",
-      "routes/lessons/cefr/a1/unit-8-around-town.tsx",
+      "/cefr/a1/unit-8-around-town",
+      "routes/cefr/a1/unit-8-around-town.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-9-what-are-you-doing",
-      "routes/lessons/cefr/a1/unit-9-what-are-you-doing.tsx",
+      "/cefr/a1/unit-9-what-are-you-doing",
+      "routes/cefr/a1/unit-9-what-are-you-doing.tsx",
     ),
     route(
-      "/lessons/cefr/a1/unit-10-abilities",
-      "routes/lessons/cefr/a1/unit-10-abilities.tsx",
+      "/cefr/a1/unit-10-abilities",
+      "routes/cefr/a1/unit-10-abilities.tsx",
     ),
 
     // A2 ELEMENTARY
 
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-1-last-weekend",
+      "routes/cefr/a2/unit-1-last-weekend.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-2-travel-plans",
+      "routes/cefr/a2/unit-2-travel-plans.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-3-future-predictions",
+      "routes/cefr/a2/unit-3-future-predictions.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-4-city-life",
+      "routes/cefr/a2/unit-4-city-life.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-5-the-best-place",
+      "routes/cefr/a2/unit-5-the-best-place.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-6-healthy-living",
+      "routes/cefr/a2/unit-6-healthy-living.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-7-rules",
+      "routes/cefr/a2/unit-7-rules.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-8-shopping-smart",
+      "routes/cefr/a2/unit-8-shopping-smart.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-9-experiences",
+      "routes/cefr/a2/unit-9-experiences.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
-    ),
-    route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/a2/unit-10-hobbies",
+      "routes/cefr/a2/unit-10-hobbies.tsx",
     ),
 
     // B1 PRE-INTERMEDIATE
 
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-1-life-experiences",
+      "routes/cefr/b1/unit-1-life-experiences.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-2-storytelling",
+      "routes/cefr/b1/unit-2-storytelling.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-3-making-plans",
+      "routes/cefr/b1/unit-3-making-plans.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-4-what-if",
+      "routes/cefr/b1/unit-4-what-if.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-5-green-planet",
+      "routes/cefr/b1/unit-5-green-planet.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-6-technology-today",
+      "routes/cefr/b1/unit-6-technology-today.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-7-news-report",
+      "routes/cefr/b1/unit-7-news-report.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-8-what-did-they-say",
+      "routes/cefr/b1/unit-8-what-did-they-say.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-9-career-path",
+      "routes/cefr/b1/unit-9-career-path.tsx",
     ),
     route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
-    ),
-    route(
-      "/lessons/cefr/a2/unit-1-",
-      "routes/lessons/cefr/b1/unit-1-.tsx",
+      "/cefr/b1/unit-10-relationships",
+      "routes/cefr/b1/unit-10-relationships.tsx",
     ),
 
     // B2 INTERMEDIATE
 
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-1-dream-scenarios",
+      "routes/cefr/b2/unit-1-dream-scenarios.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-2-regrets",
+      "routes/cefr/b2/unit-2-regrets.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-3-business-communication",
+      "routes/cefr/b2/unit-3-business-communication.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-4-leadership",
+      "routes/cefr/b2/unit-4-leadership.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-5-innovation",
+      "routes/cefr/b2/unit-5-innovation.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-6-global-issues",
+      "routes/cefr/b2/unit-6-global-issues.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-7-debate-club",
+      "routes/cefr/b2/unit-7-debate-club.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-8-media-and-marketing",
+      "routes/cefr/b2/unit-8-media-and-marketing.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-9-native-like-english",
+      "routes/cefr/b2/unit-9-native-like-english.tsx",
     ),
     route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
-    ),
-    route(
-      "/lessons/cefr/b2/unit-1-",
-      "routes/lessons/cefr/a1/unit-1-.tsx",
+      "/cefr/b2/unit-10-natural-english",
+      "routes/cefr/b2/unit-10-natural-english.tsx",
     ),
 
     // ADVANCED
 
     route(
       "c1-c2/random-topics",
-      "routes/lessons/cefr/c1-c2/random-topics.tsx"),
+      "routes/cefr/c1-c2/random-topics.tsx"),
 
     // Ted-ED
     route(
       "c1-c2/ted-ed",
-      "routes/lessons/cefr/c1-c2/ted-ed.tsx"),
+      "routes/cefr/c1-c2/ted-ed.tsx"),
 
     route(
       "/cefr/c1-c2/ted-ed/what-causes-constipation",
-      "routes/lessons/cefr/c1-c2/ted-ed/what-causes-constipation.tsx",
+      "routes/cefr/c1-c2/ted-ed/what-causes-constipation.tsx",
     ),
     route(
       "/cefr/c1-c2/ted-ed/how-your-memory-works",
-      "routes/lessons/cefr/c1-c2/ted-ed/how-your-memory-works.tsx",
+      "routes/cefr/c1-c2/ted-ed/how-your-memory-works.tsx",
     ),
 
     // Games
     route(
       "c1-c2/games",
-      "routes/lessons/cefr/c1-c2/games.tsx",
+      "routes/cefr/c1-c2/games.tsx",
     ),
     route(
       "/cefr/c1-c2/games/thimbleweed-park",
-      "routes/lessons/cefr/c1-c2/games/thimbleweed-park.tsx",
+      "routes/cefr/c1-c2/games/thimbleweed-park.tsx",
     ),
   ]),
 ] satisfies RouteConfig;
