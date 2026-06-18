@@ -16,13 +16,13 @@ export default function Dashboard() {
       />
       <div className="line-break">
         <PageSections>
-          <Section id="a1-Beginner" heading={3}>
+          <Section id="a1-beginner" heading={3}>
             <List
               type={lessons.beginner.task.type}
               items={lessons.beginner.task.items}
             />
           </Section>
-          <Section id="a1-elementary" heading={3}>
+          <Section id="a2-elementary" heading={3}>
             <List
               type={lessons.elementary.task.type}
               items={lessons.elementary.task.items}
@@ -34,7 +34,7 @@ export default function Dashboard() {
               items={lessons.intermediate.task.items}
             />
           </Section>
-          <Section id="a1-upper-intermediate" heading={3}>
+          <Section id="b2-upper-intermediate" heading={3}>
             <List
               type={lessons.upperIntermediate.task.type}
               items={lessons.upperIntermediate.task.items}
