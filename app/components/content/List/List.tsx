@@ -24,7 +24,7 @@ export const List = ({
   if (type === "checkbox") {
     return (
       <>
-        <p className="font-bold mb-4">{instruction}</p>
+        <p className="font-bold first:mb-0 mb-4">{instruction}</p>
 
         <div>
           {items.map((item, index) => (
