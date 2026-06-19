@@ -149,7 +149,7 @@ export const lessons = {
         ],
       } satisfies ListProps,
       lessonObjective:
-        "...",
+        "By the end of this class, students will be able to talk about past events, describe what they did last weekend, ask questions about past activities, and use the Past Simple correctly.",
       grammar: "Past Simple",
       vocabulary: "Weekend activities",
     },
