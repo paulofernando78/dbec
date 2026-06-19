@@ -3,27 +3,16 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  text,
-  icon,
-  audio,
-  bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
-} from "@/helpers/content";
+import { content, text, audio } from "@/helpers/content";
 
 export const lesson = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Unit 4 • Daily Routine",
-    descriptions: ["...", "..."],
-    date: "...",
+    descriptions: [
+      "I wake up at 7 o'clock.",
+      "She goes to work in the morning.",
+    ],
   },
 
   lessonObjective: {
@@ -38,10 +27,37 @@ export const lesson = {
       imgs: [
         {
           src: "/",
-          alt: "...",
+          alt: "Wake up",
           content: [
             ...content({
-              parts: [audio("/"), "...”"],
+              parts: [audio("/"), "I wake up at seven o'clock."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Breakfast",
+          content: [
+            ...content({
+              parts: [audio("/"), "I have breakfast at eight o'clock."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Work",
+          content: [
+            ...content({
+              parts: [audio("/"), "I go to work at nine o'clock."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Sleep",
+          content: [
+            ...content({
+              parts: [audio("/"), "I go to bed at ten o'clock."],
             }),
           ],
         },
@@ -53,10 +69,24 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "What do you do first in the morning?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Wake up", isCorrect: true },
+              { option: "Go to bed", isCorrect: false },
+            ],
+          },
+          {
+            question: "When do people usually eat breakfast?",
+            options: [
+              { option: "Morning", isCorrect: true },
+              { option: "Night", isCorrect: false },
+            ],
+          },
+          {
+            question: "Do people usually sleep at night?",
+            options: [
+              { option: "Yes", isCorrect: true },
+              { option: "No", isCorrect: false },
             ],
           },
         ],
@@ -66,24 +96,51 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "...",
+      prompt: "Listen to th dialogue.",
       audioSrc: "/",
       lines: [
         {
-          speaker: "...",
-          line: text(["..."]),
+          speaker: "Emma",
+          line: text(["What time do you wake up?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["I wake up at seven o'clock."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["What do you do after that?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["I have breakfast and go to work."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["What time do you go to bed?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["I go to bed at ten o'clock."]),
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "What time does Jake wake up?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "7:00", isCorrect: true },
+              { option: "8:00", isCorrect: false },
+            ],
+          },
+          {
+            question: "What does Jake do after breakfast?",
+            options: [
+              { option: "Go to work", isCorrect: true },
+              { option: "Go to bed", isCorrect: false },
             ],
           },
         ],
@@ -95,46 +152,52 @@ export const lesson = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [audio("/"), "wake up"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "have breakfast"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "go to work"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "go to bed"],
       },
     ] satisfies Meaning[],
     column: {
       width: 300,
       cols: [
-        // Column 1
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 1",
+          column: "Morning",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "wake up"] },
+            { parts: [audio("/"), "have breakfast"] },
           ],
         },
-        // Column 2
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 2",
+          column: "Day",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "go to work"] },
+            { parts: [audio("/"), "have lunch"] },
           ],
         },
-        // Column 3
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 3",
+          column: "Evening",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "watch TV"] },
+            { parts: [audio("/"), "go to bed"] },
           ],
         },
       ],
@@ -142,17 +205,33 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: ["We use the Present Simple for routines."],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "I wake up at 7:00."],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "She goes to work at 8:00."],
+      },
+      {
+        as: "span",
+        parts: ["Remember: he/she/it + verb + s"],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["..."],
+        parts: ["Do we use Present Simple for routines or right now?"],
       },
       {
         as: "span",
-        parts: ["..."],
+        parts: ["In 'She goes to work', do we add -s to the verb?"],
+      },
+      {
+        as: "span",
+        parts: ["Is waking up a daily activity?"],
       },
     ] satisfies CCQ[],
   },
@@ -163,10 +242,17 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "I _____ up at 7:00.",
             options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
+              { option: "wake", isCorrect: true },
+              { option: "wakes", isCorrect: false },
+            ],
+          },
+          {
+            question: "She _____ to work at 8:00.",
+            options: [
+              { option: "goes", isCorrect: true },
+              { option: "go", isCorrect: false },
             ],
           },
         ],
@@ -175,12 +261,32 @@ export const lesson = {
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction: "Fill in the blanks with the correct answer.",
       numbered: true,
       exercise: {
         blocks: [
           {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+            block: [
+              { text: "I " },
+              { blank: "wake up" },
+              { text: " at 7:00." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "She " },
+              { blank: "goes" },
+              { text: " to work at 8:00." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "We " },
+              { blank: "have breakfast" },
+              { text: " at 8:00." },
+            ],
             lineBreak: true,
           },
         ],
@@ -194,8 +300,16 @@ export const lesson = {
       exercise: {
         items: [
           {
-            prompt: "... / ...",
-            answer: "...",
+            prompt: "up / wake / I / at / 7:00",
+            answer: "I wake up at 7:00.",
+          },
+          {
+            prompt: "goes / work / she / to",
+            answer: "She goes to work.",
+          },
+          {
+            prompt: "breakfast / have / we",
+            answer: "We have breakfast.",
           },
         ],
       },
@@ -208,13 +322,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["..."]),
+          value: text(["Write five sentences about your daily routine."]),
         },
         {
-          value: text(["..."]),
+          value: text([
+            "Tell your partner what time you wake up, eat, and sleep.",
+          ]),
         },
         {
-          value: text(["..."]),
+          value: text(["Describe a typical weekday using the Present Simple."]),
         },
       ],
     } satisfies ListProps,
