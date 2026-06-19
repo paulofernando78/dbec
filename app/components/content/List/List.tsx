@@ -37,7 +37,7 @@ export const List = ({
                 <textarea
                   name=""
                   id=""
-                  className="w-full p-2 bg-white border border-gray-300 rounded-lg"
+                  className="w-full mt-1 p-2 bg-white border border-gray-300 rounded-lg"
                 ></textarea>
               )}
             </div>

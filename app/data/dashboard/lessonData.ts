@@ -133,7 +133,7 @@ export const lessons = {
           },
         ],
       } satisfies ListProps,
-      lessonObjective: "...",
+      lessonObjective: "By the end of this class, students will be able to talk about abilities and skills, describe what they can and can't do, and ask others about their abilities.",
       grammar: "Can / Can’t",
       vocabulary: "Skills, Sports",
     },
