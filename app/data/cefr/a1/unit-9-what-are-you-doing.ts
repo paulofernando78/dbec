@@ -3,33 +3,21 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  text,
-  icon,
-  audio,
-  bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
-} from "@/helpers/content";
+import { content, text, audio, bold, mark } from "@/helpers/content";
+
+import { lessons } from "@/data/dashboard/lessonData";
 
 export const lesson = {
   whiteboard: {
     title: "A1 BEGINNER",
-    subtitle: "Unit 9 • What are you doing?",
-    descriptions: ["...", "..."],
-    date: "...",
+    subtitle: "Unit 9 • What Are You Doing?",
+    descriptions: ["I am studying English.", "They are playing soccer."],
   },
 
   lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+    objective: lessons.beginner.unitNine.lessonObjective,
+    grammar: lessons.beginner.unitNine.grammar,
+    vocabulary: lessons.beginner.unitNine.vocabulary,
   },
 
   introduction: {
@@ -38,10 +26,37 @@ export const lesson = {
       imgs: [
         {
           src: "/",
-          alt: "...",
+          alt: "Studying",
           content: [
             ...content({
-              parts: [audio("/"), "...”"],
+              parts: [audio("/"), "She is studying."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Reading",
+          content: [
+            ...content({
+              parts: [audio("/"), "He is reading a book."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Playing",
+          content: [
+            ...content({
+              parts: [audio("/"), "They are playing soccer."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Watching TV",
+          content: [
+            ...content({
+              parts: [audio("/"), "We are watching TV."],
             }),
           ],
         },
@@ -53,10 +68,17 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "What is she doing?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Studying", isCorrect: true },
+              { option: "Sleeping", isCorrect: false },
+            ],
+          },
+          {
+            question: "What are they doing?",
+            options: [
+              { option: "Playing soccer", isCorrect: true },
+              { option: "Reading", isCorrect: false },
             ],
           },
         ],
@@ -66,24 +88,51 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "...",
+      prompt: "Listen to the dialogue.",
       audioSrc: "/",
       lines: [
         {
-          speaker: "...",
-          line: text(["..."]),
+          speaker: "Emma",
+          line: text(["Hi Jake. What are you doing?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["I'm studying English."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["Are you doing homework too?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["No, I'm reading an article."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["What is your brother doing?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["He's watching TV."]),
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "What is Jake doing?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Studying English", isCorrect: true },
+              { option: "Watching TV", isCorrect: false },
+            ],
+          },
+          {
+            question: "What is Jake's brother doing?",
+            options: [
+              { option: "Watching TV", isCorrect: true },
+              { option: "Reading", isCorrect: false },
             ],
           },
         ],
@@ -95,45 +144,65 @@ export const lesson = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [
+          audio("/"),
+          "Present Continuous describes actions happening ",
+          mark("now"),
+          ".",
+        ],
       },
     ] satisfies Meaning[],
     column: {
       width: 300,
       cols: [
-        // Column 1
         {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
+          column: "Question",
           items: [
             {
-              parts: [audio("/"), "..."],
+              parts: ["What are you doing?"],
+            },
+            {
+              parts: ["What is he doing?"],
+            },
+            {
+              parts: ["What is she doing?"],
+            },
+            {
+              parts: ["What are they doing?"],
             },
           ],
         },
-        // Column 2
         {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
+          column: "Affirmative",
           items: [
             {
-              parts: [audio("/"), "..."],
+              parts: ["I’m studying English."],
+            },
+            {
+              parts: ["He’s ..."],
+            },
+            {
+              parts: ["She’s ..."],
+            },
+            {
+              parts: ["They’re ..."],
             },
           ],
         },
-        // Column 3
         {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
+          column: "Negative",
           items: [
             {
-              parts: [audio("/"), "..."],
+              parts: [" I’m not studying English."],
+            },
+            {
+              parts: [" He’s ..."],
+            },
+            {
+              parts: [" She’s ..."],
+            },
+            {
+              parts: [" They’re ..."],
             },
           ],
         },
@@ -142,17 +211,34 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: ["... "],
+      },
+      {
+        as: "span",
+        parts: [
+          "Common contractions: ",
+          bold("I'm"),
+          ", ",
+          bold("he's"),
+          ", ",
+          bold("they're"),
+        ],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["..."],
+        parts: ["If I'm studying now, is the action happening at this moment?"],
       },
       {
         as: "span",
-        parts: ["..."],
+        parts: [
+          "Do we use Present Continuous for actions happening now or every day?",
+        ],
+      },
+      {
+        as: "span",
+        parts: ["In 'They are playing', is the subject singular or plural?"],
       },
     ] satisfies CCQ[],
   },
@@ -163,10 +249,17 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "She _____ a book.",
             options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
+              { option: "is reading", isCorrect: true },
+              { option: "reads", isCorrect: false },
+            ],
+          },
+          {
+            question: "They _____ soccer.",
+            options: [
+              { option: "are playing", isCorrect: true },
+              { option: "play", isCorrect: false },
             ],
           },
         ],
@@ -180,7 +273,27 @@ export const lesson = {
       exercise: {
         blocks: [
           {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+            block: [
+              { text: "I " },
+              { blank: "am studying" },
+              { text: " English." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "She " },
+              { blank: "is reading" },
+              { text: " a book." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "They " },
+              { blank: "are playing" },
+              { text: " soccer." },
+            ],
             lineBreak: true,
           },
         ],
@@ -194,8 +307,16 @@ export const lesson = {
       exercise: {
         items: [
           {
-            prompt: "... / ...",
-            answer: "...",
+            prompt: "am / I / studying",
+            answer: "I am studying.",
+          },
+          {
+            prompt: "reading / she / is / book / a",
+            answer: "She is reading a book.",
+          },
+          {
+            prompt: "soccer / are / they / playing",
+            answer: "They are playing soccer.",
           },
         ],
       },
@@ -208,13 +329,20 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["..."]),
+          value: text([
+            "Describe five actions happening around you right now.",
+          ]),
         },
         {
-          value: text(["..."]),
+          value: text([
+            "Ask a classmate 'What are you doing?' and report the answers.",
+          ]),
         },
         {
-          value: text(["..."]),
+          value: text([
+            "Write five Present Continuous sentences about people in your home.",
+          ]),
+          textarea: true
         },
       ],
     } satisfies ListProps,

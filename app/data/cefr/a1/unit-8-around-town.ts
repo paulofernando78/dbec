@@ -18,18 +18,22 @@ import {
   portuguese,
 } from "@/helpers/content";
 
+import { lessons } from "@/data/dashboard/lessonData";
+
 export const lesson = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Unit 8 • Around Town",
-    descriptions: ["...", "..."],
-    date: "...",
+    descriptions: [
+      "The bank is next to the supermarket.",
+      "The school is across from the park.",
+    ],
   },
 
   lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+    objective: lessons.beginner.unitEight.lessonObjective,
+    grammar: lessons.beginner.unitEight.grammar,
+    vocabulary: lessons.beginner.unitEight.vocabulary,
   },
 
   introduction: {
@@ -38,10 +42,37 @@ export const lesson = {
       imgs: [
         {
           src: "/",
-          alt: "...",
+          alt: "Bank",
           content: [
             ...content({
-              parts: [audio("/"), "...”"],
+              parts: [audio("/"), "This is a bank."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Park",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is a park."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "School",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is a school."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Supermarket",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is a supermarket."],
             }),
           ],
         },
@@ -53,10 +84,24 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "Where do you buy food?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Supermarket", isCorrect: true },
+              { option: "Bank", isCorrect: false },
+            ],
+          },
+          {
+            question: "Where do children study?",
+            options: [
+              { option: "School", isCorrect: true },
+              { option: "Park", isCorrect: false },
+            ],
+          },
+          {
+            question: "Where can you keep money?",
+            options: [
+              { option: "Bank", isCorrect: true },
+              { option: "Restaurant", isCorrect: false },
             ],
           },
         ],
@@ -66,24 +111,51 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "...",
+      prompt: "Listen to the dialogue.",
       audioSrc: "/",
       lines: [
         {
-          speaker: "...",
-          line: text(["..."]),
+          speaker: "Emma",
+          line: text(["Excuse me. Where is the bank?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["It's next to the supermarket."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["And where is the park?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["It's across from the school."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["Thank you."]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["You're welcome."]),
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "Where is the bank?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Next to the supermarket", isCorrect: true },
+              { option: "Behind the school", isCorrect: false },
+            ],
+          },
+          {
+            question: "Where is the park?",
+            options: [
+              { option: "Across from the school", isCorrect: true },
+              { option: "Next to the bank", isCorrect: false },
             ],
           },
         ],
@@ -95,45 +167,59 @@ export const lesson = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [audio("/"), "next to"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "across from"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "between"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "behind"],
       },
     ] satisfies Meaning[],
     column: {
       width: 300,
       cols: [
-        // Column 1
         {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
+          column: "Next to",
           items: [
             {
-              parts: [audio("/"), "..."],
+              parts: [bold("Q:"), " Where is the bank?"],
+            },
+            {
+              parts: [bold("A:"), " It's next to the supermarket."],
             },
           ],
         },
-        // Column 2
+
         {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
+          column: "Across from",
           items: [
             {
-              parts: [audio("/"), "..."],
+              parts: [bold("Q:"), " Where is the park?"],
+            },
+            {
+              parts: [bold("A:"), " It's across from the school."],
             },
           ],
         },
-        // Column 3
+
         {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
+          column: "Between",
           items: [
             {
-              parts: [audio("/"), "..."],
+              parts: [bold("Q:"), " Where is the café?"],
+            },
+            {
+              parts: [
+                bold("A:"),
+                " It's between the bank and the supermarket.",
+              ],
             },
           ],
         },
@@ -148,11 +234,19 @@ export const lesson = {
     ccq: [
       {
         as: "span",
-        parts: ["..."],
+        parts: [
+          "If the bank is next to the supermarket, are they close together?",
+        ],
       },
       {
         as: "span",
-        parts: ["..."],
+        parts: [
+          "If the park is across from the school, are they on the same side?",
+        ],
+      },
+      {
+        as: "span",
+        parts: ["If something is between two places, is it in the middle?"],
       },
     ] satisfies CCQ[],
   },
@@ -163,10 +257,17 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "The bank is _____ the supermarket.",
             options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
+              { option: "next to", isCorrect: true },
+              { option: "behind", isCorrect: false },
+            ],
+          },
+          {
+            question: "The park is _____ the school.",
+            options: [
+              { option: "across from", isCorrect: true },
+              { option: "inside", isCorrect: false },
             ],
           },
         ],
@@ -175,12 +276,32 @@ export const lesson = {
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction: "Fill in the blanks with the correct preposition.",
       numbered: true,
       exercise: {
         blocks: [
           {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+            block: [
+              { text: "The bank is " },
+              { blank: "next to" },
+              { text: " the supermarket." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "The park is " },
+              { blank: "across from" },
+              { text: " the school." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "The café is " },
+              { blank: "between" },
+              { text: " the bank and the supermarket." },
+            ],
             lineBreak: true,
           },
         ],
@@ -194,8 +315,17 @@ export const lesson = {
       exercise: {
         items: [
           {
-            prompt: "... / ...",
-            answer: "...",
+            prompt: "bank / next / supermarket / the / is / to / the",
+            answer: "The bank is next to the supermarket.",
+          },
+          {
+            prompt: "park / school / across / the / is / from / the",
+            answer: "The park is across from the school.",
+          },
+          {
+            prompt:
+              "café / between / bank / is / the / supermarket / and / the / the",
+            answer: "The café is between the bank and the supermarket.",
           },
         ],
       },
@@ -204,19 +334,19 @@ export const lesson = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          value: text(["..."]),
-        },
-        {
-          value: text(["..."]),
-        },
-        {
-          value: text(["..."]),
-        },
-      ],
-    } satisfies ListProps,
+  instruction: "Complete the tasks:",
+  type: "checkbox",
+  items: [
+    {
+      value: text(["Describe the location of five places in your town."]),
+    },
+    {
+      value: text(["Ask and answer questions using 'Where is...?'"]),
+    },
+    {
+      value: text(["Draw a simple map and describe the locations using prepositions of place."]),
+    },
+  ],
+} satisfies ListProps,
   },
 };
