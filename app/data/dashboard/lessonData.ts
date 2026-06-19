@@ -81,7 +81,7 @@ export const lessons = {
           },
         ],
       } satisfies ListProps,
-      lessonObjective: "...",
+      lessonObjective: "By the end of this class, students will be able to talk about food and drinks they like and don't like, ask simple questions about preferences, and respond appropriately.",
       grammar: "Like / Don’t like",
       vocabulary: "Food, Drinks",
     },
