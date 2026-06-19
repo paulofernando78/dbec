@@ -18,18 +18,19 @@ import {
   portuguese,
 } from "@/helpers/content";
 
+import { lessons } from "@/data/dashboard/lessonData";
+
 export const lesson = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Unit 2 • My Family",
-    descriptions: ["...", "..."],
-    date: "...",
+    descriptions: ["This is my family.", "Who's she? She's my sister."],
   },
 
   lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+    objective: lessons.beginner.unitTwo.lessonObjective,
+    grammar: lessons.beginner.unitTwo.grammar,
+    vocabulary: lessons.beginner.unitTwo.vocabulary,
   },
 
   introduction: {
@@ -38,10 +39,37 @@ export const lesson = {
       imgs: [
         {
           src: "/",
-          alt: "...",
+          alt: "Mother",
           content: [
             ...content({
-              parts: [audio("/"), "...”"],
+              parts: [audio("/"), "This is my mother."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Father",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is my father."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Sister",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is my sister."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Brother",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is my brother."],
             }),
           ],
         },
@@ -53,10 +81,24 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "Who is Anna?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Mother", isCorrect: false },
+              { option: "Sister", isCorrect: true },
+            ],
+          },
+          {
+            question: "Who is David?",
+            options: [
+              { option: "Father", isCorrect: true },
+              { option: "Brother", isCorrect: false },
+            ],
+          },
+          {
+            question: "Is this a family?",
+            options: [
+              { option: "Yes", isCorrect: true },
+              { option: "No", isCorrect: false },
             ],
           },
         ],
@@ -66,16 +108,54 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "...",
+      prompt: "Listen and read.",
       audioSrc: "/",
       lines: [
         {
-          speaker: "...",
-          line: text(["..."]),
+          speaker: "Emma",
+          line: text(["Hi, Jake. Who's this?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["This is my family."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["Who's she?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["She's my mother, Sarah."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["And who's he?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["He's my father, David."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["Do you have any brothers or sisters?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text([
+            "Yes. This is my sister, Lily, and this is my brother, Ben.",
+          ]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["You have a nice family."]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["Thank you!"]),
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -95,46 +175,54 @@ export const lesson = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [audio("/"), "mother"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "father"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "sister"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "brother"],
       },
     ] satisfies Meaning[],
     column: {
       width: 300,
       cols: [
-        // Column 1
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 1",
+          column: "Family",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "mother"] },
+            { parts: [audio("/"), "father"] },
+            { parts: [audio("/"), "parents"] },
           ],
         },
-        // Column 2
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 2",
+          column: "Siblings",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "brother"] },
+            { parts: [audio("/"), "sister"] },
           ],
         },
-        // Column 3
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 3",
+          column: "Possessive Adjectives",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "my"] },
+            { parts: [audio("/"), "his"] },
+            { parts: [audio("/"), "her"] },
           ],
         },
       ],
@@ -142,17 +230,33 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [bold("my"), " = belongs to me"],
+      },
+      {
+        as: "span",
+        parts: [bold("his"), " = belongs to a man or boy"],
+      },
+      {
+        as: "span",
+        parts: [bold("her"), " = belongs to a woman or girl"],
+      },
+      {
+        as: "span",
+        parts: [bold("John's"), " = belonging to John"],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["..."],
+        parts: ["In 'my mother', whose mother is she?"],
       },
       {
         as: "span",
-        parts: ["..."],
+        parts: ["In 'his sister', are we talking about a boy or a girl?"],
+      },
+      {
+        as: "span",
+        parts: ["In 'John's brother', does the brother belong to John?"],
       },
     ] satisfies CCQ[],
   },
@@ -163,10 +267,24 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "Who's she?",
             options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
+              { option: "My mother", isCorrect: true },
+              { option: "My brother", isCorrect: false },
+            ],
+          },
+          {
+            question: "Who's he?",
+            options: [
+              { option: "My father", isCorrect: true },
+              { option: "My sister", isCorrect: false },
+            ],
+          },
+          {
+            question: "Mary's brother means:",
+            options: [
+              { option: "The brother of Mary", isCorrect: true },
+              { option: "Mary's father", isCorrect: false },
             ],
           },
         ],
@@ -180,7 +298,35 @@ export const lesson = {
       exercise: {
         blocks: [
           {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+            block: [
+              { text: "This is my " },
+              { blank: "mother" },
+              { text: "." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "This is my " },
+              { blank: "father" },
+              { text: "." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "Anna is my " },
+              { blank: "sister" },
+              { text: "." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "Tom is my " },
+              { blank: "brother" },
+              { text: "." },
+            ],
             lineBreak: true,
           },
         ],
@@ -194,8 +340,16 @@ export const lesson = {
       exercise: {
         items: [
           {
-            prompt: "... / ...",
-            answer: "...",
+            prompt: "my / this / family / is",
+            answer: "This is my family.",
+          },
+          {
+            prompt: "she / sister / my / is",
+            answer: "She is my sister.",
+          },
+          {
+            prompt: "John's / brother / Ben / is",
+            answer: "Ben is John's brother.",
           },
         ],
       },
@@ -208,13 +362,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["..."]),
+          value: text(["Introduce three people in your family."]),
         },
+
         {
-          value: text(["..."]),
+          value: text(["Write three sentences using my, his, or her."]),
         },
+
         {
-          value: text(["..."]),
+          value: text(["Write two sentences using possessive ’s."]),
         },
       ],
     } satisfies ListProps,

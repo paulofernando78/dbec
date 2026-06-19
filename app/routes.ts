@@ -218,6 +218,7 @@ export default [
       "/cefr/c1-c2/ted-ed/what-causes-constipation",
       "routes/cefr/c1-c2/ted-ed/what-causes-constipation.tsx",
     ),
+
     route(
       "/cefr/c1-c2/ted-ed/how-your-memory-works",
       "routes/cefr/c1-c2/ted-ed/how-your-memory-works.tsx",
@@ -225,12 +226,12 @@ export default [
 
     // Games
     route(
-      "c1-c2/games",
-      "routes/cefr/c1-c2/games.tsx",
+      "misc/games",
+      "routes/misc/games.tsx",
     ),
     route(
-      "/cefr/c1-c2/games/thimbleweed-park",
-      "routes/cefr/c1-c2/games/thimbleweed-park.tsx",
+      "/misc/games/lucas-arts/thimbleweed-park",
+      "routes/misc/games/lucas-arts/thimbleweed-park.tsx",
     ),
   ]),
 ] satisfies RouteConfig;

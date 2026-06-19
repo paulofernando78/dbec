@@ -203,8 +203,14 @@ export const links = [
         href: "/c1-c2/ted-ed",
         label: "TED-Ed",
       },
+    ],
+  },
+  // Miscellaneous
+  {
+    title: "Miscellaneous",
+    links: [
       {
-        href: "/c1-c2/games",
+        href: "/misc/games",
         label: "Games",
       },
     ],

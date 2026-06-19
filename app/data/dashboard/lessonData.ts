@@ -1,20 +1,8 @@
 import type { ListProps } from "@/components/content/List";
 
 import {
-  audio,
-  bold,
-  boldMark,
-  content,
-  icon,
-  italic,
-  mark,
-  phonetics,
-  portuguese,
-  stressed,
   text,
-  underline,
 } from "@/helpers/content";
-import type { thimbleweedPark } from "../cefr/advanced/games/thimbleweed-park";
 
 export const lessons = {
   beginner: {
@@ -41,7 +29,7 @@ export const lessons = {
           },
         ],
       } satisfies ListProps,
-      lessonObjective: "...",
+      lessonObjective: "By the end of this class, students will be able to introduce family members, describe relationships, and use possessive adjectives and possessive ’s correctly.",
       grammar: "Possessive adjectives, Possessive ’s",
       vocabulary: "Family members",
     },
@@ -54,7 +42,7 @@ export const lessons = {
           },
         ],
       } satisfies ListProps,
-      lessonObjective: "...",
+      lessonObjective: "By the end of this class, students will be able to describe rooms in a house, identify furniture, and use there is and there are to talk about what exists in a room.",
       grammar: "There is / There are",
       vocabulary: "Rooms, Furniture",
     },
@@ -555,12 +543,12 @@ export const lessons = {
         type: "none",
         items: [
           {
-            value: text(["TED-ED"]),
+            value: text(["TED-Ed"]),
           },
         ],
       } satisfies ListProps,
       lessonObjective:
-        "Ted-ED videos",
+        "Ted-Ed videos",
     },
   },
   games: {

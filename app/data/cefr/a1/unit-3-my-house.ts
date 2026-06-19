@@ -18,18 +18,22 @@ import {
   portuguese,
 } from "@/helpers/content";
 
+import { lessons } from "@/data/dashboard/lessonData";
+
 export const lesson = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Unit 3 • My House",
-    descriptions: ["...", "..."],
-    date: "...",
+    descriptions: [
+      "There is a sofa in the living room.",
+      "There are two bedrooms in my house.",
+    ],
   },
 
   lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+    objective: lessons.beginner.unitThree.lessonObjective,
+    grammar: lessons.beginner.unitThree.grammar,
+    vocabulary: lessons.beginner.unitThree.vocabulary,
   },
 
   introduction: {
@@ -38,10 +42,37 @@ export const lesson = {
       imgs: [
         {
           src: "/",
-          alt: "...",
+          alt: "Living room",
           content: [
             ...content({
-              parts: [audio("/"), "...”"],
+              parts: [audio("/"), "This is the living room."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Kitchen",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is the kitchen."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Bedroom",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is the bedroom."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Bathroom",
+          content: [
+            ...content({
+              parts: [audio("/"), "This is the bathroom."],
             }),
           ],
         },
@@ -53,10 +84,24 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "Where do you sleep?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Bedroom", isCorrect: true },
+              { option: "Kitchen", isCorrect: false },
+            ],
+          },
+          {
+            question: "Where do you cook?",
+            options: [
+              { option: "Kitchen", isCorrect: true },
+              { option: "Bathroom", isCorrect: false },
+            ],
+          },
+          {
+            question: "Where do you watch TV?",
+            options: [
+              { option: "Living room", isCorrect: true },
+              { option: "Garage", isCorrect: false },
             ],
           },
         ],
@@ -66,24 +111,59 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "...",
+      prompt: "Listen to the dialogue.",
       audioSrc: "/",
       lines: [
         {
-          speaker: "...",
-          line: text(["..."]),
+          speaker: "Emma",
+          line: text(["Tell me about your house."]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["My house is small but comfortable."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["How many bedrooms are there?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["There are two bedrooms."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["Is there a living room?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["Yes, there is."]),
+        },
+        {
+          speaker: "Emma",
+          line: text(["Is there a TV in the living room?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["Yes, there is a TV and a sofa."]),
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "How many bedrooms are there?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Two", isCorrect: true },
+              { option: "Three", isCorrect: false },
+            ],
+          },
+          {
+            question: "Is there a living room?",
+            options: [
+              { option: "Yes", isCorrect: true },
+              { option: "No", isCorrect: false },
             ],
           },
         ],
@@ -95,46 +175,58 @@ export const lesson = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [audio("/"), "living room"],
       },
-    ] satisfies Meaning[],
+      {
+        as: "span",
+        parts: [audio("/"), "kitchen"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "bedroom"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "bathroom"],
+      },
+    ],
     column: {
       width: 300,
       cols: [
-        // Column 1
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 1",
+          column: "Rooms",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "living room"] },
+            { parts: [audio("/"), "kitchen"] },
+            { parts: [audio("/"), "bedroom"] },
+            { parts: [audio("/"), "bathroom"] },
           ],
         },
-        // Column 2
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 2",
+          column: "Furniture",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "sofa"] },
+            { parts: [audio("/"), "table"] },
+            { parts: [audio("/"), "chair"] },
+            { parts: [audio("/"), "bed"] },
           ],
         },
-        // Column 3
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 3",
+          column: "Grammar",
           items: [
-            {
-              parts: [audio("/"), "..."],
-            },
+            { parts: [audio("/"), "There is"] },
+            { parts: [audio("/"), "There are"] },
+            { parts: [audio("/"), "Is there...?"] },
+            { parts: [audio("/"), "Are there...?"] },
           ],
         },
       ],
@@ -142,19 +234,35 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [bold("There is"), " = singular"],
       },
-    ] satisfies Notes[],
+      {
+        as: "span",
+        parts: [bold("There are"), " = plural"],
+      },
+      {
+        as: "span",
+        parts: [bold("There is a sofa."), " (one sofa)"],
+      },
+      {
+        as: "span",
+        parts: [bold("There are two chairs."), " (two chairs)"],
+      },
+    ],
     ccq: [
       {
         as: "span",
-        parts: ["..."],
+        parts: ["Do we use 'There is' with one thing or many things?"],
       },
       {
         as: "span",
-        parts: ["..."],
+        parts: ["Do we use 'There are' with one thing or many things?"],
       },
-    ] satisfies CCQ[],
+      {
+        as: "span",
+        parts: ["In 'There is a bed', how many beds are there?"],
+      },
+    ],
   },
 
   practice: {
@@ -163,10 +271,17 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "_____ a sofa in the living room.",
             options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
+              { option: "There is", isCorrect: true },
+              { option: "There are", isCorrect: false },
+            ],
+          },
+          {
+            question: "_____ two chairs in the kitchen.",
+            options: [
+              { option: "There are", isCorrect: true },
+              { option: "There is", isCorrect: false },
             ],
           },
         ],
@@ -180,8 +295,27 @@ export const lesson = {
       exercise: {
         blocks: [
           {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+            block: [
+              { text: "There is a " },
+              { blank: "bed" },
+              { text: " in the bedroom." },
+            ],
             lineBreak: true,
+          },
+          {
+            block: [
+              { text: "There are two " },
+              { blank: "chairs" },
+              { text: " in the kitchen." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "There is a " },
+              { blank: "sofa" },
+              { text: " in the living room." },
+            ],
           },
         ],
       },
@@ -194,8 +328,16 @@ export const lesson = {
       exercise: {
         items: [
           {
-            prompt: "... / ...",
-            answer: "...",
+            prompt: "is / there / sofa / a",
+            answer: "There is a sofa.",
+          },
+          {
+            prompt: "are / there / bedrooms / two",
+            answer: "There are two bedrooms.",
+          },
+          {
+            prompt: "living room / TV / there / a / is / the / in",
+            answer: "There is a TV in the living room.",
           },
         ],
       },
@@ -208,13 +350,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["..."]),
+          value: text(["Describe your house."]),
         },
+
         {
-          value: text(["..."]),
+          value: text(["Write five sentences using there is or there are."]),
         },
+
         {
-          value: text(["..."]),
+          value: text(["Describe your favorite room and the furniture in it."]),
         },
       ],
     } satisfies ListProps,

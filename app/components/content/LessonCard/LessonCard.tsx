@@ -16,7 +16,7 @@ type LessonCardProps = {
 
 export const LessonCard = ({ lesson }: LessonCardProps) => {
   return (
-    <Card>
+    <Card className="bg-gray-300">
       <b>
         <List type={lesson.task.type} items={lesson.task.items} />
       </b>

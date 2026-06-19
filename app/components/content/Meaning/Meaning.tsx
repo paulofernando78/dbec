@@ -1,5 +1,4 @@
 import { Line } from "../Line";
-import { Card } from "@/components/ui/Card";
 
 import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
 

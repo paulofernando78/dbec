@@ -17,6 +17,8 @@ import {
   portuguese,
 } from "@/helpers/content";
 
+import { lessons } from "@/data/dashboard/lessonData";
+
 export const lesson = {
   whiteboard: {
     title: "A1 Beginner",
@@ -26,10 +28,9 @@ export const lesson = {
   },
 
   lessonObjective: {
-    objective:
-      "By the end of this class, students will be able to greet someone, say their name, ask for basic personal information, and introduce themselves clearly.",
-    grammar: "Verb to be, Subject pronouns",
-    vocabulary: "Greetings, Naes, Countries",
+    objective: lessons.beginner.unitOne.lessonObjective,
+    grammar: lessons.beginner.unitOne.grammar,
+    vocabulary: lessons.beginner.unitOne.vocabulary,
   },
 
   introduction: {

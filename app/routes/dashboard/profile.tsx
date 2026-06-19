@@ -1,11 +1,10 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
+import { SubSection } from "@/components/content/SubSection";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
-import { List } from "@/components/content/List";
 
-// DATA
-import { lessons } from "@/data/dashboard/lessonCard";
+import { lessons } from "@/data/dashboard/lessonData";
 
 export default function Dashboard() {
   return (
@@ -65,14 +64,13 @@ export default function Dashboard() {
             <LessonCard lesson={lessons.upperIntermediate.unitNine} />
             <LessonCard lesson={lessons.upperIntermediate.unitTen} />
           </Section>
-          <Section id="advanced" heading={3}>
+          <Section id="c1-•-c2-advanced" heading={3}>
             <LessonCard lesson={lessons.advanced.tedED} />
           </Section>
-          <Section id="lucasArts-games" heading={3}>
-            <LessonCard lesson={lessons.games.thimbleWeedPark} />
-          </Section>
-          <Section id="sierra-games" heading={3}>
-            {/* <LessonCard lesson={lessons.games.kingsQuest} /> */}
+          <Section id="Miscellaneous" heading={3}>
+            <SubSection label="Lucas Arts Games" heading={4}>
+              <LessonCard lesson={lessons.games.thimbleWeedPark} />
+            </SubSection>
           </Section>
         </PageSections>
       </div>
