@@ -17,10 +17,10 @@ export const lesson = {
     ],
   },
 
-  lessonObjective: {
-    objective: lessons.elementary.unitOne.lessonObjective,
-    grammar: lessons.elementary.unitOne.grammar,
-    vocabulary: lessons.elementary.unitOne.vocabulary,
+  lessonCard: {
+    lessonObjective: lessons.beginner.unitOne.lessonObjective,
+    grammar: lessons.beginner.unitOne.grammar,
+    vocabulary: lessons.beginner.unitOne.vocabulary,
   },
 
   introduction: {

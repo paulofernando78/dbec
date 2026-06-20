@@ -21,19 +21,9 @@ import { lesson } from "@/data/cefr/a1/unit-1-hello";
 export default function Introduction() {
   return (
     <>
-      <Whiteboard
-        title={lesson.whiteboard.title}
-        subtitle={lesson.whiteboard.subtitle}
-        descriptions={lesson.whiteboard.descriptions}
-      />
-
-      <div className="line-break">
-        <LessonCard
-          lessonObjective={lesson.lessonObjective.objective}
-          grammar={lesson.lessonObjective.grammar}
-          vocabulary={lesson.lessonObjective.vocabulary}
-        />
-
+      <Whiteboard {...lesson.whiteboard} />
+      <div>
+        <LessonCard {...lesson.lessonCard} />
         <PageSections>
           <Section id="introduction" heading={4}>
             <Carousel

@@ -26,8 +26,8 @@ export const lesson = {
     date: "...",
   },
 
-  lessonObjective: {
-    objective: "...",
+  lessonCard: {
+    lessonObjective: "...",
     grammar: "...",
     vocabulary: "...",
   },

@@ -14,8 +14,8 @@ export const lesson = {
     descriptions: ["I am studying English.", "They are playing soccer."],
   },
 
-  lessonObjective: {
-    objective: lessons.beginner.unitNine.lessonObjective,
+  lessonCard: {
+    lessonObjective: lessons.beginner.unitNine.lessonObjective,
     grammar: lessons.beginner.unitNine.grammar,
     vocabulary: lessons.beginner.unitNine.vocabulary,
   },

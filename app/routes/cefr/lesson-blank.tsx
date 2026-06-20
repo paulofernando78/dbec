@@ -20,19 +20,11 @@ import { lesson } from "@/data/lesson-blank";
 export default function Introduction() {
   return (
     <>
-      <Whiteboard
-        title={lesson.whiteboard.title}
-        subtitle={lesson.whiteboard.subtitle}
-        descriptions={lesson.whiteboard.descriptions}
-        date={lesson.whiteboard.date}
+      <Whiteboard {...lesson.whiteboard}
       />
 
       <div>
-        <LessonCard
-          lessonObjective={lesson.lessonObjective.objective}
-          grammar={lesson.lessonObjective.grammar}
-          vocabulary={lesson.lessonObjective.vocabulary}
-        />
+        <LessonCard {...lesson.lessonCard} />
         <PageSections>
           <Section id="introduction" heading={4}>
             <Carousel

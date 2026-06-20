@@ -23,8 +23,8 @@ export const lesson = {
     descriptions: ["What's your name? I’m Laura. Nice to meet you."],
   },
 
-  lessonObjective: {
-    objective: lessons.beginner.unitOne.lessonObjective,
+  lessonCard: {
+    lessonObjective: lessons.beginner.unitOne.lessonObjective,
     grammar: lessons.beginner.unitOne.grammar,
     vocabulary: lessons.beginner.unitOne.vocabulary,
   },

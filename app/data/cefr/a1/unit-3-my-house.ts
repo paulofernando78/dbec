@@ -6,16 +6,8 @@ import type { CCQ } from "@/components/content/CCQ/";
 import {
   content,
   text,
-  icon,
   audio,
   bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
 } from "@/helpers/content";
 
 import { lessons } from "@/data/dashboard/lessonCardData";
@@ -30,8 +22,8 @@ export const lesson = {
     ],
   },
 
-  lessonObjective: {
-    objective: lessons.beginner.unitThree.lessonObjective,
+  lessonCard: {
+    lessonObjective: lessons.beginner.unitThree.lessonObjective,
     grammar: lessons.beginner.unitThree.grammar,
     vocabulary: lessons.beginner.unitThree.vocabulary,
   },
@@ -189,7 +181,7 @@ export const lesson = {
         as: "span",
         parts: [audio("/"), "bathroom"],
       },
-    ],
+    ] satisfies Meaning[],
     column: {
       width: 300,
       cols: [
@@ -262,7 +254,7 @@ export const lesson = {
         as: "span",
         parts: ["In 'There is a bed', how many beds are there?"],
       },
-    ],
+    ] satisfies CCQ[],
   },
 
   practice: {

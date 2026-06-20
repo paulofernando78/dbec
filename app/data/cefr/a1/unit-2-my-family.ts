@@ -6,16 +6,8 @@ import type { CCQ } from "@/components/content/CCQ/";
 import {
   content,
   text,
-  icon,
   audio,
   bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
 } from "@/helpers/content";
 
 import { lessons } from "@/data/dashboard/lessonCardData";
@@ -27,8 +19,8 @@ export const lesson = {
     descriptions: ["This is my family.", "Who's she? She's my sister."],
   },
 
-  lessonObjective: {
-    objective: lessons.beginner.unitTwo.lessonObjective,
+  lessonCard: {
+    lessonObjective: lessons.beginner.unitTwo.lessonObjective,
     grammar: lessons.beginner.unitTwo.grammar,
     vocabulary: lessons.beginner.unitTwo.vocabulary,
   },

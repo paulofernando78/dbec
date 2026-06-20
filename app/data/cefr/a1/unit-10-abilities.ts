@@ -14,10 +14,10 @@ export const lesson = {
     descriptions: ["I can swim.", "She can't play the guitar."],
   },
 
-  lessonObjective: {
-    objective: lessons.beginner.unitTen.lessonObjective,
-    grammar: lessons.beginner.unitTen.grammar,
-    vocabulary: lessons.beginner.unitTen.vocabulary,
+  lessonCard: {
+    lessonObjective: lessons.beginner.unitOne.lessonObjective,
+    grammar: lessons.beginner.unitOne.grammar,
+    vocabulary: lessons.beginner.unitOne.vocabulary,
   },
 
   introduction: {
