@@ -4,7 +4,7 @@ import { Section } from "@/components/content/Section";
 import { SubSection } from "@/components/content/SubSection";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
-import { lessons } from "@/data/dashboard/lessonData";
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export default function Dashboard() {
   return (
@@ -17,59 +17,59 @@ export default function Dashboard() {
       <div className="line-break">
         <PageSections>
           <Section id="a1-beginner" heading={3}>
-            <LessonCard lesson={lessons.beginner.unitOne} />
-            <LessonCard lesson={lessons.beginner.unitTwo} />
-            <LessonCard lesson={lessons.beginner.unitThree} />
-            <LessonCard lesson={lessons.beginner.unitFour} />
-            <LessonCard lesson={lessons.beginner.unitFive} />
-            <LessonCard lesson={lessons.beginner.unitSix} />
-            <LessonCard lesson={lessons.beginner.unitSeven} />
-            <LessonCard lesson={lessons.beginner.unitEight} />
-            <LessonCard lesson={lessons.beginner.unitNine} />
-            <LessonCard lesson={lessons.beginner.unitTen} />
+            <LessonCard {...lessons.beginner.unitOne} />
+            <LessonCard {...lessons.beginner.unitTwo} />
+            <LessonCard {...lessons.beginner.unitThree} />
+            <LessonCard {...lessons.beginner.unitFour} />
+            <LessonCard {...lessons.beginner.unitFive} />
+            <LessonCard {...lessons.beginner.unitSix} />
+            <LessonCard {...lessons.beginner.unitSeven} />
+            <LessonCard {...lessons.beginner.unitEight} />
+            <LessonCard {...lessons.beginner.unitNine} />
+            <LessonCard {...lessons.beginner.unitTen} />
           </Section>
           <Section id="a2-elementary" heading={3}>
-            <LessonCard lesson={lessons.elementary.unitOne} />
-            <LessonCard lesson={lessons.elementary.unitTwo} />
-            <LessonCard lesson={lessons.elementary.unitThree} />
-            <LessonCard lesson={lessons.elementary.unitFour} />
-            <LessonCard lesson={lessons.elementary.unitFive} />
-            <LessonCard lesson={lessons.elementary.unitSix} />
-            <LessonCard lesson={lessons.elementary.unitSeven} />
-            <LessonCard lesson={lessons.elementary.unitEight} />
-            <LessonCard lesson={lessons.elementary.unitNine} />
-            <LessonCard lesson={lessons.elementary.unitTen} />
+            <LessonCard {...lessons.elementary.unitOne} />
+            <LessonCard {...lessons.elementary.unitTwo} />
+            <LessonCard {...lessons.elementary.unitThree} />
+            <LessonCard {...lessons.elementary.unitFour} />
+            <LessonCard {...lessons.elementary.unitFive} />
+            <LessonCard {...lessons.elementary.unitSix} />
+            <LessonCard {...lessons.elementary.unitSeven} />
+            <LessonCard {...lessons.elementary.unitEight} />
+            <LessonCard {...lessons.elementary.unitNine} />
+            <LessonCard {...lessons.elementary.unitTen} />
           </Section>
           <Section id="b1-intermediate" heading={3}>
-            <LessonCard lesson={lessons.intermediate.unitOne} />
-            <LessonCard lesson={lessons.intermediate.unitTwo} />
-            <LessonCard lesson={lessons.intermediate.unitThree} />
-            <LessonCard lesson={lessons.intermediate.unitFour} />
-            <LessonCard lesson={lessons.intermediate.unitFive} />
-            <LessonCard lesson={lessons.intermediate.unitSix} />
-            <LessonCard lesson={lessons.intermediate.unitSeven} />
-            <LessonCard lesson={lessons.intermediate.unitEight} />
-            <LessonCard lesson={lessons.intermediate.unitNine} />
-            <LessonCard lesson={lessons.intermediate.unitTen} />
+            <LessonCard {...lessons.intermediate.unitOne} />
+            <LessonCard {...lessons.intermediate.unitTwo} />
+            <LessonCard {...lessons.intermediate.unitThree} />
+            <LessonCard {...lessons.intermediate.unitFour} />
+            <LessonCard {...lessons.intermediate.unitFive} />
+            <LessonCard {...lessons.intermediate.unitSix} />
+            <LessonCard {...lessons.intermediate.unitSeven} />
+            <LessonCard {...lessons.intermediate.unitEight} />
+            <LessonCard {...lessons.intermediate.unitNine} />
+            <LessonCard {...lessons.intermediate.unitTen} />
           </Section>
           <Section id="b2-upper-intermediate" heading={3}>
-            <LessonCard lesson={lessons.upperIntermediate.unitOne} />
-            <LessonCard lesson={lessons.upperIntermediate.unitTwo} />
-            <LessonCard lesson={lessons.upperIntermediate.unitThree} />
-            <LessonCard lesson={lessons.upperIntermediate.unitFour} />
-            <LessonCard lesson={lessons.upperIntermediate.unitFive} />
-            <LessonCard lesson={lessons.upperIntermediate.unitSix} />
-            <LessonCard lesson={lessons.upperIntermediate.unitSeven} />
-            <LessonCard lesson={lessons.upperIntermediate.unitEight} />
-            <LessonCard lesson={lessons.upperIntermediate.unitNine} />
-            <LessonCard lesson={lessons.upperIntermediate.unitTen} />
+            <LessonCard {...lessons.upperIntermediate.unitOne} />
+            <LessonCard {...lessons.upperIntermediate.unitTwo} />
+            <LessonCard {...lessons.upperIntermediate.unitThree} />
+            <LessonCard {...lessons.upperIntermediate.unitFour} />
+            <LessonCard {...lessons.upperIntermediate.unitFive} />
+            <LessonCard {...lessons.upperIntermediate.unitSix} />
+            <LessonCard {...lessons.upperIntermediate.unitSeven} />
+            <LessonCard {...lessons.upperIntermediate.unitEight} />
+            <LessonCard {...lessons.upperIntermediate.unitNine} />
+            <LessonCard {...lessons.upperIntermediate.unitTen} />
           </Section>
           <Section id="c1-•-c2-advanced" heading={3}>
-            <LessonCard lesson={lessons.advanced.tedED} />
+            <LessonCard {...lessons.advanced.tedED} />
           </Section>
           <Section id="Miscellaneous" heading={3}>
             <SubSection label="Lucas Arts Games" heading={4}>
-              <LessonCard lesson={lessons.games.thimbleWeedPark} />
+              <LessonCard {...lessons.games.thimbleWeedPark} />
             </SubSection>
           </Section>
         </PageSections>

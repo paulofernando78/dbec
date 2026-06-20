@@ -5,41 +5,48 @@ import type { ListProps } from "@/components/content/List";
 
 import { Goal, FileText } from "lucide-react";
 
-type Lesson = {
-  task: ListProps;
+type LessonCardProps = {
+  task?: ListProps;
   lessonObjective: string;
   grammar?: string;
   vocabulary?: string;
 };
 
-type LessonCardProps = {
-  lesson: Lesson;
-};
-
-export const LessonCard = ({ lesson }: LessonCardProps) => {
+export const LessonCard = ({
+  task,
+  lessonObjective,
+  grammar,
+  vocabulary,
+}: LessonCardProps) => {
   return (
-    <Card className="bg-gray-300">
-      <b>
-        <List type={lesson.task.type} items={lesson.task.items} />
-      </b>
-      <p className="flex items-start gap-1 mt-2">
-        <Goal size={23} className="text-gray-400 shrink-0" />
-        <span>{lesson.lessonObjective}</span>
-      </p>
-      <div className="italic">
-        {lesson.grammar && (
-          <div className="flex items-start gap-1 mt-2">
-            <FileText size={23} className="text-gray-400 shrink-0" />
-            <span className="block">Grammar: {lesson.grammar}</span>
+    <>
+      <Card className="bg-gray-300 mb-4">
+        {task && (
+          <div className="mb-2">
+            <b>
+              <List type={task.type} items={task.items} />
+            </b>
           </div>
         )}
-        {lesson.vocabulary && (
-          <div className="flex items-start gap-1 mt-2">
-            <FileText size={23} className="text-gray-400 shrink-0" />
-            <span>Vocabulary: {lesson.vocabulary}</span>
-          </div>
-        )}
-      </div>
-    </Card>
+        <p className="flex items-start gap-1 translate-x-[-0.1rem]">
+          <Goal size={23} className="text-gray-400 shrink-0" />
+          <span>{lessonObjective}</span>
+        </p>
+        <div className="italic">
+          {grammar && (
+            <div className="flex items-start gap-1 mt-2 translate-x-[-0.1rem]">
+              <FileText size={23} className="text-gray-400 shrink-0" />
+              <span className="block">Grammar: {grammar}</span>
+            </div>
+          )}
+          {vocabulary && (
+            <div className="flex items-start gap-1 mt-2 translate-x-[-0.1rem]">
+              <FileText size={23} className="text-gray-400 shrink-0" />
+              <span>Vocabulary: {vocabulary}</span>
+            </div>
+          )}
+        </div>
+      </Card>
+    </>
   );
 };

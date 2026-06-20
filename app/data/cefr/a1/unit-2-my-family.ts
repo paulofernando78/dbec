@@ -18,7 +18,7 @@ import {
   portuguese,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonData";
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {

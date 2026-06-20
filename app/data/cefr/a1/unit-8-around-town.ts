@@ -18,7 +18,7 @@ import {
   portuguese,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonData";
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
@@ -334,19 +334,21 @@ export const lesson = {
 
   production: {
     task: {
-  instruction: "Complete the tasks:",
-  type: "checkbox",
-  items: [
-    {
-      value: text(["Describe the location of five places in your town."]),
-    },
-    {
-      value: text(["Ask and answer questions using 'Where is...?'"]),
-    },
-    {
-      value: text(["Draw a simple map and describe the locations using prepositions of place."]),
-    },
-  ],
-} satisfies ListProps,
+      instruction: "Complete the tasks:",
+      type: "checkbox",
+      items: [
+        {
+          value: text(["Describe the location of five places in your town."]),
+        },
+        {
+          value: text(["Ask and answer questions using 'Where is...?'"]),
+        },
+        {
+          value: text([
+            "Draw a simple map and describe the locations using prepositions of place.",
+          ]),
+        },
+      ],
+    } satisfies ListProps,
   },
 };

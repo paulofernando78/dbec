@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold, mark } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonData";
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
@@ -342,7 +342,7 @@ export const lesson = {
           value: text([
             "Write five Present Continuous sentences about people in your home.",
           ]),
-          textarea: true
+          textarea: true,
         },
       ],
     } satisfies ListProps,

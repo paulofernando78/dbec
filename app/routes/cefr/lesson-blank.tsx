@@ -1,5 +1,5 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { LessonObjective } from "@/components/content/LessonObjective";
+import { LessonCard } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { Meaning } from "@/components/content/Meaning";
@@ -27,8 +27,12 @@ export default function Introduction() {
         date={lesson.whiteboard.date}
       />
 
-      <div className="line-break">
-        <LessonObjective {...lesson.lessonObjective} />
+      <div>
+        <LessonCard
+          lessonObjective={lesson.lessonObjective.objective}
+          grammar={lesson.lessonObjective.grammar}
+          vocabulary={lesson.lessonObjective.vocabulary}
+        />
         <PageSections>
           <Section id="introduction" heading={4}>
             <Carousel

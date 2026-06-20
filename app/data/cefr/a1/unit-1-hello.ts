@@ -10,21 +10,17 @@ import {
   bold,
   italic,
   mark,
-  boldMark,
   underline,
-  stressed,
-  phonetics,
   portuguese,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonData";
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "Unit 1 • Hi, my name’s Laura.",
-    descriptions: ["What's your name? I’m Laura. Nice to meet you.", "..."],
-    date: "...",
+    descriptions: ["What's your name? I’m Laura. Nice to meet you."],
   },
 
   lessonObjective: {

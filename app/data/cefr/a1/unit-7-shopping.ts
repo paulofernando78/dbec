@@ -18,7 +18,7 @@ import {
   portuguese,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonData";
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
@@ -190,9 +190,9 @@ export const lesson = {
             },
             {
               parts: [bold("A:"), " This is a shirt."],
-              lineBreak: true
+              lineBreak: true,
             },
-            
+
             {
               parts: [bold("Q:"), " How much is this shirt?"],
             },
@@ -210,7 +210,7 @@ export const lesson = {
             },
             {
               parts: [bold("A:"), " These are shoes."],
-              lineBreak: true
+              lineBreak: true,
             },
             {
               parts: [bold("Q:"), " How much are these shoes?"],
@@ -229,7 +229,7 @@ export const lesson = {
             },
             {
               parts: [bold("A:"), " That is a jacket."],
-              lineBreak: true
+              lineBreak: true,
             },
             {
               parts: [bold("Q:"), " What are those?"],
