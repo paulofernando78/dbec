@@ -3,20 +3,9 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  text,
-  icon,
-  audio,
-  bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
-} from "@/helpers/content";
+import { content, text, audio } from "@/helpers/content";
+
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
@@ -26,10 +15,10 @@ export const lesson = {
     date: "...",
   },
 
-  lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+  lessonCard: {
+    lessonObjective: lessons.elementary.unitFour.lessonObjective,
+    grammar: lessons.elementary.unitFour.grammar,
+    vocabulary: lessons.elementary.unitFour.vocabulary,
   },
 
   introduction: {
@@ -75,7 +64,7 @@ export const lesson = {
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [

@@ -1,5 +1,5 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { LessonObjective } from "@/components/content/LessonObjective";
+import { LessonCard } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { Meaning } from "@/components/content/Meaning";
@@ -20,15 +20,9 @@ import { lesson } from "@/data/cefr/b2/unit-3-business-communication";
 export default function Introduction() {
   return (
     <>
-      <Whiteboard
-        title={lesson.whiteboard.title}
-        subtitle={lesson.whiteboard.subtitle}
-        descriptions={lesson.whiteboard.descriptions}
-        date={lesson.whiteboard.date}
-      />
-
-      <div className="line-break">
-        <LessonObjective {...lesson.lessonObjective} />
+      <Whiteboard {...lesson.whiteboard} />
+      <div>
+        <LessonCard {...lesson.lessonCard} />
         <PageSections>
           <Section id="introduction" heading={4}>
             <Carousel

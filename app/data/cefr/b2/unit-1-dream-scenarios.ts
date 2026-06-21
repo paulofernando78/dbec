@@ -3,33 +3,21 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  text,
-  icon,
-  audio,
-  bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
-} from "@/helpers/content";
+import { content, text, audio } from "@/helpers/content";
+
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
     title: "B2 Intermediate",
     subtitle: "Unit 1 • Dream Scenarios  ",
     descriptions: ["...", "..."],
-    date: "...",
   },
 
-  lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+  lessonCard: {
+    lessonObjective: lessons.upperIntermediate.unitOne.lessonObjective,
+    grammar: lessons.upperIntermediate.unitOne.grammar,
+    vocabulary: lessons.upperIntermediate.unitOne.vocabulary,
   },
 
   introduction: {
@@ -75,7 +63,7 @@ export const lesson = {
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [

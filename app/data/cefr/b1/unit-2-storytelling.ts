@@ -3,33 +3,22 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  text,
-  icon,
-  audio,
-  bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
-} from "@/helpers/content";
+import { content, text, audio, bold } from "@/helpers/content";
+
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
-    title: "B1 Pre-Intermediate",
+    title: "B1 Intermediate",
     subtitle: "Unit 2 • Storytelling",
     descriptions: ["...", "..."],
     date: "...",
   },
 
-  lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+  lessonCard: {
+    lessonObjective: lessons.intermediate.unitTwo.lessonObjective,
+    grammar: lessons.intermediate.unitTwo.grammar,
+    vocabulary: lessons.intermediate.unitTwo.vocabulary,
   },
 
   introduction: {

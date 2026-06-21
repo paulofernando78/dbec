@@ -3,33 +3,22 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  text,
-  icon,
-  audio,
-  bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
-} from "@/helpers/content";
+import { content, text, audio, bold } from "@/helpers/content";
+
+import { lessons } from "@/data/dashboard/lessonCardData";
 
 export const lesson = {
   whiteboard: {
-    title: "B1 Pre-Intermediate",
+    title: "B1 Intermediate",
     subtitle: "Unit 8 • What Did They Say",
     descriptions: ["...", "..."],
     date: "...",
   },
 
-  lessonObjective: {
-    objective: "...",
-    grammar: "...",
-    vocabulary: "...",
+  lessonCard: {
+    lessonObjective: lessons.intermediate.unitEight.lessonObjective,
+    grammar: lessons.intermediate.unitEight.grammar,
+    vocabulary: lessons.intermediate.unitEight.vocabulary,
   },
 
   introduction: {
@@ -75,7 +64,7 @@ export const lesson = {
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
