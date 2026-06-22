@@ -6,22 +6,18 @@ import { lessons } from "@/data/cefr/elementaryLessonCard";
 export default function Dashboard() {
   return (
     <>
-      <Whiteboard
-        title="Course"
-        subtitle="A2 Elementary"
-        descriptions={["..."]}
-      />
+      <Whiteboard title="Course" subtitle="A2 Elementary" />
       <div>
-            <LessonCard {...lessons.unitOne} />
-            <LessonCard {...lessons.unitTwo} />
-            <LessonCard {...lessons.unitThree} />
-            <LessonCard {...lessons.unitFour} />
-            <LessonCard {...lessons.unitFive} />
-            <LessonCard {...lessons.unitSix} />
-            <LessonCard {...lessons.unitSeven} />
-            <LessonCard {...lessons.unitEight} />
-            <LessonCard {...lessons.unitNine} />
-            <LessonCard {...lessons.unitTen} />
+        <LessonCard {...lessons.unitOne} />
+        <LessonCard {...lessons.unitTwo} />
+        <LessonCard {...lessons.unitThree} />
+        <LessonCard {...lessons.unitFour} />
+        <LessonCard {...lessons.unitFive} />
+        <LessonCard {...lessons.unitSix} />
+        <LessonCard {...lessons.unitSeven} />
+        <LessonCard {...lessons.unitEight} />
+        <LessonCard {...lessons.unitNine} />
+        <LessonCard {...lessons.unitTen} />
       </div>
     </>
   );

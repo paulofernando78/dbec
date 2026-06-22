@@ -9,9 +9,7 @@ import { lessons } from "@/data/cefr/intermediateLessonCard";
 export default function Dashboard() {
   return (
     <>
-      <Whiteboard title="Course" 
-      subtitle="B1 Intermediate"
-      descriptions={["..."]} />
+      <Whiteboard title="Course" subtitle="B1 Intermediate" />
       <div>
         <LessonCard {...lessons.unitOne} />
         <LessonCard {...lessons.unitTwo} />

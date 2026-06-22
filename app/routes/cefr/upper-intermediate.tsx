@@ -6,11 +6,7 @@ import { lessons } from "@/data/cefr/upperIntermedateLessonsCard";
 export default function Dashboard() {
   return (
     <>
-      <Whiteboard
-        title="Course"
-        subtitle="B2 Upper-Intermediate"
-        descriptions={["..."]}
-      />
+      <Whiteboard title="Course" subtitle="B2 Upper-Intermediate" />
       <div>
         <LessonCard {...lessons.unitOne} />
         <LessonCard {...lessons.unitTwo} />
