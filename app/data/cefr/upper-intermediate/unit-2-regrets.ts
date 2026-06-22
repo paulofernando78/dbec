@@ -5,20 +5,20 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonCardData";
+import { lessons } from "@/data/cefr/intermediateLessonCard";
 
 export const lesson = {
   whiteboard: {
-    title: "B2 Intermediate",
+    title: "B2 Upper-Intermediate",
     subtitle: "Unit 2 • Regrets",
     descriptions: ["...", "..."],
     date: "...",
   },
 
   lessonCard: {
-    lessonObjective: lessons.upperIntermediate.unitTwo.lessonObjective,
-    grammar: lessons.upperIntermediate.unitTwo.grammar,
-    vocabulary: lessons.upperIntermediate.unitTwo.vocabulary,
+    lessonObjective: lessons.unitTwo.lessonObjective,
+    grammar: lessons.unitTwo.grammar,
+    vocabulary: lessons.unitTwo.vocabulary,
   },
 
   introduction: {

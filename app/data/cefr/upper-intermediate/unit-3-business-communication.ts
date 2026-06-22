@@ -5,19 +5,19 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonCardData";
+import { lessons } from "@/data/cefr/intermediateLessonCard";
 
 export const lesson = {
   whiteboard: {
-    title: "B2 Intermediate",
+    title: "B2 Upper-Intermediate",
     subtitle: "Unit 3 • Business Communication",
     descriptions: ["...", "..."],
   },
 
   lessonCard: {
-    lessonObjective: lessons.upperIntermediate.unitThree.lessonObjective,
-    grammar: lessons.upperIntermediate.unitThree.grammar,
-    vocabulary: lessons.upperIntermediate.unitThree.vocabulary,
+    lessonObjective: lessons.unitThree.lessonObjective,
+    grammar: lessons.unitThree.grammar,
+    vocabulary: lessons.unitThree.vocabulary,
   },
 
   introduction: {

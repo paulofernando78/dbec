@@ -10,7 +10,7 @@ import {
   bold,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonCardData";
+import { lessons } from "@/data/cefr/beginnerLessonCardData";
 
 export const lesson = {
   whiteboard: {
@@ -20,9 +20,9 @@ export const lesson = {
   },
 
   lessonCard: {
-    lessonObjective: lessons.beginner.unitSeven.lessonObjective,
-    grammar: lessons.beginner.unitSeven.grammar,
-    vocabulary: lessons.beginner.unitSeven.vocabulary,
+    lessonObjective: lessons.unitSeven.lessonObjective,
+    grammar: lessons.unitSeven.grammar,
+    vocabulary: lessons.unitSeven.vocabulary,
   },
 
   introduction: {

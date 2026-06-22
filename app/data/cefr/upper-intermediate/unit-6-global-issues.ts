@@ -5,19 +5,19 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonCardData";
+import { lessons } from "@/data/cefr/intermediateLessonCard";
 
 export const lesson = {
   whiteboard: {
-    title: "B2 Intermediate",
+    title: "B2 Upper-Intermediate",
     subtitle: "Unit 6 • Global Issues",
     descriptions: ["...", "..."],
   },
 
   lessonCard: {
-    lessonObjective: lessons.upperIntermediate.unitSix.lessonObjective,
-    grammar: lessons.upperIntermediate.unitSix.grammar,
-    vocabulary: lessons.upperIntermediate.unitSix.vocabulary,
+    lessonObjective: lessons.unitSix.lessonObjective,
+    grammar: lessons.unitSix.grammar,
+    vocabulary: lessons.unitSix.vocabulary,
   },
 
   introduction: {

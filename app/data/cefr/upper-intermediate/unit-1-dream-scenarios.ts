@@ -5,19 +5,19 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonCardData";
+import { lessons } from "@/data/cefr/upperIntermedateLessonsCard";
 
 export const lesson = {
   whiteboard: {
-    title: "B2 Intermediate",
+    title: "B2 Upper-Intermediate",
     subtitle: "Unit 1 • Dream Scenarios  ",
     descriptions: ["...", "..."],
   },
 
   lessonCard: {
-    lessonObjective: lessons.upperIntermediate.unitOne.lessonObjective,
-    grammar: lessons.upperIntermediate.unitOne.grammar,
-    vocabulary: lessons.upperIntermediate.unitOne.vocabulary,
+    lessonObjective: lessons.unitOne.lessonObjective,
+    grammar: lessons.unitOne.grammar,
+    vocabulary: lessons.unitOne.vocabulary,
   },
 
   introduction: {

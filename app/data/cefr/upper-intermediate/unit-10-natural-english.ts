@@ -5,20 +5,20 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/dashboard/lessonCardData";
+import { lessons } from "@/data/cefr/intermediateLessonCard";
 
 export const lesson = {
   whiteboard: {
-    title: "B2 Intermediate",
+    title: "B2 Upper-Intermediate",
     subtitle: "Unit 10 • Natural English",
     descriptions: ["...", "..."],
     date: "...",
   },
 
   lessonCard: {
-    lessonObjective: lessons.upperIntermediate.unitTen.lessonObjective,
-    grammar: lessons.upperIntermediate.unitTen.grammar,
-    vocabulary: lessons.upperIntermediate.unitTen.vocabulary,
+    lessonObjective: lessons.unitTen.lessonObjective,
+    grammar: lessons.unitTen.grammar,
+    vocabulary: lessons.unitTen.vocabulary,
   },
 
   introduction: {
