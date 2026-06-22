@@ -38,7 +38,7 @@ export const links = [
     title: "Miscellaneous",
     links: [
       {
-        href: "/c1-c2/ted-ed",
+        href: "/misc/ted-ed",
         label: "TED-Ed",
       },
       {

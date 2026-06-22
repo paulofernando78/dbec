@@ -3,13 +3,14 @@ import { List } from "@/components/content/List";
 
 import type { ListProps } from "@/components/content/List";
 
-import { Goal, FileText } from "lucide-react";
+import { Goal, FileText, CalendarDays } from "lucide-react";
 
 type LessonCardProps = {
   task?: ListProps;
   lessonObjective: string;
   grammar?: string;
   vocabulary?: string;
+  date?: string;
 };
 
 export const LessonCard = ({
@@ -17,6 +18,7 @@ export const LessonCard = ({
   lessonObjective,
   grammar,
   vocabulary,
+  date,
 }: LessonCardProps) => {
   return (
     <>
@@ -43,6 +45,12 @@ export const LessonCard = ({
             <div className="flex items-start gap-1 mt-2 translate-x-[-0.1rem]">
               <FileText size={23} className="text-gray-400 shrink-0" />
               <span>Vocabulary: {vocabulary}</span>
+            </div>
+          )}
+          {date && (
+            <div className="flex items-start gap-1 mt-2 translate-x-[-0.1rem]">
+              <CalendarDays size={23} className="text-gray-400 shrink-0" />
+              <span>{date}</span>
             </div>
           )}
         </div>

@@ -25,12 +25,12 @@ export default [
 
     route(
       "cefr",
-      "routes/cefr/whats-cefr.tsx"),
+      "routes/whats-cefr.tsx"),
 
     // Lesson Blanks
     route(
       "cefr/lesson-blank",
-      "routes/cefr/lesson-blank.tsx"),
+      "routes/lesson-blank.tsx"),
 
     // A1 BEGINNER
     route(
