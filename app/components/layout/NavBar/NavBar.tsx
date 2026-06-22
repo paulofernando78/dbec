@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { links } from "./NavBarLinks";
+import { links } from "../../../data/NavBarLinks";
 
 
 export type NavItem = {

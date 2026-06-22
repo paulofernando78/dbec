@@ -212,10 +212,9 @@ export default [
     ),
 
     // Misc
-
     route(
-      "misc/random-topics",
-      "routes/misc/random-topics.tsx"),
+      "misc/news",
+      "routes/misc/news.tsx"),
 
     // Ted-ED
     route(

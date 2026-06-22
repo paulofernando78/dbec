@@ -38,6 +38,10 @@ export const links = [
     title: "Miscellaneous",
     links: [
       {
+        href: "/misc/news",
+        label: "News",
+      },
+      {
         href: "/misc/ted-ed",
         label: "TED-Ed",
       },
