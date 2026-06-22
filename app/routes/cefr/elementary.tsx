@@ -1,7 +1,7 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
-import { lessons } from "@/data/dashboard/lessonCardData";
+import { lessons } from "@/data/cefr/elementaryLessonCard";
 
 export default function Dashboard() {
   return (
@@ -12,16 +12,16 @@ export default function Dashboard() {
         descriptions={["..."]}
       />
       <div>
-            <LessonCard {...lessons.elementary.unitOne} />
-            <LessonCard {...lessons.elementary.unitTwo} />
-            <LessonCard {...lessons.elementary.unitThree} />
-            <LessonCard {...lessons.elementary.unitFour} />
-            <LessonCard {...lessons.elementary.unitFive} />
-            <LessonCard {...lessons.elementary.unitSix} />
-            <LessonCard {...lessons.elementary.unitSeven} />
-            <LessonCard {...lessons.elementary.unitEight} />
-            <LessonCard {...lessons.elementary.unitNine} />
-            <LessonCard {...lessons.elementary.unitTen} />
+            <LessonCard {...lessons.unitOne} />
+            <LessonCard {...lessons.unitTwo} />
+            <LessonCard {...lessons.unitThree} />
+            <LessonCard {...lessons.unitFour} />
+            <LessonCard {...lessons.unitFive} />
+            <LessonCard {...lessons.unitSix} />
+            <LessonCard {...lessons.unitSeven} />
+            <LessonCard {...lessons.unitEight} />
+            <LessonCard {...lessons.unitNine} />
+            <LessonCard {...lessons.unitTen} />
       </div>
     </>
   );
