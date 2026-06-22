@@ -41,9 +41,11 @@ export function NavBar({ closeNavBar }: NavBarProps) {
       {links.map((group) => (
         <div key={group.title}>
           {group.title && (
-            <span className="block font-bold mt-4 uppercase">
-              {group.title}
-            </span>
+            <>
+              <span className="block font-bold mt-4 uppercase">
+                {group.title}
+              </span>
+            </>
           )}
 
           <div>
