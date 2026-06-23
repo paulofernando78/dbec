@@ -1,134 +1,71 @@
-import type { ListProps } from "@/components/content/List";
-
-import { text } from "@/helpers/content";
 
 export const lessons = {
   unitOne: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 1 • Dream Scenarios"]),
-        },
-      ],
-    } satisfies ListProps,
-    lessonObjective: "By the end of this class, students will be able to discuss hypothetical situations, talk about unreal present and future scenarios, express ambitions and wishes, and use the Second Conditional accurately.",
+    href: "/cefr/upper-intermediate/unit-1-dream-scenarios",
+    link: "Unit 1 • Dream Scenarios",
+    lessonObjective: "By the end of this class, students will be able to discuss hypothetical and imaginary situations, speculate about different life choices and their consequences, express opinions about unreal scenarios, and use the Second Conditional accurately and naturally.",
     grammar: "Second Conditional",
-    vocabulary: "Ambitions",
+    vocabulary: "Dreams, ambitions, and life choices"
   },
   unitTwo: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 2 • Regrets"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-2-regrets",
+    link: "Unit 2 • Regrets",
     lessonObjective: "By the end of this class, students will be able to talk about past regrets, analyze alternative outcomes, reflect on personal experiences, and use the Third Conditional correctly.",
     grammar: "Third Conditional",
     vocabulary: "Personal experiences",
   },
   unitThree: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 3 • Business Communication"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-3-business-communication",
+    link: "Unit 3 • Business Communication",
     lessonObjective: "By the end of this class, students will be able to communicate effectively in professional contexts, express degrees of certainty and obligation, discuss workplace situations, and use advanced modal verbs accurately.",
     grammar: "Advanced Modals",
     vocabulary: "Business",
   },
   unitFour: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 4 • Leadership"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-4-leadership",
+    link: "Unit 4 • Leadership",
     lessonObjective: "By the end of this class, students will be able to talk about leadership and management, describe services performed by others, delegate responsibilities, and use the causative form correctly.",
     grammar: "Causative",
     vocabulary: "Grammar",
   },
   unitFive: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 5 • Innovation"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-5-innovation",
+    link: "Unit 5 • Innovation",
     lessonObjective: "By the end of this class, students will be able to discuss future achievements, make predictions about technological developments, describe completed future actions, and use the Future Perfect accurately.",
     grammar: "Future Perfect",
     vocabulary: "Technology",
   },
   unitSix: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 6 • Global Issues"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-6-global-issues",
+    link: "Unit 6 • Global Issues",
     lessonObjective: "By the end of this class, students will be able to discuss global and social issues, report information objectively, describe processes and systems, and use advanced passive structures correctly.",
     grammar: "Passive (advanced)",
     vocabulary: "Society",
   },
   unitSeven: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 7 • Debate Club"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-7-debate-club",
+    link: "Unit 7 • Debate Club",
     lessonObjective: "By the end of this class, students will be able to participate in debates, organize arguments logically, express agreement and disagreement effectively, and use discourse markers naturally.",
     grammar: "Discourse Markers",
     vocabulary: "Arguments",
   },
   unitEight: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 8 • Media and Marketing"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-8-media-and-marketing",
+    link: "Unit 8 • Media and Marketing",
     lessonObjective: "By the end of this class, students will be able to discuss media and marketing strategies, describe products and campaigns in detail, combine ideas fluently, and use complex relative clauses accurately.",
     grammar: "Complex Relative Clauses",
     vocabulary: "Marketing",
   },
   unitNine: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 9 • Native-Like English"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-9-native-like-english",
+    link: "Unit 9 • Native-Like English",
     lessonObjective: "By the end of this class, students will be able to understand and use common idioms and expressions, interpret figurative language, and communicate more naturally in everyday and professional situations.",
     grammar: "Idioms",
     vocabulary: "Idioms & Expressions",
   },
   unitTen: {
-    task: {
-      type: "checkbox",
-      items: [
-        {
-          value: text(["Unit 10 • Natural English"]),
-        },
-      ],
-    } satisfies ListProps,
+    href: "/cefr/upper-intermediate/unit-10-natural-english",
+    link: "Unit 10 • Natural English",
     lessonObjective: "By the end of this class, students will be able to use advanced collocations and phrasal verbs naturally, improve fluency and precision, and communicate with greater confidence in a wide range of situations.",
     grammar: "Collocations & Advanced Phrasal Verbs",
     vocabulary: "High-frequency B2 language",

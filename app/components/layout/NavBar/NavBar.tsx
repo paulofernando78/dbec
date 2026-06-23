@@ -30,7 +30,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         px-5
         py-4
         text-white
-        bg-gray-800
+        bg-gray-900
         rounded-tl-lg
         rounded-tr-lg
         rounded-br-lg
@@ -38,8 +38,8 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         overflow-y-auto
         "
     >
-      {links.map((group) => (
-        <div key={group.title}>
+      {links.map((group, index) => (
+        <div key={group.title ?? `group-${index}`}>
           {group.title && (
             <>
               <span className="block font-bold mt-4 uppercase">

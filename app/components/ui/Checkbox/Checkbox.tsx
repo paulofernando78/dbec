@@ -6,7 +6,7 @@ export const Checkbox = () => {
     <>
       <input type="checkbox" className={styles.input} />
       <span className={styles.box}>
-        <Check size={14} />
+        <Check size={14} className=""/>
       </span>
     </>
   );
