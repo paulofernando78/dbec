@@ -1,6 +1,6 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
-import { Section } from "@/components/content/Section";
+import { Section } from "@/components/ui/Section";
 import { Paragraph } from "@/components/content/Paragraph";
 import { Line } from "@/components/content/Line";
 import { List } from "@/components/content/List";

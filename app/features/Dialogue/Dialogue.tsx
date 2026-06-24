@@ -25,14 +25,14 @@ export const Dialogue = ({
   lines = [],
 }: DialogueProps) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mb-4">
       <p>
         <b>{prompt}</b>
       </p>
       <AudioPlayer src={audioSrc} />
       {lines.map((line, index) => (
         <p key={index}>
-          <b>{line.speaker}: </b>
+          <b className="py-1 px-1 border border-gray-400 rounded-lg">{line.speaker}</b>{" "}
           <InlineRichContent value={line.line ?? []} />
         </p>
       ))}

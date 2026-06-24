@@ -250,5 +250,10 @@ export const dictionary = (file: string): string => {
 };
 
 export const lineBreak = (): ContentToken => ({
-  lineBreak: true
-})
+  lineBreak: true,
+});
+
+export const space = () =>
+  ({
+    type: "space",
+  }) as const;

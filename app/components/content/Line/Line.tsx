@@ -4,11 +4,11 @@ import {
 } from "@/components/content/InlineRichContent";
 
 type LineProps = {
-  as?: "div" | "p" | "span";
+  as?: "p" | "span";
   value?: InlineRichContentValue[];
 };
 
-export const Line = ({as: Tag = "div", value = [] }: LineProps) => {
+export const Line = ({as: Tag = "p", value = [] }: LineProps) => {
   return (
     <Tag className={Tag === "span" ? "block" : ""}>
       <InlineRichContent value={value} />

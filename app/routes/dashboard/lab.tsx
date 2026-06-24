@@ -1,6 +1,6 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
-import { Section } from "@/components/content/Section";
+import { Section } from "@/components/ui/Section";
 import { Line } from "@/components/content/Line";
 import { Paragraph } from "@/components/content/Paragraph";
 import { Image } from "@/components/ui/Image";
@@ -40,7 +40,7 @@ export default function Playground() {
       <Whiteboard
         title="Title (Mock)"
         subtitle="Subtitle"
-        descriptions={["Thimbleweed park",]}
+        descriptions={["Thimbleweed park"]}
       />
       <div className="line-break">
         <PageSections>

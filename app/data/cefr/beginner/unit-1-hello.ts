@@ -8,10 +8,12 @@ import {
   text,
   audio,
   bold,
+  italic,
   mark,
   underline,
   portuguese,
   lineBreak,
+  space
 } from "@/helpers/content";
 
 import { lessons } from "@/data/cefr/beginnerLessonCardData";
@@ -20,7 +22,6 @@ export const lesson = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "Unit 1 • Hi, my name’s Laura.",
-    descriptions: ["What's your name? I’m Laura. Nice to meet you."],
   },
 
   lessonCard: {
@@ -185,59 +186,238 @@ export const lesson = {
 
   languageFocus: {
     greetings: [
-      ...content({
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi.mp3",
-          ),
-          "Hi!",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi-there.mp3",
-          ),
-          "Hi there!",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hello.mp3",
-          ),
-          "Hello!",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//hey.mp3",
-          ),
-          "Hey!",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-morning.mp3",
-          ),
-          "Good morning.",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/morning.mp3",
-          ),
-          "Morning.",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-afternoon.mp3",
-          ),
-          "Good afternoon.",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//afternoon.mp3",
-          ),
-          "Afternoon.",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-evening.mp3",
-          ),
-          "Good evening.",
-          lineBreak(),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//evening.mp3",
-          ),
-          "Evening.",
-        ],
-      }),
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi.mp3",
+            ),
+            "Hi!",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi-there.mp3",
+            ),
+            "Hi there!",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hello.mp3",
+            ),
+            "Hello!",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//hey.mp3",
+            ),
+            "Hey!",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-morning.mp3",
+            ),
+            "Good morning.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/morning.mp3",
+            ),
+            "Morning.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-afternoon.mp3",
+            ),
+            "Good afternoon.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//afternoon.mp3",
+            ),
+            "Afternoon.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-evening.mp3",
+            ),
+            "Good evening.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(
+              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//evening.mp3",
+            ),
+            "Evening.",
+          ],
+        }),
+      ],
+    ],
+    askingQuestions: [
+      [
+        ...content({
+          parts: [
+            audio("/"),
+            "How are you?",
+            " ",
+            portuguese("Como você está?"),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio("/"),
+            "How are you doing?",
+            " ",
+            portuguese("Como você vai?"),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio("/"),
+            "How are you?",
+            " ",
+            portuguese("Como você está?"),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio("/"),
+            "How are you doing?",
+            " ",
+            portuguese("Como você vai?"),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio("/"),
+            "I am...",
+            " ",
+            audio("/"),
+            "I’m...",
+            " ",
+            portuguese("Estou..."),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "good.", " ", italic("informal")],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "pretty good.", " ", italic("informal")],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "well."],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "great."],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "fine."],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "can’t complain"],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "same as usual"],
+        }),
+      ],
+      space(),
+      [
+        ...content({
+          parts: [audio("/"), "How’s it going?"],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "How’s everything?"],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "How are things?"],
+        }),
+      ],
+      space(),
+      [
+        ...content({
+          parts: [audio("/"), "What’s up?"],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "Nothing much.", " ", portuguese("Nada demais.")],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio("/"),
+            "Not much, you?",
+            " ",
+            portuguese("Nada demais, e você?"),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [audio("/"), "Just chilling.", " ", portuguese("De boa.")],
+        }),
+      ],
     ],
     personalInformation: [
       [
@@ -332,9 +512,12 @@ export const lesson = {
             "Nice to meet you.",
             lineBreak(),
             audio(".../nice-to-meet-you-2.mp3"),
-            "Nice to mee", underline("t y"), "ou.",
+            "Nice to mee",
+            underline("t y"),
+            "ou.",
             lineBreak(),
-            audio(".../nice-meeting-you.mp3"), "Nice to meeting you."
+            audio(".../nice-meeting-you.mp3"),
+            "Nice to meeting you.",
           ],
         }),
       ],
@@ -344,7 +527,7 @@ export const lesson = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/first-name-given-name.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/first-name-given-name.mp3",
           ),
           bold("first name"),
           " = given name",
@@ -354,7 +537,7 @@ export const lesson = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/last-name-surname-family-name.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/last-name-surname-family-name.mp3",
           ),
           bold("last name / surname name"),
           " = family name",
@@ -364,11 +547,11 @@ export const lesson = {
     ccq: [
       {
         as: "span",
-        parts: ["..."],
+        parts: ["Is 'Laura' a first name or a last name?"],
       },
       {
         as: "span",
-        parts: ["..."],
+        parts: ["Is 'Palmer' a first name or a last name?"],
       },
     ] satisfies CCQ[],
   },
@@ -379,24 +562,38 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "What's her name?",
+            question: "What's your first name?",
             options: [
               { option: "Laura", isCorrect: true },
-              { option: "Eric", isCorrect: false },
+              { option: "Palmer", isCorrect: false },
             ],
           },
           {
-            question: "What is Laura's last name?",
+            question: "What's your last name?",
             options: [
               { option: "Palmer", isCorrect: true },
-              { option: "Eric", isCorrect: false },
+              { option: "Laura", isCorrect: false },
             ],
           },
           {
             question: "How is Eric?",
             options: [
-              { option: "He is pretty good.", isCorrect: true },
-              { option: "His name is Palmer.", isCorrect: false },
+              { option: "Pretty good.", isCorrect: true },
+              { option: "Tired.", isCorrect: false },
+            ],
+          },
+          {
+            question: "Laura says:",
+            options: [
+              { option: "Nice to meet you.", isCorrect: true },
+              { option: "Good night.", isCorrect: false },
+            ],
+          },
+          {
+            question: "How do you ask someone's name?",
+            options: [
+              { option: "What's your name?", isCorrect: true },
+              { option: "How old are you?", isCorrect: false },
             ],
           },
         ],
@@ -461,13 +658,12 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["..."]),
+          value: text(["Introduce yourself to a classmate."]),
         },
         {
-          value: text(["..."]),
-        },
-        {
-          value: text(["..."]),
+          value: text([
+            "Ask your partner's first and last name and spell them.",
+          ]),
         },
       ],
     } satisfies ListProps,

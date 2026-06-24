@@ -22,7 +22,7 @@ export const Section = ({ id, label, heading = 2, children }: SectionProps) => {
       <Ribbon>
         <HeadingTag>{resolvedLabel}</HeadingTag>
       </Ribbon>
-      <div className="space-y-4">{children}</div>
+      <div>{children}</div>
     </section>
   );
 };

@@ -58,7 +58,7 @@ export const Radio = ({
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 mb-4">
       <p className="font-bold">{instruction}</p>
       {questions.map((q, qIndex) => (
         <div key={qIndex}>

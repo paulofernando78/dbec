@@ -196,10 +196,9 @@ const notes = [
 export const TheAlphabet = () => {
   return (
     <>
-      <Ribbon label="The Alphabet" bgColor="bg-slate-500" />
+      <Ribbon label="The Alphabet" bgColor="bg-slate-500"/>
       <LineBreak />
       <Line
-        as="p"
         value={[
           ...content({
             audio: "/assets/audio/pronunciation/the-alphabet/26-letters.mp3",
@@ -207,7 +206,7 @@ export const TheAlphabet = () => {
           }),
         ]}
       />
-      <div className="flex justify-center flex-wrap gap-2">
+      <div className="flex justify-center flex-wrap gap-2 my-4">
         {alphabet.map((a, i) => (
           <div
             key={i}

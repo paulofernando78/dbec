@@ -1,7 +1,7 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonCard } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
-import { Section } from "@/components/content/Section";
+import { Section } from "@/components/ui/Section";
 import { Meaning } from "@/components/content/Meaning";
 import { Notes } from "@/components/content/Notes";
 import { List } from "@/components/content/List";
@@ -20,8 +20,7 @@ import { lesson } from "@/data/lesson-blank";
 export default function Introduction() {
   return (
     <>
-      <Whiteboard {...lesson.whiteboard}
-      />
+      <Whiteboard {...lesson.whiteboard} />
 
       <div>
         <LessonCard {...lesson.lessonCard} />

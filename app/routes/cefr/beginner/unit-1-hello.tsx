@@ -1,17 +1,16 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonCard } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
-import { Section } from "@/components/content/Section";
-import { Ribbon } from "@/components/ui/Ribbon";
+import { Section } from "@/components/ui/Section";
+import { Subsection } from "@/components/ui/Subsection";
 import { List } from "@/components/content/List";
-import { Line } from "@/components/content/Line";
+import { Lines } from "@/components/content/Lines";
 import { Notes } from "@/components/content/Notes";
 import { CCQ } from "@/components/content/CCQ";
 
 import { Dialogue } from "@/features/Dialogue/Dialogue";
 import { TheAlphabet } from "@/features/TheAlphabet";
 
-import { ColumnDrag } from "@/components/content/Column";
 import { Carousel } from "@/components/ui/Carousel";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
@@ -26,7 +25,7 @@ export default function Introduction() {
       <div>
         <LessonCard {...lesson.lessonCard} />
         <PageSections>
-          <Section id="introduction" heading={4}>
+          <Section id="introduction" heading={3}>
             <Carousel
               aspectRatio="wide"
               {...lesson.introduction.carouselWide}
@@ -34,24 +33,24 @@ export default function Introduction() {
             <Radio {...lesson.introduction.radio} />
           </Section>
 
-          <Section id="Presentation" heading={4}>
+          <Section id="Presentation" heading={3}>
             <Dialogue {...lesson.presentation.dialogue} />
           </Section>
 
-          <Section id="Language Focus" heading={4}>
-            <Ribbon label="Greetings" bgColor="bg-slate-500" />
-            <Line as="span" value={lesson.languageFocus.greetings} />
+          <Section id="Language Focus" heading={3}>
+            <Subsection label="Greetings" heading={4} />
+            <Lines value={lesson.languageFocus.greetings} />
+            <Subsection label="Asking ..." heading={4} />
+            <Lines value={lesson.languageFocus.askingQuestions} />
             <TheAlphabet />
-            <Ribbon label="Personal Information" bgColor="bg-slate-500" />
-            {lesson.languageFocus.personalInformation.map((line, index) => (
-              <Line key={index} as="p" value={line} />
-            ))}
+            <Subsection label="Personal Information" heading={4} />
+            <Lines value={lesson.languageFocus.personalInformation} />
             {/* <ColumnDrag {...lesson.languageFocus.personalInformation} /> */}
             <Notes value={lesson.languageFocus.notes} />
             <CCQ value={lesson.languageFocus.ccq} />
           </Section>
 
-          <Section id="Practice" heading={4}>
+          <Section id="Practice" heading={3}>
             <Radio {...lesson.practice.radio} />
 
             <FillInTheBlanks {...lesson.practice.fillInTheBlanks} />
@@ -59,7 +58,7 @@ export default function Introduction() {
             <Unscramble {...lesson.practice.scramble} />
           </Section>
 
-          <Section id="Production" heading={4}>
+          <Section id="Production" heading={3}>
             <List {...lesson.production.task} />
           </Section>
         </PageSections>

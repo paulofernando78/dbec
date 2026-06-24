@@ -1,6 +1,6 @@
 import { Image } from "@/components/ui/Image";
 import { LineBreak } from "@/components/content/LineBreak";
-import { Section } from "@/components/content/Section";
+import { Section } from "@/components/ui/Section";
 
 const formation = [
   {

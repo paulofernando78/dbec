@@ -6,7 +6,7 @@ import type { InlineRichContentValue } from "@/components/content/InlineRichCont
 import { CircleQuestionMark } from "lucide-react";
 
 export type CCQ = {
-  as?: "div" | "p" | "span";
+  as?: "p" | "span";
   parts: InlineRichContentValue[];
 };
 
@@ -16,11 +16,11 @@ export type CCQProps = {
 
 export const CCQ = ({ value = [] }: CCQProps) => {
   return (
-    <Card className="bg-amber-100 border">
+    <Card className="bg-amber-100 border mb-4">
       <div className="flex gap-2">
         <CircleQuestionMark className="text-gray-400" />
         <span className="block mb-4 relative top-0.5">
-          <b>CHECKING</b>
+          <b>Concept Checking Question!</b>
         </span>
       </div>
       {value.map((note, index) => (

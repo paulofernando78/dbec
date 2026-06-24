@@ -76,7 +76,7 @@ export const Unscramble = ({
   const totalBlanks = items.length;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 mb-4">
       <div>
         <p className="font-bold mb-4">{instruction}</p>
         {items.map((item, index) => {
