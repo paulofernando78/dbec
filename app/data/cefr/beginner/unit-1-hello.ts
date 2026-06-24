@@ -12,6 +12,7 @@ import {
   mark,
   underline,
   portuguese,
+  lineBreak
 } from "@/helpers/content";
 
 import { lessons } from "@/data/cefr/beginnerLessonCardData";
@@ -31,55 +32,58 @@ export const lesson = {
 
   introduction: {
     carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+      prompt: "Look at the pictures. Laura and Eric are at school. Now listen to the sentences.",
       imgs: [
+        // Laura says, “Hi! I'm Laura.””
         {
-          src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction1.avif",
+          src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-introduction1.avif",
           alt: "...",
           content: [
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/introduction/laura-says-hi-im-laura.mp3",
+                  "/assets/audio/cefr/a1/unit-1-hello/introduction/laura-says-hi-im-laura.mp3",
                 ),
                 "Laura says, “Hi! I'm Laura.”",
-                " ",
+                lineBreak(),
                 portuguese("Laura diz: “Oi! Eu sou a Laura.”"),
               ],
             }),
           ],
         },
+        // Eric says, “Hello! I'm Eric.””
         {
-          src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-introduction2.avif",
+          src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-introduction2.avif",
           alt: "...",
           content: [
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/introduction/eric-says-hello-im-eric.mp3",
+                  "/assets/audio/cefr/a1/unit-1-hello/introduction/eric-says-hello-im-eric.mp3",
                 ),
                 "Eric says, “Hello! I'm Eric.”",
-                " ",
+                lineBreak(),
                 portuguese("Eric diz: “Olá! Eu sou o Eric.”"),
               ],
             }),
           ],
         },
+        // They shake hands.
         {
-          src: "/assets/img/lessons/cefr/a1/hi-my-names-laura/introduction/laura-eric-shake-hands.avif",
+          src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-shake-hands.avif",
           alt: "...",
           content: [
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/introduction/they-shake-hands.mp3",
+                  "/assets/audio/cefr/a1/unit-1-hello/introduction/they-shake-hands.mp3",
                 ),
                 "They",
                 " ",
                 mark("shake"),
                 " ",
                 "hands.",
-                " ",
+                lineBreak(),
                 portuguese("Eles se cumprimentam."),
               ],
             }),
@@ -93,17 +97,17 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "Laura and Jessica at home?",
+            question: "Laura and Jessica are at home.",
             options: [
-              { option: "at home", isCorrect: false },
-              { option: "at scool", isCorrect: true },
+              { option: "true.", isCorrect: false },
+              { option: "false", isCorrect: true },
             ],
           },
           {
-            question: "Are they old friends?",
+            question: "They are new friends.",
             options: [
-              { option: "true", isCorrect: false },
-              { option: "false", isCorrect: true },
+              { option: "true", isCorrect: true },
+              { option: "false", isCorrect: false },
             ],
           },
           {

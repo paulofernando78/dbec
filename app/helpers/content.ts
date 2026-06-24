@@ -248,3 +248,7 @@ export const dictionary = (file: string): string => {
 
   return `/assets/img/dictionary/${first}/${file}`;
 };
+
+export const lineBreak = (): ContentToken => ({
+  lineBreak: true
+})

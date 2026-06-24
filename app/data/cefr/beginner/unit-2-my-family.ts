@@ -30,11 +30,11 @@ export const lesson = {
       prompt: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
+          src: "/assets/img/cefr/a1/unit-2-my-family/introduction/laura-mother.avif",
           alt: "Mother",
           content: [
             ...content({
-              parts: [audio("/"), "This is my mother."],
+              parts: [audio("/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-mom.mp3"), "Laura says: \"This is my mom.\""],
             }),
           ],
         },
@@ -43,7 +43,7 @@ export const lesson = {
           alt: "Father",
           content: [
             ...content({
-              parts: [audio("/"), "This is my father."],
+              parts: [audio("/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-dad.mp3"), "Laura says: \"This is my dad.\""],
             }),
           ],
         },
@@ -99,6 +99,38 @@ export const lesson = {
   },
 
   presentation: {
+    carouselWide: {
+      prompt: "Look at the pictures and listen to the sentences.",
+      imgs: [
+        {
+          src: "/assets/img/cefr/a1/unit-2-my-family/introduction/laura-mother.avif",
+          alt: "Mother",
+          content: [
+            ...content({
+              parts: [audio("/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-mom.mp3"), "Laura says: \"This is my mom.\""],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Father",
+          content: [
+            ...content({
+              parts: [audio("/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-dad.mp3"), "Laura says: \"This is my dad.\""],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Father",
+          content: [
+            ...content({
+              parts: [audio("/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-brother.mp3"), "Laura says: \"This is my brother.\""],
+            }),
+          ],
+        },
+      ],
+    },
     dialogue: {
       prompt: "Listen and read.",
       audioSrc: "/",

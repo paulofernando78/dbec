@@ -16,6 +16,7 @@ import {
   stressed,
   phonetics,
   portuguese,
+  lineBreak
 } from "@/helpers/content";
 
 export const lesson = {
@@ -41,7 +42,7 @@ export const lesson = {
           alt: "...",
           content: [
             ...content({
-              parts: [audio("/"), "...”"],
+              parts: [audio("/"), "...", lineBreak(), "...",],
             }),
           ],
         },

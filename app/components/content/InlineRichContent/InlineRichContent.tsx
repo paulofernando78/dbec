@@ -21,6 +21,7 @@ type InlineRichContentToken = {
   icons?: string[];
   audio?: string;
   bullet?: boolean;
+  lineBreak?: boolean;
 };
 
 type InlineRichContentProps = {
@@ -69,14 +70,20 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
         className={`${styles.iconPosition} ${styles.extraIconPosition}`}
       />
     ),
-    spotlight: () => <Spotlight size={19} className={styles.iconPosition} color="var(--icon-color)"/>,
+    spotlight: () => (
+      <Spotlight
+        size={19}
+        className={styles.iconPosition}
+        color="var(--icon-color)"
+      />
+    ),
     bullet: () => (
       <Dot size={19} strokeWidth={4} className={styles.iconPosition} />
     ),
   };
 
   type IconName = keyof typeof iconMap;
-  
+
   const isIconName = (name: string): name is IconName => {
     return name in iconMap;
   };
@@ -100,6 +107,10 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
     <>
       {contentArray.map((part, i) => {
         if (typeof part === "string") return part;
+
+        if (part.lineBreak) {
+          return <span key={i} className="block" aria-hidden="true" />;
+        }
 
         let content: ReactNode = part.part;
 
@@ -153,7 +164,10 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
             {renderIcons(part)}
             {part.audio && (
               <span className="inline-audio">
-                <Audio src={part.audio} className={`${styles.iconPosition} ${styles.iconPositionAudio}`} />
+                <Audio
+                  src={part.audio}
+                  className={`${styles.iconPosition} ${styles.iconPositionAudio}`}
+                />
               </span>
             )}
             {content}

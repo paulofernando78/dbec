@@ -19,7 +19,7 @@ export const lessons = {
     href: "/cefr/elementary/unit-3-future-predictions",
     link: "Unit 3 • Future Predictions",
     lessonObjective:
-      "By the end of this class, students will be able to make predictions about the future, express spontaneous decisions, discuss future possibilities, and use 'will' correctly.",
+      "By the end of this class, students will be able to make predictions about the future, express opinions about future events, and use ‘will’ accurately.",
     grammar: "Will",
     vocabulary: "Technology, Future",
   },
