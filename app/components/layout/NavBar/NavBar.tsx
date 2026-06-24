@@ -73,7 +73,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
 
                     <div className="ml-">
                       {item.links.map((lesson) => (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3">
                           <Checkbox />
                           <NavLink
                             key={lesson.href}

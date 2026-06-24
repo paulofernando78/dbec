@@ -159,7 +159,7 @@ export const Guess = ({ words }: GuessProps) => {
   if (!selected) return <span>Loading...</span>;
 
   return (
-    <>
+    <div className="mb-4">
       <p>
         <b>Click the letters to reveal the answer.</b>
       </p>
@@ -235,6 +235,6 @@ export const Guess = ({ words }: GuessProps) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

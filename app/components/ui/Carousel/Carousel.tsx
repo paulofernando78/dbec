@@ -194,6 +194,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
                   flex-none
                   basis-full
                   snap-start
+                  h-full
                    ${aspectRatio === "wide" ? "aspect-[16/10]" : "aspect-square"}
                 `}
               >

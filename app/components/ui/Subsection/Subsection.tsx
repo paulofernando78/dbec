@@ -7,7 +7,7 @@ type SubsectionProps = {
   textColor?: string;
   children?: ReactNode;
   className?: string;
-  heading?: 3 | 4;
+  heading?: 3 | 4 | 5;
 };
 
 export const Subsection = ({
@@ -15,7 +15,14 @@ export const Subsection = ({
   children,
   heading = 3,
 }: SubsectionProps) => {
-  const Tag = `h${heading}` as "h3" | "h4";
+  const Tag = `h${heading}` as "h3" | "h4" | "h5";
+
+  const bgColor = {
+    3: "bg-gray-700 border-gray-600",
+    4: "bg-gray-500 border-gray-500",
+    5: "bg-gray-300 border-gray-400",
+  }[heading];
+
   return (
     <Tag
       className={`
@@ -25,9 +32,7 @@ export const Subsection = ({
         px-3
         py-2 
         text-white
-        bg-gray-500
-        border
-        border-gray-400
+        ${bgColor}
         rounded-lg
         shadow
         shadow-slate-400

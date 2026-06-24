@@ -2,10 +2,14 @@ import { Line } from "../Line";
 
 import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
 
-export type Meaning = {
-  as?: "div" | "p" | "span";
-  parts: InlineRichContentValue[];
-};
+export type Meaning =
+  | {
+      as?: "p" | "span";
+      parts: InlineRichContentValue[];
+    }
+  | {
+      type: "space";
+    };
 
 export type MeaningProps = {
   value?: Meaning[];
@@ -14,9 +18,13 @@ export type MeaningProps = {
 export const Meaning = ({ value = [] }: MeaningProps) => {
   return (
     <div>
-      {value.map((note, index) => (
-        <Line key={index} as={note.as} value={note.parts} />
-      ))}
+      {value.map((note, index) => {
+        if ("type" in note) {
+          return <div key={index} className="h-4" />;
+        }
+
+        return <Line key={index} as={note.as} value={note.parts} />;
+      })}
     </div>
   );
 };

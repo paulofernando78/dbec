@@ -226,7 +226,7 @@ export const FlipCards = ({
   cards = [],
 }: FlipCardsProps) => {
   return (
-    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
+    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center mb-4">
       {cards.map((card, index) => (
         <div
           key={index}

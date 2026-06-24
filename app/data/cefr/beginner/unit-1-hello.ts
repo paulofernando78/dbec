@@ -1,3 +1,4 @@
+import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -13,7 +14,7 @@ import {
   underline,
   portuguese,
   lineBreak,
-  space
+  space,
 } from "@/helpers/content";
 
 import { lessons } from "@/data/cefr/beginnerLessonCardData";
@@ -186,342 +187,267 @@ export const lesson = {
 
   languageFocus: {
     greetings: [
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi.mp3",
-            ),
-            "Hi!",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi-there.mp3",
-            ),
-            "Hi there!",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hello.mp3",
-            ),
-            "Hello!",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//hey.mp3",
-            ),
-            "Hey!",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-morning.mp3",
-            ),
-            "Good morning.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/morning.mp3",
-            ),
-            "Morning.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-afternoon.mp3",
-            ),
-            "Good afternoon.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//afternoon.mp3",
-            ),
-            "Afternoon.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-evening.mp3",
-            ),
-            "Good evening.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(
-              "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//evening.mp3",
-            ),
-            "Evening.",
-          ],
-        }),
-      ],
-    ],
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi.mp3",
+          ),
+          "Hi!",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi-there.mp3",
+          ),
+          "Hi there!",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hello.mp3",
+          ),
+          "Hello!",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//hey.mp3",
+          ),
+          "Hey!",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-morning.mp3",
+          ),
+          "Good morning.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/morning.mp3",
+          ),
+          "Morning.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-afternoon.mp3",
+          ),
+          "Good afternoon.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//afternoon.mp3",
+          ),
+          "Afternoon.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-evening.mp3",
+          ),
+          "Good evening.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//evening.mp3",
+          ),
+          "Evening.",
+        ],
+      },
+    ] satisfies Meaning[],
     askingQuestions: [
-      [
-        ...content({
-          parts: [
-            audio("/"),
-            "How are you?",
-            " ",
-            portuguese("Como você está?"),
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio("/"),
-            "How are you doing?",
-            " ",
-            portuguese("Como você vai?"),
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio("/"),
-            "How are you?",
-            " ",
-            portuguese("Como você está?"),
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio("/"),
-            "How are you doing?",
-            " ",
-            portuguese("Como você vai?"),
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio("/"),
-            "I am...",
-            " ",
-            audio("/"),
-            "I’m...",
-            " ",
-            portuguese("Estou..."),
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "good.", " ", italic("informal")],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "pretty good.", " ", italic("informal")],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "well."],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "great."],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "fine."],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "can’t complain"],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "same as usual"],
-        }),
-      ],
+      {
+        as: "span",
+        parts: [audio("/"), "How are you?", " ", portuguese("Como você está?")],
+      },
+      {
+        as: "span",
+        parts: [
+          audio("/"),
+          "How are you doing?",
+          " ",
+          portuguese("Como você vai?"),
+        ],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "How are you?", " ", portuguese("Como você está?")],
+      },
+      {
+        as: "span",
+        parts: [
+          audio("/"),
+          "How are you doing?",
+          " ",
+          portuguese("Como você vai?"),
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio("/"),
+          "I am...",
+          " ",
+          audio("/"),
+          "I’m...",
+          " ",
+          portuguese("Estou..."),
+        ],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "good.", " ", italic("informal")],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "pretty good.", " ", italic("informal")],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "can’t complain"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "same as usual"],
+      },
       space(),
-      [
-        ...content({
-          parts: [audio("/"), "How’s it going?"],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "How’s everything?"],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "How are things?"],
-        }),
-      ],
-      space(),
-      [
-        ...content({
-          parts: [audio("/"), "What’s up?"],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "Nothing much.", " ", portuguese("Nada demais.")],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio("/"),
-            "Not much, you?",
-            " ",
-            portuguese("Nada demais, e você?"),
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [audio("/"), "Just chilling.", " ", portuguese("De boa.")],
-        }),
-      ],
-    ],
+      {
+        as: "span",
+        parts: [audio("/"), "How’s it going?"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "How’s everything?"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "How are things?"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "What’s up?"],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "Nothing much.", " ", portuguese("Nada demais.")],
+      },
+      {
+        as: "span",
+        parts: [
+          audio("/"),
+          "Not much, you?",
+          " ",
+          portuguese("Nada demais, e você?"),
+        ],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "Just chilling.", " ", portuguese("De boa.")],
+      },
+    ] satisfies Meaning[],
     personalInformation: [
-      [
-        ...content({
-          parts: [bold("Common Questions & Possible Answers")],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(".../whats-your-name.mp3"),
-            "What’s your name?",
-            lineBreak(),
-            audio(".../my-name-is.mp3"),
-            "My name is...",
-            lineBreak(),
-            audio(".../my-names.mp3"),
-            "My name’s...",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(".../whats-your-first-name.mp3"),
-            "What’s your first name?",
-            lineBreak(),
-            audio(".../my-first-name-is.mp3"),
-            "My first name is...",
-            lineBreak(),
-            audio(".../my-first-names.mp3"),
-            "My first name’s...",
-            lineBreak(),
-            audio(".../my-first-names.mp3"),
-            "(it’s) Laura.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(".../how-do-you-spell-your-first-name.mp3"),
-            "How do you spell your first name?",
-            lineBreak(),
-            audio(".../its-p-a-l-m-e-r.mp3"),
-            "(It’s) L-A-U-R-A.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(".../whats-your-last-name.mp3"),
-            "What’s your last name?",
-            lineBreak(),
-            audio(".../my-last-name-is.mp3"),
-            "My last name is...",
-            lineBreak(),
-            audio(".../my-last-names.mp3"),
-            "My last name’s...",
-            lineBreak(),
-            audio(".../its-p-a-l-m-e-r.mp3"),
-            "(It’s) Palmer.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(".../how-do-you-spell-your-last-name.mp3"),
-            "How do you spell your last name?",
-            lineBreak(),
-            audio(".../its-p-a-l-m-e-r.mp3"),
-            "(It’s) P-A-L-M-E-R.",
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            icon("spotlight"),
-            audio(".../how-do-you-spell-it.mp3"),
-            "How do you spell it? (it = first/last)",
-            lineBreak(),
-          ],
-        }),
-      ],
-      [
-        ...content({
-          parts: [
-            audio(".../nice-to-meet-you-1.mp3"),
-            "Nice to meet you.",
-            lineBreak(),
-            audio(".../nice-to-meet-you-2.mp3"),
+      {
+        as: "span",
+        parts: [audio(".../whats-your-name.mp3"), "What’s your name?"],
+      },
+      {
+        as: "span",
+        parts: [audio(".../my-name-is.mp3"), "My name is..."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../my-names.mp3"), "My name’s..."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../how-do-you-spell-your-first-name.mp3"),
+            "How do you spell your first name?"],
+      },
+      {
+        as: "span",
+        parts: [audio(".../its-p-a-l-m-e-r.mp3"),
+            "(It’s) L-A-U-R-A."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../whats-your-last-name.mp3"),
+            "What’s your last name?"],
+      },
+      {
+        as: "span",
+        parts: [audio(".../my-last-name-is.mp3"),
+            "My last name is..."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../my-last-names.mp3"),
+            "My last name’s..."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../its-palmer.mp3"),
+            "(It’s) Palmer."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../how-do-you-spell-your-last-name.mp3"),
+            "How do you spell your last name?"],
+      },
+      {
+        as: "span",
+        parts: [audio(".../its-p-a-l-m-e-r.mp3"),
+            "(It’s) P-A-L-M-E-R."],
+      },
+      {
+        as: "span",
+        parts: [icon("spotlight"), audio(".../how-do-you-spell-it.mp3"),
+            "How do you spell it? (it = first/last)"],
+      },
+      {
+        as: "span",
+        parts: [audio(".../nice-to-meet-you-1.mp3"),
+            "Nice to meet you."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../nice-to-meet-you-2.mp3"),
             "Nice to mee",
             underline("t y"),
-            "ou.",
-            lineBreak(),
-            audio(".../nice-meeting-you.mp3"),
-            "Nice to meeting you.",
-          ],
-        }),
-      ],
-    ],
+            "ou."],
+      },
+      {
+        as: "span",
+        parts: [audio(".../nice-meeting-you.mp3"),
+            "Nice to meeting you."],
+      },
+      {
+        as: "span",
+        parts: [audio("/"), "..."],
+      },
+    ] satisfies Meaning[],
     notes: [
       {
         as: "span",

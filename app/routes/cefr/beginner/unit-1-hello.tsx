@@ -4,7 +4,7 @@ import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
 import { List } from "@/components/content/List";
-import { Lines } from "@/components/content/Lines";
+import { Meaning } from "@/components/content/Meaning";
 import { Notes } from "@/components/content/Notes";
 import { CCQ } from "@/components/content/CCQ";
 
@@ -39,13 +39,13 @@ export default function Introduction() {
 
           <Section id="Language Focus" heading={3}>
             <Subsection label="Greetings" heading={4} />
-            <Lines value={lesson.languageFocus.greetings} />
-            <Subsection label="Asking ..." heading={4} />
-            <Lines value={lesson.languageFocus.askingQuestions} />
+            <Subsection label="Saying hi!" heading={5} />
+            <Meaning value={lesson.languageFocus.greetings} />
+            <Subsection label="Asking Questions" heading={4} />
+            <Meaning value={lesson.languageFocus.askingQuestions} />
             <TheAlphabet />
             <Subsection label="Personal Information" heading={4} />
-            <Lines value={lesson.languageFocus.personalInformation} />
-            {/* <ColumnDrag {...lesson.languageFocus.personalInformation} /> */}
+            <Meaning value={lesson.languageFocus.personalInformation} />
             <Notes value={lesson.languageFocus.notes} />
             <CCQ value={lesson.languageFocus.ccq} />
           </Section>

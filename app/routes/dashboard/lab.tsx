@@ -33,6 +33,7 @@ import {
   columnDrag,
   carouselWide,
 } from "@/data/lab";
+import { Subsection } from "@/components/ui/Subsection";
 
 export default function Playground() {
   return (
@@ -46,6 +47,9 @@ export default function Playground() {
         <PageSections>
           {/* Line */}
           <Section id="line (<span> / <p>)" heading={3}>
+          <Subsection label="Subsection" heading={3}/>
+          <Subsection label="Subsection" heading={4}/>
+          <Subsection label="Subsection" heading={5}/>
             <Line as="span" value={line} />
           </Section>
 

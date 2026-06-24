@@ -1,4 +1,3 @@
-import styles from "./AudioPlayer.module.css"
 
 type AudioPlayerProps = {
   src: string
@@ -6,6 +5,6 @@ type AudioPlayerProps = {
 
 export const AudioPlayer = ({ src }: AudioPlayerProps) => {
   return (
-    <audio controls src={src} className={styles.audio}></audio>
+    <audio controls src={src} className="w-full h-10 mb-4"></audio>
   )
 }
