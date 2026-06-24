@@ -116,7 +116,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
 
   return (
     <>
-      <p className="font-bold">{prompt}</p>
+      <p className="font-bold mb-4">{prompt}</p>
       <div
         className={`
         relative
@@ -157,6 +157,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
             snap-x
             snap-mandatory
             [&::-webkit-scrollbar]:hidden
+            mb-4
           `}
           ref={carouselRef}
           onScroll={() => {
@@ -246,7 +247,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
           <Arrow className="block rotate-180 -translate-x-1.5" />
         </button>
       </div>
-      <div className="mt-2 flex justify-center gap-2">
+      <div className="mt-2 flex justify-center gap-2 mb-4">
         {imgs.map((_, index) => (
           <button
             key={index}
@@ -277,6 +278,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
           className={`
           mx-auto
           h-20
+          mb-4
           py-1 px-2
           overflow-x-auto
           border
