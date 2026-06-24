@@ -1,7 +1,8 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/NavBarLinks";
 
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from "lucide-react";
+import { Checkbox } from "@/components/ui/Checkbox";
 
 type NavLesson = {
   label: string;
@@ -57,7 +58,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 return (
                   <details key={item.label} className="group ">
                     <summary className="list-none flex items-center gap-2 cursor-pointer">
-                      <span className="transition-transform group-open:rotate-90 translate-x-[-0.4rem]">
+                      <span className="transition-transform group-open:rotate-90 translate-x-[-0.15rem]">
                         <ChevronRight />
                       </span>
 
@@ -72,17 +73,20 @@ export function NavBar({ closeNavBar }: NavBarProps) {
 
                     <div className="ml-">
                       {item.links.map((lesson) => (
-                        <NavLink
-                          key={lesson.href}
-                          to={lesson.href}
-                          end
-                          onClick={closeNavBar}
-                          className={({ isActive }) =>
-                            `block ${isActive ? "text-blue-400" : ""}`
-                          }
-                        >
-                          {lesson.label}
-                        </NavLink>
+                        <div className="flex items-center gap-2">
+                          <Checkbox />
+                          <NavLink
+                            key={lesson.href}
+                            to={lesson.href}
+                            end
+                            onClick={closeNavBar}
+                            className={({ isActive }) =>
+                              `block text-[1.06rem] ${isActive ? "text-blue-400" : ""}`
+                            }
+                          >
+                            {lesson.label}
+                          </NavLink>
+                        </div>
                       ))}
                     </div>
                   </details>
