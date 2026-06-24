@@ -3,16 +3,15 @@ import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
 import {
+  icon,
   content,
   text,
-  icon,
   audio,
   bold,
-  italic,
   mark,
   underline,
   portuguese,
-  lineBreak
+  lineBreak,
 } from "@/helpers/content";
 
 import { lessons } from "@/data/cefr/beginnerLessonCardData";
@@ -32,7 +31,8 @@ export const lesson = {
 
   introduction: {
     carouselWide: {
-      prompt: "Look at the pictures. Laura and Eric are at school. Now listen to the sentences.",
+      prompt:
+        "Look at the pictures. Laura and Eric are at school. Now listen to the sentences.",
       imgs: [
         // Laura says, “Hi! I'm Laura.””
         {
@@ -111,7 +111,7 @@ export const lesson = {
             ],
           },
           {
-            question: "They brothers and sisters.",
+            question: "They are brothers and sisters.",
             options: [
               { option: "true", isCorrect: false },
               { option: "false", isCorrect: true },
@@ -125,8 +125,7 @@ export const lesson = {
   presentation: {
     dialogue: {
       prompt: "Laura and Eric meet for the first time. Listen to the dialogue.",
-      audioSrc:
-        "/assets/audio/cefr/a1/unit-1-hello/presentation/dialogue.mp3",
+      audioSrc: "/assets/audio/cefr/a1/unit-1-hello/presentation/dialogue.mp3",
       lines: [
         {
           speaker: "Laura",
@@ -185,430 +184,161 @@ export const lesson = {
   },
 
   languageFocus: {
-    greetings: {
-      width: 300,
-      cols: [
-        // Saying hi!
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Saying hi!",
-          items: [
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/hi.mp3",
-                ),
-                "Hi!",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/hi-there.mp3",
-                ),
-                "Hi, there!",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/hello.mp3",
-                ),
-                "Hello!",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/hey.mp3",
-                ),
-                "Hey!",
-              ],
-            },
-            {
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/good-morning.mp3",
-                ),
-                "Good morning.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/morning.mp3",
-                ),
-                "Morning.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/good-afternoon.mp3",
-                ),
-                "Good afternoon.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/afternoon.mp3",
-                ),
-                "Afternoon.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/good-evening.mp3",
-                ),
-                "Good evening.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/saying-hi/evening.mp3",
-                ),
-                "Evening.",
-              ],
-            },
-          ],
-        },
-        // Common Questions
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Common Questions",
-          items: [
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/common-questions/how-are-you.mp3",
-                ),
-                "How are you?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/common-questions/how-are-you-doing.mp3",
-                ),
-                "How are you doing?",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/common-questions/hows-it-going.mp3",
-                ),
-                "How’s it going?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/common-questions/hows-everything.mp3",
-                ),
-                "How’s everything",
-              ],
-            },
-            {
-              lineBreak: true,
-            },
-            {
-              parts: [italic("Informal")],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/common-questions/whats-up.mp3",
-                ),
-                "What’s up?",
-              ],
-            },
-          ],
-        },
-        // Possible Answers
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-black",
-          column: "Possible Answers",
-          items: [
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/i-am.mp3",
-                ),
-                "I am...",
-              ],
-            },
-            {
-              parts: [
-                icon("spotlight"),
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/im.mp3",
-                ),
-                "I’m...",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/well.mp3",
-                ),
-                "well.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/great.mp3",
-                ),
-                "great.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/fine.mp3",
-                ),
-                "fine.",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [italic("informal.")],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/good.mp3",
-                ),
-                "good.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/pretty-good.mp3",
-                ),
-                "pretty good.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/cant-complain.mp3",
-                ),
-                "Can’t complain.",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/nothing-much.mp3",
-                ),
-                "Nothing much.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/not-much-you.mp3",
-                ),
-                "Not much, you?.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/just-chilling.mp3",
-                ),
-                "Just chilling.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/greetings/possible-answers/just-working.mp3",
-                ),
-                "Just working.",
-                " ",
-                portuguese("Só trabalho"),
-              ],
-              lineBreak: true,
-            },
-          ],
-        },
+    greetings: [
+      ...content({
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi.mp3",
+          ),
+          "Hi!",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi-there.mp3",
+          ),
+          "Hi there!",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hello.mp3",
+          ),
+          "Hello!",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//hey.mp3",
+          ),
+          "Hey!",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-morning.mp3",
+          ),
+          "Good morning.",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/morning.mp3",
+          ),
+          "Morning.",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-afternoon.mp3",
+          ),
+          "Good afternoon.",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//afternoon.mp3",
+          ),
+          "Afternoon.",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-evening.mp3",
+          ),
+          "Good evening.",
+          lineBreak(),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//evening.mp3",
+          ),
+          "Evening.",
+        ],
+      }),
+    ],
+    personalInformation: [
+      [
+        ...content({
+          parts: [bold("Common Questions & Possible Answers")],
+        }),
       ],
-    },
-    personalInformation: {
-      width: 300,
-      cols: [
-        // Common Questions
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Common Questions",
-          items: [
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/whats-your-name.mp3",
-                ),
-                "What’s your name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/whats-your-first-name.mp3",
-                ),
-                "What’s your first name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/how-do-you-spell-your-first-name.mp3",
-                ),
-                "How do you spell your first name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/whats-your-last-name.mp3",
-                ),
-                "What’s your last name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/how-do-you-spell-your-last-name.mp3",
-                ),
-                "How do you spell your last name?",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/common-questions/how-do-you-spell-it.mp3",
-                ),
-                "How do you spell it? (it = first/last)",
-              ],
-            },
+      [
+        ...content({
+          parts: [
+            audio(".../whats-your-name.mp3"),
+            "What’s your name?",
+            lineBreak(),
+            audio(".../my-name-is.mp3"),
+            "My name is...",
+            lineBreak(),
+            audio(".../my-names.mp3"),
+            "My name’s...",
           ],
-        },
-        // Possible Answers
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-black",
-          column: "Possible Answers",
-          items: [
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-name-is.mp3",
-                ),
-                "My name is...",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-names.mp3",
-                ),
-                "My name’s...",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-first-name-is.mp3",
-                ),
-                "My first name is...",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-first-names.mp3",
-                ),
-                "My first name’s...",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-last-name-is.mp3",
-                ),
-                "My last name is...",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/my-last-names.mp3",
-                ),
-                "My last name’s...",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/its-p-a-l-m-e-r.mp3",
-                ),
-                "(It’s) P-A-L-M-E-R.",
-              ],
-              lineBreak: true,
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-to-meet-you-1.mp3",
-                ),
-                "Nice to meet you.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-to-meet-you-2.mp3",
-                ),
-                "Nice to mee",
-                underline("t y"),
-                "ou.",
-              ],
-            },
-            {
-              parts: [
-                audio(
-                  "/assets/audio/lessons/cefr/a1/hi-my-names-laura/language-focus/personal-information/possible-answers/nice-meeting-you.mp3",
-                ),
-                "Nice to meeting you.",
-              ],
-            },
-          ],
-        },
+        }),
       ],
-    },
+      [
+        ...content({
+          parts: [
+            audio(".../whats-your-first-name.mp3"),
+            "What’s your first name?",
+            lineBreak(),
+            audio(".../my-first-name-is.mp3"),
+            "My first name is...",
+            lineBreak(),
+            audio(".../my-first-names.mp3"),
+            "My first name’s...",
+            lineBreak(),
+            audio(".../my-first-names.mp3"),
+            "(it’s) Laura.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(".../how-do-you-spell-your-first-name.mp3"),
+            "How do you spell your first name?",
+            lineBreak(),
+            audio(".../its-p-a-l-m-e-r.mp3"),
+            "(It’s) L-A-U-R-A.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(".../whats-your-last-name.mp3"),
+            "What’s your last name?",
+            lineBreak(),
+            audio(".../my-last-name-is.mp3"),
+            "My last name is...",
+            lineBreak(),
+            audio(".../my-last-names.mp3"),
+            "My last name’s...",
+            lineBreak(),
+            audio(".../its-p-a-l-m-e-r.mp3"),
+            "(It’s) Palmer.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(".../how-do-you-spell-your-last-name.mp3"),
+            "How do you spell your last name?",
+            lineBreak(),
+            audio(".../its-p-a-l-m-e-r.mp3"),
+            "(It’s) P-A-L-M-E-R.",
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            icon("spotlight"),
+            audio(".../how-do-you-spell-it.mp3"),
+            "How do you spell it? (it = first/last)",
+            lineBreak(),
+          ],
+        }),
+      ],
+      [
+        ...content({
+          parts: [
+            audio(".../nice-to-meet-you-1.mp3"),
+            "Nice to meet you.",
+            lineBreak(),
+            audio(".../nice-to-meet-you-2.mp3"),
+            "Nice to mee", underline("t y"), "ou.",
+            lineBreak(),
+            audio(".../nice-meeting-you.mp3"), "Nice to meeting you."
+          ],
+        }),
+      ],
+    ],
     notes: [
       {
         as: "span",

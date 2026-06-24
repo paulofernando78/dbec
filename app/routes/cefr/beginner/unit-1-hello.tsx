@@ -4,6 +4,7 @@ import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/content/Section";
 import { Ribbon } from "@/components/ui/Ribbon";
 import { List } from "@/components/content/List";
+import { Line } from "@/components/content/Line";
 import { Notes } from "@/components/content/Notes";
 import { CCQ } from "@/components/content/CCQ";
 
@@ -39,10 +40,13 @@ export default function Introduction() {
 
           <Section id="Language Focus" heading={4}>
             <Ribbon label="Greetings" bgColor="bg-slate-500" />
-            <ColumnDrag {...lesson.languageFocus.greetings} />
+            <Line as="span" value={lesson.languageFocus.greetings} />
             <TheAlphabet />
             <Ribbon label="Personal Information" bgColor="bg-slate-500" />
-            <ColumnDrag {...lesson.languageFocus.personalInformation} />
+            {lesson.languageFocus.personalInformation.map((line, index) => (
+              <Line key={index} as="p" value={line} />
+            ))}
+            {/* <ColumnDrag {...lesson.languageFocus.personalInformation} /> */}
             <Notes value={lesson.languageFocus.notes} />
             <CCQ value={lesson.languageFocus.ccq} />
           </Section>

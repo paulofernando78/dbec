@@ -8,8 +8,8 @@ import type { ListProps } from "@/components/content/List";
 import { Goal, FileText, CalendarDays, Clock2 } from "lucide-react";
 
 type LessonCardProps = {
-  href: string;
-  link: string;
+  href?: string;
+  link?: string;
   lessonObjective: string;
   grammar?: string;
   vocabulary?: string;
