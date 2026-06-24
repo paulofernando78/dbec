@@ -1,12 +1,11 @@
-import { Ribbon } from "@/components/ui/Ribbon"
+import { Ribbon } from "@/components/ui/Ribbon";
 // import { Line } from "@/components/molecules/Line";
 import { Card } from "@/components/ui/Card";
 import { Audio } from "@/components/ui/Audio";
 import { Line } from "@/components/content/Line";
 import { LineBreak } from "@/components/content/LineBreak";
-import {
-  content,
-} from "@/helpers/content";
+import { content } from "@/helpers/content";
+import { Notes } from "@/components/content/Notes";
 
 const alphabet = [
   {
@@ -167,6 +166,33 @@ const alphabet = [
   },
 ];
 
+const notes = [
+  {
+    audio: "/assets/audio/pronunciation/the-alphabet/letter-c.mp3",
+    note: "“C” has the same sound as the verb “see” and the noun “sea.”",
+  },
+  {
+    audio: "/assets/audio/pronunciation/the-alphabet/letter-d.mp3",
+    note: "“D” is pronounced differently from letter “G.”",
+  },
+  {
+    audio: "/assets/audio/pronunciation/the-alphabet/number-eight.mp3",
+    note: "Number “eight” is pronounced differently from letter “H.”",
+  },
+  {
+    audio: "/assets/audio/pronunciation/the-alphabet/letter-t.mp3",
+    note: "“T” has the same sound as in “tea.”",
+  },
+  {
+    audio: "/assets/audio/pronunciation/the-alphabet/letter-u.mp3",
+    note: "“U” has the same sound as in “you.”",
+  },
+  {
+    audio: "/assets/audio/pronunciation/the-alphabet/letter-z.mp3",
+    note: "“Z” in British is pronounced “zed.”",
+  },
+];
+
 export const TheAlphabet = () => {
   return (
     <>
@@ -181,7 +207,6 @@ export const TheAlphabet = () => {
           }),
         ]}
       />
-      <LineBreak />
       <div className="flex justify-center flex-wrap gap-2">
         {alphabet.map((a, i) => (
           <div
@@ -197,69 +222,18 @@ export const TheAlphabet = () => {
           </div>
         ))}
       </div>
-      <LineBreak />
-      <div className="line-break">
-        <Card>
-          <Line
-            as="p"
-            value={[
+      <div>
+        <Notes
+          value={notes.map((n) => ({
+            as: "p",
+            parts: [
               ...content({
-                audio: "/assets/audio/pronunciation/the-alphabet/letter-c.mp3",
-                parts: [
-                  "“C” has the same sound as the verb “see” and the noun “sea.”",
-                ],
+                audio: n.audio,
+                parts: [n.note],
               }),
-            ]}
-          />
-          <Line
-            as="p"
-            value={[
-              ...content({
-                audio: "/assets/audio/pronunciation/the-alphabet/letter-d.mp3",
-                parts: ["“D” is pronounced differently from letter “G.”"],
-              }),
-            ]}
-          />
-          <Line
-            as="p"
-            value={[
-              ...content({
-                audio:
-                  "/assets/audio/pronunciation/the-alphabet/number-eight.mp3",
-                parts: [
-                  "Number “eight” is pronounced differently from letter “H.”",
-                ],
-              }),
-            ]}
-          />
-          <Line
-            as="p"
-            value={[
-              ...content({
-                audio: "/assets/audio/pronunciation/the-alphabet/letter-t.mp3",
-                parts: ["“T” has the same sound as in “tea.”"],
-              }),
-            ]}
-          />
-          <Line
-            as="p"
-            value={[
-              ...content({
-                audio: "/assets/audio/pronunciation/the-alphabet/letter-u.mp3",
-                parts: ["“U” has the same sound as in “you.”"],
-              }),
-            ]}
-          />
-          <Line
-            as="p"
-            value={[
-              ...content({
-                audio: "/assets/audio/pronunciation/the-alphabet/letter-z.mp3",
-                parts: ["“Z” in British is pronounced “zed.”"],
-              }),
-            ]}
-          />
-        </Card>
+            ],
+          }))}
+        />
       </div>
     </>
   );
