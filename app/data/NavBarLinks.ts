@@ -16,20 +16,188 @@ export const links = [
     title: "Course ",
     links: [
       {
-        href: "/cefr/beginner",
         label: "A1 Beginner",
+        href: "/cefr/beginner",
+        links: [
+          {
+            href: "/cefr/beginner/unit-1-hello",
+            label: "Unit 1 • Hello",
+          },
+          {
+            href: "/cefr/beginner/unit-2-my-family",
+            label: "Unit 2 • My Family",
+          },
+          {
+            href: "/cefr/beginner/unit-3-my-house",
+            label: "Unit 3 • My House",
+          },
+          {
+            href: "/cefr/beginner/unit-4-daily-routine",
+            label: "Unit 4 • Daily Routine",
+          },
+          {
+            href: "/cefr/beginner/unit-5-my-week",
+            label: "Unit 5 • My Week",
+          },
+          {
+            href: "/cefr/beginner/unit-6-food-and-driks",
+            label: "Unit 6 • Food and Drinks",
+          },
+          {
+            href: "/cefr/beginner/unit-7-shopping",
+            label: "Unit 7 • Shopping",
+          },
+          {
+            href: "/cefr/beginner/unit-8-around-town",
+            label: "Unit 8 • Around Town",
+          },
+          {
+            href: "/cefr/beginner/unit-9-what-are-you-doing",
+            label: "Unit 9 • What Are You Doing?",
+          },
+          {
+            href: "/cefr/beginner/unit-10-abilities",
+            label: "Unit 10 • Abilities",
+          },
+        ],
       },
       {
-        href: "/cefr/elementary",
         label: "A2 Elementary",
+        href: "/cefr/elementary",
+        links: [
+          {
+            href: "/cefr/elementary/unit-1-last-weekend",
+            label: "Unit 1 • Last Weekend",
+          },
+          {
+            href: "/cefr/elementary/unit-2-travel-plans",
+            label: "Unit 2 • Travel Plans",
+          },
+          {
+            href: "/cefr/elementary/unit-3-future-predictions",
+            label: "Unit 3 • Future Predictions",
+          },
+          {
+            href: "/cefr/elementary/unit-4-city-life",
+            label: "Unit 4 • City Life",
+          },
+          {
+            href: "/cefr/elementary/unit-5-the-best-place",
+            label: "Unit 5 • The Best Place",
+          },
+          {
+            href: "/cefr/elementary/unit-6-healthy-living",
+            label: "Unit 6 • Healthy Living",
+          },
+          {
+            href: "/cefr/elementary/unit-7-rules",
+            label: "Unit 7 • Rules",
+          },
+          {
+            href: "/cefr/elementary/unit-8-shopping-smart",
+            label: "Unit 8 • Shopping Smart",
+          },
+          {
+            href: "/cefr/elementary/unit-9-experiences",
+            label: "Unit 9 • Experiences",
+          },
+          {
+            href: "/cefr/elementary/unit-10-hobbies",
+            label: "Unit 10 • Hobbies",
+          },
+        ],
       },
       {
-        href: "/cefr/intermediate",
         label: "B1 Intermediate",
+        href: "/cefr/intermediate",
+        links: [
+          {
+            href: "/cefr/intermediate/unit-1-life-experiences",
+            label: "Unit 1 • Life Experiences",
+          },
+          {
+            href: "/cefr/intermediate/unit-2-storytelling",
+            label: "Unit 2 • Storytelling",
+          },
+          {
+            href: "/cefr/intermediate/unit-3-making-plans",
+            label: "Unit 3 • Making Plans",
+          },
+          {
+            href: "/cefr/intermediate/unit-4-wha-if",
+            label: "Unit 4 • What If?",
+          },
+          {
+            href: "/cefr/intermediate/unit-5-green-planet",
+            label: "Unit 5 • Green Planet",
+          },
+          {
+            href: "/cefr/intermediate/unit-6-technology",
+            label: "Unit 6 • Technology Today",
+          },
+          {
+            href: "/cefr/intermediate/unit-7-news-report",
+            label: "Unit 7 • News Report",
+          },
+          {
+            href: "/cefr/intermediate/unit-8-what-did-they-say",
+            label: "Unit 8 • What Did They Say?",
+          },
+          {
+            href: "/cefr/intermediate/unit-9-career-path",
+            label: "Unit 9 • Career Path",
+          },
+          {
+            href: "/cefr/intermediate/unit-10-relationships",
+            label: "Unit 10 • Relationships",
+          },
+        ],
       },
       {
-        href: "/cefr/upper-intermediate",
         label: "B2 Upper-Intermediate",
+        href: "/cefr/upper-intermediate",
+        links: [
+          {
+            href: "/cefr/upper-intermediate/unit-1-dream-scenarios",
+            label: "Unit 1 • Dream Scenarios",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-2-regrets",
+            label: "Unit 2 • Regrets",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-3-business-communication",
+            label: "Unit 3 • Business Communication",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-4-leadership",
+            label: "Unit 4 • Leadership",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-5-innovation",
+            label: "Unit 5 • Innovation",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-6-global-issues",
+            label: "Unit 6 • Global Issues",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-7-debate-club",
+            label: "Unit 7 • Debate Club",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-8-media-and-marketing",
+            label: "Unit 8 • Media and Marketing",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-9-native-like-english",
+            label: "Unit 9 • Native-Like English",
+          },
+          {
+            href: "/cefr/upper-intermediate/unit-10-natural-english",
+            label: "Unit 10 • Natural English",
+          },
+        ],
       },
     ],
   },

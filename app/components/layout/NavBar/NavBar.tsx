@@ -1,17 +1,20 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/NavBarLinks";
 
+import { ChevronRight } from 'lucide-react';
 
-export type NavItem = {
+type NavLesson = {
   label: string;
   href: string;
-  attention?: boolean;
 };
 
-export type NavGroup = {
-  title?: string;
-  links: NavItem[];
+type NavLevel = {
+  label: string;
+  href: string;
+  links: NavLesson[];
 };
+
+type NavItem = NavLesson | NavLevel;
 
 type NavBarProps = {
   closeNavBar: () => void;
@@ -49,19 +52,57 @@ export function NavBar({ closeNavBar }: NavBarProps) {
           )}
 
           <div>
-            {group.links.map((item) => (
-              <NavLink
-                key={item.href}
-                to={item.href}
-                end
-                onClick={closeNavBar}
-                className={({ isActive }) =>
-                  `block ${isActive ? "text-blue-400" : ""}`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {group.links.map((item) => {
+              if ("links" in item) {
+                return (
+                  <details key={item.label} className="group ">
+                    <summary className="list-none flex items-center gap-2 cursor-pointer">
+                      <span className="transition-transform group-open:rotate-90 translate-x-[-0.4rem]">
+                        <ChevronRight />
+                      </span>
+
+                      <NavLink
+                        to={item.href}
+                        onClick={(e) => e.stopPropagation()}
+                        className="translate-x-[-0.4rem]"
+                      >
+                        {item.label}
+                      </NavLink>
+                    </summary>
+
+                    <div className="ml-">
+                      {item.links.map((lesson) => (
+                        <NavLink
+                          key={lesson.href}
+                          to={lesson.href}
+                          end
+                          onClick={closeNavBar}
+                          className={({ isActive }) =>
+                            `block ${isActive ? "text-blue-400" : ""}`
+                          }
+                        >
+                          {lesson.label}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </details>
+                );
+              }
+
+              return (
+                <NavLink
+                  key={item.href}
+                  to={item.href}
+                  end
+                  onClick={closeNavBar}
+                  className={({ isActive }) =>
+                    `block ${isActive ? "text-blue-400" : ""}`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              );
+            })}
           </div>
         </div>
       ))}

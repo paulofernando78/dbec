@@ -31,7 +31,7 @@ export const ColumnDrag = ({ cols = [], maxCols, width = 250 }: ColumnDragProps)
 
   return (
     <>
-        <div>
+        <div className="border mb-4">
           <div
             ref={scrollRef}
             className={styles.wrapper}
