@@ -97,7 +97,7 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "Laura and Jessica are at home.",
+            question: "Laura and Eric are at home.",
             options: [
               { option: "true.", isCorrect: false },
               { option: "false", isCorrect: true },
@@ -111,7 +111,7 @@ export const lesson = {
             ],
           },
           {
-            question: "Are they brothers and sisters?",
+            question: "They brothers and sisters.",
             options: [
               { option: "true", isCorrect: false },
               { option: "false", isCorrect: true },
@@ -126,7 +126,7 @@ export const lesson = {
     dialogue: {
       prompt: "Laura and Eric meet for the first time. Listen to the dialogue.",
       audioSrc:
-        "/assets/audio/lessons/cefr/a1/hi-my-names-laura/presentation/dialogue.mp3",
+        "/assets/audio/cefr/a1/unit-1-hello/presentation/dialogue.mp3",
       lines: [
         {
           speaker: "Laura",
