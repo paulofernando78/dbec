@@ -16,8 +16,8 @@ export const links = [
     title: "Course ",
     links: [
       {
-        label: "A1 Beginner",
         href: "/cefr/beginner",
+        label: "A1 Beginner",
         links: [
           {
             href: "/cefr/beginner/unit-1-hello",
@@ -62,8 +62,8 @@ export const links = [
         ],
       },
       {
-        label: "A2 Elementary",
         href: "/cefr/elementary",
+        label: "A2 Elementary",
         links: [
           {
             href: "/cefr/elementary/unit-1-last-weekend",
@@ -108,8 +108,8 @@ export const links = [
         ],
       },
       {
-        label: "B1 Intermediate",
         href: "/cefr/intermediate",
+        label: "B1 Intermediate",
         links: [
           {
             href: "/cefr/intermediate/unit-1-life-experiences",
@@ -154,8 +154,8 @@ export const links = [
         ],
       },
       {
-        label: "B2 Upper-Intermediate",
         href: "/cefr/upper-intermediate",
+        label: "B2 Upper-Intermediate",
         links: [
           {
             href: "/cefr/upper-intermediate/unit-1-dream-scenarios",
@@ -203,19 +203,49 @@ export const links = [
   },
   // Miscellaneous
   {
-    title: "Miscellaneous",
+    title: "C1-C2 Miscellaneous",
     links: [
       {
-        href: "/misc/news",
+        href: "/",
         label: "News",
+        links: [
+          {
+            href: "/",
+            label: "...",
+          },
+        ],
       },
       {
-        href: "/misc/ted-ed",
-        label: "TED-Ed",
+        href: "/",
+        label: "Ted-Ed",
+        links: [
+          {
+            href: "/",
+            label: "What Causes Constipation",
+          },
+          {
+            href: "/",
+            label: "When will the next ice age happen",
+          },
+          {
+            href: "/",
+            label: "The ancient origin of beer",
+          },
+          {
+            href: "/",
+            label: "...",
+          },
+        ],
       },
       {
-        href: "/misc/games",
+        href: "/",
         label: "Games",
+        links: [
+          {
+            href: "/",
+            label: "Thimbleweed PArk",
+          },
+        ],
       },
     ],
   },

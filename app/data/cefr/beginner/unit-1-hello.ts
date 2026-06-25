@@ -442,6 +442,7 @@ export const lesson = {
       {
         as: "span",
         parts: [
+          icon("spotlight"),
           audio(
             "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name2.mp3",
           ),
