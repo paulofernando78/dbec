@@ -15,7 +15,7 @@ import "./app.css";
 
 import { Loading } from "@/components/ui/Loading";
 import { Header } from "@/components/layout/Header";
-import Footer from "./components/layout/Footer/Footer";
+import { Footer } from "./components/layout/Footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

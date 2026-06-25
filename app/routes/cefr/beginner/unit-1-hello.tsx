@@ -41,7 +41,7 @@ export default function Introduction() {
             <Subsection label="Greetings" heading={4} />
             <Subsection label="Saying hi!" heading={5} />
             <Meaning value={lesson.languageFocus.greetings} />
-            <Subsection label="Asking Questions" heading={4} />
+            <Subsection label="Questions & Answers" heading={5} />
             <Meaning value={lesson.languageFocus.askingQuestions} />
             <TheAlphabet />
             <Subsection label="Personal Information" heading={4} />

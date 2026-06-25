@@ -281,12 +281,21 @@ export const lesson = {
     askingQuestions: [
       {
         as: "span",
-        parts: [audio("/"), "How are you?", " ", portuguese("Como você está?")],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/how-are-you.mp3",
+          ),
+          "How are you?",
+          " ",
+          portuguese("Como você está?"),
+        ],
       },
       {
         as: "span",
         parts: [
-          audio("/"),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/how-are-you-doing.mp3",
+          ),
           "How are you doing?",
           " ",
           portuguese("Como você vai?"),
@@ -294,24 +303,15 @@ export const lesson = {
       },
       {
         as: "span",
-        parts: [audio("/"), "How are you?", " ", portuguese("Como você está?")],
-      },
-      {
-        as: "span",
         parts: [
-          audio("/"),
-          "How are you doing?",
-          " ",
-          portuguese("Como você vai?"),
-        ],
-      },
-      {
-        as: "span",
-        parts: [
-          audio("/"),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/i-am.mp3",
+          ),
           "I am...",
           " ",
-          audio("/"),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/im.mp3",
+          ),
           "I’m...",
           " ",
           portuguese("Estou..."),
@@ -319,46 +319,99 @@ export const lesson = {
       },
       {
         as: "span",
-        parts: [audio("/"), "good.", " ", italic("informal")],
-      },
-      {
-        as: "span",
-        parts: [audio("/"), "pretty good.", " ", italic("informal")],
-      },
-      {
-        as: "span",
-        parts: [audio("/"), "can’t complain"],
-      },
-      {
-        as: "span",
-        parts: [audio("/"), "same as usual"],
-      },
-      space(),
-      {
-        as: "span",
-        parts: [audio("/"), "How’s it going?"],
-      },
-      {
-        as: "span",
-        parts: [audio("/"), "How’s everything?"],
-      },
-      {
-        as: "span",
-        parts: [audio("/"), "How are things?"],
-      },
-      space(),
-      {
-        as: "span",
-        parts: [audio("/"), "What’s up?"],
-      },
-      {
-        as: "span",
-        parts: [audio("/"), "Nothing much.", " ", portuguese("Nada demais.")],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/good.mp3",
+          ),
+          "good.",
+          " ",
+          italic("informal"),
+        ],
       },
       {
         as: "span",
         parts: [
-          audio("/"),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/pretty-good.mp3",
+          ),
+          "pretty good.",
+          " ",
+          italic("informal"),
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/cant-complain.mp3",
+          ),
+          "can’t complain",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/same-as-usual.mp3",
+          ),
+          "same as usual",
+        ],
+      },
+      space(),
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/hows-it-going.mp3",
+          ),
+          "How’s it going?",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/hows-everything.mp3",
+          ),
+          "How’s everything?",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/how-are-things-with-you.mp3",
+          ),
+          "How are things with you?",
+        ],
+      },
+      space(),
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/whats-up.mp3",
+          ),
+          "What’s up?",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/nothing-much.mp3",
+          ),
+          "Nothing much.",
+          " ",
+          portuguese("Nada demais."),
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/not-much-you.mp3",
+          ),
           "Not much, you?",
           " ",
           portuguese("Nada demais, e você?"),
@@ -366,87 +419,221 @@ export const lesson = {
       },
       {
         as: "span",
-        parts: [audio("/"), "Just chilling.", " ", portuguese("De boa.")],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/just-chilling.mp3",
+          ),
+          "Just chilling.",
+          " ",
+          portuguese("De boa."),
+        ],
       },
     ] satisfies Meaning[],
     personalInformation: [
       {
         as: "span",
-        parts: [audio(".../whats-your-name.mp3"), "What’s your name?"],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name.mp3",
+          ),
+          "What’s your name?",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../my-name-is.mp3"), "My name is..."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name2.mp3",
+          ),
+          "Wha", underline("t’s y"), "our name?"
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../my-names.mp3"), "My name’s..."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-full-name.mp3",
+          ),
+          "What’s your (full) name?",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../how-do-you-spell-your-first-name.mp3"),
-            "How do you spell your first name?"],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-name-is.mp3",
+          ),
+          "My name is...",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../its-p-a-l-m-e-r.mp3"),
-            "(It’s) L-A-U-R-A."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-names.mp3",
+          ),
+          "My name’s...",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../whats-your-last-name.mp3"),
-            "What’s your last name?"],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/laura-palmer.mp3",
+          ),
+          "Laura Palmer.",
+        ],
+      },
+      space(),
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-first-name.mp3",
+          ),
+          "What’s your first name?",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../my-last-name-is.mp3"),
-            "My last name is..."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-first-name-is.mp3",
+          ),
+          "My first name is...",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../my-last-names.mp3"),
-            "My last name’s..."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-first-names.mp3",
+          ),
+          "My first name’s...",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../its-palmer.mp3"),
-            "(It’s) Palmer."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/laura.mp3",
+          ),
+          "(It’s) Laura.",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../how-do-you-spell-your-last-name.mp3"),
-            "How do you spell your last name?"],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-your-first-name.mp3",
+          ),
+          "How do you spell your first name?",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../its-p-a-l-m-e-r.mp3"),
-            "(It’s) P-A-L-M-E-R."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/l-a-u-r-a.mp3",
+          ),
+          "(It’s) L-A-U-R-A.",
+        ],
+      },
+      space(),
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-last-name.mp3",
+          ),
+          "What’s your last name?",
+        ],
       },
       {
         as: "span",
-        parts: [icon("spotlight"), audio(".../how-do-you-spell-it.mp3"),
-            "How do you spell it? (it = first/last)"],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-last-name-is.mp3",
+          ),
+          "My last name is...",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../nice-to-meet-you-1.mp3"),
-            "Nice to meet you."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-last-names.mp3",
+          ),
+          "My last name’s...",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../nice-to-meet-you-2.mp3"),
-            "Nice to mee",
-            underline("t y"),
-            "ou."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/its-palmer.mp3",
+          ),
+          "(It’s) Palmer.",
+        ],
       },
       {
         as: "span",
-        parts: [audio(".../nice-meeting-you.mp3"),
-            "Nice to meeting you."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-your-last-name.mp3",
+          ),
+          "How do you spell your last name?",
+        ],
       },
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/p-a-l-m-e-r.mp3",
+          ),
+          "(It’s) P-A-L-M-E-R.",
+        ],
+      },
+      space(),
+      {
+        as: "span",
+        parts: [
+          icon("spotlight"),
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-it.mp3",
+          ),
+          "How do you spell it? (it = first/last)",
+        ],
+      },
+      space(),
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-to-meet-you-1.mp3",
+          ),
+          "Nice to meet you.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-to-meet-you-2.mp3",
+          ),
+          "Nice to mee",
+          underline("t y"),
+          "ou.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio(
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-meeting-you.mp3",
+          ),
+          "Nice to meeting you.",
+        ],
       },
     ] satisfies Meaning[],
     notes: [
