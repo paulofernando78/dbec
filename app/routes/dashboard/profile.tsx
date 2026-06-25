@@ -1,4 +1,7 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
+import { Ribbon } from "@/components/ui/Ribbon";
+import { LessonDateCard } from "./LessonDateCard/LessonDateCard";
+import { TextArea } from "@/components/ui/TextArea";
 
 export default function Dashboard() {
   return (
@@ -9,9 +12,10 @@ export default function Dashboard() {
         descriptions={["..."]}
       />
       <div >
-          <p>Notes</p>
-          <textarea name="" id="" className="w-full h-20 p-2 overflow-auto bg-white border rounded-lg"></textarea>
-          <p>Dates</p>
+          <Ribbon label="Notes"/>
+          <TextArea />
+          <Ribbon label="Dates"/>
+          <LessonDateCard />
       </div>
     </>
   );

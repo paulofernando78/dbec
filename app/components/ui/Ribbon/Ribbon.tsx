@@ -22,7 +22,7 @@ export const Ribbon = ({
       className={`
         text-lg
         font-bold
-        mb-4
+        mb-[1.1rem]
         px-3
         py-2 
         text-white
