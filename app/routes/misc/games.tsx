@@ -1,5 +1,5 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { SubSection } from "@/components/content/SubSection";
+import { Subsection } from "@/components/ui/Subsection";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
 import { lessons } from "@/data/misc/games";
@@ -11,9 +11,8 @@ export default function Dashboard() {
       {/* <SubSection label="Sierra" heading={3}>
           <LessonCard {...lessons.games.kingsQuest} />
         </SubSection> */}
-      <SubSection label="Lucas Arts" heading={3}>
+      <Subsection label="Lucas Arts" heading={3} />
         <LessonCard {...lessons.games.thimbleWeedPark} />
-      </SubSection>
     </>
   );
 }
