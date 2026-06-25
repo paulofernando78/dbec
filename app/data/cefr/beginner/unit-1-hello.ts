@@ -346,6 +346,7 @@ export const lesson = {
         as: "span",
         parts: [audio("/"), "How are things?"],
       },
+      space(),
       {
         as: "span",
         parts: [audio("/"), "What’s up?"],

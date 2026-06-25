@@ -1,5 +1,4 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { SubSection } from "@/components/content/SubSection";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
 import { lessons } from "@/data/misc/news";
