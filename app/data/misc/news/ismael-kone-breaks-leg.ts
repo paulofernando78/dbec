@@ -69,63 +69,63 @@ export const ismaelKoneBreaksLeg = {
             ],
           },
         ],
-      // list: {
-      //   type: "checkbox" as const,
-      //   instruction: "Check the words you already know.",
-      //   items: [
-      //     {
-      //       value: [bold("injury"), " = physical harm to a person's body"],
-      //     },
-      //     {
-      //       value: [
-      //         bold("stretcher"),
-      //         " = a frame used to carry an injured person",
-      //       ],
-      //     },
-      //     {
-      //       value: [
-      //         bold("tournament"),
-      //         " = a competition with several games or matches",
-      //       ],
-      //     },
-      //     {
-      //       value: [
-      //         bold("recovery"),
-      //         " = the process of becoming healthy again",
-      //       ],
-      //     },
-      //     {
-      //       value: [
-      //         bold("substitute"),
-      //         " = a player who replaces another player",
-      //       ],
-      //     },
-      //     {
-      //       value: [
-      //         bold("overshadowed"),
-      //         " = made something seem less important",
-      //       ],
-      //     },
-      //     {
-      //       value: [bold("lunged"), " = moved forward suddenly"],
-      //     },
-      //     {
-      //       value: [
-      //         bold("tribute"),
-      //         " = an act that shows respect or admiration",
-      //       ],
-      //     },
-      //     {
-      //       value: [bold("devastated"), " = extremely upset or shocked"],
-      //     },
-      //     {
-      //       value: [
-      //         bold("heated confrontation"),
-      //         " = an angry argument or conflict",
-      //       ],
-      //     },
-      //   ],
-      // },
+      list: {
+        type: "checkbox" as const,
+        instruction: "Check the words you already know.",
+        items: [
+          {
+            value: [bold("injury"), " = physical harm to a person's body"],
+          },
+          {
+            value: [
+              bold("stretcher"),
+              " = a frame used to carry an injured person",
+            ],
+          },
+          {
+            value: [
+              bold("tournament"),
+              " = a competition with several games or matches",
+            ],
+          },
+          {
+            value: [
+              bold("recovery"),
+              " = the process of becoming healthy again",
+            ],
+          },
+          {
+            value: [
+              bold("substitute"),
+              " = a player who replaces another player",
+            ],
+          },
+          {
+            value: [
+              bold("overshadowed"),
+              " = made something seem less important",
+            ],
+          },
+          {
+            value: [bold("lunged"), " = moved forward suddenly"],
+          },
+          {
+            value: [
+              bold("tribute"),
+              " = an act that shows respect or admiration",
+            ],
+          },
+          {
+            value: [bold("devastated"), " = extremely upset or shocked"],
+          },
+          {
+            value: [
+              bold("heated confrontation"),
+              " = an angry argument or conflict",
+            ],
+          },
+        ],
+      },
     },
     gist: {
       paragraph: [
