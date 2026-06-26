@@ -563,9 +563,9 @@ export default function WhatsCEFR() {
             label={section.label}
             heading={section.heading}
           >
-            {section.paragraphs.map((paragraph, index) => (
-              <Paragraph key={index} value={paragraph} />
-            ))}
+              {section.paragraphs.map((paragraph, index) => (
+                <Paragraph key={index} value={paragraph}/>
+              ))}
             {section.questions && (
               <>
                 <span className="block mb-4">

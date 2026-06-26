@@ -347,7 +347,6 @@ export const carouselWide = {
           ],
         }),
       ],
-    
     },
   ],
 };
@@ -392,7 +391,7 @@ export const audioPlayer = {
   src: "/assets/audio/welcome.mp3",
 };
 
-export const video = {
+export const videoPlayer = {
   instruction: "Watch the video.",
   videoId: "C8rU4dv2w8Q",
 };
@@ -496,6 +495,49 @@ export const columnDrag = {
       ],
     },
   ],
+};
+
+export const list = {
+  ordered: {
+    type: "ol" as const,
+    instruction: "Look...",
+    items: [
+      {
+        value: ["First", " ", bold("item")],
+      },
+      {
+        value: ["Second", " ", mark("item")],
+      },
+    ],
+  },
+  unordered: {
+    type: "ul" as const,
+    instruction: "Look...",
+    items: [
+      {
+        value: ["First item"],
+      },
+      {
+        value: ["Second item"],
+      },
+    ],
+  },
+  checkbox: {
+    type: "checkbox" as const,
+    instruction: "Check the correct options.",
+    items: [
+      {
+        value: ["Option 1"],
+      },
+      {
+        value: ["Option 2"],
+        textarea: true,
+      },
+      {
+        value: ["Option 3"],
+      },
+    ],
+  },
 };
 
 export const guess = {

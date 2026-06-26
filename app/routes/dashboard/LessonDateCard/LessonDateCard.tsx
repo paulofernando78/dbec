@@ -21,6 +21,7 @@ export const LessonDateCard = () => {
             <option value="H">H</option>
           </select>
         </div>
+        <span className="block font-bold">Class Notes</span>
       <TextArea />
       </div>
     </div>

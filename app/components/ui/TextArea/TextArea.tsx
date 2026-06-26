@@ -11,9 +11,10 @@ export const TextArea = ({ className = "", ...props }: TextareaProps) => {
         min-h-20
         mb-4
         p-2
-        overflow-auto
+        bg-white
         border
         border-gray-300
+        overflow-auto
         rounded-md
         ${className}
         `}

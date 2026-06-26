@@ -210,8 +210,8 @@ export const links = [
         label: "News",
         links: [
           {
-            href: "/",
-            label: "...",
+            href: "/misc/news/ismael-kone-breaks-leg",
+            label: "Ismael Kone Breaks Leg",
           },
         ],
       },

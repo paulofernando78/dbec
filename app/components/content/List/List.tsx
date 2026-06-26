@@ -24,10 +24,9 @@ export const List = ({
 }: ListProps) => {
   if (type === "checkbox") {
     return (
-      <>
-        <p className="font-bold first:mb-0 mb-4">{instruction}</p>
+      <div className="mb-4">
+        <p className="font-bold mb-4">{instruction}</p>
 
-        <div>
           {items.map((item, index) => (
             <div key={index}>
               <label key={index} className={styles.wrapper}>
@@ -42,16 +41,15 @@ export const List = ({
               )}
             </div>
           ))}
-        </div>
-      </>
+      </div>
     );
   }
 
   const Tag = type === "ol" ? "ol" : "ul";
 
   return (
-    <>
-      <p className="font-bold first:mb-0 mb-4">{instruction}</p>
+    <div className="mb-4">
+      <p className="font-bold mb-4">{instruction}</p>
 
       <Tag
         className={
@@ -68,6 +66,6 @@ export const List = ({
           </li>
         ))}
       </Tag>
-    </>
+    </div>
   );
 };

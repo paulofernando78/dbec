@@ -216,26 +216,32 @@ export default [
       "misc/news",
       "routes/misc/news.tsx"),
 
+    route(
+      "/misc/news/:slug",
+      "routes/misc/news/articles.tsx",
+    ),
+
     // Ted-ED
-    route(
-      "misc/ted-ed",
-      "routes/misc/ted-ed.tsx"),
+    // route(
+    //   "misc/ted-ed",
+    //   "routes/misc/ted-ed.tsx"),
 
-    route(
-      "/misc/ted-ed/what-causes-constipation",
-      "routes/misc/ted-ed/what-causes-constipation.tsx",
-    ),
+    // route(
+    //   "/misc/ted-ed/what-causes-constipation",
+    //   "routes/misc/ted-ed/what-causes-constipation.tsx",
+    // ),
 
-    route(
-      "misc/ted-ed/how-your-memory-works",
-      "routes/misc/ted-ed/how-your-memory-works.tsx",
-    ),
+    // route(
+    //   "misc/ted-ed/how-your-memory-works",
+    //   "routes/misc/ted-ed/how-your-memory-works.tsx",
+    // ),
 
     // Games
     route(
       "misc/games",
       "routes/misc/games.tsx",
     ),
+
     route(
       "/misc/games/lucas-arts/thimbleweed-park",
       "routes/misc/games/lucas-arts/thimbleweed-park.tsx",

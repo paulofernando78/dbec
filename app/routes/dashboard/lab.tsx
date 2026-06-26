@@ -11,6 +11,7 @@ import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { Dialogue } from "@/features/Dialogue/Dialogue";
 import { ColumnDrag } from "@/components/content/Column";
+import { List } from "@/components/content/List";
 import { Guess } from "@/features/exercises/Guess";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
@@ -19,19 +20,20 @@ import { Unscramble } from "@/features/exercises/Unscramble";
 import {
   line,
   paragraph,
-  audioPlayer,
-  video,
   image,
   carouselSquare,
+  carouselWide,
   flipCards,
   mediaWrapper,
+  audioPlayer,
+  videoPlayer,
   dialogue,
+  columnDrag,
+  list,
   guess,
   radio,
   fillInTheBlanks,
   scramble,
-  columnDrag,
-  carouselWide,
 } from "@/data/lab";
 import { Subsection } from "@/components/ui/Subsection";
 
@@ -41,15 +43,15 @@ export default function Playground() {
       <Whiteboard
         title="Title (Mock)"
         subtitle="Subtitle"
-        descriptions={["Thimbleweed park"]}
+        descriptions={["description"]}
       />
       <div className="line-break">
         <PageSections>
           {/* Line */}
           <Section id="line (<span> / <p>)" heading={3}>
-          <Subsection label="Subsection" heading={3}/>
-          <Subsection label="Subsection" heading={4}/>
-          <Subsection label="Subsection" heading={5}/>
+            <Subsection label="Subsection" heading={3} />
+            <Subsection label="Subsection" heading={4} />
+            <Subsection label="Subsection" heading={5} />
             <Line as="span" value={line} />
           </Section>
 
@@ -104,7 +106,7 @@ export default function Playground() {
           </Section>
 
           <Section id="video-player" heading={3}>
-            <VideoPlayer {...video} />
+            <VideoPlayer {...videoPlayer} />
           </Section>
 
           {/* Dialogue */}
@@ -115,6 +117,12 @@ export default function Playground() {
           {/* Column Drag */}
           <Section id="Column Drag" heading={3}>
             <ColumnDrag {...columnDrag} />
+          </Section>
+
+          <Section id="List" heading={3}>
+            <List {...list.ordered} />
+            <List {...list.unordered} />
+            <List {...list.checkbox} />
           </Section>
 
           {/* Guess */}

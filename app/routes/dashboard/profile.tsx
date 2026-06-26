@@ -12,7 +12,7 @@ export default function Dashboard() {
         descriptions={["..."]}
       />
       <div >
-          <Ribbon label="Notes"/>
+          <Ribbon label="Important Notes"/>
           <TextArea />
           <Ribbon label="Dates"/>
           <LessonDateCard />
