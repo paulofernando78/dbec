@@ -40,92 +40,123 @@ export const ismaelKoneBreaksLeg = {
       prompt: "Slide the pictures and describe what you see.",
         imgs: [
           {
-            src: "/assets/img/aspect-ratio-square.png",
-            alt: "...",
-            content: [
-              ...content({
-                parts: [
-                  " ",
-                ],
-              }),
-            ],
-          },
-          {
-            src: "https://images.unsplash.com/photo-1597838816882-4435b1977fbe?q=80&w=849&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            alt: "...",
-            content: [
-              ...content({
-                parts: ["2"],
-              }),
-            ],
-          },
-          {
-            word: "memory",
+            word: "tackle",
             img: 0,
             content: [
               ...content({
-                parts: ["3"],
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "injury",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "strether",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "tournament",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "tournament",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "stretcher",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "recovery",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "substitute",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "overshadowed",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "lunged (into)",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "tribute",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "devastated",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
+              }),
+            ],
+          },
+          {
+            word: "heated confrontation",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["0"],
               }),
             ],
           },
         ],
-      list: {
-        type: "checkbox" as const,
-        instruction: "Check the words you already know.",
-        items: [
-          {
-            value: [bold("injury"), " = physical harm to a person's body"],
-          },
-          {
-            value: [
-              bold("stretcher"),
-              " = a frame used to carry an injured person",
-            ],
-          },
-          {
-            value: [
-              bold("tournament"),
-              " = a competition with several games or matches",
-            ],
-          },
-          {
-            value: [
-              bold("recovery"),
-              " = the process of becoming healthy again",
-            ],
-          },
-          {
-            value: [
-              bold("substitute"),
-              " = a player who replaces another player",
-            ],
-          },
-          {
-            value: [
-              bold("overshadowed"),
-              " = made something seem less important",
-            ],
-          },
-          {
-            value: [bold("lunged"), " = moved forward suddenly"],
-          },
-          {
-            value: [
-              bold("tribute"),
-              " = an act that shows respect or admiration",
-            ],
-          },
-          {
-            value: [bold("devastated"), " = extremely upset or shocked"],
-          },
-          {
-            value: [
-              bold("heated confrontation"),
-              " = an angry argument or conflict",
-            ],
-          },
-        ],
-      },
     },
     gist: {
       paragraph: [
@@ -148,17 +179,17 @@ export const ismaelKoneBreaksLeg = {
               question: "What is the main purpose of the report?",
               options: [
                 {
-                  option:
-                    "To report Ismaël Koné's serious injury and Canada's historic victory.",
-                  isCorrect: true,
-                },
-                {
                   option: "To explain why the World Cup final was cancelled.",
                   isCorrect: false,
                 },
                 {
                   option: "To celebrate Qatar's performance in the match.",
                   isCorrect: false,
+                },
+                {
+                  option:
+                    "To report Ismaël Koné's serious injury and Canada's historic victory.",
+                  isCorrect: true,
                 },
                 {
                   option: "To announce Ismaël Koné's retirement from football.",

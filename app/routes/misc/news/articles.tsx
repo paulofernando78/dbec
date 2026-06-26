@@ -28,7 +28,6 @@ export default function Articles() {
         </Section>
         <Section id="Vocabulary" heading={3}>
           <Carousel aspectRatio="square" {...article.sections.vocabulary} />
-          <List {...article.sections.vocabulary.list} />
         </Section>
         <Section id="Gist" heading={3}>
           {/* <Paragraph value={article.sections.gist.paragraph} /> */}
