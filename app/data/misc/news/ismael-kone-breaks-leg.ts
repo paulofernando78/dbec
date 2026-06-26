@@ -37,63 +37,95 @@ export const ismaelKoneBreaksLeg = {
       ],
     },
     vocabulary: {
-      list: {
-        type: "checkbox" as const,
-        instruction: "Check the words you already know.",
-        items: [
+      prompt: "Slide the pictures and describe what you see.",
+        imgs: [
           {
-            value: [bold("injury"), " = physical harm to a person's body"],
-          },
-          {
-            value: [
-              bold("stretcher"),
-              " = a frame used to carry an injured person",
+            src: "/assets/img/aspect-ratio-square.png",
+            alt: "...",
+            content: [
+              ...content({
+                parts: [
+                  " ",
+                ],
+              }),
             ],
           },
           {
-            value: [
-              bold("tournament"),
-              " = a competition with several games or matches",
+            src: "https://images.unsplash.com/photo-1597838816882-4435b1977fbe?q=80&w=849&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            alt: "...",
+            content: [
+              ...content({
+                parts: ["2"],
+              }),
             ],
           },
           {
-            value: [
-              bold("recovery"),
-              " = the process of becoming healthy again",
-            ],
-          },
-          {
-            value: [
-              bold("substitute"),
-              " = a player who replaces another player",
-            ],
-          },
-          {
-            value: [
-              bold("overshadowed"),
-              " = made something seem less important",
-            ],
-          },
-          {
-            value: [bold("lunged"), " = moved forward suddenly"],
-          },
-          {
-            value: [
-              bold("tribute"),
-              " = an act that shows respect or admiration",
-            ],
-          },
-          {
-            value: [bold("devastated"), " = extremely upset or shocked"],
-          },
-          {
-            value: [
-              bold("heated confrontation"),
-              " = an angry argument or conflict",
+            word: "memory",
+            img: 0,
+            content: [
+              ...content({
+                parts: ["3"],
+              }),
             ],
           },
         ],
-      },
+      // list: {
+      //   type: "checkbox" as const,
+      //   instruction: "Check the words you already know.",
+      //   items: [
+      //     {
+      //       value: [bold("injury"), " = physical harm to a person's body"],
+      //     },
+      //     {
+      //       value: [
+      //         bold("stretcher"),
+      //         " = a frame used to carry an injured person",
+      //       ],
+      //     },
+      //     {
+      //       value: [
+      //         bold("tournament"),
+      //         " = a competition with several games or matches",
+      //       ],
+      //     },
+      //     {
+      //       value: [
+      //         bold("recovery"),
+      //         " = the process of becoming healthy again",
+      //       ],
+      //     },
+      //     {
+      //       value: [
+      //         bold("substitute"),
+      //         " = a player who replaces another player",
+      //       ],
+      //     },
+      //     {
+      //       value: [
+      //         bold("overshadowed"),
+      //         " = made something seem less important",
+      //       ],
+      //     },
+      //     {
+      //       value: [bold("lunged"), " = moved forward suddenly"],
+      //     },
+      //     {
+      //       value: [
+      //         bold("tribute"),
+      //         " = an act that shows respect or admiration",
+      //       ],
+      //     },
+      //     {
+      //       value: [bold("devastated"), " = extremely upset or shocked"],
+      //     },
+      //     {
+      //       value: [
+      //         bold("heated confrontation"),
+      //         " = an angry argument or conflict",
+      //       ],
+      //     },
+      //   ],
+      // },
     },
     gist: {
       paragraph: [

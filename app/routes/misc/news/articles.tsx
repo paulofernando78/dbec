@@ -1,12 +1,11 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
-import { Paragraph } from "@/components/content/Paragraph";
 import { List } from "@/components/content/List";
+import { Carousel } from "@/components/ui/Carousel";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
-import { Ribbon } from "@/components/ui/Ribbon";
 
 import { useParams } from "react-router";
 import { news } from "@/data/misc/news/index";
@@ -27,10 +26,12 @@ export default function Articles() {
         <Section id="Before watching" heading={3}>
           <List {...article.sections.beforeWatching} />
         </Section>
-        <Ribbon label="Vocabulary" />
-        <List {...article.sections.vocabulary.list} />
+        <Section id="Vocabulary" heading={3}>
+          <Carousel aspectRatio="square" {...article.sections.vocabulary} />
+          <List {...article.sections.vocabulary.list} />
+        </Section>
         <Section id="Gist" heading={3}>
-          <Paragraph value={article.sections.gist.paragraph} />
+          {/* <Paragraph value={article.sections.gist.paragraph} /> */}
           <VideoPlayer {...article.sections.gist.videoPlayer} />
           <Radio {...article.sections.gist.radio} />
         </Section>

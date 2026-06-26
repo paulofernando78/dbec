@@ -30,7 +30,8 @@ export const List = ({
           {items.map((item, index) => (
             <div key={index}>
               <label key={index} className={styles.wrapper}>
-                <Checkbox /> <InlineRichContent value={item.value} />
+                <Checkbox className="mr-1"/>
+                <InlineRichContent value={item.value} />
               </label>
               {item.textarea && (
                 <textarea
