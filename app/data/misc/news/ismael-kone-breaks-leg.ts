@@ -7,56 +7,35 @@ export const ismaelKoneBreaksLeg = {
     title: "Advanced | Misc | ",
     description: "Ismael Koné Breaks Leg",
   },
-
   whiteboard: {
     title: "Miscellaneous",
     subtitle: "News",
-    descriptions: ["Ismael Koné Breaks Leg"],
+    descriptions: [
+      "A dramatic moment changes the atmosphere of an important football match.",
+    ],
   },
-
-  card: "A serious injury during a football match can change a player's career and affect an entire team. In this lesson, you will watch a news report about Ismaël Koné breaking his leg during a World Cup 2026 match.",
-
   sections: {
     beforeWatching: {
-      paragraph: [
-        ...content({
-          parts: ["Discuss the questions below before watching the video."],
-        }),
+      type: "ol" as const,
+      instruction: "Discuss the questions below before watching the video.",
+      items: [
+        {
+          value: [
+            "Have you ever seen a serious injury during a football match?",
+          ],
+        },
+        {
+          value: [
+            "How can an injury affect a team during an important tournament?",
+          ],
+        },
+        {
+          value: [
+            "Should matches be stopped immediately after serious injuries? Why?",
+          ],
+        },
       ],
-
-      list: {
-        items: [
-          {
-            value: [
-              ...content({
-                parts: [
-                  "1. Have you ever seen a serious injury during a football match?",
-                ],
-              }),
-            ],
-          },
-          {
-            value: [
-              ...content({
-                parts: [
-                  "2. How can an injury affect a team during an important tournament?",
-                ],
-              }),
-            ],
-          },
-          {
-            value: [
-              ...content({
-                parts: [
-                  "3. Should matches be stopped immediately after serious injuries? Why?",
-                ],
-              }),
-            ],
-          },
-        ],
-      },
     },
-
     vocabulary: {
       list: {
         type: "checkbox" as const,
@@ -116,7 +95,6 @@ export const ismaelKoneBreaksLeg = {
         ],
       },
     },
-
     gist: {
       paragraph: [
         ...content({
@@ -160,16 +138,9 @@ export const ismaelKoneBreaksLeg = {
         },
       },
     },
-
     details: {
-      paragraph: [
-        ...content({
-          parts: ["Watch again and listen for specific information."],
-        }),
-      ],
-
       radio: {
-        instruction: "Choose the best response.",
+        instruction: "Watch again and listen for specific information.",
         exercise: {
           questions: [
             {
@@ -240,7 +211,6 @@ export const ismaelKoneBreaksLeg = {
           ],
         },
       },
-
       fillInTheBlanks: {
         instruction: "Complete the definitions with the words from Vocabulary.",
         exercise: {
@@ -389,24 +359,16 @@ export const ismaelKoneBreaksLeg = {
         },
       },
     },
-
     followUp: {
-      paragraph: [
-        ...content({
-          parts: ["Discuss the questions below."],
-        }),
-      ],
-
       list: {
+        type: "ol" as const,
+        instruction: "Answer the questions.",
         items: [
           {
-            value: [
-              ...content({
-                parts: [
-                  "1. How do you think players mentally recover after a serious injury?",
-                ],
-              }),
-            ],
+            value: ["Should dangerous tackles receive longer suspensions?"],
+          },
+          {
+            value: ["Can a serious injury change a player's career forever?"],
           },
         ],
       },
