@@ -176,17 +176,17 @@ export const ismaelKoneBreaksLeg = {
               question: "What happened in the 51st minute?",
               options: [
                 {
-                  option:
-                    "Assim Madibo lunged into a challenge on Ismaël Koné.",
-                  isCorrect: true,
-                },
-                {
                   option: "Jonathan David scored his first goal.",
                   isCorrect: false,
                 },
                 {
                   option: "Canada received a red card.",
                   isCorrect: false,
+                },
+                {
+                  option:
+                    "Assim Madibo lunged into a challenge on Ismaël Koné.",
+                  isCorrect: true,
                 },
                 {
                   option:
@@ -199,10 +199,6 @@ export const ismaelKoneBreaksLeg = {
               question: "What happened after the VAR review?",
               options: [
                 {
-                  option: "Madibo's yellow card was upgraded to a red card.",
-                  isCorrect: true,
-                },
-                {
                   option: "Koné returned to the match.",
                   isCorrect: false,
                 },
@@ -214,18 +210,22 @@ export const ismaelKoneBreaksLeg = {
                   option: "Canada was reduced to ten men.",
                   isCorrect: false,
                 },
+                {
+                  option: "Madibo's yellow card was upgraded to a red card.",
+                  isCorrect: true,
+                },
               ],
             },
             {
               question: "How did Nathan Saliba pay tribute to Koné?",
               options: [
                 {
-                  option: "He held up Koné's shirt after scoring.",
-                  isCorrect: true,
-                },
-                {
                   option: "He dedicated a song to him.",
                   isCorrect: false,
+                },
+                {
+                  option: "He held up Koné's shirt after scoring.",
+                  isCorrect: true,
                 },
                 {
                   option: "He left the match in protest.",
@@ -242,33 +242,19 @@ export const ismaelKoneBreaksLeg = {
       },
 
       fillInTheBlanks: {
-        instruction: "Complete the notes.",
+        instruction: "Complete the definitions with the words from Vocabulary.",
         exercise: {
           blocks: [
             {
               block: [
                 {
-                  text: "Canada completed a stunning",
+                  text: "A",
                 },
                 {
-                  blank: "6-0",
+                  blank: "tournament",
                 },
                 {
-                  text: " victory over Qatar.",
-                },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                {
-                  text: "Madibo's yellow card was upgraded to a",
-                },
-                {
-                  blank: "red",
-                },
-                {
-                  text: " card after a VAR review.",
+                  text: " is a competition with several matches.",
                 },
               ],
               lineBreak: true,
@@ -276,13 +262,13 @@ export const ismaelKoneBreaksLeg = {
             {
               block: [
                 {
-                  text: "Nathan Saliba held up Koné's",
+                  text: "Physical harm to a person's body is called an",
                 },
                 {
-                  blank: "shirt",
+                  blank: "injury",
                 },
                 {
-                  text: " in tribute to his injured teammate.",
+                  text: ".",
                 },
               ],
               lineBreak: true,
@@ -290,13 +276,111 @@ export const ismaelKoneBreaksLeg = {
             {
               block: [
                 {
-                  text: "The Qatari midfielder reportedly broke down in",
+                  text: "The process of becoming healthy again is called",
                 },
                 {
-                  blank: "tears",
+                  blank: "recovery",
                 },
                 {
-                  text: " after realizing the seriousness of the injury.",
+                  text: ".",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "A",
+                },
+                {
+                  blank: "stretcher",
+                },
+                {
+                  text: " is used to carry an injured person.",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "A player who replaces another player is called a",
+                },
+                {
+                  blank: "substitute",
+                },
+                {
+                  text: ".",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "To move forward suddenly means to",
+                },
+                {
+                  blank: "lunge",
+                },
+                {
+                  text: ".",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "If something is made to seem less important, it is",
+                },
+                {
+                  blank: "overshadowed",
+                },
+                {
+                  text: ".",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "An act that shows respect or admiration is called a",
+                },
+                {
+                  blank: "tribute",
+                },
+                {
+                  text: ".",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "An angry argument or conflict is called a",
+                },
+                {
+                  blank: "heated confrontation",
+                },
+                {
+                  text: ".",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "If someone is extremely upset or shocked, they are",
+                },
+                {
+                  blank: "devastated",
+                },
+                {
+                  text: ".",
                 },
               ],
               lineBreak: true,
