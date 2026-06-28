@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "stretcher",
+        "phonetics": "/ˈstretʃ.ər/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a long piece of equipment used for carrying someone who is injured or unable to walk, especially in a hospital or during an emergency",
+        "ptDefinition": "maca; equipamento usado para transportar uma pessoa ferida ou incapaz de andar, especialmente em hospitais ou emergências",
+        "examples": [
+          {
+            "enExample": "The injured player was carried off the field on a stretcher.",
+            "ptExample": "O jogador lesionado foi retirado do campo em uma maca."
+          },
+          {
+            "enExample": "The paramedics placed the patient on a stretcher and took him to the ambulance.",
+            "ptExample": "Os paramédicos colocaram o paciente em uma maca e o levaram para a ambulância."
+          }
+        ],
+        "synonyms": ["gurney", "litter", "hospital bed"],
+        "antonyms": ["walking", "standing"],
+        "seeAlso": ["ambulance", "paramedic", "wheelchair", "hospital"],
+        "notes": [
+          {
+            "enNote": "In American English, 'gurney' is often used for a wheeled hospital stretcher, while 'stretcher' is the more general term.",
+            "ptNote": "No inglês americano, 'gurney' é frequentemente usado para uma maca hospitalar com rodas, enquanto 'stretcher' é o termo mais geral."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "stretcher.avif",
+            "alt": "paramedics carrying an injured soccer player on a stretcher across a football field"
+          }
+        ]
+      },
+      {
         "word": "storage",
         "phonetics": "/ˈstɔːr.ɪdʒ/",
         "partOfSpeech": "noun",

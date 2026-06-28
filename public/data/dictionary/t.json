@@ -2,6 +2,32 @@
   {
     "definitions": [
       {
+        "word": "tackle",
+        "phonetics": "/ˈtæk.əl/",
+        "partOfSpeech": "noun, verb",
+        "enDefinition": "1) In sports, especially football (soccer), an attempt to take the ball away from an opponent by using the feet or body. 2) To deal with or try to solve a problem or difficult situation.",
+        "ptDefinition": "1) No futebol, uma entrada ou desarme feito para tirar a bola do adversário. 2) Enfrentar ou tentar resolver um problema ou situação difícil.",
+        "examples": [
+          {
+            "enExample": "The defender made a perfect tackle and won the ball back.",
+            "ptExample": "O defensor fez um desarme perfeito e recuperou a bola."
+          },
+          {
+            "enExample": "We need to tackle the issue before it becomes a bigger problem.",
+            "ptExample": "Precisamos enfrentar o problema antes que ele se torne maior."
+          }
+        ],
+        "synonyms": ["challenge", "deal with", "address"],
+        "antonyms": ["avoid", "ignore", "retreat"],
+        "seeAlso": ["slide tackle", "foul", "defender", "challenge"],
+        "imgs": [
+          {
+            "src": "tackle.avif",
+            "alt": "A soccer player making a tackle on an opponent during a football match"
+          }
+        ]
+      },
+      {
         "word": "tumbleweed",
         "phonetics": "/ˈtʌm.bəl.wiːd/",
         "partOfSpeech": "noun",

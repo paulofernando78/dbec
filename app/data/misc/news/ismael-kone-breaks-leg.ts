@@ -5,13 +5,13 @@ export const ismaelKoneBreaksLeg = {
 
   metadata: {
     title: "Advanced | Misc | ",
-    description: "Ismael Koné Breaks Leg",
+    description: "A dramatic soccer match moment",
   },
   whiteboard: {
     title: "Miscellaneous",
     subtitle: "News",
     descriptions: [
-      "A dramatic moment changes the atmosphere of an important football match.",
+      "A dramatic moment changes the atmosphere of an important soccer match.",
     ],
   },
   sections: {
@@ -38,123 +38,58 @@ export const ismaelKoneBreaksLeg = {
     },
     vocabulary: {
       prompt: "Slide the pictures and describe what you see.",
-        imgs: [
-          {
-            word: "tackle",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+      imgs: [
+        {
+          word: "stretcher",
+          img: 0
+        },
+        {
+          word: "tackle",
+          img: 0
           },
           {
             word: "injury",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "strether",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "tournament",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "tournament",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
-          },
-          {
-            word: "stretcher",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "recovery",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "substitute",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "overshadowed",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "lunged (into)",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "tribute",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "devastated",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
           {
             word: "heated confrontation",
-            img: 0,
-            content: [
-              ...content({
-                parts: ["0"],
-              }),
-            ],
+            img: 0
           },
         ],
     },

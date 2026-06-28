@@ -30,7 +30,6 @@ export default function Articles() {
           <Carousel aspectRatio="square" {...article.sections.vocabulary} />
         </Section>
         <Section id="Gist" heading={3}>
-          {/* <Paragraph value={article.sections.gist.paragraph} /> */}
           <VideoPlayer {...article.sections.gist.videoPlayer} />
           <Radio {...article.sections.gist.radio} />
         </Section>

@@ -1,4 +1,4 @@
-import { dictionary } from "@/helpers/content";
+import { dictionary, content } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { Image } from "@/components/ui/Image";
 import {
@@ -22,6 +22,7 @@ type CarouselImage = {
 };
 
 type ResolvedWord = {
+  enDefinition?: string;
   imgs?: {
     src?: string;
   }[];
@@ -104,6 +105,16 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
       behavior: "smooth",
     });
   };
+
+  const currentImg = imgs[visibleContentIndex];
+
+  const currentContent =
+    currentImg?.content ??
+    (currentImg.word && resolvedWords[currentImg.word]?.enDefinition
+      ? content({
+          parts: [resolvedWords[currentImg.word]!.enDefinition!],
+        })
+      : undefined);
 
   const scrollRight = () => {
     setCurrentIndex((prev) => (prev < imgs.length - 1 ? prev + 1 : prev));
@@ -274,7 +285,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
           </button>
         ))}
       </div>
-      {imgs[visibleContentIndex]?.content && (
+      {currentContent && (
         <div
           className={`
           mx-auto
@@ -296,7 +307,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
               ${isContentVisible ? "opacity-100" : "opacity-0"}
             `}
           >
-            <InlineRichContent value={imgs[visibleContentIndex].content} />
+            <InlineRichContent value={currentContent} />
           </div>
         </div>
       )}
