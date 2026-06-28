@@ -13,7 +13,6 @@ import { FlipHorizontal2 } from "lucide-react";
 import { Line } from "@/components/content/Line";
 import type { ContentValue } from "@/helpers/content";
 
-
 type ResolvedCardImage = {
   src: string;
   alt: string;
@@ -31,6 +30,7 @@ type FlipCardItem = {
 };
 
 type FlipCardsProps = {
+  instruction: string
   cards?: FlipCardItem[];
 };
 
@@ -113,14 +113,14 @@ const SingleFlipCard = ({
       w-full
       aspect-square
       perspective-[5000px]
-      rounded-[5px]
-      overflow-hidden
       p-1.25
       ">
       <div
         className={`
           relative
-          w-full h-full border 
+          w-full
+          h-full
+          border-10
           transition-transform duration-1000
           border-slate-300
           rounded-lg
@@ -137,8 +137,9 @@ const SingleFlipCard = ({
           w-full
           h-full
           backface-hidden
-          grid place-items-center
-        bg-slate-200 rounded-[5px]
+          grid
+          place-items-center
+        bg-slate-200
           transform-[rotateY(0deg)]
         ">
           <FlipHorizontal2 className="
@@ -150,7 +151,8 @@ const SingleFlipCard = ({
             rounded-full
             outline-2
             outline-white
-            bg-[aliceblue] z-2"
+            bg-[aliceblue]
+            z-2"
           />
           {frontContent ? (
             <span className="
@@ -175,14 +177,16 @@ const SingleFlipCard = ({
               className="
                 w-full
                 h-full
-                border-0"
-            />
-          ) : (
-            <Image
-              src="/assets/img/icons/question-mark.gif"
-              alt="Question mark gif"
-              width={100}
-              height={100}
+                object-contain
+                border-0
+              "
+                />
+              ) : (
+                <Image
+                src="/assets/img/icons/question-mark.gif"
+                alt="Question mark gif"
+                width={100}
+                height={100}
             />
           )}
         </div>
@@ -193,17 +197,20 @@ const SingleFlipCard = ({
           grid place-items-center
           bg-slate-200 rounded-1.25
           backface-hidden
-          transform-[rotateY(180deg)]">
+          transform-[rotateY(180deg)]
+          ">
           {backContent ? (
             <div className="
               text-center 
               text-black
-              text-[1rem]">{backContent}</div>
+              text-[1rem]
+              ">{backContent}</div>
           ) : backLine ? (
-            <div className="t
-              ext-center 
+            <div className="
+              text-center 
               text-black
-              text-[1rem]">
+              text-[1rem]
+              ">
               <Line value={backLine} />
             </div>
           ) : resolvedBackImg ? (
@@ -211,9 +218,9 @@ const SingleFlipCard = ({
               src={resolvedBackImg.src}
               alt={resolvedBackImg.alt}
               className="
-                w-full
-                h-full
-                border-0"
+                border-0
+                object-contain
+                "
             />
           ) : null}
         </div>
@@ -223,18 +230,22 @@ const SingleFlipCard = ({
 };
 
 export const FlipCards = ({
+  instruction,
   cards = [],
 }: FlipCardsProps) => {
   return (
-    <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center mb-4">
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className="w-full max-w-87.5"
-        >
-          <SingleFlipCard {...card} />
-        </div>
-      ))}
-    </div>
+    <>
+      <p className="mb-4 font-bold">{instruction}</p>
+      <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center mb-4">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="w-full max-w-87.5"
+          >
+            <SingleFlipCard {...card} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };

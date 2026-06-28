@@ -103,11 +103,10 @@ export const ismaelKoneBreaksLeg = {
       videoPlayer: {
         videoId: "J_YhQeIrGeQ",
         title: "Ismaël Koné breaks leg during match | World Cup 2026",
-        instruction: "Choose the best answer.",
+        instruction: "Watch the video and answer the question.",
       },
 
       radio: {
-        instruction: "Choose the best answer.",
         exercise: {
           questions: [
             {

@@ -51,10 +51,11 @@ export const VideoPlayer = ({
 
   return (
     <>
-      <p className="font-bold">{instruction}</p>
+      <p className="mb-4 font-bold">{instruction}</p>
       <div
         className="
         w-full
+        mb-4
         aspect-video
         border
         border-[var(--gray-3)]

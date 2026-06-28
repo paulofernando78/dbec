@@ -291,6 +291,7 @@ export const carouselWide = {
 };
 
 export const flipCards = {
+  instruction: "Flip the cards...",
   cards: [
     {
       backLine: [mark("asked")],

@@ -20,7 +20,7 @@ type RadioExercise = {
 };
 
 type RadioProps = {
-  instruction: string;
+  instruction?: string;
   exercise?: RadioExercise;
   score?: boolean;
 };
@@ -59,7 +59,7 @@ export const Radio = ({
 
   return (
     <div className="flex flex-col gap-4 mb-4">
-      <p className="font-bold">{instruction}</p>
+      {instruction && <p className="font-bold">{instruction}</p>}
       {questions.map((q, qIndex) => (
         <div key={qIndex}>
           <p className="mb-px">
@@ -126,14 +126,8 @@ export const Radio = ({
       )}
 
       <div className="flex gap-2 mb-2">
-        <Button
-        variant="check"
-        icon={<Check />}
-        onClick={handleCheck} />
-        <Button
-        variant="reset"
-        icon={<RotateCcw />}
-        onClick={handleReset} />
+        <Button variant="check" icon={<Check />} onClick={handleCheck} />
+        <Button variant="reset" icon={<RotateCcw />} onClick={handleReset} />
       </div>
     </div>
   );
