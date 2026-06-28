@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from "react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 
@@ -6,10 +6,13 @@ import { ScrollText } from "lucide-react";
 
 interface CollapsibleProps {
   title: string;
-  children: ReactNode;
+  content: {
+    en: string;
+    pt: string;
+  }[];
 }
 
-export const Collapsible = ({ title, children }: CollapsibleProps) => {
+export const Collapsible = ({ title, content }: CollapsibleProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCollapsible = () => {
@@ -27,7 +30,14 @@ export const Collapsible = ({ title, children }: CollapsibleProps) => {
         </div>
       </div>
       {isOpen && (
-        <div className="bg-white p-3 border rounded-xl">{children}</div>
+        <div className="bg-white p-3 border rounded-xl">
+          {content.map((line) => (
+            <div key={line.en} className="mb-4 last:mb-0">
+              <p>{line.en}</p>
+              <p className="text-gray-500">{line.pt}</p>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );

@@ -1,3 +1,4 @@
+import { Unscramble } from "@/features/exercises/Unscramble";
 import { bold, content } from "@/helpers/content";
 
 export const ismaelKoneBreaksLeg = {
@@ -41,57 +42,53 @@ export const ismaelKoneBreaksLeg = {
       imgs: [
         {
           word: "stretcher",
-          img: 0
+          img: 0,
         },
         {
           word: "tackle",
-          img: 0
-          },
-          {
-            word: "injury",
-            img: 0
-          },
-          {
-            word: "strether",
-            img: 0
-          },
-          {
-            word: "tournament",
-            img: 0
-          },
-          {
-            word: "tournament",
-            img: 0
-          },
-          {
-            word: "recovery",
-            img: 0
-          },
-          {
-            word: "substitute",
-            img: 0
-          },
-          {
-            word: "overshadowed",
-            img: 0
-          },
-          {
-            word: "lunged (into)",
-            img: 0
-          },
-          {
-            word: "tribute",
-            img: 0
-          },
-          {
-            word: "devastated",
-            img: 0
-          },
-          {
-            word: "heated confrontation",
-            img: 0
-          },
-        ],
+          img: 0,
+        },
+        {
+          word: "injury",
+          img: 0,
+        },
+        {
+          word: "tournament",
+          img: 0,
+        },
+        {
+          word: "tournament",
+          img: 0,
+        },
+        {
+          word: "recovery",
+          img: 0,
+        },
+        {
+          word: "substitute",
+          img: 0,
+        },
+        {
+          word: "overshadowed",
+          img: 0,
+        },
+        {
+          word: "lunged (into)",
+          img: 0,
+        },
+        {
+          word: "tribute",
+          img: 0,
+        },
+        {
+          word: "devastated",
+          img: 0,
+        },
+        {
+          word: "heated confrontation",
+          img: 0,
+        },
+      ],
     },
     gist: {
       paragraph: [
@@ -355,6 +352,35 @@ export const ismaelKoneBreaksLeg = {
           ],
         },
       },
+      unscramble: {
+        instruction: "Unscramble the sentences.",
+        exercise: {
+          items: [
+            {
+              prompt: "injury / the / match / overshadowed / the",
+              answer: "The injury overshadowed the match.",
+            },
+            {
+              prompt: "on / stretcher / a / he / carried / was",
+              answer: "He was carried on a stretcher.",
+            },
+            {
+              prompt:
+                "tribute / shirt / by / holding / paid / he / a / up / the",
+              answer: "He paid a tribute by holding up the shirt.",
+            },
+            {
+              prompt:
+                "after / devastated / teammates / were / the / injury / the",
+              answer: "The teammates were devastated after the injury.",
+            },
+            {
+              prompt: "substitute / a / replaced / the / injured / player",
+              answer: "The substitute replaced the injured player.",
+            },
+          ],
+        },
+      },
     },
     followUp: {
       list: {
@@ -369,6 +395,18 @@ export const ismaelKoneBreaksLeg = {
           },
         ],
       },
+    },
+    script: {
+      content: [
+        {
+          en: "Canada's victory was overshadowed by a serious injury to Ismaël Koné.",
+          pt: "A vitória do Canadá foi ofuscada por uma grave lesão de Ismaël Koné.",
+        },
+        {
+          en: "Canada's victory was overshadowed by a serious injury to Ismaël Koné.",
+          pt: "A vitória do Canadá foi ofuscada por uma grave lesão de Ismaël Koné.",
+        },
+      ],
     },
   },
 };

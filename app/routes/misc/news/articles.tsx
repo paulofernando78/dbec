@@ -6,6 +6,8 @@ import { Carousel } from "@/components/ui/Carousel";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
+import { Unscramble } from "@/features/exercises/Unscramble";
+import { Collapsible } from "@/components/content/Collapsible";
 
 import { useParams } from "react-router";
 import { news } from "@/data/misc/news/index";
@@ -36,9 +38,13 @@ export default function Articles() {
         <Section id="Details" heading={3}>
           <Radio {...article.sections.details.radio} />
           <FillInTheBlanks {...article.sections.details.fillInTheBlanks} />
+          <Unscramble {...article.sections.details.unscramble} />
         </Section>
         <Section id="Follow-up discussion" heading={3}>
           <List {...article.sections.followUp.list} />
+        </Section>
+        <Section id="Script" heading={3}>
+          <Collapsible {...article.sections.script} />
         </Section>
       </PageSections>
     </>
