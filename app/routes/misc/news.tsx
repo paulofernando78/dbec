@@ -1,7 +1,7 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
-import { lessons } from "@/data/misc/news";
+import { lessons } from "@/data/cefr/advanced/news/news";
 
 export default function Dashboard() {
   return (

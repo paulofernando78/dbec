@@ -2,7 +2,7 @@ import { Whiteboard } from "@/components/content/Whiteboard";
 import { Subsection } from "@/components/ui/Subsection";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
-import { lessons } from "@/data/misc/games";
+import { lessons } from "@/data/games/games";
 
 export default function Dashboard() {
   return (
@@ -12,7 +12,7 @@ export default function Dashboard() {
           <LessonCard {...lessons.games.kingsQuest} />
         </SubSection> */}
       <Subsection label="Lucas Arts" heading={3} />
-        <LessonCard {...lessons.games.thimbleWeedPark} />
+      <LessonCard {...lessons.games.thimbleWeedPark} />
     </>
   );
 }

@@ -211,15 +211,22 @@ export default [
       "routes/cefr/upper-intermediate/unit-10-natural-english.tsx",
     ),
 
-    // Misc
+    //! Templates
     route(
-      "misc/news",
-      "routes/misc/news.tsx"),
-
-    route(
-      "/misc/news/:slug",
-      "routes/misc/news/articles.tsx",
+      "/cefr/:level/:slug",
+      "routes/template/articles.tsx",
     ),
+
+    // C1 Advanced
+    route(
+      "cefr/c1/news",
+      "routes/cefr/advanced/news.tsx"),
+
+
+    // C2 Proficiency
+    route(
+      "cefr/c2/news",
+      "routes/cefr/proficiency/news.tsx"),
 
     // Ted-ED
     // route(
@@ -243,8 +250,8 @@ export default [
     ),
 
     route(
-      "/misc/games/lucas-arts/thimbleweed-park",
-      "routes/misc/games/lucas-arts/thimbleweed-park.tsx",
+      "//games/lucas-arts/thimbleweed-park",
+      "routes/games/lucas-arts/thimbleweed-park.tsx",
     ),
   ]),
 ] satisfies RouteConfig;

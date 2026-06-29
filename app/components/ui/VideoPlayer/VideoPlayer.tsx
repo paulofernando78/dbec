@@ -40,10 +40,31 @@ type VideoPlayerProps = {
 export const VideoPlayer = ({
   src,
   videoId,
-  title = "YouTube video",
   instruction,
 }: VideoPlayerProps) => {
   const embedUrl = getEmbedUrl(src, videoId);
+
+  // Caso 1: vídeo local (.mp4)
+
+  if (src?.endsWith(".mp4")) {
+    return (
+      <>
+        <p className="mb-4 font-bold">{instruction}</p>
+
+        <video
+          className="
+            w-full
+            mb-4
+            rounded-lg
+            border
+          "
+          controls
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      </>
+    );
+  }
 
   if (!embedUrl) {
     return null;
@@ -51,24 +72,38 @@ export const VideoPlayer = ({
 
   return (
     <>
-      <p className="mb-4 font-bold">{instruction}</p>
+      <p
+        className="
+        mb-4
+        font-bold
+      "
+      >
+        {instruction}
+      </p>
       <div
         className="
-        w-full
-        mb-4
-        aspect-video
-        border
-        border-[var(--gray-3)]
-        rounded-[var(--border-radius)]
-        overflow-hidden
-        bg-[var(--slate-10)]
-    "
+          w-full
+          mb-4
+          aspect-video
+          border
+          rounded-lg
+          overflow-hidden
+        "
       >
         <iframe
-          className="w-full h-full border-0"
+          className="
+            w-full
+            h-full
+            border-0"
           src={embedUrl}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture
+          "
           allowFullScreen
         />
       </div>

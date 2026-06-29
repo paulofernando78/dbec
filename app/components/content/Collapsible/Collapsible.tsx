@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { ScrollText } from "lucide-react";
 
 interface CollapsibleProps {
-  title: string;
+  title?: string;
   content: {
     en: string;
     pt: string;
@@ -23,10 +23,10 @@ export const Collapsible = ({ title, content }: CollapsibleProps) => {
       <div>
         <div className="flex items-center gap-2 mb-6">
           <Button
-            icon={<ScrollText className="stroke-gray-400" />}
+            icon="Show"
             onClick={toggleCollapsible}
           />
-          <span className="block font-bold translate-y-1">{title}</span>
+          {title && <span className="block font-bold translate-y-1">{title}</span>}
         </div>
       </div>
       {isOpen && (

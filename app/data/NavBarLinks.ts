@@ -154,7 +154,7 @@ export const links = [
         ],
       },
       {
-        href: "/cefr/upper-intermediate",
+        href: "/cefr/advanced",
         label: "B2 Upper-Intermediate",
         links: [
           {
@@ -199,51 +199,39 @@ export const links = [
           },
         ],
       },
+      {
+        href: "/cefr/upper-intermediate",
+        label: "C1 Advanced",
+        links: [
+          {
+            href: "/cefr/advanced/a-soccer-match-dramatic-moment",
+            label: "A Soccer Match Dramatic Moment",
+          },
+        ],
+      },
     ],
   },
-  // Miscellaneous
+  // Games
   {
-    title: "C1-C2 Miscellaneous",
+    title: "GAMES",
     links: [
       {
         href: "/",
-        label: "News",
+        label: "Sierra",
         links: [
           {
-            href: "/misc/news/ismael-kone-breaks-leg",
-            label: "Ismael Kone Breaks Leg",
+            href: "/games/kings-quest",
+            label: "King’s Quest",
           },
         ],
       },
       {
         href: "/",
-        label: "Ted-Ed",
+        label: "Lucas Arts",
         links: [
           {
-            href: "/",
-            label: "What Causes Constipation",
-          },
-          {
-            href: "/",
-            label: "When will the next ice age happen",
-          },
-          {
-            href: "/",
-            label: "The ancient origin of beer",
-          },
-          {
-            href: "/",
-            label: "...",
-          },
-        ],
-      },
-      {
-        href: "/",
-        label: "Games",
-        links: [
-          {
-            href: "/",
-            label: "Thimbleweed PArk",
+            href: "/games/thumbleweed-park",
+            label: "Thumbleweed PArk",
           },
         ],
       },
