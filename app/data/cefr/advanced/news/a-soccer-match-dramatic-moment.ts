@@ -162,7 +162,7 @@ export const aSoccerMatchDramaticMoment = {
           en: [
             ...content({
               parts: [
-                "In the 51st minute, Qatar midfielder Assim Madibo lunged into a challenge on Koné.",
+                "In the 51st minute, Qatar ", mark("midfielder"), " Assim Madibo lunged into a challenge on Koné."
               ],
             }),
           ],
