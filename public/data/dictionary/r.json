@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "recovery",
+        "phonetics": "/rɪˈkʌv.ɚ.i/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the process of returning to a normal state of health, mind, or strength; the act of getting back something lost or stolen",
+        "ptDefinition": "o processo de retorno a um estado normal de saúde, mente ou força; o ato de recuperar algo perdido ou roubado",
+        "examples": [
+          {
+            "enExample": "After the surgery, her recovery took several weeks.",
+            "ptExample": "Após a cirurgia, a recuperação dela levou várias semanas."
+          },
+          {
+            "enExample": "The company reported a strong recovery in sales after the new product launch.",
+            "ptExample": "A empresa relatou uma forte recuperação nas vendas após o lançamento do novo produto."
+          }
+        ],
+        "synonyms": ["restoration", "rehabilitation", "recuperation", "bounce-back"],
+        "antonyms": ["decline", "deterioration", "loss"],
+        "seeAlso": ["restore", "rehabilitate", "recuperate", "healing"],
+        "notes": [
+          {
+            "enNote": "Used in medical, economic, and general contexts to describe improvement after a setback.",
+            "ptNote": "Usado em contextos médicos, econômicos e gerais para descrever melhoria após um revés."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "recovery.avif",
+            "alt": "A person doing physical therapy with assistance."
+          }
+        ]
+      },
+      {
         "word": "recall",
         "phonetics": "/rɪˈkɔːl/",
         "partOfSpeech": "verb, noun",

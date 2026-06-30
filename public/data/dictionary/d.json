@@ -1,7 +1,38 @@
 [
   {
     "definitions": [
-      
+      {
+        "word": "devastate",
+        "phonetics": "/ˈdev.ə.steɪt/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to destroy something completely or to make someone feel extremely shocked, upset, or sad",
+        "ptDefinition": "devastar; destruir completamente algo ou deixar alguém extremamente chocado, triste ou abalado",
+        "examples": [
+          {
+            "enExample": "The earthquake devastated the small town and left thousands of people homeless.",
+            "ptExample": "O terremoto devastou a pequena cidade e deixou milhares de pessoas desabrigadas."
+          },
+          {
+            "enExample": "She was devastated when she heard the news of her grandfather's death.",
+            "ptExample": "Ela ficou arrasada quando soube da morte de seu avô."
+          }
+        ],
+        "synonyms": ["destroy", "ruin", "wreck", "shatter"],
+        "antonyms": ["rebuild", "restore", "repair", "comfort"],
+        "seeAlso": ["devastated", "destruction", "disaster", "ruin"],
+        "notes": [
+          {
+            "enNote": "Devastate can refer to both physical destruction, such as a natural disaster, and strong emotional suffering.",
+            "ptNote": "Devastate pode se referir tanto à destruição física, como a causada por um desastre natural, quanto a um grande sofrimento emocional."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "devastate.avif",
+            "alt": "A boy looking shocked in a town destroyed by a natural disaster."
+          }
+        ]
+      },
       {
         "word": "dehydration",
         "phonetics": "/ˌdiːhaɪˈdreɪʃən/",

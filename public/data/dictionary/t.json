@@ -2,6 +2,70 @@
   {
     "definitions": [
       {
+        "word": "tribute",
+        "phonetics": "/ˈtrɪb.juːt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "Something that is said, done, or given to show respect, admiration, or gratitude for someone or something.",
+        "ptDefinition": "Algo que é dito, feito ou dado para demonstrar respeito, admiração ou gratidão por alguém ou algo.",
+        "examples": [
+          {
+            "enExample": "The fans paid tribute to the legendary player before the match.",
+            "ptExample": "Os torcedores prestaram homenagem ao jogador lendário antes da partida."
+          },
+          {
+            "enExample": "The documentary is a tribute to the scientists who changed the world.",
+            "ptExample": "O documentário é uma homenagem aos cientistas que mudaram o mundo."
+          }
+        ],
+        "synonyms": ["homage", "honor", "recognition", "salute"],
+        "antonyms": ["disrespect", "dishonor", "criticism"],
+        "seeAlso": ["memorial", "commemoration", "dedication", "respect"],
+        "notes": [
+          {
+            "enNote": "A tribute is usually a public expression of admiration, respect, or thanks for a person's achievements or contributions.",
+            "ptNote": "Um tribute geralmente é uma expressão pública de admiração, respeito ou gratidão pelas conquistas ou contribuições de uma pessoa."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "tribute.avif",
+            "alt": "People paying tribute to a famous person with flowers and applause."
+          }
+        ]
+      },
+      {
+        "word": "tournament",
+        "phonetics": "/ˈtɝː.nə.mənt/, /ˈtʊr.nə.mənt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A series of contests in which competitors play against each other to determine a winner.",
+        "ptDefinition": "Uma série de competições em que participantes disputam entre si para determinar um vencedor.",
+        "examples": [
+          {
+            "enExample": "The tennis tournament attracted players from all over the world.",
+            "ptExample": "O torneio de tênis atraiu jogadores de todo o mundo."
+          },
+          {
+            "enExample": "They entered the school chess tournament hoping to win.",
+            "ptExample": "Eles se inscreveram no torneio de xadrez da escola esperando ganhar."
+          }
+        ],
+        "synonyms": ["competition", "contest", "championship"],
+        "antonyms": ["practice", "exhibition", "friendly match"],
+        "seeAlso": ["bracket", "match", "champion", "season"],
+        "notes": [
+          {
+            "enNote": "Often used for sports events but can also refer to competitions in games or other skills.",
+            "ptNote": "Geralmente usado para eventos esportivos, mas também pode se referir a competições em jogos ou outras habilidades."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "tournament.avif",
+            "alt": "A stadium filled with competitors and spectators during a sports tournament"
+          }
+        ]
+      },
+      {
         "word": "tackle",
         "phonetics": "/ˈtæk.əl/",
         "partOfSpeech": "noun, verb",

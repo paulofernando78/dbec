@@ -65,23 +65,19 @@ export const aSoccerMatchDramaticMoment = {
           img: 0,
         },
         {
-          word: "substitute",
+          word: "lunge",
           img: 0,
         },
         {
-          word: "overshadowed",
+          word: "devastate",
           img: 0,
         },
         {
-          word: "lunged (into)",
+          word: "overshadow",
           img: 0,
         },
         {
-          word: "devastated",
-          img: 0,
-        },
-        {
-          word: "heated confrontation",
+          word: "confrontation",
           img: 0,
         },
         {

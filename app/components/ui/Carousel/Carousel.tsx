@@ -307,7 +307,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
               ${isContentVisible ? "opacity-100" : "opacity-0"}
             `}
           >
-            <InlineRichContent value={currentContent} />
+            <span className="font-bold">Hint:</span> <InlineRichContent value={currentContent} />
           </div>
         </div>
       )}

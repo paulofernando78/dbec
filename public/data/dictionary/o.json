@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "overshadow",
+        "phonetics": "/ˌoʊ.vɚˈʃæd.oʊ/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to make something or someone seem less important, successful, or noticeable because something else receives more attention",
+        "ptDefinition": "ofuscar; fazer algo ou alguém parecer menos importante ou menos notável porque outra coisa recebe mais atenção",
+        "examples": [
+          {
+            "enExample": "The team's victory was overshadowed by the captain's injury.",
+            "ptExample": "A vitória do time foi ofuscada pela lesão do capitão."
+          },
+          {
+            "enExample": "Her achievements were overshadowed by her brother's success.",
+            "ptExample": "As conquistas dela foram ofuscadas pelo sucesso do irmão."
+          }
+        ],
+        "synonyms": ["eclipse", "outshine", "diminish", "overwhelm"],
+        "antonyms": ["highlight", "emphasize", "promote", "spotlight"],
+        "seeAlso": ["outshine", "steal the spotlight", "eclipse", "dominate"],
+        "notes": [
+          {
+            "enNote": "Overshadow is often used when an important event becomes less significant because another event attracts more attention, usually something negative or more dramatic.",
+            "ptNote": "Overshadow é frequentemente usado quando um evento importante se torna menos significativo porque outro evento atrai mais atenção, geralmente algo negativo ou mais dramático."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "overshadow.avif",
+            "alt": "A happy football team celebrating with a trophy while a disappointed player stands alone in the background."
+          }
+        ]
+      },
+      {
         "word": "orbit",
         "phonetics": "/ˈɔːr.bɪt/",
         "partOfSpeech": "noun",

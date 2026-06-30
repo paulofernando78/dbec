@@ -2,6 +2,37 @@
   {
     "definitions": [
       {
+        "word": "lunge",
+        "partOfSpeech": "verb, noun",
+        "enDefinition": "To move suddenly and quickly toward someone or something, usually with force or in an attempt to catch or attack it.",
+        "ptDefinition": "Avançar ou se lançar repentinamente em direção a alguém ou algo, geralmente com força ou na tentativa de pegar ou atacar.",
+        "examples": [
+          {
+            "enExample": "The defender lunged at the ball and made an incredible tackle.",
+            "ptExample": "O defensor se lançou na bola e fez um desarme incrível."
+          },
+          {
+            "enExample": "The dog lunged toward the gate when it saw the mailman.",
+            "ptExample": "O cachorro avançou em direção ao portão quando viu o carteiro."
+          }
+        ],
+        "synonyms": ["rush", "leap", "charge", "spring"],
+        "antonyms": ["retreat", "withdraw", "back away"],
+        "seeAlso": ["pounce", "dash", "jump", "attack"],
+        "notes": [
+          {
+            "enNote": "Lunge often suggests a sudden, aggressive, or uncontrolled movement toward something.",
+            "ptNote": "Lunge geralmente sugere um movimento repentino, agressivo ou descontrolado em direção a algo."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "lunge.avif",
+            "alt": "A soccer player lunging forward to tackle the ball."
+          }
+        ]
+      },
+      {
         "word": "learning",
         "phonetics": "/ˈlɜːrnɪŋ/",
         "partOfSpeech": "noun",
