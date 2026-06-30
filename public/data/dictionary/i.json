@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "injury",
+        "phonetics": "/ˈɪn.dʒər.i/",
+        "partOfSpeech": "noun",
+        "enDefinition": "physical harm or damage done to a person's body, especially as the result of an accident or sports activity",
+        "ptDefinition": "lesão; ferimento; dano físico causado ao corpo de uma pessoa, especialmente como resultado de um acidente ou atividade esportiva",
+        "examples": [
+          {
+            "enExample": "The player suffered a serious leg injury during the match.",
+            "ptExample": "O jogador sofreu uma grave lesão na perna durante a partida."
+          },
+          {
+            "enExample": "She couldn't work for two weeks because of her back injury.",
+            "ptExample": "Ela não pôde trabalhar por duas semanas por causa de sua lesão nas costas."
+          }
+        ],
+        "synonyms": ["wound", "hurt", "damage", "trauma"],
+        "antonyms": ["health", "wellness", "recovery"],
+        "seeAlso": ["hurt", "wound", "illness", "pain", "accident"],
+        "notes": [
+          {
+            "enNote": "An injury usually refers to physical damage to the body, while an illness refers to a disease or sickness.",
+            "ptNote": "Injury geralmente se refere a um dano físico ao corpo, enquanto illness se refere a uma doença ou enfermidade."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "injury.avif",
+            "alt": "A soccer player holding his injured leg during a match"
+          }
+        ]
+      },
+      {
         "word": "information",
         "phonetics": "/ˌɪn.fəˈmeɪ.ʃən/",
         "partOfSpeech": "noun",
