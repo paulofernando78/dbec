@@ -140,169 +140,9 @@ export const aSoccerMatchDramaticMoment = {
         },
       },
     },
-    script: {
-      content: [
-        {
-          en: [
-            ...content({
-              parts: [
-                "Canada's historic 6-0 World Cup victory over Qatar was ",
-                mark("overshadowed"),
-                " by a heartbreaking ",
-                mark("injury"),
-                " to midfielder Ismaël Koné and ",
-                mark("heated confrontations"),
-                " between players from both teams.",
-              ],
-            }),
-          ],
-          pt: "A histórica vitória do Canadá por 6 a 0 sobre o Catar na Copa do Mundo foi ofuscada por uma lesão devastadora do meio-campista Ismaël Koné e por confrontos acalorados entre jogadores das duas equipes.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "In the 51st minute, Qatar ", mark("midfielder"), " Assim Madibo lunged into a challenge on Koné."
-              ],
-            }),
-          ],
-          pt: "No 51º minuto, o meio-campista do Catar Assim Madibo entrou de forma agressiva em uma disputa com Koné.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "What initially looked like a tough tackle quickly turned into a nightmare as Koné suffered a severe leg injury and had to be stretchered off the field.",
-              ],
-            }),
-          ],
-          pt: "O que inicialmente parecia uma entrada dura rapidamente se transformou em um pesadelo, pois Koné sofreu uma grave lesão na perna e precisou ser retirado de maca.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "Reports from multiple outlets described fears of a broken leg, with players from both sides visibly distressed by the incident.",
-              ],
-            }),
-          ],
-          pt: "Relatos de vários veículos de comunicação descreveram temores de uma perna quebrada, com jogadores de ambos os lados visivelmente abalados pelo incidente.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "The challenge sparked furious reactions from Canadian players.",
-              ],
-            }),
-          ],
-          pt: "A entrada provocou reações furiosas dos jogadores canadenses.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "A heated confrontation broke out on the pitch, with players surrounding the referee and exchanging angry words with their Qatari opponents.",
-              ],
-            }),
-          ],
-          pt: "Um confronto acalorado começou em campo, com jogadores cercando o árbitro e trocando palavras raivosas com seus adversários catarianos.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "Tensions also spilled over toward the benches as emotions boiled over after seeing one of Canada's key midfielders lying injured.",
-              ],
-            }),
-          ],
-          pt: "As tensões também se espalharam para os bancos de reservas, enquanto as emoções transbordavam ao ver um dos principais meio-campistas do Canadá caído e lesionado.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "After a VAR review, Madibo's yellow card was upgraded to a red card.",
-              ],
-            }),
-          ],
-          pt: "Após uma revisão do VAR, o cartão amarelo de Madibo foi alterado para um cartão vermelho.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "The Qatari midfielder was devastated when he realized the seriousness of the injury, reportedly breaking down in tears and leaving the field in shock.",
-              ],
-            }),
-          ],
-          pt: "O meio-campista catariano ficou devastado ao perceber a gravidade da lesão, supostamente desabando em lágrimas e deixando o campo em estado de choque.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "Despite the emotional scenes, Canada continued to dominate.",
-              ],
-            }),
-          ],
-          pt: "Apesar das cenas emocionantes, o Canadá continuou dominando.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "Jonathan David scored a hat-trick while Canada completed a stunning 6-0 win over a Qatar side that finished the match with nine men.",
-              ],
-            }),
-          ],
-          pt: "Jonathan David marcou um hat-trick enquanto o Canadá completava uma impressionante vitória por 6 a 0 sobre um Catar que terminou a partida com nove jogadores.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "After scoring, Nathan Saliba held up Koné's shirt in a touching tribute to his injured teammate.",
-              ],
-            }),
-          ],
-          pt: "Após marcar, Nathan Saliba ergueu a camisa de Koné em uma emocionante homenagem ao seu companheiro lesionado.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "For Canadian fans, it should have been a night of pure celebration, the nation's first ever men's World Cup victory.",
-              ],
-            }),
-          ],
-          pt: "Para os torcedores canadenses, deveria ter sido uma noite de pura celebração, a primeira vitória da seleção masculina do país em uma Copa do Mundo.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "Instead, the final whistle brought mixed emotions, joy at a famous win, but deep concern for one of Canada's brightest young stars.",
-              ],
-            }),
-          ],
-          pt: "Em vez disso, o apito final trouxe sentimentos mistos: alegria por uma vitória histórica, mas profunda preocupação com uma das jovens estrelas mais promissoras do Canadá.",
-        },
-        {
-          en: [
-            ...content({
-              parts: [
-                "The football world now waits for an official update on the extent of Ismaël Koné's injury.",
-              ],
-            }),
-          ],
-          pt: "O mundo do futebol agora aguarda uma atualização oficial sobre a gravidade da lesão de Ismaël Koné.",
-        },
-      ],
-    },
     details: {
       radio: {
-        instruction: "Watch again and listen for specific information.",
+        instruction: "Watch again for specific information.",
         exercise: {
           questions: [
             {
@@ -549,6 +389,172 @@ export const aSoccerMatchDramaticMoment = {
           ],
         },
       },
+    },
+    script: {
+      content: [
+        {
+          en: [
+            ...content({
+              parts: [
+                "Canada's historic 6-0 World Cup victory over Qatar was ",
+                mark("overshadowed"),
+                " by a heartbreaking ",
+                mark("injury"),
+                " to ",
+                mark("midfilder"),
+                " Ismaël Koné and ",
+                mark("heated confrontations"),
+                " between players from both teams.",
+              ],
+            }),
+          ],
+          pt: "A histórica vitória do Canadá por 6 a 0 sobre o Catar na Copa do Mundo foi ofuscada por uma lesão devastadora do meio-campista Ismaël Koné e por confrontos acalorados entre jogadores das duas equipes.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "In the 51st minute, Qatar ",
+                mark("midfielder"),
+                " Assim Madibo ",
+                mark("lunged into"),
+                " a challenge on Koné."
+              ],
+            }),
+          ],
+          pt: "No 51º minuto, o meio-campista do Catar Assim Madibo entrou de forma agressiva em uma disputa com Koné.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "What initially looked like a tough tackle quickly turned into a nightmare as Koné suffered a severe leg injury and had to be stretchered off the field.",
+              ],
+            }),
+          ],
+          pt: "O que inicialmente parecia uma entrada dura rapidamente se transformou em um pesadelo, pois Koné sofreu uma grave lesão na perna e precisou ser retirado de maca.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "Reports from multiple outlets described fears of a broken leg, with players from both sides visibly distressed by the incident.",
+              ],
+            }),
+          ],
+          pt: "Relatos de vários veículos de comunicação descreveram temores de uma perna quebrada, com jogadores de ambos os lados visivelmente abalados pelo incidente.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "The challenge sparked furious reactions from Canadian players.",
+              ],
+            }),
+          ],
+          pt: "A entrada provocou reações furiosas dos jogadores canadenses.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "A heated confrontation broke out on the pitch, with players surrounding the referee and exchanging angry words with their Qatari opponents.",
+              ],
+            }),
+          ],
+          pt: "Um confronto acalorado começou em campo, com jogadores cercando o árbitro e trocando palavras raivosas com seus adversários catarianos.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "Tensions also spilled over toward the benches as emotions boiled over after seeing one of Canada's key midfielders lying injured.",
+              ],
+            }),
+          ],
+          pt: "As tensões também se espalharam para os bancos de reservas, enquanto as emoções transbordavam ao ver um dos principais meio-campistas do Canadá caído e lesionado.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "After a VAR review, Madibo's yellow card was upgraded to a red card.",
+              ],
+            }),
+          ],
+          pt: "Após uma revisão do VAR, o cartão amarelo de Madibo foi alterado para um cartão vermelho.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "The Qatari midfielder was devastated when he realized the seriousness of the injury, reportedly breaking down in tears and leaving the field in shock.",
+              ],
+            }),
+          ],
+          pt: "O meio-campista catariano ficou devastado ao perceber a gravidade da lesão, supostamente desabando em lágrimas e deixando o campo em estado de choque.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "Despite the emotional scenes, Canada continued to dominate.",
+              ],
+            }),
+          ],
+          pt: "Apesar das cenas emocionantes, o Canadá continuou dominando.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "Jonathan David scored a hat-trick while Canada completed a stunning 6-0 win over a Qatar side that finished the match with nine men.",
+              ],
+            }),
+          ],
+          pt: "Jonathan David marcou um hat-trick enquanto o Canadá completava uma impressionante vitória por 6 a 0 sobre um Catar que terminou a partida com nove jogadores.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "After scoring, Nathan Saliba held up Koné's shirt in a touching tribute to his injured teammate.",
+              ],
+            }),
+          ],
+          pt: "Após marcar, Nathan Saliba ergueu a camisa de Koné em uma emocionante homenagem ao seu companheiro lesionado.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "For Canadian fans, it should have been a night of pure celebration, the nation's first ever men's World Cup victory.",
+              ],
+            }),
+          ],
+          pt: "Para os torcedores canadenses, deveria ter sido uma noite de pura celebração, a primeira vitória da seleção masculina do país em uma Copa do Mundo.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "Instead, the final whistle brought mixed emotions, joy at a famous win, but deep concern for one of Canada's brightest young stars.",
+              ],
+            }),
+          ],
+          pt: "Em vez disso, o apito final trouxe sentimentos mistos: alegria por uma vitória histórica, mas profunda preocupação com uma das jovens estrelas mais promissoras do Canadá.",
+        },
+        {
+          en: [
+            ...content({
+              parts: [
+                "The football world now waits for an official update on the extent of Ismaël Koné's injury.",
+              ],
+            }),
+          ],
+          pt: "O mundo do futebol agora aguarda uma atualização oficial sobre a gravidade da lesão de Ismaël Koné.",
+        },
+      ],
     },
     followUp: {
       list: {

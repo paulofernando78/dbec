@@ -37,12 +37,12 @@ export default function Articles() {
         <Section id="Gist" heading={3}>
           <VideoPlayer {...article.sections.gist.videoPlayer} />
           <Radio {...article.sections.gist.radio} />
-          <Script {...article.sections.script} />
         </Section>
         <Section id="Details" heading={3}>
           <Radio {...article.sections.details.radio} />
           <FillInTheBlanks {...article.sections.details.fillInTheBlanks} />
           <Unscramble {...article.sections.details.unscramble} />
+          <Script {...article.sections.script} />
         </Section>
         <Section id="Follow-up discussion" heading={3}>
           <List {...article.sections.followUp.list} />
