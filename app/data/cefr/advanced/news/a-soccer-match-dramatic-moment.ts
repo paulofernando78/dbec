@@ -428,7 +428,13 @@ export const aSoccerMatchDramaticMoment = {
           en: [
             ...content({
               parts: [
-                "What initially looked like a tough tackle quickly turned into a nightmare as Koné suffered a severe leg injury and had to be stretchered off the field.",
+                "What initially looked like a tough ",
+                mark("tackle"),
+                " quickly turned into a nightmare as Koné suffered a severe leg ",
+                mark(" injury "),
+                " and had to be ",
+                mark("stretchered off "),
+                " the field."
               ],
             }),
           ],
