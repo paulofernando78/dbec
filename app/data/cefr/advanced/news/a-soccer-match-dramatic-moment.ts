@@ -1,9 +1,4 @@
-import {
-  audio,
-  content,
-  mark,
-  underline
-} from "@/helpers/content";
+import { audio, content, mark, underline } from "@/helpers/content";
 
 export const aSoccerMatchDramaticMoment = {
   slug: "a-soccer-match-dramatic-moment",
@@ -66,10 +61,6 @@ export const aSoccerMatchDramaticMoment = {
         },
         {
           word: "lunge",
-          img: 0,
-        },
-        {
-          word: "devastate",
           img: 0,
         },
         {
@@ -202,146 +193,102 @@ export const aSoccerMatchDramaticMoment = {
         },
       },
       fillInTheBlanks: {
-        instruction: "Complete the definitions with the words from Vocabulary.",
+        instruction: "Fill in the blanks with the correct answer.",
         exercise: {
           blocks: [
             {
               block: [
-                {
-                  text: "A",
-                },
-                {
-                  blank: "tournament",
-                },
-                {
-                  text: " is a competition with several matches.",
-                },
+                { text: "The players paid a" },
+                { blank: "touching tribute" },
+                { text: "to their former coach." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "Physical harm to a person's body is called an",
-                },
-                {
-                  blank: "injury",
-                },
-                {
-                  text: ".",
-                },
+                { text: "The protests" },
+                { blank: "spilled over" },
+                { text: "into neighboring cities." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "The process of becoming healthy again is called",
-                },
-                {
-                  blank: "recovery",
-                },
-                {
-                  text: ".",
-                },
+                { text: "Doctors are still assessing" },
+                { blank: "the extent of" },
+                { text: "his injuries." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "A",
-                },
-                {
-                  blank: "stretcher",
-                },
-                {
-                  text: " is used to carry an injured person.",
-                },
+                { text: "The scandal completely" },
+                { blank: "overshadowed" },
+                { text: "the team's victory." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "To move forward suddenly means to",
-                },
-                {
-                  blank: "lunge",
-                },
-                {
-                  text: ".",
-                },
+                { text: "She" },
+                { blank: "broke down in tears" },
+                { text: "when she heard the bad news." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "If something is made to seem less important, it is",
-                },
-                {
-                  blank: "overshadowed",
-                },
-                {
-                  text: ".",
-                },
+                { text: "The underdogs secured a" },
+                { blank: "stunning" },
+                { text: "3-0 victory." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "An act that shows respect or admiration is called a",
-                },
-                {
-                  blank: "tribute",
-                },
-                {
-                  text: ".",
-                },
+                { text: "A" },
+                { blank: "heated confrontation" },
+                { text: "broke out between the players after the foul." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "An angry argument or conflict is called a",
-                },
-                {
-                  blank: "confrontation",
-                },
-                {
-                  text: ".",
-                },
+                { text: "The midfielder" },
+                { blank: "lunged into" },
+                { text: "the challenge and injured his opponent." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "If someone is extremely upset or shocked, they are",
-                },
-                {
-                  blank: "devastated",
-                },
-                {
-                  text: ".",
-                },
+                { text: "The final result left fans with" },
+                { blank: "mixed emotions" },
+                { text: "." },
               ],
               lineBreak: true,
             },
-             {
+            {
               block: [
-                {  
-                  text: "",
-                },
-                {
-                  blank: "hat trick",
-                },
-                {
-                  text: ".",
-                },
+                { text: "Emotions" },
+                { blank: "boiled over" },
+                { text: "when the referee showed the red card." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The midfielder had to be" },
+                { blank: "stretchered off" },
+                { text: "after twisting his ankle." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "A fight" },
+                { blank: "broke out" },
+                { text: "in the stands after the final whistle." },
               ],
               lineBreak: true,
             },
@@ -353,30 +300,60 @@ export const aSoccerMatchDramaticMoment = {
         exercise: {
           items: [
             {
-              prompt: "tournament",
-              answer: "...",
-            },
-            {
-              prompt: "injury / the / match / overshadowed / the",
-              answer: "The injury overshadowed the match.",
-            },
-            {
-              prompt: "on / stretcher / a / he / carried off / was / the track",
-              answer: "He was carried off the track on a stretcher.",
+              prompt:
+                "into / the / player / lunged / challenge / recklessly / the",
+              answer: "The player lunged into the challenge recklessly.",
             },
             {
               prompt:
-                "tribute / the shirt / by / holding / paid a / he / up / the",
-              answer: "He paid a tribute by holding up the shirt.",
+                "paid / tribute / a / the / actor / touching / to / fans / the",
+              answer: "The fans paid a touching tribute to the actor.",
+            },
+            {
+              prompt: "announcement / emotions / after / the / boiled over",
+              answer: "Emotions boiled over after the announcement.",
+            },
+            {
+              prompt: "the / controversy / overshadowed / ceremony / the",
+              answer: "The controversy overshadowed the ceremony.",
+            },
+            {
+              prompt: "out / fight / broke / the / after / concert / a",
+              answer: "A fight broke out after the concert.",
+            },
+            {
+              prompt: "a / victory / secured / the / stunning / underdogs",
+              answer: "The underdogs secured a stunning victory.",
             },
             {
               prompt:
-                "after / devastated / the teammates / were / the / injury",
-              answer: "The teammates were devastated after the injury.",
+                "extent / still / the / assessing / are / the / authorities / of / damage / the",
+              answer:
+                "The authorities are still assessing the extent of the damage.",
             },
             {
-              prompt: "substitute / the / replaced / the / injured / player",
-              answer: "The substitute replaced the injured player.",
+              prompt:
+                "mixed / left / announcement / the / with / investors / emotions",
+              answer: "The announcement left investors with mixed emotions.",
+            },
+            {
+              prompt: "after / was / he / stretchered off / collision / the",
+              answer: "He was stretchered off after the collision.",
+            },
+            {
+              prompt:
+                "tears / broke down / she / in / hearing / the / news / after",
+              answer: "She broke down in tears after hearing the news.",
+            },
+            {
+              prompt:
+                "city / the / protests / neighboring / spilled over / into",
+              answer: "The protests spilled over into the neighboring city.",
+            },
+            {
+              prompt:
+                "meeting / confrontation / a / heated / during / broke out / the",
+              answer: "A heated confrontation broke out during the meeting.",
             },
           ],
         },
@@ -393,7 +370,7 @@ export const aSoccerMatchDramaticMoment = {
                 " by a heartbreaking ",
                 mark("injury"),
                 " to ",
-                mark("midfilder"),
+                mark("midfielder"),
                 " Ismaël Koné and ",
                 mark("heated confrontations"),
                 " between players from both teams.",
@@ -410,7 +387,7 @@ export const aSoccerMatchDramaticMoment = {
                 mark("midfielder"),
                 " Assim Madibo ",
                 mark("lunged into"),
-                " a challenge on Koné."
+                " a challenge on Koné.",
               ],
             }),
           ],
@@ -423,10 +400,10 @@ export const aSoccerMatchDramaticMoment = {
                 "What initially looked like a tough ",
                 mark("tackle"),
                 " quickly turned into a nightmare as Koné suffered a severe leg ",
-                mark(" injury "),
+                mark("injury"),
                 " and had to be ",
                 mark("stretchered off "),
-                " the field."
+                " the field.",
               ],
             }),
           ],
@@ -528,7 +505,6 @@ export const aSoccerMatchDramaticMoment = {
               parts: [
                 mark("Despite "),
                 " the emotional scenes, Canada continued to dominate.",
-                mark(""),
               ],
             }),
           ],

@@ -90,6 +90,7 @@ export const FillInTheBlanks = ({
   const [checked, setChecked] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
   const [description, setDescription] = useState<string>("");
+  const [crossWords, setCrossWords] = useState<string[]>([]);
 
   const normalizeAnswer = (value: string | undefined) =>
     String(value ?? "")
@@ -108,6 +109,12 @@ export const FillInTheBlanks = ({
   if (!exercise || !rawBlocks) {
     return null;
   }
+
+  const toggleWords = (word: string) => {
+    setCrossWords((prev) =>
+      prev.includes(word) ? prev.filter((w) => w !== word) : [...prev, word],
+    );
+  };
 
   const handleCheck = () => {
     let score = 0;
@@ -155,14 +162,38 @@ export const FillInTheBlanks = ({
 
   return (
     <div className="flex flex-col gap-4 mb-4">
+      <p className="font-bold">{instruction}</p>
       {showWordBank && description && (
         <Card maxContent>
-          <span>{description}</span>
+          <div className="flex flex-wrap">
+            {description.split("•").map((word, index, arr) => {
+              const trimmed = word.trim();
+
+              return (
+                <div key={trimmed} className="flex items-center">
+                  <button
+                    type="button"
+                    onClick={() => toggleWords(trimmed)}
+                    className={`cursor-pointer select-none ${
+                      crossWords.includes(trimmed)
+                        ? "line-through text-gray-400"
+                        : ""
+                    }`}
+                  >
+                    {trimmed}
+                  </button>
+
+                  {index < arr.length - 1 && (
+                    <span className="mx-2 text-gray-500">•</span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </Card>
       )}
 
       <div>
-        <p className="font-bold mb-4">{instruction}</p>
         {blocks.map((bs, bsIndex) => (
           <div key={bsIndex} className={bs.lineBreak ? "block" : "inline"}>
             {(bs.block || []).map((b, bIndex) => {
@@ -174,12 +205,8 @@ export const FillInTheBlanks = ({
                   : b.blank.length
                 : 2;
 
-
               return (
-                <div
-                  key={key}
-                  className="inline mb-2"
-                >
+                <div key={key} className="inline mb-2">
                   {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
                   {b.text && <span>{b.text}</span>}
                   {b.blank && (
@@ -219,14 +246,8 @@ export const FillInTheBlanks = ({
       </span>
 
       <div className="flex gap-2 mb-2">
-        <Button
-        variant="check"
-        icon={<Check />}
-        onClick={handleCheck} />
-        <Button
-        variant="reset"
-        icon={<RotateCcw />}
-        onClick={handleReset} />
+        <Button variant="check" icon={<Check />} onClick={handleCheck} />
+        <Button variant="reset" icon={<RotateCcw />} onClick={handleReset} />
       </div>
     </div>
   );
