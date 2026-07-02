@@ -371,7 +371,7 @@ export const aSoccerMatchDramaticMoment = {
                 audio("midfielder"),
                 mark("midfielder"),
                 " Ismaël Koné and ",
-                audio(""),
+                audio("heated confrontation"),
                 mark("heated confrontations"),
                 " between players from both teams.",
               ],
@@ -442,10 +442,7 @@ export const aSoccerMatchDramaticMoment = {
           en: [
             ...content({
               parts: [
-                "A ",
-                audio("heated confrontation"),
-                mark("heated confrontation"),
-                " ",
+                "A heated confrontation ",
                 audio("broke out"),
                 mark("broke out"),
                 " on the ",
