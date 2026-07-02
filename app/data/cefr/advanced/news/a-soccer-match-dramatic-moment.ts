@@ -8,7 +8,7 @@ export const aSoccerMatchDramaticMoment = {
     description: "A dramatic soccer match moment",
   },
   whiteboard: {
-    title: "Advanced",
+    title: "C1 Advanced",
     subtitle: "News",
     descriptions: [
       "A dramatic moment changes the atmosphere of an important soccer match.",

@@ -4,17 +4,16 @@
 @import "@fontsource/luckiest-guy";
 /* Supports weights 200-700 */
 @import "@fontsource-variable/oswald/wght.css";
-@import '@fontsource/bebas-neue';
-@import '@fontsource/permanent-marker';
+@import "@fontsource/bebas-neue";
+@import "@fontsource/fredericka-the-great";
 
 @theme {
   --font-anton: "Anton", sans-serif;
   --font-montserrat: "Montserrat Variable", sans-serif;
   --font-luckiest-guy: "Luckiest Guy", system-ui;
-  --font-oswald: 'Oswald Variable', sans-serif;
-  --font-bebas-neue: 'Bebas Neue', sans-serif;
-  --font-permanent-marker: 'Permanent Marker', cursive;
-
+  --font-oswald: "Oswald Variable", sans-serif;
+  --font-bebas-neue: "Bebas Neue", sans-serif;
+  --font-fredericka-the-great: "Fredericka the Great", system-ui;
 }
 
 :root {
@@ -24,11 +23,11 @@
   --text-color-fixed: var(--slate-7);
   --border: 1px solid var(--slate-5);
   --border-radius: 10px;
-  --icon-color: var(--gray-4)
+  --icon-color: var(--gray-4);
 }
 
 .dark {
-  --background: #0A0A0A;
+  --background: #0a0a0a;
   --ribbon: var(--gray-5);
   --text-color: var(--slate-2);
   --text-color-fixed: var(--slate-7);
