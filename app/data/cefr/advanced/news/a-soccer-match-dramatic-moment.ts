@@ -264,20 +264,6 @@ export const aSoccerMatchDramaticMoment = {
             {
               block: [
                 {
-                  text: "A player who replaces another player is called a",
-                },
-                {
-                  blank: "substitute",
-                },
-                {
-                  text: ".",
-                },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                {
                   text: "To move forward suddenly means to",
                 },
                 {
@@ -323,7 +309,7 @@ export const aSoccerMatchDramaticMoment = {
                   text: "An angry argument or conflict is called a",
                 },
                 {
-                  blank: "heated confrontation",
+                  blank: "confrontation",
                 },
                 {
                   text: ".",
@@ -345,6 +331,20 @@ export const aSoccerMatchDramaticMoment = {
               ],
               lineBreak: true,
             },
+             {
+              block: [
+                {  
+                  text: "",
+                },
+                {
+                  blank: "hat trick",
+                },
+                {
+                  text: ".",
+                },
+              ],
+              lineBreak: true,
+            },
           ],
         },
       },
@@ -353,25 +353,29 @@ export const aSoccerMatchDramaticMoment = {
         exercise: {
           items: [
             {
+              prompt: "tournament",
+              answer: "...",
+            },
+            {
               prompt: "injury / the / match / overshadowed / the",
               answer: "The injury overshadowed the match.",
             },
             {
-              prompt: "on / stretcher / a / he / carried / was",
-              answer: "He was carried on a stretcher.",
+              prompt: "on / stretcher / a / he / carried off / was / the track",
+              answer: "He was carried off the track on a stretcher.",
             },
             {
               prompt:
-                "tribute / shirt / by / holding / paid / he / a / up / the",
+                "tribute / the shirt / by / holding / paid a / he / up / the",
               answer: "He paid a tribute by holding up the shirt.",
             },
             {
               prompt:
-                "after / devastated / teammates / were / the / injury / the",
+                "after / devastated / the teammates / were / the / injury",
               answer: "The teammates were devastated after the injury.",
             },
             {
-              prompt: "substitute / a / replaced / the / injured / player",
+              prompt: "substitute / the / replaced / the / injured / player",
               answer: "The substitute replaced the injured player.",
             },
           ],
@@ -464,7 +468,9 @@ export const aSoccerMatchDramaticMoment = {
                 mark("broke out"),
                 " on the ",
                 mark("pitch"),
-                ", with players surrounding the referee and exchanging angry words with their Qatari ",
+                ", with players surrounding the ",
+                mark("referee"),
+                " and exchanging angry words with their Qatari ",
                 audio("/"),
                 "o",
                 underline("ppo"),
