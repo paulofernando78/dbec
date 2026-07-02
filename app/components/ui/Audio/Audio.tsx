@@ -10,6 +10,7 @@ type AudioProps = {
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
+let currentUtterance: SpeechSynthesisUtterance | null = null;
 
 export const Audio = ({ src, className }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -17,8 +18,24 @@ export const Audio = ({ src, className }: AudioProps) => {
 
   const handlePlay = (e: React.MouseEvent<SVGElement>) => {
     e.stopPropagation();
-    // audioRef.current?.play();
-    // setPlaying(true);
+    const isAudioFile = src.endsWith(".mp3") || src.endsWith(".wav") || src.endsWith(".ogg");
+
+    if (!isAudioFile) {
+      window.speechSynthesis.cancel();
+
+      const utterance = new window.SpeechSynthesisUtterance(src);
+      utterance.lang = "en-US";
+
+      utterance.onend = () => {
+        currentUtterance = null;
+        setPlaying(false);
+      };
+
+      currentUtterance = utterance;
+      setPlaying(true);
+      window.speechSynthesis.speak(utterance);
+      return;
+    }
 
     // grab audio
     const el = audioRef.current;
@@ -38,9 +55,12 @@ export const Audio = ({ src, className }: AudioProps) => {
 
   const handleStop = (e: React.MouseEvent<SVGElement>) => {
     e.stopPropagation();
-    // audioRef.current?.pause();
-    // audioRef.current.currentTime = 0;
-    // setPlaying(false);
+    if (currentUtterance) {
+      window.speechSynthesis.cancel();
+      currentUtterance = null;
+      setPlaying(false);
+      return;
+    }
 
     const el = audioRef.current;
     if (!el) return;

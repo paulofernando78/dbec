@@ -44,7 +44,7 @@ export const aSoccerMatchDramaticMoment = {
           img: 0,
         },
         {
-          word: "tackle",
+          word: "lunge",
           img: 0,
         },
         {
@@ -57,10 +57,6 @@ export const aSoccerMatchDramaticMoment = {
         },
         {
           word: "recovery",
-          img: 0,
-        },
-        {
-          word: "lunge",
           img: 0,
         },
         {
@@ -448,7 +444,7 @@ export const aSoccerMatchDramaticMoment = {
                 ", with players surrounding the ",
                 mark("referee"),
                 " and exchanging angry words with their Qatari ",
-                audio("/"),
+                audio("opponents"),
                 "o",
                 underline("ppo"),
                 "nents.",
