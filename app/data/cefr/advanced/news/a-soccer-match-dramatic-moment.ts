@@ -362,12 +362,16 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "Canada's historic 6-0 World Cup victory over Qatar was ",
+                audio("overshadowed"),
                 mark("overshadowed"),
                 " by a heartbreaking ",
+                audio("injury"),
                 mark("injury"),
                 " to ",
+                audio("midfielder"),
                 mark("midfielder"),
                 " Ismaël Koné and ",
+                audio(""),
                 mark("heated confrontations"),
                 " between players from both teams.",
               ],
@@ -379,11 +383,10 @@ export const aSoccerMatchDramaticMoment = {
           en: [
             ...content({
               parts: [
-                "In the 51st minute, Qatar ",
-                mark("midfielder"),
-                " Assim Madibo ",
-                mark("lunged into"),
-                " a challenge on Koné.",
+                "In the 51st minute, Qatar Assim Madibo ",
+                audio("lunged"),
+                mark("lunged"),
+                " into a challenge on Koné.",
               ],
             }),
           ],
@@ -394,10 +397,11 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "What initially looked like a tough ",
+                audio("tackle"),
                 mark("tackle"),
-                " quickly turned into a nightmare as Koné suffered a severe leg ",
-                mark("injury"),
+                " quickly turned into a nightmare as Koné suffered a severe leg injury",
                 " and had to be ",
+                audio("stretchered off"),
                 mark("stretchered off "),
                 " the field.",
               ],
@@ -410,8 +414,10 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "Reports from multiple ",
+                audio("outlets"),
                 mark("outlets"),
                 " described fears of a broken leg, with players from both sides visibly ",
+                audio("distressed"),
                 mark("distressed"),
                 " by the incident.",
               ],
@@ -424,6 +430,7 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "The challenge ",
+                audio("sparked"),
                 mark("sparked"),
                 " furious reactions from Canadian players.",
               ],
@@ -436,12 +443,16 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "A ",
+                audio("heated confrontation"),
                 mark("heated confrontation"),
                 " ",
+                audio("broke out"),
                 mark("broke out"),
                 " on the ",
+                audio("pitch"),
                 mark("pitch"),
                 ", with players surrounding the ",
+                audio("referee"),
                 mark("referee"),
                 " and exchanging angry words with their Qatari ",
                 audio("opponents"),
@@ -458,10 +469,13 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "Tensions also ",
+                audio("spilled over"),
                 mark("spilled over"),
                 " toward the ",
+                audio("benches"),
                 mark("benches"),
                 " as emotions ",
+                audio("boiled over"),
                 mark("boiled over"),
                 " after seeing one of Canada's key midfielders lying injured.",
               ],
@@ -484,12 +498,15 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "The Qatari midfielder was ",
+                audio("devastated"),
                 mark("devastated"),
-                " when he realized the",
+                " when he realized the ",
+                audio("seriousness"),
                 mark("seriousness"),
                 " of the injury, reportedly ",
-                mark("breaking down"),
-                " in tears and leaving the field in shock.",
+                audio("breaking down in tears"),
+                mark("breaking down in tears"),
+                " and leaving the field in shock.",
               ],
             }),
           ],
@@ -499,7 +516,8 @@ export const aSoccerMatchDramaticMoment = {
           en: [
             ...content({
               parts: [
-                mark("Despite "),
+                audio("Despite"),
+                mark("Despite"),
                 " the emotional scenes, Canada continued to dominate.",
               ],
             }),
@@ -511,8 +529,10 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "Jonathan David scored a ",
+                audio("hat-trick"),
                 mark("hat-trick"),
                 " while Canada completed a ",
+                audio("stunning"),
                 mark("stunning"),
                 " 6-0 win over a Qatar side that finished the match with nine men.",
               ],
@@ -525,10 +545,13 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "After scoring, Nathan Saliba ",
+                audio("held up"),
                 mark("held up"),
                 " Koné's shirt in a ",
+                audio("touching tribute"),
                 mark("touching tribute"),
                 " to his ",
+                audio("injured"),
                 mark("injured"),
                 " teammate.",
               ],
@@ -541,6 +564,7 @@ export const aSoccerMatchDramaticMoment = {
             ...content({
               parts: [
                 "For Canadian fans, it ",
+                audio("should have been"),
                 mark("should have been"),
                 " a night of pure celebration, the nation's first ever men's World Cup victory.",
               ],
@@ -552,9 +576,10 @@ export const aSoccerMatchDramaticMoment = {
           en: [
             ...content({
               parts: [
-                "",
+                audio("Instead"),
                 mark("Instead"),
                 ", the final ",
+                audio("whistle"),
                 mark("whistle"),
                 " brought mixed emotions, joy at a famous win, but deep concern for one of Canada's brightest young stars.",
               ],
@@ -566,9 +591,7 @@ export const aSoccerMatchDramaticMoment = {
           en: [
             ...content({
               parts: [
-                "The football world now waits for an official update on the extent of Ismaël Koné's ",
-                mark("injury"),
-                ".",
+                "The football world now waits for an official update on the extent of Ismaël Koné's injury.",
               ],
             }),
           ],

@@ -18,13 +18,23 @@ export const Audio = ({ src, className }: AudioProps) => {
 
   const handlePlay = (e: React.MouseEvent<SVGElement>) => {
     e.stopPropagation();
-    const isAudioFile = src.endsWith(".mp3") || src.endsWith(".wav") || src.endsWith(".ogg");
+    const isAudioFile =
+      src.endsWith(".mp3") || src.endsWith(".wav") || src.endsWith(".ogg");
 
     if (!isAudioFile) {
       window.speechSynthesis.cancel();
 
-      const utterance = new window.SpeechSynthesisUtterance(src);
+      const utterance = new SpeechSynthesisUtterance(src);
       utterance.lang = "en-US";
+
+      const voices = window.speechSynthesis.getVoices();
+
+      if (voices.length) {
+        utterance.voice =
+          voices.find((v) => v.name.includes("Google US English")) ??
+          voices.find((v) => v.lang.startsWith("en")) ??
+          voices[0];
+      }
 
       utterance.onend = () => {
         currentUtterance = null;
