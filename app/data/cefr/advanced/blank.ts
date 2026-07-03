@@ -9,7 +9,7 @@ export const blank = {
   },
   whiteboard: {
     title: "Advanced",
-    subtitle: "News",
+    subtitle: "News / Ted-ED",
     descriptions: ["..."],
   },
   sections: {

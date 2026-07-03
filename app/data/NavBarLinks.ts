@@ -222,6 +222,16 @@ export const links = [
               },
             ],
           },
+          {
+            href: "/cefr/advanced/ted-ed",
+            label: "Ted-ED",
+            links: [
+              {
+                href: "/cefr/advanced/ted-ed/mature",
+                label: "Mature",
+              },
+            ],
+          },
         ],
       },
     ],

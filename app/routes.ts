@@ -223,12 +223,6 @@ export default [
       "cefr/c1/news",
       "routes/cefr/advanced/news.tsx"),
 
-
-    // C2 Proficiency
-    route(
-      "cefr/c2/news",
-      "routes/cefr/proficiency/news.tsx"),
-
     // Ted-ED
     // route(
     //   "misc/ted-ed",

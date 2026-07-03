@@ -13,6 +13,7 @@ import { Script } from "@/components/content/Script";
 import { useParams } from "react-router";
 
 import { news as advancedNews } from "@/data/cefr/advanced/news/index";
+import { tedEd as advancedTedEd } from "@/data/cefr/advanced/ted-ed/index";
 
 export default function Articles() {
   const { level, category, slug } = useParams();
@@ -25,9 +26,9 @@ export default function Articles() {
         articles = advancedNews;
         break;
 
-      // case "ted-ed":
-      //   articles = advancedTedEd;
-      //   break;
+      case "ted-ed":
+        articles = advancedTedEd;
+        break;
     }
   }
 

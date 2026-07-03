@@ -1,5 +1,5 @@
 import { aSoccerMatchDramaticMoment } from "./a-soccer-match-dramatic-moment"
-import { blank } from "./blank"
+import { blank } from "../blank"
 
 export const news = {
   blank,
