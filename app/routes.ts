@@ -214,11 +214,6 @@ export default [
     //! Templates
 
     route(
-      "/cefr/:level/:slug",
-      "routes/template/articles.tsx",
-    ),
-
-    route(
       "/cefr/:level/:category/:slug",
       "routes/template/articles.tsx",
     ),
