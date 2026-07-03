@@ -1,4 +1,4 @@
-import { content } from "@/helpers/content";
+import { audio, content, mark, underline } from "@/helpers/content";
 
 export const blank = {
   slug: "blank",
@@ -56,15 +56,6 @@ export const blank = {
                 },
               ],
             },
-            {
-              question: "...",
-              options: [
-                {
-                  option: "...",
-                  isCorrect: false,
-                },
-              ],
-            },
           ],
         },
       },
@@ -83,34 +74,37 @@ export const blank = {
                 },
               ],
             },
-            {
-              question: "...",
-              options: [
-                {
-                  option: "...",
-                  isCorrect: false,
-                },
-              ],
-            },
           ],
         },
       },
+    },
+    script: {
+      content: [
+        {
+          en: [
+            ...content({
+              parts: [""],
+            }),
+          ],
+          pt: "...",
+        },
+      ],
+    },
+    practice: {
+      guess: {
+        words: [
+          {
+            word: "cat",
+            img: 0,
+          },
+        ],
+      },
       fillInTheBlanks: {
-        instruction: "Complete the definitions with the words from Vocabulary.",
+        instruction: "Fill in the blanks with the correct answer.",
         exercise: {
           blocks: [
             {
-              block: [
-                {
-                  text: "...",
-                },
-                {
-                  blank: "...",
-                },
-                {
-                  text: " ...",
-                },
-              ],
+              block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
               lineBreak: true,
             },
           ],
@@ -121,7 +115,7 @@ export const blank = {
         exercise: {
           items: [
             {
-              prompt: "...",
+              prompt: "... / ",
               answer: "...",
             },
           ],
@@ -138,14 +132,6 @@ export const blank = {
           },
         ],
       },
-    },
-    script: {
-      content: [
-        {
-          en: "...",
-          pt: "...",
-        },
-      ],
     },
   },
 };

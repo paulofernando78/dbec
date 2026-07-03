@@ -160,7 +160,7 @@ export const Guess = ({ words }: GuessProps) => {
 
   return (
     <div className="mb-4">
-      <p>
+      <p className="mb-4">
         <b>Click the letters to reveal the answer.</b>
       </p>
       <div className="grid grid-cols-2 gap-2 max-[920px]:grid-cols-1">
@@ -196,7 +196,7 @@ export const Guess = ({ words }: GuessProps) => {
             <b>Attempts:</b> {attempts} | {maxAttempts}
           </span>
           {/* STEP 11: Display hidden/revealed word */}
-          <div className="h-[35px]">
+          <div className="h-8.75">
             {message && <span>{message}</span>}
           </div>
           {/* _ _ _ _ _ */}

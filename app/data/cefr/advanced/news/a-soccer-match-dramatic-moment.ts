@@ -13,6 +13,7 @@ export const aSoccerMatchDramaticMoment = {
     descriptions: [
       "A dramatic moment changes the atmosphere of an important soccer match.",
     ],
+    date: "Jun 18, 2026",
   },
   sections: {
     beforeWatching: {
@@ -187,6 +188,44 @@ export const aSoccerMatchDramaticMoment = {
             },
           ],
         },
+      },
+    },
+    practice: {
+      guess: {
+        words: [
+          {
+            word: "tournament",
+            img: 0,
+          },
+          {
+            word: "lunge",
+            img: 0,
+          },
+          {
+            word: "injury",
+            img: 0,
+          },
+          {
+            word: "stretcher",
+            img: 0,
+          },
+          {
+            word: "recovery",
+            img: 0,
+          },
+          {
+            word: "overshadow",
+            img: 0,
+          },
+          {
+            word: "confrontation",
+            img: 0,
+          },
+          {
+            word: "tribute",
+            img: 0,
+          },
+        ],
       },
       fillInTheBlanks: {
         instruction: "Fill in the blanks with the correct answer.",

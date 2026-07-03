@@ -4,22 +4,70 @@ import { links } from "../../../data/NavBarLinks";
 import { ChevronRight } from "lucide-react";
 import { Checkbox } from "@/components/ui/Checkbox";
 
-type NavLesson = {
+type NavItem = {
   label: string;
   href: string;
+  links?: NavItem[];
 };
-
-type NavLevel = {
-  label: string;
-  href: string;
-  links: NavLesson[];
-};
-
-type NavItem = NavLesson | NavLevel;
 
 type NavBarProps = {
   closeNavBar: () => void;
 };
+
+function RenderNavItem({
+  item,
+  closeNavBar,
+}: {
+  item: NavItem;
+  closeNavBar: () => void;
+}) {
+  if (item.links?.length) {
+    return (
+      <details className="open:[&>summary_.chevron]:rotate-90">
+        <summary className="list-none flex items-center gap-2 cursor-pointer">
+          <span className="chevron transition-transform">
+            <ChevronRight />
+          </span>
+
+          <NavLink
+            to={item.href}
+            onClick={(e) => e.stopPropagation()}
+            className="translate-x-[-0.4rem]"
+          >
+            {item.label}
+          </NavLink>
+        </summary>
+
+        <div className="ml-4">
+          {item.links.map((child) => (
+            <RenderNavItem
+              key={child.href}
+              item={child}
+              closeNavBar={closeNavBar}
+            />
+          ))}
+        </div>
+      </details>
+    );
+  }
+
+  return (
+    <div className="flex gap-3">
+      <Checkbox className="mt-[.2rem]" />
+
+      <NavLink
+        to={item.href}
+        end
+        onClick={closeNavBar}
+        className={({ isActive }) =>
+          `block text-[1.06rem] ${isActive ? "text-blue-400" : ""}`
+        }
+      >
+        {item.label}
+      </NavLink>
+    </div>
+  );
+}
 
 export function NavBar({ closeNavBar }: NavBarProps) {
   return (
@@ -52,61 +100,14 @@ export function NavBar({ closeNavBar }: NavBarProps) {
             </>
           )}
 
-          <div>
-            {group.links.map((item) => {
-              if ("links" in item) {
-                return (
-                  <details key={item.label} className="group ">
-                    <summary className="list-none flex items-center gap-2 cursor-pointer">
-                      <span className="transition-transform group-open:rotate-90 translate-x-[-0.15rem]">
-                        <ChevronRight />
-                      </span>
-
-                      <NavLink
-                        to={item.href}
-                        onClick={(e) => e.stopPropagation()}
-                        className="translate-x-[-0.4rem]"
-                      >
-                        {item.label}
-                      </NavLink>
-                    </summary>
-
-                    <div className="ml-">
-                      {item.links.map((lesson) => (
-                        <div className="flex gap-3">
-                          <Checkbox className="mt-[.2rem]"/>
-                          <NavLink
-                            key={lesson.href}
-                            to={lesson.href}
-                            end
-                            onClick={closeNavBar}
-                            className={({ isActive }) =>
-                              `block text-[1.06rem] ${isActive ? "text-blue-400" : ""}`
-                            }
-                          >
-                            {lesson.label}
-                          </NavLink>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-                );
-              }
-
-              return (
-                <NavLink
-                  key={item.href}
-                  to={item.href}
-                  end
-                  onClick={closeNavBar}
-                  className={({ isActive }) =>
-                    `block ${isActive ? "text-blue-400" : ""}`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              );
-            })}
+          <div className="ml-4">
+            {group.links.map((item) => (
+              <RenderNavItem
+                key={item.href}
+                item={item}
+                closeNavBar={closeNavBar}
+              />
+            ))}
           </div>
         </div>
       ))}

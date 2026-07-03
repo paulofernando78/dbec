@@ -15,6 +15,7 @@ export const links = [
   {
     title: "Course ",
     links: [
+      // A1 Beginner
       {
         href: "/cefr/beginner",
         label: "A1 Beginner",
@@ -61,6 +62,7 @@ export const links = [
           },
         ],
       },
+      // A2 Elementary
       {
         href: "/cefr/elementary",
         label: "A2 Elementary",
@@ -107,6 +109,7 @@ export const links = [
           },
         ],
       },
+      // B1 Intermediate
       {
         href: "/cefr/intermediate",
         label: "B1 Intermediate",
@@ -153,8 +156,9 @@ export const links = [
           },
         ],
       },
+      // B2 Upper-Intermediate
       {
-        href: "/cefr/advanced",
+        href: "/cefr/upper-intermediate",
         label: "B2 Upper-Intermediate",
         links: [
           {
@@ -199,13 +203,24 @@ export const links = [
           },
         ],
       },
+      // C1 Advanced
       {
-        href: "/cefr/upper-intermediate",
+        href: "/cefr/advanced",
         label: "C1 Advanced",
         links: [
+          // {
+          //   href: "/cefr/advanced/unit-1",
+          //   label: "Unit 1 ...",
+          // },
           {
-            href: "/cefr/advanced/a-soccer-match-dramatic-moment",
-            label: "A Soccer Match Dramatic Moment",
+            href: "/cefr/advanced/news",
+            label: "News",
+            links: [
+              {
+                href: "/cefr/advanced/news/a-soccer-match-dramatic-moment",
+                label: "A Soccer Match's Dramatic Moment",
+              },
+            ],
           },
         ],
       },

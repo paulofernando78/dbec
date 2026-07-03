@@ -43,7 +43,7 @@ export const Whiteboard = ({
         ))}
       {date && (
         <span className="text-sm">
-          <em>release date: {date}</em>
+          <em>Date: {date}</em>
         </span>
       )}
     </div>

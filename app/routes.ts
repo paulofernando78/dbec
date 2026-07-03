@@ -32,7 +32,7 @@ export default [
       "cefr/lesson-blank",
       "routes/lesson-blank.tsx"),
 
-    // A1 BEGINNER
+    // A1 Beginner
     route(
       "/cefr/beginner",
       "routes/cefr/beginner.tsx"),
@@ -76,7 +76,7 @@ export default [
       "routes/cefr/beginner/unit-10-abilities.tsx",
     ),
 
-    // A2 ELEMENTARY
+    // A2 Elementary
     route(
       "/cefr/elementary",
       "routes/cefr/elementary.tsx"),
@@ -121,7 +121,7 @@ export default [
       "routes/cefr/elementary/unit-10-hobbies.tsx",
     ),
 
-    // B1 PRE-INTERMEDIATE
+    // B1 Intermediate
     route(
       "/cefr/intermediate",
       "routes/cefr/intermediate.tsx"),
@@ -166,7 +166,7 @@ export default [
       "routes/cefr/intermediate/unit-10-relationships.tsx",
     ),
 
-    // B2 INTERMEDIATE
+    // B2 Upper-Intermediate
     route(
       "/cefr/upper-intermediate",
       "routes/cefr/upper-intermediate.tsx"),
@@ -212,8 +212,14 @@ export default [
     ),
 
     //! Templates
+
     route(
       "/cefr/:level/:slug",
+      "routes/template/articles.tsx",
+    ),
+
+    route(
+      "/cefr/:level/:category/:slug",
       "routes/template/articles.tsx",
     ),
 

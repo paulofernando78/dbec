@@ -2,14 +2,15 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Paragraph } from "@/components/content/Paragraph";
+import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
 
 import { Eye, EyeClosed } from "lucide-react";
 
 interface CollapsibleProps {
   title?: string;
   content: {
-    en: string | string[];
-    pt: string | string[];
+    en: InlineRichContentValue[];
+    pt: string;
   }[];
 }
 
@@ -38,12 +39,10 @@ export const Script = ({ title, content }: CollapsibleProps) => {
         <div className="h-100 overflow-scroll bg-white p-3 border rounded-xl">
           {content.map((line) => (
             <div
-              key={Array.isArray(line.en) ? line.en.join("") : line.en}
+              key={line.pt}
               className="mb-4 last:mb-0"
             >
-                <Paragraph
-                  value={Array.isArray(line.en) ? line.en : [line.en]}
-                />
+                <Paragraph value={line.en} />
                 <p className="text-gray-500">{line.pt}</p>
             </div>
           ))}

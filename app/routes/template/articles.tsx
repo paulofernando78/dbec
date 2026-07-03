@@ -5,6 +5,7 @@ import { List } from "@/components/content/List";
 import { Carousel } from "@/components/ui/Carousel";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { Radio } from "@/features/exercises/Radio";
+import { Guess } from "@/features/exercises/Guess";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 import { Script } from "@/components/content/Script";
@@ -12,13 +13,26 @@ import { Script } from "@/components/content/Script";
 import { useParams } from "react-router";
 
 import { news as advancedNews } from "@/data/cefr/advanced/news/index";
-import { news as proficiencyNews } from "@/data/cefr/proficiency/news/index";
 
 export default function Articles() {
-  const { level, slug } = useParams();
+  const { level, category, slug } = useParams();
 
-  const news = level === "proficiency" ? proficiencyNews : advancedNews;
-  const article = slug ? news[slug as keyof typeof news] : undefined;
+  let articles;
+
+  if (level === "advanced") {
+    switch (category) {
+      case "news":
+        articles = advancedNews;
+        break;
+
+      // case "ted-ed":
+      //   articles = advancedTedEd;
+      //   break;
+    }
+  }
+
+  const article =
+    slug && articles ? articles[slug as keyof typeof articles] : undefined;
 
   if (!article) {
     return <h1>Article not found.</h1>;
@@ -40,9 +54,14 @@ export default function Articles() {
         </Section>
         <Section id="Details" heading={3}>
           <Radio {...article.sections.details.radio} />
-          <FillInTheBlanks {...article.sections.details.fillInTheBlanks} />
-          <Unscramble {...article.sections.details.unscramble} />
           <Script {...article.sections.script} />
+        </Section>
+        <Section id="Practice" heading={3}>
+          <>
+            <Guess {...article.sections.practice.guess} />
+            <FillInTheBlanks {...article.sections.practice.fillInTheBlanks} />
+            <Unscramble {...article.sections.practice.unscramble} />
+          </>
         </Section>
         <Section id="Follow-up discussion" heading={3}>
           <List {...article.sections.followUp.list} />
