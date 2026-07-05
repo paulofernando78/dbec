@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/NavBarLinks";
 
-import { ChevronRight } from "lucide-react";
+import { CircleChevronRight } from "lucide-react";
 import { Checkbox } from "@/components/ui/Checkbox";
 
 type NavItem = {
@@ -24,9 +24,9 @@ function RenderNavItem({
   if (item.links?.length) {
     return (
       <details className="open:[&>summary_.chevron]:rotate-90">
-        <summary className="list-none flex items-center gap-2 cursor-pointer">
-          <span className="chevron transition-transform">
-            <ChevronRight />
+        <summary className="list-none flex items-center gap-4 cursor-pointer">
+          <span className="chevron transition-transform relative top-px">
+            <CircleChevronRight />
           </span>
 
           <NavLink
@@ -100,7 +100,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
             </>
           )}
 
-          <div className="ml-4">
+          <div>
             {group.links.map((item) => (
               <RenderNavItem
                 key={item.href}

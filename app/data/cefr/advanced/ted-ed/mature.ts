@@ -18,13 +18,19 @@ export const mature = {
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {
-          value: ["Do you usually try to control your emotions, or do you simply let them happen? Why?"],
+          value: [
+            "Do you usually try to control your emotions, or do you simply let them happen? Why?",
+          ],
         },
         {
-          value: ["Can emotions like sadness or anger ever be useful? Give an example."],
+          value: [
+            "Can emotions like sadness or anger ever be useful? Give an example.",
+          ],
         },
         {
-          value: ["What strategies do you use when you're stressed or disappointed?"],
+          value: [
+            "What strategies do you use when you're stressed or disappointed?",
+          ],
         },
       ],
     },
@@ -60,10 +66,24 @@ export const mature = {
             {
               question: "What is the main idea of the talk?",
               options: [
-                { option: "People should always avoid negative emotions.", isCorrect: false },
-                { option: "Different strategies can help us regulate emotions depending on the situation.", isCorrect: true },
-                { option: "Happiness is the only healthy emotional state.", isCorrect: false },
-                { option: "Suppressing emotions is the best long-term solution.", isCorrect: false },
+                {
+                  option: "People should always avoid negative emotions.",
+                  isCorrect: false,
+                },
+                {
+                  option:
+                    "Different strategies can help us regulate emotions depending on the situation.",
+                  isCorrect: true,
+                },
+                {
+                  option: "Happiness is the only healthy emotional state.",
+                  isCorrect: false,
+                },
+                {
+                  option:
+                    "Suppressing emotions is the best long-term solution.",
+                  isCorrect: false,
+                },
               ],
             },
           ],
@@ -76,18 +96,26 @@ export const mature = {
         exercise: {
           questions: [
             {
-              question: "According to the Process Model, what is the first step?",
+              question:
+                "According to the Process Model, what is the first step?",
               options: [
-                { option: "Entering a situation that captures our attention.", isCorrect: true },
+                {
+                  option: "Entering a situation that captures our attention.",
+                  isCorrect: true,
+                },
                 { option: "Changing how you feel.", isCorrect: false },
                 { option: "Talking to a friend.", isCorrect: false },
                 { option: "Going for a walk.", isCorrect: false },
               ],
             },
             {
-              question: "Which strategy does the speaker recommend instead of suppressing emotions?",
+              question:
+                "Which strategy does the speaker recommend instead of suppressing emotions?",
               options: [
-                { option: "Talking to someone in your support system.", isCorrect: true },
+                {
+                  option: "Talking to someone in your support system.",
+                  isCorrect: true,
+                },
                 { option: "Ignoring your feelings.", isCorrect: false },
                 { option: "Taking recreational drugs.", isCorrect: false },
                 { option: "Forcing a smile.", isCorrect: false },
@@ -96,16 +124,28 @@ export const mature = {
             {
               question: "Why isn't sadness always a bad emotion?",
               options: [
-                { option: "Because it can help us empathize with others.", isCorrect: true },
+                {
+                  option: "Because it can help us empathize with others.",
+                  isCorrect: true,
+                },
                 { option: "Because it makes us happy.", isCorrect: false },
-                { option: "Because it helps us avoid situations.", isCorrect: false },
-                { option: "Because it always leads to anger.", isCorrect: false },
+                {
+                  option: "Because it helps us avoid situations.",
+                  isCorrect: false,
+                },
+                {
+                  option: "Because it always leads to anger.",
+                  isCorrect: false,
+                },
               ],
             },
             {
               question: "What does reappraisal involve?",
               options: [
-                { option: "Changing the way you think about a situation.", isCorrect: true },
+                {
+                  option: "Changing the way you think about a situation.",
+                  isCorrect: true,
+                },
                 { option: "Suppressing your emotions.", isCorrect: false },
                 { option: "Leaving the situation.", isCorrect: false },
                 { option: "Ignoring your support system.", isCorrect: false },

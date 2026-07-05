@@ -36,16 +36,18 @@ export const Script = ({ title, content }: CollapsibleProps) => {
         </div>
       </div>
       {isOpen && (
-        <div className="h-100 overflow-scroll bg-white p-3 border rounded-xl">
-          {content.map((line) => (
-            <div
-              key={line.pt}
-              className="mb-4 last:mb-0"
-            >
-                <Paragraph value={line.en} />
-                <p className="text-gray-500">{line.pt}</p>
-            </div>
-          ))}
+        <div className="border rounded-lg overflow-hidden">
+          <div className="h-100 overflow-scroll bg-white p-3 ">
+            {content.map((line) => (
+              <div
+                key={line.pt}
+                className="mb-4 last:mb-0"
+              >
+                  <Paragraph value={line.en} />
+                  <p className="text-gray-500">{line.pt}</p>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
