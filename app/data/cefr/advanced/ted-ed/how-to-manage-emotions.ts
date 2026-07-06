@@ -350,10 +350,32 @@ export const mature = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Answer the questions.",
+        instruction: "Discuss the questions below.",
         items: [
           {
-            value: ["..."],
+            value: [
+              "Which strategy from the video do you think is the most effective? Why?",
+            ],
+          },
+          {
+            value: [
+              "Do you usually try to change the situation, shift your attention, or regulate your emotional response when you're upset? Give an example.",
+            ],
+          },
+          {
+            value: [
+              "Do you agree that no emotion is inherently good or bad? Explain your opinion.",
+            ],
+          },
+          {
+            value: [
+              "Can trying to be happy all the time actually make people less happy? Why or why not?",
+            ],
+          },
+          {
+            value: [
+              "Describe a situation in which reappraising your thoughts changed the way you felt.",
+            ],
           },
         ],
       },
