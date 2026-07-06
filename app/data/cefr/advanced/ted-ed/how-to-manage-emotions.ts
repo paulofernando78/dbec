@@ -38,12 +38,12 @@ export const mature = {
       prompt: "Slide the pictures and describe what you see.",
       imgs: [
         { word: "emotions", img: 0 },
-        { word: "medidate", img: 0 },
+        { word: "avoid", img: 0 },
         { word: "shift", img: 0 },
+        { word: "empathize", img: 0 },
         { word: "support", img: 0 },
         { word: "hope", img: 0 },
-        { word: "empathize", img: 0 },
-        { word: "avoid", img: 0 },
+        { word: "meditate", img: 0 },
         { word: "look on the bright side", img: 0 },
       ],
     },
@@ -176,7 +176,9 @@ export const mature = {
             ...content({
               parts: [
                 "The answer to the last question is a definitive 'yes.' ",
-                attentionMark("There are numerous strategies for regulating our emotions"),
+                attentionMark(
+                  "There are numerous strategies for regulating our emotions",
+                ),
                 ", and one framework to understand these techniques is called the ",
                 attentionMark("Process Model"),
                 ". Psychologists use this tool to identify where and how to ",
@@ -193,7 +195,7 @@ export const mature = {
                 mark("hinders"),
                 " our goals. Finally, this ",
                 mark("appraisal"),
-                " leads to changes in how we feel, think, and behave, known as an emotional response. Each step offers an opportunity to consciously intervene and change our emotions."
+                " leads to changes in how we feel, think, and behave, known as an emotional response. Each step offers an opportunity to consciously intervene and change our emotions.",
               ],
             }),
           ],
@@ -207,7 +209,7 @@ export const mature = {
                 mark("altogether"),
                 " by skipping the party. But if you do attend, you could modify the situation by choosing not to interact with your ex. If that's difficult, you might shift your attention by playing a game with your friends instead of focusing on your ex's new partner. Another option would be to re-evaluate how you think about the situation. After seriously ",
                 mark("reappraising"),
-                " things, you might realize that you don't care who your ex dates."
+                " things, you might realize that you don't care who your ex dates.",
               ],
             }),
           ],
@@ -219,7 +221,7 @@ export const mature = {
               parts: [
                 "If none of these strategies work, you can always try ",
                 mark("tempering"),
-                " your emotional response after the fact. But this can be tricky. Many of the easiest ways to do this, like hiding your emotions or trying to change them with recreational drugs, generally lead to more negative feelings and health concerns in the long term. More sustainable strategies include going for a long walk, taking slow, deep breaths, or talking with someone in your support system."
+                " your emotional response after the fact. But this can be tricky. Many of the easiest ways to do this, like hiding your emotions or trying to change them with recreational drugs, generally lead to more negative feelings and health concerns in the long term. More sustainable strategies include going for a long walk, taking slow, deep breaths, or talking with someone in your support system.",
               ],
             }),
           ],
@@ -260,22 +262,58 @@ export const mature = {
     practice: {
       guess: {
         words: [
-        { word: "regulate emotions", img: 0 },
-        { word: "emotional response", img: 0 },
-        { word: "shift your attention", img: 0 },
-        { word: "support system", img: 0 },
-        { word: "cultivate hope", img: 0 },
-        { word: "empathize", img: 0 },
-        { word: "avoid the situation", img: 0 },
-        { word: "look on the bright side", img: 0 },
+          { word: "emotions", img: 0 },
+          { word: "avoid", img: 0 },
+          { word: "shift", img: 0 },
+          { word: "empathize", img: 0 },
+          { word: "support", img: 0 },
+          { word: "hope", img: 0 },
+          { word: "meditate", img: 0 },
+          { word: "look on the bright side", img: 0 },
         ],
       },
       fillInTheBlanks: {
-        instruction: "Fill in the blanks with the correct answer.",
+        instruction: "Complete each sentence with the correct expression.",
         exercise: {
           blocks: [
             {
-              block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+              block: [
+                { text: "Learning to " },
+                { blank: "regulate emotions" },
+                { text: " takes practice." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "After the argument, she tried to " },
+                { blank: "shift your attention" },
+                { text: " by reading a book." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Your family and close friends make up your " },
+                { blank: "support system" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "It's easier to " },
+                { blank: "empathize" },
+                { text: " with someone after a similar experience." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Even after failing the exam, she tried to " },
+                { blank: "look on the bright side" },
+                { text: "." },
+              ],
               lineBreak: true,
             },
           ],
@@ -286,8 +324,24 @@ export const mature = {
         exercise: {
           items: [
             {
-              prompt: "... / ",
-              answer: "...",
+              prompt: "can / regulate / learn / anyone / emotions / their / to",
+              answer: "Anyone can learn to regulate their emotions.",
+            },
+            {
+              prompt: "attention / shift / your / something / positive / to",
+              answer: "Shift your attention to something positive.",
+            },
+            {
+              prompt: "strong / support / everyone / needs / a / system",
+              answer: "Everyone needs a strong support system.",
+            },
+            {
+              prompt: "important / empathize / it / with / others / to / is",
+              answer: "It is important to empathize with others.",
+            },
+            {
+              prompt: "always / try / bright / the / on / side / look / to",
+              answer: "Always try to look on the bright side.",
             },
           ],
         },

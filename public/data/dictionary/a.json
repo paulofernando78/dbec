@@ -2,6 +2,48 @@
   {
     "definitions": [
       {
+        "word": "avoid",
+        "phonetics": "/əˈvɔɪd/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to stay away from someone or something, or to prevent something from happening",
+        "ptDefinition": "evitar; manter distância de alguém ou algo, ou impedir que algo aconteça",
+        "examples": [
+          {
+            "enExample": "She avoided talking to her ex at the party.",
+            "ptExample": "Ela evitou conversar com o ex na festa."
+          },
+          {
+            "enExample": "Regular exercise can help you avoid many health problems.",
+            "ptExample": "Praticar exercícios regularmente pode ajudar você a evitar muitos problemas de saúde."
+          }
+        ],
+        "synonyms": [
+          "stay away from",
+          "escape",
+          "prevent",
+          "evade",
+          "steer clear of"
+        ],
+        "antonyms": ["face", "confront", "approach", "seek"],
+        "seeAlso": ["avoid the situation", "prevent", "escape", "ignore"],
+        "notes": [
+          {
+            "enNote": "Avoid is commonly followed by a noun or a gerund (-ing form), not an infinitive. For example: 'avoid making mistakes', not 'avoid to make mistakes.'",
+            "ptNote": "Avoid é normalmente seguido por um substantivo ou por um verbo com -ing, e não por um infinitivo. Ex.: 'avoid making mistakes', e não 'avoid to make mistakes'."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "avoid.avif",
+            "alt": "A young woman quietly leaving a party to avoid an uncomfortable situation."
+          },
+          {
+            "src": "avoid-2.avif",
+            "alt": "A young man quietly leaving a party to avoid an uncomfortable situation."
+          }
+        ]
+      },
+      {
         "word": "at least",
         "partOfSpeech": "phrase / expression",
         "enDefinition": "used to indicate the smallest amount, degree, or number that is acceptable or possible; also used to emphasize a positive aspect of an otherwise negative situation",

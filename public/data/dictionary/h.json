@@ -2,6 +2,42 @@
   {
     "definitions": [
       {
+        "word": "hope",
+        "phonetics": "/həʊp/",
+        "partOfSpeech": "noun, verb",
+        "enDefinition": "noun: a feeling of expectation and desire that something good will happen; verb: to want or expect something to happen or be true.",
+        "ptDefinition": "substantivo: esperança; sentimento de expectativa e desejo de que algo bom aconteça. Verbo: esperar ou desejar que algo aconteça ou seja verdade.",
+        "examples": [
+          {
+            "enExample": "Even during difficult times, she never lost hope.",
+            "ptExample": "Mesmo durante os momentos difíceis, ela nunca perdeu a esperança."
+          },
+          {
+            "enExample": "We all hope things will get better soon.",
+            "ptExample": "Todos nós esperamos que as coisas melhorem em breve."
+          }
+        ],
+        "synonyms": ["optimism", "expectation", "confidence", "faith"],
+        "antonyms": ["despair", "hopelessness", "pessimism"],
+        "seeAlso": [
+          "optimism",
+          "encouragement",
+          "confidence"
+        ],
+        "notes": [
+          {
+            "enNote": "Hope is the belief or expectation that something positive can happen in the future. It is often associated with resilience and emotional well-being.",
+            "ptNote": "Hope é a crença ou expectativa de que algo positivo pode acontecer no futuro. Ela está frequentemente associada à resiliência e ao bem-estar emocional."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "hope.avif",
+            "alt": "A person sitting on a hill at sunrise, looking toward the horizon with a sense of hope."
+          }
+        ]
+      },
+      {
         "word": "hard times",
         "partOfSpeech": "idiom",
         "enDefinition": "a period of difficulty, especially involving lack of money, problems, or suffering",

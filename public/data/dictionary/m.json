@@ -3,33 +3,33 @@
     "definitions": [
       {
         "word": "meditate",
-        "phonetics": "/ˈmiː.di.eɪt/",
+        "phonetics": "/ˈmed.ɪ.teɪt/",
         "partOfSpeech": "verb",
-        "enDefinition": "to help two or more people or groups reach an agreement by talking to both sides and trying to solve a disagreement",
-        "ptDefinition": "mediar; atuar como intermediário para ajudar pessoas ou grupos a resolver um conflito ou chegar a um acordo",
+        "enDefinition": "to spend time in quiet thought, especially to relax, focus your mind, or improve your mental and emotional well-being",
+        "ptDefinition": "meditar; passar um tempo em silêncio refletindo ou concentrando a mente para relaxar e melhorar o bem-estar mental e emocional",
         "examples": [
           {
-            "enExample": "A professional mediator was called in to mediate the dispute between the two companies.",
-            "ptExample": "Um mediador profissional foi chamado para mediar a disputa entre as duas empresas."
+            "enExample": "She meditates for twenty minutes every morning before work.",
+            "ptExample": "Ela medita por vinte minutos todas as manhãs antes do trabalho."
           },
           {
-            "enExample": "Teachers often mediate conflicts between students.",
-            "ptExample": "Os professores frequentemente mediam conflitos entre os alunos."
+            "enExample": "Taking a few minutes to meditate can help reduce stress.",
+            "ptExample": "Reservar alguns minutos para meditar pode ajudar a reduzir o estresse."
           }
         ],
-        "synonyms": ["arbitrate", "intervene", "negotiate", "conciliate"],
-        "antonyms": ["aggravate", "escalate", "provoke", "instigate"],
-        "seeAlso": ["mediator", "mediation", "negotiate", "resolve", "settle"],
+        "synonyms": ["reflect", "contemplate", "practice mindfulness", "focus"],
+        "antonyms": ["distract oneself", "panic", "worry"],
+        "seeAlso": ["meditation", "mindfulness", "relax", "breathe"],
         "notes": [
           {
-            "enNote": "To mediate means to act as a neutral third party. A mediator helps people communicate and find a solution but does not make the final decision for them.",
-            "ptNote": "Mediar significa atuar como uma terceira parte neutra. O mediador ajuda as pessoas a se comunicarem e encontrarem uma solução, mas não toma a decisão final por elas."
+            "enNote": "Meditating usually involves focusing on your breathing, thoughts, or a particular object to calm the mind and improve awareness.",
+            "ptNote": "Meditar geralmente envolve focar na respiração, nos pensamentos ou em um objeto específico para acalmar a mente e aumentar a consciência."
           }
         ],
         "imgs": [
           {
             "src": "meditate.avif",
-            "alt": "A neutral mediator helping two people resolve a disagreement by talking calmly at a table."
+            "alt": "A young woman sitting cross-legged with her eyes closed, peacefully meditating outdoors."
           }
         ]
       },

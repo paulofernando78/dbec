@@ -227,8 +227,8 @@ export const links = [
             label: "Ted-ED",
             links: [
               {
-                href: "/cefr/advanced/ted-ed/mature",
-                label: "Mature",
+                href: "/cefr/advanced/ted-ed/why-we-react-differently",
+                label: "Why We React Differently",
               },
             ],
           },

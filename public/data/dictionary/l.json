@@ -2,6 +2,47 @@
   {
     "definitions": [
       {
+        "word": "look on the bright side",
+        "phonetics": "/lʊk ɒn ðə braɪt saɪd/",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to focus on the positive aspects of a situation instead of the negative ones",
+        "ptDefinition": "ver o lado positivo das coisas; focar nos aspectos positivos de uma situação em vez dos negativos",
+        "examples": [
+          {
+            "enExample": "Although we didn't win the game, let's look on the bright side—we played much better than last week.",
+            "ptExample": "Embora não tenhamos vencido o jogo, vamos ver o lado positivo: jogamos muito melhor do que na semana passada."
+          },
+          {
+            "enExample": "She tried to look on the bright side after failing the exam and used it as motivation to study harder.",
+            "ptExample": "Ela tentou ver o lado positivo depois de reprovar na prova e usou isso como motivação para estudar mais."
+          }
+        ],
+        "synonyms": [
+          "be optimistic",
+          "stay positive",
+          "see the silver lining",
+          "make the best of it"
+        ],
+        "antonyms": [
+          "be pessimistic",
+          "focus on the negative",
+          "expect the worst"
+        ],
+        "seeAlso": ["optimism", "silver lining", "hope", "positive thinking"],
+        "notes": [
+          {
+            "enNote": "This idiom encourages someone to focus on the good aspects of a difficult situation. It does not mean ignoring problems, but choosing a more optimistic perspective.",
+            "ptNote": "Esse idioma incentiva alguém a focar nos aspectos positivos de uma situação difícil. Não significa ignorar os problemas, mas escolher uma perspectiva mais otimista."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "look-on-the-bright-side.avif",
+            "alt": "A smiling person looking toward sunlight breaking through dark clouds, symbolizing optimism."
+          }
+        ]
+      },
+      {
         "word": "lunge",
         "partOfSpeech": "verb, noun",
         "enDefinition": "To move suddenly and quickly toward someone or something, usually with force or in an attempt to catch or attack it.",

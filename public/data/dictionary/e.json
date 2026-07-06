@@ -2,6 +2,44 @@
   {
     "definitions": [
       {
+        "word": "empathize",
+        "phonetics": "/ˈem.pə.θaɪz/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to understand and share another person's feelings or experiences by imagining what it is like to be in their situation",
+        "ptDefinition": "ter empatia; compreender e compartilhar os sentimentos ou experiências de outra pessoa, colocando-se no lugar dela",
+        "examples": [
+          {
+            "enExample": "It's easier to empathize with others when you've had a similar experience.",
+            "ptExample": "É mais fácil ter empatia pelos outros quando você passou por uma experiência semelhante."
+          },
+          {
+            "enExample": "She tried to empathize with her friend after hearing about the loss.",
+            "ptExample": "Ela tentou se colocar no lugar da amiga depois de ouvir sobre a perda."
+          }
+        ],
+        "synonyms": ["understand", "relate to", "sympathize", "identify with"],
+        "antonyms": ["ignore", "misunderstand", "dismiss", "disregard"],
+        "seeAlso": [
+          "empathy",
+          "sympathize",
+          "support",
+          "compassion",
+          "emotions"
+        ],
+        "notes": [
+          {
+            "enNote": "Empathize means understanding another person's emotions from their perspective. Unlike 'sympathize', which means feeling sorry for someone, 'empathize' means imagining how they feel.",
+            "ptNote": "Empathize significa compreender as emoções de outra pessoa a partir da perspectiva dela. Diferentemente de 'sympathize', que significa sentir pena ou compaixão, 'empathize' é imaginar como a outra pessoa se sente."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "empathize.avif",
+            "alt": "A young woman comforting a sad friend with a reassuring hand on their shoulder."
+          }
+        ]
+      },
+      {
         "word": "emotions",
         "phonetics": "/ɪˈməʊ.ʃənz/",
         "partOfSpeech": "noun (plural)",
