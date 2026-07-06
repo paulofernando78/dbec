@@ -1,6 +1,6 @@
 import { audio, content, mark, attentionMark } from "@/helpers/content";
 
-export const mature = {
+export const howToManageEmotions = {
   slug: "blank",
 
   metadata: {
@@ -8,7 +8,7 @@ export const mature = {
     description: "How to Manage Your Emotions",
   },
   whiteboard: {
-    title: "Advanced",
+    title: "C1 Advanced",
     subtitle: "Ted-ED",
     descriptions: ["Why We React Differently"],
   },

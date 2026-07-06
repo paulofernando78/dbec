@@ -226,7 +226,7 @@ export default [
     // Ted-ED
     // route(
     //   "misc/ted-ed",
-    //   "routes/misc/ted-ed.tsx"),
+    //   "routes/cefr/ted-ed.tsx"),
 
     // route(
     //   "/misc/ted-ed/what-causes-constipation",

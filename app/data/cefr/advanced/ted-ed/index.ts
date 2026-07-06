@@ -1,7 +1,7 @@
-import { mature } from "./how-to-manage-emotions";
 import { blank } from "../blank";
+import { howToManageEmotions } from "./how-to-manage-emotions";
 
 export const tedEd = {
   blank,
-  mature: mature,
+  "why-we-react-differently": howToManageEmotions,
 };
