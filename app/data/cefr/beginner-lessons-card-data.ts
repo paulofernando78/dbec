@@ -1,5 +1,3 @@
-// Removed unused imports
-
 export const lessons = {
   unitOne: {
     href: "/cefr/beginner/unit-1-hello",

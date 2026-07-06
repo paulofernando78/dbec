@@ -197,6 +197,7 @@ export default [
     route("/cefr/:level/:category/:slug", "routes/template/articles.tsx"),
 
     // C1 Advanced
+    route("/cefr/advanced", "routes/cefr/advanced.tsx"),
 
     //News
     route(
