@@ -242,23 +242,23 @@ export const links = [
   {
     title: "GAMES",
     links: [
-      {
-        href: "/",
-        label: "Sierra",
-        links: [
-          {
-            href: "/games/kings-quest",
-            label: "King’s Quest",
-          },
-        ],
-      },
+      // {
+      //   href: "/",
+      //   label: "Sierra",
+      //   links: [
+      //     {
+      //       href: "/games/kings-quest",
+      //       label: "King’s Quest",
+      //     },
+      //   ],
+      // },
       {
         href: "/",
         label: "Lucas Arts",
         links: [
           {
-            href: "/games/thumbleweed-park",
-            label: "Thumbleweed PArk",
+            href: "/games/lucas-arts/thimbleweed-park",
+            label: "Thumbleweed Park",
           },
         ],
       },
