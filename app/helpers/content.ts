@@ -23,6 +23,7 @@ export type TokenType =
   | "italic"
   | "stressed"
   | "mark"
+  | "attentionMark"
   | "underline"
   | "bold-mark"
   | "phonetics"
@@ -138,6 +139,11 @@ export const stressed = (text: string): ContentToken => ({
 export const mark = (text: string): ContentToken => ({
   part: text,
   type: "mark",
+});
+
+export const attentionMark = (text: string): ContentToken => ({
+  part: text,
+  type: "attentionMark",
 });
 
 // underline

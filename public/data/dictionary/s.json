@@ -2,6 +2,70 @@
   {
     "definitions": [
       {
+        "word": "support",
+        "phonetics": "/səˈpɔːrt/",
+        "partOfSpeech": "verb, noun",
+        "enDefinition": "verb: to help, encourage, or provide assistance to someone or something; noun: help, encouragement, or assistance given to a person, group, or idea.",
+        "ptDefinition": "verbo: ajudar, incentivar ou dar assistência a alguém ou algo; substantivo: ajuda, apoio ou assistência dada a uma pessoa, grupo ou ideia.",
+        "examples": [
+          {
+            "enExample": "Her friends supported her through a difficult time.",
+            "ptExample": "Os amigos dela a apoiaram durante um momento difícil."
+          },
+          {
+            "enExample": "Having a strong support system can improve your mental health.",
+            "ptExample": "Ter uma boa rede de apoio pode melhorar sua saúde mental."
+          }
+        ],
+        "synonyms": ["help", "assist", "encourage", "back", "aid"],
+        "antonyms": ["oppose", "discourage", "abandon", "hinder"],
+        "seeAlso": ["support system", "encourage", "assist", "help", "back"],
+        "notes": [
+          {
+            "enNote": "Support can refer to emotional, physical, financial, or practical help. It is commonly used in expressions such as 'support system', 'support someone', and 'show support'.",
+            "ptNote": "Support pode se referir a apoio emocional, físico, financeiro ou prático. É muito comum em expressões como 'support system', 'support someone' e 'show support'."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "support.avif",
+            "alt": "Two friends comforting and supporting a sad person, illustrating emotional support."
+          }
+        ]
+      },
+      {
+        "word": "shift",
+        "phonetics": "/ʃɪft/",
+        "partOfSpeech": "verb, noun",
+        "enDefinition": "verb: to move or change from one position, place, direction, or focus to another; noun: a change in position, direction, attention, or way of thinking.",
+        "ptDefinition": "verbo: mover ou mudar de posição, lugar, direção ou foco; substantivo: uma mudança de posição, direção, atenção ou forma de pensar.",
+        "examples": [
+          {
+            "enExample": "When you feel anxious, try to shift your attention to something positive.",
+            "ptExample": "Quando você se sentir ansioso, tente mudar sua atenção para algo positivo."
+          },
+          {
+            "enExample": "Public opinion shifted after the new evidence was presented.",
+            "ptExample": "A opinião pública mudou depois que as novas evidências foram apresentadas."
+          }
+        ],
+        "synonyms": ["move", "change", "switch", "redirect", "transfer"],
+        "antonyms": ["stay", "remain", "keep", "maintain"],
+        "seeAlso": ["switch", "change", "move", "redirect", "attention"],
+        "notes": [
+          {
+            "enNote": "Shift is commonly used with words like 'attention', 'focus', 'blame', 'responsibility', and 'gears'. It can describe both physical movement and mental or emotional changes.",
+            "ptNote": "Shift é frequentemente usado com palavras como 'attention', 'focus', 'blame', 'responsibility' e 'gears'. Pode descrever tanto um movimento físico quanto mudanças mentais ou emocionais."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "shift.avif",
+            "alt": "A student looking away from stressful thoughts and focusing on the bright view outside the window, illustrating shifting attention."
+          }
+        ]
+      },
+      {
         "word": "stretcher",
         "phonetics": "/ˈstretʃ.ər/",
         "partOfSpeech": "noun",

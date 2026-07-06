@@ -1,16 +1,16 @@
-import { audio, content, mark, underline } from "@/helpers/content";
+import { audio, content, mark, attentionMark } from "@/helpers/content";
 
 export const mature = {
   slug: "blank",
 
   metadata: {
-    title: "Advanced | Ted-Ed | ",
-    description: "A ...",
+    title: "Advanced | Ted-Ed",
+    description: "How to Manage Your Emotions",
   },
   whiteboard: {
     title: "Advanced",
     subtitle: "Ted-ED",
-    descriptions: ["Mature..."],
+    descriptions: ["Why We React Differently"],
   },
   sections: {
     beforeWatching: {
@@ -37,15 +37,13 @@ export const mature = {
     vocabulary: {
       prompt: "Slide the pictures and describe what you see.",
       imgs: [
-        { word: "regulate emotions", img: 0 },
-        { word: "emotional response", img: 0 },
-        { word: "appraise", img: 0 },
-        { word: "reappraisal", img: 0 },
-        { word: "shift your attention", img: 0 },
-        { word: "support system", img: 0 },
-        { word: "cultivate hope", img: 0 },
+        { word: "emotions", img: 0 },
+        { word: "medidate", img: 0 },
+        { word: "shift", img: 0 },
+        { word: "support", img: 0 },
+        { word: "hope", img: 0 },
         { word: "empathize", img: 0 },
-        { word: "avoid the situation", img: 0 },
+        { word: "avoid", img: 0 },
         { word: "look on the bright side", img: 0 },
       ],
     },
@@ -57,7 +55,7 @@ export const mature = {
       ],
       videoPlayer: {
         videoId: "Uew5BbvmLks",
-        title: "...",
+        title: "How to Managae Your Emotions",
         instruction: "Watch the video and answer the question.",
       },
       radio: {
@@ -71,13 +69,13 @@ export const mature = {
                   isCorrect: false,
                 },
                 {
+                  option: "Happiness is the only healthy emotional state.",
+                  isCorrect: false,
+                },
+                {
                   option:
                     "Different strategies can help us regulate emotions depending on the situation.",
                   isCorrect: true,
-                },
-                {
-                  option: "Happiness is the only healthy emotional state.",
-                  isCorrect: false,
                 },
                 {
                   option:
@@ -161,7 +159,13 @@ export const mature = {
           en: [
             ...content({
               parts: [
-                "You and your friend need to ace Friday’s exam to avoid summer classes, and after a week of studying, you both feel confident that you pulled it off. But when you get your grades back, they’re much lower than the two of you expected. You’re devastated. However, your friend doesn't seem too bothered, and it's making you wonder why you can't shake this off like they can. But should you really be trying to look on the bright side? And is controlling our emotions even possible in the first place?",
+                "You and your friend need to ace Friday’s exam to avoid summer classes, and after a week of studying, you both feel confident that you ",
+                mark("pulled it off"),
+                ". But when you get your grades back, they’re much lower than the two of you expected. You’re devastated. However, your friend doesn't seem too bothered, and it's making you wonder why you can't ",
+                mark("shake this off"),
+                " like they can. But should you really be trying to look ",
+                mark("on the bright side"),
+                "? And is controlling our emotions even possible in the first place?",
               ],
             }),
           ],
@@ -171,7 +175,25 @@ export const mature = {
           en: [
             ...content({
               parts: [
-                "The answer to the last question is a definitive 'yes.' There are numerous strategies for regulating our emotions, and one framework to understand these techniques is called the Process Model. Psychologists use this tool to identify where and how to intervene in the process that forms our emotions. That process has four steps: first, we enter a situation, real or imagined, and that draws our attention. Then we evaluate, or appraise, the situation and whether it helps or hinders our goals. Finally, this appraisal leads to changes in how we feel, think, and behave, known as an emotional response. Each step offers an opportunity to consciously intervene and change our emotions.",
+                "The answer to the last question is a definitive 'yes.' ",
+                attentionMark("There are numerous strategies for regulating our emotions"),
+                ", and one framework to understand these techniques is called the ",
+                attentionMark("Process Model"),
+                ". Psychologists use this tool to identify where and how to ",
+                mark("intervene"),
+                " in the process that forms our emotions. That process has ",
+                attentionMark("four steps:"),
+                " first, we enter a situation, real or imagined, and that ",
+                mark("draws"),
+                " our attention. Then we  ",
+                mark("evaluate"),
+                ", or ",
+                mark("appraise"),
+                ", the situation and whether it helps or ",
+                mark("hinders"),
+                " our goals. Finally, this ",
+                mark("appraisal"),
+                " leads to changes in how we feel, think, and behave, known as an emotional response. Each step offers an opportunity to consciously intervene and change our emotions."
               ],
             }),
           ],
@@ -181,7 +203,11 @@ export const mature = {
           en: [
             ...content({
               parts: [
-                "To see this in action, imagine you've been invited to the same party as your least-favorite ex and their new partner. Your first strategy could be avoiding the situation altogether by skipping the party. But if you do attend, you could modify the situation by choosing not to interact with your ex. If that's difficult, you might shift your attention by playing a game with your friends instead of focusing on your ex's new partner. Another option would be to re-evaluate how you think about the situation. After seriously reappraising things, you might realize that you don't care who your ex dates.",
+                "To see this in action, imagine you've been invited to the same party as your least-favorite ex and their new partner. Your first strategy could be avoiding the situation ",
+                mark("altogether"),
+                " by skipping the party. But if you do attend, you could modify the situation by choosing not to interact with your ex. If that's difficult, you might shift your attention by playing a game with your friends instead of focusing on your ex's new partner. Another option would be to re-evaluate how you think about the situation. After seriously ",
+                mark("reappraising"),
+                " things, you might realize that you don't care who your ex dates."
               ],
             }),
           ],
@@ -191,7 +217,9 @@ export const mature = {
           en: [
             ...content({
               parts: [
-                "If none of these strategies work, you can always try tempering your emotional response after the fact. But this can be tricky. Many of the easiest ways to do this, like hiding your emotions or trying to change them with recreational drugs, generally lead to more negative feelings and health concerns in the long term. More sustainable strategies include going for a long walk, taking slow, deep breaths, or talking with someone in your support system.",
+                "If none of these strategies work, you can always try ",
+                mark("tempering"),
+                " your emotional response after the fact. But this can be tricky. Many of the easiest ways to do this, like hiding your emotions or trying to change them with recreational drugs, generally lead to more negative feelings and health concerns in the long term. More sustainable strategies include going for a long walk, taking slow, deep breaths, or talking with someone in your support system."
               ],
             }),
           ],
@@ -232,14 +260,14 @@ export const mature = {
     practice: {
       guess: {
         words: [
-          { word: "regulate emotions", img: 0 },
-          { word: "emotional response", img: 0 },
-          { word: "reappraisal", img: 0 },
-          { word: "support system", img: 0 },
-          { word: "empathize", img: 0 },
-          { word: "cultivate hope", img: 0 },
-          { word: "look on the bright side", img: 0 },
-          { word: "shift your attention", img: 0 },
+        { word: "regulate emotions", img: 0 },
+        { word: "emotional response", img: 0 },
+        { word: "shift your attention", img: 0 },
+        { word: "support system", img: 0 },
+        { word: "cultivate hope", img: 0 },
+        { word: "empathize", img: 0 },
+        { word: "avoid the situation", img: 0 },
+        { word: "look on the bright side", img: 0 },
         ],
       },
       fillInTheBlanks: {

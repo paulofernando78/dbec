@@ -2,6 +2,45 @@
   {
     "definitions": [
       {
+        "word": "emotions",
+        "phonetics": "/ɪˈməʊ.ʃənz/",
+        "partOfSpeech": "noun (plural)",
+        "enDefinition": "strong feelings such as happiness, sadness, anger, fear, or excitement that are caused by a particular situation or person",
+        "ptDefinition": "emoções; sentimentos intensos, como felicidade, tristeza, raiva, medo ou entusiasmo, provocados por uma situação ou pessoa",
+        "examples": [
+          {
+            "enExample": "Learning to regulate your emotions can improve your relationships.",
+            "ptExample": "Aprender a regular suas emoções pode melhorar seus relacionamentos."
+          },
+          {
+            "enExample": "She couldn't hide her emotions after hearing the good news.",
+            "ptExample": "Ela não conseguiu esconder suas emoções depois de ouvir a boa notícia."
+          }
+        ],
+        "synonyms": ["feelings", "sentiments", "emotional states", "reactions"],
+        "antonyms": ["logic", "reason", "detachment"],
+        "seeAlso": [
+          "emotion",
+          "feeling",
+          "mood",
+          "empathy",
+          "emotional response",
+          "regulate emotions"
+        ],
+        "notes": [
+          {
+            "enNote": "An emotion is usually a short-term feeling triggered by a specific event. Common emotions include happiness, sadness, anger, fear, surprise, and disgust.",
+            "ptNote": "Uma emoção geralmente é um sentimento de curta duração desencadeado por um evento específico. Emoções comuns incluem felicidade, tristeza, raiva, medo, surpresa e nojo."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "emotions.avif",
+            "alt": "Four illustrated facial expressions showing happiness, sadness, anger, and fear."
+          }
+        ]
+      },
+      {
         "word": "earth axis",
         "phonetics": "/ɝːθ ˈæk.sɪs/",
         "partOfSpeech": "noun",

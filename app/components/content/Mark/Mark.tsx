@@ -1,11 +1,9 @@
 import type { ReactNode } from "react";
 
-import styles from "./Mark.module.css"
-
 type MarkedProps = {
   children: ReactNode
 }
 
 export const Mark = ({ children }: MarkedProps) => {
-  return <mark className={styles.marked}>{children}</mark>;
+  return <mark className="px-[.3rem] bg-yellow-400 rounded-lg">{children}</mark>;
 };

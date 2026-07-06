@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { Audio } from "@/components/ui/Audio";
 import { Mark } from "@/components/content/Mark";
+import { AttentionMark } from "@/components/content/AttentionMark";
 import { BoldMark } from "@/components/content/BoldMark";
 import { Underline } from "@/components/content/Underline";
 import { PartOfSpeech } from "@/components/content/PartOfSpeech";
@@ -134,6 +135,9 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
             break;
           case "mark":
             content = <Mark>{part.part}</Mark>;
+            break;
+          case "attentionMark":
+            content = <AttentionMark>{part.part}</AttentionMark>;
             break;
           case "bold-mark":
             content = <BoldMark>{part.part}</BoldMark>;

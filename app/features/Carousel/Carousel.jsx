@@ -46,6 +46,7 @@ export const Carousel = ({ imgs = [] }) => {
 
     loadWords();
   }, [imgs]);
+  console.warn("resolvedWords", resolvedWords);
 
   const scrollLeft = () => {
     carouselRef.current.scrollBy({
@@ -100,6 +101,7 @@ export const Carousel = ({ imgs = [] }) => {
                       img.img ?? 0
                     ]?.src
                   )}
+                  
                   alt={img.alt || img.word}
                 />
               )}

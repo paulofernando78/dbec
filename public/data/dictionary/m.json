@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "meditate",
+        "phonetics": "/ˈmiː.di.eɪt/",
+        "partOfSpeech": "verb",
+        "enDefinition": "to help two or more people or groups reach an agreement by talking to both sides and trying to solve a disagreement",
+        "ptDefinition": "mediar; atuar como intermediário para ajudar pessoas ou grupos a resolver um conflito ou chegar a um acordo",
+        "examples": [
+          {
+            "enExample": "A professional mediator was called in to mediate the dispute between the two companies.",
+            "ptExample": "Um mediador profissional foi chamado para mediar a disputa entre as duas empresas."
+          },
+          {
+            "enExample": "Teachers often mediate conflicts between students.",
+            "ptExample": "Os professores frequentemente mediam conflitos entre os alunos."
+          }
+        ],
+        "synonyms": ["arbitrate", "intervene", "negotiate", "conciliate"],
+        "antonyms": ["aggravate", "escalate", "provoke", "instigate"],
+        "seeAlso": ["mediator", "mediation", "negotiate", "resolve", "settle"],
+        "notes": [
+          {
+            "enNote": "To mediate means to act as a neutral third party. A mediator helps people communicate and find a solution but does not make the final decision for them.",
+            "ptNote": "Mediar significa atuar como uma terceira parte neutra. O mediador ajuda as pessoas a se comunicarem e encontrarem uma solução, mas não toma a decisão final por elas."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "meditate.avif",
+            "alt": "A neutral mediator helping two people resolve a disagreement by talking calmly at a table."
+          }
+        ]
+      },
+      {
         "word": "memory",
         "phonetics": "/ˈmeməri/",
         "partOfSpeech": "noun",
