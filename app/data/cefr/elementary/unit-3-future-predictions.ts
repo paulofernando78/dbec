@@ -5,15 +5,13 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/elementaryLessonCard";
+import { lessons } from "@/data/cefr/elementary-lessons-card-data";
 
 export const lesson = {
   whiteboard: {
     title: "A2 Elementary",
     subtitle: "Unit 3 • Future Predictions",
-    descriptions: [
-      "I will visit Italy one day.",
-    ],
+    descriptions: ["I will visit Italy one day."],
   },
 
   lessonCard: {
@@ -85,7 +83,10 @@ export const lesson = {
             question: "Which sentence is a prediction about the future?",
             options: [
               { option: "I ate breakfast at 7 a.m.", isCorrect: false },
-              { option: "Robots will help us cook and clean.", isCorrect: true },
+              {
+                option: "Robots will help us cook and clean.",
+                isCorrect: true,
+              },
             ],
           },
           {
@@ -127,7 +128,9 @@ export const lesson = {
         },
         {
           speaker: "Leo",
-          line: text(["Yes, I think so. If we have more free time, we'll travel more."]),
+          line: text([
+            "Yes, I think so. If we have more free time, we'll travel more.",
+          ]),
         },
         {
           speaker: "Mia",
@@ -248,7 +251,9 @@ export const lesson = {
     ccq: [
       {
         as: "span",
-        parts: ["Are we talking about the past, present, or future? (The future.)"],
+        parts: [
+          "Are we talking about the past, present, or future? (The future.)",
+        ],
       },
       {
         as: "span",
@@ -366,13 +371,13 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Write three predictions about the world in 2050 using 'will'."]),
-          textarea: true
+          value: text([
+            "Write three predictions about the world in 2050 using 'will'.",
+          ]),
+          textarea: true,
         },
         {
-          value: text([
-            "Write two predictions about your city in 2050.",
-          ]),
+          value: text(["Write two predictions about your city in 2050."]),
         },
         {
           value: text([

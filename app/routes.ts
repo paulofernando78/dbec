@@ -8,37 +8,24 @@ import {
 export default [
   index("routes/home.tsx"),
 
-  route(
-    "/about",
-    "routes/about.tsx"),
+  route("/about", "routes/about.tsx"),
 
-  layout(
-    "routes/dashboard/dashboard-layout.tsx", [
-    
-    route(
-      "/lab",
-      "routes/dashboard/lab.tsx"),
+  layout("routes/dashboard/dashboard-layout.tsx", [
+    route("/lab", "routes/dashboard/lab.tsx"),
 
-    route(
-      "dashboard",
-      "routes/dashboard/profile.tsx"),
+    route("dashboard", "routes/dashboard/profile.tsx"),
 
-    route(
-      "cefr",
-      "routes/whats-cefr.tsx"),
+    route("cefr", "routes/whats-cefr.tsx"),
 
     // Lesson Blanks
-    route(
-      "cefr/lesson-blank",
-      "routes/lesson-blank.tsx"),
+    route("cefr/lesson-blank", "routes/lesson-blank.tsx"),
 
     // A1 Beginner
-    route(
-      "/cefr/beginner",
-      "routes/cefr/beginner.tsx"),
+    route("/cefr/beginner", "routes/cefr/beginner.tsx"),
     route(
       "/cefr/beginner/unit-1-hello",
-      "routes/cefr/beginner/unit-1-hello.tsx"),
+      "routes/cefr/beginner/unit-1-hello.tsx",
+    ),
     route(
       "/cefr/beginner/unit-2-my-family",
       "routes/cefr/beginner/unit-2-my-family.tsx",
@@ -77,9 +64,7 @@ export default [
     ),
 
     // A2 Elementary
-    route(
-      "/cefr/elementary",
-      "routes/cefr/elementary.tsx"),
+    route("/cefr/elementary", "routes/cefr/elementary.tsx"),
     route(
       "/cefr/elementary/unit-1-last-weekend",
       "routes/cefr/elementary/unit-1-last-weekend.tsx",
@@ -122,9 +107,7 @@ export default [
     ),
 
     // B1 Intermediate
-    route(
-      "/cefr/intermediate",
-      "routes/cefr/intermediate.tsx"),
+    route("/cefr/intermediate", "routes/cefr/intermediate.tsx"),
     route(
       "/cefr/intermediate/unit-1-life-experiences",
       "routes/cefr/intermediate/unit-1-life-experiences.tsx",
@@ -167,9 +150,7 @@ export default [
     ),
 
     // B2 Upper-Intermediate
-    route(
-      "/cefr/upper-intermediate",
-      "routes/cefr/upper-intermediate.tsx"),
+    route("/cefr/upper-intermediate", "routes/cefr/upper-intermediate.tsx"),
     route(
       "/cefr/upper-intermediate/unit-1-dream-scenarios",
       "routes/cefr/upper-intermediate/unit-1-dream-scenarios.tsx",
@@ -213,39 +194,27 @@ export default [
 
     //! Templates
 
-    route(
-      "/cefr/:level/:category/:slug",
-      "routes/template/articles.tsx",
-    ),
+    route("/cefr/:level/:category/:slug", "routes/template/articles.tsx"),
 
     // C1 Advanced
+
+    //News
     route(
-      "cefr/c1/news",
+      "cefr/advanced/news",
       "routes/cefr/advanced/news.tsx"),
 
     // Ted-ED
-    // route(
-    //   "misc/ted-ed",
-    //   "routes/cefr/ted-ed.tsx"),
-
-    // route(
-    //   "/misc/ted-ed/what-causes-constipation",
-    //   "routes/misc/ted-ed/what-causes-constipation.tsx",
-    // ),
-
-    // route(
-    //   "misc/ted-ed/how-your-memory-works",
-    //   "routes/misc/ted-ed/how-your-memory-works.tsx",
-    // ),
+    route(
+      "cefr/advanced/ted-ed",
+      "routes/cefr/advanced/ted-ed.tsx"),
 
     // Games
     route(
-      "misc/games",
-      "routes/misc/games.tsx",
-    ),
+      "/games",
+      "routes/games.tsx"),
 
     route(
-      "//games/lucas-arts/thimbleweed-park",
+      "/games/lucas-arts/thimbleweed-park",
       "routes/games/lucas-arts/thimbleweed-park.tsx",
     ),
   ]),

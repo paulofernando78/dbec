@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/Card";
-import { List } from "@/components/content/List";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Link } from "react-router";
 

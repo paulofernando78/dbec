@@ -3,14 +3,9 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  text,
-  audio,
-  bold,
-} from "@/helpers/content";
+import { content, text, audio, bold } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/beginnerLessonCardData";
+import { lessons } from "@/data/cefr/beginner-lessons-card-data";
 
 export const lesson = {
   whiteboard: {

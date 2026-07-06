@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/elementaryLessonCard";
+import { lessons } from "@/data/cefr/elementary-lessons-card-data";
 
 export const lesson = {
   whiteboard: {
@@ -32,7 +32,10 @@ export const lesson = {
           alt: "Packing a suitcase",
           content: [
             ...content({
-              parts: [audio("/"), "Emma is going to pack her suitcase tonight."],
+              parts: [
+                audio("/"),
+                "Emma is going to pack her suitcase tonight.",
+              ],
             }),
           ],
         },
@@ -50,7 +53,10 @@ export const lesson = {
           alt: "Hotel near the beach",
           content: [
             ...content({
-              parts: [audio("/"), "They are going to stay in a hotel near the beach."],
+              parts: [
+                audio("/"),
+                "They are going to stay in a hotel near the beach.",
+              ],
             }),
           ],
         },
@@ -59,7 +65,10 @@ export const lesson = {
           alt: "Museum visit",
           content: [
             ...content({
-              parts: [audio("/"), "They are going to visit a museum on Saturday."],
+              parts: [
+                audio("/"),
+                "They are going to visit a museum on Saturday.",
+              ],
             }),
           ],
         },
@@ -98,7 +107,8 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "Emma and Jake are talking about their travel plans. Listen and read.",
+      prompt:
+        "Emma and Jake are talking about their travel plans. Listen and read.",
       audioSrc: "/",
       lines: [
         {
@@ -123,7 +133,9 @@ export const lesson = {
         },
         {
           speaker: "Jake",
-          line: text(["We're going to swim, visit a museum, and try local food."]),
+          line: text([
+            "We're going to swim, visit a museum, and try local food.",
+          ]),
         },
         {
           speaker: "Emma",
@@ -253,21 +265,38 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: [bold("be going to"), " + base verb is used for future plans and intentions."],
+        parts: [
+          bold("be going to"),
+          " + base verb is used for future plans and intentions.",
+        ],
       },
       {
         as: "span",
-        parts: ["Use ", bold("am / is / are"), " before going to: I am going to travel. She is going to pack."],
+        parts: [
+          "Use ",
+          bold("am / is / are"),
+          " before going to: I am going to travel. She is going to pack.",
+        ],
       },
       {
         as: "span",
-        parts: ["Use future time expressions such as ", bold("tomorrow"), ", ", bold("next week"), " and ", bold("next month"), "."],
+        parts: [
+          "Use future time expressions such as ",
+          bold("tomorrow"),
+          ", ",
+          bold("next week"),
+          " and ",
+          bold("next month"),
+          ".",
+        ],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["Is 'I'm going to travel next month' about the past or the future?"],
+        parts: [
+          "Is 'I'm going to travel next month' about the past or the future?",
+        ],
       },
       {
         as: "span",
@@ -317,23 +346,43 @@ export const lesson = {
       exercise: {
         blocks: [
           {
-            block: [{ text: "I " }, { blank: "am" }, { text: " going to travel next month." }],
+            block: [
+              { text: "I " },
+              { blank: "am" },
+              { text: " going to travel next month." },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "She is going to " }, { blank: "pack" }, { text: " her suitcase tonight." }],
+            block: [
+              { text: "She is going to " },
+              { blank: "pack" },
+              { text: " her suitcase tonight." },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "We are going to " }, { blank: "stay" }, { text: " in a hotel." }],
+            block: [
+              { text: "We are going to " },
+              { blank: "stay" },
+              { text: " in a hotel." },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "They are going to " }, { blank: "visit" }, { text: " a museum." }],
+            block: [
+              { text: "They are going to " },
+              { blank: "visit" },
+              { text: " a museum." },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "Jake is going to take " }, { blank: "pictures" }, { text: " every day." }],
+            block: [
+              { text: "Jake is going to take " },
+              { blank: "pictures" },
+              { text: " every day." },
+            ],
             lineBreak: true,
           },
         ],
@@ -377,11 +426,11 @@ export const lesson = {
           textarea: true,
         },
         {
-          value: text(["Write four sentences with going to." ]),
+          value: text(["Write four sentences with going to."]),
           textarea: true,
         },
         {
-          value: text(["Ask your partner about their travel plans." ]),
+          value: text(["Ask your partner about their travel plans."]),
         },
       ],
     } satisfies ListProps,

@@ -1,7 +1,7 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
-import { lessons } from "@/data/cefr/upperIntermedateLessonsCard";
+import { lessons } from "@/data/cefr/upperIntermedate-lessons-car-data";
 
 export default function Dashboard() {
   return (

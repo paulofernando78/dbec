@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { links } from "../../../data/NavBarLinks";
+import { links } from "../../../data/nav-bar-links";
 
 import { CircleChevronRight } from "lucide-react";
 import { Checkbox } from "@/components/ui/Checkbox";
@@ -7,6 +7,7 @@ import { Checkbox } from "@/components/ui/Checkbox";
 type NavItem = {
   label: string;
   href: string;
+  trackProgress?: boolean;
   links?: NavItem[];
 };
 
@@ -21,6 +22,7 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
+  console.log(item);
   if (item.links?.length) {
     return (
       <details className="open:[&>summary_.chevron]:rotate-90">
@@ -53,7 +55,7 @@ function RenderNavItem({
 
   return (
     <div className="flex gap-3">
-      <Checkbox className="mt-[.2rem]" />
+      {item.trackProgress !== false && <Checkbox className="mt-[.2rem]" />}
 
       <NavLink
         to={item.href}

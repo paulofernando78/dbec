@@ -17,7 +17,7 @@ import {
   space,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/beginnerLessonCardData";
+import { lessons } from "@/data/cefr/beginner-lessons-card-data";
 
 export const lesson = {
   whiteboard: {
@@ -446,7 +446,9 @@ export const lesson = {
           audio(
             "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name2.mp3",
           ),
-          "Wha", underline("t’s y"), "our name?"
+          "Wha",
+          underline("t’s y"),
+          "our name?",
         ],
       },
       {

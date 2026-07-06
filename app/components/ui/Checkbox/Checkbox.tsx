@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 
 type CheckboxProps = {
-  className: string
+  className?: string
 }
 
 export const Checkbox = ({ className }: CheckboxProps) => {

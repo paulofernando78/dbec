@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/elementaryLessonCard";
+import { lessons } from "@/data/cefr/elementary-lessons-card-data";
 
 export const lesson = {
   whiteboard: {

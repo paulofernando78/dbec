@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/intermediateLessonCard";
+import { lessons } from "@/data/cefr/intermediate-lessons-card-data";
 
 export const lesson = {
   whiteboard: {
@@ -16,10 +16,10 @@ export const lesson = {
   },
 
   lessonCard: {
-      lessonObjective: lessons.unitSix.lessonObjective,
-      grammar: lessons.unitSix.grammar,
-      vocabulary: lessons.unitSix.vocabulary,
-    },
+    lessonObjective: lessons.unitSix.lessonObjective,
+    grammar: lessons.unitSix.grammar,
+    vocabulary: lessons.unitSix.vocabulary,
+  },
 
   introduction: {
     carouselWide: {
@@ -64,7 +64,7 @@ export const lesson = {
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [

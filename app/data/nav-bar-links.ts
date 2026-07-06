@@ -4,10 +4,12 @@ export const links = [
       {
         href: "/dashboard",
         label: "Profile",
+        trackProgress: false
       },
       {
         href: "/cefr",
         label: "What's CEFR?",
+        trackProgress: false
       },
     ],
   },
