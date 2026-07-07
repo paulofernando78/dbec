@@ -60,7 +60,7 @@ export const whatCausesConstipation = {
           questions: [
             {
               question: "What is it mainly about?",
-              options: [
+              options: shuffle([
                 {
                   option: "The anatomy of the digestive system",
                   isCorrect: false,
@@ -78,7 +78,7 @@ export const whatCausesConstipation = {
                   option: "The history of medical research on the colon",
                   isCorrect: false,
                 },
-              ],
+              ]),
             },
           ],
         },
@@ -90,13 +90,91 @@ export const whatCausesConstipation = {
         exercise: {
           questions: [
             {
-              question: "...",
-              options: [
+              question: "Where does constipation usually occur?",
+              options: shuffle([
                 {
-                  option: "...",
+                  option: "In the stomach",
+                  isCorrect: false,
+                },
+                {
+                  option: "In the colon (large intestine)",
                   isCorrect: true,
                 },
-              ],
+                {
+                  option: "In the small intestine",
+                  isCorrect: false,
+                },
+                {
+                  option: "In the liver",
+                  isCorrect: false,
+                },
+              ]),
+            },
+            {
+              question: "What happens as stool moves through the colon?",
+              options: shuffle([
+                {
+                  option: "It absorbs nutrients",
+                  isCorrect: false,
+                },
+                {
+                  option: "It loses most of its water",
+                  isCorrect: true,
+                },
+                {
+                  option: "It becomes liquid again",
+                  isCorrect: false,
+                },
+                {
+                  option: "It mixes with digestive enzymes",
+                  isCorrect: false,
+                },
+              ]),
+            },
+            {
+              question:
+                "What are the two main causes of constipation mentioned in the video?",
+              options: shuffle([
+                {
+                  option:
+                    "Slow stool movement through the colon and pelvic floor dysfunction",
+                  isCorrect: true,
+                },
+                {
+                  option: "Stress and dehydration",
+                  isCorrect: false,
+                },
+                {
+                  option: "Poor sleep and lack of exercise",
+                  isCorrect: false,
+                },
+                {
+                  option: "Food allergies and infections",
+                  isCorrect: false,
+                },
+              ]),
+            },
+            {
+              question: "What may help relieve chronic constipation?",
+              options: shuffle([
+                {
+                  option:
+                    "Eating more fiber, exercising, and drinking enough water",
+                  isCorrect: true,
+                },
+                {
+                  option: "Avoiding vegetables and drinking less water",
+                  isCorrect: false,
+                },
+                {
+                  option: "Only taking medication",
+                  isCorrect: false,
+                },
+                {
+                  option: "Skipping meals to rest the digestive system",
+                  isCorrect: false,
+                },
+              ]),
             },
           ],
         },
@@ -348,35 +426,131 @@ export const whatCausesConstipation = {
         words: shuffle(words),
       },
       fillInTheBlanks: {
-        instruction: "Fill in the blanks with the correct answer.",
+        instruction: "Complete the sentences with the missing words.",
         exercise: {
-          blocks: [
+          blocks: shuffle([
             {
-              block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+              block: [
+                { text: "Constipation arises in the " },
+                { blank: "colon" },
+                { text: ", also known as the large intestine." },
+              ],
               lineBreak: true,
             },
-          ],
+            {
+              block: [
+                {
+                  text: "As stool moves through the colon, it loses most of its ",
+                },
+                { blank: "water" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "The two main causes mentioned are slow stool movement and pelvic floor ",
+                },
+                { blank: "dysfunction" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Eating more " },
+                { blank: "fiber" },
+                {
+                  text: " and drinking enough water may help relieve chronic constipation.",
+                },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Researchers use the Bristol Stool " },
+                { blank: "Chart" },
+                { text: " to identify constipation more precisely." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Ideally, you should be in a " },
+                { blank: "squatting" },
+                { text: " position when using the toilet." },
+              ],
+              lineBreak: true,
+            },
+          ]),
         },
       },
       unscramble: {
         instruction: "Unscramble the sentences.",
         exercise: {
-          items: [
+          items: shuffle([
             {
-              prompt: "... / ",
-              answer: "...",
+              prompt:
+                "the / in / arises / colon / Constipation / large / also / intestine / known / as / the",
+              answer:
+                "Constipation arises in the colon, also known as the large intestine.",
             },
-          ],
+            {
+              prompt:
+                "through / moves / stool / the / As / colon / loses / most / water / its / of / it",
+              answer:
+                "As stool moves through the colon, it loses most of its water.",
+            },
+            {
+              prompt:
+                "main / constipation / causes / the / slow / movement / stool / are / pelvic / dysfunction / floor / and / of / The / two",
+              answer:
+                "The two main causes of constipation are slow stool movement and pelvic floor dysfunction.",
+            },
+            {
+              prompt:
+                "fiber / Eating / more / enough / drinking / and / water / may / help / relieve / chronic / constipation",
+              answer:
+                "Eating more fiber and drinking enough water may help relieve chronic constipation.",
+            },
+            {
+              prompt:
+                "the / Bristol / Stool / Researchers / Chart / use / identify / to / constipation",
+              answer:
+                "Researchers use the Bristol Stool Chart to identify constipation.",
+            },
+            {
+              prompt:
+                "be / a / Ideally / should / in / squatting / you / position",
+              answer: "Ideally, you should be in a squatting position.",
+            },
+          ]),
         },
       },
     },
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Answer the questions.",
+        instruction: "Discuss the questions below.",
         items: [
           {
-            content: ["..."],
+            content: [
+              "Which tip from the video do you think is the most useful? Why?",
+            ],
+          },
+          {
+            content: ["Which healthy habits can help prevent constipation?"],
+          },
+          {
+            content: [
+              "Have you ever changed your diet or lifestyle to improve your health? What did you do?",
+            ],
+          },
+          {
+            content: [
+              "Do you think people drink enough water every day? Why or why not?",
+            ],
           },
         ],
       },

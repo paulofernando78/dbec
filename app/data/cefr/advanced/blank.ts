@@ -40,7 +40,7 @@ export const blank = {
 
       radio: {
         exercise: {
-          questions: [
+          questions: shuffle([
             {
               question: "What is it mainly about?",
               options: [
@@ -50,7 +50,7 @@ export const blank = {
                 },
               ],
             },
-          ],
+          ]),
         },
       },
     },
@@ -58,7 +58,7 @@ export const blank = {
       radio: {
         instruction: "Watch again and listen for specific information.",
         exercise: {
-          questions: [
+          questions: shuffle([
             {
               question: "...",
               options: [
@@ -68,7 +68,7 @@ export const blank = {
                 },
               ],
             },
-          ],
+          ]),
         },
       },
     },
@@ -91,23 +91,23 @@ export const blank = {
       fillInTheBlanks: {
         instruction: "Fill in the blanks with the correct answer.",
         exercise: {
-          blocks: [
+          blocks: shuffle([
             {
               block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
               lineBreak: true,
             },
-          ],
+          ]),
         },
       },
       unscramble: {
         instruction: "Unscramble the sentences.",
         exercise: {
-          items: [
+          items: shuffle([
             {
               prompt: "... / ",
               answer: "...",
             },
-          ],
+          ]),
         },
       },
     },
