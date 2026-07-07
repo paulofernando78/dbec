@@ -12,7 +12,7 @@ type ArrowProps = {
   className?: string;
 };
 
-type CarouselImage = {
+type CarouselWord = {
   src?: string;
   alt?: string;
   dictionary?: string;
@@ -43,11 +43,11 @@ const Arrow = ({ className }: ArrowProps) => (
 
 type CarouselProps = {
   instruction: string;
-  imgs?: CarouselImage[];
+  words?: CarouselWord[];
   aspectRatio?: "square" | "wide";
 };
 
-export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps) => {
+export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleContentIndex, setVisibleContentIndex] = useState(0);
   const [isContentVisible, setIsContentVisible] = useState(true);
@@ -60,12 +60,12 @@ export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps)
   useEffect(() => {
     const loadWords = async () => {
       const entries = await Promise.all(
-        imgs.map(async (img) => {
-          if (!img.word) return null;
+        words.map(async (word) => {
+          if (!word.word) return null;
 
-          const foundWord = await loadDictionaryWord(img.word);
+          const foundWord = await loadDictionaryWord(word.word);
 
-          return [img.word, foundWord];
+          return [word.word, foundWord];
         }),
       );
 
@@ -79,7 +79,7 @@ export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps)
     };
 
     loadWords();
-  }, [imgs]);
+  }, [words]);
 
   useEffect(() => {
     if (currentIndex === visibleContentIndex) {
@@ -106,7 +106,7 @@ export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps)
     });
   };
 
-  const currentImg = imgs[visibleContentIndex];
+  const currentImg = words[visibleContentIndex];
 
   const currentContent =
     currentImg?.content ??
@@ -117,7 +117,7 @@ export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps)
       : undefined);
 
   const scrollRight = () => {
-    setCurrentIndex((prev) => (prev < imgs.length - 1 ? prev + 1 : prev));
+    setCurrentIndex((prev) => (prev < words.length - 1 ? prev + 1 : prev));
 
     carouselRef.current?.scrollBy({
       left: 320,
@@ -192,9 +192,9 @@ export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps)
             }
           }}
         >
-          {imgs.map((img, index) => {
+          {words.map((word, index) => {
             const resolvedSrc =
-              resolvedWords[img.word ?? ""]?.imgs?.[img.img ?? 0]?.src;
+              resolvedWords[word.word ?? ""]?.imgs?.[word.img ?? 0]?.src;
             return (
               <div
                 key={index}
@@ -209,25 +209,25 @@ export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps)
                    ${aspectRatio === "wide" ? "aspect-[16/10]" : "aspect-square"}
                 `}
               >
-                {img.src && (
+                {word.src && (
                   <Image
-                    src={img.src}
-                    alt={img.alt || `carousel-image-${index}`}
+                    src={word.src}
+                    alt={word.alt || `carousel-image-${index}`}
                     rounded={false}
                   />
                 )}
-                {img.dictionary && (
+                {word.dictionary && (
                   <Image
-                    src={dictionary(img.dictionary)}
-                    alt={img.alt || `carousel-image-${index}`}
+                    src={dictionary(word.dictionary)}
+                    alt={word.alt || `carousel-image-${index}`}
                     rounded={false}
                   />
                 )}
 
-                {img.word && resolvedSrc && (
+                {word.word && resolvedSrc && (
                   <Image
                     src={dictionary(resolvedSrc)}
-                    alt={img.alt || img.word}
+                    alt={word.alt || word.word}
                     rounded={false}
                   />
                 )}
@@ -260,7 +260,7 @@ export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps)
         </button>
       </div>
       <div className="mt-2 flex justify-center gap-2 mb-4">
-        {imgs.map((_, index) => (
+        {words.map((_, index) => (
           <button
             key={index}
             onClick={() => {

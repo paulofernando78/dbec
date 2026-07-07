@@ -1,5 +1,9 @@
 import { audio, content, mark, underline } from "@/helpers/content";
 
+import { shuffle } from "@/utils/shuffle";
+
+const words = [{ word: "", img: 0 }];
+
 export const blank = {
   slug: "blank",
 
@@ -25,12 +29,7 @@ export const blank = {
     },
     vocabulary: {
       instruction: "Slide the pictures and describe what you see.",
-      imgs: [
-        {
-          word: "...",
-          img: 0,
-        },
-      ],
+      words: shuffle(words),
     },
     gist: {
       videoPlayer: {
@@ -87,12 +86,7 @@ export const blank = {
     },
     practice: {
       guess: {
-        words: [
-          {
-            word: "cat",
-            img: 0,
-          },
-        ],
+        words: shuffle(words),
       },
       fillInTheBlanks: {
         instruction: "Fill in the blanks with the correct answer.",

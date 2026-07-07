@@ -1,5 +1,18 @@
 import { audio, content, mark, underline } from "@/helpers/content";
 
+import { shuffle } from "@/utils/shuffle";
+
+const words = [
+  { word: "intestine", img: 0 },
+  { word: "symptom", img: 0 },
+  { word: "bowel movement", img: 0 },
+  { word: "strain", img: 1 },
+  { word: "stool", img: 1 },
+  { word: "dehydration", img: 0 },
+  { word: "colon", img: 0 },
+  { word: "fiber", img: 0 },
+];
+
 export const whatCausesConstipation = {
   slug: "blank",
 
@@ -33,40 +46,7 @@ export const whatCausesConstipation = {
     },
     vocabulary: {
       instruction: "Slide the pictures and describe what you see.",
-      imgs: [
-        {
-          word: "intestine",
-          img: 0,
-        },
-        {
-          word: "symptom",
-          img: 0,
-        },
-        {
-          word: "bowel movement",
-          img: 0,
-        },
-        {
-          word: "strain",
-          img: 1,
-        },
-        {
-          word: "stool",
-          img: 1,
-        },
-        {
-          word: "dehydration",
-          img: 0,
-        },
-        {
-          word: "colon",
-          img: 0,
-        },
-        {
-          word: "fiber",
-          img: 0,
-        },
-      ],
+      words: shuffle(words),
     },
     gist: {
       videoPlayer: {
@@ -365,40 +345,7 @@ export const whatCausesConstipation = {
     },
     practice: {
       guess: {
-        words: [
-          {
-            word: "intestine",
-            img: 0,
-          },
-          {
-            word: "symptom",
-            img: 0,
-          },
-          {
-            word: "bowel movement",
-            img: 0,
-          },
-          {
-            word: "strain",
-            img: 1,
-          },
-          {
-            word: "stool",
-            img: 1,
-          },
-          {
-            word: "dehydration",
-            img: 0,
-          },
-          {
-            word: "colon",
-            img: 0,
-          },
-          {
-            word: "fiber",
-            img: 0,
-          },
-        ],
+        words: shuffle(words),
       },
       fillInTheBlanks: {
         instruction: "Fill in the blanks with the correct answer.",

@@ -36,7 +36,7 @@ export const howToManageEmotions = {
     },
     vocabulary: {
       prompt: "Slide the pictures and describe what you see.",
-      imgs: [
+      words: [
         { word: "emotions", img: 0 },
         { word: "avoid", img: 0 },
         { word: "shift", img: 0 },
