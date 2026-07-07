@@ -210,14 +210,22 @@ export const links = [
         href: "/cefr/advanced",
         label: "C1 Advanced",
         links: [
-          // {
-          //   href: "/cefr/advanced/unit-1",
-          //   label: "Unit 1 ...",
-          // },
+          {
+            href: "/cefr/advanced/unit-1",
+            label: "Unit 1 ...",
+          },
+        ],
+      },
+      // C1-C2 Videos
+      {
+        href: "/cefr/advanced",
+        label: "C1-C2 Videos",
+        links: [
           {
             href: "/cefr/advanced/news",
             label: "News",
             links: [
+              // Ismal Kone breaks leg
               {
                 href: "/cefr/advanced/news/a-soccer-match-dramatic-moment",
                 label: "A Soccer Match's Dramatic Moment",
@@ -228,9 +236,29 @@ export const links = [
             href: "/cefr/advanced/ted-ed",
             label: "Ted-ED",
             links: [
+              // What Causes Constipation
+              // May 7, 2018 
+              {
+                href: "/cefr/advanced/ted-ed/how-food-moves-through-your-body",
+                label: "How Food Moves Through Your Body",
+              },
+              // When will next Ice Age happen?
+              // May 10, 2018
+              {
+                href: "/cefr/advanced/ted-ed/earths-climate-cycle",
+                label: "Earth’s Climate Cycle",
+              },
+              // How to Manage Your Emotions
+              // Feb 16, 2023
               {
                 href: "/cefr/advanced/ted-ed/why-we-react-differently",
                 label: "Why We React Differently",
+              },
+              // How did ancient civilizations brew beer?
+              // Mar 24, 2026
+              {
+                href: "/cefr/advanced/ted-ed/a-drink-with-a-long-history",
+                label: "A Drink With a Long History",
               },
             ],
           },

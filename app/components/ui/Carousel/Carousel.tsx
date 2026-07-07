@@ -42,12 +42,12 @@ const Arrow = ({ className }: ArrowProps) => (
 );
 
 type CarouselProps = {
-  prompt: string;
+  instruction: string;
   imgs?: CarouselImage[];
   aspectRatio?: "square" | "wide";
 };
 
-export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
+export const Carousel = ({ instruction, imgs = [], aspectRatio }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleContentIndex, setVisibleContentIndex] = useState(0);
   const [isContentVisible, setIsContentVisible] = useState(true);
@@ -127,7 +127,7 @@ export const Carousel = ({ prompt, imgs = [], aspectRatio }: CarouselProps) => {
 
   return (
     <>
-      <p className="font-bold mb-4">{prompt}</p>
+      <p className="font-bold mb-4">{instruction}</p>
       <div
         className={`
         relative

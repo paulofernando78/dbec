@@ -7,7 +7,7 @@ import {
 } from "@/components/content/InlineRichContent";
 
 type ListItem = {
-  value: InlineRichContentValue[];
+  content: InlineRichContentValue[];
   textarea?: boolean;
 };
 
@@ -31,7 +31,7 @@ export const List = ({
             <div key={index}>
               <label key={index} className={styles.wrapper}>
                 <Checkbox className="mr-1"/>
-                <InlineRichContent value={item.value} />
+                <InlineRichContent value={item.content} />
               </label>
               {item.textarea && (
                 <textarea
@@ -63,7 +63,7 @@ export const List = ({
       >
         {items.map((item, index) => (
           <li key={index}>
-            <InlineRichContent value={item.value} />
+            <InlineRichContent value={item.content} />
           </li>
         ))}
       </Tag>

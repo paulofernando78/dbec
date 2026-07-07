@@ -18,17 +18,17 @@ export const howToManageEmotions = {
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {
-          value: [
+          content: [
             "Do you usually try to control your emotions, or do you simply let them happen? Why?",
           ],
         },
         {
-          value: [
+          content: [
             "Can emotions like sadness or anger ever be useful? Give an example.",
           ],
         },
         {
-          value: [
+          content: [
             "What strategies do you use when you're stressed or disappointed?",
           ],
         },
@@ -48,11 +48,6 @@ export const howToManageEmotions = {
       ],
     },
     gist: {
-      paragraph: [
-        ...content({
-          parts: ["Watch the video once and choose the best summary."],
-        }),
-      ],
       videoPlayer: {
         videoId: "Uew5BbvmLks",
         title: "How to Managae Your Emotions",
@@ -62,7 +57,7 @@ export const howToManageEmotions = {
         exercise: {
           questions: [
             {
-              question: "What is the main idea of the talk?",
+              question: "What is it mainly about?",
               options: [
                 {
                   option: "People should always avoid negative emotions.",
@@ -353,27 +348,27 @@ export const howToManageEmotions = {
         instruction: "Discuss the questions below.",
         items: [
           {
-            value: [
+            content: [
               "Which strategy from the video do you think is the most effective? Why?",
             ],
           },
           {
-            value: [
+            content: [
               "Do you usually try to change the situation, shift your attention, or regulate your emotional response when you're upset? Give an example.",
             ],
           },
           {
-            value: [
+            content: [
               "Do you agree that no emotion is inherently good or bad? Explain your opinion.",
             ],
           },
           {
-            value: [
+            content: [
               "Can trying to be happy all the time actually make people less happy? Why or why not?",
             ],
           },
           {
-            value: [
+            content: [
               "Describe a situation in which reappraising your thoughts changed the way you felt.",
             ],
           },

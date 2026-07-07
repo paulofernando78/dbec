@@ -4,7 +4,8 @@ export const blank = {
   slug: "blank",
 
   metadata: {
-    title: "Advanced | News | ",
+    title: "Advanced | News | Ted-ED",
+    subtitle: "News | Ted-ED:",
     description: "A ...",
   },
   whiteboard: {
@@ -18,12 +19,12 @@ export const blank = {
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {
-          value: ["..."],
+          content: ["..."],
         },
       ],
     },
     vocabulary: {
-      prompt: "Slide the pictures and describe what you see.",
+      instruction: "Slide the pictures and describe what you see.",
       imgs: [
         {
           word: "...",
@@ -32,23 +33,17 @@ export const blank = {
       ],
     },
     gist: {
-      paragraph: [
-        ...content({
-          parts: ["Watch the video once and choose the best summary."],
-        }),
-      ],
-
       videoPlayer: {
+        instruction: "Watch the video and answer the question.",
         videoId: "...",
         title: "...",
-        instruction: "Watch the video and answer the question.",
       },
 
       radio: {
         exercise: {
           questions: [
             {
-              question: "...",
+              question: "What is it mainly about?",
               options: [
                 {
                   option: "...",
@@ -83,7 +78,7 @@ export const blank = {
         {
           en: [
             ...content({
-              parts: [""],
+              parts: [audio("..."), "...", mark("..."), underline("...")],
             }),
           ],
           pt: "...",
@@ -128,7 +123,7 @@ export const blank = {
         instruction: "Answer the questions.",
         items: [
           {
-            value: ["..."],
+            content: ["..."],
           },
         ],
       },

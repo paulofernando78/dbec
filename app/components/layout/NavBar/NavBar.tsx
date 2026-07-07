@@ -22,7 +22,6 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
-  console.log(item);
   if (item.links?.length) {
     return (
       <details className="open:[&>summary_.chevron]:rotate-90">

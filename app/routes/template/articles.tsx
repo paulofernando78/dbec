@@ -4,11 +4,11 @@ import { Section } from "@/components/ui/Section";
 import { List } from "@/components/content/List";
 import { Carousel } from "@/components/ui/Carousel";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
+import { Script } from "@/components/content/Script";
 import { Radio } from "@/features/exercises/Radio";
 import { Guess } from "@/features/exercises/Guess";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
-import { Script } from "@/components/content/Script";
 
 import { useParams } from "react-router";
 
