@@ -1,8 +1,7 @@
 import { Card } from "@/components/ui/Card";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Link } from "react-router";
-
-import type { ListProps } from "@/components/content/List";
+import { useEffect, useState } from "react";
 
 import { Goal, FileText, CalendarDays, Clock2 } from "lucide-react";
 
@@ -25,12 +24,32 @@ export const LessonCard = ({
   date,
   duration,
 }: LessonCardProps) => {
+  const storageKey = href ? `lesson-completed:${href}` : undefined;
+
+  const [checked, setChecked] = useState(() => {
+    if (typeof window === "undefined" || !storageKey) {
+      return false;
+    }
+
+    const saved = localStorage.getItem(storageKey);
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  useEffect(() => {
+    if (!storageKey) return;
+
+    localStorage.setItem(storageKey, JSON.stringify(checked));
+  }, [storageKey, checked]);
+
   return (
     <>
       <Card className="bg-gray-300 mb-4">
         {href && (
           <div className="flex gap-2 mb-2">
-            <Checkbox />
+            <Checkbox
+              checked={checked}
+              onCheckedChange={setChecked}
+            />
             <Link to={href}><><b>{link}</b></></Link>
           </div>
         )}

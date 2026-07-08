@@ -1,13 +1,20 @@
 import { Check } from "lucide-react";
 
 type CheckboxProps = {
-  className?: string
-}
+  checked: boolean;
+  onCheckedChange: (checked: boolean) => void;
+  className?: string;
+};
 
-export const Checkbox = ({ className }: CheckboxProps) => {
+export const Checkbox = ({ checked, onCheckedChange, className }: CheckboxProps) => {
   return (
     <label className="group cursor-pointer">
-      <input type="checkbox" className="peer hidden" />
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onCheckedChange(e.target.checked)}
+        className="peer hidden"
+      />
 
       <span
         className={`
