@@ -12,10 +12,11 @@ export default function Dashboard() {
         descriptions={["..."]}
       />
       <div >
-          <Ribbon label="Important Notes"/>
-          <TextArea />
-          <Ribbon label="Dates"/>
-          <LessonDateCard />
+        <span className="block mb-4 font-bold">Underconstruction!</span>
+        <Ribbon label="Important Notes"/>
+        <TextArea />
+        <Ribbon label="Dates"/>
+        <LessonDateCard />
       </div>
     </>
   );
