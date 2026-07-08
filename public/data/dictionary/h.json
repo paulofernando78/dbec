@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "hops",
+        "phonetics": "/hɒps/ (UK), /hɑːps/ (US)",
+        "partOfSpeech": "noun",
+        "enDefinition": "the flowers of the hop plant, used in brewing to add bitterness, flavor, and aroma to beer",
+        "ptDefinition": "lúpulo; flores da planta do lúpulo usadas na produção de cerveja para adicionar amargor, sabor e aroma",
+        "examples": [
+          {
+            "enExample": "Hops give beer its distinctive bitterness and floral aroma.",
+            "ptExample": "O lúpulo dá à cerveja seu amargor característico e aroma floral."
+          },
+          {
+            "enExample": "Different varieties of hops create different flavors in the final beer.",
+            "ptExample": "Diferentes variedades de lúpulo criam sabores diferentes na cerveja final."
+          }
+        ],
+        "synonyms": ["hop flowers", "brewing hops"],
+        "antonyms": [],
+        "seeAlso": ["beer", "brew", "malt", "yeast", "fermentation", "wort"],
+        "notes": [
+          {
+            "enNote": "Hops are one of the four main ingredients in most beers, along with water, malt, and yeast. They balance the sweetness of malt while adding bitterness, aroma, and flavor. Different hop varieties can produce floral, citrus, fruity, piney, spicy, or herbal notes.",
+            "ptNote": "O lúpulo é um dos quatro principais ingredientes da maioria das cervejas, junto com água, malte e levedura. Ele equilibra a doçura do malte, além de adicionar amargor, aroma e sabor. Diferentes variedades de lúpulo podem produzir notas florais, cítricas, frutadas, resinosas, condimentadas ou herbais."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "hops.avif",
+            "alt": "Fresh hop cones beside a glass of beer"
+          }
+        ]
+      },
+      {
         "word": "hope",
         "phonetics": "/həʊp/",
         "partOfSpeech": "noun, verb",
@@ -19,11 +51,7 @@
         ],
         "synonyms": ["optimism", "expectation", "confidence", "faith"],
         "antonyms": ["despair", "hopelessness", "pessimism"],
-        "seeAlso": [
-          "optimism",
-          "encouragement",
-          "confidence"
-        ],
+        "seeAlso": ["optimism", "encouragement", "confidence"],
         "notes": [
           {
             "enNote": "Hope is the belief or expectation that something positive can happen in the future. It is often associated with resilience and emotional well-being.",

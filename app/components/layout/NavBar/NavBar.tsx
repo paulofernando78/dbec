@@ -30,13 +30,17 @@ function RenderNavItem({
             <CircleChevronRight />
           </span>
 
-          <NavLink
-            to={item.href}
-            onClick={(e) => e.stopPropagation()}
-            className="translate-x-[-0.4rem]"
-          >
-            {item.label}
-          </NavLink>
+          {item.href ? (
+            <NavLink
+              to={item.href}
+              onClick={(e) => e.stopPropagation()}
+              className="translate-x-[-0.4rem]"
+            >
+              {item.label}
+            </NavLink>
+          ) : (
+            <span className="translate-x-[-0.4rem]">{item.label}</span>
+          )}
         </summary>
 
         <div className="ml-4">

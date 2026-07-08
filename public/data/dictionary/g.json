@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "grain",
+        "phonetics": "/ɡreɪn/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a small, hard seed of a cereal plant such as wheat, rice, corn, or oats; also, a very small particle or the natural texture of wood, stone, or other materials",
+        "ptDefinition": "grão; semente pequena e dura de cereais como trigo, arroz, milho ou aveia; também, um pequeno fragmento ou a textura natural da madeira, pedra e outros materiais",
+        "examples": [
+          {
+            "enExample": "Farmers harvested the grain before the rainy season began.",
+            "ptExample": "Os agricultores colheram os grãos antes do início da estação chuvosa."
+          },
+          {
+            "enExample": "The bread is made from whole grain flour, which is rich in fiber.",
+            "ptExample": "O pão é feito com farinha de grãos integrais, que é rica em fibras."
+          }
+        ],
+        "synonyms": ["seed", "cereal", "kernel", "particle", "granule"],
+        "antonyms": ["chunk", "clump"],
+        "seeAlso": ["wheat", "rice", "corn", "barley", "oats", "whole grain"],
+        "notes": [
+          {
+            "enNote": "The word 'grain' has several meanings. It most commonly refers to cereal seeds used as food, but it can also describe a tiny particle (e.g. a grain of sand) or the natural pattern of wood (e.g. wood grain).",
+            "ptNote": "A palavra 'grain' tem vários significados. O mais comum é o de grãos de cereais usados como alimento, mas também pode significar um pequeno fragmento (como um grão de areia) ou a textura natural da madeira (veios da madeira)."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "grain.avif",
+            "alt": "A variety of cereal grains including wheat, rice, oats, barley, and corn"
+          }
+        ]
+      },
+      {
         "word": "glacier",
         "phonetics": "/ˈɡleɪ.ʃər/",
         "partOfSpeech": "noun",
@@ -120,12 +152,12 @@
         "ptDefinition": "confiável, digno de confiança ou de excelente qualidade; alguém que cumpre suas promessas ou é dependável",
         "examples": [
           {
-        "enExample": "You can trust him—he's as good as gold.",
-        "ptExample": "Você pode confiar nele — ele é totalmente confiável."
+            "enExample": "You can trust him—he's as good as gold.",
+            "ptExample": "Você pode confiar nele — ele é totalmente confiável."
           },
           {
-        "enExample": "Her word is as good as gold; she always follows through on her commitments.",
-        "ptExample": "A palavra dela vale ouro; ela sempre cumpre seus compromissos."
+            "enExample": "Her word is as good as gold; she always follows through on her commitments.",
+            "ptExample": "A palavra dela vale ouro; ela sempre cumpre seus compromissos."
           }
         ],
         "synonyms": ["reliable", "trustworthy", "dependable", "honorable"],
@@ -133,8 +165,8 @@
         "seeAlso": ["keep one's word", "true blue"],
         "notes": [
           {
-        "enNote": "This idiom uses the metaphor of gold, which is valuable and unchanging, to describe someone's character or reliability.",
-        "ptNote": "Este idiom usa a metáfora do ouro, que é valioso e imutável, para descrever o caráter ou confiabilidade de alguém."
+            "enNote": "This idiom uses the metaphor of gold, which is valuable and unchanging, to describe someone's character or reliability.",
+            "ptNote": "Este idiom usa a metáfora do ouro, que é valioso e imutável, para descrever o caráter ou confiabilidade de alguém."
           }
         ]
       },

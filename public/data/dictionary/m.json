@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "malt",
+        "phonetics": "/mɔːlt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "germinated cereal grain, usually barley, that has been dried and is used in brewing, distilling, and food production",
+        "ptDefinition": "malte; grão de cereal, geralmente cevada, que foi germinado e seco, usado na produção de cerveja, destilados e alimentos",
+        "examples": [
+          {
+            "enExample": "Malt gives beer much of its flavor, color, and sweetness.",
+            "ptExample": "O malte dá à cerveja grande parte de seu sabor, cor e doçura."
+          },
+          {
+            "enExample": "The brewery uses high-quality barley malt to produce its ales.",
+            "ptExample": "A cervejaria utiliza malte de cevada de alta qualidade para produzir suas ales."
+          }
+        ],
+        "synonyms": ["barley malt", "malted grain", "brewing malt"],
+        "antonyms": [],
+        "seeAlso": ["barley", "grain", "brew", "beer", "fermentation", "wort"],
+        "notes": [
+          {
+            "enNote": "Malt is one of the four main ingredients in most beers, along with water, hops, and yeast. During malting, grains are allowed to germinate before being dried, creating enzymes that convert starch into fermentable sugars.",
+            "ptNote": "O malte é um dos quatro principais ingredientes da maioria das cervejas, junto com água, lúpulo e levedura. Durante a maltagem, os grãos germinam antes de serem secos, criando enzimas que transformam o amido em açúcares fermentáveis."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "malt.avif",
+            "alt": "malted barley grains spread on a wooden surface"
+          }
+        ]
+      },
+      {
         "word": "meditate",
         "phonetics": "/ˈmed.ɪ.teɪt/",
         "partOfSpeech": "verb",
@@ -29,7 +61,7 @@
         "imgs": [
           {
             "src": "meditate.avif",
-            "alt": "A young woman sitting cross-legged with her eyes closed, peacefully meditating outdoors."
+            "alt": "a young woman sitting cross-legged with her eyes closed, peacefully meditating outdoors"
           }
         ]
       },

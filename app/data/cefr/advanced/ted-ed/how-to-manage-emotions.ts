@@ -4,13 +4,14 @@ export const howToManageEmotions = {
   slug: "blank",
 
   metadata: {
-    title: "Advanced | Ted-Ed",
-    description: "How to Manage Your Emotions",
+    title: "C1-C2 Videos",
+    subtitle: "Ted-ED",
+    description: "Why We React Differently",
   },
   whiteboard: {
-    title: "C1 Advanced",
+    title: "C1-C2 Videos",
     subtitle: "Ted-ED",
-    descriptions: ["Why We React Differently"],
+    descriptions: ["How We React Differently"],
   },
   sections: {
     beforeWatching: {

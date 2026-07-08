@@ -7,8 +7,11 @@ import { lessons } from "@/data/cefr/advanced/ted-ed/ted-ed-lessons-card-data";
 export default function Dashboard() {
   return (
     <>
-      <Whiteboard title="Ted-Ed" subtitle="Student Talks" />
-      <LessonCard {...lessons.howWeReactDifferently} />
+      <Whiteboard title="Ted-Ed" subtitle="A variety of videos from Ted-Education Site" />
+      <LessonCard {...lessons.whatCausesConstipation} />
+      <LessonCard {...lessons.whenWillTheNextIceAgeHappen} />
+      <LessonCard {...lessons.howToManageEmotions} />
+      <LessonCard {...lessons.howDidAncientCivilizationsBrewBeer} />
     </>
   );
 }

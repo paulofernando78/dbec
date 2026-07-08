@@ -17,13 +17,13 @@ export const whatCausesConstipation = {
   slug: "blank",
 
   metadata: {
-    title: "Advanced",
-    subtitle: "Ted-ED | What Causes Constipation",
+    title: "C1-C2 Videos",
+    subtitle: "Ted-ED",
     description:
-      "Visiting the bathroom is part of the daily human experience. But occasionally, constipation, a condition that causes a backup in your digestive system, strikes. In some especially uncomfortable cases, the food you eat can take several days to exit your body. What's behind this unsettling phenomenon? Heba Shaheed takes us into the digestive system to find out.",
+      "How food moves through your body",
   },
   whiteboard: {
-    title: "Advanced",
+    title: "C1-C2 Videos",
     subtitle: "Ted-ED",
     descriptions: ["How food moves through your body"],
   },

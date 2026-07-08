@@ -2,20 +2,28 @@ import { audio, content, mark, underline } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
-const words = [{ word: "", img: 0 }];
+const words = [
+  { word: "barley", img: 0 },
+  { word: "grain", img: 0 },
+  { word: "malt", img: 0 },
+  { word: "yeast", img: 0 },
+  { word: "fermentation", img: 0 },
+  { word: "hops", img: 0 },
+  { word: "brewery", img: 0 },
+];
 
-export const blank = {
-  slug: "blank",
+export const howDidAncientCivilizationsBrewBeer = {
+  slug: "a-drink-with-a-long-history",
 
   metadata: {
     title: "C1-C2 Videos",
-    subtitle: "News | Ted-ED",
-    description: "...",
+    subtitle: "Ted-ED",
+    description: "A Drink with a Long History",
   },
   whiteboard: {
     title: "C1-C2 Videos",
-    subtitle: "News | Ted-ED",
-    descriptions: ["..."],
+    subtitle: "Ted-ED",
+    descriptions: ["A Drink with a Long History"],
   },
   sections: {
     beforeWatching: {

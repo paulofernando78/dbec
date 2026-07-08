@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "fermentation",
+        "phonetics": "/ˌfɝː.mənˈteɪ.ʃən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "the natural process in which yeast or bacteria convert sugars into alcohol, acids, or gases; in brewing, it is the stage where yeast turns the sugars in wort into alcohol and carbon dioxide",
+        "ptDefinition": "fermentação; processo natural em que leveduras ou bactérias transformam açúcares em álcool, ácidos ou gases; na produção de cerveja, é a etapa em que a levedura converte os açúcares do mosto em álcool e dióxido de carbono",
+        "examples": [
+          {
+            "enExample": "Fermentation is the stage where yeast produces alcohol and carbon dioxide.",
+            "ptExample": "A fermentação é a etapa em que a levedura produz álcool e dióxido de carbono."
+          },
+          {
+            "enExample": "The brewer carefully controlled the fermentation temperature to improve the beer's flavor.",
+            "ptExample": "O cervejeiro controlou cuidadosamente a temperatura da fermentação para melhorar o sabor da cerveja."
+          }
+        ],
+        "synonyms": ["brewing process", "fermenting"],
+        "antonyms": [],
+        "seeAlso": ["yeast", "malt", "wort", "brew", "beer", "alcohol"],
+        "notes": [
+          {
+            "enNote": "Fermentation is one of the most important stages of brewing. During this process, yeast consumes sugars from the wort and produces alcohol, carbon dioxide, and many of the flavors and aromas found in beer.",
+            "ptNote": "A fermentação é uma das etapas mais importantes da produção de cerveja. Durante esse processo, a levedura consome os açúcares do mosto e produz álcool, dióxido de carbono e muitos dos sabores e aromas presentes na cerveja."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "fermentation.avif",
+            "alt": "Beer fermenting inside a stainless steel fermentation tank"
+          }
+        ]
+      },
+      {
         "word": "forget",
         "phonetics": "/fərˈɡet/",
         "partOfSpeech": "verb",

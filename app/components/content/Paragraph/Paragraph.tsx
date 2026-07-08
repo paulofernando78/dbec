@@ -7,7 +7,7 @@ type ParagraphProps = {
 
 export const Paragraph = ({ value = [] }: ParagraphProps) => {
   return (
-    <p className="mb-4">
+    <p>
       <InlineRichContent value={value} />
     </p>
   );

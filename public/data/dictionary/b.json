@@ -2,6 +2,78 @@
   {
     "definitions": [
       {
+        "word": "brewery",
+        "phonetics": "/ˈbruː.ər.i/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a place where beer is brewed and produced commercially",
+        "ptDefinition": "cervejaria; local onde a cerveja é produzida comercialmente",
+        "examples": [
+          {
+            "enExample": "The brewery produces several award-winning craft beers.",
+            "ptExample": "A cervejaria produz várias cervejas artesanais premiadas."
+          },
+          {
+            "enExample": "Visitors toured the brewery to learn how beer is made.",
+            "ptExample": "Os visitantes fizeram um tour pela cervejaria para aprender como a cerveja é produzida."
+          }
+        ],
+        "synonyms": ["beer factory", "brewhouse"],
+        "antonyms": [],
+        "seeAlso": [
+          "brew",
+          "beer",
+          "malt",
+          "barley",
+          "hops",
+          "yeast",
+          "fermentation"
+        ],
+        "notes": [
+          {
+            "enNote": "A brewery is a facility where beer is produced. The brewing process typically includes milling malt, mashing, boiling with hops, fermenting with yeast, conditioning, and packaging.",
+            "ptNote": "Uma cervejaria é uma instalação onde a cerveja é produzida. O processo de fabricação normalmente inclui moagem do malte, mosturação, fervura com lúpulo, fermentação com levedura, maturação e envase."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "brewery.avif",
+            "alt": "Large brewery with stainless steel brewing tanks"
+          }
+        ]
+      },
+      {
+        "word": "barley",
+        "phonetics": "/ˈbɑːr.li/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a cereal grain widely grown for food, animal feed, and especially for making malt used in beer and whisky production",
+        "ptDefinition": "cevada; cereal cultivado para alimentação, ração animal e, principalmente, para produzir malte usado na fabricação de cerveja e uísque",
+        "examples": [
+          {
+            "enExample": "Barley is one of the main ingredients used to brew beer.",
+            "ptExample": "A cevada é um dos principais ingredientes usados para fabricar cerveja."
+          },
+          {
+            "enExample": "Ancient civilizations cultivated barley thousands of years ago.",
+            "ptExample": "As civilizações antigas cultivavam cevada há milhares de anos."
+          }
+        ],
+        "synonyms": ["cereal", "grain"],
+        "antonyms": [""],
+        "seeAlso": ["grain", "malt", "yeast", "fermentation", "brew", "beer"],
+        "notes": [
+          {
+            "enNote": "Barley is commonly malted before brewing. During malting, the grain begins to germinate, producing enzymes that convert starch into sugars used during fermentation.",
+            "ptNote": "A cevada geralmente é maltada antes da fabricação da cerveja. Durante a maltagem, o grão começa a germinar, produzindo enzimas que convertem o amido em açúcares usados na fermentação."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "barley.avif",
+            "alt": "Golden barley plants growing in a field with ripe grain heads."
+          }
+        ]
+      },
+      {
         "word": "brain",
         "phonetics": "/breɪn/",
         "partOfSpeech": "noun",

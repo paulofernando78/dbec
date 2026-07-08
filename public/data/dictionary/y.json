@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "yeast",
+        "phonetics": "/jiːst/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a microscopic fungus used in baking and brewing that converts sugars into alcohol and carbon dioxide through fermentation",
+        "ptDefinition": "levedura; fungo microscópico usado na panificação e na produção de cerveja que transforma açúcares em álcool e dióxido de carbono por meio da fermentação",
+        "examples": [
+          {
+            "enExample": "Yeast converts the sugars in the wort into alcohol and carbon dioxide.",
+            "ptExample": "A levedura transforma os açúcares do mosto em álcool e dióxido de carbono."
+          },
+          {
+            "enExample": "Without yeast, the beer would not ferment.",
+            "ptExample": "Sem levedura, a cerveja não fermentaria."
+          }
+        ],
+        "synonyms": ["brewer's yeast", "baker's yeast", "fungus"],
+        "antonyms": [],
+        "seeAlso": ["fermentation", "malt", "hops", "wort", "brew", "beer"],
+        "notes": [
+          {
+            "enNote": "Yeast is one of the four main ingredients in most beers, along with water, malt, and hops. During fermentation, it consumes sugars from the wort and produces alcohol, carbon dioxide, and many of the flavors and aromas found in beer.",
+            "ptNote": "A levedura é um dos quatro principais ingredientes da maioria das cervejas, junto com água, malte e lúpulo. Durante a fermentação, ela consome os açúcares do mosto e produz álcool, dióxido de carbono e muitos dos sabores e aromas presentes na cerveja."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "yeast.avif",
+            "alt": "Dry brewer's yeast beside a glass of beer"
+          }
+        ]
+      },
+      {
         "word": "year's time",
         "phonetics": "/jɪrz taɪm/",
         "partOfSpeech": "noun phrase",
