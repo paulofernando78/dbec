@@ -12,7 +12,6 @@ export const lesson = {
     title: "B2 Upper-Intermediate",
     subtitle: "Unit 4 • Leadership",
     descriptions: ["...", "..."],
-    date: "...",
   },
 
   lessonCard: {
@@ -197,13 +196,13 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["..."]),
+          content: text(["..."]),
         },
         {
-          value: text(["..."]),
+          content: text(["..."]),
         },
         {
-          value: text(["..."]),
+          content: text(["..."]),
         },
       ],
     } satisfies ListProps,

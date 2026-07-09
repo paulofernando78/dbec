@@ -18,7 +18,7 @@ export const blank = {
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {
-          value: ["..."],
+          content: ["..."],
         },
       ],
     },
@@ -134,7 +134,7 @@ export const blank = {
         instruction: "Answer the questions.",
         items: [
           {
-            value: ["..."],
+            content: ["..."],
           },
         ],
       },

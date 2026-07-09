@@ -8,7 +8,7 @@ export const lessons = {
       type: "checkbox",
       items: [
         {
-          value: text([""]),
+          content: text([""]),
         },
       ],
     } satisfies ListProps,

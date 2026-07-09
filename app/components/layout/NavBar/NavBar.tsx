@@ -2,12 +2,12 @@ import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 
 import { CircleChevronRight } from "lucide-react";
-import { Checkbox } from "@/components/ui/Checkbox";
+// import { Checkbox } from "@/components/ui/Checkbox";
 
 type NavItem = {
   label: string;
-  href: string;
-  trackProgress?: boolean;
+  href?: string;
+  // trackProgress?: boolean;
   links?: NavItem[];
 };
 
@@ -43,7 +43,7 @@ function RenderNavItem({
           )}
         </summary>
 
-        <div className="ml-4">
+        <div className="ml-[2.1rem]">
           {item.links.map((child) => (
             <RenderNavItem
               key={child.href}
@@ -56,9 +56,17 @@ function RenderNavItem({
     );
   }
 
+  if (!item.href) {
+    return (
+      <div className="flex gap-3">
+        <span className="block text-[1.06rem]">{item.label}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="flex gap-3">
-      {item.trackProgress !== false && <Checkbox className="mt-[.2rem]" />}
+      {/* {item.trackProgress !== false && <Checkbox className="mt-[.2rem]" />} */}
 
       <NavLink
         to={item.href}

@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, text, audio, bold, phonetics } from "@/helpers/content";
 
 import { lessons } from "@/data/cefr/elementary-lessons-card-data";
 
@@ -155,20 +155,28 @@ export const lesson = {
   languageFocus: {
     meaning: [
       {
-        as: "span",
-        parts: [audio("/"), "visited"],
+        as: "p",
+        parts: ["Regular Past Simple verbs end in ", bold("-ed",), "."],
       },
       {
         as: "span",
-        parts: [audio("/"), "watched"],
+        parts: [audio("ask"), "ask ", audio("asked"), "→ ", "ask", bold("ed"), " ", phonetics("/t/")],
       },
       {
         as: "span",
-        parts: [audio("/"), "played"],
+        parts: [audio("watch"), "watch ", audio("watched"), "→ ", "watch", bold("ed"), " ", phonetics("/t/")],
       },
       {
         as: "span",
-        parts: [audio("/"), "stayed"],
+        parts: [audio("visited"), "visited"],
+      },
+      {
+        as: "span",
+        parts: [audio("played"), "played"],
+      },
+      {
+        as: "span",
+        parts: [audio("stayed"), "stayed"],
       },
     ] satisfies Meaning[],
 
@@ -225,15 +233,7 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: ["Regular Past Simple verbs usually end in ", bold("-ed"), "."],
-      },
-      {
-        as: "span",
-        parts: [bold("visit → visited")],
-      },
-      {
-        as: "span",
-        parts: [bold("watch → watched")],
+        parts: ["..",],
       },
     ] satisfies Notes[],
 
@@ -339,18 +339,17 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Write five sentences about your last weekend."]),
+          content: text(["Write five sentences about your last weekend."]),
           textarea: true,
         },
         {
-          value: text([
+          content: text(["Write three Past Simple questions and answer them."]),
+          textarea: true,
+        },
+        {
+          content: text([
             "Interview a classmate about their weekend activities.",
           ]),
-          textarea: true,
-        },
-        {
-          value: text(["Write three Past Simple questions and answer them."]),
-          textarea: true,
         },
       ],
     } satisfies ListProps,

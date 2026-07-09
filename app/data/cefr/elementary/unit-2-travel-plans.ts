@@ -422,15 +422,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Plan a short trip for next weekend."]),
+          content: text(["Plan a short trip for next weekend."]),
           textarea: true,
         },
         {
-          value: text(["Write four sentences with going to."]),
+          content: text(["Write four sentences with going to."]),
           textarea: true,
         },
         {
-          value: text(["Ask your partner about their travel plans."]),
+          content: text(["Ask your partner about their travel plans."]),
         },
       ],
     } satisfies ListProps,

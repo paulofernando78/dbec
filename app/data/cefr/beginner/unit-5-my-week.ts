@@ -330,17 +330,17 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text([
+          content: text([
             "Write five sentences about your week using adverbs of frequency.",
           ]),
         },
         {
-          value: text([
+          content: text([
             "Talk about what you do on different days of the week.",
           ]),
         },
         {
-          value: text(["Describe your favorite month and explain why."]),
+          content: text(["Describe your favorite month and explain why."]),
         },
       ],
     } satisfies ListProps,

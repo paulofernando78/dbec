@@ -30,7 +30,7 @@ type InlineRichContentProps = {
 };
 
 export const InlineRichContent = ({ value }: InlineRichContentProps) => {
-  const contentArray = value;
+  const contentArray = value || [];
 
   const bulletCount = contentArray.filter(
     (part) => typeof part === "object" && part?.bullet,

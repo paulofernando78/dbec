@@ -324,15 +324,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Write five sentences about your daily routine."]),
+          content: text(["Write five sentences about your daily routine."]),
         },
         {
-          value: text([
+          content: text([
             "Tell your partner what time you wake up, eat, and sleep.",
           ]),
         },
         {
-          value: text(["Describe a typical weekday using the Present Simple."]),
+          content: text(["Describe a typical weekday using the Present Simple."]),
         },
       ],
     } satisfies ListProps,

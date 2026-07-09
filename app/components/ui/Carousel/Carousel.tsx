@@ -42,12 +42,23 @@ const Arrow = ({ className }: ArrowProps) => (
 );
 
 type CarouselProps = {
-  instruction: string;
+  instruction?: string;
+  prompt?: string;
   words?: CarouselWord[];
+  imgs?: CarouselWord[];
   aspectRatio?: "square" | "wide";
 };
 
-export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps) => {
+export const Carousel = ({
+  instruction,
+  prompt,
+  words,
+  imgs,
+  aspectRatio,
+}: CarouselProps) => {
+  const finalInstruction = instruction || prompt || "";
+  const finalWords = words || imgs || [];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleContentIndex, setVisibleContentIndex] = useState(0);
   const [isContentVisible, setIsContentVisible] = useState(true);
@@ -60,7 +71,7 @@ export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps
   useEffect(() => {
     const loadWords = async () => {
       const entries = await Promise.all(
-        words.map(async (word) => {
+        finalWords.map(async (word) => {
           if (!word.word) return null;
 
           const foundWord = await loadDictionaryWord(word.word);
@@ -79,7 +90,7 @@ export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps
     };
 
     loadWords();
-  }, [words]);
+  }, [finalWords]);
 
   useEffect(() => {
     if (currentIndex === visibleContentIndex) {
@@ -106,18 +117,18 @@ export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps
     });
   };
 
-  const currentImg = words[visibleContentIndex];
+  const currentImg = finalWords[visibleContentIndex];
 
   const currentContent =
     currentImg?.content ??
-    (currentImg.word && resolvedWords[currentImg.word]?.enDefinition
+    (currentImg?.word && resolvedWords[currentImg.word]?.enDefinition
       ? content({
           parts: [resolvedWords[currentImg.word]!.enDefinition!],
         })
       : undefined);
 
   const scrollRight = () => {
-    setCurrentIndex((prev) => (prev < words.length - 1 ? prev + 1 : prev));
+    setCurrentIndex((prev) => (prev < finalWords.length - 1 ? prev + 1 : prev));
 
     carouselRef.current?.scrollBy({
       left: 320,
@@ -127,7 +138,7 @@ export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps
 
   return (
     <>
-      <p className="font-bold mb-4">{instruction}</p>
+      <p className="font-bold mb-4">{finalInstruction}</p>
       <div
         className={`
         relative
@@ -192,7 +203,7 @@ export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps
             }
           }}
         >
-          {words.map((word, index) => {
+          {finalWords.map((word, index) => {
             const resolvedSrc =
               resolvedWords[word.word ?? ""]?.imgs?.[word.img ?? 0]?.src;
             return (
@@ -260,7 +271,7 @@ export const Carousel = ({ instruction, words = [], aspectRatio }: CarouselProps
         </button>
       </div>
       <div className="mt-2 flex justify-center gap-2 mb-4">
-        {words.map((_, index) => (
+        {finalWords.map((_, index) => (
           <button
             key={index}
             onClick={() => {

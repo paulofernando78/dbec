@@ -35,7 +35,7 @@ export const lesson = {
     carouselWide: {
       prompt:
         "Look at the pictures. Laura and Eric are at school. Now listen to the sentences.",
-      imgs: [
+      words: [
         // Laura says, “Hi! I'm Laura.””
         {
           src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-introduction1.avif",
@@ -775,10 +775,10 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Introduce yourself to a classmate."]),
+          content: text(["Introduce yourself to a classmate."]),
         },
         {
-          value: text([
+          content: text([
             "Ask your partner's first and last name and spell them.",
           ]),
         },

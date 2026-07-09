@@ -297,15 +297,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text([mark("Write three things"), "you can do."]),
+          content: text([mark("Write three things"), "you can do."]),
           textarea: true,
         },
         {
-          value: text([mark("Write three things"), "you can't do."]),
+          content: text([mark("Write three things"), "you can't do."]),
           textarea: true,
         },
         {
-          value: text([
+          content: text([
             "Interview a classmate about their abilities and write the answers.",
           ]),
         },

@@ -93,33 +93,33 @@ const sections: SectionData[] = [
       type: "ul",
       items: [
         {
-          value: [...content({ parts: ["Hello. How are you?"] })],
+          content: [...content({ parts: ["Hello. How are you?"] })],
         },
         {
-          value: [...content({ parts: ["What's your name?"] })],
+          content: [...content({ parts: ["What's your name?"] })],
         },
         {
-          value: [...content({ parts: ["Where are you from?"] })],
+          content: [...content({ parts: ["Where are you from?"] })],
         },
         {
-          value: [...content({ parts: ["Do you study English?"] })],
+          content: [...content({ parts: ["Do you study English?"] })],
         },
         {
-          value: [
+          content: [
             ...content({ parts: ["What is your favorite subject in school?"] }),
           ],
         },
         {
-          value: [...content({ parts: ["Do you have a job?"] })],
+          content: [...content({ parts: ["Do you have a job?"] })],
         },
         {
-          value: [...content({ parts: ["What do you do in your free time?"] })],
+          content: [...content({ parts: ["What do you do in your free time?"] })],
         },
         {
-          value: [...content({ parts: ["Do you like sports?"] })],
+          content: [...content({ parts: ["Do you like sports?"] })],
         },
         {
-          value: [...content({ parts: ["Do you play sports?"] })],
+          content: [...content({ parts: ["Do you play sports?"] })],
         },
       ],
     },
@@ -149,23 +149,23 @@ const sections: SectionData[] = [
     questions: {
       type: "ul",
       items: [
-        { value: [...content({ parts: ["What's your favorite movie?"] })] },
+        { content: [...content({ parts: ["What's your favorite movie?"] })] },
         {
-          value: [...content({ parts: ["What kinds of movies do you like?"] })],
+          content: [...content({ parts: ["What kinds of movies do you like?"] })],
         },
-        { value: [...content({ parts: ["Where did you grow up?"] })] },
-        { value: [...content({ parts: ["What did you do yesterday?"] })] },
+        { content: [...content({ parts: ["Where did you grow up?"] })] },
+        { content: [...content({ parts: ["What did you do yesterday?"] })] },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Did you study English in elementary school?"],
             }),
           ],
         },
-        { value: [...content({ parts: ["What was your favorite class?"] })] },
-        { value: [...content({ parts: ["What are you doing later today?"] })] },
+        { content: [...content({ parts: ["What was your favorite class?"] })] },
+        { content: [...content({ parts: ["What are you doing later today?"] })] },
         {
-          value: [
+          content: [
             ...content({ parts: ["Are you doing anything this evening?"] }),
           ],
         },
@@ -198,31 +198,31 @@ const sections: SectionData[] = [
       type: "ul",
       items: [
         {
-          value: [
+          content: [
             ...content({ parts: ["Have you ever eaten unusual foods?"] }),
           ],
         },
         {
-          value: [...content({ parts: ["Where did you eat it?"] })],
+          content: [...content({ parts: ["Where did you eat it?"] })],
         },
         {
-          value: [...content({ parts: ["What did you think of it?"] })],
+          content: [...content({ parts: ["What did you think of it?"] })],
         },
         {
-          value: [
+          content: [
             ...content({ parts: ["Would you try it again? Why or why not?"] }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({ parts: ["Do you live in a house or an apartment?"] }),
           ],
         },
         {
-          value: [...content({ parts: ["What is it like?"] })],
+          content: [...content({ parts: ["What is it like?"] })],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Compare your home with someone else’s home."],
             }),
@@ -269,13 +269,13 @@ const sections: SectionData[] = [
       type: "ul",
       items: [
         {
-          value: [...content({ parts: ["What happened?"] })],
+          content: [...content({ parts: ["What happened?"] })],
         },
         {
-          value: [...content({ parts: ["What were you doing at the time?"] })],
+          content: [...content({ parts: ["What were you doing at the time?"] })],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "If you could study anything you wanted, what would you study?",
@@ -284,42 +284,42 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Do you prefer studying during the day or at night?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Would you prefer an art class or a photography class?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Explain your choice. Give at least two reasons."],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["What will you be doing one year from now?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["How do you think it will be different then?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({ parts: ["Will you have finished your studies?"] }),
           ],
         },
@@ -359,35 +359,35 @@ const sections: SectionData[] = [
       type: "ul",
       items: [
         {
-          value: [
+          content: [
             ...content({
               parts: ["How has it changed?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["What is the biggest problem in the world today?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Why is that the most important problem?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["If you were responsible, how would you fix it?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "What arguments might someone use to disagree with you, and how would you respond?",
@@ -396,28 +396,28 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["What does it mean to be polite in your culture?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Give examples of polite and impolite behavior."],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Are you superstitious?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "Do you believe that certain things cause good or bad luck? Why or why not?",
@@ -426,7 +426,7 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "What things do people avoid doing because of their beliefs?",
@@ -435,21 +435,21 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["What have you been told about your childhood?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Were you raised by relatives other than your parents?"],
             }),
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: ["Were you encouraged to be independent?"],
             }),
@@ -484,7 +484,7 @@ const sections: SectionData[] = [
       type: "ul",
       items: [
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "To what extent has technology improved or damaged the quality of human relationships?",
@@ -493,7 +493,7 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "How would you balance economic growth and environmental protection in public policy?",
@@ -502,7 +502,7 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "Can cultural traditions slow down social progress? Why or why not?",
@@ -511,7 +511,7 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "Describe a complex problem in your field and propose a realistic solution.",
@@ -520,7 +520,7 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "Summarize two opposing viewpoints on this issue and state your own position.",
@@ -529,7 +529,7 @@ const sections: SectionData[] = [
           ],
         },
         {
-          value: [
+          content: [
             ...content({
               parts: [
                 "How do media and misinformation influence public opinion in modern societies?",

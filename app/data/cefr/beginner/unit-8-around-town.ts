@@ -325,13 +325,13 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Describe the location of five places in your town."]),
+          content: text(["Describe the location of five places in your town."]),
         },
         {
-          value: text(["Ask and answer questions using 'Where is...?'"]),
+          content: text(["Ask and answer questions using 'Where is...?'"]),
         },
         {
-          value: text([
+          content: text([
             "Draw a simple map and describe the locations using prepositions of place.",
           ]),
         },

@@ -319,13 +319,13 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Write five foods you like."]),
+          content: text(["Write five foods you like."]),
         },
         {
-          value: text(["Write three foods or drinks you don't like."]),
+          content: text(["Write three foods or drinks you don't like."]),
         },
         {
-          value: text([
+          content: text([
             "Ask a classmate about their food preferences and report the answers.",
           ]),
         },

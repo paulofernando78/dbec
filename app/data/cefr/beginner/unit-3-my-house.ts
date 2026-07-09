@@ -337,15 +337,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Describe your house."]),
+          content: text(["Describe your house."]),
         },
 
         {
-          value: text(["Write five sentences using there is or there are."]),
+          content: text(["Write five sentences using there is or there are."]),
         },
 
         {
-          value: text(["Describe your favorite room and the furniture in it."]),
+          content: text(["Describe your favorite room and the furniture in it."]),
         },
       ],
     } satisfies ListProps,

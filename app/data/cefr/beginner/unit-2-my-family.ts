@@ -23,7 +23,7 @@ export const lesson = {
   introduction: {
     carouselWide: {
       prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
+      words: [
         {
           src: "/assets/img/cefr/a1/unit-2-my-family/introduction/laura-mother.avif",
           alt: "Mother",
@@ -406,15 +406,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text(["Introduce three people in your family."]),
+          content: text(["Introduce three people in your family."]),
         },
 
         {
-          value: text(["Write three sentences using my, his, or her."]),
+          content: text(["Write three sentences using my, his, or her."]),
         },
 
         {
-          value: text(["Write two sentences using possessive ’s."]),
+          content: text(["Write two sentences using possessive ’s."]),
         },
       ],
     } satisfies ListProps,

@@ -83,7 +83,7 @@ export const image = {
 
 export const carouselSquare = {
   prompt: "Slide the pictures and describe what you see.",
-  imgs: [
+  words: [
     {
       src: "/assets/img/aspect-ratio-square.png",
       alt: "...",
@@ -162,7 +162,7 @@ export const carouselSquare = {
 
 export const carouselWide = {
   prompt: "Slide the pictures and describe what you see.",
-  imgs: [
+  words: [
     {
       src: "/assets/img/aspect-ratio-16-9.png",
       alt: "...",
@@ -443,10 +443,10 @@ export const list = {
     instruction: "Look...",
     items: [
       {
-        value: ["First", " ", bold("item")],
+        content: ["First", " ", bold("content")],
       },
       {
-        value: ["Second", " ", mark("item")],
+        content: ["Second", " ", mark("content")],
       },
     ],
   },
@@ -455,10 +455,10 @@ export const list = {
     instruction: "Look...",
     items: [
       {
-        value: ["First item"],
+        content: ["First item"],
       },
       {
-        value: ["Second item"],
+        content: ["Second item"],
       },
     ],
   },
@@ -467,14 +467,14 @@ export const list = {
     instruction: "Check the correct options.",
     items: [
       {
-        value: ["Option 1"],
+        content: ["Option 1"],
       },
       {
-        value: ["Option 2"],
+        content: ["Option 2"],
         textarea: true,
       },
       {
-        value: ["Option 3"],
+        content: ["Option 3"],
       },
     ],
   },

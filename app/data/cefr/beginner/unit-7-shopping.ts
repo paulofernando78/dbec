@@ -328,15 +328,15 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text([
+          content: text([
             "Describe five items of clothing using this, that, these, or those.",
           ]),
         },
         {
-          value: text(["Ask and answer questions about prices."]),
+          content: text(["Ask and answer questions about prices."]),
         },
         {
-          value: text([
+          content: text([
             "Role-play a conversation between a customer and a shop assistant.",
           ]),
         },

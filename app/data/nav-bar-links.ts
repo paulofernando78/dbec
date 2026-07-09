@@ -4,12 +4,10 @@ export const links = [
       {
         href: "/dashboard",
         label: "Profile",
-        trackProgress: false
       },
       {
         href: "/cefr",
         label: "What's CEFR?",
-        trackProgress: false
       },
     ],
   },
@@ -43,7 +41,7 @@ export const links = [
             label: "Unit 5 • My Week",
           },
           {
-            href: "/cefr/beginner/unit-6-food-and-driks",
+            href: "/cefr/beginner/unit-6-food-and-drinks",
             label: "Unit 6 • Food and Drinks",
           },
           {
@@ -129,7 +127,7 @@ export const links = [
             label: "Unit 3 • Making Plans",
           },
           {
-            href: "/cefr/intermediate/unit-4-wha-if",
+            href: "/cefr/intermediate/unit-4-what-if",
             label: "Unit 4 • What If?",
           },
           {
@@ -137,7 +135,7 @@ export const links = [
             label: "Unit 5 • Green Planet",
           },
           {
-            href: "/cefr/intermediate/unit-6-technology",
+            href: "/cefr/intermediate/unit-6-technology-today",
             label: "Unit 6 • Technology Today",
           },
           {

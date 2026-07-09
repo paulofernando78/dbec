@@ -329,17 +329,17 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text([
+          content: text([
             "Describe five actions happening around you right now.",
           ]),
         },
         {
-          value: text([
+          content: text([
             "Ask a classmate 'What are you doing?' and report the answers.",
           ]),
         },
         {
-          value: text([
+          content: text([
             "Write five Present Continuous sentences about people in your home.",
           ]),
           textarea: true,

@@ -21,17 +21,17 @@ export const aSoccerMatchDramaticMoment = {
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {
-          value: [
+          content: [
             "Have you ever seen a serious injury during a football match?",
           ],
         },
         {
-          value: [
+          content: [
             "How can an injury affect a team during an important tournament?",
           ],
         },
         {
-          value: [
+          content: [
             "Should matches be stopped immediately after serious injuries? Why?",
           ],
         },
@@ -641,10 +641,10 @@ export const aSoccerMatchDramaticMoment = {
         instruction: "Answer the questions.",
         items: [
           {
-            value: ["Should dangerous tackles receive longer suspensions?"],
+            content: ["Should dangerous tackles receive longer suspensions?"],
           },
           {
-            value: ["Can a serious injury change a player's career forever?"],
+            content: ["Can a serious injury change a player's career forever?"],
           },
         ],
       },

@@ -11,7 +11,7 @@ export const lessons = {
         type: "checkbox",
         items: [
           {
-            value: text(["The Secret of Monkey Island"]),
+            content: text(["The Secret of Monkey Island"]),
           },
         ],
       } satisfies ListProps,
@@ -23,7 +23,7 @@ export const lessons = {
         type: "checkbox",
         items: [
           {
-            value: text(["Thimbleweed Park"]),
+            content: text(["Thimbleweed Park"]),
           },
         ],
       } satisfies ListProps,

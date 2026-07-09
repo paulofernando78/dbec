@@ -27,17 +27,17 @@ export const thimbleweedPark = {
   partOne: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Open the gate and walk toward the bridge."] },
-      { value: ["Pick up the rock near the river."] },
-      { value: ["Use the rock on the light above the trail sign."] },
-      { value: ["Continue along the road toward town."] },
+      { content: ["Open the gate and walk toward the bridge."] },
+      { content: ["Pick up the rock near the river."] },
+      { content: ["Use the rock on the light above the trail sign."] },
+      { content: ["Continue along the road toward town."] },
       {
-        value: [
+        content: [
           "Meet the Pigeon Brothers and learn about the repair they are working on.",
         ],
       },
       {
-        value: [
+        content: [
           "Explore the first locations and talk to the main characters you encounter.",
         ],
       },
@@ -47,102 +47,102 @@ export const thimbleweedPark = {
   partTwo: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Look at the corpse and obtain the victim's keycard."] },
-      { value: ["Combine the Polaroid film with the camera."] },
-      { value: ["Take a photograph of the body."] },
+      { content: ["Look at the corpse and obtain the victim's keycard."] },
+      { content: ["Combine the Polaroid film with the camera."] },
+      { content: ["Take a photograph of the body."] },
       {
-        value: ["Explore the sewer entrance and pick up the hidden chainsaw."],
+        content: ["Explore the sewer entrance and pick up the hidden chainsaw."],
       },
-      { value: ["Meet the Pigeon Brothers near the highway."] },
-      { value: ["Walk into town and explore the main street."] },
+      { content: ["Meet the Pigeon Brothers near the highway."] },
+      { content: ["Walk into town and explore the main street."] },
       {
-        value: ["Fix the broken hydrant with the help of the Pigeon Sisters."],
+        content: ["Fix the broken hydrant with the help of the Pigeon Sisters."],
       },
-      { value: ["Visit the diner and trigger Ransome's flashback."] },
-      { value: ["Recover Ransome's joke book and complete his performance."] },
-      { value: ["Continue investigating the murder around town."] },
+      { content: ["Visit the diner and trigger Ransome's flashback."] },
+      { content: ["Recover Ransome's joke book and complete his performance."] },
+      { content: ["Continue investigating the murder around town."] },
     ],
   },
 
   partThree: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Collect fingerprint evidence."] },
-      { value: ["Obtain the blood sample and blood report."] },
-      { value: ["Investigate the victim's identity."] },
-      { value: ["Experience Franklin's flashback."] },
-      { value: ["Use the FaceTron and FingerTron machines."] },
-      { value: ["Gather enough evidence for an arrest warrant."] },
-      { value: ["Use ArrestTron 3000 to process the suspect."] },
-      { value: ["Complete the arrest."] },
+      { content: ["Collect fingerprint evidence."] },
+      { content: ["Obtain the blood sample and blood report."] },
+      { content: ["Investigate the victim's identity."] },
+      { content: ["Experience Franklin's flashback."] },
+      { content: ["Use the FaceTron and FingerTron machines."] },
+      { content: ["Gather enough evidence for an arrest warrant."] },
+      { content: ["Use ArrestTron 3000 to process the suspect."] },
+      { content: ["Complete the arrest."] },
     ],
   },
 
   partFour: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Return to the investigation after the arrest."] },
-      { value: ["Prepare for the reading of Chuck's will."] },
-      { value: ["Collect clues needed to decode the will."] },
-      { value: ["Solve the cryptic messages."] },
-      { value: ["Open Chuck's tomb in the cemetery."] },
-      { value: ["Discover new information about the town's secrets."] },
+      { content: ["Return to the investigation after the arrest."] },
+      { content: ["Prepare for the reading of Chuck's will."] },
+      { content: ["Collect clues needed to decode the will."] },
+      { content: ["Solve the cryptic messages."] },
+      { content: ["Open Chuck's tomb in the cemetery."] },
+      { content: ["Discover new information about the town's secrets."] },
     ],
   },
 
   partFive: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Attend the reading of Chuck's will."] },
-      { value: ["Listen carefully to every revelation."] },
-      { value: ["Learn how the inheritance affects each character."] },
-      { value: ["Watch the events unfold and enjoy the story."] },
+      { content: ["Attend the reading of Chuck's will."] },
+      { content: ["Listen carefully to every revelation."] },
+      { content: ["Learn how the inheritance affects each character."] },
+      { content: ["Watch the events unfold and enjoy the story."] },
     ],
   },
 
   partSix: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Find the factory key."] },
-      { value: ["Gain access to the factory grounds."] },
-      { value: ["Explore the factory machinery."] },
-      { value: ["Repair the broken watch."] },
-      { value: ["Investigate the secret meeting."] },
-      { value: ["Unlock deeper areas of the factory."] },
-      { value: ["Reveal important clues about Chuck and Pilltronics."] },
+      { content: ["Find the factory key."] },
+      { content: ["Gain access to the factory grounds."] },
+      { content: ["Explore the factory machinery."] },
+      { content: ["Repair the broken watch."] },
+      { content: ["Investigate the secret meeting."] },
+      { content: ["Unlock deeper areas of the factory."] },
+      { content: ["Reveal important clues about Chuck and Pilltronics."] },
     ],
   },
 
   partSeven: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Enter the strange world inside the game."] },
-      { value: ["Switch between characters when necessary."] },
-      { value: ["Solve the unusual meta-puzzles."] },
-      { value: ["Uncover the truth behind the simulation."] },
-      { value: ["Continue toward the final confrontation."] },
+      { content: ["Enter the strange world inside the game."] },
+      { content: ["Switch between characters when necessary."] },
+      { content: ["Solve the unusual meta-puzzles."] },
+      { content: ["Uncover the truth behind the simulation."] },
+      { content: ["Continue toward the final confrontation."] },
     ],
   },
 
   partEight: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Begin the escape sequence."] },
-      { value: ["Navigate the security systems."] },
-      { value: ["Solve the final environmental puzzles."] },
-      { value: ["Help all characters reach safety."] },
-      { value: ["Prepare for the ending."] },
+      { content: ["Begin the escape sequence."] },
+      { content: ["Navigate the security systems."] },
+      { content: ["Solve the final environmental puzzles."] },
+      { content: ["Help all characters reach safety."] },
+      { content: ["Prepare for the ending."] },
     ],
   },
 
   partNine: {
     instruction: "Follow the steps below:",
     items: [
-      { value: ["Confront the reality behind Thimbleweed Park."] },
-      { value: ["Learn the truth about the characters."] },
-      { value: ["Experience each character's conclusion."] },
-      { value: ["Complete the final sequence."] },
-      { value: ["Watch the ending and epilogues."] },
+      { content: ["Confront the reality behind Thimbleweed Park."] },
+      { content: ["Learn the truth about the characters."] },
+      { content: ["Experience each character's conclusion."] },
+      { content: ["Complete the final sequence."] },
+      { content: ["Watch the ending and epilogues."] },
     ],
   },
 };

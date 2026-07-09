@@ -371,16 +371,16 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          value: text([
+          content: text([
             "Write three predictions about the world in 2050 using 'will'.",
           ]),
           textarea: true,
         },
         {
-          value: text(["Write two predictions about your city in 2050."]),
+          content: text(["Write two predictions about your city in 2050."]),
         },
         {
-          value: text([
+          content: text([
             "Record a 30-second audio talking about how technology will change your daily life.",
           ]),
         },
