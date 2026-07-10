@@ -32,7 +32,7 @@ export const lesson = {
           alt: "Laura watching a movie",
           content: [
             ...content({
-              parts: [audio("Laura went to the movie theater"), "Laura went to the movie theater. = (movies / UK cinema)"],
+              parts: [audio("Last weekend, Laura went to the movie theater"), "Last weekend, Laura went to the movie theater. = (movies / UK cinema)"],
             }),
           ],
         },
@@ -71,17 +71,10 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "When did Emma visit her grandparents?",
+            question: "Last weekend, Laura went to the beach.",
             options: [
-              { option: "Next weekend", isCorrect: false },
-              { option: "Last weekend", isCorrect: true },
-            ],
-          },
-          {
-            question: "What did Jake do on Saturday?",
-            options: [
-              { option: "Went to work", isCorrect: false },
-              { option: "Watched a movie", isCorrect: true },
+              { option: "true", isCorrect: true },
+              { option: "false", isCorrect: false },
             ],
           },
         ],
