@@ -39,7 +39,8 @@ export default function Introduction() {
 
           <Section id="Language Focus" heading={4}>
             <Meaning value={lesson.languageFocus.meaning} />
-            <ColumnDrag {...lesson.languageFocus.column} />
+            <ColumnDrag {...lesson.languageFocus.columnQuestions} />
+            <ColumnDrag {...lesson.languageFocus.columnVerbs} />
             <Notes value={lesson.languageFocus.notes} />
             <CCQ value={lesson.languageFocus.ccq} />
           </Section>

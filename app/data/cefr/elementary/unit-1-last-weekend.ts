@@ -28,16 +28,16 @@ export const lesson = {
       prompt: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
-          alt: "Visiting grandparents",
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/movie-theater.avif",
+          alt: "Laura watching a movie",
           content: [
             ...content({
-              parts: [audio("/"), "I visited my grandparents last weekend."],
+              parts: [audio("Laura went to the movie theater"), "Laura went to the movie theater. = (movies / UK cinema)"],
             }),
           ],
         },
         {
-          src: "/",
+          src: "Laura buying candies",
           alt: "Watching a movie",
           content: [
             ...content({
@@ -156,15 +156,33 @@ export const lesson = {
     meaning: [
       {
         as: "p",
-        parts: ["Regular Past Simple verbs end in ", bold("-ed",), "."],
+        parts: ["Regular Past Simple verbs end in ", bold("-ed"), "."],
       },
       {
         as: "span",
-        parts: [audio("ask"), "ask ", audio("asked"), "→ ", "ask", bold("ed"), " ", phonetics("/t/")],
+        parts: [
+          audio("ask"),
+          "ask ",
+          audio("asked"),
+          "→ ",
+          "ask",
+          bold("ed"),
+          " ",
+          phonetics("/t/"),
+        ],
       },
       {
         as: "span",
-        parts: [audio("watch"), "watch ", audio("watched"), "→ ", "watch", bold("ed"), " ", phonetics("/t/")],
+        parts: [
+          audio("watch"),
+          "watch ",
+          audio("watched"),
+          "→ ",
+          "watch",
+          bold("ed"),
+          " ",
+          phonetics("/t/"),
+        ],
       },
       {
         as: "span",
@@ -180,7 +198,7 @@ export const lesson = {
       },
     ] satisfies Meaning[],
 
-    column: {
+    columnQuestions: {
       width: 300,
       cols: [
         {
@@ -190,10 +208,92 @@ export const lesson = {
           column: "Questions",
           items: [
             {
-              parts: [bold("Q:"), " What did you do last weekend?"],
+              parts: [audio("/"), "What did you do (last weekend?)"],
             },
             {
-              parts: [bold("A:"), " I visited my grandparents."],
+              parts: [audio("/"), "What did you watch?"],
+            },
+            {
+              parts: [audio("/"), "Where was it?"],
+            },
+          ],
+        },
+        
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Answers",
+          items: [
+            {
+              parts: [audio("/"), "I went to the movie theater."],
+            },
+            {
+              parts: [audio("/"), "I watched \"Star Wars\"."],
+            },
+            {
+              parts: [audio("/"), "It was Cinemark at Iguatemi Shopping Center."],
+            },
+          ],
+        },
+      ],
+    },
+
+    columnVerbs: {
+      width: 300,
+      cols: [
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "/t/",
+          items: [
+            // ask
+            {
+              parts: [
+                audio("ask"),
+                "ask ",
+                "➜ ",
+                audio("asked"),
+                "ask",
+                bold("ed"),
+                " ",
+                phonetics("/t/"),
+              ],
+            },
+            // watch
+            {
+              parts: [
+                audio("watch"),
+                "watch ",
+                "➜ ",
+                audio("watched"),
+                "watch",
+                bold("ed"),
+                " ",
+                phonetics("/t/"),
+              ],
+            },
+          ],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "/d/",
+          items: [
+            // answer
+            {
+              parts: [
+                audio("answer"),
+                "answer ",
+                "➜ ",
+                audio("answered"),
+                "answer",
+                bold("ed"),
+                " ",
+                phonetics("/t/"),
+              ],
             },
           ],
         },
@@ -202,28 +302,10 @@ export const lesson = {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Regular Verbs",
+          column: "/ɪd/",
           items: [
             {
-              parts: [bold("Q:"), " What did you watch?"],
-            },
-            {
-              parts: [bold("A:"), " I watched a movie."],
-            },
-          ],
-        },
-
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "More Examples",
-          items: [
-            {
-              parts: [bold("Q:"), " Where did you stay?"],
-            },
-            {
-              parts: [bold("A:"), " I stayed home."],
+              parts: ["visit"],
             },
           ],
         },
@@ -233,7 +315,7 @@ export const lesson = {
     notes: [
       {
         as: "span",
-        parts: ["..",],
+        parts: ["You liked it?"],
       },
     ] satisfies Notes[],
 
