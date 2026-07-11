@@ -12,8 +12,7 @@ export const lesson = {
     title: "A2 Elementary",
     subtitle: "Unit 1 • Last Weekend",
     descriptions: [
-      "I visited my grandparents.",
-      "We watched a movie on Saturday.",
+      "I watched a movie on Saturday.",
     ],
   },
 
@@ -150,44 +149,6 @@ export const lesson = {
       {
         as: "p",
         parts: ["Regular Past Simple verbs end in ", bold("-ed"), "."],
-      },
-      {
-        as: "span",
-        parts: [
-          audio("ask"),
-          "ask ",
-          audio("asked"),
-          "→ ",
-          "ask",
-          bold("ed"),
-          " ",
-          phonetics("/t/"),
-        ],
-      },
-      {
-        as: "span",
-        parts: [
-          audio("watch"),
-          "watch ",
-          audio("watched"),
-          "→ ",
-          "watch",
-          bold("ed"),
-          " ",
-          phonetics("/t/"),
-        ],
-      },
-      {
-        as: "span",
-        parts: [audio("visited"), "visited"],
-      },
-      {
-        as: "span",
-        parts: [audio("played"), "played"],
-      },
-      {
-        as: "span",
-        parts: [audio("stayed"), "stayed"],
       },
     ] satisfies Meaning[],
 

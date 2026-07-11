@@ -36,7 +36,7 @@ function RenderNavItem({
               onClick={(e) => e.stopPropagation()}
               className="translate-x-[-0.4rem]"
             >
-              {item.label}
+              <span>{item.label}</span>
             </NavLink>
           ) : (
             <span className="translate-x-[-0.4rem]">{item.label}</span>
@@ -73,7 +73,7 @@ function RenderNavItem({
         end
         onClick={closeNavBar}
         className={({ isActive }) =>
-          `block text-[1.06rem] ${isActive ? "text-blue-400" : ""}`
+          `mb-2 px-2 block text-[1.06rem] ${isActive ? "text-blue-400" : ""} border-l-3`
         }
       >
         {item.label}
