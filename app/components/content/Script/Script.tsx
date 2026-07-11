@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Paragraph } from "@/components/content/Paragraph";
+import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
 
 import { Eye, EyeClosed } from "lucide-react";
@@ -38,13 +39,11 @@ export const Script = ({ title, content }: CollapsibleProps) => {
       {isOpen && (
         <div className="border rounded-lg overflow-hidden">
           <div className="h-100 overflow-scroll bg-white p-3 ">
+            {/* <AudioPlayer src="" /> */}
             {content.map((line) => (
-              <div
-                key={line.pt}
-                className="mb-4 last:mb-0"
-              >
-                  <Paragraph value={line.en} />
-                  <p className="text-gray-500">{line.pt}</p>
+              <div key={line.pt} className="mb-4 last:mb-0">
+                <Paragraph value={line.en} />
+                <p className="text-gray-500">{line.pt}</p>
               </div>
             ))}
           </div>
