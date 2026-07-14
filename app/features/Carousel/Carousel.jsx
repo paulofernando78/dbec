@@ -64,7 +64,6 @@ export const Carousel = ({ imgs = [] }) => {
 
   return (
     <>
-    <span className={styles.title}>Remember?</span>
       <div className={styles.wrapper}>
         <button className={styles.leftArrow} onClick={scrollLeft}>
           <Arrow

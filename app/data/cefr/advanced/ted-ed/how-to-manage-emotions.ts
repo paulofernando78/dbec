@@ -58,7 +58,7 @@ export const howToManageEmotions = {
         exercise: {
           questions: [
             {
-              question: "What is it mainly about?",
+              question: "What is te video mainly about?",
               options: [
                 {
                   option: "People should always avoid negative emotions.",
@@ -171,9 +171,9 @@ export const howToManageEmotions = {
           en: [
             ...content({
               parts: [
-                "The answer to the last question is a definitive 'yes.' ",
+                "The answer to the last question is a definitive 'yes.' There are numerous strategies for ",
                 attentionMark(
-                  "There are numerous strategies for regulating our emotions",
+                  "regulating our emotions",
                 ),
                 ", and one framework to understand these techniques is called the ",
                 attentionMark("Process Model"),

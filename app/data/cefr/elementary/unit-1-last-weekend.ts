@@ -3,7 +3,14 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold, phonetics } from "@/helpers/content";
+import {
+  content,
+  text,
+  audio,
+  bold,
+  phonetics,
+  spacer,
+} from "@/helpers/content";
 
 import { lessons } from "@/data/cefr/elementary-lessons-card-data";
 
@@ -11,9 +18,7 @@ export const lesson = {
   whiteboard: {
     title: "A2 Elementary",
     subtitle: "Unit 1 • Last Weekend",
-    descriptions: [
-      "I watched a movie on Saturday.",
-    ],
+    descriptions: ["I watched a movie on Saturday."],
   },
 
   lessonCard: {
@@ -24,56 +29,133 @@ export const lesson = {
 
   introduction: {
     carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+      instruction:
+        "Look at the pictures. Match the words and listen to the sentences.",
+      matchingContent: [
+        {
+          as: "span",
+          parts: [audio("movie theater"), "movie theater"],
+        },
+        {
+          as: "span",
+          parts: [audio("tickets"), "tickets"],
+        },
+        {
+          as: "span",
+          parts: [audio("popcorn"), "popcorn"],
+        },
+        {
+          as: "span",
+          parts: [audio("soda"), "soda"],
+        },
+        {
+          as: "span",
+          parts: [audio("seat row"), "seat row"],
+        },
+      ],
       imgs: [
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/movie-theater.avif",
-          alt: "Laura watching a movie",
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-going-to-movies.avif",
+          alt: "Laura going to the movies",
           content: [
             ...content({
-              parts: [audio("Last weekend, Laura went to the movie theater"), "Last weekend, Laura went to the movie theater. = (movies / UK cinema)"],
+              parts: [audio("Laura went to the movies."), "Laura went to the movies."],
             }),
           ],
         },
         {
-          src: "Laura buying candies",
-          alt: "Watching a movie",
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-buying-two-tickets.avif",
+          alt: "Laura two buying tickets",
           content: [
             ...content({
-              parts: [audio("/"), "We watched a movie on Saturday."],
+              parts: [audio("She bought two tickets."), "She bought two tickets."],
+            }),
+          ],
+        },
+        {
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-buying-popcorn-soda.avif",
+          alt: "Laura buying soda and popocorn",
+          content: [
+            ...content({
+              parts: [audio("She also bought popcorn and soda"), "She also bought popcorn and soda."],
+            }),
+          ],
+        },
+        {
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-meeting-liz.avif",
+          alt: "Laura meeting her friend Liz",
+          content: [
+            ...content({
+              parts: [
+                audio("She met her friend Liz."),
+                "She met her friend Liz.",
+              ],
+            }),
+          ],
+        },
+        {
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/they-watching-movie.avif",
+          alt: "They watched the movie.",
+          content: [
+            ...content({
+              parts: [audio("They watched the movie."), "They watched the movie."],
             }),
           ],
         },
         {
           src: "/",
-          alt: "Playing soccer",
+          alt: "They had popcorn and soda.",
           content: [
             ...content({
-              parts: [audio("/"), "I played soccer with my friends."],
+              parts: [audio("They watched the movie."), "They watched the movie."],
             }),
           ],
         },
         {
           src: "/",
-          alt: "Staying home",
+          alt: "The movie finished at 8:30pm.",
           content: [
             ...content({
-              parts: [audio("/"), "I stayed home on Sunday."],
+              parts: [audio("The movie finished at 8:30pm."), "The movie finished at 8:30pm."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "Laura and Liz enjoying sometime together",
+          content: [
+            ...content({
+              parts: [audio("After the movie, they enjoyed sometime together."), "After the movie, they enjoyed sometime together."],
+            }),
+          ],
+        },
+        {
+          src: "/",
+          alt: "After the movie they went home.",
+          content: [
+            ...content({
+              parts: [audio("After the movie they went home."), "The movie finished at 8:30pm."],
             }),
           ],
         },
       ],
     },
-
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
           {
-            question: "Last weekend, Laura went to the beach.",
+            question: "Last weekend, Laura went to the movies.",
             options: [
               { option: "true", isCorrect: true },
               { option: "false", isCorrect: false },
+            ],
+          },
+          {
+            question: "Laura bought chocolate and candies.",
+            options: [
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
             ],
           },
         ],
@@ -87,36 +169,54 @@ export const lesson = {
       audioSrc: "/",
       lines: [
         {
-          speaker: "Emma",
-          line: text(["Hi Jake! How was your weekend?"]),
+          speaker: "Laura",
+          line: text(["Hey Eric. How's it going?"]),
         },
         {
-          speaker: "Jake",
-          line: text(["It was great!"]),
+          speaker: "Eric",
+          line: text(["Pretty good. How about you?"]),
         },
         {
-          speaker: "Emma",
-          line: text(["What did you do?"]),
+          speaker: "Laura",
+          line: text(["Feeling great. I had a really nice weekend."]),
         },
         {
-          speaker: "Jake",
-          line: text(["I visited my grandparents on Saturday."]),
+          speaker: "Eric",
+          line: text(["Nice! What did you do?"]),
         },
         {
-          speaker: "Emma",
-          line: text(["Nice! What did you do on Sunday?"]),
+          speaker: "Laura",
+          line: text(["I went to the movie theater on Saturday."]),
         },
         {
-          speaker: "Jake",
-          line: text(["I watched a movie and relaxed at home."]),
+          speaker: "Eric",
+          line: text(["Cool! What movie did you watch?"]),
         },
         {
-          speaker: "Emma",
-          line: text(["Sounds good. I played soccer with some friends."]),
+          speaker: "Laura",
+          line: text(["I watched a comedy. It was really funny."]),
         },
         {
-          speaker: "Jake",
-          line: text(["That's awesome!"]),
+          speaker: "Eric",
+          line: text(["Did you go alone?"]),
+        },
+        {
+          speaker: "Laura",
+          line: text([
+            "No, I went with my sister. We bought tickets and popcorn.",
+          ]),
+        },
+        {
+          speaker: "Eric",
+          line: text(["Sounds fun. I stayed home and played video games."]),
+        },
+        {
+          speaker: "Laura",
+          line: text(["That sounds good too. Did you relax?"]),
+        },
+        {
+          speaker: "Eric",
+          line: text(["Yes, I relaxed a lot. It was a quiet weekend."]),
         },
       ],
     },
@@ -126,17 +226,24 @@ export const lesson = {
       exercise: {
         questions: [
           {
-            question: "What did Jake do on Saturday?",
+            question: "What did Laura do on Saturday?",
             options: [
-              { option: "Played soccer", isCorrect: false },
-              { option: "Visited his grandparents", isCorrect: true },
+              { option: "She went to the movie theater", isCorrect: true },
+              { option: "She stayed home", isCorrect: false },
             ],
           },
           {
-            question: "What did Emma do?",
+            question: "Who did Laura go with?",
             options: [
-              { option: "Watched a movie", isCorrect: false },
-              { option: "Played soccer", isCorrect: true },
+              { option: "Her sister", isCorrect: true },
+              { option: "Eric", isCorrect: false },
+            ],
+          },
+          {
+            question: "What did Eric do last weekend?",
+            options: [
+              { option: "He played video games", isCorrect: true },
+              { option: "He bought tickets and popcorn", isCorrect: false },
             ],
           },
         ],
@@ -148,7 +255,32 @@ export const lesson = {
     meaning: [
       {
         as: "p",
-        parts: ["Regular Past Simple verbs end in ", bold("-ed"), "."],
+        parts: [
+          "Use the ",
+          bold("Past Simple"),
+          " to talk about finished actions in the past.",
+        ],
+      },
+      spacer(),
+      {
+        as: "p",
+        parts: [
+          "Regular verbs usually end in ",
+          bold("-ed"),
+          ": watched, played, relaxed.",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          "Some verbs are irregular: go ",
+          bold("➜ went"),
+          ", buy ",
+          bold("➜ bought"),
+          ", have ",
+          bold("➜ had"),
+          ".",
+        ],
       },
     ] satisfies Meaning[],
 
@@ -162,17 +294,20 @@ export const lesson = {
           column: "Questions",
           items: [
             {
-              parts: [audio("/"), "What did you do (last weekend?)"],
+              parts: [bold("Did"), " + subject + base verb:"],
             },
+            spacer(),
             {
-              parts: [audio("/"), "What did you watch?"],
+              parts: [
+                audio("What did you do last weekend?"),
+                "What did you do last weekend?",
+              ],
             },
-            {
-              parts: [audio("/"), "Where was it?"],
-            },
+            { parts: [audio("Where did you go?"), "Where did you go?"] },
+            { parts: [audio("Who did you go with?"), "Who did you go with?"] },
+            { parts: [audio("Did you relax?"), "Did you relax?"] },
           ],
         },
-        
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
@@ -180,13 +315,20 @@ export const lesson = {
           column: "Answers",
           items: [
             {
-              parts: [audio("/"), "I went to the movie theater."],
+              parts: [
+                audio("I went to the movie theater."),
+                "I went to the movie theater.",
+              ],
             },
             {
-              parts: [audio("/"), "I watched \"Star Wars\"."],
+              parts: [
+                audio("I went with my sister."),
+                "I went with my sister.",
+              ],
             },
+            { parts: [audio("I watched a comedy."), "I watched a comedy."] },
             {
-              parts: [audio("/"), "It was Cinemark at Iguatemi Shopping Center."],
+              parts: [audio("Yes, I relaxed a lot."), "Yes, I relaxed a lot."],
             },
           ],
         },
@@ -204,6 +346,8 @@ export const lesson = {
           items: [
             // ask
             {
+              display: "block",
+              as: "span",
               parts: [
                 audio("ask"),
                 "ask ",
@@ -217,6 +361,7 @@ export const lesson = {
             },
             // watch
             {
+              as: "span",
               parts: [
                 audio("watch"),
                 "watch ",
@@ -238,6 +383,7 @@ export const lesson = {
           items: [
             // answer
             {
+              as: "span",
               parts: [
                 audio("answer"),
                 "answer ",
@@ -268,22 +414,28 @@ export const lesson = {
 
     notes: [
       {
-        as: "span",
-        parts: ["You liked it?"],
+        as: "p",
+        parts: [
+          "Don't say: Did you ",
+          bold("went"),
+          "? Say: Did you ",
+          bold("go"),
+          "?",
+        ],
       },
     ] satisfies Notes[],
 
     ccq: [
       {
-        as: "span",
+        parts: ['In the sentence: "I went to the movice last weekend."'],
+      },
+      {
         parts: ["Are we talking about the past or the future?"],
       },
       {
-        as: "span",
         parts: ["Did the action happen yesterday or tomorrow?"],
       },
       {
-        as: "span",
         parts: ["In 'I watched a movie', is the movie finished?"],
       },
     ] satisfies CCQ[],

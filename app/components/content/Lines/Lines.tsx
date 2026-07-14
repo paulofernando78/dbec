@@ -5,7 +5,7 @@ import { type InlineRichContentValue } from "@/components/content/InlineRichCont
 type LineItem =
   | InlineRichContentValue[]
   | {
-      type: "space";
+      type: "spacer";
     };
 
 type LinesProps = {
@@ -21,7 +21,7 @@ export const Lines = ({ value = [], as }: LinesProps) => {
           return <Line key={index} as={as} value={line} />;
         }
 
-        if (line.type === "space") {
+        if (line.type === "spacer") {
           return <div key={index} className="h-4" />;
         }
 

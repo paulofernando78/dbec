@@ -14,7 +14,7 @@ import {
   underline,
   portuguese,
   lineBreak,
-  space,
+  spacer,
 } from "@/helpers/content";
 
 import { lessons } from "@/data/cefr/beginner-lessons-card-data";
@@ -357,7 +357,7 @@ export const lesson = {
           "same as usual",
         ],
       },
-      space(),
+      spacer(),
       {
         as: "span",
         parts: [
@@ -385,7 +385,7 @@ export const lesson = {
           "How are things with you?",
         ],
       },
-      space(),
+      spacer(),
       {
         as: "span",
         parts: [
@@ -487,7 +487,7 @@ export const lesson = {
           "Laura Palmer.",
         ],
       },
-      space(),
+      spacer(),
       {
         as: "span",
         parts: [
@@ -542,7 +542,7 @@ export const lesson = {
           "(It’s) L-A-U-R-A.",
         ],
       },
-      space(),
+      spacer(),
       {
         as: "span",
         parts: [
@@ -597,7 +597,7 @@ export const lesson = {
           "(It’s) P-A-L-M-E-R.",
         ],
       },
-      space(),
+      spacer(),
       {
         as: "span",
         parts: [
@@ -608,7 +608,7 @@ export const lesson = {
           "How do you spell it? (it = first/last)",
         ],
       },
-      space(),
+      spacer(),
       {
         as: "span",
         parts: [

@@ -8,7 +8,7 @@ export type Meaning =
       parts: InlineRichContentValue[];
     }
   | {
-      type: "space";
+      type: "spacer";
     };
 
 export type MeaningProps = {

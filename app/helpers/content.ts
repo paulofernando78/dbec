@@ -259,7 +259,7 @@ export const lineBreak = (): ContentToken => ({
   lineBreak: true,
 });
 
-export const space = () =>
+export const spacer = () =>
   ({
-    type: "space",
+    type: "spacer",
   }) as const;

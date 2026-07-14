@@ -1,6 +1,9 @@
-import { dictionary, content } from "@/helpers/content";
+import { dictionary, content, type ContentValue } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
+import { Line } from "@/components/content/Line";
+import { Dot } from 'lucide-react';
 import { Image } from "@/components/ui/Image";
+
 import {
   InlineRichContent,
   type InlineRichContentValue,
@@ -28,6 +31,20 @@ type ResolvedWord = {
   }[];
 };
 
+type MatchingContentItem = {
+  display?: "inline" | "block";
+  as?: "p" | "span";
+  parts: ContentValue[];
+};
+
+type CarouselProps = {
+  instruction?: string;
+  matchingContent?: MatchingContentItem[];
+  words?: CarouselWord[];
+  imgs?: CarouselWord[];
+  aspectRatio?: "square" | "wide";
+};
+
 const Arrow = ({ className }: ArrowProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -41,22 +58,14 @@ const Arrow = ({ className }: ArrowProps) => (
   </svg>
 );
 
-type CarouselProps = {
-  instruction?: string;
-  prompt?: string;
-  words?: CarouselWord[];
-  imgs?: CarouselWord[];
-  aspectRatio?: "square" | "wide";
-};
-
 export const Carousel = ({
   instruction,
-  prompt,
+  matchingContent,
   words,
   imgs,
   aspectRatio,
 }: CarouselProps) => {
-  const finalInstruction = instruction || prompt || "";
+  const finalInstruction = instruction || "";
   const finalWords = words || imgs || [];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -139,6 +148,32 @@ export const Carousel = ({
   return (
     <>
       <p className="font-bold mb-4">{finalInstruction}</p>
+      <div
+        className={`
+          mx-auto
+          h-20
+          mb-4
+          py-1 px-2
+          overflow-x-auto
+          border
+          border-gray-300
+          rounded-lg
+          ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+        `}
+      >
+        {matchingContent?.map((item, index) => (
+          <>
+            <Line
+              key={index}
+              display={item.display}
+              as={item.as}
+              value={content({ parts: item.parts })}
+            />
+            <Dot className="inline"/>
+          </>
+        ))}
+        
+      </div>
       <div
         className={`
         relative
@@ -307,7 +342,7 @@ export const Carousel = ({
           border
           border-gray-300
           rounded-lg
-        ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+          ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
         `}
         >
           <div
@@ -318,7 +353,8 @@ export const Carousel = ({
               ${isContentVisible ? "opacity-100" : "opacity-0"}
             `}
           >
-            <span className="font-bold">Hint:</span> <InlineRichContent value={currentContent} />
+            <span className="font-bold">Hint:</span>{" "}
+            <InlineRichContent value={currentContent} />
           </div>
         </div>
       )}
