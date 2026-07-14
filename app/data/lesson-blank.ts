@@ -16,7 +16,7 @@ import {
   stressed,
   phonetics,
   portuguese,
-  lineBreak
+  lineBreak,
 } from "@/helpers/content";
 
 export const lesson = {
@@ -35,14 +35,24 @@ export const lesson = {
 
   introduction: {
     carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+      instruction: "Look at the pictures and listen to the sentences.",
+      matchingContent: [
+        {
+          as: "span",
+          parts: [audio("movie theater"), "..."],
+        },
+        {
+          as: "span",
+          parts: [audio("tickets"), "..."],
+        },
+      ],
       imgs: [
         {
           src: "/",
           alt: "...",
           content: [
             ...content({
-              parts: [audio("/"), "...", lineBreak(), "...",],
+              parts: [audio("/"), "...", lineBreak(), "..."],
             }),
           ],
         },
@@ -76,7 +86,7 @@ export const lesson = {
         },
       ],
     },
-     radio: {
+    radio: {
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [

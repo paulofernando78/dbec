@@ -12,11 +12,20 @@ import { Unscramble } from "@/features/exercises/Unscramble";
 
 import { useParams } from "react-router";
 
+import { getCefrLesson } from "@/data/cefr/lessons";
+import { LessonPage } from "@/routes/template/lesson";
+
 import { news as advancedNews } from "@/data/cefr/advanced/news/index";
 import { tedEd as advancedTedEd } from "@/data/cefr/advanced/ted-ed/index";
 
 export default function Articles() {
   const { level, category, slug } = useParams();
+
+  const lesson = getCefrLesson({ level, category, slug });
+
+  if (lesson) {
+    return <LessonPage lesson={lesson} />;
+  }
 
   let articles;
 

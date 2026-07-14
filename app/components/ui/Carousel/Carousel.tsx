@@ -1,7 +1,7 @@
 import { dictionary, content, type ContentValue } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { Line } from "@/components/content/Line";
-import { Dot } from 'lucide-react';
+import { Dot } from "lucide-react";
 import { Image } from "@/components/ui/Image";
 
 import {
@@ -32,8 +32,8 @@ type ResolvedWord = {
 };
 
 type MatchingContentItem = {
-  display?: "inline" | "block";
-  as?: "p" | "span";
+  display?: string;
+  as?: string;
   parts: ContentValue[];
 };
 
@@ -148,32 +148,43 @@ export const Carousel = ({
   return (
     <>
       <p className="font-bold mb-4">{finalInstruction}</p>
-      <div
-        className={`
-          mx-auto
-          h-20
-          mb-4
-          py-1 px-2
-          overflow-x-auto
-          border
-          border-gray-300
-          rounded-lg
-          ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
-        `}
-      >
-        {matchingContent?.map((item, index) => (
-          <>
-            <Line
-              key={index}
-              display={item.display}
-              as={item.as}
-              value={content({ parts: item.parts })}
-            />
-            <Dot className="inline"/>
-          </>
-        ))}
-        
-      </div>
+      {matchingContent && (
+        <div
+          className={`
+            mx-auto
+            h-20
+            mb-4
+            py-1 px-2
+            overflow-x-auto
+            border
+            border-gray-300
+            rounded-lg
+            ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+          `}
+        >
+          {matchingContent.map((item, index) => {
+            const display =
+              item.display === "block" || item.display === "inline"
+                ? item.display
+                : undefined;
+            const as =
+              item.as === "p" || item.as === "span" ? item.as : undefined;
+
+            return (
+              <span key={index} className="inline-flex items-center">
+                <Line
+                  display={display}
+                  as={as}
+                  value={content({ parts: item.parts })}
+                />
+                {index < matchingContent.length - 1 && (
+                  <Dot className="inline size-4" />
+                )}
+              </span>
+            );
+          })}
+        </div>
+      )}
       <div
         className={`
         relative

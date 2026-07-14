@@ -8,17 +8,19 @@ import {
   text,
   audio,
   bold,
+  mark,
+  portuguese,
   phonetics,
   spacer,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/elementary-lessons-card-data";
+import { lessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
 
 export const lesson = {
   whiteboard: {
     title: "A2 Elementary",
     subtitle: "Unit 1 • Last Weekend",
-    descriptions: ["I watched a movie on Saturday."],
+    descriptions: ["I watched a movie last Saturday."],
   },
 
   lessonCard: {
@@ -59,25 +61,43 @@ export const lesson = {
           alt: "Laura going to the movies",
           content: [
             ...content({
-              parts: [audio("Laura went to the movies."), "Laura went to the movies."],
+              parts: [
+                audio("Laura went to the movies."),
+                "Laura ",
+                mark("went"),
+                " to the movies. ",
+                portuguese("Laura foi ao cinema."),
+              ],
             }),
           ],
         },
         {
           src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-buying-two-tickets.avif",
-          alt: "Laura two buying tickets",
+          alt: "Laura buying two tickets",
           content: [
             ...content({
-              parts: [audio("She bought two tickets."), "She bought two tickets."],
+              parts: [
+                audio("She bought two tickets."),
+                "She ",
+                mark("bought"),
+                " two tickets. ",
+                portuguese("Ela comprou dois ingressos."),
+              ],
             }),
           ],
         },
         {
           src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-buying-popcorn-soda.avif",
-          alt: "Laura buying soda and popocorn",
+          alt: "Laura buying soda and popcorn",
           content: [
             ...content({
-              parts: [audio("She also bought popcorn and soda"), "She also bought popcorn and soda."],
+              parts: [
+                audio("She also bought popcorn and soda."),
+                "She also ",
+                mark("bought"),
+                " popcorn and soda. ",
+                portuguese("Ela tambem comprou pipoca e refrigerante."),
+              ],
             }),
           ],
         },
@@ -88,53 +108,105 @@ export const lesson = {
             ...content({
               parts: [
                 audio("She met her friend Liz."),
-                "She met her friend Liz.",
+                "She ",
+                mark("met"),
+                " her friend Liz. ",
+                portuguese("Ela encontrou a amiga dela, Liz."),
               ],
             }),
           ],
         },
         {
           src: "/assets/img/cefr/a2/unit-1-last-weekend/they-watching-movie.avif",
-          alt: "They watched the movie.",
+          alt: "Laura and Liz watching the movie",
           content: [
             ...content({
-              parts: [audio("They watched the movie."), "They watched the movie."],
+              parts: [
+                audio("They watched the movie."),
+                "They ",
+                mark("watched"),
+                " the movie. ",
+                portuguese("Elas assistiram ao filme."),
+              ],
+            }),
+          ],
+        },
+        {
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-liz-eating.avif",
+          alt: "Laura and Liz eating popcorn and drinking soda",
+          content: [
+            ...content({
+              parts: [
+                audio("They had popcorn and soda."),
+                "They ",
+                mark("had"),
+                " popcorn and soda. ",
+                portuguese("Elas comeram pipoca e tomaram refrigerante."),
+              ],
+            }),
+          ],
+        },
+        {
+          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-looking-at-watch.avif",
+          alt: "Laura looking at her watch",
+          content: [
+            ...content({
+              parts: [
+                audio("The movie finished at 8:20 p.m."),
+                "The movie ",
+                mark("finished"),
+                " at 8:20 p.m. ",
+                portuguese("O filme terminou as 20h20."),
+              ],
             }),
           ],
         },
         {
           src: "/",
-          alt: "They had popcorn and soda.",
+          alt: "Laura and Liz spending some time together",
           content: [
             ...content({
-              parts: [audio("They watched the movie."), "They watched the movie."],
+              parts: [
+                audio("After the movie, they spent some time together."),
+                "After the movie, they ",
+                mark("spent"),
+                " some time together. ",
+                portuguese("Depois do filme, elas passaram um tempo juntas."),
+              ],
             }),
           ],
         },
         {
           src: "/",
-          alt: "The movie finished at 8:30pm.",
+          alt: "Laura taking a taxi home",
           content: [
             ...content({
-              parts: [audio("The movie finished at 8:30pm."), "The movie finished at 8:30pm."],
+              parts: [
+                audio("After they talked for a while, Laura took a taxi home."),
+                "After they ",
+                mark("talked"),
+                " for a while, Laura ",
+                mark("took"),
+                " a taxi home. ",
+                portuguese(
+                  "Depois que elas conversaram por um tempo, Laura pegou um taxi para casa.",
+                ),
+              ],
             }),
           ],
         },
         {
           src: "/",
-          alt: "Laura and Liz enjoying sometime together",
+          alt: "Liz driving home",
           content: [
             ...content({
-              parts: [audio("After the movie, they enjoyed sometime together."), "After the movie, they enjoyed sometime together."],
-            }),
-          ],
-        },
-        {
-          src: "/",
-          alt: "After the movie they went home.",
-          content: [
-            ...content({
-              parts: [audio("After the movie they went home."), "The movie finished at 8:30pm."],
+              parts: [
+                audio("And Liz drove home."),
+                "And Liz ",
+                mark("drove"),
+                " home. ",
+                portuguese("E Liz dirigiu para casa."),
+              ],
             }),
           ],
         },

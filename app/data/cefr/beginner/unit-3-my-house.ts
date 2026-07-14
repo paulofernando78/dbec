@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/beginner-lessons-card-data";
+import { lessons } from "@/data/cefr/beginner/beginner-lessons-card-data";
 
 export const lesson = {
   whiteboard: {
@@ -345,7 +345,9 @@ export const lesson = {
         },
 
         {
-          content: text(["Describe your favorite room and the furniture in it."]),
+          content: text([
+            "Describe your favorite room and the furniture in it.",
+          ]),
         },
       ],
     } satisfies ListProps,

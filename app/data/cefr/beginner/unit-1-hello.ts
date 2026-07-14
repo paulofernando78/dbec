@@ -17,9 +17,9 @@ import {
   spacer,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/beginner-lessons-card-data";
+import { lessons } from "@/data/cefr/beginner/beginner-lessons-card-data";
 
-export const lesson = {
+export const beginnerUnitOneHello = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "Unit 1 • Hi, my name’s Laura.",
@@ -786,3 +786,5 @@ export const lesson = {
     } satisfies ListProps,
   },
 };
+
+export const lesson = beginnerUnitOneHello;

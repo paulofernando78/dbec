@@ -28,7 +28,7 @@ export const Checkbox = ({ checked, onCheckedChange, className }: CheckboxProps)
           justify-center
           rounded
           border
-          border-slate-400
+          border-slate-300
           bg-white
           peer-checked:bg-green-500
           [&_svg]:opacity-0

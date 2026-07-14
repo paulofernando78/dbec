@@ -3,7 +3,7 @@ export const links = [
     links: [
       {
         href: "/dashboard",
-        label: "Profile",
+        label: "Dashboard",
       },
       {
         href: "/cefr",
@@ -17,7 +17,6 @@ export const links = [
     links: [
       // A1 Beginner
       {
-        href: "/cefr/beginner",
         label: "A1 Beginner",
         links: [
           {
@@ -64,12 +63,34 @@ export const links = [
       },
       // A2 Elementary
       {
-        href: "/cefr/elementary",
         label: "A2 Elementary",
         links: [
+          // Past
           {
-            href: "/cefr/elementary/unit-1-last-weekend",
-            label: "Unit 1 • Last Weekend",
+            href: "/cefr/elementary/past",
+            label: "Unit 1 • Past",
+            links: [
+              // Beach
+              {
+                href: "/cefr/elementary/past/unit-1-1-beach",
+                label: "Unit 1.1 • Beach",
+              },
+              // Movies
+              {
+                href: "/cefr/elementary/past/unit-1-2-movies",
+                label: "Unit 1.2 • Movies",
+              },
+              // Movies
+              {
+                href: "/cefr/elementary/past/unit-1-3-family",
+                label: "Unit 1.3 • Family",
+              },
+              // Movies
+              {
+                href: "/cefr/elementary/past/unit-1-4-home",
+                label: "Unit 1.4 • Home",
+              },
+            ],
           },
           {
             href: "/cefr/elementary/unit-2-travel-plans",
@@ -111,7 +132,6 @@ export const links = [
       },
       // B1 Intermediate
       {
-        href: "/cefr/intermediate",
         label: "B1 Intermediate",
         links: [
           {
@@ -158,7 +178,6 @@ export const links = [
       },
       // B2 Upper-Intermediate
       {
-        href: "/cefr/upper-intermediate",
         label: "B2 Upper-Intermediate",
         links: [
           {
@@ -205,7 +224,6 @@ export const links = [
       },
       // C1 Advanced
       {
-        href: "/cefr/advanced",
         label: "C1 Advanced",
         links: [
           {
@@ -235,7 +253,7 @@ export const links = [
             href: "/cefr/advanced/ted-ed",
             label: "Ted-ED",
             links: [
-              // What Causes Constipation - May 7, 2018 
+              // What Causes Constipation - May 7, 2018
               {
                 href: "/cefr/advanced/ted-ed/how-food-moves-through-your-body",
                 label: "How Food Moves Through Your Body",
