@@ -161,8 +161,29 @@ export const LessonDateCard = () => {
   };
 
   return (
-    <div className="mb-4 overflow-x-auto border border-gray-300 rounded-lg">
-      <div className="grid min-w-300 grid-cols-7">
+    <div
+      className="
+      mb-4
+      overflow-x-auto
+      border-2
+    border-gray-400
+      rounded-lg"
+    >
+      <h2
+        className="
+        text-lg
+        px-2
+        py-1
+        bg-gray-300"
+      >
+        Calendar
+      </h2>
+      <div
+        className="
+        grid
+        min-w-300
+        grid-cols-7"
+      >
         {calendarMonths.map(({ month, dates }) => {
           const totalClasses = dates.filter(({ day }) => {
             const storageKey = getStorageKey(month, day);
@@ -174,9 +195,20 @@ export const LessonDateCard = () => {
           return (
             <section
               key={month}
-              className="border-r border-gray-300 last:border-r-0"
+              className="
+                border-r
+                border-gray-300
+                last:border-r-0"
             >
-              <h3 className="bg-black px-2 py-2 text-center font-bold text-white">
+              <h3
+                className="
+                bg-black
+                px-2
+                py-2
+                text-center
+                font-bold
+                text-white"
+              >
                 {month}
               </h3>
 
@@ -193,7 +225,11 @@ export const LessonDateCard = () => {
                     return (
                       <li
                         key={`${month}-${day}`}
-                        className="grid grid-cols-[1.25rem_3.5rem_1fr] items-center gap-1"
+                        className="
+                          grid
+                          grid-cols-[1.25rem_3.5rem_1fr]
+                          items-center
+                          gap-1"
                       >
                         <span>{index + 1}.</span>
                         <StatusSelect
