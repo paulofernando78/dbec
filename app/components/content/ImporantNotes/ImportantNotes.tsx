@@ -5,9 +5,10 @@ export const ImportantNotes = () => {
     <>
       <h2
         className="
-        text-lg
         px-2
         py-1
+        text-lg
+        font-bold
         bg-gray-300
         border-t
         border-r

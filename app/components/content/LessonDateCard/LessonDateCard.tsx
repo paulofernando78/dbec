@@ -177,6 +177,7 @@ export const LessonDateCard = () => {
       <h2
         className="
         text-lg
+        font-bold
         px-2
         py-1
         bg-gray-300"
