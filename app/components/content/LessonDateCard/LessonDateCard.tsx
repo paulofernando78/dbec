@@ -96,13 +96,22 @@ const calendarMonths = months.map((month, index) => ({
   dates: getWeekdaysInMonth(2026, index + 5),
 }));
 
-const StatusSelect = ({ defaultStatus }: { defaultStatus: string }) => {
-  const [status, setStatus] = useState(defaultStatus);
+type CalendarStatusMap = Record<string, string>;
 
+const getStorageKey = (month: string, day: number) =>
+  `calendar-2026-${month}-${day}`;
+
+const StatusSelect = ({
+  status,
+  onStatusChange,
+}: {
+  status: string;
+  onStatusChange: (nextStatus: string) => void;
+}) => {
   return (
     <select
       value={status}
-      onChange={(event) => setStatus(event.target.value)}
+      onChange={(event) => onStatusChange(event.target.value)}
       className={`w-full h-6 rounded-lg p-[.1rem] text-sm ${getStatusColor(
         status,
       )}`}
@@ -117,40 +126,88 @@ const StatusSelect = ({ defaultStatus }: { defaultStatus: string }) => {
 };
 
 export const LessonDateCard = () => {
+  const [calendarStatus, setCalendarStatus] = useState<CalendarStatusMap>(
+    () => {
+      if (typeof window === "undefined") {
+        return {};
+      }
+
+      const initialStatus: CalendarStatusMap = {};
+
+      calendarMonths.forEach(({ month, dates }) => {
+        dates.forEach(({ day, status }) => {
+          const storageKey = getStorageKey(month, day);
+          initialStatus[storageKey] =
+            localStorage.getItem(storageKey) ?? status;
+        });
+      });
+
+      return initialStatus;
+    },
+  );
+
+  const handleStatusChange = (storageKey: string, nextStatus: string) => {
+    setCalendarStatus((currentStatus) => ({
+      ...currentStatus,
+      [storageKey]: nextStatus,
+    }));
+
+    localStorage.setItem(storageKey, nextStatus);
+  };
+
   return (
     <div className="mb-4 overflow-x-auto border border-gray-300 rounded-lg">
       <div className="grid min-w-300 grid-cols-7">
-        {calendarMonths.map(({ month, dates }) => (
-          <section
-            key={month}
-            className="border-r border-gray-300 last:border-r-0"
-          >
-            <h3 className="bg-black px-2 py-2 text-center font-bold text-white">
-              {month}
-            </h3>
+        {calendarMonths.map(({ month, dates }) => {
+          const totalClasses = dates.filter(({ day }) => {
+            const storageKey = getStorageKey(month, day);
+            const currentStatus = calendarStatus[storageKey];
 
-            <div className="px-2 py-2">
-              <p className="mb-2 font-bold">
-                Total: <span className="font-normal">{dates.length}</span>
-              </p>
+            return currentStatus === "OK" || currentStatus === "ROK";
+          }).length;
 
-              <ol className="space-y-1">
-                {dates.map(({ day, weekday, status }, index) => (
-                  <li
-                    key={`${month}-${day}`}
-                    className="grid grid-cols-[1.25rem_3.5rem_1fr] items-center gap-1"
-                  >
-                    <span>{index + 1}.</span>
-                     <StatusSelect defaultStatus={status} />
-                    <span>
-                      &bull; {weekday} {day}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </section>
-        ))}
+          return (
+            <section
+              key={month}
+              className="border-r border-gray-300 last:border-r-0"
+            >
+              <h3 className="bg-black px-2 py-2 text-center font-bold text-white">
+                {month}
+              </h3>
+
+              <div className="px-2 py-2">
+                <p className="mb-2 font-bold">
+                  Total: <span className="font-normal">{totalClasses}</span>
+                </p>
+
+                <ol className="space-y-1">
+                  {dates.map(({ day, weekday, status }, index) => {
+                    const storageKey = getStorageKey(month, day);
+                    const currentStatus = calendarStatus[storageKey] ?? status;
+
+                    return (
+                      <li
+                        key={`${month}-${day}`}
+                        className="grid grid-cols-[1.25rem_3.5rem_1fr] items-center gap-1"
+                      >
+                        <span>{index + 1}.</span>
+                        <StatusSelect
+                          status={currentStatus}
+                          onStatusChange={(nextStatus) =>
+                            handleStatusChange(storageKey, nextStatus)
+                          }
+                        />
+                        <span>
+                          &bull; {weekday} {day}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   );
