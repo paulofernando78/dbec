@@ -56,32 +56,75 @@ export const LessonCard = ({
             </Link>
           </div>
         )}
-        <p className="flex items-start gap-2 translate-x-[-0.1rem]">
-          <Goal size={23} className="text-gray-400 shrink-0" />
+        <p className="
+          flex
+          items-start
+          gap-2
+          translate-x-[-0.1rem]"
+        >
+          <Goal size={23} className="
+            text-gray-400
+            shrink-0"
+          />
           <span>{lessonObjective}</span>
         </p>
         <div className="italic mb-[.1rem]">
           {grammar && (
-            <div className="flex items-start gap-2 mt-2 translate-x-[-0.1rem]">
-              <FileText size={23} className="text-gray-400 shrink-0" />
+            <div className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <FileText size={23} className="
+                text-gray-400
+                shrink-0"
+              />
               <span className="block">Grammar: {grammar}</span>
             </div>
           )}
           {vocabulary && (
-            <div className="flex items-start gap-2 mt-2 translate-x-[-0.1rem]">
-              <FileText size={23} className="text-gray-400 shrink-0" />
+            <div className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <FileText size={23} className="
+                text-gray-400
+                shrink-0"
+              />
               <span>Vocabulary: {vocabulary}</span>
             </div>
           )}
           {date && (
-            <div className="flex items-start gap-2 mt-2 translate-x-[-0.1rem]">
-              <CalendarDays size={23} className="text-gray-400 shrink-0" />
+            <div className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <CalendarDays size={23} className="
+                text-gray-400
+                shrink-0" />
               <span>{date}</span>
             </div>
           )}
           {duration && (
-            <div className="flex items-start gap-1 mt-2 translate-x-[-0.1rem]">
-              <Clock2 size={23} className="text-gray-400 shrink-0" />
+            <div className="
+              flex
+              items-start
+              gap-1
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <Clock2 size={23} className="
+                text-gray-400
+                shrink-0"
+              />
               <span>{duration}</span>
             </div>
           )}

@@ -9,21 +9,20 @@ export const ImportantNotes = () => {
         px-2
         py-1
         bg-gray-300
-        border-t-2
-        border-r-2
-        border-b
-        border-l-2
-        border-gray-400
+        border-t
+        border-r
+        border-l
+        border-gray-300
         rounded-t-lg
         "
       >
         Important Notes
       </h2>
       <TextArea storageKey="dashboard-important-notes" className="
-        border-r-2
-        border-b-2
-        border-l-2
-      border-gray-400
+        border-r
+        border-b
+        border-l
+      border-gray-300
         rounded-t-none
       " />
     </>

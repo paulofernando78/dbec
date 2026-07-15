@@ -117,9 +117,14 @@ const StatusSelect = ({
     <select
       value={status}
       onChange={(event) => onStatusChange(event.target.value)}
-      className={`w-full h-6 rounded-lg p-[.1rem] text-sm ${getStatusColor(
-        status,
-      )}`}
+      className={`
+        w-full
+        h-6
+        rounded-lg
+        p-[.1rem]
+        text-sm
+        ${getStatusColor(status)}
+      `}
     >
       {statusOptions.map((option) => (
         <option key={option.value} value={option.value}>
@@ -165,8 +170,8 @@ export const LessonDateCard = () => {
       className="
       mb-4
       overflow-x-auto
-      border-2
-    border-gray-400
+      border
+    border-gray-300
       rounded-lg"
     >
       <h2
@@ -212,8 +217,14 @@ export const LessonDateCard = () => {
                 {month}
               </h3>
 
-              <div className="px-2 py-2">
-                <p className="mb-2 font-bold">
+              <div className="
+                px-2
+                py-2"
+              >
+                <p className="
+                  mb-2
+                  font-bold"
+                >
                   Total: <span className="font-normal">{totalClasses}</span>
                 </p>
 
