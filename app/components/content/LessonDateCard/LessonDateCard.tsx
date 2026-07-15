@@ -4,7 +4,12 @@ const statusOptions = [
   {
     value: "...",
     label: "...",
-    color: "bg-gray-200 border border-gray-300 text-white",
+    color: "bg-gray-300 border border-gray-400 text-white",
+  },
+  {
+    value: "P",
+    label: "P",
+    color: "bg-gray-400 border border-gray-500 text-white",
   },
   {
     value: "OK",
