@@ -36,7 +36,8 @@ export const TextArea = ({
         w-full
         min-h-20
         mb-2
-        p-2
+        px-2
+        py-1
         bg-white
         border
         border-gray-300
