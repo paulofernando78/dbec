@@ -1,7 +1,7 @@
 export const lessons = {
   unitOne: {
-    href: "/cefr/elementary/unit-1-last-weekend",
-    link: "Unit 1 • Last Weekend",
+    href: "/cefr/elementary/past/unit-1-2-movies",
+    link: "Unit 1 • Past: Went to the Movies",
     lessonObjective:
       "By the end of this class, students will be able to talk about past events, describe what they did last weekend, ask questions about past activities, and use the Past Simple correctly.",
     grammar: "Past Simple",

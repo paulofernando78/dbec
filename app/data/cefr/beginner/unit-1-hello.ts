@@ -19,7 +19,7 @@ import {
 
 import { lessons } from "@/data/cefr/beginner/beginner-lessons-card-data";
 
-export const beginnerUnitOneHello = {
+export const beginnerUnit1Hello = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "Unit 1 • Hi, my name’s Laura.",
@@ -786,5 +786,3 @@ export const beginnerUnitOneHello = {
     } satisfies ListProps,
   },
 };
-
-export const lesson = beginnerUnitOneHello;

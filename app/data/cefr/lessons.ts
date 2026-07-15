@@ -1,5 +1,5 @@
 // Beginner
-import { beginnerUnitOneHello } from "@/data/cefr/beginner/unit-1-hello";
+import { beginnerUnit1Hello } from "@/data/cefr/beginner/unit-1-hello";
 import { lesson as beginnerUnit2MyFamily } from "@/data/cefr/beginner/unit-2-my-family";
 import { lesson as beginnerUnit3MyHouse } from "@/data/cefr/beginner/unit-3-my-house";
 import { lesson as beginnerUnit4DailyRoutine } from "@/data/cefr/beginner/unit-4-daily-routine";
@@ -11,15 +11,29 @@ import { lesson as beginnerUnit9WhatAreYouDoing } from "@/data/cefr/beginner/uni
 import { lesson as beginnerUnit10Abilities } from "@/data/cefr/beginner/unit-10-abilities";
 
 // Elementary
-import { lesson as elementaryUnit1LastWeekend } from "@/data/cefr/elementary/unit-1-last-weekend";
+// Unit 1 Past
+import { elementaryUnit11Beach } from "@/data/cefr/elementary/unit-1/unit-1-1-beach";
+import { elementaryUnit12Movies } from "@/data/cefr/elementary/unit-1/unit-1-2-movies";
+import { elementaryUnit13Family } from "@/data/cefr/elementary/unit-1/unit-1-3-family";
+import { elementaryUnit14Home } from "@/data/cefr/elementary/unit-1/unit-1-4-home";
+
+// Unit 2 
 import { lesson as elementaryUnit2TravelPlans } from "@/data/cefr/elementary/unit-2-travel-plans";
+// Unit 3
 import { lesson as elementaryUnit3FuturePredictions } from "@/data/cefr/elementary/unit-3-future-predictions";
+// Unit 4
 import { lesson as elementaryUnit4CityLife } from "@/data/cefr/elementary/unit-4-city-life";
+// Unit 5
 import { lesson as elementaryUnit5TheBestPlace } from "@/data/cefr/elementary/unit-5-the-best-place";
+// Unit 6
 import { lesson as elementaryUnit6HealthyLiving } from "@/data/cefr/elementary/unit-6-healthy-living";
+// Unit 7
 import { lesson as elementaryUnit7Rules } from "@/data/cefr/elementary/unit-7-rules";
+// Unit 8
 import { lesson as elementaryUnit8ShoppingSmart } from "@/data/cefr/elementary/unit-8-shopping-smart";
+// Unit 9
 import { lesson as elementaryUnit9Experiences } from "@/data/cefr/elementary/unit-9-experiences";
+// Unit 10
 import { lesson as elementaryUnit10Hobbies } from "@/data/cefr/elementary/unit-10-hobbies";
 
 // Intermediate
@@ -58,7 +72,7 @@ export type CefrLessonLevel = {
 export const cefrLessons: Record<string, CefrLessonLevel> = {
   beginner: {
     lessons: {
-      "unit-1-hello": beginnerUnitOneHello,
+      "unit-1-hello": beginnerUnit1Hello,
       "unit-2-my-family": beginnerUnit2MyFamily,
       "unit-3-my-house": beginnerUnit3MyHouse,
       "unit-4-daily-routine": beginnerUnit4DailyRoutine,
@@ -72,7 +86,6 @@ export const cefrLessons: Record<string, CefrLessonLevel> = {
   },
   elementary: {
     lessons: {
-      "unit-1-last-weekend": elementaryUnit1LastWeekend,
       "unit-2-travel-plans": elementaryUnit2TravelPlans,
       "unit-3-future-predictions": elementaryUnit3FuturePredictions,
       "unit-4-city-life": elementaryUnit4CityLife,
@@ -85,11 +98,10 @@ export const cefrLessons: Record<string, CefrLessonLevel> = {
     },
     categories: {
       past: {
-        "unit-1-last-weekend": elementaryUnit1LastWeekend,
-        "unit-1-1-movies": elementaryUnit1LastWeekend,
-        "unit-1-2-movies": elementaryUnit1LastWeekend,
-        "unit-1-3-movies": elementaryUnit1LastWeekend,
-        "unit-1-4-home": elementaryUnit1LastWeekend,
+        "unit-1-1-beach": elementaryUnit11Beach,
+        "unit-1-2-movies": elementaryUnit12Movies,
+        "unit-1-3-family": elementaryUnit13Family,
+        "unit-1-4-home": elementaryUnit14Home,
       },
     },
   },

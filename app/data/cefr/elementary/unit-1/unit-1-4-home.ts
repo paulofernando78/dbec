@@ -16,11 +16,11 @@ import {
 
 import { lessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
 
-export const lesson = {
+export const elementaryUnit14Home = {
   whiteboard: {
     title: "A2 Elementary",
-    subtitle: "Unit 1 • Last Weekend",
-    descriptions: ["I watched a movie last Saturday."],
+    subtitle: "Unit 4 • Home",
+    descriptions: ["I stayed at home."],
   },
 
   lessonCard: {

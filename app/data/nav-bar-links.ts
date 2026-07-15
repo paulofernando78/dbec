@@ -67,7 +67,6 @@ export const links = [
         links: [
           // Past
           {
-            href: "/cefr/elementary/past",
             label: "Unit 1 • Past",
             links: [
               // Beach

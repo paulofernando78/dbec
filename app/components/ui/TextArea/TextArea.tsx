@@ -9,7 +9,7 @@ export const TextArea = ({ className = "", ...props }: TextareaProps) => {
         block
         w-full
         min-h-20
-        mb-4
+        mb-2
         p-2
         bg-white
         border
