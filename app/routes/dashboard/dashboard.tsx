@@ -2,6 +2,8 @@ import { Whiteboard } from "@/components/content/Whiteboard";
 import { ImportantNotes } from "@/components/content/ImporantNotes";
 import { LessonDateCard } from "../../components/content/LessonDateCard/LessonDateCard";
 import { Ribbon } from "@/components/ui/Ribbon";
+import { PageSections } from "@/components/content/PageSections";
+import { Section } from "@/components/ui/Section";
 import { LessonCard } from "@/components/content/LessonCard";
 
 import { lessons as beginnerLessons } from "@/data/cefr/beginner/beginner-lessons-card-data";
@@ -57,12 +59,19 @@ export default function Dashboard() {
         <ImportantNotes />
         <LessonDateCard />
         {lessonSections.map((section) => (
-          <section key={section.label}>
-            <Ribbon label={section.label} />
-            {Object.values(section.lessons).map((lesson) => (
-              <LessonCard key={lesson.href ?? lesson.link} {...lesson} />
+          <PageSections>
+            {lessonSections.map((section) => (
+              <Section
+                key={section.label}
+                id={section.label.toLowerCase().replaceAll(" ", "-")}
+                label={section.label}
+              >
+                {Object.values(section.lessons).map((lesson) => (
+                  <LessonCard key={lesson.href ?? lesson.link} {...lesson} />
+                ))}
+              </Section>
             ))}
-          </section>
+          </PageSections>
         ))}
       </div>
     </>
