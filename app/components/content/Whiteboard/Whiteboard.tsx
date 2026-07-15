@@ -1,3 +1,5 @@
+import { CalendarDays, Clock } from "lucide-react";
+
 import styles from "./Whiteboard.module.css";
 
 type WhiteboardProps = {
@@ -8,6 +10,7 @@ type WhiteboardProps = {
   descriptions?: string[];
   description?: string;
   date?: string;
+  time?: string;
 };
 
 export const Whiteboard = ({
@@ -15,6 +18,7 @@ export const Whiteboard = ({
   subtitle,
   descriptions = [],
   date,
+  time,
 }: WhiteboardProps) => {
   return (
     <div className={styles.whiteboard}>
@@ -42,9 +46,16 @@ export const Whiteboard = ({
           </p>
         ))}
       {date && (
-        <span className="text-sm">
-          <em>Date: {date}</em>
-        </span>
+        <div className="flex gap-2 mb-1">
+          <CalendarDays size={19} className="text-gray-500" />
+          <span className="text-sm relative top-px"><em>{date}</em></span>
+        </div>
+      )}
+      {time && (
+        <div className="flex items-center gap-2">
+          <Clock size={19} className="text-gray-500" />
+          <span className="text-sm relative top-px"><em>{time}</em></span>
+        </div>
       )}
     </div>
   );

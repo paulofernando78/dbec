@@ -49,10 +49,13 @@ export default function Dashboard() {
       <Whiteboard
         title="Dashboard"
         subtitle="Student's Name"
+        description=""
+        date="Mon / Wed"
+        time="10-11"
       />
       <div>
         <h2 className="text-lg">Important Notes</h2>
-        <TextArea />
+        <TextArea storageKey="dashboard-important-notes" />
 
         <h2 className="text-lg">Calendar</h2>
         <LessonDateCard />
