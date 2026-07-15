@@ -1,8 +1,14 @@
 import { TextArea } from "@/components/ui/TextArea";
 
-export const ImportantNotes = () => {
+type ImportantNotesProps = {
+  storageKey?: string;
+};
+
+export const ImportantNotes = ({
+  storageKey = "dashboard-important-notes",
+}: ImportantNotesProps) => {
   return (
-    <>
+    <div className="mb-4">
       <h2
         className="
         px-2
@@ -19,13 +25,16 @@ export const ImportantNotes = () => {
       >
         Important Notes
       </h2>
-      <TextArea storageKey="dashboard-important-notes" className="
+      <TextArea
+        storageKey={storageKey}
+        className="
         border-r
         border-b
         border-l
       border-gray-300
         rounded-t-none
-      " />
-    </>
+      "
+      />
+    </div>
   );
 };

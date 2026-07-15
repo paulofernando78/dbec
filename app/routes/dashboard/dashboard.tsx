@@ -1,7 +1,6 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { ImportantNotes } from "@/components/content/ImporantNotes";
-import { LessonDateCard } from "../../components/content/LessonDateCard/LessonDateCard";
-import { Ribbon } from "@/components/ui/Ribbon";
+import { Calendar } from "@/components/content/Calendar";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { LessonCard } from "@/components/content/LessonCard";
@@ -13,6 +12,9 @@ import { lessons as upperIntermediateLessons } from "@/data/cefr/upper-intermedi
 import { lessons as advancedLessons } from "@/data/cefr/advanced/advanced-lessons-car-data";
 import { lessons as advancedNewsLessons } from "@/data/cefr/advanced/news/news-lessons-card-data";
 import { lessons as advancedTedEdLessons } from "@/data/cefr/advanced/ted-ed/ted-ed-lessons-card-data";
+
+import { useParams } from "react-router";
+import { students, type StudentId } from "@/data/students";
 
 const lessonSections = [
   {
@@ -46,18 +48,30 @@ const lessonSections = [
 ];
 
 export default function Dashboard() {
+  const { studentId } = useParams();
+
+  const student =
+    studentId && studentId in students
+      ? students[studentId as StudentId]
+      : {
+          name: "Student’s Name",
+          schedule: "...",
+          time: "...",
+        };
+
+  const storagePrefix = studentId ? `dashboard:${studentId}` : "dashbaord";
+
   return (
     <>
       <Whiteboard
         title="Dashboard"
-        subtitle="Student's Name"
-        description=""
-        date="Mon / Wed"
-        time="10-11"
+        subtitle={student.name}
+        date={student.schedule}
+        time={student.time}
       />
       <div>
-        <ImportantNotes />
-        <LessonDateCard />
+        <ImportantNotes storageKey={`${storagePrefix}:important-notes`}/>
+        <Calendar />
         {lessonSections.map((section) => (
           <PageSections>
             {lessonSections.map((section) => (

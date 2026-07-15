@@ -13,7 +13,7 @@ export default [
   layout("routes/dashboard/dashboard-layout.tsx", [
     route("/lab", "routes/dashboard/lab.tsx"),
 
-    route("dashboard", "routes/dashboard/dashboard.tsx"),
+    route("dashboard/:studentId", "routes/dashboard/dashboard.tsx"),
 
     route("cefr", "routes/whats-cefr.tsx"),
 

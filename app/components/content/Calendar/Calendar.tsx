@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDraggableScroll } from "@/utils/useDraggableScroll";
 
 const statusOptions = [
   {
@@ -48,6 +49,11 @@ const getStatusColor = (status: string) =>
   "bg-gray-100 text-gray-700";
 
 const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
   "June",
   "July",
   "August",
@@ -135,7 +141,7 @@ const StatusSelect = ({
   );
 };
 
-export const LessonDateCard = () => {
+export const Calendar = () => {
   const [calendarStatus, setCalendarStatus] = useState<CalendarStatusMap>(
     () => {
       if (typeof window === "undefined") {
@@ -156,6 +162,8 @@ export const LessonDateCard = () => {
     },
   );
 
+  const { ref: scrollRef, isDragging, events } = useDraggableScroll();
+
   const handleStatusChange = (storageKey: string, nextStatus: string) => {
     setCalendarStatus((currentStatus) => ({
       ...currentStatus,
@@ -167,15 +175,24 @@ export const LessonDateCard = () => {
 
   return (
     <div
-      className="
-      mb-4
-      overflow-x-auto
-      border
-    border-gray-300
-      rounded-lg"
+      ref={scrollRef}
+      {...events} // Isso injeta automaticamente o onMouseDown, onMouseUp, etc.
+      className={`
+        mb-4
+        overflow-x-auto
+        border
+        border-gray-300
+        rounded-lg
+        ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}
+      `}
     >
       <h2
         className="
+         sticky
+        left-0
+        z-10
+        inline-block
+        min-w-full
         text-lg
         font-bold
         px-2
@@ -187,8 +204,8 @@ export const LessonDateCard = () => {
       <div
         className="
         grid
-        min-w-300
-        grid-cols-7"
+        min-w-540
+        grid-cols-12"
       >
         {calendarMonths.map(({ month, dates }) => {
           const totalClasses = dates.filter(({ day }) => {
@@ -218,11 +235,13 @@ export const LessonDateCard = () => {
                 {month}
               </h3>
 
-              <div className="
+              <div
+                className="
                 px-2
                 py-2"
               >
-                <p className="
+                <p
+                  className="
                   mb-2
                   font-bold"
                 >
@@ -239,7 +258,7 @@ export const LessonDateCard = () => {
                         key={`${month}-${day}`}
                         className="
                           grid
-                          grid-cols-[1.25rem_3.5rem_1fr]
+                          grid-cols-[1.35rem_3.5rem_1fr]
                           items-center
                           gap-1"
                       >
