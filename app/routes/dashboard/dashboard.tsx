@@ -1,7 +1,7 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { Ribbon } from "@/components/ui/Ribbon";
 import { LessonCard } from "@/components/content/LessonCard";
-import { LessonDateCard } from "./LessonDateCard/LessonDateCard";
+import { LessonDateCard } from "../../components/content/LessonDateCard/LessonDateCard";
 import { TextArea } from "@/components/ui/TextArea";
 
 import { lessons as beginnerLessons } from "@/data/cefr/beginner/beginner-lessons-card-data";
@@ -49,13 +49,12 @@ export default function Dashboard() {
       <Whiteboard
         title="Dashboard"
         subtitle="Student's Name"
-        descriptions={["..."]}
       />
       <div>
-        <Ribbon label="Important Notes" />
+        <h2 className="text-lg">Important Notes</h2>
         <TextArea />
 
-        <Ribbon label="Dates" />
+        <h2 className="text-lg">Calendar</h2>
         <LessonDateCard />
 
         {lessonSections.map((section) => (
