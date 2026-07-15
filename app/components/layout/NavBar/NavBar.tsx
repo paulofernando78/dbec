@@ -7,13 +7,15 @@ import { CircleChevronRight } from "lucide-react";
 type NavItem = {
   label: string;
   href?: string;
-  // trackProgress?: boolean;
   links?: NavItem[];
 };
 
 type NavBarProps = {
   closeNavBar: () => void;
 };
+
+const getNavItemKey = (item: NavItem) =>
+  "href" in item && item.href ? item.href : item.label;
 
 function RenderNavItem({
   item,
@@ -25,8 +27,19 @@ function RenderNavItem({
   if (item.links?.length) {
     return (
       <details className="open:[&>summary_.chevron]:rotate-90">
-        <summary className="list-none flex items-center gap-4 cursor-pointer">
-          <span className="chevron transition-transform relative top-px">
+        <summary className="
+          list-none
+          flex
+          items-center
+          gap-4
+          cursor-pointer
+        ">
+          <span className="
+            chevron
+            transition-transform
+            relative
+            top-px
+          ">
             <CircleChevronRight />
           </span>
 
@@ -34,19 +47,19 @@ function RenderNavItem({
             <NavLink
               to={item.href}
               onClick={(e) => e.stopPropagation()}
-              className="translate-x-[-0.4rem]"
+              className="translate-x-[-0.5rem]"
             >
               <span>{item.label}</span>
             </NavLink>
           ) : (
-            <span className="translate-x-[-0.4rem]">{item.label}</span>
+            <span className="translate-x-[-0.5rem]">{item.label}</span>
           )}
         </summary>
 
         <div className="ml-[2.1rem]">
           {item.links.map((child) => (
             <RenderNavItem
-              key={child.href}
+              key={getNavItemKey(child)}
               item={child}
               closeNavBar={closeNavBar}
             />
@@ -58,22 +71,38 @@ function RenderNavItem({
 
   if (!item.href) {
     return (
-      <div className="flex gap-3">
-        <span className="block text-[1.06rem]">{item.label}</span>
+      <div className="
+        flex
+        gap-3"
+      >
+        <span className="border">{item.label}</span>
       </div>
     );
   }
 
   return (
-    <div className="flex gap-3">
-      {/* {item.trackProgress !== false && <Checkbox className="mt-[.2rem]" />} */}
-
+    <div className="
+      flex
+      gap-3"
+    >
       <NavLink
         to={item.href}
         end
         onClick={closeNavBar}
-        className={({ isActive }) =>
-          `mb-2 px-2 block text-[1.06rem] ${isActive ? "text-blue-400" : ""} border-l-3`
+        className={({ isActive }) => `
+          block
+          mb-1
+          px-2
+          text-[1.06rem]
+          relative
+          before:absolute
+          before:left-0
+          before:top-1
+          before:bottom-1
+          before:w-0.75
+          before:bg-current
+          ${isActive ? "text-blue-400" : ""}
+          `
         }
       >
         {item.label}
@@ -107,7 +136,12 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         <div key={group.title ?? `group-${index}`}>
           {group.title && (
             <>
-              <span className="block font-bold mt-4 uppercase">
+              <span className="
+                block
+                font-bold
+                mt-4
+                uppercase"
+              >
                 {group.title}
               </span>
             </>
@@ -116,7 +150,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
           <div>
             {group.links.map((item) => (
               <RenderNavItem
-                key={item.href}
+                key={getNavItemKey(item)}
                 item={item}
                 closeNavBar={closeNavBar}
               />
