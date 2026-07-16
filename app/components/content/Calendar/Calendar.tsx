@@ -66,11 +66,27 @@ const months = [
 const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const holidayDates = new Set([
-  "2026-06-04",
-  "2026-09-07",
-  "2026-10-12",
-  "2026-10-15",
-  "2026-12-25",
+  "2026-01-01", // Janeiro: Confraternização Universal
+  "2026-02-16", // Fevereiro: Carnaval (Segunda)
+  "2026-02-17", // Fevereiro: Carnaval (Terça)
+  "2026-04-03", // Abril: Paixão de Cristo (Sexta-feira Santa)
+  "2026-04-21", // Abril: Tiradentes
+  "2026-05-01", // Maio: Dia do Trabalhador
+  "2026-06-04", // Junho: Corpus Christi
+  "2026-09-07", // Setembro: Independência do Brasil
+  "2026-10-12", // Outubro: Nossa Senhora Aparecida / Dia das Crianças
+  "2026-10-15", // Outubro: Dia do Professor (Feriado Escolar)
+  "2026-11-02", // Novembro: Finados
+  "2026-11-15", // Novembro: Proclamação da República
+  "2026-11-20", // Novembro: Dia da Consciência Negra
+  "2026-12-24", // Dezembro: Pre-Natal
+  "2026-12-25", // Dezembro: Natal
+  "2026-12-26", // Dezembro: ...
+  "2026-12-27", // Dezembro: ...
+  "2026-12-28", // Dezembro: ...
+  "2026-12-29", // Dezembro: ...
+  "2026-12-30", // Dezembro: ...
+  "2026-12-31", // Dezembro: ...
 ]);
 
 const getDateKey = (year: number, monthIndex: number, day: number) =>
@@ -104,7 +120,7 @@ const getWeekdaysInMonth = (year: number, monthIndex: number) => {
 
 const calendarMonths = months.map((month, index) => ({
   month,
-  dates: getWeekdaysInMonth(2026, index + 5),
+  dates: getWeekdaysInMonth(2026, index),
 }));
 
 type CalendarStatusMap = Record<string, string>;
