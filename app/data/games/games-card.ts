@@ -1,6 +1,6 @@
 export const lucasArtsGames = {
   monkeyIsland: {
-    href: "#/games/lucas-arts/monkey-island",
+    href: "#",
     link: "The Secret of Monkey Island",
     lessonObjective: "In The Secret of Monkey Island, an earnest young man named Guybrush Threepwood arrives at Mêlée Island with dreams of becoming a pirate. He must complete three perilous trials to prove himself, but his quest is complicated when the ghostly pirate LeChuck kidnaps the beautiful Governor Elaine Marley. Guybrush assembles a crew and sets sail to rescue her.",
   },
