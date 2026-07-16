@@ -223,6 +223,7 @@ export const Calendar = () => {
         border
         border-gray-300
         rounded-t-none
+        rounded-b
         "
       >
         {statusOptions
