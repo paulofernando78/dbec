@@ -5,7 +5,7 @@ const statusOptions = [
   {
     value: "...",
     label: "...",
-    color: "bg-gray-300 border border-gray-400 text-white",
+    color: "bg-gray-300 border border-gray-400 text-gray-500",
   },
   {
     value: "P",
@@ -17,6 +17,12 @@ const statusOptions = [
     value: "OK",
     label: "OK",
     description: "Okay",
+    color: "bg-green-400 border border-green-600 text-white",
+  },
+  {
+    value: "ROK",
+    label: "ROK",
+    description: "Replacement OK",
     color: "bg-green-400 border border-green-600 text-white",
   },
   {
@@ -36,12 +42,6 @@ const statusOptions = [
     label: "R",
     description: "Replacement",
     color: "bg-yellow-400 border border-yellow-600 text-white",
-  },
-  {
-    value: "ROK",
-    label: "ROK",
-    description: "Replacement OK",
-    color: "bg-green-400 border border-green-600 text-white",
   },
   {
     value: "H",
@@ -135,6 +135,7 @@ type CalendarStatusMap = Record<string, string>;
 const getStorageKey = (month: string, day: number) =>
   `calendar-2026-${month}-${day}`;
 
+//! SELECT
 const StatusSelect = ({
   status,
   onStatusChange,

@@ -72,7 +72,6 @@ export default function Dashboard() {
       <div>
         <ImportantNotes storageKey={`${storagePrefix}:important-notes`} />
         <Calendar />
-
         <PageSections>
           {lessonSections.map((section, sectionIndex) => {
             const previousLessonCount = lessonSections
