@@ -44,7 +44,7 @@ export const PageSections = ({ children }: PageSectionsProps) => {
   return (
     <>
       {/* Build the TableOfContents menu automatically from the Section components */}
-      <TableOfContents items={items} />
+      <TableOfContents items={items}/>
 
       {/* Render the original sections below the TableOfContents */}
       {children}

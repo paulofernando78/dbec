@@ -18,6 +18,8 @@ import { lessons as advancedTedEdLessons } from "@/data/cefr/advanced/ted-ed/ted
 import { useParams } from "react-router";
 import { students, type StudentId } from "@/data/students";
 
+import { SquareCheckBig } from "lucide-react";
+
 const lessonSections = [
   {
     label: "A1 Beginner",
@@ -101,9 +103,10 @@ export default function Dashboard() {
       <div>
         <ImportantNotes storageKey={`${storagePrefix}:important-notes`} />
         <Calendar />
-        <span className="block mt-5 mb-3">
-          A1-C1 Progress: {completedLessons}/{totalLessons}
-        </span>
+        <div className="flex items-center gap-2 w-max mt-5 mb-4 px-2 pt-[.4rem] pb-[.3rem] border border-gray-300 rounded-lg">
+          <SquareCheckBig size={20} className="text-gray-400" />
+          <span><b>A1-C1 Progress:</b> {completedLessons} / {totalLessons}</span>
+        </div>
         <PageSections>
           {lessonSections.map((section, sectionIndex) => {
             const previousLessonCount = lessonSections

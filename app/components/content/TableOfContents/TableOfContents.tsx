@@ -25,8 +25,12 @@ export const TableOfContents = ({
     Array.isArray(value) ? value : [value];
 
   return (
-    <div className="mb-4">
-      <div className="flex gap-2 mb-2">
+    <div className="mb-4 p-2 border border-gray-300 rounded-lg">
+      <div className="
+        flex
+        gap-2
+        mb-2"
+      >
         <Notebook color="var(--icon-color)"/>
         <span>
           <b>Table of Contents</b>

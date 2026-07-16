@@ -57,7 +57,7 @@ export const LessonCard = ({
             <Link to={href}>
               <>
                 <b>
-                  Day {index + 1} • {link}
+                  Lesson {index + 1} • {link}
                 </b>
               </>
             </Link>
