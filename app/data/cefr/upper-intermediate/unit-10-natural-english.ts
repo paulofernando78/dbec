@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/intermediate/intermediate-lessons-card-data";
+import { upperIntermediateLessons } from "@/data/cefr/upper-intermediate/upperIntermedate-lessons-car-data";
 
 export const lesson = {
   whiteboard: {
@@ -15,9 +15,9 @@ export const lesson = {
   },
 
   lessonCard: {
-    lessonObjective: lessons.unitTen.lessonObjective,
-    grammar: lessons.unitTen.grammar,
-    vocabulary: lessons.unitTen.vocabulary,
+    lessonObjective: upperIntermediateLessons.unitTen.lessonObjective,
+    grammar: upperIntermediateLessons.unitTen.grammar,
+    vocabulary: upperIntermediateLessons.unitTen.vocabulary,
   },
 
   introduction: {

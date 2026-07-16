@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
+import { elementaryLessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
 
 export const lesson = {
   whiteboard: {
@@ -16,9 +16,9 @@ export const lesson = {
   },
 
   lessonCard: {
-    lessonObjective: lessons.unitEight.lessonObjective,
-    grammar: lessons.unitEight.grammar,
-    vocabulary: lessons.unitEight.vocabulary,
+    lessonObjective: elementaryLessons.unitEight.lessonObjective,
+    grammar: elementaryLessons.unitEight.grammar,
+    vocabulary: elementaryLessons.unitEight.vocabulary,
   },
 
   introduction: {

@@ -14,7 +14,7 @@ import {
   spacer,
 } from "@/helpers/content";
 
-import { lessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
+import { elementaryLessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
 
 export const elementaryUnit12Movies = {
   whiteboard: {
@@ -24,9 +24,9 @@ export const elementaryUnit12Movies = {
   },
 
   lessonCard: {
-    lessonObjective: lessons.unitOne.lessonObjective,
-    grammar: lessons.unitOne.grammar,
-    vocabulary: lessons.unitOne.vocabulary,
+    lessonObjective: elementaryLessons.unitOne.lessonObjective,
+    grammar: elementaryLessons.unitOne.grammar,
+    vocabulary: elementaryLessons.unitOne.vocabulary,
   },
 
   introduction: {
