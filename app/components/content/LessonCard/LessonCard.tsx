@@ -16,6 +16,7 @@ type LessonCardProps = {
   vocabulary?: string;
   date?: string;
   duration?: string;
+  updateProgress?: () => void;
 };
 
 export const LessonCard = ({
@@ -27,6 +28,7 @@ export const LessonCard = ({
   vocabulary,
   date,
   duration,
+  updateProgress,
 }: LessonCardProps) => {
   const storageKey = href ? `lesson-completed:${href}` : undefined;
 
@@ -43,6 +45,7 @@ export const LessonCard = ({
     if (!storageKey) return;
 
     localStorage.setItem(storageKey, JSON.stringify(checked));
+    updateProgress?.();
   }, [storageKey, checked]);
 
   return (
@@ -53,18 +56,23 @@ export const LessonCard = ({
             <Checkbox checked={checked} onCheckedChange={setChecked} />
             <Link to={href}>
               <>
-                <b>Day {index + 1} • {link}</b>
+                <b>
+                  Day {index + 1} • {link}
+                </b>
               </>
             </Link>
           </div>
         )}
-        <p className="
+        <p
+          className="
           flex
           items-start
           gap-2
           translate-x-[-0.1rem]"
         >
-          <Goal size={23} className="
+          <Goal
+            size={23}
+            className="
             text-gray-400
             shrink-0"
           />
@@ -72,14 +80,17 @@ export const LessonCard = ({
         </p>
         <div className="italic mb-[.1rem]">
           {grammar && (
-            <div className="
+            <div
+              className="
               flex
               items-start
               gap-2
               mt-2
               translate-x-[-0.1rem]"
             >
-              <FileText size={23} className="
+              <FileText
+                size={23}
+                className="
                 text-gray-400
                 shrink-0"
               />
@@ -87,14 +98,17 @@ export const LessonCard = ({
             </div>
           )}
           {vocabulary && (
-            <div className="
+            <div
+              className="
               flex
               items-start
               gap-2
               mt-2
               translate-x-[-0.1rem]"
             >
-              <FileText size={23} className="
+              <FileText
+                size={23}
+                className="
                 text-gray-400
                 shrink-0"
               />
@@ -102,28 +116,35 @@ export const LessonCard = ({
             </div>
           )}
           {date && (
-            <div className="
+            <div
+              className="
               flex
               items-start
               gap-2
               mt-2
               translate-x-[-0.1rem]"
             >
-              <CalendarDays size={23} className="
+              <CalendarDays
+                size={23}
+                className="
                 text-gray-400
-                shrink-0" />
+                shrink-0"
+              />
               <span>{date}</span>
             </div>
           )}
           {duration && (
-            <div className="
+            <div
+              className="
               flex
               items-start
               gap-1
               mt-2
               translate-x-[-0.1rem]"
             >
-              <Clock2 size={23} className="
+              <Clock2
+                size={23}
+                className="
                 text-gray-400
                 shrink-0"
               />

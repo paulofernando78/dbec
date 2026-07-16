@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { ImportantNotes } from "@/components/content/ImporantNotes";
 import { Calendar } from "@/components/content/Calendar";
@@ -61,6 +63,33 @@ export default function Dashboard() {
 
   const storagePrefix = studentId ? `dashboard:${studentId}` : "dashbaord";
 
+  const [completedLessons, setCompletedLessons] = useState(0);
+
+  const updateProgress = () => {
+    const total = Object.keys(localStorage).filter(
+      (key) =>
+        key.startsWith("lesson-completed:") &&
+        localStorage.getItem(key) === "true",
+    ).length;
+
+    setCompletedLessons(total);
+  };
+
+  const totalLessons = lessonSections
+    .slice(
+      0,
+      lessonSections.findIndex((section) => section.label === "C1 Advanced") +
+        1,
+    )
+    .reduce(
+      (total, section) => total + Object.values(section.lessons).length,
+      0,
+    );
+
+  useEffect(() => {
+    updateProgress();
+  }, []);
+
   return (
     <>
       <Whiteboard
@@ -72,6 +101,9 @@ export default function Dashboard() {
       <div>
         <ImportantNotes storageKey={`${storagePrefix}:important-notes`} />
         <Calendar />
+        <span className="block mt-5 mb-3">
+          A1-C1 Progress: {completedLessons}/{totalLessons}
+        </span>
         <PageSections>
           {lessonSections.map((section, sectionIndex) => {
             const previousLessonCount = lessonSections
@@ -93,6 +125,7 @@ export default function Dashboard() {
                     key={lesson.href ?? lesson.link}
                     index={previousLessonCount + lessonIndex}
                     {...lesson}
+                    updateProgress={updateProgress}
                   />
                 ))}
               </Section>

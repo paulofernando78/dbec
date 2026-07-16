@@ -201,7 +201,7 @@ export const Calendar = () => {
     <>
       <span className="
         block
-        px-1 py-[.1rem]
+        px-[.3rem] py-[.2rem]
         font-bold
         text-sm
         border-t
