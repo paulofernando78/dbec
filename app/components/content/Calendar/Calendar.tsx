@@ -10,36 +10,43 @@ const statusOptions = [
   {
     value: "P",
     label: "P",
+    description: "Pending",
     color: "bg-gray-400 border border-gray-500 text-white",
   },
   {
     value: "OK",
     label: "OK",
+    description: "Okay",
     color: "bg-green-400 border border-green-600 text-white",
   },
   {
     value: "SC",
     label: "SC",
+    description: "Student canceled",
     color: "bg-red-400 border border-red-600 text-white",
   },
   {
     value: "TC",
     label: "TC",
+    description: "Teacher canceled",
     color: "bg-red-400 border border-red-600 text-white",
   },
   {
     value: "R",
     label: "R",
+    description: "Replacement",
     color: "bg-yellow-400 border border-yellow-600 text-white",
   },
   {
     value: "ROK",
     label: "ROK",
+    description: "Replacement OK",
     color: "bg-green-400 border border-green-600 text-white",
   },
   {
     value: "H",
     label: "H",
+    description: "Holiday",
     color: "bg-purple-400 border border-purple-600 text-white",
   },
 ];
@@ -81,12 +88,12 @@ const holidayDates = new Set([
   "2026-11-20", // Novembro: Dia da Consciência Negra
   "2026-12-24", // Dezembro: Pre-Natal
   "2026-12-25", // Dezembro: Natal
-  "2026-12-26", // Dezembro: ...
-  "2026-12-27", // Dezembro: ...
-  "2026-12-28", // Dezembro: ...
-  "2026-12-29", // Dezembro: ...
-  "2026-12-30", // Dezembro: ...
-  "2026-12-31", // Dezembro: ...
+  "2026-12-26", // Dezembro: Férias
+  "2026-12-27", // Dezembro: Férias
+  "2026-12-28", // Dezembro: Férias
+  "2026-12-29", // Dezembro: Férias
+  "2026-12-30", // Dezembro: Férias
+  "2026-12-31", // Dezembro: Férias
 ]);
 
 const getDateKey = (year: number, monthIndex: number, day: number) =>
@@ -190,113 +197,174 @@ export const Calendar = () => {
   };
 
   return (
-    <div
-      ref={scrollRef}
-      {...events} // Isso injeta automaticamente o onMouseDown, onMouseUp, etc.
-      className={`
+    <>
+      <span className="
+        block
+        px-1 py-[.1rem]
+        font-bold
+        text-sm
+        border-t
+        border-r
+        border-l 
+        border-gray-300
+        bg-gray-300
+        rounded-t
+        rounded-b-none
+        "
+      >
+        Legend
+      </span>
+      <ul className="
         mb-4
-        overflow-x-auto
+        p-2
+        grid
+        grid-cols-3
+        gap-2
         border
         border-gray-300
-        rounded-lg
-        ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}
-      `}
-    >
-      <h2
-        className="
-         sticky
-        left-0
-        z-10
-        inline-block
-        min-w-full
-        text-lg
-        font-bold
-        px-2
-        py-1
-        bg-gray-300"
+        rounded-t-none
+        "
       >
-        Calendar
-      </h2>
-      <div
-        className="
-        grid
-        min-w-540
-        grid-cols-12"
-      >
-        {calendarMonths.map(({ month, dates }) => {
-          const totalClasses = dates.filter(({ day }) => {
-            const storageKey = getStorageKey(month, day);
-            const currentStatus = calendarStatus[storageKey];
-
-            return currentStatus === "OK" || currentStatus === "ROK";
-          }).length;
-
-          return (
-            <section
-              key={month}
-              className="
-                border-r
-                border-gray-300
-                last:border-r-0"
-            >
-              <h3
+        {statusOptions
+          .filter((options) => options.value !== "...")
+          .map((option) => (
+            <>
+              <li
+                key={option.value}
                 className="
-                bg-black
-                px-2
-                py-2
-                text-center
-                font-bold
-                text-white"
+              flex
+              items-center
+              gap-2
+              text-[.7rem]
+              "
               >
-                {month}
-              </h3>
-
-              <div
-                className="
-                px-2
-                py-2"
-              >
-                <p
-                  className="
-                  mb-2
-                  font-bold"
+                <span
+                  className={`
+                inline-flex
+                items-center
+                justify-center
+                w-9
+                h-6
+                rounded-lg
+                ${option.color}
+            `}
                 >
-                  Total: <span className="font-normal">{totalClasses}</span>
-                </p>
+                  {option.label}
+                </span>
+                <span>{option.description}</span>
+              </li>
+            </>
+          ))}
+      </ul>
+      <div
+        ref={scrollRef}
+        {...events} // Isso injeta automaticamente o onMouseDown, onMouseUp, etc.
+        className={`
+          mb-4
+          overflow-x-auto
+          border
+          border-gray-300
+          rounded-lg
+          ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}
+        `}
+      >
+        <h2
+          className="
+           sticky
+          left-0
+          z-10
+          inline-block
+          min-w-full
+          text-lg
+          font-bold
+          px-2
+          py-1
+          bg-gray-300"
+        >
+          Calendar
+        </h2>
+        <div
+          className="
+          grid
+          min-w-540
+          grid-cols-12"
+        >
+          {calendarMonths.map(({ month, dates }) => {
+            const totalClasses = dates.filter(({ day }) => {
+              const storageKey = getStorageKey(month, day);
+              const currentStatus = calendarStatus[storageKey];
 
-                <ol className="space-y-1">
-                  {dates.map(({ day, weekday, status }, index) => {
-                    const storageKey = getStorageKey(month, day);
-                    const currentStatus = calendarStatus[storageKey] ?? status;
+              return currentStatus === "OK" || currentStatus === "ROK";
+            }).length;
 
-                    return (
-                      <li
-                        key={`${month}-${day}`}
-                        className="
-                          grid
-                          grid-cols-[1.35rem_3.5rem_1fr]
-                          items-center
-                          gap-1"
-                      >
-                        <span>{index + 1}.</span>
-                        <StatusSelect
-                          status={currentStatus}
-                          onStatusChange={(nextStatus) =>
-                            handleStatusChange(storageKey, nextStatus)
-                          }
-                        />
-                        <span>
-                          &bull; {weekday} {day}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            </section>
-          );
-        })}
+            return (
+              <section
+                key={month}
+                className="
+                  border-r
+                  border-gray-300
+                  last:border-r-0"
+              >
+                <h3
+                  className="
+                  bg-black
+                  px-2
+                  py-2
+                  text-center
+                  font-bold
+                  text-white"
+                >
+                  {month}
+                </h3>
+
+                <div
+                  className="
+                  px-2
+                  py-2"
+                >
+                  <p
+                    className="
+                    mb-2
+                    font-bold"
+                  >
+                    Total: <span className="font-normal">{totalClasses}</span>
+                  </p>
+
+                  <ol className="space-y-1">
+                    {dates.map(({ day, weekday, status }, index) => {
+                      const storageKey = getStorageKey(month, day);
+                      const currentStatus =
+                        calendarStatus[storageKey] ?? status;
+
+                      return (
+                        <li
+                          key={`${month}-${day}`}
+                          className="
+                            grid
+                            grid-cols-[1.35rem_3.5rem_1fr]
+                            items-center
+                            gap-1"
+                        >
+                          <span>{index + 1}.</span>
+                          <StatusSelect
+                            status={currentStatus}
+                            onStatusChange={(nextStatus) =>
+                              handleStatusChange(storageKey, nextStatus)
+                            }
+                          />
+                          <span>
+                            &bull; {weekday} {day}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
+              </section>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

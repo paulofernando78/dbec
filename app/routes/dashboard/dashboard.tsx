@@ -70,23 +70,36 @@ export default function Dashboard() {
         time={student.time}
       />
       <div>
-        <ImportantNotes storageKey={`${storagePrefix}:important-notes`}/>
+        <ImportantNotes storageKey={`${storagePrefix}:important-notes`} />
         <Calendar />
-        {lessonSections.map((section) => (
-          <PageSections>
-            {lessonSections.map((section) => (
+
+        <PageSections>
+          {lessonSections.map((section, sectionIndex) => {
+            const previousLessonCount = lessonSections
+              .slice(0, sectionIndex)
+              .reduce(
+                (total, previousSection) =>
+                  total + Object.values(previousSection.lessons).length,
+                0,
+              );
+
+            return (
               <Section
                 key={section.label}
                 id={section.label.toLowerCase().replaceAll(" ", "-")}
                 label={section.label}
               >
-                {Object.values(section.lessons).map((lesson) => (
-                  <LessonCard key={lesson.href ?? lesson.link} {...lesson} />
+                {Object.values(section.lessons).map((lesson, lessonIndex) => (
+                  <LessonCard
+                    key={lesson.href ?? lesson.link}
+                    index={previousLessonCount + lessonIndex}
+                    {...lesson}
+                  />
                 ))}
               </Section>
-            ))}
-          </PageSections>
-        ))}
+            );
+          })}
+        </PageSections>
       </div>
     </>
   );

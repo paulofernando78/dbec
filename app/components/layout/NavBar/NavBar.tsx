@@ -97,7 +97,7 @@ function RenderNavItem({
           relative
           before:absolute
           before:left-0
-          before:top-1
+          before:top-[.35rem]
           before:bottom-1
           before:w-0.75
           before:bg-current
@@ -105,7 +105,7 @@ function RenderNavItem({
           `
         }
       >
-        {item.label}
+        <span className="ml-1">{item.label}</span>
       </NavLink>
     </div>
   );

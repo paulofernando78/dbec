@@ -9,6 +9,7 @@ import { Goal, FileText, CalendarDays, Clock2 } from "lucide-react";
 
 type LessonCardProps = {
   href?: string;
+  index?: number;
   link?: string;
   lessonObjective: string;
   grammar?: string;
@@ -19,6 +20,7 @@ type LessonCardProps = {
 
 export const LessonCard = ({
   href,
+  index = 0,
   link,
   lessonObjective,
   grammar,
@@ -51,7 +53,7 @@ export const LessonCard = ({
             <Checkbox checked={checked} onCheckedChange={setChecked} />
             <Link to={href}>
               <>
-                <b>{link}</b>
+                <b>Day {index + 1} • {link}</b>
               </>
             </Link>
           </div>
