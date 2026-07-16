@@ -1,4 +1,4 @@
-export const lessons = {
+export const upperIntermediateLessons = {
   unitOne: {
     href: "/cefr/upper-intermediate/unit-1-dream-scenarios",
     link: "Unit 1 • Dream Scenarios",

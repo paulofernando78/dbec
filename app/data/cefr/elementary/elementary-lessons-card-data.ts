@@ -1,4 +1,4 @@
-export const lessons = {
+export const elementaryLessons = {
   unitOne: {
     href: "/cefr/elementary/past/unit-1-2-movies",
     link: "Unit 1 • Past: Went to the Movies",

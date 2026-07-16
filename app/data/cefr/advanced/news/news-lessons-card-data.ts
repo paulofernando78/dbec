@@ -1,4 +1,4 @@
-export const lessons = {
+export const advancedNewsLessons = {
   ismalKoneBreaksLeg: {
     href: "/cefr/advanced/news/a-soccer-match-dramatic-moment",
     link: "A Soccer Match's Dramatic Moment",

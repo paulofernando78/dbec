@@ -1,4 +1,4 @@
-export const lessons = {
+export const advancedTedEdLessons = {
   whatCausesConstipation: {
     href: "/cefr/advanced/ted-ed/how-food-moves-through-your-body",
     link: "How Food Moves Through Your Body",

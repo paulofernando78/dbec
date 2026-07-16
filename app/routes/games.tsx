@@ -2,7 +2,7 @@ import { Whiteboard } from "@/components/content/Whiteboard";
 import { Subsection } from "@/components/ui/Subsection";
 import { LessonCard } from "@/components/content/LessonCard/LessonCard";
 
-import { lessons } from "@/data/games/games";
+import { lessons } from "@/data/games/games-card";
 
 export default function Dashboard() {
   return (

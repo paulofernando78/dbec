@@ -293,7 +293,6 @@ export const links = [
       //   ],
       // },
       {
-        href: "/",
         label: "Lucas Arts",
         links: [
           {

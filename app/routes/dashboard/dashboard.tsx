@@ -7,13 +7,14 @@ import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { LessonCard } from "@/components/content/LessonCard";
 
-import { lessons as beginnerLessons } from "@/data/cefr/beginner/beginner-lessons-card-data";
-import { lessons as elementaryLessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
-import { lessons as intermediateLessons } from "@/data/cefr/intermediate/intermediate-lessons-card-data";
-import { lessons as upperIntermediateLessons } from "@/data/cefr/upper-intermediate/upperIntermedate-lessons-car-data";
-import { lessons as advancedLessons } from "@/data/cefr/advanced/advanced-lessons-car-data";
-import { lessons as advancedNewsLessons } from "@/data/cefr/advanced/news/news-lessons-card-data";
-import { lessons as advancedTedEdLessons } from "@/data/cefr/advanced/ted-ed/ted-ed-lessons-card-data";
+import { beginnerLessons } from "@/data/cefr/beginner/beginner-lessons-card-data";
+import { elementaryLessons } from "@/data/cefr/elementary/elementary-lessons-card-data";
+import { intermediateLessons } from "@/data/cefr/intermediate/intermediate-lessons-card-data";
+import { upperIntermediateLessons } from "@/data/cefr/upper-intermediate/upperIntermedate-lessons-car-data";
+import { advancedLessons } from "@/data/cefr/advanced/advanced-lessons-card-data";
+import { advancedNewsLessons } from "@/data/cefr/advanced/news/news-lessons-card-data";
+import { advancedTedEdLessons } from "@/data/cefr/advanced/ted-ed/ted-ed-lessons-card-data";
+import { lucasArtsGames } from "@/data/games/games-card";
 
 import { useParams } from "react-router";
 import { students, type StudentId } from "@/data/students";
@@ -48,6 +49,10 @@ const lessonSections = [
   {
     label: "C1-C2 Ted-ED",
     lessons: advancedTedEdLessons,
+  },
+  {
+    label: "Lucas Arts Games",
+    lessons: lucasArtsGames,
   },
 ];
 
@@ -105,7 +110,9 @@ export default function Dashboard() {
         <Calendar />
         <div className="flex items-center gap-2 w-max mt-5 mb-4 px-2 pt-[.4rem] pb-[.3rem] border border-gray-300 rounded-lg">
           <SquareCheckBig size={20} className="text-gray-400" />
-          <span><b>A1-C1 Progress:</b> {completedLessons} / {totalLessons}</span>
+          <span>
+            <b>A1-C1 Progress:</b> {completedLessons} / {totalLessons}
+          </span>
         </div>
         <PageSections>
           {lessonSections.map((section, sectionIndex) => {
