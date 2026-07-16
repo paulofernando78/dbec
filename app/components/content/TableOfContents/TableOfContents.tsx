@@ -1,4 +1,3 @@
-
 import { Fragment } from "react";
 import {
   InlineRichContent,
@@ -18,20 +17,19 @@ type TableOfContentsProps = {
   items?: TableOfContentsItem[];
 };
 
-export const TableOfContents = ({
-  items = [],
-}: TableOfContentsProps) => {
+export const TableOfContents = ({ items = [] }: TableOfContentsProps) => {
   const toValue = (value: InlineRichContentValue[] | string) =>
     Array.isArray(value) ? value : [value];
 
   return (
     <div className="mb-4 px-2 pt-[.65rem] pb-[.5rem] border border-gray-300 rounded-lg">
-      <div className="
+      <div
+        className="
         flex
         gap-2
         mb-2"
       >
-        <Notebook size={22} color="var(--icon-color)"/>
+        <Notebook size={22} className="text-gray-400" />
         <span>
           <b>Table of Contents</b>
         </span>
@@ -51,7 +49,7 @@ export const TableOfContents = ({
 
                 {item.href && (
                   <li className="flex gap-2 ml-4 space-y-1">
-                    <NotebookText size={22} color="var(--icon-color)"/>
+                    <NotebookText size={22} className="text-gray-400" />
                     <a href={`#${item.href}`}>
                       {item.label && (
                         <InlineRichContent value={toValue(item.label)} />
