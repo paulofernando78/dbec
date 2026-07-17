@@ -10,10 +10,11 @@ export default [
 
   route("/about", "routes/about.tsx"),
 
-  layout("routes/dashboard/dashboard-layout.tsx", [
-    route("/lab", "routes/dashboard/lab.tsx"),
+  layout("routes/layout/layout.tsx", [
+    route("/lab", "routes/layout/lab.tsx"),
 
-    route("dashboard/:studentId", "routes/dashboard/dashboard.tsx"),
+    route("dashboard/:studentId?", "routes/template/dashboard.tsx"),
+    route("/welcome", "routes/welcome.tsx"),
 
     route("cefr", "routes/whats-cefr.tsx"),
 

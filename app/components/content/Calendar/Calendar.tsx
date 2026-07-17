@@ -199,7 +199,8 @@ export const Calendar = () => {
 
   return (
     <>
-      <span className="
+      <span
+        className="
         block
         px-[.3rem] py-[.2rem]
         font-bold
@@ -215,7 +216,8 @@ export const Calendar = () => {
       >
         Legend
       </span>
-      <ul className="
+      <ul
+        className="
         mb-4
         p-2
         grid
@@ -230,18 +232,17 @@ export const Calendar = () => {
         {statusOptions
           .filter((options) => options.value !== "...")
           .map((option) => (
-            <>
-              <li
-                key={option.value}
-                className="
+            <li
+              key={option.value}
+              className="
               flex
               items-center
               gap-2
               text-[.7rem]
               "
-              >
-                <span
-                  className={`
+            >
+              <span
+                className={`
                 inline-flex
                 items-center
                 justify-center
@@ -250,12 +251,11 @@ export const Calendar = () => {
                 rounded-lg
                 ${option.color}
             `}
-                >
-                  {option.label}
-                </span>
-                <span>{option.description}</span>
-              </li>
-            </>
+              >
+                {option.label}
+              </span>
+              <span>{option.description}</span>
+            </li>
           ))}
       </ul>
       <div

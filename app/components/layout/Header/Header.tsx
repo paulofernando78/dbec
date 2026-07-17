@@ -29,7 +29,7 @@ export const Header = ({ onClick }: HeadersProps) => {
   const handleLogin = () => {
     setIsLoggedIn((prev) => {
       const next = !prev;
-      navigate(next ? "/dashboard" : "/");
+      navigate(next ? "/welcome" : "/");
       return next;
     });
   };

@@ -1,16 +1,15 @@
+import { useEffect, useState } from "react";
+
 import { Card } from "@/components/ui/Card";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Link } from "react-router";
-import { TextArea } from "@/components/ui/TextArea";
-
-import { useEffect, useState } from "react";
 
 import { Goal, FileText, CalendarDays, Clock2 } from "lucide-react";
 
 type LessonCardProps = {
   href?: string;
   index?: number;
-  link?: string;
+  label?: string;
   lessonObjective: string;
   grammar?: string;
   vocabulary?: string;
@@ -22,7 +21,7 @@ type LessonCardProps = {
 export const LessonCard = ({
   href,
   index = 0,
-  link,
+  label,
   lessonObjective,
   grammar,
   vocabulary,
@@ -57,7 +56,7 @@ export const LessonCard = ({
             <Link to={href}>
               <>
                 <b>
-                  Lesson {index + 1} • {link}
+                  Lesson {index + 1} • {label}
                 </b>
               </>
             </Link>
