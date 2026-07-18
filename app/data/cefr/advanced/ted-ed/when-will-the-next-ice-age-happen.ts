@@ -658,7 +658,7 @@ export const whenWillTheNextIceAgeHappen = {
               answer: "Earth moves around the Sun.",
             },
             {
-              prompt: "scientists / study / ice cores / Ancient / climate / to",
+              prompt: "scientists / study / ice cores / ancient / climate / to / understand",
               answer:
                 "Scientists study ice cores to understand ancient climate.",
             },

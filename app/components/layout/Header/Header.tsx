@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
-import { useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
 
@@ -29,33 +28,52 @@ export const Header = ({ onClick }: HeadersProps) => {
   const handleLogin = () => {
     setIsLoggedIn((prev) => {
       const next = !prev;
+
       navigate(next ? "/welcome" : "/");
+
       return next;
     });
   };
 
   const location = useLocation();
-  const pathname = location.pathname;
-  const isPresentationPage = pathname === "/" || pathname === "/about";
+
+  const isPresentationPage =
+    location.pathname === "/" || location.pathname === "/about";
 
   return (
-    <div className={styles.header}>
+    <div className="w-full h-10 p-[5px] flex items-center justify-between mb-[5px]">
       {!isPresentationPage && (
         <Button
-        icon={<Menu />}
-        onClick={onClick}
-        className={styles.menuBtn} />
+          icon={<Menu />}
+          onClick={onClick}
+          className="
+            min-[700px]:translate-x-[-55px]
+            transition-all
+            duration-1000
+          "
+        />
       )}
 
       {isPresentationPage && (
-        <div className={styles.homeAbout}>
+        <div
+          className="
+            flex
+            items-center
+            gap-[10px]
+            font-[var(--font-oswald)]
+            text-[1.3rem]
+            font-bold
+          "
+        >
           <Link to="/">HOME</Link>
-          <span className={styles.divider}></span>
+
+          <span className="w-[3px] h-[22px] bg-[#1D283B]" />
+
           <Link to="/about">ABOUT</Link>
         </div>
       )}
 
-      <div className={styles.darkMode}>
+      <div className="flex gap-[7px]">
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}

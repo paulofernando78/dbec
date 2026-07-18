@@ -1,4 +1,4 @@
-import { blank } from "../blank";
+import { blank } from "../../blank";
 import { whatCausesConstipation } from "./what-causes-constipation";
 import { whenWillTheNextIceAgeHappen } from "./when-will-the-next-ice-age-happen";
 import { howToManageEmotions } from "./how-to-manage-emotions";
