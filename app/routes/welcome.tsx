@@ -353,21 +353,21 @@ const emojis = [
   },
 ];
 
-export const Welcome = () => {
+export default function Welcome() {
   return (
     <>
-      <div className="">
-        <h2 className="">Welcome</h2>
-        <h3 className="">How are you feeling today?</h3>
+      <div className="my-8 text-center">
+        <h2 className="mb-2 text-3xl font-bold">Welcome</h2>
+        <h3 className="text-2xl font-bold">How are you feeling today?</h3>
       </div>
-      <div className="">
+      <div className="grid grid-cols-[repeat(auto-fill,9rem)] gap-2 justify-center">
         {emojis.map((emoji, emojiIndex) => (
           <div key={emojiIndex}>
-            <div className="">
+            <div className="p-1 flex flex-col border border-gray-300 rounded-lg">
               <Image src={emoji.img} alt={emoji.alt} width={60} height={60} />
               {emoji.words &&
                 emoji.words.map((word, wordIndex) => (
-                  <div key={wordIndex} className="">
+                  <div key={wordIndex} className="flex items-center gap-2">
                     {word.audio && <Audio src={word.audio} />}
                     <span key={wordIndex} className="">
                       {word.word}
@@ -380,4 +380,4 @@ export const Welcome = () => {
       </div>
     </>
   );
-};
+}

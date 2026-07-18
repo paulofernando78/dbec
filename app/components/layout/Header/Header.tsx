@@ -26,13 +26,10 @@ export const Header = ({ onClick }: HeadersProps) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    setIsLoggedIn((prev) => {
-      const next = !prev;
+    const next = !isLoggedIn;
 
-      navigate(next ? "/welcome" : "/");
-
-      return next;
-    });
+    setIsLoggedIn(next);
+    navigate(next ? "/welcome" : "/");
   };
 
   const location = useLocation();
