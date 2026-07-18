@@ -57,7 +57,7 @@ export const elementaryPastMovies = {
       ],
       imgs: [
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-going-to-movies.avif",
+          src: "/assets/img/cefr/a2/past-movies/laura-going-to-movies.avif",
           alt: "Laura going to the movies",
           content: [
             ...content({
@@ -72,7 +72,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-buying-two-tickets.avif",
+          src: "/assets/img/cefr/a2/past-movies/laura-buying-two-tickets.avif",
           alt: "Laura buying two tickets",
           content: [
             ...content({
@@ -87,7 +87,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-buying-popcorn-soda.avif",
+          src: "/assets/img/cefr/a2/past-movies/laura-buying-popcorn-soda.avif",
           alt: "Laura buying soda and popcorn",
           content: [
             ...content({
@@ -102,7 +102,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-meeting-liz.avif",
+          src: "/assets/img/cefr/a2/past-movies/laura-meeting-liz.avif",
           alt: "Laura meeting her friend Liz",
           content: [
             ...content({
@@ -117,7 +117,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/they-watching-movie.avif",
+          src: "/assets/img/cefr/a2/past-movies/they-watching-movie.avif",
           alt: "Laura and Liz watching the movie",
           content: [
             ...content({
@@ -132,7 +132,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-liz-eating.avif",
+          src: "/assets/img/cefr/a2/past-movies/laura-liz-eating.avif",
           alt: "Laura and Liz eating popcorn and drinking soda",
           content: [
             ...content({
@@ -147,7 +147,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-looking-at-watch.avif",
+          src: "/assets/img/cefr/a2/past-movies/laura-looking-at-watch.avif",
           alt: "Laura looking at her watch",
           content: [
             ...content({
@@ -162,7 +162,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/cefr/a2/past-movies/laura-liz-leaving-movie-theater.avif",
           alt: "Laura and Liz leaving the movie theater",
           content: [
             ...content({
@@ -179,7 +179,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/cefr/a2/past-movies/laura-taking-taxi.avif",
           alt: "Laura taking a taxi",
           content: [
             ...content({
@@ -194,7 +194,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/cefr/a2/past-movies/liz-driving-home.avif",
           alt: "Liz driving home",
           content: [
             ...content({
