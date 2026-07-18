@@ -15,9 +15,9 @@ import {
 } from "@/helpers/content";
 
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/past-movies"
+const href = "/cefr/elementary/past-movies";
 const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
+  (lesson) => lesson.href === href,
 )!;
 
 export const elementaryPastMovies = {
@@ -53,10 +53,6 @@ export const elementaryPastMovies = {
         {
           as: "span",
           parts: [audio("soda"), "soda"],
-        },
-        {
-          as: "span",
-          parts: [audio("seat row"), "seat row"],
         },
       ],
       imgs: [
@@ -167,34 +163,32 @@ export const elementaryPastMovies = {
         },
         {
           src: "/",
-          alt: "Laura and Liz spending some time together",
+          alt: "Laura and Liz leaving the movie theater",
           content: [
             ...content({
               parts: [
-                audio("After the movie, they spent some time together."),
-                "After the movie, they ",
-                mark("spent"),
-                " some time together. ",
-                portuguese("Depois do filme, elas passaram um tempo juntas."),
+                audio("They left the movie."),
+                "They ",
+                mark("left"),
+                " the movie. ",
+                portuguese(
+                  "Elas sairam do cinema.",
+                ),
               ],
             }),
           ],
         },
         {
           src: "/",
-          alt: "Laura taking a taxi home",
+          alt: "Laura taking a taxi",
           content: [
             ...content({
               parts: [
-                audio("After they talked for a while, Laura took a taxi home."),
-                "After they ",
-                mark("talked"),
-                " for a while, Laura ",
+                audio("Laura took a taxi home."),
+                "Laura ",
                 mark("took"),
-                " a taxi home. ",
-                portuguese(
-                  "Depois que elas conversaram por um tempo, Laura pegou um taxi para casa.",
-                ),
+                " a taxi home.",
+                portuguese(""),
               ],
             }),
           ],
@@ -205,11 +199,11 @@ export const elementaryPastMovies = {
           content: [
             ...content({
               parts: [
-                audio("And Liz drove home."),
-                "And Liz ",
+                audio("Liz drove home, too."),
+                "Liz ",
                 mark("drove"),
-                " home. ",
-                portuguese("E Liz dirigiu para casa."),
+                " home, too.",
+                portuguese(""),
               ],
             }),
           ],

@@ -1,215 +1,101 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
-import { content, text, audio, bold } from "@/helpers/content";
-
-import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/hobbies"
-const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
-)!;
-
-export const elementaryHobbies = {
-  whiteboard: {
-    title: "A2 Elementary",
-    subtitle: "Hobbies",
-    descriptions: ["...", "..."],
-    date: "...",
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
-  },
-
-  introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...”"],
-            }),
-          ],
-        },
-      ],
+import { createElementaryLesson } from "./create-elementary-lesson";
+export const elementaryHobbies = createElementaryLesson({
+  href: "/cefr/elementary/hobbies",
+  subtitle: "Hobbies",
+  descriptions: ["I enjoy taking photos.", "I'd like to learn to paint."],
+  vocabulary: ["photography", "gardening", "painting", "board games"],
+  story: [
+    {
+      sentence: "Kai enjoys taking photos in the park.",
+      translation: "Kai gosta de tirar fotos no parque.",
+      alt: "A person taking photographs in a park",
     },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+    {
+      sentence: "He wants to learn to paint.",
+      translation: "Ele quer aprender a pintar.",
+      alt: "A beginner painting on a canvas",
     },
-  },
-
-  presentation: {
-    dialogue: {
-      prompt: "...",
-      audioSrc: "/",
-      lines: [
-        {
-          speaker: "...",
-          line: text(["..."]),
-        },
-      ],
+    {
+      sentence: "His friends like playing board games.",
+      translation: "Os amigos dele gostam de jogar jogos de tabuleiro.",
+      alt: "Friends playing a board game",
     },
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+  ],
+  dialogue: [
+    { speaker: "Kai", line: "What do you like doing in your free time?" },
+    { speaker: "Nora", line: "I love gardening and cooking." },
+    { speaker: "Kai", line: "Would you like to try a new hobby?" },
+    { speaker: "Nora", line: "Yes. I'd like to learn to play the guitar." },
+    { speaker: "Kai", line: "I want to learn to paint." },
+    { speaker: "Nora", line: "We could take an art class together." },
+  ],
+  comprehension: [
+    {
+      question: "What does Nora love doing?",
+      correct: "Gardening and cooking",
+      incorrect: "Running and swimming",
     },
-  },
-
-  languageFocus: {
-    meaning: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Meaning[],
-    column: {
-      width: 300,
-      cols: [
-        // Column 1
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 2
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 3
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-      ],
+    {
+      question: "What would Nora like to learn?",
+      correct: "To play the guitar",
+      incorrect: "To paint",
     },
-    notes: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Notes[],
-    ccq: [
-      {
-        as: "span",
-        parts: ["..."],
-      },
-      {
-        as: "span",
-        parts: ["..."],
-      },
-    ] satisfies CCQ[],
-  },
-
-  practice: {
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
-            ],
-          },
-        ],
-      },
+    {
+      question: "What class could they take?",
+      correct: "An art class",
+      incorrect: "A dance class",
     },
-
-    fillInTheBlanks: {
-      showWordBank: true,
-      instruction: "...",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
-            lineBreak: true,
-          },
-        ],
-      },
+  ],
+  meaning: [
+    " uses verb + -ing after enjoy, love, and like to describe activities.",
+    "Use to + base verb after want and would like to describe wishes and plans.",
+  ],
+  columns: [
+    {
+      title: "Verb + -ing",
+      examples: ["I enjoy reading.", "She loves dancing."],
     },
-
-    scramble: {
-      showWordBank: false,
-      instruction: "Unscramble the sentence.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "... / ...",
-            answer: "...",
-          },
-        ],
-      },
+    {
+      title: "Verb + to",
+      examples: ["I want to paint.", "We'd like to learn."],
     },
-  },
-
-  production: {
-    task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-      ],
-    } satisfies ListProps,
-  },
-};
+    {
+      title: "Questions",
+      examples: ["What do you enjoy doing?", "What would you like to try?"],
+    },
+  ],
+  note: "Say enjoy reading, but want to read. The pattern depends on the first verb.",
+  ccq: [
+    "After enjoy, do we use read or reading?",
+    "After want, do we use to + verb?",
+    "Is a hobby a free-time activity?",
+  ],
+  practice: [
+    {
+      question: "I enjoy _____ photos.",
+      correct: "taking",
+      incorrect: "to take",
+    },
+    {
+      question: "She wants _____ the guitar.",
+      correct: "to learn",
+      incorrect: "learning",
+    },
+  ],
+  blanks: [
+    { before: "They love ", blank: "playing", after: " board games." },
+    { before: "I'd like ", blank: "to try", after: " gardening." },
+  ],
+  scramble: [
+    { prompt: "enjoy / photos / taking / I", answer: "I enjoy taking photos." },
+    {
+      prompt: "learn / wants / paint / to / she / to",
+      answer: "She wants to learn to paint.",
+    },
+  ],
+  production: [
+    "Describe three hobbies you enjoy.",
+    "Write about two hobbies you would like to try.",
+    "Interview a classmate about their free-time activities.",
+  ],
+});

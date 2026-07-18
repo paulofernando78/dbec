@@ -357,8 +357,8 @@ export default function Welcome() {
   return (
     <>
       <div className="my-8 text-center">
-        <h2 className="mb-2 text-3xl font-bold">Welcome</h2>
-        <h3 className="text-2xl font-bold">How are you feeling today?</h3>
+        <h2 className="mb-6 text-3xl font-bold">Welcome</h2>
+        <h3 className="mb-4 text-2xl font-bold">How are you feeling today?</h3>
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,9rem)] gap-2 justify-center">
         {emojis.map((emoji, emojiIndex) => (

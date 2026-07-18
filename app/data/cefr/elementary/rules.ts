@@ -1,215 +1,105 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
-import { content, text, audio, bold } from "@/helpers/content";
-
-import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/rules"
-const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
-)!;
-
-export const elementaryRules = {
-  whiteboard: {
-    title: "A2 Elementary",
-    subtitle: "Rules",
-    descriptions: ["...", "..."],
-    date: "...",
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
-  },
-
-  introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...”"],
-            }),
-          ],
-        },
-      ],
+import { createElementaryLesson } from "./create-elementary-lesson";
+export const elementaryRules = createElementaryLesson({
+  href: "/cefr/elementary/rules",
+  subtitle: "Rules",
+  descriptions: ["You must wear a helmet.", "We have to arrive on time."],
+  vocabulary: ["helmet", "uniform", "permission", "prohibited"],
+  story: [
+    {
+      sentence: "Visitors must show identification.",
+      translation: "Visitantes devem mostrar identificação.",
+      alt: "A visitor showing identification",
     },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+    {
+      sentence: "Employees have to wear a uniform.",
+      translation: "Funcionários precisam usar uniforme.",
+      alt: "Employees wearing uniforms",
     },
-  },
-
-  presentation: {
-    dialogue: {
-      prompt: "...",
-      audioSrc: "/",
-      lines: [
-        {
-          speaker: "...",
-          line: text(["..."]),
-        },
-      ],
+    {
+      sentence: "You mustn't take photos here.",
+      translation: "Você não pode tirar fotos aqui.",
+      alt: "A no photography sign",
     },
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+  ],
+  dialogue: [
+    {
+      speaker: "Guide",
+      line: "Welcome to the science lab. There are some rules.",
     },
-  },
-
-  languageFocus: {
-    meaning: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Meaning[],
-    column: {
-      width: 300,
-      cols: [
-        // Column 1
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 2
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 3
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-      ],
+    { speaker: "Leo", line: "Do we have to wear safety glasses?" },
+    { speaker: "Guide", line: "Yes, you must wear them at all times." },
+    { speaker: "Leo", line: "Can we bring food inside?" },
+    { speaker: "Guide", line: "No. You mustn't eat or drink in the lab." },
+    { speaker: "Leo", line: "Do we have to turn off our phones?" },
+    { speaker: "Guide", line: "Yes, and you have to follow the instructor." },
+  ],
+  comprehension: [
+    {
+      question: "What must visitors wear?",
+      correct: "Safety glasses",
+      incorrect: "A hat",
     },
-    notes: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Notes[],
-    ccq: [
-      {
-        as: "span",
-        parts: ["..."],
-      },
-      {
-        as: "span",
-        parts: ["..."],
-      },
-    ] satisfies CCQ[],
-  },
-
-  practice: {
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
-            ],
-          },
-        ],
-      },
+    {
+      question: "Can visitors eat in the lab?",
+      correct: "No",
+      incorrect: "Yes",
     },
-
-    fillInTheBlanks: {
-      showWordBank: true,
-      instruction: "...",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
-            lineBreak: true,
-          },
-        ],
-      },
+    {
+      question: "Who must visitors follow?",
+      correct: "The instructor",
+      incorrect: "Another visitor",
     },
-
-    scramble: {
-      showWordBank: false,
-      instruction: "Unscramble the sentence.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "... / ...",
-            answer: "...",
-          },
-        ],
-      },
+  ],
+  meaning: [
+    " and have to express obligation.",
+    "Mustn't means something is prohibited; don't have to means it is not necessary.",
+  ],
+  columns: [
+    { title: "Must", examples: ["You must be careful.", "You must show ID."] },
+    {
+      title: "Have to",
+      examples: ["We have to leave now.", "She has to work."],
     },
-  },
-
-  production: {
-    task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-      ],
-    } satisfies ListProps,
-  },
-};
+    {
+      title: "Negative",
+      examples: ["You mustn't park here.", "You don't have to pay."],
+    },
+  ],
+  note: "Mustn't and don't have to are different: prohibited versus not necessary.",
+  ccq: [
+    "Is a rule optional?",
+    "Does mustn't mean prohibited?",
+    "Does don't have to mean you can choose?",
+  ],
+  practice: [
+    {
+      question: "You _____ use your phone during the test.",
+      correct: "mustn't",
+      incorrect: "don't have to",
+    },
+    {
+      question: "She _____ wear a uniform at work.",
+      correct: "has to",
+      incorrect: "have to",
+    },
+  ],
+  blanks: [
+    { before: "Visitors ", blank: "must", after: " show identification." },
+    { before: "We ", blank: "have to", after: " arrive on time." },
+  ],
+  scramble: [
+    {
+      prompt: "helmet / wear / must / a / you",
+      answer: "You must wear a helmet.",
+    },
+    {
+      prompt: "to / we / early / have / leave",
+      answer: "We have to leave early.",
+    },
+  ],
+  production: [
+    "Write five rules for a classroom or workplace.",
+    "Explain what visitors must and mustn't do.",
+    "Compare rules with a classmate.",
+  ],
+});

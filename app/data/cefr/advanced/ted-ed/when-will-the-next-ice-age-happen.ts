@@ -19,12 +19,12 @@ export const whenWillTheNextIceAgeHappen = {
   metadata: {
     title: "C1-C2 Videos",
     subtitle: "Ted-ED",
-    description: "Eath’s Climate Cycle",
+    description: "Earth’s Climate Cycle",
   },
   whiteboard: {
     title: "C1-C2 Videos",
     subtitle: "Ted-ED",
-    descriptions: ["Eath’s Climate Cycle"],
+    descriptions: ["Earth’s Climate Cycle"],
   },
   sections: {
     beforeWatching: {
@@ -673,17 +673,22 @@ export const whenWillTheNextIceAgeHappen = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Answer the questions.",
+        instruction:
+          "Complete the tasks. Distinguish explanation from evaluation and cite information from the video.",
         items: [
-          { content: ["Which fact from the video surprised you the most?"] },
           {
             content: [
-              "What can individuals do to reduce carbon dioxide emissions?",
+              "Synthesize how orbital cycles, ice cover, and carbon dioxide interact in the video's explanation of glacial periods.",
             ],
           },
           {
             content: [
-              "Do you think governments are doing enough to address climate change?",
+              "Distinguish the natural climate cycle described in the video from the influence of human emissions. Why is this distinction important?",
+            ],
+          },
+          {
+            content: [
+              "Evaluate the implications of the video's explanation for the claim that a future ice age will solve current global warming. Address one possible misunderstanding.",
             ],
           },
         ],

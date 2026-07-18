@@ -51,14 +51,14 @@ export const howToManageEmotions = {
     gist: {
       videoPlayer: {
         videoId: "Uew5BbvmLks",
-        title: "How to Managae Your Emotions",
+        title: "How to Manage Your Emotions",
         instruction: "Watch the video and answer the question.",
       },
       radio: {
         exercise: {
           questions: [
             {
-              question: "What is te video mainly about?",
+              question: "What is the video mainly about?",
               options: [
                 {
                   option: "People should always avoid negative emotions.",
@@ -346,31 +346,22 @@ export const howToManageEmotions = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Discuss the questions below.",
+        instruction:
+          "Complete the tasks. Compare strategies, explain their mechanisms, and evaluate their suitability.",
         items: [
           {
             content: [
-              "Which strategy from the video do you think is the most effective? Why?",
+              "Compare situation selection, attention deployment, and cognitive reappraisal. Explain when each strategy acts in the emotional process.",
             ],
           },
           {
             content: [
-              "Do you usually try to change the situation, shift your attention, or regulate your emotional response when you're upset? Give an example.",
+              "Choose a complex real-life scenario and evaluate which two strategies could be combined. Justify the sequence you recommend.",
             ],
           },
           {
             content: [
-              "Do you agree that no emotion is inherently good or bad? Explain your opinion.",
-            ],
-          },
-          {
-            content: [
-              "Can trying to be happy all the time actually make people less happy? Why or why not?",
-            ],
-          },
-          {
-            content: [
-              "Describe a situation in which reappraising your thoughts changed the way you felt.",
+              "Critically evaluate the idea that no emotion is inherently good or bad. Use the video's reasoning, then acknowledge one limitation or exception.",
             ],
           },
         ],

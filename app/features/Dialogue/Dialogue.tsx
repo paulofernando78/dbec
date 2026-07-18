@@ -29,7 +29,7 @@ export const Dialogue = ({
       <p>
         <b>{prompt}</b>
       </p>
-      <AudioPlayer src={audioSrc} />
+      {audioSrc && <AudioPlayer src={audioSrc} />}
       {lines.map((line, index) => (
         <p key={index}>
           <b className="py-1 px-1 border border-gray-400 rounded-lg">{line.speaker}</b>{" "}

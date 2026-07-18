@@ -51,6 +51,20 @@ import { upperIntermediateMediaAndMarketing } from "@/data/cefr/upper-intermedia
 import { upperIntermediateNativeLikeEnglish } from "@/data/cefr/upper-intermediate/native-like-english";
 import { upperIntermediateNaturalEnglish } from "@/data/cefr/upper-intermediate/natural-english";
 
+// Advanced
+import {
+  advancedAcademicPresentations,
+  advancedBuildingComplexArguments,
+  advancedCriticalReviews,
+  advancedDiplomaticCommunication,
+  advancedMediationAndClarification,
+  advancedNegotiationAndConsensus,
+  advancedPrecisionAndNuance,
+  advancedReadingBetweenTheLines,
+  advancedResearchBriefing,
+  advancedSynthesizingSources,
+} from "@/data/cefr/advanced/c1-lessons";
+
 type Lesson = Record<string, any>;
 type LessonMap = Record<string, Lesson>;
 type CategoryLessonMap = Record<string, LessonMap>;
@@ -106,7 +120,7 @@ export const cefrLessons: Record<string, CefrLessonLevel> = {
       "relationships": intermediateRelationships,
     },
   },
-  upperIntermediate: {
+  "upper-intermediate": {
     lessons: {
       "dream-scenarios": upperIntermediateDreamScenarios,
       "regrets": upperIntermediateRegrets,
@@ -119,6 +133,20 @@ export const cefrLessons: Record<string, CefrLessonLevel> = {
       "media-and-marketing": upperIntermediateMediaAndMarketing,
       "native-like-english": upperIntermediateNativeLikeEnglish,
       "natural-english": upperIntermediateNaturalEnglish,
+    },
+  },
+  advanced: {
+    lessons: {
+      "reading-between-the-lines": advancedReadingBetweenTheLines,
+      "synthesizing-sources": advancedSynthesizingSources,
+      "building-complex-arguments": advancedBuildingComplexArguments,
+      "diplomatic-communication": advancedDiplomaticCommunication,
+      "academic-presentations": advancedAcademicPresentations,
+      "mediation-and-clarification": advancedMediationAndClarification,
+      "critical-reviews": advancedCriticalReviews,
+      "negotiation-and-consensus": advancedNegotiationAndConsensus,
+      "precision-and-nuance": advancedPrecisionAndNuance,
+      "research-briefing": advancedResearchBriefing,
     },
   },
 };

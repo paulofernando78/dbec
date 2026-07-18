@@ -6,7 +6,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 import { content, text, audio } from "@/helpers/content";
 
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/upper-intermediate/native-like-english"
+const href = "/cefr/upper-intermediate/native-like-english";
 const data = cefrLessonsCardData.upperIntermediate.find(
   (lesson) => lesson.href === href
 )!;
@@ -14,7 +14,7 @@ const data = cefrLessonsCardData.upperIntermediate.find(
 export const upperIntermediateNativeLikeEnglish = {
   whiteboard: {
     title: "B2 Upper-Intermediate",
-    subtitle: "Native-Like English",
+    subtitle: "Idiomatic English in Context",
     descriptions: ["...", "..."],
   },
 

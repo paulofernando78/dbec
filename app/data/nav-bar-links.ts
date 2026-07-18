@@ -68,58 +68,58 @@ export const links = [
           //! Past
           // Beach
           {
-            href: "/cefr/elementary/past/unit-1-1-beach",
-            label: "Beach",
+            href: "/cefr/elementary/past-beach",
+            label: "Past: Beach",
           },
           // Movies
           {
-            href: "/cefr/elementary/past/unit-1-2-movies",
-            label: "Movies",
+            href: "/cefr/elementary/past-movies",
+            label: "Past: Movies",
           },
           // Movies
           {
-            href: "/cefr/elementary/past/unit-1-3-family",
-            label: "Family",
+            href: "/cefr/elementary/past-family",
+            label: "Past: Family",
           },
           // Movies
           {
-            href: "/cefr/elementary/past/unit-1-4-home",
-            label: "Home",
+            href: "/cefr/elementary/past-home",
+            label: "Past: Home",
           },
           {
-            href: "/cefr/elementary/unit-2-travel-plans",
-            label: "Travel Plans",
+            href: "/cefr/elementary/travel-plans",
+            label: "Future: Travel Plans",
           },
           {
-            href: "/cefr/elementary/unit-3-future-predictions",
-            label: "Future Predictions",
+            href: "/cefr/elementary/future-predictions",
+            label: "Future: Predictions",
           },
           {
-            href: "/cefr/elementary/unit-4-city-life",
+            href: "/cefr/elementary/city-life",
             label: "City Life",
           },
           {
-            href: "/cefr/elementary/unit-5-the-best-place",
+            href: "/cefr/elementary/the-best-place",
             label: "The Best Place",
           },
           {
-            href: "/cefr/elementary/unit-6-healthy-living",
+            href: "/cefr/elementary/healthy-living",
             label: "Healthy Living",
           },
           {
-            href: "/cefr/elementary/unit-7-rules",
-            label: "URules",
+            href: "/cefr/elementary/rules",
+            label: "Rules",
           },
           {
-            href: "/cefr/elementary/unit-8-shopping-smart",
+            href: "/cefr/elementary/shopping-smart",
             label: "Shopping Smart",
           },
           {
-            href: "/cefr/elementary/unit-9-experiences",
+            href: "/cefr/elementary/experiences",
             label: "Experiences",
           },
           {
-            href: "/cefr/elementary/unit-10-hobbies",
+            href: "/cefr/elementary/hobbies",
             label: "Hobbies",
           },
         ],
@@ -129,43 +129,43 @@ export const links = [
         label: "B1 Intermediate",
         links: [
           {
-            href: "/cefr/intermediate/unit-1-life-experiences",
+            href: "/cefr/intermediate/life-experiences",
             label: "Life Experiences",
           },
           {
-            href: "/cefr/intermediate/unit-2-storytelling",
+            href: "/cefr/intermediate/storytelling",
             label: "Storytelling",
           },
           {
-            href: "/cefr/intermediate/unit-3-making-plans",
+            href: "/cefr/intermediate/making-plans",
             label: "Making Plans",
           },
           {
-            href: "/cefr/intermediate/unit-4-what-if",
+            href: "/cefr/intermediate/what-if",
             label: "What If?",
           },
           {
-            href: "/cefr/intermediate/unit-5-green-planet",
+            href: "/cefr/intermediate/green-planet",
             label: "Green Planet",
           },
           {
-            href: "/cefr/intermediate/unit-6-technology-today",
+            href: "/cefr/intermediate/technology-today",
             label: "Technology Today",
           },
           {
-            href: "/cefr/intermediate/unit-7-news-report",
+            href: "/cefr/intermediate/news-report",
             label: "News Report",
           },
           {
-            href: "/cefr/intermediate/unit-8-what-did-they-say",
+            href: "/cefr/intermediate/what-did-they-say",
             label: "What Did They Say?",
           },
           {
-            href: "/cefr/intermediate/unit-9-career-path",
+            href: "/cefr/intermediate/career-path",
             label: "Career Path",
           },
           {
-            href: "/cefr/intermediate/unit-10-relationships",
+            href: "/cefr/intermediate/relationships",
             label: "Relationships",
           },
         ],
@@ -175,43 +175,43 @@ export const links = [
         label: "B2 Upper-Intermediate",
         links: [
           {
-            href: "/cefr/upper-intermediate/unit-1-dream-scenarios",
+            href: "/cefr/upper-intermediate/dream-scenarios",
             label: "Dream Scenarios",
           },
           {
-            href: "/cefr/upper-intermediate/unit-2-regrets",
+            href: "/cefr/upper-intermediate/regrets",
             label: "Regrets",
           },
           {
-            href: "/cefr/upper-intermediate/unit-3-business-communication",
+            href: "/cefr/upper-intermediate/business-communication",
             label: "Business Communication",
           },
           {
-            href: "/cefr/upper-intermediate/unit-4-leadership",
+            href: "/cefr/upper-intermediate/leadership",
             label: "Leadership",
           },
           {
-            href: "/cefr/upper-intermediate/unit-5-innovation",
+            href: "/cefr/upper-intermediate/innovation",
             label: "Innovation",
           },
           {
-            href: "/cefr/upper-intermediate/unit-6-global-issues",
+            href: "/cefr/upper-intermediate/global-issues",
             label: "Global Issues",
           },
           {
-            href: "/cefr/upper-intermediate/unit-7-debate-club",
+            href: "/cefr/upper-intermediate/debate-club",
             label: "Debate Club",
           },
           {
-            href: "/cefr/upper-intermediate/unit-8-media-and-marketing",
+            href: "/cefr/upper-intermediate/media-and-marketing",
             label: "Media and Marketing",
           },
           {
-            href: "/cefr/upper-intermediate/unit-9-native-like-english",
-            label: "Native-Like English",
+            href: "/cefr/upper-intermediate/native-like-english",
+            label: "Idiomatic English in Context",
           },
           {
-            href: "/cefr/upper-intermediate/unit-10-natural-english",
+            href: "/cefr/upper-intermediate/natural-english",
             label: "Natural English",
           },
         ],
@@ -221,53 +221,89 @@ export const links = [
         label: "C1 Advanced",
         links: [
           {
-            href: "/cefr/advanced/",
-            label: "...",
+            href: "/cefr/advanced/reading-between-the-lines",
+            label: "Reading Between the Lines",
+          },
+          {
+            href: "/cefr/advanced/synthesizing-sources",
+            label: "Synthesizing Sources",
+          },
+          {
+            href: "/cefr/advanced/building-complex-arguments",
+            label: "Building Complex Arguments",
+          },
+          {
+            href: "/cefr/advanced/diplomatic-communication",
+            label: "Diplomatic Communication",
+          },
+          {
+            href: "/cefr/advanced/academic-presentations",
+            label: "Academic Presentations",
+          },
+          {
+            href: "/cefr/advanced/mediation-and-clarification",
+            label: "Mediation and Clarification",
+          },
+          {
+            href: "/cefr/advanced/critical-reviews",
+            label: "Critical Reviews",
+          },
+          {
+            href: "/cefr/advanced/negotiation-and-consensus",
+            label: "Negotiation and Consensus",
+          },
+          {
+            href: "/cefr/advanced/precision-and-nuance",
+            label: "Precision and Nuance",
+          },
+          {
+            href: "/cefr/advanced/research-briefing",
+            label: "Research Briefing",
           },
         ],
       },
-      // C1-C2 Videos
+    ],
+  },
+  // Authentic Content
+  {
+    title: "Authentic Content",
+    links: [
+      // News
       {
-        label: "C1-C2 Videos",
+        href: "/cefr/advanced/news",
+        label: "News",
         links: [
-          // News
+          // Ismal Kone breaks leg
           {
-            href: "/cefr/advanced/news",
-            label: "News",
-            links: [
-              // Ismal Kone breaks leg
-              {
-                href: "/cefr/advanced/news/a-soccer-match-dramatic-moment",
-                label: "A Soccer Match's Dramatic Moment",
-              },
-            ],
+            href: "/cefr/advanced/news/a-soccer-match-dramatic-moment",
+            label: "A Soccer Match's Dramatic Moment",
           },
-          // Ted-ED
+        ],
+      },
+      // Ted-ED
+      {
+        href: "/cefr/advanced/ted-ed",
+        label: "Ted-ED",
+        links: [
+          // What Causes Constipation - May 7, 2018
           {
-            href: "/cefr/advanced/ted-ed",
-            label: "Ted-ED",
-            links: [
-              // What Causes Constipation - May 7, 2018
-              {
-                href: "/cefr/advanced/ted-ed/how-food-moves-through-your-body",
-                label: "How Food Moves Through Your Body",
-              },
-              // When will next Ice Age happen? - May 10, 2018
-              {
-                href: "/cefr/advanced/ted-ed/earths-climate-cycle",
-                label: "Earth’s Climate Cycle",
-              },
-              // How to Manage Your Emotions - Feb 16, 2023
-              {
-                href: "/cefr/advanced/ted-ed/how-we-react-differently",
-                label: "How We React Differently",
-              },
-              // How did ancient civilizations brew beer? - Mar 24, 2026
-              {
-                href: "/cefr/advanced/ted-ed/a-drink-with-a-long-history",
-                label: "A Drink With a Long History",
-              },
-            ],
+            href: "/cefr/advanced/ted-ed/how-food-moves-through-your-body",
+            label: "How Food Moves Through Your Body",
+          },
+          // When will next Ice Age happen? - May 10, 2018
+          {
+            href: "/cefr/advanced/ted-ed/earths-climate-cycle",
+            label: "Earth’s Climate Cycle",
+          },
+          // How to Manage Your Emotions - Feb 16, 2023
+          {
+            href: "/cefr/advanced/ted-ed/how-we-react-differently",
+            label: "How We React Differently",
+          },
+          // How did ancient civilizations brew beer? - Mar 24, 2026
+          {
+            href: "/cefr/advanced/ted-ed/a-drink-with-a-long-history",
+            label: "A Drink With a Long History",
           },
         ],
       },

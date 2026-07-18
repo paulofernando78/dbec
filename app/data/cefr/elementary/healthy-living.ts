@@ -1,214 +1,110 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
-import { content, text, audio, bold } from "@/helpers/content";
-
-import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/healthy-living"
-const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
-)!;
-
-export const elementaryHealthyLiving = {
-  whiteboard: {
-    title: "A2 Elementary",
-    subtitle: "Healthy Living",
-    descriptions: ["...", "..."],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
-  },
-
-  introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...”"],
-            }),
-          ],
-        },
-      ],
+import { createElementaryLesson } from "./create-elementary-lesson";
+export const elementaryHealthyLiving = createElementaryLesson({
+  href: "/cefr/elementary/healthy-living",
+  subtitle: "Healthy Living",
+  descriptions: [
+    "You should drink more water.",
+    "You shouldn't skip breakfast.",
+  ],
+  vocabulary: ["balanced diet", "exercise", "sleep", "stress"],
+  story: [
+    {
+      sentence: "Maya feels tired every morning.",
+      translation: "Maya se sente cansada todas as manhãs.",
+      alt: "A tired woman in the morning",
     },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+    {
+      sentence: "She should go to bed earlier.",
+      translation: "Ela deveria dormir mais cedo.",
+      alt: "A clock beside a bed",
     },
-  },
-
-  presentation: {
-    dialogue: {
-      prompt: "...",
-      audioSrc: "/",
-      lines: [
-        {
-          speaker: "...",
-          line: text(["..."]),
-        },
-      ],
+    {
+      sentence: "She should eat a balanced breakfast.",
+      translation: "Ela deveria tomar um café da manhã equilibrado.",
+      alt: "A healthy balanced breakfast",
     },
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+  ],
+  dialogue: [
+    { speaker: "Maya", line: "I feel tired all the time." },
+    { speaker: "Noah", line: "What time do you go to bed?" },
+    { speaker: "Maya", line: "Usually after midnight." },
+    { speaker: "Noah", line: "You should go to bed earlier." },
+    { speaker: "Maya", line: "I also skip breakfast." },
+    {
+      speaker: "Noah",
+      line: "You shouldn't skip it. You should eat something healthy.",
     },
-  },
-
-  languageFocus: {
-    meaning: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Meaning[],
-    column: {
-      width: 300,
-      cols: [
-        // Column 1
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 2
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 3
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-      ],
+  ],
+  comprehension: [
+    {
+      question: "How does Maya feel?",
+      correct: "Tired",
+      incorrect: "Energetic",
     },
-    notes: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Notes[],
-    ccq: [
-      {
-        as: "span",
-        parts: ["..."],
-      },
-      {
-        as: "span",
-        parts: ["..."],
-      },
-    ] satisfies CCQ[],
-  },
-
-  practice: {
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
-            ],
-          },
-        ],
-      },
+    {
+      question: "What should Maya do?",
+      correct: "Go to bed earlier",
+      incorrect: "Stay up later",
     },
-
-    fillInTheBlanks: {
-      showWordBank: true,
-      instruction: "...",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
-            lineBreak: true,
-          },
-        ],
-      },
+    {
+      question: "What shouldn't Maya skip?",
+      correct: "Breakfast",
+      incorrect: "Exercise",
     },
-
-    scramble: {
-      showWordBank: false,
-      instruction: "Unscramble the sentence.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "... / ...",
-            answer: "...",
-          },
-        ],
-      },
+  ],
+  meaning: [
+    " gives advice and recommendations.",
+    "Use should + base verb; use shouldn't + base verb for negative advice.",
+  ],
+  columns: [
+    {
+      title: "Positive",
+      examples: ["You should rest.", "She should exercise."],
     },
-  },
-
-  production: {
-    task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-      ],
-    } satisfies ListProps,
-  },
-};
+    {
+      title: "Negative",
+      examples: ["You shouldn't smoke.", "He shouldn't skip lunch."],
+    },
+    {
+      title: "Question",
+      examples: ["Should I see a doctor?", "What should I eat?"],
+    },
+  ],
+  note: "Do not use to after should: You should exercise.",
+  ccq: [
+    "Is should an order or advice?",
+    "After should, do we use the base verb?",
+    "Does shouldn't mean it is a good idea?",
+  ],
+  practice: [
+    {
+      question: "You _____ drink more water.",
+      correct: "should",
+      incorrect: "should to",
+    },
+    {
+      question: "You _____ eat so much sugar.",
+      correct: "shouldn't",
+      incorrect: "should",
+    },
+  ],
+  blanks: [
+    { before: "You ", blank: "should", after: " sleep eight hours." },
+    { before: "He ", blank: "shouldn't", after: " skip breakfast." },
+  ],
+  scramble: [
+    {
+      prompt: "should / more / water / drink / you",
+      answer: "You should drink more water.",
+    },
+    {
+      prompt: "late / shouldn't / eat / she",
+      answer: "She shouldn't eat late.",
+    },
+  ],
+  production: [
+    "Write five tips for a healthy week.",
+    "Give advice to someone who feels tired.",
+    "Compare health habits with a classmate.",
+  ],
+});

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
+import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
 
 import { CircleChevronRight } from "lucide-react";
 // import { Checkbox } from "@/components/ui/Checkbox";
@@ -12,6 +13,28 @@ type NavItem = {
 
 type NavBarProps = {
   closeNavBar: () => void;
+};
+
+const numberedCourseLessons = [
+  ...cefrLessonsCardData.beginner,
+  ...cefrLessonsCardData.elementary,
+  ...cefrLessonsCardData.intermediate,
+  ...cefrLessonsCardData.upperIntermediate,
+  ...cefrLessonsCardData.advanced,
+];
+
+const lessonNumberByHref = new Map(
+  numberedCourseLessons.map((lesson, index) => [lesson.href, index + 1]),
+);
+
+const getNavItemLabel = (item: NavItem) => {
+  const lessonNumber = item.href
+    ? lessonNumberByHref.get(item.href)
+    : undefined;
+
+  return lessonNumber
+    ? `Lesson ${lessonNumber} • ${item.label}`
+    : item.label;
 };
 
 const getNavItemKey = (item: NavItem) =>
@@ -49,10 +72,12 @@ function RenderNavItem({
               onClick={(e) => e.stopPropagation()}
               className="translate-x-[-0.5rem]"
             >
-              <span>{item.label}</span>
+              <span>{getNavItemLabel(item)}</span>
             </NavLink>
           ) : (
-            <span className="translate-x-[-0.5rem]">{item.label}</span>
+            <span className="translate-x-[-0.5rem]">
+              {getNavItemLabel(item)}
+            </span>
           )}
         </summary>
 
@@ -105,7 +130,7 @@ function RenderNavItem({
           `
         }
       >
-        <span className="ml-1">{item.label}</span>
+        <span className="ml-1">{getNavItemLabel(item)}</span>
       </NavLink>
     </div>
   );

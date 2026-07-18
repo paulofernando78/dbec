@@ -1,215 +1,103 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
-import { content, text, audio, bold } from "@/helpers/content";
-
-import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/experiences"
-const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
-)!;
-
-export const elementaryExperiences = {
-  whiteboard: {
-    title: "A2 Elementary",
-    subtitle: "Experiences",
-    descriptions: ["...", "..."],
-    date: "...",
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
-  },
-
-  introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...”"],
-            }),
-          ],
-        },
-      ],
+import { createElementaryLesson } from "./create-elementary-lesson";
+export const elementaryExperiences = createElementaryLesson({
+  href: "/cefr/elementary/experiences",
+  subtitle: "Experiences",
+  descriptions: [
+    "I have visited another country.",
+    "Have you ever tried sushi?",
+  ],
+  vocabulary: ["abroad", "adventure", "concert", "traditional food"],
+  story: [
+    {
+      sentence: "Eva has visited three countries.",
+      translation: "Eva visitou três países.",
+      alt: "A traveler looking at a world map",
     },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+    {
+      sentence: "She has tried many traditional foods.",
+      translation: "Ela experimentou muitas comidas tradicionais.",
+      alt: "Different traditional foods",
     },
-  },
-
-  presentation: {
-    dialogue: {
-      prompt: "...",
-      audioSrc: "/",
-      lines: [
-        {
-          speaker: "...",
-          line: text(["..."]),
-        },
-      ],
+    {
+      sentence: "She has never traveled alone.",
+      translation: "Ela nunca viajou sozinha.",
+      alt: "A traveler with friends",
     },
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+  ],
+  dialogue: [
+    { speaker: "Eva", line: "Have you ever traveled abroad?" },
+    { speaker: "Max", line: "Yes, I have. I have visited Chile." },
+    { speaker: "Eva", line: "Have you ever tried Chilean food?" },
+    { speaker: "Max", line: "Yes, I have, but I have never tried curanto." },
+    { speaker: "Eva", line: "Have you ever traveled alone?" },
+    { speaker: "Max", line: "No, I haven't. I usually travel with my family." },
+  ],
+  comprehension: [
+    {
+      question: "Which country has Max visited?",
+      correct: "Chile",
+      incorrect: "Peru",
     },
-  },
-
-  languageFocus: {
-    meaning: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Meaning[],
-    column: {
-      width: 300,
-      cols: [
-        // Column 1
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 2
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 3
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-      ],
+    { question: "Has Max tried curanto?", correct: "No", incorrect: "Yes" },
+    {
+      question: "Who does Max travel with?",
+      correct: "His family",
+      incorrect: "He travels alone",
     },
-    notes: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Notes[],
-    ccq: [
-      {
-        as: "span",
-        parts: ["..."],
-      },
-      {
-        as: "span",
-        parts: ["..."],
-      },
-    ] satisfies CCQ[],
-  },
-
-  practice: {
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
-            ],
-          },
-        ],
-      },
+  ],
+  meaning: [
+    " talks about life experiences when the exact time is not important.",
+    "Use have/has + past participle; ever asks about any time and never means at no time.",
+  ],
+  columns: [
+    {
+      title: "Positive",
+      examples: ["I have traveled abroad.", "She has tried sushi."],
     },
-
-    fillInTheBlanks: {
-      showWordBank: true,
-      instruction: "...",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
-            lineBreak: true,
-          },
-        ],
-      },
+    {
+      title: "Negative",
+      examples: ["I haven't been there.", "He has never flown."],
     },
-
-    scramble: {
-      showWordBank: false,
-      instruction: "Unscramble the sentence.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "... / ...",
-            answer: "...",
-          },
-        ],
-      },
+    {
+      title: "Question",
+      examples: ["Have you ever traveled?", "Has she tried it?"],
     },
-  },
-
-  production: {
-    task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-      ],
-    } satisfies ListProps,
-  },
-};
+  ],
+  note: "Use the past participle: go → gone, see → seen, eat → eaten.",
+  ccq: [
+    "Is the exact past time important?",
+    "Do we use have with I and you?",
+    "Does never describe zero experiences?",
+  ],
+  practice: [
+    {
+      question: "She _____ visited Argentina.",
+      correct: "has",
+      incorrect: "have",
+    },
+    {
+      question: "Have you ever _____ sushi?",
+      correct: "eaten",
+      incorrect: "ate",
+    },
+  ],
+  blanks: [
+    { before: "I have ", blank: "seen", after: " that movie." },
+    { before: "He has never ", blank: "flown", after: " in a plane." },
+  ],
+  scramble: [
+    {
+      prompt: "ever / you / traveled / have / abroad",
+      answer: "Have you ever traveled abroad?",
+    },
+    {
+      prompt: "never / she / sushi / has / tried",
+      answer: "She has never tried sushi.",
+    },
+  ],
+  production: [
+    "Write five sentences about your life experiences.",
+    "Write three Have you ever questions.",
+    "Interview a classmate about new experiences.",
+  ],
+});

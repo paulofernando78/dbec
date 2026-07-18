@@ -1,215 +1,101 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
-import { content, text, audio, bold } from "@/helpers/content";
-
-import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/the-best-place"
-const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
-)!;
-
-export const elementaryTheBestPlace = {
-  whiteboard: {
-    title: "A2 Elementary",
-    subtitle: "The Best Place",
-    descriptions: ["...", "..."],
-    date: "...",
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
-  },
-
-  introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...”"],
-            }),
-          ],
-        },
-      ],
+import { createElementaryLesson } from "./create-elementary-lesson";
+export const elementaryTheBestPlace = createElementaryLesson({
+  href: "/cefr/elementary/the-best-place",
+  subtitle: "The Best Place",
+  descriptions: [
+    "This is the most beautiful beach.",
+    "It is the best place to relax.",
+  ],
+  vocabulary: ["view", "waterfall", "historic", "peaceful"],
+  story: [
+    {
+      sentence: "Sunset Beach is the most peaceful place on the island.",
+      translation: "Sunset Beach é o lugar mais tranquilo da ilha.",
+      alt: "A peaceful beach at sunset",
     },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+    {
+      sentence: "Blue Mountain has the best view.",
+      translation: "Blue Mountain tem a melhor vista.",
+      alt: "A wide view from a mountain",
     },
-  },
-
-  presentation: {
-    dialogue: {
-      prompt: "...",
-      audioSrc: "/",
-      lines: [
-        {
-          speaker: "...",
-          line: text(["..."]),
-        },
-      ],
+    {
+      sentence: "Old Town is the most historic area.",
+      translation: "Old Town é a região mais histórica.",
+      alt: "Historic buildings in an old town",
     },
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+  ],
+  dialogue: [
+    { speaker: "Lia", line: "What is the best place to visit here?" },
+    { speaker: "Sam", line: "I think Blue Mountain is the most beautiful." },
+    { speaker: "Lia", line: "Is it difficult to get there?" },
+    { speaker: "Sam", line: "Yes, but it has the best view in the region." },
+    { speaker: "Lia", line: "What is the easiest place to visit?" },
+    { speaker: "Sam", line: "Old Town. It is the closest attraction." },
+  ],
+  comprehension: [
+    {
+      question: "Which place is the most beautiful for Sam?",
+      correct: "Blue Mountain",
+      incorrect: "Old Town",
     },
-  },
-
-  languageFocus: {
-    meaning: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Meaning[],
-    column: {
-      width: 300,
-      cols: [
-        // Column 1
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 2
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 3
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-      ],
+    {
+      question: "Which place has the best view?",
+      correct: "Blue Mountain",
+      incorrect: "Sunset Beach",
     },
-    notes: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Notes[],
-    ccq: [
-      {
-        as: "span",
-        parts: ["..."],
-      },
-      {
-        as: "span",
-        parts: ["..."],
-      },
-    ] satisfies CCQ[],
-  },
-
-  practice: {
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
-            ],
-          },
-        ],
-      },
+    {
+      question: "Which attraction is the closest?",
+      correct: "Old Town",
+      incorrect: "Blue Mountain",
     },
-
-    fillInTheBlanks: {
-      showWordBank: true,
-      instruction: "...",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
-            lineBreak: true,
-          },
-        ],
-      },
+  ],
+  meaning: [
+    " identifies one person, place, or thing as number one in a group.",
+    "Use the + adjective-est or the most + adjective.",
+  ],
+  columns: [
+    { title: "Short adjectives", examples: ["the tallest", "the easiest"] },
+    {
+      title: "Long adjectives",
+      examples: ["the most beautiful", "the most peaceful"],
     },
-
-    scramble: {
-      showWordBank: false,
-      instruction: "Unscramble the sentence.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "... / ...",
-            answer: "...",
-          },
-        ],
-      },
+    { title: "Irregular", examples: ["good → the best", "bad → the worst"] },
+  ],
+  note: "Use the before a superlative: It is the best place.",
+  ccq: [
+    "Are we comparing two places or a whole group?",
+    "Is the best place number one?",
+    "Do we say the most beautiful or the beautifulest?",
+  ],
+  practice: [
+    {
+      question: "This is _____ restaurant in town.",
+      correct: "the best",
+      incorrect: "the better",
     },
-  },
-
-  production: {
-    task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-      ],
-    } satisfies ListProps,
-  },
-};
+    {
+      question: "It is _____ beach on the island.",
+      correct: "the most peaceful",
+      incorrect: "the peacefulest",
+    },
+  ],
+  blanks: [
+    { before: "That is ", blank: "the tallest", after: " building here." },
+    { before: "June is ", blank: "the busiest", after: " month." },
+  ],
+  scramble: [
+    {
+      prompt: "best / this / place / the / is",
+      answer: "This is the best place.",
+    },
+    {
+      prompt: "most / city / beautiful / the / is / it",
+      answer: "It is the most beautiful city.",
+    },
+  ],
+  production: [
+    "Describe the best place in your region.",
+    "Write three superlative sentences about places.",
+    "Recommend one place to a classmate.",
+  ],
+});

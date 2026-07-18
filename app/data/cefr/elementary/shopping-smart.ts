@@ -1,214 +1,97 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
-import { content, text, audio } from "@/helpers/content";
-
-import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/shopping-smart"
-const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
-)!;
-
-export const elementaryShoppingSmart = {
-  whiteboard: {
-    title: "A2 Elementary",
-    subtitle: "Shopping Smart",
-    descriptions: ["...", "..."],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
-  },
-
-  introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...”"],
-            }),
-          ],
-        },
-      ],
+import { createElementaryLesson } from "./create-elementary-lesson";
+export const elementaryShoppingSmart = createElementaryLesson({
+  href: "/cefr/elementary/shopping-smart",
+  subtitle: "Shopping Smart",
+  descriptions: ["How much rice do we need?", "We need some apples."],
+  vocabulary: ["shopping list", "price", "discount", "quantity"],
+  story: [
+    {
+      sentence: "Rosa makes a shopping list before she goes out.",
+      translation: "Rosa faz uma lista de compras antes de sair.",
+      alt: "A woman writing a shopping list",
     },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+    {
+      sentence: "She needs some rice and a few vegetables.",
+      translation: "Ela precisa de arroz e alguns legumes.",
+      alt: "Rice and vegetables in a basket",
     },
-  },
-
-  presentation: {
-    dialogue: {
-      prompt: "...",
-      audioSrc: "/",
-      lines: [
-        {
-          speaker: "...",
-          line: text(["..."]),
-        },
-      ],
+    {
+      sentence: "There isn't any milk at home.",
+      translation: "Não há leite em casa.",
+      alt: "An empty milk container",
     },
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
-        ],
-      },
+  ],
+  dialogue: [
+    { speaker: "Rosa", line: "Do we have any rice?" },
+    { speaker: "Tom", line: "No, we don't have any." },
+    { speaker: "Rosa", line: "How much rice should I buy?" },
+    { speaker: "Tom", line: "One bag is enough. We also need some apples." },
+    { speaker: "Rosa", line: "How many apples do we need?" },
+    { speaker: "Tom", line: "Six, and please buy some milk too." },
+  ],
+  comprehension: [
+    { question: "Do they have any rice?", correct: "No", incorrect: "Yes" },
+    {
+      question: "How many apples do they need?",
+      correct: "Six",
+      incorrect: "Two",
     },
-  },
-
-  languageFocus: {
-    meaning: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Meaning[],
-    column: {
-      width: 300,
-      cols: [
-        // Column 1
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 2
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 3
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-      ],
+    {
+      question: "What else should Rosa buy?",
+      correct: "Milk",
+      incorrect: "Coffee",
     },
-    notes: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Notes[],
-    ccq: [
-      {
-        as: "span",
-        parts: ["..."],
-      },
-      {
-        as: "span",
-        parts: ["..."],
-      },
-    ] satisfies CCQ[],
-  },
-
-  practice: {
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
-            ],
-          },
-        ],
-      },
+  ],
+  meaning: [
+    " uses much with uncountable nouns and many with countable plural nouns.",
+    "Use some mainly in positive sentences and any mainly in questions and negatives.",
+  ],
+  columns: [
+    { title: "Much", examples: ["How much rice?", "There isn't much milk."] },
+    {
+      title: "Many",
+      examples: ["How many apples?", "There aren't many eggs."],
     },
-
-    fillInTheBlanks: {
-      showWordBank: true,
-      instruction: "...",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
-            lineBreak: true,
-          },
-        ],
-      },
+    {
+      title: "Some / Any",
+      examples: ["We need some bread.", "Do we have any cheese?"],
     },
-
-    scramble: {
-      showWordBank: false,
-      instruction: "Unscramble the sentence.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "... / ...",
-            answer: "...",
-          },
-        ],
-      },
+  ],
+  note: "Rice, milk, and money are uncountable; apples, bottles, and stores are countable.",
+  ccq: [
+    "Can we count apples one by one?",
+    "Do we use much or many with milk?",
+    "Is any common in questions?",
+  ],
+  practice: [
+    {
+      question: "How _____ bananas do you need?",
+      correct: "many",
+      incorrect: "much",
     },
-  },
-
-  production: {
-    task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-        {
-          content: text(["..."]),
-        },
-      ],
-    } satisfies ListProps,
-  },
-};
+    {
+      question: "We don't have _____ bread.",
+      correct: "any",
+      incorrect: "some",
+    },
+  ],
+  blanks: [
+    { before: "I need ", blank: "some", after: " tomatoes." },
+    { before: "How ", blank: "much", after: " water do we have?" },
+  ],
+  scramble: [
+    {
+      prompt: "many / need / eggs / how / we / do",
+      answer: "How many eggs do we need?",
+    },
+    {
+      prompt: "any / have / don't / milk / we",
+      answer: "We don't have any milk.",
+    },
+  ],
+  production: [
+    "Create a shopping list for three meals.",
+    "Write questions with how much and how many.",
+    "Plan a shopping trip with a classmate.",
+  ],
+});

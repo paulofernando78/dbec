@@ -60,7 +60,7 @@ export const cefrLessonsCardData = {
       href: "/cefr/beginner/around-town",
       label: "Around Town",
       lessonObjective:
-        "By the end of this class, students will be able to identify common places in town, ask for and give simple directions, and use basic prepositions of place correctly.",
+        "By the end of this class, students will be able to name common places in town and ask and answer where they are using basic prepositions of place.",
       grammar: "Prepositions of place",
       vocabulary: "Places in town",
     },
@@ -86,9 +86,9 @@ export const cefrLessonsCardData = {
       href: "/cefr/elementary/past-beach",
       label: "Past: Beach",
       lessonObjective:
-        "By the end of this class, students will be able to talk about past events, describe what they did, ask questions about past activities, and use the Past Simple correctly.",
+        "By the end of this class, students will be able to talk about past activities and describe a day at the beach using the Past Simple.",
       grammar: "Past Simple",
-      vocabulary: "Weekend activities",
+      vocabulary: "Beach activities, Weather, Seaside places",
     },
     {
       href: "/cefr/elementary/past-movies",
@@ -96,29 +96,29 @@ export const cefrLessonsCardData = {
       lessonObjective:
         "By the end of this class, students will be able to talk about past events, describe what they did, ask questions about past activities, and use the Past Simple correctly.",
       grammar: "Past Simple",
-      vocabulary: "Weekend activities",
+      vocabulary: "Movies, Movie theater, Weekend activities",
     },
     {
       href: "/cefr/elementary/past-family",
       label: "Past: Family",
       lessonObjective:
-        "By the end of this class, students will be able to talk about past events, describe what they did, ask questions about past activities, and use the Past Simple correctly.",
+        "By the end of this class, students will be able to talk about past activities and describe time spent with family using the Past Simple.",
       grammar: "Past Simple",
-      vocabulary: "Weekend activities",
+      vocabulary: "Family members, Family activities, Celebrations",
     },
     {
       href: "/cefr/elementary/past-home",
       label: "Past: Home",
       lessonObjective:
-        "By the end of this class, students will be able to talk about past events, describe what they did, ask questions about past activities, and use the Past Simple correctly.",
+        "By the end of this class, students will be able to talk about past activities and describe what they did at home using the Past Simple.",
       grammar: "Past Simple",
-      vocabulary: "Weekend activities",
+      vocabulary: "Household chores, Activities at home, Free-time activities",
     },
     {
       href: "/cefr/elementary/travel-plans",
       label: "Travel Plans",
       lessonObjective:
-        "By the end of this class, students will be able to talk about future travel plans, discuss upcoming trips, make predictions about their vacations, and use 'going to' correctly.",
+        "By the end of this class, students will be able to describe a simple travel plan and ask a partner about future arrangements using 'going to'.",
       grammar: "Going to",
       vocabulary: "Travel",
     },
@@ -182,7 +182,7 @@ export const cefrLessonsCardData = {
       href: "/cefr/elementary/hobbies",
       label: "Hobbies",
       lessonObjective:
-        "By the end of this class, students will be able to talk about hobbies and interests, describe activities they enjoy, express preferences, and use gerunds and infinitives correctly.",
+        "By the end of this class, students will be able to describe hobbies they enjoy and would like to try using a small taught set of verb patterns.",
       grammar: "Gerunds & Infinitives",
       vocabulary: "Hobbies",
     },
@@ -336,9 +336,9 @@ export const cefrLessonsCardData = {
     },
     {
       href: "/cefr/upper-intermediate/native-like-english",
-      label: "Native-Like English",
+      label: "Idiomatic English in Context",
       lessonObjective:
-        "By the end of this class, students will be able to understand and use common idioms and expressions, interpret figurative language, and communicate more naturally in everyday and professional situations.",
+        "By the end of this class, students will be able to infer the meaning of selected common idiomatic expressions from context and use a small taught set appropriately in familiar situations.",
       grammar: "Idioms",
       vocabulary: "Idioms & Expressions",
     },
@@ -353,11 +353,84 @@ export const cefrLessonsCardData = {
   ],
   advanced: [
     {
-      href: "/cefr/advanced/",
-      label: "...",
-      lessonObjective: "...",
-      grammar: "...",
-      vocabulary: "...",
+      href: "/cefr/advanced/reading-between-the-lines",
+      label: "Reading Between the Lines",
+      lessonObjective:
+        "By the end of this class, students will be able to infer a speaker's or writer's stance, identify implied meaning, and justify an interpretation with linguistic evidence.",
+      grammar: "Hedging and stance",
+      vocabulary: "Inference and evaluation",
+    },
+    {
+      href: "/cefr/advanced/synthesizing-sources",
+      label: "Synthesizing Sources",
+      lessonObjective:
+        "By the end of this class, students will be able to integrate complementary and conflicting information from two sources into a coherent, neutral synthesis.",
+      grammar: "Reporting structures",
+      vocabulary: "Evidence and source attribution",
+    },
+    {
+      href: "/cefr/advanced/building-complex-arguments",
+      label: "Building Complex Arguments",
+      lessonObjective:
+        "By the end of this class, students will be able to develop a structured argument, acknowledge a counterargument, and defend a position with relevant reasons and examples.",
+      grammar: "Concession and rebuttal",
+      vocabulary: "Argumentation",
+    },
+    {
+      href: "/cefr/advanced/diplomatic-communication",
+      label: "Diplomatic Communication",
+      lessonObjective:
+        "By the end of this class, students will be able to soften disagreement, adapt register, and communicate a sensitive position clearly and diplomatically.",
+      grammar: "Mitigation and modal distance",
+      vocabulary: "Diplomacy and register",
+    },
+    {
+      href: "/cefr/advanced/academic-presentations",
+      label: "Academic Presentations",
+      lessonObjective:
+        "By the end of this class, students will be able to deliver a well-structured presentation on a complex topic, integrate subthemes, and conclude with a clear overall message.",
+      grammar: "Signposting and thematic development",
+      vocabulary: "Presentation language",
+    },
+    {
+      href: "/cefr/advanced/mediation-and-clarification",
+      label: "Mediation and Clarification",
+      lessonObjective:
+        "By the end of this class, students will be able to explain a complex idea to a non-specialist, clarify a misunderstanding, and reformulate information without distorting it.",
+      grammar: "Reformulation structures",
+      vocabulary: "Explanation and clarification",
+    },
+    {
+      href: "/cefr/advanced/critical-reviews",
+      label: "Critical Reviews",
+      lessonObjective:
+        "By the end of this class, students will be able to evaluate a cultural or media work using explicit criteria and support a balanced judgment with specific evidence.",
+      grammar: "Evaluative structures",
+      vocabulary: "Critical appraisal",
+    },
+    {
+      href: "/cefr/advanced/negotiation-and-consensus",
+      label: "Negotiation and Consensus",
+      lessonObjective:
+        "By the end of this class, students will be able to compare competing priorities, negotiate alternatives, and formulate a compromise that reflects different perspectives.",
+      grammar: "Conditional proposals",
+      vocabulary: "Negotiation and compromise",
+    },
+    {
+      href: "/cefr/advanced/precision-and-nuance",
+      label: "Precision and Nuance",
+      lessonObjective:
+        "By the end of this class, students will be able to express fine shades of certainty and attitude by selecting precise hedging, emphasis, and qualification devices.",
+      grammar: "Modality and qualification",
+      vocabulary: "Degrees of certainty",
+    },
+    {
+      href: "/cefr/advanced/research-briefing",
+      label: "Research Briefing",
+      lessonObjective:
+        "By the end of this class, students will be able to synthesize evidence from several claims, distinguish fact from inference, and present a concise briefing with justified recommendations.",
+      grammar: "Evidence-based reporting",
+      vocabulary: "Research and recommendations",
     },
   ],
 };

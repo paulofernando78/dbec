@@ -698,23 +698,23 @@ export const howDidAncientCivilizationsBrewBeer = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Answer the questions.",
+        instruction:
+          "Complete the tasks. Organize information coherently and support evaluations with details from the video.",
         items: [
           {
-            content: ["What fact from the video surprised you the most?"],
-          },
-          {
             content: [
-              "Why do you think beer became so important in many ancient civilizations?",
+              "Reconstruct the development of brewing from early cereal mixtures to controlled modern production. Select the turning points that matter most.",
             ],
           },
           {
             content: [
-              "How has science changed the way beer is produced today?",
+              "Explain the causal stages of fermentation and how temperature, yeast, and ingredients affect the result.",
             ],
           },
           {
-            content: ["Would you like to visit a brewery? Why or why not?"],
+            content: [
+              "Evaluate how scientific knowledge changed beer production. Discuss one benefit and one possible trade-off between standardization and tradition.",
+            ],
           },
         ],
       },

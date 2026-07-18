@@ -532,24 +532,22 @@ export const whatCausesConstipation = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Discuss the questions below.",
+        instruction:
+          "Complete the tasks. Explain relationships precisely and support evaluations with information from the video.",
         items: [
           {
             content: [
-              "Which tip from the video do you think is the most useful? Why?",
-            ],
-          },
-          {
-            content: ["Which healthy habits can help prevent constipation?"],
-          },
-          {
-            content: [
-              "Have you ever changed your diet or lifestyle to improve your health? What did you do?",
+              "Reconstruct the cause-and-effect chain from slow movement through the colon to the symptoms of constipation.",
             ],
           },
           {
             content: [
-              "Do you think people drink enough water every day? Why or why not?",
+              "Compare two causes mentioned in the video. Explain how each one disrupts the normal digestive process.",
+            ],
+          },
+          {
+            content: [
+              "Evaluate which remedies are most logically supported by the biological mechanisms explained in the video. Acknowledge one limitation of the advice.",
             ],
           },
         ],

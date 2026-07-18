@@ -4,7 +4,7 @@ export const aSoccerMatchDramaticMoment = {
   slug: "a-soccer-match-dramatic-moment",
 
   metadata: {
-    title: "Advanced | Misc | ",
+    title: "C1-C2 Videos | News",
     description: "A dramatic soccer match moment",
   },
   whiteboard: {
@@ -638,13 +638,23 @@ export const aSoccerMatchDramaticMoment = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Answer the questions.",
+        instruction:
+          "Complete the tasks. Support each interpretation or claim with evidence from the report.",
         items: [
           {
-            content: ["Should dangerous tackles receive longer suspensions?"],
+            content: [
+              "In three or four sentences, summarize the central event and its consequences for the match, the player, and the public reaction.",
+            ],
           },
           {
-            content: ["Can a serious injury change a player's career forever?"],
+            content: [
+              "Identify two words, images, or contrasts that frame the incident emotionally. Explain the effect of each choice.",
+            ],
+          },
+          {
+            content: [
+              "Should dangerous tackles receive longer suspensions? State a nuanced position and justify it with evidence from the report and one relevant counterargument.",
+            ],
           },
         ],
       },
