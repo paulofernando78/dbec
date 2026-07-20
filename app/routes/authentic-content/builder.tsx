@@ -1,5 +1,7 @@
 import { useParams } from "react-router";
 
+import { template } from "@/data/authentic-content/template";
+
 // Content routes
 import { authenticContentsNewsRoutes } from "@/data/authentic-content/news";
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
@@ -19,23 +21,29 @@ import { Unscramble } from "@/features/exercises/Unscramble";
 export default function AuthenticContents() {
   const { category, slug } = useParams();
 
-  let contents;
+  let content;
 
-  switch (category) {
-    case "news":
-      contents = authenticContentsNewsRoutes;
-      break;
+  if (category === "template") {
+    content = template;
+  } else {
+    let contents;
 
-    case "ted-ed":
-      contents = authenticContentsTedEdRoutes;
-      break;
+    switch (category) {
+      case "news":
+        contents = authenticContentsNewsRoutes;
+        break;
 
-    default:
-      contents = undefined;
+      case "ted-ed":
+        contents = authenticContentsTedEdRoutes;
+        break;
+
+      default:
+        contents = undefined;
+    }
+
+    content =
+      slug && contents ? contents[slug as keyof typeof contents] : undefined;
   }
-
-  const content =
-    slug && contents ? contents[slug as keyof typeof contents] : undefined;
 
   if (!content) {
     return <h1>Authentic content not found.</h1>;

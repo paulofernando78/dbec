@@ -47,7 +47,7 @@ export default [
     //! ─────────────────────────────────────────────
     
     route(
-      "/courses/:level/:slug",
+      "/courses/:level/:slug?",
       "routes/course/builder.tsx"),
 
     //! ─────────────────────────────────────────────
@@ -55,7 +55,7 @@ export default [
     //! ─────────────────────────────────────────────
     
     route(
-      "/authentic-content/:category/:slug",
+      "/authentic-content/:category/:slug?",
       "routes/authentic-content/builder.tsx",
     ),
 

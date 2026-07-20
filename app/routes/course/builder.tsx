@@ -18,6 +18,7 @@ import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
 import { getCourseLesson } from "@/data/course/lessons-slug";
+import { lesson as courseTemplate } from "@/data/course/template";
 
 type CourseProps = {
   lesson: Record<string, any>;
@@ -118,7 +119,8 @@ export function Course({ lesson }: CourseProps) {
 
 export default function Lesson() {
   const { level, slug } = useParams();
-  const lesson = getCourseLesson({ level, slug });
+  const lesson =
+    level === "template" ? courseTemplate : getCourseLesson({ level, slug });
 
   if (!lesson) {
     return <h1>Lesson not found.</h1>;

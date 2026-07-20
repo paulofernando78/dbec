@@ -15,8 +15,7 @@ const words = [
   { word: "", img: 0 },
 ];
 
-export const blank = {
-  slug: "blank",
+export const template = {
 
   metadata: {
     title: "Authentic Content",
