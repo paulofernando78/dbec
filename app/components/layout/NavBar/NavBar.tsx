@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
-import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
+import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 
 import { ChevronRight } from "lucide-react";
 // import { Checkbox } from "@/components/ui/Checkbox";
@@ -16,11 +16,11 @@ type NavBarProps = {
 };
 
 const numberedCourseLessons = [
-  ...cefrLessonsCardData.beginner,
-  ...cefrLessonsCardData.elementary,
-  ...cefrLessonsCardData.intermediate,
-  ...cefrLessonsCardData.upperIntermediate,
-  ...cefrLessonsCardData.advanced,
+  ...courseLessonsCardData.beginner,
+  ...courseLessonsCardData.elementary,
+  ...courseLessonsCardData.intermediate,
+  ...courseLessonsCardData.upperIntermediate,
+  ...courseLessonsCardData.advanced,
 ];
 
 const lessonNumberByHref = new Map(

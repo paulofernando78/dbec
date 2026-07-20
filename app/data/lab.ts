@@ -13,6 +13,8 @@ import {
   underline,
 } from "@/helpers/content";
 
+import { shuffle } from "@/utils/shuffle";
+
 export const line = [
   ...content({
     parts: [
@@ -83,11 +85,18 @@ export const image = {
 
 export const vocabularyCarousel = {
   instruction: "Match the words to the pictures.",
-  matchingContent: [
-    { as: "span" as const, parts: [audio("memory"), "memory"] },
-    { as: "span" as const, parts: [audio("learning"), "learning"] },
-  ],
+  matchingContent: shuffle([
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+    { as: "span" as const, parts: [audio("xxx"), "xxx"] },
+  ]),
   words: [
+    // Local igs
     {
       src: "/assets/img/aspect-ratio-square.png",
       alt: "...",
@@ -148,6 +157,7 @@ export const vocabularyCarousel = {
         }),
       ],
     },
+    // Web imgs
     {
       src: "https://images.unsplash.com/photo-1597838816882-4435b1977fbe?q=80&w=849&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "...",
@@ -157,6 +167,7 @@ export const vocabularyCarousel = {
         }),
       ],
     },
+    // Dictionary words
     {
       word: "memory",
       img: 0,

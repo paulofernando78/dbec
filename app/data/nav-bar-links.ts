@@ -20,43 +20,43 @@ export const links = [
         label: "A1 Beginner",
         links: [
           {
-            href: "/cefr/beginner/hello",
+            href: "/courses/beginner/hello",
             label: "Hello",
           },
           {
-            href: "/cefr/beginner/my-family",
+            href: "/courses/beginner/my-family",
             label: "My Family",
           },
           {
-            href: "/cefr/beginner/my-house",
+            href: "/courses/beginner/my-house",
             label: "My House",
           },
           {
-            href: "/cefr/beginner/daily-routine",
+            href: "/courses/beginner/daily-routine",
             label: "Daily Routine",
           },
           {
-            href: "/cefr/beginner/my-week",
+            href: "/courses/beginner/my-week",
             label: "My Week",
           },
           {
-            href: "/cefr/beginner/food-and-drinks",
+            href: "/courses/beginner/food-and-drinks",
             label: "Food and Drinks",
           },
           {
-            href: "/cefr/beginner/shopping",
+            href: "/courses/beginner/shopping",
             label: "Shopping",
           },
           {
-            href: "/cefr/beginner/around-town",
+            href: "/courses/beginner/around-town",
             label: "Around Town",
           },
           {
-            href: "/cefr/beginner/what-are-you-doing",
+            href: "/courses/beginner/what-are-you-doing",
             label: "What Are You Doing?",
           },
           {
-            href: "/cefr/beginner/abilities",
+            href: "/courses/beginner/abilities",
             label: "Abilities",
           },
         ],
@@ -68,58 +68,58 @@ export const links = [
           //! Past
           // Beach
           {
-            href: "/cefr/elementary/past-beach",
+            href: "/courses/elementary/past-beach",
             label: "Past: Beach",
           },
           // Movies
           {
-            href: "/cefr/elementary/past-movies",
+            href: "/courses/elementary/past-movies",
             label: "Past: Movies",
           },
           // Movies
           {
-            href: "/cefr/elementary/past-family",
+            href: "/courses/elementary/past-family",
             label: "Past: Family",
           },
           // Movies
           {
-            href: "/cefr/elementary/past-home",
+            href: "/courses/elementary/past-home",
             label: "Past: Home",
           },
           {
-            href: "/cefr/elementary/travel-plans",
+            href: "/courses/elementary/travel-plans",
             label: "Future: Travel Plans",
           },
           {
-            href: "/cefr/elementary/future-predictions",
+            href: "/courses/elementary/future-predictions",
             label: "Future: Predictions",
           },
           {
-            href: "/cefr/elementary/city-life",
+            href: "/courses/elementary/city-life",
             label: "City Life",
           },
           {
-            href: "/cefr/elementary/the-best-place",
+            href: "/courses/elementary/the-best-place",
             label: "The Best Place",
           },
           {
-            href: "/cefr/elementary/healthy-living",
+            href: "/courses/elementary/healthy-living",
             label: "Healthy Living",
           },
           {
-            href: "/cefr/elementary/rules",
+            href: "/courses/elementary/rules",
             label: "Rules",
           },
           {
-            href: "/cefr/elementary/shopping-smart",
+            href: "/courses/elementary/shopping-smart",
             label: "Shopping Smart",
           },
           {
-            href: "/cefr/elementary/experiences",
+            href: "/courses/elementary/experiences",
             label: "Experiences",
           },
           {
-            href: "/cefr/elementary/hobbies",
+            href: "/courses/elementary/hobbies",
             label: "Hobbies",
           },
         ],
@@ -129,43 +129,43 @@ export const links = [
         label: "B1 Intermediate",
         links: [
           {
-            href: "/cefr/intermediate/life-experiences",
+            href: "/courses/intermediate/life-experiences",
             label: "Life Experiences",
           },
           {
-            href: "/cefr/intermediate/storytelling",
+            href: "/courses/intermediate/storytelling",
             label: "Storytelling",
           },
           {
-            href: "/cefr/intermediate/making-plans",
+            href: "/courses/intermediate/making-plans",
             label: "Making Plans",
           },
           {
-            href: "/cefr/intermediate/what-if",
+            href: "/courses/intermediate/what-if",
             label: "What If?",
           },
           {
-            href: "/cefr/intermediate/green-planet",
+            href: "/courses/intermediate/green-planet",
             label: "Green Planet",
           },
           {
-            href: "/cefr/intermediate/technology-today",
+            href: "/courses/intermediate/technology-today",
             label: "Technology Today",
           },
           {
-            href: "/cefr/intermediate/news-report",
+            href: "/courses/intermediate/news-report",
             label: "News Report",
           },
           {
-            href: "/cefr/intermediate/what-did-they-say",
+            href: "/courses/intermediate/what-did-they-say",
             label: "What Did They Say?",
           },
           {
-            href: "/cefr/intermediate/career-path",
+            href: "/courses/intermediate/career-path",
             label: "Career Path",
           },
           {
-            href: "/cefr/intermediate/relationships",
+            href: "/courses/intermediate/relationships",
             label: "Relationships",
           },
         ],
@@ -175,43 +175,43 @@ export const links = [
         label: "B2 Upper-Intermediate",
         links: [
           {
-            href: "/cefr/upper-intermediate/dream-scenarios",
+            href: "/courses/upper-intermediate/dream-scenarios",
             label: "Dream Scenarios",
           },
           {
-            href: "/cefr/upper-intermediate/regrets",
+            href: "/courses/upper-intermediate/regrets",
             label: "Regrets",
           },
           {
-            href: "/cefr/upper-intermediate/business-communication",
+            href: "/courses/upper-intermediate/business-communication",
             label: "Business Communication",
           },
           {
-            href: "/cefr/upper-intermediate/leadership",
+            href: "/courses/upper-intermediate/leadership",
             label: "Leadership",
           },
           {
-            href: "/cefr/upper-intermediate/innovation",
+            href: "/courses/upper-intermediate/innovation",
             label: "Innovation",
           },
           {
-            href: "/cefr/upper-intermediate/global-issues",
+            href: "/courses/upper-intermediate/global-issues",
             label: "Global Issues",
           },
           {
-            href: "/cefr/upper-intermediate/debate-club",
+            href: "/courses/upper-intermediate/debate-club",
             label: "Debate Club",
           },
           {
-            href: "/cefr/upper-intermediate/media-and-marketing",
+            href: "/courses/upper-intermediate/media-and-marketing",
             label: "Media and Marketing",
           },
           {
-            href: "/cefr/upper-intermediate/native-like-english",
+            href: "/courses/upper-intermediate/native-like-english",
             label: "Idiomatic English in Context",
           },
           {
-            href: "/cefr/upper-intermediate/natural-english",
+            href: "/courses/upper-intermediate/natural-english",
             label: "Natural English",
           },
         ],
@@ -221,43 +221,43 @@ export const links = [
         label: "C1 Advanced",
         links: [
           {
-            href: "/cefr/advanced/reading-between-the-lines",
+            href: "/courses/advanced/reading-between-the-lines",
             label: "Reading Between the Lines",
           },
           {
-            href: "/cefr/advanced/synthesizing-sources",
+            href: "/courses/advanced/synthesizing-sources",
             label: "Synthesizing Sources",
           },
           {
-            href: "/cefr/advanced/building-complex-arguments",
+            href: "/courses/advanced/building-complex-arguments",
             label: "Building Complex Arguments",
           },
           {
-            href: "/cefr/advanced/diplomatic-communication",
+            href: "/courses/advanced/diplomatic-communication",
             label: "Diplomatic Communication",
           },
           {
-            href: "/cefr/advanced/academic-presentations",
+            href: "/courses/advanced/academic-presentations",
             label: "Academic Presentations",
           },
           {
-            href: "/cefr/advanced/mediation-and-clarification",
+            href: "/courses/advanced/mediation-and-clarification",
             label: "Mediation and Clarification",
           },
           {
-            href: "/cefr/advanced/critical-reviews",
+            href: "/courses/advanced/critical-reviews",
             label: "Critical Reviews",
           },
           {
-            href: "/cefr/advanced/negotiation-and-consensus",
+            href: "/courses/advanced/negotiation-and-consensus",
             label: "Negotiation and Consensus",
           },
           {
-            href: "/cefr/advanced/precision-and-nuance",
+            href: "/courses/advanced/precision-and-nuance",
             label: "Precision and Nuance",
           },
           {
-            href: "/cefr/advanced/research-briefing",
+            href: "/courses/advanced/research-briefing",
             label: "Research Briefing",
           },
         ],
@@ -270,39 +270,37 @@ export const links = [
     links: [
       // News
       {
-        href: "/cefr/advanced/news",
         label: "News",
         links: [
           // Ismal Kone breaks leg
           {
-            href: "/cefr/advanced/news/a-soccer-match-dramatic-moment",
+            href: "/authentic-content/news/a-soccer-match-dramatic-moment",
             label: "A Soccer Match's Dramatic Moment",
           },
         ],
       },
       // Ted-ED
       {
-        href: "/cefr/advanced/ted-ed",
         label: "Ted-ED",
         links: [
           // What Causes Constipation - May 7, 2018
           {
-            href: "/cefr/advanced/ted-ed/how-food-moves-through-your-body",
+            href: "/authentic-content/ted-ed/how-food-moves-through-your-body",
             label: "How Food Moves Through Your Body",
           },
           // When will next Ice Age happen? - May 10, 2018
           {
-            href: "/cefr/advanced/ted-ed/earths-climate-cycle",
+            href: "/authentic-content/ted-ed/earths-climate-cycle",
             label: "Earth’s Climate Cycle",
           },
           // How to Manage Your Emotions - Feb 16, 2023
           {
-            href: "/cefr/advanced/ted-ed/how-we-react-differently",
+            href: "/authentic-content/ted-ed/how-we-react-differently",
             label: "How We React Differently",
           },
           // How did ancient civilizations brew beer? - Mar 24, 2026
           {
-            href: "/cefr/advanced/ted-ed/a-drink-with-a-long-history",
+            href: "/authentic-content/ted-ed/a-drink-with-a-long-history",
             label: "A Drink With a Long History",
           },
         ],

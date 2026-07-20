@@ -65,7 +65,6 @@ export const Carousel = ({
   imgs,
   aspectRatio,
 }: CarouselProps) => {
-  const finalInstruction = instruction || "";
   const finalWords = words || imgs || [];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -144,7 +143,7 @@ export const Carousel = ({
 
   return (
     <>
-      <p className="font-bold mb-4">{finalInstruction}</p>
+      <p className="font-bold mb-4">{instruction}</p>
       {matchingContent && (
         <div
           className={`
