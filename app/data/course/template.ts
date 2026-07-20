@@ -119,6 +119,7 @@ export const lesson = {
   languageFocus: {
     meaning: [
       {
+        display: "block",
         as: "span",
         parts: [audio("/"), "..."],
       },

@@ -191,6 +191,7 @@ export const beginnerHello = {
   languageFocus: {
     greetings: [
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -200,6 +201,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -209,6 +211,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -218,6 +221,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -227,6 +231,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -236,6 +241,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -245,6 +251,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -254,6 +261,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -263,6 +271,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -272,6 +281,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -283,6 +293,7 @@ export const beginnerHello = {
     ] satisfies Meaning[],
     askingQuestions: [
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -294,6 +305,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -305,6 +317,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -321,6 +334,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -332,6 +346,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -343,6 +358,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -352,6 +368,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -362,6 +379,7 @@ export const beginnerHello = {
       },
       spacer(),
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -371,6 +389,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -380,6 +399,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -390,6 +410,7 @@ export const beginnerHello = {
       },
       spacer(),
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -399,6 +420,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -410,6 +432,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -421,6 +444,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -434,6 +458,7 @@ export const beginnerHello = {
     ] satisfies Meaning[],
     personalInformation: [
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -443,6 +468,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           icon("spotlight"),
@@ -455,6 +481,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -464,6 +491,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -473,6 +501,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -482,6 +511,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -492,6 +522,7 @@ export const beginnerHello = {
       },
       spacer(),
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -501,6 +532,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -510,6 +542,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -519,6 +552,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -528,6 +562,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -537,6 +572,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -547,6 +583,7 @@ export const beginnerHello = {
       },
       spacer(),
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -556,6 +593,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -565,6 +603,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -574,6 +613,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -583,6 +623,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -592,6 +633,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -602,6 +644,7 @@ export const beginnerHello = {
       },
       spacer(),
       {
+        display: "block",
         as: "span",
         parts: [
           icon("spotlight"),
@@ -613,6 +656,7 @@ export const beginnerHello = {
       },
       spacer(),
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -622,6 +666,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(
@@ -633,6 +678,7 @@ export const beginnerHello = {
         ],
       },
       {
+        display: "block",
         as: "span",
         parts: [
           audio(

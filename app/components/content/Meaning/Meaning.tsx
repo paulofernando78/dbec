@@ -4,6 +4,7 @@ import type { InlineRichContentValue } from "@/components/content/InlineRichCont
 
 export type Meaning =
   | {
+      display?: "block" | "inline";
       as?: "p" | "span";
       parts: InlineRichContentValue[];
     }
@@ -23,7 +24,7 @@ export const Meaning = ({ value = [] }: MeaningProps) => {
           return <div key={index} className="h-4" />;
         }
 
-        return <Line key={index} as={note.as} value={note.parts} />;
+        return <Line key={index} display={note.display} as={note.as} value={note.parts} />;
       })}
     </div>
   );
