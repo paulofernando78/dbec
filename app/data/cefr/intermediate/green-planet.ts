@@ -6,9 +6,9 @@ import type { CCQ } from "@/components/content/CCQ/";
 import { content, text, audio } from "@/helpers/content";
 
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/intermediate/green-planet"
+const href = "/cefr/intermediate/green-planet";
 const data = cefrLessonsCardData.intermediate.find(
-  (lesson) => lesson.href === href
+  (lesson) => lesson.href === href,
 )!;
 
 export const intermediateGreenPlanet = {
@@ -26,8 +26,8 @@ export const intermediateGreenPlanet = {
   },
 
   introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
           src: "/",

@@ -84,17 +84,14 @@ export const Carousel = ({
           if (!word.word) return null;
 
           const foundWord = await loadDictionaryWord(word.word);
+          if (!foundWord) return null;
 
-          return [word.word, foundWord];
+          return [word.word, foundWord] as const;
         }),
       );
 
       setResolvedWords(
-        Object.fromEntries(
-          entries.filter(
-            (entry): entry is [string, ResolvedWord] => entry !== null,
-          ),
-        ),
+        Object.fromEntries(entries.filter((entry) => entry !== null)),
       );
     };
 

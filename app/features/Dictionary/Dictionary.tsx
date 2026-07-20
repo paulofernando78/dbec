@@ -9,25 +9,25 @@ import { dictionary } from "@/helpers/content";
 import {
   flattenDictionaryDefinitions,
   loadDictionaryLetter,
+  type DictionaryDefinition,
 } from "@/utils/loadDictionaryWord";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, type KeyboardEvent } from "react";
 // import { Search, Close } from "@/lib/svg-imports";
 import { Search, X, Keyboard, Dot } from "lucide-react";
 
 export const Dictionary = () => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [definitions, setDefinitions] = useState([]);
+  const [definitions, setDefinitions] = useState<DictionaryDefinition[]>([]);
 
   useEffect(() => {
     const letters = "abcdefghijklmnopqrstuvwxyz".split("");
 
     Promise.all(
       letters.map(
-        (letter) =>
-          loadDictionaryLetter(letter).catch(() => null) // se algum não existir, ignora
-      )
+        (letter) => loadDictionaryLetter(letter).catch(() => null), // se algum não existir, ignora
+      ),
     ).then((results) => {
       const allDefinitions = results
         .filter(Boolean)
@@ -73,7 +73,7 @@ export const Dictionary = () => {
             return 0;
           });
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       setOpen(true);
     }
@@ -198,15 +198,17 @@ export const Dictionary = () => {
 
                 {item.imgs && (
                   <div className={styles.images}>
-                    {item.imgs.map((img, index) => (
-                      <Image
-                        key={index}
-                        src={dictionary(img.src)}
-                        alt={img.alt || item.word || `image-${index}`}
-                        width={270}
-                        height={270}
-                      />
-                    ))}
+                    {item.imgs
+                      .filter((img) => Boolean(img.src))
+                      .map((img, index) => (
+                        <Image
+                          key={index}
+                          src={dictionary(img.src!)}
+                          alt={img.alt || item.word || `image-${index}`}
+                          width={270}
+                          height={270}
+                        />
+                      ))}
                   </div>
                 )}
               </div>

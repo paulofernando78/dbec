@@ -2,6 +2,37 @@
   {
     "definitions": [
       {
+        "word": "soda",
+        "phonetics": "/ˈsoʊ.də/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A sweet, carbonated soft drink, such as cola, lemon-lime, or orange soda.",
+        "ptDefinition": "Um refrigerante gaseificado e geralmente doce, como cola, limão ou laranja.",
+        "examples": [
+          {
+            "enExample": "Liz bought a large soda to drink during the movie.",
+            "ptExample": "Liz comprou um refrigerante grande para beber durante o filme."
+          },
+          {
+            "enExample": "Would you like popcorn and a soda?",
+            "ptExample": "Você gostaria de pipoca e um refrigerante?"
+          }
+        ],
+        "synonyms": ["soft drink", "pop", "fizzy drink"],
+        "seeAlso": ["movie theater", "popcorn", "snack", "cup", "drink"],
+        "notes": [
+          {
+            "enNote": "\"Soda\" is the most common term in many parts of the United States. Other regions may use \"pop\" or simply \"soft drink.\"",
+            "ptNote": "\"Soda\" é o termo mais comum em muitas partes dos Estados Unidos. Em outras regiões, pode-se usar \"pop\" ou simplesmente \"soft drink\"."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "soda.avif",
+            "alt": "A cup of soda with a lid and straw at a movie theater"
+          }
+        ]
+      },
+      {
         "word": "support",
         "phonetics": "/səˈpɔːrt/",
         "partOfSpeech": "verb, noun",

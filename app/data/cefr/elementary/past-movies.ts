@@ -3,6 +3,8 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
+import { shuffle } from "@/utils/shuffle";
+
 import {
   content,
   text,
@@ -34,10 +36,9 @@ export const elementaryPastMovies = {
   },
 
   introduction: {
-    carouselWide: {
-      instruction:
-        "Look at the pictures. Match the words and listen to the sentences.",
-      matchingContent: [
+    vocabularyCarousel: {
+      instruction: "Match the words to the pictures.",
+      matchingContent: shuffle([
         {
           as: "span",
           parts: [audio("movie theater"), "movie theater"],
@@ -54,25 +55,39 @@ export const elementaryPastMovies = {
           as: "span",
           parts: [audio("soda"), "soda"],
         },
-      ],
+        {
+          as: "span",
+          parts: [audio("row of seats"), "row of seats"],
+        },
+      ]),
+      words: shuffle([
+        { word: "movie theater", img: 0 },
+        { word: "ticket", img: 0 },
+        { word: "popcorn", img: 0 },
+        { word: "soda", img: 0 },
+        { word: "row of seats", img: 0 },
+      ]),
+    },
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-going-to-movies.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-going-to-movies.avif",
           alt: "Laura going to the movies",
           content: [
             ...content({
               parts: [
-                audio("Laura went to the movies."),
+                audio("Last weekend, Laura went to the movies."),
                 "Laura ",
                 mark("went"),
                 " to the movies. ",
-                portuguese("Laura foi ao cinema."),
+                portuguese("Semana passada, Laura foi ao cinema."),
               ],
             }),
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-buying-two-tickets.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-buying-two-tickets.avif",
           alt: "Laura buying two tickets",
           content: [
             ...content({
@@ -87,7 +102,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-buying-popcorn-soda.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-buying-popcorn-soda.avif",
           alt: "Laura buying soda and popcorn",
           content: [
             ...content({
@@ -96,13 +111,13 @@ export const elementaryPastMovies = {
                 "She also ",
                 mark("bought"),
                 " popcorn and soda. ",
-                portuguese("Ela tambem comprou pipoca e refrigerante."),
+                portuguese("Ela também comprou pipoca e refrigerante."),
               ],
             }),
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-meeting-liz.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-meeting-liz.avif",
           alt: "Laura meeting her friend Liz",
           content: [
             ...content({
@@ -111,13 +126,13 @@ export const elementaryPastMovies = {
                 "She ",
                 mark("met"),
                 " her friend Liz. ",
-                portuguese("Ela encontrou a amiga dela, Liz."),
+                portuguese("Ela encontrou com sua  amiga, Liz."),
               ],
             }),
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/they-watching-movie.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/they-watching-movie.avif",
           alt: "Laura and Liz watching the movie",
           content: [
             ...content({
@@ -132,7 +147,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-liz-eating.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-liz-eating.avif",
           alt: "Laura and Liz eating popcorn and drinking soda",
           content: [
             ...content({
@@ -147,7 +162,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-looking-at-watch.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-looking-at-watch.avif",
           alt: "Laura looking at her watch",
           content: [
             ...content({
@@ -162,39 +177,37 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-liz-leaving-movie-theater.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-liz-leaving-movie-theater.avif",
           alt: "Laura and Liz leaving the movie theater",
           content: [
             ...content({
               parts: [
-                audio("They left the movie."),
+                audio("They left the movie theater."),
                 "They ",
                 mark("left"),
-                " the movie. ",
-                portuguese(
-                  "Elas sairam do cinema.",
-                ),
+                " the movie theater. ",
+                portuguese("Elas saíram do cinema."),
               ],
             }),
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/laura-taking-taxi.avif",
-          alt: "Laura taking a taxi",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-taking-taxi.avif",
+          alt: "Laura taking a taxi home",
           content: [
             ...content({
               parts: [
                 audio("Laura took a taxi home."),
                 "Laura ",
                 mark("took"),
-                " a taxi home.",
-                portuguese(""),
+                " a taxi home. ",
+                portuguese("Laura pegou um táxi para casa."),
               ],
             }),
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/liz-driving-home.avif",
+          src: "/assets/img/cefr/a2/past-movies/introduction/story/liz-driving-home.avif",
           alt: "Liz driving home",
           content: [
             ...content({
@@ -202,8 +215,8 @@ export const elementaryPastMovies = {
                 audio("Liz drove home, too."),
                 "Liz ",
                 mark("drove"),
-                " home, too.",
-                portuguese(""),
+                " home, too. ",
+                portuguese("Liz também dirigiu para casa."),
               ],
             }),
           ],
@@ -222,7 +235,14 @@ export const elementaryPastMovies = {
             ],
           },
           {
-            question: "Laura bought chocolate and candies.",
+            question: "Laura bought one ticket.",
+            options: [
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
+            ],
+          },
+          {
+            question: "The movie finished at 7:20 p.m.",
             options: [
               { option: "true", isCorrect: false },
               { option: "false", isCorrect: true },

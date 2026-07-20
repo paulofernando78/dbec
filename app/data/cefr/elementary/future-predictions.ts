@@ -6,9 +6,9 @@ import type { CCQ } from "@/components/content/CCQ/";
 import { content, text, audio } from "@/helpers/content";
 
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/elementary/future-predictions"
+const href = "/cefr/elementary/future-predictions";
 const data = cefrLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href
+  (lesson) => lesson.href === href,
 )!;
 
 export const elementaryFuturePredictions = {
@@ -25,8 +25,8 @@ export const elementaryFuturePredictions = {
   },
 
   introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
           src: "/images/a2/unit-3-future-predictions/flying-cars.jpg",

@@ -444,6 +444,12 @@
             "enNote": "Tickets can refer to either entry to events or fines/penalties, depending on context.",
             "ptNote": "Tickets podem se referir tanto a ingressos para eventos quanto a multas/penalidades, dependendo do contexto."
           }
+        ],
+        "imgs": [
+          {
+            "src": "ticket.avif",
+            "alt": "A movie ticket"
+          }
         ]
       },
       {

@@ -68,13 +68,19 @@ export function createPastLesson(config: PastLessonConfig) {
     },
 
     introduction: {
-      carouselWide: {
-        instruction:
-          "Look at the pictures. Match the words and listen to the sentences.",
+      vocabularyCarousel: {
+        instruction: "Match the words to the pictures.",
         matchingContent: config.vocabulary.map((word) => ({
           as: "span" as const,
           parts: [audio(word), word],
         })),
+        imgs: config.vocabulary.map((word, index) => ({
+          src: config.story[index]?.src ?? "/",
+          alt: word,
+        })),
+      },
+      storyCarousel: {
+        instruction: "Look at the pictures and listen to the sentences.",
         imgs: config.story.map((item) => ({
           src: item.src ?? "/",
           alt: item.alt,

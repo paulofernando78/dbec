@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "movie theater",
+        "phonetics": "/ˈmuː.vi ˌθiː.ə.t̬ɚ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A building where people go to watch movies on a large screen.",
+        "ptDefinition": "Um local onde as pessoas vão para assistir filmes em uma tela grande.",
+        "examples": [
+          {
+            "enExample": "Laura and Liz went to the movie theater on Saturday night.",
+            "ptExample": "Laura e Liz foram ao cinema no sábado à noite."
+          },
+          {
+            "enExample": "There are ten seat rows in this movie theater.",
+            "ptExample": "Há dez fileiras de assentos neste cinema."
+          }
+        ],
+        "synonyms": ["cinema", "picture house", "movie house"],
+        "antonyms": [""],
+        "seeAlso": ["movie", "screen", "seat", "popcorn", "ticket"],
+        "notes": [
+          {
+            "enNote": "\"Movie theater\" is the most common term in American English. In British English, people usually say \"cinema.\"",
+            "ptNote": "\"Movie theater\" é o termo mais comum no inglês americano. No inglês britânico, geralmente se usa \"cinema\"."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "movie-theater.avif",
+            "alt": "Rows of seats inside a movie theater."
+          }
+        ]
+      },
+      {
         "word": "malt",
         "phonetics": "/mɔːlt/",
         "partOfSpeech": "noun",

@@ -18,9 +18,9 @@ import {
 } from "@/helpers/content";
 
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/beginner/hello"
+const href = "/cefr/beginner/hello";
 const data = cefrLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href
+  (lesson) => lesson.href === href,
 )!;
 
 export const beginnerHello = {
@@ -37,8 +37,8 @@ export const beginnerHello = {
   },
 
   introduction: {
-    carouselWide: {
-      prompt:
+    storyCarousel: {
+      instruction:
         "Look at the pictures. Laura and Eric are at school. Now listen to the sentences.",
       words: [
         // Laura says, “Hi! I'm Laura.””
@@ -48,9 +48,7 @@ export const beginnerHello = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "Laura says, “Hi! I'm Laura.",
-                ),
+                audio("Laura says, “Hi! I'm Laura."),
                 "Laura says, “Hi! I'm Laura.”",
                 lineBreak(),
                 portuguese("Laura diz: “Oi! Eu sou a Laura.”"),

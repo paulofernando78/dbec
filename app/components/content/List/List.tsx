@@ -5,6 +5,7 @@ import {
   InlineRichContent,
   type InlineRichContentValue,
 } from "@/components/content/InlineRichContent";
+import { useState } from "react";
 
 type ListItem = {
   content: InlineRichContentValue[];
@@ -17,31 +18,38 @@ export type ListProps = {
   type?: "none" | "ul" | "ol" | "checkbox";
 };
 
-export const List = ({
-  instruction,
-  items = [],
-  type = "none",
-}: ListProps) => {
+export const List = ({ instruction, items = [], type = "none" }: ListProps) => {
+  const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
+
   if (type === "checkbox") {
     return (
       <div className="mb-4">
         <p className="font-bold mb-4">{instruction}</p>
 
-          {items.map((item, index) => (
-            <div key={index}>
-              <label key={index} className={styles.wrapper}>
-                <Checkbox className="mr-1"/>
-                <InlineRichContent value={item.content} />
-              </label>
-              {item.textarea && (
-                <textarea
-                  name=""
-                  id=""
-                  className="w-full mt-1 p-2 bg-white border border-gray-300 rounded-lg"
-                ></textarea>
-              )}
-            </div>
-          ))}
+        {items.map((item, index) => (
+          <div key={index}>
+            <label className={styles.wrapper}>
+              <Checkbox
+                className="mr-1"
+                checked={checkedItems[index] ?? false}
+                onCheckedChange={(checked) =>
+                  setCheckedItems((current) => ({
+                    ...current,
+                    [index]: checked,
+                  }))
+                }
+              />
+              <InlineRichContent value={item.content} />
+            </label>
+            {item.textarea && (
+              <textarea
+                name=""
+                id=""
+                className="w-full mt-1 p-2 bg-white border border-gray-300 rounded-lg"
+              ></textarea>
+            )}
+          </div>
+        ))}
       </div>
     );
   }

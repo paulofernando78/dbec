@@ -69,10 +69,18 @@ export function LessonPage({ lesson }: LessonPageProps) {
         <LessonCard {...lesson.lessonCard} />
         <PageSections>
           <Section id="introduction" heading={heading}>
-            <Carousel
-              aspectRatio="wide"
-              {...lesson.introduction?.carouselWide}
-            />
+            {lesson.introduction?.vocabularyCarousel && (
+              <Carousel
+                aspectRatio="square"
+                {...lesson.introduction.vocabularyCarousel}
+              />
+            )}
+            {lesson.introduction?.storyCarousel && (
+              <Carousel
+                aspectRatio="wide"
+                {...lesson.introduction.storyCarousel}
+              />
+            )}
             {lesson.introduction?.radio && (
               <Radio {...lesson.introduction.radio} />
             )}

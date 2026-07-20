@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
 
-import { CircleChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 // import { Checkbox } from "@/components/ui/Checkbox";
 
 type NavItem = {
@@ -54,7 +54,7 @@ function RenderNavItem({
           list-none
           flex
           items-center
-          gap-4
+          gap-2
           cursor-pointer
         ">
           <span className="
@@ -63,7 +63,7 @@ function RenderNavItem({
             relative
             top-px
           ">
-            <CircleChevronRight />
+            <ChevronRight />
           </span>
 
           {item.href ? (

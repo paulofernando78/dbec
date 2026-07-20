@@ -6,9 +6,9 @@ import type { CCQ } from "@/components/content/CCQ/";
 import { content, text, audio, bold } from "@/helpers/content";
 
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/beginner/food-and-drinks"
+const href = "/cefr/beginner/food-and-drinks";
 const data = cefrLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href
+  (lesson) => lesson.href === href,
 )!;
 
 export const beginnerFoodAndDrinks = {
@@ -25,8 +25,8 @@ export const beginnerFoodAndDrinks = {
   },
 
   introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
           src: "/",

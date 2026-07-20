@@ -3,10 +3,10 @@ import { Card } from "@/components/ui/Card";
 
 import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
 
-import { ClipboardList } from 'lucide-react';
+import { ClipboardList } from "lucide-react";
 
 export type ICQ = {
-  as?: "div" | "p" | "span";
+  as?: "p" | "span";
   parts: InlineRichContentValue[];
 };
 

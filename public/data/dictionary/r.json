@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "row of seats",
+        "phonetics": "/ˌroʊ əv ˈsiːts/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "A line of seats arranged next to each other, especially in places like movie theaters, airplanes, or stadiums.",
+        "ptDefinition": "Uma fileira de assentos organizados lado a lado, especialmente em lugares como cinemas, aviões ou estádios.",
+        "examples": [
+          {
+            "enExample": "Laura and Liz sat in the third row of seats.",
+            "ptExample": "Laura e Liz se sentaram na terceira fileira de assentos."
+          },
+          {
+            "enExample": "The front row of seats was completely empty.",
+            "ptExample": "A primeira fileira de assentos estava completamente vazia."
+          }
+        ],
+        "synonyms": ["seat row", "line of seats"],
+        "antonyms": [""],
+        "seeAlso": ["movie theater", "seat", "auditorium", "ticket", "screen"],
+        "notes": [
+          {
+            "enNote": "\"Row of seats\" is commonly used to describe seating arrangements in theaters, cinemas, airplanes, and sports venues.",
+            "ptNote": "\"Row of seats\" é comumente usado para descrever a disposição dos assentos em teatros, cinemas, aviões e locais esportivos."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "row-of-seats.avif",
+            "alt": "Several rows of seats inside a movie theater"
+          }
+        ]
+      },
+      {
         "word": "recovery",
         "phonetics": "/rɪˈkʌv.ɚ.i/",
         "partOfSpeech": "noun",
@@ -17,7 +49,12 @@
             "ptExample": "A empresa relatou uma forte recuperação nas vendas após o lançamento do novo produto."
           }
         ],
-        "synonyms": ["restoration", "rehabilitation", "recuperation", "bounce-back"],
+        "synonyms": [
+          "restoration",
+          "rehabilitation",
+          "recuperation",
+          "bounce-back"
+        ],
         "antonyms": ["decline", "deterioration", "loss"],
         "seeAlso": ["restore", "rehabilitate", "recuperate", "healing"],
         "notes": [

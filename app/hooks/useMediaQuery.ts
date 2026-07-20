@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export function useMediaQuery(query) {
+export function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export function useMediaQuery(query) {
     // Set initial value
     setTimeout(() => {
       setMatches(media.matches);
-    }, 0)
+    }, 0);
 
     const listener = () => setMatches(media.matches);
     media.addEventListener("change", listener);
@@ -19,5 +19,5 @@ export function useMediaQuery(query) {
     return () => media.removeEventListener("change", listener);
   }, [query]);
 
-  return matches
+  return matches;
 }

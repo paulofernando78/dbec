@@ -27,8 +27,12 @@ export default function Introduction() {
         <PageSections>
           <Section id="introduction" heading={4}>
             <Carousel
+              aspectRatio="square"
+              {...lesson.introduction.vocabularyCarousel}
+            />
+            <Carousel
               aspectRatio="wide"
-              {...lesson.introduction.carouselWide}
+              {...lesson.introduction.storyCarousel}
             />
             <Radio {...lesson.introduction.radio} />
           </Section>

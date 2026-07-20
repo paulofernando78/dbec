@@ -21,8 +21,8 @@ import {
   line,
   paragraph,
   image,
-  carouselSquare,
-  carouselWide,
+  vocabularyCarousel,
+  storyCarousel,
   flipCards,
   mediaWrapper,
   audioPlayer,
@@ -65,14 +65,14 @@ export default function Playground() {
             <Image {...image} />
           </Section>
 
-          {/* Caroseul */}
-          <Section id="caroseul-square-aspect-ratio" heading={3}>
-            <Carousel aspectRatio="square" {...carouselSquare} />
+          {/* Vocabulary Carousel */}
+          <Section id="vocabulary-carousel-square" heading={3}>
+            <Carousel aspectRatio="square" {...vocabularyCarousel} />
           </Section>
 
-          {/* Caroseul */}
-          <Section id="caroseul-wide-aspect-ratio" heading={3}>
-            <Carousel aspectRatio="wide" {...carouselWide} />
+          {/* Story Carousel */}
+          <Section id="story-carousel-wide" heading={3}>
+            <Carousel aspectRatio="wide" {...storyCarousel} />
           </Section>
 
           {/* Flip Card */}

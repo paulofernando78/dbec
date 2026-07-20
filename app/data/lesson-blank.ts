@@ -34,8 +34,8 @@ export const lesson = {
   },
 
   introduction: {
-    carouselWide: {
-      instruction: "Look at the pictures and listen to the sentences.",
+    vocabularyCarousel: {
+      instruction: "Match the words to the pictures.",
       matchingContent: [
         {
           as: "span",
@@ -46,6 +46,20 @@ export const lesson = {
           parts: [audio("tickets"), "..."],
         },
       ],
+      imgs: [
+        {
+          src: "/",
+          alt: "...",
+        },
+        {
+          src: "/",
+          alt: "...",
+        },
+      ],
+    },
+
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
           src: "/",

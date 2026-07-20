@@ -6,9 +6,9 @@ import type { CCQ } from "@/components/content/CCQ/";
 import { content, text, audio, bold } from "@/helpers/content";
 
 import { cefrLessonsCardData } from "@/data/cefr/cefr-lessons-card-data";
-const href = "/cefr/beginner/my-family"
+const href = "/cefr/beginner/my-family";
 const data = cefrLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href
+  (lesson) => lesson.href === href,
 )!;
 
 export const beginnerMyFamily = {
@@ -25,8 +25,8 @@ export const beginnerMyFamily = {
   },
 
   introduction: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
       words: [
         {
           src: "/assets/img/cefr/a1/unit-2-my-family/introduction/laura-mother.avif",
@@ -108,8 +108,8 @@ export const beginnerMyFamily = {
   },
 
   presentation: {
-    carouselWide: {
-      prompt: "Look at the pictures and listen to the sentences.",
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
           src: "/assets/img/cefr/a1/unit-2-my-family/introduction/laura-mother.avif",

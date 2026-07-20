@@ -81,8 +81,12 @@ export const image = {
   applyPadding: true,
 };
 
-export const carouselSquare = {
-  prompt: "Slide the pictures and describe what you see.",
+export const vocabularyCarousel = {
+  instruction: "Match the words to the pictures.",
+  matchingContent: [
+    { as: "span" as const, parts: [audio("memory"), "memory"] },
+    { as: "span" as const, parts: [audio("learning"), "learning"] },
+  ],
   words: [
     {
       src: "/assets/img/aspect-ratio-square.png",
@@ -155,13 +159,13 @@ export const carouselSquare = {
     },
     {
       word: "memory",
-      img: 0
+      img: 0,
     },
   ],
 };
 
-export const carouselWide = {
-  prompt: "Slide the pictures and describe what you see.",
+export const storyCarousel = {
+  instruction: "Look at the pictures and describe what you see.",
   words: [
     {
       src: "/assets/img/aspect-ratio-16-9.png",
@@ -285,7 +289,7 @@ export const carouselWide = {
     },
     {
       word: "memory",
-      img: 0
+      img: 0,
     },
   ],
 };

@@ -89,8 +89,8 @@ export const createC1Lesson = (config: C1LessonConfig) => ({
   },
 
   introduction: {
-    carouselWide: {
-      prompt: config.introductionPrompt,
+    storyCarousel: {
+      instruction: config.introductionPrompt,
       imgs: config.introductionStatements.map((statement) => ({
         alt: "Add a supporting image for this C1 discussion prompt.",
         content: text([statement]),

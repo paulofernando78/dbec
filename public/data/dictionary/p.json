@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "popcorn",
+        "phonetics": "/ˈpɑːp.kɔːrn/",
+        "partOfSpeech": "noun",
+        "enDefinition": "Corn kernels that have been heated until they burst open and are eaten as a snack, especially at movie theaters.",
+        "ptDefinition": "Grãos de milho que foram aquecidos até estourarem e são consumidos como um lanche, especialmente em cinemas.",
+        "examples": [
+          {
+            "enExample": "Laura shared a bucket of popcorn with Liz during the movie.",
+            "ptExample": "Laura compartilhou um balde de pipoca com Liz durante o filme."
+          },
+          {
+            "enExample": "The smell of fresh popcorn filled the movie theater.",
+            "ptExample": "O cheiro de pipoca fresca tomou conta do cinema."
+          }
+        ],
+        "synonyms": ["popped corn"],
+        "antonyms": [""],
+        "seeAlso": ["soda", "movie theater", "snack", "bucket", "seat"],
+        "notes": [
+          {
+            "enNote": "Popcorn is one of the most popular snacks at movie theaters around the world and is often served with butter and salt.",
+            "ptNote": "A pipoca é um dos lanches mais populares em cinemas ao redor do mundo e geralmente é servida com manteiga e sal."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "popcorn.avif",
+            "alt": "A bucket of popcorn"
+          }
+        ]
+      },
+      {
         "word": "pipe dream",
         "partOfSpeech": "expression",
         "enDefinition": "an idea or plan that is very unlikely to happen or be achieved",
