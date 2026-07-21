@@ -35,7 +35,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-mom.mp3",
+                  "Laura says: \"This is my mom.\"",
                 ),
                 'Laura says: "This is my mom."',
               ],
@@ -49,7 +49,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-dad.mp3",
+                  "Laura says: \"This is my dad.\"",
                 ),
                 'Laura says: "This is my dad."',
               ],
@@ -63,7 +63,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-brother.mp3",
+                  "Laura says: \"This is my brother.\"",
                 ),
                 'Laura says: "This is my brother."',
               ],
@@ -77,7 +77,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-sister.mp3",
+                  "Laura says: \"This is my sister.\"",
                 ),
                 'Laura says: "This is my sister."',
               ],
