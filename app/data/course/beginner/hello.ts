@@ -112,9 +112,7 @@ export const beginnerHello = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "Laura says, “Hi! I'm Laura.”",
-                ),
+                audio("Laura says, “Hi! I'm Laura.”"),
                 "Laura says, “Hi! I'm Laura.”",
                 lineBreak(),
                 portuguese("Laura diz: “Oi! Eu sou a Laura.”"),
@@ -129,9 +127,7 @@ export const beginnerHello = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "Eric says, “Hello! I'm Eric.”",
-                ),
+                audio("Eric says, “Hello! I'm Eric.”"),
                 "Eric says, “Hello! I'm Eric.”",
                 lineBreak(),
                 portuguese("Eric diz: “Olá! Eu sou o Eric.”"),
@@ -146,9 +142,7 @@ export const beginnerHello = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "They shake hands.",
-                ),
+                audio("They shake hands."),
                 "They",
                 " ",
                 mark("shake"),
@@ -164,28 +158,21 @@ export const beginnerHello = {
     },
 
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Look at the pictures and choose the correct answer.",
       exercise: {
         questions: [
           {
-            question: "Laura and Eric are at home.",
+            question: "Where are Laura and Eric?",
             options: [
-              { option: "true.", isCorrect: false },
-              { option: "false", isCorrect: true },
+              { option: "At school", isCorrect: true },
+              { option: "At home", isCorrect: false },
             ],
           },
           {
-            question: "They are new friends.",
+            question: "Who says “Hello! I’m Eric”?",
             options: [
-              { option: "true", isCorrect: true },
-              { option: "false", isCorrect: false },
-            ],
-          },
-          {
-            question: "They are brothers and sisters.",
-            options: [
-              { option: "true", isCorrect: false },
-              { option: "false", isCorrect: true },
+              { option: "Laura", isCorrect: false },
+              { option: "Eric", isCorrect: true },
             ],
           },
         ],
@@ -207,10 +194,7 @@ export const beginnerHello = {
         },
         {
           speaker: "Eric",
-          line: [
-            audio("Hello! I'm Eric."),
-            ...text(["Hello! I'm Eric."]),
-          ],
+          line: [audio("Hello! I'm Eric."), ...text(["Hello! I'm Eric."])],
         },
         {
           speaker: "Laura",
@@ -225,10 +209,7 @@ export const beginnerHello = {
         },
         {
           speaker: "Laura",
-          line: [
-            audio("Nice to meet you."),
-            ...text(["Nice to meet you."]),
-          ],
+          line: [audio("Nice to meet you."), ...text(["Nice to meet you."])],
         },
         {
           speaker: "Eric",
@@ -239,10 +220,7 @@ export const beginnerHello = {
         },
         {
           speaker: "Laura",
-          line: [
-            audio("See you in class!"),
-            ...text(["See you in class!"]),
-          ],
+          line: [audio("See you in class!"), ...text(["See you in class!"])],
         },
         {
           speaker: "Eric",
@@ -478,7 +456,8 @@ export const beginnerHello = {
             ],
           },
           {
-            question: "What do you say when you meet someone for the first time?",
+            question:
+              "What do you say when you meet someone for the first time?",
             options: [
               { option: "Nice to meet you.", isCorrect: true },
               { option: "Good night.", isCorrect: false },
@@ -528,11 +507,7 @@ export const beginnerHello = {
             lineBreak: true,
           },
           {
-            block: [
-              { text: "What" },
-              { blank: "is" },
-              { text: "your name?" },
-            ],
+            block: [{ text: "What" }, { blank: "is" }, { text: "your name?" }],
           },
         ],
       },
