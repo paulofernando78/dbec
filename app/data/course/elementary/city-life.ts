@@ -1,107 +1,288 @@
-import { createElementaryLesson } from "./create-elementary-lesson";
-export const elementaryCityLife = createElementaryLesson({
-  href: "/courses/elementary/city-life",
-  subtitle: "City Life",
-  descriptions: [
-    "The city is busier than the town.",
-    "The subway is faster than the bus.",
-  ],
-  vocabulary: ["crowded", "quiet", "subway", "traffic"],
-  story: [
-    {
-      sentence: "Metro City is bigger and busier than Lake Town.",
-      translation: "Metro City é maior e mais agitada que Lake Town.",
-      alt: "A large busy city and a small quiet town",
+export const elementaryCityLife = {
+  whiteboard: {
+    title: "A2 Elementary",
+    subtitle: "City Life",
+    descriptions: [
+      "The city is busier than the town.",
+      "The subway is faster than the bus.",
+    ],
+  },
+  lessonCard: {
+    lessonObjective:
+      "By the end of this class, students will be able to compare cities and places, describe urban life, talk about advantages and disadvantages of different locations, and use comparative adjectives correctly.",
+    grammar: "Comparatives",
+    vocabulary: "Cities",
+  },
+  introduction: {
+    vocabularyCarousel: {
+      instruction: "Match the words to the pictures.",
+      matchingContent: [
+        { as: "span", parts: [{ audio: "crowded" }, "crowded"] },
+        { as: "span", parts: [{ audio: "quiet" }, "quiet"] },
+        { as: "span", parts: [{ audio: "subway" }, "subway"] },
+        { as: "span", parts: [{ audio: "traffic" }, "traffic"] },
+      ],
+      imgs: [
+        { src: "/", alt: "crowded" },
+        { src: "/", alt: "quiet" },
+        { src: "/", alt: "subway" },
+        { src: "/", alt: "traffic" },
+      ],
     },
-    {
-      sentence: "The subway is faster than the bus.",
-      translation: "O metrô é mais rápido que o ônibus.",
-      alt: "A subway and a bus in the city",
+    storyCarousel: {
+      instruction: "Look at the pictures and listen to the sentences.",
+      imgs: [
+        {
+          src: "/",
+          alt: "A large busy city and a small quiet town",
+          content: [
+            { audio: "Metro City is bigger and busier than Lake Town." },
+            "Metro City is bigger and busier than Lake Town.",
+            " (Metro City é maior e mais agitada que Lake Town.)",
+          ],
+        },
+        {
+          src: "/",
+          alt: "A subway and a bus in the city",
+          content: [
+            { audio: "The subway is faster than the bus." },
+            "The subway is faster than the bus.",
+            " (O metrô é mais rápido que o ônibus.)",
+          ],
+        },
+        {
+          src: "/",
+          alt: "A clean quiet street in a small town",
+          content: [
+            { audio: "Lake Town is quieter and cleaner." },
+            "Lake Town is quieter and cleaner.",
+            " (Lake Town é mais tranquila e limpa.)",
+          ],
+        },
+      ],
     },
-    {
-      sentence: "Lake Town is quieter and cleaner.",
-      translation: "Lake Town é mais tranquila e limpa.",
-      alt: "A clean quiet street in a small town",
+    radio: {
+      instruction: "Choose the correct answer.",
+      exercise: {
+        questions: [
+          {
+            question: "Which place is noisier?",
+            options: [
+              { option: "Metro City", isCorrect: true },
+              { option: "Ben's hometown", isCorrect: false },
+            ],
+          },
+          {
+            question: "Which transportation is faster?",
+            options: [
+              { option: "The subway", isCorrect: true },
+              { option: "The bus", isCorrect: false },
+            ],
+          },
+        ],
+      },
     },
-  ],
-  dialogue: [
-    { speaker: "Ana", line: "Do you like living in Metro City?" },
-    { speaker: "Ben", line: "Yes, but it is noisier than my hometown." },
-    { speaker: "Ana", line: "Is public transportation good?" },
-    { speaker: "Ben", line: "Yes. The subway is faster than the bus." },
-    { speaker: "Ana", line: "What do you miss about your hometown?" },
-    { speaker: "Ben", line: "It is quieter, cleaner, and less crowded." },
-  ],
-  comprehension: [
-    {
-      question: "Which place is noisier?",
-      correct: "Metro City",
-      incorrect: "Ben's hometown",
+  },
+  presentation: {
+    dialogue: {
+      prompt: "Listen and read.",
+      audioSrc: "/",
+      lines: [
+        { speaker: "Ana", line: ["Do you like living in Metro City?"] },
+        { speaker: "Ben", line: ["Yes, but it is noisier than my hometown."] },
+        { speaker: "Ana", line: ["Is public transportation good?"] },
+        { speaker: "Ben", line: ["Yes. The subway is faster than the bus."] },
+        { speaker: "Ana", line: ["What do you miss about your hometown?"] },
+        { speaker: "Ben", line: ["It is quieter, cleaner, and less crowded."] },
+      ],
     },
-    {
-      question: "Which transportation is faster?",
-      correct: "The subway",
-      incorrect: "The bus",
+    radio: {
+      instruction: "Choose the correct answer.",
+      exercise: {
+        questions: [
+          {
+            question: "Which place is noisier?",
+            options: [
+              { option: "Metro City", isCorrect: true },
+              { option: "Ben's hometown", isCorrect: false },
+            ],
+          },
+          {
+            question: "Which transportation is faster?",
+            options: [
+              { option: "The subway", isCorrect: true },
+              { option: "The bus", isCorrect: false },
+            ],
+          },
+          {
+            question: "What does Ben miss?",
+            options: [
+              { option: "Quiet, clean streets", isCorrect: true },
+              { option: "Heavy traffic", isCorrect: false },
+            ],
+          },
+        ],
+      },
     },
-    {
-      question: "What does Ben miss?",
-      correct: "Quiet, clean streets",
-      incorrect: "Heavy traffic",
+  },
+  languageFocus: {
+    meaning: [
+      {
+        as: "p",
+        parts: [
+          { part: "Comparatives", type: "bold" },
+          " compares two people, places, or things.",
+        ],
+      },
+      { type: "spacer" },
+      {
+        as: "p",
+        parts: [
+          "",
+          "Use adjective + -er + than for short adjectives and more + adjective + than for many long adjectives.",
+        ],
+      },
+      { type: "spacer" },
+    ],
+    column: {
+      width: 300,
+      cols: [
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Short adjectives",
+          items: [
+            {
+              parts: [
+                { audio: "small → smaller than" },
+                "small → smaller than",
+              ],
+            },
+            { parts: [{ audio: "busy → busier than" }, "busy → busier than"] },
+          ],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Long adjectives",
+          items: [
+            { parts: [{ audio: "more crowded than" }, "more crowded than"] },
+            {
+              parts: [{ audio: "more expensive than" }, "more expensive than"],
+            },
+          ],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Irregular",
+          items: [
+            { parts: [{ audio: "good → better than" }, "good → better than"] },
+            { parts: [{ audio: "bad → worse than" }, "bad → worse than"] },
+          ],
+        },
+      ],
     },
-  ],
-  meaning: [
-    " compares two people, places, or things.",
-    "Use adjective + -er + than for short adjectives and more + adjective + than for many long adjectives.",
-  ],
-  columns: [
-    {
-      title: "Short adjectives",
-      examples: ["small → smaller than", "busy → busier than"],
+    notes: [
+      {
+        as: "p",
+        parts: [
+          "Use than after the comparative: The city is bigger than the town.",
+        ],
+      },
+    ],
+    ccq: [
+      { as: "p", parts: ["Are we comparing one place or two?"] },
+      { as: "p", parts: ["Is a busier place more or less active?"] },
+      { as: "p", parts: ["Do we say more faster or faster?"] },
+    ],
+  },
+  practice: {
+    radio: {
+      instruction: "Choose the correct answer.",
+      exercise: {
+        questions: [
+          {
+            question: "The city is _____ than the village.",
+            options: [
+              { option: "busier", isCorrect: true },
+              { option: "busy", isCorrect: false },
+            ],
+          },
+          {
+            question: "The subway is _____ than the bus.",
+            options: [
+              { option: "faster", isCorrect: true },
+              { option: "more fast", isCorrect: false },
+            ],
+          },
+        ],
+      },
     },
-    {
-      title: "Long adjectives",
-      examples: ["more crowded than", "more expensive than"],
+    fillInTheBlanks: {
+      showWordBank: true,
+      instruction: "Complete the sentences.",
+      numbered: true,
+      exercise: {
+        blocks: [
+          {
+            block: [
+              { text: "My street is " },
+              { blank: "quieter" },
+              { text: " than downtown." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "The city is " },
+              { blank: "more crowded" },
+              { text: " on Fridays." },
+            ],
+            lineBreak: true,
+          },
+        ],
+      },
     },
-    {
-      title: "Irregular",
-      examples: ["good → better than", "bad → worse than"],
+    scramble: {
+      showWordBank: false,
+      instruction: "Unscramble the sentence.",
+      numbered: true,
+      exercise: {
+        items: [
+          {
+            prompt: "town / city / bigger / the / is / than / the",
+            answer: "The city is bigger than the town.",
+          },
+          {
+            prompt: "bus / faster / subway / the / is / the / than",
+            answer: "The subway is faster than the bus.",
+          },
+        ],
+      },
     },
-  ],
-  note: "Use than after the comparative: The city is bigger than the town.",
-  ccq: [
-    "Are we comparing one place or two?",
-    "Is a busier place more or less active?",
-    "Do we say more faster or faster?",
-  ],
-  practice: [
-    {
-      question: "The city is _____ than the village.",
-      correct: "busier",
-      incorrect: "busy",
+  },
+  production: {
+    task: {
+      instruction: "Complete the tasks:",
+      type: "checkbox",
+      items: [
+        {
+          content: ["Compare your city with another place in four sentences."],
+          textarea: true,
+        },
+        {
+          content: ["Write two questions using comparatives."],
+          textarea: true,
+        },
+        {
+          content: ["Ask a classmate which place they prefer and why."],
+          textarea: false,
+        },
+      ],
     },
-    {
-      question: "The subway is _____ than the bus.",
-      correct: "faster",
-      incorrect: "more fast",
-    },
-  ],
-  blanks: [
-    { before: "My street is ", blank: "quieter", after: " than downtown." },
-    { before: "The city is ", blank: "more crowded", after: " on Fridays." },
-  ],
-  scramble: [
-    {
-      prompt: "town / city / bigger / the / is / than / the",
-      answer: "The city is bigger than the town.",
-    },
-    {
-      prompt: "bus / faster / subway / the / is / the / than",
-      answer: "The subway is faster than the bus.",
-    },
-  ],
-  production: [
-    "Compare your city with another place in four sentences.",
-    "Write two questions using comparatives.",
-    "Ask a classmate which place they prefer and why.",
-  ],
-});
+  },
+};

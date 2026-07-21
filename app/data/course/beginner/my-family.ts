@@ -13,7 +13,7 @@ const data = courseLessonsCardData.beginner.find(
 
 export const beginnerMyFamily = {
   whiteboard: {
-    title: "A1 BEGINNER",
+    title: "A1 Beginner",
     subtitle: "My Family",
     descriptions: ["This is my family.", "Who's she? She's my sister."],
   },
@@ -29,13 +29,13 @@ export const beginnerMyFamily = {
       instruction: "Look at the pictures and listen to the sentences.",
       words: [
         {
-          src: "/assets/img/cefr/a1/unit-2-my-family/introduction/laura-mother.avif",
-          alt: "Mother",
+          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-mom.avif",
+          alt: "Laura with her Mom",
           content: [
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-mom.mp3",
+                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-mom.mp3",
                 ),
                 'Laura says: "This is my mom."',
               ],
@@ -43,13 +43,13 @@ export const beginnerMyFamily = {
           ],
         },
         {
-          src: "/",
-          alt: "Father",
+          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-dad.avif",
+          alt: "Laura ith her Dad",
           content: [
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-dad.mp3",
+                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-dad.mp3",
                 ),
                 'Laura says: "This is my dad."',
               ],
@@ -57,20 +57,30 @@ export const beginnerMyFamily = {
           ],
         },
         {
-          src: "/",
-          alt: "Sister",
+          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-brother.avif",
+          alt: "Laura with her brother",
           content: [
             ...content({
-              parts: [audio("/"), "This is my sister."],
+              parts: [
+                audio(
+                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-brother.mp3",
+                ),
+                'Laura says: "This is my brother."',
+              ],
             }),
           ],
         },
         {
-          src: "/",
-          alt: "Brother",
+          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-sister.avif",
+          alt: "Mother",
           content: [
             ...content({
-              parts: [audio("/"), "This is my brother."],
+              parts: [
+                audio(
+                  "/assets/audio/courses/a1/unit-2-my-family/presentation/laura-sister.mp3",
+                ),
+                'Laura says: "This is my sister."',
+              ],
             }),
           ],
         },
@@ -82,24 +92,43 @@ export const beginnerMyFamily = {
       exercise: {
         questions: [
           {
-            question: "Who is Anna?",
+            imgSrc:
+              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/mother-mom.avif",
+            imgAlt: "Laura’s mom",
+            question: "This is Laura’s sister.",
             options: [
-              { option: "Mother", isCorrect: false },
-              { option: "Sister", isCorrect: true },
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
             ],
           },
           {
-            question: "Who is David?",
+            imgSrc:
+              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/brother.avif",
+            imgAlt: "Laura’s brother",
+            question: "This is Laura’s dad.",
             options: [
-              { option: "Father", isCorrect: true },
-              { option: "Brother", isCorrect: false },
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
             ],
           },
           {
-            question: "Is this a family?",
+            imgSrc:
+              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/sister.avif",
+            imgAlt: "Laura’s sister",
+            question: "This is Laura’s mom.",
             options: [
-              { option: "Yes", isCorrect: true },
-              { option: "No", isCorrect: false },
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
+            ],
+          },
+          {
+            imgSrc:
+              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/father-dad.avif",
+            imgAlt: "Laura’s dad",
+            question: "This is Laura’s brother",
+            options: [
+              { option: "true", isCorrect: false },
+              { option: "false", isCorrect: true },
             ],
           },
         ],
@@ -108,56 +137,9 @@ export const beginnerMyFamily = {
   },
 
   presentation: {
-    storyCarousel: {
-      instruction: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          src: "/assets/img/cefr/a1/unit-2-my-family/introduction/laura-mother.avif",
-          alt: "Mother",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  "/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-mom.mp3",
-                ),
-                'Laura says: "This is my mom."',
-              ],
-            }),
-          ],
-        },
-        {
-          src: "/",
-          alt: "Father",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  "/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-dad.mp3",
-                ),
-                'Laura says: "This is my dad."',
-              ],
-            }),
-          ],
-        },
-        {
-          src: "/",
-          alt: "Father",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  "/assets/audio/cefr/a1/unit-1-my-family/introduction/laura-brother.mp3",
-                ),
-                'Laura says: "This is my brother."',
-              ],
-            }),
-          ],
-        },
-      ],
-    },
     dialogue: {
       prompt: "Listen and read.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -208,10 +190,17 @@ export const beginnerMyFamily = {
       exercise: {
         questions: [
           {
-            question: "...",
+            question: "Who is Sarah?",
             options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
+              { option: "Jake's mother", isCorrect: true },
+              { option: "Jake's sister", isCorrect: false },
+            ],
+          },
+          {
+            question: "How many siblings does Jake introduce?",
+            options: [
+              { option: "Two", isCorrect: true },
+              { option: "One", isCorrect: false },
             ],
           },
         ],
@@ -223,19 +212,19 @@ export const beginnerMyFamily = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "mother"],
+        parts: ["mother"],
       },
       {
         as: "span",
-        parts: [audio("/"), "father"],
+        parts: ["father"],
       },
       {
         as: "span",
-        parts: [audio("/"), "sister"],
+        parts: ["sister"],
       },
       {
         as: "span",
-        parts: [audio("/"), "brother"],
+        parts: ["brother"],
       },
     ] satisfies Meaning[],
     column: {
@@ -247,9 +236,9 @@ export const beginnerMyFamily = {
           textColor: "text-white",
           column: "Family",
           items: [
-            { parts: [audio("/"), "mother"] },
-            { parts: [audio("/"), "father"] },
-            { parts: [audio("/"), "parents"] },
+            { parts: ["mother"] },
+            { parts: ["father"] },
+            { parts: ["parents"] },
           ],
         },
         {
@@ -257,10 +246,7 @@ export const beginnerMyFamily = {
           bgColor: "bg-slate-400",
           textColor: "text-white",
           column: "Siblings",
-          items: [
-            { parts: [audio("/"), "brother"] },
-            { parts: [audio("/"), "sister"] },
-          ],
+          items: [{ parts: ["brother"] }, { parts: ["sister"] }],
         },
         {
           borderColor: "border-slate-500",
@@ -268,9 +254,23 @@ export const beginnerMyFamily = {
           textColor: "text-white",
           column: "Possessive Adjectives",
           items: [
-            { parts: [audio("/"), "my"] },
-            { parts: [audio("/"), "his"] },
-            { parts: [audio("/"), "her"] },
+            { parts: ["my"] },
+            { parts: ["your"] },
+            { parts: ["his"] },
+            { parts: ["her"] },
+            { parts: ["our"] },
+            { parts: ["their"] },
+          ],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Possessive ’s",
+          items: [
+            { parts: ["John's brother"] },
+            { parts: ["Maria's mother"] },
+            { parts: ["Ben's sister"] },
           ],
         },
       ],
@@ -278,7 +278,11 @@ export const beginnerMyFamily = {
     notes: [
       {
         as: "span",
-        parts: [bold("my"), " = belongs to me"],
+        parts: [bold("my"), " = belongs to the speaker"],
+      },
+      {
+        as: "span",
+        parts: [bold("your"), " = belongs to the person we are speaking to"],
       },
       {
         as: "span",
@@ -290,7 +294,7 @@ export const beginnerMyFamily = {
       },
       {
         as: "span",
-        parts: [bold("John's"), " = belonging to John"],
+        parts: [bold("John's brother"), " = the brother of John"],
       },
     ] satisfies Notes[],
     ccq: [
@@ -300,7 +304,9 @@ export const beginnerMyFamily = {
       },
       {
         as: "span",
-        parts: ["In 'his sister', are we talking about a boy or a girl?"],
+        parts: [
+          "In 'his sister', is the person who has the sister male or female?",
+        ],
       },
       {
         as: "span",
@@ -341,7 +347,7 @@ export const beginnerMyFamily = {
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction: "Complete the sentences with the correct family word.",
       numbered: true,
       exercise: {
         blocks: [

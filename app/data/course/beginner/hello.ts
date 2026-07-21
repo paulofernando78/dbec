@@ -27,7 +27,7 @@ export const beginnerHello = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "Hello!",
-    descriptions: ["This is my family.", "Who's she? She's my sister."],
+    descriptions: ["Hi! I'm Laura.", "What's your name?"],
   },
 
   lessonCard: {
@@ -44,11 +44,13 @@ export const beginnerHello = {
         // Laura says, “Hi! I'm Laura.””
         {
           src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-introduction1.avif",
-          alt: "...",
+          alt: "Laura introduces herself to Eric",
           content: [
             ...content({
               parts: [
-                audio("Laura says, “Hi! I'm Laura."),
+                audio(
+                  "/assets/audio/cefr/a1/unit-1-hello/introduction/laura-says-hi-im-laura.mp3",
+                ),
                 "Laura says, “Hi! I'm Laura.”",
                 lineBreak(),
                 portuguese("Laura diz: “Oi! Eu sou a Laura.”"),
@@ -59,7 +61,7 @@ export const beginnerHello = {
         // Eric says, “Hello! I'm Eric.””
         {
           src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-introduction2.avif",
-          alt: "...",
+          alt: "Eric introduces himself to Laura",
           content: [
             ...content({
               parts: [
@@ -76,7 +78,7 @@ export const beginnerHello = {
         // They shake hands.
         {
           src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-shake-hands.avif",
-          alt: "...",
+          alt: "Laura and Eric shake hands",
           content: [
             ...content({
               parts: [
@@ -138,7 +140,7 @@ export const beginnerHello = {
         },
         {
           speaker: "Eric",
-          line: text(["Hello, I'm pretty good. How about you?"]),
+          line: text(["Hi! I'm pretty good. How about you?"]),
         },
         {
           speaker: "Laura",
@@ -182,7 +184,7 @@ export const beginnerHello = {
         },
         {
           speaker: "Laura",
-          line: text(["Yes. I am. Let's go."]),
+          line: text(["Yes, I am. Let's go."]),
         },
       ],
     },
@@ -225,7 +227,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//hey.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hey.mp3",
           ),
           "Hey!",
         ],
@@ -235,7 +237,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-morning.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/good-morning.mp3",
           ),
           "Good morning.",
         ],
@@ -255,7 +257,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-afternoon.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/good-afternoon.mp3",
           ),
           "Good afternoon.",
         ],
@@ -265,7 +267,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//afternoon.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/afternoon.mp3",
           ),
           "Afternoon.",
         ],
@@ -275,7 +277,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//good-evening.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/good-evening.mp3",
           ),
           "Good evening.",
         ],
@@ -285,7 +287,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi//evening.mp3",
+            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/evening.mp3",
           ),
           "Evening.",
         ],
@@ -357,26 +359,6 @@ export const beginnerHello = {
           italic("informal"),
         ],
       },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/cant-complain.mp3",
-          ),
-          "can’t complain",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/same-as-usual.mp3",
-          ),
-          "same as usual",
-        ],
-      },
       spacer(),
       {
         display: "block",
@@ -386,73 +368,6 @@ export const beginnerHello = {
             "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/hows-it-going.mp3",
           ),
           "How’s it going?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/hows-everything.mp3",
-          ),
-          "How’s everything?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/how-are-things-with-you.mp3",
-          ),
-          "How are things with you?",
-        ],
-      },
-      spacer(),
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/whats-up.mp3",
-          ),
-          "What’s up?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/nothing-much.mp3",
-          ),
-          "Nothing much.",
-          " ",
-          portuguese("Nada demais."),
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/not-much-you.mp3",
-          ),
-          "Not much, you?",
-          " ",
-          portuguese("Nada demais, e você?"),
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/just-chilling.mp3",
-          ),
-          "Just chilling.",
-          " ",
-          portuguese("De boa."),
         ],
       },
     ] satisfies Meaning[],
@@ -615,12 +530,7 @@ export const beginnerHello = {
       {
         display: "block",
         as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/its-palmer.mp3",
-          ),
-          "(It’s) Palmer.",
-        ],
+        parts: ["(It’s) Palmer."],
       },
       {
         display: "block",
@@ -684,7 +594,7 @@ export const beginnerHello = {
           audio(
             "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-meeting-you.mp3",
           ),
-          "Nice to meeting you.",
+          "Nice meeting you.",
         ],
       },
     ] satisfies Meaning[],
@@ -705,7 +615,7 @@ export const beginnerHello = {
           audio(
             "/assets/audio/cefr/a1/unit-1-hello/language-focus/last-name-surname-family-name.mp3",
           ),
-          bold("last name / surname name"),
+          bold("last name / surname"),
           " = family name",
         ],
       },

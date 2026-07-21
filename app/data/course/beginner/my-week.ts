@@ -32,38 +32,34 @@ export const beginnerMyWeek = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "Monday",
           content: [
             ...content({
-              parts: [audio("/"), "I study English on Monday."],
+              parts: ["I study English on Monday."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Wednesday",
           content: [
             ...content({
-              parts: [audio("/"), "I go to the gym on Wednesday."],
+              parts: ["I go to the gym on Wednesday."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Saturday",
           content: [
             ...content({
-              parts: [audio("/"), "I play soccer on Saturday."],
+              parts: ["I play soccer on Saturday."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Sunday",
           content: [
             ...content({
-              parts: [audio("/"), "I relax on Sunday."],
+              parts: ["I relax on Sunday."],
             }),
           ],
         },
@@ -103,7 +99,7 @@ export const beginnerMyWeek = {
   presentation: {
     dialogue: {
       prompt: "Listen to the dialogue.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -158,19 +154,19 @@ export const beginnerMyWeek = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "always"],
+        parts: ["always"],
       },
       {
         as: "span",
-        parts: [audio("/"), "usually"],
+        parts: ["usually"],
       },
       {
         as: "span",
-        parts: [audio("/"), "sometimes"],
+        parts: ["sometimes"],
       },
       {
         as: "span",
-        parts: [audio("/"), "never"],
+        parts: ["never"],
       },
     ] satisfies Meaning[],
     column: {
@@ -182,10 +178,10 @@ export const beginnerMyWeek = {
           textColor: "text-white",
           column: "Frequency",
           items: [
-            { parts: [audio("/"), "always"] },
-            { parts: [audio("/"), "usually"] },
-            { parts: [audio("/"), "sometimes"] },
-            { parts: [audio("/"), "never"] },
+            { parts: ["always"] },
+            { parts: ["usually"] },
+            { parts: ["sometimes"] },
+            { parts: ["never"] },
           ],
         },
         {
@@ -194,10 +190,13 @@ export const beginnerMyWeek = {
           textColor: "text-white",
           column: "Days",
           items: [
-            { parts: [audio("/"), "Monday"] },
-            { parts: [audio("/"), "Tuesday"] },
-            { parts: [audio("/"), "Wednesday"] },
-            { parts: [audio("/"), "Thursday"] },
+            { parts: ["Monday"] },
+            { parts: ["Tuesday"] },
+            { parts: ["Wednesday"] },
+            { parts: ["Thursday"] },
+            { parts: ["Friday"] },
+            { parts: ["Saturday"] },
+            { parts: ["Sunday"] },
           ],
         },
         {
@@ -206,10 +205,18 @@ export const beginnerMyWeek = {
           textColor: "text-white",
           column: "Months",
           items: [
-            { parts: [audio("/"), "January"] },
-            { parts: [audio("/"), "February"] },
-            { parts: [audio("/"), "March"] },
-            { parts: [audio("/"), "April"] },
+            { parts: ["January"] },
+            { parts: ["February"] },
+            { parts: ["March"] },
+            { parts: ["April"] },
+            { parts: ["May"] },
+            { parts: ["June"] },
+            { parts: ["July"] },
+            { parts: ["August"] },
+            { parts: ["September"] },
+            { parts: ["October"] },
+            { parts: ["November"] },
+            { parts: ["December"] },
           ],
         },
       ],
@@ -230,6 +237,17 @@ export const beginnerMyWeek = {
       {
         as: "span",
         parts: [bold("never"), " = 0%"],
+      },
+      {
+        as: "span",
+        parts: ["Put the adverb before a main verb: ", bold("I always study.")],
+      },
+      {
+        as: "span",
+        parts: [
+          "Put the adverb after the verb to be: ",
+          bold("She is sometimes late."),
+        ],
       },
     ] satisfies Notes[],
     ccq: [
@@ -262,6 +280,13 @@ export const beginnerMyWeek = {
           },
           {
             question: "She _____ plays soccer. Maybe once or twice a month.",
+            options: [
+              { option: "sometimes", isCorrect: true },
+              { option: "always", isCorrect: false },
+            ],
+          },
+          {
+            question: "She is _____ late, but not every day.",
             options: [
               { option: "sometimes", isCorrect: true },
               { option: "always", isCorrect: false },

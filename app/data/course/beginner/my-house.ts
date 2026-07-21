@@ -32,38 +32,34 @@ export const beginnerMyHouse = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "Living room",
           content: [
             ...content({
-              parts: [audio("/"), "This is the living room."],
+              parts: ["This is the living room."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Kitchen",
           content: [
             ...content({
-              parts: [audio("/"), "This is the kitchen."],
+              parts: ["This is the kitchen."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Bedroom",
           content: [
             ...content({
-              parts: [audio("/"), "This is the bedroom."],
+              parts: ["This is the bedroom."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Bathroom",
           content: [
             ...content({
-              parts: [audio("/"), "This is the bathroom."],
+              parts: ["This is the bathroom."],
             }),
           ],
         },
@@ -103,7 +99,7 @@ export const beginnerMyHouse = {
   presentation: {
     dialogue: {
       prompt: "Listen to the dialogue.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -166,19 +162,19 @@ export const beginnerMyHouse = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "living room"],
+        parts: ["living room"],
       },
       {
         as: "span",
-        parts: [audio("/"), "kitchen"],
+        parts: ["kitchen"],
       },
       {
         as: "span",
-        parts: [audio("/"), "bedroom"],
+        parts: ["bedroom"],
       },
       {
         as: "span",
-        parts: [audio("/"), "bathroom"],
+        parts: ["bathroom"],
       },
     ] satisfies Meaning[],
     column: {
@@ -190,10 +186,10 @@ export const beginnerMyHouse = {
           textColor: "text-white",
           column: "Rooms",
           items: [
-            { parts: [audio("/"), "living room"] },
-            { parts: [audio("/"), "kitchen"] },
-            { parts: [audio("/"), "bedroom"] },
-            { parts: [audio("/"), "bathroom"] },
+            { parts: ["living room"] },
+            { parts: ["kitchen"] },
+            { parts: ["bedroom"] },
+            { parts: ["bathroom"] },
           ],
         },
         {
@@ -202,10 +198,10 @@ export const beginnerMyHouse = {
           textColor: "text-white",
           column: "Furniture",
           items: [
-            { parts: [audio("/"), "sofa"] },
-            { parts: [audio("/"), "table"] },
-            { parts: [audio("/"), "chair"] },
-            { parts: [audio("/"), "bed"] },
+            { parts: ["sofa"] },
+            { parts: ["table"] },
+            { parts: ["chair"] },
+            { parts: ["bed"] },
           ],
         },
         {
@@ -214,10 +210,10 @@ export const beginnerMyHouse = {
           textColor: "text-white",
           column: "Grammar",
           items: [
-            { parts: [audio("/"), "There is"] },
-            { parts: [audio("/"), "There are"] },
-            { parts: [audio("/"), "Is there...?"] },
-            { parts: [audio("/"), "Are there...?"] },
+            { parts: ["There is"] },
+            { parts: ["There are"] },
+            { parts: ["Is there...?"] },
+            { parts: ["Are there...?"] },
           ],
         },
       ],
@@ -275,37 +271,52 @@ export const beginnerMyHouse = {
               { option: "There is", isCorrect: false },
             ],
           },
+          {
+            question: "_____ a bathroom in the house?",
+            options: [
+              { option: "Is there", isCorrect: true },
+              { option: "Are there", isCorrect: false },
+            ],
+          },
+          {
+            question: "_____ two bedrooms?",
+            options: [
+              { option: "Are there", isCorrect: true },
+              { option: "Is there", isCorrect: false },
+            ],
+          },
         ],
       },
     },
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction:
+        "Complete each sentence with there is, there are, is there, or are there.",
       numbered: true,
       exercise: {
         blocks: [
           {
             block: [
-              { text: "There is a " },
-              { blank: "bed" },
-              { text: " in the bedroom." },
+              { text: "" },
+              { blank: "There is" },
+              { text: " a bed in the bedroom." },
             ],
             lineBreak: true,
           },
           {
             block: [
-              { text: "There are two " },
-              { blank: "chairs" },
-              { text: " in the kitchen." },
+              { text: "" },
+              { blank: "There are" },
+              { text: " two chairs in the kitchen." },
             ],
             lineBreak: true,
           },
           {
             block: [
-              { text: "There is a " },
-              { blank: "sofa" },
-              { text: " in the living room." },
+              { text: "" },
+              { blank: "Is there" },
+              { text: " a sofa in the living room?" },
             ],
           },
         ],

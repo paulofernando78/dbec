@@ -29,38 +29,34 @@ export const beginnerShopping = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "T-shirt",
           content: [
             ...content({
-              parts: [audio("/"), "This is a T-shirt."],
+              parts: ["This is a T-shirt."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Shoes",
           content: [
             ...content({
-              parts: [audio("/"), "These are shoes."],
+              parts: ["These are shoes."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Jacket",
           content: [
             ...content({
-              parts: [audio("/"), "That is a jacket."],
+              parts: ["That is a jacket."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Jeans",
           content: [
             ...content({
-              parts: [audio("/"), "Those are jeans."],
+              parts: ["Those are jeans."],
             }),
           ],
         },
@@ -100,7 +96,7 @@ export const beginnerShopping = {
   presentation: {
     dialogue: {
       prompt: "Listen to the dialogue.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Customer",
@@ -155,19 +151,19 @@ export const beginnerShopping = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), bold("this"), " = singular, near"],
+        parts: [bold("this"), " = singular, near"],
       },
       {
         as: "span",
-        parts: [audio("/"), bold("that"), " = singular, far"],
+        parts: [bold("that"), " = singular, far"],
       },
       {
         as: "span",
-        parts: [audio("/"), bold("these"), " = plural, near"],
+        parts: [bold("these"), " = plural, near"],
       },
       {
         as: "span",
-        parts: [audio("/"), bold("those"), " = plural, far"],
+        parts: [bold("those"), " = plural, far"],
       },
     ] satisfies Meaning[],
     column: {
@@ -235,11 +231,11 @@ export const beginnerShopping = {
     notes: [
       {
         as: "span",
-        parts: [audio("/"), bold("cheap"), " = low price"],
+        parts: [bold("cheap"), " = low price"],
       },
       {
         as: "span",
-        parts: [audio("/"), bold("expensive"), " = high price"],
+        parts: [bold("expensive"), " = high price"],
       },
     ] satisfies Notes[],
     ccq: [
@@ -264,14 +260,15 @@ export const beginnerShopping = {
       exercise: {
         questions: [
           {
-            question: "_____ shoes are very expensive.",
+            question:
+              "The shoes here are very expensive. _____ shoes are very expensive.",
             options: [
               { option: "These", isCorrect: true },
               { option: "This", isCorrect: false },
             ],
           },
           {
-            question: "_____ jacket is nice.",
+            question: "Look at the jacket over there. _____ jacket is nice.",
             options: [
               { option: "That", isCorrect: true },
               { option: "Those", isCorrect: false },
@@ -283,20 +280,32 @@ export const beginnerShopping = {
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction: "Complete the sentences with this, that, these, or those.",
       numbered: true,
       exercise: {
         blocks: [
           {
-            block: [{ text: "_____ shirt is blue." }, { blank: "This" }],
+            block: [
+              { text: "" },
+              { blank: "This" },
+              { text: " shirt here is blue." },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "_____ shoes are black." }, { blank: "These" }],
+            block: [
+              { text: "" },
+              { blank: "These" },
+              { text: " shoes here are black." },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "_____ jeans are expensive." }, { blank: "Those" }],
+            block: [
+              { text: "" },
+              { blank: "Those" },
+              { text: " jeans over there are expensive." },
+            ],
             lineBreak: true,
           },
         ],

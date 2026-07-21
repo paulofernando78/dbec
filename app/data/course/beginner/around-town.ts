@@ -32,38 +32,34 @@ export const beginnerAroundTown = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "Bank",
           content: [
             ...content({
-              parts: [audio("/"), "This is a bank."],
+              parts: ["This is a bank."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Park",
           content: [
             ...content({
-              parts: [audio("/"), "This is a park."],
+              parts: ["This is a park."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "School",
           content: [
             ...content({
-              parts: [audio("/"), "This is a school."],
+              parts: ["This is a school."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Supermarket",
           content: [
             ...content({
-              parts: [audio("/"), "This is a supermarket."],
+              parts: ["This is a supermarket."],
             }),
           ],
         },
@@ -103,7 +99,7 @@ export const beginnerAroundTown = {
   presentation: {
     dialogue: {
       prompt: "Listen to the dialogue.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -158,19 +154,19 @@ export const beginnerAroundTown = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "next to"],
+        parts: ["next to"],
       },
       {
         as: "span",
-        parts: [audio("/"), "across from"],
+        parts: ["across from"],
       },
       {
         as: "span",
-        parts: [audio("/"), "between"],
+        parts: ["between"],
       },
       {
         as: "span",
-        parts: [audio("/"), "behind"],
+        parts: ["behind"],
       },
     ] satisfies Meaning[],
     column: {
@@ -214,12 +210,35 @@ export const beginnerAroundTown = {
             },
           ],
         },
+        {
+          column: "Behind",
+          items: [
+            {
+              parts: [bold("Q:"), " Where is the parking lot?"],
+            },
+            {
+              parts: [bold("A:"), " It's behind the supermarket."],
+            },
+          ],
+        },
       ],
     },
     notes: [
       {
         as: "span",
-        parts: [audio("/"), "..."],
+        parts: [bold("next to"), " = beside another place"],
+      },
+      {
+        as: "span",
+        parts: [bold("across from"), " = on the opposite side"],
+      },
+      {
+        as: "span",
+        parts: [bold("between"), " = in the middle of two places"],
+      },
+      {
+        as: "span",
+        parts: [bold("behind"), " = at the back of another place"],
       },
     ] satisfies Notes[],
     ccq: [

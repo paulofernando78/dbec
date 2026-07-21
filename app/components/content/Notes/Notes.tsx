@@ -6,6 +6,7 @@ import type { InlineRichContentValue } from "@/components/content/InlineRichCont
 import { Megaphone } from 'lucide-react';
 
 export type Notes = {
+  display?: "block" | "inline";
   as?: "p" | "span";
   parts: InlineRichContentValue[];
 };
@@ -24,7 +25,12 @@ export const Notes = ({ value = [] }: NotesProps) => {
         </span>
       </div>
       {value.map((note, index) => (
-        <Line key={index} as={note.as} value={note.parts} />
+        <Line
+          key={index}
+          display={note.display ?? "block"}
+          as={note.as}
+          value={note.parts}
+        />
       ))}
     </Card>
   );

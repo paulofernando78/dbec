@@ -170,7 +170,7 @@ export const FillInTheBlanks = ({
               const trimmed = word.trim();
 
               return (
-                <div key={trimmed} className="flex items-center">
+                <div key={`${trimmed}-${index}`} className="flex items-center">
                   <button
                     type="button"
                     onClick={() => toggleWords(trimmed)}

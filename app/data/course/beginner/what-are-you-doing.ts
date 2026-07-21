@@ -29,38 +29,34 @@ export const beginnerWhatAreYouDoing = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "Studying",
           content: [
             ...content({
-              parts: [audio("/"), "She is studying."],
+              parts: ["She is studying."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Reading",
           content: [
             ...content({
-              parts: [audio("/"), "He is reading a book."],
+              parts: ["He is reading a book."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Playing",
           content: [
             ...content({
-              parts: [audio("/"), "They are playing soccer."],
+              parts: ["They are playing soccer."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Watching TV",
           content: [
             ...content({
-              parts: [audio("/"), "We are watching TV."],
+              parts: ["We are watching TV."],
             }),
           ],
         },
@@ -93,7 +89,7 @@ export const beginnerWhatAreYouDoing = {
   presentation: {
     dialogue: {
       prompt: "Listen to the dialogue.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -149,11 +145,14 @@ export const beginnerWhatAreYouDoing = {
       {
         as: "span",
         parts: [
-          audio("/"),
           "Present Continuous describes actions happening ",
           mark("now"),
           ".",
         ],
+      },
+      {
+        as: "span",
+        parts: ["Form: ", bold("subject + am/is/are + verb-ing"), "."],
       },
     ] satisfies Meaning[],
     column: {
@@ -183,13 +182,13 @@ export const beginnerWhatAreYouDoing = {
               parts: ["I’m studying English."],
             },
             {
-              parts: ["He’s ..."],
+              parts: ["He’s reading a book."],
             },
             {
-              parts: ["She’s ..."],
+              parts: ["She’s cooking dinner."],
             },
             {
-              parts: ["They’re ..."],
+              parts: ["They’re playing soccer."],
             },
           ],
         },
@@ -197,16 +196,16 @@ export const beginnerWhatAreYouDoing = {
           column: "Negative",
           items: [
             {
-              parts: [" I’m not studying English."],
+              parts: ["I’m not studying English."],
             },
             {
-              parts: [" He’s ..."],
+              parts: ["He isn’t reading a book."],
             },
             {
-              parts: [" She’s ..."],
+              parts: ["She isn’t cooking dinner."],
             },
             {
-              parts: [" They’re ..."],
+              parts: ["They aren’t playing soccer."],
             },
           ],
         },
@@ -215,7 +214,15 @@ export const beginnerWhatAreYouDoing = {
     notes: [
       {
         as: "span",
-        parts: ["... "],
+        parts: [
+          "Most verbs add ",
+          bold("-ing"),
+          ": read → reading, play → playing.",
+        ],
+      },
+      {
+        as: "span",
+        parts: ["Verbs ending in -e usually drop the e: write → writing."],
       },
       {
         as: "span",
@@ -266,13 +273,27 @@ export const beginnerWhatAreYouDoing = {
               { option: "play", isCorrect: false },
             ],
           },
+          {
+            question: "_____ she cooking dinner now?",
+            options: [
+              { option: "Is", isCorrect: true },
+              { option: "Does", isCorrect: false },
+            ],
+          },
+          {
+            question: "He _____ watching TV. He is reading.",
+            options: [
+              { option: "isn't", isCorrect: true },
+              { option: "doesn't", isCorrect: false },
+            ],
+          },
         ],
       },
     },
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction: "Complete the sentences with the Present Continuous form.",
       numbered: true,
       exercise: {
         blocks: [

@@ -28,42 +28,40 @@ import { elementaryExperiences } from "@/data/course/elementary/experiences";
 import { elementaryHobbies } from "@/data/course/elementary/hobbies";
 
 // Intermediate
-import { intermediateLifeExperiences } from "@/data/course/intermediate/life-experiences";
-import { intermediateStorytelling } from "@/data/course/intermediate/storytelling";
-import { intermediateMakingPlans } from "@/data/course/intermediate/making-plans";
-import { intermediateWhatIf } from "@/data/course/intermediate/what-if";
-import { intermediateGreenPlanet } from "@/data/course/intermediate/green-planet";
-import { intermediateTechnologyToday } from "@/data/course/intermediate/technology-today";
-import { intermediateNewsReport } from "@/data/course/intermediate/news-report";
-import { intermediateWhatDidTheySay } from "@/data/course/intermediate/what-did-they-say";
 import { intermediateCareerPath } from "@/data/course/intermediate/career-path";
+import { intermediateGreenPlanet } from "@/data/course/intermediate/green-planet";
+import { intermediateLifeExperiences } from "@/data/course/intermediate/life-experiences";
+import { intermediateMakingPlans } from "@/data/course/intermediate/making-plans";
+import { intermediateNewsReport } from "@/data/course/intermediate/news-report";
 import { intermediateRelationships } from "@/data/course/intermediate/relationships";
+import { intermediateStorytelling } from "@/data/course/intermediate/storytelling";
+import { intermediateTechnologyToday } from "@/data/course/intermediate/technology-today";
+import { intermediateWhatDidTheySay } from "@/data/course/intermediate/what-did-they-say";
+import { intermediateWhatIf } from "@/data/course/intermediate/what-if";
 
 // Upper-Intermediate
-import { upperIntermediateDreamScenarios } from "@/data/course/upper-intermediate/dream-scenarios";
-import { upperIntermediateRegrets } from "@/data/course/upper-intermediate/regrets";
 import { upperIntermediateBusinessCommunication } from "@/data/course/upper-intermediate/business-communication";
-import { upperIntermediateLeadership } from "@/data/course/upper-intermediate/leadership";
-import { upperIntermediateInnovation } from "@/data/course/upper-intermediate/innovation";
-import { upperIntermediateGlobalIssues } from "@/data/course/upper-intermediate/global-issues";
 import { upperIntermediateDebateClub } from "@/data/course/upper-intermediate/debate-club";
+import { upperIntermediateDreamScenarios } from "@/data/course/upper-intermediate/dream-scenarios";
+import { upperIntermediateGlobalIssues } from "@/data/course/upper-intermediate/global-issues";
+import { upperIntermediateInnovation } from "@/data/course/upper-intermediate/innovation";
+import { upperIntermediateLeadership } from "@/data/course/upper-intermediate/leadership";
 import { upperIntermediateMediaAndMarketing } from "@/data/course/upper-intermediate/media-and-marketing";
 import { upperIntermediateNativeLikeEnglish } from "@/data/course/upper-intermediate/native-like-english";
 import { upperIntermediateNaturalEnglish } from "@/data/course/upper-intermediate/natural-english";
+import { upperIntermediateRegrets } from "@/data/course/upper-intermediate/regrets";
 
 // Advanced
-import {
-  advancedAcademicPresentations,
-  advancedBuildingComplexArguments,
-  advancedCriticalReviews,
-  advancedDiplomaticCommunication,
-  advancedMediationAndClarification,
-  advancedNegotiationAndConsensus,
-  advancedPrecisionAndNuance,
-  advancedReadingBetweenTheLines,
-  advancedResearchBriefing,
-  advancedSynthesizingSources,
-} from "@/data/course/advanced/c1-lessons";
+import { advancedAcademicPresentations } from "@/data/course/advanced/academic-presentations";
+import { advancedBuildingComplexArguments } from "@/data/course/advanced/building-complex-arguments";
+import { advancedCriticalReviews } from "@/data/course/advanced/critical-reviews";
+import { advancedDiplomaticCommunication } from "@/data/course/advanced/diplomatic-communication";
+import { advancedMediationAndClarification } from "@/data/course/advanced/mediation-and-clarification";
+import { advancedNegotiationAndConsensus } from "@/data/course/advanced/negotiation-and-consensus";
+import { advancedPrecisionAndNuance } from "@/data/course/advanced/precision-and-nuance";
+import { advancedReadingBetweenTheLines } from "@/data/course/advanced/reading-between-the-lines";
+import { advancedResearchBriefing } from "@/data/course/advanced/research-briefing";
+import { advancedSynthesizingSources } from "@/data/course/advanced/synthesizing-sources";
 
 type Lesson = Record<string, any>;
 type LessonMap = Record<string, Lesson>;

@@ -29,38 +29,34 @@ export const beginnerFoodAndDrinks = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "Pizza",
           content: [
             ...content({
-              parts: [audio("/"), "I like pizza."],
+              parts: ["I like pizza."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Coffee",
           content: [
             ...content({
-              parts: [audio("/"), "I don't like coffee."],
+              parts: ["I don't like coffee."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Juice",
           content: [
             ...content({
-              parts: [audio("/"), "I like orange juice."],
+              parts: ["I like orange juice."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Salad",
           content: [
             ...content({
-              parts: [audio("/"), "I like salad."],
+              parts: ["I like salad."],
             }),
           ],
         },
@@ -100,7 +96,7 @@ export const beginnerFoodAndDrinks = {
   presentation: {
     dialogue: {
       prompt: "Listen to the dialogue.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -155,19 +151,19 @@ export const beginnerFoodAndDrinks = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "pizza"],
+        parts: ["pizza"],
       },
       {
         as: "span",
-        parts: [audio("/"), "burger"],
+        parts: ["burger"],
       },
       {
         as: "span",
-        parts: [audio("/"), "coffee"],
+        parts: ["coffee"],
       },
       {
         as: "span",
-        parts: [audio("/"), "juice"],
+        parts: ["juice"],
       },
     ] satisfies Meaning[],
     column: {
@@ -179,10 +175,10 @@ export const beginnerFoodAndDrinks = {
           textColor: "text-white",
           column: "Food",
           items: [
-            { parts: [audio("/"), "pizza"] },
-            { parts: [audio("/"), "burger"] },
-            { parts: [audio("/"), "salad"] },
-            { parts: [audio("/"), "sandwich"] },
+            { parts: ["pizza"] },
+            { parts: ["burger"] },
+            { parts: ["salad"] },
+            { parts: ["sandwich"] },
           ],
         },
         {
@@ -191,10 +187,10 @@ export const beginnerFoodAndDrinks = {
           textColor: "text-white",
           column: "Drinks",
           items: [
-            { parts: [audio("/"), "coffee"] },
-            { parts: [audio("/"), "water"] },
-            { parts: [audio("/"), "juice"] },
-            { parts: [audio("/"), "tea"] },
+            { parts: ["coffee"] },
+            { parts: ["water"] },
+            { parts: ["juice"] },
+            { parts: ["tea"] },
           ],
         },
         {
@@ -203,10 +199,10 @@ export const beginnerFoodAndDrinks = {
           textColor: "text-white",
           column: "Grammar",
           items: [
-            { parts: [audio("/"), "I like..."] },
-            { parts: [audio("/"), "I don't like..."] },
-            { parts: [audio("/"), "Do you like...?"] },
-            { parts: [audio("/"), "Yes, I do / No, I don't"] },
+            { parts: ["I like..."] },
+            { parts: ["I don't like..."] },
+            { parts: ["Do you like...?"] },
+            { parts: ["Yes, I do / No, I don't"] },
           ],
         },
       ],
@@ -222,11 +218,11 @@ export const beginnerFoodAndDrinks = {
       },
       {
         as: "span",
-        parts: [audio("/"), "I like pizza."],
+        parts: ["I like pizza."],
       },
       {
         as: "span",
-        parts: [audio("/"), "I don't like coffee."],
+        parts: ["I don't like coffee."],
       },
     ] satisfies Notes[],
     ccq: [
@@ -251,14 +247,14 @@ export const beginnerFoodAndDrinks = {
       exercise: {
         questions: [
           {
-            question: "I _____ pizza.",
+            question: 'Complete: "Pizza is my favorite food. I _____ pizza."',
             options: [
               { option: "like", isCorrect: true },
-              { option: "don't", isCorrect: false },
+              { option: "don't like", isCorrect: false },
             ],
           },
           {
-            question: "I _____ coffee.",
+            question: 'Complete: "Coffee is not for me. I _____ coffee."',
             options: [
               { option: "don't like", isCorrect: true },
               { option: "like", isCorrect: false },
@@ -270,7 +266,7 @@ export const beginnerFoodAndDrinks = {
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction: "Complete the sentences with like or don't like.",
       numbered: true,
       exercise: {
         blocks: [

@@ -32,38 +32,34 @@ export const beginnerDailyRoutine = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "Wake up",
           content: [
             ...content({
-              parts: [audio("/"), "I wake up at seven o'clock."],
+              parts: ["I wake up at seven o'clock."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Breakfast",
           content: [
             ...content({
-              parts: [audio("/"), "I have breakfast at eight o'clock."],
+              parts: ["I have breakfast at eight o'clock."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Work",
           content: [
             ...content({
-              parts: [audio("/"), "I go to work at nine o'clock."],
+              parts: ["I go to work at nine o'clock."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Sleep",
           content: [
             ...content({
-              parts: [audio("/"), "I go to bed at ten o'clock."],
+              parts: ["I go to bed at ten o'clock."],
             }),
           ],
         },
@@ -103,7 +99,7 @@ export const beginnerDailyRoutine = {
   presentation: {
     dialogue: {
       prompt: "Listen to th dialogue.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -158,19 +154,19 @@ export const beginnerDailyRoutine = {
     meaning: [
       {
         as: "span",
-        parts: [audio("/"), "wake up"],
+        parts: ["wake up"],
       },
       {
         as: "span",
-        parts: [audio("/"), "have breakfast"],
+        parts: ["have breakfast"],
       },
       {
         as: "span",
-        parts: [audio("/"), "go to work"],
+        parts: ["go to work"],
       },
       {
         as: "span",
-        parts: [audio("/"), "go to bed"],
+        parts: ["go to bed"],
       },
     ] satisfies Meaning[],
     column: {
@@ -181,29 +177,32 @@ export const beginnerDailyRoutine = {
           bgColor: "bg-slate-400",
           textColor: "text-white",
           column: "Morning",
-          items: [
-            { parts: [audio("/"), "wake up"] },
-            { parts: [audio("/"), "have breakfast"] },
-          ],
+          items: [{ parts: ["wake up"] }, { parts: ["have breakfast"] }],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
           column: "Day",
-          items: [
-            { parts: [audio("/"), "go to work"] },
-            { parts: [audio("/"), "have lunch"] },
-          ],
+          items: [{ parts: ["go to work"] }, { parts: ["have lunch"] }],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
           column: "Evening",
+          items: [{ parts: ["watch TV"] }, { parts: ["go to bed"] }],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Present Simple",
           items: [
-            { parts: [audio("/"), "watch TV"] },
-            { parts: [audio("/"), "go to bed"] },
+            { parts: ["I/You/We/They work."] },
+            { parts: ["He/She works."] },
+            { parts: ["Do you work?"] },
+            { parts: ["He/She doesn't work."] },
           ],
         },
       ],
@@ -215,11 +214,11 @@ export const beginnerDailyRoutine = {
       },
       {
         as: "span",
-        parts: [audio("/"), "I wake up at 7:00."],
+        parts: ["I wake up at 7:00."],
       },
       {
         as: "span",
-        parts: [audio("/"), "She goes to work at 8:00."],
+        parts: ["She goes to work at 8:00."],
       },
       {
         as: "span",
@@ -259,6 +258,20 @@ export const beginnerDailyRoutine = {
             options: [
               { option: "goes", isCorrect: true },
               { option: "go", isCorrect: false },
+            ],
+          },
+          {
+            question: "_____ you work on Saturday?",
+            options: [
+              { option: "Do", isCorrect: true },
+              { option: "Does", isCorrect: false },
+            ],
+          },
+          {
+            question: "She _____ work on Sunday.",
+            options: [
+              { option: "doesn't", isCorrect: true },
+              { option: "don't", isCorrect: false },
             ],
           },
         ],

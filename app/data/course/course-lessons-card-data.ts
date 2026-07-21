@@ -4,9 +4,9 @@ export const courseLessonsCardData = {
       href: "/courses/beginner/hello",
       label: "Hello!",
       lessonObjective:
-        "By the end of this class, students will be able to greet someone, say their name, ask for basic personal information, and introduce themselves clearly.",
-      grammar: "Verb to be, Subject pronouns",
-      vocabulary: "Greetings, Names, Countries",
+        "By the end of this class, students will be able to greet someone, introduce themselves, ask and answer questions about names, and spell a first or last name.",
+      grammar: "Verb to be: I am / You are",
+      vocabulary: "Greetings, Names, Spelling",
     },
     {
       href: "/courses/beginner/my-family",

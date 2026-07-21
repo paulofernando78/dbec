@@ -29,38 +29,34 @@ export const beginnerAbilities = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/",
           alt: "Swimming",
           content: [
             ...content({
-              parts: [audio("/"), "I can swim."],
+              parts: ["I can swim."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Playing guitar",
           content: [
             ...content({
-              parts: [audio("/"), "She can play the guitar."],
+              parts: ["She can play the guitar."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Riding a bike",
           content: [
             ...content({
-              parts: [audio("/"), "He can ride a bike."],
+              parts: ["He can ride a bike."],
             }),
           ],
         },
         {
-          src: "/",
           alt: "Playing soccer",
           content: [
             ...content({
-              parts: [audio("/"), "They can play soccer."],
+              parts: ["They can play soccer."],
             }),
           ],
         },
@@ -92,8 +88,8 @@ export const beginnerAbilities = {
 
   presentation: {
     dialogue: {
-      prompt: "...",
-      audioSrc: "/",
+      prompt: "Listen and read. What can Jake do?",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -148,16 +144,11 @@ export const beginnerAbilities = {
     meaning: [
       {
         as: "p",
-        parts: [audio("/"), "We use ", bold("can"), " ..."],
+        parts: ["We use ", bold("can"), " to say that someone has an ability."],
       },
       {
         as: "p",
-        parts: [
-          audio("/"),
-          "After ",
-          bold("can"),
-          " we use the base form of the verb.",
-        ],
+        parts: ["After ", bold("can"), " we use the base form of the verb."],
       },
     ] satisfies Meaning[],
     column: {
@@ -171,7 +162,7 @@ export const beginnerAbilities = {
           column: "Question",
           items: [
             {
-              parts: [audio("/"), "Can you swim?"],
+              parts: ["Can you swim?"],
             },
           ],
         },
@@ -183,19 +174,18 @@ export const beginnerAbilities = {
           column: "Affirmative",
           items: [
             {
-              parts: [audio("/"), "Yes, I can. (Yes, I can swim.)"],
+              parts: ["Yes, I can. (Yes, I can swim.)"],
             },
           ],
         },
-        // Column 3
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Column 3",
+          column: "Negative",
           items: [
             {
-              parts: [audio("/"), "No, I can’t. (No, I can’t swim.)"],
+              parts: ["No, I can’t. (No, I can’t swim.)"],
             },
           ],
         },
@@ -204,7 +194,18 @@ export const beginnerAbilities = {
     notes: [
       {
         as: "span",
-        parts: ["!!! pronunciation"],
+        parts: [
+          bold("can"),
+          " and ",
+          bold("can't"),
+          " are followed by the base verb: can swim, can't drive.",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          "In short answers, do not repeat the main verb: Yes, I can. / No, I can't.",
+        ],
       },
     ] satisfies Notes[],
     ccq: [
@@ -229,14 +230,15 @@ export const beginnerAbilities = {
       exercise: {
         questions: [
           {
-            question: "I _____ swim.",
+            question: "Jake is a good swimmer. He _____ swim.",
             options: [
               { option: "can", isCorrect: true },
               { option: "can't", isCorrect: false },
             ],
           },
           {
-            question: "She _____ play the guitar.",
+            question:
+              "Mia doesn't know how to play the guitar. She _____ play it.",
             options: [
               { option: "can't", isCorrect: true },
               { option: "can", isCorrect: false },
@@ -301,11 +303,11 @@ export const beginnerAbilities = {
       type: "checkbox",
       items: [
         {
-          content: text([mark("Write three things"), "you can do."]),
+          content: text([mark("Write three things"), " you can do."]),
           textarea: true,
         },
         {
-          content: text([mark("Write three things"), "you can't do."]),
+          content: text([mark("Write three things"), " you can't do."]),
           textarea: true,
         },
         {
