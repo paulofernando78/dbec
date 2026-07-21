@@ -21,7 +21,7 @@ export const elementaryPastBeach = {
       ],
       imgs: [
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-beach.avif",
+          src: "/assets/img/course/a2/unit-1-last-weekend/laura-beach.avif",
           alt: "beach",
         },
         { src: "/", alt: "swimsuit" },
@@ -33,7 +33,7 @@ export const elementaryPastBeach = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/assets/img/cefr/a2/unit-1-last-weekend/laura-beach.avif",
+          src: "/assets/img/course/a2/unit-1-last-weekend/laura-beach.avif",
           alt: "Laura spending the day at the beach",
           content: [
             { audio: "Laura went to the beach on Sunday." },

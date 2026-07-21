@@ -5,6 +5,8 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
+import { shuffle } from "@/utils/shuffle";
+
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 const href = "/courses/beginner/my-family";
 const data = courseLessonsCardData.beginner.find(
@@ -34,9 +36,7 @@ export const beginnerMyFamily = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "Laura says: \"This is my mom.\"",
-                ),
+                audio('Laura says: "This is my mom."'),
                 'Laura says: "This is my mom."',
               ],
             }),
@@ -48,9 +48,7 @@ export const beginnerMyFamily = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "Laura says: \"This is my dad.\"",
-                ),
+                audio('Laura says: "This is my dad."'),
                 'Laura says: "This is my dad."',
               ],
             }),
@@ -62,9 +60,7 @@ export const beginnerMyFamily = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "Laura says: \"This is my brother.\"",
-                ),
+                audio('Laura says: "This is my brother."'),
                 'Laura says: "This is my brother."',
               ],
             }),
@@ -76,9 +72,7 @@ export const beginnerMyFamily = {
           content: [
             ...content({
               parts: [
-                audio(
-                  "Laura says: \"This is my sister.\"",
-                ),
+                audio('Laura says: "This is my sister."'),
                 'Laura says: "This is my sister."',
               ],
             }),
@@ -90,7 +84,7 @@ export const beginnerMyFamily = {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
-        questions: [
+        questions: shuffle([
           {
             imgSrc:
               "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/mother-mom.avif",
@@ -131,57 +125,63 @@ export const beginnerMyFamily = {
               { option: "false", isCorrect: true },
             ],
           },
-        ],
+        ]),
       },
     },
   },
 
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "",
       lines: [
         {
-          speaker: "Emma",
-          line: text(["Hi, Jake. Who's this?"]),
+          speaker: "Laura",
+          line: text(["This is my family photo album."]),
         },
         {
-          speaker: "Jake",
-          line: text(["This is my family."]),
+          speaker: "Liz",
+          line: text(["Really? Can I see it?"]),
         },
         {
-          speaker: "Emma",
-          line: text(["Who's she?"]),
+          speaker: "Laura",
+          line: text(["Of course! This is my mother."]),
         },
         {
-          speaker: "Jake",
-          line: text(["She's my mother, Sarah."]),
+          speaker: "Liz",
+          line: text(["She looks very kind."]),
         },
         {
-          speaker: "Emma",
-          line: text(["And who's he?"]),
+          speaker: "Laura",
+          line: text(["And this is my father."]),
         },
         {
-          speaker: "Jake",
-          line: text(["He's my father, David."]),
+          speaker: "Liz",
+          line: text(["He has a nice smile."]),
         },
         {
-          speaker: "Emma",
-          line: text(["Do you have any brothers or sisters?"]),
+          speaker: "Laura",
+          line: text(["This is my younger sister."]),
         },
         {
-          speaker: "Jake",
-          line: text([
-            "Yes. This is my sister, Lily, and this is my brother, Ben.",
-          ]),
+          speaker: "Liz",
+          line: text(["She is very cute!"]),
         },
         {
-          speaker: "Emma",
-          line: text(["You have a nice family."]),
+          speaker: "Laura",
+          line: text(["And this is my older brother."]),
         },
         {
-          speaker: "Jake",
-          line: text(["Thank you!"]),
+          speaker: "Liz",
+          line: text(["Wow! You have a big family."]),
+        },
+        {
+          speaker: "Laura",
+          line: text(["Yes, I do. I love my family."]),
+        },
+        {
+          speaker: "Liz",
+          line: text(["They look wonderful, Laura."]),
         },
       ],
     },
@@ -190,17 +190,24 @@ export const beginnerMyFamily = {
       exercise: {
         questions: [
           {
-            question: "Who is Sarah?",
+            question: "What is Laura showing Liz?",
             options: [
-              { option: "Jake's mother", isCorrect: true },
-              { option: "Jake's sister", isCorrect: false },
+              { option: "Her family photo album", isCorrect: true },
+              { option: "Her school album", isCorrect: false },
             ],
           },
           {
-            question: "How many siblings does Jake introduce?",
+            question: "Who does Laura introduce after her father?",
             options: [
-              { option: "Two", isCorrect: true },
-              { option: "One", isCorrect: false },
+              { option: "Her younger sister", isCorrect: true },
+              { option: "Her older brother", isCorrect: false },
+            ],
+          },
+          {
+            question: "What does Liz say about Laura's family?",
+            options: [
+              { option: "They look wonderful", isCorrect: true },
+              { option: "They look serious", isCorrect: false },
             ],
           },
         ],

@@ -72,7 +72,7 @@ export const elementaryPastMovies = {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-going-to-movies.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-going-to-movies.avif",
           alt: "Laura going to the movies",
           content: [
             ...content({
@@ -87,7 +87,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-buying-two-tickets.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-buying-two-tickets.avif",
           alt: "Laura buying two tickets",
           content: [
             ...content({
@@ -102,7 +102,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-buying-popcorn-soda.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-buying-popcorn-soda.avif",
           alt: "Laura buying soda and popcorn",
           content: [
             ...content({
@@ -117,7 +117,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-meeting-liz.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-meeting-liz.avif",
           alt: "Laura meeting her friend Liz",
           content: [
             ...content({
@@ -132,7 +132,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/they-watching-movie.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/they-watching-movie.avif",
           alt: "Laura and Liz watching the movie",
           content: [
             ...content({
@@ -147,7 +147,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-liz-eating.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-liz-eating.avif",
           alt: "Laura and Liz eating popcorn and drinking soda",
           content: [
             ...content({
@@ -162,7 +162,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-looking-at-watch.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-looking-at-watch.avif",
           alt: "Laura looking at her watch",
           content: [
             ...content({
@@ -177,7 +177,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-liz-leaving-movie-theater.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-liz-leaving-movie-theater.avif",
           alt: "Laura and Liz leaving the movie theater",
           content: [
             ...content({
@@ -192,7 +192,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/laura-taking-taxi.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/laura-taking-taxi.avif",
           alt: "Laura taking a taxi home",
           content: [
             ...content({
@@ -207,7 +207,7 @@ export const elementaryPastMovies = {
           ],
         },
         {
-          src: "/assets/img/cefr/a2/past-movies/introduction/story/liz-driving-home.avif",
+          src: "/assets/img/course/a2/past-movies/introduction/story/liz-driving-home.avif",
           alt: "Liz driving home",
           content: [
             ...content({

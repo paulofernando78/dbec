@@ -43,7 +43,7 @@ export const beginnerHello = {
       words: [
         // Laura says, “Hi! I'm Laura.””
         {
-          src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-introduction1.avif",
+          src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction1.avif",
           alt: "Laura introduces herself to Eric",
           content: [
             ...content({
@@ -60,7 +60,7 @@ export const beginnerHello = {
         },
         // Eric says, “Hello! I'm Eric.””
         {
-          src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-introduction2.avif",
+          src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction2.avif",
           alt: "Eric introduces himself to Laura",
           content: [
             ...content({
@@ -77,7 +77,7 @@ export const beginnerHello = {
         },
         // They shake hands.
         {
-          src: "/assets/img/cefr/a1/unit-1-hi-my-names-laura/introduction/laura-eric-shake-hands.avif",
+          src: "/assets/img/courses/a1/hello/introduction/laura-eric-shake-hands.avif",
           alt: "Laura and Eric shake hands",
           content: [
             ...content({
