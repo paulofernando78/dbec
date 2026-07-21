@@ -35,11 +35,22 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
         <Meaning value={languageFocus.greetings} />
         <Subsection label="Questions & Answers" heading={5} />
         <Meaning value={languageFocus.askingQuestions} />
-        <TheAlphabet />
+        <Subsection label="Meeting Someone" heading={4} />
+        <Meaning value={languageFocus.meetingSomeone} />
+        <Notes value={languageFocus.notes} />
+        <CCQ value={languageFocus.ccq} />
+      </>
+    );
+  }
+
+  if (languageFocus.personalInformation) {
+    return (
+      <>
         <Subsection label="Personal Information" heading={4} />
         <Meaning value={languageFocus.personalInformation} />
         <Notes value={languageFocus.notes} />
         <CCQ value={languageFocus.ccq} />
+        <TheAlphabet />
       </>
     );
   }

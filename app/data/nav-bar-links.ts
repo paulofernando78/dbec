@@ -24,6 +24,10 @@ export const links = [
             label: "Hello",
           },
           {
+            href: "/courses/beginner/personal-information",
+            label: "Personal Information",
+          },
+          {
             href: "/courses/beginner/my-family",
             label: "My Family",
           },
@@ -58,6 +62,10 @@ export const links = [
           {
             href: "/courses/beginner/abilities",
             label: "Abilities",
+          },
+          {
+            href: "/courses/beginner/real-life-project",
+            label: "A1 Real-Life Project",
           },
         ],
       },

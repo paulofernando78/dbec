@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, text, audio, bold, portuguese } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
@@ -37,7 +37,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my mom."'),
-                'Laura says: "This is my mom."',
+                'Laura says: "This is my mom."', portuguese("")
               ],
             }),
           ],
@@ -49,7 +49,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my dad."'),
-                'Laura says: "This is my dad."',
+                'Laura says: "This is my dad."', portuguese("")
               ],
             }),
           ],
@@ -61,7 +61,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my brother."'),
-                'Laura says: "This is my brother."',
+                'Laura says: "This is my brother."', portuguese("")
               ],
             }),
           ],
@@ -73,7 +73,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my sister."'),
-                'Laura says: "This is my sister."',
+                'Laura says: "This is my sister."', portuguese("")
               ],
             }),
           ],

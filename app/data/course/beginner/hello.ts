@@ -23,6 +23,70 @@ const data = courseLessonsCardData.beginner.find(
   (lesson) => lesson.href === href,
 )!;
 
+const helloPersonalInformation = [
+  {
+    display: "block" as const,
+    as: "span" as const,
+    parts: [
+      audio(
+        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name.mp3",
+      ),
+      "What’s your name?",
+    ],
+  },
+  {
+    display: "block" as const,
+    as: "span" as const,
+    parts: [
+      audio(
+        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-names.mp3",
+      ),
+      "My name’s Laura.",
+    ],
+  },
+  {
+    display: "block" as const,
+    as: "span" as const,
+    parts: [
+      audio(
+        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-it.mp3",
+      ),
+      "How do you spell it?",
+    ],
+  },
+  {
+    display: "block" as const,
+    as: "span" as const,
+    parts: [
+      audio(
+        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/l-a-u-r-a.mp3",
+      ),
+      "L-A-U-R-A.",
+    ],
+  },
+  spacer(),
+  {
+    display: "block" as const,
+    as: "span" as const,
+    parts: [
+      audio(
+        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-to-meet-you-1.mp3",
+      ),
+      "Nice to meet you.",
+    ],
+  },
+  {
+    display: "block" as const,
+    as: "span" as const,
+    parts: ["Nice to meet you too."],
+  },
+  {
+    display: "block" as const,
+    as: "span" as const,
+    parts: ["See you! / Bye!"],
+  },
+] satisfies Meaning[];
+
 export const beginnerHello = {
   whiteboard: {
     title: "A1 Beginner",
@@ -131,60 +195,58 @@ export const beginnerHello = {
 
   presentation: {
     dialogue: {
-      instruction: "Laura and Eric meet for the first time. Listen to the dialogue.",
-      audioSrc: "/assets/audio/cefr/a1/unit-1-hello/presentation/dialogue.mp3",
+      instruction: "Laura and Eric meet for the first time. Listen and read.",
+      audioSrc: "",
       lines: [
         {
           speaker: "Laura",
-          line: text(["Hi there! How are you doing?"]),
+          line: [
+            audio("Hi! I'm Laura. What's your name?"),
+            ...text(["Hi! I'm Laura. What's your name?"]),
+          ],
         },
         {
           speaker: "Eric",
-          line: text(["Hi! I'm pretty good. How about you?"]),
+          line: [
+            audio("Hello! I'm Eric."),
+            ...text(["Hello! I'm Eric."]),
+          ],
         },
         {
           speaker: "Laura",
-          line: text(["I'm great, thanks. I'm Laura."]),
+          line: [
+            audio("How do you spell it?"),
+            ...text(["How do you spell it?"]),
+          ],
         },
         {
           speaker: "Eric",
-          line: text(["Hello, Laura. I'm Eric."]),
+          line: [audio("E-R-I-C."), ...text(["E-R-I-C."])],
         },
         {
           speaker: "Laura",
-          line: text(["Nice to meet you."]),
+          line: [
+            audio("Nice to meet you."),
+            ...text(["Nice to meet you."]),
+          ],
         },
         {
           speaker: "Eric",
-          line: text(["Nice to meet you too. What's your last name?"]),
+          line: [
+            audio("Nice to meet you too."),
+            ...text(["Nice to meet you too."]),
+          ],
         },
         {
           speaker: "Laura",
-          line: text(["It's Palmer."]),
+          line: [
+            audio("See you in class!"),
+            ...text(["See you in class!"]),
+          ],
         },
         {
           speaker: "Eric",
-          line: text(["How do you spell it?"]),
-        },
-        {
-          speaker: "Laura",
-          line: text(["P-A-L-M-E-R."]),
-        },
-        {
-          speaker: "Eric",
-          line: text(["Are you a new student here?"]),
-        },
-        {
-          speaker: "Laura",
-          line: text(["Yes, I am. How about you?"]),
-        },
-        {
-          speaker: "Eric",
-          line: text(["Me too. So, class starts in 5 minutes, right? Ready?"]),
-        },
-        {
-          speaker: "Laura",
-          line: text(["Yes, I am. Let's go."]),
+          line: [audio("Bye!"), ...text(["Bye!"])],
         },
       ],
     },
@@ -371,263 +433,34 @@ export const beginnerHello = {
         ],
       },
     ] satisfies Meaning[],
-    personalInformation: [
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name.mp3",
-          ),
-          "What’s your name?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          icon("spotlight"),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name2.mp3",
-          ),
-          "Wha",
-          underline("t’s y"),
-          "our name?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-full-name.mp3",
-          ),
-          "What’s your (full) name?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-name-is.mp3",
-          ),
-          "My name is...",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-names.mp3",
-          ),
-          "My name’s...",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/laura-palmer.mp3",
-          ),
-          "Laura Palmer.",
-        ],
-      },
-      spacer(),
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-first-name.mp3",
-          ),
-          "What’s your first name?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-first-name-is.mp3",
-          ),
-          "My first name is...",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-first-names.mp3",
-          ),
-          "My first name’s...",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/laura.mp3",
-          ),
-          "(It’s) Laura.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-your-first-name.mp3",
-          ),
-          "How do you spell your first name?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/l-a-u-r-a.mp3",
-          ),
-          "(It’s) L-A-U-R-A.",
-        ],
-      },
-      spacer(),
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-last-name.mp3",
-          ),
-          "What’s your last name?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-last-name-is.mp3",
-          ),
-          "My last name is...",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-last-names.mp3",
-          ),
-          "My last name’s...",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: ["(It’s) Palmer."],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-your-last-name.mp3",
-          ),
-          "How do you spell your last name?",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/p-a-l-m-e-r.mp3",
-          ),
-          "(It’s) P-A-L-M-E-R.",
-        ],
-      },
-      spacer(),
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          icon("spotlight"),
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-it.mp3",
-          ),
-          "How do you spell it? (it = first/last)",
-        ],
-      },
-      spacer(),
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-to-meet-you-1.mp3",
-          ),
-          "Nice to meet you.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-to-meet-you-2.mp3",
-          ),
-          "Nice to mee",
-          underline("t y"),
-          "ou.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-meeting-you.mp3",
-          ),
-          "Nice meeting you.",
-        ],
-      },
-    ] satisfies Meaning[],
     notes: [
       {
         as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/first-name-given-name.mp3",
-          ),
-          bold("first name"),
-          " = given name",
-        ],
+        parts: [bold("I am"), " → ", bold("I’m")],
       },
       {
         as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/last-name-surname-family-name.mp3",
-          ),
-          bold("last name / surname"),
-          " = family name",
-        ],
+        parts: [bold("What is"), " → ", bold("What’s")],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["Is 'Laura' a first name or a last name?"],
+        parts: [
+          "When I say “I’m Laura”, am I introducing myself or another person?",
+        ],
       },
       {
         as: "span",
-        parts: ["Is 'Palmer' a first name or a last name?"],
+        parts: [
+          "Do I already know the person’s name when I ask “What’s your name?”",
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          "Do I say “Nice to meet you” when I meet someone for the first time?",
+        ],
       },
     ] satisfies CCQ[],
   },
@@ -645,17 +478,17 @@ export const beginnerHello = {
             ],
           },
           {
-            question: "What's your last name?",
+            question: "What do you say when you meet someone for the first time?",
             options: [
-              { option: "Palmer", isCorrect: true },
-              { option: "Laura", isCorrect: false },
+              { option: "Nice to meet you.", isCorrect: true },
+              { option: "Good night.", isCorrect: false },
             ],
           },
           {
-            question: "How is Eric?",
+            question: "How does Eric spell his name?",
             options: [
-              { option: "Pretty good.", isCorrect: true },
-              { option: "Tired.", isCorrect: false },
+              { option: "E-R-I-C.", isCorrect: true },
+              { option: "L-A-U-R-A.", isCorrect: false },
             ],
           },
           {
@@ -696,9 +529,9 @@ export const beginnerHello = {
           },
           {
             block: [
-              { text: "My last name" },
+              { text: "What" },
               { blank: "is" },
-              { text: "Palmer." },
+              { text: "your name?" },
             ],
           },
         ],
@@ -716,8 +549,8 @@ export const beginnerHello = {
             answer: "My name is Laura.",
           },
           {
-            prompt: "your / what / name / last / is",
-            answer: "What is your last name?",
+            prompt: "your / what / name / is",
+            answer: "What is your name?",
           },
           {
             prompt: "spell / how / it / do / you",
@@ -738,8 +571,11 @@ export const beginnerHello = {
         },
         {
           content: text([
-            "Ask your partner's first and last name and spell them.",
+            "Ask your partner's first name and ask them to spell it.",
           ]),
+        },
+        {
+          content: text(["End the conversation with “See you!” or “Bye!”"]),
         },
       ],
     } satisfies ListProps,

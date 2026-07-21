@@ -39,11 +39,11 @@ export const lesson = {
       matchingContent: [
         {
           as: "span",
-          parts: [audio("movie theater"), "..."],
+          parts: [audio("..."), "..."],
         },
         {
           as: "span",
-          parts: [audio("tickets"), "..."],
+          parts: [audio("..."), "..."],
         },
       ],
       imgs: [

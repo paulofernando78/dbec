@@ -4,9 +4,17 @@ export const courseLessonsCardData = {
       href: "/courses/beginner/hello",
       label: "Hello!",
       lessonObjective:
-        "By the end of this class, students will be able to greet someone, introduce themselves, ask and answer questions about names, and spell a first or last name.",
+        "By the end of this class, students will be able to greet someone, exchange first names, ask for spelling, and close a short first-time conversation.",
       grammar: "Verb to be: I am / You are",
-      vocabulary: "Greetings, Names, Spelling",
+      vocabulary: "Greetings, First names, Spelling, Goodbyes",
+    },
+    {
+      href: "/courses/beginner/personal-information",
+      label: "Personal Information",
+      lessonObjective:
+        "By the end of this class, students will be able to ask for and give a full name, nationality, and fictional contact information using simple questions and answers.",
+      grammar: "Wh-questions, Verb to be",
+      vocabulary: "Full names, Nationality, Contact details",
     },
     {
       href: "/courses/beginner/my-family",
@@ -79,6 +87,14 @@ export const courseLessonsCardData = {
         "By the end of this class, students will be able to talk about abilities and skills, describe what they can and can't do, and ask others about their abilities.",
       grammar: "Can / Can’t",
       vocabulary: "Skills, Sports",
+    },
+    {
+      href: "/courses/beginner/real-life-project",
+      label: "A1 Real-Life Project",
+      lessonObjective:
+        "By the end of this class, students will be able to introduce themselves, exchange familiar information, and collaboratively plan a simple social meeting.",
+      grammar: "A1 language review",
+      vocabulary: "Personal information, Routines, Preferences, Places",
     },
   ],
   elementary: [

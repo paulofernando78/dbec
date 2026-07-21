@@ -1,5 +1,6 @@
 // Beginner
 import { beginnerHello } from "@/data/course/beginner/hello";
+import { beginnerPersonalInformation } from "@/data/course/beginner/personal-information";
 import { beginnerMyFamily } from "@/data/course/beginner/my-family";
 import { beginnerMyHouse } from "@/data/course/beginner/my-house";
 import { beginnerDailyRoutine } from "@/data/course/beginner/daily-routine";
@@ -9,6 +10,7 @@ import { beginnerShopping } from "@/data/course/beginner/shopping";
 import { beginnerAroundTown } from "@/data/course/beginner/around-town";
 import { beginnerWhatAreYouDoing } from "@/data/course/beginner/what-are-you-doing";
 import { beginnerAbilities } from "@/data/course/beginner/abilities";
+import { beginnerRealLifeProject } from "@/data/course/beginner/real-life-project";
 
 // Elementary
 // Past
@@ -74,6 +76,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
   beginner: {
     lessons: {
       hello: beginnerHello,
+      "personal-information": beginnerPersonalInformation,
       "my-family": beginnerMyFamily,
       "my-house": beginnerMyHouse,
       "daily-routine": beginnerDailyRoutine,
@@ -83,6 +86,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       "around-town": beginnerAroundTown,
       "what-are-you-doing": beginnerWhatAreYouDoing,
       abilities: beginnerAbilities,
+      "real-life-project": beginnerRealLifeProject,
     },
   },
   elementary: {
