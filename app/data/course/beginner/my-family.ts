@@ -87,7 +87,7 @@ export const beginnerMyFamily = {
         questions: shuffle([
           {
             imgSrc:
-              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/mother-mom.avif",
+              "/assets/img/courses/a1/my-family/introduction/true-false/mother-mom.avif",
             imgAlt: "Laura’s mom",
             question: "This is Laura’s sister.",
             options: [
@@ -97,7 +97,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/brother.avif",
+              "/assets/img/courses/a1/my-family/introduction/true-false/brother.avif",
             imgAlt: "Laura’s brother",
             question: "This is Laura’s dad.",
             options: [
@@ -107,7 +107,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/sister.avif",
+              "/assets/img/courses/a1/my-family/introduction/true-false/sister.avif",
             imgAlt: "Laura’s sister",
             question: "This is Laura’s mom.",
             options: [
@@ -117,7 +117,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/courses/a1/unit-2-my-family/introduction/true-false/father-dad.avif",
+              "/assets/img/courses/a1/my-family/introduction/true-false/father-dad.avif",
             imgAlt: "Laura’s dad",
             question: "This is Laura’s brother",
             options: [
