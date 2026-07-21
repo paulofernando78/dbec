@@ -7,12 +7,6 @@ export const elementaryTheBestPlace = {
       "It is the best place to relax.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to describe the best and worst places, compare multiple options, express preferences, and use superlative adjectives correctly.",
-    grammar: "Superlatives",
-    vocabulary: "Travel destinations",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

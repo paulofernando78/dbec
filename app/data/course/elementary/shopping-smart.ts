@@ -4,12 +4,6 @@ export const elementaryShoppingSmart = {
     subtitle: "Shopping Smart",
     descriptions: ["How much rice do we need?", "We need some apples."],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about quantities, ask for and give information about products, discuss shopping habits, and use 'much', 'many', 'some', and 'any' correctly.",
-    grammar: "Much / Many / Some / Any",
-    vocabulary: "Shopping",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

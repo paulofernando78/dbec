@@ -5,13 +5,6 @@ import type { Notes } from "@/components/content/Notes";
 
 import { audio, content, text, bold, spacer } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-
-const href = "/courses/beginner/personal-information";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerPersonalInformation = {
   whiteboard: {
     title: "A1 BEGINNER",
@@ -20,12 +13,6 @@ export const beginnerPersonalInformation = {
       "I'm Laura. I'm from Brazil.",
       "What's your phone number?",
     ],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

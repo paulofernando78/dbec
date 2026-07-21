@@ -7,12 +7,6 @@ export const upperIntermediateNativeLikeEnglish = {
       "Use a controlled set of common idioms appropriately.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to infer the meaning of selected common idiomatic expressions from context and use a small taught set appropriately in familiar situations.",
-    grammar: "Idioms",
-    vocabulary: "Idioms & Expressions",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

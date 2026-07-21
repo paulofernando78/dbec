@@ -17,23 +17,11 @@ import {
   spacer,
 } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/beginner/hello";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerHello = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "Hello!",
     descriptions: ["Hi! I'm Laura.", "What's your name?"],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

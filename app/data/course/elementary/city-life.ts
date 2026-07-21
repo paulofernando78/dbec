@@ -7,12 +7,6 @@ export const elementaryCityLife = {
       "The subway is faster than the bus.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to compare cities and places, describe urban life, talk about advantages and disadvantages of different locations, and use comparative adjectives correctly.",
-    grammar: "Comparatives",
-    vocabulary: "Cities",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

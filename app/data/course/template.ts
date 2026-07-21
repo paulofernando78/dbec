@@ -28,9 +28,11 @@ export const lesson = {
   },
 
   lessonCard: {
-    lessonObjective: "...",
-    grammar: "...",
+    canDo: "...",
+    usefulLanguage: "...",
     vocabulary: "...",
+    skills: "...",
+    finalTask: "...",
   },
 
   introduction: {

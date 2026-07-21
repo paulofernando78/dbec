@@ -7,23 +7,11 @@ import { content, text, audio, bold, portuguese } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/beginner/my-family";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerMyFamily = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "My Family",
     descriptions: ["This is my family.", "Who's she? She's my sister."],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

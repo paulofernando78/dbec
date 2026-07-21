@@ -5,23 +5,11 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold, mark } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/beginner/abilities";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerAbilities = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Abilities",
     descriptions: ["I can swim.", "She can't play the guitar."],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

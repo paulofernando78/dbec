@@ -5,23 +5,11 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/elementary/future-predictions";
-const data = courseLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const elementaryFuturePredictions = {
   whiteboard: {
     title: "A2 Elementary",
     subtitle: "Future Predictions",
     descriptions: ["I will visit Italy one day."],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

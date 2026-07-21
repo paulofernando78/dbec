@@ -8,12 +8,6 @@ export const advancedMediationAndClarification = {
       "Notice and repair misunderstandings collaboratively.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to explain a complex idea to a non-specialist, clarify a misunderstanding, and reformulate information without distorting it.",
-    grammar: "Reformulation structures",
-    vocabulary: "Explanation and clarification",
-  },
   introduction: {
     storyCarousel: {
       instruction:

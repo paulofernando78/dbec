@@ -16,23 +16,11 @@ import {
   spacer,
 } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/elementary/past-movies";
-const data = courseLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const elementaryPastMovies = {
   whiteboard: {
     title: "A2 Elementary",
     subtitle: "Movies",
     descriptions: ["We went to the movies. The movie was great."],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

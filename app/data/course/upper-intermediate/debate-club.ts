@@ -7,12 +7,6 @@ export const upperIntermediateDebateClub = {
       "Use discourse markers to signal logical relationships.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to participate in debates, organize arguments logically, express agreement and disagreement effectively, and use discourse markers naturally.",
-    grammar: "Discourse Markers",
-    vocabulary: "Arguments",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

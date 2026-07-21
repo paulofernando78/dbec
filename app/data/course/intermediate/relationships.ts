@@ -7,12 +7,6 @@ export const intermediateRelationships = {
       "Use common relationship phrasal verbs naturally.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about personal relationships, understand and use common phrasal verbs, and communicate more naturally in everyday situations.",
-    grammar: "Phrasal Verbs",
-    vocabulary: "Relationships",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

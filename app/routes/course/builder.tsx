@@ -1,7 +1,10 @@
 import { useParams } from "react-router";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { LessonCard } from "@/components/content/LessonCard";
+import {
+  LessonCard,
+  type LessonCardContent,
+} from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
@@ -18,10 +21,12 @@ import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
 import { getCourseLesson } from "@/data/course/lessons-slug";
+import { getCourseLessonCard } from "@/data/course/course-lessons-card-data";
 import { lesson as courseTemplate } from "@/data/course/template";
 
 type CourseProps = {
   lesson: Record<string, any>;
+  lessonCard?: LessonCardContent;
 };
 
 const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
@@ -71,14 +76,15 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
   );
 };
 
-export function Course({ lesson }: CourseProps) {
+export function Course({ lesson, lessonCard }: CourseProps) {
   const heading = lesson.languageFocus?.greetings ? 3 : 4;
+  const card = lessonCard ?? lesson.lessonCard;
 
   return (
     <>
       <Whiteboard {...lesson.whiteboard} />
       <div>
-        <LessonCard {...lesson.lessonCard} />
+        {card && <LessonCard {...card} />}
         <PageSections>
           <Section id="introduction" heading={heading}>
             {lesson.introduction?.vocabularyCarousel && (
@@ -132,10 +138,23 @@ export default function Lesson() {
   const { level, slug } = useParams();
   const lesson =
     level === "template" ? courseTemplate : getCourseLesson({ level, slug });
+  const courseLessonCard =
+    level && slug
+      ? getCourseLessonCard("/courses/" + level + "/" + slug)
+      : undefined;
+  const lessonCard = courseLessonCard
+    ? {
+        canDo: courseLessonCard.canDo,
+        usefulLanguage: courseLessonCard.usefulLanguage,
+        vocabulary: courseLessonCard.vocabulary,
+        skills: courseLessonCard.skills,
+        finalTask: courseLessonCard.finalTask,
+      }
+    : undefined;
 
   if (!lesson) {
     return <h1>Lesson not found.</h1>;
   }
 
-  return <Course lesson={lesson} />;
+  return <Course lesson={lesson} lessonCard={lessonCard} />;
 }

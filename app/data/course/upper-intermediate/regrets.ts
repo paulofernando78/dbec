@@ -7,12 +7,6 @@ export const upperIntermediateRegrets = {
       "Use the Third Conditional to analyse decisions.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about past regrets, analyze alternative outcomes, reflect on personal experiences, and use the Third Conditional correctly.",
-    grammar: "Third Conditional",
-    vocabulary: "Personal experiences",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

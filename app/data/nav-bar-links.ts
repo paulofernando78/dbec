@@ -65,7 +65,7 @@ export const links = [
           },
           {
             href: "/courses/beginner/real-life-project",
-            label: "A1 Real-Life Project",
+            label: "Real-Life Project",
           },
         ],
       },

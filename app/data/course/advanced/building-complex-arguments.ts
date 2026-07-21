@@ -8,12 +8,6 @@ export const advancedBuildingComplexArguments = {
       "Claims need reasons, evidence, counterarguments, and proportionate conclusions.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to develop a structured argument, acknowledge a counterargument, and defend a position with relevant reasons and examples.",
-    grammar: "Concession and rebuttal",
-    vocabulary: "Argumentation",
-  },
   introduction: {
     storyCarousel: {
       instruction:

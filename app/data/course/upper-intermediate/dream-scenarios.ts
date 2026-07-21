@@ -7,12 +7,6 @@ export const upperIntermediateDreamScenarios = {
       "Use the Second Conditional to evaluate life choices.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to discuss hypothetical and imaginary situations, speculate about different life choices and their consequences, express opinions about unreal scenarios, and use the Second Conditional accurately and naturally.",
-    grammar: "Second Conditional",
-    vocabulary: "Dreams, ambitions, and life choices",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

@@ -4,12 +4,6 @@ export const elementaryHobbies = {
     subtitle: "Hobbies",
     descriptions: ["I enjoy taking photos.", "I'd like to learn to paint."],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to describe hobbies they enjoy and would like to try using a small taught set of verb patterns.",
-    grammar: "Gerunds & Infinitives",
-    vocabulary: "Hobbies",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

@@ -7,12 +7,6 @@ export const intermediateCareerPath = {
       "Choose modal verbs according to meaning and strength.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to discuss workplace situations, express obligation, permission, advice, and possibility, and use modal verbs accurately.",
-    grammar: "Modals",
-    vocabulary: "Work",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

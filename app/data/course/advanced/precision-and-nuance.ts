@@ -8,12 +8,6 @@ export const advancedPrecisionAndNuance = {
       "Express attitude without turning possibility into certainty.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to express fine shades of certainty and attitude by selecting precise hedging, emphasis, and qualification devices.",
-    grammar: "Modality and qualification",
-    vocabulary: "Degrees of certainty",
-  },
   introduction: {
     storyCarousel: {
       instruction:

@@ -7,12 +7,6 @@ export const upperIntermediateMediaAndMarketing = {
       "Use complex relative clauses in marketing analysis.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to discuss media and marketing strategies, describe products and campaigns in detail, combine ideas fluently, and use complex relative clauses accurately.",
-    grammar: "Complex Relative Clauses",
-    vocabulary: "Marketing",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

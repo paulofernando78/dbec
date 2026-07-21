@@ -8,12 +8,6 @@ export const advancedDiplomaticCommunication = {
       "Adapt directness, register, and tone to the situation.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to soften disagreement, adapt register, and communicate a sensitive position clearly and diplomatically.",
-    grammar: "Mitigation and modal distance",
-    vocabulary: "Diplomacy and register",
-  },
   introduction: {
     storyCarousel: {
       instruction:

@@ -7,12 +7,6 @@ export const upperIntermediateInnovation = {
       "Use the Future Perfect to discuss innovation.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to discuss future achievements, make predictions about technological developments, describe completed future actions, and use the Future Perfect accurately.",
-    grammar: "Future Perfect",
-    vocabulary: "Technology",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

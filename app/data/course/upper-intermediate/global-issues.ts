@@ -7,12 +7,6 @@ export const upperIntermediateGlobalIssues = {
       "Use advanced passive and reporting structures.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to discuss global and social issues, report information objectively, describe processes and systems, and use advanced passive structures correctly.",
-    grammar: "Passive (advanced)",
-    vocabulary: "Society",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

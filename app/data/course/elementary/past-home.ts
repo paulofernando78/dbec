@@ -4,12 +4,6 @@ export const elementaryPastHome = {
     subtitle: "Home",
     descriptions: ["I stayed at home. I cleaned and relaxed."],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about past activities and describe what they did at home using the Past Simple.",
-    grammar: "Past Simple",
-    vocabulary: "Household chores, Activities at home, Free-time activities",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

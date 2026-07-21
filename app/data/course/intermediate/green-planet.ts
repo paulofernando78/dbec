@@ -7,12 +7,6 @@ export const intermediateGreenPlanet = {
       "Use the Zero Conditional for general truths.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to describe facts, scientific truths, and general rules, discuss environmental issues, and use the Zero Conditional correctly.",
-    grammar: "Zero Conditional",
-    vocabulary: "Environment",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

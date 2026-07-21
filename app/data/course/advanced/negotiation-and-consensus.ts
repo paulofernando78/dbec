@@ -8,12 +8,6 @@ export const advancedNegotiationAndConsensus = {
       "A workable compromise preserves what matters most to each side.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to compare competing priorities, negotiate alternatives, and formulate a compromise that reflects different perspectives.",
-    grammar: "Conditional proposals",
-    vocabulary: "Negotiation and compromise",
-  },
   introduction: {
     storyCarousel: {
       instruction: "Identify the priority protected by each proposal.",

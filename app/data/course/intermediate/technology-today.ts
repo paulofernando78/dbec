@@ -7,12 +7,6 @@ export const intermediateTechnologyToday = {
       "Combine ideas with defining relative clauses.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to describe people, places, and things in greater detail, combine ideas into more complex sentences, and use relative clauses accurately.",
-    grammar: "Relative Clauses",
-    vocabulary: "Technology",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

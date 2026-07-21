@@ -8,12 +8,6 @@ export const advancedResearchBriefing = {
       "Give decision-makers a concise and defensible account.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to synthesize evidence from several claims, distinguish fact from inference, and present a concise briefing with justified recommendations.",
-    grammar: "Evidence-based reporting",
-    vocabulary: "Research and recommendations",
-  },
   introduction: {
     storyCarousel: {
       instruction:

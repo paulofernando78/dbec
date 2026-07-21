@@ -8,12 +8,6 @@ export const advancedSynthesizingSources = {
       "Show agreement, difference, limitation, and significance.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to integrate complementary and conflicting information from two sources into a coherent, neutral synthesis.",
-    grammar: "Reporting structures",
-    vocabulary: "Evidence and source attribution",
-  },
   introduction: {
     storyCarousel: {
       instruction:

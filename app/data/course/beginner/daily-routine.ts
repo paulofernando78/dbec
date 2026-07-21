@@ -5,12 +5,6 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/beginner/daily-routine";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerDailyRoutine = {
   whiteboard: {
     title: "A1 BEGINNER",
@@ -19,12 +13,6 @@ export const beginnerDailyRoutine = {
       "I wake up at 7 o'clock.",
       "She goes to work in the morning.",
     ],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

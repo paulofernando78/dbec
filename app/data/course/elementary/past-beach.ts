@@ -4,12 +4,6 @@ export const elementaryPastBeach = {
     subtitle: "Beach",
     descriptions: ["We went to the beach. The weather was beautiful."],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about past activities and describe a day at the beach using the Past Simple.",
-    grammar: "Past Simple",
-    vocabulary: "Beach activities, Weather, Seaside places",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

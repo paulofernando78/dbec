@@ -7,12 +7,6 @@ export const intermediateWhatIf = {
       "Use the First Conditional to explain decisions.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about possible future situations, explain consequences, make predictions based on conditions, and use the First Conditional accurately.",
-    grammar: "First Conditional",
-    vocabulary: "Decisions",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

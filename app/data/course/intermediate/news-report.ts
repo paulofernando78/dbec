@@ -7,12 +7,6 @@ export const intermediateNewsReport = {
       "Use common passive structures in news contexts.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to report events and news stories, focus on actions rather than the performer, and use the Passive Voice appropriately.",
-    grammar: "Passive Voice",
-    vocabulary: "News",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

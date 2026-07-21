@@ -7,12 +7,6 @@ export const intermediateMakingPlans = {
       "Select an appropriate future form in conversation.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to discuss future plans and intentions, make arrangements, talk about personal goals, and choose appropriate future forms.",
-    grammar: "Future forms",
-    vocabulary: "Goals",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

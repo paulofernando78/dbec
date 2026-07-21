@@ -1,5 +1,5 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { LessonCard } from "@/components/content/LessonCard/LessonCard";
+import { LessonCard } from "@/components/content/LessonCard";
 
 import { authenticContentTedEdLessonsCardData } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 

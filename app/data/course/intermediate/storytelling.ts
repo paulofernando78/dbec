@@ -7,12 +7,6 @@ export const intermediateStorytelling = {
       "Tell a clear story with the Past Continuous and Past Simple.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to tell engaging stories, describe actions in progress in the past, set the scene for narratives, and use the Past Continuous correctly.",
-    grammar: "Past Continuous",
-    vocabulary: "Narratives",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

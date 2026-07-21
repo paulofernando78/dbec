@@ -5,23 +5,11 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/beginner/food-and-drinks";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerFoodAndDrinks = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Food and Drinks",
     descriptions: ["I like pizza.", "I don't like coffee."],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

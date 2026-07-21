@@ -7,12 +7,6 @@ export const upperIntermediateNaturalEnglish = {
       "Use high-frequency B2 collocations and phrasal verbs.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to use advanced collocations and phrasal verbs naturally, improve fluency and precision, and communicate with greater confidence in a wide range of situations.",
-    grammar: "Collocations & Advanced Phrasal Verbs",
-    vocabulary: "High-frequency B2 language",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

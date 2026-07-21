@@ -7,12 +7,6 @@ export const upperIntermediateLeadership = {
       "Use have/get something done to focus on arranged services.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about leadership and management, describe services performed by others, delegate responsibilities, and use the causative form correctly.",
-    grammar: "Causative",
-    vocabulary: "Grammar",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

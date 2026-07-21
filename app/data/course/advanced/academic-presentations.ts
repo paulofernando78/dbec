@@ -8,12 +8,6 @@ export const advancedAcademicPresentations = {
       "Integrate subthemes and close with a meaningful conclusion.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to deliver a well-structured presentation on a complex topic, integrate subthemes, and conclude with a clear overall message.",
-    grammar: "Signposting and thematic development",
-    vocabulary: "Presentation language",
-  },
   introduction: {
     storyCarousel: {
       instruction:

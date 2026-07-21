@@ -5,12 +5,6 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/beginner/my-week";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerMyWeek = {
   whiteboard: {
     title: "A1 BEGINNER",
@@ -19,12 +13,6 @@ export const beginnerMyWeek = {
       "I always study on Monday.",
       "She sometimes plays soccer on Saturday.",
     ],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

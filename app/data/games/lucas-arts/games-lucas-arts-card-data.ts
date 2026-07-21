@@ -2,13 +2,25 @@ export const gamesLucasArtsCardData = {
   monkeyIsland: {
     href: "/games/lucas-arts/monkey-island",
     label: "The Secret of Monkey Island",
-    lessonObjective: "In The Secret of Monkey Island, an earnest young man named Guybrush Threepwood arrives at Mêlée Island with dreams of becoming a pirate. He must complete three perilous trials to prove himself, but his quest is complicated when the ghostly pirate LeChuck kidnaps the beautiful Governor Elaine Marley. Guybrush assembles a crew and sets sail to rescue her.",
+    canDo:
+      "Follow a humorous adventure narrative, infer character motives, and explain puzzle decisions.",
+    usefulLanguage:
+      "He is trying to…; The clue suggests…; If we use… on…, we may…",
+    vocabulary: "Pirates, quests, clues, inventory, intentions",
+    skills: "Reading, inference, problem-solving, and collaborative speaking",
+    finalTask: "Explain and justify a solution to a story-based puzzle.",
   },
   thimbleWeedPark: {
     href: "/games/lucas-arts/thimbleweed-park",
     label: "Thimbleweed Park",
-    lessonObjective:
-      "In Thimbleweed Park, a dead body is the least of your problems. Switch between five playable characters to uncover the surreal secrets of this strange town in a modern mystery adventure game from the creators of Monkey Island and Maniac Mansion. The deeper you go, the weirder it gets.",
+    canDo:
+      "Track multiple perspectives, evaluate clues, and form a reasoned mystery hypothesis.",
+    usefulLanguage:
+      "From this character’s perspective…; The clue may imply…; My hypothesis is…",
+    vocabulary: "Mystery, investigation, suspects, clues, motives",
+    skills: "Reading, inference, note-taking, and collaborative speaking",
+    finalTask:
+      "Present and defend a theory about the mystery using collected clues.",
   },
   // date: "Mar 30, 2017",
 };

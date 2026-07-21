@@ -7,12 +7,6 @@ export const intermediateWhatDidTheySay = {
       "Make appropriate tense, pronoun, and time-reference changes.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to report conversations, relay information from other speakers, describe what people said, and use Reported Speech correctly.",
-    grammar: "Reported Speech",
-    vocabulary: "Communication",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

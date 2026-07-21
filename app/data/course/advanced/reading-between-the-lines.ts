@@ -8,12 +8,6 @@ export const advancedReadingBetweenTheLines = {
       "Support every interpretation with evidence from the language used.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to infer a speaker's or writer's stance, identify implied meaning, and justify an interpretation with linguistic evidence.",
-    grammar: "Hedging and stance",
-    vocabulary: "Inference and evaluation",
-  },
   introduction: {
     storyCarousel: {
       instruction:

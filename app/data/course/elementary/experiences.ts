@@ -7,12 +7,6 @@ export const elementaryExperiences = {
       "Have you ever tried sushi?",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about life experiences, describe things they have done, ask about experiences, and use the Present Perfect correctly in basic situations.",
-    grammar: "Present Perfect (basic)",
-    vocabulary: "Life experiences",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

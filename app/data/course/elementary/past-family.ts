@@ -4,12 +4,6 @@ export const elementaryPastFamily = {
     subtitle: "Family",
     descriptions: ["I visited my family. We had lunch together."],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about past activities and describe time spent with family using the Past Simple.",
-    grammar: "Past Simple",
-    vocabulary: "Family members, Family activities, Celebrations",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

@@ -7,12 +7,6 @@ export const elementaryHealthyLiving = {
       "You shouldn't skip breakfast.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to give health advice, talk about healthy habits, discuss lifestyle choices, and use 'should' correctly.",
-    grammar: "Should",
-    vocabulary: "Health",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

@@ -4,12 +4,6 @@ export const elementaryRules = {
     subtitle: "Rules",
     descriptions: ["You must wear a helmet.", "We have to arrive on time."],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about obligations and rules, describe responsibilities, explain what is necessary or prohibited, and use 'must' and 'have to' correctly.",
-    grammar: "Must / Have to",
-    vocabulary: "Rules and obligations",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",

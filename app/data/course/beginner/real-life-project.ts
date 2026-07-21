@@ -5,27 +5,14 @@ import type { Notes } from "@/components/content/Notes";
 
 import { content, text, bold } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-
-const href = "/courses/beginner/real-life-project";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerRealLifeProject = {
   whiteboard: {
     title: "A1 BEGINNER",
-    subtitle: "A1 Real-Life Project",
+    subtitle: "Real-Life Project",
     descriptions: [
       "Let's meet at the park on Saturday.",
       "I like soccer. Can you play?",
     ],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

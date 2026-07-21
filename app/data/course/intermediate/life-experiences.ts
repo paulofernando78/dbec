@@ -7,12 +7,6 @@ export const intermediateLifeExperiences = {
       "Choose between the Present Perfect and Past Simple.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to talk about life experiences, describe past events, distinguish between finished and unfinished time periods, and use the Present Perfect and Past Simple accurately.",
-    grammar: "Present Perfect vs Past Simple",
-    vocabulary: "Grammar",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

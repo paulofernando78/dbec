@@ -5,12 +5,6 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/elementary/travel-plans";
-const data = courseLessonsCardData.elementary.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const elementaryTravelPlans = {
   whiteboard: {
     title: "A2 Elementary",
@@ -19,12 +13,6 @@ export const elementaryTravelPlans = {
       "I'm going to visit Rio next month.",
       "We're going to stay in a hotel near the beach.",
     ],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

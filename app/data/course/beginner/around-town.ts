@@ -5,12 +5,6 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, text, audio, bold } from "@/helpers/content";
 
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
-const href = "/courses/beginner/around-town";
-const data = courseLessonsCardData.beginner.find(
-  (lesson) => lesson.href === href,
-)!;
-
 export const beginnerAroundTown = {
   whiteboard: {
     title: "A1 BEGINNER",
@@ -19,12 +13,6 @@ export const beginnerAroundTown = {
       "The bank is next to the supermarket.",
       "The school is across from the park.",
     ],
-  },
-
-  lessonCard: {
-    lessonObjective: data.lessonObjective,
-    grammar: data.grammar,
-    vocabulary: data.vocabulary,
   },
 
   introduction: {

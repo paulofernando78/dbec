@@ -7,12 +7,6 @@ export const upperIntermediateBusinessCommunication = {
       "Use advanced modal patterns in professional contexts.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to communicate effectively in professional contexts, express degrees of certainty and obligation, discuss workplace situations, and use advanced modal verbs accurately.",
-    grammar: "Advanced Modals",
-    vocabulary: "Business",
-  },
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",

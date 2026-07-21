@@ -8,12 +8,6 @@ export const advancedCriticalReviews = {
       "Balance strengths, limitations, evidence, and audience needs.",
     ],
   },
-  lessonCard: {
-    lessonObjective:
-      "By the end of this class, students will be able to evaluate a cultural or media work using explicit criteria and support a balanced judgment with specific evidence.",
-    grammar: "Evaluative structures",
-    vocabulary: "Critical appraisal",
-  },
   introduction: {
     storyCarousel: {
       instruction:

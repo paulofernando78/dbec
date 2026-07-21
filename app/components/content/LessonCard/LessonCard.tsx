@@ -4,15 +4,28 @@ import { Card } from "@/components/ui/Card";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Link } from "react-router";
 
-import { Goal, FileText, CalendarDays, Clock2 } from "lucide-react";
+import {
+  BookOpenText,
+  CalendarDays,
+  Clock2,
+  Flag,
+  Goal,
+  MessageCircle,
+  MessagesSquare,
+} from "lucide-react";
 
-type LessonCardProps = {
+export type LessonCardContent = {
+  canDo: string;
+  usefulLanguage?: string;
+  vocabulary?: string;
+  skills?: string;
+  finalTask?: string;
+};
+
+type LessonCardProps = LessonCardContent & {
   href?: string;
   index?: number;
   label?: string;
-  lessonObjective: string;
-  grammar?: string;
-  vocabulary?: string;
   date?: string;
   duration?: string;
   updateProgress?: () => void;
@@ -22,9 +35,11 @@ export const LessonCard = ({
   href,
   index = 0,
   label,
-  lessonObjective,
-  grammar,
+  canDo,
+  usefulLanguage,
   vocabulary,
+  skills,
+  finalTask,
   date,
   duration,
   updateProgress,
@@ -75,10 +90,12 @@ export const LessonCard = ({
             text-gray-400
             shrink-0"
           />
-          <span>{lessonObjective}</span>
+          <span>
+            <b>Can do:</b> {canDo}
+          </span>
         </p>
-        <div className="italic mb-[.1rem]">
-          {grammar && (
+        <div className="mb-[.1rem]">
+          {usefulLanguage && (
             <div
               className="
               flex
@@ -87,13 +104,15 @@ export const LessonCard = ({
               mt-2
               translate-x-[-0.1rem]"
             >
-              <FileText
+              <MessageCircle
                 size={23}
                 className="
                 text-gray-400
                 shrink-0"
               />
-              <span className="block">Grammar: {grammar}</span>
+              <span className="block">
+                <b>Useful language:</b> {usefulLanguage}
+              </span>
             </div>
           )}
           {vocabulary && (
@@ -105,13 +124,55 @@ export const LessonCard = ({
               mt-2
               translate-x-[-0.1rem]"
             >
-              <FileText
+              <BookOpenText
                 size={23}
                 className="
                 text-gray-400
                 shrink-0"
               />
-              <span>Vocabulary: {vocabulary}</span>
+              <span>
+                <b>Vocabulary:</b> {vocabulary}
+              </span>
+            </div>
+          )}
+          {skills && (
+            <div
+              className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <MessagesSquare
+                size={23}
+                className="
+                text-gray-400
+                shrink-0"
+              />
+              <span>
+                <b>Skills:</b> {skills}
+              </span>
+            </div>
+          )}
+          {finalTask && (
+            <div
+              className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <Flag
+                size={23}
+                className="
+                text-gray-400
+                shrink-0"
+              />
+              <span>
+                <b>Final task:</b> {finalTask}
+              </span>
             </div>
           )}
           {date && (
