@@ -23,70 +23,6 @@ const data = courseLessonsCardData.beginner.find(
   (lesson) => lesson.href === href,
 )!;
 
-const helloPersonalInformation = [
-  {
-    display: "block" as const,
-    as: "span" as const,
-    parts: [
-      audio(
-        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-name.mp3",
-      ),
-      "What’s your name?",
-    ],
-  },
-  {
-    display: "block" as const,
-    as: "span" as const,
-    parts: [
-      audio(
-        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/my-names.mp3",
-      ),
-      "My name’s Laura.",
-    ],
-  },
-  {
-    display: "block" as const,
-    as: "span" as const,
-    parts: [
-      audio(
-        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-it.mp3",
-      ),
-      "How do you spell it?",
-    ],
-  },
-  {
-    display: "block" as const,
-    as: "span" as const,
-    parts: [
-      audio(
-        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/l-a-u-r-a.mp3",
-      ),
-      "L-A-U-R-A.",
-    ],
-  },
-  spacer(),
-  {
-    display: "block" as const,
-    as: "span" as const,
-    parts: [
-      audio(
-        "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/nice-to-meet-you-1.mp3",
-      ),
-      "Nice to meet you.",
-    ],
-  },
-  {
-    display: "block" as const,
-    as: "span" as const,
-    parts: ["Nice to meet you too."],
-  },
-  {
-    display: "block" as const,
-    as: "span" as const,
-    parts: ["See you! / Bye!"],
-  },
-] satisfies Meaning[];
-
 export const beginnerHello = {
   whiteboard: {
     title: "A1 Beginner",
@@ -169,7 +105,7 @@ export const beginnerHello = {
             ],
           },
           {
-            question: "Who says “Hello! I’m Eric”?",
+            question: "Who says “Hello!”?",
             options: [
               { option: "Laura", isCorrect: false },
               { option: "Eric", isCorrect: true },
@@ -237,7 +173,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi.mp3",
+            "Hi!",
           ),
           "Hi!",
         ],
@@ -247,7 +183,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hi-there.mp3",
+            "Hi there!",
           ),
           "Hi there!",
         ],
@@ -257,7 +193,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hello.mp3",
+            "Hello!",
           ),
           "Hello!",
         ],
@@ -267,9 +203,9 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/hey.mp3",
+            "Hey there!",
           ),
-          "Hey!",
+          "Hey (there)!",
         ],
       },
       {
@@ -277,9 +213,9 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/good-morning.mp3",
+            "Good morning. Morning.",
           ),
-          "Good morning.",
+          "Good morning. / Morning.",
         ],
       },
       {
@@ -287,9 +223,9 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/morning.mp3",
+            "Good afternoon. / Afternoon.",
           ),
-          "Morning.",
+          "Good afternoon. / Afternoon.",
         ],
       },
       {
@@ -297,39 +233,9 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/good-afternoon.mp3",
+            "Good evening. / Evening.",
           ),
-          "Good afternoon.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/afternoon.mp3",
-          ),
-          "Afternoon.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/good-evening.mp3",
-          ),
-          "Good evening.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/saying-hi/evening.mp3",
-          ),
-          "Evening.",
+          "Good evening. / Evening.",
         ],
       },
     ] satisfies Meaning[],
