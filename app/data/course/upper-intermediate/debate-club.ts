@@ -107,7 +107,7 @@ export const upperIntermediateDebateClub = {
   },
   presentation: {
     dialogue: {
-      prompt: "Read the dialogue and identify the target language.",
+      instruction: "Read the dialogue and identify the target language.",
       audioSrc: "",
       lines: [
         {

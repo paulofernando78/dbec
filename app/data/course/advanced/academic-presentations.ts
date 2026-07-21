@@ -74,7 +74,7 @@ export const advancedAcademicPresentations = {
   },
   presentation: {
     dialogue: {
-      prompt: "Two presenters revise the structure of a talk on urban heat.",
+      instruction: "Two presenters revise the structure of a talk on urban heat.",
       audioSrc: "",
       lines: [
         {

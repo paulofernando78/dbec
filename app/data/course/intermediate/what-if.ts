@@ -101,7 +101,7 @@ export const intermediateWhatIf = {
   },
   presentation: {
     dialogue: {
-      prompt: "Read the dialogue and identify the target language.",
+      instruction: "Read the dialogue and identify the target language.",
       audioSrc: "",
       lines: [
         { speaker: "Kai", line: ["What will we do if it rains tomorrow?"] },

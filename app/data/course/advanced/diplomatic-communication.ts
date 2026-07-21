@@ -70,7 +70,7 @@ export const advancedDiplomaticCommunication = {
   },
   presentation: {
     dialogue: {
-      prompt:
+      instruction:
         "A manager and a consultant discuss a delayed project without assigning unnecessary blame.",
       audioSrc: "",
       lines: [

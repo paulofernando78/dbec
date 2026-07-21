@@ -49,7 +49,7 @@ export const beginnerHello = {
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/cefr/a1/unit-1-hello/introduction/laura-says-hi-im-laura.mp3",
+                  "Laura says, “Hi! I'm Laura.”",
                 ),
                 "Laura says, “Hi! I'm Laura.”",
                 lineBreak(),
@@ -66,7 +66,7 @@ export const beginnerHello = {
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/cefr/a1/unit-1-hello/introduction/eric-says-hello-im-eric.mp3",
+                  "Eric says, “Hello! I'm Eric.”",
                 ),
                 "Eric says, “Hello! I'm Eric.”",
                 lineBreak(),
@@ -83,7 +83,7 @@ export const beginnerHello = {
             ...content({
               parts: [
                 audio(
-                  "/assets/audio/cefr/a1/unit-1-hello/introduction/they-shake-hands.mp3",
+                  "They shake hands.",
                 ),
                 "They",
                 " ",
@@ -131,7 +131,7 @@ export const beginnerHello = {
 
   presentation: {
     dialogue: {
-      prompt: "Laura and Eric meet for the first time. Listen to the dialogue.",
+      instruction: "Laura and Eric meet for the first time. Listen to the dialogue.",
       audioSrc: "/assets/audio/cefr/a1/unit-1-hello/presentation/dialogue.mp3",
       lines: [
         {

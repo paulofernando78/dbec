@@ -68,7 +68,7 @@ export const advancedBuildingComplexArguments = {
   },
   presentation: {
     dialogue: {
-      prompt:
+      instruction:
         "Nora and Victor prepare opposing positions for a formal discussion.",
       audioSrc: "",
       lines: [

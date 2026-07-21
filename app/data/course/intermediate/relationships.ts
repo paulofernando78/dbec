@@ -101,7 +101,7 @@ export const intermediateRelationships = {
   },
   presentation: {
     dialogue: {
-      prompt: "Read the dialogue and identify the target language.",
+      instruction: "Read the dialogue and identify the target language.",
       audioSrc: "",
       lines: [
         { speaker: "Ella", line: ["How are things with Marcus?"] },

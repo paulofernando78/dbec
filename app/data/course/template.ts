@@ -91,7 +91,7 @@ export const lesson = {
 
   presentation: {
     dialogue: {
-      prompt: "...",
+      instruction: "...",
       audioSrc: "/",
       lines: [
         {

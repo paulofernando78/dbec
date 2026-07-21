@@ -360,7 +360,7 @@ export const Carousel = ({
               ${isContentVisible ? "opacity-100" : "opacity-0"}
             `}
           >
-            <span className="font-bold">Hint:</span>{" "}
+            {/* <span className="font-bold">Hint:</span>{" "} */}
             <InlineRichContent value={currentContent} />
           </div>
         </div>

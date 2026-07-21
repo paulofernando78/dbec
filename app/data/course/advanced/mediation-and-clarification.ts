@@ -68,7 +68,7 @@ export const advancedMediationAndClarification = {
   },
   presentation: {
     dialogue: {
-      prompt:
+      instruction:
         "A data specialist explains a finding to a community representative.",
       audioSrc: "",
       lines: [

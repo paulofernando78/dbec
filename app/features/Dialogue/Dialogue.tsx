@@ -13,13 +13,13 @@ type DialogueLine = {
 type DialogueSentence = (ContentToken | string)[];
 
 type DialogueProps = {
-  prompt: string;
+  instruction: string;
   audioSrc: string;
   lines: DialogueLine[];
 };
 
 export const Dialogue = ({
-  prompt,
+  instruction,
 
   audioSrc,
   lines = [],
@@ -27,7 +27,7 @@ export const Dialogue = ({
   return (
     <div className="space-y-4 mb-4">
       <p>
-        <b>{prompt}</b>
+        <b>{instruction}</b>
       </p>
       {audioSrc && <AudioPlayer src={audioSrc} />}
       {lines.map((line, index) => (

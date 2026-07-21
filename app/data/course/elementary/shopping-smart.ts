@@ -82,7 +82,7 @@ export const elementaryShoppingSmart = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Rosa", line: ["Do we have any rice?"] },

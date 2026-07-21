@@ -69,7 +69,7 @@ export const advancedReadingBetweenTheLines = {
   },
   presentation: {
     dialogue: {
-      prompt:
+      instruction:
         "Maya and Daniel are interpreting a cautious statement from a public report.",
       audioSrc: "",
       lines: [

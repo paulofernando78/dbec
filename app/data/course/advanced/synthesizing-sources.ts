@@ -77,7 +77,7 @@ export const advancedSynthesizingSources = {
   },
   presentation: {
     dialogue: {
-      prompt: "Leah and Amir plan a neutral synthesis of two reports.",
+      instruction: "Leah and Amir plan a neutral synthesis of two reports.",
       audioSrc: "",
       lines: [
         {

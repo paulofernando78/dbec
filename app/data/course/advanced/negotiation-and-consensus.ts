@@ -67,7 +67,7 @@ export const advancedNegotiationAndConsensus = {
   },
   presentation: {
     dialogue: {
-      prompt:
+      instruction:
         "A community group and transport team negotiate a late-night bus pilot.",
       audioSrc: "",
       lines: [

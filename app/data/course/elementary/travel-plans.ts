@@ -111,7 +111,7 @@ export const elementaryTravelPlans = {
 
   presentation: {
     dialogue: {
-      prompt:
+      instruction:
         "Emma and Jake are talking about their travel plans. Listen and read.",
       audioSrc: "/",
       lines: [

@@ -255,7 +255,7 @@ export const elementaryPastMovies = {
 
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         {

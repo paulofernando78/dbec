@@ -108,7 +108,7 @@ export const upperIntermediateRegrets = {
   },
   presentation: {
     dialogue: {
-      prompt: "Read the dialogue and identify the target language.",
+      instruction: "Read the dialogue and identify the target language.",
       audioSrc: "",
       lines: [
         { speaker: "Ari", line: ["I wish I'd accepted the internship."] },

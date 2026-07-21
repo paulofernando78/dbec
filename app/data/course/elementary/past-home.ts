@@ -126,7 +126,7 @@ export const elementaryPastHome = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Nina", line: ["Hi Leo. How was your weekend?"] },

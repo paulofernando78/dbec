@@ -72,7 +72,7 @@ export const advancedResearchBriefing = {
   },
   presentation: {
     dialogue: {
-      prompt: "A research analyst briefs a director on a pilot programme.",
+      instruction: "A research analyst briefs a director on a pilot programme.",
       audioSrc: "",
       lines: [
         {

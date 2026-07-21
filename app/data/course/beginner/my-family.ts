@@ -31,7 +31,7 @@ export const beginnerMyFamily = {
       instruction: "Look at the pictures and listen to the sentences.",
       words: [
         {
-          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-mom.avif",
+          src: "/assets/img/courses/a1/my-family/introduction/laura-mom.avif",
           alt: "Laura with her Mom",
           content: [
             ...content({
@@ -43,7 +43,7 @@ export const beginnerMyFamily = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-dad.avif",
+          src: "/assets/img/courses/a1/my-family/introduction/laura-dad.avif",
           alt: "Laura ith her Dad",
           content: [
             ...content({
@@ -55,7 +55,7 @@ export const beginnerMyFamily = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-brother.avif",
+          src: "/assets/img/courses/a1/my-family/introduction/laura-brother.avif",
           alt: "Laura with her brother",
           content: [
             ...content({
@@ -67,7 +67,7 @@ export const beginnerMyFamily = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/unit-2-my-family/introduction/laura-sister.avif",
+          src: "/assets/img/courses/a1/my-family/introduction/laura-sister.avif",
           alt: "Mother",
           content: [
             ...content({

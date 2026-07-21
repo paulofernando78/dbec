@@ -98,7 +98,7 @@ export const beginnerAroundTown = {
 
   presentation: {
     dialogue: {
-      prompt: "Listen to the dialogue.",
+      instruction: "Listen to the dialogue.",
       audioSrc: "",
       lines: [
         {

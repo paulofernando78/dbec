@@ -98,7 +98,7 @@ export const intermediateStorytelling = {
   },
   presentation: {
     dialogue: {
-      prompt: "Read the dialogue and identify the target language.",
+      instruction: "Read the dialogue and identify the target language.",
       audioSrc: "",
       lines: [
         { speaker: "Nina", line: ["What happened on your way home?"] },

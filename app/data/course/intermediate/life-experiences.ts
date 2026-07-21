@@ -101,7 +101,7 @@ export const intermediateLifeExperiences = {
   },
   presentation: {
     dialogue: {
-      prompt: "Read the dialogue and identify the target language.",
+      instruction: "Read the dialogue and identify the target language.",
       audioSrc: "",
       lines: [
         { speaker: "Leo", line: ["Have you ever travelled alone?"] },

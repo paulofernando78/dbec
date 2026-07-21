@@ -130,7 +130,7 @@ export const elementaryPastBeach = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Laura", line: ["Hey Eric. How's it going?"] },

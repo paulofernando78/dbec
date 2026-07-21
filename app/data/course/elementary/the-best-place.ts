@@ -85,7 +85,7 @@ export const elementaryTheBestPlace = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Lia", line: ["What is the best place to visit here?"] },

@@ -82,7 +82,7 @@ export const elementaryHobbies = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Kai", line: ["What do you like doing in your free time?"] },

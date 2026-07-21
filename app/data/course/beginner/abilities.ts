@@ -88,7 +88,7 @@ export const beginnerAbilities = {
 
   presentation: {
     dialogue: {
-      prompt: "Listen and read. What can Jake do?",
+      instruction: "Listen and read. What can Jake do?",
       audioSrc: "",
       lines: [
         {

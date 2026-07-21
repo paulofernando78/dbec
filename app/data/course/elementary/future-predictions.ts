@@ -107,7 +107,7 @@ export const elementaryFuturePredictions = {
 
   presentation: {
     dialogue: {
-      prompt: "Listen to Leo and Mia talking about the future.",
+      instruction: "Listen to Leo and Mia talking about the future.",
       audioSrc: "/audio/a2/unit-3-future-predictions/dialogue.mp3",
       lines: [
         {

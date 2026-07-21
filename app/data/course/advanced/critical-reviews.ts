@@ -67,7 +67,7 @@ export const advancedCriticalReviews = {
   },
   presentation: {
     dialogue: {
-      prompt: "Two reviewers compare their judgments of a documentary.",
+      instruction: "Two reviewers compare their judgments of a documentary.",
       audioSrc: "",
       lines: [
         {

@@ -352,7 +352,7 @@ export const videoPlayer = {
 };
 
 export const dialogue = {
-  prompt: "Listen to the dialogue.",
+  instruction: "Listen to the dialogue.",
   imgSrc:
     "https://t4.ftcdn.net/jpg/09/69/46/43/360_F_969464328_BsABgg6gLMxYgY3iL74cuteW7s2YrMTP.jpg",
   imgAlt: "...",

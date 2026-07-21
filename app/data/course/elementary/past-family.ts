@@ -133,7 +133,7 @@ export const elementaryPastFamily = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Mia", line: ["Hi Daniel. What did you do on Saturday?"] },

@@ -85,7 +85,7 @@ export const elementaryHealthyLiving = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Maya", line: ["I feel tired all the time."] },

@@ -58,7 +58,7 @@ export const advancedPrecisionAndNuance = {
   },
   presentation: {
     dialogue: {
-      prompt: "Researchers calibrate the language of a preliminary finding.",
+      instruction: "Researchers calibrate the language of a preliminary finding.",
       audioSrc: "",
       lines: [
         {

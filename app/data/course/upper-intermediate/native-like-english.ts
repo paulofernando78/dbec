@@ -103,7 +103,7 @@ export const upperIntermediateNativeLikeEnglish = {
   },
   presentation: {
     dialogue: {
-      prompt: "Read the dialogue and identify the target language.",
+      instruction: "Read the dialogue and identify the target language.",
       audioSrc: "",
       lines: [
         { speaker: "Alex", line: ["Shall we get the ball rolling?"] },

@@ -85,7 +85,7 @@ export const elementaryCityLife = {
   },
   presentation: {
     dialogue: {
-      prompt: "Listen and read.",
+      instruction: "Listen and read.",
       audioSrc: "/",
       lines: [
         { speaker: "Ana", line: ["Do you like living in Metro City?"] },

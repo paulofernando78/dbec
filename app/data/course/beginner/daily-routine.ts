@@ -98,7 +98,7 @@ export const beginnerDailyRoutine = {
 
   presentation: {
     dialogue: {
-      prompt: "Listen to th dialogue.",
+      instruction: "Listen to th dialogue.",
       audioSrc: "",
       lines: [
         {
