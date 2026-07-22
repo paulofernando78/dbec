@@ -131,8 +131,8 @@ export const beginnerHello = {
           {
             question: "Eric says, “Bye.”",
             options: [
-              { option: "True", isCorrect: true },
-              { option: "False", isCorrect: false },
+              { option: "True", isCorrect: false },
+              { option: "False", isCorrect: true },
             ],
           },
         ],
