@@ -1,5 +1,3 @@
-import styles from "./List.module.css";
-
 import { Checkbox } from "@/components/ui/Checkbox";
 import {
   InlineRichContent,
@@ -28,7 +26,7 @@ export const List = ({ instruction, items = [], type = "none" }: ListProps) => {
 
         {items.map((item, index) => (
           <div key={index}>
-            <label className={styles.wrapper}>
+            <label className="flex items-start gap-[5px]">
               <Checkbox
                 className="mr-1"
                 checked={checkedItems[index] ?? false}
@@ -63,10 +61,10 @@ export const List = ({ instruction, items = [], type = "none" }: ListProps) => {
       <Tag
         className={
           type === "none"
-            ? styles.none
+            ? "list-none"
             : type === "ol"
-              ? styles.ordered
-              : styles.bulleted
+              ? "list-decimal list-outside pl-6"
+              : "list-disc list-outside pl-6"
         }
       >
         {items.map((item, index) => (

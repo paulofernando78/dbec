@@ -1,11 +1,9 @@
 import type { ReactNode } from "react";
 
-import styles from "./Stressed.module.css"
-
 type StressedProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const Stressed = ({ children }: StressedProps) => {
-  return <mark className={styles.stressed}>{children}</mark>;
+  return <mark className="px-1.25 bg-blue-300 rounded">{children}</mark>;
 };

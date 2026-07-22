@@ -44,7 +44,7 @@ export const Header = ({ onClick }: HeadersProps) => {
           icon={<Menu />}
           onClick={onClick}
           className="
-            min-[700px]:translate-x-13.75
+            min-[700px]:-translate-x-13.75
             transition-all
             duration-1000
           "

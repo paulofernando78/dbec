@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   isRouteErrorResponse,
@@ -37,18 +37,33 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const navigation = useNavigation();
-
   const isLoading = navigation.state === "loading";
-
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
-   const toggleNav = () => {
-    setIsNavBarOpen((prev) => !prev)
-  }
+  const toggleNav = () => {
+    setIsNavBarOpen((prev) => !prev);
+  };
 
   const closeNavBar = () => {
-    setIsNavBarOpen(false)
-  }
+    setIsNavBarOpen(false);
+  };
+
+  useEffect(() => {
+    const mobileBreakpoint = window.matchMedia("(max-width: 700px)");
+    const handleBreakpointChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        setIsNavBarOpen(false);
+      }
+    };
+
+    mobileBreakpoint.addEventListener("change", handleBreakpointChange);
+
+    return () => {
+      mobileBreakpoint.removeEventListener(
+        "change",
+        handleBreakpointChange);
+    };
+  }, []);
 
   return (
     <div className="app">
@@ -56,7 +71,11 @@ export default function App() {
         <Header onClick={toggleNav} />
         <div className="app-content">
           <div className="app-scrollArea">
-            {isLoading ? <Loading /> : <Outlet context={{isNavBarOpen, closeNavBar}} />}
+            {isLoading ? (
+              <Loading />
+            ) : (
+              <Outlet context={{ isNavBarOpen, closeNavBar }} />
+            )}
           </div>
         </div>
         <Footer />
