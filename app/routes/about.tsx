@@ -74,13 +74,14 @@ const experience = [
 export default function About() {
   return (
     <div className="mx-[min(200px,max(0px,calc((100vw-380px)*0.135)))]">
-      <div className="flex flex-col items-center gap-[30px]">
+      <div className="flex flex-col items-center gap-7.5">
         <Image
           src="/assets/img/about/me.png"
           alt="My picture"
           width={150}
           height={150}
-          className="rounded-full border-[5px] border-[var(--slate-3)]"
+          className="rounded-[50%] border-[5px] border-slate-300"
+          rounded={false}
         />
         <p className="text-justify mb-4">
           Fundador do <b>Daily Basis English Course</b>, é apaixonado pelos

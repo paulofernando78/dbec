@@ -4,14 +4,12 @@ import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
 import {
-  icon,
   content,
   text,
   audio,
   bold,
   italic,
   mark,
-  underline,
   portuguese,
   lineBreak,
   spacer,
@@ -27,39 +25,56 @@ export const beginnerHello = {
   introduction: {
     storyCarousel: {
       instruction:
-        "Look at the pictures. Laura and Eric are at school. Now listen to the sentences.",
+        "Look at the pictures. Listen to the sentences.",
       words: [
-        // Laura says, “Hi! I'm Laura.””
         {
           src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction1.avif",
           alt: "Laura introduces herself to Eric",
           content: [
             ...content({
               parts: [
-                audio("Laura says, “Hi! I'm Laura.”"),
-                "Laura says, “Hi! I'm Laura.”",
+                audio("Laura says, “Hi! I'm Laura. What’s your name?”"),
+                "Laura says, “Hi! I'm Laura. What’s your name?",
                 lineBreak(),
-                portuguese("Laura diz: “Oi! Eu sou a Laura.”"),
+                portuguese(
+                  "Laura diz: “Oi! Eu sou a Laura. Qual é o seu nome?”",
+                ),
               ],
             }),
           ],
         },
-        // Eric says, “Hello! I'm Eric.””
+        {
+          src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction2.avif",
+          alt: "Laura introduces herself to Eric",
+          content: [
+            ...content({
+              parts: [
+                audio("Eric says, “Hi, Laura. I’m Eric. Nice to meet you.”"),
+                "Eric says, “Hi, Laura. I’m Eric. Nice to meet you.",
+                lineBreak(),
+                portuguese(
+                  "",
+                ),
+              ],
+            }),
+          ],
+        },
         {
           src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction2.avif",
           alt: "Eric introduces himself to Laura",
           content: [
             ...content({
               parts: [
-                audio("Eric says, “Hello! I'm Eric.”"),
-                "Eric says, “Hello! I'm Eric.”",
+                audio("Laura says, “It’s nice to meet you, too.”"),
+                "Laura says, “It’s nice to meet you, too.”",
                 lineBreak(),
-                portuguese("Eric diz: “Olá! Eu sou o Eric.”"),
+                portuguese(
+                  "",
+                ),
               ],
             }),
           ],
         },
-        // They shake hands.
         {
           src: "/assets/img/courses/a1/hello/introduction/laura-eric-shake-hands.avif",
           alt: "Laura and Eric shake hands",
@@ -67,13 +82,25 @@ export const beginnerHello = {
             ...content({
               parts: [
                 audio("They shake hands."),
-                "They",
-                " ",
+                "They ",
                 mark("shake"),
-                " ",
-                "hands.",
+                " hands.",
                 lineBreak(),
-                portuguese("Eles se cumprimentam."),
+                portuguese("Eles apertam as mãos."),
+              ],
+            }),
+          ],
+        },
+        {
+          src: "/assets/img/courses/a1/hello/introduction/laura-eric-bye-hands.avif",
+          alt: "Laura and Eric wave goodbye",
+          content: [
+            ...content({
+              parts: [
+                audio("Bye. See you in class."),
+                "Bye. See you in class.",
+                lineBreak(),
+                portuguese("Tchau. Vejo você na aula."),
               ],
             }),
           ],
@@ -159,72 +186,40 @@ export const beginnerHello = {
       {
         display: "block",
         as: "span",
-        parts: [
-          audio(
-            "Hi!",
-          ),
-          "Hi!",
-        ],
+        parts: [audio("Hi!"), "Hi!"],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("Hi there!"), "Hi there!"],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("Hello!"), "Hello!"],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("Hey there!"), "Hey (there)!"],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("Good morning. Morning."), "Good morning. / Morning."],
       },
       {
         display: "block",
         as: "span",
         parts: [
-          audio(
-            "Hi there!",
-          ),
-          "Hi there!",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "Hello!",
-          ),
-          "Hello!",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "Hey there!",
-          ),
-          "Hey (there)!",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "Good morning. Morning.",
-          ),
-          "Good morning. / Morning.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "Good afternoon. / Afternoon.",
-          ),
+          audio("Good afternoon. / Afternoon."),
           "Good afternoon. / Afternoon.",
         ],
       },
       {
         display: "block",
         as: "span",
-        parts: [
-          audio(
-            "Good evening. / Evening.",
-          ),
-          "Good evening. / Evening.",
-        ],
+        parts: [audio("Good evening. / Evening."), "Good evening. / Evening."],
       },
     ] satisfies Meaning[],
     askingQuestions: [
