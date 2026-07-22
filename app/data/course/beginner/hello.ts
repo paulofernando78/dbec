@@ -24,59 +24,54 @@ export const beginnerHello = {
 
   introduction: {
     storyCarousel: {
-      instruction:
-        "Look at the pictures. Listen to the sentences.",
+      instruction: "Look at the pictures. Listen to the sentences.",
       words: [
         {
-          src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction1.avif",
+          src: "/assets/img/courses/a1/hello/introduction/pic-1.avif",
           alt: "Laura introduces herself to Eric",
           content: [
             ...content({
               parts: [
-                audio("Laura says, “Hi! I'm Laura. What’s your name?”"),
-                "Laura says, “Hi! I'm Laura. What’s your name?",
+                audio("Laura says: “Hi! I'm Laura. What’s your name?”"),
+                "Laura says: “Hi! I'm Laura. What’s your name?",
                 lineBreak(),
                 portuguese(
-                  "Laura diz: “Oi! Eu sou a Laura. Qual é o seu nome?”",
+                  "Laura diz: “Oi! (Eu) Sou a Laura. Qual é o seu nome?”",
                 ),
               ],
             }),
           ],
         },
         {
-          src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction2.avif",
-          alt: "Laura introduces herself to Eric",
-          content: [
-            ...content({
-              parts: [
-                audio("Eric says, “Hi, Laura. I’m Eric. Nice to meet you.”"),
-                "Eric says, “Hi, Laura. I’m Eric. Nice to meet you.",
-                lineBreak(),
-                portuguese(
-                  "",
-                ),
-              ],
-            }),
-          ],
-        },
-        {
-          src: "/assets/img/courses/a1/hello/introduction/laura-eric-introduction2.avif",
+          src: "/assets/img/courses/a1/hello/introduction/pic-2.avif",
           alt: "Eric introduces himself to Laura",
           content: [
             ...content({
               parts: [
-                audio("Laura says, “It’s nice to meet you, too.”"),
-                "Laura says, “It’s nice to meet you, too.”",
+                audio("Eric says: “Hi, Laura. I’m Eric. Nice to meet you.”"),
+                "Eric says: “Hello, Laura. I’m Eric. Nice to meet you.",
                 lineBreak(),
-                portuguese(
-                  "",
-                ),
+                portuguese("Eric diz: Olá, Laura. (Eu) Sou o Eric. Prazer em conhecê-la."),
               ],
             }),
           ],
         },
         {
-          src: "/assets/img/courses/a1/hello/introduction/laura-eric-shake-hands.avif",
+          src: "/assets/img/courses/a1/hello/introduction/pic-3.avif",
+          alt: "Laura replies nice to meet you, too",
+          content: [
+            ...content({
+              parts: [
+                audio("Laura says, “Nice to meet you, too.”"),
+                "Laura says: “Nice to meet you, too.”",
+                lineBreak(),
+                portuguese("Laura diz: Muito prazer."),
+              ],
+            }),
+          ],
+        },
+        {
+          src: "/assets/img/courses/a1/hello/introduction/pic-4.avif",
           alt: "Laura and Eric shake hands",
           content: [
             ...content({
@@ -92,15 +87,15 @@ export const beginnerHello = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/hello/introduction/laura-eric-bye-hands.avif",
-          alt: "Laura and Eric wave goodbye",
+          src: "/assets/img/courses/a1/hello/introduction/pic-5.avif",
+          alt: "Laura waves goodbye",
           content: [
             ...content({
               parts: [
-                audio("Bye. See you in class."),
-                "Bye. See you in class.",
+                audio("Lauras says: Bye. See you in class."),
+                "Laura says: Bye. See you in class.",
                 lineBreak(),
-                portuguese("Tchau. Vejo você na aula."),
+                portuguese("Laura diz: Tchau. Vejo você na aula."),
               ],
             }),
           ],
@@ -109,21 +104,35 @@ export const beginnerHello = {
     },
 
     radio: {
-      instruction: "Look at the pictures and choose the correct answer.",
+      instruction: "Choose True or False.",
       exercise: {
         questions: [
           {
-            question: "Where are Laura and Eric?",
+            question: "Laura says, “I'm Laura.”",
             options: [
-              { option: "At school", isCorrect: true },
-              { option: "At home", isCorrect: false },
+              { option: "True", isCorrect: true },
+              { option: "False", isCorrect: false },
             ],
           },
           {
-            question: "Who says “Hello!”?",
+            question: "Eric says, “I'm Laura.”",
             options: [
-              { option: "Laura", isCorrect: false },
-              { option: "Eric", isCorrect: true },
+              { option: "True", isCorrect: false },
+              { option: "False", isCorrect: true },
+            ],
+          },
+          {
+            question: "They shake hands.",
+            options: [
+              { option: "True", isCorrect: true },
+              { option: "False", isCorrect: false },
+            ],
+          },
+          {
+            question: "Eric says, “Bye.”",
+            options: [
+              { option: "True", isCorrect: true },
+              { option: "False", isCorrect: false },
             ],
           },
         ],
@@ -134,48 +143,39 @@ export const beginnerHello = {
   presentation: {
     dialogue: {
       instruction: "Laura and Eric meet for the first time. Listen and read.",
-      audioSrc: "",
+      audioSrc: "/",
       lines: [
         {
           speaker: "Laura",
-          line: [
-            audio("Hi! I'm Laura. What's your name?"),
-            ...text(["Hi! I'm Laura. What's your name?"]),
-          ],
+          line: [...text(["Hi! I'm Laura Palmer. What's your name?"])],
         },
         {
           speaker: "Eric",
-          line: [audio("Hello! I'm Eric."), ...text(["Hello! I'm Eric."])],
+          line: [...text(["Hello! I'm Eric, Eric "])],
         },
         {
           speaker: "Laura",
-          line: [
-            audio("How do you spell it?"),
-            ...text(["How do you spell it?"]),
-          ],
+          line: [...text(["Sorry? Please repeat."])],
         },
         {
           speaker: "Eric",
-          line: [audio("E-R-I-C."), ...text(["E-R-I-C."])],
+          line: [...text(["It‘s Eric."])],
         },
         {
           speaker: "Laura",
-          line: [audio("Nice to meet you."), ...text(["Nice to meet you."])],
+          line: [...text(["Nice to meet you, Eric."])],
         },
         {
           speaker: "Eric",
-          line: [
-            audio("Nice to meet you too."),
-            ...text(["Nice to meet you too."]),
-          ],
+          line: [...text(["Nice to meet you too."])],
         },
         {
           speaker: "Laura",
-          line: [audio("See you in class!"), ...text(["See you in class!"])],
+          line: [...text(["See you in class!"])],
         },
         {
           speaker: "Eric",
-          line: [audio("Bye!"), ...text(["Bye!"])],
+          line: [...text(["Bye!"])],
         },
       ],
     },
@@ -300,6 +300,31 @@ export const beginnerHello = {
         ],
       },
     ] satisfies Meaning[],
+    meetingSomeone: [
+      {
+        display: "block",
+        as: "span",
+        parts: [
+          audio("I'm Laura. What's your name?"),
+          "I'm Laura. What's your name?",
+        ],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("Sorry? Please repeat."), "Sorry? / Please repeat."],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("Nice to meet you."), "Nice to meet you."],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("See you. Bye."), "See you. / Bye."],
+      },
+    ] satisfies Meaning[],
     notes: [
       {
         as: "span",
@@ -308,6 +333,16 @@ export const beginnerHello = {
       {
         as: "span",
         parts: [bold("What is"), " → ", bold("What’s")],
+      },
+      {
+        as: "span",
+        parts: [
+          "Use ",
+          bold("Sorry?"),
+          " or ",
+          bold("Please repeat."),
+          " when you do not understand.",
+        ],
       },
     ] satisfies Notes[],
     ccq: [
@@ -353,10 +388,11 @@ export const beginnerHello = {
             ],
           },
           {
-            question: "How does Eric spell his name?",
+            question:
+              "What does Laura say when she does not understand Eric's name?",
             options: [
-              { option: "E-R-I-C.", isCorrect: true },
-              { option: "L-A-U-R-A.", isCorrect: false },
+              { option: "Please repeat.", isCorrect: true },
+              { option: "Good night.", isCorrect: false },
             ],
           },
           {
@@ -417,8 +453,8 @@ export const beginnerHello = {
             answer: "What is your name?",
           },
           {
-            prompt: "spell / how / it / do / you",
-            answer: "How do you spell it?",
+            prompt: "meet / nice / you / to",
+            answer: "Nice to meet you.",
           },
         ],
       },
@@ -427,19 +463,23 @@ export const beginnerHello = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Have a short first meeting with a classmate:",
       type: "checkbox",
       items: [
         {
-          content: text(["Introduce yourself to a classmate."]),
-        },
-        {
           content: text([
-            "Ask your partner's first name and ask them to spell it.",
+            "Say hello and introduce yourself using your first name.",
           ]),
         },
         {
-          content: text(["End the conversation with “See you!” or “Bye!”"]),
+          content: text([
+            "Ask your partner's first name. Say “Sorry?” or “Please repeat” if needed.",
+          ]),
+        },
+        {
+          content: text([
+            "Say “Nice to meet you” and end with “See you!” or “Bye!”",
+          ]),
         },
       ],
     } satisfies ListProps,

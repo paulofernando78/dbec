@@ -9,15 +9,13 @@ export const beginnerPersonalInformation = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Personal Information",
-    descriptions: [
-      "I'm Laura. I'm from Brazil.",
-      "What's your phone number?",
-    ],
+    descriptions: ["I'm Laura. I'm from Brazil.", "What's your phone number?"],
   },
 
   introduction: {
     radio: {
-      instruction: "Choose the information people commonly use to introduce themselves.",
+      instruction:
+        "Choose the information people commonly use to introduce themselves.",
       exercise: {
         questions: [
           {
@@ -184,17 +182,27 @@ export const beginnerPersonalInformation = {
       },
       {
         as: "span",
-        parts: ["In conversation, ", bold("What is"), " often becomes ", bold("What's"), "."],
+        parts: [
+          "In conversation, ",
+          bold("What is"),
+          " often becomes ",
+          bold("What's"),
+          ".",
+        ],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["Does “Where are you from?” ask about a place or a phone number?"],
+        parts: [
+          "Does “Where are you from?” ask about a place or a phone number?",
+        ],
       },
       {
         as: "span",
-        parts: ["Should you share real private information during classroom practice?"],
+        parts: [
+          "Should you share real private information during classroom practice?",
+        ],
       },
     ] satisfies CCQ[],
   },
@@ -235,19 +243,35 @@ export const beginnerPersonalInformation = {
       exercise: {
         blocks: [
           {
-            block: [{ text: "What " }, { blank: "is" }, { text: " your full name?" }],
+            block: [
+              { text: "What " },
+              { blank: "is" },
+              { text: " your full name?" },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "What is your last " }, { blank: "name" }, { text: "?" }],
+            block: [
+              { text: "What is your last " },
+              { blank: "name" },
+              { text: "?" },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "Where " }, { blank: "are" }, { text: " you from?" }],
+            block: [
+              { text: "Where " },
+              { blank: "are" },
+              { text: " you from?" },
+            ],
             lineBreak: true,
           },
           {
-            block: [{ text: "What is " }, { blank: "your" }, { text: " phone number?" }],
+            block: [
+              { text: "What is " },
+              { blank: "your" },
+              { text: " phone number?" },
+            ],
             lineBreak: true,
           },
         ],
@@ -260,11 +284,31 @@ export const beginnerPersonalInformation = {
       instruction: "Interview a partner using fictional contact details:",
       type: "checkbox",
       items: [
-        { content: content({ parts: ["Ask their full, first, and last name."] }) },
+        {
+          content: content({
+            parts: ["Ask their full, first, and last name."],
+          }),
+        },
         { content: content({ parts: ["Ask them to spell their last name."] }) },
         { content: content({ parts: ["Ask where they are from."] }) },
-        { content: content({ parts: ["Ask for a fictional phone number or email address."] }) },
-        { content: content({ parts: ["Introduce your partner to another student."] }) },
+        {
+          content: content({
+            parts: ["Ask for a fictional phone number or email address."],
+          }),
+        },
+        {
+          content: content({
+            parts: [
+              "Record the answers in a simple registration form or note.",
+            ],
+          }),
+          textarea: true,
+        },
+        {
+          content: content({
+            parts: ["Introduce your partner to another student."],
+          }),
+        },
       ],
     } satisfies ListProps,
   },

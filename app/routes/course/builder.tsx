@@ -148,7 +148,10 @@ export default function Lesson() {
         usefulLanguage: courseLessonCard.usefulLanguage,
         vocabulary: courseLessonCard.vocabulary,
         skills: courseLessonCard.skills,
+        recycles: courseLessonCard.recycles,
+        pronunciation: courseLessonCard.pronunciation,
         finalTask: courseLessonCard.finalTask,
+        successCriteria: courseLessonCard.successCriteria,
       }
     : undefined;
 

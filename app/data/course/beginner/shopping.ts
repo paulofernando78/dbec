@@ -325,20 +325,20 @@ export const beginnerShopping = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Prepare and role-play a short clothes-shop exchange:",
       type: "checkbox",
       items: [
         {
           content: text([
-            "Describe five items of clothing using this, that, these, or those.",
+            "Choose an item and identify it with this, that, these, or those and a color.",
           ]),
         },
         {
-          content: text(["Ask and answer questions about prices."]),
+          content: text(["Ask for the price and listen for the number."]),
         },
         {
           content: text([
-            "Role-play a conversation between a customer and a shop assistant.",
+            "Role-play the customer and shop assistant. Request the item politely.",
           ]),
         },
       ],

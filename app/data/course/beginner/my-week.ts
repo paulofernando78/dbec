@@ -343,21 +343,24 @@ export const beginnerMyWeek = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Create and present a simple weekly schedule:",
       type: "checkbox",
       items: [
         {
           content: text([
-            "Write five sentences about your week using adverbs of frequency.",
+            "Add at least four activities to a weekly schedule. Include days and times.",
+          ]),
+          textarea: true,
+        },
+        {
+          content: text([
+            "Prepare four short sentences and use at least two frequency expressions.",
           ]),
         },
         {
           content: text([
-            "Talk about what you do on different days of the week.",
+            "Present your schedule, then exchange schedules and find one activity, day, and time in your partner's plan.",
           ]),
-        },
-        {
-          content: text(["Describe your favorite month and explain why."]),
         },
       ],
     } satisfies ListProps,

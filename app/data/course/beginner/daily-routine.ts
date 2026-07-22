@@ -325,20 +325,21 @@ export const beginnerDailyRoutine = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Prepare and share a short weekday routine:",
       type: "checkbox",
       items: [
         {
-          content: text(["Write five sentences about your daily routine."]),
-        },
-        {
           content: text([
-            "Tell your partner what time you wake up, eat, and sleep.",
+            "Prepare four simple sentences about your weekday routine.",
           ]),
+          textarea: true,
+        },
+        {
+          content: text(["Give the time for at least two activities."]),
         },
         {
           content: text([
-            "Describe a typical weekday using the Present Simple.",
+            "Tell your partner your routine, then ask or answer two “What time do you…?” questions.",
           ]),
         },
       ],

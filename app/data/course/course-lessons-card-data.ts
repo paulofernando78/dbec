@@ -13,10 +13,17 @@ export const courseLessonsCardData = {
       canDo:
         "Greet someone, exchange first names, and end a short first meeting.",
       usefulLanguage:
-        "Hi! / Hello!; I’m…; What’s your name?; Nice to meet you.; Bye!",
+        "Hi! / Hello!; I’m…; What’s your name?; Nice to meet you.; Sorry?; Please repeat.; Bye!",
       vocabulary: "Greetings, first names, goodbyes",
-      skills: "Listening and spoken interaction",
+      skills: "Listening for names, pronunciation, and spoken interaction",
+      pronunciation:
+        "I’m /aɪm/, What’s /wɒts/, and friendly greeting intonation",
       finalTask: "Meet a classmate and have a short greeting conversation.",
+      successCriteria: [
+        "Greet and say your first name.",
+        "Ask for and understand a first name, requesting repetition if needed.",
+        "Use Nice to meet you and an appropriate goodbye.",
+      ],
     },
     {
       href: "/courses/beginner/personal-information",
@@ -26,18 +33,36 @@ export const courseLessonsCardData = {
       usefulLanguage:
         "What’s your full name?; How do you spell it?; Where are you from?; What’s your email address?",
       vocabulary: "The alphabet, countries, nationalities, contact details",
-      skills: "Listening, speaking, and form completion",
+      skills: "Listening for details, speaking, spelling, and form completion",
+      recycles: "Greetings, first names, and goodbyes",
+      pronunciation: "English letter names and clear groups of phone numbers",
       finalTask:
-        "Interview a partner and complete a simple fictional registration form.",
+        "Interview a partner, complete a fictional registration form, and introduce them.",
+      successCriteria: [
+        "Ask for a full name, country, and one fictional contact detail.",
+        "Spell and record a name accurately.",
+        "Introduce the partner using two simple sentences.",
+      ],
     },
     {
       href: "/courses/beginner/my-family",
       label: "My Family",
       canDo: "Introduce family members and say how they are related.",
-      usefulLanguage: "This is my…; Who’s she/he?; She’s my…; Laura’s brother",
+      usefulLanguage:
+        "This is my…; Who’s she/he?; She’s my…; His/Her name is…; Laura’s brother",
       vocabulary: "Family members",
-      skills: "Listening and spoken interaction",
-      finalTask: "Use a photo or drawing to introduce three family members.",
+      skills:
+        "Listening for relationships, spoken interaction, and short writing",
+      recycles: "Introductions, names, and the verb be",
+      pronunciation:
+        "Who’s /huːz/, she’s /ʃiːz/, and final sounds in family words",
+      finalTask:
+        "Use a photo or drawing to introduce three family members and write three captions.",
+      successCriteria: [
+        "Name three family relationships.",
+        "Use my, his, or her accurately in simple sentences.",
+        "Use one possessive ’s phrase, such as Laura’s brother.",
+      ],
     },
     {
       href: "/courses/beginner/my-house",
@@ -45,8 +70,17 @@ export const courseLessonsCardData = {
       canDo: "Describe the main rooms and say what furniture is in them.",
       usefulLanguage: "There is a…; There are two…; Is there a…?; It’s in the…",
       vocabulary: "Rooms, furniture, basic prepositions of place",
-      skills: "Listening, speaking, and short writing",
-      finalTask: "Describe a simple home plan so a partner can identify it.",
+      skills:
+        "Listening for objects and locations, speaking, and short writing",
+      recycles: "Possessives, familiar objects, and numbers",
+      pronunciation: "There’s /ðerz/, there are, and plural -s",
+      finalTask:
+        "Describe a room without naming it so a partner can identify the room.",
+      successCriteria: [
+        "Name at least three rooms and three pieces of furniture.",
+        "Use there is/there are and one preposition of place.",
+        "Give enough information for a partner to identify the room.",
+      ],
     },
     {
       href: "/courses/beginner/daily-routine",
@@ -55,8 +89,17 @@ export const courseLessonsCardData = {
         "Describe a simple weekday routine and say what time things happen.",
       usefulLanguage: "I get up at…; What time do you…?; I start work at…",
       vocabulary: "Daily activities, clock times",
-      skills: "Listening and spoken interaction",
-      finalTask: "Compare weekday routines with a partner.",
+      skills: "Listening for times, prepared speaking, and spoken interaction",
+      recycles: "Numbers, clock times, and personal information questions",
+      pronunciation:
+        "Third-person -s and sentence stress in clock-time phrases",
+      finalTask:
+        "Describe four parts of your weekday routine and answer two prepared questions.",
+      successCriteria: [
+        "Say four routine activities in a clear order.",
+        "Give a time for at least two activities.",
+        "Ask or answer two What time…? questions.",
+      ],
     },
     {
       href: "/courses/beginner/my-week",
@@ -64,18 +107,36 @@ export const courseLessonsCardData = {
       canDo: "Talk about weekly habits and say how often activities happen.",
       usefulLanguage: "I usually…; I never…; On Mondays…; How often do you…?",
       vocabulary: "Days, months, free-time activities",
-      skills: "Reading and spoken interaction",
+      skills:
+        "Reading a weekly schedule, prepared speaking, and spoken interaction",
+      recycles: "Present Simple, daily activities, and clock times",
+      pronunciation: "Stress in days of the week and frequency expressions",
       finalTask: "Plan and present a simple weekly schedule.",
+      successCriteria: [
+        "Add at least four activities to a weekly schedule.",
+        "Use days and two frequency expressions.",
+        "Present the schedule in short, prepared sentences.",
+      ],
     },
     {
       href: "/courses/beginner/food-and-drinks",
       label: "Food and Drinks",
-      canDo: "Ask about and express basic food and drink preferences.",
+      canDo: "Ask about food and drink preferences and order one basic item.",
       usefulLanguage:
-        "I like…; I don’t like…; Do you like…?; Yes, I do. / No, I don’t.",
+        "I like…; I don’t like…; Do you like…?; Can I have…, please?; Here you are.; Thank you.",
       vocabulary: "Everyday food and drinks",
-      skills: "Listening and spoken interaction",
-      finalTask: "Survey classmates and report two food preferences.",
+      skills:
+        "Listening for preferences, spoken interaction, and a basic transaction",
+      recycles:
+        "Present Simple questions, everyday activities, and polite expressions",
+      pronunciation: "Do you…?, don’t, and polite request intonation",
+      finalTask:
+        "Survey a partner about preferences, then role-play a short café exchange.",
+      successCriteria: [
+        "Ask and answer two Do you like…? questions.",
+        "Report two preferences in simple sentences.",
+        "Order one item using please and thank you.",
+      ],
     },
     {
       href: "/courses/beginner/shopping",
@@ -86,7 +147,14 @@ export const courseLessonsCardData = {
         "How much is this?; How much are these?; I’d like…; That one, please.",
       vocabulary: "Clothes, colors, prices",
       skills: "Listening and transactional speaking",
+      recycles: "Numbers, colors, and polite requests",
+      pronunciation: "This/these, that/those, and clear prices",
       finalTask: "Role-play a short clothes-shop exchange.",
+      successCriteria: [
+        "Identify the item using a demonstrative and a color.",
+        "Ask for and understand the price.",
+        "Request the chosen item politely.",
+      ],
     },
     {
       href: "/courses/beginner/around-town",
@@ -95,8 +163,16 @@ export const courseLessonsCardData = {
       usefulLanguage:
         "Where’s the…?; It’s next to…; It’s opposite…; Is there a… near here?",
       vocabulary: "Places in town, location phrases",
-      skills: "Listening and spoken interaction",
+      skills:
+        "Reading a simple map, listening for locations, and spoken interaction",
+      recycles: "There is/there are and prepositions of place",
+      pronunciation: "Where’s…? and Is there…? as question chunks",
       finalTask: "Use a simple map to ask for and give three locations.",
+      successCriteria: [
+        "Ask where three familiar places are.",
+        "Locate them with next to, opposite, or near.",
+        "Keep to locations rather than multi-step directions.",
+      ],
     },
     {
       href: "/courses/beginner/what-are-you-doing",
@@ -105,8 +181,16 @@ export const courseLessonsCardData = {
       usefulLanguage:
         "What are you doing?; I’m cooking.; What’s she doing?; She’s reading.",
       vocabulary: "Common actions and activities",
-      skills: "Listening and spoken interaction",
+      skills:
+        "Listening for actions, picture-supported speaking, and interaction",
+      recycles: "Subject pronouns, the verb be, and familiar activity verbs",
+      pronunciation: "I’m/he’s/she’s/they’re and the -ing ending",
       finalTask: "Describe actions in a picture for a partner to identify.",
+      successCriteria: [
+        "Describe at least three actions happening now.",
+        "Use am/is/are + verb-ing.",
+        "Give enough information for a partner to identify the picture.",
+      ],
     },
     {
       href: "/courses/beginner/abilities",
@@ -114,20 +198,40 @@ export const courseLessonsCardData = {
       canDo: "Ask and say what someone can and cannot do.",
       usefulLanguage: "I can…; I can’t…; Can you…?; Yes, I can. / No, I can’t.",
       vocabulary: "Skills, sports, everyday abilities",
-      skills: "Listening and spoken interaction",
+      skills:
+        "Listening, can/can’t pronunciation, note-taking, and interaction",
+      recycles: "Activity vocabulary and Yes/No questions",
+      pronunciation:
+        "The contrast between can and can’t in statements and answers",
       finalTask:
         "Find classmates with three different abilities and report back.",
+      successCriteria: [
+        "Ask at least three Can you…? questions.",
+        "Record short Yes, I can/No, I can’t answers.",
+        "Report three abilities using clear can or can’t.",
+      ],
     },
     {
       href: "/courses/beginner/real-life-project",
       label: "Real-Life Project",
       canDo:
-        "Introduce yourself, exchange familiar information, and arrange a simple meeting.",
-      usefulLanguage: "I’m…; I’m from…; I like…; Can you…?; Let’s meet at…",
+        "Introduce yourself, exchange familiar information, and agree on a simple social plan from prepared options.",
+      usefulLanguage:
+        "I’m…; I’m from…; I like…; Can you…?; Saturday or Sunday?; Let’s meet at…; Please repeat.",
       vocabulary: "Personal information, routines, preferences, places",
       skills: "Integrated listening, speaking, reading, and writing",
+      recycles:
+        "All A1 course language, especially names, times, preferences, places, and abilities",
+      pronunciation:
+        "Intelligible use of familiar chunks, names, days, and times",
       finalTask:
         "Meet a new person, complete a profile, and agree on a simple social plan.",
+      successCriteria: [
+        "Exchange at least four pieces of familiar information.",
+        "Complete a short profile with key details.",
+        "Choose an activity, day, time, and familiar place from the options.",
+        "Ask for repetition when needed and present the final plan.",
+      ],
     },
   ],
   elementary: [
@@ -601,5 +705,7 @@ export const courseLessonsCardData = {
 
 const allCourseLessonCards = Object.values(courseLessonsCardData).flat();
 
-export const getCourseLessonCard = (href: string) =>
+export const getCourseLessonCard = (
+  href: string,
+): CourseLessonCard | undefined =>
   allCourseLessonCards.find((lesson) => lesson.href === href);

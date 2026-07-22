@@ -98,7 +98,10 @@ export const beginnerRealLifeProject = {
       {
         display: "block",
         as: "span",
-        parts: [bold("Are you free on Saturday?"), " — ask about availability."],
+        parts: [
+          bold("Are you free on Saturday?"),
+          " — ask about availability.",
+        ],
       },
       {
         display: "block",
@@ -118,13 +121,17 @@ export const beginnerRealLifeProject = {
       },
       {
         as: "span",
-        parts: ["Repeat or ask a simple follow-up question when information is unclear."],
+        parts: [
+          "Repeat or ask a simple follow-up question when information is unclear.",
+        ],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["Does “Let's meet” describe a past event or suggest a future activity?"],
+        parts: [
+          "Does “Let's meet” describe a past event or suggest a future activity?",
+        ],
       },
       {
         as: "span",
@@ -161,9 +168,18 @@ export const beginnerRealLifeProject = {
       numbered: true,
       exercise: {
         items: [
-          { prompt: "meet / let's / park / at / the", answer: "Let's meet at the park." },
-          { prompt: "free / Saturday / are / on / you", answer: "Are you free on Saturday?" },
-          { prompt: "play / can / soccer / you", answer: "Can you play soccer?" },
+          {
+            prompt: "meet / let's / park / at / the",
+            answer: "Let's meet at the park.",
+          },
+          {
+            prompt: "free / Saturday / are / on / you",
+            answer: "Are you free on Saturday?",
+          },
+          {
+            prompt: "play / can / soccer / you",
+            answer: "Can you play soccer?",
+          },
         ],
       },
     },
@@ -174,10 +190,42 @@ export const beginnerRealLifeProject = {
       instruction: "Complete the A1 real-life project with a partner:",
       type: "checkbox",
       items: [
-        { content: content({ parts: ["Introduce yourselves and exchange familiar information."] }) },
-        { content: content({ parts: ["Ask about routines, preferences, and abilities."] }) },
-        { content: content({ parts: ["Choose an activity, day, time, and meeting place."] }) },
-        { content: content({ parts: ["Present your plan to another pair and answer one question."] }) },
+        {
+          content: content({
+            parts: [
+              "Use these options: activity — soccer, a walk, or coffee; day — Saturday or Sunday; time — 10:00 or 2:00; place — the park or the café.",
+            ],
+          }),
+        },
+        {
+          content: content({
+            parts: [
+              "Use the model questions to exchange names, countries, routines, preferences, and abilities.",
+            ],
+          }),
+        },
+        {
+          content: content({
+            parts: [
+              "Complete a short profile with at least four details about your partner.",
+            ],
+          }),
+          textarea: true,
+        },
+        {
+          content: content({
+            parts: [
+              "Choose an activity, day, time, and familiar meeting place from the prepared options.",
+            ],
+          }),
+        },
+        {
+          content: content({
+            parts: [
+              "Ask for repetition if needed. Present your plan to another pair and answer one prepared question.",
+            ],
+          }),
+        },
       ],
     } satisfies ListProps,
   },

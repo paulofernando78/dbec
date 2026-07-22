@@ -336,20 +336,25 @@ export const beginnerMyHouse = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Describe a room for a partner to identify:",
       type: "checkbox",
       items: [
         {
-          content: text(["Describe your house."]),
-        },
-
-        {
-          content: text(["Write five sentences using there is or there are."]),
+          content: text([
+            "Choose a room, but do not tell your partner its name.",
+          ]),
         },
 
         {
           content: text([
-            "Describe your favorite room and the furniture in it.",
+            "Prepare three sentences with there is/there are, furniture, and a location phrase.",
+          ]),
+          textarea: true,
+        },
+
+        {
+          content: text([
+            "Describe the room. Your partner listens and identifies it.",
           ]),
         },
       ],

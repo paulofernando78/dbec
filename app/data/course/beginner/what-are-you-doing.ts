@@ -338,24 +338,23 @@ export const beginnerWhatAreYouDoing = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Choose a lesson picture and help a partner identify it:",
       type: "checkbox",
       items: [
         {
           content: text([
-            "Describe five actions happening around you right now.",
+            "Choose a picture without showing or naming it to your partner.",
           ]),
         },
         {
           content: text([
-            "Ask a classmate 'What are you doing?' and report the answers.",
+            "Describe at least three actions using am/is/are + verb-ing.",
           ]),
         },
         {
           content: text([
-            "Write five Present Continuous sentences about people in your home.",
+            "Your partner listens and identifies the picture. Then change roles.",
           ]),
-          textarea: true,
         },
       ],
     } satisfies ListProps,

@@ -110,6 +110,22 @@ export const beginnerFoodAndDrinks = {
           speaker: "Jake",
           line: text(["I like orange juice and water."]),
         },
+        {
+          speaker: "Server",
+          line: text(["Hello. Can I help you?"]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["Can I have an orange juice, please?"]),
+        },
+        {
+          speaker: "Server",
+          line: text(["Here you are."]),
+        },
+        {
+          speaker: "Jake",
+          line: text(["Thank you."]),
+        },
       ],
     },
     radio: {
@@ -128,6 +144,13 @@ export const beginnerFoodAndDrinks = {
             options: [
               { option: "No", isCorrect: true },
               { option: "Yes", isCorrect: false },
+            ],
+          },
+          {
+            question: "What does Jake order?",
+            options: [
+              { option: "An orange juice", isCorrect: true },
+              { option: "A coffee", isCorrect: false },
             ],
           },
         ],
@@ -193,6 +216,17 @@ export const beginnerFoodAndDrinks = {
             { parts: ["Yes, I do / No, I don't"] },
           ],
         },
+        {
+          borderColor: "border-amber-700",
+          bgColor: "bg-amber-500",
+          textColor: "text-black",
+          column: "At a café",
+          items: [
+            { parts: ["Can I have..., please?"] },
+            { parts: ["Here you are."] },
+            { parts: ["Thank you."] },
+          ],
+        },
       ],
     },
     notes: [
@@ -212,6 +246,14 @@ export const beginnerFoodAndDrinks = {
         as: "span",
         parts: ["I don't like coffee."],
       },
+      {
+        as: "span",
+        parts: [
+          "Use ",
+          bold("Can I have..., please?"),
+          " to order one item politely.",
+        ],
+      },
     ] satisfies Notes[],
     ccq: [
       {
@@ -225,6 +267,12 @@ export const beginnerFoodAndDrinks = {
       {
         as: "span",
         parts: ["Is 'I don't like tea' positive or negative?"],
+      },
+      {
+        as: "span",
+        parts: [
+          "Does “Can I have water, please?” ask for an item or express a preference?",
+        ],
       },
     ] satisfies CCQ[],
   },
@@ -296,6 +344,10 @@ export const beginnerFoodAndDrinks = {
             prompt: "you / do / like / tea",
             answer: "Do you like tea?",
           },
+          {
+            prompt: "have / can / water / I / please",
+            answer: "Can I have water, please?",
+          },
         ],
       },
     },
@@ -303,18 +355,23 @@ export const beginnerFoodAndDrinks = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Complete a preference survey and a café role-play:",
       type: "checkbox",
       items: [
         {
-          content: text(["Write five foods you like."]),
-        },
-        {
-          content: text(["Write three foods or drinks you don't like."]),
+          content: text([
+            "Ask a partner two “Do you like…?” questions and record the answers.",
+          ]),
+          textarea: true,
         },
         {
           content: text([
-            "Ask a classmate about their food preferences and report the answers.",
+            "Report two preferences using “likes” or “doesn’t like”.",
+          ]),
+        },
+        {
+          content: text([
+            "Role-play a short café exchange: order one item, use “please”, and say “thank you”.",
           ]),
         },
       ],

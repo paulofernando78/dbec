@@ -332,18 +332,18 @@ export const beginnerAroundTown = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Use a simple map to exchange locations:",
       type: "checkbox",
       items: [
         {
-          content: text(["Describe the location of five places in your town."]),
+          content: text(["Choose three familiar places on the map."]),
         },
         {
-          content: text(["Ask and answer questions using 'Where is...?'"]),
+          content: text(["Ask and answer three questions using “Where is…?”"]),
         },
         {
           content: text([
-            "Draw a simple map and describe the locations using prepositions of place.",
+            "Locate each place using next to, opposite, or near. Do not give multi-step directions.",
           ]),
         },
       ],

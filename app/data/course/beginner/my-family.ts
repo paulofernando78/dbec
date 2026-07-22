@@ -25,7 +25,8 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my mom."'),
-                'Laura says: "This is my mom."', portuguese("")
+                'Laura says: "This is my mom."',
+                portuguese(""),
               ],
             }),
           ],
@@ -37,7 +38,8 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my dad."'),
-                'Laura says: "This is my dad."', portuguese("")
+                'Laura says: "This is my dad."',
+                portuguese(""),
               ],
             }),
           ],
@@ -49,7 +51,8 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my brother."'),
-                'Laura says: "This is my brother."', portuguese("")
+                'Laura says: "This is my brother."',
+                portuguese(""),
               ],
             }),
           ],
@@ -61,7 +64,8 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio('Laura says: "This is my sister."'),
-                'Laura says: "This is my sister."', portuguese("")
+                'Laura says: "This is my sister."',
+                portuguese(""),
               ],
             }),
           ],
@@ -407,19 +411,24 @@ export const beginnerMyFamily = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Use a family photo, a fictional family, or a drawing:",
       type: "checkbox",
       items: [
         {
-          content: text(["Introduce three people in your family."]),
+          content: text([
+            "Introduce three people and say how they are related.",
+          ]),
         },
 
         {
-          content: text(["Write three sentences using my, his, or her."]),
+          content: text(["Write three short captions using my, his, or her."]),
+          textarea: true,
         },
 
         {
-          content: text(["Write two sentences using possessive ’s."]),
+          content: text([
+            "Include one possessive ’s phrase, for example, “Laura’s brother”.",
+          ]),
         },
       ],
     } satisfies ListProps,

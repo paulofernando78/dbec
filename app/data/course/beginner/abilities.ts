@@ -287,21 +287,23 @@ export const beginnerAbilities = {
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Find and report three abilities:",
       type: "checkbox",
       items: [
         {
-          content: text([mark("Write three things"), " you can do."]),
-          textarea: true,
-        },
-        {
-          content: text([mark("Write three things"), " you can't do."]),
+          content: text([
+            mark("Prepare three questions"),
+            " using “Can you…?”",
+          ]),
           textarea: true,
         },
         {
           content: text([
-            "Interview a classmate about their abilities and write the answers.",
+            "Ask one or more classmates and record short answers.",
           ]),
+        },
+        {
+          content: text(["Report three results using a clear can or can’t."]),
         },
       ],
     } satisfies ListProps,

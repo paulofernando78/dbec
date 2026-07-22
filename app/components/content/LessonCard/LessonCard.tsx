@@ -5,6 +5,8 @@ import { Checkbox } from "@/components/ui/Checkbox";
 import { Link } from "react-router";
 
 import {
+  AudioLines,
+  BadgeCheck,
   BookOpenText,
   CalendarDays,
   Clock2,
@@ -12,6 +14,7 @@ import {
   Goal,
   MessageCircle,
   MessagesSquare,
+  RefreshCcw,
 } from "lucide-react";
 
 export type LessonCardContent = {
@@ -19,7 +22,10 @@ export type LessonCardContent = {
   usefulLanguage?: string;
   vocabulary?: string;
   skills?: string;
+  recycles?: string;
+  pronunciation?: string;
   finalTask?: string;
+  successCriteria?: string[];
 };
 
 type LessonCardProps = LessonCardContent & {
@@ -39,7 +45,10 @@ export const LessonCard = ({
   usefulLanguage,
   vocabulary,
   skills,
+  recycles,
+  pronunciation,
   finalTask,
+  successCriteria,
   date,
   duration,
   updateProgress,
@@ -155,6 +164,46 @@ export const LessonCard = ({
               </span>
             </div>
           )}
+          {recycles && (
+            <div
+              className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <RefreshCcw
+                size={23}
+                className="
+                text-gray-400
+                shrink-0"
+              />
+              <span>
+                <b>Recycles:</b> {recycles}
+              </span>
+            </div>
+          )}
+          {pronunciation && (
+            <div
+              className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <AudioLines
+                size={23}
+                className="
+                text-gray-400
+                shrink-0"
+              />
+              <span>
+                <b>Pronunciation:</b> {pronunciation}
+              </span>
+            </div>
+          )}
           {finalTask && (
             <div
               className="
@@ -175,6 +224,31 @@ export const LessonCard = ({
               </span>
             </div>
           )}
+          {successCriteria?.length ? (
+            <div
+              className="
+              flex
+              items-start
+              gap-2
+              mt-2
+              translate-x-[-0.1rem]"
+            >
+              <BadgeCheck
+                size={23}
+                className="
+                text-gray-400
+                shrink-0"
+              />
+              <div>
+                <b>Success criteria:</b>
+                <ul className="list-disc list-outside pl-5">
+                  {successCriteria.map((criterion) => (
+                    <li key={criterion}>{criterion}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : null}
           {date && (
             <div
               className="
