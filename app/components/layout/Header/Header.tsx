@@ -38,13 +38,13 @@ export const Header = ({ onClick }: HeadersProps) => {
     location.pathname === "/" || location.pathname === "/about";
 
   return (
-    <div className="w-full h-10 p-[5px] flex items-center justify-between mb-[5px]">
+    <div className="w-full h-10 p-1.25 flex items-center justify-between mb-1.25">
       {!isPresentationPage && (
         <Button
           icon={<Menu />}
           onClick={onClick}
           className="
-            min-[700px]:translate-x-[-55px]
+            min-[700px]:translate-x-13.75
             transition-all
             duration-1000
           "
@@ -56,21 +56,21 @@ export const Header = ({ onClick }: HeadersProps) => {
           className="
             flex
             items-center
-            gap-[10px]
-            font-[var(--font-oswald)]
+            gap-2.5
+            font-font-oswald
             text-[1.3rem]
             font-bold
           "
         >
-          <Link to="/">HOME</Link>
+          <Link to="/" className="text-lg">HOME</Link>
 
-          <span className="w-[3px] h-[22px] bg-[#1D283B]" />
+          <span className="w-0.75 h-5 bg-gray-500" />
 
-          <Link to="/about">ABOUT</Link>
+          <Link to="/about" className="text-lg">ABOUT</Link>
         </div>
       )}
 
-      <div className="flex gap-[7px]">
+      <div className="flex gap-1.75">
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
