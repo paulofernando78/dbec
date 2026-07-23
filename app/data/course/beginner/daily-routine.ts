@@ -59,24 +59,24 @@ export const beginnerDailyRoutine = {
       exercise: {
         questions: [
           {
-            question: "What do you do first in the morning?",
+            question: "First in the morning:",
             options: [
               { option: "Wake up", isCorrect: true },
               { option: "Go to bed", isCorrect: false },
             ],
           },
           {
-            question: "When do people usually eat breakfast?",
+            question: "Breakfast is in the:",
             options: [
               { option: "Morning", isCorrect: true },
               { option: "Night", isCorrect: false },
             ],
           },
           {
-            question: "Do people usually sleep at night?",
+            question: "People sleep at night.",
             options: [
-              { option: "Yes", isCorrect: true },
-              { option: "No", isCorrect: false },
+              { option: "True", isCorrect: true },
+              { option: "False", isCorrect: false },
             ],
           },
         ],
@@ -86,7 +86,7 @@ export const beginnerDailyRoutine = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to th dialogue.",
+      instruction: "Listen to the dialogue.",
       audioSrc: "",
       lines: [
         {
@@ -190,6 +190,7 @@ export const beginnerDailyRoutine = {
             { parts: ["I/You/We/They work."] },
             { parts: ["He/She works."] },
             { parts: ["Do you work?"] },
+            { parts: ["Does he/she work?"] },
             { parts: ["He/She doesn't work."] },
           ],
         },
@@ -211,6 +212,16 @@ export const beginnerDailyRoutine = {
       {
         as: "span",
         parts: ["Remember: he/she/it + verb + s"],
+      },
+      {
+        as: "span",
+        parts: [
+          "Use ",
+          "do",
+          " with I/you/we/they and ",
+          "does",
+          " with he/she/it in questions.",
+        ],
       },
     ] satisfies Notes[],
     ccq: [
@@ -253,6 +264,13 @@ export const beginnerDailyRoutine = {
             options: [
               { option: "Do", isCorrect: true },
               { option: "Does", isCorrect: false },
+            ],
+          },
+          {
+            question: "_____ she work on Saturday?",
+            options: [
+              { option: "Does", isCorrect: true },
+              { option: "Do", isCorrect: false },
             ],
           },
           {

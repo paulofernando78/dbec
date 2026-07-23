@@ -33,7 +33,7 @@ export const beginnerHello = {
             ...content({
               parts: [
                 audio("Laura says: “Hi! I'm Laura. What’s your name?”"),
-                "Laura says: “Hi! I'm Laura. What’s your name?",
+                "Laura says: “Hi! I'm Laura. What’s your name?”",
                 lineBreak(),
                 portuguese(
                   "Laura diz: “Oi! (Eu) Sou a Laura. Qual é o seu nome?”",
@@ -48,10 +48,12 @@ export const beginnerHello = {
           content: [
             ...content({
               parts: [
-                audio("Eric says: “Hi, Laura. I’m Eric. Nice to meet you.”"),
-                "Eric says: “Hello, Laura. I’m Eric. Nice to meet you.",
+                audio("Eric says: “Hello, Laura. I’m Eric. Nice to meet you.”"),
+                "Eric says: “Hello, Laura. I’m Eric. Nice to meet you.”",
                 lineBreak(),
-                portuguese("Eric diz: Olá, Laura. (Eu) Sou o Eric. Prazer em conhecê-la."),
+                portuguese(
+                  "Eric diz: Olá, Laura. (Eu) sou o Eric. Prazer em conhecê-la.",
+                ),
               ],
             }),
           ],
@@ -92,8 +94,8 @@ export const beginnerHello = {
           content: [
             ...content({
               parts: [
-                audio("Lauras says: Bye. See you in class."),
-                "Laura says: Bye. See you in class.",
+                audio("Laura says: “Bye. See you in class.”"),
+                "Laura says: “Bye. See you in class.”",
                 lineBreak(),
                 portuguese("Laura diz: Tchau. Vejo você na aula."),
               ],
@@ -129,10 +131,10 @@ export const beginnerHello = {
             ],
           },
           {
-            question: "Eric says, “Bye.”",
+            question: "Laura says, “Bye.”",
             options: [
-              { option: "True", isCorrect: false },
-              { option: "False", isCorrect: true },
+              { option: "True", isCorrect: true },
+              { option: "False", isCorrect: false },
             ],
           },
         ],
@@ -143,7 +145,7 @@ export const beginnerHello = {
   presentation: {
     dialogue: {
       instruction: "Laura and Eric meet for the first time. Listen and read.",
-      audioSrc: "/",
+      audioSrc: "",
       lines: [
         {
           speaker: "Laura",
@@ -355,14 +357,12 @@ export const beginnerHello = {
       {
         as: "span",
         parts: [
-          "Do I already know the person’s name when I ask “What’s your name?”",
+          "“What’s your name?”: before or after I know the person’s name?",
         ],
       },
       {
         as: "span",
-        parts: [
-          "Do I say “Nice to meet you” when I meet someone for the first time?",
-        ],
+        parts: ["“Nice to meet you”: a first meeting or a goodbye?"],
       },
     ] satisfies CCQ[],
   },
@@ -373,37 +373,35 @@ export const beginnerHello = {
       exercise: {
         questions: [
           {
-            question: "What's your first name?",
+            question: "To introduce yourself:",
             options: [
-              { option: "Laura", isCorrect: true },
-              { option: "Palmer", isCorrect: false },
+              { option: "I'm Laura.", isCorrect: true },
+              { option: "What's your name?", isCorrect: false },
             ],
           },
           {
-            question:
-              "What do you say when you meet someone for the first time?",
+            question: "At a first meeting:",
             options: [
               { option: "Nice to meet you.", isCorrect: true },
               { option: "Good night.", isCorrect: false },
             ],
           },
           {
-            question:
-              "What does Laura say when she does not understand Eric's name?",
+            question: "To hear a name again:",
             options: [
               { option: "Please repeat.", isCorrect: true },
               { option: "Good night.", isCorrect: false },
             ],
           },
           {
-            question: "Laura says:",
+            question: "To end the conversation:",
             options: [
-              { option: "Nice to meet you.", isCorrect: true },
-              { option: "Good night.", isCorrect: false },
+              { option: "Bye!", isCorrect: true },
+              { option: "What's your name?", isCorrect: false },
             ],
           },
           {
-            question: "How do you ask someone's name?",
+            question: "To ask a name:",
             options: [
               { option: "What's your name?", isCorrect: true },
               { option: "How old are you?", isCorrect: false },
@@ -420,19 +418,19 @@ export const beginnerHello = {
       exercise: {
         blocks: [
           {
-            block: [{ text: "My name" }, { blank: "is" }, { text: "Laura." }],
+            block: [{ text: "" }, { blank: "I'm" }, { text: " Laura." }],
             lineBreak: true,
           },
           {
             block: [
-              { text: "My first" },
-              { blank: "name" },
-              { text: "is Laura." },
+              { text: "What " },
+              { blank: "is" },
+              { text: " your name?" },
             ],
             lineBreak: true,
           },
           {
-            block: [{ text: "What" }, { blank: "is" }, { text: "your name?" }],
+            block: [{ text: "Nice to " }, { blank: "meet" }, { text: " you." }],
           },
         ],
       },
@@ -445,8 +443,8 @@ export const beginnerHello = {
       exercise: {
         items: [
           {
-            prompt: "name / my / Laura / is",
-            answer: "My name is Laura.",
+            prompt: "Laura / I'm",
+            answer: "I'm Laura.",
           },
           {
             prompt: "your / what / name / is",

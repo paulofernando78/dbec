@@ -10,6 +10,7 @@ import {
   bold,
   portuguese,
   lineBreak,
+  spacer
 } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
@@ -25,7 +26,25 @@ export const beginnerMyFamily = {
     // Laura’s family
     instruction: text(["Look at Laura’s family."]),
     imgSrc: "/assets/img/courses/a1/my-family/introduction/laura-family.avif",
-    imgAlt: "Laura with her mom (Heather Palmer)",
+    imgAlt: "Laura with her family",
+
+    radio: {
+      instruction: "Choose the correct answer.",
+      exercise: {
+        questions: shuffle([
+          {
+            question: "The pictures show:",
+            options: [
+              { option: "Laura’s friend", isCorrect: true },
+              { option: "Laura's family", isCorrect: false },
+            ],
+          },
+        ]),
+      },
+    },
+  },
+
+  presentation: {
     storyCarousel: {
       instruction: "Now look at the pictures and listen to the sentences.",
       imgs: [
@@ -93,7 +112,7 @@ export const beginnerMyFamily = {
                 audio(
                   'Laura says: "This is my sister. Her name’s Kate Palmer." (It’s Laura’s sister.)',
                 ),
-                'Laura says: "This is my sister." Her name’s Kate Palmer.',
+                'Laura says: "This is my sister. Her name’s Kate Palmer."',
                 lineBreak(),
                 "(It’s Laura’s sister.)",
                 portuguese(""),
@@ -101,7 +120,7 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Laura with her grandapa (William Smith)
+        // Laura with her grandpa (William Smith)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-grandpa-william.avif",
           alt: "Laura with her grandpa (William Smith)",
@@ -109,11 +128,11 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  'Laura says: "This is my Grandpa. His name’s William Smith." (It’s Laura’s Grandpa.)',
+                  'Laura says: "This is my grandpa. His name’s William Smith." (It’s Laura’s grandpa.)',
                 ),
-                'Laura says: "This is my Grandpa. His name’s William Smith."',
+                'Laura says: "This is my grandpa. His name’s William Smith."',
                 lineBreak(),
-                "(It’s Laura’s Grandpa.)",
+                "(It’s Laura’s grandpa.)",
                 portuguese(""),
               ],
             }),
@@ -127,29 +146,29 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  'Laura says: "This is my Grandma. Her name’s Mary Smith." (It’s Laura’s Grandma.)',
+                  'Laura says: "This is my grandma. Her name’s Mary Smith." (It’s Laura’s grandma.)',
                 ),
-                'Laura says: "This is my Grandma. Her name’s Mary Smith."',
+                'Laura says: "This is my grandma. Her name’s Mary Smith."',
                 lineBreak(),
-                "(It’s Laura’s Grandma.)",
+                "(It’s Laura’s grandma.)",
                 portuguese(""),
               ],
             }),
           ],
         },
-        // Laura with her grandapa (James Palmer)
+        // Laura with her grandpa (James Palmer)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-grandpa-james.avif",
-          alt: "Laura with her grandapa (James Palmer)",
+          alt: "Laura with her grandpa (James Palmer)",
           content: [
             ...content({
               parts: [
                 audio(
-                  'Laura says: "This is my Grandpa. His name’s James Palmer." (It’s Laura’s Grandpa.)',
+                  'Laura says: "This is my grandpa. His name’s James Palmer." (It’s Laura’s grandpa.)',
                 ),
-                'Laura says: "This is my Grandpa. His name’s James Palmer."',
+                'Laura says: "This is my grandpa. His name’s James Palmer."',
                 lineBreak(),
-                "(It’s Laura’s Grandpa.)",
+                "(It’s Laura’s grandpa.)",
                 portuguese(""),
               ],
             }),
@@ -163,11 +182,11 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  'Laura says: "This is my Grandma. Her name’s Patricia Palmer." (It’s Laura’s Grandma.)',
+                  'Laura says: "This is my grandma. Her name’s Patricia Palmer." (It’s Laura’s grandma.)',
                 ),
-                'Laura says: "This is my Grandma. Her name’s Patricia Palmer."',
+                'Laura says: "This is my grandma. Her name’s Patricia Palmer."',
                 lineBreak(),
-                "(It’s Laura’s Grandma.)",
+                "(It’s Laura’s grandma.)",
                 portuguese(""),
               ],
             }),
@@ -175,57 +194,6 @@ export const beginnerMyFamily = {
         },
       ],
     },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: shuffle([
-          {
-            imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/mother-mom.avif",
-            imgAlt: "Laura’s mom",
-            question: "This is Laura’s sister.",
-            options: [
-              { option: "true", isCorrect: false },
-              { option: "false", isCorrect: true },
-            ],
-          },
-          {
-            imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/brother.avif",
-            imgAlt: "Laura’s brother",
-            question: "This is Laura’s dad.",
-            options: [
-              { option: "true", isCorrect: false },
-              { option: "false", isCorrect: true },
-            ],
-          },
-          {
-            imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/sister.avif",
-            imgAlt: "Laura’s sister",
-            question: "This is Laura’s mom.",
-            options: [
-              { option: "true", isCorrect: false },
-              { option: "false", isCorrect: true },
-            ],
-          },
-          {
-            imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/father-dad.avif",
-            imgAlt: "Laura’s dad",
-            question: "This is Laura’s brother",
-            options: [
-              { option: "true", isCorrect: false },
-              { option: "false", isCorrect: true },
-            ],
-          },
-        ]),
-      },
-    },
-  },
-
-  presentation: {
     dialogue: {
       instruction: "Listen and read.",
       audioSrc: "",
@@ -236,47 +204,39 @@ export const beginnerMyFamily = {
         },
         {
           speaker: "Liz",
-          line: text(["Really? Can I see it?"]),
+          line: text(["Oh, nice!"]),
         },
         {
           speaker: "Laura",
-          line: text(["Of course! This is my mother."]),
+          line: text(["This is my mother. Her name is Heather."]),
         },
         {
           speaker: "Liz",
-          line: text(["She looks very kind."]),
+          line: text(["And who's he?"]),
         },
         {
           speaker: "Laura",
-          line: text(["And this is my father."]),
+          line: text(["He's my father. His name is Robert."]),
         },
         {
           speaker: "Liz",
-          line: text(["He has a nice smile."]),
+          line: text(["Who's she?"]),
         },
         {
           speaker: "Laura",
-          line: text(["This is my younger sister."]),
+          line: text(["She's my sister, Kate."]),
         },
         {
           speaker: "Liz",
-          line: text(["She is very cute!"]),
+          line: text(["And who's he?"]),
         },
         {
           speaker: "Laura",
-          line: text(["And this is my older brother."]),
+          line: text(["He's my brother, Tom."]),
         },
         {
           speaker: "Liz",
-          line: text(["Wow! You have a big family."]),
-        },
-        {
-          speaker: "Laura",
-          line: text(["Yes, I do. I love my family."]),
-        },
-        {
-          speaker: "Liz",
-          line: text(["They look wonderful, Laura."]),
+          line: text(["A nice family!"]),
         },
       ],
     },
@@ -285,24 +245,24 @@ export const beginnerMyFamily = {
       exercise: {
         questions: [
           {
-            question: "What is Laura showing Liz?",
+            question: "Laura's album is:",
             options: [
-              { option: "Her family photo album", isCorrect: true },
-              { option: "Her school album", isCorrect: false },
+              { option: "A school album.", isCorrect: false },
+              { option: "A family photo album.", isCorrect: true },
             ],
           },
           {
-            question: "Who does Laura introduce after her father?",
+            question: "Laura’s father is:",
             options: [
-              { option: "Her younger sister", isCorrect: true },
-              { option: "Her older brother", isCorrect: false },
+              { option: "William.", isCorrect: false },
+              { option: "Robert.", isCorrect: true },
             ],
           },
           {
-            question: "What does Liz say about Laura's family?",
+            question: "Laura's brother is:",
             options: [
-              { option: "They look wonderful", isCorrect: true },
-              { option: "They look serious", isCorrect: false },
+              { option: "Tom.", isCorrect: true },
+              { option: "Robert.", isCorrect: false },
             ],
           },
         ],
@@ -311,24 +271,32 @@ export const beginnerMyFamily = {
   },
 
   languageFocus: {
-    meaning: [
-      {
-        as: "span",
-        parts: ["mother"],
-      },
-      {
-        as: "span",
-        parts: ["father"],
-      },
-      {
-        as: "span",
-        parts: ["sister"],
-      },
-      {
-        as: "span",
-        parts: ["brother"],
-      },
-    ] satisfies Meaning[],
+    // meaning: [
+    //   {
+    //     as: "span",
+    //     parts: ["mother"],
+    //   },
+    //   {
+    //     as: "span",
+    //     parts: ["father"],
+    //   },
+    //   {
+    //     as: "span",
+    //     parts: ["sister"],
+    //   },
+    //   {
+    //     as: "span",
+    //     parts: ["brother"],
+    //   },
+    //   {
+    //     as: "span",
+    //     parts: ["grandmother / grandma"],
+    //   },
+    //   {
+    //     as: "span",
+    //     parts: ["grandfather / grandpa"],
+    //   },
+    // ] satisfies Meaning[],
     column: {
       width: 300,
       cols: [
@@ -338,9 +306,13 @@ export const beginnerMyFamily = {
           textColor: "text-white",
           column: "Family",
           items: [
-            { parts: ["mother"] },
-            { parts: ["father"] },
-            { parts: ["parents"] },
+            { parts: [bold("parents")] },
+            { parts: ["father (dad / daddy)"] },
+            { parts: ["mother (mom / mommy)"] },
+            spacer(),
+            { parts: [bold("grandparents")] },
+            { parts: ["grandfather (grandpa)"] },
+            { parts: ["grandmother (grandma)"] },
           ],
         },
         {
@@ -360,8 +332,6 @@ export const beginnerMyFamily = {
             { parts: ["your"] },
             { parts: ["his"] },
             { parts: ["her"] },
-            { parts: ["our"] },
-            { parts: ["their"] },
           ],
         },
         {
@@ -380,39 +350,24 @@ export const beginnerMyFamily = {
     notes: [
       {
         as: "span",
-        parts: [bold("my"), " = belongs to the speaker"],
-      },
-      {
-        as: "span",
-        parts: [bold("your"), " = belongs to the person we are speaking to"],
-      },
-      {
-        as: "span",
-        parts: [bold("his"), " = belongs to a man or boy"],
-      },
-      {
-        as: "span",
-        parts: [bold("her"), " = belongs to a woman or girl"],
-      },
-      {
-        as: "span",
-        parts: [bold("John's brother"), " = the brother of John"],
+        parts: [audio("the sound of your"),
+          "the sound of \"your\"",],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
-        parts: ["In 'my mother', whose mother is she?"],
+        parts: ["“My mother”: the speaker’s mother or the listener’s mother?"],
+      },
+      {
+        as: "span",
+        parts: ["“His sister”: the sister of a man/boy or a woman/girl?"],
       },
       {
         as: "span",
         parts: [
-          "In 'his sister', is the person who has the sister male or female?",
+          "“John’s brother”: the brother of John or the brother of Mary?",
         ],
-      },
-      {
-        as: "span",
-        parts: ["In 'John's brother', does the brother belong to John?"],
       },
     ] satisfies CCQ[],
   },
@@ -423,24 +378,43 @@ export const beginnerMyFamily = {
       exercise: {
         questions: [
           {
-            question: "Who's she?",
+            imgSrc:
+              "/assets/img/courses/a1/my-family/introduction/true-false/mother-mom.avif",
+            imgAlt: "Laura’s mom",
+            question: "This is Laura’s mom.",
             options: [
-              { option: "My mother", isCorrect: true },
-              { option: "My brother", isCorrect: false },
+              { option: "True", isCorrect: true },
+              { option: "False", isCorrect: false },
             ],
           },
           {
-            question: "Who's he?",
+            imgSrc:
+              "/assets/img/courses/a1/my-family/introduction/true-false/brother.avif",
+            imgAlt: "Laura’s brother",
+            question: "This is Laura’s dad.",
             options: [
-              { option: "My father", isCorrect: true },
-              { option: "My sister", isCorrect: false },
+              { option: "True", isCorrect: false },
+              { option: "False", isCorrect: true },
             ],
           },
           {
-            question: "Mary's brother means:",
+            imgSrc:
+              "/assets/img/courses/a1/my-family/introduction/true-false/sister.avif",
+            imgAlt: "Laura’s sister",
+            question: "This is Laura’s sister.",
             options: [
-              { option: "The brother of Mary", isCorrect: true },
-              { option: "Mary's father", isCorrect: false },
+              { option: "True", isCorrect: true },
+              { option: "False", isCorrect: false },
+            ],
+          },
+          {
+            imgSrc:
+              "/assets/img/courses/a1/my-family/introduction/true-false/father-dad.avif",
+            imgAlt: "Laura’s dad",
+            question: "This is Laura’s brother.",
+            options: [
+              { option: "True", isCorrect: false },
+              { option: "False", isCorrect: true },
             ],
           },
         ],

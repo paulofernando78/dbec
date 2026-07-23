@@ -73,7 +73,7 @@ export const beginnerAroundTown = {
             ],
           },
           {
-            question: "Where can you keep money?",
+            question: "A place for money:",
             options: [
               { option: "Bank", isCorrect: true },
               { option: "Restaurant", isCorrect: false },

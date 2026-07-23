@@ -26,7 +26,7 @@ export const beginnerPersonalInformation = {
             ],
           },
           {
-            question: "Which question asks about nationality?",
+            question: "For country or nationality:",
             options: [
               { option: "Where are you from?", isCorrect: true },
               { option: "What time is it?", isCorrect: false },
@@ -39,7 +39,7 @@ export const beginnerPersonalInformation = {
 
   presentation: {
     dialogue: {
-      instruction: "Read the conversation. What information does Liz ask for?",
+      instruction: "Listen and read.",
       audioSrc: "",
       lines: [
         {
@@ -96,10 +96,10 @@ export const beginnerPersonalInformation = {
             ],
           },
           {
-            question: "Why does Liz say 'What's your phone number?'",
+            question: "Liz: “What's your phone number?”",
             options: [
-              { option: "To ask for contact information", isCorrect: true },
-              { option: "To ask Laura's age", isCorrect: false },
+              { option: "555-0184", isCorrect: true },
+              { option: "Laura Silva", isCorrect: false },
             ],
           },
         ],
@@ -194,15 +194,11 @@ export const beginnerPersonalInformation = {
     ccq: [
       {
         as: "span",
-        parts: [
-          "Does “Where are you from?” ask about a place or a phone number?",
-        ],
+        parts: ["“Where are you from?”: a place or a phone number?"],
       },
       {
         as: "span",
-        parts: [
-          "Should you share real private information during classroom practice?",
-        ],
+        parts: ["Real private information in classroom practice: yes or no?"],
       },
     ] satisfies CCQ[],
   },

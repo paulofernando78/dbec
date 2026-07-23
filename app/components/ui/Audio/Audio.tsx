@@ -16,10 +16,10 @@ export const Audio = ({ src, className }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
+  const isAudioFile = /\.(mp3|wav|ogg)$/i.test(src);
+
   const handlePlay = (e: React.MouseEvent<SVGElement>) => {
     e.stopPropagation();
-    const isAudioFile =
-      src.endsWith(".mp3") || src.endsWith(".wav") || src.endsWith(".ogg");
 
     if (!isAudioFile) {
       window.speechSynthesis.cancel();
@@ -128,14 +128,14 @@ export const Audio = ({ src, className }: AudioProps) => {
         />
       )}
 
-      <audio
+      {isAudioFile && <audio
         ref={audioRef}
         src={src}
         preload="metadata"
         onEnded={handleEnded}
         onPause={handlePause}
         onError={() => console.log("Audio failed to load:", src)}
-      />
+      />}
     </>
   );
 };

@@ -114,6 +114,12 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
           </Section>
 
           <Section id="Presentation" heading={heading}>
+            {lesson.presentation?.storyCarousel && (
+              <Carousel
+                aspectRatio="wide"
+                {...lesson.presentation.storyCarousel}
+              />
+            )}
             <Dialogue {...lesson.presentation?.dialogue} />
             {lesson.presentation?.radio && (
               <Radio {...lesson.presentation.radio} />

@@ -129,9 +129,7 @@ export const beginnerRealLifeProject = {
     ccq: [
       {
         as: "span",
-        parts: [
-          "Does “Let's meet” describe a past event or suggest a future activity?",
-        ],
+        parts: ["“Let's meet” is a suggestion: yes or no?"],
       },
       {
         as: "span",

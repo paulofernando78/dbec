@@ -64,7 +64,7 @@ export const lesson = {
     },
 
     storyCarousel: {
-      instruction: "Look at the pictures and listen to the sentences.",
+      instruction: "Look ...",
       imgs: [
         {
           src: "/",
@@ -95,6 +95,20 @@ export const lesson = {
   },
 
   presentation: {
+    storyCarousel: {
+      instruction: "Look ...",
+      imgs: [
+        {
+          src: "/",
+          alt: "...",
+          content: [
+            ...content({
+              parts: [audio("/"), "...", lineBreak(), "..."],
+            }),
+          ],
+        },
+      ],
+    },
     dialogue: {
       instruction: "...",
       audioSrc: "/",

@@ -59,21 +59,21 @@ export const beginnerMyHouse = {
       exercise: {
         questions: [
           {
-            question: "Where do you sleep?",
+            question: "Sleep:",
             options: [
               { option: "Bedroom", isCorrect: true },
               { option: "Kitchen", isCorrect: false },
             ],
           },
           {
-            question: "Where do you cook?",
+            question: "Cook:",
             options: [
               { option: "Kitchen", isCorrect: true },
               { option: "Bathroom", isCorrect: false },
             ],
           },
           {
-            question: "Where do you watch TV?",
+            question: "Watch TV:",
             options: [
               { option: "Living room", isCorrect: true },
               { option: "Garage", isCorrect: false },
@@ -227,11 +227,11 @@ export const beginnerMyHouse = {
     ccq: [
       {
         as: "span",
-        parts: ["Do we use 'There is' with one thing or many things?"],
+        parts: ["“There is”: one thing or many things?"],
       },
       {
         as: "span",
-        parts: ["Do we use 'There are' with one thing or many things?"],
+        parts: ["“There are”: one thing or many things?"],
       },
       {
         as: "span",
