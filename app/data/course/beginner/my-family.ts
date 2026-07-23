@@ -25,10 +25,10 @@ export const beginnerMyFamily = {
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       words: [
-        // Laura with her Mom
+        // Laura with her mom (Heather Palmer)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-mom.avif",
-          alt: "Laura with her Mom",
+          alt: "Laura with her mom (Heather Palmer)",
           content: [
             ...content({
               parts: [
@@ -43,10 +43,10 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Laura with her Dad
+        // Laura with her dad (Robert Palmer)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-dad.avif",
-          alt: "Laura with her Dad",
+          alt: "Laura with her dad (Robert Palmer)",
           content: [
             ...content({
               parts: [
@@ -61,10 +61,10 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Laura with her brother
+        // Laura with her brother (Tom Palmer)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-brother.avif",
-          alt: "Laura with her brother",
+          alt: "Laura with her brother (Tom Palmer)",
           content: [
             ...content({
               parts: [
@@ -79,10 +79,10 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Laura with her sister
+        // Laura with her sister (Kate Palmer)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-sister.avif",
-          alt: "Laura with her sister",
+          alt: "Laura with her sister (Kate Palmer)",
           content: [
             ...content({
               parts: [
@@ -97,10 +97,10 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Laura with her grandapa (William)
+        // Laura with her grandapa (William Smith)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-grandpa-william.avif",
-          alt: "Grandpa",
+          alt: "Laura with her grandpa (William Smith)",
           content: [
             ...content({
               parts: [
@@ -115,10 +115,10 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Laura with her grandma (Mary)
+        // Laura with her grandma (Mary Smith)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-grandma-mary.avif",
-          alt: "Laura with her grandma (Mary)",
+          alt: "Laura with her grandma (Mary Smith)",
           content: [
             ...content({
               parts: [
@@ -133,10 +133,10 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Pic-7
+        // Laura with her grandapa (James Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/pic-7.avif",
-          alt: "Grandpa",
+          src: "/assets/img/courses/a1/my-family/introduction/laura-grandpa-james.avif",
+          alt: "Laura with her grandapa (James Palmer)",
           content: [
             ...content({
               parts: [
@@ -151,10 +151,10 @@ export const beginnerMyFamily = {
             }),
           ],
         },
-        // Pic-8
+        // Laura with her grandma (Patricia Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/pic-8.avif",
-          alt: "Grandma",
+          src: "/assets/img/courses/a1/my-family/introduction/laura-grandma-patricia.avif",
+          alt: "Laura with her grandma (Patricia Palmer)",
           content: [
             ...content({
               parts: [
