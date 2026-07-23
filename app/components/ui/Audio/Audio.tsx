@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 
-import { Play, Square } from "lucide-react";
+import { LoaderCircle, Play, Square } from "lucide-react";
 
 type AudioProps = {
   src: string;
@@ -15,10 +15,11 @@ let currentUtterance: SpeechSynthesisUtterance | null = null;
 export const Audio = ({ src, className }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const isAudioFile = /\.(mp3|wav|ogg)$/i.test(src);
 
-  const handlePlay = (e: React.MouseEvent<SVGElement>) => {
+  const handlePlay = async (e: React.MouseEvent<SVGElement>) => {
     e.stopPropagation();
 
     if (!isAudioFile) {
@@ -58,13 +59,24 @@ export const Audio = ({ src, className }: AudioProps) => {
       currentGlobalAudio.currentTime = 0;
     }
 
-    el.play();
-    currentGlobalAudio = el;
-    setPlaying(true);
+    setLoading(true);
+
+    try {
+      await el.play();
+
+      currentGlobalAudio = el;
+      setLoading(false);
+      setPlaying(true);
+    } catch (error) {
+      console.error("Não foi possível tocar o áudio:", error);
+      setLoading(false);
+      setPlaying(false);
+    }
   };
 
   const handleStop = (e: React.MouseEvent<SVGElement>) => {
     e.stopPropagation();
+    setLoading(false);
     if (currentUtterance) {
       window.speechSynthesis.cancel();
       currentUtterance = null;
@@ -93,6 +105,7 @@ export const Audio = ({ src, className }: AudioProps) => {
       currentGlobalAudio = null;
     }
 
+    setLoading(false);
     setPlaying(false);
   };
 
@@ -105,12 +118,20 @@ export const Audio = ({ src, className }: AudioProps) => {
       currentGlobalAudio = null;
     }
 
+    setLoading(false);
     setPlaying(false);
   };
 
   return (
     <>
-      {playing ? (
+      {loading ? (
+        <LoaderCircle
+          onClick={handleStop}
+          size={16}
+          className={`${className ?? ""} animate-spin`}
+          color="var(--icon-color)"
+        />
+      ) : playing ? (
         <Square
           onClick={handleStop}
           size={16}
@@ -128,14 +149,26 @@ export const Audio = ({ src, className }: AudioProps) => {
         />
       )}
 
-      {isAudioFile && <audio
-        ref={audioRef}
-        src={src}
-        preload="metadata"
-        onEnded={handleEnded}
-        onPause={handlePause}
-        onError={() => console.log("Audio failed to load:", src)}
-      />}
+      {isAudioFile && (
+        <audio
+          ref={audioRef}
+          src={src}
+          preload="metadata"
+          onWaiting={() => setLoading(true)}
+          onPlaying={() => {
+            setLoading(false);
+            setPlaying(true);
+          }}
+          onCanPlay={() => setLoading(false)}
+          onEnded={handleEnded}
+          onPause={handlePause}
+          onError={() => {
+            console.error("Audio failed to load:", src);
+            setLoading(false);
+            setPlaying(false);
+          }}
+        />
+      )}
     </>
   );
 };
