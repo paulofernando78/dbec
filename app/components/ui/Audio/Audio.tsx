@@ -12,6 +12,53 @@ type AudioProps = {
 let currentGlobalAudio: HTMLAudioElement | null = null;
 let currentUtterance: SpeechSynthesisUtterance | null = null;
 
+const selectBestVoice = (voices: SpeechSynthesisVoice[]) => {
+  const findVoice = (term: string) =>
+    voices.find(
+      (voice) =>
+        voice.lang === "en-US" &&
+        voice.name.toLowerCase().includes(term),
+    );
+
+  return (
+    findVoice("natural") ??
+    findVoice("premium") ??
+    findVoice("google") ??
+    voices.find((voice) => voice.lang === "en-US") ??
+    voices.find((voice) => voice.lang.startsWith("en")) ??
+    voices[0]
+  );
+};
+
+const waitForVoices = () =>
+  new Promise<SpeechSynthesisVoice[]>((resolve) => {
+    const voices = window.speechSynthesis.getVoices();
+
+    if (voices.length) {
+      resolve(voices);
+      return;
+    }
+
+    const handleVoicesChanged = () => {
+      window.clearTimeout(timeout);
+      resolve(window.speechSynthesis.getVoices());
+    };
+
+    const timeout = window.setTimeout(() => {
+      window.speechSynthesis.removeEventListener(
+        "voiceschanged",
+        handleVoicesChanged,
+      );
+      resolve(window.speechSynthesis.getVoices());
+    }, 500);
+
+    window.speechSynthesis.addEventListener(
+      "voiceschanged",
+      handleVoicesChanged,
+      { once: true },
+    );
+  });
+
 export const Audio = ({ src, className }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -27,14 +74,15 @@ export const Audio = ({ src, className }: AudioProps) => {
 
       const utterance = new SpeechSynthesisUtterance(src);
       utterance.lang = "en-US";
+      utterance.rate = 0.92;
+      utterance.pitch = 1;
+      utterance.volume = 1;
 
-      const voices = window.speechSynthesis.getVoices();
+      const voices = await waitForVoices();
+      const voice = selectBestVoice(voices);
 
-      if (voices.length) {
-        utterance.voice =
-          voices.find((v) => v.name.includes("Google US English")) ??
-          voices.find((v) => v.lang.startsWith("en")) ??
-          voices[0];
+      if (voice) {
+        utterance.voice = voice;
       }
 
       utterance.onend = () => {
