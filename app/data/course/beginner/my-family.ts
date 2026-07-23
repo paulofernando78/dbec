@@ -22,9 +22,13 @@ export const beginnerMyFamily = {
   },
 
   introduction: {
+    // Laura’s family
+    instruction: text(["Look at Laura’s family."]),
+    imgSrc: "/assets/img/courses/a1/my-family/introduction/laura-family.avif",
+    imgAlt: "Laura with her mom (Heather Palmer)",
     storyCarousel: {
-      instruction: "Look at the pictures and listen to the sentences.",
-      words: [
+      instruction: "Now look at the pictures and listen to the sentences.",
+      imgs: [
         // Laura with her mom (Heather Palmer)
         {
           src: "/assets/img/courses/a1/my-family/introduction/laura-mom.avif",
@@ -33,9 +37,9 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my mom. Her name’s Heather Palmer.\" (It’s Laura’s mom.)",
+                  'Laura says: "This is my mom. Her name’s Heather Palmer." (It’s Laura’s mom.)',
                 ),
-                "Laura says: \"This is my mom. Her name’s Heather Palmer.\"",
+                'Laura says: "This is my mom. Her name’s Heather Palmer."',
                 lineBreak(),
                 "(It’s Laura’s mom.)",
                 portuguese(""),
@@ -51,9 +55,9 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my dad. His name’s Robert Palmer.\" (It’s Laura’s dad.)",
+                  'Laura says: "This is my dad. His name’s Robert Palmer." (It’s Laura’s dad.)',
                 ),
-                "Laura says: \"This is my dad. His name’s Robert Palmer.\"",
+                'Laura says: "This is my dad. His name’s Robert Palmer."',
                 lineBreak(),
                 "(It’s Laura’s dad.)",
                 portuguese(""),
@@ -69,9 +73,9 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my brother. His name’s Tom Palmer.\" (It’s Laura’s brother.)",
+                  'Laura says: "This is my brother. His name’s Tom Palmer." (It’s Laura’s brother.)',
                 ),
-                "Laura says: \"This is my brother. His name’s Tom Palmer.\"",
+                'Laura says: "This is my brother. His name’s Tom Palmer."',
                 lineBreak(),
                 "(It’s Laura’s brother.)",
                 portuguese(""),
@@ -87,7 +91,7 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my sister. Her name’s Kate Palmer.\" (It’s Laura’s sister.)",
+                  'Laura says: "This is my sister. Her name’s Kate Palmer." (It’s Laura’s sister.)',
                 ),
                 'Laura says: "This is my sister." Her name’s Kate Palmer.',
                 lineBreak(),
@@ -105,9 +109,9 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my Grandpa. His name’s William Smith.\" (It’s Laura’s Grandpa.)",
+                  'Laura says: "This is my Grandpa. His name’s William Smith." (It’s Laura’s Grandpa.)',
                 ),
-                "Laura says: \"This is my Grandpa. His name’s William Smith.\"",
+                'Laura says: "This is my Grandpa. His name’s William Smith."',
                 lineBreak(),
                 "(It’s Laura’s Grandpa.)",
                 portuguese(""),
@@ -123,9 +127,9 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my Grandma. Her name’s Mary Smith.\" (It’s Laura’s Grandma.)",
+                  'Laura says: "This is my Grandma. Her name’s Mary Smith." (It’s Laura’s Grandma.)',
                 ),
-                "Laura says: \"This is my Grandma. Her name’s Mary Smith.\"",
+                'Laura says: "This is my Grandma. Her name’s Mary Smith."',
                 lineBreak(),
                 "(It’s Laura’s Grandma.)",
                 portuguese(""),
@@ -141,9 +145,9 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my Grandpa. His name’s James Palmer.\" (It’s Laura’s Grandpa.)",
+                  'Laura says: "This is my Grandpa. His name’s James Palmer." (It’s Laura’s Grandpa.)',
                 ),
-                "Laura says: \"This is my Grandpa. His name’s James Palmer.\"",
+                'Laura says: "This is my Grandpa. His name’s James Palmer."',
                 lineBreak(),
                 "(It’s Laura’s Grandpa.)",
                 portuguese(""),
@@ -159,9 +163,9 @@ export const beginnerMyFamily = {
             ...content({
               parts: [
                 audio(
-                  "Laura says: \"This is my Grandma. Her name’s Patricia Palmer.\" (It’s Laura’s Grandma.)",
+                  'Laura says: "This is my Grandma. Her name’s Patricia Palmer." (It’s Laura’s Grandma.)',
                 ),
-                "Laura says: \"This is my Grandma. Her name’s Patricia Palmer.\"",
+                'Laura says: "This is my Grandma. Her name’s Patricia Palmer."',
                 lineBreak(),
                 "(It’s Laura’s Grandma.)",
                 portuguese(""),

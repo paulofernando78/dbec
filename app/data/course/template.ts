@@ -36,6 +36,9 @@ export const lesson = {
   },
 
   introduction: {
+    instruction: text(["..."]),
+    imgSrc: "/",
+    imgAlt: "...",
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       matchingContent: [

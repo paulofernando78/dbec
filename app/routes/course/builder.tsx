@@ -8,6 +8,9 @@ import {
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
+import { Line } from "@/components/content/Line";
+import { Image } from "@/components/ui/Image";
+import { Carousel } from "@/components/ui/Carousel";
 import { Meaning } from "@/components/content/Meaning";
 import { Notes } from "@/components/content/Notes";
 import { List } from "@/components/content/List";
@@ -15,7 +18,6 @@ import { CCQ } from "@/components/content/CCQ";
 import { Dialogue } from "@/features/Dialogue/Dialogue";
 import { TheAlphabet } from "@/features/TheAlphabet";
 import { ColumnDrag } from "@/components/content/Column";
-import { Carousel } from "@/components/ui/Carousel";
 import { Radio } from "@/features/exercises/Radio";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
@@ -27,6 +29,8 @@ import { lesson as courseTemplate } from "@/data/course/template";
 type CourseProps = {
   lesson: Record<string, any>;
   lessonCard?: LessonCardContent;
+  imgSrc?: string;
+  imgAlt?: string;
 };
 
 const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
@@ -76,7 +80,7 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
   );
 };
 
-export function Course({ lesson, lessonCard }: CourseProps) {
+export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
   const heading = lesson.languageFocus?.greetings ? 3 : 4;
   const card = lessonCard ?? lesson.lessonCard;
 
@@ -87,6 +91,11 @@ export function Course({ lesson, lessonCard }: CourseProps) {
         {card && <LessonCard {...card} />}
         <PageSections>
           <Section id="introduction" heading={heading}>
+            <Line value={lesson.introduction.instruction} className="font-bold mb-4"/>
+            <Image
+              src={lesson.introduction.imgSrc}
+              alt={lesson.introduction.imgAlt}
+            />
             {lesson.introduction?.vocabularyCarousel && (
               <Carousel
                 aspectRatio="square"

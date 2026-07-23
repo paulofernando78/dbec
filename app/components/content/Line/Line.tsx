@@ -7,17 +7,19 @@ type LineProps = {
   display?: "block" | "inline";
   as?: "p" | "span";
   value?: InlineRichContentValue[];
+  className?: string
 };
 
 export const Line = ({
   as: Tag = "p",
   display,
-  value = []
+  value = [],
+  className
 }: LineProps) => {
-  const className = Tag === "span" ? display : undefined
+  const displayClass = Tag === "span" ? display : undefined
   return (
-    <Tag className={display}>
-      <InlineRichContent value={value} />
+    <Tag className={[displayClass, className].filter(Boolean).join(" ")}>
+      <InlineRichContent value={value}/>
     </Tag>
   );
 };
