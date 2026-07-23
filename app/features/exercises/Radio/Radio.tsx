@@ -64,7 +64,7 @@ export const Radio = ({
     <div className="flex flex-col gap-4 mb-4">
       {instruction && <p className="font-bold">{instruction}</p>}
       {questions.map((q, qIndex) => (
-        <div key={qIndex} className="flex items-start gap-4">
+        <div key={qIndex} className="flex flex-col items-start gap-4 min-[500px]:flex-row">
           {q.imgSrc && (
             <div>
               <Image
