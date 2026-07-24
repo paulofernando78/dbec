@@ -315,11 +315,20 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/healthy-living",
       label: "Healthy Living",
-      objective: "Describe a health problem and give simple lifestyle advice.",
-      usefulLanguage: "You should…; You shouldn’t…; I feel…; Why don’t you…?",
+      objective:
+        "Explain general results of healthy and unhealthy habits and give simple advice.",
+      usefulLanguage:
+        "If you…, you…; When you…, you…; You should…; You shouldn’t…",
       vocabulary: "Health problems, habits, food, exercise",
       skills: "Listening and spoken interaction",
-      finalTask: "Role-play a health-advice conversation.",
+      recycles: "Present Simple habits, frequency, and lifestyle vocabulary",
+      pronunciation: "Sentence stress and the pause after an initial if-clause",
+      finalTask: "Create and discuss a simple healthy-habits guide.",
+      successCriteria: [
+        "Write three accurate Zero Conditional sentences.",
+        "Use both if and when to describe general results.",
+        "Add relevant advice with should or shouldn’t.",
+      ],
     },
     {
       href: "/courses/elementary/rules",
@@ -404,8 +413,15 @@ export const courseLessonsCardData = {
         "If…, I’ll…; Unless…; What will happen if…?; It depends on…",
       vocabulary: "Choices, consequences, risk, decisions",
       skills: "Reading and problem-solving interaction",
+      recycles: "Zero Conditional, Present Simple, and future forms with will",
+      pronunciation: "Contractions with will and clause-level sentence stress",
       finalTask:
         "Choose the best response to a practical dilemma and justify it.",
+      successCriteria: [
+        "Describe a realistic future condition with if or unless.",
+        "Give a logical result with will, may, or can.",
+        "Explain a decision and suggest a backup plan.",
+      ],
     },
     {
       href: "/courses/intermediate/green-planet",
@@ -480,7 +496,14 @@ export const courseLessonsCardData = {
         "If I were…, I’d…; Suppose…; I’d be more likely to…; On balance…",
       vocabulary: "Dreams, ambitions, priorities, life choices",
       skills: "Listening and speculative discussion",
+      recycles: "First Conditional, Past Simple forms, and modal verbs",
+      pronunciation: "I’d/we’d and contrastive stress in hypothetical choices",
       finalTask: "Discuss a life-changing scenario and defend your choice.",
+      successCriteria: [
+        "Describe at least three hypothetical present or future situations.",
+        "Use would, could, or might to evaluate possible consequences.",
+        "Compare the scenarios and defend one choice.",
+      ],
     },
     {
       href: "/courses/upper-intermediate/regrets",
@@ -489,7 +512,15 @@ export const courseLessonsCardData = {
       usefulLanguage: "If I had…, I would have…; I wish I’d…; In hindsight…",
       vocabulary: "Decisions, consequences, emotions, reflection",
       skills: "Reading and extended spoken interaction",
+      recycles: "Second Conditional, past narratives, and past participles",
+      pronunciation:
+        "Contractions in I’d and would’ve, with stress on alternative outcomes",
       finalTask: "Analyze a case study and present a better course of action.",
+      successCriteria: [
+        "Identify the real past decision and its actual outcome.",
+        "Form three alternatives with the Third Conditional.",
+        "Evaluate which alternative outcome was most plausible.",
+      ],
     },
     {
       href: "/courses/upper-intermediate/business-communication",
