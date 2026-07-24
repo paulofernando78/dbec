@@ -4,7 +4,6 @@ export const elementaryHealthyLiving = {
     subtitle: "Healthy Living",
     descriptions: [
       "If you sleep well, you feel better.",
-      "Use the Zero Conditional to describe general results.",
     ],
   },
 
