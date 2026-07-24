@@ -27,8 +27,8 @@ export const beginnerMyFamily = {
     imgSrc: "/assets/img/course/a1/my-family/introduction/laura-family.avif",
     imgAlt: "Laura with her family",
     questions: [
-      [audio("/"), "Is Laura’s family big or small?"],
-      [audio("/"), "Is your family big or small?"],
+      [audio("Is Laura’s family big or small?"), "Is Laura’s family big or small?"],
+      [audio("Is your family big or small?"), "Is your family big or small?"],
     ],
     radio: {
       instruction: "Choose the correct answer.",
