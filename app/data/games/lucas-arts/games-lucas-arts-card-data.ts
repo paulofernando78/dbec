@@ -2,7 +2,7 @@ export const gamesLucasArtsCardData = {
   monkeyIsland: {
     href: "/games/lucas-arts/monkey-island",
     label: "The Secret of Monkey Island",
-    canDo:
+    objective:
       "Follow a humorous adventure narrative, infer character motives, and explain puzzle decisions.",
     usefulLanguage:
       "He is trying to…; The clue suggests…; If we use… on…, we may…",
@@ -13,7 +13,7 @@ export const gamesLucasArtsCardData = {
   thimbleWeedPark: {
     href: "/games/lucas-arts/thimbleweed-park",
     label: "Thimbleweed Park",
-    canDo:
+    objective:
       "Track multiple perspectives, evaluate clues, and form a reasoned mystery hypothesis.",
     usefulLanguage:
       "From this character’s perspective…; The clue may imply…; My hypothesis is…",

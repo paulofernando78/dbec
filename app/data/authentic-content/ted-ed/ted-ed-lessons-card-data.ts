@@ -2,7 +2,7 @@ export const authenticContentTedEdLessonsCardData = {
   whatCausesConstipation: {
     href: "/authentic-content/ted-ed/how-food-moves-through-your-body",
     label: "How Food Moves Through Your Body",
-    canDo:
+    objective:
       "Reconstruct a scientific cause-and-effect explanation and evaluate its recommendations.",
     usefulLanguage:
       "This occurs when…; As a result…; The most strongly supported recommendation is…",
@@ -16,7 +16,7 @@ export const authenticContentTedEdLessonsCardData = {
   whenWillTheNextIceAgeHappen: {
     href: "/authentic-content/ted-ed/earths-climate-cycle",
     label: "Earth’s Climate Cycle",
-    canDo:
+    objective:
       "Summarize interacting causes, distinguish natural cycles from human influence, and evaluate evidence.",
     usefulLanguage:
       "The cycle is driven by…; This differs from…; The evidence indicates…",
@@ -30,7 +30,7 @@ export const authenticContentTedEdLessonsCardData = {
   howToManageEmotions: {
     href: "/authentic-content/ted-ed/how-we-react-differently",
     label: "How We React Differently",
-    canDo:
+    objective:
       "Distinguish emotion-regulation strategies and evaluate their usefulness in context.",
     usefulLanguage:
       "One strategy involves…; This may be effective when…; A limitation is…",
@@ -43,7 +43,7 @@ export const authenticContentTedEdLessonsCardData = {
   howDidAncientCivilizationsBrewBeer: {
     href: "/authentic-content/ted-ed/a-drink-with-a-long-history",
     label: "A Drink With a Long History",
-    canDo:
+    objective:
       "Reconstruct a historical process and explain how scientific knowledge changed it.",
     usefulLanguage:
       "Initially…; This led to…; Once people discovered…; Production became…",

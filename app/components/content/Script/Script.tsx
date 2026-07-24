@@ -3,14 +3,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Paragraph } from "@/components/content/Paragraph";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
-import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 import { Eye, EyeClosed } from "lucide-react";
 
 interface CollapsibleProps {
   title?: string;
   content: {
-    en: InlineRichContentValue[];
+    en: RichContent;
     pt: string;
   }[];
 }

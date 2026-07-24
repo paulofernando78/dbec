@@ -7,7 +7,6 @@ import { shuffle } from "@/utils/shuffle";
 
 import {
   content,
-  text,
   audio,
   bold,
   mark,
@@ -248,53 +247,53 @@ export const elementaryPastMovies = {
       lines: [
         {
           speaker: "Laura",
-          line: text(["Hey Eric. How's it going?"]),
+          line: ["Hey Eric. How's it going?"],
         },
         {
           speaker: "Eric",
-          line: text(["Pretty good. How about you?"]),
+          line: ["Pretty good. How about you?"],
         },
         {
           speaker: "Laura",
-          line: text(["Feeling great. I had a really nice weekend."]),
+          line: ["Feeling great. I had a really nice weekend."],
         },
         {
           speaker: "Eric",
-          line: text(["Nice! What did you do?"]),
+          line: ["Nice! What did you do?"],
         },
         {
           speaker: "Laura",
-          line: text(["I went to the movie theater on Saturday."]),
+          line: ["I went to the movie theater on Saturday."],
         },
         {
           speaker: "Eric",
-          line: text(["Cool! What movie did you watch?"]),
+          line: ["Cool! What movie did you watch?"],
         },
         {
           speaker: "Laura",
-          line: text(["I watched a comedy. It was really funny."]),
+          line: ["I watched a comedy. It was really funny."],
         },
         {
           speaker: "Eric",
-          line: text(["Did you go alone?"]),
+          line: ["Did you go alone?"],
         },
         {
           speaker: "Laura",
-          line: text([
+          line: [
             "No, I went with my sister. We bought tickets and popcorn.",
-          ]),
+          ],
         },
         {
           speaker: "Eric",
-          line: text(["Sounds fun. I stayed home and played video games."]),
+          line: ["Sounds fun. I stayed home and played video games."],
         },
         {
           speaker: "Laura",
-          line: text(["That sounds good too. Did you relax?"]),
+          line: ["That sounds good too. Did you relax?"],
         },
         {
           speaker: "Eric",
-          line: text(["Yes, I relaxed a lot. It was a quiet weekend."]),
+          line: ["Yes, I relaxed a lot. It was a quiet weekend."],
         },
       ],
     },
@@ -605,17 +604,17 @@ export const elementaryPastMovies = {
       type: "checkbox",
       items: [
         {
-          content: text(["Write five sentences about your last weekend."]),
+          content: ["Write five sentences about your last weekend."],
           textarea: true,
         },
         {
-          content: text(["Write three Past Simple questions and answer them."]),
+          content: ["Write three Past Simple questions and answer them."],
           textarea: true,
         },
         {
-          content: text([
+          content: [
             "Interview a classmate about their weekend activities.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

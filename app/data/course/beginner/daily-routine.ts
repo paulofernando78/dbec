@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio } from "@/helpers/content";
+import { content, audio } from "@/helpers/content";
 
 export const beginnerDailyRoutine = {
   whiteboard: {
@@ -91,27 +91,27 @@ export const beginnerDailyRoutine = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["What time do you wake up?"]),
+          line: ["What time do you wake up?"],
         },
         {
           speaker: "Jake",
-          line: text(["I wake up at seven o'clock."]),
+          line: ["I wake up at seven o'clock."],
         },
         {
           speaker: "Emma",
-          line: text(["What do you do after that?"]),
+          line: ["What do you do after that?"],
         },
         {
           speaker: "Jake",
-          line: text(["I have breakfast and go to work."]),
+          line: ["I have breakfast and go to work."],
         },
         {
           speaker: "Emma",
-          line: text(["What time do you go to bed?"]),
+          line: ["What time do you go to bed?"],
         },
         {
           speaker: "Jake",
-          line: text(["I go to bed at ten o'clock."]),
+          line: ["I go to bed at ten o'clock."],
         },
       ],
     },
@@ -347,18 +347,18 @@ export const beginnerDailyRoutine = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Prepare four simple sentences about your weekday routine.",
-          ]),
+          ],
           textarea: true,
         },
         {
-          content: text(["Give the time for at least two activities."]),
+          content: ["Give the time for at least two activities."],
         },
         {
-          content: text([
+          content: [
             "Tell your partner your routine, then ask or answer two “What time do you…?” questions.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

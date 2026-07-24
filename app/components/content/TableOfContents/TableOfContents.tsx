@@ -1,16 +1,14 @@
 import { Fragment } from "react";
-import {
-  InlineRichContent,
-  type InlineRichContentValue,
-} from "@/components/content/InlineRichContent";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 import { Notebook, NotebookText } from "lucide-react";
 
 type TableOfContentsItem = {
-  title?: InlineRichContentValue[] | string;
+  title?: RichContent | string;
   href?: string;
   id?: string;
-  label?: InlineRichContentValue[] | string;
+  label?: RichContent | string;
 };
 
 type TableOfContentsProps = {
@@ -18,7 +16,7 @@ type TableOfContentsProps = {
 };
 
 export const TableOfContents = ({ items = [] }: TableOfContentsProps) => {
-  const toValue = (value: InlineRichContentValue[] | string) =>
+  const toValue = (value: RichContent | string): RichContent =>
     Array.isArray(value) ? value : [value];
 
   return (

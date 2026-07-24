@@ -1,12 +1,10 @@
-import {
-  InlineRichContent,
-  type InlineRichContentValue,
-} from "@/components/content/InlineRichContent";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 type LineProps = {
   display?: "block" | "inline";
   as?: "p" | "span";
-  value?: InlineRichContentValue[];
+  value?: RichContent;
   className?: string
 };
 

@@ -9,7 +9,6 @@ import {
   phonetics,
   portuguese,
   stressed,
-  text,
   underline,
 } from "@/helpers/content";
 
@@ -24,6 +23,7 @@ export const line = [
       icon("correct"),
       icon("incorrect"),
       icon("spotlight"),
+      icon("arrow"),
       audio("/assets/audio/welcome.mp3"),
       "Normal",
       " ",
@@ -367,15 +367,15 @@ export const dialogue = {
   lines: [
     {
       speaker: "Laura",
-      line: text([
+      line: [
         "Hello! ",
         audio("/assets/audio/hello.mp3"),
         mark("I'm Laura."),
-      ]),
+      ],
     },
     {
       speaker: "Eric",
-      line: text(["Nice to meet you!"]),
+      line: ["Nice to meet you!"],
     },
   ],
 };

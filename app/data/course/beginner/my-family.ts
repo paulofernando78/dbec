@@ -5,12 +5,11 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import {
   content,
-  text,
   audio,
   bold,
   portuguese,
   lineBreak,
-  spacer
+  spacer,
 } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
@@ -24,10 +23,13 @@ export const beginnerMyFamily = {
 
   introduction: {
     // Laura’s family
-    instruction: text(["Look at Laura’s family."]),
-    imgSrc: "/assets/img/courses/a1/my-family/introduction/laura-family.avif",
+    instruction: ["Look at Laura’s family."],
+    imgSrc: "/assets/img/course/a1/my-family/introduction/laura-family.avif",
     imgAlt: "Laura with her family",
-
+    questions: [
+      [audio("/"), "Is your Laura’s family big or small?"],
+      [audio("/"), "Is your family big or small?"],
+    ],
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -35,8 +37,8 @@ export const beginnerMyFamily = {
           {
             question: "The pictures show:",
             options: [
-              { option: "Laura’s friend", isCorrect: true },
-              { option: "Laura's family", isCorrect: false },
+              { option: "Laura’s friend", isCorrect: false },
+              { option: "Laura's family", isCorrect: true },
             ],
           },
         ]),
@@ -50,7 +52,7 @@ export const beginnerMyFamily = {
       imgs: [
         // Laura with her mom (Heather Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-mom.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-mom.avif",
           alt: "Laura with her mom (Heather Palmer)",
           content: [
             ...content({
@@ -68,7 +70,7 @@ export const beginnerMyFamily = {
         },
         // Laura with her dad (Robert Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-dad.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-dad.avif",
           alt: "Laura with her dad (Robert Palmer)",
           content: [
             ...content({
@@ -86,7 +88,7 @@ export const beginnerMyFamily = {
         },
         // Laura with her brother (Tom Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-brother.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-brother.avif",
           alt: "Laura with her brother (Tom Palmer)",
           content: [
             ...content({
@@ -104,7 +106,7 @@ export const beginnerMyFamily = {
         },
         // Laura with her sister (Kate Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-sister.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-sister.avif",
           alt: "Laura with her sister (Kate Palmer)",
           content: [
             ...content({
@@ -122,7 +124,7 @@ export const beginnerMyFamily = {
         },
         // Laura with her grandpa (William Smith)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-grandpa-william.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-william.avif",
           alt: "Laura with her grandpa (William Smith)",
           content: [
             ...content({
@@ -140,7 +142,7 @@ export const beginnerMyFamily = {
         },
         // Laura with her grandma (Mary Smith)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-grandma-mary.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-mary.avif",
           alt: "Laura with her grandma (Mary Smith)",
           content: [
             ...content({
@@ -158,7 +160,7 @@ export const beginnerMyFamily = {
         },
         // Laura with her grandpa (James Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-grandpa-james.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-james.avif",
           alt: "Laura with her grandpa (James Palmer)",
           content: [
             ...content({
@@ -176,7 +178,7 @@ export const beginnerMyFamily = {
         },
         // Laura with her grandma (Patricia Palmer)
         {
-          src: "/assets/img/courses/a1/my-family/introduction/laura-grandma-patricia.avif",
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-patricia.avif",
           alt: "Laura with her grandma (Patricia Palmer)",
           content: [
             ...content({
@@ -200,43 +202,43 @@ export const beginnerMyFamily = {
       lines: [
         {
           speaker: "Laura",
-          line: text(["This is my family photo album."]),
+          line: ["This is my family photo album."],
         },
         {
           speaker: "Liz",
-          line: text(["Oh, nice!"]),
+          line: ["Oh, nice!"],
         },
         {
           speaker: "Laura",
-          line: text(["This is my mother. Her name is Heather."]),
+          line: ["This is my mother. Her name is Heather."],
         },
         {
           speaker: "Liz",
-          line: text(["And who's he?"]),
+          line: ["And who's he?"],
         },
         {
           speaker: "Laura",
-          line: text(["He's my father. His name is Robert."]),
+          line: ["He's my father. His name is Robert."],
         },
         {
           speaker: "Liz",
-          line: text(["Who's she?"]),
+          line: ["Who's she?"],
         },
         {
           speaker: "Laura",
-          line: text(["She's my sister, Kate."]),
+          line: ["She's my sister, Kate."],
         },
         {
           speaker: "Liz",
-          line: text(["And who's he?"]),
+          line: ["And who's he?"],
         },
         {
           speaker: "Laura",
-          line: text(["He's my brother, Tom."]),
+          line: ["He's my brother, Tom."],
         },
         {
           speaker: "Liz",
-          line: text(["A nice family!"]),
+          line: ["A nice family!"],
         },
       ],
     },
@@ -350,8 +352,7 @@ export const beginnerMyFamily = {
     notes: [
       {
         as: "span",
-        parts: [audio("the sound of your"),
-          "the sound of \"your\"",],
+        parts: [audio("the sound of your"), 'the sound of "your"'],
       },
     ] satisfies Notes[],
     ccq: [
@@ -379,7 +380,7 @@ export const beginnerMyFamily = {
         questions: [
           {
             imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/mother-mom.avif",
+              "/assets/img/course/a1/my-family/introduction/true-false/mother-mom.avif",
             imgAlt: "Laura’s mom",
             question: "This is Laura’s mom.",
             options: [
@@ -389,7 +390,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/brother.avif",
+              "/assets/img/course/a1/my-family/introduction/true-false/brother.avif",
             imgAlt: "Laura’s brother",
             question: "This is Laura’s dad.",
             options: [
@@ -399,7 +400,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/sister.avif",
+              "/assets/img/course/a1/my-family/introduction/true-false/sister.avif",
             imgAlt: "Laura’s sister",
             question: "This is Laura’s sister.",
             options: [
@@ -409,7 +410,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/courses/a1/my-family/introduction/true-false/father-dad.avif",
+              "/assets/img/course/a1/my-family/introduction/true-false/father-dad.avif",
             imgAlt: "Laura’s dad",
             question: "This is Laura’s brother.",
             options: [
@@ -492,20 +493,18 @@ export const beginnerMyFamily = {
       type: "checkbox",
       items: [
         {
-          content: text([
-            "Introduce three people and say how they are related.",
-          ]),
+          content: ["Introduce three people and say how they are related."],
         },
 
         {
-          content: text(["Write three short captions using my, his, or her."]),
+          content: ["Write three short captions using my, his, or her."],
           textarea: true,
         },
 
         {
-          content: text([
+          content: [
             "Include one possessive ’s phrase, for example, “Laura’s brother”.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

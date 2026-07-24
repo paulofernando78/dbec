@@ -1,9 +1,9 @@
 import { Line } from "@/components/content/Line";
 
-import { type InlineRichContentValue } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 type LineItem =
-  | InlineRichContentValue[]
+  | RichContent
   | {
       type: "spacer";
     };
@@ -11,11 +11,12 @@ type LineItem =
 type LinesProps = {
   value?: LineItem[];
   as?: "p" | "span";
+  className: string
 };
 
-export const Lines = ({ value = [], as }: LinesProps) => {
+export const Lines = ({ value = [], as, className }: LinesProps) => {
   return (
-    <>
+    <div className={className}>
       {value.map((line, index) => {
         if (Array.isArray(line)) {
           return <Line key={index} as={as} value={line} />;
@@ -27,6 +28,6 @@ export const Lines = ({ value = [], as }: LinesProps) => {
 
         return null;
       })}
-    </>
+    </div>
   );
 };

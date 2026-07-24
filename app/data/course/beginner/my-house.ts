@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, audio, bold } from "@/helpers/content";
 
 export const beginnerMyHouse = {
   whiteboard: {
@@ -91,35 +91,35 @@ export const beginnerMyHouse = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["Tell me about your house."]),
+          line: ["Tell me about your house."],
         },
         {
           speaker: "Jake",
-          line: text(["My house is small but comfortable."]),
+          line: ["My house is small but comfortable."],
         },
         {
           speaker: "Emma",
-          line: text(["How many bedrooms are there?"]),
+          line: ["How many bedrooms are there?"],
         },
         {
           speaker: "Jake",
-          line: text(["There are two bedrooms."]),
+          line: ["There are two bedrooms."],
         },
         {
           speaker: "Emma",
-          line: text(["Is there a living room?"]),
+          line: ["Is there a living room?"],
         },
         {
           speaker: "Jake",
-          line: text(["Yes, there is."]),
+          line: ["Yes, there is."],
         },
         {
           speaker: "Emma",
-          line: text(["Is there a TV in the living room?"]),
+          line: ["Is there a TV in the living room?"],
         },
         {
           speaker: "Jake",
-          line: text(["Yes, there is a TV and a sofa."]),
+          line: ["Yes, there is a TV and a sofa."],
         },
       ],
     },
@@ -340,22 +340,22 @@ export const beginnerMyHouse = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Choose a room, but do not tell your partner its name.",
-          ]),
+          ],
         },
 
         {
-          content: text([
+          content: [
             "Prepare three sentences with there is/there are, furniture, and a location phrase.",
-          ]),
+          ],
           textarea: true,
         },
 
         {
-          content: text([
+          content: [
             "Describe the room. Your partner listens and identifies it.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

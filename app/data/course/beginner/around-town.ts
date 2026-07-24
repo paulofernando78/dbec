@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, audio, bold } from "@/helpers/content";
 
 export const beginnerAroundTown = {
   whiteboard: {
@@ -91,27 +91,27 @@ export const beginnerAroundTown = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["Excuse me. Where is the bank?"]),
+          line: ["Excuse me. Where is the bank?"],
         },
         {
           speaker: "Jake",
-          line: text(["It's next to the supermarket."]),
+          line: ["It's next to the supermarket."],
         },
         {
           speaker: "Emma",
-          line: text(["And where is the park?"]),
+          line: ["And where is the park?"],
         },
         {
           speaker: "Jake",
-          line: text(["It's across from the school."]),
+          line: ["It's across from the school."],
         },
         {
           speaker: "Emma",
-          line: text(["Thank you."]),
+          line: ["Thank you."],
         },
         {
           speaker: "Jake",
-          line: text(["You're welcome."]),
+          line: ["You're welcome."],
         },
       ],
     },
@@ -336,15 +336,15 @@ export const beginnerAroundTown = {
       type: "checkbox",
       items: [
         {
-          content: text(["Choose three familiar places on the map."]),
+          content: ["Choose three familiar places on the map."],
         },
         {
-          content: text(["Ask and answer three questions using “Where is…?”"]),
+          content: ["Ask and answer three questions using “Where is…?”"],
         },
         {
-          content: text([
+          content: [
             "Locate each place using next to, opposite, or near. Do not give multi-step directions.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

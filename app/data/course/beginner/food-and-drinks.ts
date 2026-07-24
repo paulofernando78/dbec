@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, audio, bold } from "@/helpers/content";
 
 export const beginnerFoodAndDrinks = {
   whiteboard: {
@@ -88,43 +88,43 @@ export const beginnerFoodAndDrinks = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["Do you like pizza?"]),
+          line: ["Do you like pizza?"],
         },
         {
           speaker: "Jake",
-          line: text(["Yes, I do. I love pizza."]),
+          line: ["Yes, I do. I love pizza."],
         },
         {
           speaker: "Emma",
-          line: text(["Do you like coffee?"]),
+          line: ["Do you like coffee?"],
         },
         {
           speaker: "Jake",
-          line: text(["No, I don't."]),
+          line: ["No, I don't."],
         },
         {
           speaker: "Emma",
-          line: text(["What do you like to drink?"]),
+          line: ["What do you like to drink?"],
         },
         {
           speaker: "Jake",
-          line: text(["I like orange juice and water."]),
+          line: ["I like orange juice and water."],
         },
         {
           speaker: "Server",
-          line: text(["Hello. Can I help you?"]),
+          line: ["Hello. Can I help you?"],
         },
         {
           speaker: "Jake",
-          line: text(["Can I have an orange juice, please?"]),
+          line: ["Can I have an orange juice, please?"],
         },
         {
           speaker: "Server",
-          line: text(["Here you are."]),
+          line: ["Here you are."],
         },
         {
           speaker: "Jake",
-          line: text(["Thank you."]),
+          line: ["Thank you."],
         },
       ],
     },
@@ -359,20 +359,20 @@ export const beginnerFoodAndDrinks = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Ask a partner two “Do you like…?” questions and record the answers.",
-          ]),
+          ],
           textarea: true,
         },
         {
-          content: text([
+          content: [
             "Report two preferences using “likes” or “doesn’t like”.",
-          ]),
+          ],
         },
         {
-          content: text([
+          content: [
             "Role-play a short café exchange: order one item, use “please”, and say “thank you”.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

@@ -5,7 +5,6 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import {
   content,
-  text,
   icon,
   audio,
   bold,
@@ -28,7 +27,7 @@ export const lesson = {
   },
 
   lessonCard: {
-    canDo: "...",
+    objective: "...",
     usefulLanguage: "...",
     vocabulary: "...",
     skills: "...",
@@ -36,9 +35,13 @@ export const lesson = {
   },
 
   introduction: {
-    instruction: text(["..."]),
+    instruction: ["..."],
     imgSrc: "/",
     imgAlt: "...",
+    questions: [
+      [audio("/"), "question 1"],
+      [audio("/"), "question 2"],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       matchingContent: [
@@ -115,7 +118,7 @@ export const lesson = {
       lines: [
         {
           speaker: "...",
-          line: text(["..."]),
+          line: ["..."],
         },
       ],
     },
@@ -253,13 +256,13 @@ export const lesson = {
       type: "checkbox",
       items: [
         {
-          content: text(["..."]),
+          content: ["..."],
         },
         {
-          content: text(["..."]),
+          content: ["..."],
         },
         {
-          content: text(["..."]),
+          content: ["..."],
         },
       ],
     } satisfies ListProps,

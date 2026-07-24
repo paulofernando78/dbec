@@ -1,13 +1,13 @@
 import { Line } from "../Line";
 import { Card } from "@/components/ui/Card";
 
-import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 import { ClipboardList } from "lucide-react";
 
 export type ICQ = {
   as?: "p" | "span";
-  parts: InlineRichContentValue[];
+  parts: RichContent;
 };
 
 type ICQProps = {

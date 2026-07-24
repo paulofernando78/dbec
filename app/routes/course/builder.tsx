@@ -9,6 +9,7 @@ import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
 import { Line } from "@/components/content/Line";
+import { Lines } from "@/components/content/Lines";
 import { Image } from "@/components/ui/Image";
 import { Carousel } from "@/components/ui/Carousel";
 import { Meaning } from "@/components/content/Meaning";
@@ -96,6 +97,9 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
               src={lesson.introduction.imgSrc}
               alt={lesson.introduction.imgAlt}
             />
+            {lesson.introduction.questions &&
+            <Lines value={lesson.introduction.questions} className="mb-4"/>
+            }
             {lesson.introduction?.vocabularyCarousel && (
               <Carousel
                 aspectRatio="square"
@@ -159,7 +163,7 @@ export default function Lesson() {
       : undefined;
   const lessonCard = courseLessonCard
     ? {
-        canDo: courseLessonCard.canDo,
+        objective: courseLessonCard.objective,
         usefulLanguage: courseLessonCard.usefulLanguage,
         vocabulary: courseLessonCard.vocabulary,
         skills: courseLessonCard.skills,

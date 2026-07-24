@@ -1,14 +1,14 @@
 import { Line } from "../Line";
 import { Card } from "@/components/ui/Card";
 
-import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 import { CircleQuestionMark } from "lucide-react";
 
 export type CCQ = {
   display?: "block" | "inline";
   as?: "p" | "span";
-  parts: InlineRichContentValue[];
+  parts: RichContent;
 };
 
 export type CCQProps = {

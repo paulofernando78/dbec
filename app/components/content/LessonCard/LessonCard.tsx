@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export type LessonCardContent = {
-  canDo: string;
+  objective: string;
   usefulLanguage?: string;
   vocabulary?: string;
   skills?: string;
@@ -41,7 +41,7 @@ export const LessonCard = ({
   href,
   index = 0,
   label,
-  canDo,
+  objective,
   usefulLanguage,
   vocabulary,
   skills,
@@ -100,7 +100,7 @@ export const LessonCard = ({
             shrink-0"
           />
           <span>
-            <b>Can do:</b> {canDo}
+            <b>Objective:</b> {objective}
           </span>
         </p>
         <div className="mb-[.1rem]">

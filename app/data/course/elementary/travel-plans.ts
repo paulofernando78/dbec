@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, audio, bold } from "@/helpers/content";
 
 export const elementaryTravelPlans = {
   whiteboard: {
@@ -105,37 +105,37 @@ export const elementaryTravelPlans = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["Are you going to travel next month?"]),
+          line: ["Are you going to travel next month?"],
         },
         {
           speaker: "Jake",
-          line: text(["Yes, I am. I'm going to visit Recife with my family."]),
+          line: ["Yes, I am. I'm going to visit Recife with my family."],
         },
         {
           speaker: "Emma",
-          line: text(["That sounds great. Where are you going to stay?"]),
+          line: ["That sounds great. Where are you going to stay?"],
         },
         {
           speaker: "Jake",
-          line: text(["We're going to stay in a hotel near the beach."]),
+          line: ["We're going to stay in a hotel near the beach."],
         },
         {
           speaker: "Emma",
-          line: text(["What are you going to do there?"]),
+          line: ["What are you going to do there?"],
         },
         {
           speaker: "Jake",
-          line: text([
+          line: [
             "We're going to swim, visit a museum, and try local food.",
-          ]),
+          ],
         },
         {
           speaker: "Emma",
-          line: text(["Are you going to take many pictures?"]),
+          line: ["Are you going to take many pictures?"],
         },
         {
           speaker: "Jake",
-          line: text(["Of course. I'm going to take pictures every day."]),
+          line: ["Of course. I'm going to take pictures every day."],
         },
       ],
     },
@@ -414,15 +414,15 @@ export const elementaryTravelPlans = {
       type: "checkbox",
       items: [
         {
-          content: text(["Plan a short trip for next weekend."]),
+          content: ["Plan a short trip for next weekend."],
           textarea: true,
         },
         {
-          content: text(["Write four sentences with going to."]),
+          content: ["Write four sentences with going to."],
           textarea: true,
         },
         {
-          content: text(["Ask your partner about their travel plans."]),
+          content: ["Ask your partner about their travel plans."],
         },
       ],
     } satisfies ListProps,

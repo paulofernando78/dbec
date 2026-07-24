@@ -6,8 +6,8 @@ import { Image } from "@/components/ui/Image";
 
 import {
   InlineRichContent,
-  type InlineRichContentValue,
 } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 import { useState, useRef, useEffect } from "react";
 
@@ -21,7 +21,7 @@ type CarouselWord = {
   dictionary?: string;
   word?: string;
   img?: number;
-  content?: InlineRichContentValue[];
+  content?: RichContent;
 };
 
 type ResolvedWord = {

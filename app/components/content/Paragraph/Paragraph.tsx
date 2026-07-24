@@ -1,8 +1,8 @@
 import { InlineRichContent } from "@/components/content/InlineRichContent";
-import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 type ParagraphProps = {
-  value?: InlineRichContentValue[];
+  value?: RichContent;
 };
 
 export const Paragraph = ({ value = [] }: ParagraphProps) => {

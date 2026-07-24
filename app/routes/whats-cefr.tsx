@@ -8,7 +8,7 @@ import { List } from "@/components/content/List";
 import { content, portuguese } from "@/helpers/content";
 
 import type { ListProps } from "@/components/content/List";
-import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 const sections: SectionData[] = [
   // What’s CEFR?
@@ -546,8 +546,8 @@ type SectionData = {
   id: string;
   label?: string;
   heading: 1 | 2 | 3 | 4 | 5 | 6;
-  paragraphs: InlineRichContentValue[][];
-  lines?: InlineRichContentValue[][];
+  paragraphs: RichContent[];
+  lines?: RichContent[];
   questions?: ListProps;
 };
 

@@ -1,12 +1,10 @@
 import { Checkbox } from "@/components/ui/Checkbox";
-import {
-  InlineRichContent,
-  type InlineRichContentValue,
-} from "@/components/content/InlineRichContent";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 import { useState } from "react";
 
 type ListItem = {
-  content: InlineRichContentValue[];
+  content: RichContent;
   textarea?: boolean;
 };
 

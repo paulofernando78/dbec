@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold, mark } from "@/helpers/content";
+import { content, audio, bold, mark } from "@/helpers/content";
 
 export const beginnerWhatAreYouDoing = {
   whiteboard: {
@@ -81,27 +81,27 @@ export const beginnerWhatAreYouDoing = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["Hi Jake. What are you doing?"]),
+          line: ["Hi Jake. What are you doing?"],
         },
         {
           speaker: "Jake",
-          line: text(["I'm studying English."]),
+          line: ["I'm studying English."],
         },
         {
           speaker: "Emma",
-          line: text(["Are you doing homework too?"]),
+          line: ["Are you doing homework too?"],
         },
         {
           speaker: "Jake",
-          line: text(["No, I'm reading an article."]),
+          line: ["No, I'm reading an article."],
         },
         {
           speaker: "Emma",
-          line: text(["What is your brother doing?"]),
+          line: ["What is your brother doing?"],
         },
         {
           speaker: "Jake",
-          line: text(["He's watching TV."]),
+          line: ["He's watching TV."],
         },
       ],
     },
@@ -342,19 +342,19 @@ export const beginnerWhatAreYouDoing = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Choose a picture without showing or naming it to your partner.",
-          ]),
+          ],
         },
         {
-          content: text([
+          content: [
             "Describe at least three actions using am/is/are + verb-ing.",
-          ]),
+          ],
         },
         {
-          content: text([
+          content: [
             "Your partner listens and identifies the picture. Then change roles.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

@@ -3,7 +3,7 @@ import type { ListProps } from "@/components/content/List";
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
 
-import { audio, content, text, bold, spacer } from "@/helpers/content";
+import { audio, content, bold, spacer } from "@/helpers/content";
 
 export const beginnerPersonalInformation = {
   whiteboard: {
@@ -44,43 +44,43 @@ export const beginnerPersonalInformation = {
       lines: [
         {
           speaker: "Liz",
-          line: text(["Hi! What's your full name?"]),
+          line: ["Hi! What's your full name?"],
         },
         {
           speaker: "Laura",
-          line: text(["I'm Laura Silva."]),
+          line: ["I'm Laura Silva."],
         },
         {
           speaker: "Liz",
-          line: text(["What's your first name?"]),
+          line: ["What's your first name?"],
         },
         {
           speaker: "Laura",
-          line: text(["Laura."]),
+          line: ["Laura."],
         },
         {
           speaker: "Liz",
-          line: text(["What's your last name? How do you spell it?"]),
+          line: ["What's your last name? How do you spell it?"],
         },
         {
           speaker: "Laura",
-          line: text(["Silva. S-I-L-V-A."]),
+          line: ["Silva. S-I-L-V-A."],
         },
         {
           speaker: "Liz",
-          line: text(["Where are you from?"]),
+          line: ["Where are you from?"],
         },
         {
           speaker: "Laura",
-          line: text(["I'm from Brazil. I'm Brazilian."]),
+          line: ["I'm from Brazil. I'm Brazilian."],
         },
         {
           speaker: "Liz",
-          line: text(["What's your phone number?"]),
+          line: ["What's your phone number?"],
         },
         {
           speaker: "Laura",
-          line: text(["It's 555-0184."]),
+          line: ["It's 555-0184."],
         },
       ],
     },
@@ -114,7 +114,7 @@ export const beginnerPersonalInformation = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-full-name.mp3",
+            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-full-name.mp3",
           ),
           bold("What's your full name?"),
           " Laura Palmer.",
@@ -125,7 +125,7 @@ export const beginnerPersonalInformation = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-first-name.mp3",
+            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-first-name.mp3",
           ),
           bold("What's your first name?"),
           " Laura.",
@@ -136,7 +136,7 @@ export const beginnerPersonalInformation = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-last-name.mp3",
+            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-last-name.mp3",
           ),
           bold("What's your last name?"),
           " Palmer.",
@@ -147,7 +147,7 @@ export const beginnerPersonalInformation = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-your-last-name.mp3",
+            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-your-last-name.mp3",
           ),
           bold("How do you spell your last name?"),
           "P-A-L-M-E-R.",
@@ -302,7 +302,9 @@ export const beginnerPersonalInformation = {
         },
         {
           content: content({
-            parts: ["Introduce your partner to another student."],
+            parts: [
+              "Check that the registration form includes all the required details.",
+            ],
           }),
         },
       ],

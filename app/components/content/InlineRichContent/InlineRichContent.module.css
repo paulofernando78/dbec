@@ -6,13 +6,13 @@
 .flagIcon {
   width: 20px;
   height: 19px;
-  transform: translateY(3px);
+  transform: translateY(4px);
   margin-right: 7px;
 }
 
 .iconPosition {
-  transform: translate(-2px, 3px);
-  margin-right: 2px;
+  transform: translateY(4px);
+  margin-inline: 2px;
 }
 
 .iconPositionAudio {

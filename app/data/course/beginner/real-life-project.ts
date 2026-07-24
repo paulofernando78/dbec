@@ -3,7 +3,7 @@ import type { ListProps } from "@/components/content/List";
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
 
-import { content, text, bold } from "@/helpers/content";
+import { content, bold } from "@/helpers/content";
 
 export const beginnerRealLifeProject = {
   whiteboard: {
@@ -46,27 +46,27 @@ export const beginnerRealLifeProject = {
       lines: [
         {
           speaker: "Laura",
-          line: text(["Hi, Liz. Are you free on Saturday?"]),
+          line: ["Hi, Liz. Are you free on Saturday?"],
         },
         {
           speaker: "Liz",
-          line: text(["Yes, I am. I usually relax on Saturday."]),
+          line: ["Yes, I am. I usually relax on Saturday."],
         },
         {
           speaker: "Laura",
-          line: text(["Let's meet at the park. I like soccer. Can you play?"]),
+          line: ["Let's meet at the park. I like soccer. Can you play?"],
         },
         {
           speaker: "Liz",
-          line: text(["Yes, I can. What time?"]),
+          line: ["Yes, I can. What time?"],
         },
         {
           speaker: "Laura",
-          line: text(["Let's meet at ten o'clock, next to the café."]),
+          line: ["Let's meet at ten o'clock, next to the café."],
         },
         {
           speaker: "Liz",
-          line: text(["Great! See you on Saturday."]),
+          line: ["Great! See you on Saturday."],
         },
       ],
     },

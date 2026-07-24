@@ -11,6 +11,22 @@ type AudioProps = {
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
 let currentUtterance: SpeechSynthesisUtterance | null = null;
+let currentUtteranceReset: (() => void) | null = null;
+let speechRequestId = 0;
+
+const stopCurrentSpeech = () => {
+  speechRequestId += 1;
+
+  if (currentUtterance) {
+    window.speechSynthesis.cancel();
+  }
+
+  currentUtterance = null;
+
+  const resetPreviousAudio = currentUtteranceReset;
+  currentUtteranceReset = null;
+  resetPreviousAudio?.();
+};
 
 const selectBestVoice = (voices: SpeechSynthesisVoice[]) => {
   const findVoice = (term: string) =>
@@ -61,6 +77,7 @@ const waitForVoices = () =>
 
 export const Audio = ({ src, className }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -70,7 +87,15 @@ export const Audio = ({ src, className }: AudioProps) => {
     e.stopPropagation();
 
     if (!isAudioFile) {
-      window.speechSynthesis.cancel();
+      stopCurrentSpeech();
+
+      if (currentGlobalAudio) {
+        currentGlobalAudio.pause();
+        currentGlobalAudio.currentTime = 0;
+        currentGlobalAudio = null;
+      }
+
+      const requestId = speechRequestId;
 
       const utterance = new SpeechSynthesisUtterance(src);
       utterance.lang = "en-US";
@@ -79,18 +104,34 @@ export const Audio = ({ src, className }: AudioProps) => {
       utterance.volume = 1;
 
       const voices = await waitForVoices();
+
+      if (requestId !== speechRequestId) return;
+
       const voice = selectBestVoice(voices);
 
       if (voice) {
         utterance.voice = voice;
       }
 
-      utterance.onend = () => {
+      const handleSpeechEnd = () => {
+        if (currentUtterance !== utterance) return;
+
         currentUtterance = null;
+        currentUtteranceReset = null;
+        utteranceRef.current = null;
         setPlaying(false);
       };
 
+      utterance.onend = handleSpeechEnd;
+      utterance.onerror = handleSpeechEnd;
+
       currentUtterance = utterance;
+      utteranceRef.current = utterance;
+      currentUtteranceReset = () => {
+        utteranceRef.current = null;
+        setLoading(false);
+        setPlaying(false);
+      };
       setPlaying(true);
       window.speechSynthesis.speak(utterance);
       return;
@@ -99,6 +140,8 @@ export const Audio = ({ src, className }: AudioProps) => {
     // grab audio
     const el = audioRef.current;
     if (!el) return;
+
+    stopCurrentSpeech();
 
     // Is there another audio being played?
     if (currentGlobalAudio && currentGlobalAudio !== el) {
@@ -125,10 +168,9 @@ export const Audio = ({ src, className }: AudioProps) => {
   const handleStop = (e: React.MouseEvent<SVGElement>) => {
     e.stopPropagation();
     setLoading(false);
-    if (currentUtterance) {
-      window.speechSynthesis.cancel();
-      currentUtterance = null;
-      setPlaying(false);
+
+    if (utteranceRef.current) {
+      stopCurrentSpeech();
       return;
     }
 

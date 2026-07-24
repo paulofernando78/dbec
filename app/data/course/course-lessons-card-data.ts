@@ -10,7 +10,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/hello",
       label: "Hello!",
-      canDo:
+      objective:
         "Greet someone, exchange first names, and end a short first meeting.",
       usefulLanguage:
         "Hi! / Hello!; I’m…; What’s your name?; Nice to meet you.; Sorry?; Please repeat.; Bye!",
@@ -28,7 +28,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/personal-information",
       label: "Personal Information",
-      canDo:
+      objective:
         "Ask for and give a full name, nationality, spelling, and simple contact details.",
       usefulLanguage:
         "What’s your full name?; How do you spell it?; Where are you from?; What’s your email address?",
@@ -37,17 +37,17 @@ export const courseLessonsCardData = {
       recycles: "Greetings, first names, and goodbyes",
       pronunciation: "English letter names and clear groups of phone numbers",
       finalTask:
-        "Interview a partner, complete a fictional registration form, and introduce them.",
+        "Interview a partner and complete a fictional registration form.",
       successCriteria: [
         "Ask for a full name, country, and one fictional contact detail.",
         "Spell and record a name accurately.",
-        "Introduce the partner using two simple sentences.",
+        "Complete the registration form with the required details.",
       ],
     },
     {
       href: "/courses/beginner/my-family",
       label: "My Family",
-      canDo: "Introduce family members and say how they are related.",
+      objective: "Introduce family members and say how they are related.",
       usefulLanguage:
         "This is my…; Who’s she/he?; She’s my…; His/Her name is…; Laura’s brother",
       vocabulary: "Family members",
@@ -67,7 +67,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/my-house",
       label: "My House",
-      canDo: "Describe the main rooms and say what furniture is in them.",
+      objective: "Describe the main rooms and say what furniture is in them.",
       usefulLanguage: "There is a…; There are two…; Is there a…?; It’s in the…",
       vocabulary: "Rooms, furniture, basic prepositions of place",
       skills:
@@ -85,7 +85,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/daily-routine",
       label: "Daily Routine",
-      canDo:
+      objective:
         "Describe a simple weekday routine and say what time things happen.",
       usefulLanguage: "I get up at…; What time do you…?; I start work at…",
       vocabulary: "Daily activities, clock times",
@@ -104,7 +104,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/my-week",
       label: "My Week",
-      canDo: "Talk about weekly habits and say how often activities happen.",
+      objective: "Talk about weekly habits and say how often activities happen.",
       usefulLanguage: "I usually…; I never…; On Mondays…; How often do you…?",
       vocabulary: "Days, months, free-time activities",
       skills:
@@ -121,7 +121,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/food-and-drinks",
       label: "Food and Drinks",
-      canDo: "Ask about food and drink preferences and order one basic item.",
+      objective: "Ask about food and drink preferences and order one basic item.",
       usefulLanguage:
         "I like…; I don’t like…; Do you like…?; Can I have…, please?; Here you are.; Thank you.",
       vocabulary: "Everyday food and drinks",
@@ -141,10 +141,10 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/shopping",
       label: "Shopping",
-      canDo:
+      objective:
         "Ask about a clothing item, its price, and which item someone means.",
       usefulLanguage:
-        "How much is this?; How much are these?; I’d like…; That one, please.",
+        "How much is this?; How much are these?; Can I have that…, please?; Here you are.",
       vocabulary: "Clothes, colors, prices",
       skills: "Listening and transactional speaking",
       recycles: "Numbers, colors, and polite requests",
@@ -159,14 +159,14 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/around-town",
       label: "Around Town",
-      canDo: "Ask where a familiar place is and give its basic location.",
+      objective: "Ask where a familiar place is and give its basic location.",
       usefulLanguage:
-        "Where’s the…?; It’s next to…; It’s opposite…; Is there a… near here?",
+        "Where is the…?; It’s next to…; It’s across from…; It’s between…",
       vocabulary: "Places in town, location phrases",
       skills:
         "Reading a simple map, listening for locations, and spoken interaction",
-      recycles: "There is/there are and prepositions of place",
-      pronunciation: "Where’s…? and Is there…? as question chunks",
+      recycles: "The verb be in questions and familiar place vocabulary",
+      pronunciation: "Where is…?/Where’s…? and stress in location phrases",
       finalTask: "Use a simple map to ask for and give three locations.",
       successCriteria: [
         "Ask where three familiar places are.",
@@ -177,7 +177,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/what-are-you-doing",
       label: "What Are You Doing?",
-      canDo: "Ask and say what people are doing now.",
+      objective: "Ask and say what people are doing now.",
       usefulLanguage:
         "What are you doing?; I’m cooking.; What’s she doing?; She’s reading.",
       vocabulary: "Common actions and activities",
@@ -195,7 +195,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/abilities",
       label: "Abilities",
-      canDo: "Ask and say what someone can and cannot do.",
+      objective: "Ask and say what someone can and cannot do.",
       usefulLanguage: "I can…; I can’t…; Can you…?; Yes, I can. / No, I can’t.",
       vocabulary: "Skills, sports, everyday abilities",
       skills:
@@ -214,7 +214,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/real-life-project",
       label: "Real-Life Project",
-      canDo:
+      objective:
         "Introduce yourself, exchange familiar information, and agree on a simple social plan from prepared options.",
       usefulLanguage:
         "I’m…; I’m from…; I like…; Can you…?; Saturday or Sunday?; Let’s meet at…; Please repeat.",
@@ -238,7 +238,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/past-beach",
       label: "Past: Beach",
-      canDo: "Describe a past day at the beach and ask what happened.",
+      objective: "Describe a past day at the beach and ask what happened.",
       usefulLanguage: "We went…; I swam…; Did you…?; What did you do?",
       vocabulary: "Beach activities, weather, seaside places",
       skills: "Listening and spoken interaction",
@@ -247,7 +247,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/past-movies",
       label: "Past: Movies",
-      canDo: "Talk about a recent movie outing and ask follow-up questions.",
+      objective: "Talk about a recent movie outing and ask follow-up questions.",
       usefulLanguage: "I saw…; Did you like it?; What happened?; It was…",
       vocabulary: "Movies, cinemas, weekend activities",
       skills: "Listening and spoken interaction",
@@ -256,7 +256,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/past-family",
       label: "Past: Family",
-      canDo: "Describe a past family event and sequence its main activities.",
+      objective: "Describe a past family event and sequence its main activities.",
       usefulLanguage: "We visited…; First…; Then…; After that…; Did everyone…?",
       vocabulary: "Family activities, celebrations, special occasions",
       skills: "Listening and spoken narrative",
@@ -266,7 +266,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/past-home",
       label: "Past: Home",
-      canDo: "Describe what you did at home during a past day or weekend.",
+      objective: "Describe what you did at home during a past day or weekend.",
       usefulLanguage: "I stayed home.; I cleaned…; I didn’t…; What did you do?",
       vocabulary: "Household chores, home and free-time activities",
       skills: "Listening and spoken interaction",
@@ -275,7 +275,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/travel-plans",
       label: "Travel Plans",
-      canDo: "Describe a simple travel plan and ask about future intentions.",
+      objective: "Describe a simple travel plan and ask about future intentions.",
       usefulLanguage:
         "I’m going to…; Where are you going to stay?; We’re going to visit…",
       vocabulary: "Transport, accommodation, destinations, activities",
@@ -285,7 +285,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/future-predictions",
       label: "Future Predictions",
-      canDo: "Make and explain simple predictions about everyday future life.",
+      objective: "Make and explain simple predictions about everyday future life.",
       usefulLanguage:
         "I think… will…; Maybe…; I don’t think… will…; What do you think?",
       vocabulary: "Technology, work, transport, future life",
@@ -295,7 +295,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/city-life",
       label: "City Life",
-      canDo: "Compare two places and explain which one better meets a need.",
+      objective: "Compare two places and explain which one better meets a need.",
       usefulLanguage:
         "It’s bigger than…; It’s more convenient…; I prefer… because…",
       vocabulary: "City features, transport, services, adjectives",
@@ -305,7 +305,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/the-best-place",
       label: "The Best Place",
-      canDo: "Compare several destinations and justify a simple preference.",
+      objective: "Compare several destinations and justify a simple preference.",
       usefulLanguage:
         "It’s the cheapest…; It has the best…; I’d choose… because…",
       vocabulary: "Travel destinations, attractions, descriptive adjectives",
@@ -315,7 +315,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/healthy-living",
       label: "Healthy Living",
-      canDo: "Describe a health problem and give simple lifestyle advice.",
+      objective: "Describe a health problem and give simple lifestyle advice.",
       usefulLanguage: "You should…; You shouldn’t…; I feel…; Why don’t you…?",
       vocabulary: "Health problems, habits, food, exercise",
       skills: "Listening and spoken interaction",
@@ -324,7 +324,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/rules",
       label: "Rules",
-      canDo:
+      objective:
         "Explain familiar rules, obligations, and things that are not allowed.",
       usefulLanguage: "You have to…; You must…; You mustn’t…; Do we have to…?",
       vocabulary: "Public places, school and workplace rules",
@@ -334,7 +334,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/shopping-smart",
       label: "Shopping Smart",
-      canDo:
+      objective:
         "Ask about quantities and choose products for a simple shopping list.",
       usefulLanguage: "How much…?; How many…?; Do we have any…?; We need some…",
       vocabulary: "Food products, containers, quantities, prices",
@@ -345,7 +345,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/experiences",
       label: "Experiences",
-      canDo: "Ask about life experiences and give a simple relevant detail.",
+      objective: "Ask about life experiences and give a simple relevant detail.",
       usefulLanguage:
         "Have you ever…?; Yes, I have. / No, I haven’t.; When did you…?",
       vocabulary: "Travel, achievements, unusual experiences",
@@ -355,7 +355,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/hobbies",
       label: "Hobbies",
-      canDo: "Describe hobbies, preferences, and an activity you want to try.",
+      objective: "Describe hobbies, preferences, and an activity you want to try.",
       usefulLanguage:
         "I enjoy…; I’m interested in…; I’d like to…; How often do you…?",
       vocabulary: "Hobbies, equipment, frequency",
@@ -367,7 +367,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/life-experiences",
       label: "Life Experiences",
-      canDo:
+      objective:
         "Discuss experiences and add specific details about when they happened.",
       usefulLanguage:
         "Have you ever…?; I’ve…; I did it when…; How long have you…?",
@@ -378,7 +378,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/storytelling",
       label: "Storytelling",
-      canDo:
+      objective:
         "Tell a clear story by setting the scene and sequencing key events.",
       usefulLanguage: "I was… when…; While…; Suddenly…; In the end…",
       vocabulary: "Narrative events, reactions, sequencing expressions",
@@ -388,7 +388,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/making-plans",
       label: "Making Plans",
-      canDo:
+      objective:
         "Discuss intentions, make arrangements, and agree on a shared plan.",
       usefulLanguage:
         "I’m planning to…; I’m meeting…; How about…?; That works for me.",
@@ -399,7 +399,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/what-if",
       label: "What If?",
-      canDo: "Discuss likely future situations and explain their consequences.",
+      objective: "Discuss likely future situations and explain their consequences.",
       usefulLanguage:
         "If…, I’ll…; Unless…; What will happen if…?; It depends on…",
       vocabulary: "Choices, consequences, risk, decisions",
@@ -410,7 +410,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/green-planet",
       label: "Green Planet",
-      canDo:
+      objective:
         "Explain environmental cause-and-effect and propose practical action.",
       usefulLanguage: "If people…, it…; When…, …; We could…; One solution is…",
       vocabulary: "Climate, waste, energy, conservation",
@@ -420,7 +420,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/technology-today",
       label: "Technology Today",
-      canDo: "Describe a technology clearly and explain what it is used for.",
+      objective: "Describe a technology clearly and explain what it is used for.",
       usefulLanguage:
         "It’s a device that…; It’s used for…; The person who…; What I like is…",
       vocabulary: "Devices, apps, features, digital habits",
@@ -430,7 +430,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/news-report",
       label: "News Report",
-      canDo:
+      objective:
         "Summarize a news event and distinguish confirmed facts from details.",
       usefulLanguage:
         "It was reported that…; … was affected by…; According to…",
@@ -441,7 +441,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/what-did-they-say",
       label: "What Did They Say?",
-      canDo: "Relay the main points of a conversation accurately.",
+      objective: "Relay the main points of a conversation accurately.",
       usefulLanguage:
         "She said that…; He told me…; They asked whether…; Apparently…",
       vocabulary: "Communication, messages, reporting verbs",
@@ -451,7 +451,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/career-path",
       label: "Career Path",
-      canDo: "Discuss workplace expectations and give career advice.",
+      objective: "Discuss workplace expectations and give career advice.",
       usefulLanguage:
         "You should…; You might…; You have to…; You don’t need to…",
       vocabulary: "Jobs, skills, responsibilities, qualifications",
@@ -462,7 +462,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/relationships",
       label: "Relationships",
-      canDo: "Discuss relationship situations and give tactful advice.",
+      objective: "Discuss relationship situations and give tactful advice.",
       usefulLanguage:
         "We get along…; They fell out…; You could…; If I were you…",
       vocabulary: "Relationships, feelings, common phrasal verbs",
@@ -475,7 +475,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/dream-scenarios",
       label: "Dream Scenarios",
-      canDo: "Explore hypothetical choices and evaluate possible consequences.",
+      objective: "Explore hypothetical choices and evaluate possible consequences.",
       usefulLanguage:
         "If I were…, I’d…; Suppose…; I’d be more likely to…; On balance…",
       vocabulary: "Dreams, ambitions, priorities, life choices",
@@ -485,7 +485,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/regrets",
       label: "Regrets",
-      canDo: "Reflect on a past decision and evaluate alternative outcomes.",
+      objective: "Reflect on a past decision and evaluate alternative outcomes.",
       usefulLanguage: "If I had…, I would have…; I wish I’d…; In hindsight…",
       vocabulary: "Decisions, consequences, emotions, reflection",
       skills: "Reading and extended spoken interaction",
@@ -494,7 +494,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/business-communication",
       label: "Business Communication",
-      canDo:
+      objective:
         "Communicate degrees of certainty, obligation, and recommendation professionally.",
       usefulLanguage:
         "We may need to…; You’re expected to…; I’d strongly recommend…; It must be…",
@@ -505,7 +505,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/leadership",
       label: "Leadership",
-      canDo:
+      objective:
         "Delegate work, arrange services, and explain management decisions.",
       usefulLanguage:
         "I’ll have… done.; We need to get…; Could you take responsibility for…?",
@@ -516,7 +516,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/innovation",
       label: "Innovation",
-      canDo:
+      objective:
         "Discuss innovation and project what will have changed by a future date.",
       usefulLanguage:
         "By 2035, … will have…; It is likely to…; One breakthrough could…",
@@ -528,7 +528,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/global-issues",
       label: "Global Issues",
-      canDo:
+      objective:
         "Explain a global issue objectively and compare possible responses.",
       usefulLanguage:
         "It is widely believed…; … has been affected by…; One measure would be…",
@@ -539,7 +539,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/debate-club",
       label: "Debate Club",
-      canDo:
+      objective:
         "Build a reasoned argument and respond constructively to opposition.",
       usefulLanguage:
         "To begin with…; That said…; I take your point, but…; Therefore…",
@@ -551,7 +551,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/media-and-marketing",
       label: "Media and Marketing",
-      canDo: "Evaluate a campaign and explain how it targets an audience.",
+      objective: "Evaluate a campaign and explain how it targets an audience.",
       usefulLanguage:
         "The audience it targets…; What makes it effective is…; Whereas…",
       vocabulary: "Campaigns, branding, audiences, persuasion",
@@ -561,7 +561,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/native-like-english",
       label: "Idiomatic English in Context",
-      canDo:
+      objective:
         "Infer and use a small set of common idiomatic expressions appropriately.",
       usefulLanguage:
         "From the context, it seems to mean…; A natural way to say this is…",
@@ -573,7 +573,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/natural-english",
       label: "Natural English",
-      canDo:
+      objective:
         "Use common collocations and phrasal verbs to speak more precisely.",
       usefulLanguage:
         "It largely depends on…; I ended up…; We need to take into account…",
@@ -587,7 +587,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/reading-between-the-lines",
       label: "Reading Between the Lines",
-      canDo:
+      objective:
         "Infer stance and implied meaning, then justify an interpretation with linguistic evidence.",
       usefulLanguage:
         "This appears to imply…; The hedging suggests…; The choice of… indicates…",
@@ -598,7 +598,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/synthesizing-sources",
       label: "Synthesizing Sources",
-      canDo:
+      objective:
         "Integrate complementary and conflicting information into a coherent neutral synthesis.",
       usefulLanguage:
         "While both sources acknowledge…; X maintains…, whereas Y…; Taken together…",
@@ -609,7 +609,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/building-complex-arguments",
       label: "Building Complex Arguments",
-      canDo:
+      objective:
         "Develop a nuanced argument, address a counterargument, and defend a conclusion.",
       usefulLanguage:
         "Admittedly…; This objection overlooks…; A more compelling interpretation is…",
@@ -620,7 +620,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/diplomatic-communication",
       label: "Diplomatic Communication",
-      canDo:
+      objective:
         "Communicate disagreement or sensitive feedback clearly while preserving rapport.",
       usefulLanguage:
         "I wonder whether…; There may be some scope to…; I see your point; however…",
@@ -631,7 +631,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/academic-presentations",
       label: "Academic Presentations",
-      canDo:
+      objective:
         "Deliver a coherent presentation on a complex topic and handle follow-up questions.",
       usefulLanguage:
         "I’ll begin by…; This brings us to…; The key implication is…; To sum up…",
@@ -643,7 +643,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/mediation-and-clarification",
       label: "Mediation and Clarification",
-      canDo:
+      objective:
         "Reformulate complex information for a non-specialist and repair misunderstanding.",
       usefulLanguage:
         "In other words…; What this means in practice is…; Let me clarify…",
@@ -655,7 +655,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/critical-reviews",
       label: "Critical Reviews",
-      canDo:
+      objective:
         "Evaluate a cultural work against explicit criteria and support a balanced judgment.",
       usefulLanguage:
         "Its principal strength lies in…; Despite…; It ultimately falls short because…",
@@ -667,7 +667,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/negotiation-and-consensus",
       label: "Negotiation and Consensus",
-      canDo:
+      objective:
         "Negotiate competing priorities and formulate a workable consensus.",
       usefulLanguage:
         "We could agree to… provided that…; Would you be open to…?; A viable compromise…",
@@ -679,7 +679,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/precision-and-nuance",
       label: "Precision and Nuance",
-      canDo:
+      objective:
         "Express fine degrees of certainty, attitude, emphasis, and qualification.",
       usefulLanguage:
         "It is highly probable…; To some extent…; Far from…; Arguably…",
@@ -691,7 +691,7 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/research-briefing",
       label: "Research Briefing",
-      canDo:
+      objective:
         "Synthesize evidence, distinguish fact from inference, and justify recommendations.",
       usefulLanguage:
         "The evidence indicates…; This should not be taken to mean…; On balance, we recommend…",

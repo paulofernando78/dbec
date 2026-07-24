@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, audio, bold } from "@/helpers/content";
 
 export const beginnerMyWeek = {
   whiteboard: {
@@ -91,27 +91,27 @@ export const beginnerMyWeek = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["What do you usually do on weekends?"]),
+          line: ["What do you usually do on weekends?"],
         },
         {
           speaker: "Jake",
-          line: text(["I usually play soccer on Saturday."]),
+          line: ["I usually play soccer on Saturday."],
         },
         {
           speaker: "Emma",
-          line: text(["Do you study on Sunday?"]),
+          line: ["Do you study on Sunday?"],
         },
         {
           speaker: "Jake",
-          line: text(["No, I never study on Sunday."]),
+          line: ["No, I never study on Sunday."],
         },
         {
           speaker: "Emma",
-          line: text(["Do you always go to school on Monday?"]),
+          line: ["Do you always go to school on Monday?"],
         },
         {
           speaker: "Jake",
-          line: text(["Yes, I always go to school on Monday."]),
+          line: ["Yes, I always go to school on Monday."],
         },
       ],
     },
@@ -347,20 +347,20 @@ export const beginnerMyWeek = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Add at least four activities to a weekly schedule. Include days and times.",
-          ]),
+          ],
           textarea: true,
         },
         {
-          content: text([
+          content: [
             "Prepare four short sentences and use at least two frequency expressions.",
-          ]),
+          ],
         },
         {
-          content: text([
+          content: [
             "Present your schedule, then exchange schedules and find one activity, day, and time in your partner's plan.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

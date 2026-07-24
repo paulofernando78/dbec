@@ -1,16 +1,12 @@
 import { InlineRichContent } from "@/components/content/InlineRichContent";
-import { Line } from "@/components/content/Line";
-import { Image } from "@/components/ui/Image";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 
-import type { ContentToken } from "@/helpers/content";
+import type { RichContent } from "@/helpers/content";
 
 type DialogueLine = {
   speaker?: string;
-  line: (ContentToken | string)[];
+  line: RichContent;
 };
-
-type DialogueSentence = (ContentToken | string)[];
 
 type DialogueProps = {
   instruction: string;

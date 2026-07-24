@@ -2,7 +2,7 @@ export const authenticContentNewsLessonsCardData = {
   ismalKoneBreaksLeg: {
     href: "/authentic-content/news/a-soccer-match-dramatic-moment",
     label: "A Soccer Match's Dramatic Moment",
-    canDo:
+    objective:
       "Identify a report’s central event and consequences, then justify a position using evidence.",
     usefulLanguage:
       "According to the report…; The incident resulted in…; The evidence suggests…",

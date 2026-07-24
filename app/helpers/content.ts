@@ -20,14 +20,18 @@
 
 export type TokenType =
   | "bold"
+  | "strong"
   | "italic"
   | "stressed"
   | "mark"
   | "attentionMark"
   | "underline"
   | "bold-mark"
+  | "partOfSpeech"
   | "phonetics"
   | "portuguese"
+  | "bold-portuguese"
+  | "portuguese-bold"
   | "connector";
 
 export type ContentToken = {
@@ -40,6 +44,7 @@ export type ContentToken = {
 };
 
 export type ContentValue = string | ContentToken;
+export type RichContent = ContentValue[];
 
 export type BaseTokenProps = {
   icons?: string[];
@@ -191,8 +196,6 @@ export const content = ({
     ...opts,
     bullet: false,
   });
-
-export const text = (parts: ContentValue[] = []): ContentValue[] => parts;
 
 export const attention = ({
   icons = [],

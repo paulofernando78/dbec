@@ -1,12 +1,12 @@
 import { Line } from "../Line";
 
-import type { InlineRichContentValue } from "@/components/content/InlineRichContent";
+import type { RichContent } from "@/helpers/content";
 
 export type Meaning =
   | {
       display?: "block" | "inline";
       as?: "p" | "span";
-      parts: InlineRichContentValue[];
+      parts: RichContent;
     }
   | {
       type: "spacer";

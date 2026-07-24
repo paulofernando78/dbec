@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio } from "@/helpers/content";
+import { content, audio } from "@/helpers/content";
 
 export const elementaryFuturePredictions = {
   whiteboard: {
@@ -100,33 +100,33 @@ export const elementaryFuturePredictions = {
       lines: [
         {
           speaker: "Leo",
-          line: text(["What do you think the world will look like in 2050?"]),
+          line: ["What do you think the world will look like in 2050?"],
         },
         {
           speaker: "Mia",
-          line: text(["I think cars will fly. Look at this picture!"]),
+          line: ["I think cars will fly. Look at this picture!"],
         },
         {
           speaker: "Leo",
-          line: text([
+          line: [
             "Really? I'm not so sure. I think robots will do most of the jobs.",
-          ]),
+          ],
         },
         {
           speaker: "Mia",
-          line: text([
+          line: [
             "Maybe. But if robots do all the jobs, will people have free time?",
-          ]),
+          ],
         },
         {
           speaker: "Leo",
-          line: text([
+          line: [
             "Yes, I think so. If we have more free time, we'll travel more.",
-          ]),
+          ],
         },
         {
           speaker: "Mia",
-          line: text(["That sounds great! I hope it's true."]),
+          line: ["That sounds great! I hope it's true."],
         },
       ],
     },
@@ -363,18 +363,18 @@ export const elementaryFuturePredictions = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Write three predictions about the world in 2050 using 'will'.",
-          ]),
+          ],
           textarea: true,
         },
         {
-          content: text(["Write two predictions about your city in 2050."]),
+          content: ["Write two predictions about your city in 2050."],
         },
         {
-          content: text([
+          content: [
             "Record a 30-second audio talking about how technology will change your daily life.",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

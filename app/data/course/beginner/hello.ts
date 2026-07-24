@@ -5,14 +5,15 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import {
   content,
-  text,
   audio,
   bold,
   italic,
   mark,
   portuguese,
+  underline,
   lineBreak,
   spacer,
+  icon,
 } from "@/helpers/content";
 
 export const beginnerHello = {
@@ -25,9 +26,9 @@ export const beginnerHello = {
   introduction: {
     storyCarousel: {
       instruction: "Look at the pictures. Listen to the sentences.",
-      words: [
+      imgs: [
         {
-          src: "/assets/img/courses/a1/hello/introduction/pic-1.avif",
+          src: "/assets/img/course/a1/hello/introduction/pic-1.avif",
           alt: "Laura introduces herself to Eric",
           content: [
             ...content({
@@ -43,7 +44,7 @@ export const beginnerHello = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/hello/introduction/pic-2.avif",
+          src: "/assets/img/course/a1/hello/introduction/pic-2.avif",
           alt: "Eric introduces himself to Laura",
           content: [
             ...content({
@@ -59,7 +60,7 @@ export const beginnerHello = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/hello/introduction/pic-3.avif",
+          src: "/assets/img/course/a1/hello/introduction/pic-3.avif",
           alt: "Laura replies nice to meet you, too",
           content: [
             ...content({
@@ -73,7 +74,7 @@ export const beginnerHello = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/hello/introduction/pic-4.avif",
+          src: "/assets/img/course/a1/hello/introduction/pic-4.avif",
           alt: "Laura and Eric shake hands",
           content: [
             ...content({
@@ -89,7 +90,7 @@ export const beginnerHello = {
           ],
         },
         {
-          src: "/assets/img/courses/a1/hello/introduction/pic-5.avif",
+          src: "/assets/img/course/a1/hello/introduction/pic-5.avif",
           alt: "Laura waves goodbye",
           content: [
             ...content({
@@ -145,39 +146,39 @@ export const beginnerHello = {
   presentation: {
     dialogue: {
       instruction: "Laura and Eric meet for the first time. Listen and read.",
-      audioSrc: "",
+      audioSrc: "/",
       lines: [
         {
           speaker: "Laura",
-          line: [...text(["Hi! I'm Laura Palmer. What's your name?"])],
+          line: ["Hi! I'm Laura Palmer. What's your name?"],
         },
         {
           speaker: "Eric",
-          line: [...text(["Hello! I'm Eric, Eric "])],
+          line: ["Hello! I'm Eric, Eric "],
         },
         {
           speaker: "Laura",
-          line: [...text(["Sorry? Please repeat."])],
+          line: ["Sorry? Please repeat."],
         },
         {
           speaker: "Eric",
-          line: [...text(["It‘s Eric."])],
+          line: ["It‘s Eric."],
         },
         {
           speaker: "Laura",
-          line: [...text(["Nice to meet you, Eric."])],
+          line: ["Nice to meet you, Eric."],
         },
         {
           speaker: "Eric",
-          line: [...text(["Nice to meet you too."])],
+          line: ["Nice to meet you too."],
         },
         {
           speaker: "Laura",
-          line: [...text(["See you in class!"])],
+          line: ["See you in class!"],
         },
         {
           speaker: "Eric",
-          line: [...text(["Bye!"])],
+          line: ["Bye!"],
         },
       ],
     },
@@ -214,8 +215,13 @@ export const beginnerHello = {
         display: "block",
         as: "span",
         parts: [
-          audio("Good afternoon. / Afternoon."),
-          "Good afternoon. / Afternoon.",
+          audio("Good afternoon. Afternoon."),
+          "Good after",
+          underline("noon"),
+          ".",
+          " After",
+          underline("noon"),
+          ".",
         ],
       },
       {
@@ -229,11 +235,8 @@ export const beginnerHello = {
         display: "block",
         as: "span",
         parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/how-are-you.mp3",
-          ),
-          "How are you?",
-          " ",
+          audio("How are you?"),
+          "How are you? ",
           portuguese("Como você está?"),
         ],
       },
@@ -241,11 +244,8 @@ export const beginnerHello = {
         display: "block",
         as: "span",
         parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/how-are-you-doing.mp3",
-          ),
-          "How are you doing?",
-          " ",
+          audio("How are you doing?"),
+          "How are you doing? ",
           portuguese("Como você vai?"),
         ],
       },
@@ -254,27 +254,9 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/i-am.mp3",
+            "Good.",
           ),
-          "I am...",
-          " ",
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/im.mp3",
-          ),
-          "I’m...",
-          " ",
-          portuguese("Estou..."),
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/good.mp3",
-          ),
-          "good.",
-          " ",
+          "Good. ",
           italic("informal"),
         ],
       },
@@ -283,10 +265,9 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/pretty-good.mp3",
+            "I’m pretty good.",
           ),
-          "pretty good.",
-          " ",
+          "(I’m) pretty good. ",
           italic("informal"),
         ],
       },
@@ -296,7 +277,7 @@ export const beginnerHello = {
         as: "span",
         parts: [
           audio(
-            "/assets/audio/cefr/a1/unit-1-hello/language-focus/greetings/questions-and-answers/hows-it-going.mp3",
+            "How’s it going?",
           ),
           "How’s it going?",
         ],
@@ -324,45 +305,31 @@ export const beginnerHello = {
       {
         display: "block",
         as: "span",
+        parts: [audio("Glad to meet you."), "Glad to meet you."],
+      },
+      {
+        display: "block",
+        as: "span",
+        parts: [audio("Pleased to meet you."), "Pleased to meet you."],
+      },
+      {
+        display: "block",
+        as: "span",
         parts: [audio("See you. Bye."), "See you. / Bye."],
       },
     ] satisfies Meaning[],
     notes: [
       {
         as: "span",
-        parts: [bold("I am"), " → ", bold("I’m")],
-      },
-      {
-        as: "span",
-        parts: [bold("What is"), " → ", bold("What’s")],
-      },
-      {
-        as: "span",
-        parts: [
-          "Use ",
-          bold("Sorry?"),
-          " or ",
-          bold("Please repeat."),
-          " when you do not understand.",
-        ],
+        parts: [audio("I’m, I am"), bold("I’m"), icon("arrow"), bold("I am")],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
         parts: [
-          "When I say “I’m Laura”, am I introducing myself or another person?",
+          "...",
         ],
-      },
-      {
-        as: "span",
-        parts: [
-          "“What’s your name?”: before or after I know the person’s name?",
-        ],
-      },
-      {
-        as: "span",
-        parts: ["“Nice to meet you”: a first meeting or a goodbye?"],
       },
     ] satisfies CCQ[],
   },
@@ -465,19 +432,19 @@ export const beginnerHello = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Say hello and introduce yourself using your first name.",
-          ]),
+          ],
         },
         {
-          content: text([
+          content: [
             "Ask your partner's first name. Say “Sorry?” or “Please repeat” if needed.",
-          ]),
+          ],
         },
         {
-          content: text([
+          content: [
             "Say “Nice to meet you” and end with “See you!” or “Bye!”",
-          ]),
+          ],
         },
       ],
     } satisfies ListProps,

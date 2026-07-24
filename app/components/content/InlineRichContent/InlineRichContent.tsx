@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { ContentToken, RichContent } from "@/helpers/content";
 
 import { Audio } from "@/components/ui/Audio";
 import { Mark } from "@/components/content/Mark";
@@ -10,23 +11,12 @@ import { Stressed } from "@/components/content/Stressed";
 import { Portuguese } from "@/components/content/Portuguese";
 import { PortugueseBold } from "@/components/content/PortugueseBold";
 import { Phonetics } from "@/components/content/Phonetics";
-import { CircleCheck, CircleX, Dot, Spotlight } from "lucide-react";
+import { CircleCheck, CircleX, Dot, Spotlight, ArrowRight } from "lucide-react";
 
 import styles from "./InlineRichContent.module.css";
 
-export type InlineRichContentValue = string | InlineRichContentToken;
-
-type InlineRichContentToken = {
-  part?: string;
-  type?: string;
-  icons?: string[];
-  audio?: string;
-  bullet?: boolean;
-  lineBreak?: boolean;
-};
-
 type InlineRichContentProps = {
-  value: InlineRichContentValue[];
+  value: RichContent;
 };
 
 export const InlineRichContent = ({ value }: InlineRichContentProps) => {
@@ -81,6 +71,9 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
     bullet: () => (
       <Dot size={19} strokeWidth={4} className={styles.iconPosition} />
     ),
+    arrow: () => (
+      <ArrowRight size={18} strokeWidth={4} className={`text-gray-400 ${styles.iconPosition}`} />
+    ),
   };
 
   type IconName = keyof typeof iconMap;
@@ -89,7 +82,7 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
     return name in iconMap;
   };
 
-  const renderIcons = (part: InlineRichContentToken) => {
+  const renderIcons = (part: ContentToken) => {
     const icons: ReactNode[] = [];
 
     if (Array.isArray(part.icons)) {

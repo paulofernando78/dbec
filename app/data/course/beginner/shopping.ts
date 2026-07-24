@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold } from "@/helpers/content";
+import { content, audio, bold } from "@/helpers/content";
 
 export const beginnerShopping = {
   whiteboard: {
@@ -88,27 +88,31 @@ export const beginnerShopping = {
       lines: [
         {
           speaker: "Customer",
-          line: text(["Excuse me. How much is this T-shirt?"]),
+          line: ["Excuse me. How much is this T-shirt?"],
         },
         {
           speaker: "Shop Assistant",
-          line: text(["It's twenty dollars."]),
+          line: ["It's twenty dollars."],
         },
         {
           speaker: "Customer",
-          line: text(["And how much are these shoes?"]),
+          line: ["And how much are these shoes?"],
         },
         {
           speaker: "Shop Assistant",
-          line: text(["They're forty-five dollars."]),
+          line: ["They're forty-five dollars."],
         },
         {
           speaker: "Customer",
-          line: text(["I like those shoes."]),
+          line: ["I like those shoes."],
+        },
+        {
+          speaker: "Customer",
+          line: ["Can I have those shoes, please?"],
         },
         {
           speaker: "Shop Assistant",
-          line: text(["They're very popular."]),
+          line: ["Of course. Here you are."],
         },
       ],
     },
@@ -329,17 +333,17 @@ export const beginnerShopping = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             "Choose an item and identify it with this, that, these, or those and a color.",
-          ]),
+          ],
         },
         {
-          content: text(["Ask for the price and listen for the number."]),
+          content: ["Ask for the price and listen for the number."],
         },
         {
-          content: text([
-            "Role-play the customer and shop assistant. Request the item politely.",
-          ]),
+          content: [
+            "Role-play the customer and shop assistant. Request the item with “Can I have…, please?”",
+          ],
         },
       ],
     } satisfies ListProps,

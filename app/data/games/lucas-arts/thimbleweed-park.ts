@@ -1,6 +1,5 @@
 import {
   content,
-  text,
   icon,
   audio,
   bold,

@@ -3,7 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, text, audio, bold, mark } from "@/helpers/content";
+import { content, audio, bold, mark } from "@/helpers/content";
 
 export const beginnerAbilities = {
   whiteboard: {
@@ -81,27 +81,27 @@ export const beginnerAbilities = {
       lines: [
         {
           speaker: "Emma",
-          line: text(["Can you play soccer?"]),
+          line: ["Can you play soccer?"],
         },
         {
           speaker: "Jake",
-          line: text(["Yes, I can."]),
+          line: ["Yes, I can."],
         },
         {
           speaker: "Emma",
-          line: text(["Can you play the guitar?"]),
+          line: ["Can you play the guitar?"],
         },
         {
           speaker: "Jake",
-          line: text(["No, I can't."]),
+          line: ["No, I can't."],
         },
         {
           speaker: "Emma",
-          line: text(["What can you do?"]),
+          line: ["What can you do?"],
         },
         {
           speaker: "Jake",
-          line: text(["I can swim and ride a bike."]),
+          line: ["I can swim and ride a bike."],
         },
       ],
     },
@@ -226,7 +226,7 @@ export const beginnerAbilities = {
           },
           {
             question:
-              "Mia doesn't know how to play the guitar. She _____ play it.",
+              "Mia is not able to play the guitar. She _____ play it.",
             options: [
               { option: "can't", isCorrect: true },
               { option: "can", isCorrect: false },
@@ -291,19 +291,19 @@ export const beginnerAbilities = {
       type: "checkbox",
       items: [
         {
-          content: text([
+          content: [
             mark("Prepare three questions"),
             " using “Can you…?”",
-          ]),
+          ],
           textarea: true,
         },
         {
-          content: text([
+          content: [
             "Ask one or more classmates and record short answers.",
-          ]),
+          ],
         },
         {
-          content: text(["Report three results using a clear can or can’t."]),
+          content: ["Report three results using a clear can or can’t."],
         },
       ],
     } satisfies ListProps,
