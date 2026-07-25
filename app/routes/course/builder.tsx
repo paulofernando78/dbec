@@ -92,11 +92,15 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
         {card && <LessonCard {...card} />}
         <PageSections>
           <Section id="introduction" heading={heading}>
-            <Line value={lesson.introduction.instruction} className="font-bold mb-4"/>
-            <Image
-              src={lesson.introduction.imgSrc}
-              alt={lesson.introduction.imgAlt}
-            />
+            {lesson.introduction.instruction &&
+            <>
+              <Line value={lesson.introduction.instruction} className="font-bold mb-4"/>
+              <Image
+                src={lesson.introduction.imgSrc}
+                alt={lesson.introduction.imgAlt}
+              />
+            </>
+            }
             {lesson.introduction.questions &&
             <Lines value={lesson.introduction.questions} className="mb-4"/>
             }

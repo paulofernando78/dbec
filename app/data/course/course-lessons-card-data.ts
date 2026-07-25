@@ -7,6 +7,7 @@ export type CourseLessonCard = LessonCardContent & {
 
 export const courseLessonsCardData = {
   beginner: [
+    // Hello
     {
       href: "/courses/beginner/hello",
       label: "Hello!",
@@ -25,6 +26,7 @@ export const courseLessonsCardData = {
         "Use Nice to meet you and an appropriate goodbye.",
       ],
     },
+    // Personal Information
     {
       href: "/courses/beginner/personal-information",
       label: "Personal Information",
@@ -44,6 +46,7 @@ export const courseLessonsCardData = {
         "Complete the registration form with the required details.",
       ],
     },
+    // My Family
     {
       href: "/courses/beginner/my-family",
       label: "My Family",
@@ -64,6 +67,7 @@ export const courseLessonsCardData = {
         "Use one possessive ’s phrase, such as Laura’s brother.",
       ],
     },
+    // My house
     {
       href: "/courses/beginner/my-house",
       label: "My House",
@@ -82,6 +86,7 @@ export const courseLessonsCardData = {
         "Give enough information for a partner to identify the room.",
       ],
     },
+    // Daily Routine
     {
       href: "/courses/beginner/daily-routine",
       label: "Daily Routine",
@@ -101,6 +106,7 @@ export const courseLessonsCardData = {
         "Ask or answer two What time…? questions.",
       ],
     },
+    // My Week
     {
       href: "/courses/beginner/my-week",
       label: "My Week",
@@ -118,6 +124,7 @@ export const courseLessonsCardData = {
         "Present the schedule in short, prepared sentences.",
       ],
     },
+    // Food and Drinks
     {
       href: "/courses/beginner/food-and-drinks",
       label: "Food and Drinks",
@@ -138,6 +145,7 @@ export const courseLessonsCardData = {
         "Order one item using please and thank you.",
       ],
     },
+    // Shopping
     {
       href: "/courses/beginner/shopping",
       label: "Shopping",
@@ -156,6 +164,7 @@ export const courseLessonsCardData = {
         "Request the chosen item politely.",
       ],
     },
+    // Around Town
     {
       href: "/courses/beginner/around-town",
       label: "Around Town",
@@ -174,6 +183,7 @@ export const courseLessonsCardData = {
         "Keep to locations rather than multi-step directions.",
       ],
     },
+    // What are you doing?
     {
       href: "/courses/beginner/what-are-you-doing",
       label: "What Are You Doing?",
@@ -192,6 +202,7 @@ export const courseLessonsCardData = {
         "Give enough information for a partner to identify the picture.",
       ],
     },
+    // Abilities
     {
       href: "/courses/beginner/abilities",
       label: "Abilities",
@@ -211,6 +222,7 @@ export const courseLessonsCardData = {
         "Report three abilities using clear can or can’t.",
       ],
     },
+    // Rea-life Project
     {
       href: "/courses/beginner/real-life-project",
       label: "Real-Life Project",
@@ -235,6 +247,7 @@ export const courseLessonsCardData = {
     },
   ],
   elementary: [
+    // Past: Beach
     {
       href: "/courses/elementary/past-beach",
       label: "Past: Beach",
@@ -244,6 +257,7 @@ export const courseLessonsCardData = {
       skills: "Listening and spoken interaction",
       finalTask: "Tell a partner about a real or invented beach day.",
     },
+    // Past: Movie
     {
       href: "/courses/elementary/past-movies",
       label: "Past: Movies",
@@ -253,6 +267,7 @@ export const courseLessonsCardData = {
       skills: "Listening and spoken interaction",
       finalTask: "Interview a partner about their last movie experience.",
     },
+    // Past: Family
     {
       href: "/courses/elementary/past-family",
       label: "Past: Family",
@@ -263,6 +278,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Tell a short story about a real or imagined family celebration.",
     },
+    // Past: Home
     {
       href: "/courses/elementary/past-home",
       label: "Past: Home",
@@ -272,6 +288,7 @@ export const courseLessonsCardData = {
       skills: "Listening and spoken interaction",
       finalTask: "Compare how two people spent a weekend at home.",
     },
+    // Travels Plans
     {
       href: "/courses/elementary/travel-plans",
       label: "Travel Plans",
@@ -282,6 +299,7 @@ export const courseLessonsCardData = {
       skills: "Listening and spoken interaction",
       finalTask: "Plan a short trip with a partner and present the itinerary.",
     },
+    // Future Predictions
     {
       href: "/courses/elementary/future-predictions",
       label: "Future Predictions",
@@ -292,6 +310,7 @@ export const courseLessonsCardData = {
       skills: "Reading and spoken interaction",
       finalTask: "Create and discuss three predictions for life in 2040.",
     },
+    // City Life
     {
       href: "/courses/elementary/city-life",
       label: "City Life",
@@ -302,6 +321,7 @@ export const courseLessonsCardData = {
       skills: "Reading and spoken interaction",
       finalTask: "Compare two cities and recommend one to a visitor.",
     },
+    // The Best Place
     {
       href: "/courses/elementary/the-best-place",
       label: "The Best Place",
@@ -312,6 +332,7 @@ export const courseLessonsCardData = {
       skills: "Reading and collaborative speaking",
       finalTask: "Choose the best destination for a group and explain why.",
     },
+    // Healthy Living
     {
       href: "/courses/elementary/healthy-living",
       label: "Healthy Living",
@@ -330,6 +351,7 @@ export const courseLessonsCardData = {
         "Add relevant advice with should or shouldn’t.",
       ],
     },
+    // Rules
     {
       href: "/courses/elementary/rules",
       label: "Rules",
@@ -340,6 +362,7 @@ export const courseLessonsCardData = {
       skills: "Reading and spoken interaction",
       finalTask: "Agree on five clear rules for a shared space.",
     },
+    // Shopping Smart
     {
       href: "/courses/elementary/shopping-smart",
       label: "Shopping Smart",
@@ -351,6 +374,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Plan a small event and buy the necessary items within a budget.",
     },
+    // Experiences
     {
       href: "/courses/elementary/experiences",
       label: "Experiences",
@@ -361,6 +385,7 @@ export const courseLessonsCardData = {
       skills: "Listening and spoken interaction",
       finalTask: "Conduct a class experience survey and report one result.",
     },
+    // Hobbies
     {
       href: "/courses/elementary/hobbies",
       label: "Hobbies",
@@ -373,6 +398,7 @@ export const courseLessonsCardData = {
     },
   ],
   intermediate: [
+    // Life Experiences
     {
       href: "/courses/intermediate/life-experiences",
       label: "Life Experiences",
@@ -384,6 +410,7 @@ export const courseLessonsCardData = {
       skills: "Listening and extended spoken interaction",
       finalTask: "Interview a partner and present one significant experience.",
     },
+    // Storytelling
     {
       href: "/courses/intermediate/storytelling",
       label: "Storytelling",
@@ -394,6 +421,7 @@ export const courseLessonsCardData = {
       skills: "Listening and extended speaking",
       finalTask: "Tell a two-minute story from a visual prompt.",
     },
+    // Maling Plans
     {
       href: "/courses/intermediate/making-plans",
       label: "Making Plans",
@@ -405,6 +433,7 @@ export const courseLessonsCardData = {
       skills: "Listening and collaborative speaking",
       finalTask: "Negotiate and produce a realistic group weekend plan.",
     },
+    // What if?
     {
       href: "/courses/intermediate/what-if",
       label: "What If?",
@@ -423,6 +452,7 @@ export const courseLessonsCardData = {
         "Explain a decision and suggest a backup plan.",
       ],
     },
+    // Green Planet
     {
       href: "/courses/intermediate/green-planet",
       label: "Green Planet",
@@ -433,6 +463,7 @@ export const courseLessonsCardData = {
       skills: "Reading and collaborative speaking",
       finalTask: "Create a small environmental action plan for the community.",
     },
+    // Technology Today
     {
       href: "/courses/intermediate/technology-today",
       label: "Technology Today",
@@ -443,6 +474,7 @@ export const courseLessonsCardData = {
       skills: "Listening and explanatory speaking",
       finalTask: "Pitch a useful app or device to a target user.",
     },
+    // News Report
     {
       href: "/courses/intermediate/news-report",
       label: "News Report",
@@ -454,6 +486,7 @@ export const courseLessonsCardData = {
       skills: "Reading, listening, and spoken reporting",
       finalTask: "Deliver a concise news bulletin from a fact sheet.",
     },
+    // What did they say?
     {
       href: "/courses/intermediate/what-did-they-say",
       label: "What Did They Say?",
@@ -464,6 +497,7 @@ export const courseLessonsCardData = {
       skills: "Listening, note-taking, and spoken mediation",
       finalTask: "Listen to a message and relay it to a third person.",
     },
+    // Career Path
     {
       href: "/courses/intermediate/career-path",
       label: "Career Path",
@@ -475,6 +509,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Recommend a career path for a profile and justify the advice.",
     },
+    // Relationsships
     {
       href: "/courses/intermediate/relationships",
       label: "Relationships",
@@ -488,6 +523,7 @@ export const courseLessonsCardData = {
     },
   ],
   upperIntermediate: [
+    // Dream Scenarios
     {
       href: "/courses/upper-intermediate/dream-scenarios",
       label: "Dream Scenarios",
@@ -505,6 +541,7 @@ export const courseLessonsCardData = {
         "Compare the scenarios and defend one choice.",
       ],
     },
+    // Regrets
     {
       href: "/courses/upper-intermediate/regrets",
       label: "Regrets",
@@ -522,6 +559,7 @@ export const courseLessonsCardData = {
         "Evaluate which alternative outcome was most plausible.",
       ],
     },
+    // Business Communication
     {
       href: "/courses/upper-intermediate/business-communication",
       label: "Business Communication",
@@ -533,6 +571,7 @@ export const courseLessonsCardData = {
       skills: "Listening, speaking, and professional writing",
       finalTask: "Resolve a workplace problem in a short team meeting.",
     },
+    // Leadership
     {
       href: "/courses/upper-intermediate/leadership",
       label: "Leadership",
@@ -544,6 +583,7 @@ export const courseLessonsCardData = {
       skills: "Listening and collaborative speaking",
       finalTask: "Allocate roles and services for a time-sensitive project.",
     },
+    // Innovation
     {
       href: "/courses/upper-intermediate/innovation",
       label: "Innovation",
@@ -556,6 +596,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Present a plausible innovation timeline and answer questions.",
     },
+    // Global Issues
     {
       href: "/courses/upper-intermediate/global-issues",
       label: "Global Issues",
@@ -567,6 +608,7 @@ export const courseLessonsCardData = {
       skills: "Reading, listening, and discussion",
       finalTask: "Brief a group on a global issue and recommend one response.",
     },
+    // Debate Club
     {
       href: "/courses/upper-intermediate/debate-club",
       label: "Debate Club",
@@ -579,6 +621,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Take part in a structured debate and deliver a closing statement.",
     },
+    // Media and Marketing
     {
       href: "/courses/upper-intermediate/media-and-marketing",
       label: "Media and Marketing",
@@ -589,6 +632,7 @@ export const courseLessonsCardData = {
       skills: "Media reading and evaluative discussion",
       finalTask: "Pitch and defend a campaign concept for a defined audience.",
     },
+    // Native-like English
     {
       href: "/courses/upper-intermediate/native-like-english",
       label: "Idiomatic English in Context",
@@ -601,6 +645,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Use the target expressions in a natural problem-solving dialogue.",
     },
+    // Natural English
     {
       href: "/courses/upper-intermediate/natural-english",
       label: "Natural English",
@@ -615,6 +660,7 @@ export const courseLessonsCardData = {
     },
   ],
   advanced: [
+    // Between the Lines
     {
       href: "/courses/advanced/reading-between-the-lines",
       label: "Reading Between the Lines",
@@ -626,6 +672,7 @@ export const courseLessonsCardData = {
       skills: "Close reading, listening, and evidence-based discussion",
       finalTask: "Defend an interpretation of an ambiguous text or statement.",
     },
+    // Synthesizing Sources
     {
       href: "/courses/advanced/synthesizing-sources",
       label: "Synthesizing Sources",
@@ -637,6 +684,7 @@ export const courseLessonsCardData = {
       skills: "Critical reading, note-taking, and synthesis writing",
       finalTask: "Produce and present a neutral synthesis of two sources.",
     },
+    // Building Complex Arguments
     {
       href: "/courses/advanced/building-complex-arguments",
       label: "Building Complex Arguments",
@@ -648,6 +696,7 @@ export const courseLessonsCardData = {
       skills: "Critical reading, argumentation, and extended speaking",
       finalTask: "Present and defend a position under critical questioning.",
     },
+    // Diplomatic Communication
     {
       href: "/courses/advanced/diplomatic-communication",
       label: "Diplomatic Communication",
@@ -659,6 +708,7 @@ export const courseLessonsCardData = {
       skills: "Listening, pragmatic analysis, and spoken interaction",
       finalTask: "Handle a sensitive workplace conversation diplomatically.",
     },
+    // Academic Presentations
     {
       href: "/courses/advanced/academic-presentations",
       label: "Academic Presentations",
@@ -671,6 +721,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Deliver a structured briefing with evidence and a clear conclusion.",
     },
+    // Mediation and Clarification
     {
       href: "/courses/advanced/mediation-and-clarification",
       label: "Mediation and Clarification",
@@ -683,6 +734,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Explain a specialist text to a general audience and answer questions.",
     },
+    // Critical Reviews
     {
       href: "/courses/advanced/critical-reviews",
       label: "Critical Reviews",
@@ -695,6 +747,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Deliver a balanced critical review supported by specific evidence.",
     },
+    // Negotiation and Consensus
     {
       href: "/courses/advanced/negotiation-and-consensus",
       label: "Negotiation and Consensus",
@@ -707,6 +760,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Reach and formally summarize an agreement in a multi-party negotiation.",
     },
+    // Precision and Nuance
     {
       href: "/courses/advanced/precision-and-nuance",
       label: "Precision and Nuance",
@@ -719,6 +773,7 @@ export const courseLessonsCardData = {
       finalTask:
         "Revise and deliver an overgeneralized statement with appropriate nuance.",
     },
+    // Research Briefing
     {
       href: "/courses/advanced/research-briefing",
       label: "Research Briefing",

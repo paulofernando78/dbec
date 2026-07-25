@@ -1,4 +1,17 @@
 export const authenticContentTedEdLessonsCardData = {
+  // Month 00, Year
+  // ...: {
+  //   href: "/authentic-content/ted-ed/",
+  //   label: "...",
+  //   objective: "...",
+  //   usefulLanguage: "...",
+  //   vocabulary: "...",
+  //   skills: "...",
+  //   finalTask: "...",
+  //   date: "...",
+  //   duration: "00:00",
+  // },
+  // May 7, 2018
   whatCausesConstipation: {
     href: "/authentic-content/ted-ed/how-food-moves-through-your-body",
     label: "How Food Moves Through Your Body",
@@ -13,6 +26,7 @@ export const authenticContentTedEdLessonsCardData = {
     date: "May 7, 2018",
     duration: "03:33",
   },
+  // May 10, 2018
   whenWillTheNextIceAgeHappen: {
     href: "/authentic-content/ted-ed/earths-climate-cycle",
     label: "Earth’s Climate Cycle",
@@ -27,6 +41,7 @@ export const authenticContentTedEdLessonsCardData = {
     date: "May 10, 2018",
     duration: "05:07",
   },
+  // Feb 16, 2023
   howToManageEmotions: {
     href: "/authentic-content/ted-ed/how-we-react-differently",
     label: "How We React Differently",
@@ -40,6 +55,24 @@ export const authenticContentTedEdLessonsCardData = {
     date: "Feb 16, 2023",
     duration: "4:50",
   },
+  // May 30, 2024
+  howDidAncientCivilizationsMakeIceCream: {
+    href: "/authentic-content/ted-ed/the-history-of-a-popular-ice-treat",
+    label: "The History of a Popular Ice Treat",
+    objective:
+      "Understand the historical evolution of cold treats and practice listening for specific facts, dates, and historical details.",
+    usefulLanguage:
+      "Passive voice (e.g., 'were enjoyed by', 'was patented by'), historical time expressions, and cause-and-effect connectors.",
+    vocabulary:
+      "Freezer, sherbet, recipe, settlers, patent, trade, vendor, soda fountain, saloon, refrigeration.",
+    skills:
+      "Listening for gist and specific detail, reading comprehension, vocabulary matching, and sentence unscrambling.",
+    finalTask:
+      "Discuss how historical, cultural, and technological changes turned an elite luxury into an everyday food item.",
+    date: "Mar 24, 2026",
+    duration: "04:54",
+  },
+  // Mar 24, 2026
   howDidAncientCivilizationsBrewBeer: {
     href: "/authentic-content/ted-ed/a-drink-with-a-long-history",
     label: "A Drink With a Long History",

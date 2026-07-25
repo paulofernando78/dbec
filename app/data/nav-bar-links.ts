@@ -306,6 +306,11 @@ export const links = [
             href: "/authentic-content/ted-ed/how-we-react-differently",
             label: "How We React Differently",
           },
+          // How did ancient civilizations make ice cream? - May 30, 2024
+          {
+            href: "/authentic-content/ted-ed/the-history-of-a-popular-ice-treat",
+            label: "The History of a Popular Ice Treat",
+          },
           // How did ancient civilizations brew beer? - Mar 24, 2026
           {
             href: "/authentic-content/ted-ed/a-drink-with-a-long-history",

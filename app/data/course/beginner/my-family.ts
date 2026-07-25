@@ -198,19 +198,19 @@ export const beginnerMyFamily = {
     },
     dialogue: {
       instruction: "Listen and read.",
-      audioSrc: "",
+      audioSrc: "/",
       lines: [
         {
           speaker: "Laura",
-          line: ["This is my family photo album."],
+          line: ["Hey Liz, Come here. Let me show you my family photo album."],
         },
         {
           speaker: "Liz",
-          line: ["Oh, nice!"],
+          line: ["Oh, great!"],
         },
         {
           speaker: "Laura",
-          line: ["This is my mother. Her name is Heather."],
+          line: ["Look. This is my mother. Her name is Heather."],
         },
         {
           speaker: "Liz",
@@ -238,7 +238,27 @@ export const beginnerMyFamily = {
         },
         {
           speaker: "Liz",
-          line: ["A nice family!"],
+          line: ["And who are they?"],
+        },
+        {
+          speaker: "Laura",
+          line: ["They’re my grandparents. Their names are James and Patricia Palmer. They’re my dad’s parents."],
+        },
+        {
+          speaker: "Liz",
+          line: ["How about William and Mary Smith?"],
+        },
+        {
+          speaker: "Laura",
+          line: ["They are also my grandparents, but they’re my mom’s parents."],
+        },
+        {
+          speaker: "Liz",
+          line: ["Nice. Your family is big!"],
+        },
+        {
+          speaker: "Laura",
+          line: ["Yes, it is."],
         },
       ],
     },
@@ -302,38 +322,40 @@ export const beginnerMyFamily = {
     column: {
       width: 300,
       cols: [
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Family",
-          items: [
-            { parts: [bold("parents")] },
-            { parts: ["father (dad / daddy)"] },
-            { parts: ["mother (mom / mommy)"] },
-            spacer(),
-            { parts: [bold("grandparents")] },
-            { parts: ["grandfather (grandpa)"] },
-            { parts: ["grandmother (grandma)"] },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Siblings",
-          items: [{ parts: ["brother"] }, { parts: ["sister"] }],
-        },
+        // {
+        //   borderColor: "border-slate-500",
+        //   bgColor: "bg-slate-400",
+        //   textColor: "text-white",
+        //   column: "Family",
+        //   items: [
+        //     { parts: [bold("parents")] },
+        //     { parts: ["father (dad / daddy)"] },
+        //     { parts: ["mother (mom / mommy)"] },
+        //     spacer(),
+        //     { parts: [bold("grandparents")] },
+        //     { parts: ["grandfather (grandpa)"] },
+        //     { parts: ["grandmother (grandma)"] },
+        //   ],
+        // },
+        // {
+        //   borderColor: "border-slate-500",
+        //   bgColor: "bg-slate-400",
+        //   textColor: "text-white",
+        //   column: "Siblings",
+        //   items: [{ parts: ["brother"] }, { parts: ["sister"] }],
+        // },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
           column: "Possessive Adjectives",
           items: [
-            { parts: ["my"] },
-            { parts: ["your"] },
-            { parts: ["his"] },
-            { parts: ["her"] },
+            { parts: [audio("my"), "my"] },
+            { parts: [audio("your"),"your"] },
+            { parts: [audio("his"),"his"] },
+            { parts: [audio("her"),"her"] },
+            { parts: [audio("our"),"our"] },
+            { parts: [audio("their"),"their"] },
           ],
         },
         {
@@ -342,9 +364,9 @@ export const beginnerMyFamily = {
           textColor: "text-white",
           column: "Possessive ’s",
           items: [
-            { parts: ["John's brother"] },
-            { parts: ["Maria's mother"] },
-            { parts: ["Ben's sister"] },
+            { parts: [audio("John's brother"), "John's brother"] },
+            { parts: [audio("Maria's mother"),"Maria's mother"] },
+            { parts: [audio("Ben's sister"),"Ben's sister"] },
           ],
         },
       ],
@@ -358,17 +380,17 @@ export const beginnerMyFamily = {
     ccq: [
       {
         as: "span",
-        parts: ["“My mother”: the speaker’s mother or the listener’s mother?"],
-      },
-      {
-        as: "span",
-        parts: ["“His sister”: the sister of a man/boy or a woman/girl?"],
+        parts: ["Is your grandmother your mother’s mother or your sister?"],
       },
       {
         as: "span",
         parts: [
-          "“John’s brother”: the brother of John or the brother of Mary?",
+          "Are \"mother\" and \"father\" your parents?",
         ],
+      },
+      {
+        as: "span",
+        parts: ["Is a cousin your brother?"],
       },
     ] satisfies CCQ[],
   },
