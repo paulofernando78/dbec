@@ -336,7 +336,6 @@ export const howDidAncientCivilizationsMakeIceCream = {
               ],
               lineBreak: true,
             },
-            // Novos itens adicionados abaixo
             {
               block: [
                 { text: "In 1692, Antonio Latini recorded a milk-based " },

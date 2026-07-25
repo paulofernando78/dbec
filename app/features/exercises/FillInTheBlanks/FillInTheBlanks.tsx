@@ -95,7 +95,7 @@ export const FillInTheBlanks = ({
   const normalizeAnswer = (value: string | undefined) =>
     String(value ?? "")
       .trim()
-      .toLowerCase()
+      // .toLowerCase()
       .replaceAll("’", "'")
       .replaceAll("‘", "'");
 
@@ -138,9 +138,6 @@ export const FillInTheBlanks = ({
         if (isCorrect) score++;
       });
     });
-
-    console.log("newResults", newResults);
-    console.log("score", score);
 
     setResults(newResults);
     setTotalScore(score);

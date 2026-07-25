@@ -34,7 +34,7 @@ export const Unscramble = ({
   const [results, setResults] = useState<Record<string, boolean>>({});
   const [checked, setChecked] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
-  const [isShown, setIsShown] = useState(false)
+  const [isShown, setIsShown] = useState(false);
 
   const normalizeAnswer = (value: string | undefined) =>
     String(value ?? "")
@@ -50,22 +50,41 @@ export const Unscramble = ({
   const handleCheck = () => {
     let score = 0;
     const newResults: Record<string, boolean> = {};
+
     items.forEach((item, index) => {
       const key = String(index);
-      const user = normalizeAnswer(answers[key]);
-      const correctAnswer = normalizeAnswer(item.answer);
-      const isCorrect = user === correctAnswer;
+
+      // 1. Pegamos a string original sem converter para minúscula
+      const rawUserInput = String(answers[key] ?? "").trim();
+
+      // 2. Verificamos se o primeiro caractere é maiúsculo
+      const firstChar = rawUserInput.charAt(0);
+      const hasUppercaseStart =
+        firstChar !== "" &&
+        firstChar === firstChar.toUpperCase() &&
+        firstChar !== firstChar.toLowerCase();
+
+      // 3. Normalizamos (tudo minúsculo) apenas para verificar se as palavras batem
+      const userNormalized = normalizeAnswer(answers[key]);
+      const correctAnswerNormalized = normalizeAnswer(item.answer);
+
+      // 4. Para estar correto, precisa começar com maiúscula E ter escrito a frase certa
+      const isCorrect =
+        hasUppercaseStart && userNormalized === correctAnswerNormalized;
+
       newResults[key] = isCorrect;
+
       if (isCorrect) score++;
     });
+
     setResults(newResults);
     setTotalScore(score);
     setChecked(true);
   };
 
   const handleShowAnswers = () => {
-    setIsShown((prev) => !prev)
-  }
+    setIsShown((prev) => !prev);
+  };
 
   const handleReset = () => {
     setAnswers({});
@@ -123,19 +142,13 @@ export const Unscramble = ({
       </span>
 
       <div className="flex gap-2 mb-2">
+        <Button variant="check" icon={<Check />} onClick={handleCheck} />
         <Button
-        variant="check"
-        icon={<Check />}
-        onClick={handleCheck}
+          variant="answer"
+          icon={isShown ? <EyeClosed /> : <Eye />}
+          onClick={handleShowAnswers}
         />
-        <Button
-        variant="answer"
-        icon={isShown ? <EyeClosed /> : <Eye />}
-        onClick={handleShowAnswers} />
-        <Button
-        variant="reset"
-        icon={<RotateCcw />}
-        onClick={handleReset} />
+        <Button variant="reset" icon={<RotateCcw />} onClick={handleReset} />
       </div>
     </div>
   );

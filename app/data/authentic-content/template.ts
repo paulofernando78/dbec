@@ -110,7 +110,7 @@ export const template = {
         words: shuffle(words),
       },
       fillInTheBlanks: {
-        instruction: "Fill in the blanks with the correct answer.",
+        instruction: "Fill in the blanks with the correct answer. Then, click the wods to be crosshed out.",
         exercise: {
           blocks: shuffle([
             {
