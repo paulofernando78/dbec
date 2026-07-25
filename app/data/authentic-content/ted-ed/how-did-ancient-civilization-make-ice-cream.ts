@@ -54,8 +54,8 @@ export const howDidAncientCivilizationsMakeIceCream = {
     vocabulary: {
       instruction: "Match the words with the pictures.",
       matchingContent: shuffle([
-        { as: "span" as const, parts: [audio("freezer"), "freezer"] },
-        { as: "span" as const, parts: [audio("sherbet"), "sherbet"] },
+        // { as: "span" as const, parts: [audio("freezer"), "freezer"] },
+        // { as: "span" as const, parts: [audio("sherbet"), "sherbet"] },
         { as: "span" as const, parts: [audio("recipe"), "recipe"] },
         { as: "span" as const, parts: [audio("settlers"), "settlers"] },
         { as: "span" as const, parts: [audio("patent"), "patent"] },
