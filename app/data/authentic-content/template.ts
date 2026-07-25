@@ -82,12 +82,12 @@ export const template = {
           questions: shuffle([
             {
               question: "...",
-              options: [
+              options: shuffle([
                 {
                   option: "...",
                   isCorrect: true,
                 },
-              ],
+              ]),
             },
           ]),
         },

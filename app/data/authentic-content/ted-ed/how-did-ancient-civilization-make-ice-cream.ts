@@ -117,7 +117,7 @@ export const howDidAncientCivilizationsMakeIceCream = {
             {
               question:
                 "Why did the CIA's 1963 plot to poison Fidel Castro's milkshake fail?",
-              options: [
+              options: shuffle([
                 {
                   option:
                     "The poison pill froze to the freezer coils and broke.",
@@ -137,12 +137,12 @@ export const howDidAncientCivilizationsMakeIceCream = {
                     "The CIA agents were caught before entering the hotel.",
                   isCorrect: false,
                 },
-              ],
+              ]),
             },
             {
               question:
                 "How did ancient Persians freeze water in shallow pools at night?",
-              options: [
+              options: shuffle([
                 {
                   option:
                     "By utilizing a technique called sky cooling, radiating heat into the desert sky.",
@@ -162,22 +162,22 @@ export const howDidAncientCivilizationsMakeIceCream = {
                   option: "By using early mechanical ice machines.",
                   isCorrect: false,
                 },
-              ],
+              ]),
             },
             {
               question:
                 "Who recorded a milk-based recipe in 1692 that historians call the first ice cream?",
-              options: [
+              options: shuffle([
                 { option: "Antonio Latini", isCorrect: true },
                 { option: "Nancy Johnson", isCorrect: false },
                 { option: "Frederic Tudor", isCorrect: false },
                 { option: "George Washington", isCorrect: false },
-              ],
+              ]),
             },
             {
               question:
                 "What happened when the sale of alcohol was banned in America in 1920?",
-              options: [
+              options: shuffle([
                 {
                   option:
                     "Saloons turned into soda fountains and breweries started producing ice cream.",
@@ -197,7 +197,7 @@ export const howDidAncientCivilizationsMakeIceCream = {
                     "People stopped going to drugstores for social meetings.",
                   isCorrect: false,
                 },
-              ],
+              ]),
             },
           ]),
         },
