@@ -32,19 +32,19 @@ export const howDidAncientCivilizationsMakeIceCream = {
     beforeWatching: {
       type: "ol" as const,
       instruction: "Discuss the questions below before watching the video.",
-      content: [
+      items: [
         {
-          question: [
+          content: [
             "How do you think ancient civilizations kept drinks and desserts cold before electric refrigerators existed?",
           ],
         },
         {
-          question: [
+          content: [
             "Why do you think ice cream was historically a luxury dessert reserved only for the elite?",
           ],
         },
         {
-          question: [
+          content: [
             "What unusual ice cream flavors (like vegetable or spice flavors) have you heard of or tried?",
           ],
         },
