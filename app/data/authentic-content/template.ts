@@ -77,7 +77,7 @@ export const template = {
     },
     details: {
       radio: {
-        instruction: "Watch again and listen for specific information.",
+        instruction: "Watch again for specific information.",
         exercise: {
           questions: shuffle([
             {

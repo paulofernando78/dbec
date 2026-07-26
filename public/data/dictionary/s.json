@@ -2,11 +2,82 @@
   {
     "definitions": [
       {
+        "word": "settler",
+        "phonetics": "/ˈsetlər/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A person who moves with a group of others to live in a new country or area, typically one with few previous inhabitants",
+        "ptDefinition": "Uma pessoa que se muda com um grupo de outros para viver em um novo país ou área, tipicamente uma com poucos habitantes anteriores; colono, pioneiro",
+        "examples": [
+          {
+            "enExample": "Early settlers in North America faced harsh winters and scarce resources.",
+            "ptExample": "Os primeiros colonos na América do Norte enfrentaram invernos rigorosos e recursos escassos."
+          },
+          {
+            "enExample": "The government encouraged settlers to move westward by offering cheap land.",
+            "ptExample": "O governo incentivou os colonos a se mudarem para o oeste oferecendo terras baratas."
+          }
+        ],
+        "synonyms": ["pioneer", "colonist", "immigrant", "pilgrim"],
+        "antonyms": ["native", "indigenous", "nomad"],
+        "seeAlso": ["homestead", "frontier", "colonization"],
+        "notes": [
+          {
+            "enNote": "The term is often used in the context of Western expansion in the US or colonial history globally.",
+            "ptNote": "O termo é frequentemente usado no contexto da expansão para o Oeste nos EUA ou na história colonial globalmente."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "settler.avif",
+            "alt": "..."
+          },
+          {
+            "src": "settler-old.avif",
+            "alt": "A family of settlers on the American prairie standing among log cabins, a covered wagon, expedition supply crates"
+          }
+        ]
+      },
+      {
+        "word": "soda fountain",
+        "phonetics": "/ˈsoʊdə ˌfaʊntən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "An apparatus for dispensing carbonated water and flavored syrups, or a counter or shop where these drinks and ice cream are served",
+        "ptDefinition": "Máquina de servir refrigerantes (em copo) ou balcão/lanchonete tradicional americana onde se servem refrigerantes e sorvetes",
+        "examples": [
+          {
+            "enExample": "The teenagers gathered at the local soda fountain to share a milkshake.",
+            "ptExample": "Os adolescentes se reuniram no balcão da lanchonete local para dividir um milkshake."
+          },
+          {
+            "enExample": "Old pharmacies often had a soda fountain where customers could enjoy a cold drink.",
+            "ptExample": "As antigas farmácias costumavam ter um balcão de refrigerantes onde os clientes podiam desfrutar de uma bebida gelada."
+          }
+        ],
+        "synonyms": ["soda counter", "malt shop"],
+        "seeAlso": ["drugstore", "ice cream parlor", "milkshake", "diner"],
+        "notes": [
+          {
+            "enNote": "Soda fountains were an important social hub in the United States from the late 19th century until the 1950s.",
+            "ptNote": "As 'soda fountains' foram um importante centro social nos Estados Unidos do final do século XIX até a década de 1950."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "soda-fountain-0.avif",
+            "alt": "A modern soda fountain"
+          },
+          {
+            "src": "soda-fountain-1.avif",
+            "alt": "A vintage American soda fountain counter with round stools"
+          }
+        ]
+      },
+      {
         "word": "soda",
         "phonetics": "/ˈsoʊ.də/",
         "partOfSpeech": "noun",
-        "enDefinition": "A sweet, carbonated soft drink, such as cola, lemon-lime, or orange soda.",
-        "ptDefinition": "Um refrigerante gaseificado e geralmente doce, como cola, limão ou laranja.",
+        "enDefinition": "A sweet, carbonated soft drink, such as cola, lemon-lime, or orange soda",
+        "ptDefinition": "Um refrigerante gaseificado e geralmente doce, como cola, limão ou laranja",
         "examples": [
           {
             "enExample": "Liz bought a large soda to drink during the movie.",
@@ -36,12 +107,12 @@
         "word": "support",
         "phonetics": "/səˈpɔːrt/",
         "partOfSpeech": "verb, noun",
-        "enDefinition": "verb: to help, encourage, or provide assistance to someone or something; noun: help, encouragement, or assistance given to a person, group, or idea.",
+        "enDefinition": "verb: to help, encourage, or provide assistance to someone or something; noun: help, encouragement, or assistance given to a person, group, or idea",
         "ptDefinition": "verbo: ajudar, incentivar ou dar assistência a alguém ou algo; substantivo: ajuda, apoio ou assistência dada a uma pessoa, grupo ou ideia.",
         "examples": [
           {
             "enExample": "Her friends supported her through a difficult time.",
-            "ptExample": "Os amigos dela a apoiaram durante um momento difícil."
+            "ptExample": "Os amigos dela a apoiaram durante um momento difícil"
           },
           {
             "enExample": "Having a strong support system can improve your mental health.",
@@ -69,7 +140,7 @@
         "phonetics": "/ʃɪft/",
         "partOfSpeech": "verb, noun",
         "enDefinition": "verb: to move or change from one position, place, direction, or focus to another; noun: a change in position, direction, attention, or way of thinking.",
-        "ptDefinition": "verbo: mover ou mudar de posição, lugar, direção ou foco; substantivo: uma mudança de posição, direção, atenção ou forma de pensar.",
+        "ptDefinition": "verbo: mover ou mudar de posição, lugar, direção ou foco; substantivo: uma mudança de posição, direção, atenção ou forma de pensar",
         "examples": [
           {
             "enExample": "When you feel anxious, try to shift your attention to something positive.",
@@ -77,7 +148,7 @@
           },
           {
             "enExample": "Public opinion shifted after the new evidence was presented.",
-            "ptExample": "A opinião pública mudou depois que as novas evidências foram apresentadas."
+            "ptExample": "A opinião pública mudou depois que as novas evidências foram apresentadas"
           }
         ],
         "synonyms": ["move", "change", "switch", "redirect", "transfer"],
@@ -164,8 +235,8 @@
         "word": "stool",
         "phonetics": "/stuːl/",
         "partOfSpeech": "noun",
-        "enDefinition": "1. a small seat without a back or arms. 2. solid waste passed from the body through the bowels; feces.",
-        "ptDefinition": "1. banquinho ou banco pequeno sem encosto. 2. excremento eliminado pelo intestino; fezes. ",
+        "enDefinition": "1. a small seat without a back or arms. 2. solid waste passed from the body through the bowels; feces",
+        "ptDefinition": "1. banquinho ou banco pequeno sem encosto. 2. excremento eliminado pelo intestino; fezes",
         "examples": [
           {
             "enExample": "The doctor asked if there was blood in the stool.",
@@ -199,8 +270,8 @@
         "word": "strain",
         "phonetics": "/streɪn/",
         "partOfSpeech": "verb, noun",
-        "enDefinition": "verb: to make a great physical or mental effort, or to injure by overstretching; noun: pressure, tension, or a particular type of plant, animal, or disease.",
-        "ptDefinition": "verbo: fazer grande esforço físico ou mental, ou machucar ao forçar demais; substantivo: pressão, tensão, ou um tipo específico de planta, animal ou doença.",
+        "enDefinition": "verb: to make a great physical or mental effort, or to injure by overstretching; noun: pressure, tension, or a particular type of plant, animal, or disease",
+        "ptDefinition": "verbo: fazer grande esforço físico ou mental, ou machucar ao forçar demais; substantivo: pressão, tensão, ou um tipo específico de planta, animal ou doença",
         "examples": [
           {
             "enExample": "Don't strain your back when lifting that heavy box.",
@@ -235,8 +306,8 @@
         "word": "symptom",
         "phonetics": "/ˈsɪmp.təm/",
         "partOfSpeech": "noun",
-        "enDefinition": "a physical or mental sign that shows a person may have an illness or medical condition.",
-        "ptDefinition": "um sinal físico ou mental que mostra que uma pessoa pode ter uma doença ou condição médica.",
+        "enDefinition": "a physical or mental sign that shows a person may have an illness or medical condition",
+        "ptDefinition": "um sinal físico ou mental que mostra que uma pessoa pode ter uma doença ou condição médica",
         "examples": [
           {
             "enExample": "A fever is a common symptom of the flu.",
@@ -327,10 +398,10 @@
         "phonetics": "/ˈstæmər/",
         "partOfSpeech": "verb, noun",
         "enDefinition": "verb: to speak with involuntary repetition, prolongation, or blocks of sounds or syllables; noun: a speech disorder or an instance of such disrupted speech.",
-        "ptDefinition": "verbo: falar com repetições involuntárias, prolongamentos ou bloqueios de sons ou sílabas; substantivo: um distúrbio de fala ou um caso de fala interrompida.",
+        "ptDefinition": "verbo: falar com repetições involuntárias, prolongamentos ou bloqueios de sons ou sílabas; substantivo: um distúrbio de fala ou um caso de fala interrompida",
         "examples": [
           {
-            "enExample": "He tends to stammer when he's nervous.",
+            "enExample": "He tends to stammer when he's nervous",
             "ptExample": "Ele tende a gaguejar quando está nervoso."
           },
           {
@@ -356,8 +427,8 @@
         "word": "stutter",
         "phonetics": "/ˈstʌtər/",
         "partOfSpeech": "verb, noun",
-        "enDefinition": "verb: to speak with involuntary repetition, prolongation, or blocks of sounds or syllables; noun: a speech disorder characterized by such disruptions in fluency.",
-        "ptDefinition": "verbo: falar com repetições involuntárias, prolongamento ou bloqueios de sons ou sílabas; substantivo: um distúrbio de fala caracterizado por essas interrupções na fluência.",
+        "enDefinition": "verb: to speak with involuntary repetition, prolongation, or blocks of sounds or syllables; noun: a speech disorder characterized by such disruptions in fluency",
+        "ptDefinition": "verbo: falar com repetições involuntárias, prolongamento ou bloqueios de sons ou sílabas; substantivo: um distúrbio de fala caracterizado por essas interrupções na fluência",
         "examples": [
           {
             "enExample": "He tends to stutter when he's nervous.",
@@ -386,8 +457,8 @@
         "word": "stab someone in the back",
         "phonetics": "/stæb ˈsʌm.wʌn ɪn ðə bæk/",
         "partOfSpeech": "idiom (figurative)",
-        "enDefinition": "to betray or act disloyally toward someone who trusts you, especially by doing something harmful without their knowledge.",
-        "ptDefinition": "trair ou agir de forma desleal com alguém que confia em você, especialmente fazendo algo prejudicial sem o conhecimento dessa pessoa.",
+        "enDefinition": "to betray or act disloyally toward someone who trusts you, especially by doing something harmful without their knowledge",
+        "ptDefinition": "trair ou agir de forma desleal com alguém que confia em você, especialmente fazendo algo prejudicial sem o conhecimento dessa pessoa",
         "examples": [
           {
             "enExample": "I thought she was my friend, but she stabbed me in the back by spreading those rumors.",
@@ -446,8 +517,8 @@
         "word": "stand a chance",
         "phonetics": "/stænd ə tʃæns/",
         "partOfSpeech": "idiom",
-        "enDefinition": "to have a possibility of succeeding or achieving something.",
-        "ptDefinition": "ter uma possibilidade de sucesso ou de alcançar algo.",
+        "enDefinition": "to have a possibility of succeeding or achieving something",
+        "ptDefinition": "ter uma possibilidade de sucesso ou de alcançar algo",
         "examples": [
           {
             "enExample": "Without proper training, you don’t stand a chance of winning the competition.",
@@ -476,8 +547,8 @@
         "word": "slack off",
         "phonetics": "US /slæk ɑːf/, UK /slæk ɑːf/",
         "partOfSpeech": "phrasal verb",
-        "enDefinition": "to work less hard than usual or to become lazy or careless in doing something.",
-        "ptDefinition": "trabalhar com menos empenho do que o normal; tornar-se preguiçoso ou negligente em alguma tarefa.",
+        "enDefinition": "to work less hard than usual or to become lazy or careless in doing something",
+        "ptDefinition": "trabalhar com menos empenho do que o normal; tornar-se preguiçoso ou negligente em alguma tarefa",
         "examples": [
           {
             "enExample": "You’ve been slacking off lately — your performance has dropped.",
@@ -632,8 +703,8 @@
         "word": "soup",
         "phonetics": "/suːp/",
         "partOfSpeech": "noun",
-        "enDefinition": "A liquid food made by boiling meat, vegetables, or fish in water, usually served hot.",
-        "ptDefinition": "Alimento líquido feito ao ferver carne, legumes ou peixe em água, geralmente servido quente.",
+        "enDefinition": "a liquid food made by boiling meat, vegetables, or fish in water, usually served hot",
+        "ptDefinition": "alimento líquido feito ao ferver carne, legumes ou peixe em água, geralmente servido quente",
         "examples": [
           {
             "enExample": "She made a delicious tomato soup for lunch.",

@@ -2,6 +2,58 @@
   {
     "definitions": [
       {
+        "word": "trade",
+        "phonetics": "/ˈtreɪd/",
+        "partOfSpeech": "noun, verb",
+        "enDefinition": "Noun: The action of buying and selling goods and services; a particular job or skill. Verb: To buy, sell, or exchange goods and services.",
+        "ptDefinition": "Substantivo: A ação de comprar e vender bens e serviços; um trabalho ou habilidade particular; comércio. Verbo: Comprar, vender ou trocar bens e serviços; negociar.",
+        "examples": [
+          {
+            "enExample": "The silk road facilitated trade between Asia and Europe.",
+            "ptExample": "A rota da seda facilitou o comércio entre a Ásia e a Europa."
+          },
+          {
+            "enExample": "I would like to trade my old bike for your new camera.",
+            "ptExample": "Eu gostaria de trocar minha bicicleta antiga pela sua câmera nova."
+          }
+        ],
+        "synonyms": [
+          "commerce",
+          "exchange",
+          "barter",
+          "traffic",
+          "business",
+          "deal",
+          "swap"
+        ],
+        "antonyms": ["keep", "hold"],
+        "seeAlso": [
+          "commodity",
+          "market",
+          "tariff",
+          "export",
+          "import",
+          "free trade"
+        ],
+        "notes": [
+          {
+            "enNote": "Can be used as an adjective, e.g., 'trade agreement' or 'trade route'.",
+            "ptNote": "Pode ser usado como adjetivo, por exemplo, 'acordo comercial' ou 'rota comercial'."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "trade-0.avif",
+            "alt": "..."
+          },
+          {
+            "src": "trade-1.avif",
+            "alt": "..."
+          }
+        ]
+      },
+
+      {
         "word": "tribute",
         "phonetics": "/ˈtrɪb.juːt/",
         "partOfSpeech": "noun",

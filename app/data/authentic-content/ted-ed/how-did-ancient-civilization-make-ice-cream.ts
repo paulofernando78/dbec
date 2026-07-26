@@ -3,15 +3,12 @@ import { shuffle } from "@/utils/shuffle";
 
 // Palavras e conceitos-chave extraídos diretamente da legenda
 const words = [
-  { word: "freezer", img: 0 },
-  { word: "sherbet", img: 0 },
-  { word: "recipe", img: 0 },
-  { word: "settlers", img: 0 },
+  { word: "recipe", img: 1 },
+  { word: "settler", img: 1 },
   { word: "patent", img: 0 },
-  { word: "trade", img: 0 },
+  { word: "trade", img: 1 },
   { word: "vendor", img: 0 },
-  { word: "soda fountain", img: 0 },
-  { word: "saloon", img: 0 },
+  { word: "soda fountain", img: 1 },
   { word: "refrigeration", img: 0 },
 ];
 
@@ -53,9 +50,8 @@ export const howDidAncientCivilizationsMakeIceCream = {
 
     vocabulary: {
       instruction: "Match the words with the pictures.",
+      // matchingContent: shuffle([words]),
       matchingContent: shuffle([
-        // { as: "span" as const, parts: [audio("freezer"), "freezer"] },
-        // { as: "span" as const, parts: [audio("sherbet"), "sherbet"] },
         { as: "span" as const, parts: [audio("recipe"), "recipe"] },
         { as: "span" as const, parts: [audio("settlers"), "settlers"] },
         { as: "span" as const, parts: [audio("patent"), "patent"] },

@@ -53,6 +53,7 @@ export const Contact = ({ className }: ContactProps) => {
         <li key={index} className="">
           <a
             href={contact.link}
+            target="_blank"
             className="
               inline-block
               transition-transform

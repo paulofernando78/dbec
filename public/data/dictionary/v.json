@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "vendor",
+        "phonetics": "/ˈvɛndər/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A person or company offering something for sale, especially in the street or as a business-to-business supplier.",
+        "ptDefinition": "Vendedor, fornecedor ou ambulante.",
+        "examples": [
+          {
+            "enExample": "The street vendor was selling hot dogs and pretzels.",
+            "ptExample": "O vendedor ambulante estava vendendo cachorros-quentes e pretzels."
+          },
+          {
+            "enExample": "Our company is evaluating a new software vendor.",
+            "ptExample": "Nossa empresa está avaliando um novo fornecedor de software."
+          }
+        ],
+        "synonyms": ["seller", "supplier", "dealer", "merchant"],
+        "antonyms": ["buyer", "customer", "purchaser", "consumer"],
+        "seeAlso": ["vend", "vending machine", "supplier"],
+        "notes": [
+          {
+            "enNote": "In corporate settings, 'vendor' is commonly used to describe a third-party supplier of goods, software, or services.",
+            "ptNote": "No ambiente corporativo, 'vendor' é comumente usado para descrever um fornecedor terceirizado de produtos, software ou serviços."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "vendor(old-ice-cream).avif",
+            "alt": "An old street vendor selling ice cream from a cart"
+          }
+        ]
+      },
+      {
         "word": "vigorous",
         "phonetics": "/ˈvɪɡ.ɚ.əs/",
         "partOfSpeech": "adjective",

@@ -2,6 +2,42 @@
   {
     "definitions": [
       {
+        "word": "recipe",
+        "phonetics": "/ˈresəpi/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A set of instructions for preparing a particular dish, including a list of the ingredients required.",
+        "ptDefinition": "Um conjunto de instruções para preparar um prato específico, incluindo uma lista dos ingredientes necessários.",
+        "examples": [
+          {
+            "enExample": "She followed the recipe closely to make the cake.",
+            "ptExample": "Ela seguiu a receita à risca para fazer o bolo."
+          },
+          {
+            "enExample": "Do you have a good recipe for lasagna?",
+            "ptExample": "Você tem uma boa receita de lasanha?"
+          }
+        ],
+        "synonyms": ["formula", "instructions", "method", "prescription"],
+        "antonyms": [],
+        "seeAlso": ["cookbook", "ingredients", "cuisine"],
+        "notes": [
+          {
+            "enNote": "The word is sometimes used figuratively to mean a set of conditions that will produce a particular result, e.g., 'a recipe for disaster'.",
+            "ptNote": "A palavra às vezes é usada figurativamente para significar um conjunto de condições que produzirão um resultado particular, por exemplo, 'uma receita para o desastre'."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "recipe-0.avif",
+            "alt": "An illustrated recipe page"
+          },
+          {
+            "src": "recipe-1.avif",
+            "alt": "An illustrated vintage frontier-style recipe page"
+          }
+        ]
+      },
+      {
         "word": "row of seats",
         "phonetics": "/ˌroʊ əv ˈsiːts/",
         "partOfSpeech": "noun phrase",
