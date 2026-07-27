@@ -13,7 +13,6 @@ const words = [
 ];
 
 export const howDidAncientCivilizationsBrewBeer = {
-
   metadata: {
     title: "C1-C2 Videos",
     subtitle: "Ted-ED",
@@ -49,15 +48,12 @@ export const howDidAncientCivilizationsBrewBeer = {
     },
     vocabulary: {
       instruction: "Match the words with the pictures..",
-      matchingContent: shuffle([
-        { as: "span" as const, parts: [audio("barley"), "barley"] },
-        { as: "span" as const, parts: [audio("grain"), "grain"] },
-        { as: "span" as const, parts: [audio("malt"), "malt"] },
-        { as: "span" as const, parts: [audio("yeast"), "yeast"] },
-        { as: "span" as const, parts: [audio("fermentation"), "fermentation"] },
-        { as: "span" as const, parts: [audio("hops"), "hops"] },
-        { as: "span" as const, parts: [audio("brewery"), "brewery"] },
-      ]),
+      matchingContent: shuffle(
+        words.map(({ word }) => ({
+          as: "span" as const,
+          parts: [audio(word), word],
+        })),
+      ),
       words: shuffle(words),
     },
     gist: {

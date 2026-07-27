@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "patent",
+        "phonetics": "/ˈpæt.ənt/",
+        "partOfSpeech": "noun, adjective, verb",
+        "enDefinition": "An official legal right that protects an invention; as an adjective, it can describe something protected by such a right or something clearly evident; as a verb, it means to obtain legal protection for an invention.",
+        "ptDefinition": "Direito legal oficial que protege uma invenção; como adjetivo, pode indicar algo protegido por esse direito ou algo evidente; como verbo, significa obter proteção legal para uma invenção.",
+        "examples": [
+          {
+            "enExample": "The inventor received a patent for the new machine.",
+            "ptExample": "O inventor recebeu uma patente pela nova máquina."
+          },
+          {
+            "enExample": "Many patent medicines were promoted with exaggerated claims.",
+            "ptExample": "Muitos medicamentos patenteados eram promovidos com alegações exageradas."
+          }
+        ],
+        "synonyms": ["license", "exclusive right", "protection"],
+        "antonyms": ["public domain", "unprotected invention"],
+        "seeAlso": ["invention", "trademark", "copyright", "patent medicine"],
+        "notes": [
+          {
+            "enNote": "Historically, the expression “patent medicine” referred to commercially promoted remedies with secret or proprietary formulas. Many were not protected by actual patents.",
+            "ptNote": "Historicamente, a expressão “patent medicine” designava medicamentos comerciais promovidos como fórmulas secretas ou exclusivas. Muitos não eram protegidos por patentes verdadeiras."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "patent-1.avif",
+            "alt": "A Victorian-style advertisement showing a traveling medicine seller, tonic bottles, exaggerated health claims, customer testimonials, an exclusive-formula seal, and a registration certificate."
+          }
+        ]
+      },
+      {
         "word": "popcorn",
         "phonetics": "/ˈpɑːp.kɔːrn/",
         "partOfSpeech": "noun",

@@ -225,51 +225,51 @@ export const links = [
         ],
       },
       // C1 Advanced
-      {
-        label: "C1 Advanced",
-        links: [
-          {
-            href: "/courses/advanced/reading-between-the-lines",
-            label: "Reading Between the Lines",
-          },
-          {
-            href: "/courses/advanced/synthesizing-sources",
-            label: "Synthesizing Sources",
-          },
-          {
-            href: "/courses/advanced/building-complex-arguments",
-            label: "Building Complex Arguments",
-          },
-          {
-            href: "/courses/advanced/diplomatic-communication",
-            label: "Diplomatic Communication",
-          },
-          {
-            href: "/courses/advanced/academic-presentations",
-            label: "Academic Presentations",
-          },
-          {
-            href: "/courses/advanced/mediation-and-clarification",
-            label: "Mediation and Clarification",
-          },
-          {
-            href: "/courses/advanced/critical-reviews",
-            label: "Critical Reviews",
-          },
-          {
-            href: "/courses/advanced/negotiation-and-consensus",
-            label: "Negotiation and Consensus",
-          },
-          {
-            href: "/courses/advanced/precision-and-nuance",
-            label: "Precision and Nuance",
-          },
-          {
-            href: "/courses/advanced/research-briefing",
-            label: "Research Briefing",
-          },
-        ],
-      },
+      // {
+      //   label: "C1 Advanced",
+      //   links: [
+      //     {
+      //       href: "/courses/advanced/reading-between-the-lines",
+      //       label: "Reading Between the Lines",
+      //     },
+      //     {
+      //       href: "/courses/advanced/synthesizing-sources",
+      //       label: "Synthesizing Sources",
+      //     },
+      //     {
+      //       href: "/courses/advanced/building-complex-arguments",
+      //       label: "Building Complex Arguments",
+      //     },
+      //     {
+      //       href: "/courses/advanced/diplomatic-communication",
+      //       label: "Diplomatic Communication",
+      //     },
+      //     {
+      //       href: "/courses/advanced/academic-presentations",
+      //       label: "Academic Presentations",
+      //     },
+      //     {
+      //       href: "/courses/advanced/mediation-and-clarification",
+      //       label: "Mediation and Clarification",
+      //     },
+      //     {
+      //       href: "/courses/advanced/critical-reviews",
+      //       label: "Critical Reviews",
+      //     },
+      //     {
+      //       href: "/courses/advanced/negotiation-and-consensus",
+      //       label: "Negotiation and Consensus",
+      //     },
+      //     {
+      //       href: "/courses/advanced/precision-and-nuance",
+      //       label: "Precision and Nuance",
+      //     },
+      //     {
+      //       href: "/courses/advanced/research-briefing",
+      //       label: "Research Briefing",
+      //     },
+      //   ],
+      // },
     ],
   },
   // Authentic Content

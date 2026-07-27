@@ -50,19 +50,13 @@ export const howDidAncientCivilizationsMakeIceCream = {
 
     vocabulary: {
       instruction: "Match the words with the pictures.",
-      // matchingContent: shuffle([words]),
-      matchingContent: shuffle([
-        { as: "span" as const, parts: [audio("recipe"), "recipe"] },
-        { as: "span" as const, parts: [audio("settlers"), "settlers"] },
-        { as: "span" as const, parts: [audio("patent"), "patent"] },
-        { as: "span" as const, parts: [audio("trade"), "trade"] },
-        { as: "span" as const, parts: [audio("vendor"), "vendor"] },
-        {
+      matchingContent: shuffle(
+        words.map(({ word }) => ({
           as: "span" as const,
-          parts: [audio("soda-fountain"), "soda fountain"],
-        },
-      ]),
-      words: shuffle(words.slice(0, 8)),
+          parts: [audio(word), word],
+        })),
+      ),
+      words: shuffle(words),
     },
 
     gist: {

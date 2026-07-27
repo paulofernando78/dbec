@@ -14,7 +14,6 @@ const words = [
 ];
 
 export const howToManageEmotions = {
-
   metadata: {
     title: "C1-C2 Videos",
     subtitle: "Ted-ED",
@@ -49,19 +48,12 @@ export const howToManageEmotions = {
     },
     vocabulary: {
       instuction: "Match the words with the pictures.",
-      matchingContent: shuffle([
-        { as: "span" as const, parts: [audio("emotions"), "emotions"] },
-        { as: "span" as const, parts: [audio("avoid"), "avoid"] },
-        { as: "span" as const, parts: [audio("shift"), "shift"] },
-        { as: "span" as const, parts: [audio("empathize"), "empathize"] },
-        { as: "span" as const, parts: [audio("support"), "support"] },
-        { as: "span" as const, parts: [audio("hope"), "hope"] },
-        { as: "span" as const, parts: [audio("medidate"), "medidate"] },
-        {
+      matchingContent: shuffle(
+        words.map(({ word }) => ({
           as: "span" as const,
-          parts: [audio("look on the bright side"), "look on the bright side"],
-        },
-      ]),
+          parts: [audio(word), word],
+        })),
+      ),
       words: shuffle(words),
     },
     gist: {

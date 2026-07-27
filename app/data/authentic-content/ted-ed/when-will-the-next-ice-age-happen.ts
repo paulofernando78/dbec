@@ -14,7 +14,6 @@ const words = [
 ];
 
 export const whenWillTheNextIceAgeHappen = {
-
   metadata: {
     title: "C1-C2 Videos",
     subtitle: "Ted-ED",
@@ -45,22 +44,12 @@ export const whenWillTheNextIceAgeHappen = {
     },
     vocabulary: {
       instruction: "Match the words with the pictures.",
-      matchingContent: shuffle([
-        { as: "span" as const, parts: [audio("glacier"), "glacier"] },
-        { as: "span" as const, parts: [audio("ice age"), "ice age"] },
-        { as: "span" as const, parts: [audio("orbit"), "orbit"] },
-        {
+      matchingContent: shuffle(
+        words.map(({ word }) => ({
           as: "span" as const,
-          parts: [audio("climate change"), "climate change"],
-        },
-        { as: "span" as const, parts: [audio("earth axis"), "earth axis"] },
-        {
-          as: "span" as const,
-          parts: [audio("carbon dioxide"), "carbon dioxide"],
-        },
-        { as: "span" as const, parts: [audio("fossil"), "fossil"] },
-        { as: "span" as const, parts: [audio("temperature"), "temperature"] },
-      ]),
+          parts: [audio(word), word],
+        })),
+      ),
       words: shuffle(words),
     },
     gist: {

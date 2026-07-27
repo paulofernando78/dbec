@@ -14,7 +14,6 @@ const words = [
 ];
 
 export const whatCausesConstipation = {
-
   metadata: {
     title: "C1-C2 Videos",
     subtitle: "Ted-ED",
@@ -44,19 +43,12 @@ export const whatCausesConstipation = {
     },
     vocabulary: {
       instruction: "Match the words with the pictures.",
-      matchingContent: shuffle([
-        { as: "span" as const, parts: [audio("instestine"), "instestine"] },
-        { as: "span" as const, parts: [audio("symptom"), "symptom"] },
-        {
+      matchingContent: shuffle(
+        words.map(({ word }) => ({
           as: "span" as const,
-          parts: [audio("bowel movement"), "bowel movement"],
-        },
-        { as: "span" as const, parts: [audio("strain"), "strain"] },
-        { as: "span" as const, parts: [audio("stool"), "stool"] },
-        { as: "span" as const, parts: [audio("dehydration"), "dehydration"] },
-        { as: "span" as const, parts: [audio("colon"), "colon"] },
-        { as: "span" as const, parts: [audio("fiber"), "fiber"] },
-      ]),
+          parts: [audio(word), word],
+        })),
+      ),
       words: shuffle(words),
     },
     gist: {
