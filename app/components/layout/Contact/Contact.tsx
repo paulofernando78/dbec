@@ -29,7 +29,7 @@ const contacts: ContactItem[] = [
   },
   // whatsapp
   {
-    link: "https:/wa.me/5511981672145",
+    link: "https://wa.me/5511981672145",
     icon: "/assets/img/icons/contacts/whatsapp.png",
     alt: "Whatsapp",
   },
@@ -54,6 +54,7 @@ export const Contact = ({ className }: ContactProps) => {
           <a
             href={contact.link}
             target="_blank"
+            rel="noopener noreferrer"
             className="
               inline-block
               transition-transform
