@@ -137,13 +137,19 @@ export const intermediateWhatIf = {
     meaning: [
       {
         as: "p",
-        parts: [bold("FIRST CONDITONAL")],
+        parts: [bold("Let’s take a look at FIRST CONDITIONAL.")],
       },
       spacer(),
       {
         as: "p",
+        parts: [bold("Uses")],
+      },
+      {
+        as: "p",
         parts: [
-          bold("Uses:"),
+          audio(
+            "A possible situation in the future. Predicting a likely result in the future (if the conditional happens)",
+          ),
           " A possible situation in the future. Predicting a likely result in the future (if the conditional happens)",
         ],
       },
