@@ -126,6 +126,7 @@ export const FillInTheBlanks = ({
   const handleCheck = () => {
     let score = 0;
     const newResults: Record<string, boolean> = {};
+    const correctWords: string[] = [];
 
     blocks.forEach((bs, bsIndex) => {
       (bs.block || []).forEach((b, bIndex) => {
@@ -135,19 +136,33 @@ export const FillInTheBlanks = ({
 
         const user = normalizeAnswer(answers[key]);
 
-        const correctAnswers = Array.isArray(b.blank)
-          ? b.blank.map((a) => normalizeAnswer(a))
-          : [normalizeAnswer(b.blank)];
+        const acceptedAnswers = Array.isArray(b.blank) ? b.blank : [b.blank];
+
+        const correctAnswers = acceptedAnswers.map((answer) =>
+          normalizeAnswer(answer),
+        );
 
         const isCorrect = correctAnswers.includes(user);
+
         newResults[key] = isCorrect;
 
-        if (isCorrect) score++;
+        if (isCorrect) {
+          score++;
+
+          const matchedAnwer = acceptedAnswers.find(
+            (answer) => normalizeAnswer(answer) === user,
+          );
+
+          if (matchedAnwer) {
+            correctWords.push(matchedAnwer.trim());
+          }
+        }
       });
     });
 
     setResults(newResults);
     setTotalScore(score);
+    setCrossWords(correctWords)
     setChecked(true);
   };
 

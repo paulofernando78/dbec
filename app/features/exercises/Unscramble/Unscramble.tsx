@@ -120,7 +120,7 @@ export const Unscramble = ({
               </p>
               <div className="relative">
                 {checked && results[key] && (
-                  <Audio src={item.answer} className="absolute top-[0.49rem] left-[0.4rem]" />
+                  <Audio src={item.answer} className="absolute top-[0.52rem] left-[0.42rem]" />
                 )}
                 <input
                   type="text"
