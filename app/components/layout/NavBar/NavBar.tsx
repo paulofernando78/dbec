@@ -49,7 +49,7 @@ function RenderNavItem({
 }) {
   if (item.links?.length) {
     return (
-      <details className="open:[&>summary_.chevron]:rotate-90">
+      <details className="open:[&>summary_.chevron]:rotate-90 mb-1">
         <summary className="
           list-none
           flex
@@ -165,6 +165,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 block
                 font-bold
                 mt-4
+                mb-1
                 uppercase"
               >
                 {group.title}
