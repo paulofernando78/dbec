@@ -149,7 +149,7 @@ export const intermediateWhatIf = {
       },
     ],
     column: {
-      width: 320,
+      width: 266,
       cols: [
         {
           borderColor: "border-slate-500",
