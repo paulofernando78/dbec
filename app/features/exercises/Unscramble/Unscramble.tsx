@@ -1,5 +1,6 @@
 import { useEffect, useState, type ChangeEvent } from "react";
 
+import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
 
 import { Check, Eye, EyeClosed, RotateCcw } from "lucide-react";
@@ -139,9 +140,12 @@ export const Unscramble = ({
                   .filter(Boolean)
                   .join(" ")}
               />
-              <p className="text-sm min-h-5 mt-1">
-                {isShown ? item.answer : ""}
-              </p>
+              <div className="flex items-center gap-2">
+                {checked && results[key] && <Audio src={item.answer} className="relative top-[0.06rem]"/>}
+                <p className="text-sm min-h-5 mt-1">
+                  {isShown ? item.answer : ""}
+                </p>
+              </div>
             </div>
           );
         })}
