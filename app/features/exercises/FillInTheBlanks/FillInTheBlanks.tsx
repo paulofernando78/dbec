@@ -221,62 +221,58 @@ export const FillInTheBlanks = ({
 
           return (
             <div key={bsIndex} className={bs.lineBreak ? "block" : "inline"}>
-              <div className="flex">
+              <div className="flex items-start gap-1 mb-2">
                 {checked && results[blankKey] && audioSentence && (
-                  <Audio
-                    src={audioSentence}
-                    className="mr-2 relative top-[0.4rem]"
-                  />
+                  <Audio src={audioSentence} className="mt-[0.38rem]" />
                 )}
 
-                {(bs.block || []).map((b, bIndex) => {
-                  const key = `${bsIndex}-${bIndex}`;
-                  const maxLength = b.blank
-                    ? Array.isArray(b.blank)
-                      ? Math.max(...b.blank.map((a) => a.length))
-                      : b.blank.length
-                    : 2;
+                <div className="ml-1 min-w-0 flex-1 leading-relaxed">
+                  {(bs.block || []).map((b, bIndex) => {
+                    const key = `${bsIndex}-${bIndex}`;
 
-                  return (
-                    <div key={key} className="inline mb-2">
-                      {numbered && bIndex === 0 && (
-                        <span className="relative top-[0.19rem]">
-                          {bsIndex + 1}.{" "}
-                        </span>
-                      )}
+                    const maxLength = b.blank
+                      ? Array.isArray(b.blank)
+                        ? Math.max(...b.blank.map((answer) => answer.length))
+                        : b.blank.length
+                      : 2;
 
-                      {b.text && (
-                        <span className="relative top-[0.19rem]">{b.text}</span>
-                      )}
+                    return (
+                      <span key={key} className="inline">
+                        {numbered && bIndex === 0 && (
+                          <span>{bsIndex + 1}. </span>
+                        )}
 
-                      {b.blank && (
-                        <input
-                          type="text"
-                          placeholder={b.placeholder}
-                          value={answers[key] || ""}
-                          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                            setAnswers((prev) => ({
-                              ...prev,
-                              [key]: e.target.value,
-                            }))
-                          }
-                          className={[
-                            "font-mono text-gray-900 box-content mx-1.25 mb-0.5 px-1 py-0.5 border rounded-lg",
-                            "focus:outline-none focus:border-slate-400",
-                            checked
-                              ? results[key]
-                                ? "border-green-200 bg-green-100"
-                                : "border-red-200 bg-red-100"
-                              : "border-slate-300 bg-white",
-                          ]
-                            .filter(Boolean)
-                            .join(" ")}
-                          style={{ width: `${Math.max(maxLength, 2)}ch` }}
-                        />
-                      )}
-                    </div>
-                  );
-                })}
+                        {b.text && <span>{b.text}</span>}
+
+                        {b.blank && (
+                          <input
+                            type="text"
+                            placeholder={b.placeholder}
+                            value={answers[key] || ""}
+                            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                              setAnswers((previous) => ({
+                                ...previous,
+                                [key]: event.target.value,
+                              }))
+                            }
+                            className={[
+                              "font-mono text-gray-900 box-content mx-1.25 mb-0.5 px-1 py-0.5 border rounded-lg",
+                              "focus:outline-none focus:border-slate-400",
+                              checked
+                                ? results[key]
+                                  ? "border-green-200 bg-green-100"
+                                  : "border-red-200 bg-red-100"
+                                : "border-slate-300 bg-white",
+                            ]
+                              .filter(Boolean)
+                              .join(" ")}
+                            style={{ width: `${Math.max(maxLength, 2)}ch` }}
+                          />
+                        )}
+                      </span>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           );

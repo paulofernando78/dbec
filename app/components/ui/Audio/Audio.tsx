@@ -220,7 +220,7 @@ export const Audio = ({ src, className }: AudioProps) => {
   };
 
   return (
-    <>
+    <div>
       {loading ? (
         <LoaderCircle
           onClick={handleStop}
@@ -266,6 +266,6 @@ export const Audio = ({ src, className }: AudioProps) => {
           }}
         />
       )}
-    </>
+    </div>
   );
 };
