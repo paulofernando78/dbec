@@ -118,34 +118,35 @@ export const Unscramble = ({
                 {numbered && `${index + 1}. `}
                 {item.prompt}
               </p>
-
-              <input
-                type="text"
-                value={answers[key] || ""}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setAnswers((prev) => ({
-                    ...prev,
-                    [key]: e.target.value,
-                  }))
-                }
-                className={[
-                  "font-mono text-gray-900 w-full px-2 py-1 border rounded-lg",
-                  "focus:outline-none focus:border-slate-400",
-                  checked
-                    ? results[key]
-                      ? "border-green-200 bg-green-100"
-                      : "border-red-200 bg-red-100"
-                    : "border-slate-300 bg-white",
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              />
-              <div className="flex items-center gap-2">
-                {checked && results[key] && <Audio src={item.answer} className="relative top-[0.06rem]"/>}
+              <div className="relative">
+                {checked && results[key] && (
+                  <Audio src={item.answer} className="absolute top-[0.49rem] left-[0.4rem]" />
+                )}
+                <input
+                  type="text"
+                  value={answers[key] || ""}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setAnswers((prev) => ({
+                      ...prev,
+                      [key]: e.target.value,
+                    }))
+                  }
+                  className={[
+                    "font-mono text-gray-900 w-full py-1 border rounded-lg", checked && results[key] ? "pl-7" : "pl-2",
+                    "focus:outline-none focus:border-slate-400",
+                    checked
+                      ? results[key]
+                        ? "border-green-200 bg-green-100"
+                        : "border-red-200 bg-red-100"
+                      : "border-slate-300 bg-white",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                />
+              </div>
                 <p className="text-sm min-h-5 mt-1">
                   {isShown ? item.answer : ""}
                 </p>
-              </div>
             </div>
           );
         })}
