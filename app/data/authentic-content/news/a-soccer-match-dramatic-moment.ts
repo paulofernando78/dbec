@@ -231,9 +231,9 @@ export const aSoccerMatchDramaticMoment = {
           blocks: [
             {
               block: [
-                { text: "The players paid a" },
-                { blank: "touching tribute" },
-                { text: "to their former coach." },
+                { text: "The red-card decision" },
+                { blank: "sparked" },
+                { text: "an angry reaction from both teams." },
               ],
               lineBreak: true,
             },
@@ -247,17 +247,17 @@ export const aSoccerMatchDramaticMoment = {
             },
             {
               block: [
-                { text: "Doctors are still assessing" },
-                { blank: "the extent of" },
-                { text: "his injuries." },
+                { text: "Players from both" },
+                { blank: "benches" },
+                { text: "ran onto the pitch." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "The scandal completely" },
-                { blank: "overshadowed" },
-                { text: "the team's victory." },
+                { text: "The medical staff immediately recognized the" },
+                { blank: "seriousness" },
+                { text: "of the injury." },
               ],
               lineBreak: true,
             },
@@ -271,33 +271,9 @@ export const aSoccerMatchDramaticMoment = {
             },
             {
               block: [
-                { text: "The underdogs secured a" },
+                { text: "Canada secured a" },
                 { blank: "stunning" },
-                { text: "3-0 victory." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "A" },
-                { blank: "heated confrontation" },
-                { text: "broke out between the players after the foul." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "The midfielder" },
-                { blank: "lunged into" },
-                { text: "the challenge and injured his opponent." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "The final result left fans with" },
-                { blank: "mixed emotions" },
-                { text: "." },
+                { text: "6-0 victory." },
               ],
               lineBreak: true,
             },
@@ -306,14 +282,6 @@ export const aSoccerMatchDramaticMoment = {
                 { text: "Emotions" },
                 { blank: "boiled over" },
                 { text: "when the referee showed the red card." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "The midfielder had to be" },
-                { blank: "stretchered off" },
-                { text: "after twisting his ankle." },
               ],
               lineBreak: true,
             },
@@ -334,21 +302,13 @@ export const aSoccerMatchDramaticMoment = {
           items: [
             {
               prompt:
-                "into / the / player / lunged / challenge / recklessly / the",
-              answer: "The player lunged into the challenge recklessly.",
-            },
-            {
-              prompt:
-                "paid / tribute / a / the / actor / touching / to / fans / the",
-              answer: "The fans paid a touching tribute to the actor.",
+                "sparked / the decision / an angry reaction / from both teams",
+              answer:
+                "The decision sparked an angry reaction from both teams.",
             },
             {
               prompt: "announcement / emotions / after / the / boiled over",
               answer: "Emotions boiled over after the announcement.",
-            },
-            {
-              prompt: "the / controversy / overshadowed / ceremony / the",
-              answer: "The controversy overshadowed the ceremony.",
             },
             {
               prompt: "out / fight / broke / the / after / concert / a",
@@ -360,18 +320,14 @@ export const aSoccerMatchDramaticMoment = {
             },
             {
               prompt:
-                "extent / still / the / assessing / are / the / authorities / of / damage / the",
+                "recognized / the medical staff / the seriousness / immediately / of the injury",
               answer:
-                "The authorities are still assessing the extent of the damage.",
+                "The medical staff immediately recognized the seriousness of the injury.",
             },
             {
               prompt:
-                "mixed / left / announcement / the / with / investors / emotions",
-              answer: "The announcement left investors with mixed emotions.",
-            },
-            {
-              prompt: "after / was / he / stretchered off / collision / the",
-              answer: "He was stretchered off after the collision.",
+                "onto the pitch / players / from both benches / ran",
+              answer: "Players from both benches ran onto the pitch.",
             },
             {
               prompt:

@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 
 import { Button } from "@/components/ui/Button";
 
@@ -42,6 +42,14 @@ export const Unscramble = ({
       .toLowerCase()
       .replaceAll("’", "'")
       .replaceAll("‘", "'");
+
+  useEffect(() => {
+    setAnswers({});
+    setResults({});
+    setChecked(false);
+    setTotalScore(0);
+    setIsShown(false);
+  }, [rawItems]);
 
   if (!exercise || !rawItems) {
     return null;
@@ -90,6 +98,8 @@ export const Unscramble = ({
     setAnswers({});
     setResults({});
     setChecked(false);
+    setTotalScore(0);
+    setIsShown(false);
   };
 
   const totalBlanks = items.length;

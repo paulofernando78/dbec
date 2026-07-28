@@ -434,55 +434,53 @@ export const whatCausesConstipation = {
           blocks: shuffle([
             {
               block: [
-                { text: "Constipation arises in the " },
-                { blank: "colon" },
-                { text: ", also known as the large intestine." },
+                { text: "For some people, constipation becomes " },
+                { blank: "chronic" },
+                { text: " rather than occasional." },
               ],
               lineBreak: true,
             },
             {
               block: [
                 {
-                  text: "As stool moves through the colon, it loses most of its ",
+                  text: "As stool moves through the colon, the organ ",
                 },
-                { blank: "water" },
+                { blank: "siphons off" },
+                { text: " most of the water it contains." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                {
+                  text: "A longer transit time leads to greater water ",
+                },
+                { blank: "reabsorption" },
                 { text: "." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "The two main causes mentioned are slow stool movement and pelvic floor ",
-                },
-                { blank: "dysfunction" },
-                { text: "." },
+                { text: "The rectum expands as waste enters, " },
+                { blank: "distending" },
+                { text: " its walls." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Eating more " },
-                { blank: "fiber" },
-                {
-                  text: " and drinking enough water may help relieve chronic constipation.",
-                },
+                { text: "The body can either " },
+                { blank: "expel" },
+                { text: " or retain the stool." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Researchers use the Bristol Stool " },
-                { blank: "Chart" },
-                { text: " to identify constipation more precisely." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "Ideally, you should be in a " },
-                { blank: "squatting" },
-                { text: " position when using the toilet." },
+                { text: "The urge alone may not " },
+                { blank: "coax" },
+                { text: " the body into action." },
               ],
               lineBreak: true,
             },
@@ -495,38 +493,34 @@ export const whatCausesConstipation = {
           items: shuffle([
             {
               prompt:
-                "the / in / arises / colon / Constipation / large / also / intestine / known / as / the",
-              answer:
-                "Constipation arises in the colon, also known as the large intestine.",
+                "rather than occasional / constipation / chronic / can become",
+              answer: "Constipation can become chronic rather than occasional.",
             },
             {
               prompt:
-                "through / moves / stool / the / As / colon / loses / most / water / its / of / it",
-              answer:
-                "As stool moves through the colon, it loses most of its water.",
+                "most of the water / the colon / siphons off / in the stool",
+              answer: "The colon siphons off most of the water in the stool.",
             },
             {
               prompt:
-                "main / constipation / causes / the / slow / movement / stool / are / pelvic / dysfunction / floor / and / of / The / two",
+                "greater reabsorption / a longer transit time / causes / of water",
               answer:
-                "The two main causes of constipation are slow stool movement and pelvic floor dysfunction.",
+                "A longer transit time causes greater reabsorption of water.",
             },
             {
               prompt:
-                "fiber / Eating / more / enough / drinking / and / water / may / help / relieve / chronic / constipation",
-              answer:
-                "Eating more fiber and drinking enough water may help relieve chronic constipation.",
+                "its walls / the rectum / distending / waste enters / expands",
+              answer: "The rectum expands, distending its walls, as waste enters.",
             },
             {
               prompt:
-                "the / Bristol / Stool / Researchers / Chart / use / identify / to / constipation",
-              answer:
-                "Researchers use the Bristol Stool Chart to identify constipation.",
+                "the stool / can / expel / the body / or retain",
+              answer: "The body can expel or retain the stool.",
             },
             {
               prompt:
-                "be / a / Ideally / should / in / squatting / you / position",
-              answer: "Ideally, you should be in a squatting position.",
+                "into action / may not / the urge alone / coax / the body",
+              answer: "The urge alone may not coax the body into action.",
             },
           ]),
         },

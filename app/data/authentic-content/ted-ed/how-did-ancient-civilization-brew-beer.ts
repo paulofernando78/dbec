@@ -602,65 +602,49 @@ export const howDidAncientCivilizationsBrewBeer = {
           blocks: shuffle([
             {
               block: [
-                { text: "Beer is made from fermented cereal " },
-                { blank: "grains" },
-                { text: "." },
+                { text: "Local ingredients shaped the " },
+                { blank: "composition" },
+                { text: " of early beers." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "The second step in brewing is " },
-                { blank: "fermentation" },
-                { text: "." },
+                { text: "Soaking cereal seeds can trigger " },
+                { blank: "germination" },
+                { text: " and break down their starches." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Wild " },
-                { blank: "yeast" },
-                { text: " converts sugars into alcohol." },
+                { text: "" },
+                { blank: "Unbeknownst" },
+                { text: " to ancient brewers, airborne organisms entered the mixture." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "European brewers began adding " },
-                { blank: "hops" },
-                { text: " to improve flavor and preserve beer." },
+                { text: "Hammurabi's Code " },
+                { blank: "mandated" },
+                { text: " daily beer rations for citizens." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "The Reinheitsgebot stated that beer should contain " },
-                { blank: "barley" },
-                { text: ", hops, and water." },
+                { text: "European monasteries " },
+                { blank: "pioneered" },
+                { text: " large-scale beer production." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Louis Pasteur discovered the role of " },
-                { blank: "yeast" },
-                { text: " in beer fermentation." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "Today there are more than " },
-                { blank: "100" },
-                { text: " different varieties of beer." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "Lagers ferment at " },
-                { blank: "colder" },
-                { text: " temperatures than ales." },
+                { text: "The Industrial Revolution " },
+                { blank: "ushered in" },
+                { text: " major innovations in brewing." },
               ],
               lineBreak: true,
             },
@@ -672,28 +656,40 @@ export const howDidAncientCivilizationsBrewBeer = {
         exercise: {
           items: shuffle([
             {
-              prompt: "beer / fermented / grains / is / from / made",
-              answer: "Beer is made from fermented grains.",
+              prompt:
+                "of early beers / local ingredients / the composition / shaped",
+              answer:
+                "Local ingredients shaped the composition of early beers.",
             },
             {
-              prompt: "wild / alcohol / yeast / into / sugars / converts",
-              answer: "Wild yeast converts sugars into alcohol.",
+              prompt:
+                "can trigger germination / soaking cereal seeds / and break down starches",
+              answer:
+                "Soaking cereal seeds can trigger germination and break down starches.",
             },
             {
-              prompt: "help / preserve / hops / beer",
-              answer: "Hops help preserve beer.",
+              prompt:
+                "airborne organisms / unbeknownst to ancient brewers / entered the mixture",
+              answer:
+                "Unbeknownst to ancient brewers, airborne organisms entered the mixture.",
             },
             {
-              prompt: "identified / Pasteur / role / yeast's / Louis",
-              answer: "Louis Pasteur identified yeast's role.",
+              prompt:
+                "daily beer rations / Hammurabi's Code / for citizens / mandated",
+              answer:
+                "Hammurabi's Code mandated daily beer rations for citizens.",
             },
             {
-              prompt: "at / colder / ferment / lagers / temperatures",
-              answer: "Lagers ferment at colder temperatures.",
+              prompt:
+                "large-scale beer production / European monasteries / pioneered",
+              answer:
+                "European monasteries pioneered large-scale beer production.",
             },
             {
-              prompt: "than / beer / water / safer / was / often",
-              answer: "Beer was often safer than water.",
+              prompt:
+                "major brewing innovations / ushered in / the Industrial Revolution",
+              answer:
+                "The Industrial Revolution ushered in major brewing innovations.",
             },
           ]),
         },

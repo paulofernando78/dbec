@@ -1,6 +1,7 @@
 import { useEffect, useState, type ChangeEvent } from "react";
 
 import { Card } from "@/components/ui/Card";
+import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
 
 import { Check, RotateCcw } from "lucide-react";
@@ -14,6 +15,7 @@ type FillBlankBlockItem = {
 type FillBlankBlock = {
   lineBreak?: boolean;
   block?: FillBlankBlockItem[];
+  audio: string;
 };
 
 type FillInTheBlanksExercise = {
@@ -101,6 +103,12 @@ export const FillInTheBlanks = ({
 
   useEffect(() => {
     const nextBlocks = Array.isArray(rawBlocks) ? rawBlocks : [];
+
+    setAnswers({});
+    setResults({});
+    setChecked(false);
+    setTotalScore(0);
+    setCrossWords([]);
     setDescription(
       showWordBank ? buildDescription(descriptionText, nextBlocks) : "",
     );
@@ -148,6 +156,8 @@ export const FillInTheBlanks = ({
     setAnswers({});
     setResults({});
     setChecked(false);
+    setTotalScore(0);
+    setCrossWords([]);
     setDescription(
       showWordBank ? buildDescription(descriptionText, blocks) : "",
     );
@@ -191,51 +201,71 @@ export const FillInTheBlanks = ({
       )}
 
       <div>
-        {blocks.map((bs, bsIndex) => (
-          <div key={bsIndex} className={bs.lineBreak ? "block" : "inline"}>
-            {(bs.block || []).map((b, bIndex) => {
-              const key = `${bsIndex}-${bIndex}`;
+        {blocks.map((bs, bsIndex) => {
+          const blankIndex = (bs.block || []).findIndex((item) => item.blank);
 
-              const maxLength = b.blank
-                ? Array.isArray(b.blank)
-                  ? Math.max(...b.blank.map((a) => a.length))
-                  : b.blank.length
-                : 2;
+          const blankItem =
+            blankIndex >= 0 ? bs.block?.[blankIndex] : undefined;
 
-              return (
-                <div key={key} className="inline mb-2">
-                  {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
-                  {b.text && <span>{b.text}</span>}
-                  {b.blank && (
-                    <input
-                      type="text"
-                      placeholder={b.placeholder}
-                      value={answers[key] || ""}
-                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                        setAnswers((prev) => ({
-                          ...prev,
-                          [key]: e.target.value,
-                        }))
-                      }
-                      className={[
-                        "font-mono text-gray-900 box-content mx-1.25 mb-0.5 px-1 py-0.5 border rounded-lg",
-                        "focus:outline-none focus:border-slate-400",
-                        checked
-                          ? results[key]
-                            ? "border-green-200 bg-green-100"
-                            : "border-red-200 bg-red-100"
-                          : "border-slate-300 bg-white",
-                      ]
-                        .filter(Boolean)
-                        .join(" ")}
-                      style={{ width: `${Math.max(maxLength, 2)}ch` }}
-                    />
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        ))}
+          const audioAnswer = Array.isArray(blankItem?.blank)
+            ? blankItem.blank[0]
+            : blankItem?.blank;
+
+          const blankKey = `${bsIndex}-${blankIndex}`;
+
+          return (
+            <div key={bsIndex} className={bs.lineBreak ? "block" : "inline"}>
+              <div className="flex">
+                {checked && results[blankKey] && audioAnswer && (
+                  <Audio src={audioAnswer} className="mr-2 relative top-[0.19rem]"/>
+                )}
+  
+                {(bs.block || []).map((b, bIndex) => {
+                  const key = `${bsIndex}-${bIndex}`;
+                  const maxLength = b.blank
+                    ? Array.isArray(b.blank)
+                      ? Math.max(...b.blank.map((a) => a.length))
+                      : b.blank.length
+                    : 2;
+  
+                  return (
+                    <div key={key} className="inline mb-2">
+                      {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
+  
+                      {b.text && <span>{b.text}</span>}
+  
+                      {b.blank && (
+                        <input
+                          type="text"
+                          placeholder={b.placeholder}
+                          value={answers[key] || ""}
+                          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                            setAnswers((prev) => ({
+                              ...prev,
+                              [key]: e.target.value,
+                            }))
+                          }
+                          className={[
+                            "font-mono text-gray-900 box-content mx-1.25 mb-0.5 px-1 py-0.5 border rounded-lg",
+                            "focus:outline-none focus:border-slate-400",
+                            checked
+                              ? results[key]
+                                ? "border-green-200 bg-green-100"
+                                : "border-red-200 bg-red-100"
+                              : "border-slate-300 bg-white",
+                          ]
+                            .filter(Boolean)
+                            .join(" ")}
+                          style={{ width: `${Math.max(maxLength, 2)}ch` }}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       <span>

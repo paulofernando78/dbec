@@ -300,63 +300,49 @@ export const howDidAncientCivilizationsMakeIceCream = {
           blocks: shuffle([
             {
               block: [
-                {
-                  text: "Modern ice cream was originally inspired by an icy drink called ",
-                },
-                { blank: "sherbet" },
-                { text: "." },
+                { text: "The frozen poison pill broke, ultimately " },
+                { blank: "foiling" },
+                { text: " the assassination plan." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Nancy Johnson " },
-                { blank: "patented" },
-                { text: " a hand-cranked ice cream machine in 1843." },
+                { text: "Making ice cream remained a highly " },
+                { blank: "laborious" },
+                { text: " process for the upper classes." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "Frederic Tudor, known as the Ice King, improved the ice ",
-                },
-                { blank: "trade" },
-                { text: " globally." },
+                { text: "During Prohibition, several breweries " },
+                { blank: "pivoted" },
+                { text: " to producing ice cream." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "In 1692, Antonio Latini recorded a milk-based " },
-                { blank: "recipe" },
-                { text: " that some historians call the first ice cream." },
+                { text: "The pools could fall below the " },
+                { blank: "ambient" },
+                { text: " temperature during the night." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "When alcohol was banned, many American " },
-                { blank: "saloons" },
-                { text: " reinvented themselves as soda fountains." },
+                { text: "Political " },
+                { blank: "turmoil" },
+                { text: " drove many Italian immigrants to other cities." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                {
-                  text: "By the end of World War II, the average American home had a ",
-                },
-                { blank: "freezer" },
-                { text: " that could house a quart of ice cream." },
-              ],
-              lineBreak: true,
-            },
-            {
-              block: [
-                { text: "At the same time, " },
-                { blank: "refrigeration" },
-                { text: " technology was improving rapidly." },
+                { text: "Carbonated drinks were believed to possess " },
+                { blank: "therapeutic" },
+                { text: " properties." },
               ],
               lineBreak: true,
             },
@@ -365,37 +351,43 @@ export const howDidAncientCivilizationsMakeIceCream = {
       },
 
       unscramble: {
-        instruction: "Unscramble the sentences from the video transcript.",
+        instruction:
+          "Unscramble the sentences using vocabulary from the video.",
         exercise: {
           items: shuffle([
             {
-              prompt: "enjoyed / icy / by / treats / royal / elites / were",
-              answer: "Icy treats were enjoyed by royal elites.",
+              prompt:
+                "an unexpected failure / the agents' mission / ended up / foiling",
+              answer:
+                "An unexpected failure ended up foiling the agents' mission.",
             },
             {
-              prompt: "patented / Nancy Johnson / revolutionary / machine / a",
-              answer: "Nancy Johnson patented a revolutionary machine.",
+              prompt:
+                "for mountain workers / harvesting glacial ice / a laborious task / was",
+              answer:
+                "Harvesting glacial ice was a laborious task for mountain workers.",
             },
             {
-              prompt: "soda / combined / druggists / with / ice cream",
-              answer: "Druggists combined soda with ice cream.",
-            },
-            // Novos itens adicionados abaixo
-            {
-              prompt: "pools / built / ancient / shallow / Persians",
-              answer: "Ancient Persians built shallow pools.",
+              prompt:
+                "during Prohibition / breweries / toward frozen desserts / pivoted",
+              answer:
+                "Breweries pivoted toward frozen desserts during Prohibition.",
             },
             {
-              prompt: "expensive / ingredients / the / main / were",
-              answer: "The main ingredients were expensive.",
+              prompt:
+                "below ambient temperature / during clear nights / the desert pools / cooled",
+              answer:
+                "The desert pools cooled below ambient temperature during clear nights.",
             },
             {
-              prompt: "improving / refrigeration / was / rapidly / technology",
-              answer: "Refrigeration technology was improving rapidly.",
+              prompt: "many families / political turmoil / to migrate / forced",
+              answer: "Political turmoil forced many families to migrate.",
             },
             {
-              prompt: "forms / on / new / takes / ice cream",
-              answer: "Ice cream takes on new forms.",
+              prompt:
+                "as having therapeutic properties / promoted / druggists / soda water",
+              answer:
+                "Druggists promoted soda water as having therapeutic properties.",
             },
           ]),
         },
@@ -405,21 +397,32 @@ export const howDidAncientCivilizationsMakeIceCream = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Answer the questions below based on the video.",
+        instruction:
+          "Discuss the questions below, using ideas and examples from the video.",
         items: [
           {
             content: [
-              "How did social and economic changes (like Prohibition or Italian immigration) help popularize ice cream?",
+              "To what extent did technological innovation democratize ice cream consumption?",
             ],
           },
           {
             content: [
-              "In what ways did technological innovations change ice cream from an elite luxury to an everyday treat?",
+              "Which had a greater influence on the popularity of ice cream: technological progress, migration, or changing social habits? Justify your answer.",
             ],
           },
           {
             content: [
-              "If you could create a unique ice cream flavor like the 17th-century European chefs (e.g., eggplant or pinecone), what unusual ingredient would you use?",
+              "The history of ice cream involves cultural exchange between Persia, Europe, and North America. When does cultural adaptation become cultural appropriation?",
+            ],
+          },
+          {
+            content: [
+              "How might the environmental cost of modern refrigeration change the way frozen products are produced and transported in the future?",
+            ],
+          },
+          {
+            content: [
+              "If you had to create an unconventional ice cream flavor, which ingredient would you choose, and how would you persuade consumers to try it?",
             ],
           },
         ],

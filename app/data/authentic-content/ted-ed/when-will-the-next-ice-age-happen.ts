@@ -598,45 +598,43 @@ export const whenWillTheNextIceAgeHappen = {
           blocks: shuffle([
             {
               block: [
-                {
-                  text: "The Last Glacial Maximum was the most recent period when huge ",
-                },
-                { blank: "ice sheets" },
-                { text: " covered large areas of Earth." },
+                { text: "Earth's climate has undergone immense " },
+                { blank: "fluctuation" },
+                { text: " throughout its history." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Carbon dioxide is a greenhouse gas that traps " },
-                { blank: "heat" },
-                { text: "." },
+                { text: "The planet " },
+                { blank: "wobbles" },
+                { text: " on its axis as it rotates." },
               ],
               lineBreak: true,
             },
             {
               block: [
                 {
-                  text: "Repeated glacial periods are linked to Earth's movement around the ",
+                  text: "Changes in axial tilt create long-term climatic ",
                 },
-                { blank: "Sun" },
+                { blank: "oscillations" },
                 { text: "." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Scientists study " },
-                { blank: "ice cores" },
-                { text: " to measure ancient carbon dioxide levels." },
+                { text: "Several orbital factors must " },
+                { blank: "align" },
+                { text: " to produce colder conditions." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Reducing carbon dioxide emissions may help reduce " },
-                { blank: "ice loss" },
-                { text: "." },
+                { text: "Snow can " },
+                { blank: "accumulate" },
+                { text: " when summers are too cool to melt it." },
               ],
               lineBreak: true,
             },
@@ -649,27 +647,31 @@ export const whenWillTheNextIceAgeHappen = {
           items: shuffle([
             {
               prompt:
-                "covered / huge / Earth / sheets / ice / large / areas / of",
-              answer: "Huge ice sheets covered large areas of Earth.",
-            },
-            {
-              prompt:
-                "greenhouse / Carbon dioxide / traps / heat / a / gas / that / is",
-              answer: "Carbon dioxide is a greenhouse gas that traps heat.",
-            },
-            {
-              prompt: "around / Earth / the / moves / Sun",
-              answer: "Earth moves around the Sun.",
-            },
-            {
-              prompt:
-                "scientists / study / ice cores / ancient / climate / to / understand",
+                "throughout its history / immense fluctuation / Earth's climate / has undergone",
               answer:
-                "Scientists study ice cores to understand ancient climate.",
+                "Earth's climate has undergone immense fluctuation throughout its history.",
             },
             {
-              prompt: "reduce / emissions / Carbon dioxide / should / we",
-              answer: "We should reduce carbon dioxide emissions.",
+              prompt: "on its axis / the planet / as it rotates / wobbles",
+              answer: "The planet wobbles on its axis as it rotates.",
+            },
+            {
+              prompt:
+                "long-term climatic oscillations / changes in axial tilt / create",
+              answer:
+                "Changes in axial tilt create long-term climatic oscillations.",
+            },
+            {
+              prompt:
+                "to produce colder conditions / must align / several orbital factors",
+              answer:
+                "Several orbital factors must align to produce colder conditions.",
+            },
+            {
+              prompt:
+                "when summers are too cool / snow / to melt it / can accumulate",
+              answer:
+                "Snow can accumulate when summers are too cool to melt it.",
             },
           ]),
         },

@@ -16,7 +16,6 @@ const words = [
 ];
 
 export const template = {
-
   metadata: {
     title: "Authentic Content",
     subtitle: "News | Ted-ED",
@@ -40,16 +39,7 @@ export const template = {
     },
     vocabulary: {
       instruction: "Match the words with the pictures..",
-      matchingContent: shuffle([
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-        { as: "span" as const, parts: [audio("xxx"), "xxx"] },
-      ]),
+      matchingContent: shuffle(words),
       words: shuffle(words),
     },
     gist: {
@@ -110,7 +100,8 @@ export const template = {
         words: shuffle(words),
       },
       fillInTheBlanks: {
-        instruction: "Fill in the blanks with the correct answer. Then, click the wods to be crosshed out.",
+        instruction:
+          "Fill in the blanks with the correct answer. Then, click the words to be crosshed out.",
         exercise: {
           blocks: shuffle([
             {
@@ -135,7 +126,7 @@ export const template = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Answer the questions.",
+        instruction: "Discuss the questions below, using ideas and examples from the video.",
         items: [
           {
             content: ["..."],

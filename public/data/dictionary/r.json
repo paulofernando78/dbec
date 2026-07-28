@@ -2,6 +2,43 @@
   {
     "definitions": [
       {
+        "word": "refrigeration",
+        "phonetics": "/rɪˌfrɪdʒ.əˈreɪ.ʃən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The process of keeping food, drinks, or other materials cold to preserve them or prevent them from spoiling.",
+        "ptDefinition": "O processo de manter alimentos, bebidas ou outros materiais em baixa temperatura para conservá-los ou evitar que estraguem.",
+        "examples": [
+          {
+            "enExample": "Modern refrigeration allows food to remain fresh for longer periods.",
+            "ptExample": "A refrigeração moderna permite que os alimentos permaneçam frescos por períodos mais longos."
+          },
+          {
+            "enExample": "Before mechanical refrigeration, people stored food with blocks of ice.",
+            "ptExample": "Antes da refrigeração mecânica, as pessoas armazenavam alimentos com blocos de gelo."
+          }
+        ],
+        "synonyms": ["cooling", "chilling", "cold storage"],
+        "antonyms": ["heating", "warming"],
+        "seeAlso": [
+          "refrigerator",
+          "refrigerate",
+          "freezer",
+          "food preservation"
+        ],
+        "notes": [
+          {
+            "enNote": "Early systems used iceboxes, insulated rooms, compressors, and coiled pipes to remove heat and preserve food.",
+            "ptNote": "Os primeiros sistemas utilizavam caixas de gelo, ambientes isolados, compressores e tubos em espiral para remover o calor e conservar alimentos."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "refrigeration-1.avif",
+            "alt": "A Victorian-style illustration showing a mechanical cooling machine, frosted pipes, blocks of ice, a cold-storage room, a thermometer, and preserved food."
+          }
+        ]
+      },
+      {
         "word": "recipe",
         "phonetics": "/ˈresəpi/",
         "partOfSpeech": "noun",

@@ -280,41 +280,49 @@ export const howToManageEmotions = {
           blocks: [
             {
               block: [
-                { text: "Learning to " },
-                { blank: "regulate emotions" },
-                { text: " takes practice." },
+                { text: "The Process Model shows where we can " },
+                { blank: "intervene" },
+                { text: " in the formation of an emotion." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "After the argument, she tried to " },
-                { blank: "shift your attention" },
-                { text: " by reading a book." },
+                { text: "We first " },
+                { blank: "appraise" },
+                { text: " whether a situation helps us reach our goals." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Your family and close friends make up your " },
-                { blank: "support system" },
-                { text: "." },
+                { text: "A difficult situation may " },
+                { blank: "hinder" },
+                { text: " rather than support our goals." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "It's easier to " },
-                { blank: "empathize" },
-                { text: " with someone after a similar experience." },
+                { text: "We can reduce distress by " },
+                { blank: "reappraising" },
+                { text: " the meaning of a situation." },
               ],
               lineBreak: true,
             },
             {
               block: [
-                { text: "Even after failing the exam, she tried to " },
-                { blank: "look on the bright side" },
-                { text: "." },
+                { text: "Some people try " },
+                { blank: "tempering" },
+                { text: " their emotional response after it arises." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Regulation becomes easier once you have " },
+                { blank: "internalized" },
+                { text: " the idea that emotions can be managed." },
               ],
               lineBreak: true,
             },
@@ -326,24 +334,39 @@ export const howToManageEmotions = {
         exercise: {
           items: [
             {
-              prompt: "can / regulate / learn / anyone / emotions / their / to",
-              answer: "Anyone can learn to regulate their emotions.",
+              prompt:
+                "in the formation of an emotion / the Process Model / where to intervene / shows us",
+              answer:
+                "The Process Model shows us where to intervene in the formation of an emotion.",
             },
             {
-              prompt: "attention / shift / your / something / positive / to",
-              answer: "Shift your attention to something positive.",
+              prompt:
+                "whether a situation / we appraise / helps us / reach our goals",
+              answer:
+                "We appraise whether a situation helps us reach our goals.",
             },
             {
-              prompt: "strong / support / everyone / needs / a / system",
-              answer: "Everyone needs a strong support system.",
+              prompt:
+                "rather than support / a difficult situation / may hinder / our goals",
+              answer:
+                "A difficult situation may hinder rather than support our goals.",
             },
             {
-              prompt: "important / empathize / it / with / others / to / is",
-              answer: "It is important to empathize with others.",
+              prompt:
+                "the situation / by reappraising / she reduced / her distress",
+              answer:
+                "She reduced her distress by reappraising the situation.",
             },
             {
-              prompt: "always / try / bright / the / on / side / look / to",
-              answer: "Always try to look on the bright side.",
+              prompt:
+                "after it arises / people may try / their emotional response / tempering",
+              answer:
+                "People may try tempering their emotional response after it arises.",
+            },
+            {
+              prompt:
+                "the principle / she had internalized / through practice",
+              answer: "She had internalized the principle through practice.",
             },
           ],
         },
