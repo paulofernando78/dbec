@@ -1,16 +1,26 @@
-import { audio, content, mark, attentionMark } from "@/helpers/content";
+import {
+  audio,
+  content,
+  mark,
+  attentionMark,
+  phonetics,
+} from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
 const words = [
-  { word: "emotions", img: 0 },
-  { word: "avoid", img: 0 },
-  { word: "shift", img: 0 },
-  { word: "empathize", img: 0 },
-  { word: "support", img: 0 },
-  { word: "hope", img: 0 },
-  { word: "meditate", img: 0 },
-  { word: "look on the bright side", img: 0 },
+  { word: "emotions", phonetic: "/ɪˈmoʊ.ʃənz/", img: 0 },
+  { word: "avoid", phonetic: "/əˈvɔɪd/", img: 0 },
+  { word: "shift", phonetic: "/ʃɪft/", img: 0 },
+  { word: "empathize", phonetic: "/ˈem.pə.θaɪz/", img: 0 },
+  { word: "support", phonetic: "/səˈpɔːrt/", img: 0 },
+  { word: "hope", phonetic: "/hoʊp/", img: 0 },
+  { word: "meditate", phonetic: "/ˈmed.ɪ.teɪt/", img: 0 },
+  {
+    word: "look on the bright side",
+    phonetic: "/lʊk ɑːn ðə braɪt saɪd/",
+    img: 0,
+  },
 ];
 
 export const howToManageEmotions = {
@@ -47,11 +57,11 @@ export const howToManageEmotions = {
       ],
     },
     vocabulary: {
-      instuction: "Match the words with the pictures.",
+      instruction: "Match the words to the pictures.",
       matchingContent: shuffle(
-        words.map(({ word }) => ({
+        words.map(({ word, phonetic }) => ({
           as: "span" as const,
-          parts: [audio(word), word],
+          parts: [audio(word), word, " ", phonetics(phonetic)],
         })),
       ),
       words: shuffle(words),
@@ -273,6 +283,78 @@ export const howToManageEmotions = {
           { word: "meditate", img: 0 },
           { word: "look on the bright side", img: 0 },
         ]),
+      },
+      guessFillInTheBlanks: {
+        instruction:
+          "Complete the sentences with the words from the Guess activity.",
+        exercise: {
+          blocks: shuffle([
+            {
+              block: [
+                { text: "Our " },
+                { blank: "emotions" },
+                { text: " influence how we think and behave." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Some people " },
+                { blank: "avoid" },
+                { text: " situations that may cause distress." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "You can " },
+                { blank: "shift" },
+                { text: " your attention toward something positive." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Sadness can help us " },
+                { blank: "empathize" },
+                { text: " with someone who is grieving." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Friends can provide emotional " },
+                { blank: "support" },
+                { text: " during difficult periods." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Reappraisal can help people cultivate " },
+                { blank: "hope" },
+                { text: " for the future." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Some people " },
+                { blank: "meditate" },
+                { text: " to manage stress." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "After a disappointment, it may help to " },
+                { blank: "look on the bright side" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+          ]),
+        },
       },
       fillInTheBlanks: {
         instruction: "Complete each sentence with the correct expression.",

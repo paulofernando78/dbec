@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "risk",
+        "phonetics": "/rɪsk/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The possibility that something harmful or undesirable may happen.",
+        "ptDefinition": "A possibilidade de que algo prejudicial ou indesejado aconteça.",
+        "examples": [
+          {
+            "enExample": "Crossing the damaged bridge involved a considerable risk.",
+            "ptExample": "Atravessar a ponte danificada envolvia um risco considerável."
+          },
+          {
+            "enExample": "The company assessed the financial risks before launching the project.",
+            "ptExample": "A empresa avaliou os riscos financeiros antes de lançar o projeto."
+          }
+        ],
+        "synonyms": ["danger", "hazard", "threat"],
+        "antonyms": ["safety", "security", "certainty"],
+        "seeAlso": ["at risk", "take a risk", "risky"],
+        "notes": [
+          {
+            "enNote": "Risk can also be a verb. It is followed by a noun or an -ing form.",
+            "ptNote": "Risk também pode ser um verbo. Ele é seguido por um substantivo ou uma forma com -ing."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "risk.avif",
+            "alt": "Eric carefully crossing a wooden bridge with a cracked plank."
+          }
+        ]
+      },
+      {
         "word": "refrigeration",
         "phonetics": "/rɪˌfrɪdʒ.əˈreɪ.ʃən/",
         "partOfSpeech": "noun",

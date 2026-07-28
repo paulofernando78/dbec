@@ -1,15 +1,19 @@
-import { audio, content, mark, underline } from "@/helpers/content";
+import { audio, content, mark, phonetics, underline } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
 const words = [
-  { word: "barley", img: 0 },
-  { word: "grain", img: 0 },
-  { word: "malt", img: 0 },
-  { word: "yeast", img: 0 },
-  { word: "fermentation", img: 0 },
-  { word: "hops", img: 0 },
-  { word: "brewery", img: 0 },
+  { word: "barley", phonetic: "/ˈbɑːr.li/", img: 0 },
+  { word: "grain", phonetic: "/ɡreɪn/", img: 0 },
+  { word: "malt", phonetic: "/mɔːlt/", img: 0 },
+  { word: "yeast", phonetic: "/jiːst/", img: 0 },
+  {
+    word: "fermentation",
+    phonetic: "/ˌfɝː.mənˈteɪ.ʃən/",
+    img: 0,
+  },
+  { word: "hops", phonetic: "/hɑːps/", img: 0 },
+  { word: "brewery", phonetic: "/ˈbruː.ər.i/", img: 0 },
 ];
 
 export const howDidAncientCivilizationsBrewBeer = {
@@ -47,11 +51,11 @@ export const howDidAncientCivilizationsBrewBeer = {
       ],
     },
     vocabulary: {
-      instruction: "Match the words with the pictures..",
+      instruction: "Match the words to the pictures.",
       matchingContent: shuffle(
-        words.map(({ word }) => ({
+        words.map(({ word, phonetic }) => ({
           as: "span" as const,
-          parts: [audio(word), word],
+          parts: [audio(word), word, " ", phonetics(phonetic)],
         })),
       ),
       words: shuffle(words),
@@ -595,6 +599,70 @@ export const howDidAncientCivilizationsBrewBeer = {
     practice: {
       guess: {
         words: shuffle(words),
+      },
+      guessFillInTheBlanks: {
+        instruction:
+          "Complete the sentences with the words from the Guess activity.",
+        exercise: {
+          blocks: shuffle([
+            {
+              block: [
+                { text: "Brewers often use " },
+                { blank: "barley" },
+                { text: " as the main cereal ingredient." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Each cereal " },
+                { blank: "grain" },
+                { text: " contains starch that can become sugar." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Germinated cereal is processed into " },
+                { blank: "malt" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Wild " },
+                { blank: "yeast" },
+                { text: " converts sugars into alcohol." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "During " },
+                { blank: "fermentation" },
+                { text: ", microorganisms release carbon dioxide." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "European brewers added " },
+                { blank: "hops" },
+                { text: " for bitterness and preservation." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "A modern " },
+                { blank: "brewery" },
+                { text: " can produce beer on a large scale." },
+              ],
+              lineBreak: true,
+            },
+          ]),
+        },
       },
       fillInTheBlanks: {
         instruction: "Fill in the blanks with the correct answer.",

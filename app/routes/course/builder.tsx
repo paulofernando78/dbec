@@ -27,6 +27,10 @@ import { getCourseLesson } from "@/data/course/lessons-slug";
 import { getCourseLessonCard } from "@/data/course/course-lessons-card-data";
 import { lesson as courseTemplate } from "@/data/course/template";
 
+import {
+  bold
+} from "@/helpers/content";
+
 type CourseProps = {
   lesson: Record<string, any>;
   lessonCard?: LessonCardContent;
@@ -105,10 +109,21 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
             <Lines value={lesson.introduction.questions} className="mb-4"/>
             }
             {lesson.introduction?.vocabularyCarousel && (
-              <Carousel
-                aspectRatio="square"
-                {...lesson.introduction.vocabularyCarousel}
-              />
+              <>
+                <Lines
+                  value={[
+                    [
+                      bold("Look at the pictures. Describe what you see, then match to the words."),
+                    ],
+                  ]}
+                  className="mb-4"
+                />
+                <Carousel
+                  aspectRatio="square"
+                  {...lesson.introduction.vocabularyCarousel}
+                  instruction={undefined}
+                />
+              </>
             )}
             {lesson.introduction?.storyCarousel && (
               <Carousel

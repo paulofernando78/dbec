@@ -1,4 +1,5 @@
 import { useParams } from "react-router";
+import type { ComponentProps } from "react";
 
 import { template } from "@/data/authentic-content/template";
 
@@ -49,6 +50,12 @@ export default function AuthenticContents() {
     return <h1>Authentic content not found.</h1>;
   }
 
+  const guessFillInTheBlanks = (
+    content.sections.practice as typeof content.sections.practice & {
+      guessFillInTheBlanks?: ComponentProps<typeof FillInTheBlanks>;
+    }
+  ).guessFillInTheBlanks;
+
   return (
     <>
       <Whiteboard {...content.whiteboard} />
@@ -74,6 +81,9 @@ export default function AuthenticContents() {
 
         <Section id="Practice" heading={3}>
           <Guess {...content.sections.practice.guess} />
+          {guessFillInTheBlanks && (
+            <FillInTheBlanks {...guessFillInTheBlanks} />
+          )}
           <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
           <Unscramble {...content.sections.practice.unscramble} />
         </Section>

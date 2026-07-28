@@ -1,15 +1,23 @@
-import { audio, content, mark, underline } from "@/helpers/content";
+import { audio, content, mark, phonetics, underline } from "@/helpers/content";
 import { shuffle } from "@/utils/shuffle";
 
 // Palavras e conceitos-chave extraídos diretamente da legenda
 const words = [
-  { word: "recipe", img: 1 },
-  { word: "settler", img: 1 },
-  { word: "patent", img: 0 },
-  { word: "trade", img: 1 },
-  { word: "vendor", img: 0 },
-  { word: "soda fountain", img: 1 },
-  { word: "refrigeration", img: 0 },
+  { word: "recipe", phonetic: "/ˈresəpi/", img: 1 },
+  { word: "settler", phonetic: "/ˈsetlər/", img: 1 },
+  { word: "patent", phonetic: "/ˈpæt.ənt/", img: 0 },
+  { word: "trade", phonetic: "/ˈtreɪd/", img: 1 },
+  { word: "vendor", phonetic: "/ˈvɛndər/", img: 0 },
+  {
+    word: "soda fountain",
+    phonetic: "/ˈsoʊdə ˌfaʊntən/",
+    img: 1,
+  },
+  {
+    word: "refrigeration",
+    phonetic: "/rɪˌfrɪdʒ.əˈreɪ.ʃən/",
+    img: 0,
+  },
 ];
 
 export const howDidAncientCivilizationsMakeIceCream = {
@@ -49,11 +57,11 @@ export const howDidAncientCivilizationsMakeIceCream = {
     },
 
     vocabulary: {
-      instruction: "Match the words with the pictures.",
+      instruction: "Match the words to the pictures.",
       matchingContent: shuffle(
-        words.map(({ word }) => ({
+        words.map(({ word, phonetic }) => ({
           as: "span" as const,
-          parts: [audio(word), word],
+          parts: [audio(word), word, " ", phonetics(phonetic)],
         })),
       ),
       words: shuffle(words),
@@ -292,6 +300,71 @@ export const howDidAncientCivilizationsMakeIceCream = {
     practice: {
       guess: {
         words: shuffle(words),
+      },
+
+      guessFillInTheBlanks: {
+        instruction:
+          "Complete the sentences with the words from the Guess activity.",
+        exercise: {
+          blocks: shuffle([
+            {
+              block: [
+                { text: "The earliest recorded ice cream " },
+                { blank: "recipe" },
+                { text: " appeared in the seventeenth century." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "A European " },
+                { blank: "settler" },
+                { text: " could encounter new ingredients in America." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Nancy Johnson received a " },
+                { blank: "patent" },
+                { text: " for her ice cream machine." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The international ice " },
+                { blank: "trade" },
+                { text: " made frozen desserts easier to store." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "An Italian street " },
+                { blank: "vendor" },
+                { text: " sold small servings of ice cream." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The " },
+                { blank: "soda fountain" },
+                { text: " became a popular social meeting place." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Modern " },
+                { blank: "refrigeration" },
+                { text: " transformed the production of frozen desserts." },
+              ],
+              lineBreak: true,
+            },
+          ]),
+        },
       },
 
       fillInTheBlanks: {

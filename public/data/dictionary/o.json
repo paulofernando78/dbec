@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "option",
+        "phonetics": "/ˈɑːp.ʃən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "One of two or more possibilities from which someone can choose.",
+        "ptDefinition": "Uma entre duas ou mais possibilidades que alguém pode escolher.",
+        "examples": [
+          {
+            "enExample": "Tom considered the bus, but riding his bicycle was another option.",
+            "ptExample": "Tom considerou o ônibus, mas ir de bicicleta era outra opção."
+          },
+          {
+            "enExample": "Working remotely gives employees the option of avoiding a long commute.",
+            "ptExample": "Trabalhar remotamente oferece aos funcionários a opção de evitar um deslocamento longo."
+          }
+        ],
+        "synonyms": ["choice", "alternative", "possibility"],
+        "antonyms": ["necessity", "obligation"],
+        "seeAlso": ["choose", "decision", "preference"],
+        "notes": [
+          {
+            "enNote": "Use the option of before an -ing form and the option to before a verb.",
+            "ptNote": "Use the option of antes de uma forma com -ing e the option to antes de um verbo."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "option.avif",
+            "alt": "Tom Palmer deciding between taking a bus and riding a bicycle."
+          }
+        ]
+      },
+      {
         "word": "overshadow",
         "phonetics": "/ˌoʊ.vɚˈʃæd.oʊ/",
         "partOfSpeech": "verb",

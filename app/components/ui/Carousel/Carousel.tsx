@@ -4,9 +4,7 @@ import { Line } from "@/components/content/Line";
 import { Dot } from "lucide-react";
 import { Image } from "@/components/ui/Image";
 
-import {
-  InlineRichContent,
-} from "@/components/content/InlineRichContent";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { RichContent } from "@/helpers/content";
 
 import { useState, useRef, useEffect } from "react";
@@ -141,46 +139,106 @@ export const Carousel = ({
     });
   };
 
+  const matchingContentElement = matchingContent ? (
+    <div
+      className={`
+        mx-auto
+        h-20
+        mb-4
+        py-1 px-2
+        overflow-x-auto
+        border
+        border-gray-300
+        rounded-lg
+        ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+      `}
+    >
+      {matchingContent.map((item, index) => {
+        const display =
+          item.display === "block" || item.display === "inline"
+            ? item.display
+            : undefined;
+        const as = item.as === "p" || item.as === "span" ? item.as : undefined;
+
+        return (
+          <span key={index} className="inline-flex items-center">
+            <Line
+              display={display}
+              as={as}
+              value={content({ parts: item.parts })}
+            />
+            {index < matchingContent.length - 1 && (
+              <Dot className="inline size-4" />
+            )}
+          </span>
+        );
+      })}
+    </div>
+  ) : null;
+
+  const currentContentElement = currentContent ? (
+    <div
+      className={`
+        mx-auto
+        h-20
+        mb-4
+        py-1 px-2
+        overflow-x-auto
+        border
+        border-gray-300
+        rounded-lg
+        ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+      `}
+    >
+      <div
+        className={`
+          transition-opacity
+          duration-200
+          ease-in-out
+          ${isContentVisible ? "opacity-100" : "opacity-0"}
+        `}
+      >
+        {/* Meaning */}
+        <span className="font-bold">Meaning:</span>{" "}
+        <InlineRichContent value={currentContent} />
+      </div>
+    </div>
+  ) : null;
+
+  const paginationElement = (
+    <div className="mt-2 flex justify-center gap-2 mb-4">
+      {finalWords.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => {
+            setCurrentIndex(index);
+            cardRef.current[index]?.scrollIntoView({
+              behavior: "smooth",
+              inline: "start",
+            });
+          }}
+          className={`
+            aspect-square
+            w-[1.6rem]
+            cursor-pointer
+            rounded-[5px]
+            border
+            border-slate-400
+            text-[0.9rem]
+            ${currentIndex === index ? "bg-slate-300" : "bg-slate-100"}
+          `}
+        >
+          {index + 1}
+        </button>
+      ))}
+    </div>
+  );
+
   return (
     <>
       <p className="font-bold mb-4">{instruction}</p>
-      {matchingContent && (
-        <div
-          className={`
-            mx-auto
-            h-20
-            mb-4
-            py-1 px-2
-            overflow-x-auto
-            border
-            border-gray-300
-            rounded-lg
-            ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
-          `}
-        >
-          {matchingContent.map((item, index) => {
-            const display =
-              item.display === "block" || item.display === "inline"
-                ? item.display
-                : undefined;
-            const as =
-              item.as === "p" || item.as === "span" ? item.as : undefined;
-
-            return (
-              <span key={index} className="inline-flex items-center">
-                <Line
-                  display={display}
-                  as={as}
-                  value={content({ parts: item.parts })}
-                />
-                {index < matchingContent.length - 1 && (
-                  <Dot className="inline size-4" />
-                )}
-              </span>
-            );
-          })}
-        </div>
-      )}
+      {aspectRatio !== "square" && matchingContentElement}
+      {paginationElement}
       <div
         className={`
         relative
@@ -259,7 +317,7 @@ export const Carousel = ({
                   basis-full
                   snap-start
                   h-full
-                   ${aspectRatio === "wide" ? "aspect-[16/10]" : "aspect-square"}
+                   ${aspectRatio === "wide" ? "aspect-16/10" : "aspect-square"}
                 `}
               >
                 {word.src && (
@@ -312,59 +370,9 @@ export const Carousel = ({
           <Arrow className="block rotate-180 -translate-x-1.5" />
         </button>
       </div>
-      <div className="mt-2 flex justify-center gap-2 mb-4">
-        {finalWords.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setCurrentIndex(index);
-              cardRef.current[index]?.scrollIntoView({
-                behavior: "smooth",
-                inline: "start",
-              });
-            }}
-            className={`
-              aspect-square
-              w-[1.6rem]
-              cursor-pointer
-              rounded-[5px]
-              border
-              border-slate-400
-              text-[0.9rem]
-              ${currentIndex === index ? "bg-slate-300" : "bg-slate-100"}
-            `}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
-      {currentContent && (
-        <div
-          className={`
-          mx-auto
-          h-20
-          mb-4
-          py-1 px-2
-          overflow-x-auto
-          border
-          border-gray-300
-          rounded-lg
-          ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
-        `}
-        >
-          <div
-            className={`
-              transition-opacity
-              duration-200
-              ease-in-out
-              ${isContentVisible ? "opacity-100" : "opacity-0"}
-            `}
-          >
-            {/* <span className="font-bold">Hint:</span>{" "} */}
-            <InlineRichContent value={currentContent} />
-          </div>
-        </div>
-      )}
+      {aspectRatio === "square" && currentContentElement}
+      {aspectRatio === "square" && matchingContentElement}
+      {aspectRatio !== "square" && currentContentElement}
     </>
   );
 };

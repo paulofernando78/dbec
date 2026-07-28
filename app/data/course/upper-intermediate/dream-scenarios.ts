@@ -226,20 +226,23 @@ export const upperIntermediateDreamScenarios = {
             options: [
               { option: "had", isCorrect: true },
               { option: "will have", isCorrect: false },
+              { option: "would have", isCorrect: false },
             ],
           },
           {
             question: "What ___ you do if you won a scholarship?",
             options: [
               { option: "would", isCorrect: true },
-              { option: "do yesterday", isCorrect: false },
+              { option: "will", isCorrect: false },
+              { option: "did", isCorrect: false },
             ],
           },
           {
             question: "If she were available, we ___ invite her.",
             options: [
               { option: "could", isCorrect: true },
-              { option: "can definitely yesterday", isCorrect: false },
+              { option: "can", isCorrect: false },
+              { option: "will", isCorrect: false },
             ],
           },
           {
@@ -247,6 +250,23 @@ export const upperIntermediateDreamScenarios = {
             options: [
               { option: "were", isCorrect: true },
               { option: "will be", isCorrect: false },
+              { option: "would be", isCorrect: false },
+            ],
+          },
+          {
+            question: "If he ___ closer, he could walk to work.",
+            options: [
+              { option: "lived", isCorrect: true },
+              { option: "would live", isCorrect: false },
+              { option: "had lived", isCorrect: false },
+            ],
+          },
+          {
+            question: "I ___ that position if it involved frequent travel.",
+            options: [
+              { option: "wouldn't take", isCorrect: true },
+              { option: "won't take", isCorrect: false },
+              { option: "didn't take", isCorrect: false },
             ],
           },
         ],
@@ -290,6 +310,22 @@ export const upperIntermediateDreamScenarios = {
             ],
             lineBreak: true,
           },
+          {
+            block: [
+              { text: "If the role were remote, she " },
+              { blank: "might apply" },
+              { text: " for it." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "I wouldn't move unless the company " },
+              { blank: "paid" },
+              { text: " my relocation costs." },
+            ],
+            lineBreak: true,
+          },
         ],
       },
     },
@@ -310,6 +346,10 @@ export const upperIntermediateDreamScenarios = {
           {
             prompt: "if / could / she / remotely / relocate / worked",
             answer: "She could relocate if she worked remotely.",
+          },
+          {
+            prompt: "unless / wouldn't / the salary / I / accept / were higher",
+            answer: "I wouldn't accept unless the salary were higher.",
           },
         ],
       },

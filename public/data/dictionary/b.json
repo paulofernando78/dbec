@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "backup plan",
+        "phonetics": "/ˈbæk.ʌp ˌplæn/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "An alternative course of action prepared in case the original plan fails.",
+        "ptDefinition": "Um plano alternativo preparado para o caso de o plano original falhar.",
+        "examples": [
+          {
+            "enExample": "Laura used printed documents as a backup plan when her laptop stopped working.",
+            "ptExample": "Laura usou documentos impressos como plano alternativo quando o notebook parou de funcionar."
+          },
+          {
+            "enExample": "We need a backup plan in case the outdoor event is cancelled.",
+            "ptExample": "Precisamos de um plano B caso o evento ao ar livre seja cancelado."
+          }
+        ],
+        "synonyms": ["contingency plan", "alternative plan", "plan B"],
+        "antonyms": ["primary plan", "original plan"],
+        "seeAlso": ["fallback", "precaution", "contingency"],
+        "notes": [
+          {
+            "enNote": "Backup is written as one word when it modifies a noun, as in backup plan.",
+            "ptNote": "Backup é escrito como uma única palavra quando modifica um substantivo, como em backup plan."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "backup-plan.avif",
+            "alt": "Laura continuing a presentation with printed documents after her laptop fails."
+          }
+        ]
+      },
+      {
         "word": "brewery",
         "phonetics": "/ˈbruː.ər.i/",
         "partOfSpeech": "noun",

@@ -1,4 +1,4 @@
-import { audio, content, mark, underline } from "@/helpers/content";
+import { audio, content, mark, phonetics, underline } from "@/helpers/content";
 
 export const aSoccerMatchDramaticMoment = {
   metadata: {
@@ -36,7 +36,69 @@ export const aSoccerMatchDramaticMoment = {
       ],
     },
     vocabulary: {
-      prompt: "Slide the pictures and describe what you see.",
+      instruction: "Match the words to the pictures.",
+      matchingContent: [
+        {
+          as: "span" as const,
+          parts: [
+            audio("tournament"),
+            "tournament ",
+            phonetics("/ˈtɝː.nə.mənt/"),
+          ],
+        },
+        {
+          as: "span" as const,
+          parts: [audio("lunge"), "lunge ", phonetics("/lʌndʒ/")],
+        },
+        {
+          as: "span" as const,
+          parts: [
+            audio("injury"),
+            "injury ",
+            phonetics("/ˈɪn.dʒər.i/"),
+          ],
+        },
+        {
+          as: "span" as const,
+          parts: [
+            audio("stretcher"),
+            "stretcher ",
+            phonetics("/ˈstretʃ.ər/"),
+          ],
+        },
+        {
+          as: "span" as const,
+          parts: [
+            audio("recovery"),
+            "recovery ",
+            phonetics("/rɪˈkʌv.ɚ.i/"),
+          ],
+        },
+        {
+          as: "span" as const,
+          parts: [
+            audio("overshadow"),
+            "overshadow ",
+            phonetics("/ˌoʊ.vɚˈʃæd.oʊ/"),
+          ],
+        },
+        {
+          as: "span" as const,
+          parts: [
+            audio("confrontation"),
+            "confrontation ",
+            phonetics("/ˌkɑːn.frənˈteɪ.ʃən/"),
+          ],
+        },
+        {
+          as: "span" as const,
+          parts: [
+            audio("tribute"),
+            "tribute ",
+            phonetics("/ˈtrɪb.juːt/"),
+          ],
+        },
+      ],
       imgs: [
         {
           word: "tournament",
@@ -224,6 +286,78 @@ export const aSoccerMatchDramaticMoment = {
             img: 0,
           },
         ],
+      },
+      guessFillInTheBlanks: {
+        instruction:
+          "Complete the sentences with the words from the Guess activity.",
+        exercise: {
+          blocks: [
+            {
+              block: [
+                { text: "Canada competed in an international " },
+                { blank: "tournament" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The midfielder made a dangerous " },
+                { blank: "lunge" },
+                { text: " toward his opponent." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The player suffered a serious " },
+                { blank: "injury" },
+                { text: " during the match." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Medical staff carried him away on a " },
+                { blank: "stretcher" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "His full " },
+                { blank: "recovery" },
+                { text: " may take several months." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The accident threatened to " },
+                { blank: "overshadow" },
+                { text: " Canada's victory." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "A heated " },
+                { blank: "confrontation" },
+                { text: " followed the referee's decision." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The players paid " },
+                { blank: "tribute" },
+                { text: " to their injured teammate." },
+              ],
+              lineBreak: true,
+            },
+          ],
+        },
       },
       fillInTheBlanks: {
         instruction: "Fill in the blanks with the correct answer.",

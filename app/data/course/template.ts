@@ -5,16 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import {
   content,
-  icon,
   audio,
-  bold,
-  italic,
-  mark,
-  boldMark,
-  underline,
-  stressed,
-  phonetics,
-  portuguese,
   lineBreak,
 } from "@/helpers/content";
 
@@ -146,6 +137,7 @@ export const lesson = {
         parts: [audio("/"), "..."],
       },
     ] satisfies Meaning[],
+    
     column: {
       width: 300,
       cols: [

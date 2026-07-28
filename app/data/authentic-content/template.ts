@@ -38,8 +38,13 @@ export const template = {
       ],
     },
     vocabulary: {
-      instruction: "Match the words with the pictures..",
-      matchingContent: shuffle(words),
+      instruction: "Match the words to the pictures.",
+      matchingContent: shuffle(
+        words.map(({ word }) => ({
+          as: "span" as const,
+          parts: [audio(word), word],
+        })),
+      ),
       words: shuffle(words),
     },
     gist: {

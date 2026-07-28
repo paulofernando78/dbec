@@ -182,9 +182,9 @@ export const Guess = ({ words }: GuessProps) => {
             className="rounded-lg"
           />
 
-          {/* Hints */}
+          {/* Meaning */}
           <span className="w-full h-20 p-2 border border-gray-400 rounded-lg overflow-scroll">
-            <b>Hint:</b> {selected?.enDefinition}
+            <b>Meaning:</b> {selected?.enDefinition}
           </span>
         </div>
 

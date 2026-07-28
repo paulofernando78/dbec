@@ -1,16 +1,28 @@
-import { audio, content, mark, underline } from "@/helpers/content";
+import { audio, content, mark, phonetics, underline } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
 const words = [
-  { word: "intestine", img: 0 },
-  { word: "symptom", img: 0 },
-  { word: "bowel movement", img: 0 },
-  { word: "strain", img: 1 },
-  { word: "stool", img: 1 },
-  { word: "dehydration", img: 0 },
-  { word: "colon", img: 0 },
-  { word: "fiber", img: 0 },
+  { word: "intestine", phonetic: "/ɪnˈtes.tɪn/", img: 0 },
+  { word: "symptom", phonetic: "/ˈsɪmp.təm/", img: 0 },
+  {
+    word: "bowel movement",
+    phonetic: "/ˈbaʊ.əl ˌmuːv.mənt/",
+    img: 0,
+  },
+  { word: "strain", phonetic: "/streɪn/", img: 1 },
+  { word: "stool", phonetic: "/stuːl/", img: 1 },
+  { word: "dehydration", phonetic: "/ˌdiːhaɪˈdreɪʃən/", img: 0 },
+  {
+    word: "colon",
+    phonetic: "/ˈkoʊ.lən/",
+    img: 0,
+  },
+  {
+    word: "fiber",
+    phonetic: "/ˈfaɪ.bɚ/",
+    img: 0,
+  },
 ];
 
 export const whatCausesConstipation = {
@@ -42,11 +54,11 @@ export const whatCausesConstipation = {
       ],
     },
     vocabulary: {
-      instruction: "Match the words with the pictures.",
+      instruction: "Match the words to the pictures.",
       matchingContent: shuffle(
-        words.map(({ word }) => ({
+        words.map(({ word, phonetic }) => ({
           as: "span" as const,
-          parts: [audio(word), word],
+          parts: [audio(word), word, " ", phonetics(phonetic)],
         })),
       ),
       words: shuffle(words),
@@ -427,6 +439,78 @@ export const whatCausesConstipation = {
     practice: {
       guess: {
         words: shuffle(words),
+      },
+      guessFillInTheBlanks: {
+        instruction:
+          "Complete the sentences with the words from the Guess activity.",
+        exercise: {
+          blocks: shuffle([
+            {
+              block: [
+                { text: "The small " },
+                { blank: "intestine" },
+                { text: " sends waste to the large intestine." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Abdominal discomfort can be a " },
+                { blank: "symptom" },
+                { text: " of constipation." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Some people do not have a regular " },
+                { blank: "bowel movement" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "People may " },
+                { blank: "strain" },
+                { text: " when passing hard waste." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The colon gradually turns liquid waste into solid " },
+                { blank: "stool" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Not drinking enough water may cause " },
+                { blank: "dehydration" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Most water is absorbed as waste passes through the " },
+                { blank: "colon" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Vegetables provide dietary " },
+                { blank: "fiber" },
+                { text: " that can support digestion." },
+              ],
+              lineBreak: true,
+            },
+          ]),
+        },
       },
       fillInTheBlanks: {
         instruction: "Complete the sentences with the missing words.",

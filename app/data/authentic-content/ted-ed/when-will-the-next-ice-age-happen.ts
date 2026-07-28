@@ -1,16 +1,24 @@
-import { audio, content, mark, underline } from "@/helpers/content";
+import { audio, content, mark, phonetics, underline } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
 const words = [
-  { word: "glacier", img: 0 },
-  { word: "ice age", img: 0 },
-  { word: "orbit", img: 0 },
-  { word: "climate change", img: 0 },
-  { word: "earth axis", img: 0 },
-  { word: "carbon dioxide", img: 0 },
-  { word: "fossil", img: 0 },
-  { word: "temperature", img: 0 },
+  { word: "glacier", phonetic: "/ˈɡleɪ.ʃər/", img: 0 },
+  { word: "ice age", phonetic: "/ˈaɪs ˌeɪdʒ/", img: 0 },
+  { word: "orbit", phonetic: "/ˈɔːr.bɪt/", img: 0 },
+  {
+    word: "climate change",
+    phonetic: "/ˈklaɪ.mət tʃeɪndʒ/",
+    img: 0,
+  },
+  { word: "earth axis", phonetic: "/ɝːθ ˈæk.sɪs/", img: 0 },
+  {
+    word: "carbon dioxide",
+    phonetic: "/ˌkɑːr.bən daɪˈɑːk.saɪd/",
+    img: 0,
+  },
+  { word: "fossil", phonetic: "/ˈfɑː.səl/", img: 0 },
+  { word: "temperature", phonetic: "/ˈtem.prə.tʃɚ/", img: 0 },
 ];
 
 export const whenWillTheNextIceAgeHappen = {
@@ -43,11 +51,11 @@ export const whenWillTheNextIceAgeHappen = {
       ],
     },
     vocabulary: {
-      instruction: "Match the words with the pictures.",
+      instruction: "Match the words to the pictures.",
       matchingContent: shuffle(
-        words.map(({ word }) => ({
+        words.map(({ word, phonetic }) => ({
           as: "span" as const,
-          parts: [audio(word), word],
+          parts: [audio(word), word, " ", phonetics(phonetic)],
         })),
       ),
       words: shuffle(words),
@@ -591,6 +599,78 @@ export const whenWillTheNextIceAgeHappen = {
     practice: {
       guess: {
         words: shuffle(words),
+      },
+      guessFillInTheBlanks: {
+        instruction:
+          "Complete the sentences with the words from the Guess activity.",
+        exercise: {
+          blocks: shuffle([
+            {
+              block: [
+                { text: "A " },
+                { blank: "glacier" },
+                { text: " is a large mass of slowly moving ice." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "An " },
+                { blank: "ice age" },
+                { text: " is marked by extensive ice coverage." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Earth follows an elliptical " },
+                { blank: "orbit" },
+                { text: " around the Sun." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Human activity is accelerating " },
+                { blank: "climate change" },
+                { text: "." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "The tilt of the " },
+                { blank: "earth axis" },
+                { text: " affects how sunlight reaches the surface." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Atmospheric " },
+                { blank: "carbon dioxide" },
+                { text: " traps heat." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "A marine " },
+                { blank: "fossil" },
+                { text: " can provide evidence about past climates." },
+              ],
+              lineBreak: true,
+            },
+            {
+              block: [
+                { text: "Global average " },
+                { blank: "temperature" },
+                { text: " has risen since the nineteenth century." },
+              ],
+              lineBreak: true,
+            },
+          ]),
+        },
       },
       fillInTheBlanks: {
         instruction: "Fill in the blanks with the correct answer.",

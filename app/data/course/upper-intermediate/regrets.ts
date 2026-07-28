@@ -236,6 +236,7 @@ export const upperIntermediateRegrets = {
             options: [
               { option: "had left", isCorrect: true },
               { option: "would leave", isCorrect: false },
+              { option: "would have left", isCorrect: false },
             ],
           },
           {
@@ -243,6 +244,7 @@ export const upperIntermediateRegrets = {
             options: [
               { option: "had received", isCorrect: true },
               { option: "would have receive", isCorrect: false },
+              { option: "received", isCorrect: false },
             ],
           },
           {
@@ -250,13 +252,31 @@ export const upperIntermediateRegrets = {
             options: [
               { option: "would have told", isCorrect: true },
               { option: "had tell", isCorrect: false },
+              { option: "would tell", isCorrect: false },
             ],
           },
           {
             question: "They ___ the error if they had checked the figures.",
             options: [
               { option: "could have found", isCorrect: true },
-              { option: "could found yesterday", isCorrect: false },
+              { option: "could find", isCorrect: false },
+              { option: "had found", isCorrect: false },
+            ],
+          },
+          {
+            question: "Had you warned me, I ___ a different route.",
+            options: [
+              { option: "would have taken", isCorrect: true },
+              { option: "had taken", isCorrect: false },
+              { option: "would take", isCorrect: false },
+            ],
+          },
+          {
+            question: "If they hadn't ignored the warning, the accident ___.",
+            options: [
+              { option: "might have been prevented", isCorrect: true },
+              { option: "might prevent", isCorrect: false },
+              { option: "had prevented", isCorrect: false },
             ],
           },
         ],
@@ -300,6 +320,22 @@ export const upperIntermediateRegrets = {
             ],
             lineBreak: true,
           },
+          {
+            block: [
+              { text: "If you had asked for help, we " },
+              { blank: "could have supported" },
+              { text: " you." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "She wouldn't have resigned if the situation " },
+              { blank: "had improved" },
+              { text: "." },
+            ],
+            lineBreak: true,
+          },
         ],
       },
     },
@@ -320,6 +356,10 @@ export const upperIntermediateRegrets = {
           {
             prompt: "could have / prepared / they / won / had / they",
             answer: "They could have won had they prepared.",
+          },
+          {
+            prompt: "hadn't ignored / might have avoided / if / the warning / we / the delay",
+            answer: "We might have avoided the delay if we hadn't ignored the warning.",
           },
         ],
       },

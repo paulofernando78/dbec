@@ -1,3 +1,14 @@
+import { audio, bold, lineBreak, spacer } from "@/helpers/content";
+
+import { shuffle } from "@/utils/shuffle";
+
+const words = [
+  { word: "consequence", img: 0 },
+  { word: "option", img: 0 },
+  { word: "risk", img: 0 },
+  { word: "backup plan", img: 0 },
+];
+
 export const intermediateWhatIf = {
   whiteboard: {
     title: "B1 Intermediate",
@@ -9,67 +20,41 @@ export const intermediateWhatIf = {
   },
   introduction: {
     vocabularyCarousel: {
-      instruction: "Match the words to the definitions and visual cards.",
-      matchingContent: [
-        { as: "span", parts: ["consequence"] },
-        { as: "span", parts: ["option"] },
-        { as: "span", parts: ["risk"] },
-        { as: "span", parts: ["backup plan"] },
-      ],
-      imgs: [
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Econsequence%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "consequence",
-          content: [
-            { part: "consequence: ", type: "bold" },
-            "a result of an action or situation",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eoption%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "option",
-          content: [{ part: "option: ", type: "bold" }, "one possible choice"],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Erisk%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "risk",
-          content: [
-            { part: "risk: ", type: "bold" },
-            "the possibility that something bad may happen",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ebackup%20plan%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "backup plan",
-          content: [
-            { part: "backup plan: ", type: "bold" },
-            "an alternative plan used if the first one fails",
-          ],
-        },
-      ],
+      matchingContent: shuffle(
+        words.map(({ word }) => ({
+          as: "span" as const,
+          parts: [audio(word), word],
+        })),
+      ),
+      words: shuffle(words),
     },
     storyCarousel: {
-      instruction: "Read the situations and notice the target language.",
+      instruction: "Read the situations.",
       imgs: [
         {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ECondition%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Condition",
-          content: ["If the weather improves, we'll have the event outside."],
+          src: "",
+          alt: "",
+          content: [audio("/"),""],
         },
         {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EConsequence%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Consequence",
-          content: ["If it keeps raining, we'll move indoors."],
+          src: "",
+          alt: "",
+          content: [audio("/"),""],
         },
         {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EWarning%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Warning",
-          content: ["Unless we decide soon, we won't have enough time."],
+          src: "",
+          alt: "",
+          content: [audio("/"),""],
+        },
+        {
+          src: "",
+          alt: "",
+          content: [audio("/"),""],
         },
       ],
     },
     radio: {
-      instruction: "Check your understanding of the situations.",
+      instruction: "Answer the questions.",
       exercise: {
         questions: [
           {
@@ -152,9 +137,17 @@ export const intermediateWhatIf = {
     meaning: [
       {
         as: "p",
-        parts: [
-          { part: "First Conditional: ", type: "bold" },
-          "Use if/unless + Present Simple for a realistic future condition and will/can/may + base verb for its likely result.",
+        parts: [bold("First Conditional")
+        ],
+      },
+      {
+        as: "p",
+        parts: [bold("Uses: A possible situation in the future. Predicting a likely result in the future (if the conditional happens)")]
+      },
+      {
+        as: "p",
+        parts: ["First Conditional:",
+          " Use if/unless + Present Simple for a realistic future condition and will/can/may + base verb for its likely result.",
         ],
       },
     ],
@@ -197,15 +190,17 @@ export const intermediateWhatIf = {
       {
         as: "p",
         parts: [
-          "Do not normally use will directly after if or unless in a First Conditional condition clause.",
+          "...",
         ],
       },
     ],
     ccq: [
       {
         as: "p",
-        parts: ["Is the situation presented as a real future possibility?"],
+        parts: ["If it rains, I will stay at home."],
       },
+      { as: "p", parts: ["Has it happened yet?” “Is it possible?"] },
+      spacer(),
       { as: "p", parts: ["Does unless mean if not?"] },
       { as: "p", parts: ["Which clause describes the result?"] },
     ],
@@ -220,6 +215,7 @@ export const intermediateWhatIf = {
             options: [
               { option: "leave", isCorrect: true },
               { option: "will leave", isCorrect: false },
+              { option: "left", isCorrect: false },
             ],
           },
           {
@@ -227,20 +223,39 @@ export const intermediateWhatIf = {
             options: [
               { option: "improves", isCorrect: true },
               { option: "will improve", isCorrect: false },
+              { option: "improved", isCorrect: false },
             ],
           },
           {
             question: "If I finish early, I ___ you.",
             options: [
               { option: "will call", isCorrect: true },
-              { option: "called yesterday", isCorrect: false },
+              { option: "call", isCorrect: false },
+              { option: "would call", isCorrect: false },
             ],
           },
           {
             question: "She may accept if they ___ the offer.",
             options: [
               { option: "improve", isCorrect: true },
-              { option: "will improved", isCorrect: false },
+              { option: "will improve", isCorrect: false },
+              { option: "improved", isCorrect: false },
+            ],
+          },
+          {
+            question: "If the traffic is heavy, we ___ be late.",
+            options: [
+              { option: "might", isCorrect: true },
+              { option: "would", isCorrect: false },
+              { option: "had", isCorrect: false },
+            ],
+          },
+          {
+            question: "Unless you save your work, you ___ your changes.",
+            options: [
+              { option: "will lose", isCorrect: true },
+              { option: "lose", isCorrect: false },
+              { option: "would lose", isCorrect: false },
             ],
           },
         ],
@@ -263,7 +278,7 @@ export const intermediateWhatIf = {
           {
             block: [
               { text: "You won't improve unless you " },
-              { blank: "practise" },
+              { blank: "practice" },
               { text: "." },
             ],
             lineBreak: true,
@@ -280,6 +295,22 @@ export const intermediateWhatIf = {
             block: [
               { text: "We may cancel if nobody " },
               { blank: "registers" },
+              { text: "." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "Unless the price drops, I " },
+              { blank: "won't buy" },
+              { text: " it." },
+            ],
+            lineBreak: true,
+          },
+          {
+            block: [
+              { text: "If you don't charge the battery, it " },
+              { blank: "will run out" },
               { text: "." },
             ],
             lineBreak: true,
@@ -304,6 +335,11 @@ export const intermediateWhatIf = {
           {
             prompt: "help / if / can / ask / you",
             answer: "I can help if you ask.",
+          },
+          {
+            prompt:
+              "unless / the deadline / extend / they / won't / we / finish",
+            answer: "We won't finish unless they extend the deadline.",
           },
         ],
       },

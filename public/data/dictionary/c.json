@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "consequence",
+        "phonetics": "/ˈkɑːn.sə.kwens/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A result or effect caused by an action, decision, or situation.",
+        "ptDefinition": "Um resultado ou efeito provocado por uma ação, decisão ou situação.",
+        "examples": [
+          {
+            "enExample": "Damaging the documents was an unfortunate consequence of spilling the drink.",
+            "ptExample": "Danificar os documentos foi uma consequência infeliz de derramar a bebida."
+          },
+          {
+            "enExample": "Every decision may have consequences that are difficult to predict.",
+            "ptExample": "Toda decisão pode ter consequências difíceis de prever."
+          }
+        ],
+        "synonyms": ["result", "outcome", "effect"],
+        "antonyms": ["cause", "origin"],
+        "seeAlso": ["repercussion", "aftermath", "impact"],
+        "notes": [
+          {
+            "enNote": "Consequence often describes a negative result, but it can also be positive or neutral.",
+            "ptNote": "Consequence frequentemente descreve um resultado negativo, mas também pode ser positivo ou neutro."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "consequence.avif",
+            "alt": "Laura cleaning spilled juice from important documents on a desk."
+          }
+        ]
+      },
+      {
         "word": "confrontation",
         "phonetics": "/ˌkɑːn.frənˈteɪ.ʃən/",
         "partOfSpeech": "noun",
