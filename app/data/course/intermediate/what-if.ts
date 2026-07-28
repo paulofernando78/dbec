@@ -34,22 +34,22 @@ export const intermediateWhatIf = {
         {
           src: "",
           alt: "",
-          content: [audio("/"),""],
+          content: [audio("/"), ""],
         },
         {
           src: "",
           alt: "",
-          content: [audio("/"),""],
+          content: [audio("/"), ""],
         },
         {
           src: "",
           alt: "",
-          content: [audio("/"),""],
+          content: [audio("/"), ""],
         },
         {
           src: "",
           alt: "",
-          content: [audio("/"),""],
+          content: [audio("/"), ""],
         },
       ],
     },
@@ -137,17 +137,14 @@ export const intermediateWhatIf = {
     meaning: [
       {
         as: "p",
-        parts: [bold("First Conditional")
-        ],
+        parts: [bold("FIRST CONDITONAL")],
       },
+      spacer(),
       {
         as: "p",
-        parts: [bold("Uses: A possible situation in the future. Predicting a likely result in the future (if the conditional happens)")]
-      },
-      {
-        as: "p",
-        parts: ["First Conditional:",
-          " Use if/unless + Present Simple for a realistic future condition and will/can/may + base verb for its likely result.",
+        parts: [
+          bold("Uses:"),
+          " A possible situation in the future. Predicting a likely result in the future (if the conditional happens)",
         ],
       },
     ],
@@ -158,8 +155,34 @@ export const intermediateWhatIf = {
           borderColor: "border-slate-500",
           bgColor: "bg-blue-600",
           textColor: "text-white",
+          column: "if/unless + present simple",
+          items: [
+            { as: "p", parts: ["If it rains,"] },
+            { as: "p", parts: ["If you study hard,"] }
+          ],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-blue-600",
+          textColor: "text-white",
+          column: "will/can/may",
+          items: [
+            { as: "p", parts: ["we will cancel the trip."] },
+            { as: "p", parts: ["you will pass the exam."] }
+          ],
+        },
+      ],
+    },
+    column2: {
+      width: 320,
+      cols: [
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-blue-600",
+          textColor: "text-white",
           column: "If-clause first",
           items: [
+            { as: "p", parts: ["if/unless + Present Simple"] },
             { as: "p", parts: ["If it rains, we'll stay inside."] },
             { as: "p", parts: ["If you call, I can explain."] },
           ],
@@ -170,6 +193,7 @@ export const intermediateWhatIf = {
           textColor: "text-white",
           column: "Result first",
           items: [
+            { as: "p", parts: ["will/can/may"] },
             { as: "p", parts: ["We'll stay inside if it rains."] },
             { as: "p", parts: ["I may go if I finish early."] },
           ],
@@ -189,9 +213,7 @@ export const intermediateWhatIf = {
     notes: [
       {
         as: "p",
-        parts: [
-          "...",
-        ],
+        parts: ["..."],
       },
     ],
     ccq: [
