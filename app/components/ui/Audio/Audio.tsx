@@ -123,7 +123,13 @@ export const Audio = ({ src, className }: AudioProps) => {
       };
 
       utterance.onend = handleSpeechEnd;
-      utterance.onerror = handleSpeechEnd;
+      utterance.onerror = (event) => {
+        if (event.error !== "canceled" && event.error !== "interrupted") {
+          console.error("Speech synthesis failed:", event.error, src);
+        }
+
+        handleSpeechEnd();
+      };
 
       currentUtterance = utterance;
       utteranceRef.current = utterance;
@@ -133,6 +139,7 @@ export const Audio = ({ src, className }: AudioProps) => {
         setPlaying(false);
       };
       setPlaying(true);
+      window.speechSynthesis.resume();
       window.speechSynthesis.speak(utterance);
       return;
     }

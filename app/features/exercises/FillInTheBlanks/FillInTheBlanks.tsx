@@ -15,7 +15,6 @@ type FillBlankBlockItem = {
 type FillBlankBlock = {
   lineBreak?: boolean;
   block?: FillBlankBlockItem[];
-  audio: string;
 };
 
 type FillInTheBlanksExercise = {
@@ -204,22 +203,32 @@ export const FillInTheBlanks = ({
         {blocks.map((bs, bsIndex) => {
           const blankIndex = (bs.block || []).findIndex((item) => item.blank);
 
-          const blankItem =
-            blankIndex >= 0 ? bs.block?.[blankIndex] : undefined;
-
-          const audioAnswer = Array.isArray(blankItem?.blank)
-            ? blankItem.blank[0]
-            : blankItem?.blank;
-
           const blankKey = `${bsIndex}-${blankIndex}`;
+
+          const audioSentence = (bs.block || [])
+            .map((item) => {
+              if (item.text !== undefined) {
+                return item.text;
+              }
+
+              if (Array.isArray(item.blank)) {
+                return item.blank[0];
+              }
+
+              return item.blank;
+            })
+            .join("");
 
           return (
             <div key={bsIndex} className={bs.lineBreak ? "block" : "inline"}>
               <div className="flex">
-                {checked && results[blankKey] && audioAnswer && (
-                  <Audio src={audioAnswer} className="mr-2 relative top-[0.19rem]"/>
+                {checked && results[blankKey] && audioSentence && (
+                  <Audio
+                    src={audioSentence}
+                    className="mr-2 relative top-[0.4rem]"
+                  />
                 )}
-  
+
                 {(bs.block || []).map((b, bIndex) => {
                   const key = `${bsIndex}-${bIndex}`;
                   const maxLength = b.blank
@@ -227,13 +236,19 @@ export const FillInTheBlanks = ({
                       ? Math.max(...b.blank.map((a) => a.length))
                       : b.blank.length
                     : 2;
-  
+
                   return (
                     <div key={key} className="inline mb-2">
-                      {numbered && bIndex === 0 && <span>{bsIndex + 1}. </span>}
-  
-                      {b.text && <span>{b.text}</span>}
-  
+                      {numbered && bIndex === 0 && (
+                        <span className="relative top-[0.19rem]">
+                          {bsIndex + 1}.{" "}
+                        </span>
+                      )}
+
+                      {b.text && (
+                        <span className="relative top-[0.19rem]">{b.text}</span>
+                      )}
+
                       {b.blank && (
                         <input
                           type="text"
