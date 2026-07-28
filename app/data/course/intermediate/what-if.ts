@@ -158,7 +158,7 @@ export const intermediateWhatIf = {
           column: "if/unless + present simple",
           items: [
             { as: "p", parts: ["If it rains,"] },
-            { as: "p", parts: ["If you study hard,"] }
+            { as: "p", parts: ["If you study hard,"] },
           ],
         },
         {
@@ -168,7 +168,7 @@ export const intermediateWhatIf = {
           column: "will/can/may",
           items: [
             { as: "p", parts: ["we will cancel the trip."] },
-            { as: "p", parts: ["you will pass the exam."] }
+            { as: "p", parts: ["you will pass the exam."] },
           ],
         },
       ],
