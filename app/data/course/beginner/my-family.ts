@@ -22,12 +22,14 @@ export const beginnerMyFamily = {
   },
 
   introduction: {
-    // Laura’s family
     instruction: ["Look at Laura’s family."],
-    imgSrc: "/assets/img/course/a1/my-family/introduction/laura-family.avif",
-    imgAlt: "Laura with her family",
+    imgSrc: "/assets/img/course/a1/my-family/introduction/laura-family-tree.avif",
+    imgAlt: "Laura’s family tree showing three generations",
     questions: [
-      [audio("Is Laura’s family big or small?"), "Is Laura’s family big or small?"],
+      [
+        audio("Is Laura’s family big or small?"),
+        "Is Laura’s family big or small?",
+      ],
       [audio("Is your family big or small?"), "Is your family big or small?"],
     ],
     radio: {
@@ -47,157 +49,14 @@ export const beginnerMyFamily = {
   },
 
   presentation: {
-    storyCarousel: {
-      instruction: "Now look at the pictures and listen to the sentences.",
-      imgs: [
-        // Laura with her mom (Heather Palmer)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-mom.avif",
-          alt: "Laura with her mom (Heather Palmer)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my mom. Her name’s Heather Palmer." (It’s Laura’s mom.)',
-                ),
-                'Laura says: "This is my mom. Her name’s Heather Palmer."',
-                lineBreak(),
-                "(It’s Laura’s mom.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-        // Laura with her dad (Robert Palmer)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-dad.avif",
-          alt: "Laura with her dad (Robert Palmer)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my dad. His name’s Robert Palmer." (It’s Laura’s dad.)',
-                ),
-                'Laura says: "This is my dad. His name’s Robert Palmer."',
-                lineBreak(),
-                "(It’s Laura’s dad.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-        // Laura with her brother (Tom Palmer)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-brother.avif",
-          alt: "Laura with her brother (Tom Palmer)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my brother. His name’s Tom Palmer." (It’s Laura’s brother.)',
-                ),
-                'Laura says: "This is my brother. His name’s Tom Palmer."',
-                lineBreak(),
-                "(It’s Laura’s brother.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-        // Laura with her sister (Kate Palmer)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-sister.avif",
-          alt: "Laura with her sister (Kate Palmer)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my sister. Her name’s Kate Palmer." (It’s Laura’s sister.)',
-                ),
-                'Laura says: "This is my sister. Her name’s Kate Palmer."',
-                lineBreak(),
-                "(It’s Laura’s sister.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-        // Laura with her grandpa (William Smith)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-william.avif",
-          alt: "Laura with her grandpa (William Smith)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my grandpa. His name’s William Smith." (It’s Laura’s grandpa.)',
-                ),
-                'Laura says: "This is my grandpa. His name’s William Smith."',
-                lineBreak(),
-                "(It’s Laura’s grandpa.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-        // Laura with her grandma (Mary Smith)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-mary.avif",
-          alt: "Laura with her grandma (Mary Smith)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my grandma. Her name’s Mary Smith." (It’s Laura’s grandma.)',
-                ),
-                'Laura says: "This is my grandma. Her name’s Mary Smith."',
-                lineBreak(),
-                "(It’s Laura’s grandma.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-        // Laura with her grandpa (James Palmer)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-james.avif",
-          alt: "Laura with her grandpa (James Palmer)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my grandpa. His name’s James Palmer." (It’s Laura’s grandpa.)',
-                ),
-                'Laura says: "This is my grandpa. His name’s James Palmer."',
-                lineBreak(),
-                "(It’s Laura’s grandpa.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-        // Laura with her grandma (Patricia Palmer)
-        {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-patricia.avif",
-          alt: "Laura with her grandma (Patricia Palmer)",
-          content: [
-            ...content({
-              parts: [
-                audio(
-                  'Laura says: "This is my grandma. Her name’s Patricia Palmer." (It’s Laura’s grandma.)',
-                ),
-                'Laura says: "This is my grandma. Her name’s Patricia Palmer."',
-                lineBreak(),
-                "(It’s Laura’s grandma.)",
-                portuguese(""),
-              ],
-            }),
-          ],
-        },
-      ],
-    },
+    instruction: [
+      "Look at Laura and Liz talking about Laura‘s family photo album.",
+    ],
+    imgSrc:
+      "/assets/img/course/a1/my-family/presentation/laura-liz-photo-album.avif",
+    imgAlt: "Laura with her family",
     dialogue: {
-      instruction: "Listen and read.",
+      instruction: "Listen to the dialogue.",
       audioSrc: "/",
       lines: [
         {
@@ -242,7 +101,9 @@ export const beginnerMyFamily = {
         },
         {
           speaker: "Laura",
-          line: ["They’re my grandparents. Their names are James and Patricia Palmer. They’re my dad’s parents."],
+          line: [
+            "They’re my grandparents. Their names are James and Patricia Palmer. They’re my dad’s parents.",
+          ],
         },
         {
           speaker: "Liz",
@@ -250,7 +111,9 @@ export const beginnerMyFamily = {
         },
         {
           speaker: "Laura",
-          line: ["They are also my grandparents, but they’re my mom’s parents."],
+          line: [
+            "They are also my grandparents, but they’re my mom’s parents.",
+          ],
         },
         {
           speaker: "Liz",
@@ -293,69 +156,260 @@ export const beginnerMyFamily = {
   },
 
   languageFocus: {
-    // meaning: [
-    //   {
-    //     as: "span",
-    //     parts: ["mother"],
-    //   },
-    //   {
-    //     as: "span",
-    //     parts: ["father"],
-    //   },
-    //   {
-    //     as: "span",
-    //     parts: ["sister"],
-    //   },
-    //   {
-    //     as: "span",
-    //     parts: ["brother"],
-    //   },
-    //   {
-    //     as: "span",
-    //     parts: ["grandmother / grandma"],
-    //   },
-    //   {
-    //     as: "span",
-    //     parts: ["grandfather / grandpa"],
-    //   },
-    // ] satisfies Meaning[],
+    storyCarousel: {
+      instruction: "Now look at the pictures and listen to the sentences.",
+      imgs: [
+        // Laura’s grandpa (William Smith)
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-william.avif",
+          alt: "Laura with her grandpa (William Smith)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my grandpa. His name’s William Smith." (He’s / It’s Laura’s grandpa.)',
+                ),
+                'Laura says: "This is my grandpa. His name’s William Smith."',
+                lineBreak(),
+                "(He’s / It’s Laura’s grandpa.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+        // Laura’s grandma (Mary Smith)
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-mary.avif",
+          alt: "Laura with her grandma (Mary Smith)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my grandma. Her name’s Mary Smith." (She’s / It’s Laura’s grandma.)',
+                ),
+                'Laura says: "This is my grandma. Her name’s Mary Smith."',
+                lineBreak(),
+                "(She’s / It’s Laura’s grandma.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+        // Laura‘s grandpa (James Palmer)
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-james.avif",
+          alt: "Laura with her grandpa (James Palmer)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my grandpa. His name’s James Palmer." (He’s / It’s Laura’s grandpa.)',
+                ),
+                'Laura says: "This is my grandpa. His name’s James Palmer."',
+                lineBreak(),
+                "(He’s / It’s Laura’s grandpa.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+        // Laura’s grandma (Patricia Palmer)
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-patricia.avif",
+          alt: "Laura with her grandma (Patricia Palmer)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my grandma. Her name’s Patricia Palmer." (She’s / It’s Laura’s grandma.)',
+                ),
+                'Laura says: "This is my grandma. Her name’s Patricia Palmer."',
+                lineBreak(),
+                "(She’s / It’s Laura’s grandma.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+        // Laura’s mom
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-mom.avif",
+          alt: "Laura with her mom (Heather Palmer)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my mom. Her name’s Heather Palmer." (She‘s / It’s Laura’s mom.)',
+                ),
+                'Laura says: "This is my mom. Her name’s Heather Palmer."',
+                lineBreak(),
+                "(She‘s / It’s Laura’s mom.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+        // Laura’s dad
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-dad.avif",
+          alt: "Laura with her dad (Robert Palmer)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my dad. His name’s Robert Palmer." (He’s / It’s Laura’s dad.)',
+                ),
+                'Laura says: "This is my dad. His name’s Robert Palmer."',
+                lineBreak(),
+                "(He’s / It’s Laura’s dad.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+        // Laura’s brother.
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-brother.avif",
+          alt: "Laura with her brother (Tom Palmer)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my brother. His name’s Tom Palmer." (He’s / It’s Laura’s brother.)',
+                ),
+                'Laura says: "This is my brother. His name’s Tom Palmer."',
+                lineBreak(),
+                "(He’s / It’s Laura’s brother.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+        // Laura’s sister
+        {
+          src: "/assets/img/course/a1/my-family/introduction/laura-sister.avif",
+          alt: "Laura with her sister (Kate Palmer)",
+          content: [
+            ...content({
+              parts: [
+                audio(
+                  'Laura says: "This is my sister. Her name’s Kate Palmer." (She’s / It’s Laura’s sister.)',
+                ),
+                'Laura says: "This is my sister. Her name’s Kate Palmer."',
+                lineBreak(),
+                "(She’s / It’s Laura’s sister.)",
+                portuguese(""),
+              ],
+            }),
+          ],
+        },
+      ],
+    },
+    meaning: [
+      {
+        as: "span",
+        parts: [bold('Take a look at "Family" vocab.')],
+      },
+    ] satisfies Meaning[],
     column: {
-      width: 300,
+      width: 231,
       cols: [
-        // {
-        //   borderColor: "border-slate-500",
-        //   bgColor: "bg-slate-400",
-        //   textColor: "text-white",
-        //   column: "Family",
-        //   items: [
-        //     { parts: [bold("parents")] },
-        //     { parts: ["father (dad / daddy)"] },
-        //     { parts: ["mother (mom / mommy)"] },
-        //     spacer(),
-        //     { parts: [bold("grandparents")] },
-        //     { parts: ["grandfather (grandpa)"] },
-        //     { parts: ["grandmother (grandma)"] },
-        //   ],
-        // },
-        // {
-        //   borderColor: "border-slate-500",
-        //   bgColor: "bg-slate-400",
-        //   textColor: "text-white",
-        //   column: "Siblings",
-        //   items: [{ parts: ["brother"] }, { parts: ["sister"] }],
-        // },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
           column: "Possessive Adjectives",
           items: [
-            { parts: [audio("my"), "my"] },
-            { parts: [audio("your"),"your"] },
-            { parts: [audio("his"),"his"] },
-            { parts: [audio("her"),"her"] },
-            { parts: [audio("our"),"our"] },
-            { parts: [audio("their"),"their"] },
+            { parts: [audio("my"), "my ", portuguese("meu, minha")] },
+            { parts: [audio("your"), "your ", portuguese("seu, sua")] },
+            { parts: [audio("his"), "his ", portuguese("dele")] },
+            { parts: [audio("her"), "her ", portuguese("dela")] },
+            { parts: [audio("our"), "our ", portuguese("nosso, nossa")] },
+            { parts: [audio("their"), "their ", portuguese("deles, delas")] },
+          ],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Family",
+          items: [
+            {
+              parts: [
+                audio("Grandparents"),
+                bold("Grandparents"),
+                " ",
+                portuguese("avós"),
+              ],
+            },
+            {
+              parts: [
+                audio("grandfather (grandpa)"),
+                "grandfather (grandpa) ",
+                portuguese("avô (vovô)"),
+              ],
+            },
+            {
+              parts: [
+                audio("grandmother (grandma)"),
+                "grandmother (grandma) ",
+                portuguese("avó (vovó)"),
+              ],
+            },
+            spacer(),
+            {
+              parts: [
+                audio("Parents"),
+                bold("Parents "),
+                " ",
+                portuguese("pais"),
+              ],
+            },
+            {
+              parts: [
+                audio("father (dad / daddy)"),
+                "father (dad / daddy) ",
+                portuguese("pai (papai)"),
+              ],
+            },
+            {
+              parts: [
+                audio("mother (mom / mommy)"),
+                "mother (mom / mommy) ",
+                portuguese("mãe (mamãe)"),
+              ],
+            },
+            spacer(),
+            {
+              parts: [
+                audio("Siblings"),
+                bold("Siblings "),
+                " ",
+                portuguese("irmãos"),
+              ],
+            },
+            {
+              parts: [audio("brother"), "brother ", portuguese("irmão")],
+            },
+            { parts: [audio("sister"), "sister ", portuguese("irmã")] },
+            spacer(),
+            {
+              parts: [
+                audio("Relatives"),
+                bold("Relatives "),
+                " ",
+                portuguese("parentes"),
+              ],
+            },
+            {
+              parts: [audio("uncle"), "uncle ", portuguese("tio")],
+            },
+            {
+              parts: [audio("aunt"), "aunt ", portuguese("tia")],
+            },
+            {
+              parts: [audio("cousin"), "cousin ", portuguese("primo, prima")],
+            },
           ],
         },
         {
@@ -364,9 +418,27 @@ export const beginnerMyFamily = {
           textColor: "text-white",
           column: "Possessive ’s",
           items: [
-            { parts: [audio("John's brother"), "John's brother"] },
-            { parts: [audio("Maria's mother"),"Maria's mother"] },
-            { parts: [audio("Ben's sister"),"Ben's sister"] },
+            {
+              parts: [
+                audio("John's brother"),
+                "John's brother ",
+                portuguese("irmão do John"),
+              ],
+            },
+            {
+              parts: [
+                audio("Maria's mother"),
+                "Maria's mother ",
+                portuguese("mãe da Maria"),
+              ],
+            },
+            {
+              parts: [
+                audio("Ben's sister"),
+                "Ben's sister ",
+                portuguese("irmã do Ben"),
+              ],
+            },
           ],
         },
       ],
@@ -384,9 +456,7 @@ export const beginnerMyFamily = {
       },
       {
         as: "span",
-        parts: [
-          "Are \"mother\" and \"father\" your parents?",
-        ],
+        parts: ['Are "mother" and "father" your parents?'],
       },
       {
         as: "span",

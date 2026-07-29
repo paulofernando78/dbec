@@ -137,12 +137,15 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
           </Section>
 
           <Section id="Presentation" heading={heading}>
-            {lesson.presentation?.storyCarousel && (
-              <Carousel
-                aspectRatio="wide"
-                {...lesson.presentation.storyCarousel}
+            {lesson.presentation.instruction &&
+            <>
+              <Line value={lesson.presentation.instruction} className="font-bold mb-4"/>
+              <Image
+                src={lesson.presentation.imgSrc}
+                alt={lesson.presentation.imgAlt}
               />
-            )}
+            </>
+            }
             <Dialogue {...lesson.presentation?.dialogue} />
             {lesson.presentation?.radio && (
               <Radio {...lesson.presentation.radio} />
@@ -150,6 +153,12 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
           </Section>
 
           <Section id="Language Focus" heading={heading}>
+            {lesson.languageFocus?.storyCarousel && (
+              <Carousel
+                aspectRatio="wide"
+                {...lesson.languageFocus.storyCarousel}
+              />
+            )}
             {renderLanguageFocus(lesson, heading)}
           </Section>
 

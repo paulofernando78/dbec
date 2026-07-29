@@ -27,56 +27,7 @@ export const intermediateWhatIf = {
         })),
       ),
       words: shuffle(words),
-    },
-    storyCarousel: {
-      instruction: "Read the situations.",
-      imgs: [
-        {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
-        },
-        {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
-        },
-        {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
-        },
-        {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
-        },
-      ],
-    },
-    radio: {
-      instruction: "Answer the questions.",
-      exercise: {
-        questions: [
-          {
-            question: "What will happen if it rains?",
-            options: [
-              { option: "They will use the hall.", isCorrect: true },
-              { option: "They used the park.", isCorrect: false },
-            ],
-          },
-          {
-            question: "Why do people need to register?",
-            options: [
-              {
-                option: "So the organizers can plan the chairs.",
-                isCorrect: true,
-              },
-              { option: "To cancel the event.", isCorrect: false },
-            ],
-          },
-        ],
-      },
-    },
+    }
   },
   presentation: {
     dialogue: {
@@ -134,6 +85,55 @@ export const intermediateWhatIf = {
     },
   },
   languageFocus: {
+    storyCarousel: {
+      instruction: "Read the situations.",
+      imgs: [
+        {
+          src: "",
+          alt: "",
+          content: [audio("/"), ""],
+        },
+        {
+          src: "",
+          alt: "",
+          content: [audio("/"), ""],
+        },
+        {
+          src: "",
+          alt: "",
+          content: [audio("/"), ""],
+        },
+        {
+          src: "",
+          alt: "",
+          content: [audio("/"), ""],
+        },
+      ],
+    },
+    radio: {
+      instruction: "Answer the questions.",
+      exercise: {
+        questions: [
+          {
+            question: "What will happen if it rains?",
+            options: [
+              { option: "They will use the hall.", isCorrect: true },
+              { option: "They used the park.", isCorrect: false },
+            ],
+          },
+          {
+            question: "Why do people need to register?",
+            options: [
+              {
+                option: "So the organizers can plan the chairs.",
+                isCorrect: true,
+              },
+              { option: "To cancel the event.", isCorrect: false },
+            ],
+          },
+        ],
+      },
+    },
     meaning: [
       {
         as: "p",

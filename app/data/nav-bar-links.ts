@@ -15,6 +15,10 @@ export const links = [
   {
     title: "Course",
     links: [
+      {
+        href: "/courses/table-of-content",
+        label: "Table of Content",
+      },
       // A1 Beginner
       {
         label: "A1 Beginner",
@@ -30,6 +34,10 @@ export const links = [
           {
             href: "/courses/beginner/my-family",
             label: "My Family",
+          },
+          {
+            href: "/courses/beginner/more-family-members",
+            label: "More Family Members",
           },
           {
             href: "/courses/beginner/my-house",

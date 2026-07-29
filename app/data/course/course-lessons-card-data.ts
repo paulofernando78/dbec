@@ -67,6 +67,29 @@ export const courseLessonsCardData = {
         "Use one possessive ’s phrase, such as Laura’s brother.",
       ],
     },
+    // More Family Members
+    {
+      href: "/courses/beginner/more-family-members",
+      label: "More Family Members",
+      objective:
+        "Describe relationships in extended, married, and blended families.",
+      usefulLanguage:
+        "This is my…; He’s her husband.; She’s their daughter.; Who are they?",
+      vocabulary:
+        "Husband, wife, son, daughter, nephew, niece, in-laws, stepfather, half-brother",
+      skills:
+        "Listening for relationships, describing a family tree, and short writing",
+      recycles: "Core family words, possessive adjectives, and possessive ’s",
+      pronunciation:
+        "Word stress in husband, daughter, nephew, and compound family words",
+      finalTask:
+        "Create a fictional family tree and describe at least four relationships.",
+      successCriteria: [
+        "Use at least four new family words accurately.",
+        "Describe relationships with a possessive adjective.",
+        "Use one possessive ’s phrase accurately.",
+      ],
+    },
     // My house
     {
       href: "/courses/beginner/my-house",

@@ -3,11 +3,7 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import {
-  content,
-  audio,
-  lineBreak,
-} from "@/helpers/content";
+import { content, audio, lineBreak } from "@/helpers/content";
 
 export const lesson = {
   whiteboard: {
@@ -30,8 +26,8 @@ export const lesson = {
     imgSrc: "/",
     imgAlt: "...",
     questions: [
-      [audio("/"), "question 1"],
-      [audio("/"), "question 2"],
+      [audio("..."), "question 1"],
+      [audio("..."), "question 2"],
     ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
@@ -57,21 +53,6 @@ export const lesson = {
       ],
     },
 
-    storyCarousel: {
-      instruction: "Look ...",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...", lineBreak(), "..."],
-            }),
-          ],
-        },
-      ],
-    },
-
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -89,22 +70,11 @@ export const lesson = {
   },
 
   presentation: {
-    storyCarousel: {
-      instruction: "Look ...",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...", lineBreak(), "..."],
-            }),
-          ],
-        },
-      ],
-    },
+    instruction: ["Look at the picture."],
+    imgSrc: "/",
+    imgAlt: "...",
     dialogue: {
-      instruction: "...",
+      instruction: "Listen to the dialogue.",
       audioSrc: "/",
       lines: [
         {
@@ -130,6 +100,20 @@ export const lesson = {
   },
 
   languageFocus: {
+    storyCarousel: {
+      instruction: "Look ...",
+      imgs: [
+        {
+          src: "/",
+          alt: "...",
+          content: [
+            ...content({
+              parts: [audio("/"), "...", lineBreak(), "..."],
+            }),
+          ],
+        },
+      ],
+    },
     meaning: [
       {
         display: "block",
@@ -137,7 +121,6 @@ export const lesson = {
         parts: [audio("/"), "..."],
       },
     ] satisfies Meaning[],
-    
     column: {
       width: 300,
       cols: [
@@ -215,7 +198,7 @@ export const lesson = {
 
     fillInTheBlanks: {
       showWordBank: true,
-      instruction: "...",
+      instruction: "Fill in the blanks.",
       numbered: true,
       exercise: {
         blocks: [
@@ -229,7 +212,7 @@ export const lesson = {
 
     scramble: {
       showWordBank: false,
-      instruction: "Unscramble the sentence.",
+      instruction: "Unscramble the sentences.",
       numbered: true,
       exercise: {
         items: [

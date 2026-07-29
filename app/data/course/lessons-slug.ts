@@ -2,6 +2,7 @@
 import { beginnerHello } from "@/data/course/beginner/hello";
 import { beginnerPersonalInformation } from "@/data/course/beginner/personal-information";
 import { beginnerMyFamily } from "@/data/course/beginner/my-family";
+import { beginnerMoreFamilyMembers } from "@/data/course/beginner/more-family-members";
 import { beginnerMyHouse } from "@/data/course/beginner/my-house";
 import { beginnerDailyRoutine } from "@/data/course/beginner/daily-routine";
 import { beginnerMyWeek } from "@/data/course/beginner/my-week";
@@ -78,6 +79,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       hello: beginnerHello,
       "personal-information": beginnerPersonalInformation,
       "my-family": beginnerMyFamily,
+      "more-family-members": beginnerMoreFamilyMembers,
       "my-house": beginnerMyHouse,
       "daily-routine": beginnerDailyRoutine,
       "my-week": beginnerMyWeek,

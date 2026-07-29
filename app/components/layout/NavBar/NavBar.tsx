@@ -32,9 +32,7 @@ const getNavItemLabel = (item: NavItem) => {
     ? lessonNumberByHref.get(item.href)
     : undefined;
 
-  return lessonNumber
-    ? `Lesson ${lessonNumber} • ${item.label}`
-    : item.label;
+  return lessonNumber ? `Lesson ${lessonNumber} • ${item.label}` : item.label;
 };
 
 const getNavItemKey = (item: NavItem) =>
@@ -49,29 +47,29 @@ function RenderNavItem({
 }) {
   if (item.links?.length) {
     return (
-      <details className="open:[&>summary_.chevron]:rotate-90 mb-1">
-        <summary className="
+      <details className="open:[&>summary_.chevron]:rotate-90 mb-1 -translate-x-[0.5rem]">
+        <summary
+          className="
           list-none
           flex
           items-center
           gap-2
           cursor-pointer
-        ">
-          <span className="
+        "
+        >
+          <span
+            className="
             chevron
             transition-transform
             relative
             top-px
-          ">
+          "
+          >
             <ChevronRight />
           </span>
 
           {item.href ? (
-            <NavLink
-              to={item.href}
-              onClick={(e) => e.stopPropagation()}
-              className="translate-x-[-0.5rem]"
-            >
+            <NavLink to={item.href} onClick={(e) => e.stopPropagation()}>
               <span>{getNavItemLabel(item)}</span>
             </NavLink>
           ) : (
@@ -81,7 +79,7 @@ function RenderNavItem({
           )}
         </summary>
 
-        <div className="ml-[2.1rem]">
+        <div className="ml-[1.55rem]">
           {item.links.map((child) => (
             <RenderNavItem
               key={getNavItemKey(child)}
@@ -96,7 +94,8 @@ function RenderNavItem({
 
   if (!item.href) {
     return (
-      <div className="
+      <div
+        className="
         flex
         gap-3"
       >
@@ -106,7 +105,8 @@ function RenderNavItem({
   }
 
   return (
-    <div className="
+    <div
+      className="
       flex
       gap-3"
     >
@@ -127,8 +127,7 @@ function RenderNavItem({
           before:w-0.75
           before:bg-current
           ${isActive ? "text-blue-400" : ""}
-          `
-        }
+          `}
       >
         <span className="ml-1">{getNavItemLabel(item)}</span>
       </NavLink>
@@ -161,7 +160,8 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         <div key={group.title ?? `group-${index}`}>
           {group.title && (
             <>
-              <span className="
+              <span
+                className="
                 block
                 font-bold
                 mt-4
