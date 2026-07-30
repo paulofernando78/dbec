@@ -8,7 +8,9 @@ export const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const content = document.getElementById("content-scroll");
+    const content =
+      document.querySelector<HTMLElement>("[data-scroll-container]") ??
+      document.getElementById("content-scroll");
 
     if (!content) return;
 
@@ -16,10 +18,9 @@ export const ScrollToTop = () => {
       setVisible(content.scrollTop > 300);
     };
 
-    // run once in case the page is already scrolled
     handleScroll();
 
-    content.addEventListener("scroll", handleScroll);
+    content.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       content.removeEventListener("scroll", handleScroll);
@@ -27,7 +28,9 @@ export const ScrollToTop = () => {
   }, []);
 
   const handleClick = () => {
-    const content = document.getElementById("content-scroll");
+    const content =
+      document.querySelector<HTMLElement>("[data-scroll-container]") ??
+      document.getElementById("content-scroll");
 
     content?.scrollTo({
       top: 0,
@@ -41,7 +44,7 @@ export const ScrollToTop = () => {
       aria-label="Scroll to top"
       className={`${styles.button} ${visible ? styles.visible : ""}`}
     >
-      <CircleArrowUp />
+      <CircleArrowUp className="text-gray-500"/>
     </button>
   );
 };

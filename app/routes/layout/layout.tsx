@@ -18,7 +18,7 @@ export default function Layout() {
       <aside className={`${styles.aside} ${isNavBarOpen ? styles.open : ""}`}>
         <NavBar closeNavBar={closeNavBar}/>
       </aside>
-      <main className={styles.main}>
+      <main className={styles.main} data-scroll-container>
         <Outlet />
       </main>
     </div>
