@@ -13,8 +13,9 @@ export const Card = ({ children, maxContent = false, className }: CardProps) => 
     pb-3
     text-gray-800
     border 
-    border-gray-400 
-    rounded-xl 
+    border-gray-300 
+    rounded-xl
+    shadow-md shadow-gray-300
     ${maxContent ? "w-fit max-w-full" : ""} ${className}`}
     >
       {children}

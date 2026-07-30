@@ -1,33 +1,45 @@
 import { Fragment } from "react";
+import { Card } from "@/components/ui/Card";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { RichContent } from "@/helpers/content";
 
-import { Notebook, NotebookText } from "lucide-react";
+import { Notebook, NotebookText, type LucideIcon } from "lucide-react";
 
 type TableOfContentsItem = {
   title?: RichContent | string;
   href?: string;
   id?: string;
   label?: RichContent | string;
+  iconClassName?: string;
 };
 
 type TableOfContentsProps = {
   items?: TableOfContentsItem[];
+  headerIcon?: LucideIcon;
+  itemIcon?: LucideIcon;
+  headerIconClassName?: string;
+  itemIconClassName?: string;
 };
 
-export const TableOfContents = ({ items = [] }: TableOfContentsProps) => {
+export const TableOfContents = ({
+  items = [],
+  headerIcon: HeaderIcon = Notebook,
+  itemIcon: ItemIcon = NotebookText,
+  headerIconClassName = "text-gray-400",
+  itemIconClassName = "text-gray-400",
+}: TableOfContentsProps) => {
   const toValue = (value: RichContent | string): RichContent =>
     Array.isArray(value) ? value : [value];
 
   return (
-    <div className="mb-4 px-2 pt-[.65rem] pb-[.5rem] border border-gray-300 rounded-lg">
+    <Card className="mb-4 px-4 pt-[1.1rem] pb-3 bg-gray-100">
       <div
         className="
         flex
         gap-2
         mb-2"
       >
-        <Notebook size={22} className="text-gray-400" />
+        <HeaderIcon size={22} className={headerIconClassName} />
         <span>
           <b>Table of Contents</b>
         </span>
@@ -47,7 +59,10 @@ export const TableOfContents = ({ items = [] }: TableOfContentsProps) => {
 
                 {item.href && (
                   <li className="flex gap-2 ml-4 space-y-1">
-                    <NotebookText size={22} className="text-gray-400" />
+                    <ItemIcon
+                      size={22}
+                      className={item.iconClassName ?? itemIconClassName}
+                    />
                     <a href={`#${item.href}`}>
                       {item.label && (
                         <InlineRichContent value={toValue(item.label)} />
@@ -60,6 +75,6 @@ export const TableOfContents = ({ items = [] }: TableOfContentsProps) => {
           })}
         </ul>
       </nav>
-    </div>
+    </Card>
   );
 };

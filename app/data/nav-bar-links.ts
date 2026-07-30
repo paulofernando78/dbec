@@ -9,16 +9,16 @@ export const links = [
         href: "/cefr",
         label: "What's CEFR?",
       },
+      {
+        href: "/dashboard",
+        label: "Dashboard",
+      },
     ],
   },
   // Courses
   {
     title: "Course",
     links: [
-      {
-        href: "/courses/table-of-content",
-        label: "Table of Content",
-      },
       // A1 Beginner
       {
         label: "A1 Beginner",
