@@ -160,9 +160,105 @@ export const intermediateWhatIf = {
         as: "p",
         parts: [
           audio(
-            "A possible situation in the future. Predicting a likely result in the future (if the conditional happens)",
+            "We use the First Conditional to talk about a real or possible future condition and its result.",
           ),
-          " A possible situation in the future. Predicting a likely result in the future (if the conditional happens).",
+          " We use the First Conditional to talk about a real or possible future condition and its result.",
+        ],
+      },
+      spacer(),
+
+      {
+        as: "p",
+        parts: [
+          audio("If you call, I will answer."),
+          " If you call, I will answer.",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          "Do not normally use ",
+          bold("will"),
+          " in the if-clause: ",
+          bold("If you call"),
+          ", not ",
+          bold("If you will call"),
+          ".",
+        ],
+      },
+      spacer(),
+      {
+        as: "p",
+        parts: [bold("Unless = if ... not")],
+      },
+      {
+        as: "p",
+        parts: [
+          audio("Unless you hurry, you will miss the bus."),
+          " Unless you hurry, you will miss the bus. = If you do not hurry, you will miss the bus.",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          bold("Unless"),
+          " already has a negative meaning, so do not add ",
+          bold("not"),
+          " to its clause.",
+        ],
+      },
+      spacer(),
+      {
+        as: "p",
+        parts: [bold("Choosing the result verb")],
+      },
+      {
+        as: "p",
+        parts: [
+          bold("Will"),
+          " expresses an expected future result: If it rains, we ",
+          bold("will stay"),
+          " inside.",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          bold("Can"),
+          " expresses ability or an available possibility: If you call, I ",
+          bold("can explain"),
+          ".",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          bold("May"),
+          " expresses an uncertain possibility: If I finish early, I ",
+          bold("may go"),
+          ".",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          bold("May"),
+          " and ",
+          bold("might"),
+          " have similar meanings, but ",
+          bold("might"),
+          " can sound slightly less certain.",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          bold("Unless"),
+          " introduces the condition; ",
+          bold("will, can, may"),
+          " and ",
+          bold("might"),
+          " express different kinds of results. They do not have the same function.",
         ],
       },
     ],
@@ -173,20 +269,32 @@ export const intermediateWhatIf = {
           borderColor: "border-slate-500",
           bgColor: "bg-blue-600",
           textColor: "text-white",
-          column: "if/unless + present simple",
+          column: "Conditional",
           items: [
+            { as: "p", parts: [bold("If + present simple")] },
             { as: "p", parts: ["If it rains,"] },
             { as: "p", parts: ["If you study hard,"] },
+            spacer(),
+            { as: "p", parts: [bold("unless + present simple")] },
+            { as: "p", parts: ["Unless you hurry,"] },
+            { as: "p", parts: ["..."] },
+            { as: "p", parts: ["..."] },
           ],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-blue-600",
           textColor: "text-white",
-          column: "will/can/may",
+          column: "Result",
           items: [
+            { as: "p", parts: [bold("will/can/may")] },
             { as: "p", parts: ["we will cancel the trip."] },
             { as: "p", parts: ["you will pass the exam."] },
+            spacer(),
+            spacer(),
+            { as: "p", parts: ["you will miss the bus. (If you do not hurry, you will miss the bus)"] },
+            { as: "p", parts: ["..."] },
+            { as: "p", parts: ["..."] },
           ],
         },
       ],
