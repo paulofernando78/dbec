@@ -73,7 +73,7 @@ function RenderNavItem({
           </span>
 
           {item.iconClassName && (
-            <Book size={20} className={`shrink-0 translate-y-[0.1rem] ${item.iconClassName}`} />
+            <Book size={20} className={`ml-[0.1rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`} />
           )}
 
           {item.href ? (
