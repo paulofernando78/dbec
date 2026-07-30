@@ -13,6 +13,7 @@ import type { LucideIcon } from "lucide-react";
 type SectionElementProps = {
   id: string;
   label?: string;
+  tocTitle?: string;
   iconClassName?: string;
   tocItemClassName?: string;
   tocProgress?: ReactNode;
@@ -55,6 +56,7 @@ export const PageSections = ({
       href: child.props.id,
       // Use the custom label if it exists, otherwise build one from the id
       label: child.props.label ?? formatSectionLabel(child.props.id),
+      title: child.props.tocTitle,
       iconClassName: child.props.iconClassName,
       className: child.props.tocItemClassName,
       progress: child.props.tocProgress,

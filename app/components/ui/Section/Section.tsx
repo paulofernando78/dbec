@@ -7,6 +7,7 @@ import { formatSectionLabel } from "@/utils/formatSectionLabel";
 type SectionProps = {
   id: string;
   label?: string;
+  tocTitle?: string;
   iconClassName?: string;
   tocItemClassName?: string;
   tocProgress?: ReactNode;

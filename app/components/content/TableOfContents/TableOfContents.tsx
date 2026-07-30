@@ -55,7 +55,11 @@ export const TableOfContents = ({
             return (
               <Fragment key={key}>
                 {item.title && (
-                  <span>
+                  <span
+                    className={`block mb-1 font-bold uppercase ${
+                      index === 0 ? "" : "mt-3"
+                    }`}
+                  >
                     <InlineRichContent value={toValue(item.title)} />
                   </span>
                 )}

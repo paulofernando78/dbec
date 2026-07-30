@@ -15,11 +15,12 @@ import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/ne
 import { authenticContentTedEdLessonsCardData } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { gamesLucasArtsCardData } from "@/data/games/lucas-arts/games-lucas-arts-card-data";
 
-import { LibraryBig, Book, BookCopy } from "lucide-react";
+import { LibraryBig, BookText, BookCopy } from "lucide-react";
 
 const lessonSections = [
   {
     label: "A1 Beginner",
+    tocTitle: "COURSE",
     iconClassName: "text-yellow-500",
     lessons: courseLessonsCardData.beginner,
   },
@@ -44,11 +45,12 @@ const lessonSections = [
     lessons: courseLessonsCardData.advanced,
   },
   {
-    label: "Authentic Content • News",
+    label: "News",
+    tocTitle: "AUTHENTIC CONTENT",
     lessons: Object.values(authenticContentNewsLessonsCardData),
   },
   {
-    label: "Authentic Content • TED-Ed",
+    label: "TED-Ed",
     lessons: Object.values(authenticContentTedEdLessonsCardData),
   },
   // {
@@ -56,7 +58,8 @@ const lessonSections = [
   //   lessons: gamesSierraCardData.sierra,
   // },
   {
-    label: "Games • Lucas Arts Games",
+    label: "Lucas Arts Games",
+    tocTitle: "GAMES",
     lessons: Object.values(gamesLucasArtsCardData),
   },
 ];
@@ -103,6 +106,11 @@ export default function Dashboard() {
       0,
     );
 
+  const totalPercentage =
+    totalLessons === 0
+      ? 0
+      : Math.round((completedLessons / totalLessons) * 100);
+
   useEffect(() => {
     updateProgress();
   }, []);
@@ -120,7 +128,7 @@ export default function Dashboard() {
         <Calendar />
         <PageSections
           headerIcon={LibraryBig}
-          itemIcon={Book}
+          itemIcon={BookText}
           headerIconClassName="text-gray-400"
           itemIconClassName="text-gray-400"
         >
@@ -147,6 +155,7 @@ export default function Dashboard() {
                 key={section.label}
                 id={section.label.toLowerCase().replaceAll(" ", "-")}
                 label={section.label}
+                tocTitle={section.tocTitle}
                 iconClassName={section.iconClassName}
                 tocContentAfter={
                   section.label === "C1 Advanced" ? (
@@ -155,9 +164,10 @@ export default function Dashboard() {
                         <BookCopy size={20} className="text-gray-400" />
                         <span>A1-C1 Progress</span>
                       </div>
-                      <div>
+                      <div className="text-sm">
                         <span>{completedLessons}</span> /{" "}
                         <span>{totalLessons}</span>
+                        <span> • {totalPercentage}%</span>
                       </div>
                     </div>
                   ) : undefined
