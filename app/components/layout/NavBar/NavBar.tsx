@@ -2,13 +2,14 @@ import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 
-import { ChevronRight } from "lucide-react";
+import { Book, ChevronRight } from "lucide-react";
 // import { Checkbox } from "@/components/ui/Checkbox";
 
 type NavItem = {
   label: string;
   href?: string;
   links?: NavItem[];
+  iconClassName?: string;
 };
 
 type NavBarProps = {
@@ -47,13 +48,15 @@ function RenderNavItem({
 }) {
   if (item.links?.length) {
     return (
-      <details className="open:[&>summary_.chevron]:rotate-90 mb-1 -translate-x-[0.5rem]">
+      <details className="open:[&>summary_.chevron]:rotate-90 mb-1">
         <summary
           className="
           list-none
+          ml-4
           flex
           items-center
           gap-2
+          relative
           cursor-pointer
         "
         >
@@ -61,21 +64,24 @@ function RenderNavItem({
             className="
             chevron
             transition-transform
-            relative
+            absolute
+            -left-5
             top-px
           "
           >
-            <ChevronRight />
+            <ChevronRight size={20} className="translate-y-[0.2rem]"/>
           </span>
+
+          {item.iconClassName && (
+            <Book size={20} className={`shrink-0 translate-y-[0.1rem] ${item.iconClassName}`} />
+          )}
 
           {item.href ? (
             <NavLink to={item.href} onClick={(e) => e.stopPropagation()}>
               <span>{getNavItemLabel(item)}</span>
             </NavLink>
           ) : (
-            <span className="translate-x-[-0.5rem]">
-              {getNavItemLabel(item)}
-            </span>
+            <span>{getNavItemLabel(item)}</span>
           )}
         </summary>
 

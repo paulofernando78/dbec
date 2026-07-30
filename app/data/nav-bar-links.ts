@@ -22,6 +22,7 @@ export const links = [
       // A1 Beginner
       {
         label: "A1 Beginner",
+        iconClassName: "text-yellow-500",
         links: [
           {
             href: "/courses/beginner/hello",
@@ -80,6 +81,7 @@ export const links = [
       // A2 Elementary
       {
         label: "A2 Elementary",
+        iconClassName: "text-red-500",
         links: [
           //! Past
           // Beach
@@ -143,6 +145,7 @@ export const links = [
       // B1 Intermediate
       {
         label: "B1 Intermediate",
+        iconClassName: "text-blue-500",
         links: [
           {
             href: "/courses/intermediate/life-experiences",
@@ -189,6 +192,7 @@ export const links = [
       // B2 Upper-Intermediate
       {
         label: "B2 Upper-Intermediate",
+        iconClassName: "text-green-500",
         links: [
           {
             href: "/courses/upper-intermediate/dream-scenarios",
@@ -287,6 +291,7 @@ export const links = [
       // News
       {
         label: "News",
+        iconClassName: "text-gray-400",
         links: [
           // Ismal Kone breaks leg
           {
@@ -298,6 +303,7 @@ export const links = [
       // Ted-ED
       {
         label: "Ted-ED",
+        iconClassName: "text-gray-400",
         links: [
           // What Causes Constipation - May 7, 2018
           {
@@ -344,6 +350,7 @@ export const links = [
       // },
       {
         label: "Lucas Arts",
+        iconClassName: "text-gray-400",
         links: [
           {
             href: "/games/lucas-arts/thimbleweed-park",

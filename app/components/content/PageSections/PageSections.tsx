@@ -14,6 +14,8 @@ type SectionElementProps = {
   id: string;
   label?: string;
   iconClassName?: string;
+  tocItemClassName?: string;
+  tocProgress?: ReactNode;
 };
 
 type PageSectionsProps = {
@@ -53,6 +55,8 @@ export const PageSections = ({
       // Use the custom label if it exists, otherwise build one from the id
       label: child.props.label ?? formatSectionLabel(child.props.id),
       iconClassName: child.props.iconClassName,
+      className: child.props.tocItemClassName,
+      progress: child.props.tocProgress,
     }));
 
   return (

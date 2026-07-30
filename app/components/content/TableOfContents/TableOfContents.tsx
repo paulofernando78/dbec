@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import { Card } from "@/components/ui/Card";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { RichContent } from "@/helpers/content";
@@ -11,6 +11,8 @@ type TableOfContentsItem = {
   id?: string;
   label?: RichContent | string;
   iconClassName?: string;
+  className?: string;
+  progress?: ReactNode;
 };
 
 type TableOfContentsProps = {
@@ -58,7 +60,9 @@ export const TableOfContents = ({
                 )}
 
                 {item.href && (
-                  <li className="flex gap-2 ml-4 space-y-1">
+                  <li
+                    className={`flex items-center gap-2 ml-4 space-y-1 ${item.className ?? ""}`}
+                  >
                     <ItemIcon
                       size={22}
                       className={item.iconClassName ?? itemIconClassName}
@@ -68,6 +72,9 @@ export const TableOfContents = ({
                         <InlineRichContent value={toValue(item.label)} />
                       )}
                     </a>
+                    {item.progress && (
+                      <span className="ml-auto text-sm">{item.progress}</span>
+                    )}
                   </li>
                 )}
               </Fragment>

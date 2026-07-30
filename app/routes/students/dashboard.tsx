@@ -42,6 +42,7 @@ const lessonSections = [
     label: "C1 Advanced",
     iconClassName: "text-purple-500",
     lessons: courseLessonsCardData.advanced,
+    tocItemClassName: "mb-4",
   },
   {
     label: "Authentic Content • News",
@@ -154,7 +155,15 @@ export default function Dashboard() {
                 id={section.label.toLowerCase().replaceAll(" ", "-")}
                 label={section.label}
                 iconClassName={section.iconClassName}
-                progress={`${completed}/${total} • ${percentage}%`}
+                tocItemClassName={section.tocItemClassName}
+                tocProgress={
+                  sectionIndex <=
+                  lessonSections.findIndex(
+                    (lessonSection) => lessonSection.label === "C1 Advanced",
+                  )
+                    ? `${completed}/${total} • ${percentage}%`
+                    : undefined
+                }
               >
                 {section.lessons.map((lesson, lessonIndex) => (
                   <LessonCard
