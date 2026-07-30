@@ -10,6 +10,7 @@ type SectionProps = {
   iconClassName?: string;
   tocItemClassName?: string;
   tocProgress?: ReactNode;
+  tocContentAfter?: ReactNode;
   heading?: 1 | 2 | 3 | 4 | 5 | 6;
   children: ReactNode;
 };

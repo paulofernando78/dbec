@@ -15,7 +15,7 @@ import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/ne
 import { authenticContentTedEdLessonsCardData } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { gamesLucasArtsCardData } from "@/data/games/lucas-arts/games-lucas-arts-card-data";
 
-import { BookCopy, Book, SquareCheckBig } from "lucide-react";
+import { LibraryBig, Book, BookCopy } from "lucide-react";
 
 const lessonSections = [
   {
@@ -42,7 +42,6 @@ const lessonSections = [
     label: "C1 Advanced",
     iconClassName: "text-purple-500",
     lessons: courseLessonsCardData.advanced,
-    tocItemClassName: "mb-4",
   },
   {
     label: "Authentic Content • News",
@@ -119,14 +118,8 @@ export default function Dashboard() {
       <div>
         <ImportantNotes storageKey={`${storagePrefix}:important-notes`} />
         <Calendar />
-        <div className="flex items-center gap-2 w-max mt-5 mb-4 px-2 pt-[.4rem] pb-[.3rem] border border-gray-300 rounded-lg">
-          <SquareCheckBig size={20} className="text-gray-400" />
-          <span>
-            <b>A1-C1 Progress:</b> {completedLessons} / {totalLessons}
-          </span>
-        </div>
         <PageSections
-          headerIcon={BookCopy}
+          headerIcon={LibraryBig}
           itemIcon={Book}
           headerIconClassName="text-gray-400"
           itemIconClassName="text-gray-400"
@@ -155,7 +148,20 @@ export default function Dashboard() {
                 id={section.label.toLowerCase().replaceAll(" ", "-")}
                 label={section.label}
                 iconClassName={section.iconClassName}
-                tocItemClassName={section.tocItemClassName}
+                tocContentAfter={
+                  section.label === "C1 Advanced" ? (
+                    <div className=" mt-2 mb-4 ml-4 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <BookCopy size={20} className="text-gray-400" />
+                        <span>A1-C1 Progress</span>
+                      </div>
+                      <div>
+                        <span>{completedLessons}</span> /{" "}
+                        <span>{totalLessons}</span>
+                      </div>
+                    </div>
+                  ) : undefined
+                }
                 tocProgress={
                   sectionIndex <=
                   lessonSections.findIndex(

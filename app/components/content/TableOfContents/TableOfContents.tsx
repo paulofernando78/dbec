@@ -13,6 +13,7 @@ type TableOfContentsItem = {
   iconClassName?: string;
   className?: string;
   progress?: ReactNode;
+  contentAfter?: ReactNode;
 };
 
 type TableOfContentsProps = {
@@ -77,6 +78,8 @@ export const TableOfContents = ({
                     )}
                   </li>
                 )}
+
+                {item.contentAfter}
               </Fragment>
             );
           })}
