@@ -5,6 +5,8 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, audio, lineBreak } from "@/helpers/content";
 
+import { shuffle } from "@/utils/shuffle";
+
 export const lesson = {
   whiteboard: {
     title: "...",
@@ -31,17 +33,7 @@ export const lesson = {
     ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
-      matchingContent: [
-        {
-          as: "span",
-          parts: [audio("..."), "..."],
-        },
-        {
-          as: "span",
-          parts: [audio("..."), "..."],
-        },
-      ],
-      imgs: [
+      words: [
         {
           src: "/",
           alt: "...",
@@ -51,6 +43,16 @@ export const lesson = {
           alt: "...",
         },
       ],
+      matchingContent: shuffle([
+        {
+          as: "span",
+          parts: [audio("..."), "..."],
+        },
+        {
+          as: "span",
+          parts: [audio("..."), "..."],
+        },
+      ]),
     },
 
     radio: {

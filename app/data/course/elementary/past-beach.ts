@@ -1,3 +1,5 @@
+import { shuffle } from "@/utils/shuffle";
+
 export const elementaryPastBeach = {
   whiteboard: {
     title: "A2 Elementary",
@@ -7,13 +9,7 @@ export const elementaryPastBeach = {
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
-      matchingContent: [
-        { as: "span", parts: [{ audio: "beach" }, "beach"] },
-        { as: "span", parts: [{ audio: "swimsuit" }, "swimsuit"] },
-        { as: "span", parts: [{ audio: "sunscreen" }, "sunscreen"] },
-        { as: "span", parts: [{ audio: "waves" }, "waves"] },
-      ],
-      imgs: [
+      words: [
         {
           src: "/assets/img/course/a2/unit-1-last-weekend/laura-beach.avif",
           alt: "beach",
@@ -22,6 +18,12 @@ export const elementaryPastBeach = {
         { src: "/", alt: "sunscreen" },
         { src: "/", alt: "waves" },
       ],
+      matchingContent: shuffle([
+        { as: "span", parts: [{ audio: "beach" }, "beach"] },
+        { as: "span", parts: [{ audio: "swimsuit" }, "swimsuit"] },
+        { as: "span", parts: [{ audio: "sunscreen" }, "sunscreen"] },
+        { as: "span", parts: [{ audio: "waves" }, "waves"] },
+      ]),
     },
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",

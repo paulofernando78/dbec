@@ -25,6 +25,13 @@ export const elementaryPastMovies = {
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
+      words: [
+        { word: "movie theater", img: 0 },
+        { word: "ticket", img: 0 },
+        { word: "popcorn", img: 0 },
+        { word: "soda", img: 0 },
+        { word: "row of seats", img: 0 },
+      ],
       matchingContent: shuffle([
         {
           as: "span",
@@ -46,13 +53,6 @@ export const elementaryPastMovies = {
           as: "span",
           parts: [audio("row of seats"), "row of seats"],
         },
-      ]),
-      words: shuffle([
-        { word: "movie theater", img: 0 },
-        { word: "ticket", img: 0 },
-        { word: "popcorn", img: 0 },
-        { word: "soda", img: 0 },
-        { word: "row of seats", img: 0 },
       ]),
     },
     storyCarousel: {

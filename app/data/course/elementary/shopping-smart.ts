@@ -1,3 +1,5 @@
+import { shuffle } from "@/utils/shuffle";
+
 export const elementaryShoppingSmart = {
   whiteboard: {
     title: "A2 Elementary",
@@ -7,18 +9,18 @@ export const elementaryShoppingSmart = {
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
-      matchingContent: [
-        { as: "span", parts: [{ audio: "shopping list" }, "shopping list"] },
-        { as: "span", parts: [{ audio: "price" }, "price"] },
-        { as: "span", parts: [{ audio: "discount" }, "discount"] },
-        { as: "span", parts: [{ audio: "quantity" }, "quantity"] },
-      ],
-      imgs: [
+      words: [
         { src: "/", alt: "shopping list" },
         { src: "/", alt: "price" },
         { src: "/", alt: "discount" },
         { src: "/", alt: "quantity" },
       ],
+      matchingContent: shuffle([
+        { as: "span", parts: [{ audio: "shopping list" }, "shopping list"] },
+        { as: "span", parts: [{ audio: "price" }, "price"] },
+        { as: "span", parts: [{ audio: "discount" }, "discount"] },
+        { as: "span", parts: [{ audio: "quantity" }, "quantity"] },
+      ]),
     },
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",

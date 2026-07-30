@@ -187,7 +187,7 @@ export const Carousel = ({
         border
         border-gray-300
         rounded-lg
-        ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+        ${aspectRatio === "wide" ? "max-w-180" : "max-w-100"}
       `}
     >
       <div
@@ -243,7 +243,7 @@ export const Carousel = ({
         className={`
         relative
         mx-auto
-        ${aspectRatio === "wide" ? "max-w-150" : "max-w-100"}
+        ${aspectRatio === "wide" ? "max-w-180" : "max-w-100"}
         px-[1.6rem]
         `}
       >

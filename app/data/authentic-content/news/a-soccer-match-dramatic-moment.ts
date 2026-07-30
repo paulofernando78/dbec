@@ -1,5 +1,7 @@
 import { audio, content, mark, phonetics, underline } from "@/helpers/content";
 
+import { shuffle } from "@/utils/shuffle";
+
 export const aSoccerMatchDramaticMoment = {
   metadata: {
     title: "C1-C2 Videos | News",
@@ -37,7 +39,41 @@ export const aSoccerMatchDramaticMoment = {
     },
     vocabulary: {
       instruction: "Match the words to the pictures.",
-      matchingContent: [
+      words: [
+        {
+          word: "tournament",
+          img: 0,
+        },
+        {
+          word: "lunge",
+          img: 0,
+        },
+        {
+          word: "injury",
+          img: 0,
+        },
+        {
+          word: "stretcher",
+          img: 0,
+        },
+        {
+          word: "recovery",
+          img: 0,
+        },
+        {
+          word: "overshadow",
+          img: 0,
+        },
+        {
+          word: "confrontation",
+          img: 0,
+        },
+        {
+          word: "tribute",
+          img: 0,
+        },
+      ],
+      matchingContent: shuffle([
         {
           as: "span" as const,
           parts: [
@@ -98,41 +134,7 @@ export const aSoccerMatchDramaticMoment = {
             phonetics("/ˈtrɪb.juːt/"),
           ],
         },
-      ],
-      imgs: [
-        {
-          word: "tournament",
-          img: 0,
-        },
-        {
-          word: "lunge",
-          img: 0,
-        },
-        {
-          word: "injury",
-          img: 0,
-        },
-        {
-          word: "stretcher",
-          img: 0,
-        },
-        {
-          word: "recovery",
-          img: 0,
-        },
-        {
-          word: "overshadow",
-          img: 0,
-        },
-        {
-          word: "confrontation",
-          img: 0,
-        },
-        {
-          word: "tribute",
-          img: 0,
-        },
-      ],
+      ]),
     },
     gist: {
       paragraph: [

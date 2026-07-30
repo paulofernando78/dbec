@@ -4,9 +4,9 @@ import { shuffle } from "@/utils/shuffle";
 
 const words = [
   { word: "consequence", img: 0 },
+  { word: "backup plan", img: 0 },
   { word: "option", img: 0 },
   { word: "risk", img: 0 },
-  { word: "backup plan", img: 0 },
 ];
 
 export const intermediateWhatIf = {
@@ -20,14 +20,14 @@ export const intermediateWhatIf = {
   },
   introduction: {
     vocabularyCarousel: {
+      words: words,
       matchingContent: shuffle(
         words.map(({ word }) => ({
           as: "span" as const,
           parts: [audio(word), word],
         })),
       ),
-      words: shuffle(words),
-    }
+    },
   },
   presentation: {
     dialogue: {
@@ -89,24 +89,36 @@ export const intermediateWhatIf = {
       instruction: "Read the situations.",
       imgs: [
         {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
+          src: "/assets/img/course/b1/what-if/language-focus/laura-consequence.avif",
+          alt: "Laura works beside a glass of juice, then reacts after it spills across her laptop.",
+          content: [
+            audio("If Laura knocks over the glass, the juice will spill on her laptop."),
+            "If Laura knocks over the glass, the juice will spill on her laptop.",
+          ],
         },
         {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
+          src: "/assets/img/course/b1/what-if/language-focus/laura-backup-plan.avif",
+          alt: "Laura presents a backup plan to her colleagues after the laptop stops working.",
+          content: [
+            audio("If the laptop stops working, Laura will use her backup plan."),
+            "If the laptop stops working, Laura will use her backup plan.",
+          ],
         },
         {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
+          src: "/assets/img/course/b1/what-if/language-focus/risk-eric.avif",
+          alt: "Eric notices a damaged bridge and chooses the safer path beside the stream.",
+          content: [
+            audio("If Eric crosses the damaged bridge, he will put himself in danger."),
+            "If Eric crosses the damaged bridge, he will put himself in danger.",
+          ],
         },
         {
-          src: "",
-          alt: "",
-          content: [audio("/"), ""],
+          src: "/assets/img/course/b1/what-if/language-focus/tom-option.avif",
+          alt: "Tom considers taking the bus, then chooses to ride his bicycle.",
+          content: [
+            audio("If Tom does not take the bus, he will ride his bicycle."),
+            "If Tom does not take the bus, he will ride his bicycle.",
+          ],
         },
       ],
     },
@@ -150,7 +162,7 @@ export const intermediateWhatIf = {
           audio(
             "A possible situation in the future. Predicting a likely result in the future (if the conditional happens)",
           ),
-          " A possible situation in the future. Predicting a likely result in the future (if the conditional happens)",
+          " A possible situation in the future. Predicting a likely result in the future (if the conditional happens).",
         ],
       },
     ],
@@ -225,9 +237,8 @@ export const intermediateWhatIf = {
     ccq: [
       {
         as: "p",
-        parts: ["If it rains, I will stay at home."],
+        parts: ["“If it rains, I will stay at home.” Has it happened yet? Is it possible?"],
       },
-      { as: "p", parts: ["Has it happened yet?” “Is it possible?"] },
       spacer(),
       { as: "p", parts: ["Does unless mean if not?"] },
       { as: "p", parts: ["Which clause describes the result?"] },

@@ -1,3 +1,5 @@
+import { shuffle } from "@/utils/shuffle";
+
 export const elementaryPastHome = {
   whiteboard: {
     title: "A2 Elementary",
@@ -7,18 +9,18 @@ export const elementaryPastHome = {
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
-      matchingContent: [
-        { as: "span", parts: [{ audio: "laundry" }, "laundry"] },
-        { as: "span", parts: [{ audio: "vacuum cleaner" }, "vacuum cleaner"] },
-        { as: "span", parts: [{ audio: "living room" }, "living room"] },
-        { as: "span", parts: [{ audio: "takeout" }, "takeout"] },
-      ],
-      imgs: [
+      words: [
         { src: "/", alt: "laundry" },
         { src: "/", alt: "vacuum cleaner" },
         { src: "/", alt: "living room" },
         { src: "/", alt: "takeout" },
       ],
+      matchingContent: shuffle([
+        { as: "span", parts: [{ audio: "laundry" }, "laundry"] },
+        { as: "span", parts: [{ audio: "vacuum cleaner" }, "vacuum cleaner"] },
+        { as: "span", parts: [{ audio: "living room" }, "living room"] },
+        { as: "span", parts: [{ audio: "takeout" }, "takeout"] },
+      ]),
     },
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",

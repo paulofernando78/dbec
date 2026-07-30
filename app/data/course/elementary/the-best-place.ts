@@ -1,3 +1,5 @@
+import { shuffle } from "@/utils/shuffle";
+
 export const elementaryTheBestPlace = {
   whiteboard: {
     title: "A2 Elementary",
@@ -10,18 +12,18 @@ export const elementaryTheBestPlace = {
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
-      matchingContent: [
-        { as: "span", parts: [{ audio: "view" }, "view"] },
-        { as: "span", parts: [{ audio: "waterfall" }, "waterfall"] },
-        { as: "span", parts: [{ audio: "historic" }, "historic"] },
-        { as: "span", parts: [{ audio: "peaceful" }, "peaceful"] },
-      ],
-      imgs: [
+      words: [
         { src: "/", alt: "view" },
         { src: "/", alt: "waterfall" },
         { src: "/", alt: "historic" },
         { src: "/", alt: "peaceful" },
       ],
+      matchingContent: shuffle([
+        { as: "span", parts: [{ audio: "view" }, "view"] },
+        { as: "span", parts: [{ audio: "waterfall" }, "waterfall"] },
+        { as: "span", parts: [{ audio: "historic" }, "historic"] },
+        { as: "span", parts: [{ audio: "peaceful" }, "peaceful"] },
+      ]),
     },
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",

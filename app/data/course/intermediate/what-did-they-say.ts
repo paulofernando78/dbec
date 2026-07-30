@@ -1,3 +1,5 @@
+import { shuffle } from "@/utils/shuffle";
+
 export const intermediateWhatDidTheySay = {
   whiteboard: {
     title: "B1 Intermediate",
@@ -10,13 +12,7 @@ export const intermediateWhatDidTheySay = {
   introduction: {
     vocabularyCarousel: {
       instruction: "Match the words to the definitions and visual cards.",
-      matchingContent: [
-        { as: "span", parts: ["mention"] },
-        { as: "span", parts: ["clarify"] },
-        { as: "span", parts: ["admit"] },
-        { as: "span", parts: ["promise"] },
-      ],
-      imgs: [
+      words: [
         {
           src: "",
           alt: "mention",
@@ -50,6 +46,12 @@ export const intermediateWhatDidTheySay = {
           ],
         },
       ],
+      matchingContent: shuffle([
+        { as: "span", parts: ["mention"] },
+        { as: "span", parts: ["clarify"] },
+        { as: "span", parts: ["admit"] },
+        { as: "span", parts: ["promise"] },
+      ]),
     },
     storyCarousel: {
       instruction: "Read the situations and notice the target language.",
