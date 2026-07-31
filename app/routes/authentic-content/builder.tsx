@@ -6,8 +6,11 @@ import { template } from "@/data/authentic-content/template";
 // Content routes
 import { authenticContentsNewsRoutes } from "@/data/authentic-content/news";
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
+import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/news/news-card-data";
+import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
+import { LessonCard } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { List } from "@/components/content/List";
@@ -56,42 +59,63 @@ export default function AuthenticContents() {
     }
   ).guessFillInTheBlanks;
 
+  const lessonHref = `/authentic-content/${category}/${slug}`;
+  const lessonCard =
+    category === "news"
+      ? Object.values(authenticContentNewsLessonsCardData).find(
+          (card) => card.href === lessonHref,
+        )
+      : category === "ted-ed"
+        ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
+        : undefined;
+
   return (
     <>
       <Whiteboard {...content.whiteboard} />
+      <div>
+        {lessonCard && (
+          <LessonCard
+            objective={lessonCard.objective}
+            usefulLanguage={lessonCard.usefulLanguage}
+            vocabulary={lessonCard.vocabulary}
+            skills={lessonCard.skills}
+            finalTask={lessonCard.finalTask}
+          />
+        )}
 
-      <PageSections>
-        <Section id="Before watching" heading={3}>
-          <List {...content.sections.beforeWatching} />
-        </Section>
+        <PageSections>
+          <Section id="Before watching" heading={3}>
+            <List {...content.sections.beforeWatching} />
+          </Section>
 
-        <Section id="Vocabulary" heading={3}>
-          <Carousel aspectRatio="square" {...content.sections.vocabulary} />
-        </Section>
+          <Section id="Vocabulary" heading={3}>
+            <Carousel aspectRatio="square" {...content.sections.vocabulary} />
+          </Section>
 
-        <Section id="Gist" heading={3}>
-          <VideoPlayer {...content.sections.gist.videoPlayer} />
-          <Radio {...content.sections.gist.radio} />
-        </Section>
+          <Section id="Gist" heading={3}>
+            <VideoPlayer {...content.sections.gist.videoPlayer} />
+            <Radio {...content.sections.gist.radio} />
+          </Section>
 
-        <Section id="Details" heading={3}>
-          <Radio {...content.sections.details.radio} />
-          <Script {...content.sections.script} />
-        </Section>
+          <Section id="Details" heading={3}>
+            <Radio {...content.sections.details.radio} />
+            <Script {...content.sections.script} />
+          </Section>
 
-        <Section id="Practice" heading={3}>
-          <Guess {...content.sections.practice.guess} />
-          {guessFillInTheBlanks && (
-            <FillInTheBlanks {...guessFillInTheBlanks} />
-          )}
-          <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
-          <Unscramble {...content.sections.practice.unscramble} />
-        </Section>
+          <Section id="Practice" heading={3}>
+            <Guess {...content.sections.practice.guess} />
+            {guessFillInTheBlanks && (
+              <FillInTheBlanks {...guessFillInTheBlanks} />
+            )}
+            <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
+            <Unscramble {...content.sections.practice.unscramble} />
+          </Section>
 
-        <Section id="Follow-up discussion" heading={3}>
-          <List {...content.sections.followUp.list} />
-        </Section>
-      </PageSections>
+          <Section id="Follow-up discussion" heading={3}>
+            <List {...content.sections.followUp.list} />
+          </Section>
+        </PageSections>
+      </div>
     </>
   );
 }

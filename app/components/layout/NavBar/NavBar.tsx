@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 
-import { Book, ChevronRight } from "lucide-react";
+import { Book, Minus, Plus } from "lucide-react";
 // import { Checkbox } from "@/components/ui/Checkbox";
 
 type NavItem = {
@@ -48,7 +48,7 @@ function RenderNavItem({
 }) {
   if (item.links?.length) {
     return (
-      <details className="open:[&>summary_.chevron]:rotate-90 mb-1">
+      <details className="open:[&>summary_.plus]:hidden open:[&>summary_.minus]:block mb-1">
         <summary
           className="
           list-none
@@ -62,18 +62,20 @@ function RenderNavItem({
         >
           <span
             className="
-            chevron
-            transition-transform
             absolute
             -left-5
             top-px
           "
           >
-            <ChevronRight size={20} className="translate-y-[0.2rem]"/>
+            <Plus size={18} className="plus translate-y-[0.2rem]" />
+            <Minus size={18} className="minus hidden translate-y-[0.2rem]" />
           </span>
 
           {item.iconClassName && (
-            <Book size={20} className={`ml-[0.1rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`} />
+            <Book
+              size={20}
+              className={`ml-[0.1rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`}
+            />
           )}
 
           {item.href ? (
