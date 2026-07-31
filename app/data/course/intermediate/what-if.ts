@@ -86,7 +86,7 @@ export const intermediateWhatIf = {
   },
   languageFocus: {
     storyCarousel: {
-      instruction: "Read the situations.",
+      instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
           src: "/assets/img/course/b1/what-if/language-focus/laura-consequence.avif",
@@ -149,7 +149,7 @@ export const intermediateWhatIf = {
     meaning: [
       {
         as: "p",
-        parts: [bold("Let’s take a look at FIRST CONDITIONAL.")],
+        parts: [bold("Let’s see how the FIRST CONDITIONAL works.")],
       },
       spacer(),
       {

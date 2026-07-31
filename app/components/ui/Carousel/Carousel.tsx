@@ -199,7 +199,9 @@ export const Carousel = ({
         `}
       >
         {/* Meaning */}
-        <span className="font-bold">Meaning:</span>{" "}
+        <span className="font-bold">
+          {aspectRatio === "wide" ? null : "Meaning:"}
+        </span>{" "}
         <InlineRichContent value={currentContent} />
       </div>
     </div>
