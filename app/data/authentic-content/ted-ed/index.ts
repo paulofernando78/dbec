@@ -8,6 +8,7 @@ import { howToManageEmotions } from "./how-to-manage-emotions";
 import { howDidAncientCivilizationsMakeIceCream } from "./how-did-ancient-civilization-make-ice-cream";
 // ...
 import { howDidAncientCivilizationsBrewBeer } from "./how-did-ancient-civilization-brew-beer";
+import { theBodysHiddenBalance } from "./the-bodys-hidden-balance";
 
 export const authenticContentsTedEdRoutes = {
   // ...
@@ -20,4 +21,6 @@ export const authenticContentsTedEdRoutes = {
   "the-history-of-a-popular-ice-treat": howDidAncientCivilizationsMakeIceCream,
   // ...
   "a-drink-with-a-long-history": howDidAncientCivilizationsBrewBeer,
+  // ...
+  "the-bodys-hidden-balance": theBodysHiddenBalance,
 };

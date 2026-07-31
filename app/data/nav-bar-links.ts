@@ -1,3 +1,5 @@
+import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
+
 export const links = [
   {
     links: [
@@ -304,33 +306,10 @@ export const links = [
       {
         label: "Ted-ED",
         iconClassName: "text-gray-400",
-        links: [
-          // What Causes Constipation - May 7, 2018
-          {
-            href: "/authentic-content/ted-ed/how-food-moves-through-your-body",
-            label: "How Food Moves Through Your Body",
-          },
-          // When will next Ice Age happen? - May 10, 2018
-          {
-            href: "/authentic-content/ted-ed/earths-climate-cycle",
-            label: "Earth’s Climate Cycle",
-          },
-          // How to Manage Your Emotions - Feb 16, 2023
-          {
-            href: "/authentic-content/ted-ed/how-we-react-differently",
-            label: "How We React Differently",
-          },
-          // How did ancient civilizations make ice cream? - May 30, 2024
-          {
-            href: "/authentic-content/ted-ed/the-history-of-a-popular-ice-treat",
-            label: "The History of a Popular Ice Treat",
-          },
-          // How did ancient civilizations brew beer? - Mar 24, 2026
-          {
-            href: "/authentic-content/ted-ed/a-drink-with-a-long-history",
-            label: "A Drink With a Long History",
-          },
-        ],
+        links: authenticContentTedEdLessons.map(({ href, label }) => ({
+          href,
+          label,
+        })),
       },
     ],
   },

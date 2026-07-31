@@ -24,6 +24,7 @@ export const authenticContentTedEdLessonsCardData = {
     finalTask:
       "Explain the process and rank the proposed remedies by evidence.",
     date: "May 7, 2018",
+    publishedAt: "2018-05-07",
     duration: "03:33",
   },
   // May 10, 2018
@@ -39,6 +40,7 @@ export const authenticContentTedEdLessonsCardData = {
     finalTask:
       "Brief a partner on the causes and implications of the climate cycle.",
     date: "May 10, 2018",
+    publishedAt: "2018-05-10",
     duration: "05:07",
   },
   // Feb 16, 2023
@@ -53,6 +55,7 @@ export const authenticContentTedEdLessonsCardData = {
     skills: "Authentic listening, comparison, and evaluative discussion",
     finalTask: "Recommend and justify a strategy for a real-life scenario.",
     date: "Feb 16, 2023",
+    publishedAt: "2023-02-16",
     duration: "4:50",
   },
   // May 30, 2024
@@ -70,6 +73,7 @@ export const authenticContentTedEdLessonsCardData = {
     finalTask:
       "Discuss how historical, cultural, and technological changes turned an elite luxury into an everyday food item.",
     date: "Mar 24, 2026",
+    publishedAt: "2026-03-24",
     duration: "04:54",
   },
   // Mar 24, 2026
@@ -85,6 +89,33 @@ export const authenticContentTedEdLessonsCardData = {
     finalTask:
       "Present a concise timeline of brewing’s scientific development.",
     date: "Mar 24, 2026",
+    publishedAt: "2026-03-24",
     duration: "06:24",
   },
+  // Mar 2016
+  theBodysHiddenBalance: {
+    href: "/authentic-content/ted-ed/the-bodys-hidden-balance",
+    label: "The Body’s Hidden Balance",
+    objective:
+      "Explain how the body regulates fluid, distinguish deficiency from excess, and evaluate generalized health advice.",
+    usefulLanguage:
+      "The body compensates by…; This may lead to…; Requirements vary according to…; The evidence suggests…",
+    vocabulary:
+      "Moisture, joints, spinal cord, kidneys, dehydration, overhydration, electrolytes, intake",
+    skills:
+      "Prediction, authentic listening for gist and detail, scientific explanation, and critical discussion",
+    finalTask:
+      "Create and justify an evidence-based hydration recommendation for a specific person and context.",
+    date: "Mar 2016",
+    publishedAt: "2016-03-01",
+    duration: "04:51",
+  },
 };
+
+export const authenticContentTedEdLessons = Object.values(
+  authenticContentTedEdLessonsCardData,
+)
+  .slice()
+  .sort((firstLesson, secondLesson) =>
+    firstLesson.publishedAt.localeCompare(secondLesson.publishedAt),
+  );

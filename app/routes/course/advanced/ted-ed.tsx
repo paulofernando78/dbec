@@ -1,9 +1,9 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { LessonCard } from "@/components/content/LessonCard";
 
-import { authenticContentTedEdLessonsCardData } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
+import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
-const lessons = Object.values(authenticContentTedEdLessonsCardData);
+const lessons = authenticContentTedEdLessons;
 
 export default function Dashboard() {
   return (

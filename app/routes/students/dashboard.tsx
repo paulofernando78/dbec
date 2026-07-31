@@ -12,7 +12,7 @@ import { Section } from "@/components/ui/Section";
 import { LessonCard } from "@/components/content/LessonCard";
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/news/news-card-data";
-import { authenticContentTedEdLessonsCardData } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
+import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { gamesLucasArtsCardData } from "@/data/games/lucas-arts/games-lucas-arts-card-data";
 
 import { LibraryBig, BookText, BookCopy } from "lucide-react";
@@ -51,7 +51,7 @@ const lessonSections = [
   },
   {
     label: "TED-Ed",
-    lessons: Object.values(authenticContentTedEdLessonsCardData),
+    lessons: authenticContentTedEdLessons,
   },
   // {
   //   label: "Games •Sierra",
