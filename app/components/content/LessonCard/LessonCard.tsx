@@ -12,6 +12,8 @@ import {
   Flag,
   Goal,
   MessageCircle,
+  Plus,
+  Minus
 } from "lucide-react";
 
 export type LessonCardContent = {
@@ -31,6 +33,7 @@ type LessonCardProps = LessonCardContent & {
   label?: string;
   date?: string;
   duration?: string;
+  collapsible?: boolean;
   updateProgress?: () => void;
 };
 
@@ -45,6 +48,7 @@ export const LessonCard = ({
   finalTask,
   date,
   duration,
+  collapsible = false,
   updateProgress,
 }: LessonCardProps) => {
   const storageKey = href ? `lesson-completed:${href}` : undefined;
@@ -65,158 +69,132 @@ export const LessonCard = ({
     updateProgress?.();
   }, [storageKey, checked]);
 
-  return (
+  const cardHeader = (
+    <div className="flex items-center gap-2">
+      {href && (
+        <span onClick={(event) => event.stopPropagation()}>
+          <Checkbox checked={checked} onCheckedChange={setChecked} />
+        </span>
+      )}
+
+      {href ? (
+        <Link to={href} onClick={(event) => event.stopPropagation()}>
+          <b>
+            Lesson {index + 1} • {label}
+          </b>
+        </Link>
+      ) : (
+        <b>{label}</b>
+      )}
+    </div>
+  );
+
+  const cardDetails = (
     <>
-      <Card className="mb-4 bg-gray-100">
-        {href && (
-          <div className="flex gap-2 mb-2">
-            <Checkbox checked={checked} onCheckedChange={setChecked} />
-            <Link to={href}>
-              <>
-                <b>
-                  Lesson {index + 1} • {label}
-                </b>
-              </>
-            </Link>
+      <hr className="mt-3 mb-4 text-gray-300" />
+
+      <p className="flex items-start gap-2">
+        <Goal size={23} className="text-gray-400 shrink-0" />
+
+        <span>
+          <b>Objective:</b> {objective}
+        </span>
+      </p>
+
+      <div className="mb-[.1rem]">
+        {usefulLanguage && (
+          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+            <MessageCircle size={23} className="shrink-0 text-gray-400" />
+
+            <span>
+              <b>Useful language:</b> {usefulLanguage}
+            </span>
           </div>
         )}
-        <hr className="mt-3 mb-4 text-gray-300" />
-        <p
-          className="
-          flex
-          items-start
-          gap-2
-          translate-x-[-0.1rem]"
-        >
-          <Goal
-            size={23}
-            className="
-            text-gray-400
-            shrink-0"
-          />
-          <span>
-            <b>Objective:</b> {objective}
-          </span>
-        </p>
-        <div className="mb-[.1rem]">
-          {usefulLanguage && (
-            <div
-              className="
-              flex
-              items-start
-              gap-2
-              mt-2
-              translate-x-[-0.1rem]"
-            >
-              <MessageCircle
-                size={23}
-                className="
-                text-gray-400
-                shrink-0"
-              />
-              <span className="block">
-                <b>Useful language:</b> {usefulLanguage}
-              </span>
-            </div>
-          )}
-          {vocabulary && (
-            <div
-              className="
-              flex
-              items-start
-              gap-2
-              mt-2
-              translate-x-[-0.1rem]"
-            >
-              <BookOpenText
-                size={23}
-                className="
-                text-gray-400
-                shrink-0"
-              />
-              <span>
-                <b>Vocabulary:</b> {vocabulary}
-              </span>
-            </div>
-          )}
-          {pronunciation && (
-            <div
-              className="
-              flex
-              items-start
-              gap-2
-              mt-2
-              translate-x-[-0.1rem]"
-            >
-              <AudioLines
-                size={23}
-                className="
-                text-gray-400
-                shrink-0"
-              />
-              <span>
-                <b>Pronunciation:</b> {pronunciation}
-              </span>
-            </div>
-          )}
-          {finalTask && (
-            <div
-              className="
-              flex
-              items-start
-              gap-2
-              mt-2
-              translate-x-[-0.1rem]"
-            >
-              <Flag
-                size={23}
-                className="
-                text-gray-400
-                shrink-0"
-              />
-              <span>
-                <b>Final task:</b> {finalTask}
-              </span>
-            </div>
-          )}
-          {date && (
-            <div
-              className="
-              flex
-              items-start
-              gap-2
-              mt-2
-              translate-x-[-0.1rem]"
-            >
-              <CalendarDays
-                size={23}
-                className="
-                text-gray-400
-                shrink-0"
-              />
-              <span>{date}</span>
-            </div>
-          )}
-          {duration && (
-            <div
-              className="
-              flex
-              items-start
-              gap-1
-              mt-2
-              translate-x-[-0.1rem]"
-            >
-              <Clock2
-                size={23}
-                className="
-                text-gray-400
-                shrink-0"
-              />
-              <span>{duration}</span>
-            </div>
-          )}
-        </div>
-      </Card>
+
+        {vocabulary && (
+          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+            <BookOpenText size={23} className="shrink-0 text-gray-400" />
+
+            <span>
+              <b>Vocabulary:</b> {vocabulary}
+            </span>
+          </div>
+        )}
+
+        {pronunciation && (
+          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+            <AudioLines size={23} className="shrink-0 text-gray-400" />
+
+            <span>
+              <b>Pronunciation:</b> {pronunciation}
+            </span>
+          </div>
+        )}
+
+        {finalTask && (
+          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+            <Flag size={23} className="shrink-0 text-gray-400" />
+
+            <span>
+              <b>Final task:</b> {finalTask}
+            </span>
+          </div>
+        )}
+
+        {date && (
+          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+            <CalendarDays size={23} className="shrink-0 text-gray-400" />
+            <span>{date}</span>
+          </div>
+        )}
+
+        {duration && (
+          <div className="mt-2 flex items-start gap-1 translate-x-[-0.1rem]">
+            <Clock2 size={23} className="shrink-0 text-gray-400" />
+            <span>{duration}</span>
+          </div>
+        )}
+      </div>
     </>
+  );
+
+  return (
+    <Card className="mb-4 bg-gray-100">
+      {collapsible ? (
+        <details
+          className="
+            [&_.details-minus]:hidden
+            open:[&_.details-plus]:hidden
+            open:[&_.details-minus]:inline
+          "
+        >
+          <summary
+            className="
+            list-none
+            cursor-pointer
+            select-none
+            flex
+            items-center
+            justify-between
+          "
+          >
+            {cardHeader}
+
+            <span className="font-bold">
+              <span className="details-plus"><Plus size={18} /></span>
+              <span className="details-minus"><Minus size={18} /></span>
+            </span>
+          </summary>
+
+          {cardDetails}
+        </details>
+      ) : (
+        <>
+          {href && cardHeader}
+          {cardDetails}
+        </>
+      )}
+    </Card>
   );
 };

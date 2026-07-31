@@ -186,6 +186,7 @@ export default function Dashboard() {
                     key={lesson.href}
                     index={previousLessonCount + lessonIndex}
                     {...lesson}
+                    collapsible
                     updateProgress={updateProgress}
                   />
                 ))}

@@ -67,8 +67,8 @@ function RenderNavItem({
             top-px
           "
           >
-            <Plus size={18} className="plus translate-y-[0.2rem]" />
-            <Minus size={18} className="minus hidden translate-y-[0.2rem]" />
+            <Plus size={18} className="plus translate-y-[0.3rem]" />
+            <Minus size={18} className="minus hidden translate-y-[0.3rem]" />
           </span>
 
           {item.iconClassName && (
