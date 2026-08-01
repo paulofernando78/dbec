@@ -22,6 +22,7 @@ type SectionElementProps = {
 
 type PageSectionsProps = {
   children: ReactNode;
+  title?: ReactNode;
   headerIcon?: LucideIcon;
   itemIcon?: LucideIcon;
   headerIconClassName?: string;
@@ -30,6 +31,7 @@ type PageSectionsProps = {
 
 export const PageSections = ({
   children,
+  title,
   headerIcon,
   itemIcon,
   headerIconClassName,
@@ -67,6 +69,7 @@ export const PageSections = ({
     <>
       {/* Build the TableOfContents menu automatically from the Section components */}
       <TableOfContents
+        title={title}
         items={items}
         headerIcon={headerIcon}
         itemIcon={itemIcon}

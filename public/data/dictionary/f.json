@@ -832,7 +832,7 @@
       },
       {
         "word": "fine-tune",
-        "phonetics": "faɪn-tun",
+        "phonetics": "/ˌfaɪnˈtuːn/",
         "partOfSpeech": "verb",
         "enDefinition": "to make small and precise adjustments to improve something, such as a system, plan, or product, so it works perfectly",
         "ptDefinition": "fazer ajustes pequenos e precisos para melhorar algo, como um sistema, plano ou produto, para que funcione perfeitamente",
@@ -848,12 +848,17 @@
         ],
         "synonyms": ["adjust", "refine", "tweak", "optimize"],
         "antonyms": ["neglect", "worsen", "overlook"],
+        "seeAlso": ["adjust", "refine", "optimize"],
         "notes": [
           {
-            "enNote": "This phrase is often used in technical, creative, or professional contexts when precision is essential."
-          },
-          {
+            "enNote": "This phrase is often used in technical, creative, or professional contexts when precision is essential.",
             "ptNote": "Esta expressão é frequentemente usada em contextos técnicos, criativos ou profissionais quando a precisão é essencial."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "fine-tune.avif",
+            "alt": "A person making precise adjustments to fine-tune a control panel."
           }
         ]
       },

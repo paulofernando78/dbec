@@ -1,4 +1,10 @@
-import { dictionary, content, type ContentValue } from "@/helpers/content";
+import {
+  audio,
+  content,
+  dictionary,
+  phonetics,
+  type ContentValue,
+} from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { Line } from "@/components/content/Line";
 import { Dot } from "lucide-react";
@@ -24,6 +30,7 @@ type CarouselWord = {
 
 type ResolvedWord = {
   enDefinition?: string;
+  phonetics?: string;
   imgs?: {
     src?: string;
   }[];
@@ -32,7 +39,8 @@ type ResolvedWord = {
 type MatchingContentItem = {
   display?: string;
   as?: string;
-  parts: ContentValue[];
+  parts?: ContentValue[];
+  word?: string;
 };
 
 type CarouselProps = {
@@ -159,13 +167,27 @@ export const Carousel = ({
             ? item.display
             : undefined;
         const as = item.as === "p" || item.as === "span" ? item.as : undefined;
+        const dictionaryPhonetics = item.word
+          ? resolvedWords[item.word]?.phonetics
+          : undefined;
+        const parts =
+          item.parts ??
+          (item.word
+            ? [
+                audio(item.word),
+                item.word,
+                ...(dictionaryPhonetics
+                  ? [" ", phonetics(dictionaryPhonetics)]
+                  : []),
+              ]
+            : []);
 
         return (
           <span key={index} className="inline-flex items-center">
             <Line
               display={display}
               as={as}
-              value={content({ parts: item.parts })}
+              value={content({ parts })}
             />
             {index < matchingContent.length - 1 && (
               <Dot className="inline size-4" />

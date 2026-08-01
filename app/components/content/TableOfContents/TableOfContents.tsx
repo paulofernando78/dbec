@@ -17,6 +17,7 @@ type TableOfContentsItem = {
 };
 
 type TableOfContentsProps = {
+  title?: ReactNode;
   items?: TableOfContentsItem[];
   headerIcon?: LucideIcon;
   itemIcon?: LucideIcon;
@@ -25,6 +26,7 @@ type TableOfContentsProps = {
 };
 
 export const TableOfContents = ({
+  title = "Table of Contents",
   items = [],
   headerIcon: HeaderIcon = Notebook,
   itemIcon: ItemIcon = NotebookText,
@@ -44,7 +46,7 @@ export const TableOfContents = ({
       >
         <HeaderIcon size={22} className={headerIconClassName} />
         <span>
-          <b>Table of Contents</b>
+          <b>{title}</b>
         </span>
       </div>
       <nav>

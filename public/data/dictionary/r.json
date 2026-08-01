@@ -2,6 +2,70 @@
   {
     "definitions": [
       {
+        "word": "replenish",
+        "phonetics": "/rɪˈplen.ɪʃ/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To fill something again or restore it to its previous level or condition.",
+        "ptDefinition": "Repor, reabastecer ou restaurar algo ao seu nível ou condição anterior.",
+        "examples": [
+          {
+            "enExample": "Drink water after exercising to replenish lost fluids.",
+            "ptExample": "Beba água após o exercício para repor os líquidos perdidos."
+          },
+          {
+            "enExample": "The staff replenished the shelves before the store opened.",
+            "ptExample": "A equipe reabasteceu as prateleiras antes de a loja abrir."
+          }
+        ],
+        "synonyms": ["refill", "restock", "restore"],
+        "antonyms": ["deplete", "drain", "exhaust"],
+        "seeAlso": ["replenishment", "hydrate", "supply"],
+        "notes": [
+          {
+            "enNote": "Replenish emphasizes replacing what has been used, lost, or removed.",
+            "ptNote": "Replenish enfatiza a reposição daquilo que foi usado, perdido ou removido."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "replenish.avif",
+            "alt": "A glass being refilled with water to replenish lost fluids."
+          }
+        ]
+      },
+      {
+        "word": "retain",
+        "phonetics": "/rɪˈteɪn/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To continue to have, keep, or remember something instead of losing it.",
+        "ptDefinition": "Reter, conservar, manter ou lembrar algo em vez de perdê-lo.",
+        "examples": [
+          {
+            "enExample": "This material can retain heat for several hours.",
+            "ptExample": "Este material consegue reter calor por várias horas."
+          },
+          {
+            "enExample": "Writing notes helps me retain new information.",
+            "ptExample": "Fazer anotações me ajuda a reter novas informações."
+          }
+        ],
+        "synonyms": ["keep", "preserve", "remember"],
+        "antonyms": ["lose", "release", "forget"],
+        "seeAlso": ["retention", "maintain", "preserve"],
+        "notes": [
+          {
+            "enNote": "Retain is common in formal contexts and can refer to possessions, information, qualities, or substances.",
+            "ptNote": "Retain é comum em contextos formais e pode se referir a posses, informações, qualidades ou substâncias."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "retain.avif",
+            "alt": "A container retaining water without allowing it to escape."
+          }
+        ]
+      },
+      {
         "word": "risk",
         "phonetics": "/rɪsk/",
         "partOfSpeech": "noun",

@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "lubricate",
+        "phonetics": "/ˈluː.brə.keɪt/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To apply oil or another substance to moving surfaces so they move smoothly and with less friction.",
+        "ptDefinition": "Lubrificar; aplicar óleo ou outra substância a superfícies móveis para que se movam suavemente e com menos atrito.",
+        "examples": [
+          {
+            "enExample": "You should lubricate the chain regularly to keep the bicycle running smoothly.",
+            "ptExample": "Você deve lubrificar a corrente regularmente para manter a bicicleta funcionando bem."
+          },
+          {
+            "enExample": "Saliva helps lubricate food before it is swallowed.",
+            "ptExample": "A saliva ajuda a lubrificar o alimento antes que ele seja engolido."
+          }
+        ],
+        "synonyms": ["oil", "grease", "moisten"],
+        "antonyms": ["dry", "degrease"],
+        "seeAlso": ["lubricant", "friction", "moisture"],
+        "notes": [
+          {
+            "enNote": "Lubricate can describe machines as well as biological processes that reduce friction.",
+            "ptNote": "Lubricate pode descrever máquinas e também processos biológicos que reduzem o atrito."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "lubricate.avif",
+            "alt": "Lubricant being applied to moving mechanical parts to reduce friction."
+          }
+        ]
+      },
+      {
         "word": "look on the bright side",
         "phonetics": "/lʊk ɒn ðə braɪt saɪd/",
         "partOfSpeech": "idiom",

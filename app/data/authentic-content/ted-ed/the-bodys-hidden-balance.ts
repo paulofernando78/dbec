@@ -1,17 +1,19 @@
-import { audio, content, phonetics } from "@/helpers/content";
+import { content } from "@/helpers/content";
 import { shuffle } from "@/utils/shuffle";
 
 // Concrete vocabulary used to introduce the topic before watching.
 // More demanding C1/C2 language from the video is reserved for Practice.
 const words = [
-  { word: "moisture", phonetic: "/ˈmɔɪs.tʃɚ/", img: 0 },
-  { word: "joint", phonetic: "/dʒɔɪnt/", img: 0 },
-  { word: "spinal cord", phonetic: "/ˈspaɪ.nəl ˌkɔːrd/", img: 0 },
-  { word: "kidney", phonetic: "/ˈkɪd.ni/", img: 0 },
-  { word: "dehydration", phonetic: "/ˌdiː.haɪˈdreɪ.ʃən/", img: 0 },
-  { word: "overhydration", phonetic: "/ˌoʊ.vɚ.haɪˈdreɪ.ʃən/", img: 0 },
-  { word: "electrolyte", phonetic: "/iˈlek.trə.laɪt/", img: 0 },
-  { word: "intake", phonetic: "/ˈɪn.teɪk/", img: 0 },
+  { word: "cushion", img: 0 },
+  { word: "lubricate", img: 0 },
+  { word: "nourish", img: 0 },
+  { word: "retain", img: 0 },
+  { word: "impaired", img: 0 },
+  { word: "compensate for", img: 0 },
+  { word: "replenish", img: 0 },
+  { word: "intake", img: 0 },
+  { word: "fine-tune", img: 0 },
+  { word: "moisture", img: 0 },
 ];
 
 export const theBodysHiddenBalance = {
@@ -54,9 +56,9 @@ export const theBodysHiddenBalance = {
       instruction: "Match the words to the pictures.",
       words,
       matchingContent: shuffle(
-        words.map(({ word, phonetic }) => ({
+        words.map(({ word }) => ({
           as: "span" as const,
-          parts: [audio(word), word, " ", phonetics(phonetic)],
+          word,
         })),
       ),
     },

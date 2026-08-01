@@ -2,6 +2,70 @@
   {
     "definitions": [
       {
+        "word": "cushion",
+        "phonetics": "/ˈkʊʃ.ən/",
+        "partOfSpeech": "noun, verb",
+        "enDefinition": "A soft object used to make a seat more comfortable; as a verb, to soften the effect of an impact or difficulty.",
+        "ptDefinition": "Almofada; como verbo, amortecer ou reduzir o efeito de um impacto ou dificuldade.",
+        "examples": [
+          {
+            "enExample": "She placed a cushion behind her back for support.",
+            "ptExample": "Ela colocou uma almofada atrás das costas para dar apoio."
+          },
+          {
+            "enExample": "The savings helped cushion the impact of the unexpected expense.",
+            "ptExample": "As economias ajudaram a amortecer o impacto da despesa inesperada."
+          }
+        ],
+        "synonyms": ["pillow", "pad", "buffer"],
+        "antonyms": ["intensify", "aggravate"],
+        "seeAlso": ["padding", "support", "shock absorber"],
+        "notes": [
+          {
+            "enNote": "As a verb, cushion commonly means to protect someone or something from a sudden impact, loss, or difficulty.",
+            "ptNote": "Como verbo, cushion geralmente significa proteger alguém ou algo de um impacto, perda ou dificuldade repentina."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "cushion.avif",
+            "alt": "A soft cushion providing comfort and support on a seat."
+          }
+        ]
+      },
+      {
+        "word": "compensate for",
+        "phonetics": "/ˈkɑːm.pən.seɪt fɔːr/",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "To make up for a weakness, loss, disadvantage, or unwanted effect by providing something positive or equivalent.",
+        "ptDefinition": "Compensar uma fraqueza, perda, desvantagem ou efeito indesejado oferecendo algo positivo ou equivalente.",
+        "examples": [
+          {
+            "enExample": "She worked extra hours to compensate for the time she had missed.",
+            "ptExample": "Ela trabalhou horas extras para compensar o tempo que havia perdido."
+          },
+          {
+            "enExample": "The bright lighting compensates for the lack of natural light.",
+            "ptExample": "A iluminação intensa compensa a falta de luz natural."
+          }
+        ],
+        "synonyms": ["make up for", "offset", "counterbalance"],
+        "antonyms": ["worsen", "intensify", "aggravate"],
+        "seeAlso": ["compensation", "balance", "remedy"],
+        "notes": [
+          {
+            "enNote": "Compensate for is followed by the thing whose negative effect or absence is being balanced.",
+            "ptNote": "Compensate for é seguido daquilo cujo efeito negativo ou ausência está sendo compensado."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "compensate-for.avif",
+            "alt": "A person balancing one disadvantage with an additional benefit."
+          }
+        ]
+      },
+      {
         "word": "consequence",
         "phonetics": "/ˈkɑːn.sə.kwens/",
         "partOfSpeech": "noun",

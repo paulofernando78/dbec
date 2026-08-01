@@ -2,6 +2,70 @@
   {
     "definitions": [
       {
+        "word": "impaired",
+        "phonetics": "/ɪmˈperd/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "Weakened, damaged, or functioning less effectively than normal.",
+        "ptDefinition": "Prejudicado, debilitado ou com funcionamento menos eficaz que o normal.",
+        "examples": [
+          {
+            "enExample": "His vision was temporarily impaired by the bright light.",
+            "ptExample": "A visão dele foi temporariamente prejudicada pela luz forte."
+          },
+          {
+            "enExample": "Driving while impaired puts everyone on the road at risk.",
+            "ptExample": "Dirigir com a capacidade comprometida coloca todos na estrada em risco."
+          }
+        ],
+        "synonyms": ["weakened", "damaged", "diminished"],
+        "antonyms": ["unimpaired", "healthy", "fully functioning"],
+        "seeAlso": ["impairment", "disability", "weaken"],
+        "notes": [
+          {
+            "enNote": "Impaired often describes a reduced physical or mental ability and should be used respectfully when referring to people.",
+            "ptNote": "Impaired frequentemente descreve uma capacidade física ou mental reduzida e deve ser usado com respeito ao se referir a pessoas."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "impaired.avif",
+            "alt": "A person experiencing reduced vision and difficulty seeing clearly."
+          }
+        ]
+      },
+      {
+        "word": "intake",
+        "phonetics": "/ˈɪn.teɪk/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The amount of food, drink, air, or another substance taken into the body; also, the process of admitting people into an organization or service.",
+        "ptDefinition": "Ingestão ou consumo de alimento, bebida, ar ou outra substância; também, o processo de admissão de pessoas em uma organização ou serviço.",
+        "examples": [
+          {
+            "enExample": "The doctor advised her to reduce her daily salt intake.",
+            "ptExample": "O médico aconselhou que ela reduzisse a ingestão diária de sal."
+          },
+          {
+            "enExample": "The university increased its annual intake of new students.",
+            "ptExample": "A universidade aumentou a admissão anual de novos alunos."
+          }
+        ],
+        "synonyms": ["consumption", "ingestion", "admission"],
+        "antonyms": ["output", "release", "expulsion"],
+        "seeAlso": ["consume", "diet", "admission"],
+        "notes": [
+          {
+            "enNote": "In health contexts, intake commonly refers to the quantity consumed during a particular period.",
+            "ptNote": "Em contextos de saúde, intake geralmente se refere à quantidade consumida durante determinado período."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "intake.avif",
+            "alt": "A person monitoring a healthy daily intake of food and water."
+          }
+        ]
+      },
+      {
         "word": "injury",
         "phonetics": "/ˈɪn.dʒər.i/",
         "partOfSpeech": "noun",

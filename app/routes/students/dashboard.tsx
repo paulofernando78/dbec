@@ -127,6 +127,7 @@ export default function Dashboard() {
         <ImportantNotes storageKey={`${storagePrefix}:important-notes`} />
         <Calendar />
         <PageSections
+          title="Course Library"
           headerIcon={LibraryBig}
           itemIcon={BookText}
           headerIconClassName="text-gray-400"

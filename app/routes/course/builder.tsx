@@ -20,6 +20,7 @@ import { Dialogue } from "@/features/Dialogue/Dialogue";
 import { TheAlphabet } from "@/features/TheAlphabet";
 import { ColumnDrag } from "@/components/content/Column";
 import { Radio } from "@/features/exercises/Radio";
+import { ImageQuiz } from "@/features/exercises/ImageQuiz";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
@@ -130,6 +131,9 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
                 aspectRatio="wide"
                 {...lesson.introduction.storyCarousel}
               />
+            )}
+            {lesson.introduction?.imageQuiz && (
+              <ImageQuiz {...lesson.introduction.imageQuiz} />
             )}
             {lesson.introduction?.radio && (
               <Radio {...lesson.introduction.radio} />

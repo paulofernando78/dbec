@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "moisture",
+        "phonetics": "/ˈmɔɪs.tʃɚ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A small amount of water or another liquid present in the air, on a surface, or in a substance.",
+        "ptDefinition": "Umidade; pequena quantidade de água ou outro líquido presente no ar, em uma superfície ou em uma substância.",
+        "examples": [
+          {
+            "enExample": "The plants absorb moisture from the soil.",
+            "ptExample": "As plantas absorvem umidade do solo."
+          },
+          {
+            "enExample": "Keep the container closed to prevent moisture from getting inside.",
+            "ptExample": "Mantenha o recipiente fechado para impedir a entrada de umidade."
+          }
+        ],
+        "synonyms": ["dampness", "humidity", "wetness"],
+        "antonyms": ["dryness", "aridity"],
+        "seeAlso": ["moist", "humidity", "hydration"],
+        "notes": [
+          {
+            "enNote": "Moisture is an uncountable noun and usually refers to a relatively small amount of liquid.",
+            "ptNote": "Moisture é um substantivo incontável e geralmente se refere a uma quantidade relativamente pequena de líquido."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "moisture.avif",
+            "alt": "Water droplets showing moisture on a green leaf."
+          }
+        ]
+      },
+      {
         "word": "movie theater",
         "phonetics": "/ˈmuː.vi ˌθiː.ə.t̬ɚ/",
         "partOfSpeech": "noun",

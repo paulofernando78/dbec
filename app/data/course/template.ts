@@ -31,28 +31,40 @@ export const lesson = {
       [audio("..."), "question 1"],
       [audio("..."), "question 2"],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
+    imageQuiz: {
+      instruction: "Look at the picture and choose the correct word.",
+      questions: [
         {
-          src: "/",
-          alt: "...",
+          word: "cushion",
+          imgSrc: "/assets/img/dictionary/c/cushion.avif",
+          imgAlt: "A cushion softening the impact of an object.",
+          options: shuffle([
+            { option: "cushion", isCorrect: true },
+            { option: "lubricate", isCorrect: false },
+            { option: "moisture", isCorrect: false },
+          ]),
         },
         {
-          src: "/",
-          alt: "...",
+          word: "lubricate",
+          imgSrc: "/assets/img/dictionary/l/lubricate.avif",
+          imgAlt: "Lubricant being applied to reduce friction.",
+          options: shuffle([
+            { option: "cushion", isCorrect: false },
+            { option: "lubricate", isCorrect: true },
+            { option: "moisture", isCorrect: false },
+          ]),
+        },
+        {
+          word: "moisture",
+          imgSrc: "/assets/img/dictionary/m/moisture.avif",
+          imgAlt: "Water droplets representing moisture.",
+          options: shuffle([
+            { option: "cushion", isCorrect: false },
+            { option: "lubricate", isCorrect: false },
+            { option: "moisture", isCorrect: true },
+          ]),
         },
       ],
-      matchingContent: shuffle([
-        {
-          as: "span",
-          parts: [audio("..."), "..."],
-        },
-        {
-          as: "span",
-          parts: [audio("..."), "..."],
-        },
-      ]),
     },
 
     radio: {

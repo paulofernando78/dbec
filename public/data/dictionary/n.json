@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "nourish",
+        "phonetics": "/ˈnɜːr.ɪʃ/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To provide a person, animal, or plant with the food and nutrients needed for health and growth.",
+        "ptDefinition": "Nutrir; fornecer a uma pessoa, animal ou planta os alimentos e nutrientes necessários para a saúde e o crescimento.",
+        "examples": [
+          {
+            "enExample": "A balanced diet helps nourish the body.",
+            "ptExample": "Uma dieta equilibrada ajuda a nutrir o corpo."
+          },
+          {
+            "enExample": "The soil must nourish the young plants as they grow.",
+            "ptExample": "O solo precisa nutrir as plantas jovens enquanto elas crescem."
+          }
+        ],
+        "synonyms": ["feed", "sustain", "nurture"],
+        "antonyms": ["starve", "deprive", "neglect"],
+        "seeAlso": ["nutrition", "nutrient", "replenish"],
+        "notes": [
+          {
+            "enNote": "Nourish may also be used figuratively for supporting an idea, relationship, or feeling.",
+            "ptNote": "Nourish também pode ser usado em sentido figurado para fortalecer uma ideia, relação ou sentimento."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "nourish.avif",
+            "alt": "Nutritious food nourishing the body and supporting good health."
+          }
+        ]
+      },
+      {
         "word": "neuron",
         "phonetics": "/ˈnʊr.ɑːn/ (US), /ˈnjʊə.rɒn/ (UK)",
         "partOfSpeech": "noun",
