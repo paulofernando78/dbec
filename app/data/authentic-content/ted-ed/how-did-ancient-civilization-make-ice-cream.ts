@@ -1,4 +1,4 @@
-import { audio, content, mark, phonetics, underline } from "@/helpers/content";
+import { content, mark, underline } from "@/helpers/content";
 import { shuffle } from "@/utils/shuffle";
 
 // Palavras e conceitos-chave extraídos diretamente da legenda
@@ -58,12 +58,6 @@ export const howDidAncientCivilizationsMakeIceCream = {
 
     vocabulary: {
       words: words,
-      matchingContent: shuffle(
-        words.map(({ word, phonetic }) => ({
-          as: "span" as const,
-          parts: [audio(word), word, " ", phonetics(phonetic)],
-        })),
-      ),
     },
 
     gist: {

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import { audio, content, phonetics } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
+import { shuffle } from "@/utils/shuffle";
 
 import { RotateCcw } from "lucide-react";
 
@@ -110,22 +111,19 @@ export const ImageQuiz = ({
         if (!image?.src) return [];
 
         const optionCount = Math.min(8, words.length);
-        const candidateIndexes = Array.from(
-          { length: optionCount },
-          (_, offset) => (index + offset) % words.length,
-        );
-        const rotation = index % candidateIndexes.length;
-        const orderedIndexes = [
-          ...candidateIndexes.slice(rotation),
-          ...candidateIndexes.slice(0, rotation),
-        ];
+        const distractorIndexes = shuffle(
+          words
+            .map((_, wordIndex) => wordIndex)
+            .filter((wordIndex) => wordIndex !== index),
+        ).slice(0, optionCount - 1);
+        const optionIndexes = shuffle([index, ...distractorIndexes]);
 
         return [
           {
             word: item.word,
             imgSrc: `/assets/img/dictionary/${item.word[0].toLowerCase()}/${image.src}`,
             imgAlt: image.alt ?? item.word,
-            options: orderedIndexes.map((wordIndex) => ({
+            options: optionIndexes.map((wordIndex) => ({
               option: words[wordIndex].word,
               isCorrect: wordIndex === index,
             })),
@@ -135,7 +133,7 @@ export const ImageQuiz = ({
 
       if (active) {
         setCurrentIndex(0);
-        setGeneratedQuestions(nextQuestions);
+        setGeneratedQuestions(shuffle(nextQuestions));
       }
     };
 

@@ -1,8 +1,6 @@
 import { content } from "@/helpers/content";
 import { shuffle } from "@/utils/shuffle";
 
-// Concrete vocabulary used to introduce the topic before watching.
-// More demanding C1/C2 language from the video is reserved for Practice.
 const words = [
   { word: "cushion", img: 0 },
   { word: "lubricate", img: 0 },
@@ -54,12 +52,6 @@ export const theBodysHiddenBalance = {
 
     vocabulary: {
       words,
-      matchingContent: shuffle(
-        words.map(({ word }) => ({
-          as: "span" as const,
-          word,
-        })),
-      ),
     },
 
     gist: {
@@ -227,7 +219,6 @@ export const theBodysHiddenBalance = {
       },
     },
 
-    // Pedagogical adaptation of the video transcript rather than a verbatim copy.
     script: {
       content: [
         {

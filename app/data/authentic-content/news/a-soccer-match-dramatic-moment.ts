@@ -1,4 +1,4 @@
-import { audio, content, mark, phonetics, underline } from "@/helpers/content";
+import { audio, content, mark, underline } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
@@ -72,68 +72,6 @@ export const aSoccerMatchDramaticMoment = {
           img: 0,
         },
       ],
-      matchingContent: shuffle([
-        {
-          as: "span" as const,
-          parts: [
-            audio("tournament"),
-            "tournament ",
-            phonetics("/ˈtɝː.nə.mənt/"),
-          ],
-        },
-        {
-          as: "span" as const,
-          parts: [audio("lunge"), "lunge ", phonetics("/lʌndʒ/")],
-        },
-        {
-          as: "span" as const,
-          parts: [
-            audio("injury"),
-            "injury ",
-            phonetics("/ˈɪn.dʒər.i/"),
-          ],
-        },
-        {
-          as: "span" as const,
-          parts: [
-            audio("stretcher"),
-            "stretcher ",
-            phonetics("/ˈstretʃ.ər/"),
-          ],
-        },
-        {
-          as: "span" as const,
-          parts: [
-            audio("recovery"),
-            "recovery ",
-            phonetics("/rɪˈkʌv.ɚ.i/"),
-          ],
-        },
-        {
-          as: "span" as const,
-          parts: [
-            audio("overshadow"),
-            "overshadow ",
-            phonetics("/ˌoʊ.vɚˈʃæd.oʊ/"),
-          ],
-        },
-        {
-          as: "span" as const,
-          parts: [
-            audio("confrontation"),
-            "confrontation ",
-            phonetics("/ˌkɑːn.frənˈteɪ.ʃən/"),
-          ],
-        },
-        {
-          as: "span" as const,
-          parts: [
-            audio("tribute"),
-            "tribute ",
-            phonetics("/ˈtrɪb.juːt/"),
-          ],
-        },
-      ]),
     },
     gist: {
       paragraph: [

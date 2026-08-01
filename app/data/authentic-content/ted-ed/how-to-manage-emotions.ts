@@ -1,9 +1,7 @@
 import {
-  audio,
   content,
   mark,
   attentionMark,
-  phonetics,
 } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
@@ -58,12 +56,6 @@ export const howToManageEmotions = {
     },
     vocabulary: {
       words: words,
-      matchingContent: shuffle(
-        words.map(({ word, phonetic }) => ({
-          as: "span" as const,
-          parts: [audio(word), word, " ", phonetics(phonetic)],
-        })),
-      ),
     },
     gist: {
       videoPlayer: {

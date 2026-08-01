@@ -91,7 +91,7 @@ export const LessonCard = ({
 
   const cardDetails = (
     <>
-      <hr className="mt-3 mb-4 text-gray-300" />
+      {href && <hr className="mt-3 mb-4 text-gray-300" />}
 
       <p className="flex items-start gap-2">
         <Goal size={23} className="text-gray-400 shrink-0" />

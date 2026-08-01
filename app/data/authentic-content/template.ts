@@ -40,12 +40,6 @@ export const template = {
     vocabulary: {
       instruction: "Match the words to the pictures.",
       words: words,
-      matchingContent: shuffle(
-        words.map(({ word }) => ({
-          as: "span" as const,
-          parts: [audio(word), word],
-        })),
-      ),
     },
     gist: {
       videoPlayer: {
