@@ -2,6 +2,9 @@ import { useState, type ChangeEvent } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Image } from "@/components/ui/Image";
+import { Line } from "@/components/content/Line";
+
+import type { RichContent } from "@/helpers/content";
 
 import { Check, RotateCcw } from "lucide-react";
 
@@ -11,7 +14,7 @@ type RadioOption = {
 };
 
 type RadioQuestion = {
-  question?: string;
+  question?: string | RichContent;
   options?: RadioOption[];
   imgSrc?: string;
   imgAlt?: string;
@@ -26,18 +29,23 @@ type RadioProps = {
   instruction?: string;
   exercise?: RadioExercise;
   score?: boolean;
+  className?: string;
 };
 
-export const Radio = ({
+const RadioComponent = ({
   instruction,
   exercise = {},
   score = true,
+  className,
 }: RadioProps) => {
   const [selected, setSelected] = useState<Record<number, number>>({});
   const [checked, setChecked] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
 
   const questions = Array.isArray(exercise.questions) ? exercise.questions : [];
+  const scoredQuestions = questions.filter((question) =>
+    question.options?.some((option) => option.isCorrect),
+  );
 
   const handleCheck = () => {
     let score = 0;
@@ -61,10 +69,18 @@ export const Radio = ({
   };
 
   return (
-    <div className="flex flex-col gap-4 mb-4">
-      {instruction && <p className="font-bold">{instruction}</p>}
+    <div className={["mb-4", className].filter(Boolean).join(" ")}>
+      {instruction && <p className="mb-4 font-bold">{instruction}</p>}
       {questions.map((q, qIndex) => (
-        <div key={qIndex} className="flex flex-col items-start gap-4 min-[500px]:flex-row">
+        <div
+          key={qIndex}
+          className={[
+            "flex flex-col items-start gap-4 min-[500px]:flex-row",
+            qIndex < questions.length - 1 && "mb-4",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
           {q.imgSrc && (
             <div>
               <Image
@@ -77,9 +93,14 @@ export const Radio = ({
             </div>
           )}
           <div className="flex-1">
-            <p className="mb-px">
-              {qIndex + 1}. {q.question}
-            </p>
+            <div className="mb-px flex gap-1">
+              <span>{qIndex + 1}.</span>
+              {Array.isArray(q.question) ? (
+                <Line value={q.question} />
+              ) : (
+                <span>{q.question}</span>
+              )}
+            </div>
 
             {(q.options || []).map((opt, optIndex) => {
               const isActive = selected[qIndex] === optIndex;
@@ -136,16 +157,22 @@ export const Radio = ({
           </div>
         </div>
       ))}
-      {score && (
-        <span>
-          Score: {totalScore} out of {questions.length}
+      {score && scoredQuestions.length > 0 && (
+        <span className="mt-4 block">
+          Score: {totalScore} out of {scoredQuestions.length}
         </span>
       )}
 
-      <div className="flex gap-2 mb-2">
-        <Button variant="check" icon={<Check />} onClick={handleCheck} />
-        <Button variant="reset" icon={<RotateCcw />} onClick={handleReset} />
-      </div>
+      {scoredQuestions.length > 0 && (
+        <div className="mt-4 flex gap-2 mb-2">
+          <Button variant="check" icon={<Check />} onClick={handleCheck} />
+          <Button variant="reset" icon={<RotateCcw />} onClick={handleReset} />
+        </div>
+      )}
     </div>
   );
 };
+
+export const Radio = Object.assign(RadioComponent, {
+  compactCardBottom: true as const,
+});

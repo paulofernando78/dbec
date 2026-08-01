@@ -202,10 +202,10 @@ export const beginnerPersonalInformation = {
       {
         as: "span",
         parts: ["“Where are you from?”: a place or a phone number?"],
-      },
-      {
-        as: "span",
-        parts: ["Real private information in classroom practice: yes or no?"],
+        options: [
+          { option: "A place", isCorrect: true },
+          { option: "A phone number", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
