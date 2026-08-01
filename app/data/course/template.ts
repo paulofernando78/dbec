@@ -32,7 +32,6 @@ export const lesson = {
       [audio("..."), "question 2"],
     ],
     imageQuiz: {
-      instruction: "Look at the picture and choose the correct word.",
       questions: [
         {
           word: "cushion",

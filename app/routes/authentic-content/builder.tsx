@@ -89,10 +89,7 @@ export default function AuthenticContents() {
           </Section>
 
           <Section id="Vocabulary" heading={3}>
-            <ImageQuiz
-              {...content.sections.vocabulary}
-              instruction="Look at the picture and choose the correct word."
-            />
+            <ImageQuiz {...content.sections.vocabulary} />
           </Section>
 
           <Section id="Gist" heading={3}>

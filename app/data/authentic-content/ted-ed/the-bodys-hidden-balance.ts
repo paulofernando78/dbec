@@ -8,7 +8,7 @@ const words = [
   { word: "lubricate", img: 0 },
   { word: "nourish", img: 0 },
   { word: "retain", img: 0 },
-  { word: "impaired", img: 0 },
+  { word: "impairment", img: 0 },
   { word: "compensate for", img: 0 },
   { word: "replenish", img: 0 },
   { word: "intake", img: 0 },
@@ -53,7 +53,6 @@ export const theBodysHiddenBalance = {
     },
 
     vocabulary: {
-      instruction: "Match the words to the pictures.",
       words,
       matchingContent: shuffle(
         words.map(({ word }) => ({

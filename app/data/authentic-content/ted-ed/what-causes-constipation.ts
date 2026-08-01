@@ -54,7 +54,6 @@ export const whatCausesConstipation = {
       ],
     },
     vocabulary: {
-      instruction: "Match the words to the pictures.",
       words: words,
       matchingContent: shuffle(
         words.map(({ word, phonetic }) => ({

@@ -2,34 +2,34 @@
   {
     "definitions": [
       {
-        "word": "impaired",
-        "phonetics": "/ɪmˈperd/",
-        "partOfSpeech": "adjective",
-        "enDefinition": "Weakened, damaged, or functioning less effectively than normal.",
-        "ptDefinition": "Prejudicado, debilitado ou com funcionamento menos eficaz que o normal.",
+        "word": "impairment",
+        "phonetics": "/ɪmˈper.mənt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A condition in which a physical or mental ability is weakened, damaged, or functions less effectively than normal.",
+        "ptDefinition": "Comprometimento ou redução de uma capacidade física ou mental, fazendo com que funcione de maneira menos eficaz que o normal.",
         "examples": [
           {
-            "enExample": "His vision was temporarily impaired by the bright light.",
-            "ptExample": "A visão dele foi temporariamente prejudicada pela luz forte."
+            "enExample": "The bright light caused a temporary visual impairment.",
+            "ptExample": "A luz forte causou um comprometimento visual temporário."
           },
           {
-            "enExample": "Driving while impaired puts everyone on the road at risk.",
-            "ptExample": "Dirigir com a capacidade comprometida coloca todos na estrada em risco."
+            "enExample": "Severe dehydration can lead to temporary cognitive impairment.",
+            "ptExample": "A desidratação grave pode causar comprometimento cognitivo temporário."
           }
         ],
-        "synonyms": ["weakened", "damaged", "diminished"],
-        "antonyms": ["unimpaired", "healthy", "fully functioning"],
-        "seeAlso": ["impairment", "disability", "weaken"],
+        "synonyms": ["limitation", "dysfunction", "disability"],
+        "antonyms": ["ability", "health", "full functioning"],
+        "seeAlso": ["impaired", "disability", "cognitive function"],
         "notes": [
           {
-            "enNote": "Impaired often describes a reduced physical or mental ability and should be used respectfully when referring to people.",
-            "ptNote": "Impaired frequentemente descreve uma capacidade física ou mental reduzida e deve ser usado com respeito ao se referir a pessoas."
+            "enNote": "Impairment commonly refers to reduced physical, sensory, or cognitive functioning and should be used respectfully when describing people.",
+            "ptNote": "Impairment geralmente se refere à redução do funcionamento físico, sensorial ou cognitivo e deve ser usado com respeito ao descrever pessoas."
           }
         ],
         "imgs": [
           {
-            "src": "impaired.avif",
-            "alt": "A person experiencing reduced vision and difficulty seeing clearly."
+            "src": "impairment.avif",
+            "alt": "A person experiencing a visual impairment and difficulty seeing clearly."
           }
         ]
       },

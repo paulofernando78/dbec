@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
@@ -26,13 +26,11 @@ export type ImageQuizWord = {
 };
 
 export type ImageQuizProps = {
-  instruction?: string;
   questions?: ImageQuizQuestion[];
   words?: ImageQuizWord[];
 };
 
 export const ImageQuiz = ({
-  instruction,
   questions: explicitQuestions = [],
   words = [],
 }: ImageQuizProps) => {
@@ -47,12 +45,51 @@ export const ImageQuiz = ({
   const [generatedQuestions, setGeneratedQuestions] = useState<
     ImageQuizQuestion[]
   >([]);
+  const restartButtonRef = useRef<HTMLDivElement | null>(null);
+  const celebratedRef = useRef(false);
 
   const questions = explicitQuestions.length
     ? explicitQuestions
     : generatedQuestions;
 
   const currentQuestion = questions[currentIndex];
+
+  useEffect(() => {
+    if (!completed) {
+      celebratedRef.current = false;
+      return;
+    }
+
+    if (celebratedRef.current) return;
+    celebratedRef.current = true;
+
+    const frame = window.requestAnimationFrame(async () => {
+      const buttonRect = restartButtonRef.current?.getBoundingClientRect();
+      if (!buttonRect) return;
+
+      const { default: confetti } = await import("@hiseb/confetti");
+
+      confetti({
+        position: {
+          x: buttonRect.left + buttonRect.width / 2,
+          y: buttonRect.top + buttonRect.height / 2,
+        },
+        count: 140,
+        size: 1,
+        velocity: 220,
+        fade: false,
+        color: [
+          "#22c55e",
+          "#3b82f6",
+          "#eab308",
+          "#f97316",
+          "#a855f7",
+        ],
+      });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [completed]);
 
   useEffect(() => {
     if (explicitQuestions.length || !words.length) {
@@ -72,11 +109,11 @@ export const ImageQuiz = ({
         const image = dictionaryEntry?.imgs?.[item.img ?? 0];
         if (!image?.src) return [];
 
-        const candidateIndexes = [
-          index,
-          (index + 1) % words.length,
-          (index + 2) % words.length,
-        ];
+        const optionCount = Math.min(8, words.length);
+        const candidateIndexes = Array.from(
+          { length: optionCount },
+          (_, offset) => (index + offset) % words.length,
+        );
         const rotation = index % candidateIndexes.length;
         const orderedIndexes = [
           ...candidateIndexes.slice(rotation),
@@ -192,14 +229,18 @@ export const ImageQuiz = ({
 
   return (
     <div className="mb-4">
-      {instruction && <p className="mb-4 font-bold">{instruction}</p>}
+      <p className="mb-4 font-bold">
+        Look at the pictures. Describe what you see, then match to the words.
+      </p>
 
       {completed ? (
         <div className="flex flex-col items-center gap-4 rounded-lg border border-green-700 p-6">
           <p className="font-bold text-green-700">
             Great job! You completed all {questions.length} questions.
           </p>
-          <Button variant="reset" icon={<RotateCcw />} onClick={reset} />
+          <div ref={restartButtonRef}>
+            <Button variant="reset" icon={<RotateCcw />} onClick={reset} />
+          </div>
         </div>
       ) : (
         <>

@@ -38,7 +38,6 @@ export const aSoccerMatchDramaticMoment = {
       ],
     },
     vocabulary: {
-      instruction: "Match the words to the pictures.",
       words: [
         {
           word: "tournament",
