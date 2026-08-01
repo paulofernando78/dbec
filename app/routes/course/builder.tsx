@@ -62,7 +62,7 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
     return (
       <>
         <Subsection label="Personal Information" heading={4} />
-        <Meaning value={languageFocus.personalInformation} />
+        <ColumnDrag {...languageFocus.personalInformation} />
         <Notes value={languageFocus.notes} />
         <CCQ value={languageFocus.ccq} />
         <TheAlphabet />

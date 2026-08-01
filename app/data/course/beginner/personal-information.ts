@@ -1,15 +1,14 @@
 import type { CCQ } from "@/components/content/CCQ";
 import type { ListProps } from "@/components/content/List";
-import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
 
-import { audio, content, bold, spacer } from "@/helpers/content";
+import { audio, content, bold } from "@/helpers/content";
 
 export const beginnerPersonalInformation = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Personal Information",
-    descriptions: ["I'm Laura. I'm from Brazil.", "What's your phone number?"],
+    descriptions: ["I’m Laura. I’m from Brazil.", "What’s your phone number?"],
   },
 
   introduction: {
@@ -39,8 +38,8 @@ export const beginnerPersonalInformation = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "",
+      instruction: "Listen to Laura and Eric.",
+      audioSrc: "/",
       lines: [
         {
           speaker: "Liz",
@@ -108,63 +107,63 @@ export const beginnerPersonalInformation = {
   },
 
   languageFocus: {
-    personalInformation: [
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-full-name.mp3",
-          ),
-          bold("What's your full name?"),
-          " Laura Palmer.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-first-name.mp3",
-          ),
-          bold("What's your first name?"),
-          " Laura.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/whats-your-last-name.mp3",
-          ),
-          bold("What's your last name?"),
-          " Palmer.",
-        ],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [
-          audio(
-            "/assets/audio/course/a1/unit-1-hello/language-focus/personal-information/questions-answers/how-do-you-spell-your-last-name.mp3",
-          ),
-          bold("How do you spell your last name?"),
-          "P-A-L-M-E-R.",
-        ],
-      },
-      spacer(),
-      {
-        display: "block",
-        as: "span",
-        parts: [bold("Where are you from?"), " I'm from Brazil."],
-      },
-      {
-        display: "block",
-        as: "span",
-        parts: [bold("What's your phone number?"), " It's 555-0184."],
-      },
-    ] satisfies Meaning[],
+    personalInformation: {
+      width: 302,
+      cols: [
+        {
+          column: "Questions",
+          items: [
+            {
+              parts: [
+                audio("What’s your full name?"),
+                bold("What’s your full name?"),
+              ],
+            },
+            {
+              parts: [
+                audio("What’s your first name?"),
+                bold("What’s your first name?"),
+              ],
+            },
+            {
+              parts: [
+                audio("What’s your last name?"),
+                bold("What’s your last name?"),
+              ],
+            },
+            {
+              parts: [
+                audio("How do you spell your last name?"),
+                bold("How do you spell your last name?"),
+              ],
+            },
+            {
+              parts: [
+                audio("Where are you from?"),
+                bold("Where are you from?"),
+              ],
+            },
+            {
+              parts: [
+                audio("What’s your phone number?"),
+                bold("What’s your phone number?"),
+              ],
+            },
+          ],
+        },
+        {
+          column: "Answers",
+          items: [
+            { parts: ["Laura Palmer."] },
+            { parts: ["Laura."] },
+            { parts: ["Palmer."] },
+            { parts: ["P-A-L-M-E-R."] },
+            { parts: ["I’m from Brazil."] },
+            { parts: ["It’s 555-0184."] },
+          ],
+        },
+      ],
+    },
     notes: [
       {
         as: "span",
@@ -174,11 +173,19 @@ export const beginnerPersonalInformation = {
       },
       {
         as: "span",
-        parts: [bold("first name"), " = given name"],
+        parts: [
+          audio("first name = given name"),
+          bold("first name"),
+          " = given name",
+        ],
       },
       {
         as: "span",
-        parts: [bold("last name / surname"), " = family name"],
+        parts: [
+          audio("last name / surname = family name"),
+          bold("last name / surname"),
+          " = family name",
+        ],
       },
       {
         as: "span",
