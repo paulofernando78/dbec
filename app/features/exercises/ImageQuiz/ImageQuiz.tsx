@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
+import { audio, content, phonetics } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 
 import { RotateCcw } from "lucide-react";
@@ -18,22 +20,94 @@ export type ImageQuizQuestion = {
   options: ImageQuizOption[];
 };
 
+export type ImageQuizWord = {
+  word: string;
+  img?: number;
+};
+
 export type ImageQuizProps = {
   instruction?: string;
   questions?: ImageQuizQuestion[];
+  words?: ImageQuizWord[];
 };
 
 export const ImageQuiz = ({
   instruction,
-  questions = [],
+  questions: explicitQuestions = [],
+  words = [],
 }: ImageQuizProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [meaning, setMeaning] = useState<string>("");
+  const [optionPhonetics, setOptionPhonetics] = useState<
+    Record<string, string>
+  >({});
+  const [generatedQuestions, setGeneratedQuestions] = useState<
+    ImageQuizQuestion[]
+  >([]);
+
+  const questions = explicitQuestions.length
+    ? explicitQuestions
+    : generatedQuestions;
 
   const currentQuestion = questions[currentIndex];
+
+  useEffect(() => {
+    if (explicitQuestions.length || !words.length) {
+      setGeneratedQuestions([]);
+      return;
+    }
+
+    let active = true;
+
+    const generateQuestions = async () => {
+      const entries = await Promise.all(
+        words.map(({ word }) => loadDictionaryWord(word)),
+      );
+
+      const nextQuestions = words.flatMap((item, index) => {
+        const dictionaryEntry = entries[index];
+        const image = dictionaryEntry?.imgs?.[item.img ?? 0];
+        if (!image?.src) return [];
+
+        const candidateIndexes = [
+          index,
+          (index + 1) % words.length,
+          (index + 2) % words.length,
+        ];
+        const rotation = index % candidateIndexes.length;
+        const orderedIndexes = [
+          ...candidateIndexes.slice(rotation),
+          ...candidateIndexes.slice(0, rotation),
+        ];
+
+        return [
+          {
+            word: item.word,
+            imgSrc: `/assets/img/dictionary/${item.word[0].toLowerCase()}/${image.src}`,
+            imgAlt: image.alt ?? item.word,
+            options: orderedIndexes.map((wordIndex) => ({
+              option: words[wordIndex].word,
+              isCorrect: wordIndex === index,
+            })),
+          },
+        ];
+      });
+
+      if (active) {
+        setCurrentIndex(0);
+        setGeneratedQuestions(nextQuestions);
+      }
+    };
+
+    generateQuestions();
+
+    return () => {
+      active = false;
+    };
+  }, [explicitQuestions.length, words]);
 
   useEffect(() => {
     let active = true;
@@ -54,6 +128,27 @@ export const ImageQuiz = ({
       active = false;
     };
   }, [currentQuestion?.word]);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadOptionPhonetics = async () => {
+      const entries = await Promise.all(
+        (currentQuestion?.options ?? []).map(async ({ option }) => {
+          const dictionaryEntry = await loadDictionaryWord(option);
+          return [option.toLowerCase(), dictionaryEntry?.phonetics ?? ""] as const;
+        }),
+      );
+
+      if (active) setOptionPhonetics(Object.fromEntries(entries));
+    };
+
+    loadOptionPhonetics();
+
+    return () => {
+      active = false;
+    };
+  }, [currentQuestion?.options]);
 
   useEffect(() => {
     if (!isCorrect) return;
@@ -177,7 +272,24 @@ export const ImageQuiz = ({
                         .filter(Boolean)
                         .join(" ")}
                     >
-                      {option.option}
+                      <InlineRichContent
+                        value={content({
+                          parts: [
+                            audio(option.option),
+                            option.option,
+                            ...(optionPhonetics[option.option.toLowerCase()]
+                              ? [
+                                  " ",
+                                  phonetics(
+                                    optionPhonetics[
+                                      option.option.toLowerCase()
+                                    ],
+                                  ),
+                                ]
+                              : []),
+                          ],
+                        })}
+                      />
                     </button>
                   );
                 })}

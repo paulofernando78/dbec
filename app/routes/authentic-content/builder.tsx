@@ -14,7 +14,7 @@ import { LessonCard } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { List } from "@/components/content/List";
-import { Carousel } from "@/components/ui/Carousel";
+import { ImageQuiz } from "@/features/exercises/ImageQuiz";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { Script } from "@/components/content/Script";
 import { Radio } from "@/features/exercises/Radio";
@@ -89,7 +89,10 @@ export default function AuthenticContents() {
           </Section>
 
           <Section id="Vocabulary" heading={3}>
-            <Carousel aspectRatio="square" {...content.sections.vocabulary} />
+            <ImageQuiz
+              {...content.sections.vocabulary}
+              instruction="Look at the picture and choose the correct word."
+            />
           </Section>
 
           <Section id="Gist" heading={3}>
