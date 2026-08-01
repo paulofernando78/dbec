@@ -270,7 +270,7 @@ export const ImageQuiz = ({
                 ))}
               </div>
 
-              <div className="aspect-square w-full overflow-hidden rounded-lg border border-gray-300 bg-white p-2">
+              <div className="aspect-square w-full overflow-hidden rounded-lg border border-gray-300 bg-white">
                 <img
                   src={currentQuestion.imgSrc}
                   alt={currentQuestion.imgAlt ?? ""}
