@@ -1,7 +1,5 @@
 import { audio, bold, lineBreak, spacer } from "@/helpers/content";
 
-import { shuffle } from "@/utils/shuffle";
-
 const words = [
   { word: "consequence", img: 0 },
   { word: "backup plan", img: 0 },
@@ -19,14 +17,8 @@ export const intermediateWhatIf = {
     ],
   },
   introduction: {
-    vocabularyCarousel: {
-      words: words,
-      matchingContent: shuffle(
-        words.map(({ word }) => ({
-          as: "span" as const,
-          parts: [audio(word), word],
-        })),
-      ),
+    imageQuiz: {
+      words,
     },
   },
   presentation: {

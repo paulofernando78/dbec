@@ -234,7 +234,7 @@ export const ImageQuiz = ({
       </p>
 
       {completed ? (
-        <div className="flex flex-col items-center gap-4 rounded-lg border border-green-700 p-6">
+        <div className="flex flex-col items-center gap-4 rounded-lg border border-gray-300 p-6">
           <p className="font-bold text-green-700">
             Great job! You completed all {questions.length} questions.
           </p>
