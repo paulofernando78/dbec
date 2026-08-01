@@ -185,6 +185,10 @@ export const lesson = {
       {
         as: "span",
         parts: ["..."],
+        options: [
+          { option: "...", isCorrect: true },
+          { option: "...", isCorrect: false },
+        ],
       },
       {
         as: "span",

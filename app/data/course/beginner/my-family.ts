@@ -161,7 +161,7 @@ export const beginnerMyFamily = {
       imgs: [
         // Laura’s grandpa (William Smith)
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-william.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-grandpa-william.avif",
           alt: "Laura with her grandpa (William Smith)",
           content: [
             ...content({
@@ -179,7 +179,7 @@ export const beginnerMyFamily = {
         },
         // Laura’s grandma (Mary Smith)
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-mary.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-grandma-mary.avif",
           alt: "Laura with her grandma (Mary Smith)",
           content: [
             ...content({
@@ -197,7 +197,7 @@ export const beginnerMyFamily = {
         },
         // Laura‘s grandpa (James Palmer)
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandpa-james.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-grandpa-james.avif",
           alt: "Laura with her grandpa (James Palmer)",
           content: [
             ...content({
@@ -215,7 +215,7 @@ export const beginnerMyFamily = {
         },
         // Laura’s grandma (Patricia Palmer)
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-grandma-patricia.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-grandma-patricia.avif",
           alt: "Laura with her grandma (Patricia Palmer)",
           content: [
             ...content({
@@ -233,7 +233,7 @@ export const beginnerMyFamily = {
         },
         // Laura’s mom
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-mom.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-mom.avif",
           alt: "Laura with her mom (Heather Palmer)",
           content: [
             ...content({
@@ -251,7 +251,7 @@ export const beginnerMyFamily = {
         },
         // Laura’s dad
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-dad.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-dad.avif",
           alt: "Laura with her dad (Robert Palmer)",
           content: [
             ...content({
@@ -269,7 +269,7 @@ export const beginnerMyFamily = {
         },
         // Laura’s brother.
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-brother.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-brother.avif",
           alt: "Laura with her brother (Tom Palmer)",
           content: [
             ...content({
@@ -287,7 +287,7 @@ export const beginnerMyFamily = {
         },
         // Laura’s sister
         {
-          src: "/assets/img/course/a1/my-family/introduction/laura-sister.avif",
+          src: "/assets/img/course/a1/my-family/language-focus/laura-sister.avif",
           alt: "Laura with her sister (Kate Palmer)",
           content: [
             ...content({
@@ -452,15 +452,27 @@ export const beginnerMyFamily = {
     ccq: [
       {
         as: "span",
-        parts: ["Is your grandmother your mother’s mother or your sister?"],
+        parts: ["Is your grandmother"],
+        options: [
+          { option: "your mother’s mother", isCorrect: true },
+          { option: "your sister?", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ['Are "mother" and "father" your parents?'],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Is a cousin your brother?"],
+        options: [
+          { option: "Yes", isCorrect: false },
+          { option: "No", isCorrect: true },
+        ],
       },
     ] satisfies CCQ[],
   },
@@ -472,7 +484,7 @@ export const beginnerMyFamily = {
         questions: [
           {
             imgSrc:
-              "/assets/img/course/a1/my-family/introduction/true-false/mother-mom.avif",
+              "/assets/img/course/a1/my-family/practice/radio/mother-mom.avif",
             imgAlt: "Laura’s mom",
             question: "This is Laura’s mom.",
             options: [
@@ -482,7 +494,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/course/a1/my-family/introduction/true-false/brother.avif",
+              "/assets/img/course/a1/my-family/practice/radio/brother.avif",
             imgAlt: "Laura’s brother",
             question: "This is Laura’s dad.",
             options: [
@@ -492,7 +504,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/course/a1/my-family/introduction/true-false/sister.avif",
+              "/assets/img/course/a1/my-family/practice/radio/sister.avif",
             imgAlt: "Laura’s sister",
             question: "This is Laura’s sister.",
             options: [
@@ -502,7 +514,7 @@ export const beginnerMyFamily = {
           },
           {
             imgSrc:
-              "/assets/img/course/a1/my-family/introduction/true-false/father-dad.avif",
+              "/assets/img/course/a1/my-family/practice/radio/father-dad.avif",
             imgAlt: "Laura’s dad",
             question: "This is Laura’s brother.",
             options: [
