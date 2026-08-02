@@ -87,7 +87,7 @@ function RenderNavItem({
           )}
         </summary>
 
-        <div className="ml-[1.55rem]">
+        <div >
           {item.links.map((child) => (
             <RenderNavItem
               key={getNavItemKey(child)}
@@ -123,21 +123,11 @@ function RenderNavItem({
         end
         onClick={closeNavBar}
         className={({ isActive }) => `
-          block
           mb-1
-          px-2
-          text-[1.06rem]
-          relative
-          before:absolute
-          before:left-0
-          before:top-[.35rem]
-          before:bottom-1
-          before:w-0.75
-          before:bg-current
           ${isActive ? "text-blue-400" : ""}
           `}
       >
-        <span className="ml-1">{getNavItemLabel(item)}</span>
+        <span>{getNavItemLabel(item)}</span>
       </NavLink>
     </div>
   );

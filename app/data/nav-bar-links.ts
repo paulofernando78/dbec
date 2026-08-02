@@ -27,21 +27,32 @@ export const links = [
         iconClassName: "text-yellow-500",
         links: [
           {
-            href: "/courses/beginner/hello",
-            label: "Hello",
+            label: "Chapter 1 • Introduction",
+            links: [
+              {
+                href: "/courses/beginner/hello",
+                label: "Hello",
+              },
+              {
+                href: "/courses/beginner/personal-information",
+                label: "Personal Information",
+              },
+            ],
           },
           {
-            href: "/courses/beginner/personal-information",
-            label: "Personal Information",
+            label: "Chapter 2 • Family",
+            links: [
+              {
+                href: "/courses/beginner/my-family",
+                label: "My Nuclear Family",
+              },
+              {
+                href: "/courses/beginner/more-family-members",
+                label: "My Extended Family",
+              },
+            ],
           },
-          {
-            href: "/courses/beginner/my-family",
-            label: "My Family",
-          },
-          {
-            href: "/courses/beginner/more-family-members",
-            label: "More Family Members",
-          },
+
           {
             href: "/courses/beginner/my-house",
             label: "My House",
