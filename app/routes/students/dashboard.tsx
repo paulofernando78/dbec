@@ -9,7 +9,7 @@ import { Calendar } from "@/components/content/Calendar";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 
-import { LessonCard } from "@/components/content/LessonCard";
+import { DashboardLessonTable } from "@/components/content/DashboardLessonTable";
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/news/news-card-data";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
@@ -182,15 +182,11 @@ export default function Dashboard() {
                     : undefined
                 }
               >
-                {section.lessons.map((lesson, lessonIndex) => (
-                  <LessonCard
-                    key={lesson.href}
-                    index={previousLessonCount + lessonIndex}
-                    {...lesson}
-                    collapsible
-                    updateProgress={updateProgress}
-                  />
-                ))}
+                <DashboardLessonTable
+                  lessons={section.lessons}
+                  startIndex={previousLessonCount}
+                  updateProgress={updateProgress}
+                />
               </Section>
             );
           })}

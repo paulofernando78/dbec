@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 
-import { Book, Minus, Plus } from "lucide-react";
+import { BookText, Minus, Plus } from "lucide-react";
 // import { Checkbox } from "@/components/ui/Checkbox";
 
 type NavItem = {
@@ -72,7 +72,7 @@ function RenderNavItem({
           </span>
 
           {item.iconClassName && (
-            <Book
+            <BookText
               size={20}
               className={`ml-[0.1rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`}
             />

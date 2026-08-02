@@ -1,0 +1,1 @@
+export { DashboardLessonTable } from "./DashboardLessonTable";
