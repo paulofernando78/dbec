@@ -11,10 +11,10 @@ export const links = [
         href: "/cefr",
         label: "What's CEFR?",
       },
-      {
-        href: "/dashboard",
-        label: "Dashboard",
-      },
+      // {
+      //   href: "/dashboard",
+      //   label: "Dashboard",
+      // },
     ],
   },
   // Courses
