@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateGlobalIssues = {
   whiteboard: {
@@ -240,7 +239,7 @@ export const upperIntermediateGlobalIssues = {
       { as: "p", parts: ["When do we use to have + past participle?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -341,12 +340,8 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     },
-  }, [
-    ["The policy is _____ to have displaced thousands of residents.", "believed", "believing"],
-    ["It has been _____ that emissions are rising again.", "reported", "reporting"],
-    ["The agreement is expected to _____ signed next month.", "be", "being"],
-    ["Several communities were _____ by the flooding.", "affected", "affecting"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Brief a partner objectively on a complex public issue:",

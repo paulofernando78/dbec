@@ -1,5 +1,4 @@
 import { audio, bold, lineBreak, spacer } from "@/helpers/content";
-import { completePractice } from "@/data/course/completePractice";
 
 const words = [
   { word: "consequence", img: 0 },
@@ -293,7 +292,7 @@ export const intermediateWhatIf = {
       { as: "p", parts: ["Which clause describes the result?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -432,10 +431,8 @@ export const intermediateWhatIf = {
         ],
       },
     },
-  }, [
-    ["If the weather is good, we _____ outside.", "will eat", "eat would"],
-    ["What will you do if the plan _____?", "changes", "will change"],
-  ]),
+  },
+  
   production: {
     task: {
       instruction: "Discuss a realistic plan and prepare for possible problems:",

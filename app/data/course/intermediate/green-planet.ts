@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateGreenPlanet = {
   whiteboard: {
@@ -224,7 +223,7 @@ export const intermediateGreenPlanet = {
       { as: "p", parts: ["Can when replace if when the result is certain?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -322,12 +321,8 @@ export const intermediateGreenPlanet = {
         ],
       },
     },
-  }, [
-    ["If people recycle more, less waste _____ to landfill.", "goes", "will go"],
-    ["Plants die if they _____ enough water.", "don't get", "won't get"],
-    ["When ice melts, sea levels _____.", "rise", "will rise"],
-    ["If we use less energy, we _____ emissions.", "reduce", "will reduce"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Explain environmental causes and agree on useful actions:",

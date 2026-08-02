@@ -44,7 +44,7 @@ export const ScrollToTop = () => {
       aria-label="Scroll to top"
       className={`${styles.button} ${visible ? styles.visible : ""}`}
     >
-      <CircleArrowUp className="text-gray-500"/>
+      <CircleArrowUp size={30} className="text-gray-500"/>
     </button>
   );
 };

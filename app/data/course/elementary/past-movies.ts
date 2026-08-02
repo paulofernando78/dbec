@@ -4,7 +4,6 @@ import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, audio, bold, spacer } from "@/helpers/content";
-import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastMovies = {
   whiteboard: {
@@ -484,7 +483,7 @@ export const elementaryPastMovies = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -569,13 +568,7 @@ export const elementaryPastMovies = {
         ],
       },
     },
-  }, [
-    ["We _____ to the cinema on Friday.", "went", "go"],
-    ["What film _____ you see?", "did", "were"],
-    ["The acting _____ excellent.", "was", "were"],
-    ["I _____ the ending because it was surprising.", "liked", "like"],
-    ["I wouldn't _____ it because it was too long.", "recommend", "recommended"],
-  ]),
+  },
 
   production: {
     task: {

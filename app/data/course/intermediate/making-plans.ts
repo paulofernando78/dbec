@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateMakingPlans = {
   whiteboard: {
@@ -222,7 +221,7 @@ export const intermediateMakingPlans = {
       { as: "p", parts: ["Do timetables depend on a personal intention?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -317,12 +316,8 @@ export const intermediateMakingPlans = {
         ],
       },
     },
-  }, [
-    ["I'm _____ Sam at the station at six.", "meeting", "meet"],
-    ["We are going to _____ a picnic this weekend.", "have", "having"],
-    ["The train _____ at 8:15 tomorrow.", "leaves", "will leave"],
-    ["I think it _____ rain later.", "will", "is going"],
-  ]),
+  },
+  
   production: {
     task: {
       instruction: "Negotiate and confirm plans for a shared project:",

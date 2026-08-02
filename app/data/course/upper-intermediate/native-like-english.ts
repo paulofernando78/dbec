@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateNativeLikeEnglish = {
   whiteboard: {
@@ -236,7 +235,7 @@ export const upperIntermediateNativeLikeEnglish = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -334,12 +333,8 @@ export const upperIntermediateNativeLikeEnglish = {
         ],
       },
     },
-  }, [
-    ["The exam was a piece of _____ for Maya.", "cake", "bread"],
-    ["Let's call it a _____ and continue tomorrow.", "day", "nightly"],
-    ["His comment broke the _____ at the meeting.", "ice", "snow"],
-    ["I was on the _____ about accepting the offer.", "fence", "wall"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Use selected idioms in a natural, appropriate conversation:",

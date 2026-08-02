@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -14,9 +13,7 @@ export const beginnerAbilities = {
   },
 
   introduction: {
-    questions: [
-      [audio("What can you do well?"), "What can you do well?"],
-    ],
+    questions: [[audio("What can you do well?"), "What can you do well?"]],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -228,7 +225,7 @@ export const beginnerAbilities = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -298,14 +295,7 @@ export const beginnerAbilities = {
         ],
       },
     },
-  }, [
-    ["I _____ swim very well.", "can", "am"],
-    ["_____ you play the guitar?", "Can", "Are"],
-    ["She can't _____ a car.", "drive", "drives"],
-    ["Can he _____ English?", "speak", "speaks"],
-    ["We _____ cook Italian food.", "can", "are"],
-    ["They cannot _____ today.", "come", "coming"],
-  ]),
+  },
 
   production: {
     task: {

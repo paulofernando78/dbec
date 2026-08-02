@@ -39,11 +39,11 @@ const lessonSections = [
     iconClassName: "text-green-500",
     lessons: courseLessonsCardData.upperIntermediate,
   },
-  {
-    label: "C1 Advanced",
-    iconClassName: "text-purple-500",
-    lessons: courseLessonsCardData.advanced,
-  },
+  // {
+  //   label: "C1 Advanced",
+  //   iconClassName: "text-purple-500",
+  //   lessons: courseLessonsCardData.advanced,
+  // },
   {
     label: "News",
     tocTitle: "AUTHENTIC CONTENT",

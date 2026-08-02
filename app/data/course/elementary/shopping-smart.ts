@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 import { audio } from "@/helpers/content";
 
 export const elementaryShoppingSmart = {
@@ -221,7 +220,7 @@ export const elementaryShoppingSmart = {
       { as: "p", parts: ["Is any common in questions?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -299,14 +298,7 @@ export const elementaryShoppingSmart = {
         ],
       },
     },
-  }, [
-    ["How _____ rice do we need?", "much", "many"],
-    ["How _____ bottles are in the basket?", "many", "much"],
-    ["There isn't _____ cheese left.", "any", "some"],
-    ["Could I have _____ apples, please?", "some", "much"],
-    ["We have _____ milk, so buy another carton.", "little", "few"],
-    ["There are only a _____ eggs left.", "few", "little"],
-  ]),
+  }, 
   production: {
     task: {
       instruction: "Plan a shopping list and agree on quantities:",

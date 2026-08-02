@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateCareerPath = {
   whiteboard: {
@@ -215,7 +214,7 @@ export const intermediateCareerPath = {
       { as: "p", parts: ["Do may, might, and could express certainty?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -313,12 +312,8 @@ export const intermediateCareerPath = {
         ],
       },
     },
-  }, [
-    ["You _____ update your résumé before applying.", "should", "may"],
-    ["Employees _____ wear safety equipment here.", "must", "might"],
-    ["You _____ work remotely with your manager's permission.", "can", "must"],
-    ["The interview _____ take longer than expected.", "might", "has to"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Give practical advice about a career opportunity:",

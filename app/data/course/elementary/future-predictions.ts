@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -272,7 +271,7 @@ export const elementaryFuturePredictions = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -369,13 +368,7 @@ export const elementaryFuturePredictions = {
         ],
       },
     },
-  }, [
-    ["Cities _____ use more electric buses.", "will", "did"],
-    ["People probably _____ work fewer hours.", "will", "are"],
-    ["I don't think cars _____ disappear completely.", "will", "do"],
-    ["The technology _____ be cheaper at first.", "won't", "isn't"],
-    ["_____ you think homes will be smarter?", "Do", "Will"],
-  ]),
+  },
 
   production: {
     task: {

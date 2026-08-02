@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 import { audio } from "@/helpers/content";
 
 export const elementaryExperiences = {
@@ -233,7 +232,7 @@ export const elementaryExperiences = {
       { as: "p", parts: ["Does never describe zero experiences?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -315,14 +314,7 @@ export const elementaryExperiences = {
         ],
       },
     },
-  }, [
-    ["I have _____ a mountain.", "climbed", "climb"],
-    ["_____ you ever traveled alone?", "Have", "Did"],
-    ["She has never _____ abroad.", "lived", "live"],
-    ["We _____ that museum last year.", "visited", "have visited"],
-    ["He has _____ tried surfing.", "never", "ever"],
-    ["When _____ you go to Peru?", "did", "have"],
-  ]),
+  },
   production: {
     task: {
       instruction: "Interview a partner about life experiences:",

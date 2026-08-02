@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateNaturalEnglish = {
   whiteboard: {
@@ -236,7 +235,7 @@ export const upperIntermediateNaturalEnglish = {
       { as: "p", parts: ["What usually follows come up with?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -334,12 +333,8 @@ export const upperIntermediateNaturalEnglish = {
         ],
       },
     },
-  }, [
-    ["We need to _____ a decision by Friday.", "make", "do"],
-    ["The team carried _____ a detailed investigation.", "out", "on"],
-    ["Please _____ attention to the final paragraph.", "pay", "give"],
-    ["The new evidence _____ serious concerns.", "raises", "lifts"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Agree on an action plan using precise, natural word combinations:",

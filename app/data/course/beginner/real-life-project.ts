@@ -1,5 +1,4 @@
 import type { CCQ } from "@/components/content/CCQ";
-import { completePractice } from "@/data/course/completePractice";
 import type { ListProps } from "@/components/content/List";
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
@@ -153,7 +152,7 @@ export const beginnerRealLifeProject = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the best expression for each situation.",
       exercise: {
@@ -217,16 +216,7 @@ export const beginnerRealLifeProject = {
         ],
       },
     },
-  }, [
-    ["Let's _____ at the café.", "meet", "meeting"],
-    ["Are you _____ on Saturday?", "free", "time"],
-    ["What _____ should we meet?", "time", "old"],
-    ["How _____ the park?", "about", "is"],
-    ["I can _____ soccer in the afternoon.", "play", "playing"],
-    ["See you _____!", "there", "where"],
-    ["Would you like _____ join us?", "to", "for"],
-    ["That _____ good to me.", "sounds", "sound"],
-  ]),
+  },
 
   production: {
     task: {

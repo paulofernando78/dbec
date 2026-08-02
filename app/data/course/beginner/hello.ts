@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -196,14 +195,20 @@ export const beginnerHello = {
           {
             question: "Do Laura and Eric already know each other?",
             options: [
-              { option: "No, they are meeting for the first time.", isCorrect: true },
+              {
+                option: "No, they are meeting for the first time.",
+                isCorrect: true,
+              },
               { option: "Yes, they are old friends.", isCorrect: false },
             ],
           },
           {
             question: "Why does Laura say “Please repeat”?",
             options: [
-              { option: "She does not hear Eric's name clearly.", isCorrect: true },
+              {
+                option: "She does not hear Eric's name clearly.",
+                isCorrect: true,
+              },
               { option: "She wants to leave.", isCorrect: false },
             ],
           },
@@ -397,7 +402,7 @@ export const beginnerHello = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -487,13 +492,7 @@ export const beginnerHello = {
         ],
       },
     },
-  }, [
-    ["I _____ Ana.", "am", "is"],
-    ["What _____ your name?", "is", "are"],
-    ["Nice to _____ you.", "meet", "met"],
-    ["_____ are you from?", "Where", "What"],
-    ["See you _____!", "later", "name"],
-  ]),
+  },
 
   production: {
     task: {

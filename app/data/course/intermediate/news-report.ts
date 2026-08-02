@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateNewsReport = {
   whiteboard: {
@@ -219,7 +218,7 @@ export const intermediateNewsReport = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -317,12 +316,8 @@ export const intermediateNewsReport = {
         ],
       },
     },
-  }, [
-    ["Three roads _____ closed after the storm.", "were", "did"],
-    ["The new hospital _____ opened next month.", "will be", "will"],
-    ["The suspect was _____ by police last night.", "arrested", "arrest"],
-    ["More details _____ expected later today.", "are", "is"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Prepare and deliver a concise news update:",

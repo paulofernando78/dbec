@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 import { audio } from "@/helpers/content";
 
 export const elementaryHobbies = {
@@ -216,7 +215,7 @@ export const elementaryHobbies = {
       { as: "p", parts: ["Is a hobby a free-time activity?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -294,14 +293,7 @@ export const elementaryHobbies = {
         ],
       },
     },
-  }, [
-    ["I love _____ short stories.", "writing", "write"],
-    ["He wants _____ join a photography club.", "to", "for"],
-    ["We enjoy _____ together on weekends.", "hiking", "to hike"],
-    ["She would like _____ pottery.", "to try", "trying"],
-    ["Do you mind _____ me how to knit?", "showing", "to show"],
-    ["They decided _____ dance lessons.", "to take", "taking"],
-  ]),
+  },
   production: {
     task: {
       instruction: "Find a hobby you and a partner could try together:",

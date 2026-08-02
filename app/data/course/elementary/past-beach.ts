@@ -1,4 +1,3 @@
-import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastBeach = {
   whiteboard: {
@@ -320,7 +319,7 @@ export const elementaryPastBeach = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -403,13 +402,7 @@ export const elementaryPastBeach = {
         ],
       },
     },
-  }, [
-    ["We _____ to the beach last Sunday.", "went", "go"],
-    ["I _____ in the sea with my friends.", "swam", "swim"],
-    ["_____ you enjoy the picnic?", "Did", "Were"],
-    ["The weather _____ warm and sunny.", "was", "were"],
-    ["Laura _____ lots of photos.", "took", "take"],
-  ]),
+  },
   production: {
     task: {
       instruction: "Share a real or invented beach story:",

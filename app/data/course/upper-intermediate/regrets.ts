@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateRegrets = {
   whiteboard: {
@@ -237,7 +236,7 @@ export const upperIntermediateRegrets = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -375,10 +374,8 @@ export const upperIntermediateRegrets = {
         ],
       },
     },
-  }, [
-    ["If I had left earlier, I _____ the train.", "would have caught", "would catch"],
-    ["She wouldn't have resigned if they _____ her concerns.", "had addressed", "addressed"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Reflect on a past decision and extract a useful lesson:",

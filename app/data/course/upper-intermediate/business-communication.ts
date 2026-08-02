@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateBusinessCommunication = {
   whiteboard: {
@@ -224,7 +223,7 @@ export const upperIntermediateBusinessCommunication = {
       { as: "p", parts: ["Is might have less certain than must have?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -322,12 +321,8 @@ export const upperIntermediateBusinessCommunication = {
         ],
       },
     },
-  }, [
-    ["The figures _____ have been checked before publication.", "should", "can"],
-    ["They _____ have misunderstood the deadline.", "may", "mustn't"],
-    ["We _____ meet the revised deadline if resources are approved.", "should be able to", "had to"],
-    ["You _____ have copied the client into that internal email.", "shouldn't", "might"],
-  ]),
+  },
+  
   production: {
     task: {
       instruction: "Diagnose a workplace problem and propose a proportionate response:",

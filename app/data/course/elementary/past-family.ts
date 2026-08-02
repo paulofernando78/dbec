@@ -1,4 +1,3 @@
-import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastFamily = {
   whiteboard: {
@@ -327,7 +326,7 @@ export const elementaryPastFamily = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -403,14 +402,7 @@ export const elementaryPastFamily = {
         ],
       },
     },
-  }, [
-    ["We _____ our grandparents last weekend.", "visited", "visit"],
-    ["What _____ your family do on Sunday?", "did", "does"],
-    ["My aunt _____ lunch for everyone.", "cooked", "cook"],
-    ["The children _____ games in the garden.", "played", "play"],
-    ["It _____ a special family day.", "was", "were"],
-    ["We didn't _____ home early.", "go", "went"],
-  ]),
+  },
   production: {
     task: {
       instruction: "Tell a family celebration story:",

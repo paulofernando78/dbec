@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateTechnologyToday = {
   whiteboard: {
@@ -225,7 +224,7 @@ export const intermediateTechnologyToday = {
       { as: "p", parts: ["Does whose express possession?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -323,12 +322,8 @@ export const intermediateTechnologyToday = {
         ],
       },
     },
-  }, [
-    ["A smartwatch is a device _____ tracks activity.", "that", "where"],
-    ["The engineer _____ designed the app won an award.", "who", "which"],
-    ["This is the website _____ I store my files.", "where", "who"],
-    ["The tool _____ we use is free.", "that", "who"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Recommend and describe a useful piece of technology:",

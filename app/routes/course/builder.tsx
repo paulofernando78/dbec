@@ -33,9 +33,7 @@ import {
   getPracticeExerciseCounts,
 } from "@/utils/getLessonVocabulary";
 
-import {
-  bold
-} from "@/helpers/content";
+import { bold } from "@/helpers/content";
 
 type CourseProps = {
   lesson: Record<string, any>;
@@ -127,24 +125,29 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
         {card && <LessonCard {...card} />}
         <PageSections>
           <Section id="introduction" heading={heading}>
-            {lesson.introduction.instruction &&
-            <>
-              <Line value={lesson.introduction.instruction} className="font-bold mb-4"/>
-              <Image
-                src={lesson.introduction.imgSrc}
-                alt={lesson.introduction.imgAlt}
-              />
-            </>
-            }
-            {lesson.introduction.questions &&
-            <Lines value={lesson.introduction.questions} className="mb-4"/>
-            }
+            {lesson.introduction.instruction && (
+              <>
+                <Line
+                  value={lesson.introduction.instruction}
+                  className="font-bold mb-4"
+                />
+                <Image
+                  src={lesson.introduction.imgSrc}
+                  alt={lesson.introduction.imgAlt}
+                />
+              </>
+            )}
+            {lesson.introduction.questions && (
+              <Lines value={lesson.introduction.questions} className="mb-4" />
+            )}
             {lesson.introduction?.vocabularyCarousel && (
               <>
                 <Lines
                   value={[
                     [
-                      bold("Look at the pictures. Describe what you see, then match to the words."),
+                      bold(
+                        "Look at the pictures. Describe what you see, then match to the words.",
+                      ),
                     ],
                   ]}
                   className="mb-4"
@@ -171,15 +174,18 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
           </Section>
 
           <Section id="Presentation" heading={heading}>
-            {lesson.presentation.instruction &&
-            <>
-              <Line value={lesson.presentation.instruction} className="font-bold mb-4"/>
-              <Image
-                src={lesson.presentation.imgSrc}
-                alt={lesson.presentation.imgAlt}
-              />
-            </>
-            }
+            {lesson.presentation.instruction && (
+              <>
+                <Line
+                  value={lesson.presentation.instruction}
+                  className="font-bold mb-4"
+                />
+                <Image
+                  src={lesson.presentation.imgSrc}
+                  alt={lesson.presentation.imgAlt}
+                />
+              </>
+            )}
             {lesson.presentation?.storyCarousel && (
               <Carousel
                 aspectRatio="wide"
@@ -209,14 +215,18 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
           </Section>
 
           <Section id="Practice" heading={heading}>
-            {lesson.practice?.radio && <Radio {...lesson.practice.radio} />}
+            {lesson.lessonVocabulary?.words && (
+              <Guess words={lessonVocabulary.words} />
+            )}
+            {lesson.practice?.radio && (
+              <Radio {...lesson.practice.radio}/>
+            )}
             {lesson.practice?.fillInTheBlanks && (
               <FillInTheBlanks {...lesson.practice.fillInTheBlanks} />
             )}
             {lesson.practice?.scramble && (
               <Unscramble {...lesson.practice.scramble} />
             )}
-            <Guess words={lessonVocabulary.words} />
           </Section>
 
           <Section id="Production" heading={heading}>

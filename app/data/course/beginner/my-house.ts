@@ -1,6 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
-import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
@@ -259,7 +257,7 @@ export const beginnerMyHouse = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -351,13 +349,7 @@ export const beginnerMyHouse = {
         ],
       },
     },
-  }, [
-    ["There _____ a sofa in the living room.", "is", "are"],
-    ["There _____ two bedrooms upstairs.", "are", "is"],
-    ["The kitchen is next _____ the living room.", "to", "at"],
-    ["Where _____ the bathroom?", "is", "are"],
-    ["My bedroom is _____ the second floor.", "on", "in"],
-  ]),
+  },
 
   production: {
     task: {

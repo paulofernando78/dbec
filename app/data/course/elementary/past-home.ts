@@ -1,4 +1,3 @@
-import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastHome = {
   whiteboard: {
@@ -345,7 +344,7 @@ export const elementaryPastHome = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -415,14 +414,7 @@ export const elementaryPastHome = {
         ],
       },
     },
-  }, [
-    ["I _____ at home on Saturday.", "stayed", "stay"],
-    ["We _____ the kitchen in the morning.", "cleaned", "clean"],
-    ["What _____ you do after lunch?", "did", "do"],
-    ["My parents _____ tired after the work.", "were", "was"],
-    ["I _____ a series in the evening.", "watched", "watch"],
-    ["She didn't _____ dinner yesterday.", "cook", "cooked"],
-  ]),
+  }, 
   production: {
     task: {
       instruction: "Compare two weekends at home:",

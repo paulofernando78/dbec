@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateDebateClub = {
   whiteboard: {
@@ -233,7 +232,7 @@ export const upperIntermediateDebateClub = {
       { as: "p", parts: ["What does on balance signal?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -331,12 +330,8 @@ export const upperIntermediateDebateClub = {
         ],
       },
     },
-  }, [
-    ["_____ the proposal is costly, it offers long-term savings.", "Although", "Therefore"],
-    ["The evidence is limited; _____, a pilot would be reasonable.", "nevertheless", "because"],
-    ["The scheme improves access. _____, it reduces waiting times.", "Moreover", "However"],
-    ["Costs have risen. _____, the current model is unsustainable.", "Consequently", "Whereas"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Debate a proposal and negotiate a balanced conclusion:",

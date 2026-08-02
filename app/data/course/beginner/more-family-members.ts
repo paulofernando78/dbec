@@ -1,5 +1,4 @@
 import type { CCQ } from "@/components/content/CCQ";
-import { completePractice } from "@/data/course/completePractice";
 import type { ListProps } from "@/components/content/List";
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
@@ -343,7 +342,7 @@ export const beginnerMoreFamilyMembers = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct family word.",
       exercise: {
@@ -441,12 +440,7 @@ export const beginnerMoreFamilyMembers = {
         ],
       },
     },
-  }, [
-    ["My mother's brother is my _____.", "uncle", "cousin"],
-    ["My cousin _____ twelve years old.", "is", "are"],
-    ["These _____ my grandparents.", "are", "is"],
-    ["_____ is your aunt?", "Who", "Where"],
-  ]),
+  },
 
   production: {
     task: {

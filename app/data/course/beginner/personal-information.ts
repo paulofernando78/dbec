@@ -1,5 +1,4 @@
 import type { CCQ } from "@/components/content/CCQ";
-import { completePractice } from "@/data/course/completePractice";
 import type { ListProps } from "@/components/content/List";
 import type { Notes } from "@/components/content/Notes";
 
@@ -218,7 +217,7 @@ export const beginnerPersonalInformation = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the best response.",
       exercise: {
@@ -295,12 +294,7 @@ export const beginnerPersonalInformation = {
         ],
       },
     },
-  }, [
-    ["My first _____ is Alex.", "name", "number"],
-    ["How do you _____ Costa?", "spell", "speak"],
-    ["I _____ from Brazil.", "am", "is"],
-    ["What's your phone _____?", "number", "country"],
-  ]),
+  },
 
   production: {
     task: {

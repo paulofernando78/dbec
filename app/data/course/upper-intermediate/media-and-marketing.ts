@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateMediaAndMarketing = {
   whiteboard: {
@@ -242,7 +241,7 @@ export const upperIntermediateMediaAndMarketing = {
       { as: "p", parts: ["What does many of whom refer to?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -340,12 +339,8 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     },
-  }, [
-    ["The campaign, _____ launched in May, targets younger consumers.", "which was", "that it was"],
-    ["The agency hired a designer _____ work had won awards.", "whose", "who"],
-    ["The platform, _____ millions use daily, changed its policy.", "which", "where"],
-    ["The launch took place in June, _____ demand was highest.", "when", "which"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Analyse a campaign and present its audience and impact:",

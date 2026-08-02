@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 import { audio } from "@/helpers/content";
 
 export const elementaryHealthyLiving = {
@@ -246,7 +245,7 @@ export const elementaryHealthyLiving = {
     ],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct form.",
       exercise: {
@@ -344,12 +343,7 @@ export const elementaryHealthyLiving = {
         ],
       },
     },
-  }, [
-    ["You _____ drink more water during the day.", "should", "shouldn't"],
-    ["We _____ eat too much processed food.", "shouldn't", "should"],
-    ["I need to _____ more sleep.", "get", "getting"],
-    ["What should I _____ for breakfast?", "eat", "eating"],
-  ]),
+  },
 
   production: {
     task: {

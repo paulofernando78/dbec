@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 import { audio } from "@/helpers/content";
 
 export const elementaryRules = {
@@ -231,7 +230,7 @@ export const elementaryRules = {
       { as: "p", parts: ["Does don't have to mean you can choose?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -309,14 +308,7 @@ export const elementaryRules = {
         ],
       },
     },
-  }, [
-    ["Passengers _____ show a valid ticket.", "must", "mustn't"],
-    ["You _____ touch the exhibits.", "mustn't", "don't have to"],
-    ["Employees _____ wear an ID badge.", "have to", "has to"],
-    ["She _____ arrive before nine.", "has to", "have to"],
-    ["We don't _____ to bring food.", "have", "must"],
-    ["Do visitors _____ to register?", "have", "must"],
-  ]),
+  },
   production: {
     task: {
       instruction: "Create and explain rules for a shared place:",

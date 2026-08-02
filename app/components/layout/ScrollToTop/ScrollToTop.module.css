@@ -1,6 +1,5 @@
 .button {
   all: unset;
-
   position: fixed;
   right: max(15px, calc((100vw - 1100px) / 2 + 10px));
   bottom: 50px;

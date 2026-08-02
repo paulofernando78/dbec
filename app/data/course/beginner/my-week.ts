@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -274,7 +273,7 @@ export const beginnerMyWeek = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -359,13 +358,7 @@ export const beginnerMyWeek = {
         ],
       },
     },
-  }, [
-    ["I work _____ Monday.", "on", "at"],
-    ["What do you do _____ weekends?", "on", "in"],
-    ["She _____ English on Tuesday.", "studies", "study"],
-    ["We don't _____ on Sundays.", "work", "works"],
-    ["Are you free _____ Friday evening?", "on", "in"],
-  ]),
+  },
 
   production: {
     task: {

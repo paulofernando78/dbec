@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 import { audio } from "@/helpers/content";
 
 export const elementaryCityLife = {
@@ -211,7 +210,7 @@ export const elementaryCityLife = {
       { as: "p", parts: ["Do we say more faster or faster?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -292,14 +291,7 @@ export const elementaryCityLife = {
         ],
       },
     },
-  }, [
-    ["The city center is _____ than my neighborhood.", "noisier", "noisy"],
-    ["Buses are _____ crowded than trains here.", "less", "least"],
-    ["This street is _____ than the main avenue.", "narrower", "more narrow"],
-    ["Living downtown is _____ expensive.", "more", "most"],
-    ["The park is _____ than the shopping district.", "greener", "green"],
-    ["Which area is _____ for families?", "better", "gooder"],
-  ]),
+  },
   production: {
     task: {
       instruction: "Compare two places and decide which one you prefer:",

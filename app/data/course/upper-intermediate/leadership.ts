@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateLeadership = {
   whiteboard: {
@@ -230,7 +229,7 @@ export const upperIntermediateLeadership = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -328,12 +327,8 @@ export const upperIntermediateLeadership = {
         ],
       },
     },
-  }, [
-    ["We had the report _____ by an external consultant.", "reviewed", "review"],
-    ["The director is getting the office _____ this week.", "reorganized", "reorganize"],
-    ["I need to have my laptop _____ before the meeting.", "repaired", "repair"],
-    ["She got the team _____ in conflict management.", "trained", "train"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Delegate a project while keeping responsibilities clear:",

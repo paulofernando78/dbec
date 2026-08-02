@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 import { audio } from "@/helpers/content";
 
 export const elementaryTheBestPlace = {
@@ -205,7 +204,7 @@ export const elementaryTheBestPlace = {
       { as: "p", parts: ["Do we say the most beautiful or the beautifulest?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -290,14 +289,8 @@ export const elementaryTheBestPlace = {
         ],
       },
     },
-  }, [
-    ["This is _____ oldest building in town.", "the", "a"],
-    ["The river walk is the _____ relaxing place.", "most", "more"],
-    ["Saturday is the _____ day at the market.", "busiest", "busier"],
-    ["That café serves the _____ coffee.", "best", "better"],
-    ["It is the _____ viewpoint in the city.", "highest", "higher"],
-    ["Which attraction is the _____ popular?", "most", "more"],
-  ]),
+  },
+  
   production: {
     task: {
       instruction: "Recommend the best local place for a visitor:",

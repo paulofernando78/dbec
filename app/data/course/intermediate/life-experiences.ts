@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateLifeExperiences = {
   whiteboard: {
@@ -233,7 +232,7 @@ export const intermediateLifeExperiences = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -328,12 +327,8 @@ export const intermediateLifeExperiences = {
         ],
       },
     },
-  }, [
-    ["I have never _____ in a hot-air balloon.", "flown", "flew"],
-    ["When _____ you visit Thailand?", "did", "have"],
-    ["She _____ three countries this year.", "has visited", "visited"],
-    ["We _____ the festival in 2024.", "attended", "have attended"],
-  ]),
+  },
+  
   production: {
     task: {
       instruction: "Interview a partner and develop one experience with past details:",

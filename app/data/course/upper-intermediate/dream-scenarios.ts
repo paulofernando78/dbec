@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateDreamScenarios = {
   whiteboard: {
@@ -227,7 +226,7 @@ export const upperIntermediateDreamScenarios = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -365,10 +364,8 @@ export const upperIntermediateDreamScenarios = {
         ],
       },
     },
-  }, [
-    ["If I had more time, I _____ a novel.", "would write", "will write"],
-    ["Where would you live if you _____ anywhere?", "could choose", "will choose"],
-  ]),
+  },
+  
   production: {
     task: {
       instruction: "Compare hypothetical changes and choose the most realistic one:",

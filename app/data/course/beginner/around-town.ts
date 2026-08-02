@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -278,7 +277,7 @@ export const beginnerAroundTown = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -357,14 +356,7 @@ export const beginnerAroundTown = {
         ],
       },
     },
-  }, [
-    ["Where _____ the bank?", "is", "are"],
-    ["It's next _____ the supermarket.", "to", "at"],
-    ["Go straight _____.", "ahead", "left"],
-    ["Turn _____ at the corner.", "right", "next"],
-    ["Is there a pharmacy _____ here?", "near", "between"],
-    ["How can I _____ to the station?", "get", "getting"],
-  ]),
+  },
 
   production: {
     task: {

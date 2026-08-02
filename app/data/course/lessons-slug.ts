@@ -55,16 +55,7 @@ import { upperIntermediateNaturalEnglish } from "@/data/course/upper-intermediat
 import { upperIntermediateRegrets } from "@/data/course/upper-intermediate/regrets";
 
 // Advanced
-import { advancedAcademicPresentations } from "@/data/course/advanced/academic-presentations";
-import { advancedBuildingComplexArguments } from "@/data/course/advanced/building-complex-arguments";
-import { advancedCriticalReviews } from "@/data/course/advanced/critical-reviews";
-import { advancedDiplomaticCommunication } from "@/data/course/advanced/diplomatic-communication";
-import { advancedMediationAndClarification } from "@/data/course/advanced/mediation-and-clarification";
-import { advancedNegotiationAndConsensus } from "@/data/course/advanced/negotiation-and-consensus";
-import { advancedPrecisionAndNuance } from "@/data/course/advanced/precision-and-nuance";
-import { advancedReadingBetweenTheLines } from "@/data/course/advanced/reading-between-the-lines";
-import { advancedResearchBriefing } from "@/data/course/advanced/research-briefing";
-import { advancedSynthesizingSources } from "@/data/course/advanced/synthesizing-sources";
+// import { ... } from "@/data/course/advanced/";
 
 type Lesson = Record<string, any>;
 type LessonMap = Record<string, Lesson>;
@@ -138,16 +129,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
   },
   advanced: {
     lessons: {
-      "reading-between-the-lines": advancedReadingBetweenTheLines,
-      "synthesizing-sources": advancedSynthesizingSources,
-      "building-complex-arguments": advancedBuildingComplexArguments,
-      "diplomatic-communication": advancedDiplomaticCommunication,
-      "academic-presentations": advancedAcademicPresentations,
-      "mediation-and-clarification": advancedMediationAndClarification,
-      "critical-reviews": advancedCriticalReviews,
-      "negotiation-and-consensus": advancedNegotiationAndConsensus,
-      "precision-and-nuance": advancedPrecisionAndNuance,
-      "research-briefing": advancedResearchBriefing,
+      // "...": ...,
     },
   },
 };

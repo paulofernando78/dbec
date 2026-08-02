@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -277,7 +276,7 @@ export const beginnerShopping = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -356,14 +355,7 @@ export const beginnerShopping = {
         ],
       },
     },
-  }, [
-    ["How _____ is this T-shirt?", "much", "many"],
-    ["I'd like _____ blue shirt, please.", "the", "some"],
-    ["Do you have this _____ medium?", "in", "on"],
-    ["Here you _____.", "are", "is"],
-    ["Can I _____ it on?", "try", "trying"],
-    ["That's too _____.", "expensive", "expense"],
-  ]),
+  },
 
   production: {
     task: {

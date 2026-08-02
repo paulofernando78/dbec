@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -308,7 +307,7 @@ export const elementaryTravelPlans = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -413,13 +412,7 @@ export const elementaryTravelPlans = {
         ],
       },
     },
-  }, [
-    ["I'm going to _____ Lisbon next month.", "visit", "visited"],
-    ["Where are you going to _____?", "stay", "stayed"],
-    ["We _____ going to travel by train.", "are", "is"],
-    ["She isn't going to _____ a car.", "rent", "rents"],
-    ["_____ they going to book a hotel?", "Are", "Do"],
-  ]),
+  },
 
   production: {
     task: {

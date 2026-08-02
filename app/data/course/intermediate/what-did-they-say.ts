@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateWhatDidTheySay = {
   whiteboard: {
@@ -214,7 +213,7 @@ export const intermediateWhatDidTheySay = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -312,12 +311,8 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     },
-  }, [
-    ["Mia said she _____ tired.", "was", "is"],
-    ["He asked me where I _____.", "lived", "do live"],
-    ["They told us _____ wait outside.", "to", "for"],
-    ["Ana said she would call me the _____ day.", "next", "tomorrow"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Pass on messages accurately in a workplace situation:",

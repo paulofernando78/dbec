@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateRelationships = {
   whiteboard: {
@@ -218,7 +217,7 @@ export const intermediateRelationships = {
       { as: "p", parts: ["Where does a pronoun go in 'work it out'?"] },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -310,12 +309,8 @@ export const intermediateRelationships = {
         ],
       },
     },
-  }, [
-    ["I get _____ well with my new colleague.", "on", "up"],
-    ["They fell _____ after an argument.", "out", "on"],
-    ["We grew _____ together in the same neighborhood.", "up", "out"],
-    ["She looks _____ to her older sister.", "up", "after"],
-  ]),
+  }, 
+  
   production: {
     task: {
       instruction: "Discuss a relationship problem and agree on a way forward:",

@@ -1,5 +1,4 @@
 import { shuffle } from "@/utils/shuffle";
-import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateInnovation = {
   whiteboard: {
@@ -235,7 +234,7 @@ export const upperIntermediateInnovation = {
       },
     ],
   },
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -333,12 +332,8 @@ export const upperIntermediateInnovation = {
         ],
       },
     },
-  }, [
-    ["By 2030, the company _____ have launched the new platform.", "will", "would"],
-    ["Scientists will have _____ the trial by June.", "completed", "complete"],
-    ["By then, we _____ have reduced production costs.", "will", "are"],
-    ["Will the team have _____ the prototype by Friday?", "tested", "test"],
-  ]),
+  },
+  
   production: {
     task: {
       instruction: "Present a realistic innovation timeline to a partner:",

@@ -1,5 +1,4 @@
 import type { Meaning } from "@/components/content/Meaning";
-import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -445,7 +444,7 @@ export const beginnerMyFamily = {
     ] satisfies CCQ[],
   },
 
-  practice: completePractice({
+  practice: {
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -613,12 +612,7 @@ export const beginnerMyFamily = {
         ],
       },
     },
-  }, [
-    ["This _____ my sister.", "is", "are"],
-    ["_____ name is Julia.", "Her", "She"],
-    ["I have two _____.", "brothers", "brother"],
-    ["Who _____ she?", "is", "are"],
-  ]),
+  },
 
   production: {
     task: {
