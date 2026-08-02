@@ -3,28 +3,32 @@ import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
-import { shuffle } from "@/utils/shuffle";
-
-import {
-  content,
-  audio,
-  bold,
-  mark,
-  portuguese,
-  phonetics,
-  spacer,
-} from "@/helpers/content";
+import { content, audio, bold, spacer } from "@/helpers/content";
+import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastMovies = {
   whiteboard: {
     title: "A2 Elementary",
-    subtitle: "Movies",
-    descriptions: ["We went to the movies. The movie was great."],
+    subtitle: "Movie Night",
+    descriptions: [
+      "We went to the movies. It was funny, and I'd recommend it.",
+    ],
   },
 
   introduction: {
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
+    instruction: ["Talk about movies before you begin."],
+    questions: [
+      [audio("Do you like watching movies?"), "Do you like watching movies?"],
+      [
+        audio("Where do you usually watch movies?"),
+        "Where do you usually watch movies?",
+      ],
+      [
+        audio("Who do you usually watch movies with?"),
+        "Who do you usually watch movies with?",
+      ],
+    ],
+    imageQuiz: {
       words: [
         { word: "movie theater", img: 0 },
         { word: "ticket", img: 0 },
@@ -32,31 +36,13 @@ export const elementaryPastMovies = {
         { word: "soda", img: 0 },
         { word: "row of seats", img: 0 },
       ],
-      matchingContent: shuffle([
-        {
-          as: "span",
-          parts: [audio("movie theater"), "movie theater"],
-        },
-        {
-          as: "span",
-          parts: [audio("tickets"), "tickets"],
-        },
-        {
-          as: "span",
-          parts: [audio("popcorn"), "popcorn"],
-        },
-        {
-          as: "span",
-          parts: [audio("soda"), "soda"],
-        },
-        {
-          as: "span",
-          parts: [audio("row of seats"), "row of seats"],
-        },
-      ]),
     },
+  },
+
+  presentation: {
     storyCarousel: {
-      instruction: "Look at the pictures and listen to the sentences.",
+      instruction:
+        "Look at the pictures. What happened on Laura's movie night? Listen and check.",
       imgs: [
         {
           src: "/assets/img/course/a2/past-movies/introduction/story/laura-going-to-movies.avif",
@@ -65,10 +51,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("Last weekend, Laura went to the movies."),
-                "Laura ",
-                mark("went"),
-                " to the movies. ",
-                portuguese("Semana passada, Laura foi ao cinema."),
+                "Last weekend, Laura went to the movies.",
               ],
             }),
           ],
@@ -80,10 +63,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("She bought two tickets."),
-                "She ",
-                mark("bought"),
-                " two tickets. ",
-                portuguese("Ela comprou dois ingressos."),
+                "She bought two tickets.",
               ],
             }),
           ],
@@ -95,10 +75,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("She also bought popcorn and soda."),
-                "She also ",
-                mark("bought"),
-                " popcorn and soda. ",
-                portuguese("Ela também comprou pipoca e refrigerante."),
+                "She also bought popcorn and soda.",
               ],
             }),
           ],
@@ -110,10 +87,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("She met her friend Liz."),
-                "She ",
-                mark("met"),
-                " her friend Liz. ",
-                portuguese("Ela encontrou com sua  amiga, Liz."),
+                "She met her friend Liz.",
               ],
             }),
           ],
@@ -125,10 +99,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("They watched the movie."),
-                "They ",
-                mark("watched"),
-                " the movie. ",
-                portuguese("Elas assistiram ao filme."),
+                "They watched the movie.",
               ],
             }),
           ],
@@ -140,10 +111,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("They had popcorn and soda."),
-                "They ",
-                mark("had"),
-                " popcorn and soda. ",
-                portuguese("Elas comeram pipoca e tomaram refrigerante."),
+                "They had popcorn and soda.",
               ],
             }),
           ],
@@ -155,10 +123,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("The movie finished at 8:20 p.m."),
-                "The movie ",
-                mark("finished"),
-                " at 8:20 p.m. ",
-                portuguese("O filme terminou as 20h20."),
+                "The movie finished at 8:20 p.m.",
               ],
             }),
           ],
@@ -170,10 +135,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("They left the movie theater."),
-                "They ",
-                mark("left"),
-                " the movie theater. ",
-                portuguese("Elas saíram do cinema."),
+                "They left the movie theater.",
               ],
             }),
           ],
@@ -185,10 +147,7 @@ export const elementaryPastMovies = {
             ...content({
               parts: [
                 audio("Laura took a taxi home."),
-                "Laura ",
-                mark("took"),
-                " a taxi home. ",
-                portuguese("Laura pegou um táxi para casa."),
+                "Laura took a taxi home.",
               ],
             }),
           ],
@@ -198,20 +157,14 @@ export const elementaryPastMovies = {
           alt: "Liz driving home",
           content: [
             ...content({
-              parts: [
-                audio("Liz drove home, too."),
-                "Liz ",
-                mark("drove"),
-                " home, too. ",
-                portuguese("Liz também dirigiu para casa."),
-              ],
+              parts: [audio("Liz drove home, too."), "Liz drove home, too."],
             }),
           ],
         },
       ],
     },
-    radio: {
-      instruction: "Choose the correct answer.",
+    storyRadio: {
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -238,12 +191,10 @@ export const elementaryPastMovies = {
         ],
       },
     },
-  },
-
-  presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once. Who had the more active weekend? Then listen again for details.",
+      audioSrc: "",
       lines: [
         {
           speaker: "Laura",
@@ -271,7 +222,15 @@ export const elementaryPastMovies = {
         },
         {
           speaker: "Laura",
-          line: ["I watched a comedy. It was really funny."],
+          line: ["I saw a comedy. It was really funny."],
+        },
+        {
+          speaker: "Eric",
+          line: ["Would you recommend it?"],
+        },
+        {
+          speaker: "Laura",
+          line: ["Yes, I would. It was really funny."],
         },
         {
           speaker: "Eric",
@@ -280,7 +239,7 @@ export const elementaryPastMovies = {
         {
           speaker: "Laura",
           line: [
-            "No, I went with my sister. We bought tickets and popcorn.",
+            "No, I went with my friend Liz. We bought tickets and popcorn.",
           ],
         },
         {
@@ -312,7 +271,7 @@ export const elementaryPastMovies = {
           {
             question: "Who did Laura go with?",
             options: [
-              { option: "Her sister", isCorrect: true },
+              { option: "Her friend Liz", isCorrect: true },
               { option: "Eric", isCorrect: false },
             ],
           },
@@ -333,30 +292,30 @@ export const elementaryPastMovies = {
       {
         as: "p",
         parts: [
-          "Use the ",
+          "Describe a finished movie experience with the ",
           bold("Past Simple"),
-          " to talk about finished actions in the past.",
+          ", then give your opinion.",
         ],
       },
       spacer(),
       {
         as: "p",
         parts: [
-          "Regular verbs usually end in ",
-          bold("-ed"),
-          ": watched, played, relaxed.",
+          "Experience: ",
+          bold("I saw a comedy with my friend Liz."),
+          " Opinion: ",
+          bold("It was really funny."),
         ],
       },
       {
         as: "p",
         parts: [
-          "Some verbs are irregular: go ",
-          bold("➜ went"),
-          ", buy ",
-          bold("➜ bought"),
-          ", have ",
-          bold("➜ had"),
-          ".",
+          "Ask follow-up questions: ",
+          bold("Did you like it?"),
+          " ",
+          bold("Who did you go with?"),
+          " ",
+          bold("Would you recommend it?"),
         ],
       },
     ] satisfies Meaning[],
@@ -368,44 +327,54 @@ export const elementaryPastMovies = {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Questions",
+          column: "Ask about the experience",
           items: [
             {
-              parts: [bold("Did"), " + subject + base verb:"],
+              parts: [
+                bold("did + base verb"),
+                " for past details; ",
+                bold("would + base verb"),
+                " for recommendations:",
+              ],
             },
             spacer(),
             {
               parts: [
-                audio("What did you do last weekend?"),
-                "What did you do last weekend?",
+                audio("What movie did you see?"),
+                "What movie did you see?",
               ],
             },
-            { parts: [audio("Where did you go?"), "Where did you go?"] },
             { parts: [audio("Who did you go with?"), "Who did you go with?"] },
-            { parts: [audio("Did you relax?"), "Did you relax?"] },
+            { parts: [audio("Did you like it?"), "Did you like it?"] },
+            {
+              parts: [
+                audio("Would you recommend it?"),
+                "Would you recommend it?",
+              ],
+            },
           ],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Answers",
+          column: "Answer and give an opinion",
           items: [
             {
-              parts: [
-                audio("I went to the movie theater."),
-                "I went to the movie theater.",
-              ],
+              parts: [audio("I saw a comedy."), "I saw a comedy."],
             },
             {
               parts: [
-                audio("I went with my sister."),
-                "I went with my sister.",
+                audio("I went with my friend Liz."),
+                "I went with my friend Liz.",
               ],
             },
-            { parts: [audio("I watched a comedy."), "I watched a comedy."] },
+            { parts: [audio("Yes. It was funny."), "Yes. It was funny."] },
             {
-              parts: [audio("Yes, I relaxed a lot."), "Yes, I relaxed a lot."],
+              parts: [
+                audio("Yes, I'd recommend it."),
+                "Yes, I'd recommend it.",
+              ],
             },
           ],
         },
@@ -413,76 +382,36 @@ export const elementaryPastMovies = {
     },
 
     columnVerbs: {
-      width: 300,
+      width: 280,
       cols: [
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "/t/",
+          column: "Opinion",
           items: [
-            // ask
+            { parts: [audio("It was funny."), "It was funny."] },
+            { parts: [audio("It was exciting."), "It was exciting."] },
             {
-              display: "block",
-              as: "span",
-              parts: [
-                audio("ask"),
-                "ask ",
-                "➜ ",
-                audio("asked"),
-                "ask",
-                bold("ed"),
-                " ",
-                phonetics("/t/"),
-              ],
+              parts: [audio("It was a little slow."), "It was a little slow."],
             },
-            // watch
-            {
-              as: "span",
-              parts: [
-                audio("watch"),
-                "watch ",
-                "➜ ",
-                audio("watched"),
-                "watch",
-                bold("ed"),
-                " ",
-                phonetics("/t/"),
-              ],
-            },
+            { parts: [audio("I didn't enjoy it."), "I didn't enjoy it."] },
           ],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "/d/",
+          column: "Recommendation",
           items: [
-            // answer
+            { parts: [audio("I'd recommend it."), "I'd recommend it."] },
+            { parts: [audio("It's worth watching."), "It's worth watching."] },
+            { parts: [audio("It isn't for me."), "It isn't for me."] },
             {
-              as: "span",
               parts: [
-                audio("answer"),
-                "answer ",
-                "➜ ",
-                audio("answered"),
-                "answer",
-                bold("ed"),
-                " ",
-                phonetics("/t/"),
+                audio("I wouldn't recommend it."),
+                "I wouldn't recommend it.",
               ],
-            },
-          ],
-        },
-
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "/ɪd/",
-          items: [
-            {
-              parts: ["visit"],
             },
           ],
         },
@@ -493,32 +422,69 @@ export const elementaryPastMovies = {
       {
         as: "p",
         parts: [
-          "Don't say: Did you ",
-          bold("went"),
-          "? Say: Did you ",
-          bold("go"),
-          "?",
+          "Give a reason after your opinion: ",
+          bold("I liked it because it was funny."),
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          bold("I'd"),
+          " means ",
+          bold("I would"),
+          ". Stress the opinion or recommendation: It was ",
+          bold("FUNNY"),
+          ". I'd ",
+          bold("RECOMMEND"),
+          " it.",
         ],
       },
     ] satisfies Notes[],
 
     ccq: [
       {
-        parts: ['In the sentence: "I went to the movice last weekend."'],
+        parts: [
+          "In 'I saw a comedy last weekend', is the experience finished?",
+        ],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
-        parts: ["Are we talking about the past or the future?"],
+        parts: [
+          "Does 'It was funny' give a fact about the outing or an opinion?",
+        ],
+        options: [
+          { option: "An opinion", isCorrect: true },
+          { option: "A time", isCorrect: false },
+        ],
       },
       {
-        parts: ["Did the action happen yesterday or tomorrow?"],
+        parts: ["Which question asks for a recommendation?"],
+        options: [
+          { option: "Would you recommend it?", isCorrect: true },
+          { option: "Where are you from?", isCorrect: false },
+        ],
       },
       {
-        parts: ["In 'I watched a movie', is the movie finished?"],
+        parts: ["After did, do we use see or saw?"],
+        options: [
+          { option: "see", isCorrect: true },
+          { option: "saw", isCorrect: false },
+        ],
+      },
+      {
+        parts: ["Does I'd recommend mean I would recommend?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -531,10 +497,17 @@ export const elementaryPastMovies = {
             ],
           },
           {
-            question: "Last weekend we _____ soccer.",
+            question: "_____ you like the movie?",
             options: [
-              { option: "played", isCorrect: true },
-              { option: "play", isCorrect: false },
+              { option: "Did", isCorrect: true },
+              { option: "Were", isCorrect: false },
+            ],
+          },
+          {
+            question: "It was exciting, so I _____ recommend it.",
+            options: [
+              { option: "would", isCorrect: true },
+              { option: "did", isCorrect: false },
             ],
           },
         ],
@@ -550,8 +523,8 @@ export const elementaryPastMovies = {
           {
             block: [
               { text: "Last weekend I " },
-              { blank: "visited" },
-              { text: " my grandparents." },
+              { blank: "saw" },
+              { text: " a comedy." },
             ],
             lineBreak: true,
           },
@@ -565,9 +538,9 @@ export const elementaryPastMovies = {
           },
           {
             block: [
-              { text: "They " },
-              { blank: "played" },
-              { text: " soccer." },
+              { text: "I liked it " },
+              { blank: "because" },
+              { text: " it was funny." },
             ],
             lineBreak: true,
           },
@@ -582,40 +555,50 @@ export const elementaryPastMovies = {
       exercise: {
         items: [
           {
-            prompt: "visited / I / grandparents / my",
-            answer: "I visited my grandparents.",
+            prompt: "movie / what / see / did / you",
+            answer: "What movie did you see?",
           },
           {
             prompt: "movie / watched / we / a",
             answer: "We watched a movie.",
           },
           {
-            prompt: "soccer / played / they",
-            answer: "They played soccer.",
+            prompt: "recommend / would / it / you",
+            answer: "Would you recommend it?",
           },
         ],
       },
     },
-  },
+  }, [
+    ["We _____ to the cinema on Friday.", "went", "go"],
+    ["What film _____ you see?", "did", "were"],
+    ["The acting _____ excellent.", "was", "were"],
+    ["I _____ the ending because it was surprising.", "liked", "like"],
+    ["I wouldn't _____ it because it was too long.", "recommend", "recommended"],
+  ]),
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Choose a movie together:",
       type: "checkbox",
       items: [
         {
-          content: ["Write five sentences about your last weekend."],
-          textarea: true,
-        },
-        {
-          content: ["Write three Past Simple questions and answer them."],
+          content: [
+            "Prepare notes about a real or invented movie experience: title or genre, who with, place, opinion, and reason.",
+          ],
           textarea: true,
         },
         {
           content: [
-            "Interview a classmate about their weekend activities.",
+            "Interview a partner and ask at least three follow-up questions.",
           ],
         },
+        {
+          content: [
+            "Recommend or reject each movie with a reason, then agree on one movie to watch together.",
+          ],
+        },
+        { content: ["Report your choice and reason to the class."] },
       ],
     } satisfies ListProps,
   },

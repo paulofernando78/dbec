@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedMediationAndClarification = {
   slug: "mediation-and-clarification",
   whiteboard: {
@@ -205,7 +207,7 @@ export const advancedMediationAndClarification = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -233,6 +235,25 @@ export const advancedMediationAndClarification = {
                 isCorrect: true,
               },
               { option: "Why were you confused?", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "A specialist says, 'The association is not necessarily causal.' Which mediation preserves the meaning?",
+            options: [
+              {
+                option:
+                  "The two things are connected, but we cannot yet say that one causes the other.",
+                isCorrect: true,
+              },
+              {
+                option: "The two things have no connection.",
+                isCorrect: false,
+              },
+              {
+                option: "One thing definitely causes the other.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -291,11 +312,17 @@ export const advancedMediationAndClarification = {
         ],
       },
     },
-  },
+  }, [
+    ["In other _____, the evidence is promising but inconclusive.", "words", "terms of"],
+    ["Not _____; the data suggests a benefit rather than proving one.", "quite", "exactly yes"],
+    ["What this means in _____ is that further testing is needed.", "practice", "practical"],
+    ["Let me _____ that distinction in simpler terms.", "clarify", "clarification"],
+    ["Does that interpretation make _____?", "sense", "meaning"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Mediate complex information for a non-specialist and repair misunderstandings:",
       type: "checkbox",
       items: [
         {

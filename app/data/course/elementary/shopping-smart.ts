@@ -1,4 +1,6 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
+import { audio } from "@/helpers/content";
 
 export const elementaryShoppingSmart = {
   whiteboard: {
@@ -7,6 +9,12 @@ export const elementaryShoppingSmart = {
     descriptions: ["How much rice do we need?", "We need some apples."],
   },
   introduction: {
+    questions: [
+      [
+        audio("What is usually on your shopping list?"),
+        "What is usually on your shopping list?",
+      ],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       words: [
@@ -78,8 +86,9 @@ export const elementaryShoppingSmart = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: what does Rosa need to buy? Then listen again for the quantities.",
+      audioSrc: "",
       lines: [
         { speaker: "Rosa", line: ["Do we have any rice?"] },
         { speaker: "Tom", line: ["No, we don't have any."] },
@@ -199,6 +208,12 @@ export const elementaryShoppingSmart = {
           "Rice, milk, and money are uncountable; apples, bottles, and stores are countable.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Use how much with uncountable nouns and how many with plural countable nouns. In a shop, connect the question to a quantity or price.",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["Can we count apples one by one?"] },
@@ -206,7 +221,7 @@ export const elementaryShoppingSmart = {
       { as: "p", parts: ["Is any common in questions?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -223,6 +238,20 @@ export const elementaryShoppingSmart = {
             options: [
               { option: "any", isCorrect: true },
               { option: "some", isCorrect: false },
+            ],
+          },
+          {
+            question: "You want the price of the apples.",
+            options: [
+              { option: "How much are the apples?", isCorrect: true },
+              { option: "How many are the apples?", isCorrect: false },
+            ],
+          },
+          {
+            question: "The assistant offers you help. What is the best reply?",
+            options: [
+              { option: "Yes, please. I need some rice.", isCorrect: true },
+              { option: "Yes, I need any rice.", isCorrect: false },
             ],
           },
         ],
@@ -270,10 +299,17 @@ export const elementaryShoppingSmart = {
         ],
       },
     },
-  },
+  }, [
+    ["How _____ rice do we need?", "much", "many"],
+    ["How _____ bottles are in the basket?", "many", "much"],
+    ["There isn't _____ cheese left.", "any", "some"],
+    ["Could I have _____ apples, please?", "some", "much"],
+    ["We have _____ milk, so buy another carton.", "little", "few"],
+    ["There are only a _____ eggs left.", "few", "little"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Plan a shopping list and agree on quantities:",
       type: "checkbox",
       items: [
         {

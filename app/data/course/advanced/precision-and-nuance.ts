@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedPrecisionAndNuance = {
   slug: "precision-and-nuance",
   whiteboard: {
@@ -52,7 +54,8 @@ export const advancedPrecisionAndNuance = {
   },
   presentation: {
     dialogue: {
-      instruction: "Researchers calibrate the language of a preliminary finding.",
+      instruction:
+        "Researchers calibrate the language of a preliminary finding.",
       audioSrc: "",
       lines: [
         {
@@ -190,7 +193,7 @@ export const advancedPrecisionAndNuance = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -220,6 +223,25 @@ export const advancedPrecisionAndNuance = {
               { option: "possibly", isCorrect: false },
               { option: "almost certainly", isCorrect: true },
               { option: "maybe", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "The data comes from one small observational study. Which claim is appropriately calibrated?",
+            options: [
+              {
+                option:
+                  "The findings may indicate an association that warrants further study.",
+                isCorrect: true,
+              },
+              {
+                option: "The findings establish a universal causal law.",
+                isCorrect: false,
+              },
+              {
+                option: "The findings are certainly meaningless.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -278,11 +300,17 @@ export const advancedPrecisionAndNuance = {
         ],
       },
     },
-  },
+  }, [
+    ["The preliminary pattern appears _____ support the hypothesis.", "to", "for"],
+    ["The decline was likely to _____ influenced by several factors.", "have been", "be have"],
+    ["The evidence strongly _____ that the original estimate was too low.", "suggests", "proves absolutely"],
+    ["Another explanation cannot be ruled _____.", "out", "away"],
+    ["The treatment _____ reduce symptoms in some patients.", "may", "certainly"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Calibrate claims so that their certainty matches the available evidence:",
       type: "checkbox",
       items: [
         {

@@ -1,35 +1,18 @@
-import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastBeach = {
   whiteboard: {
     title: "A2 Elementary",
-    subtitle: "Beach",
-    descriptions: ["We went to the beach. The weather was beautiful."],
+    subtitle: "A Day at the Beach",
+    descriptions: ["We went to the beach, swam, and watched the sunset."],
   },
   introduction: {
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        {
-          src: "/assets/img/course/a2/unit-1-last-weekend/laura-beach.avif",
-          alt: "beach",
-        },
-        { src: "/", alt: "swimsuit" },
-        { src: "/", alt: "sunscreen" },
-        { src: "/", alt: "waves" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "beach" }, "beach"] },
-        { as: "span", parts: [{ audio: "swimsuit" }, "swimsuit"] },
-        { as: "span", parts: [{ audio: "sunscreen" }, "sunscreen"] },
-        { as: "span", parts: [{ audio: "waves" }, "waves"] },
-      ]),
-    },
     storyCarousel: {
-      instruction: "Look at the pictures and listen to the sentences.",
+      instruction:
+        "Look at the pictures. What made Laura's day special? Then listen and check.",
       imgs: [
         {
-          src: "/assets/img/course/a2/unit-1-last-weekend/laura-beach.avif",
+          src: "/assets/img/course/a2/past-beach/laura-beach.avif",
           alt: "Laura spending the day at the beach",
           content: [
             { audio: "Laura went to the beach on Sunday." },
@@ -40,7 +23,7 @@ export const elementaryPastBeach = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a2/past-beach/laura-beach.avif",
           alt: "Laura putting on sunscreen",
           content: [
             { audio: "She put on sunscreen." },
@@ -51,7 +34,7 @@ export const elementaryPastBeach = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a2/past-beach/laura-beach.avif",
           alt: "Laura swimming in the ocean",
           content: [
             { audio: "She swam in the ocean." },
@@ -62,7 +45,7 @@ export const elementaryPastBeach = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a2/past-beach/laura-beach.avif",
           alt: "Laura and her friends playing beach volleyball",
           content: [
             { audio: "They played beach volleyball." },
@@ -73,7 +56,7 @@ export const elementaryPastBeach = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a2/past-beach/laura-beach.avif",
           alt: "Laura and her friends having a snack",
           content: [
             { audio: "They ate fruit and drank coconut water." },
@@ -87,7 +70,7 @@ export const elementaryPastBeach = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a2/past-beach/laura-beach.avif",
           alt: "Laura watching the sunset",
           content: [
             { audio: "Laura watched the sunset before she went home." },
@@ -126,8 +109,9 @@ export const elementaryPastBeach = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once. Did Laura enjoy her beach day? Then listen again for details.",
+      audioSrc: "",
       lines: [
         { speaker: "Laura", line: ["Hey Eric. How's it going?"] },
         { speaker: "Eric", line: ["Pretty good. How was your weekend?"] },
@@ -180,30 +164,28 @@ export const elementaryPastBeach = {
       {
         as: "p",
         parts: [
-          "Use the ",
-          { part: "Past Simple", type: "bold" },
-          " to talk about finished actions in the past.",
+          "Use common ",
+          { part: "irregular Past Simple verbs", type: "bold" },
+          " to describe a finished day: go ➜ went, swim ➜ swam, eat ➜ ate.",
         ],
       },
       { type: "spacer" },
       {
         as: "p",
         parts: [
-          "Regular verbs usually end in ",
-          { part: "-ed", type: "bold" },
-          ": watched, played, visited.",
+          "Ask for details with ",
+          { part: "did + base verb", type: "bold" },
+          ": Where did you go? What did you eat?",
         ],
       },
       {
         as: "p",
         parts: [
-          "Some verbs are irregular: go ",
-          { part: "➜ went", type: "bold" },
-          ", have ",
-          { part: "➜ had", type: "bold" },
-          ", eat ",
-          { part: "➜ ate", type: "bold" },
-          ".",
+          "Use ",
+          { part: "then", type: "bold" },
+          " and ",
+          { part: "after that", type: "bold" },
+          " to connect the main events.",
         ],
       },
     ],
@@ -266,66 +248,32 @@ export const elementaryPastBeach = {
       ],
     },
     columnVerbs: {
-      width: 300,
+      width: 250,
       cols: [
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "/t/",
+          column: "Base verb",
           items: [
-            {
-              as: "span",
-              parts: [
-                { audio: "watch" },
-                "watch ➜ ",
-                { audio: "watched" },
-                "watch",
-                { part: "ed", type: "bold" },
-                " ",
-                { part: "/t/", type: "phonetics" },
-              ],
-            },
+            { parts: [{ audio: "go" }, "go"] },
+            { parts: [{ audio: "swim" }, "swim"] },
+            { parts: [{ audio: "eat" }, "eat"] },
+            { parts: [{ audio: "drink" }, "drink"] },
+            { parts: [{ audio: "have" }, "have"] },
           ],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "/d/",
+          column: "Past form",
           items: [
-            {
-              as: "span",
-              parts: [
-                { audio: "play" },
-                "play ➜ ",
-                { audio: "played" },
-                "play",
-                { part: "ed", type: "bold" },
-                " ",
-                { part: "/d/", type: "phonetics" },
-              ],
-            },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "/ɪd/",
-          items: [
-            {
-              as: "span",
-              parts: [
-                { audio: "visit" },
-                "visit ➜ ",
-                { audio: "visited" },
-                "visit",
-                { part: "ed", type: "bold" },
-                " ",
-                { part: "/ɪd/", type: "phonetics" },
-              ],
-            },
+            { parts: [{ audio: "went" }, "went"] },
+            { parts: [{ audio: "swam" }, "swam"] },
+            { parts: [{ audio: "ate" }, "ate"] },
+            { parts: [{ audio: "drank" }, "drank"] },
+            { parts: [{ audio: "had" }, "had"] },
           ],
         },
       ],
@@ -341,15 +289,38 @@ export const elementaryPastBeach = {
           "?",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Use the Past Simple to tell a finished beach-day story. After the first answer, ask a follow-up such as Who did you go with? or What did you do there?",
+        ],
+      },
     ],
     ccq: [
-      { parts: ['In the sentence: "Laura went to the beach on Sunday."'] },
-      { parts: ["Are we talking about the past or the future?"] },
-      { parts: ["Is the action finished?"] },
-      { parts: ["After did, do we use the base verb or the past form?"] },
+      {
+        parts: ["Is Laura's beach day finished?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
+      },
+      {
+        parts: ["What is the past form of swim?"],
+        options: [
+          { option: "swam", isCorrect: true },
+          { option: "swimmed", isCorrect: false },
+        ],
+      },
+      {
+        parts: ["Which question is correct?"],
+        options: [
+          { option: "Where did you go?", isCorrect: true },
+          { option: "Where did you went?", isCorrect: false },
+        ],
+      },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -366,6 +337,13 @@ export const elementaryPastBeach = {
             options: [
               { option: "played", isCorrect: true },
               { option: "play", isCorrect: false },
+            ],
+          },
+          {
+            question: "What did you _____ at the beach?",
+            options: [
+              { option: "eat", isCorrect: true },
+              { option: "ate", isCorrect: false },
             ],
           },
         ],
@@ -425,22 +403,36 @@ export const elementaryPastBeach = {
         ],
       },
     },
-  },
+  }, [
+    ["We _____ to the beach last Sunday.", "went", "go"],
+    ["I _____ in the sea with my friends.", "swam", "swim"],
+    ["_____ you enjoy the picnic?", "Did", "Were"],
+    ["The weather _____ warm and sunny.", "was", "were"],
+    ["Laura _____ lots of photos.", "took", "take"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Share a real or invented beach story:",
       type: "checkbox",
       items: [
         {
-          content: ["Write five sentences about your last day at the beach."],
+          content: [
+            "Prepare five notes: when, who with, weather, three activities, and one memorable detail.",
+          ],
           textarea: true,
         },
         {
-          content: ["Write three Past Simple questions and answer them."],
-          textarea: true,
+          content: [
+            "Tell your story to a partner using then or after that. Do not read complete sentences.",
+          ],
         },
         {
-          content: ["Interview a classmate about your last day at the beach."],
+          content: [
+            "Your partner asks at least two follow-up questions. Change roles and repeat.",
+          ],
+        },
+        {
+          content: ["Retell one interesting detail from your partner's story."],
         },
       ],
     },

@@ -23,10 +23,15 @@ import { Radio } from "@/features/exercises/Radio";
 import { ImageQuiz } from "@/features/exercises/ImageQuiz";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
+import { Guess } from "@/features/exercises/Guess";
 
 import { getCourseLesson } from "@/data/course/lessons-slug";
 import { getCourseLessonCard } from "@/data/course/course-lessons-card-data";
 import { lesson as courseTemplate } from "@/data/course/template";
+import {
+  getLessonVocabulary,
+  getPracticeExerciseCounts,
+} from "@/utils/getLessonVocabulary";
 
 import {
   bold
@@ -39,8 +44,18 @@ type CourseProps = {
   imgAlt?: string;
 };
 
-const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
+const renderLanguageFocus = (
+  lesson: Record<string, any>,
+  heading: 3 | 4,
+  pronunciation?: string,
+) => {
   const languageFocus = lesson.languageFocus ?? {};
+  const pronunciationFocus = pronunciation ? (
+    <>
+      <Subsection label="Pronunciation" heading={5} />
+      <Line value={[pronunciation]} className="mb-4" />
+    </>
+  ) : null;
 
   if (languageFocus.greetings || languageFocus.askingQuestions) {
     return (
@@ -52,6 +67,7 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
         <Meaning value={languageFocus.askingQuestions} />
         <Subsection label="Meeting Someone" heading={4} />
         <Meaning value={languageFocus.meetingSomeone} />
+        {pronunciationFocus}
         <Notes value={languageFocus.notes} />
         <CCQ value={languageFocus.ccq} />
       </>
@@ -63,6 +79,7 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
       <>
         <Subsection label="Personal Information" heading={4} />
         <ColumnDrag {...languageFocus.personalInformation} />
+        {pronunciationFocus}
         <Notes value={languageFocus.notes} />
         <CCQ value={languageFocus.ccq} />
         <TheAlphabet />
@@ -73,13 +90,14 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
   return (
     <>
       <Meaning value={languageFocus.meaning} />
-      {languageFocus.column && <ColumnDrag {...languageFocus.column} />}
       {languageFocus.columnQuestions && (
         <ColumnDrag {...languageFocus.columnQuestions} />
       )}
+      {languageFocus.column && <ColumnDrag {...languageFocus.column} />}
       {languageFocus.columnVerbs && (
         <ColumnDrag {...languageFocus.columnVerbs} />
       )}
+      {pronunciationFocus}
       <Notes value={languageFocus.notes} />
       <CCQ value={languageFocus.ccq} />
     </>
@@ -89,6 +107,18 @@ const renderLanguageFocus = (lesson: Record<string, any>, heading: 3 | 4) => {
 export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
   const heading = lesson.languageFocus?.greetings ? 3 : 4;
   const card = lessonCard ?? lesson.lessonCard;
+  const lessonVocabulary = getLessonVocabulary(lesson, card?.vocabulary);
+  const practiceCounts = getPracticeExerciseCounts(lesson);
+
+  if (
+    import.meta.env.DEV &&
+    (practiceCounts.radio < 8 || practiceCounts.fillInTheBlanks < 8)
+  ) {
+    console.warn(
+      `Lesson practice requires at least 8 Radio and 8 FillInTheBlanks items. Received Radio: ${practiceCounts.radio}, FillInTheBlanks: ${practiceCounts.fillInTheBlanks}.`,
+      lesson.whiteboard?.subtitle,
+    );
+  }
 
   return (
     <>
@@ -150,7 +180,19 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
               />
             </>
             }
-            <Dialogue {...lesson.presentation?.dialogue} />
+            {lesson.presentation?.storyCarousel && (
+              <Carousel
+                aspectRatio="wide"
+                {...lesson.presentation.storyCarousel}
+              />
+            )}
+            {lesson.presentation?.storyRadio && (
+              <Radio {...lesson.presentation.storyRadio} />
+            )}
+            <Dialogue
+              key={lesson.whiteboard?.subtitle}
+              {...lesson.presentation?.dialogue}
+            />
             {lesson.presentation?.radio && (
               <Radio {...lesson.presentation.radio} />
             )}
@@ -163,7 +205,7 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
                 {...lesson.languageFocus.storyCarousel}
               />
             )}
-            {renderLanguageFocus(lesson, heading)}
+            {renderLanguageFocus(lesson, heading, card?.pronunciation)}
           </Section>
 
           <Section id="Practice" heading={heading}>
@@ -174,6 +216,7 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
             {lesson.practice?.scramble && (
               <Unscramble {...lesson.practice.scramble} />
             )}
+            <Guess words={lessonVocabulary.words} />
           </Section>
 
           <Section id="Production" heading={heading}>

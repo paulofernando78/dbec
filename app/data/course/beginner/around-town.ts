@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -16,6 +17,12 @@ export const beginnerAroundTown = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What places are near your home?"),
+        "What places are near your home?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -86,7 +93,7 @@ export const beginnerAroundTown = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to the dialogue.",
+      instruction: "Listen once: is Emma asking for locations or prices?",
       audioSrc: "",
       lines: [
         {
@@ -116,7 +123,7 @@ export const beginnerAroundTown = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -228,6 +235,16 @@ export const beginnerAroundTown = {
         as: "span",
         parts: [bold("behind"), " = at the back of another place"],
       },
+      {
+        as: "span",
+        parts: [
+          "Ask ",
+          bold("Where is...?"),
+          " and answer with a landmark: ",
+          bold("It’s next to the supermarket"),
+          ". Repeat the place to check that you understood.",
+        ],
+      },
     ] satisfies Notes[],
     ccq: [
       {
@@ -235,21 +252,33 @@ export const beginnerAroundTown = {
         parts: [
           "If the bank is next to the supermarket, are they close together?",
         ],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: [
           "If the park is across from the school, are they on the same side?",
         ],
+        options: [
+          { option: "No", isCorrect: true },
+          { option: "Yes", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["If something is between two places, is it in the middle?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -328,7 +357,14 @@ export const beginnerAroundTown = {
         ],
       },
     },
-  },
+  }, [
+    ["Where _____ the bank?", "is", "are"],
+    ["It's next _____ the supermarket.", "to", "at"],
+    ["Go straight _____.", "ahead", "left"],
+    ["Turn _____ at the corner.", "right", "next"],
+    ["Is there a pharmacy _____ here?", "near", "between"],
+    ["How can I _____ to the station?", "get", "getting"],
+  ]),
 
   production: {
     task: {

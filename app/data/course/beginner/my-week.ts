@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -16,6 +17,12 @@ export const beginnerMyWeek = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What do you usually do on Saturday?"),
+        "What do you usually do on Saturday?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -86,7 +93,8 @@ export const beginnerMyWeek = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to the dialogue.",
+      instruction:
+        "Listen once: are Emma and Jake talking about daily or weekly habits?",
       audioSrc: "",
       lines: [
         {
@@ -116,7 +124,7 @@ export const beginnerMyWeek = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -242,19 +250,31 @@ export const beginnerMyWeek = {
       {
         as: "span",
         parts: ["If I always study on Monday, do I study every Monday?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["If I never play tennis, do I play tennis?"],
+        options: [
+          { option: "No", isCorrect: true },
+          { option: "Yes", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Is 'sometimes' more frequent than 'always'?"],
+        options: [
+          { option: "No", isCorrect: true },
+          { option: "Yes", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -339,7 +359,13 @@ export const beginnerMyWeek = {
         ],
       },
     },
-  },
+  }, [
+    ["I work _____ Monday.", "on", "at"],
+    ["What do you do _____ weekends?", "on", "in"],
+    ["She _____ English on Tuesday.", "studies", "study"],
+    ["We don't _____ on Sundays.", "work", "works"],
+    ["Are you free _____ Friday evening?", "on", "in"],
+  ]),
 
   production: {
     task: {

@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedBuildingComplexArguments = {
   slug: "building-complex-arguments",
   whiteboard: {
@@ -202,7 +204,7 @@ export const advancedBuildingComplexArguments = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -233,6 +235,25 @@ export const advancedBuildingComplexArguments = {
                 isCorrect: true,
               },
               { option: "No other policy could work.", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "Which sentence concedes a limitation while maintaining the main claim?",
+            options: [
+              {
+                option:
+                  "Although the sample is small, the consistency of the results justifies further investigation.",
+                isCorrect: true,
+              },
+              {
+                option: "The sample is small, so the findings are worthless.",
+                isCorrect: false,
+              },
+              {
+                option: "There are no limitations to this argument.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -293,11 +314,17 @@ export const advancedBuildingComplexArguments = {
         ],
       },
     },
-  },
+  }, [
+    ["_____, the proposal would require substantial initial investment.", "Admittedly", "Therefore"],
+    ["_____, the long-term savings justify a limited trial.", "Nevertheless", "Similarly"],
+    ["The objection _____ the measurable cost of inaction.", "overlooks", "supports"],
+    ["_____ the concern is valid, it does not invalidate the evidence.", "While", "Because"],
+    ["The policy could succeed _____ that enforcement remains consistent.", "provided", "despite"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Build, defend, and refine a complex argument with a partner:",
       type: "checkbox",
       items: [
         {

@@ -8,9 +8,12 @@ import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 
 import { RotateCcw } from "lucide-react";
 
-type GuessWord = {
+export type GuessWord = {
   word: string;
   img?: number;
+  src?: string;
+  alt?: string;
+  meaning?: string;
 };
 
 type DictionaryImage = {
@@ -24,7 +27,7 @@ type DictionaryWord = {
   imgs?: DictionaryImage[];
 };
 
-type GuessProps = {
+export type GuessProps = {
   words: GuessWord[];
 };
 
@@ -52,12 +55,22 @@ export const Guess = ({ words }: GuessProps) => {
   const [completeWords, setCompleteWords] = useState<string[]>([]);
 
   const loadWord = async (word: string) => {
-    const foundWord = await loadDictionaryWord(word);
-    setSelectedWord(foundWord);
+    try {
+      const foundWord = await loadDictionaryWord(word);
+      setSelectedWord(foundWord ?? { word });
+    } catch {
+      setSelectedWord({ word });
+    }
   };
 
   useEffect(() => {
-    loadWord(words[currentIndex].word);
+    const currentWord = words[currentIndex];
+    if (!currentWord) {
+      setSelectedWord(null);
+      return;
+    }
+
+    loadWord(currentWord.word);
   }, [currentIndex, words]);
 
   // STEP 7: Move to next word and reset round state
@@ -81,7 +94,7 @@ export const Guess = ({ words }: GuessProps) => {
   // STEP 8: Restart full game
   const resetGame = () => {
     setCurrentIndex(0);
-    loadWord(words[0].word);
+    if (words[0]) loadWord(words[0].word);
     setUsedLetters([]);
     setAttempts(0);
     setMessage("");
@@ -123,7 +136,7 @@ export const Guess = ({ words }: GuessProps) => {
         selected.word
           .toUpperCase()
           .split("")
-          .filter((char) => char !== " "),
+          .filter((char) => /[A-Z']/.test(char)),
       ),
     ];
     // const hasWon = uniqueLetters.every((item) =>
@@ -156,7 +169,15 @@ export const Guess = ({ words }: GuessProps) => {
     // keep status = playing
   };
 
-  if (!selected) return <span>Loading...</span>;
+  const currentWord = words[currentIndex];
+
+  if (!words.length) return null;
+  if (!selected || !currentWord) return <span>Loading...</span>;
+
+  const dictionaryImage = selected.imgs?.[currentWord.img ?? 0];
+  const imageSrc = currentWord.src ?? dictionaryImage?.src;
+  const imageAlt = currentWord.alt ?? dictionaryImage?.alt ?? selected.word;
+  const meaning = currentWord.meaning ?? selected.enDefinition;
 
   return (
     <div className="mb-4">
@@ -165,27 +186,30 @@ export const Guess = ({ words }: GuessProps) => {
       </p>
       <div className="grid grid-cols-2 gap-2 max-[920px]:grid-cols-1">
         <div className="flex flex-col gap-4 justify-between">
-          {/* Pics */}
           <span className="text-center">
-            <b>Pics:</b> {currentIndex + 1} | {words.length}
+            <b>Word:</b> {currentIndex + 1} | {words.length}
           </span>
-          <Image
-            src={dictionary(
-              selected?.imgs?.[words[currentIndex].img ?? 0]?.src || "",
-            )}
-            alt={
-              selected?.imgs?.[words[currentIndex].img ?? 0]?.alt ||
-              selected.word
-            }
-            width={300}
-            height={300}
-            className="rounded-lg"
-          />
+          {imageSrc && (
+            <Image
+              src={currentWord.src ? imageSrc : dictionary(imageSrc)}
+              alt={imageAlt}
+              width={300}
+              height={300}
+              className="rounded-lg"
+            />
+          )}
 
           {/* Meaning */}
-          <span className="w-full h-20 p-2 border border-gray-400 rounded-lg overflow-scroll">
-            <b>Meaning:</b> {selected?.enDefinition}
-          </span>
+          {meaning && (
+            <span className="w-full h-20 p-2 border border-gray-400 rounded-lg overflow-scroll">
+              <b>Meaning:</b> {meaning}
+            </span>
+          )}
+          {!imageSrc && !meaning && (
+            <span className="w-full p-3 border border-gray-400 rounded-lg">
+              Review the key vocabulary from the Introduction.
+            </span>
+          )}
         </div>
 
         {/* !!! */}
@@ -196,19 +220,20 @@ export const Guess = ({ words }: GuessProps) => {
             <b>Attempts:</b> {attempts} | {maxAttempts}
           </span>
           {/* STEP 11: Display hidden/revealed word */}
-          <div className="h-8.75">
-            {message && <span>{message}</span>}
-          </div>
+          <div className="h-8.75">{message && <span>{message}</span>}</div>
           {/* _ _ _ _ _ */}
           <span>
             {selected.word
               .toUpperCase()
               .split("")
               .map((char, index) => (
-                <span key={index} className="inline-flex items-center justify-center w-8 text-2xl">
+                <span
+                  key={index}
+                  className="inline-flex items-center justify-center w-8 text-2xl"
+                >
                   {char === " "
                     ? "\u2002"
-                    : usedLetters.includes(char)
+                    : !/[A-Z']/.test(char) || usedLetters.includes(char)
                       ? char
                       : "_"}
                 </span>

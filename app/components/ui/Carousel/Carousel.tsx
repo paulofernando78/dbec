@@ -36,6 +36,17 @@ type ResolvedWord = {
   }[];
 };
 
+const toPlainText = (value: unknown): string => {
+  if (typeof value === "string") return value;
+  if (Array.isArray(value)) return value.map(toPlainText).join("");
+  if (!value || typeof value !== "object") return "";
+
+  const item = value as Record<string, unknown>;
+  if (typeof item.part === "string") return item.part;
+
+  return toPlainText(item.parts ?? item.content);
+};
+
 type MatchingContentItem = {
   display?: string;
   as?: string;
@@ -138,6 +149,13 @@ export const Carousel = ({
         })
       : undefined);
 
+  const currentResolvedSrc =
+    currentImg?.word &&
+    resolvedWords[currentImg.word]?.imgs?.[currentImg.img ?? 0]?.src;
+  const currentHasVisual = Boolean(
+    currentImg?.src || currentImg?.dictionary || currentResolvedSrc,
+  );
+
   const scrollRight = () => {
     setCurrentIndex((prev) => (prev < finalWords.length - 1 ? prev + 1 : prev));
 
@@ -198,7 +216,7 @@ export const Carousel = ({
     </div>
   ) : null;
 
-  const currentContentElement = currentContent ? (
+  const currentContentElement = currentContent && currentHasVisual ? (
     <div
       className={`
         mx-auto
@@ -330,6 +348,13 @@ export const Carousel = ({
           {finalWords.map((word, index) => {
             const resolvedSrc =
               resolvedWords[word.word ?? ""]?.imgs?.[word.img ?? 0]?.src;
+            const hasVisual = Boolean(
+              word.src || word.dictionary || (word.word && resolvedSrc),
+            );
+            const accessibleLabel =
+              word.alt && !word.alt.startsWith("Add a supporting image")
+                ? word.alt
+                : toPlainText(word.content) || `Text prompt ${index + 1}`;
             return (
               <div
                 key={index}
@@ -365,6 +390,18 @@ export const Carousel = ({
                     alt={word.alt || word.word}
                     rounded={false}
                   />
+                )}
+
+                {!hasVisual && (
+                  <div
+                    role="img"
+                    aria-label={accessibleLabel}
+                    className="flex h-full w-full items-center justify-center rounded-lg border border-slate-300 bg-slate-100 p-8 text-center text-lg font-semibold text-slate-700"
+                  >
+                    <InlineRichContent
+                      value={word.content ?? [word.alt || "Discussion prompt"]}
+                    />
+                  </div>
                 )}
               </div>
             );

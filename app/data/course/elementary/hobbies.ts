@@ -1,4 +1,6 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
+import { audio } from "@/helpers/content";
 
 export const elementaryHobbies = {
   whiteboard: {
@@ -7,6 +9,12 @@ export const elementaryHobbies = {
     descriptions: ["I enjoy taking photos.", "I'd like to learn to paint."],
   },
   introduction: {
+    questions: [
+      [
+        audio("What do you enjoy doing in your free time?"),
+        "What do you enjoy doing in your free time?",
+      ],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       words: [
@@ -78,8 +86,9 @@ export const elementaryHobbies = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: which hobbies do Nora and Kai want to learn? Then listen again for their current interests.",
+      audioSrc: "",
       lines: [
         { speaker: "Kai", line: ["What do you like doing in your free time?"] },
         { speaker: "Nora", line: ["I love gardening and cooking."] },
@@ -194,6 +203,12 @@ export const elementaryHobbies = {
           "Say enjoy reading, but want to read. The pattern depends on the first verb.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Learn the verb pattern as a complete chunk. To extend the conversation, ask how often, where, or who the person does the hobby with.",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["After enjoy, do we use read or reading?"] },
@@ -201,7 +216,7 @@ export const elementaryHobbies = {
       { as: "p", parts: ["Is a hobby a free-time activity?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -218,6 +233,20 @@ export const elementaryHobbies = {
             options: [
               { option: "to learn", isCorrect: true },
               { option: "learning", isCorrect: false },
+            ],
+          },
+          {
+            question: "Your friend asks about your free time.",
+            options: [
+              { option: "I enjoy painting landscapes.", isCorrect: true },
+              { option: "I enjoy to paint landscapes.", isCorrect: false },
+            ],
+          },
+          {
+            question: "You are interested in a new hobby.",
+            options: [
+              { option: "I'd like to try pottery.", isCorrect: true },
+              { option: "I'd like trying pottery.", isCorrect: false },
             ],
           },
         ],
@@ -265,10 +294,17 @@ export const elementaryHobbies = {
         ],
       },
     },
-  },
+  }, [
+    ["I love _____ short stories.", "writing", "write"],
+    ["He wants _____ join a photography club.", "to", "for"],
+    ["We enjoy _____ together on weekends.", "hiking", "to hike"],
+    ["She would like _____ pottery.", "to try", "trying"],
+    ["Do you mind _____ me how to knit?", "showing", "to show"],
+    ["They decided _____ dance lessons.", "to take", "taking"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Find a hobby you and a partner could try together:",
       type: "checkbox",
       items: [
         { content: ["Describe three hobbies you enjoy."], textarea: true },

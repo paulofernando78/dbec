@@ -1,32 +1,18 @@
-import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastHome = {
   whiteboard: {
     title: "A2 Elementary",
-    subtitle: "Home",
-    descriptions: ["I stayed at home. I cleaned and relaxed."],
+    subtitle: "A Weekend at Home",
+    descriptions: ["I stayed at home. I cleaned, relaxed, and didn't go out."],
   },
   introduction: {
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "laundry" },
-        { src: "/", alt: "vacuum cleaner" },
-        { src: "/", alt: "living room" },
-        { src: "/", alt: "takeout" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "laundry" }, "laundry"] },
-        { as: "span", parts: [{ audio: "vacuum cleaner" }, "vacuum cleaner"] },
-        { as: "span", parts: [{ audio: "living room" }, "living room"] },
-        { as: "span", parts: [{ audio: "takeout" }, "takeout"] },
-      ]),
-    },
     storyCarousel: {
-      instruction: "Look at the pictures and listen to the sentences.",
+      instruction:
+        "Look at the pictures. What kind of day did Nina have? Then listen and check.",
       imgs: [
         {
-          src: "/",
+          src: "/assets/img/home/home-me.png",
           alt: "Nina staying at home on a rainy Saturday",
           content: [
             { audio: "Nina stayed at home on Saturday." },
@@ -37,7 +23,7 @@ export const elementaryPastHome = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/home/home-me.png",
           alt: "Nina doing the laundry",
           content: [
             { audio: "She did the laundry in the morning." },
@@ -48,7 +34,7 @@ export const elementaryPastHome = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/home/home-me.png",
           alt: "Nina cleaning the living room",
           content: [
             { audio: "She vacuumed the living room." },
@@ -59,7 +45,7 @@ export const elementaryPastHome = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/woman-eat-dinner.png",
           alt: "Nina cooking soup",
           content: [
             { audio: "She made soup for lunch." },
@@ -70,7 +56,7 @@ export const elementaryPastHome = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/man-study-home.png",
           alt: "Nina reading on the sofa",
           content: [
             { audio: "She read a book on the sofa." },
@@ -81,7 +67,7 @@ export const elementaryPastHome = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/man-watch-tv-evening.png",
           alt: "Nina calling her friend",
           content: [
             {
@@ -122,8 +108,9 @@ export const elementaryPastHome = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once. Was Nina's weekend busy, relaxing, or both? Then listen again for details.",
+      audioSrc: "",
       lines: [
         { speaker: "Nina", line: ["Hi Leo. How was your weekend?"] },
         { speaker: "Leo", line: ["Busy! I went out all day. What about you?"] },
@@ -178,28 +165,26 @@ export const elementaryPastHome = {
         parts: [
           "Use the ",
           { part: "Past Simple", type: "bold" },
-          " to talk about finished actions in the past.",
+          " for activities that started and finished in the past.",
         ],
       },
       { type: "spacer" },
       {
         as: "p",
         parts: [
-          "Regular verbs usually end in ",
-          { part: "-ed", type: "bold" },
-          ": watched, played, visited.",
+          "Positive: I ",
+          { part: "cleaned", type: "bold" },
+          " the living room. Negative: I ",
+          { part: "didn't clean", type: "bold" },
+          " the kitchen.",
         ],
       },
       {
         as: "p",
         parts: [
-          "Some verbs are irregular: go ",
-          { part: "➜ went", type: "bold" },
-          ", have ",
-          { part: "➜ had", type: "bold" },
-          ", eat ",
-          { part: "➜ ate", type: "bold" },
-          ".",
+          "After ",
+          { part: "didn't", type: "bold" },
+          ", use the base verb: didn't cook, didn't go, didn't watch.",
         ],
       },
     ],
@@ -210,7 +195,7 @@ export const elementaryPastHome = {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Questions",
+          column: "Ask",
           items: [
             {
               parts: [{ part: "Did", type: "bold" }, " + subject + base verb:"],
@@ -218,35 +203,37 @@ export const elementaryPastHome = {
             { type: "spacer" },
             {
               parts: [
-                { audio: "What did you do last weekend?" },
-                "What did you do last weekend?",
+                { audio: "What did you do at home?" },
+                "What did you do at home?",
               ],
             },
-            { parts: [{ audio: "Where did you go?" }, "Where did you go?"] },
             {
               parts: [
-                { audio: "Who did you go with?" },
-                "Who did you go with?",
+                { audio: "Did you do any housework?" },
+                "Did you do any housework?",
               ],
             },
-            { parts: [{ audio: "Did you have fun?" }, "Did you have fun?"] },
+            { parts: [{ audio: "Did you cook?" }, "Did you cook?"] },
+            { parts: [{ audio: "Did you relax?" }, "Did you relax?"] },
           ],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Answers",
+          column: "Answer",
           items: [
             { parts: [{ audio: "I stayed at home." }, "I stayed at home."] },
-            { parts: [{ audio: "I was alone." }, "I was alone."] },
             {
               parts: [
                 { audio: "I cleaned the living room." },
                 "I cleaned the living room.",
               ],
             },
-            { parts: [{ audio: "Yes, I relaxed." }, "Yes, I relaxed."] },
+            { parts: [{ audio: "No, I didn't cook." }, "No, I didn't cook."] },
+            {
+              parts: [{ audio: "Yes, I read a book." }, "Yes, I read a book."],
+            },
           ],
         },
       ],
@@ -320,22 +307,45 @@ export const elementaryPastHome = {
       {
         as: "p",
         parts: [
-          "Don't say: Did you ",
-          { part: "went", type: "bold" },
-          "? Say: Did you ",
-          { part: "go", type: "bold" },
-          "?",
+          "Don't say: I didn't ",
+          { part: "cooked", type: "bold" },
+          ". Say: I didn't ",
+          { part: "cook", type: "bold" },
+          ".",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          "Use the Past Simple for completed activities at home. Add a time reference or detail: on Saturday, in the morning, or after lunch.",
         ],
       },
     ],
     ccq: [
-      { parts: ['In the sentence: "Nina stayed at home on Saturday."'] },
-      { parts: ["Are we talking about the past or the future?"] },
-      { parts: ["Is the action finished?"] },
-      { parts: ["After did, do we use the base verb or the past form?"] },
+      {
+        parts: ["Is Nina's Saturday finished now?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
+      },
+      {
+        parts: ["In 'I didn't cook', did I cook?"],
+        options: [
+          { option: "No", isCorrect: true },
+          { option: "Yes", isCorrect: false },
+        ],
+      },
+      {
+        parts: ["After didn't, do we use cook or cooked?"],
+        options: [
+          { option: "cook", isCorrect: true },
+          { option: "cooked", isCorrect: false },
+        ],
+      },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -348,10 +358,10 @@ export const elementaryPastHome = {
             ],
           },
           {
-            question: "She _____ soup for lunch.",
+            question: "She _____ dinner because she ordered takeout.",
             options: [
-              { option: "made", isCorrect: true },
-              { option: "make", isCorrect: false },
+              { option: "didn't make", isCorrect: true },
+              { option: "didn't made", isCorrect: false },
             ],
           },
         ],
@@ -382,8 +392,8 @@ export const elementaryPastHome = {
           {
             block: [
               { text: "She " },
-              { blank: "ordered" },
-              { text: " takeout." },
+              { blank: "didn't cook" },
+              { text: " dinner; she ordered takeout." },
             ],
             lineBreak: true,
           },
@@ -405,21 +415,35 @@ export const elementaryPastHome = {
         ],
       },
     },
-  },
+  }, [
+    ["I _____ at home on Saturday.", "stayed", "stay"],
+    ["We _____ the kitchen in the morning.", "cleaned", "clean"],
+    ["What _____ you do after lunch?", "did", "do"],
+    ["My parents _____ tired after the work.", "were", "was"],
+    ["I _____ a series in the evening.", "watched", "watch"],
+    ["She didn't _____ dinner yesterday.", "cook", "cooked"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Compare two weekends at home:",
       type: "checkbox",
       items: [
         {
-          content: ["Write five sentences about a day you stayed at home."],
+          content: [
+            "Prepare four true or invented details: two things you did and two things you didn't do.",
+          ],
           textarea: true,
         },
         {
-          content: ["Write three Past Simple questions and answer them."],
-          textarea: true,
+          content: [
+            "Interview a partner. Ask at least three follow-up questions with Did you…?",
+          ],
         },
-        { content: ["Interview a classmate about a day you stayed at home."] },
+        {
+          content: [
+            "Find two similarities or differences, then report them to the class.",
+          ],
+        },
       ],
     },
   },

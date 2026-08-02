@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedNegotiationAndConsensus = {
   slug: "negotiation-and-consensus",
   whiteboard: {
@@ -202,7 +204,7 @@ export const advancedNegotiationAndConsensus = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -228,6 +230,25 @@ export const advancedNegotiationAndConsensus = {
                 isCorrect: true,
               },
               { option: "We accept everything.", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "The discussion is stuck on two competing proposals. Which move is most likely to build consensus?",
+            options: [
+              {
+                option:
+                  "Could we identify the outcome both proposals are trying to protect?",
+                isCorrect: true,
+              },
+              {
+                option: "Which side is prepared to admit defeat?",
+                isCorrect: false,
+              },
+              {
+                option: "Let us postpone every decision indefinitely.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -285,11 +306,17 @@ export const advancedNegotiationAndConsensus = {
         ],
       },
     },
-  },
+  }, [
+    ["We could accept the change _____ that the review date remains fixed.", "provided", "unless if"],
+    ["A possible middle _____ would be a limited regional pilot.", "ground", "point"],
+    ["What we appear to agree _____ is the need for reliable access.", "on", "with"],
+    ["Could we _____ the outcome both proposals are trying to protect?", "identify", "identifying"],
+    ["The remaining _____ is how success should be measured.", "issue", "agreement"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Negotiate a workable compromise and record the resulting consensus:",
       type: "checkbox",
       items: [
         {

@@ -1,4 +1,6 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
+import { audio } from "@/helpers/content";
 
 export const elementaryExperiences = {
   whiteboard: {
@@ -10,6 +12,12 @@ export const elementaryExperiences = {
     ],
   },
   introduction: {
+    questions: [
+      [
+        audio("What new experience would you like to try?"),
+        "What new experience would you like to try?",
+      ],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       words: [
@@ -84,8 +92,9 @@ export const elementaryExperiences = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: has Max travelled abroad and alone? Then listen again for the experiences he has and has not had.",
+      audioSrc: "",
       lines: [
         { speaker: "Eva", line: ["Have you ever traveled abroad?"] },
         { speaker: "Max", line: ["Yes, I have. I have visited Chile."] },
@@ -211,6 +220,12 @@ export const elementaryExperiences = {
         as: "p",
         parts: ["Use the past participle: go → gone, see → seen, eat → eaten."],
       },
+      {
+        as: "p",
+        parts: [
+          "Start with the Present Perfect for an experience with no finished time, then use the Past Simple for details: Have you been there? When did you go?",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["Is the exact past time important?"] },
@@ -218,7 +233,7 @@ export const elementaryExperiences = {
       { as: "p", parts: ["Does never describe zero experiences?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -235,6 +250,24 @@ export const elementaryExperiences = {
             options: [
               { option: "eaten", isCorrect: true },
               { option: "ate", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "Your friend says, 'I've been to Peru.' Ask for a detail.",
+            options: [
+              { option: "When did you go?", isCorrect: true },
+              { option: "When have you gone?", isCorrect: false },
+            ],
+          },
+          {
+            question: "Which question asks about life experience?",
+            options: [
+              { option: "Have you ever ridden a horse?", isCorrect: true },
+              {
+                option: "Did you ride a horse last Saturday?",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -282,10 +315,17 @@ export const elementaryExperiences = {
         ],
       },
     },
-  },
+  }, [
+    ["I have _____ a mountain.", "climbed", "climb"],
+    ["_____ you ever traveled alone?", "Have", "Did"],
+    ["She has never _____ abroad.", "lived", "live"],
+    ["We _____ that museum last year.", "visited", "have visited"],
+    ["He has _____ tried surfing.", "never", "ever"],
+    ["When _____ you go to Peru?", "did", "have"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Interview a partner about life experiences:",
       type: "checkbox",
       items: [
         {

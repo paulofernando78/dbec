@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -13,6 +14,12 @@ export const beginnerFoodAndDrinks = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What food and drink do you like?"),
+        "What food and drink do you like?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -83,7 +90,8 @@ export const beginnerFoodAndDrinks = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to the dialogue.",
+      instruction:
+        "Listen once: do Emma and Jake like all the same food and drinks?",
       audioSrc: "",
       lines: [
         {
@@ -129,7 +137,7 @@ export const beginnerFoodAndDrinks = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -259,25 +267,41 @@ export const beginnerFoodAndDrinks = {
       {
         as: "span",
         parts: ["If I like pizza, do I enjoy pizza?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["If I don't like coffee, do I enjoy coffee?"],
+        options: [
+          { option: "No", isCorrect: true },
+          { option: "Yes", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Is 'I don't like tea' positive or negative?"],
+        options: [
+          { option: "Negative", isCorrect: true },
+          { option: "Positive", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: [
           "Does “Can I have water, please?” ask for an item or express a preference?",
         ],
+        options: [
+          { option: "It asks for an item", isCorrect: true },
+          { option: "It expresses a preference", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -351,7 +375,14 @@ export const beginnerFoodAndDrinks = {
         ],
       },
     },
-  },
+  }, [
+    ["I _____ bananas and oranges.", "like", "likes"],
+    ["Do you _____ coffee?", "drink", "drinks"],
+    ["She doesn't _____ meat.", "eat", "eats"],
+    ["I'd _____ some water, please.", "like", "likes"],
+    ["Would you like _____ tea?", "some", "any"],
+    ["We have _____ apples in the kitchen.", "some", "much"],
+  ]),
 
   production: {
     task: {
@@ -365,9 +396,7 @@ export const beginnerFoodAndDrinks = {
           textarea: true,
         },
         {
-          content: [
-            "Report two preferences using “likes” or “doesn’t like”.",
-          ],
+          content: ["Report two preferences using “likes” or “doesn’t like”."],
         },
         {
           content: [

@@ -1,4 +1,5 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateMediaAndMarketing = {
   whiteboard: {
@@ -54,7 +55,8 @@ export const upperIntermediateMediaAndMarketing = {
       ]),
     },
     storyCarousel: {
-      instruction: "Read the situations and notice the target language.",
+      instruction:
+        "Read the campaign descriptions. Which details identify something essential, and which add supplementary information?",
       imgs: [
         {
           src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ENon-defining%3C%2Ftext%3E%3C%2Fsvg%3E",
@@ -101,7 +103,8 @@ export const upperIntermediateMediaAndMarketing = {
   },
   presentation: {
     dialogue: {
-      instruction: "Read the dialogue and identify the target language.",
+      instruction:
+        "Read or listen once: why did the campaign spread widely? Then read or listen again for the extra information about the campaign, channel, and audience.",
       audioSrc: "",
       lines: [
         {
@@ -218,6 +221,12 @@ export const upperIntermediateMediaAndMarketing = {
           "Non-defining clauses use commas and cannot normally use that. In formal structures, place a preposition before whom or which.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Use a non-defining clause for supplementary information, not to identify which person or thing you mean. In speech, mark it with a brief pause and appropriate intonation.",
+        ],
+      },
     ],
     ccq: [
       {
@@ -233,7 +242,7 @@ export const upperIntermediateMediaAndMarketing = {
       { as: "p", parts: ["What does many of whom refer to?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -331,10 +340,15 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     },
-  },
+  }, [
+    ["The campaign, _____ launched in May, targets younger consumers.", "which was", "that it was"],
+    ["The agency hired a designer _____ work had won awards.", "whose", "who"],
+    ["The platform, _____ millions use daily, changed its policy.", "which", "where"],
+    ["The launch took place in June, _____ demand was highest.", "when", "which"],
+  ]),
   production: {
     task: {
-      instruction: "Use the target language to complete the tasks.",
+      instruction: "Analyse a campaign and present its audience and impact:",
       type: "checkbox",
       items: [
         {

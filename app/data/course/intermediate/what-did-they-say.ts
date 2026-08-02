@@ -1,4 +1,5 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateWhatDidTheySay = {
   whiteboard: {
@@ -54,7 +55,8 @@ export const intermediateWhatDidTheySay = {
       ]),
     },
     storyCarousel: {
-      instruction: "Read the situations and notice the target language.",
+      instruction:
+        "Read the situations. Decide whether each speaker reports a statement, a question, or a request.",
       imgs: [
         {
           src: "",
@@ -97,7 +99,8 @@ export const intermediateWhatDidTheySay = {
   },
   presentation: {
     dialogue: {
-      instruction: "Read the dialogue and identify the target language.",
+      instruction:
+        "Read or listen once: why can Carla not attend the meeting? Then read or listen again for the message and request Owen passes on.",
       audioSrc: "",
       lines: [
         { speaker: "Mia", line: ["What did Carla say about the meeting?"] },
@@ -195,6 +198,12 @@ export const intermediateWhatDidTheySay = {
           "Use statement word order in reported questions: asked where it was, not asked where was it.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Change pronouns, time references, and tense only when the reporting context requires it. Preserve the speaker's intended meaning rather than applying backshift mechanically.",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["Are these the speaker's exact original words?"] },
@@ -205,7 +214,7 @@ export const intermediateWhatDidTheySay = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -303,10 +312,15 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     },
-  },
+  }, [
+    ["Mia said she _____ tired.", "was", "is"],
+    ["He asked me where I _____.", "lived", "do live"],
+    ["They told us _____ wait outside.", "to", "for"],
+    ["Ana said she would call me the _____ day.", "next", "tomorrow"],
+  ]),
   production: {
     task: {
-      instruction: "Use the target language to complete the tasks.",
+      instruction: "Pass on messages accurately in a workplace situation:",
       type: "checkbox",
       items: [
         {

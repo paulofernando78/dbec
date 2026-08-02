@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -13,6 +14,12 @@ export const beginnerShopping = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What clothes do you usually buy?"),
+        "What clothes do you usually buy?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -83,7 +90,7 @@ export const beginnerShopping = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to the dialogue.",
+      instruction: "Listen once: is the customer buying food or clothes?",
       audioSrc: "",
       lines: [
         {
@@ -117,7 +124,7 @@ export const beginnerShopping = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -229,24 +236,48 @@ export const beginnerShopping = {
         as: "span",
         parts: [bold("expensive"), " = high price"],
       },
+      {
+        as: "span",
+        parts: [
+          "Use ",
+          bold("this/these"),
+          " for items near you and ",
+          bold("that/those"),
+          " for items farther away. Ask ",
+          bold("How much is/are...?"),
+          " to check the price.",
+        ],
+      },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
         parts: ["Do we use 'this' for one thing or many things?"],
+        options: [
+          { option: "One thing", isCorrect: true },
+          { option: "Many things", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Do we use 'these' for one thing or many things?"],
+        options: [
+          { option: "Many things", isCorrect: true },
+          { option: "One thing", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["If the object is far away, do we use 'this' or 'that'?"],
+        options: [
+          { option: "That", isCorrect: true },
+          { option: "This", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -325,7 +356,14 @@ export const beginnerShopping = {
         ],
       },
     },
-  },
+  }, [
+    ["How _____ is this T-shirt?", "much", "many"],
+    ["I'd like _____ blue shirt, please.", "the", "some"],
+    ["Do you have this _____ medium?", "in", "on"],
+    ["Here you _____.", "are", "is"],
+    ["Can I _____ it on?", "try", "trying"],
+    ["That's too _____.", "expensive", "expense"],
+  ]),
 
   production: {
     task: {
@@ -342,7 +380,7 @@ export const beginnerShopping = {
         },
         {
           content: [
-            "Role-play the customer and shop assistant. Request the item with “Can I have…, please?”",
+            "Role-play the customer and shop assistant. Request the item with “Can I have…, please?” Then change roles.",
           ],
         },
       ],

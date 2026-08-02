@@ -1,4 +1,6 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
+import { audio } from "@/helpers/content";
 
 export const elementaryRules = {
   whiteboard: {
@@ -7,6 +9,12 @@ export const elementaryRules = {
     descriptions: ["You must wear a helmet.", "We have to arrive on time."],
   },
   introduction: {
+    questions: [
+      [
+        audio("Where do you have to follow important rules?"),
+        "Where do you have to follow important rules?",
+      ],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       words: [
@@ -78,8 +86,9 @@ export const elementaryRules = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: where are Leo and the guide? Then listen again and identify what is required and prohibited.",
+      audioSrc: "",
       lines: [
         {
           speaker: "Guide",
@@ -209,6 +218,12 @@ export const elementaryRules = {
           "Mustn't and don't have to are different: prohibited versus not necessary.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Use must for a rule the speaker presents as important and have to for an external requirement. Check the real situation before choosing the form.",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["Is a rule optional?"] },
@@ -216,7 +231,7 @@ export const elementaryRules = {
       { as: "p", parts: ["Does don't have to mean you can choose?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -233,6 +248,20 @@ export const elementaryRules = {
             options: [
               { option: "has to", isCorrect: true },
               { option: "have to", isCorrect: false },
+            ],
+          },
+          {
+            question: "There is no class tomorrow. You _____ come to school.",
+            options: [
+              { option: "don't have to", isCorrect: true },
+              { option: "mustn't", isCorrect: false },
+            ],
+          },
+          {
+            question: "The sign says 'No photos.' You _____ take pictures.",
+            options: [
+              { option: "mustn't", isCorrect: true },
+              { option: "don't have to", isCorrect: false },
             ],
           },
         ],
@@ -280,10 +309,17 @@ export const elementaryRules = {
         ],
       },
     },
-  },
+  }, [
+    ["Passengers _____ show a valid ticket.", "must", "mustn't"],
+    ["You _____ touch the exhibits.", "mustn't", "don't have to"],
+    ["Employees _____ wear an ID badge.", "have to", "has to"],
+    ["She _____ arrive before nine.", "has to", "have to"],
+    ["We don't _____ to bring food.", "have", "must"],
+    ["Do visitors _____ to register?", "have", "must"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Create and explain rules for a shared place:",
       type: "checkbox",
       items: [
         {

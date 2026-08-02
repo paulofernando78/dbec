@@ -3,13 +3,16 @@ import styles from "./Column.module.css";
 import { useRef } from "react";
 import { Ribbon } from "@/components/ui/Ribbon";
 import { Line } from "@/components/content/Line";
+import { Portuguese } from "@/components/content/Portuguese";
 import { useDragScroll } from "@/hooks/useDragScroll";
+import { getColumnTranslation } from "@/data/course/columnTranslations";
 
 type ColumnContentItem = {
   display?: string;
   as?: string;
   parts?: any[];
   lineBreak?: boolean;
+  translation?: string;
 };
 
 type ColumnSpacerItem = {
@@ -20,6 +23,29 @@ type ColumnItem = ColumnContentItem | ColumnSpacerItem;
 
 const isSpacerItem = (item: ColumnItem): item is ColumnSpacerItem =>
   "type" in item && item.type === "spacer";
+
+const getPlainText = (parts: any[] = []) =>
+  parts
+    .map((part) => {
+      if (typeof part === "string") return part;
+      if (!part || typeof part !== "object") return "";
+      if (
+        ["portuguese", "portuguese-bold", "bold-portuguese"].includes(part.type)
+      ) {
+        return "";
+      }
+      return typeof part.part === "string" ? part.part : "";
+    })
+    .join("")
+    .trim();
+
+const hasPortuguese = (parts: any[] = []) =>
+  parts.some(
+    (part) =>
+      part &&
+      typeof part === "object" &&
+      ["portuguese", "portuguese-bold", "bold-portuguese"].includes(part.type),
+  );
 
 type ColumnData = {
   borderColor?: string;
@@ -75,11 +101,19 @@ export const ColumnDrag = ({
                     : undefined;
                 const as =
                   item.as === "p" || item.as === "span" ? item.as : undefined;
+                const translation =
+                  item.translation ??
+                  getColumnTranslation(getPlainText(item.parts));
 
                 return (
                   <div key={index} className={item.lineBreak ? "mb-4" : ""}>
                     {item.parts && (
                       <Line display={display} as={as} value={item.parts} />
+                    )}
+                    {translation && !hasPortuguese(item.parts) && (
+                      <div>
+                        <Portuguese>{translation}</Portuguese>
+                      </div>
                     )}
                   </div>
                 );

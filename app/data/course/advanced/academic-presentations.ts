@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedAcademicPresentations = {
   slug: "academic-presentations",
   whiteboard: {
@@ -68,7 +70,8 @@ export const advancedAcademicPresentations = {
   },
   presentation: {
     dialogue: {
-      instruction: "Two presenters revise the structure of a talk on urban heat.",
+      instruction:
+        "Two presenters revise the structure of a talk on urban heat.",
       audioSrc: "",
       lines: [
         {
@@ -220,7 +223,7 @@ export const advancedAcademicPresentations = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -247,6 +250,25 @@ export const advancedAcademicPresentations = {
                 isCorrect: true,
               },
               { option: "I discussed three things.", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "An audience member asks about a limitation. Which response handles the question most effectively?",
+            options: [
+              {
+                option:
+                  "That is an important limitation. The sample excludes rural areas, so the conclusion should not be generalized nationally.",
+                isCorrect: true,
+              },
+              {
+                option: "That issue is outside my slides.",
+                isCorrect: false,
+              },
+              {
+                option: "The study is still completely reliable.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -307,11 +329,17 @@ export const advancedAcademicPresentations = {
         ],
       },
     },
-  },
+  }, [
+    ["I will begin by defining the issue before _____ to the evidence.", "turning", "turn"],
+    ["This finding is significant _____ it challenges the standard account.", "because", "although"],
+    ["Taken _____, the cases reveal a consistent pattern.", "together", "separately"],
+    ["This brings us _____ the central implication of the study.", "to", "for"],
+    ["I would now like to _____ the limitations of the data.", "address", "addressing"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Deliver a coherent academic presentation and respond to questions:",
       type: "checkbox",
       items: [
         {

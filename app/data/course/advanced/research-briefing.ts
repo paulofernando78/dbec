@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedResearchBriefing = {
   slug: "research-briefing",
   whiteboard: {
@@ -215,7 +217,7 @@ export const advancedResearchBriefing = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -254,6 +256,25 @@ export const advancedResearchBriefing = {
                 isCorrect: true,
               },
               { option: "Ignore the findings entirely.", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "Which opening gives a decision-maker the key message without overstating the evidence?",
+            options: [
+              {
+                option:
+                  "The pilot improved completion rates, but the small sample means a larger controlled trial is needed before rollout.",
+                isCorrect: true,
+              },
+              {
+                option: "The pilot proves the programme will work everywhere.",
+                isCorrect: false,
+              },
+              {
+                option: "This briefing contains several interesting results.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -311,11 +332,17 @@ export const advancedResearchBriefing = {
         ],
       },
     },
-  },
+  }, [
+    ["The observed _____ was an increase of nineteen percentage points.", "change", "cause"],
+    ["A plausible _____ is the introduction of reminders.", "explanation", "proof"],
+    ["A proportionate next _____ would be a controlled pilot.", "step", "certainty"],
+    ["The evidence does not _____ a causal link.", "establish", "establishes"],
+    ["The recommendation should remain _____ to the strength of the evidence.", "proportionate", "proportion"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Brief a decision-maker with a defensible finding, limitation, and recommendation:",
       type: "checkbox",
       items: [
         {

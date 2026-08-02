@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -13,6 +14,9 @@ export const beginnerAbilities = {
   },
 
   introduction: {
+    questions: [
+      [audio("What can you do well?"), "What can you do well?"],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -76,7 +80,7 @@ export const beginnerAbilities = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen and read. What can Jake do?",
+      instruction: "Listen once: can Jake do every activity Emma asks about?",
       audioSrc: "",
       lines: [
         {
@@ -106,7 +110,7 @@ export const beginnerAbilities = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -200,19 +204,31 @@ export const beginnerAbilities = {
       {
         as: "span",
         parts: ["If I can swim, am I able to swim?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["If I can't drive, can I drive a car?"],
+        options: [
+          { option: "No", isCorrect: true },
+          { option: "Yes", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["After 'can', do we use the base verb or 'to + verb'?"],
+        options: [
+          { option: "The base verb", isCorrect: true },
+          { option: "To + verb", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -225,8 +241,7 @@ export const beginnerAbilities = {
             ],
           },
           {
-            question:
-              "Mia is not able to play the guitar. She _____ play it.",
+            question: "Mia is not able to play the guitar. She _____ play it.",
             options: [
               { option: "can't", isCorrect: true },
               { option: "can", isCorrect: false },
@@ -283,7 +298,14 @@ export const beginnerAbilities = {
         ],
       },
     },
-  },
+  }, [
+    ["I _____ swim very well.", "can", "am"],
+    ["_____ you play the guitar?", "Can", "Are"],
+    ["She can't _____ a car.", "drive", "drives"],
+    ["Can he _____ English?", "speak", "speaks"],
+    ["We _____ cook Italian food.", "can", "are"],
+    ["They cannot _____ today.", "come", "coming"],
+  ]),
 
   production: {
     task: {
@@ -291,16 +313,11 @@ export const beginnerAbilities = {
       type: "checkbox",
       items: [
         {
-          content: [
-            mark("Prepare three questions"),
-            " using “Can you…?”",
-          ],
+          content: [mark("Prepare three questions"), " using “Can you…?”"],
           textarea: true,
         },
         {
-          content: [
-            "Ask one or more classmates and record short answers.",
-          ],
+          content: ["Ask one or more classmates and record short answers."],
         },
         {
           content: ["Report three results using a clear can or can’t."],

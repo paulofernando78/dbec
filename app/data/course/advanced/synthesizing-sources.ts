@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedSynthesizingSources = {
   slug: "synthesizing-sources",
   whiteboard: {
@@ -211,7 +213,7 @@ export const advancedSynthesizingSources = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -238,6 +240,25 @@ export const advancedSynthesizingSources = {
               { option: "proves", isCorrect: false },
               { option: "suggests", isCorrect: true },
               { option: "guarantees", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "Source A reports improved access, while Source B identifies uneven regional results. Which synthesis is most accurate?",
+            options: [
+              {
+                option:
+                  "Overall access improved, although the benefit was not distributed evenly across regions.",
+                isCorrect: true,
+              },
+              {
+                option: "Both sources prove that access improved everywhere.",
+                isCorrect: false,
+              },
+              {
+                option: "The sources discuss unrelated topics.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -297,11 +318,17 @@ export const advancedSynthesizingSources = {
         ],
       },
     },
-  },
+  }, [
+    ["_____ sources identify cost as a significant barrier.", "Both", "Each of"],
+    ["The first study reports gains, _____ the second finds no change.", "whereas", "therefore"],
+    ["Taken _____, the findings support a cautious conclusion.", "together", "apart"],
+    ["The later survey _____ the pattern identified in the interviews.", "corroborates", "contradicts"],
+    ["The two accounts _____ primarily in their explanation of the cause.", "diverge", "combine"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Synthesize two sources around relationships between their ideas:",
       type: "checkbox",
       items: [
         {

@@ -69,3 +69,50 @@ body {
   font-family: 'Times New Roman', Times, serif;
   @apply text-blue-500
 }
+
+/*
+ * Expandable content uses a grid transition as a cross-browser fallback.
+ * Browsers that support intrinsic-size interpolation animate height: 0 → auto.
+ */
+.smooth-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    grid-template-rows 350ms ease,
+    opacity 220ms ease;
+}
+
+.smooth-collapse[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.smooth-collapse__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@supports (interpolate-size: allow-keywords) {
+  .smooth-collapse {
+    display: block;
+    height: 0;
+    overflow: clip;
+    interpolate-size: allow-keywords;
+    transition:
+      height 350ms ease,
+      opacity 220ms ease;
+  }
+
+  .smooth-collapse[data-open="true"] {
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smooth-collapse {
+    transition: none;
+  }
+}

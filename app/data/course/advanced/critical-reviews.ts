@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedCriticalReviews = {
   slug: "critical-reviews",
   whiteboard: {
@@ -210,7 +212,7 @@ export const advancedCriticalReviews = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -238,6 +240,25 @@ export const advancedCriticalReviews = {
                 isCorrect: true,
               },
               { option: "It is objectively perfect.", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "Which sentence supports an evaluation with a specific feature?",
+            options: [
+              {
+                option:
+                  "The documentary is persuasive because its interviews connect the statistics to lived experience.",
+                isCorrect: true,
+              },
+              {
+                option: "The documentary is very good and interesting.",
+                isCorrect: false,
+              },
+              {
+                option: "The documentary contains six interviews.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -298,11 +319,17 @@ export const advancedCriticalReviews = {
         ],
       },
     },
-  },
+  }, [
+    ["Its main strength _____ in making the issue emotionally immediate.", "lies", "lays"],
+    ["This achievement is partly _____ by the narrow evidence base.", "undermined", "underlining"],
+    ["On _____, the film succeeds as an accessible introduction.", "balance", "balanced"],
+    ["The recommendation should be judged _____ its intended audience.", "against", "between"],
+    ["The review supports its evaluation _____ specific examples.", "with", "by of"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Produce and peer-review a balanced, criteria-based evaluation:",
       type: "checkbox",
       items: [
         {

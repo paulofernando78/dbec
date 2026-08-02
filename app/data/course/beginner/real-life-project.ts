@@ -1,9 +1,10 @@
 import type { CCQ } from "@/components/content/CCQ";
+import { completePractice } from "@/data/course/completePractice";
 import type { ListProps } from "@/components/content/List";
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
 
-import { content, bold } from "@/helpers/content";
+import { content, audio, bold } from "@/helpers/content";
 
 export const beginnerRealLifeProject = {
   whiteboard: {
@@ -16,6 +17,12 @@ export const beginnerRealLifeProject = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("How do you make a simple plan with a friend?"),
+        "How do you make a simple plan with a friend?",
+      ],
+    ],
     radio: {
       instruction: "Review what you can already do in English.",
       exercise: {
@@ -130,15 +137,23 @@ export const beginnerRealLifeProject = {
       {
         as: "span",
         parts: ["“Let's meet” is a suggestion: yes or no?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Do Laura and Liz agree on a place and a time?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the best expression for each situation.",
       exercise: {
@@ -155,6 +170,27 @@ export const beginnerRealLifeProject = {
             options: [
               { option: "What time?", isCorrect: true },
               { option: "How old?", isCorrect: false },
+            ],
+          },
+          {
+            question: "Your friend cannot meet on Saturday.",
+            options: [
+              { option: "How about Sunday?", isCorrect: true },
+              { option: "Where are you from?", isCorrect: false },
+            ],
+          },
+          {
+            question: "You want to confirm the plan.",
+            options: [
+              { option: "Great. See you there!", isCorrect: true },
+              { option: "I don't have a brother.", isCorrect: false },
+            ],
+          },
+          {
+            question: "You want to invite a friend to play soccer.",
+            options: [
+              { option: "Would you like to play soccer?", isCorrect: true },
+              { option: "Do you play soccer yesterday?", isCorrect: false },
             ],
           },
         ],
@@ -181,7 +217,16 @@ export const beginnerRealLifeProject = {
         ],
       },
     },
-  },
+  }, [
+    ["Let's _____ at the café.", "meet", "meeting"],
+    ["Are you _____ on Saturday?", "free", "time"],
+    ["What _____ should we meet?", "time", "old"],
+    ["How _____ the park?", "about", "is"],
+    ["I can _____ soccer in the afternoon.", "play", "playing"],
+    ["See you _____!", "there", "where"],
+    ["Would you like _____ join us?", "to", "for"],
+    ["That _____ good to me.", "sounds", "sound"],
+  ]),
 
   production: {
     task: {
@@ -191,7 +236,7 @@ export const beginnerRealLifeProject = {
         {
           content: content({
             parts: [
-              "Use these options: activity — soccer, a walk, or coffee; day — Saturday or Sunday; time — 10:00 or 2:00; place — the park or the café.",
+              "Use these options: activity — playing soccer, taking a walk, or having coffee; day — Saturday or Sunday; time — 10:00 or 2:00; place — the park or the café.",
             ],
           }),
         },

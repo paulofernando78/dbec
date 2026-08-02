@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 
 import { Card } from "@/components/ui/Card";
 import { Checkbox } from "@/components/ui/Checkbox";
@@ -61,6 +61,8 @@ export const LessonCard = ({
     const saved = localStorage.getItem(storageKey);
     return saved ? JSON.parse(saved) : false;
   });
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const detailsId = useId();
 
   useEffect(() => {
     if (!storageKey) return;
@@ -70,7 +72,7 @@ export const LessonCard = ({
   }, [storageKey, checked]);
 
   const cardHeader = (
-    <div className="flex items-center gap-2">
+    <div className="flex gap-2">
       {href && (
         <span onClick={(event) => event.stopPropagation()}>
           <Checkbox checked={checked} onCheckedChange={setChecked} />
@@ -162,17 +164,10 @@ export const LessonCard = ({
   return (
     <Card className="mb-4 bg-gray-100">
       {collapsible ? (
-        <details
-          className="
-            [&_.details-minus]:hidden
-            open:[&_.details-plus]:hidden
-            open:[&_.details-minus]:inline
-          "
-        >
-          <summary
+        <div>
+          <div
             className="
             list-none
-            cursor-pointer
             select-none
             flex
             items-center
@@ -181,14 +176,27 @@ export const LessonCard = ({
           >
             {cardHeader}
 
-            <span className="font-bold">
-              <span className="details-plus"><Plus size={18} /></span>
-              <span className="details-minus"><Minus size={18} /></span>
-            </span>
-          </summary>
+            <button
+              type="button"
+              className="cursor-pointer rounded p-1 font-bold hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+              aria-expanded={isDetailsOpen}
+              aria-controls={detailsId}
+              aria-label={isDetailsOpen ? "Hide lesson details" : "Show lesson details"}
+              onClick={() => setIsDetailsOpen((current) => !current)}
+            >
+              {isDetailsOpen ? <Minus size={18} /> : <Plus size={18} />}
+            </button>
+          </div>
 
-          {cardDetails}
-        </details>
+          <div
+            id={detailsId}
+            className="smooth-collapse"
+            data-open={isDetailsOpen}
+            aria-hidden={!isDetailsOpen}
+          >
+            <div className="smooth-collapse__inner">{cardDetails}</div>
+          </div>
+        </div>
       ) : (
         <>
           {href && cardHeader}

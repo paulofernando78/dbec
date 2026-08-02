@@ -52,19 +52,19 @@ export const courseLessonsCardData = {
       label: "My Family",
       objective: "Introduce family members and say how they are related.",
       usefulLanguage:
-        "This is my…; Who’s she/he?; She’s my…; His/Her name is…; Laura’s brother",
+        "This is my…; Who’s he/she?; Who are they?; He’s/She’s my…; They’re my…; His/Her/Their name(s)…",
       vocabulary: "Family members",
       skills:
         "Listening for relationships, spoken interaction, and short writing",
       recycles: "Introductions, names, and the verb be",
       pronunciation:
-        "Who’s /huːz/, she’s /ʃiːz/, and final sounds in family words",
+        "Contractions in who’s, he’s, she’s, and they’re; stress on the person and family word",
       finalTask:
         "Use a photo or drawing to introduce three family members and write three captions.",
       successCriteria: [
         "Name three family relationships.",
         "Use my, his, or her accurately in simple sentences.",
-        "Use one possessive ’s phrase, such as Laura’s brother.",
+        "Ask and answer a Who’s…? or Who are they? question.",
       ],
     },
     // More Family Members
@@ -74,14 +74,14 @@ export const courseLessonsCardData = {
       objective:
         "Describe relationships in extended, married, and blended families.",
       usefulLanguage:
-        "This is my…; He’s her husband.; She’s their daughter.; Who are they?",
+        "This is my…; He’s her husband.; She’s their daughter.; Who are they?; Kate’s husband",
       vocabulary:
         "Husband, wife, son, daughter, nephew, niece, in-laws, stepfather, half-brother",
       skills:
         "Listening for relationships, describing a family tree, and short writing",
-      recycles: "Core family words, possessive adjectives, and possessive ’s",
+      recycles: "Core family words, possessive adjectives, and identifying people",
       pronunciation:
-        "Word stress in husband, daughter, nephew, and compound family words",
+        "Word stress in family words and /s/ or /z/ in possessive ’s",
       finalTask:
         "Create a fictional family tree and describe at least four relationships.",
       successCriteria: [
@@ -133,7 +133,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/my-week",
       label: "My Week",
-      objective: "Talk about weekly habits and say how often activities happen.",
+      objective:
+        "Talk about weekly habits and say how often activities happen.",
       usefulLanguage: "I usually…; I never…; On Mondays…; How often do you…?",
       vocabulary: "Days, months, free-time activities",
       skills:
@@ -151,7 +152,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/beginner/food-and-drinks",
       label: "Food and Drinks",
-      objective: "Ask about food and drink preferences and order one basic item.",
+      objective:
+        "Ask about food and drink preferences and order one basic item.",
       usefulLanguage:
         "I like…; I don’t like…; Do you like…?; Can I have…, please?; Here you are.; Thank you.",
       vocabulary: "Everyday food and drinks",
@@ -270,52 +272,72 @@ export const courseLessonsCardData = {
     },
   ],
   elementary: [
-    // Past: Beach
+    // A Weekend at Home
+    {
+      href: "/courses/elementary/past-home",
+      label: "A Weekend at Home",
+      pronunciation: "Past -ed endings /t/, /d/, and /ɪd/; linking in Did you…?",
+      objective:
+        "Describe completed home activities and say what you did not do.",
+      usefulLanguage:
+        "I stayed home.; I cleaned…; I didn’t…; Did you…?; What did you do?",
+      vocabulary: "Household chores, home and free-time activities",
+      skills: "Listening and spoken interaction",
+      finalTask: "Interview a partner and compare two weekends spent at home.",
+    },
+    // A Day at the Beach
     {
       href: "/courses/elementary/past-beach",
-      label: "Past: Beach",
-      objective: "Describe a past day at the beach and ask what happened.",
-      usefulLanguage: "We went…; I swam…; Did you…?; What did you do?",
+      label: "A Day at the Beach",
+      pronunciation:
+        "Clear irregular past forms and weak pronunciation of did you in follow-up questions",
+      objective:
+        "Describe a past beach day with common irregular verbs and ask for details.",
+      usefulLanguage:
+        "We went…; I swam…; Then we ate…; Did you…?; What did you do?",
       vocabulary: "Beach activities, weather, seaside places",
       skills: "Listening and spoken interaction",
-      finalTask: "Tell a partner about a real or invented beach day.",
+      finalTask:
+        "Tell a partner about a real or invented beach day and answer follow-up questions.",
     },
-    // Past: Movie
+    // Movie Night
     {
       href: "/courses/elementary/past-movies",
-      label: "Past: Movies",
-      objective: "Talk about a recent movie outing and ask follow-up questions.",
-      usefulLanguage: "I saw…; Did you like it?; What happened?; It was…",
+      label: "Movie Night",
+      pronunciation:
+        "Weak did you in past questions and sentence stress in opinions and recommendations",
+      objective:
+        "Talk about a recent movie experience, express an opinion, and ask follow-up questions.",
+      usefulLanguage:
+        "I saw…; Who did you go with?; Did you like it?; It was…; I’d recommend it.",
       vocabulary: "Movies, cinemas, weekend activities",
       skills: "Listening and spoken interaction",
-      finalTask: "Interview a partner about their last movie experience.",
+      finalTask:
+        "Interview a partner about a movie experience and decide which movie to watch.",
     },
-    // Past: Family
+    // A Family Celebration
     {
       href: "/courses/elementary/past-family",
-      label: "Past: Family",
-      objective: "Describe a past family event and sequence its main activities.",
-      usefulLanguage: "We visited…; First…; Then…; After that…; Did everyone…?",
+      label: "A Family Celebration",
+      pronunciation:
+        "Stress and pausing with first, then, after that, and finally; regular past endings",
+      objective:
+        "Tell a short, connected story about a family event in chronological order.",
+      usefulLanguage:
+        "First…; Then…; After that…; Finally…; What happened next?",
       vocabulary: "Family activities, celebrations, special occasions",
       skills: "Listening and spoken narrative",
       finalTask:
-        "Tell a short story about a real or imagined family celebration.",
-    },
-    // Past: Home
-    {
-      href: "/courses/elementary/past-home",
-      label: "Past: Home",
-      objective: "Describe what you did at home during a past day or weekend.",
-      usefulLanguage: "I stayed home.; I cleaned…; I didn’t…; What did you do?",
-      vocabulary: "Household chores, home and free-time activities",
-      skills: "Listening and spoken interaction",
-      finalTask: "Compare how two people spent a weekend at home.",
+        "Tell a real or imagined family story that a partner can retell.",
     },
     // Travels Plans
     {
       href: "/courses/elementary/travel-plans",
       label: "Travel Plans",
-      objective: "Describe a simple travel plan and ask about future intentions.",
+      pronunciation:
+        "Going to in connected speech and sentence stress on destinations and activities",
+      objective:
+        "Describe a simple travel plan and ask about future intentions.",
       usefulLanguage:
         "I’m going to…; Where are you going to stay?; We’re going to visit…",
       vocabulary: "Transport, accommodation, destinations, activities",
@@ -326,7 +348,10 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/future-predictions",
       label: "Future Predictions",
-      objective: "Make and explain simple predictions about everyday future life.",
+      pronunciation:
+        "Contractions with will and won’t; intonation for confident and uncertain predictions",
+      objective:
+        "Make and explain simple predictions about everyday future life.",
       usefulLanguage:
         "I think… will…; Maybe…; I don’t think… will…; What do you think?",
       vocabulary: "Technology, work, transport, future life",
@@ -337,7 +362,10 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/city-life",
       label: "City Life",
-      objective: "Compare two places and explain which one better meets a need.",
+      pronunciation:
+        "Comparative -er endings, weak than, and contrastive stress when comparing places",
+      objective:
+        "Compare two places and explain which one better meets a need.",
       usefulLanguage:
         "It’s bigger than…; It’s more convenient…; I prefer… because…",
       vocabulary: "City features, transport, services, adjectives",
@@ -348,7 +376,10 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/the-best-place",
       label: "The Best Place",
-      objective: "Compare several destinations and justify a simple preference.",
+      pronunciation:
+        "Weak the before superlatives and sentence stress on the quality being compared",
+      objective:
+        "Compare several destinations and justify a simple preference.",
       usefulLanguage:
         "It’s the cheapest…; It has the best…; I’d choose… because…",
       vocabulary: "Travel destinations, attractions, descriptive adjectives",
@@ -378,6 +409,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/rules",
       label: "Rules",
+      pronunciation:
+        "The contrast between must and mustn’t; connected speech in have to and don’t have to",
       objective:
         "Explain familiar rules, obligations, and things that are not allowed.",
       usefulLanguage: "You have to…; You must…; You mustn’t…; Do we have to…?",
@@ -389,6 +422,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/shopping-smart",
       label: "Shopping Smart",
+      pronunciation:
+        "Stress on quantities and clear contrasts in much/many and some/any questions",
       objective:
         "Ask about quantities and choose products for a simple shopping list.",
       usefulLanguage: "How much…?; How many…?; Do we have any…?; We need some…",
@@ -401,7 +436,10 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/experiences",
       label: "Experiences",
-      objective: "Ask about life experiences and give a simple relevant detail.",
+      pronunciation:
+        "Weak have/has, contractions with haven’t/hasn’t, and stress on ever and never",
+      objective:
+        "Ask about life experiences and give a simple relevant detail.",
       usefulLanguage:
         "Have you ever…?; Yes, I have. / No, I haven’t.; When did you…?",
       vocabulary: "Travel, achievements, unusual experiences",
@@ -412,7 +450,10 @@ export const courseLessonsCardData = {
     {
       href: "/courses/elementary/hobbies",
       label: "Hobbies",
-      objective: "Describe hobbies, preferences, and an activity you want to try.",
+      pronunciation:
+        "The -ing ending, contractions in I’d/we’d, and stress in hobby expressions",
+      objective:
+        "Describe hobbies, preferences, and an activity you want to try.",
       usefulLanguage:
         "I enjoy…; I’m interested in…; I’d like to…; How often do you…?",
       vocabulary: "Hobbies, equipment, frequency",
@@ -425,6 +466,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/life-experiences",
       label: "Life Experiences",
+      pronunciation:
+        "Weak have in the Present Perfect and stress on finished-time details in the Past Simple",
       objective:
         "Discuss experiences and add specific details about when they happened.",
       usefulLanguage:
@@ -437,6 +480,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/storytelling",
       label: "Storytelling",
+      pronunciation:
+        "Weak was/were in background actions and prominence on the main events of a story",
       objective:
         "Tell a clear story by setting the scene and sequencing key events.",
       usefulLanguage: "I was… when…; While…; Suddenly…; In the end…",
@@ -448,6 +493,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/making-plans",
       label: "Making Plans",
+      pronunciation:
+        "Contractions in future forms and sentence stress that highlights fixed arrangements",
       objective:
         "Discuss intentions, make arrangements, and agree on a shared plan.",
       usefulLanguage:
@@ -460,7 +507,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/what-if",
       label: "What If?",
-      objective: "Discuss likely future situations and explain their consequences.",
+      objective:
+        "Discuss likely future situations and explain their consequences.",
       usefulLanguage:
         "If…, I’ll…; Unless…; What will happen if…?; It depends on…",
       vocabulary: "Choices, consequences, risk, decisions",
@@ -479,6 +527,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/green-planet",
       label: "Green Planet",
+      pronunciation:
+        "Rhythm across if/when clauses and sentence stress on causes and predictable results",
       objective:
         "Explain environmental cause-and-effect and propose practical action.",
       usefulLanguage: "If people…, it…; When…, …; We could…; One solution is…",
@@ -490,7 +540,10 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/technology-today",
       label: "Technology Today",
-      objective: "Describe a technology clearly and explain what it is used for.",
+      pronunciation:
+        "Weak relative pronouns and natural chunking between the main and defining clauses",
+      objective:
+        "Describe a technology clearly and explain what it is used for.",
       usefulLanguage:
         "It’s a device that…; It’s used for…; The person who…; What I like is…",
       vocabulary: "Devices, apps, features, digital habits",
@@ -501,6 +554,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/news-report",
       label: "News Report",
+      pronunciation:
+        "Weak passive auxiliaries and prominence on the action or result in a news report",
       objective:
         "Summarize a news event and distinguish confirmed facts from details.",
       usefulLanguage:
@@ -513,6 +568,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/what-did-they-say",
       label: "What Did They Say?",
+      pronunciation:
+        "Connected speech in reported clauses and clear stress on the information being passed on",
       objective: "Relay the main points of a conversation accurately.",
       usefulLanguage:
         "She said that…; He told me…; They asked whether…; Apparently…",
@@ -524,6 +581,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/career-path",
       label: "Career Path",
+      pronunciation:
+        "Weak modal forms and contrastive stress to distinguish obligation, advice, and possibility",
       objective: "Discuss workplace expectations and give career advice.",
       usefulLanguage:
         "You should…; You might…; You have to…; You don’t need to…",
@@ -536,6 +595,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/intermediate/relationships",
       label: "Relationships",
+      pronunciation:
+        "Stress patterns in relationship phrasal verbs, including stressed particles where appropriate",
       objective: "Discuss relationship situations and give tactful advice.",
       usefulLanguage:
         "We get along…; They fell out…; You could…; If I were you…",
@@ -550,7 +611,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/dream-scenarios",
       label: "Dream Scenarios",
-      objective: "Explore hypothetical choices and evaluate possible consequences.",
+      objective:
+        "Explore hypothetical choices and evaluate possible consequences.",
       usefulLanguage:
         "If I were…, I’d…; Suppose…; I’d be more likely to…; On balance…",
       vocabulary: "Dreams, ambitions, priorities, life choices",
@@ -568,7 +630,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/regrets",
       label: "Regrets",
-      objective: "Reflect on a past decision and evaluate alternative outcomes.",
+      objective:
+        "Reflect on a past decision and evaluate alternative outcomes.",
       usefulLanguage: "If I had…, I would have…; I wish I’d…; In hindsight…",
       vocabulary: "Decisions, consequences, emotions, reflection",
       skills: "Reading and extended spoken interaction",
@@ -586,6 +649,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/business-communication",
       label: "Business Communication",
+      pronunciation:
+        "Connected modal-perfect forms such as must’ve and should’ve; stress for degree of certainty",
       objective:
         "Communicate degrees of certainty, obligation, and recommendation professionally.",
       usefulLanguage:
@@ -598,6 +663,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/leadership",
       label: "Leadership",
+      pronunciation:
+        "Sentence stress in have/get something done and prominence on the delegated task",
       objective:
         "Delegate work, arrange services, and explain management decisions.",
       usefulLanguage:
@@ -610,6 +677,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/innovation",
       label: "Innovation",
+      pronunciation:
+        "Connected speech in will have and prominence on deadlines and completed milestones",
       objective:
         "Discuss innovation and project what will have changed by a future date.",
       usefulLanguage:
@@ -623,6 +692,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/global-issues",
       label: "Global Issues",
+      pronunciation:
+        "Prominence in reporting passives and intonation that distinguishes claims from confirmed facts",
       objective:
         "Explain a global issue objectively and compare possible responses.",
       usefulLanguage:
@@ -635,6 +706,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/debate-club",
       label: "Debate Club",
+      pronunciation:
+        "Pausing after discourse markers and contrastive intonation in concessions and rebuttals",
       objective:
         "Build a reasoned argument and respond constructively to opposition.",
       usefulLanguage:
@@ -648,6 +721,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/media-and-marketing",
       label: "Media and Marketing",
+      pronunciation:
+        "Pauses around non-defining relative clauses and prominence on supplementary information",
       objective: "Evaluate a campaign and explain how it targets an audience.",
       usefulLanguage:
         "The audience it targets…; What makes it effective is…; Whereas…",
@@ -659,6 +734,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/native-like-english",
       label: "Idiomatic English in Context",
+      pronunciation:
+        "Chunk stress and conversational intonation in fixed idiomatic expressions",
       objective:
         "Infer and use a small set of common idiomatic expressions appropriately.",
       usefulLanguage:
@@ -672,6 +749,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/upper-intermediate/natural-english",
       label: "Natural English",
+      pronunciation:
+        "Chunking in collocations and appropriate particle stress in common phrasal verbs",
       objective:
         "Use common collocations and phrasal verbs to speak more precisely.",
       usefulLanguage:
@@ -687,6 +766,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/reading-between-the-lines",
       label: "Reading Between the Lines",
+      pronunciation:
+        "Intonation and prominence that signal qualification, reservation, and implied stance",
       objective:
         "Infer stance and implied meaning, then justify an interpretation with linguistic evidence.",
       usefulLanguage:
@@ -699,6 +780,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/synthesizing-sources",
       label: "Synthesizing Sources",
+      pronunciation:
+        "Contrastive stress between sources and pausing that clarifies synthesis relationships",
       objective:
         "Integrate complementary and conflicting information into a coherent neutral synthesis.",
       usefulLanguage:
@@ -711,6 +794,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/building-complex-arguments",
       label: "Building Complex Arguments",
+      pronunciation:
+        "Prominence and intonation across claims, concessions, rebuttals, and qualified conclusions",
       objective:
         "Develop a nuanced argument, address a counterargument, and defend a conclusion.",
       usefulLanguage:
@@ -723,6 +808,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/diplomatic-communication",
       label: "Diplomatic Communication",
+      pronunciation:
+        "Fall-rise intonation and softened prominence in hedged disagreement and proposals",
       objective:
         "Communicate disagreement or sensitive feedback clearly while preserving rapport.",
       usefulLanguage:
@@ -735,6 +822,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/academic-presentations",
       label: "Academic Presentations",
+      pronunciation:
+        "Strategic pausing, signposting stress, and intonation that marks connections and conclusions",
       objective:
         "Deliver a coherent presentation on a complex topic and handle follow-up questions.",
       usefulLanguage:
@@ -748,6 +837,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/mediation-and-clarification",
       label: "Mediation and Clarification",
+      pronunciation:
+        "Chunking complex information and intonation that signals reformulation and clarification",
       objective:
         "Reformulate complex information for a non-specialist and repair misunderstanding.",
       usefulLanguage:
@@ -761,6 +852,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/critical-reviews",
       label: "Critical Reviews",
+      pronunciation:
+        "Evaluative prominence and concession intonation when balancing strengths and limitations",
       objective:
         "Evaluate a cultural work against explicit criteria and support a balanced judgment.",
       usefulLanguage:
@@ -774,6 +867,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/negotiation-and-consensus",
       label: "Negotiation and Consensus",
+      pronunciation:
+        "Conditional-offer intonation and purposeful pausing while stating priorities and conditions",
       objective:
         "Negotiate competing priorities and formulate a workable consensus.",
       usefulLanguage:
@@ -787,6 +882,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/precision-and-nuance",
       label: "Precision and Nuance",
+      pronunciation:
+        "Prominence on hedges and certainty markers to calibrate the strength of a claim",
       objective:
         "Express fine degrees of certainty, attitude, emphasis, and qualification.",
       usefulLanguage:
@@ -800,6 +897,8 @@ export const courseLessonsCardData = {
     {
       href: "/courses/advanced/research-briefing",
       label: "Research Briefing",
+      pronunciation:
+        "Prominence that separates findings, limitations, interpretations, and recommendations",
       objective:
         "Synthesize evidence, distinguish fact from inference, and justify recommendations.",
       usefulLanguage:

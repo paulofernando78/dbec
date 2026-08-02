@@ -1,4 +1,6 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
+import { audio } from "@/helpers/content";
 
 export const elementaryCityLife = {
   whiteboard: {
@@ -10,6 +12,12 @@ export const elementaryCityLife = {
     ],
   },
   introduction: {
+    questions: [
+      [
+        audio("Do you prefer city life or life in a small town? Why?"),
+        "Do you prefer city life or life in a small town? Why?",
+      ],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       words: [
@@ -81,8 +89,9 @@ export const elementaryCityLife = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: which place is quieter, Metro City or Ben's hometown? Then listen again for the comparisons.",
+      audioSrc: "",
       lines: [
         { speaker: "Ana", line: ["Do you like living in Metro City?"] },
         { speaker: "Ben", line: ["Yes, but it is noisier than my hometown."] },
@@ -189,6 +198,12 @@ export const elementaryCityLife = {
           "Use than after the comparative: The city is bigger than the town.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Use comparatives to support a real choice between two places. Avoid double comparatives: say faster, not more faster.",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["Are we comparing one place or two?"] },
@@ -196,7 +211,7 @@ export const elementaryCityLife = {
       { as: "p", parts: ["Do we say more faster or faster?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -213,6 +228,23 @@ export const elementaryCityLife = {
             options: [
               { option: "faster", isCorrect: true },
               { option: "more fast", isCorrect: false },
+            ],
+          },
+          {
+            question: "Which sentence compares two places?",
+            options: [
+              {
+                option: "Downtown is noisier than my neighborhood.",
+                isCorrect: true,
+              },
+              { option: "Downtown is very noisy.", isCorrect: false },
+            ],
+          },
+          {
+            question: "You prefer the park because it is _____.",
+            options: [
+              { option: "quieter than the main square", isCorrect: true },
+              { option: "the quieter the main square", isCorrect: false },
             ],
           },
         ],
@@ -260,10 +292,17 @@ export const elementaryCityLife = {
         ],
       },
     },
-  },
+  }, [
+    ["The city center is _____ than my neighborhood.", "noisier", "noisy"],
+    ["Buses are _____ crowded than trains here.", "less", "least"],
+    ["This street is _____ than the main avenue.", "narrower", "more narrow"],
+    ["Living downtown is _____ expensive.", "more", "most"],
+    ["The park is _____ than the shopping district.", "greener", "green"],
+    ["Which area is _____ for families?", "better", "gooder"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Compare two places and decide which one you prefer:",
       type: "checkbox",
       items: [
         {

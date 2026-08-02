@@ -1,4 +1,6 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
+import { audio } from "@/helpers/content";
 
 export const elementaryTheBestPlace = {
   whiteboard: {
@@ -10,6 +12,12 @@ export const elementaryTheBestPlace = {
     ],
   },
   introduction: {
+    questions: [
+      [
+        audio("What is the best place to visit near your home?"),
+        "What is the best place to visit near your home?",
+      ],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       words: [
@@ -81,8 +89,9 @@ export const elementaryTheBestPlace = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: which two places does Sam recommend? Then listen again for the reasons.",
+      audioSrc: "",
       lines: [
         { speaker: "Lia", line: ["What is the best place to visit here?"] },
         {
@@ -183,6 +192,12 @@ export const elementaryTheBestPlace = {
         as: "p",
         parts: ["Use the before a superlative: It is the best place."],
       },
+      {
+        as: "p",
+        parts: [
+          "A superlative compares one place with a whole group. Give a reason after the claim: It's the best café because the service is friendly.",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["Are we comparing two places or a whole group?"] },
@@ -190,7 +205,7 @@ export const elementaryTheBestPlace = {
       { as: "p", parts: ["Do we say the most beautiful or the beautifulest?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -207,6 +222,27 @@ export const elementaryTheBestPlace = {
             options: [
               { option: "the most peaceful", isCorrect: true },
               { option: "the peacefulest", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "Which sentence recommends one place above all the others?",
+            options: [
+              {
+                option: "The market is the liveliest place in town.",
+                isCorrect: true,
+              },
+              {
+                option: "The market is livelier than the café.",
+                isCorrect: false,
+              },
+            ],
+          },
+          {
+            question: "For a quiet afternoon, the park is _____.",
+            options: [
+              { option: "the best choice", isCorrect: true },
+              { option: "the better choice in all", isCorrect: false },
             ],
           },
         ],
@@ -254,10 +290,17 @@ export const elementaryTheBestPlace = {
         ],
       },
     },
-  },
+  }, [
+    ["This is _____ oldest building in town.", "the", "a"],
+    ["The river walk is the _____ relaxing place.", "most", "more"],
+    ["Saturday is the _____ day at the market.", "busiest", "busier"],
+    ["That café serves the _____ coffee.", "best", "better"],
+    ["It is the _____ viewpoint in the city.", "highest", "higher"],
+    ["Which attraction is the _____ popular?", "most", "more"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Recommend the best local place for a visitor:",
       type: "checkbox",
       items: [
         {

@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -13,7 +14,6 @@ import {
   underline,
   lineBreak,
   spacer,
-  icon,
 } from "@/helpers/content";
 
 export const beginnerHello = {
@@ -24,6 +24,12 @@ export const beginnerHello = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What do you say when you meet someone for the first time?"),
+        "What do you say when you meet someone for the first time?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures. Listen to the sentences.",
       imgs: [
@@ -145,8 +151,9 @@ export const beginnerHello = {
 
   presentation: {
     dialogue: {
-      instruction: "Laura and Eric meet for the first time. Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Laura and Eric meet for the first time. Listen once: do they know each other already?",
+      audioSrc: "",
       lines: [
         {
           speaker: "Laura",
@@ -154,7 +161,7 @@ export const beginnerHello = {
         },
         {
           speaker: "Eric",
-          line: ["Hello! I'm Eric, Eric "],
+          line: ["Hello! I’m Eric."],
         },
         {
           speaker: "Laura",
@@ -162,7 +169,7 @@ export const beginnerHello = {
         },
         {
           speaker: "Eric",
-          line: ["It‘s Eric."],
+          line: ["Eric."],
         },
         {
           speaker: "Laura",
@@ -181,6 +188,34 @@ export const beginnerHello = {
           line: ["Bye!"],
         },
       ],
+    },
+    radio: {
+      instruction: "Listen again and choose the correct answer.",
+      exercise: {
+        questions: [
+          {
+            question: "Do Laura and Eric already know each other?",
+            options: [
+              { option: "No, they are meeting for the first time.", isCorrect: true },
+              { option: "Yes, they are old friends.", isCorrect: false },
+            ],
+          },
+          {
+            question: "Why does Laura say “Please repeat”?",
+            options: [
+              { option: "She does not hear Eric's name clearly.", isCorrect: true },
+              { option: "She wants to leave.", isCorrect: false },
+            ],
+          },
+          {
+            question: "Where will Laura and Eric see each other again?",
+            options: [
+              { option: "In class.", isCorrect: true },
+              { option: "At the airport.", isCorrect: false },
+            ],
+          },
+        ],
+      },
     },
   },
 
@@ -252,21 +287,13 @@ export const beginnerHello = {
       {
         display: "block",
         as: "span",
-        parts: [
-          audio(
-            "Good.",
-          ),
-          "Good. ",
-          italic("informal"),
-        ],
+        parts: [audio("Good."), "Good. ", italic("informal")],
       },
       {
         display: "block",
         as: "span",
         parts: [
-          audio(
-            "I’m pretty good.",
-          ),
+          audio("I’m pretty good."),
           "(I’m) pretty good. ",
           italic("informal"),
         ],
@@ -275,12 +302,7 @@ export const beginnerHello = {
       {
         display: "block",
         as: "span",
-        parts: [
-          audio(
-            "How’s it going?",
-          ),
-          "How’s it going?",
-        ],
+        parts: [audio("How’s it going?"), "How’s it going?"],
       },
     ] satisfies Meaning[],
     meetingSomeone: [
@@ -321,20 +343,61 @@ export const beginnerHello = {
     notes: [
       {
         as: "span",
-        parts: [audio("I’m, I am"), bold("I’m"), icon("arrow"), bold("I am")],
+        parts: [
+          "Use ",
+          bold("Hi"),
+          " or ",
+          bold("Hello"),
+          " to open a first meeting, then ask ",
+          bold("What’s your name?"),
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          audio("I’m. What’s your name?"),
+          bold("I’m"),
+          " and ",
+          bold("What’s"),
+          " are the usual conversational forms of ",
+          bold("I am"),
+          " and ",
+          bold("What is"),
+          ".",
+        ],
       },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
+        parts: ["Do we use “What’s your name?” to ask for a person’s name?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
+      },
+      {
+        as: "span",
         parts: [
-          "...",
+          "Does “Nice to meet you” normally begin or follow an introduction?",
+        ],
+        options: [
+          { option: "It follows an introduction", isCorrect: true },
+          { option: "It asks someone to leave", isCorrect: false },
+        ],
+      },
+      {
+        as: "span",
+        parts: ["What can you say when you do not hear a name clearly?"],
+        options: [
+          { option: "Please repeat", isCorrect: true },
+          { option: "Good night", isCorrect: false },
         ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -424,7 +487,13 @@ export const beginnerHello = {
         ],
       },
     },
-  },
+  }, [
+    ["I _____ Ana.", "am", "is"],
+    ["What _____ your name?", "is", "are"],
+    ["Nice to _____ you.", "meet", "met"],
+    ["_____ are you from?", "Where", "What"],
+    ["See you _____!", "later", "name"],
+  ]),
 
   production: {
     task: {
@@ -432,9 +501,7 @@ export const beginnerHello = {
       type: "checkbox",
       items: [
         {
-          content: [
-            "Say hello and introduce yourself using your first name.",
-          ],
+          content: ["Say hello and introduce yourself using your first name."],
         },
         {
           content: [
@@ -442,9 +509,7 @@ export const beginnerHello = {
           ],
         },
         {
-          content: [
-            "Say “Nice to meet you” and end with “See you!” or “Bye!”",
-          ],
+          content: ["Say “Nice to meet you” and end with “See you!” or “Bye!”"],
         },
       ],
     } satisfies ListProps,

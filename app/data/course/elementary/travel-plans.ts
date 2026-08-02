@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -16,6 +17,12 @@ export const elementaryTravelPlans = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("Where would you like to go on your next trip?"),
+        "Where would you like to go on your next trip?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -100,8 +107,8 @@ export const elementaryTravelPlans = {
   presentation: {
     dialogue: {
       instruction:
-        "Emma and Jake are talking about their travel plans. Listen and read.",
-      audioSrc: "/",
+        "Listen once: where is Jake going, and who is he going with? Then listen again for the planned activities.",
+      audioSrc: "",
       lines: [
         {
           speaker: "Emma",
@@ -301,7 +308,7 @@ export const elementaryTravelPlans = {
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -406,11 +413,17 @@ export const elementaryTravelPlans = {
         ],
       },
     },
-  },
+  }, [
+    ["I'm going to _____ Lisbon next month.", "visit", "visited"],
+    ["Where are you going to _____?", "stay", "stayed"],
+    ["We _____ going to travel by train.", "are", "is"],
+    ["She isn't going to _____ a car.", "rent", "rents"],
+    ["_____ they going to book a hotel?", "Are", "Do"],
+  ]),
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Plan and compare a short trip with a partner:",
       type: "checkbox",
       items: [
         {

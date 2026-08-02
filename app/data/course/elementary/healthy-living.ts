@@ -1,4 +1,6 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
+import { audio } from "@/helpers/content";
 
 export const elementaryHealthyLiving = {
   whiteboard: {
@@ -10,6 +12,12 @@ export const elementaryHealthyLiving = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What healthy habit gives you more energy?"),
+        "What healthy habit gives you more energy?",
+      ],
+    ],
     vocabularyCarousel: {
       instruction: "Match the words to the pictures.",
       words: [
@@ -79,7 +87,8 @@ export const elementaryHealthyLiving = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
+      instruction:
+        "Listen once: which habits are causing Maya's problems? Then listen again for causes and results.",
       audioSrc: "",
       lines: [
         { speaker: "Maya", line: ["I feel tired every morning."] },
@@ -237,7 +246,7 @@ export const elementaryHealthyLiving = {
     ],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct form.",
       exercise: {
@@ -335,7 +344,12 @@ export const elementaryHealthyLiving = {
         ],
       },
     },
-  },
+  }, [
+    ["You _____ drink more water during the day.", "should", "shouldn't"],
+    ["We _____ eat too much processed food.", "shouldn't", "should"],
+    ["I need to _____ more sleep.", "get", "getting"],
+    ["What should I _____ for breakfast?", "eat", "eating"],
+  ]),
 
   production: {
     task: {

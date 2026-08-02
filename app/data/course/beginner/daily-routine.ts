@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -16,6 +17,9 @@ export const beginnerDailyRoutine = {
   },
 
   introduction: {
+    questions: [
+      [audio("What time do you wake up?"), "What time do you wake up?"],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -86,7 +90,8 @@ export const beginnerDailyRoutine = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to the dialogue.",
+      instruction:
+        "Listen once: are Emma and Jake talking about a weekday routine?",
       audioSrc: "",
       lines: [
         {
@@ -116,7 +121,7 @@ export const beginnerDailyRoutine = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -228,19 +233,31 @@ export const beginnerDailyRoutine = {
       {
         as: "span",
         parts: ["Do we use Present Simple for routines or right now?"],
+        options: [
+          { option: "Routines", isCorrect: true },
+          { option: "Only right now", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["In 'She goes to work', do we add -s to the verb?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Is waking up a daily activity?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -339,7 +356,13 @@ export const beginnerDailyRoutine = {
         ],
       },
     },
-  },
+  }, [
+    ["I _____ up at seven o'clock.", "get", "gets"],
+    ["She _____ breakfast before work.", "has", "have"],
+    ["What time _____ you start work?", "do", "does"],
+    ["He _____ to work by bus.", "goes", "go"],
+    ["We _____ dinner at home.", "have", "has"],
+  ]),
 
   production: {
     task: {

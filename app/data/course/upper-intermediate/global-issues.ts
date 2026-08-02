@@ -1,4 +1,5 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
 
 export const upperIntermediateGlobalIssues = {
   whiteboard: {
@@ -54,7 +55,8 @@ export const upperIntermediateGlobalIssues = {
       ]),
     },
     storyCarousel: {
-      instruction: "Read the situations and notice the target language.",
+      instruction:
+        "Read the statements. Which ones report a claim, describe an action, or identify an expected result?",
       imgs: [
         {
           src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EImpersonal%20report%3C%2Ftext%3E%3C%2Fsvg%3E",
@@ -105,7 +107,8 @@ export const upperIntermediateGlobalIssues = {
   },
   presentation: {
     dialogue: {
-      instruction: "Read the dialogue and identify the target language.",
+      instruction:
+        "Read or listen once: which responses to the housing crisis are mentioned? Then read or listen again and distinguish claims from confirmed actions.",
       audioSrc: "",
       lines: [
         {
@@ -216,6 +219,12 @@ export const upperIntermediateGlobalIssues = {
           "Use a perfect infinitive after reporting passives for an earlier event: The talks are reported to have failed.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Reporting passives create distance from a claim. Name the source when credibility matters and avoid presenting an unverified report as an established fact.",
+        ],
+      },
     ],
     ccq: [
       {
@@ -231,7 +240,7 @@ export const upperIntermediateGlobalIssues = {
       { as: "p", parts: ["When do we use to have + past participle?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -332,10 +341,15 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     },
-  },
+  }, [
+    ["The policy is _____ to have displaced thousands of residents.", "believed", "believing"],
+    ["It has been _____ that emissions are rising again.", "reported", "reporting"],
+    ["The agreement is expected to _____ signed next month.", "be", "being"],
+    ["Several communities were _____ by the flooding.", "affected", "affecting"],
+  ]),
   production: {
     task: {
-      instruction: "Use the target language to complete the tasks.",
+      instruction: "Brief a partner objectively on a complex public issue:",
       type: "checkbox",
       items: [
         {

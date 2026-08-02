@@ -196,13 +196,13 @@ const notes = [
 export const TheAlphabet = () => {
   return (
     <>
-      <Ribbon label="The Alphabet" bgColor="bg-slate-500"/>
+      <Ribbon label="The Alphabet" bgColor="bg-slate-500" />
       <LineBreak />
       <Line
         value={[
           ...content({
             audio: "/assets/audio/pronunciation/the-alphabet/26-letters.mp3",
-            parts: ["There are 26 letters in the english alphabet."],
+            parts: ["There are 26 letters in the English alphabet."],
           }),
         ]}
       />

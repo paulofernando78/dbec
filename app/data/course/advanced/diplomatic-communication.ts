@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedDiplomaticCommunication = {
   slug: "diplomatic-communication",
   whiteboard: {
@@ -205,7 +207,7 @@ export const advancedDiplomaticCommunication = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -235,6 +237,25 @@ export const advancedDiplomaticCommunication = {
                 isCorrect: true,
               },
               { option: "Whatever you say.", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "A colleague's draft contains a serious error. Which response is both tactful and actionable?",
+            options: [
+              {
+                option:
+                  "There may be an inconsistency in the second calculation. Could we check the source figures before submitting?",
+                isCorrect: true,
+              },
+              {
+                option: "Your calculation is obviously careless.",
+                isCorrect: false,
+              },
+              {
+                option: "The draft is perhaps not entirely ideal.",
+                isCorrect: false,
+              },
             ],
           },
         ],
@@ -294,11 +315,17 @@ export const advancedDiplomaticCommunication = {
         ],
       },
     },
-  },
+  }, [
+    ["I may be _____ some context, but the figures appear inconsistent.", "missing", "losing"],
+    ["There _____ have been a misunderstanding about the deadline.", "may", "must"],
+    ["Would it be _____ to review the wording together?", "possible", "possibly"],
+    ["I can see the reasoning, _____ I reach a different conclusion.", "although", "because"],
+    ["Perhaps we _____ explore an alternative approach.", "could", "must"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Resolve a sensitive workplace disagreement while protecting the relationship:",
       type: "checkbox",
       items: [
         {

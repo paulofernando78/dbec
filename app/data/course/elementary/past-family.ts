@@ -1,32 +1,18 @@
-import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
 
 export const elementaryPastFamily = {
   whiteboard: {
     title: "A2 Elementary",
-    subtitle: "Family",
-    descriptions: ["I visited my family. We had lunch together."],
+    subtitle: "A Family Celebration",
+    descriptions: ["First we prepared lunch. Then we celebrated a birthday."],
   },
   introduction: {
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "relatives" },
-        { src: "/", alt: "family lunch" },
-        { src: "/", alt: "birthday cake" },
-        { src: "/", alt: "photo album" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "relatives" }, "relatives"] },
-        { as: "span", parts: [{ audio: "family lunch" }, "family lunch"] },
-        { as: "span", parts: [{ audio: "birthday cake" }, "birthday cake"] },
-        { as: "span", parts: [{ audio: "photo album" }, "photo album"] },
-      ]),
-    },
     storyCarousel: {
-      instruction: "Look at the pictures and listen to the sentences.",
+      instruction:
+        "Look at the pictures. What did the family celebrate? Then listen and check.",
       imgs: [
         {
-          src: "/",
+          src: "/assets/img/course/a1/more-family-members/introduction/extended-family.png",
           alt: "Daniel visiting his grandparents",
           content: [
             { audio: "Daniel visited his grandparents on Saturday." },
@@ -37,7 +23,7 @@ export const elementaryPastFamily = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/more-family-members/introduction/extended-family.png",
           alt: "Daniel helping his grandfather",
           content: [
             { audio: "He helped his grandfather in the garden." },
@@ -48,7 +34,7 @@ export const elementaryPastFamily = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/Lauras-birthday.png",
           alt: "The family preparing lunch",
           content: [
             { audio: "His grandmother cooked a big family lunch." },
@@ -62,7 +48,7 @@ export const elementaryPastFamily = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/Lauras-birthday.png",
           alt: "The family celebrating a birthday",
           content: [
             { audio: "They celebrated his cousin's birthday." },
@@ -76,7 +62,7 @@ export const elementaryPastFamily = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/my-family/presentation/laura-liz-photo-album.avif",
           alt: "The family looking at old photographs",
           content: [
             { audio: "They looked at old family photos." },
@@ -90,7 +76,7 @@ export const elementaryPastFamily = {
           ],
         },
         {
-          src: "/",
+          src: "/assets/img/course/a1/more-family-members/introduction/extended-family.png",
           alt: "Daniel saying goodbye to his family",
           content: [
             { audio: "Daniel hugged everyone before he left." },
@@ -129,8 +115,9 @@ export const elementaryPastFamily = {
   },
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once. Was Daniel's visit an ordinary day or a celebration? Then listen again for details.",
+      audioSrc: "",
       lines: [
         { speaker: "Mia", line: ["Hi Daniel. What did you do on Saturday?"] },
         { speaker: "Daniel", line: ["I visited my grandparents."] },
@@ -183,30 +170,26 @@ export const elementaryPastFamily = {
       {
         as: "p",
         parts: [
-          "Use the ",
-          { part: "Past Simple", type: "bold" },
-          " to talk about finished actions in the past.",
+          "A clear story gives events in ",
+          { part: "chronological order", type: "bold" },
+          ": beginning, middle, and end.",
         ],
       },
       { type: "spacer" },
       {
         as: "p",
         parts: [
-          "Regular verbs usually end in ",
-          { part: "-ed", type: "bold" },
-          ": watched, played, visited.",
+          "Use ",
+          { part: "first, then, after that", type: "bold" },
+          ", and ",
+          { part: "finally", type: "bold" },
+          " to help the listener follow the story.",
         ],
       },
       {
         as: "p",
         parts: [
-          "Some verbs are irregular: go ",
-          { part: "➜ went", type: "bold" },
-          ", have ",
-          { part: "➜ had", type: "bold" },
-          ", eat ",
-          { part: "➜ ate", type: "bold" },
-          ".",
+          "Use Past Simple verbs for the events: visited, helped, cooked, had, gave, and left.",
         ],
       },
     ],
@@ -217,118 +200,89 @@ export const elementaryPastFamily = {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Questions",
+          column: "Keep the story going",
           items: [
             {
-              parts: [{ part: "Did", type: "bold" }, " + subject + base verb:"],
+              parts: [{ part: "Follow-up questions", type: "bold" }],
             },
             { type: "spacer" },
             {
               parts: [
-                { audio: "What did you do last weekend?" },
-                "What did you do last weekend?",
+                { audio: "What happened first?" },
+                "What happened first?",
               ],
             },
-            { parts: [{ audio: "Where did you go?" }, "Where did you go?"] },
+            {
+              parts: [{ audio: "What happened next?" }, "What happened next?"],
+            },
+            { parts: [{ audio: "Who was there?" }, "Who was there?"] },
             {
               parts: [
-                { audio: "Who did you go with?" },
-                "Who did you go with?",
+                { audio: "How did everyone feel?" },
+                "How did everyone feel?",
               ],
             },
-            { parts: [{ audio: "Did you have fun?" }, "Did you have fun?"] },
           ],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "Answers",
+          column: "Tell the story",
           items: [
             {
               parts: [
-                { audio: "I visited my grandparents." },
-                "I visited my grandparents.",
+                { audio: "First, I visited my grandparents." },
+                "First, I visited my grandparents.",
               ],
             },
             {
               parts: [
-                { audio: "I went with my parents." },
-                "I went with my parents.",
+                { audio: "Then, we prepared lunch." },
+                "Then, we prepared lunch.",
               ],
             },
             {
               parts: [
-                { audio: "We had a family lunch." },
-                "We had a family lunch.",
+                { audio: "After that, we celebrated a birthday." },
+                "After that, we celebrated a birthday.",
               ],
             },
-            { parts: [{ audio: "Yes, we had fun." }, "Yes, we had fun."] },
+            {
+              parts: [
+                { audio: "Finally, I hugged everyone and left." },
+                "Finally, I hugged everyone and left.",
+              ],
+            },
           ],
         },
       ],
     },
     columnVerbs: {
-      width: 300,
+      width: 260,
       cols: [
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "/t/",
+          column: "Story stage",
           items: [
-            {
-              as: "span",
-              parts: [
-                { audio: "watch" },
-                "watch ➜ ",
-                { audio: "watched" },
-                "watch",
-                { part: "ed", type: "bold" },
-                " ",
-                { part: "/t/", type: "phonetics" },
-              ],
-            },
+            { parts: [{ part: "Beginning", type: "bold" }] },
+            { parts: [{ part: "Next event", type: "bold" }] },
+            { parts: [{ part: "Later event", type: "bold" }] },
+            { parts: [{ part: "Ending", type: "bold" }] },
           ],
         },
         {
           borderColor: "border-slate-500",
           bgColor: "bg-slate-400",
           textColor: "text-white",
-          column: "/d/",
+          column: "Sequencer",
           items: [
-            {
-              as: "span",
-              parts: [
-                { audio: "play" },
-                "play ➜ ",
-                { audio: "played" },
-                "play",
-                { part: "ed", type: "bold" },
-                " ",
-                { part: "/d/", type: "phonetics" },
-              ],
-            },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "/ɪd/",
-          items: [
-            {
-              as: "span",
-              parts: [
-                { audio: "visit" },
-                "visit ➜ ",
-                { audio: "visited" },
-                "visit",
-                { part: "ed", type: "bold" },
-                " ",
-                { part: "/ɪd/", type: "phonetics" },
-              ],
-            },
+            { parts: [{ audio: "First" }, "First, …"] },
+            { parts: [{ audio: "Then" }, "Then, …"] },
+            { parts: [{ audio: "After that" }, "After that, …"] },
+            { parts: [{ audio: "Finally" }, "Finally, …"] },
           ],
         },
       ],
@@ -337,26 +291,43 @@ export const elementaryPastFamily = {
       {
         as: "p",
         parts: [
-          "Don't say: Did you ",
-          { part: "went", type: "bold" },
-          "? Say: Did you ",
-          { part: "go", type: "bold" },
-          "?",
+          "Use sequencers to connect events, but do not begin every sentence with ",
+          { part: "then", type: "bold" },
+          ".",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          "Use follow-up questions such as What happened next? and How did everyone feel? to keep a family story moving.",
         ],
       },
     ],
     ccq: [
       {
-        parts: [
-          'In the sentence: "Daniel visited his grandparents on Saturday."',
+        parts: ["Does first introduce the beginning or the ending?"],
+        options: [
+          { option: "The beginning", isCorrect: true },
+          { option: "The ending", isCorrect: false },
         ],
       },
-      { parts: ["Are we talking about the past or the future?"] },
-      { parts: ["Is the action finished?"] },
-      { parts: ["After did, do we use the base verb or the past form?"] },
+      {
+        parts: ["Does finally normally introduce the last event?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
+      },
+      {
+        parts: ["Which question asks for the next event?"],
+        options: [
+          { option: "What happened next?", isCorrect: true },
+          { option: "Who is it?", isCorrect: false },
+        ],
+      },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -369,10 +340,10 @@ export const elementaryPastFamily = {
             ],
           },
           {
-            question: "My uncle _____ us an old photo.",
+            question: "_____ that, we looked at old photos.",
             options: [
-              { option: "showed", isCorrect: true },
-              { option: "show", isCorrect: false },
+              { option: "After", isCorrect: true },
+              { option: "First of", isCorrect: false },
             ],
           },
         ],
@@ -418,41 +389,50 @@ export const elementaryPastFamily = {
       exercise: {
         items: [
           {
-            prompt: "grandparents / visited / my / I",
-            answer: "I visited my grandparents.",
+            prompt: "grandparents / first / my / visited / I",
+            answer: "First, I visited my grandparents.",
           },
           {
-            prompt: "lunch / family / had / we / a",
-            answer: "We had a family lunch.",
+            prompt: "lunch / then / family / had / we / a",
+            answer: "Then, we had a family lunch.",
           },
           {
-            prompt: "birthday / celebrated / they / a",
-            answer: "They celebrated a birthday.",
+            prompt: "finally / cake / ate / they",
+            answer: "Finally, they ate cake.",
           },
         ],
       },
     },
-  },
+  }, [
+    ["We _____ our grandparents last weekend.", "visited", "visit"],
+    ["What _____ your family do on Sunday?", "did", "does"],
+    ["My aunt _____ lunch for everyone.", "cooked", "cook"],
+    ["The children _____ games in the garden.", "played", "play"],
+    ["It _____ a special family day.", "was", "were"],
+    ["We didn't _____ home early.", "go", "went"],
+  ]),
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Tell a family celebration story:",
       type: "checkbox",
       items: [
         {
           content: [
-            "Write five sentences about a special day with your family.",
+            "Prepare six keywords for a real or invented event: occasion, people, place, beginning, middle, and ending.",
           ],
-          textarea: true,
-        },
-        {
-          content: ["Write three Past Simple questions and answer them."],
           textarea: true,
         },
         {
           content: [
-            "Interview a classmate about a special day with your family.",
+            "Tell the story without reading complete sentences. Use at least three sequencers.",
           ],
         },
+        {
+          content: [
+            "Your partner asks two follow-up questions and then retells the main events in order.",
+          ],
+        },
+        { content: ["Change roles and repeat."] },
       ],
     },
   },

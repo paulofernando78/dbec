@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Paragraph } from "@/components/content/Paragraph";
@@ -17,6 +17,7 @@ interface CollapsibleProps {
 
 export const Script = ({ title, content }: CollapsibleProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const contentId = useId();
 
   const toggleCollapsible = () => {
     setIsOpen((prev) => !prev);
@@ -29,6 +30,8 @@ export const Script = ({ title, content }: CollapsibleProps) => {
             variant="answer"
             icon={isOpen ? <EyeClosed /> : <Eye />}
             onClick={toggleCollapsible}
+            aria-expanded={isOpen}
+            aria-controls={contentId}
           >
             <span className="pr-[.14rem] font-bold text-yellow-800">
               Script
@@ -36,19 +39,26 @@ export const Script = ({ title, content }: CollapsibleProps) => {
           </Button>
         </div>
       </div>
-      {isOpen && (
-        <div className="border rounded-lg overflow-hidden">
-          <div className="h-100 overflow-scroll bg-white p-3 ">
-            {/* <AudioPlayer src="" /> */}
-            {content.map((line) => (
-              <div key={line.pt} className="mb-4 last:mb-0">
-                <Paragraph value={line.en} />
-                <p className="text-gray-500">{line.pt}</p>
-              </div>
-            ))}
+      <div
+        id={contentId}
+        className="smooth-collapse"
+        data-open={isOpen}
+        aria-hidden={!isOpen}
+      >
+        <div className="smooth-collapse__inner">
+          <div className="border rounded-lg overflow-hidden">
+            <div className="h-100 overflow-scroll bg-white p-3 ">
+              {/* <AudioPlayer src="" /> */}
+              {content.map((line) => (
+                <div key={line.pt} className="mb-4 last:mb-0">
+                  <Paragraph value={line.en} />
+                  <p className="text-gray-500">{line.pt}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

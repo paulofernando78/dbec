@@ -1,4 +1,5 @@
 import type { CCQ } from "@/components/content/CCQ";
+import { completePractice } from "@/data/course/completePractice";
 import type { ListProps } from "@/components/content/List";
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
@@ -9,18 +10,14 @@ export const beginnerMoreFamilyMembers = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "More Family Members",
-    descriptions: [
-      "This is my husband, Daniel.",
-      "Sofia is my half-sister.",
-    ],
+    descriptions: ["This is my husband, Daniel.", "Sofia is my half-sister."],
   },
 
   introduction: {
     instruction: ["Think about different kinds of families."],
     imgSrc:
       "/assets/img/course/a1/more-family-members/introduction/extended-family.png",
-    imgAlt:
-      "Laura with members of her extended, married, and blended family",
+    imgAlt: "Laura with members of her extended, married, and blended family",
     questions: [
       [
         audio("Who lives in your home?"),
@@ -58,8 +55,9 @@ export const beginnerMoreFamilyMembers = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen and read.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: is Laura describing a small immediate family or a larger extended family?",
+      audioSrc: "",
       lines: [
         {
           speaker: "Laura",
@@ -77,7 +75,9 @@ export const beginnerMoreFamilyMembers = {
         },
         {
           speaker: "Liz",
-          line: ["So their son is your nephew and their daughter is your niece."],
+          line: [
+            "So their son is your nephew and their daughter is your niece.",
+          ],
         },
         {
           speaker: "Laura",
@@ -100,7 +100,7 @@ export const beginnerMoreFamilyMembers = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -134,10 +134,78 @@ export const beginnerMoreFamilyMembers = {
       {
         as: "span",
         parts: [
-          bold("Family words describe relationships, not one fixed family structure."),
+          bold(
+            "Family words describe relationships, not one fixed family structure.",
+          ),
+        ],
+      },
+      {
+        as: "span",
+        parts: [
+          "Use ",
+          bold("person + ’s + family member"),
+          " to show a relationship: ",
+          bold("Kate’s husband"),
+          ".",
         ],
       },
     ] satisfies Meaning[],
+    columnQuestions: {
+      width: 300,
+      cols: [
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Possessive ’s",
+          items: [
+            {
+              parts: [
+                audio("Kate’s husband"),
+                "Kate’s husband ",
+                portuguese("o marido da Kate"),
+              ],
+            },
+            {
+              parts: [
+                audio("Laura’s nephew"),
+                "Laura’s nephew ",
+                portuguese("o sobrinho da Laura"),
+              ],
+            },
+            {
+              parts: [
+                audio("my sister’s in-laws"),
+                "my sister’s in-laws ",
+                portuguese("os sogros da minha irmã"),
+              ],
+            },
+          ],
+        },
+        {
+          borderColor: "border-slate-500",
+          bgColor: "bg-slate-400",
+          textColor: "text-white",
+          column: "Describe the relationship",
+          items: [
+            {
+              parts: [
+                audio("Daniel is Kate’s husband."),
+                "Daniel is Kate’s husband. ",
+                portuguese("Daniel é o marido da Kate."),
+              ],
+            },
+            {
+              parts: [
+                audio("The boy is Laura’s nephew."),
+                "The boy is Laura’s nephew. ",
+                portuguese("O menino é sobrinho da Laura."),
+              ],
+            },
+          ],
+        },
+      ],
+    },
     column: {
       width: 250,
       cols: [
@@ -235,24 +303,47 @@ export const beginnerMoreFamilyMembers = {
           "When speaking about families, use the words people choose for their own relationships.",
         ],
       },
+      {
+        as: "span",
+        parts: [
+          audio("Kate’s husband. Laura’s nephew."),
+          "The possessive ending is pronounced /s/ after the final sound in ",
+          bold("Kate’s"),
+          " and /z/ in ",
+          bold("Laura’s"),
+          ".",
+        ],
+      },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
         parts: ["Is your sister’s daughter your niece or your wife?"],
+        options: [
+          { option: "Your niece", isCorrect: true },
+          { option: "Your wife", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Does a half-brother share one parent or no parents with you?"],
+        options: [
+          { option: "One parent", isCorrect: true },
+          { option: "No parents", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["Is your spouse’s father your father-in-law?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct family word.",
       exercise: {
@@ -350,7 +441,12 @@ export const beginnerMoreFamilyMembers = {
         ],
       },
     },
-  },
+  }, [
+    ["My mother's brother is my _____.", "uncle", "cousin"],
+    ["My cousin _____ twelve years old.", "is", "are"],
+    ["These _____ my grandparents.", "are", "is"],
+    ["_____ is your aunt?", "Who", "Where"],
+  ]),
 
   production: {
     task: {
@@ -369,6 +465,11 @@ export const beginnerMoreFamilyMembers = {
         {
           content: [
             "Include one sentence with a possessive adjective and one with possessive ’s.",
+          ],
+        },
+        {
+          content: [
+            "Exchange family trees with a partner and ask two questions about the relationships.",
           ],
         },
       ],

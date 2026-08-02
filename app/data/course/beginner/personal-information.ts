@@ -1,4 +1,5 @@
 import type { CCQ } from "@/components/content/CCQ";
+import { completePractice } from "@/data/course/completePractice";
 import type { ListProps } from "@/components/content/List";
 import type { Notes } from "@/components/content/Notes";
 
@@ -12,6 +13,12 @@ export const beginnerPersonalInformation = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What information do people usually share when they meet?"),
+        "What information do people usually share when they meet?",
+      ],
+    ],
     radio: {
       instruction:
         "Choose the information people commonly use to introduce themselves.",
@@ -38,8 +45,9 @@ export const beginnerPersonalInformation = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to Laura and Eric.",
-      audioSrc: "/",
+      instruction:
+        "Listen once: is Liz asking about Laura’s family or her personal information?",
+      audioSrc: "",
       lines: [
         {
           speaker: "Liz",
@@ -84,7 +92,7 @@ export const beginnerPersonalInformation = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -95,7 +103,7 @@ export const beginnerPersonalInformation = {
             ],
           },
           {
-            question: "Liz: “What's your phone number?”",
+            question: "What is Laura's phone number?",
             options: [
               { option: "555-0184", isCorrect: true },
               { option: "Laura Silva", isCorrect: false },
@@ -210,7 +218,7 @@ export const beginnerPersonalInformation = {
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the best response.",
       exercise: {
@@ -234,6 +242,13 @@ export const beginnerPersonalInformation = {
             options: [
               { option: "I'm from Japan.", isCorrect: true },
               { option: "I'm twenty.", isCorrect: false },
+            ],
+          },
+          {
+            question: "How do you spell your last name?",
+            options: [
+              { option: "C-O-S-T-A.", isCorrect: true },
+              { option: "I'm Alex Costa.", isCorrect: false },
             ],
           },
         ],
@@ -280,7 +295,12 @@ export const beginnerPersonalInformation = {
         ],
       },
     },
-  },
+  }, [
+    ["My first _____ is Alex.", "name", "number"],
+    ["How do you _____ Costa?", "spell", "speak"],
+    ["I _____ from Brazil.", "am", "is"],
+    ["What's your phone _____?", "number", "country"],
+  ]),
 
   production: {
     task: {
@@ -310,7 +330,7 @@ export const beginnerPersonalInformation = {
         {
           content: content({
             parts: [
-              "Check that the registration form includes all the required details.",
+              "Read the details back to your partner. Your partner confirms or corrects them.",
             ],
           }),
         },

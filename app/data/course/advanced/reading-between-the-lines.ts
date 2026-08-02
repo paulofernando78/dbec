@@ -1,3 +1,5 @@
+import { completePractice } from "@/data/course/completePractice";
+
 export const advancedReadingBetweenTheLines = {
   slug: "reading-between-the-lines",
   whiteboard: {
@@ -200,7 +202,7 @@ export const advancedReadingBetweenTheLines = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most precise and context-appropriate option.",
       exercise: {
@@ -229,6 +231,18 @@ export const advancedReadingBetweenTheLines = {
                 isCorrect: true,
               },
               { option: "The plan will fail.", isCorrect: false },
+            ],
+          },
+          {
+            question:
+              "The writer calls the result 'encouraging, if preliminary'. What is implied?",
+            options: [
+              {
+                option: "The result is promising but not yet conclusive.",
+                isCorrect: true,
+              },
+              { option: "The result has been disproved.", isCorrect: false },
+              { option: "No further evidence is needed.", isCorrect: false },
             ],
           },
         ],
@@ -288,11 +302,17 @@ export const advancedReadingBetweenTheLines = {
         ],
       },
     },
-  },
+  }, [
+    ["The cautious wording _____ that the writer has reservations.", "suggests", "proves"],
+    ["The result is _____ less decisive than the headline implies.", "arguably", "certainly"],
+    ["The report stops _____ of recommending immediate action.", "short", "near"],
+    ["The remark could be _____ as indirect criticism.", "interpreted", "stated"],
+    ["The contrast _____ that the author doubts the official account.", "implies", "declares"],
+  ]),
   production: {
     task: {
       instruction:
-        "Complete the C1 performance tasks. Support interpretations and claims with specific evidence.",
+        "Interpret a writer's stance and justify every inference with linguistic evidence:",
       type: "checkbox",
       items: [
         {

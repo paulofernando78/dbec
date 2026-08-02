@@ -1,4 +1,5 @@
 import { audio, bold, lineBreak, spacer } from "@/helpers/content";
+import { completePractice } from "@/data/course/completePractice";
 
 const words = [
   { word: "consequence", img: 0 },
@@ -23,7 +24,8 @@ export const intermediateWhatIf = {
   },
   presentation: {
     dialogue: {
-      instruction: "Read the dialogue and identify the target language.",
+      instruction:
+        "Read or listen once: what is the backup plan if it rains? Then read or listen again for the conditions and their consequences.",
       audioSrc: "",
       lines: [
         { speaker: "Kai", line: ["What will we do if it rains tomorrow?"] },
@@ -113,30 +115,6 @@ export const intermediateWhatIf = {
           ],
         },
       ],
-    },
-    radio: {
-      instruction: "Answer the questions.",
-      exercise: {
-        questions: [
-          {
-            question: "What will happen if it rains?",
-            options: [
-              { option: "They will use the hall.", isCorrect: true },
-              { option: "They used the park.", isCorrect: false },
-            ],
-          },
-          {
-            question: "Why do people need to register?",
-            options: [
-              {
-                option: "So the organizers can plan the chairs.",
-                isCorrect: true,
-              },
-              { option: "To cancel the event.", isCorrect: false },
-            ],
-          },
-        ],
-      },
     },
     meaning: [
       {
@@ -255,43 +233,6 @@ export const intermediateWhatIf = {
       },
     ],
     column: {
-      width: 266,
-      cols: [
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-blue-600",
-          textColor: "text-white",
-          column: "Conditional",
-          items: [
-            { as: "p", parts: [bold("If + present simple")] },
-            { as: "p", parts: ["If it rains,"] },
-            { as: "p", parts: ["If you study hard,"] },
-            spacer(),
-            { as: "p", parts: [bold("unless + present simple")] },
-            { as: "p", parts: ["Unless you hurry,"] },
-            { as: "p", parts: ["..."] },
-            { as: "p", parts: ["..."] },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-blue-600",
-          textColor: "text-white",
-          column: "Result",
-          items: [
-            { as: "p", parts: [bold("will/can/may")] },
-            { as: "p", parts: ["we will cancel the trip."] },
-            { as: "p", parts: ["you will pass the exam."] },
-            spacer(),
-            spacer(),
-            { as: "p", parts: ["you will miss the bus. (If you do not hurry, you will miss the bus)"] },
-            { as: "p", parts: ["..."] },
-            { as: "p", parts: ["..."] },
-          ],
-        },
-      ],
-    },
-    column2: {
       width: 320,
       cols: [
         {
@@ -331,7 +272,15 @@ export const intermediateWhatIf = {
     notes: [
       {
         as: "p",
-        parts: ["..."],
+        parts: [
+          "Use the First Conditional for a real future possibility and its likely result: if + Present Simple, will/can/may + base verb.",
+        ],
+      },
+      {
+        as: "p",
+        parts: [
+          "Do not normally use will in the if-clause. Unless means if not: Unless you hurry = If you do not hurry.",
+        ],
       },
     ],
     ccq: [
@@ -344,7 +293,7 @@ export const intermediateWhatIf = {
       { as: "p", parts: ["Which clause describes the result?"] },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -483,10 +432,13 @@ export const intermediateWhatIf = {
         ],
       },
     },
-  },
+  }, [
+    ["If the weather is good, we _____ outside.", "will eat", "eat would"],
+    ["What will you do if the plan _____?", "changes", "will change"],
+  ]),
   production: {
     task: {
-      instruction: "Use the target language to complete the tasks.",
+      instruction: "Discuss a realistic plan and prepare for possible problems:",
       type: "checkbox",
       items: [
         {

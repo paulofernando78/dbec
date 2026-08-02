@@ -32,8 +32,7 @@ const selectBestVoice = (voices: SpeechSynthesisVoice[]) => {
   const findVoice = (term: string) =>
     voices.find(
       (voice) =>
-        voice.lang === "en-US" &&
-        voice.name.toLowerCase().includes(term),
+        voice.lang === "en-US" && voice.name.toLowerCase().includes(term),
     );
 
   return (
@@ -220,7 +219,7 @@ export const Audio = ({ src, className }: AudioProps) => {
   };
 
   return (
-    <div>
+    <span className="inline-flex">
       {loading ? (
         <LoaderCircle
           onClick={handleStop}
@@ -266,6 +265,6 @@ export const Audio = ({ src, className }: AudioProps) => {
           }}
         />
       )}
-    </div>
+    </span>
   );
 };

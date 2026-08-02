@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -13,6 +14,9 @@ export const beginnerWhatAreYouDoing = {
   },
 
   introduction: {
+    questions: [
+      [audio("What are you doing now?"), "What are you doing now?"],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -76,7 +80,7 @@ export const beginnerWhatAreYouDoing = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to the dialogue.",
+      instruction: "Listen once: are the actions happening now or every day?",
       audioSrc: "",
       lines: [
         {
@@ -106,7 +110,7 @@ export const beginnerWhatAreYouDoing = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -223,26 +227,46 @@ export const beginnerWhatAreYouDoing = {
           bold("they're"),
         ],
       },
+      {
+        as: "span",
+        parts: [
+          "Use the Present Continuous for an action happening now: ",
+          bold("am/is/are + verb-ing"),
+          ". Ask a follow-up about the activity instead of repeating the same question.",
+        ],
+      },
     ] satisfies Notes[],
     ccq: [
       {
         as: "span",
         parts: ["If I'm studying now, is the action happening at this moment?"],
+        options: [
+          { option: "Yes", isCorrect: true },
+          { option: "No", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: [
           "Do we use Present Continuous for actions happening now or every day?",
         ],
+        options: [
+          { option: "Actions happening now", isCorrect: true },
+          { option: "Regular everyday routines", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["In 'They are playing', is the subject singular or plural?"],
+        options: [
+          { option: "Plural", isCorrect: true },
+          { option: "Singular", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -334,7 +358,13 @@ export const beginnerWhatAreYouDoing = {
         ],
       },
     },
-  },
+  }, [
+    ["I am _____ dinner now.", "cooking", "cook"],
+    ["What _____ you doing?", "are", "is"],
+    ["She _____ reading a book.", "is", "are"],
+    ["They are _____ soccer.", "playing", "play"],
+    ["He isn't _____ TV at the moment.", "watching", "watches"],
+  ]),
 
   production: {
     task: {

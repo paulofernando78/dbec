@@ -1,4 +1,5 @@
 import { shuffle } from "@/utils/shuffle";
+import { completePractice } from "@/data/course/completePractice";
 
 export const intermediateNewsReport = {
   whiteboard: {
@@ -54,7 +55,8 @@ export const intermediateNewsReport = {
       ]),
     },
     storyCarousel: {
-      instruction: "Read the situations and notice the target language.",
+      instruction:
+        "Read the situations. Is the important information the person responsible, the action, or its result?",
       imgs: [
         {
           src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%232563eb%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EEvent%3C%2Ftext%3E%3C%2Fsvg%3E",
@@ -97,7 +99,8 @@ export const intermediateNewsReport = {
   },
   presentation: {
     dialogue: {
-      instruction: "Read the dialogue and identify the target language.",
+      instruction:
+        "Read or listen once: what happened to the bridge? Then read or listen again for confirmed facts and the ongoing investigation.",
       audioSrc: "",
       lines: [
         { speaker: "Editor", line: ["Has the story been confirmed?"] },
@@ -200,6 +203,12 @@ export const intermediateNewsReport = {
           "Form the passive with the correct tense of be plus the past participle. Add by only when the agent matters.",
         ],
       },
+      {
+        as: "p",
+        parts: [
+          "Use the passive when the action or result is more newsworthy than the person responsible, or when the agent is unknown. Keep the tense accurate to the report time.",
+        ],
+      },
     ],
     ccq: [
       { as: "p", parts: ["Is the bridge performing the action?"] },
@@ -210,7 +219,7 @@ export const intermediateNewsReport = {
       },
     ],
   },
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the most accurate option.",
       exercise: {
@@ -308,10 +317,15 @@ export const intermediateNewsReport = {
         ],
       },
     },
-  },
+  }, [
+    ["Three roads _____ closed after the storm.", "were", "did"],
+    ["The new hospital _____ opened next month.", "will be", "will"],
+    ["The suspect was _____ by police last night.", "arrested", "arrest"],
+    ["More details _____ expected later today.", "are", "is"],
+  ]),
   production: {
     task: {
-      instruction: "Use the target language to complete the tasks.",
+      instruction: "Prepare and deliver a concise news update:",
       type: "checkbox",
       items: [
         {

@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -16,6 +17,12 @@ export const beginnerMyHouse = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("Which room do you spend the most time in?"),
+        "Which room do you spend the most time in?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -86,7 +93,7 @@ export const beginnerMyHouse = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to the dialogue.",
+      instruction: "Listen once: is Jake describing a house or a workplace?",
       audioSrc: "",
       lines: [
         {
@@ -124,7 +131,7 @@ export const beginnerMyHouse = {
       ],
     },
     radio: {
-      instruction: "Choose the correct answer.",
+      instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
           {
@@ -228,19 +235,31 @@ export const beginnerMyHouse = {
       {
         as: "span",
         parts: ["“There is”: one thing or many things?"],
+        options: [
+          { option: "One thing", isCorrect: true },
+          { option: "Many things", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["“There are”: one thing or many things?"],
+        options: [
+          { option: "Many things", isCorrect: true },
+          { option: "One thing", isCorrect: false },
+        ],
       },
       {
         as: "span",
         parts: ["In 'There is a bed', how many beds are there?"],
+        options: [
+          { option: "One", isCorrect: true },
+          { option: "Two", isCorrect: false },
+        ],
       },
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -332,7 +351,13 @@ export const beginnerMyHouse = {
         ],
       },
     },
-  },
+  }, [
+    ["There _____ a sofa in the living room.", "is", "are"],
+    ["There _____ two bedrooms upstairs.", "are", "is"],
+    ["The kitchen is next _____ the living room.", "to", "at"],
+    ["Where _____ the bathroom?", "is", "are"],
+    ["My bedroom is _____ the second floor.", "on", "in"],
+  ]),
 
   production: {
     task: {
@@ -340,9 +365,7 @@ export const beginnerMyHouse = {
       type: "checkbox",
       items: [
         {
-          content: [
-            "Choose a room, but do not tell your partner its name.",
-          ],
+          content: ["Choose a room, but do not tell your partner its name."],
         },
 
         {

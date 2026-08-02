@@ -1,4 +1,5 @@
 import type { Meaning } from "@/components/content/Meaning";
+import { completePractice } from "@/data/course/completePractice";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -13,6 +14,12 @@ export const elementaryFuturePredictions = {
   },
 
   introduction: {
+    questions: [
+      [
+        audio("What do you think life will be like in 2050?"),
+        "What do you think life will be like in 2050?",
+      ],
+    ],
     storyCarousel: {
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
@@ -95,7 +102,8 @@ export const elementaryFuturePredictions = {
 
   presentation: {
     dialogue: {
-      instruction: "Listen to Leo and Mia talking about the future.",
+      instruction:
+        "Listen once: do Leo and Mia agree completely about life in 2050? Then listen again for their predictions.",
       audioSrc: "/audio/a2/unit-3-future-predictions/dialogue.mp3",
       lines: [
         {
@@ -239,6 +247,12 @@ export const elementaryFuturePredictions = {
           "We use 'will' for predictions based on opinion, and 'going to' for predictions based on evidence we can see now.",
         ],
       },
+      {
+        as: "span",
+        parts: [
+          "Use I think, probably, or maybe to show how certain a prediction is. In speech, will and will not commonly contract to 'll and won't.",
+        ],
+      },
     ] satisfies Notes[],
     ccq: [
       {
@@ -258,7 +272,7 @@ export const elementaryFuturePredictions = {
     ] satisfies CCQ[],
   },
 
-  practice: {
+  practice: completePractice({
     radio: {
       instruction: "Choose the correct answer.",
       exercise: {
@@ -355,11 +369,17 @@ export const elementaryFuturePredictions = {
         ],
       },
     },
-  },
+  }, [
+    ["Cities _____ use more electric buses.", "will", "did"],
+    ["People probably _____ work fewer hours.", "will", "are"],
+    ["I don't think cars _____ disappear completely.", "will", "do"],
+    ["The technology _____ be cheaper at first.", "won't", "isn't"],
+    ["_____ you think homes will be smarter?", "Do", "Will"],
+  ]),
 
   production: {
     task: {
-      instruction: "Complete the tasks:",
+      instruction: "Make and discuss predictions about life in 2050:",
       type: "checkbox",
       items: [
         {
