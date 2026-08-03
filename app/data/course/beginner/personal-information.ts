@@ -142,7 +142,7 @@ export const beginnerPersonalInformation = {
       },
       {
         type: "subsection",
-        label: "Saying hi!",
+        label: "Greetings",
         heading: 5,
       },
       {
@@ -158,22 +158,47 @@ export const beginnerPersonalInformation = {
             as: "p",
             parts: [audio("How are you doing?"), "How are you doing?"],
           },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("How’s it going?"), "How’s it going?"],
+          },
           spacer(),
           {
             display: "block",
             as: "span",
-            parts: [audio("opmistic"), italic("opmistic")],
+            parts: [italic("enthusiastic")],
           },
           {
             display: "block",
             as: "p",
-            parts: [audio("Doing great!"), "Doing great!"],
+            parts: [audio("Great!"), "Great!"],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("I’m doing great!"), "I’m doing great!"],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("Fantastic!"), "Fantastic!"],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("Everything’s going great!"), "Everything’s going great!"],
           },
           spacer(),
           {
             display: "block",
             as: "span",
-            parts: [audio("pessimist"), italic("pessimist")],
+            parts: [italic("unenthusiastic")],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("Not great."), "Not great."],
           },
           {
             display: "block",
@@ -185,12 +210,17 @@ export const beginnerPersonalInformation = {
             as: "p",
             parts: [audio("Could be worse."), "Could be worse."],
           },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("It’s going."), "It’s going."],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("Same old, same old."), "Same old, same old."],
+          },
         ],
-      },
-      {
-        type: "subsection",
-        label: "Personal Information",
-        heading: 4,
       },
       {
         type: "subsection",
