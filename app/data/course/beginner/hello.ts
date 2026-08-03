@@ -1,13 +1,7 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
 import {
   content,
   icon,
   audio,
-  bold,
   italic,
   mark,
   portuguese,
@@ -154,7 +148,7 @@ export const beginnerHello = {
         type: "dialogue",
         ...{
           instruction: [
-            "Laura and Eric meet for the first time. ",
+            "Listen to Laura and Eric. They meet for the first time. ",
             portuguese("Laura e Eric se encontram pela primeira vez."),
           ],
           audioSrc: "/",
