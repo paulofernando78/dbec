@@ -10,14 +10,13 @@ type DialogueLine = {
 };
 
 type DialogueProps = {
-  instruction: string;
+  instruction: RichContent;
   audioSrc: string;
   lines: DialogueLine[];
 };
 
 export const Dialogue = ({
   instruction,
-
   audioSrc,
   lines = [],
 }: DialogueProps) => {
@@ -35,7 +34,7 @@ export const Dialogue = ({
     <div className="space-y-4 mb-4">
       <div className="flex items-center gap-2">
         {!audioSrc && dialogueText && <Audio src={dialogueText} />}
-        <b>{instruction}</b>
+        <b><InlineRichContent value={instruction}/></b>
       </div>
       {audioSrc && <AudioPlayer src={audioSrc} />}
       {lines.map((line, index) => (
