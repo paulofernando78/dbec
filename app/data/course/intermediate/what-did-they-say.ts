@@ -10,50 +10,11 @@ export const intermediateWhatDidTheySay = {
     ],
   },
   introduction: {
-    vocabularyCarousel: {
-      instruction: "Match the words to the definitions and visual cards.",
-      words: [
-        {
-          src: "",
-          alt: "mention",
-          content: [
-            { part: "mention: ", type: "bold" },
-            "to refer to something briefly",
-          ],
-        },
-        {
-          src: "",
-          alt: "clarify",
-          content: [
-            { part: "clarify: ", type: "bold" },
-            "to make an idea easier to understand",
-          ],
-        },
-        {
-          src: "",
-          alt: "admit",
-          content: [
-            { part: "admit: ", type: "bold" },
-            "to agree that something is true, often unwillingly",
-          ],
-        },
-        {
-          src: "",
-          alt: "promise",
-          content: [
-            { part: "promise: ", type: "bold" },
-            "to say definitely that you will do something",
-          ],
-        },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: ["mention"] },
-        { as: "span", parts: ["clarify"] },
-        { as: "span", parts: ["admit"] },
-        { as: "span", parts: ["promise"] },
-      ]),
-    },
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Read the situations. Decide whether each speaker reports a statement, a question, or a request.",
       imgs: [
@@ -74,7 +35,61 @@ export const intermediateWhatDidTheySay = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "mention",
+          imgSrc: "",
+          imgAlt: "mention",
+          options: shuffle([
+            { option: "mention", isCorrect: true },
+            { option: "clarify", isCorrect: false },
+            { option: "admit", isCorrect: false },
+            { option: "promise", isCorrect: false },
+          ]),
+        },
+        {
+          word: "clarify",
+          imgSrc: "",
+          imgAlt: "clarify",
+          options: shuffle([
+            { option: "mention", isCorrect: false },
+            { option: "clarify", isCorrect: true },
+            { option: "admit", isCorrect: false },
+            { option: "promise", isCorrect: false },
+          ]),
+        },
+        {
+          word: "admit",
+          imgSrc: "",
+          imgAlt: "admit",
+          options: shuffle([
+            { option: "mention", isCorrect: false },
+            { option: "clarify", isCorrect: false },
+            { option: "admit", isCorrect: true },
+            { option: "promise", isCorrect: false },
+          ]),
+        },
+        {
+          word: "promise",
+          imgSrc: "",
+          imgAlt: "promise",
+          options: shuffle([
+            { option: "mention", isCorrect: false },
+            { option: "clarify", isCorrect: false },
+            { option: "admit", isCorrect: false },
+            { option: "promise", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Check your understanding of the situations.",
       exercise: {
         questions: [
@@ -95,9 +110,14 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Read or listen once: why can Carla not attend the meeting? Then read or listen again for the message and request Owen passes on.",
       audioSrc: "",
@@ -113,7 +133,10 @@ export const intermediateWhatDidTheySay = {
         { speaker: "Owen", line: ["She asked us to send it tomorrow."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the answer supported by the dialogue.",
       exercise: {
         questions: [
@@ -141,9 +164,14 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -152,7 +180,10 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 320,
       cols: [
         {
@@ -190,7 +221,10 @@ export const intermediateWhatDidTheySay = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -204,7 +238,10 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["Are these the speaker's exact original words?"] },
       { as: "p", parts: ["Do reported questions use question word order?"] },
       {
@@ -212,9 +249,17 @@ export const intermediateWhatDidTheySay = {
         parts: ["What structure follows told or asked for a request?"],
       },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the most accurate option.",
       exercise: {
         questions: [
@@ -249,7 +294,10 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with the target language.",
       numbered: true,
@@ -290,7 +338,10 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentences.",
       numbered: true,
@@ -311,13 +362,17 @@ export const intermediateWhatDidTheySay = {
         ],
       },
     },
+      }
+    ],
   }, 
   
   production: {
-    task: {
-      instruction: "Pass on messages accurately in a workplace situation:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Pass on messages accurately in a workplace situation:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Write a short message containing a statement, question, and request.",
@@ -333,6 +388,7 @@ export const intermediateWhatDidTheySay = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

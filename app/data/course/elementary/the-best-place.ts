@@ -11,28 +11,21 @@ export const elementaryTheBestPlace = {
     ],
   },
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What is the best place to visit near your home?"),
         "What is the best place to visit near your home?",
       ],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "view" },
-        { src: "/", alt: "waterfall" },
-        { src: "/", alt: "historic" },
-        { src: "/", alt: "peaceful" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "view" }, "view"] },
-        { as: "span", parts: [{ audio: "waterfall" }, "waterfall"] },
-        { as: "span", parts: [{ audio: "historic" }, "historic"] },
-        { as: "span", parts: [{ audio: "peaceful" }, "peaceful"] },
-      ]),
-    },
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -64,7 +57,61 @@ export const elementaryTheBestPlace = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "view",
+          imgSrc: "/",
+          imgAlt: "view",
+          options: shuffle([
+            { option: "view", isCorrect: true },
+            { option: "waterfall", isCorrect: false },
+            { option: "historic", isCorrect: false },
+            { option: "peaceful", isCorrect: false },
+          ]),
+        },
+        {
+          word: "waterfall",
+          imgSrc: "/",
+          imgAlt: "waterfall",
+          options: shuffle([
+            { option: "view", isCorrect: false },
+            { option: "waterfall", isCorrect: true },
+            { option: "historic", isCorrect: false },
+            { option: "peaceful", isCorrect: false },
+          ]),
+        },
+        {
+          word: "historic",
+          imgSrc: "/",
+          imgAlt: "historic",
+          options: shuffle([
+            { option: "view", isCorrect: false },
+            { option: "waterfall", isCorrect: false },
+            { option: "historic", isCorrect: true },
+            { option: "peaceful", isCorrect: false },
+          ]),
+        },
+        {
+          word: "peaceful",
+          imgSrc: "/",
+          imgAlt: "peaceful",
+          options: shuffle([
+            { option: "view", isCorrect: false },
+            { option: "waterfall", isCorrect: false },
+            { option: "historic", isCorrect: false },
+            { option: "peaceful", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -85,9 +132,14 @@ export const elementaryTheBestPlace = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: which two places does Sam recommend? Then listen again for the reasons.",
       audioSrc: "",
@@ -106,7 +158,10 @@ export const elementaryTheBestPlace = {
         { speaker: "Sam", line: ["Old Town. It is the closest attraction."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -134,9 +189,14 @@ export const elementaryTheBestPlace = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -151,7 +211,10 @@ export const elementaryTheBestPlace = {
       },
       { type: "spacer" },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -186,7 +249,10 @@ export const elementaryTheBestPlace = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: ["Use the before a superlative: It is the best place."],
@@ -198,14 +264,25 @@ export const elementaryTheBestPlace = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["Are we comparing two places or a whole group?"] },
       { as: "p", parts: ["Is the best place number one?"] },
       { as: "p", parts: ["Do we say the most beautiful or the beautifulest?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -247,7 +324,10 @@ export const elementaryTheBestPlace = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -272,7 +352,10 @@ export const elementaryTheBestPlace = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -289,13 +372,17 @@ export const elementaryTheBestPlace = {
         ],
       },
     },
+      }
+    ],
   },
   
   production: {
-    task: {
-      instruction: "Recommend the best local place for a visitor:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Recommend the best local place for a visitor:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Describe the best place in your region."],
           textarea: true,
@@ -306,6 +393,7 @@ export const elementaryTheBestPlace = {
         },
         { content: ["Recommend one place to a classmate."], textarea: false },
       ],
-    },
+      }
+    ],
   },
 };

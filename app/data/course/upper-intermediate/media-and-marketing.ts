@@ -10,50 +10,11 @@ export const upperIntermediateMediaAndMarketing = {
     ],
   },
   introduction: {
-    vocabularyCarousel: {
-      instruction: "Match the words to the definitions and visual cards.",
-      words: [
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ecampaign%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "campaign",
-          content: [
-            { part: "campaign: ", type: "bold" },
-            "a planned series of promotional activities",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Etarget%20audience%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "target audience",
-          content: [
-            { part: "target audience: ", type: "bold" },
-            "the group a message is designed to reach",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eendorsement%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "endorsement",
-          content: [
-            { part: "endorsement: ", type: "bold" },
-            "public support for a product by a person or organization",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eengagement%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "engagement",
-          content: [
-            { part: "engagement: ", type: "bold" },
-            "the level of attention and interaction an audience gives",
-          ],
-        },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: ["campaign"] },
-        { as: "span", parts: ["target audience"] },
-        { as: "span", parts: ["endorsement"] },
-        { as: "span", parts: ["engagement"] },
-      ]),
-    },
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Read the campaign descriptions. Which details identify something essential, and which add supplementary information?",
       imgs: [
@@ -78,7 +39,61 @@ export const upperIntermediateMediaAndMarketing = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "campaign",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ecampaign%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "campaign",
+          options: shuffle([
+            { option: "campaign", isCorrect: true },
+            { option: "target audience", isCorrect: false },
+            { option: "endorsement", isCorrect: false },
+            { option: "engagement", isCorrect: false },
+          ]),
+        },
+        {
+          word: "target audience",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Etarget%20audience%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "target audience",
+          options: shuffle([
+            { option: "campaign", isCorrect: false },
+            { option: "target audience", isCorrect: true },
+            { option: "endorsement", isCorrect: false },
+            { option: "engagement", isCorrect: false },
+          ]),
+        },
+        {
+          word: "endorsement",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eendorsement%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "endorsement",
+          options: shuffle([
+            { option: "campaign", isCorrect: false },
+            { option: "target audience", isCorrect: false },
+            { option: "endorsement", isCorrect: true },
+            { option: "engagement", isCorrect: false },
+          ]),
+        },
+        {
+          word: "engagement",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eengagement%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "engagement",
+          options: shuffle([
+            { option: "campaign", isCorrect: false },
+            { option: "target audience", isCorrect: false },
+            { option: "endorsement", isCorrect: false },
+            { option: "engagement", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Check your understanding of the situations.",
       exercise: {
         questions: [
@@ -99,9 +114,14 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Read or listen once: why did the campaign spread widely? Then read or listen again for the extra information about the campaign, channel, and audience.",
       audioSrc: "",
@@ -136,7 +156,10 @@ export const upperIntermediateMediaAndMarketing = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the answer supported by the dialogue.",
       exercise: {
         questions: [
@@ -164,9 +187,14 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -175,7 +203,10 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 320,
       cols: [
         {
@@ -213,7 +244,10 @@ export const upperIntermediateMediaAndMarketing = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -227,7 +261,10 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "p",
         parts: [
@@ -240,9 +277,17 @@ export const upperIntermediateMediaAndMarketing = {
       },
       { as: "p", parts: ["What does many of whom refer to?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the most accurate option.",
       exercise: {
         questions: [
@@ -277,7 +322,10 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with the target language.",
       numbered: true,
@@ -318,7 +366,10 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentences.",
       numbered: true,
@@ -339,13 +390,17 @@ export const upperIntermediateMediaAndMarketing = {
         ],
       },
     },
+      }
+    ],
   }, 
   
   production: {
-    task: {
-      instruction: "Analyse a campaign and present its audience and impact:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Analyse a campaign and present its audience and impact:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Analyse a real or fictional marketing campaign in six sentences.",
@@ -365,6 +420,7 @@ export const upperIntermediateMediaAndMarketing = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

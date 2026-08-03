@@ -1,6 +1,5 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 
 import { BookText, Minus, Plus } from "lucide-react";
 // import { Checkbox } from "@/components/ui/Checkbox";
@@ -16,13 +15,14 @@ type NavBarProps = {
   closeNavBar: () => void;
 };
 
-const numberedCourseLessons = [
-  ...courseLessonsCardData.beginner,
-  ...courseLessonsCardData.elementary,
-  ...courseLessonsCardData.intermediate,
-  ...courseLessonsCardData.upperIntermediate,
-  ...courseLessonsCardData.advanced,
-];
+const getCourseLessonLinks = (items: NavItem[]): NavItem[] =>
+  items.flatMap((item) => {
+    if (item.href?.startsWith("/courses/")) return [item];
+    return item.links ? getCourseLessonLinks(item.links) : [];
+  });
+
+const courseLinks = links.find((group) => group.title === "Course")?.links ?? [];
+const numberedCourseLessons = getCourseLessonLinks(courseLinks);
 
 const lessonNumberByHref = new Map(
   numberedCourseLessons.map((lesson, index) => [lesson.href, index + 1]),

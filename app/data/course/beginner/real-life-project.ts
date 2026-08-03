@@ -16,13 +16,20 @@ export const beginnerRealLifeProject = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("How do you make a simple plan with a friend?"),
         "How do you make a simple plan with a friend?",
       ],
     ],
-    radio: {
+        className: "mb-4",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Review what you can already do in English.",
       exercise: {
         questions: [
@@ -43,10 +50,15 @@ export const beginnerRealLifeProject = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction: "Read the conversation. What do Laura and Liz decide to do?",
       audioSrc: "",
       lines: [
@@ -76,7 +88,10 @@ export const beginnerRealLifeProject = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -97,10 +112,15 @@ export const beginnerRealLifeProject = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         display: "block",
         as: "span",
@@ -119,8 +139,11 @@ export const beginnerRealLifeProject = {
         as: "span",
         parts: [bold("What time?"), " — ask for a meeting time."],
       },
-    ] satisfies Meaning[],
-    notes: [
+    ],
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: ["Use ", bold("Let's + verb"), " to suggest an activity."],
@@ -131,8 +154,11 @@ export const beginnerRealLifeProject = {
           "Repeat or ask a simple follow-up question when information is unclear.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["“Let's meet” is a suggestion: yes or no?"],
@@ -149,11 +175,19 @@ export const beginnerRealLifeProject = {
           { option: "No", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the best expression for each situation.",
       exercise: {
         questions: [
@@ -195,7 +229,10 @@ export const beginnerRealLifeProject = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentences.",
       numbered: true,
@@ -216,13 +253,17 @@ export const beginnerRealLifeProject = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Complete the A1 real-life project with a partner:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Complete the A1 real-life project with a partner:",
+        listType: "checkbox",
+        items: [
         {
           content: content({
             parts: [
@@ -260,6 +301,7 @@ export const beginnerRealLifeProject = {
           }),
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

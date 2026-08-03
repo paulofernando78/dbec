@@ -10,50 +10,11 @@ export const upperIntermediateGlobalIssues = {
     ],
   },
   introduction: {
-    vocabularyCarousel: {
-      instruction: "Match the words to the definitions and visual cards.",
-      words: [
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Einequality%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "inequality",
-          content: [
-            { part: "inequality: ", type: "bold" },
-            "an unfair difference in access, wealth, or opportunity",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Edisplaced%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "displaced",
-          content: [
-            { part: "displaced: ", type: "bold" },
-            "forced to leave one's home",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Epolicy%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "policy",
-          content: [
-            { part: "policy: ", type: "bold" },
-            "an official plan or set of principles",
-          ],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eresources%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "resources",
-          content: [
-            { part: "resources: ", type: "bold" },
-            "useful materials, money, or support",
-          ],
-        },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: ["inequality"] },
-        { as: "span", parts: ["displaced"] },
-        { as: "span", parts: ["policy"] },
-        { as: "span", parts: ["resources"] },
-      ]),
-    },
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Read the statements. Which ones report a claim, describe an action, or identify an expected result?",
       imgs: [
@@ -76,7 +37,61 @@ export const upperIntermediateGlobalIssues = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "inequality",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Einequality%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "inequality",
+          options: shuffle([
+            { option: "inequality", isCorrect: true },
+            { option: "displaced", isCorrect: false },
+            { option: "policy", isCorrect: false },
+            { option: "resources", isCorrect: false },
+          ]),
+        },
+        {
+          word: "displaced",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Edisplaced%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "displaced",
+          options: shuffle([
+            { option: "inequality", isCorrect: false },
+            { option: "displaced", isCorrect: true },
+            { option: "policy", isCorrect: false },
+            { option: "resources", isCorrect: false },
+          ]),
+        },
+        {
+          word: "policy",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Epolicy%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "policy",
+          options: shuffle([
+            { option: "inequality", isCorrect: false },
+            { option: "displaced", isCorrect: false },
+            { option: "policy", isCorrect: true },
+            { option: "resources", isCorrect: false },
+          ]),
+        },
+        {
+          word: "resources",
+          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eresources%3C%2Ftext%3E%3C%2Fsvg%3E",
+          imgAlt: "resources",
+          options: shuffle([
+            { option: "inequality", isCorrect: false },
+            { option: "displaced", isCorrect: false },
+            { option: "policy", isCorrect: false },
+            { option: "resources", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Check your understanding of the situations.",
       exercise: {
         questions: [
@@ -103,9 +118,14 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Read or listen once: which responses to the housing crisis are mentioned? Then read or listen again and distinguish claims from confirmed actions.",
       audioSrc: "",
@@ -131,7 +151,10 @@ export const upperIntermediateGlobalIssues = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the answer supported by the dialogue.",
       exercise: {
         questions: [
@@ -165,9 +188,14 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -176,7 +204,10 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 320,
       cols: [
         {
@@ -211,7 +242,10 @@ export const upperIntermediateGlobalIssues = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -225,7 +259,10 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "p",
         parts: [
@@ -238,9 +275,17 @@ export const upperIntermediateGlobalIssues = {
       },
       { as: "p", parts: ["When do we use to have + past participle?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the most accurate option.",
       exercise: {
         questions: [
@@ -278,7 +323,10 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with the target language.",
       numbered: true,
@@ -319,7 +367,10 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentences.",
       numbered: true,
@@ -340,13 +391,17 @@ export const upperIntermediateGlobalIssues = {
         ],
       },
     },
+      }
+    ],
   }, 
   
   production: {
-    task: {
-      instruction: "Brief a partner objectively on a complex public issue:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Brief a partner objectively on a complex public issue:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Write a neutral briefing about one global issue."],
           textarea: true,
@@ -364,6 +419,7 @@ export const upperIntermediateGlobalIssues = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

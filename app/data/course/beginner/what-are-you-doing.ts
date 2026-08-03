@@ -13,10 +13,18 @@ export const beginnerWhatAreYouDoing = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [audio("What are you doing now?"), "What are you doing now?"],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -53,8 +61,10 @@ export const beginnerWhatAreYouDoing = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -75,10 +85,15 @@ export const beginnerWhatAreYouDoing = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction: "Listen once: are the actions happening now or every day?",
       audioSrc: "",
       lines: [
@@ -108,7 +123,10 @@ export const beginnerWhatAreYouDoing = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -129,10 +147,15 @@ export const beginnerWhatAreYouDoing = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: [
@@ -145,8 +168,11 @@ export const beginnerWhatAreYouDoing = {
         as: "span",
         parts: ["Form: ", bold("subject + am/is/are + verb-ing"), "."],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -202,7 +228,10 @@ export const beginnerWhatAreYouDoing = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [
@@ -234,8 +263,11 @@ export const beginnerWhatAreYouDoing = {
           ". Ask a follow-up about the activity instead of repeating the same question.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["If I'm studying now, is the action happening at this moment?"],
@@ -262,11 +294,19 @@ export const beginnerWhatAreYouDoing = {
           { option: "Singular", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -301,8 +341,10 @@ export const beginnerWhatAreYouDoing = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with the Present Continuous form.",
       numbered: true,
@@ -335,8 +377,10 @@ export const beginnerWhatAreYouDoing = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -357,13 +401,17 @@ export const beginnerWhatAreYouDoing = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Choose a lesson picture and help a partner identify it:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Choose a lesson picture and help a partner identify it:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Choose a picture without showing or naming it to your partner.",
@@ -380,6 +428,7 @@ export const beginnerWhatAreYouDoing = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

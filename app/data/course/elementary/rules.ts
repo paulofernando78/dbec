@@ -8,28 +8,21 @@ export const elementaryRules = {
     descriptions: ["You must wear a helmet.", "We have to arrive on time."],
   },
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("Where do you have to follow important rules?"),
         "Where do you have to follow important rules?",
       ],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "helmet" },
-        { src: "/", alt: "uniform" },
-        { src: "/", alt: "permission" },
-        { src: "/", alt: "prohibited" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "helmet" }, "helmet"] },
-        { as: "span", parts: [{ audio: "uniform" }, "uniform"] },
-        { as: "span", parts: [{ audio: "permission" }, "permission"] },
-        { as: "span", parts: [{ audio: "prohibited" }, "prohibited"] },
-      ]),
-    },
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -61,7 +54,61 @@ export const elementaryRules = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "helmet",
+          imgSrc: "/",
+          imgAlt: "helmet",
+          options: shuffle([
+            { option: "helmet", isCorrect: true },
+            { option: "uniform", isCorrect: false },
+            { option: "permission", isCorrect: false },
+            { option: "prohibited", isCorrect: false },
+          ]),
+        },
+        {
+          word: "uniform",
+          imgSrc: "/",
+          imgAlt: "uniform",
+          options: shuffle([
+            { option: "helmet", isCorrect: false },
+            { option: "uniform", isCorrect: true },
+            { option: "permission", isCorrect: false },
+            { option: "prohibited", isCorrect: false },
+          ]),
+        },
+        {
+          word: "permission",
+          imgSrc: "/",
+          imgAlt: "permission",
+          options: shuffle([
+            { option: "helmet", isCorrect: false },
+            { option: "uniform", isCorrect: false },
+            { option: "permission", isCorrect: true },
+            { option: "prohibited", isCorrect: false },
+          ]),
+        },
+        {
+          word: "prohibited",
+          imgSrc: "/",
+          imgAlt: "prohibited",
+          options: shuffle([
+            { option: "helmet", isCorrect: false },
+            { option: "uniform", isCorrect: false },
+            { option: "permission", isCorrect: false },
+            { option: "prohibited", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -82,9 +129,14 @@ export const elementaryRules = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: where are Leo and the guide? Then listen again and identify what is required and prohibited.",
       audioSrc: "",
@@ -107,7 +159,10 @@ export const elementaryRules = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -135,9 +190,14 @@ export const elementaryRules = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -155,7 +215,10 @@ export const elementaryRules = {
       },
       { type: "spacer" },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -210,7 +273,10 @@ export const elementaryRules = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -224,14 +290,25 @@ export const elementaryRules = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["Is a rule optional?"] },
       { as: "p", parts: ["Does mustn't mean prohibited?"] },
       { as: "p", parts: ["Does don't have to mean you can choose?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -266,7 +343,10 @@ export const elementaryRules = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -291,7 +371,10 @@ export const elementaryRules = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -308,12 +391,16 @@ export const elementaryRules = {
         ],
       },
     },
+      }
+    ],
   },
   production: {
-    task: {
-      instruction: "Create and explain rules for a shared place:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Create and explain rules for a shared place:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Write five rules for a classroom or workplace."],
           textarea: true,
@@ -324,6 +411,7 @@ export const elementaryRules = {
         },
         { content: ["Compare rules with a classmate."], textarea: false },
       ],
-    },
+      }
+    ],
   },
 };

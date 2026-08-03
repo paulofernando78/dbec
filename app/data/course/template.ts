@@ -1,11 +1,8 @@
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, audio, lineBreak } from "@/helpers/content";
-
-import { shuffle } from "@/utils/shuffle";
 
 export const lesson = {
   whiteboard: {
@@ -24,239 +21,243 @@ export const lesson = {
   },
 
   introduction: {
-    instruction: ["..."],
-    imgSrc: "/",
-    imgAlt: "...",
-    questions: [
-      [audio("..."), "question 1"],
-      [audio("..."), "question 2"],
-    ],
-    imageQuiz: {
-      questions: [
-        {
-          word: "cushion",
-          imgSrc: "/assets/img/dictionary/c/cushion.avif",
-          imgAlt: "A cushion softening the impact of an object.",
-          options: shuffle([
-            { option: "cushion", isCorrect: true },
-            { option: "lubricate", isCorrect: false },
-            { option: "moisture", isCorrect: false },
-          ]),
-        },
-        {
-          word: "lubricate",
-          imgSrc: "/assets/img/dictionary/l/lubricate.avif",
-          imgAlt: "Lubricant being applied to reduce friction.",
-          options: shuffle([
-            { option: "cushion", isCorrect: false },
-            { option: "lubricate", isCorrect: true },
-            { option: "moisture", isCorrect: false },
-          ]),
-        },
-        {
-          word: "moisture",
-          imgSrc: "/assets/img/dictionary/m/moisture.avif",
-          imgAlt: "Water droplets representing moisture.",
-          options: shuffle([
-            { option: "cushion", isCorrect: false },
-            { option: "lubricate", isCorrect: false },
-            { option: "moisture", isCorrect: true },
-          ]),
-        },
-      ],
-    },
-
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
-          },
+    blocks: [
+      {
+        type: "line",
+        value: ["..."],
+        className: "font-bold mb-4",
+      },
+      {
+        type: "image",
+        src: "/",
+        alt: "...",
+      },
+      {
+        type: "lines",
+        value: [
+          [audio("..."), "question 1"],
+          [audio("..."), "question 2"],
+        ],
+        className: "mb-4",
+      },
+      {
+        type: "imageQuiz",
+        words: [
+          { word: "cushion", img: 0 },
+          { word: "lubricate", img: 0 },
+          { word: "moisture", img: 0 },
         ],
       },
-    },
+      {
+        type: "radio",
+        instruction: "Choose the correct answer.",
+        exercise: {
+          questions: [
+            {
+              question: "...",
+              options: [
+                { option: "...", isCorrect: false },
+                { option: "...", isCorrect: true },
+              ],
+            },
+          ],
+        },
+      },
+    ],
   },
 
   presentation: {
-    instruction: ["Look at the picture."],
-    imgSrc: "/",
-    imgAlt: "...",
-    dialogue: {
-      instruction: "Listen to the dialogue.",
-      audioSrc: "/",
-      lines: [
-        {
-          speaker: "...",
-          line: ["..."],
-        },
-      ],
-    },
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
+    blocks: [
+      {
+        type: "line",
+        value: ["Look at the picture."],
+        className: "font-bold mb-4",
+      },
+      {
+        type: "image",
+        src: "/",
+        alt: "...",
+      },
+      {
+        type: "dialogue",
+        instruction: "Listen to the dialogue.",
+        audioSrc: "/",
+        lines: [
           {
-            question: "...",
-            options: [
-              { option: "...", isCorrect: false },
-              { option: "...", isCorrect: true },
-            ],
+            speaker: "...",
+            line: ["..."],
           },
         ],
       },
-    },
+      {
+        type: "radio",
+        instruction: "Choose the correct answer.",
+        exercise: {
+          questions: [
+            {
+              question: "...",
+              options: [
+                { option: "...", isCorrect: false },
+                { option: "...", isCorrect: true },
+              ],
+            },
+          ],
+        },
+      },
+    ],
   },
 
   languageFocus: {
-    storyCarousel: {
-      instruction: "Look ...",
-      imgs: [
-        {
-          src: "/",
-          alt: "...",
-          content: [
-            ...content({
-              parts: [audio("/"), "...", lineBreak(), "..."],
-            }),
-          ],
-        },
-      ],
-    },
-    meaning: [
+    blocks: [
       {
-        display: "block",
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Meaning[],
-    column: {
-      width: 300,
-      cols: [
-        // Column 1
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 1",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 2
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 2",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-        // Column 3
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-slate-400",
-          textColor: "text-white",
-          column: "Column 3",
-          items: [
-            {
-              parts: [audio("/"), "..."],
-            },
-          ],
-        },
-      ],
-    },
-    notes: [
-      {
-        as: "span",
-        parts: [audio("/"), "..."],
-      },
-    ] satisfies Notes[],
-    ccq: [
-      {
-        as: "span",
-        parts: ["..."],
-        options: [
-          { option: "...", isCorrect: true },
-          { option: "...", isCorrect: false },
+        type: "carousel",
+        aspectRatio: "wide",
+        instruction: "Look ...",
+        imgs: [
+          {
+            src: "/",
+            alt: "...",
+            content: [
+              ...content({
+                parts: [audio("/"), "...", lineBreak(), "..."],
+              }),
+            ],
+          },
         ],
       },
       {
-        as: "span",
-        parts: ["..."],
-      },
-    ] satisfies CCQ[],
-  },
-
-  practice: {
-    radio: {
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
+        type: "meaning",
+        value: [
           {
-            question: "...",
+            display: "block",
+            as: "span",
+            parts: [audio("/"), "..."],
+          },
+        ] satisfies Meaning[],
+      },
+      {
+        type: "column",
+        width: 300,
+        cols: [
+          {
+            borderColor: "border-slate-500",
+            bgColor: "bg-slate-400",
+            textColor: "text-white",
+            column: "Column 1",
+            items: [
+              {
+                parts: [audio("/"), "..."],
+              },
+            ],
+          },
+          {
+            borderColor: "border-slate-500",
+            bgColor: "bg-slate-400",
+            textColor: "text-white",
+            column: "Column 2",
+            items: [
+              {
+                parts: [audio("/"), "..."],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "notes",
+        value: [
+          {
+            as: "span",
+            parts: [audio("/"), "..."],
+          },
+        ] satisfies Notes[],
+      },
+      {
+        type: "ccq",
+        value: [
+          {
+            as: "span",
+            parts: ["..."],
             options: [
               { option: "...", isCorrect: true },
               { option: "...", isCorrect: false },
             ],
           },
-        ],
-      },
-    },
-
-    fillInTheBlanks: {
-      showWordBank: true,
-      instruction: "Fill in the blanks.",
-      numbered: true,
-      exercise: {
-        blocks: [
           {
-            block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
-            lineBreak: true,
+            as: "span",
+            parts: ["..."],
           },
-        ],
+        ] satisfies CCQ[],
       },
-    },
+    ],
+  },
 
-    scramble: {
-      showWordBank: false,
-      instruction: "Unscramble the sentences.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "... / ...",
-            answer: "...",
-          },
-        ],
+  practice: {
+    blocks: [
+      {
+        type: "radio",
+        instruction: "Choose the correct answer.",
+        exercise: {
+          questions: [
+            {
+              question: "...",
+              options: [
+                { option: "...", isCorrect: true },
+                { option: "...", isCorrect: false },
+              ],
+            },
+          ],
+        },
       },
-    },
+      {
+        type: "fillInTheBlanks",
+        showWordBank: true,
+        instruction: "Fill in the blanks.",
+        numbered: true,
+        exercise: {
+          blocks: [
+            {
+              block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+              lineBreak: true,
+            },
+          ],
+        },
+      },
+      {
+        type: "unscramble",
+        showWordBank: false,
+        instruction: "Unscramble the sentences.",
+        numbered: true,
+        exercise: {
+          items: [
+            {
+              prompt: "... / ...",
+              answer: "...",
+            },
+          ],
+        },
+      },
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Complete the tasks:",
-      type: "checkbox",
-      items: [
-        {
-          content: ["..."],
-        },
-        {
-          content: ["..."],
-        },
-        {
-          content: ["..."],
-        },
-      ],
-    } satisfies ListProps,
+    blocks: [
+      {
+        type: "task",
+        instruction: "Complete the tasks:",
+        listType: "checkbox",
+        items: [
+          {
+            content: ["..."],
+          },
+          {
+            content: ["..."],
+          },
+          {
+            content: ["..."],
+          },
+        ],
+      },
+    ],
   },
 };

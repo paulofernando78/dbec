@@ -15,13 +15,21 @@ export const beginnerMyHouse = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("Which room do you spend the most time in?"),
         "Which room do you spend the most time in?",
       ],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -58,8 +66,10 @@ export const beginnerMyHouse = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -87,10 +97,15 @@ export const beginnerMyHouse = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction: "Listen once: is Jake describing a house or a workplace?",
       audioSrc: "",
       lines: [
@@ -128,7 +143,10 @@ export const beginnerMyHouse = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -149,10 +167,15 @@ export const beginnerMyHouse = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: ["living room"],
@@ -169,8 +192,11 @@ export const beginnerMyHouse = {
         as: "span",
         parts: ["bathroom"],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -211,7 +237,10 @@ export const beginnerMyHouse = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [bold("There is"), " = singular"],
@@ -229,7 +258,10 @@ export const beginnerMyHouse = {
         parts: [bold("There are two chairs."), " (two chairs)"],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["“There is”: one thing or many things?"],
@@ -254,11 +286,19 @@ export const beginnerMyHouse = {
           { option: "Two", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -293,8 +333,10 @@ export const beginnerMyHouse = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction:
         "Complete each sentence with there is, there are, is there, or are there.",
@@ -327,8 +369,10 @@ export const beginnerMyHouse = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -349,13 +393,17 @@ export const beginnerMyHouse = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Describe a room for a partner to identify:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Describe a room for a partner to identify:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Choose a room, but do not tell your partner its name."],
         },
@@ -373,6 +421,7 @@ export const beginnerMyHouse = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

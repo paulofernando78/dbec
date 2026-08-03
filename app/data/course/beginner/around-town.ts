@@ -16,13 +16,21 @@ export const beginnerAroundTown = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What places are near your home?"),
         "What places are near your home?",
       ],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -59,8 +67,10 @@ export const beginnerAroundTown = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -88,10 +98,15 @@ export const beginnerAroundTown = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction: "Listen once: is Emma asking for locations or prices?",
       audioSrc: "",
       lines: [
@@ -121,7 +136,10 @@ export const beginnerAroundTown = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -142,10 +160,15 @@ export const beginnerAroundTown = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: ["next to"],
@@ -162,8 +185,11 @@ export const beginnerAroundTown = {
         as: "span",
         parts: ["behind"],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -217,7 +243,10 @@ export const beginnerAroundTown = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [bold("next to"), " = beside another place"],
@@ -244,8 +273,11 @@ export const beginnerAroundTown = {
           ". Repeat the place to check that you understood.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: [
@@ -274,11 +306,19 @@ export const beginnerAroundTown = {
           { option: "No", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -299,8 +339,10 @@ export const beginnerAroundTown = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Fill in the blanks with the correct preposition.",
       numbered: true,
@@ -333,8 +375,10 @@ export const beginnerAroundTown = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -356,13 +400,17 @@ export const beginnerAroundTown = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Use a simple map to exchange locations:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Use a simple map to exchange locations:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Choose three familiar places on the map."],
         },
@@ -375,6 +423,7 @@ export const beginnerAroundTown = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

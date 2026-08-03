@@ -13,13 +13,21 @@ export const beginnerFoodAndDrinks = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What food and drink do you like?"),
         "What food and drink do you like?",
       ],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -56,8 +64,10 @@ export const beginnerFoodAndDrinks = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -85,10 +95,15 @@ export const beginnerFoodAndDrinks = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: do Emma and Jake like all the same food and drinks?",
       audioSrc: "",
@@ -135,7 +150,10 @@ export const beginnerFoodAndDrinks = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -163,10 +181,15 @@ export const beginnerFoodAndDrinks = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: ["pizza"],
@@ -183,8 +206,11 @@ export const beginnerFoodAndDrinks = {
         as: "span",
         parts: ["juice"],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -236,7 +262,10 @@ export const beginnerFoodAndDrinks = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: ["Use ", bold("like"), " for preferences."],
@@ -261,8 +290,11 @@ export const beginnerFoodAndDrinks = {
           " to order one item politely.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["If I like pizza, do I enjoy pizza?"],
@@ -297,11 +329,19 @@ export const beginnerFoodAndDrinks = {
           { option: "It expresses a preference", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -322,8 +362,10 @@ export const beginnerFoodAndDrinks = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with like or don't like.",
       numbered: true,
@@ -348,8 +390,10 @@ export const beginnerFoodAndDrinks = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -374,13 +418,17 @@ export const beginnerFoodAndDrinks = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Complete a preference survey and a café role-play:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Complete a preference survey and a café role-play:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Ask a partner two “Do you like…?” questions and record the answers.",
@@ -396,6 +444,7 @@ export const beginnerFoodAndDrinks = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

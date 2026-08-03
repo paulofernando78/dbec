@@ -13,11 +13,20 @@ export const beginnerMoreFamilyMembers = {
   },
 
   introduction: {
-    instruction: ["Think about different kinds of families."],
-    imgSrc:
-      "/assets/img/course/a1/more-family-members/introduction/extended-family.png",
-    imgAlt: "Laura with members of her extended, married, and blended family",
-    questions: [
+    blocks: [
+      {
+        type: "line",
+        value: ["Think about different kinds of families."],
+        className: "font-bold mb-4",
+      },
+      {
+        type: "image",
+        src: "/assets/img/course/a1/more-family-members/introduction/extended-family.png",
+        alt: "Laura with members of her extended, married, and blended family",
+      },
+      {
+        type: "lines",
+        value: [
       [
         audio("Who lives in your home?"),
         "Who lives in your home?",
@@ -29,7 +38,11 @@ export const beginnerMoreFamilyMembers = {
         portuguese("Todas as famílias são iguais?"),
       ],
     ],
-    radio: {
+        className: "mb-4",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -50,10 +63,15 @@ export const beginnerMoreFamilyMembers = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: is Laura describing a small immediate family or a larger extended family?",
       audioSrc: "",
@@ -98,7 +116,10 @@ export const beginnerMoreFamilyMembers = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -126,10 +147,15 @@ export const beginnerMoreFamilyMembers = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: [
@@ -148,8 +174,11 @@ export const beginnerMoreFamilyMembers = {
           ".",
         ],
       },
-    ] satisfies Meaning[],
-    columnQuestions: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -205,7 +234,10 @@ export const beginnerMoreFamilyMembers = {
         },
       ],
     },
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 250,
       cols: [
         {
@@ -275,7 +307,10 @@ export const beginnerMoreFamilyMembers = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [
@@ -313,8 +348,11 @@ export const beginnerMoreFamilyMembers = {
           ".",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["Is your sister’s daughter your niece or your wife?"],
@@ -339,11 +377,19 @@ export const beginnerMoreFamilyMembers = {
           { option: "No", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct family word.",
       exercise: {
         questions: [
@@ -378,7 +424,10 @@ export const beginnerMoreFamilyMembers = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with the correct family word.",
       numbered: true,
@@ -419,7 +468,10 @@ export const beginnerMoreFamilyMembers = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -440,13 +492,17 @@ export const beginnerMoreFamilyMembers = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Create a fictional family tree:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Create a fictional family tree:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Add at least six people to the family tree."],
         },
@@ -467,6 +523,7 @@ export const beginnerMoreFamilyMembers = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

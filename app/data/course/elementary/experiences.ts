@@ -11,31 +11,21 @@ export const elementaryExperiences = {
     ],
   },
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What new experience would you like to try?"),
         "What new experience would you like to try?",
       ],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "abroad" },
-        { src: "/", alt: "adventure" },
-        { src: "/", alt: "concert" },
-        { src: "/", alt: "traditional food" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "abroad" }, "abroad"] },
-        { as: "span", parts: [{ audio: "adventure" }, "adventure"] },
-        { as: "span", parts: [{ audio: "concert" }, "concert"] },
-        {
-          as: "span",
-          parts: [{ audio: "traditional food" }, "traditional food"],
-        },
-      ]),
-    },
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -67,7 +57,61 @@ export const elementaryExperiences = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "abroad",
+          imgSrc: "/",
+          imgAlt: "abroad",
+          options: shuffle([
+            { option: "abroad", isCorrect: true },
+            { option: "adventure", isCorrect: false },
+            { option: "concert", isCorrect: false },
+            { option: "traditional food", isCorrect: false },
+          ]),
+        },
+        {
+          word: "adventure",
+          imgSrc: "/",
+          imgAlt: "adventure",
+          options: shuffle([
+            { option: "abroad", isCorrect: false },
+            { option: "adventure", isCorrect: true },
+            { option: "concert", isCorrect: false },
+            { option: "traditional food", isCorrect: false },
+          ]),
+        },
+        {
+          word: "concert",
+          imgSrc: "/",
+          imgAlt: "concert",
+          options: shuffle([
+            { option: "abroad", isCorrect: false },
+            { option: "adventure", isCorrect: false },
+            { option: "concert", isCorrect: true },
+            { option: "traditional food", isCorrect: false },
+          ]),
+        },
+        {
+          word: "traditional food",
+          imgSrc: "/",
+          imgAlt: "traditional food",
+          options: shuffle([
+            { option: "abroad", isCorrect: false },
+            { option: "adventure", isCorrect: false },
+            { option: "concert", isCorrect: false },
+            { option: "traditional food", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -88,9 +132,14 @@ export const elementaryExperiences = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: has Max travelled abroad and alone? Then listen again for the experiences he has and has not had.",
       audioSrc: "",
@@ -109,7 +158,10 @@ export const elementaryExperiences = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -137,9 +189,14 @@ export const elementaryExperiences = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -157,7 +214,10 @@ export const elementaryExperiences = {
       },
       { type: "spacer" },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -214,7 +274,10 @@ export const elementaryExperiences = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: ["Use the past participle: go → gone, see → seen, eat → eaten."],
@@ -226,14 +289,25 @@ export const elementaryExperiences = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["Is the exact past time important?"] },
       { as: "p", parts: ["Do we use have with I and you?"] },
       { as: "p", parts: ["Does never describe zero experiences?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -272,7 +346,10 @@ export const elementaryExperiences = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -297,7 +374,10 @@ export const elementaryExperiences = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -314,12 +394,16 @@ export const elementaryExperiences = {
         ],
       },
     },
+      }
+    ],
   },
   production: {
-    task: {
-      instruction: "Interview a partner about life experiences:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Interview a partner about life experiences:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Write five sentences about your life experiences."],
           textarea: true,
@@ -330,6 +414,7 @@ export const elementaryExperiences = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

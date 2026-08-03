@@ -6,7 +6,11 @@ export const elementaryPastHome = {
     descriptions: ["I stayed at home. I cleaned, relaxed, and didn't go out."],
   },
   introduction: {
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Look at the pictures. What kind of day did Nina have? Then listen and check.",
       imgs: [
@@ -83,7 +87,10 @@ export const elementaryPastHome = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -104,9 +111,14 @@ export const elementaryPastHome = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once. Was Nina's weekend busy, relaxing, or both? Then listen again for details.",
       audioSrc: "",
@@ -128,7 +140,10 @@ export const elementaryPastHome = {
         { speaker: "Nina", line: ["I ordered takeout and called a friend."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -156,9 +171,14 @@ export const elementaryPastHome = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -187,7 +207,10 @@ export const elementaryPastHome = {
         ],
       },
     ],
-    columnQuestions: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -237,7 +260,10 @@ export const elementaryPastHome = {
         },
       ],
     },
-    columnVerbs: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -302,7 +328,10 @@ export const elementaryPastHome = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -320,7 +349,10 @@ export const elementaryPastHome = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       {
         parts: ["Is Nina's Saturday finished now?"],
         options: [
@@ -343,9 +375,17 @@ export const elementaryPastHome = {
         ],
       },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -366,7 +406,10 @@ export const elementaryPastHome = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -399,7 +442,10 @@ export const elementaryPastHome = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -414,12 +460,16 @@ export const elementaryPastHome = {
         ],
       },
     },
+      }
+    ],
   }, 
   production: {
-    task: {
-      instruction: "Compare two weekends at home:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Compare two weekends at home:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Prepare four true or invented details: two things you did and two things you didn't do.",
@@ -437,6 +487,7 @@ export const elementaryPastHome = {
           ],
         },
       ],
-    },
+      }
+    ],
   },
 };

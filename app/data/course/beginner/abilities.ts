@@ -13,8 +13,16 @@ export const beginnerAbilities = {
   },
 
   introduction: {
-    questions: [[audio("What can you do well?"), "What can you do well?"]],
-    storyCarousel: {
+    blocks: [
+      {
+        type: "lines",
+        value: [[audio("What can you do well?"), "What can you do well?"]],
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -51,8 +59,10 @@ export const beginnerAbilities = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -73,10 +83,15 @@ export const beginnerAbilities = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction: "Listen once: can Jake do every activity Emma asks about?",
       audioSrc: "",
       lines: [
@@ -106,7 +121,10 @@ export const beginnerAbilities = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -127,10 +145,15 @@ export const beginnerAbilities = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: ["We use ", bold("can"), " to say that someone has an ability."],
@@ -139,8 +162,11 @@ export const beginnerAbilities = {
         as: "p",
         parts: ["After ", bold("can"), " we use the base form of the verb."],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         // Column 1
@@ -180,7 +206,10 @@ export const beginnerAbilities = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [
@@ -196,8 +225,11 @@ export const beginnerAbilities = {
           "In short answers, do not repeat the main verb: Yes, I can. / No, I can't.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["If I can swim, am I able to swim?"],
@@ -222,11 +254,19 @@ export const beginnerAbilities = {
           { option: "To + verb", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -247,8 +287,10 @@ export const beginnerAbilities = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: false,
       instruction: "Fill in the blanks with can / can’t.",
       numbered: true,
@@ -273,8 +315,10 @@ export const beginnerAbilities = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -295,13 +339,17 @@ export const beginnerAbilities = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Find and report three abilities:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Find and report three abilities:",
+        listType: "checkbox",
+        items: [
         {
           content: [mark("Prepare three questions"), " using “Can you…?”"],
           textarea: true,
@@ -313,6 +361,7 @@ export const beginnerAbilities = {
           content: ["Report three results using a clear can or can’t."],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

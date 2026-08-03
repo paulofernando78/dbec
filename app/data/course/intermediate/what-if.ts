@@ -17,12 +17,20 @@ export const intermediateWhatIf = {
     ],
   },
   introduction: {
-    imageQuiz: {
+    blocks: [
+      {
+        type: "imageQuiz",
+        ...{
       words,
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Read or listen once: what is the backup plan if it rains? Then read or listen again for the conditions and their consequences.",
       audioSrc: "",
@@ -45,7 +53,10 @@ export const intermediateWhatIf = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the answer supported by the dialogue.",
       exercise: {
         questions: [
@@ -76,9 +87,15 @@ export const intermediateWhatIf = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -115,7 +132,10 @@ export const intermediateWhatIf = {
         },
       ],
     },
-    meaning: [
+      },
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [bold("Let’s see how the FIRST CONDITIONAL works.")],
@@ -231,7 +251,10 @@ export const intermediateWhatIf = {
         ],
       },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 320,
       cols: [
         {
@@ -268,7 +291,10 @@ export const intermediateWhatIf = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -282,7 +308,10 @@ export const intermediateWhatIf = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "p",
         parts: ["“If it rains, I will stay at home.” Has it happened yet? Is it possible?"],
@@ -291,9 +320,17 @@ export const intermediateWhatIf = {
       { as: "p", parts: ["Does unless mean if not?"] },
       { as: "p", parts: ["Which clause describes the result?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the most accurate option.",
       exercise: {
         questions: [
@@ -348,7 +385,10 @@ export const intermediateWhatIf = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with the target language.",
       numbered: true,
@@ -405,7 +445,10 @@ export const intermediateWhatIf = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentences.",
       numbered: true,
@@ -431,13 +474,17 @@ export const intermediateWhatIf = {
         ],
       },
     },
+      }
+    ],
   },
   
   production: {
-    task: {
-      instruction: "Discuss a realistic plan and prepare for possible problems:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Discuss a realistic plan and prepare for possible problems:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Write three possible decisions you face this month and their consequences.",
@@ -457,6 +504,7 @@ export const intermediateWhatIf = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

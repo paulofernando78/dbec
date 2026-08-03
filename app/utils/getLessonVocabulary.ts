@@ -46,24 +46,34 @@ const uniqueWords = (words: GuessWord[]) => {
   });
 };
 
+const getBlocks = (section: Record<string, any> = {}) =>
+  Array.isArray(section.blocks) ? section.blocks : [];
+
+const findBlock = (section: Record<string, any>, type: string) =>
+  getBlocks(section).find((block: Record<string, any>) => block.type === type);
+
+const filterBlocks = (section: Record<string, any>, type: string) =>
+  getBlocks(section).filter((block: Record<string, any>) => block.type === type);
+
 export const getLessonVocabulary = (
   lesson: Record<string, any>,
   lessonCardVocabulary?: string,
 ): LessonVocabulary => {
   const introduction = lesson.introduction ?? {};
+  const imageQuiz = introduction.imageQuiz ?? findBlock(introduction, "imageQuiz");
 
-  if (introduction.imageQuiz?.words?.length) {
+  if (imageQuiz?.words?.length) {
     return {
       source: "imageQuiz",
-      words: uniqueWords(introduction.imageQuiz.words).slice(0, 10),
+      words: uniqueWords(imageQuiz.words).slice(0, 10),
     };
   }
 
-  if (introduction.imageQuiz?.questions?.length) {
+  if (imageQuiz?.questions?.length) {
     return {
       source: "imageQuiz",
       words: uniqueWords(
-        introduction.imageQuiz.questions.map(
+        imageQuiz.questions.map(
           ({ word, imgSrc, imgAlt }: Record<string, any>) => ({
             word,
             src: imgSrc,
@@ -74,8 +84,15 @@ export const getLessonVocabulary = (
     };
   }
 
-  if (introduction.vocabularyCarousel?.words?.length) {
-    const words = introduction.vocabularyCarousel.words.flatMap(
+  const vocabularyCarousel =
+    introduction.vocabularyCarousel ??
+    getBlocks(introduction).find(
+      (block: Record<string, any>) =>
+        block.type === "carousel" && block.words?.length,
+    );
+
+  if (vocabularyCarousel?.words?.length) {
+    const words = vocabularyCarousel.words.flatMap(
       (item: Record<string, any>) => {
         const word = item.word ?? item.dictionary ?? item.alt;
         if (!word) return [];
@@ -129,9 +146,27 @@ export const getPracticeExerciseCounts = (lesson: Record<string, any>) => {
   const practice = lesson.practice ?? {};
 
   return {
-    radio: practice.radio?.exercise?.questions?.length ?? 0,
-    fillInTheBlanks: practice.fillInTheBlanks?.exercise?.blocks?.length ?? 0,
-    scramble: practice.scramble?.exercise?.items?.length ?? 0,
+    radio:
+      practice.radio?.exercise?.questions?.length ??
+      filterBlocks(practice, "radio").reduce(
+        (total: number, block: Record<string, any>) =>
+          total + (block.exercise?.questions?.length ?? 0),
+        0,
+      ),
+    fillInTheBlanks:
+      practice.fillInTheBlanks?.exercise?.blocks?.length ??
+      filterBlocks(practice, "fillInTheBlanks").reduce(
+        (total: number, block: Record<string, any>) =>
+          total + (block.exercise?.blocks?.length ?? 0),
+        0,
+      ),
+    scramble:
+      practice.scramble?.exercise?.items?.length ??
+      filterBlocks(practice, "unscramble").reduce(
+        (total: number, block: Record<string, any>) =>
+          total + (block.exercise?.items?.length ?? 0),
+        0,
+      ),
   };
 };
 

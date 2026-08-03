@@ -12,13 +12,20 @@ export const beginnerPersonalInformation = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What information do people usually share when they meet?"),
         "What information do people usually share when they meet?",
       ],
     ],
-    radio: {
+        className: "mb-4",
+      },
+      {
+        type: "radio",
+        ...{
       instruction:
         "Choose the information people commonly use to introduce themselves.",
       exercise: {
@@ -40,10 +47,15 @@ export const beginnerPersonalInformation = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: is Liz asking about Laura’s family or her personal information?",
       audioSrc: "",
@@ -90,7 +102,10 @@ export const beginnerPersonalInformation = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -111,10 +126,20 @@ export const beginnerPersonalInformation = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    personalInformation: {
+    blocks: [
+      {
+        type: "subsection",
+        label: "Personal Information",
+        heading: 4,
+      },
+      {
+        type: "column",
+        ...{
       width: 302,
       cols: [
         {
@@ -171,7 +196,14 @@ export const beginnerPersonalInformation = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "alphabet",
+
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [
@@ -204,8 +236,11 @@ export const beginnerPersonalInformation = {
           ".",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["“Where are you from?”: a place or a phone number?"],
@@ -214,11 +249,19 @@ export const beginnerPersonalInformation = {
           { option: "A phone number", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the best response.",
       exercise: {
         questions: [
@@ -253,7 +296,10 @@ export const beginnerPersonalInformation = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the questions with the missing words.",
       numbered: true,
@@ -294,13 +340,17 @@ export const beginnerPersonalInformation = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Interview a partner using fictional contact details:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Interview a partner using fictional contact details:",
+        listType: "checkbox",
+        items: [
         {
           content: content({
             parts: ["Ask their full, first, and last name."],
@@ -329,6 +379,7 @@ export const beginnerPersonalInformation = {
           }),
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

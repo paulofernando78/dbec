@@ -8,28 +8,21 @@ export const elementaryHobbies = {
     descriptions: ["I enjoy taking photos.", "I'd like to learn to paint."],
   },
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What do you enjoy doing in your free time?"),
         "What do you enjoy doing in your free time?",
       ],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "photography" },
-        { src: "/", alt: "gardening" },
-        { src: "/", alt: "painting" },
-        { src: "/", alt: "board games" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "photography" }, "photography"] },
-        { as: "span", parts: [{ audio: "gardening" }, "gardening"] },
-        { as: "span", parts: [{ audio: "painting" }, "painting"] },
-        { as: "span", parts: [{ audio: "board games" }, "board games"] },
-      ]),
-    },
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -61,7 +54,61 @@ export const elementaryHobbies = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "photography",
+          imgSrc: "/",
+          imgAlt: "photography",
+          options: shuffle([
+            { option: "photography", isCorrect: true },
+            { option: "gardening", isCorrect: false },
+            { option: "painting", isCorrect: false },
+            { option: "board games", isCorrect: false },
+          ]),
+        },
+        {
+          word: "gardening",
+          imgSrc: "/",
+          imgAlt: "gardening",
+          options: shuffle([
+            { option: "photography", isCorrect: false },
+            { option: "gardening", isCorrect: true },
+            { option: "painting", isCorrect: false },
+            { option: "board games", isCorrect: false },
+          ]),
+        },
+        {
+          word: "painting",
+          imgSrc: "/",
+          imgAlt: "painting",
+          options: shuffle([
+            { option: "photography", isCorrect: false },
+            { option: "gardening", isCorrect: false },
+            { option: "painting", isCorrect: true },
+            { option: "board games", isCorrect: false },
+          ]),
+        },
+        {
+          word: "board games",
+          imgSrc: "/",
+          imgAlt: "board games",
+          options: shuffle([
+            { option: "photography", isCorrect: false },
+            { option: "gardening", isCorrect: false },
+            { option: "painting", isCorrect: false },
+            { option: "board games", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -82,9 +129,14 @@ export const elementaryHobbies = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: which hobbies do Nora and Kai want to learn? Then listen again for their current interests.",
       audioSrc: "",
@@ -100,7 +152,10 @@ export const elementaryHobbies = {
         { speaker: "Nora", line: ["We could take an art class together."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -128,9 +183,14 @@ export const elementaryHobbies = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -148,7 +208,10 @@ export const elementaryHobbies = {
       },
       { type: "spacer" },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -195,7 +258,10 @@ export const elementaryHobbies = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -209,14 +275,25 @@ export const elementaryHobbies = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["After enjoy, do we use read or reading?"] },
       { as: "p", parts: ["After want, do we use to + verb?"] },
       { as: "p", parts: ["Is a hobby a free-time activity?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -251,7 +328,10 @@ export const elementaryHobbies = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -276,7 +356,10 @@ export const elementaryHobbies = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -293,12 +376,16 @@ export const elementaryHobbies = {
         ],
       },
     },
+      }
+    ],
   },
   production: {
-    task: {
-      instruction: "Find a hobby you and a partner could try together:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Find a hobby you and a partner could try together:",
+        listType: "checkbox",
+        items: [
         { content: ["Describe three hobbies you enjoy."], textarea: true },
         {
           content: ["Write about two hobbies you would like to try."],
@@ -309,6 +396,7 @@ export const elementaryHobbies = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

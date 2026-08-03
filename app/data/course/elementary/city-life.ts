@@ -11,28 +11,21 @@ export const elementaryCityLife = {
     ],
   },
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("Do you prefer city life or life in a small town? Why?"),
         "Do you prefer city life or life in a small town? Why?",
       ],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "crowded" },
-        { src: "/", alt: "quiet" },
-        { src: "/", alt: "subway" },
-        { src: "/", alt: "traffic" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "crowded" }, "crowded"] },
-        { as: "span", parts: [{ audio: "quiet" }, "quiet"] },
-        { as: "span", parts: [{ audio: "subway" }, "subway"] },
-        { as: "span", parts: [{ audio: "traffic" }, "traffic"] },
-      ]),
-    },
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -64,7 +57,61 @@ export const elementaryCityLife = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "crowded",
+          imgSrc: "/",
+          imgAlt: "crowded",
+          options: shuffle([
+            { option: "crowded", isCorrect: true },
+            { option: "quiet", isCorrect: false },
+            { option: "subway", isCorrect: false },
+            { option: "traffic", isCorrect: false },
+          ]),
+        },
+        {
+          word: "quiet",
+          imgSrc: "/",
+          imgAlt: "quiet",
+          options: shuffle([
+            { option: "crowded", isCorrect: false },
+            { option: "quiet", isCorrect: true },
+            { option: "subway", isCorrect: false },
+            { option: "traffic", isCorrect: false },
+          ]),
+        },
+        {
+          word: "subway",
+          imgSrc: "/",
+          imgAlt: "subway",
+          options: shuffle([
+            { option: "crowded", isCorrect: false },
+            { option: "quiet", isCorrect: false },
+            { option: "subway", isCorrect: true },
+            { option: "traffic", isCorrect: false },
+          ]),
+        },
+        {
+          word: "traffic",
+          imgSrc: "/",
+          imgAlt: "traffic",
+          options: shuffle([
+            { option: "crowded", isCorrect: false },
+            { option: "quiet", isCorrect: false },
+            { option: "subway", isCorrect: false },
+            { option: "traffic", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -85,9 +132,14 @@ export const elementaryCityLife = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: which place is quieter, Metro City or Ben's hometown? Then listen again for the comparisons.",
       audioSrc: "",
@@ -100,7 +152,10 @@ export const elementaryCityLife = {
         { speaker: "Ben", line: ["It is quieter, cleaner, and less crowded."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -128,9 +183,14 @@ export const elementaryCityLife = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -148,7 +208,10 @@ export const elementaryCityLife = {
       },
       { type: "spacer" },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -190,7 +253,10 @@ export const elementaryCityLife = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -204,14 +270,25 @@ export const elementaryCityLife = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["Are we comparing one place or two?"] },
       { as: "p", parts: ["Is a busier place more or less active?"] },
       { as: "p", parts: ["Do we say more faster or faster?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -249,7 +326,10 @@ export const elementaryCityLife = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -274,7 +354,10 @@ export const elementaryCityLife = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -291,12 +374,16 @@ export const elementaryCityLife = {
         ],
       },
     },
+      }
+    ],
   },
   production: {
-    task: {
-      instruction: "Compare two places and decide which one you prefer:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Compare two places and decide which one you prefer:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Compare your city with another place in four sentences."],
           textarea: true,
@@ -310,6 +397,7 @@ export const elementaryCityLife = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

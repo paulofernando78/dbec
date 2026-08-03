@@ -21,18 +21,31 @@ export const beginnerMyFamily = {
   },
 
   introduction: {
-    instruction: ["Look at Laura’s family."],
-    imgSrc:
-      "/assets/img/course/a1/my-family/introduction/laura-family-tree.avif",
-    imgAlt: "Laura’s family tree showing three generations",
-    questions: [
+    blocks: [
+      {
+        type: "line",
+        value: ["Look at Laura’s family."],
+        className: "font-bold mb-4",
+      },
+      {
+        type: "image",
+        src: "/assets/img/course/a1/my-family/introduction/laura-family-tree.avif",
+        alt: "Laura’s family tree showing three generations",
+      },
+      {
+        type: "lines",
+        value: [
       [
         audio("Is Laura’s family big or small?"),
         "Is Laura’s family big or small?",
       ],
       [audio("Is your family big or small?"), "Is your family big or small?"],
     ],
-    radio: {
+        className: "mb-4",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: shuffle([
@@ -46,16 +59,27 @@ export const beginnerMyFamily = {
         ]),
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    instruction: [
+    blocks: [
+      {
+        type: "line",
+        value: [
       "Look at Laura and Liz talking about Laura’s family photo album.",
     ],
-    imgSrc:
-      "/assets/img/course/a1/my-family/presentation/laura-liz-photo-album.avif",
-    imgAlt: "Laura with her family",
-    dialogue: {
+        className: "font-bold mb-4",
+      },
+      {
+        type: "image",
+        src: "/assets/img/course/a1/my-family/presentation/laura-liz-photo-album.avif",
+        alt: "Laura with her family",
+      },
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: is Laura describing friends, classmates, or family members?",
       audioSrc: "",
@@ -126,7 +150,10 @@ export const beginnerMyFamily = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -161,10 +188,16 @@ export const beginnerMyFamily = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Listen to the questions and answers from Laura's conversation. Notice how the language changes for one person and more than one person.",
       imgs: [
@@ -238,7 +271,10 @@ export const beginnerMyFamily = {
         },
       ],
     },
-    meaning: [
+      },
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -254,8 +290,11 @@ export const beginnerMyFamily = {
           " refers to two or more people.",
         ],
       },
-    ] satisfies Meaning[],
-    columnQuestions: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 260,
       cols: [
         {
@@ -310,7 +349,10 @@ export const beginnerMyFamily = {
         },
       ],
     },
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 250,
       cols: [
         {
@@ -368,7 +410,10 @@ export const beginnerMyFamily = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [
@@ -407,8 +452,11 @@ export const beginnerMyFamily = {
           ".",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["Does “Who’s she?” ask about one person or several people?"],
@@ -441,11 +489,19 @@ export const beginnerMyFamily = {
           { option: "No", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -520,8 +576,10 @@ export const beginnerMyFamily = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with the correct family word.",
       numbered: true,
@@ -590,8 +648,10 @@ export const beginnerMyFamily = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -612,13 +672,17 @@ export const beginnerMyFamily = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Use a family photo, a fictional family, or a drawing:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Use a family photo, a fictional family, or a drawing:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Introduce at least three people and say how they are related to you.",
@@ -643,6 +707,7 @@ export const beginnerMyFamily = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

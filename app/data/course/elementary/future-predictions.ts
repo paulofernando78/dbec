@@ -13,13 +13,21 @@ export const elementaryFuturePredictions = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What do you think life will be like in 2050?"),
         "What do you think life will be like in 2050?",
       ],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -72,8 +80,10 @@ export const elementaryFuturePredictions = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -97,10 +107,15 @@ export const elementaryFuturePredictions = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: do Leo and Mia agree completely about life in 2050? Then listen again for their predictions.",
       audioSrc: "/audio/a2/unit-3-future-predictions/dialogue.mp3",
@@ -137,7 +152,10 @@ export const elementaryFuturePredictions = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -158,10 +176,15 @@ export const elementaryFuturePredictions = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: [
@@ -169,8 +192,11 @@ export const elementaryFuturePredictions = {
           "We use 'will' + base verb to make predictions about the future.",
         ],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         // Column 1
@@ -238,7 +264,10 @@ export const elementaryFuturePredictions = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [
@@ -252,8 +281,11 @@ export const elementaryFuturePredictions = {
           "Use I think, probably, or maybe to show how certain a prediction is. In speech, will and will not commonly contract to 'll and won't.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: [
@@ -268,11 +300,19 @@ export const elementaryFuturePredictions = {
         as: "span",
         parts: ["Which word do we use to make predictions? ('will')"],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -300,8 +340,10 @@ export const elementaryFuturePredictions = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with 'will'.",
       numbered: true,
@@ -342,8 +384,10 @@ export const elementaryFuturePredictions = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -368,13 +412,17 @@ export const elementaryFuturePredictions = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Make and discuss predictions about life in 2050:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Make and discuss predictions about life in 2050:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Write three predictions about the world in 2050 using 'will'.",
@@ -390,6 +438,7 @@ export const elementaryFuturePredictions = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

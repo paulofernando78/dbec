@@ -16,13 +16,21 @@ export const beginnerMyWeek = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What do you usually do on Saturday?"),
         "What do you usually do on Saturday?",
       ],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -59,8 +67,10 @@ export const beginnerMyWeek = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -88,10 +98,15 @@ export const beginnerMyWeek = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: are Emma and Jake talking about daily or weekly habits?",
       audioSrc: "",
@@ -122,7 +137,10 @@ export const beginnerMyWeek = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -143,10 +161,15 @@ export const beginnerMyWeek = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: ["always"],
@@ -163,8 +186,11 @@ export const beginnerMyWeek = {
         as: "span",
         parts: ["never"],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -216,7 +242,10 @@ export const beginnerMyWeek = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [bold("always"), " = 100%"],
@@ -244,8 +273,11 @@ export const beginnerMyWeek = {
           bold("She is sometimes late."),
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["If I always study on Monday, do I study every Monday?"],
@@ -270,11 +302,19 @@ export const beginnerMyWeek = {
           { option: "Yes", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -302,8 +342,10 @@ export const beginnerMyWeek = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Fill in the blank with the correct adverb of frequency.",
       numbered: true,
@@ -336,8 +378,10 @@ export const beginnerMyWeek = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -358,13 +402,17 @@ export const beginnerMyWeek = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Create and present a simple weekly schedule:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Create and present a simple weekly schedule:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Add at least four activities to a weekly schedule. Include days and times.",
@@ -382,6 +430,7 @@ export const beginnerMyWeek = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

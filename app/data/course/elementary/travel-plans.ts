@@ -16,13 +16,21 @@ export const elementaryTravelPlans = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("Where would you like to go on your next trip?"),
         "Where would you like to go on your next trip?",
       ],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -72,8 +80,10 @@ export const elementaryTravelPlans = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -101,10 +111,15 @@ export const elementaryTravelPlans = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: where is Jake going, and who is he going with? Then listen again for the planned activities.",
       audioSrc: "",
@@ -145,7 +160,10 @@ export const elementaryTravelPlans = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -173,10 +191,15 @@ export const elementaryTravelPlans = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: [audio("/"), "travel"],
@@ -197,8 +220,11 @@ export const elementaryTravelPlans = {
         as: "span",
         parts: [audio("/"), "try local food"],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -260,7 +286,10 @@ export const elementaryTravelPlans = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [
@@ -288,8 +317,11 @@ export const elementaryTravelPlans = {
           ".",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: [
@@ -304,11 +336,19 @@ export const elementaryTravelPlans = {
         as: "span",
         parts: ["After 'going to', do we use the base verb?"],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -336,8 +376,10 @@ export const elementaryTravelPlans = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Fill in the blanks with the correct words.",
       numbered: true,
@@ -386,8 +428,10 @@ export const elementaryTravelPlans = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -412,13 +456,17 @@ export const elementaryTravelPlans = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Plan and compare a short trip with a partner:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Plan and compare a short trip with a partner:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Plan a short trip for next weekend."],
           textarea: true,
@@ -431,6 +479,7 @@ export const elementaryTravelPlans = {
           content: ["Ask your partner about their travel plans."],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

@@ -5,7 +5,7 @@ export type CourseLessonCard = LessonCardContent & {
   label: string;
 };
 
-export const courseLessonsCardData = {
+export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   beginner: [
     // Hello
     {
@@ -909,7 +909,285 @@ export const courseLessonsCardData = {
         "Present a concise evidence-based briefing with justified recommendations.",
     },
   ],
-} satisfies Record<string, CourseLessonCard[]>;
+};
+
+const getExistingCourseLessonCard = (href: string) => {
+  const card = Object.values(courseLessonsCardData)
+    .flat()
+    .find((lesson) => lesson.href === href);
+
+  if (!card) {
+    throw new Error(`Missing course lesson card for ${href}`);
+  }
+
+  return card;
+};
+
+const useExistingCard = ({
+  from,
+  href,
+  label,
+}: {
+  from: string;
+  href: string;
+  label: string;
+}): CourseLessonCard => ({
+  ...getExistingCourseLessonCard(from),
+  href,
+  label,
+});
+
+courseLessonsCardData.beginner.push(
+  useExistingCard({
+    from: "/courses/beginner/my-house",
+    href: "/courses/beginner/renting-a-home",
+    label: "Renting a Home",
+  }),
+  useExistingCard({
+    from: "/courses/beginner/food-and-drinks",
+    href: "/courses/beginner/eating-out",
+    label: "Eating Out",
+  }),
+  useExistingCard({
+    from: "/courses/beginner/shopping",
+    href: "/courses/beginner/bargain-hunting",
+    label: "Bargain Hunting",
+  }),
+  useExistingCard({
+    from: "/courses/beginner/around-town",
+    href: "/courses/beginner/finding-your-way",
+    label: "Finding Your Way",
+  }),
+  useExistingCard({
+    from: "/courses/beginner/real-life-project",
+    href: "/courses/beginner/course-review",
+    label: "Course Review",
+  }),
+);
+
+courseLessonsCardData.elementary.push(
+  useExistingCard({
+    from: "/courses/elementary/healthy-living",
+    href: "/courses/elementary/giving-advice",
+    label: "Giving Advice",
+  }),
+  useExistingCard({
+    from: "/courses/elementary/rules",
+    href: "/courses/elementary/school-and-work-rules",
+    label: "School & Work Rules",
+  }),
+  useExistingCard({
+    from: "/courses/elementary/shopping-smart",
+    href: "/courses/elementary/complaints-and-returns",
+    label: "Complaints & Returns",
+  }),
+);
+
+courseLessonsCardData.intermediate = [
+  useExistingCard({
+    from: "/courses/intermediate/life-experiences",
+    href: "/courses/intermediate/milestones",
+    label: "Milestones",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/life-experiences",
+    href: "/courses/intermediate/looking-back",
+    label: "Looking Back",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/storytelling",
+    href: "/courses/intermediate/narrative-tenses",
+    label: "Narrative Tenses",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/storytelling",
+    href: "/courses/intermediate/tell-your-story",
+    label: "Tell Your Story",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/making-plans",
+    href: "/courses/intermediate/future-arrangements",
+    label: "Future Arrangements",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/making-plans",
+    href: "/courses/intermediate/lets-meet-up",
+    label: "Let's Meet Up",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/what-if",
+    href: "/courses/intermediate/real-possibilities",
+    label: "Real Possibilities",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/what-if",
+    href: "/courses/intermediate/imaginary-situations",
+    label: "Imaginary Situations",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/green-planet",
+    href: "/courses/intermediate/our-planet",
+    label: "Our Planet",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/green-planet",
+    href: "/courses/intermediate/taking-action",
+    label: "Taking Action",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/technology-today",
+    href: "/courses/intermediate/digital-life",
+    label: "Digital Life",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/technology-today",
+    href: "/courses/intermediate/pros-and-cons",
+    label: "Pros & Cons",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/news-report",
+    href: "/courses/intermediate/in-the-news",
+    label: "In The News",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/news-report",
+    href: "/courses/intermediate/breaking-news",
+    label: "Breaking News",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/what-did-they-say",
+    href: "/courses/intermediate/he-said-she-said",
+    label: "He Said, She Said",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/what-did-they-say",
+    href: "/courses/intermediate/the-interview",
+    label: "The Interview",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/career-path",
+    href: "/courses/intermediate/job-hunting",
+    label: "Job Hunting",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/career-path",
+    href: "/courses/intermediate/career-choices",
+    label: "Career Choices",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/relationships",
+    href: "/courses/intermediate/reading-people",
+    label: "Reading People",
+  }),
+  useExistingCard({
+    from: "/courses/intermediate/relationships",
+    href: "/courses/intermediate/social-situations",
+    label: "Social Situations",
+  }),
+];
+
+courseLessonsCardData.upperIntermediate = [
+  useExistingCard({
+    from: "/courses/upper-intermediate/dream-scenarios",
+    href: "/courses/upper-intermediate/wishing-for-change",
+    label: "Wishing For Change",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/dream-scenarios",
+    href: "/courses/upper-intermediate/life-goals",
+    label: "Life Goals",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/regrets",
+    href: "/courses/upper-intermediate/if-only",
+    label: "If Only...",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/regrets",
+    href: "/courses/upper-intermediate/looking-back",
+    label: "Looking Back",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/business-communication",
+    href: "/courses/upper-intermediate/meeting-language",
+    label: "Meeting Language",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/business-communication",
+    href: "/courses/upper-intermediate/lets-negotiate",
+    label: "Let's Negotiate",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/leadership",
+    href: "/courses/upper-intermediate/qualities-of-a-leader",
+    label: "Qualities of a Leader",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/leadership",
+    href: "/courses/upper-intermediate/leading-a-team",
+    label: "Leading a Team",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/innovation",
+    href: "/courses/upper-intermediate/future-of-work",
+    label: "The Future of Work",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/innovation",
+    href: "/courses/upper-intermediate/pitch-your-idea",
+    label: "Pitch Your Idea",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/global-issues",
+    href: "/courses/upper-intermediate/world-problems",
+    label: "World Problems",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/global-issues",
+    href: "/courses/upper-intermediate/finding-solutions",
+    label: "Finding Solutions",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/debate-club",
+    href: "/courses/upper-intermediate/making-your-case",
+    label: "Making Your Case",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/debate-club",
+    href: "/courses/upper-intermediate/the-big-debate",
+    label: "The Big Debate",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/media-and-marketing",
+    href: "/courses/upper-intermediate/selling-an-idea",
+    label: "Selling An Idea",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/media-and-marketing",
+    href: "/courses/upper-intermediate/ad-campaign",
+    label: "Ad Campaign",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/native-like-english",
+    href: "/courses/upper-intermediate/everyday-idioms",
+    label: "Everyday Idioms",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/native-like-english",
+    href: "/courses/upper-intermediate/using-idioms-naturally",
+    label: "Using Idioms Naturally",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/natural-english",
+    href: "/courses/upper-intermediate/sounding-natural",
+    label: "Sounding Natural",
+  }),
+  useExistingCard({
+    from: "/courses/upper-intermediate/natural-english",
+    href: "/courses/upper-intermediate/real-conversations",
+    label: "Real Conversations",
+  }),
+];
 
 const allCourseLessonCards = Object.values(courseLessonsCardData).flat();
 

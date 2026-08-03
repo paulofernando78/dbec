@@ -6,7 +6,11 @@ export const elementaryPastBeach = {
     descriptions: ["We went to the beach, swam, and watched the sunset."],
   },
   introduction: {
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Look at the pictures. What made Laura's day special? Then listen and check.",
       imgs: [
@@ -84,7 +88,10 @@ export const elementaryPastBeach = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -105,9 +112,14 @@ export const elementaryPastBeach = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once. Did Laura enjoy her beach day? Then listen again for details.",
       audioSrc: "",
@@ -129,7 +141,10 @@ export const elementaryPastBeach = {
         { speaker: "Laura", line: ["No, it was warm and calm."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -157,9 +172,14 @@ export const elementaryPastBeach = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -188,7 +208,10 @@ export const elementaryPastBeach = {
         ],
       },
     ],
-    columnQuestions: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -246,7 +269,10 @@ export const elementaryPastBeach = {
         },
       ],
     },
-    columnVerbs: {
+      },
+      {
+        type: "column",
+        ...{
       width: 250,
       cols: [
         {
@@ -277,7 +303,10 @@ export const elementaryPastBeach = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -295,7 +324,10 @@ export const elementaryPastBeach = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       {
         parts: ["Is Laura's beach day finished?"],
         options: [
@@ -318,9 +350,17 @@ export const elementaryPastBeach = {
         ],
       },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -348,7 +388,10 @@ export const elementaryPastBeach = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -381,7 +424,10 @@ export const elementaryPastBeach = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -402,12 +448,16 @@ export const elementaryPastBeach = {
         ],
       },
     },
+      }
+    ],
   },
   production: {
-    task: {
-      instruction: "Share a real or invented beach story:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Share a real or invented beach story:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Prepare five notes: when, who with, weather, three activities, and one memorable detail.",
@@ -428,6 +478,7 @@ export const elementaryPastBeach = {
           content: ["Retell one interesting detail from your partner's story."],
         },
       ],
-    },
+      }
+    ],
   },
 };

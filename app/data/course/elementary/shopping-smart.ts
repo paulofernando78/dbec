@@ -8,28 +8,21 @@ export const elementaryShoppingSmart = {
     descriptions: ["How much rice do we need?", "We need some apples."],
   },
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What is usually on your shopping list?"),
         "What is usually on your shopping list?",
       ],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "shopping list" },
-        { src: "/", alt: "price" },
-        { src: "/", alt: "discount" },
-        { src: "/", alt: "quantity" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "shopping list" }, "shopping list"] },
-        { as: "span", parts: [{ audio: "price" }, "price"] },
-        { as: "span", parts: [{ audio: "discount" }, "discount"] },
-        { as: "span", parts: [{ audio: "quantity" }, "quantity"] },
-      ]),
-    },
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -61,7 +54,61 @@ export const elementaryShoppingSmart = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "shopping list",
+          imgSrc: "/",
+          imgAlt: "shopping list",
+          options: shuffle([
+            { option: "shopping list", isCorrect: true },
+            { option: "price", isCorrect: false },
+            { option: "discount", isCorrect: false },
+            { option: "quantity", isCorrect: false },
+          ]),
+        },
+        {
+          word: "price",
+          imgSrc: "/",
+          imgAlt: "price",
+          options: shuffle([
+            { option: "shopping list", isCorrect: false },
+            { option: "price", isCorrect: true },
+            { option: "discount", isCorrect: false },
+            { option: "quantity", isCorrect: false },
+          ]),
+        },
+        {
+          word: "discount",
+          imgSrc: "/",
+          imgAlt: "discount",
+          options: shuffle([
+            { option: "shopping list", isCorrect: false },
+            { option: "price", isCorrect: false },
+            { option: "discount", isCorrect: true },
+            { option: "quantity", isCorrect: false },
+          ]),
+        },
+        {
+          word: "quantity",
+          imgSrc: "/",
+          imgAlt: "quantity",
+          options: shuffle([
+            { option: "shopping list", isCorrect: false },
+            { option: "price", isCorrect: false },
+            { option: "discount", isCorrect: false },
+            { option: "quantity", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -82,9 +129,14 @@ export const elementaryShoppingSmart = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: what does Rosa need to buy? Then listen again for the quantities.",
       audioSrc: "",
@@ -100,7 +152,10 @@ export const elementaryShoppingSmart = {
         { speaker: "Tom", line: ["Six, and please buy some milk too."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -128,9 +183,14 @@ export const elementaryShoppingSmart = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -148,7 +208,10 @@ export const elementaryShoppingSmart = {
       },
       { type: "spacer" },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -200,7 +263,10 @@ export const elementaryShoppingSmart = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -214,14 +280,25 @@ export const elementaryShoppingSmart = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["Can we count apples one by one?"] },
       { as: "p", parts: ["Do we use much or many with milk?"] },
       { as: "p", parts: ["Is any common in questions?"] },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -256,7 +333,10 @@ export const elementaryShoppingSmart = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -281,7 +361,10 @@ export const elementaryShoppingSmart = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -298,12 +381,16 @@ export const elementaryShoppingSmart = {
         ],
       },
     },
+      }
+    ],
   }, 
   production: {
-    task: {
-      instruction: "Plan a shopping list and agree on quantities:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Plan a shopping list and agree on quantities:",
+        listType: "checkbox",
+        items: [
         {
           content: ["Create a shopping list for three meals."],
           textarea: true,
@@ -317,6 +404,7 @@ export const elementaryShoppingSmart = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };

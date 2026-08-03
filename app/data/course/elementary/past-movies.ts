@@ -15,8 +15,15 @@ export const elementaryPastMovies = {
   },
 
   introduction: {
-    instruction: ["Talk about movies before you begin."],
-    questions: [
+    blocks: [
+      {
+        type: "line",
+        value: ["Talk about movies before you begin."],
+        className: "font-bold mb-4",
+      },
+      {
+        type: "lines",
+        value: [
       [audio("Do you like watching movies?"), "Do you like watching movies?"],
       [
         audio("Where do you usually watch movies?"),
@@ -27,7 +34,11 @@ export const elementaryPastMovies = {
         "Who do you usually watch movies with?",
       ],
     ],
-    imageQuiz: {
+        className: "mb-4",
+      },
+      {
+        type: "imageQuiz",
+        ...{
       words: [
         { word: "movie theater", img: 0 },
         { word: "ticket", img: 0 },
@@ -36,10 +47,16 @@ export const elementaryPastMovies = {
         { word: "row of seats", img: 0 },
       ],
     },
+      }
+    ],
   },
 
   presentation: {
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Look at the pictures. What happened on Laura's movie night? Listen and check.",
       imgs: [
@@ -162,7 +179,10 @@ export const elementaryPastMovies = {
         },
       ],
     },
-    storyRadio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -190,7 +210,10 @@ export const elementaryPastMovies = {
         ],
       },
     },
-    dialogue: {
+      },
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once. Who had the more active weekend? Then listen again for details.",
       audioSrc: "",
@@ -255,8 +278,10 @@ export const elementaryPastMovies = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -284,10 +309,15 @@ export const elementaryPastMovies = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -317,9 +347,11 @@ export const elementaryPastMovies = {
           bold("Would you recommend it?"),
         ],
       },
-    ] satisfies Meaning[],
-
-    columnQuestions: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -379,8 +411,10 @@ export const elementaryPastMovies = {
         },
       ],
     },
-
-    columnVerbs: {
+      },
+      {
+        type: "column",
+        ...{
       width: 280,
       cols: [
         {
@@ -416,8 +450,10 @@ export const elementaryPastMovies = {
         },
       ],
     },
-
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -438,9 +474,11 @@ export const elementaryPastMovies = {
           " it.",
         ],
       },
-    ] satisfies Notes[],
-
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         parts: [
           "In 'I saw a comedy last weekend', is the experience finished?",
@@ -480,11 +518,19 @@ export const elementaryPastMovies = {
           { option: "No", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -512,8 +558,10 @@ export const elementaryPastMovies = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -546,8 +594,10 @@ export const elementaryPastMovies = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -568,13 +618,17 @@ export const elementaryPastMovies = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Choose a movie together:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Choose a movie together:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Prepare notes about a real or invented movie experience: title or genre, who with, place, opinion, and reason.",
@@ -593,6 +647,7 @@ export const elementaryPastMovies = {
         },
         { content: ["Report your choice and reason to the class."] },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

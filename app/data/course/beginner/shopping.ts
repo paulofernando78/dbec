@@ -13,13 +13,21 @@ export const beginnerShopping = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What clothes do you usually buy?"),
         "What clothes do you usually buy?",
       ],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -56,8 +64,10 @@ export const beginnerShopping = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -85,10 +95,15 @@ export const beginnerShopping = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction: "Listen once: is the customer buying food or clothes?",
       audioSrc: "",
       lines: [
@@ -122,7 +137,10 @@ export const beginnerShopping = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -143,10 +161,15 @@ export const beginnerShopping = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: [bold("this"), " = singular, near"],
@@ -163,8 +186,11 @@ export const beginnerShopping = {
         as: "span",
         parts: [bold("those"), " = plural, far"],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -226,7 +252,10 @@ export const beginnerShopping = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: [bold("cheap"), " = low price"],
@@ -247,8 +276,11 @@ export const beginnerShopping = {
           " to check the price.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["Do we use 'this' for one thing or many things?"],
@@ -273,11 +305,19 @@ export const beginnerShopping = {
           { option: "This", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -299,8 +339,10 @@ export const beginnerShopping = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences with this, that, these, or those.",
       numbered: true,
@@ -333,8 +375,10 @@ export const beginnerShopping = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -355,13 +399,17 @@ export const beginnerShopping = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Prepare and role-play a short clothes-shop exchange:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Prepare and role-play a short clothes-shop exchange:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Choose an item and identify it with this, that, these, or those and a color.",
@@ -376,6 +424,7 @@ export const beginnerShopping = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

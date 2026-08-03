@@ -12,6 +12,7 @@ import { Line } from "@/components/content/Line";
 import { Lines } from "@/components/content/Lines";
 import { Image } from "@/components/ui/Image";
 import { Carousel } from "@/components/ui/Carousel";
+import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { Meaning } from "@/components/content/Meaning";
 import { Notes } from "@/components/content/Notes";
 import { List } from "@/components/content/List";
@@ -33,8 +34,6 @@ import {
   getPracticeExerciseCounts,
 } from "@/utils/getLessonVocabulary";
 
-import { bold } from "@/helpers/content";
-
 type CourseProps = {
   lesson: Record<string, any>;
   lessonCard?: LessonCardContent;
@@ -42,70 +41,97 @@ type CourseProps = {
   imgAlt?: string;
 };
 
-const renderLanguageFocus = (
-  lesson: Record<string, any>,
-  heading: 3 | 4,
-  pronunciation?: string,
-) => {
-  const languageFocus = lesson.languageFocus ?? {};
-  const pronunciationFocus = pronunciation ? (
-    <>
-      <Subsection label="Pronunciation" heading={5} />
-      <Line value={[pronunciation]} className="mb-4" />
-    </>
-  ) : null;
-
-  if (languageFocus.greetings || languageFocus.askingQuestions) {
-    return (
-      <>
-        <Subsection label="Greetings" heading={4} />
-        <Subsection label="Saying hi!" heading={5} />
-        <Meaning value={languageFocus.greetings} />
-        <Subsection label="Questions & Answers" heading={5} />
-        <Meaning value={languageFocus.askingQuestions} />
-        <Subsection label="Meeting Someone" heading={4} />
-        <Meaning value={languageFocus.meetingSomeone} />
-        {pronunciationFocus}
-        <Notes value={languageFocus.notes} />
-        <CCQ value={languageFocus.ccq} />
-      </>
-    );
-  }
-
-  if (languageFocus.personalInformation) {
-    return (
-      <>
-        <Subsection label="Personal Information" heading={4} />
-        <ColumnDrag {...languageFocus.personalInformation} />
-        {pronunciationFocus}
-        <Notes value={languageFocus.notes} />
-        <CCQ value={languageFocus.ccq} />
-        <TheAlphabet />
-      </>
-    );
-  }
-
-  return (
-    <>
-      <Meaning value={languageFocus.meaning} />
-      {languageFocus.columnQuestions && (
-        <ColumnDrag {...languageFocus.columnQuestions} />
-      )}
-      {languageFocus.column && <ColumnDrag {...languageFocus.column} />}
-      {languageFocus.columnVerbs && (
-        <ColumnDrag {...languageFocus.columnVerbs} />
-      )}
-      {pronunciationFocus}
-      <Notes value={languageFocus.notes} />
-      <CCQ value={languageFocus.ccq} />
-    </>
-  );
+type RenderBlockContext = {
+  lessonVocabulary: ReturnType<typeof getLessonVocabulary>;
 };
 
+const renderBlock = (
+  block: Record<string, any>,
+  index: number,
+  context: RenderBlockContext,
+) => {
+  switch (block.type) {
+    case "line":
+      return (
+        <Line
+          key={index}
+          value={block.value}
+          className={block.className}
+        />
+      );
+    case "lines":
+      return (
+        <Lines
+          key={index}
+          value={block.value}
+          className={block.className}
+        />
+      );
+    case "image":
+      return <Image key={index} src={block.src} alt={block.alt} />;
+    case "carousel":
+      return <Carousel key={index} {...(block as any)} />;
+    case "audioPlayer":
+      return <AudioPlayer key={index} src={block.src} />;
+    case "dialogue":
+      return <Dialogue key={index} {...(block as any)} />;
+    case "meaning":
+      return <Meaning key={index} value={block.value} />;
+    case "notes":
+      return <Notes key={index} value={block.value} />;
+    case "ccq":
+      return <CCQ key={index} value={block.value} />;
+    case "subsection":
+      return (
+        <Subsection
+          key={index}
+          label={block.label}
+          heading={block.heading}
+        />
+      );
+    case "column":
+      return <ColumnDrag key={index} {...(block as any)} />;
+    case "radio":
+      return <Radio key={index} {...(block as any)} />;
+    case "imageQuiz":
+      return <ImageQuiz key={index} {...(block as any)} />;
+    case "fillInTheBlanks":
+      return <FillInTheBlanks key={index} {...(block as any)} />;
+    case "unscramble":
+      return <Unscramble key={index} {...(block as any)} />;
+    case "guess":
+      return (
+        <Guess
+          key={index}
+          words={block.words ?? context.lessonVocabulary.words}
+        />
+      );
+    case "task":
+      return (
+        <List
+          key={index}
+          instruction={block.instruction}
+          items={block.items}
+          type={block.listType}
+        />
+      );
+    case "alphabet":
+      return <TheAlphabet key={index} />;
+    default:
+      return null;
+  }
+};
+
+const renderBlocks = (
+  blocks: Record<string, any>[] | undefined,
+  context: RenderBlockContext,
+) => blocks?.map((block, index) => renderBlock(block, index, context));
+
 export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
-  const heading = lesson.languageFocus?.greetings ? 3 : 4;
+  const heading = 4;
   const card = lessonCard ?? lesson.lessonCard;
   const lessonVocabulary = getLessonVocabulary(lesson, card?.vocabulary);
+  const renderContext = { lessonVocabulary };
   const practiceCounts = getPracticeExerciseCounts(lesson);
 
   if (
@@ -125,112 +151,23 @@ export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
         {card && <LessonCard {...card} />}
         <PageSections>
           <Section id="introduction" heading={heading}>
-            {lesson.introduction.instruction && (
-              <>
-                <Line
-                  value={lesson.introduction.instruction}
-                  className="font-bold mb-4"
-                />
-                <Image
-                  src={lesson.introduction.imgSrc}
-                  alt={lesson.introduction.imgAlt}
-                />
-              </>
-            )}
-            {lesson.introduction.questions && (
-              <Lines value={lesson.introduction.questions} className="mb-4" />
-            )}
-            {lesson.introduction?.vocabularyCarousel && (
-              <>
-                <Lines
-                  value={[
-                    [
-                      bold(
-                        "Look at the pictures. Describe what you see, then match to the words.",
-                      ),
-                    ],
-                  ]}
-                  className="mb-4"
-                />
-                <Carousel
-                  aspectRatio="square"
-                  {...lesson.introduction.vocabularyCarousel}
-                  instruction={undefined}
-                />
-              </>
-            )}
-            {lesson.introduction?.storyCarousel && (
-              <Carousel
-                aspectRatio="wide"
-                {...lesson.introduction.storyCarousel}
-              />
-            )}
-            {lesson.introduction?.imageQuiz && (
-              <ImageQuiz {...lesson.introduction.imageQuiz} />
-            )}
-            {lesson.introduction?.radio && (
-              <Radio {...lesson.introduction.radio} />
-            )}
+            {renderBlocks(lesson.introduction?.blocks, renderContext)}
           </Section>
 
           <Section id="Presentation" heading={heading}>
-            {lesson.presentation.instruction && (
-              <>
-                <Line
-                  value={lesson.presentation.instruction}
-                  className="font-bold mb-4"
-                />
-                <Image
-                  src={lesson.presentation.imgSrc}
-                  alt={lesson.presentation.imgAlt}
-                />
-              </>
-            )}
-            {lesson.presentation?.storyCarousel && (
-              <Carousel
-                aspectRatio="wide"
-                {...lesson.presentation.storyCarousel}
-              />
-            )}
-            {lesson.presentation?.storyRadio && (
-              <Radio {...lesson.presentation.storyRadio} />
-            )}
-            <Dialogue
-              key={lesson.whiteboard?.subtitle}
-              {...lesson.presentation?.dialogue}
-            />
-            {lesson.presentation?.radio && (
-              <Radio {...lesson.presentation.radio} />
-            )}
+            {renderBlocks(lesson.presentation?.blocks, renderContext)}
           </Section>
 
           <Section id="Language Focus" heading={heading}>
-            {lesson.languageFocus?.storyCarousel && (
-              <Carousel
-                aspectRatio="wide"
-                {...lesson.languageFocus.storyCarousel}
-              />
-            )}
-            {renderLanguageFocus(lesson, heading, card?.pronunciation)}
+            {renderBlocks(lesson.languageFocus?.blocks, renderContext)}
           </Section>
 
           <Section id="Practice" heading={heading}>
-            {lesson.lessonVocabulary?.words && (
-              <Guess words={lessonVocabulary.words} />
-            )}
-            {lesson.practice?.radio && (
-              <Radio {...lesson.practice.radio}/>
-            )}
-            {lesson.practice?.fillInTheBlanks && (
-              <FillInTheBlanks {...lesson.practice.fillInTheBlanks} />
-            )}
-            {lesson.practice?.scramble && (
-              <Unscramble {...lesson.practice.scramble} />
-            )}
+            {renderBlocks(lesson.practice?.blocks, renderContext)}
           </Section>
 
           <Section id="Production" heading={heading}>
-            {lesson.production?.task && <List {...lesson.production.task} />}
+            {renderBlocks(lesson.production?.blocks, renderContext)}
           </Section>
         </PageSections>
       </div>

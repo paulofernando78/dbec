@@ -6,7 +6,11 @@ export const elementaryPastFamily = {
     descriptions: ["First we prepared lunch. Then we celebrated a birthday."],
   },
   introduction: {
-    storyCarousel: {
+    blocks: [
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction:
         "Look at the pictures. What did the family celebrate? Then listen and check.",
       imgs: [
@@ -90,7 +94,10 @@ export const elementaryPastFamily = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -111,9 +118,14 @@ export const elementaryPastFamily = {
         ],
       },
     },
+      }
+    ],
   },
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once. Was Daniel's visit an ordinary day or a celebration? Then listen again for details.",
       audioSrc: "",
@@ -135,7 +147,10 @@ export const elementaryPastFamily = {
         { speaker: "Mia", line: ["That sounds like a lovely family day."] },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -163,9 +178,14 @@ export const elementaryPastFamily = {
         ],
       },
     },
+      }
+    ],
   },
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -192,7 +212,10 @@ export const elementaryPastFamily = {
         ],
       },
     ],
-    columnQuestions: {
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -257,7 +280,10 @@ export const elementaryPastFamily = {
         },
       ],
     },
-    columnVerbs: {
+      },
+      {
+        type: "column",
+        ...{
       width: 260,
       cols: [
         {
@@ -286,7 +312,10 @@ export const elementaryPastFamily = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -302,7 +331,10 @@ export const elementaryPastFamily = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       {
         parts: ["Does first introduce the beginning or the ending?"],
         options: [
@@ -325,9 +357,17 @@ export const elementaryPastFamily = {
         ],
       },
     ],
+      }
+    ],
   },
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -348,7 +388,10 @@ export const elementaryPastFamily = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the sentences.",
       numbered: true,
@@ -381,7 +424,10 @@ export const elementaryPastFamily = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -402,12 +448,16 @@ export const elementaryPastFamily = {
         ],
       },
     },
+      }
+    ],
   },
   production: {
-    task: {
-      instruction: "Tell a family celebration story:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Tell a family celebration story:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Prepare six keywords for a real or invented event: occasion, people, place, beginning, middle, and ending.",
@@ -426,6 +476,7 @@ export const elementaryPastFamily = {
         },
         { content: ["Change roles and repeat."] },
       ],
-    },
+      }
+    ],
   },
 };

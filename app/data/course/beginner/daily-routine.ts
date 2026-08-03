@@ -16,10 +16,18 @@ export const beginnerDailyRoutine = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [audio("What time do you wake up?"), "What time do you wake up?"],
     ],
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and listen to the sentences.",
       imgs: [
         {
@@ -56,8 +64,10 @@ export const beginnerDailyRoutine = {
         },
       ],
     },
-
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -85,10 +95,15 @@ export const beginnerDailyRoutine = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: are Emma and Jake talking about a weekday routine?",
       audioSrc: "",
@@ -119,7 +134,10 @@ export const beginnerDailyRoutine = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Listen again and choose the correct answer.",
       exercise: {
         questions: [
@@ -140,10 +158,15 @@ export const beginnerDailyRoutine = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "span",
         parts: ["wake up"],
@@ -160,8 +183,11 @@ export const beginnerDailyRoutine = {
         as: "span",
         parts: ["go to bed"],
       },
-    ] satisfies Meaning[],
-    column: {
+    ],
+      },
+      {
+        type: "column",
+        ...{
       width: 300,
       cols: [
         {
@@ -200,7 +226,10 @@ export const beginnerDailyRoutine = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "span",
         parts: ["We use the Present Simple for routines."],
@@ -227,8 +256,11 @@ export const beginnerDailyRoutine = {
           " with he/she/it in questions.",
         ],
       },
-    ] satisfies Notes[],
-    ccq: [
+    ],
+      },
+      {
+        type: "ccq",
+        value: [
       {
         as: "span",
         parts: ["Do we use Present Simple for routines or right now?"],
@@ -253,11 +285,19 @@ export const beginnerDailyRoutine = {
           { option: "No", isCorrect: false },
         ],
       },
-    ] satisfies CCQ[],
+    ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct answer.",
       exercise: {
         questions: [
@@ -299,8 +339,10 @@ export const beginnerDailyRoutine = {
         ],
       },
     },
-
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Fill in the blanks with the correct answer.",
       numbered: true,
@@ -333,8 +375,10 @@ export const beginnerDailyRoutine = {
         ],
       },
     },
-
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentence.",
       numbered: true,
@@ -355,13 +399,17 @@ export const beginnerDailyRoutine = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Prepare and share a short weekday routine:",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Prepare and share a short weekday routine:",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Prepare four simple sentences about your weekday routine.",
@@ -377,6 +425,7 @@ export const beginnerDailyRoutine = {
           ],
         },
       ],
-    } satisfies ListProps,
+      }
+    ],
   },
 };

@@ -11,28 +11,21 @@ export const elementaryHealthyLiving = {
   },
 
   introduction: {
-    questions: [
+    blocks: [
+      {
+        type: "lines",
+        value: [
       [
         audio("What healthy habit gives you more energy?"),
         "What healthy habit gives you more energy?",
       ],
     ],
-    vocabularyCarousel: {
-      instruction: "Match the words to the pictures.",
-      words: [
-        { src: "/", alt: "A balanced meal" },
-        { src: "/", alt: "A person exercising" },
-        { src: "/", alt: "A person sleeping" },
-        { src: "/", alt: "A stressed person" },
-      ],
-      matchingContent: shuffle([
-        { as: "span", parts: [{ audio: "balanced diet" }, "balanced diet"] },
-        { as: "span", parts: [{ audio: "exercise" }, "exercise"] },
-        { as: "span", parts: [{ audio: "sleep" }, "sleep"] },
-        { as: "span", parts: [{ audio: "stress" }, "stress"] },
-      ]),
-    },
-    storyCarousel: {
+        className: "mb-4",
+      },
+      {
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
       instruction: "Look at the pictures and notice what usually happens.",
       imgs: [
         {
@@ -61,7 +54,61 @@ export const elementaryHealthyLiving = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "imageQuiz",
+        ...{
+      questions: [
+        {
+          word: "A balanced meal",
+          imgSrc: "/",
+          imgAlt: "A balanced meal",
+          options: shuffle([
+            { option: "A balanced meal", isCorrect: true },
+            { option: "A person exercising", isCorrect: false },
+            { option: "A person sleeping", isCorrect: false },
+            { option: "A stressed person", isCorrect: false },
+          ]),
+        },
+        {
+          word: "A person exercising",
+          imgSrc: "/",
+          imgAlt: "A person exercising",
+          options: shuffle([
+            { option: "A balanced meal", isCorrect: false },
+            { option: "A person exercising", isCorrect: true },
+            { option: "A person sleeping", isCorrect: false },
+            { option: "A stressed person", isCorrect: false },
+          ]),
+        },
+        {
+          word: "A person sleeping",
+          imgSrc: "/",
+          imgAlt: "A person sleeping",
+          options: shuffle([
+            { option: "A balanced meal", isCorrect: false },
+            { option: "A person exercising", isCorrect: false },
+            { option: "A person sleeping", isCorrect: true },
+            { option: "A stressed person", isCorrect: false },
+          ]),
+        },
+        {
+          word: "A stressed person",
+          imgSrc: "/",
+          imgAlt: "A stressed person",
+          options: shuffle([
+            { option: "A balanced meal", isCorrect: false },
+            { option: "A person exercising", isCorrect: false },
+            { option: "A person sleeping", isCorrect: false },
+            { option: "A stressed person", isCorrect: true },
+          ]),
+        },
+      ],
+    },
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the result that is generally true.",
       exercise: {
         questions: [
@@ -82,10 +129,15 @@ export const elementaryHealthyLiving = {
         ],
       },
     },
+      }
+    ],
   },
 
   presentation: {
-    dialogue: {
+    blocks: [
+      {
+        type: "dialogue",
+        ...{
       instruction:
         "Listen once: which habits are causing Maya's problems? Then listen again for causes and results.",
       audioSrc: "",
@@ -110,7 +162,10 @@ export const elementaryHealthyLiving = {
         },
       ],
     },
-    radio: {
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the answer supported by the dialogue.",
       exercise: {
         questions: [
@@ -138,10 +193,15 @@ export const elementaryHealthyLiving = {
         ],
       },
     },
+      }
+    ],
   },
 
   languageFocus: {
-    meaning: [
+    blocks: [
+      {
+        type: "meaning",
+        value: [
       {
         as: "p",
         parts: [
@@ -158,7 +218,10 @@ export const elementaryHealthyLiving = {
         ],
       },
     ],
-    column: {
+      },
+      {
+        type: "column",
+        ...{
       width: 310,
       cols: [
         {
@@ -223,7 +286,10 @@ export const elementaryHealthyLiving = {
         },
       ],
     },
-    notes: [
+      },
+      {
+        type: "notes",
+        value: [
       {
         as: "p",
         parts: [
@@ -237,16 +303,27 @@ export const elementaryHealthyLiving = {
         ],
       },
     ],
-    ccq: [
+      },
+      {
+        type: "ccq",
+        value: [
       { as: "p", parts: ["Is this about one occasion or a general result?"] },
       { as: "p", parts: ["Which tense appears in both clauses?"] },
       { as: "p", parts: ["Can when replace if when the result is regular?"] },
       { as: "p", parts: ["Do we normally use will in a Zero Conditional?"] },
     ],
+      }
+    ],
   },
 
   practice: {
-    radio: {
+    blocks: [
+      {
+        type: "guess",
+      },
+      {
+        type: "radio",
+        ...{
       instruction: "Choose the correct form.",
       exercise: {
         questions: [
@@ -281,7 +358,10 @@ export const elementaryHealthyLiving = {
         ],
       },
     },
-    fillInTheBlanks: {
+      },
+      {
+        type: "fillInTheBlanks",
+        ...{
       showWordBank: true,
       instruction: "Complete the general health results.",
       numbered: true,
@@ -322,7 +402,10 @@ export const elementaryHealthyLiving = {
         ],
       },
     },
-    scramble: {
+      },
+      {
+        type: "unscramble",
+        ...{
       showWordBank: false,
       instruction: "Unscramble the sentences.",
       numbered: true,
@@ -343,13 +426,17 @@ export const elementaryHealthyLiving = {
         ],
       },
     },
+      }
+    ],
   },
 
   production: {
-    task: {
-      instruction: "Create and discuss a simple healthy-habits guide.",
-      type: "checkbox",
-      items: [
+    blocks: [
+      {
+        type: "task",
+        instruction: "Create and discuss a simple healthy-habits guide.",
+        listType: "checkbox",
+        items: [
         {
           content: [
             "Write three Zero Conditional sentences about sleep, food, exercise, or stress.",
@@ -375,6 +462,7 @@ export const elementaryHealthyLiving = {
           textarea: false,
         },
       ],
-    },
+      }
+    ],
   },
 };
