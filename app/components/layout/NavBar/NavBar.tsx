@@ -46,6 +46,9 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
+
+  const isLesson = item.href ? lessonNumberByHref.has(item.href) : false;
+
   if (item.links?.length) {
     return (
       <details className="open:[&>summary_.plus]:hidden open:[&>summary_.minus]:block mb-1">
@@ -115,9 +118,11 @@ function RenderNavItem({
 
   return (
     <div
-      className="
-      flex
-      gap-3"
+      className={`
+        flex
+        gap-3
+        ${isLesson ? "ml-4" : ""}
+      `}
     >
       <NavLink
         to={item.href}
