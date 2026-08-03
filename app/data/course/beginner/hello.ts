@@ -5,6 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import {
   content,
+  icon,
   audio,
   bold,
   italic,
@@ -152,7 +153,10 @@ export const beginnerHello = {
       {
         type: "dialogue",
         ...{
-          instruction: ["Laura and Eric meet for the first time. ", portuguese("Laura e Eric se encontram pela primeira vez.")],
+          instruction: [
+            "Laura and Eric meet for the first time. ",
+            portuguese("Laura e Eric se encontram pela primeira vez."),
+          ],
           audioSrc: "/",
           lines: [
             {
@@ -314,20 +318,45 @@ export const beginnerHello = {
             as: "span",
             parts: [audio("How’s it going?"), "How’s it going?"],
           },
+          spacer(),
           {
             display: "block",
             as: "span",
-            parts: [audio("Good."), "Good. ", italic("informal")],
+            parts: [audio("Great."), "Great. "],
+          },
+          {
+            display: "block",
+            as: "span",
+            parts: [audio("Fantastic."), "Fantastic. "],
+          },
+          {
+            display: "block",
+            as: "span",
+            parts: [
+              audio("Everything’s going great."),
+              "Everything’s going great. ",
+            ],
           },
           spacer(),
           {
             display: "block",
             as: "span",
-            parts: [
-              audio("I’m pretty good."),
-              "(I’m) pretty good. ",
-              italic("informal"),
-            ],
+            parts: [italic("informal")],
+          },
+          {
+            display: "block",
+            as: "span",
+            parts: [audio("Good."), "Good. "],
+          },
+          {
+            display: "block",
+            as: "span",
+            parts: [audio("I’m pretty good."), "(I’m) pretty good. "],
+          },
+          {
+            display: "block",
+            as: "span",
+            parts: [audio("Not bad."), "Not bad. ", portuguese("Nada mal.")],
           },
         ],
       },
@@ -347,6 +376,23 @@ export const beginnerHello = {
               "I'm Laura. What's your name?",
             ],
           },
+          {
+            display: "block",
+            as: "span",
+            parts: [
+              icon("spotlight"),
+              audio("I'm = I am"),
+              "I'm = I am"],
+          },
+          {
+            display: "block",
+            as: "span",
+            parts: [
+              icon("spotlight"),
+              audio("What’s = What is"),
+              "What’s = What is"],
+          },
+          spacer(),
           {
             display: "block",
             as: "span",
@@ -371,19 +417,6 @@ export const beginnerHello = {
             display: "block",
             as: "span",
             parts: [audio("See you. Bye."), "See you. / Bye."],
-          },
-        ],
-      },
-      {
-        type: "notes",
-        value: [
-          {
-            as: "span",
-            parts: [audio("I’m. = I am"), "I’m. = I am"],
-          },
-          {
-            as: "span",
-            parts: [audio("What’s = What is"), "What’s = What is"],
           },
         ],
       },

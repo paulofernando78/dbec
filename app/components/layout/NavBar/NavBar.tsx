@@ -74,7 +74,7 @@ function RenderNavItem({
           {item.iconClassName && (
             <BookText
               size={20}
-              className={`ml-[0.1rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`}
+              className={`ml-[0.2rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`}
             />
           )}
 
@@ -105,9 +105,10 @@ function RenderNavItem({
       <div
         className="
         flex
-        gap-3"
+        gap-3
+        "
       >
-        <span className="border">{item.label}</span>
+        <span>{item.label}</span>
       </div>
     );
   }
