@@ -1,4 +1,4 @@
-import { content, audio, bold, portuguese } from "@/helpers/content";
+import { content, audio, bold, italic, portuguese, spacer } from "@/helpers/content";
 
 export const beginnerPersonalInformation = {
   whiteboard: {
@@ -142,6 +142,58 @@ export const beginnerPersonalInformation = {
       },
       {
         type: "subsection",
+        label: "Saying hi!",
+        heading: 5,
+      },
+      {
+        type: "meaning",
+        value: [
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("How are you?"), "How are you?"],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("How are you doing?"), "How are you doing?"],
+          },
+          spacer(),
+          {
+            display: "block",
+            as: "span",
+            parts: [audio("opmistic"), italic("opmistic")],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("Doing great!"), "Doing great!"],
+          },
+          spacer(),
+          {
+            display: "block",
+            as: "span",
+            parts: [audio("pessimist"), italic("pessimist")],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("Can’t complain!"), "Can’t complain!"],
+          },
+          {
+            display: "block",
+            as: "p",
+            parts: [audio("Could be worse."), "Could be worse."],
+          },
+        ],
+      },
+      {
+        type: "subsection",
+        label: "Personal Information",
+        heading: 4,
+      },
+      {
+        type: "subsection",
         label: "Questions and Answers",
         heading: 5,
       },
@@ -150,7 +202,7 @@ export const beginnerPersonalInformation = {
         value: [
           {
             display: "block",
-            as: "span",
+            as: "p",
             parts: [
               audio("What’s your first name? Laura."),
               "What’s your first name? Laura.",
@@ -158,37 +210,55 @@ export const beginnerPersonalInformation = {
           },
           {
             display: "block",
-            as: "span",
-            parts: [audio("How do you spell your first name? L-A-U-R-A."), "How do you spell your first name? L-A-U-R-A."],
+            as: "p",
+            parts: [
+              audio("How do you spell your first name? L-A-U-R-A."),
+              "How do you spell your first name? L-A-U-R-A.",
+            ],
           },
           {
             display: "block",
-            as: "span",
-            parts: [audio("What’s your last name? Palmer."), "What’s your last name? Palmer."],
+            as: "p",
+            parts: [
+              audio("What’s your last name? Palmer."),
+              "What’s your last name? Palmer.",
+            ],
           },
           {
             display: "block",
-            as: "span",
-            parts: [audio("How do you spell your last name? P-A-L-M-E-R."), "How do you spell your last name? P-A-L-M-E-R."],
+            as: "p",
+            parts: [
+              audio("How do you spell your last name? P-A-L-M-E-R."),
+              "How do you spell your last name? P-A-L-M-E-R.",
+            ],
           },
           {
             display: "block",
-            as: "span",
-            parts: [audio("What’s your full name?"), "What’s your full name? Laura Palmer."],
+            as: "p",
+            parts: [
+              audio("What’s your full name?"),
+              "What’s your full name? Laura Palmer.",
+            ],
           },
           {
             display: "block",
-            as: "span",
-            parts: [audio("Where are you from? I’m from the United States."), "Where are you from? I’m from the United States."],
+            as: "p",
+            parts: [
+              audio("Where are you from? I’m from the United States."),
+              "Where are you from? I’m from the United States.",
+            ],
           },
           {
             display: "block",
-            as: "span",
-            parts: [audio("What’s your phone number? It’s 555-01-84."), "What’s your phone number? It’s 555-01-84."],
+            as: "p",
+            parts: [
+              audio("What’s your phone number? It’s 555-01-84."),
+              "What’s your phone number? It’s 555-01-84.",
+            ],
           },
         ],
       },
-       {
+      {
         type: "notes",
         value: [
           {
