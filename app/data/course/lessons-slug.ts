@@ -16,7 +16,7 @@ import { beginnerMyDailyRoutine } from "@/data/course/beginner/chapter-4/my-dail
 import { beginnerMyWeek } from "@/data/course/beginner/chapter-4/my-week";
 
 // Chapter 5
-import { beginnerFoodAndDrinks } from "@/data/course/beginner/chapter-5/food-and-drinks";
+import { beginnerFavoriteFood } from "@/data/course/beginner/chapter-5/favorite-food";
 import { beginnerEatingOut } from "./beginner/chapter-5/eating-out";
 
 // Chapter 6
@@ -86,37 +86,37 @@ export type CourseLessonLevel = {
 export const courseLessons: Record<string, CourseLessonLevel> = {
   beginner: {
     lessons: {
-      // Chapter 1
+      // Chapter 1 • Introduction
       hello: beginnerHello,
       "personal-information": beginnerPersonalInformation,
 
-      // Chapter 2
+      // Chapter 2 • Family
       "my-family": beginnerMyFamily,
       "my-relatives": beginnerMyRelatives,
 
-      // Chapter 3
+      // Chapter 3 • Home
       "my-house": beginnerMyHouse,
       "renting-a-home": beginnerRentingAHome,
 
-      // Chapter 4
+      // Chapter 4 • Daily Routine
       "my-daily-routine": beginnerMyDailyRoutine,
       "my-week": beginnerMyWeek,
 
-      // Chapter 5
-      "food-and-drinks": beginnerFoodAndDrinks,
+      // Chapter 5 • Food and Drinks
+      "i-love-pizza": beginnerFavoriteFood,
       "eating-out": beginnerEatingOut,
 
-      // Chapter 6
+      // Chapter 6 • Shopping
       shopping: beginnerShopping,
       "bargain-hunting": beginnerShopping,
       
-      // Chapter 7
+      // Chapter 7 • Around Town
       "around-town": beginnerAroundTown,
       "finding-your-way": beginnerAroundTown,
 
-      // Chapter 8
+      // Chapter 8 • Actions & Abilities
 
-      // Chapter 9
+      // Chapter 9 • Real-Life Project
       "what-are-you-doing": beginnerWhatAreYouDoing,
       abilities: beginnerAbilities,
       "real-life-project": beginnerRealLifeProject,

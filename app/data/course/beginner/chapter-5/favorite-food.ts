@@ -5,7 +5,7 @@ import type { CCQ } from "@/components/content/CCQ/";
 
 import { content, audio, bold } from "@/helpers/content";
 
-export const beginnerFoodAndDrinks = {
+export const beginnerFavoriteFood = {
   whiteboard: {
     title: "A1 BEGINNER",
     subtitle: "Food and Drinks",

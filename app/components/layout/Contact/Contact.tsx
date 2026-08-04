@@ -19,13 +19,23 @@ const contacts: ContactItem[] = [
     icon: "/assets/img/icons/contacts/linkedin.png",
     alt: "LinkedIn",
   },
+  // Vakinha
+  {
+    link: "https://www.vakinha.com.br/vaquinha/site-para-dar-aula-de-ingles?utm_internal_source=search_results",
+    icon: "/assets/img/icons/contacts/vakinha.jpg",
+    alt: "By me a coffee",
+    width: 28,
+    height: 28,
+    className:
+      "mx-auto !w-[26px] !h-[26px] ml-[0.3rem] mr-[0.5rem] rounded-sm border-[1.5px] shadow-[0_0_0_2px_#F2F2F2,2px_2px_0_#9B9FA3,0_3px_1px_#9B9FA3,2px_2px_1px_#9B9FA3] translate-y-[3.5px]",
+  },
   // buy me a coffee
   {
     link: "https://www.buymeacoffee.com/paulofernando78",
     icon: "/assets/img/icons/contacts/coffee.gif",
     alt: "By me a coffee",
     className:
-      "mx-auto !w-[27.5px] !h-[27.5px] rounded-full border-[1.5px] shadow-[0_0_0_2px_#F2F2F2,2px_2px_0_#9B9FA3,0_3px_1px_#9B9FA3,2px_2px_1px_#9B9FA3] translate-y-[3.5px]",
+      "mx-auto !w-[27.5px] !h-[27.5px] ml-[0.1rem] mr-[0.27rem] rounded-full border-[1.5px] shadow-[0_0_0_2px_#F2F2F2,2px_2px_0_#9B9FA3,0_3px_1px_#9B9FA3,2px_2px_1px_#9B9FA3] translate-y-[3.5px]",
   },
   // whatsapp
   {
@@ -44,13 +54,15 @@ type ContactItem = {
   icon: string;
   alt: string;
   className?: string;
+  width?: number;
+  height?: number;
 };
 
 export const Contact = ({ className }: ContactProps) => {
   return (
-    <ul className={`flex gap-2.5 p-2.5 ${className ?? ""}`}>
+    <ul className={`flex gap-2 p-2.5 ${className ?? ""}`}>
       {contacts.map((contact, index) => (
-        <li key={index} className="">
+        <li key={index}>
           <a
             href={contact.link}
             target="_blank"
