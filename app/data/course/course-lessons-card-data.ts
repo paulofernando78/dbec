@@ -10,7 +10,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 1 • Introduction
     // Hello
     {
-      href: "/courses/beginner/chapter-1/hello",
+      href: "/course/beginner/chapter-1/hello",
       label: "Hello!",
       objective:
         "Greet someone, exchange first names, and end a short first meeting.",
@@ -24,7 +24,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Personal Information
     {
-      href: "/courses/beginner/chapter-1/personal-information",
+      href: "/course/beginner/chapter-1/personal-information",
       label: "Personal Information",
       objective:
         "Ask for and give a full name, nationality, spelling, and simple contact details.",
@@ -40,7 +40,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 2 • Family
     // My Family
     {
-      href: "/courses/beginner/chapter-1/my-family",
+      href: "/course/beginner/chapter-1/my-family",
       label: "My Family",
       objective: "Introduce family members and say how they are related.",
       usefulLanguage:
@@ -61,7 +61,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // My Relatives
     {
-      href: "/courses/beginner/chapter-1/my-relatives",
+      href: "/course/beginner/chapter-1/my-relatives",
       label: "MMy Relatives",
       objective:
         "Describe relationships in extended, married, and blended families.",
@@ -85,7 +85,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 3 • Home
     // My house
     {
-      href: "/courses/beginner/my-house",
+      href: "/course/beginner/my-house",
       label: "My House",
       objective: "Describe the main rooms and say what furniture is in them.",
       usefulLanguage: "There is a…; There are two…; Is there a…?; It’s in the…",
@@ -105,7 +105,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 4 • Daily Routine
     // Daily Routine
     {
-      href: "/courses/beginner/daily-routine",
+      href: "/course/beginner/daily-routine",
       label: "Daily Routine",
       objective:
         "Describe a simple weekday routine and say what time things happen.",
@@ -125,7 +125,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // My Week
     {
-      href: "/courses/beginner/my-week",
+      href: "/course/beginner/my-week",
       label: "My Week",
       objective:
         "Talk about weekly habits and say how often activities happen.",
@@ -145,7 +145,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 5 • Food and Drinks
     // Food and Drinks
     {
-      href: "/courses/beginner/food-and-drinks",
+      href: "/course/beginner/food-and-drinks",
       label: "Food and Drinks",
       objective:
         "Ask about food and drink preferences and order one basic item.",
@@ -168,7 +168,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 6 • Shopping
     // Shopping
     {
-      href: "/courses/beginner/shopping",
+      href: "/course/beginner/shopping",
       label: "Shopping",
       objective:
         "Ask about a clothing item, its price, and which item someone means.",
@@ -188,7 +188,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 7 • Around Town
     // Around Town
     {
-      href: "/courses/beginner/around-town",
+      href: "/course/beginner/around-town",
       label: "Around Town",
       objective: "Ask where a familiar place is and give its basic location.",
       usefulLanguage:
@@ -208,7 +208,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 8 • Action & Abilities
     // What are you doing?
     {
-      href: "/courses/beginner/what-are-you-doing",
+      href: "/course/beginner/what-are-you-doing",
       label: "What Are You Doing?",
       objective: "Ask and say what people are doing now.",
       usefulLanguage:
@@ -227,7 +227,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Abilities
     {
-      href: "/courses/beginner/abilities",
+      href: "/course/beginner/abilities",
       label: "Abilities",
       objective: "Ask and say what someone can and cannot do.",
       usefulLanguage: "I can…; I can’t…; Can you…?; Yes, I can. / No, I can’t.",
@@ -248,7 +248,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     //! Chapter 9 • Real-Life Project
     // Rea-life Project
     {
-      href: "/courses/beginner/real-life-project",
+      href: "/course/beginner/real-life-project",
       label: "Real-Life Project",
       objective:
         "Introduce yourself, exchange familiar information, and agree on a simple social plan from prepared options.",
@@ -273,7 +273,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   elementary: [
     // A Weekend at Home
     {
-      href: "/courses/elementary/past-home",
+      href: "/course/elementary/past-home",
       label: "A Weekend at Home",
       pronunciation: "Past -ed endings /t/, /d/, and /ɪd/; linking in Did you…?",
       objective:
@@ -286,7 +286,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // A Day at the Beach
     {
-      href: "/courses/elementary/past-beach",
+      href: "/course/elementary/past-beach",
       label: "A Day at the Beach",
       pronunciation:
         "Clear irregular past forms and weak pronunciation of did you in follow-up questions",
@@ -301,7 +301,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Movie Night
     {
-      href: "/courses/elementary/past-movies",
+      href: "/course/elementary/past-movies",
       label: "Movie Night",
       pronunciation:
         "Weak did you in past questions and sentence stress in opinions and recommendations",
@@ -316,7 +316,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // A Family Celebration
     {
-      href: "/courses/elementary/past-family",
+      href: "/course/elementary/past-family",
       label: "A Family Celebration",
       pronunciation:
         "Stress and pausing with first, then, after that, and finally; regular past endings",
@@ -331,7 +331,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Travels Plans
     {
-      href: "/courses/elementary/travel-plans",
+      href: "/course/elementary/travel-plans",
       label: "Travel Plans",
       pronunciation:
         "Going to in connected speech and sentence stress on destinations and activities",
@@ -345,7 +345,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Future Predictions
     {
-      href: "/courses/elementary/future-predictions",
+      href: "/course/elementary/future-predictions",
       label: "Future Predictions",
       pronunciation:
         "Contractions with will and won’t; intonation for confident and uncertain predictions",
@@ -359,7 +359,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // City Life
     {
-      href: "/courses/elementary/city-life",
+      href: "/course/elementary/city-life",
       label: "City Life",
       pronunciation:
         "Comparative -er endings, weak than, and contrastive stress when comparing places",
@@ -373,7 +373,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // The Best Place
     {
-      href: "/courses/elementary/the-best-place",
+      href: "/course/elementary/the-best-place",
       label: "The Best Place",
       pronunciation:
         "Weak the before superlatives and sentence stress on the quality being compared",
@@ -387,7 +387,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Healthy Living
     {
-      href: "/courses/elementary/healthy-living",
+      href: "/course/elementary/healthy-living",
       label: "Healthy Living",
       objective:
         "Explain general results of healthy and unhealthy habits and give simple advice.",
@@ -406,7 +406,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Rules
     {
-      href: "/courses/elementary/rules",
+      href: "/course/elementary/rules",
       label: "Rules",
       pronunciation:
         "The contrast between must and mustn’t; connected speech in have to and don’t have to",
@@ -419,7 +419,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Shopping Smart
     {
-      href: "/courses/elementary/shopping-smart",
+      href: "/course/elementary/shopping-smart",
       label: "Shopping Smart",
       pronunciation:
         "Stress on quantities and clear contrasts in much/many and some/any questions",
@@ -433,7 +433,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Experiences
     {
-      href: "/courses/elementary/experiences",
+      href: "/course/elementary/experiences",
       label: "Experiences",
       pronunciation:
         "Weak have/has, contractions with haven’t/hasn’t, and stress on ever and never",
@@ -447,7 +447,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Hobbies
     {
-      href: "/courses/elementary/hobbies",
+      href: "/course/elementary/hobbies",
       label: "Hobbies",
       pronunciation:
         "The -ing ending, contractions in I’d/we’d, and stress in hobby expressions",
@@ -463,7 +463,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   intermediate: [
     // Life Experiences
     {
-      href: "/courses/intermediate/life-experiences",
+      href: "/course/intermediate/life-experiences",
       label: "Life Experiences",
       pronunciation:
         "Weak have in the Present Perfect and stress on finished-time details in the Past Simple",
@@ -477,7 +477,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Storytelling
     {
-      href: "/courses/intermediate/storytelling",
+      href: "/course/intermediate/storytelling",
       label: "Storytelling",
       pronunciation:
         "Weak was/were in background actions and prominence on the main events of a story",
@@ -490,7 +490,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Maling Plans
     {
-      href: "/courses/intermediate/making-plans",
+      href: "/course/intermediate/making-plans",
       label: "Making Plans",
       pronunciation:
         "Contractions in future forms and sentence stress that highlights fixed arrangements",
@@ -504,7 +504,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // What if?
     {
-      href: "/courses/intermediate/what-if",
+      href: "/course/intermediate/what-if",
       label: "What If?",
       objective:
         "Discuss likely future situations and explain their consequences.",
@@ -524,7 +524,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Green Planet
     {
-      href: "/courses/intermediate/green-planet",
+      href: "/course/intermediate/green-planet",
       label: "Green Planet",
       pronunciation:
         "Rhythm across if/when clauses and sentence stress on causes and predictable results",
@@ -537,7 +537,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Technology Today
     {
-      href: "/courses/intermediate/technology-today",
+      href: "/course/intermediate/technology-today",
       label: "Technology Today",
       pronunciation:
         "Weak relative pronouns and natural chunking between the main and defining clauses",
@@ -551,7 +551,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // News Report
     {
-      href: "/courses/intermediate/news-report",
+      href: "/course/intermediate/news-report",
       label: "News Report",
       pronunciation:
         "Weak passive auxiliaries and prominence on the action or result in a news report",
@@ -565,7 +565,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // What did they say?
     {
-      href: "/courses/intermediate/what-did-they-say",
+      href: "/course/intermediate/what-did-they-say",
       label: "What Did They Say?",
       pronunciation:
         "Connected speech in reported clauses and clear stress on the information being passed on",
@@ -578,7 +578,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Career Path
     {
-      href: "/courses/intermediate/career-path",
+      href: "/course/intermediate/career-path",
       label: "Career Path",
       pronunciation:
         "Weak modal forms and contrastive stress to distinguish obligation, advice, and possibility",
@@ -592,7 +592,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Relationsships
     {
-      href: "/courses/intermediate/relationships",
+      href: "/course/intermediate/relationships",
       label: "Relationships",
       pronunciation:
         "Stress patterns in relationship phrasal verbs, including stressed particles where appropriate",
@@ -608,7 +608,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   upperIntermediate: [
     // Dream Scenarios
     {
-      href: "/courses/upper-intermediate/dream-scenarios",
+      href: "/course/upper-intermediate/dream-scenarios",
       label: "Dream Scenarios",
       objective:
         "Explore hypothetical choices and evaluate possible consequences.",
@@ -627,7 +627,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Regrets
     {
-      href: "/courses/upper-intermediate/regrets",
+      href: "/course/upper-intermediate/regrets",
       label: "Regrets",
       objective:
         "Reflect on a past decision and evaluate alternative outcomes.",
@@ -646,7 +646,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Business Communication
     {
-      href: "/courses/upper-intermediate/business-communication",
+      href: "/course/upper-intermediate/business-communication",
       label: "Business Communication",
       pronunciation:
         "Connected modal-perfect forms such as must’ve and should’ve; stress for degree of certainty",
@@ -660,7 +660,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Leadership
     {
-      href: "/courses/upper-intermediate/leadership",
+      href: "/course/upper-intermediate/leadership",
       label: "Leadership",
       pronunciation:
         "Sentence stress in have/get something done and prominence on the delegated task",
@@ -674,7 +674,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Innovation
     {
-      href: "/courses/upper-intermediate/innovation",
+      href: "/course/upper-intermediate/innovation",
       label: "Innovation",
       pronunciation:
         "Connected speech in will have and prominence on deadlines and completed milestones",
@@ -689,7 +689,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Global Issues
     {
-      href: "/courses/upper-intermediate/global-issues",
+      href: "/course/upper-intermediate/global-issues",
       label: "Global Issues",
       pronunciation:
         "Prominence in reporting passives and intonation that distinguishes claims from confirmed facts",
@@ -703,7 +703,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Debate Club
     {
-      href: "/courses/upper-intermediate/debate-club",
+      href: "/course/upper-intermediate/debate-club",
       label: "Debate Club",
       pronunciation:
         "Pausing after discourse markers and contrastive intonation in concessions and rebuttals",
@@ -718,7 +718,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Media and Marketing
     {
-      href: "/courses/upper-intermediate/media-and-marketing",
+      href: "/course/upper-intermediate/media-and-marketing",
       label: "Media and Marketing",
       pronunciation:
         "Pauses around non-defining relative clauses and prominence on supplementary information",
@@ -731,7 +731,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Native-like English
     {
-      href: "/courses/upper-intermediate/native-like-english",
+      href: "/course/upper-intermediate/native-like-english",
       label: "Idiomatic English in Context",
       pronunciation:
         "Chunk stress and conversational intonation in fixed idiomatic expressions",
@@ -746,7 +746,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Natural English
     {
-      href: "/courses/upper-intermediate/natural-english",
+      href: "/course/upper-intermediate/natural-english",
       label: "Natural English",
       pronunciation:
         "Chunking in collocations and appropriate particle stress in common phrasal verbs",
@@ -763,7 +763,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   advanced: [
     // Between the Lines
     {
-      href: "/courses/advanced/reading-between-the-lines",
+      href: "/course/advanced/reading-between-the-lines",
       label: "Reading Between the Lines",
       pronunciation:
         "Intonation and prominence that signal qualification, reservation, and implied stance",
@@ -777,7 +777,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Synthesizing Sources
     {
-      href: "/courses/advanced/synthesizing-sources",
+      href: "/course/advanced/synthesizing-sources",
       label: "Synthesizing Sources",
       pronunciation:
         "Contrastive stress between sources and pausing that clarifies synthesis relationships",
@@ -791,7 +791,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Building Complex Arguments
     {
-      href: "/courses/advanced/building-complex-arguments",
+      href: "/course/advanced/building-complex-arguments",
       label: "Building Complex Arguments",
       pronunciation:
         "Prominence and intonation across claims, concessions, rebuttals, and qualified conclusions",
@@ -805,7 +805,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Diplomatic Communication
     {
-      href: "/courses/advanced/diplomatic-communication",
+      href: "/course/advanced/diplomatic-communication",
       label: "Diplomatic Communication",
       pronunciation:
         "Fall-rise intonation and softened prominence in hedged disagreement and proposals",
@@ -819,7 +819,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Academic Presentations
     {
-      href: "/courses/advanced/academic-presentations",
+      href: "/course/advanced/academic-presentations",
       label: "Academic Presentations",
       pronunciation:
         "Strategic pausing, signposting stress, and intonation that marks connections and conclusions",
@@ -834,7 +834,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Mediation and Clarification
     {
-      href: "/courses/advanced/mediation-and-clarification",
+      href: "/course/advanced/mediation-and-clarification",
       label: "Mediation and Clarification",
       pronunciation:
         "Chunking complex information and intonation that signals reformulation and clarification",
@@ -849,7 +849,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Critical Reviews
     {
-      href: "/courses/advanced/critical-reviews",
+      href: "/course/advanced/critical-reviews",
       label: "Critical Reviews",
       pronunciation:
         "Evaluative prominence and concession intonation when balancing strengths and limitations",
@@ -864,7 +864,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Negotiation and Consensus
     {
-      href: "/courses/advanced/negotiation-and-consensus",
+      href: "/course/advanced/negotiation-and-consensus",
       label: "Negotiation and Consensus",
       pronunciation:
         "Conditional-offer intonation and purposeful pausing while stating priorities and conditions",
@@ -879,7 +879,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Precision and Nuance
     {
-      href: "/courses/advanced/precision-and-nuance",
+      href: "/course/advanced/precision-and-nuance",
       label: "Precision and Nuance",
       pronunciation:
         "Prominence on hedges and certainty markers to calibrate the strength of a claim",
@@ -894,7 +894,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     },
     // Research Briefing
     {
-      href: "/courses/advanced/research-briefing",
+      href: "/course/advanced/research-briefing",
       label: "Research Briefing",
       pronunciation:
         "Prominence that separates findings, limitations, interpretations, and recommendations",
@@ -938,252 +938,252 @@ const useExistingCard = ({
 
 courseLessonsCardData.beginner.push(
   useExistingCard({
-    from: "/courses/beginner/my-house",
-    href: "/courses/beginner/renting-a-home",
+    from: "/course/beginner/my-house",
+    href: "/course/beginner/renting-a-home",
     label: "Renting a Home",
   }),
   useExistingCard({
-    from: "/courses/beginner/food-and-drinks",
-    href: "/courses/beginner/eating-out",
+    from: "/course/beginner/food-and-drinks",
+    href: "/course/beginner/eating-out",
     label: "Eating Out",
   }),
   useExistingCard({
-    from: "/courses/beginner/shopping",
-    href: "/courses/beginner/bargain-hunting",
+    from: "/course/beginner/shopping",
+    href: "/course/beginner/bargain-hunting",
     label: "Bargain Hunting",
   }),
   useExistingCard({
-    from: "/courses/beginner/around-town",
-    href: "/courses/beginner/finding-your-way",
+    from: "/course/beginner/around-town",
+    href: "/course/beginner/finding-your-way",
     label: "Finding Your Way",
   }),
   useExistingCard({
-    from: "/courses/beginner/real-life-project",
-    href: "/courses/beginner/course-review",
+    from: "/course/beginner/real-life-project",
+    href: "/course/beginner/course-review",
     label: "Course Review",
   }),
 );
 
 courseLessonsCardData.elementary.push(
   useExistingCard({
-    from: "/courses/elementary/healthy-living",
-    href: "/courses/elementary/giving-advice",
+    from: "/course/elementary/healthy-living",
+    href: "/course/elementary/giving-advice",
     label: "Giving Advice",
   }),
   useExistingCard({
-    from: "/courses/elementary/rules",
-    href: "/courses/elementary/school-and-work-rules",
+    from: "/course/elementary/rules",
+    href: "/course/elementary/school-and-work-rules",
     label: "School & Work Rules",
   }),
   useExistingCard({
-    from: "/courses/elementary/shopping-smart",
-    href: "/courses/elementary/complaints-and-returns",
+    from: "/course/elementary/shopping-smart",
+    href: "/course/elementary/complaints-and-returns",
     label: "Complaints & Returns",
   }),
 );
 
 courseLessonsCardData.intermediate = [
   useExistingCard({
-    from: "/courses/intermediate/life-experiences",
-    href: "/courses/intermediate/milestones",
+    from: "/course/intermediate/life-experiences",
+    href: "/course/intermediate/milestones",
     label: "Milestones",
   }),
   useExistingCard({
-    from: "/courses/intermediate/life-experiences",
-    href: "/courses/intermediate/looking-back",
+    from: "/course/intermediate/life-experiences",
+    href: "/course/intermediate/looking-back",
     label: "Looking Back",
   }),
   useExistingCard({
-    from: "/courses/intermediate/storytelling",
-    href: "/courses/intermediate/narrative-tenses",
+    from: "/course/intermediate/storytelling",
+    href: "/course/intermediate/narrative-tenses",
     label: "Narrative Tenses",
   }),
   useExistingCard({
-    from: "/courses/intermediate/storytelling",
-    href: "/courses/intermediate/tell-your-story",
+    from: "/course/intermediate/storytelling",
+    href: "/course/intermediate/tell-your-story",
     label: "Tell Your Story",
   }),
   useExistingCard({
-    from: "/courses/intermediate/making-plans",
-    href: "/courses/intermediate/future-arrangements",
+    from: "/course/intermediate/making-plans",
+    href: "/course/intermediate/future-arrangements",
     label: "Future Arrangements",
   }),
   useExistingCard({
-    from: "/courses/intermediate/making-plans",
-    href: "/courses/intermediate/lets-meet-up",
+    from: "/course/intermediate/making-plans",
+    href: "/course/intermediate/lets-meet-up",
     label: "Let's Meet Up",
   }),
   useExistingCard({
-    from: "/courses/intermediate/what-if",
-    href: "/courses/intermediate/real-possibilities",
+    from: "/course/intermediate/what-if",
+    href: "/course/intermediate/real-possibilities",
     label: "Real Possibilities",
   }),
   useExistingCard({
-    from: "/courses/intermediate/what-if",
-    href: "/courses/intermediate/imaginary-situations",
+    from: "/course/intermediate/what-if",
+    href: "/course/intermediate/imaginary-situations",
     label: "Imaginary Situations",
   }),
   useExistingCard({
-    from: "/courses/intermediate/green-planet",
-    href: "/courses/intermediate/our-planet",
+    from: "/course/intermediate/green-planet",
+    href: "/course/intermediate/our-planet",
     label: "Our Planet",
   }),
   useExistingCard({
-    from: "/courses/intermediate/green-planet",
-    href: "/courses/intermediate/taking-action",
+    from: "/course/intermediate/green-planet",
+    href: "/course/intermediate/taking-action",
     label: "Taking Action",
   }),
   useExistingCard({
-    from: "/courses/intermediate/technology-today",
-    href: "/courses/intermediate/digital-life",
+    from: "/course/intermediate/technology-today",
+    href: "/course/intermediate/digital-life",
     label: "Digital Life",
   }),
   useExistingCard({
-    from: "/courses/intermediate/technology-today",
-    href: "/courses/intermediate/pros-and-cons",
+    from: "/course/intermediate/technology-today",
+    href: "/course/intermediate/pros-and-cons",
     label: "Pros & Cons",
   }),
   useExistingCard({
-    from: "/courses/intermediate/news-report",
-    href: "/courses/intermediate/in-the-news",
+    from: "/course/intermediate/news-report",
+    href: "/course/intermediate/in-the-news",
     label: "In The News",
   }),
   useExistingCard({
-    from: "/courses/intermediate/news-report",
-    href: "/courses/intermediate/breaking-news",
+    from: "/course/intermediate/news-report",
+    href: "/course/intermediate/breaking-news",
     label: "Breaking News",
   }),
   useExistingCard({
-    from: "/courses/intermediate/what-did-they-say",
-    href: "/courses/intermediate/he-said-she-said",
+    from: "/course/intermediate/what-did-they-say",
+    href: "/course/intermediate/he-said-she-said",
     label: "He Said, She Said",
   }),
   useExistingCard({
-    from: "/courses/intermediate/what-did-they-say",
-    href: "/courses/intermediate/the-interview",
+    from: "/course/intermediate/what-did-they-say",
+    href: "/course/intermediate/the-interview",
     label: "The Interview",
   }),
   useExistingCard({
-    from: "/courses/intermediate/career-path",
-    href: "/courses/intermediate/job-hunting",
+    from: "/course/intermediate/career-path",
+    href: "/course/intermediate/job-hunting",
     label: "Job Hunting",
   }),
   useExistingCard({
-    from: "/courses/intermediate/career-path",
-    href: "/courses/intermediate/career-choices",
+    from: "/course/intermediate/career-path",
+    href: "/course/intermediate/career-choices",
     label: "Career Choices",
   }),
   useExistingCard({
-    from: "/courses/intermediate/relationships",
-    href: "/courses/intermediate/reading-people",
+    from: "/course/intermediate/relationships",
+    href: "/course/intermediate/reading-people",
     label: "Reading People",
   }),
   useExistingCard({
-    from: "/courses/intermediate/relationships",
-    href: "/courses/intermediate/social-situations",
+    from: "/course/intermediate/relationships",
+    href: "/course/intermediate/social-situations",
     label: "Social Situations",
   }),
 ];
 
 courseLessonsCardData.upperIntermediate = [
   useExistingCard({
-    from: "/courses/upper-intermediate/dream-scenarios",
-    href: "/courses/upper-intermediate/wishing-for-change",
+    from: "/course/upper-intermediate/dream-scenarios",
+    href: "/course/upper-intermediate/wishing-for-change",
     label: "Wishing For Change",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/dream-scenarios",
-    href: "/courses/upper-intermediate/life-goals",
+    from: "/course/upper-intermediate/dream-scenarios",
+    href: "/course/upper-intermediate/life-goals",
     label: "Life Goals",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/regrets",
-    href: "/courses/upper-intermediate/if-only",
+    from: "/course/upper-intermediate/regrets",
+    href: "/course/upper-intermediate/if-only",
     label: "If Only...",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/regrets",
-    href: "/courses/upper-intermediate/looking-back",
+    from: "/course/upper-intermediate/regrets",
+    href: "/course/upper-intermediate/looking-back",
     label: "Looking Back",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/business-communication",
-    href: "/courses/upper-intermediate/meeting-language",
+    from: "/course/upper-intermediate/business-communication",
+    href: "/course/upper-intermediate/meeting-language",
     label: "Meeting Language",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/business-communication",
-    href: "/courses/upper-intermediate/lets-negotiate",
+    from: "/course/upper-intermediate/business-communication",
+    href: "/course/upper-intermediate/lets-negotiate",
     label: "Let's Negotiate",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/leadership",
-    href: "/courses/upper-intermediate/qualities-of-a-leader",
+    from: "/course/upper-intermediate/leadership",
+    href: "/course/upper-intermediate/qualities-of-a-leader",
     label: "Qualities of a Leader",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/leadership",
-    href: "/courses/upper-intermediate/leading-a-team",
+    from: "/course/upper-intermediate/leadership",
+    href: "/course/upper-intermediate/leading-a-team",
     label: "Leading a Team",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/innovation",
-    href: "/courses/upper-intermediate/future-of-work",
+    from: "/course/upper-intermediate/innovation",
+    href: "/course/upper-intermediate/future-of-work",
     label: "The Future of Work",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/innovation",
-    href: "/courses/upper-intermediate/pitch-your-idea",
+    from: "/course/upper-intermediate/innovation",
+    href: "/course/upper-intermediate/pitch-your-idea",
     label: "Pitch Your Idea",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/global-issues",
-    href: "/courses/upper-intermediate/world-problems",
+    from: "/course/upper-intermediate/global-issues",
+    href: "/course/upper-intermediate/world-problems",
     label: "World Problems",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/global-issues",
-    href: "/courses/upper-intermediate/finding-solutions",
+    from: "/course/upper-intermediate/global-issues",
+    href: "/course/upper-intermediate/finding-solutions",
     label: "Finding Solutions",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/debate-club",
-    href: "/courses/upper-intermediate/making-your-case",
+    from: "/course/upper-intermediate/debate-club",
+    href: "/course/upper-intermediate/making-your-case",
     label: "Making Your Case",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/debate-club",
-    href: "/courses/upper-intermediate/the-big-debate",
+    from: "/course/upper-intermediate/debate-club",
+    href: "/course/upper-intermediate/the-big-debate",
     label: "The Big Debate",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/media-and-marketing",
-    href: "/courses/upper-intermediate/selling-an-idea",
+    from: "/course/upper-intermediate/media-and-marketing",
+    href: "/course/upper-intermediate/selling-an-idea",
     label: "Selling An Idea",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/media-and-marketing",
-    href: "/courses/upper-intermediate/ad-campaign",
+    from: "/course/upper-intermediate/media-and-marketing",
+    href: "/course/upper-intermediate/ad-campaign",
     label: "Ad Campaign",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/native-like-english",
-    href: "/courses/upper-intermediate/everyday-idioms",
+    from: "/course/upper-intermediate/native-like-english",
+    href: "/course/upper-intermediate/everyday-idioms",
     label: "Everyday Idioms",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/native-like-english",
-    href: "/courses/upper-intermediate/using-idioms-naturally",
+    from: "/course/upper-intermediate/native-like-english",
+    href: "/course/upper-intermediate/using-idioms-naturally",
     label: "Using Idioms Naturally",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/natural-english",
-    href: "/courses/upper-intermediate/sounding-natural",
+    from: "/course/upper-intermediate/natural-english",
+    href: "/course/upper-intermediate/sounding-natural",
     label: "Sounding Natural",
   }),
   useExistingCard({
-    from: "/courses/upper-intermediate/natural-english",
-    href: "/courses/upper-intermediate/real-conversations",
+    from: "/course/upper-intermediate/natural-english",
+    href: "/course/upper-intermediate/real-conversations",
     label: "Real Conversations",
   }),
 ];
