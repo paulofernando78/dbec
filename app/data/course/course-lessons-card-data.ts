@@ -7,9 +7,10 @@ export type CourseLessonCard = LessonCardContent & {
 
 export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   beginner: [
+    //! Chapter 1 • Introduction
     // Hello
     {
-      href: "/courses/beginner/hello",
+      href: "/courses/beginner/chapter-1/hello",
       label: "Hello!",
       objective:
         "Greet someone, exchange first names, and end a short first meeting.",
@@ -20,15 +21,10 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       pronunciation:
         "I’m /aɪm/, What’s /wɒts/, and friendly greeting intonation",
       finalTask: "Meet a classmate and have a short greeting conversation.",
-      successCriteria: [
-        "Greet and say your first name.",
-        "Ask for and understand a first name, requesting repetition if needed.",
-        "Use Nice to meet you and an appropriate goodbye.",
-      ],
     },
     // Personal Information
     {
-      href: "/courses/beginner/personal-information",
+      href: "/courses/beginner/chapter-1/personal-information",
       label: "Personal Information",
       objective:
         "Ask for and give a full name, nationality, spelling, and simple contact details.",
@@ -40,15 +36,11 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       pronunciation: "English letter names and clear groups of phone numbers",
       finalTask:
         "Interview a partner and complete a fictional registration form.",
-      successCriteria: [
-        "Ask for a full name, country, and one fictional contact detail.",
-        "Spell and record a name accurately.",
-        "Complete the registration form with the required details.",
-      ],
     },
+    //! Chapter 2 • Family
     // My Family
     {
-      href: "/courses/beginner/my-family",
+      href: "/courses/beginner/chapter-1/my-family",
       label: "My Family",
       objective: "Introduce family members and say how they are related.",
       usefulLanguage:
@@ -67,10 +59,10 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Ask and answer a Who’s…? or Who are they? question.",
       ],
     },
-    // More Family Members
+    // My Relatives
     {
-      href: "/courses/beginner/more-family-members",
-      label: "More Family Members",
+      href: "/courses/beginner/chapter-1/my-relatives",
+      label: "MMy Relatives",
       objective:
         "Describe relationships in extended, married, and blended families.",
       usefulLanguage:
@@ -90,6 +82,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Use one possessive ’s phrase accurately.",
       ],
     },
+    //! Chapter 3 • Home
     // My house
     {
       href: "/courses/beginner/my-house",
@@ -109,6 +102,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Give enough information for a partner to identify the room.",
       ],
     },
+    //! Chapter 4 • Daily Routine
     // Daily Routine
     {
       href: "/courses/beginner/daily-routine",
@@ -148,6 +142,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Present the schedule in short, prepared sentences.",
       ],
     },
+    //! Chapter 5 • Food and Drinks
     // Food and Drinks
     {
       href: "/courses/beginner/food-and-drinks",
@@ -170,6 +165,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Order one item using please and thank you.",
       ],
     },
+    //! Chapter 6 • Shopping
     // Shopping
     {
       href: "/courses/beginner/shopping",
@@ -189,6 +185,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Request the chosen item politely.",
       ],
     },
+    //! Chapter 7 • Around Town
     // Around Town
     {
       href: "/courses/beginner/around-town",
@@ -208,6 +205,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Keep to locations rather than multi-step directions.",
       ],
     },
+    //! Chapter 8 • Action & Abilities
     // What are you doing?
     {
       href: "/courses/beginner/what-are-you-doing",
@@ -247,6 +245,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Report three abilities using clear can or can’t.",
       ],
     },
+    //! Chapter 9 • Real-Life Project
     // Rea-life Project
     {
       href: "/courses/beginner/real-life-project",

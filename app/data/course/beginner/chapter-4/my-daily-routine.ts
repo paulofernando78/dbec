@@ -1,14 +1,9 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
 import { content, audio } from "@/helpers/content";
 
-export const beginnerDailyRoutine = {
+export const beginnerMyDailyRoutine = {
   whiteboard: {
     title: "A1 BEGINNER",
-    subtitle: "Daily Routine",
+    subtitle: "My Daily Routine",
     descriptions: [
       "I wake up at 7 o'clock.",
       "She goes to work in the morning.",
@@ -104,8 +99,8 @@ export const beginnerDailyRoutine = {
       {
         type: "dialogue",
         ...{
-      instruction:
-        "Listen once: are Emma and Jake talking about a weekday routine?",
+      instruction: [
+        "Listen once: are Emma and Jake talking about a weekday routine?", ],
       audioSrc: "",
       lines: [
         {

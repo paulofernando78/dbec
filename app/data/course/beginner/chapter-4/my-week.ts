@@ -1,8 +1,3 @@
-import type { Meaning } from "@/components/content/Meaning";
-import type { Notes } from "@/components/content/Notes";
-import type { ListProps } from "@/components/content/List";
-import type { CCQ } from "@/components/content/CCQ/";
-
 import { content, audio, bold } from "@/helpers/content";
 
 export const beginnerMyWeek = {
@@ -10,8 +5,8 @@ export const beginnerMyWeek = {
     title: "A1 BEGINNER",
     subtitle: "My Week",
     descriptions: [
-      "I always study on Monday.",
-      "She sometimes plays soccer on Saturday.",
+      "Laura always study on Monday.",
+      "Eric sometimes plays soccer on Saturday.",
     ],
   },
 
@@ -107,8 +102,9 @@ export const beginnerMyWeek = {
       {
         type: "dialogue",
         ...{
-      instruction:
+      instruction: [
         "Listen once: are Emma and Jake talking about daily or weekly habits?",
+      ],
       audioSrc: "",
       lines: [
         {

@@ -1,19 +1,38 @@
-// Beginner
-import { beginnerHello } from "@/data/course/beginner/hello";
-import { beginnerPersonalInformation } from "@/data/course/beginner/personal-information";
-import { beginnerMyFamily } from "@/data/course/beginner/my-family";
-import { beginnerMoreFamilyMembers } from "@/data/course/beginner/more-family-members";
-import { beginnerMyHouse } from "@/data/course/beginner/my-house";
-import { beginnerDailyRoutine } from "@/data/course/beginner/daily-routine";
-import { beginnerMyWeek } from "@/data/course/beginner/my-week";
-import { beginnerFoodAndDrinks } from "@/data/course/beginner/food-and-drinks";
-import { beginnerShopping } from "@/data/course/beginner/shopping";
-import { beginnerAroundTown } from "@/data/course/beginner/around-town";
-import { beginnerWhatAreYouDoing } from "@/data/course/beginner/what-are-you-doing";
-import { beginnerAbilities } from "@/data/course/beginner/abilities";
-import { beginnerRealLifeProject } from "@/data/course/beginner/real-life-project";
+//! Beginner
+// Chapter 1
+import { beginnerHello } from "@/data/course/beginner/chapter-1/hello";
+import { beginnerPersonalInformation } from "@/data/course/beginner/chapter-1/personal-information";
 
-// Elementary
+// Chapter 2
+import { beginnerMyFamily } from "@/data/course/beginner/chapter-2/my-family";
+import { beginnerMyRelatives } from "@/data/course/beginner/chapter-2/my-relatives";
+
+// Chapter 3
+import { beginnerMyHouse } from "@/data/course/beginner/chapter-3/my-house";
+import { beginnerRentingAHome } from "@/data/course/beginner/chapter-3/renting-a-home";
+
+// Chapter 4
+import { beginnerMyDailyRoutine } from "@/data/course/beginner/chapter-4/my-daily-routine";
+import { beginnerMyWeek } from "@/data/course/beginner/chapter-4/my-week";
+
+// Chapter 5
+import { beginnerFoodAndDrinks } from "@/data/course/beginner/chapter-5/food-and-drinks";
+import { beginnerEatingOut } from "./beginner/chapter-5/eating-out";
+
+// Chapter 6
+import { beginnerShopping } from "@/data/course/beginner/chapter-6/shopping";
+
+// Chapter 7
+import { beginnerAroundTown } from "@/data/course/beginner/chapter-7/around-town";
+
+// Chapter 8
+import { beginnerWhatAreYouDoing } from "@/data/course/beginner/chapter-8/what-are-you-doing";
+
+// Chapter 9
+import { beginnerAbilities } from "@/data/course/beginner/chapter-8/abilities";
+import { beginnerRealLifeProject } from "@/data/course/beginner/chapter-9/real-life-project";
+
+//! Elementary
 // Past
 import { elementaryPastBeach } from "@/data/course/elementary/past-beach";
 import { elementaryPastMovies } from "@/data/course/elementary/past-movies";
@@ -30,7 +49,7 @@ import { elementaryShoppingSmart } from "@/data/course/elementary/shopping-smart
 import { elementaryExperiences } from "@/data/course/elementary/experiences";
 import { elementaryHobbies } from "@/data/course/elementary/hobbies";
 
-// Intermediate
+//! Intermediate
 import { intermediateCareerPath } from "@/data/course/intermediate/career-path";
 import { intermediateGreenPlanet } from "@/data/course/intermediate/green-planet";
 import { intermediateLifeExperiences } from "@/data/course/intermediate/life-experiences";
@@ -42,7 +61,7 @@ import { intermediateTechnologyToday } from "@/data/course/intermediate/technolo
 import { intermediateWhatDidTheySay } from "@/data/course/intermediate/what-did-they-say";
 import { intermediateWhatIf } from "@/data/course/intermediate/what-if";
 
-// Upper-Intermediate
+//! Upper-Intermediate
 import { upperIntermediateBusinessCommunication } from "@/data/course/upper-intermediate/business-communication";
 import { upperIntermediateDebateClub } from "@/data/course/upper-intermediate/debate-club";
 import { upperIntermediateDreamScenarios } from "@/data/course/upper-intermediate/dream-scenarios";
@@ -54,7 +73,7 @@ import { upperIntermediateNativeLikeEnglish } from "@/data/course/upper-intermed
 import { upperIntermediateNaturalEnglish } from "@/data/course/upper-intermediate/natural-english";
 import { upperIntermediateRegrets } from "@/data/course/upper-intermediate/regrets";
 
-// Advanced
+//! Advanced
 // import { ... } from "@/data/course/advanced/";
 
 type Lesson = Record<string, any>;
@@ -67,21 +86,38 @@ export type CourseLessonLevel = {
 export const courseLessons: Record<string, CourseLessonLevel> = {
   beginner: {
     lessons: {
-      hello: beginnerHello,
+      // Chapter 1
+      "hello:": beginnerHello,
       "personal-information": beginnerPersonalInformation,
+
+      // Chapter 2
       "my-family": beginnerMyFamily,
-      "more-family-members": beginnerMoreFamilyMembers,
+      "my-relatives": beginnerMyRelatives,
+
+      // Chapter 3
       "my-house": beginnerMyHouse,
-      "daily-routine": beginnerDailyRoutine,
+      "renting-a-home": beginnerRentingAHome,
+
+      // Chapter 4
+      "my-daily-routine": beginnerMyDailyRoutine,
       "my-week": beginnerMyWeek,
+
+      // Chapter 5
       "food-and-drinks": beginnerFoodAndDrinks,
+      "eating-out": beginnerEatingOut,
+
+      // Chapter 6
       shopping: beginnerShopping,
       "around-town": beginnerAroundTown,
+
+      // Chapter 7
+
+      // Chapter 8
+
+      // Chapter 9
       "what-are-you-doing": beginnerWhatAreYouDoing,
       abilities: beginnerAbilities,
       "real-life-project": beginnerRealLifeProject,
-      "renting-a-home": beginnerMyHouse,
-      "eating-out": beginnerFoodAndDrinks,
       "bargain-hunting": beginnerShopping,
       "finding-your-way": beginnerAroundTown,
       "course-review": beginnerRealLifeProject,

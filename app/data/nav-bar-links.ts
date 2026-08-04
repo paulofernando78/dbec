@@ -30,9 +30,10 @@ export const links = [
       {
         label: "Chapter 1 • Introduction",
         links: [
-          { href: "/courses/beginner/hello", label: "Hello" },
+          { href: "/courses/beginner/chapter-1/hello",
+            label: "Hello" },
           {
-            href: "/courses/beginner/personal-information",
+            href: "/courses/beginner/chapter-1/personal-information",
             label: "Personal Information",
           },
         ],
@@ -41,10 +42,10 @@ export const links = [
       {
         label: "Chapter 2 • Family",
         links: [
-          { href: "/courses/beginner/my-family", label: "My Nuclear Family" },
+          { href: "/courses/beginner/chapter-2/my-family", label: "My Family" },
           {
-            href: "/courses/beginner/more-family-members",
-            label: "My Extended Family",
+            href: "/courses/beginner/chapter-2/my-relatives",
+            label: "My Relatives",
           },
         ],
       },
@@ -52,9 +53,10 @@ export const links = [
       {
         label: "Chapter 3 • Home",
         links: [
-          { href: "/courses/beginner/my-house", label: "My House" },
+          { href: "/courses/beginner/chapter-3/my-house",
+            label: "My House" },
           {
-            href: "/courses/beginner/renting-a-home", // [new]
+            href: "/courses/beginner/chapter-3/renting-a-home",
             label: "Renting a Home",
           },
         ],
@@ -64,10 +66,10 @@ export const links = [
         label: "Chapter 4 • Daily Routine",
         links: [
           {
-            href: "/courses/beginner/daily-routine",
+            href: "/courses/beginner/chapter-4/my-daily-routine",
             label: "Daily Routine",
           },
-          { href: "/courses/beginner/my-week", label: "My Week" },
+          { href: "/courses/beginner/chapter-4/my-week", label: "My Week" },
         ],
       },
       // Chapter 5 • Food and Drinks
