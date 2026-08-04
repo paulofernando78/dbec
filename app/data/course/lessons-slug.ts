@@ -87,7 +87,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
   beginner: {
     lessons: {
       // Chapter 1
-      "hello:": beginnerHello,
+      hello: beginnerHello,
       "personal-information": beginnerPersonalInformation,
 
       // Chapter 2
@@ -108,9 +108,11 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
 
       // Chapter 6
       shopping: beginnerShopping,
-      "around-town": beginnerAroundTown,
-
+      "bargain-hunting": beginnerShopping,
+      
       // Chapter 7
+      "around-town": beginnerAroundTown,
+      "finding-your-way": beginnerAroundTown,
 
       // Chapter 8
 
@@ -118,8 +120,6 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       "what-are-you-doing": beginnerWhatAreYouDoing,
       abilities: beginnerAbilities,
       "real-life-project": beginnerRealLifeProject,
-      "bargain-hunting": beginnerShopping,
-      "finding-your-way": beginnerAroundTown,
       "course-review": beginnerRealLifeProject,
     },
   },

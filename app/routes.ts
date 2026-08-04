@@ -47,7 +47,12 @@ export default [
     //! ─────────────────────────────────────────────
     
     route(
-      "/courses/:level/:chapter/:slug?",
+      "/course/:level/:slug?",
+      "routes/course/builder.tsx"),
+
+
+    route(
+      "/course/:level/:chapter/:slug?",
       "routes/course/builder.tsx"),
 
     //! ─────────────────────────────────────────────

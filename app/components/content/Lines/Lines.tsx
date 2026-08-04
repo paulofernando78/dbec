@@ -11,12 +11,11 @@ type LineItem =
 type LinesProps = {
   value?: LineItem[];
   as?: "p" | "span";
-  className: string
 };
 
-export const Lines = ({ value = [], as, className }: LinesProps) => {
+export const Lines = ({ value = [], as}: LinesProps) => {
   return (
-    <div className={className}>
+    <div className="mb-4">
       {value.map((line, index) => {
         if (Array.isArray(line)) {
           return <Line key={index} as={as} value={line} />;

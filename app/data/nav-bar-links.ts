@@ -21,536 +21,557 @@ export const links = [
   {
     title: "Course",
     links: [
-  // A1 Beginner
-  {
-    label: "A1 Beginner",
-    iconClassName: "text-yellow-500",
-    links: [
-      // Chapter 1 • Introduction
+      // A1 Beginner
       {
-        label: "Chapter 1 • Introduction",
+        label: "A1 Beginner",
+        iconClassName: "text-yellow-500",
         links: [
-          { href: "/courses/beginner/chapter-1/hello",
-            label: "Hello" },
+          // Chapter 1 • Introduction
           {
-            href: "/courses/beginner/chapter-1/personal-information",
-            label: "Personal Information",
+            label: "Chapter 1 • Introduction",
+            links: [
+              { href: "/course/beginner/chapter-1/hello", label: "Hello" },
+              {
+                href: "/course/beginner/chapter-1/personal-information",
+                label: "Personal Information",
+              },
+            ],
+          },
+          // Chapter 2 • Family
+          {
+            label: "Chapter 2 • Family",
+            links: [
+              {
+                href: "/course/beginner/chapter-2/my-family",
+                label: "My Family",
+              },
+              {
+                href: "/course/beginner/chapter-2/my-relatives",
+                label: "My Relatives",
+              },
+            ],
+          },
+          // Chapter 3 • Home
+          {
+            label: "Chapter 3 • Home",
+            links: [
+              {
+                href: "/course/beginner/chapter-3/my-house",
+                label: "My House",
+              },
+              {
+                href: "/course/beginner/chapter-3/renting-a-home",
+                label: "Renting a Home",
+              },
+            ],
+          },
+          // Chapter 4 • Daily Routine
+          {
+            label: "Chapter 4 • Daily Routine",
+            links: [
+              {
+                href: "/course/beginner/chapter-4/my-daily-routine",
+                label: "Daily Routine",
+              },
+              { href: "/course/beginner/chapter-4/my-week", label: "My Week" },
+            ],
+          },
+          // Chapter 5 • Food and Drinks
+          {
+            label: "Chapter 5 • Food and Drinks",
+            links: [
+              {
+                href: "/course/beginner/food-and-drinks",
+                label: "Food and Drinks",
+              },
+              {
+                href: "/course/beginner/eating-out",
+                label: "Eating Out",
+              },
+            ],
+          },
+          // Chapter 6 • Shopping
+          {
+            label: "Chapter 6 • Shopping",
+            links: [
+              { href: "/course/beginner/shopping", label: "Shopping" },
+              {
+                href: "/course/beginner/bargain-hunting",
+                label: "Bargain Hunting",
+              },
+            ],
+          },
+          // Chapter 7 • Around Town
+          {
+            label: "Chapter 7 • Around Town",
+            links: [
+              { href: "/course/beginner/around-town", label: "Around Town" },
+              {
+                href: "/course/beginner/finding-your-way",
+                label: "Finding Your Way",
+              },
+            ],
+          },
+          // Chapter 8 • Actions & Abilities
+          {
+            label: "Chapter 8 • Actions & Abilities",
+            links: [
+              {
+                href: "/course/beginner/what-are-you-doing",
+                label: "What Are You Doing?",
+              },
+              { href: "/course/beginner/abilities", label: "Abilities" },
+            ],
+          },
+          // Chapter 9 • Real-Life Project
+          {
+            label: "Chapter 9 • Real-Life Project",
+            links: [
+              {
+                href: "/course/beginner/real-life-project",
+                label: "Real-Life Project",
+              },
+              {
+                href: "/course/beginner/course-review",
+                label: "Course Review",
+              },
+            ],
           },
         ],
       },
-      // Chapter 2 • Family
-      {
-        label: "Chapter 2 • Family",
-        links: [
-          { href: "/courses/beginner/chapter-2/my-family", label: "My Family" },
-          {
-            href: "/courses/beginner/chapter-2/my-relatives",
-            label: "My Relatives",
-          },
-        ],
-      },
-      // Chapter 3 • Home
-      {
-        label: "Chapter 3 • Home",
-        links: [
-          { href: "/courses/beginner/chapter-3/my-house",
-            label: "My House" },
-          {
-            href: "/courses/beginner/chapter-3/renting-a-home",
-            label: "Renting a Home",
-          },
-        ],
-      },
-      // Chapter 4 • Daily Routine
-      {
-        label: "Chapter 4 • Daily Routine",
-        links: [
-          {
-            href: "/courses/beginner/chapter-4/my-daily-routine",
-            label: "Daily Routine",
-          },
-          { href: "/courses/beginner/chapter-4/my-week", label: "My Week" },
-        ],
-      },
-      // Chapter 5 • Food and Drinks
-      {
-        label: "Chapter 5 • Food and Drinks",
-        links: [
-          {
-            href: "/courses/beginner/food-and-drinks",
-            label: "Food and Drinks",
-          },
-          {
-            href: "/courses/beginner/eating-out", // [new]
-            label: "Eating Out",
-          },
-        ],
-      },
-      // Chapter 6 • Shopping
-      {
-        label: "Chapter 6 • Shopping",
-        links: [
-          { href: "/courses/beginner/shopping", label: "Shopping" },
-          {
-            href: "/courses/beginner/bargain-hunting", // [new]
-            label: "Bargain Hunting",
-          },
-        ],
-      },
-      // Chapter 7 • Around Town
-      {
-        label: "Chapter 7 • Around Town",
-        links: [
-          { href: "/courses/beginner/around-town", label: "Around Town" },
-          {
-            href: "/courses/beginner/finding-your-way", // [new]
-            label: "Finding Your Way",
-          },
-        ],
-      },
-      // Chapter 8 • Actions & Abilities
-      {
-        label: "Chapter 8 • Actions & Abilities",
-        links: [
-          {
-            href: "/courses/beginner/what-are-you-doing",
-            label: "What Are You Doing?",
-          },
-          { href: "/courses/beginner/abilities", label: "Abilities" },
-        ],
-      },
-      // Chapter 9 • Real-Life Project
-      {
-        label: "Chapter 9 • Real-Life Project",
-        links: [
-          {
-            href: "/courses/beginner/real-life-project",
-            label: "Real-Life Project",
-          },
-          {
-            href: "/courses/beginner/course-review", // [new]
-            label: "Course Review",
-          },
-        ],
-      },
-    ],
-  },
- 
-  // A2 Elementary
-  {
-    label: "A2 Elementary",
-    iconClassName: "text-red-500",
-    links: [
-      // Chapter 1 • Past
-      // Intentional pattern: same grammar point (past simple), recycled
-      // across 4 different vocabulary contexts. Kept as 4 lessons on
-      // purpose — do not collapse to 2.
-      {
-        label: "Chapter 1 • Past",
-        links: [
-          { href: "/courses/elementary/past-beach", label: "Past: Beach" },
-          { href: "/courses/elementary/past-movies", label: "Past: Movies" },
-          { href: "/courses/elementary/past-family", label: "Past: Family" },
-          { href: "/courses/elementary/past-home", label: "Past: Home" },
-        ],
-      },
-      // Chapter 2 • Future
-      {
-        label: "Chapter 2 • Future",
-        links: [
-          {
-            href: "/courses/elementary/travel-plans",
-            label: "Travel Plans",
-          },
-          {
-            href: "/courses/elementary/future-predictions",
-            label: "Predictions",
-          },
-        ],
-      },
-      // Chapter 3 • City Life
-      {
-        label: "Chapter 3 • City Life",
-        links: [
-          { href: "/courses/elementary/city-life", label: "City Life" },
-          {
-            href: "/courses/elementary/the-best-place",
-            label: "The Best Place",
-          },
-        ],
-      },
-      // Chapter 4 • Healthy Living
-      {
-        label: "Chapter 4 • Healthy Living",
-        links: [
-          {
-            href: "/courses/elementary/healthy-living",
-            label: "Healthy Living",
-          },
-          {
-            href: "/courses/elementary/giving-advice", // [new]
-            label: "Giving Advice",
-          },
-        ],
-      },
-      // Chapter 5 • Rules & Obligations
-      {
-        label: "Chapter 5 • Rules & Obligations",
-        links: [
-          { href: "/courses/elementary/rules", label: "Rules" },
-          {
-            href: "/courses/elementary/school-and-work-rules", // [new]
-            label: "School & Work Rules",
-          },
-        ],
-      },
-      // Chapter 6 • Shopping Smart
-      {
-        label: "Chapter 6 • Shopping Smart",
-        links: [
-          {
-            href: "/courses/elementary/shopping-smart",
-            label: "Shopping Smart",
-          },
-          {
-            href: "/courses/elementary/complaints-and-returns", // [new]
-            label: "Complaints & Returns",
-          },
-        ],
-      },
-      // Chapter 7 • Life Experiences
-      {
-        label: "Chapter 7 • Life Experiences",
-        links: [
-          { href: "/courses/elementary/experiences", label: "Experiences" },
-          { href: "/courses/elementary/hobbies", label: "Hobbies" },
-        ],
-      },
-    ],
-  },
 
-  // B1 Intermediate
-  {
-    label: "B1 Intermediate",
-    iconClassName: "text-blue-500",
-    links: [
+      // A2 Elementary
       {
-        label: "Chapter 1 • Life Experiences",
+        label: "A2 Elementary",
+        iconClassName: "text-red-500",
         links: [
+          // Chapter 1 • Past
           {
-            href: "/courses/intermediate/milestones", // [new]
-            label: "Milestones",
+            label: "Chapter 1 • Past",
+            links: [
+              { href: "/course/elementary/past-beach", label: "Past: Beach" },
+              { href: "/course/elementary/past-movies", label: "Past: Movies" },
+              { href: "/course/elementary/past-family", label: "Past: Family" },
+              { href: "/course/elementary/past-home", label: "Past: Home" },
+            ],
           },
+          // Chapter 2 • Future
           {
-            href: "/courses/intermediate/looking-back", // [new]
-            label: "Looking Back",
+            label: "Chapter 2 • Future",
+            links: [
+              {
+                href: "/course/elementary/travel-plans",
+                label: "Travel Plans",
+              },
+              {
+                href: "/course/elementary/future-predictions",
+                label: "Predictions",
+              },
+            ],
+          },
+          // Chapter 3 • City Life
+          {
+            label: "Chapter 3 • City Life",
+            links: [
+              { href: "/course/elementary/city-life", label: "City Life" },
+              {
+                href: "/course/elementary/the-best-place",
+                label: "The Best Place",
+              },
+            ],
+          },
+          // Chapter 4 • Healthy Living
+          {
+            label: "Chapter 4 • Healthy Living",
+            links: [
+              {
+                href: "/course/elementary/healthy-living",
+                label: "Healthy Living",
+              },
+              {
+                href: "/course/elementary/giving-advice",
+                label: "Giving Advice",
+              },
+            ],
+          },
+          // Chapter 5 • Rules & Obligations
+          {
+            label: "Chapter 5 • Rules & Obligations",
+            links: [
+              { href: "/course/elementary/rules", label: "Rules" },
+              {
+                href: "/course/elementary/school-and-work-rules",
+                label: "School & Work Rules",
+              },
+            ],
+          },
+          // Chapter 6 • Shopping Smart
+          {
+            label: "Chapter 6 • Shopping Smart",
+            links: [
+              {
+                href: "/course/elementary/shopping-smart",
+                label: "Shopping Smart",
+              },
+              {
+                href: "/course/elementary/complaints-and-returns",
+                label: "Complaints & Returns",
+              },
+            ],
+          },
+          // Chapter 7 • Life Experiences
+          {
+            label: "Chapter 7 • Life Experiences",
+            links: [
+              { href: "/course/elementary/experiences", label: "Experiences" },
+              { href: "/course/elementary/hobbies", label: "Hobbies" },
+            ],
           },
         ],
       },
-      {
-        label: "Chapter 2 • Storytelling",
-        links: [
-          {
-            href: "/courses/intermediate/narrative-tenses", // [new]
-            label: "Narrative Tenses",
-          },
-          {
-            href: "/courses/intermediate/tell-your-story", // [new]
-            label: "Tell Your Story",
-          },
-        ],
-      },
-      {
-        label: "Chapter 3 • Making Plans",
-        links: [
-          {
-            href: "/courses/intermediate/future-arrangements", // [new]
-            label: "Future Arrangements",
-          },
-          {
-            href: "/courses/intermediate/lets-meet-up", // [new]
-            label: "Let's Meet Up",
-          },
-        ],
-      },
-      {
-        label: "Chapter 4 • What If?",
-        links: [
-          {
-            href: "/courses/intermediate/real-possibilities", // [new]
-            label: "Real Possibilities",
-          },
-          {
-            href: "/courses/intermediate/imaginary-situations", // [new]
-            label: "Imaginary Situations",
-          },
-        ],
-      },
-      {
-        label: "Chapter 5 • Green Planet",
-        links: [
-          {
-            href: "/courses/intermediate/our-planet", // [new]
-            label: "Our Planet",
-          },
-          {
-            href: "/courses/intermediate/taking-action", // [new]
-            label: "Taking Action",
-          },
-        ],
-      },
-      {
-        label: "Chapter 6 • Technology Today",
-        links: [
-          {
-            href: "/courses/intermediate/digital-life", // [new]
-            label: "Digital Life",
-          },
-          {
-            href: "/courses/intermediate/pros-and-cons", // [new]
-            label: "Pros & Cons",
-          },
-        ],
-      },
-      {
-        label: "Chapter 7 • News Report",
-        links: [
-          {
-            href: "/courses/intermediate/in-the-news", // [new]
-            label: "In The News",
-          },
-          {
-            href: "/courses/intermediate/breaking-news", // [new]
-            label: "Breaking News",
-          },
-        ],
-      },
-      {
-        label: "Chapter 8 • What Did They Say?",
-        links: [
-          {
-            href: "/courses/intermediate/he-said-she-said", // [new]
-            label: "He Said, She Said",
-          },
-          {
-            href: "/courses/intermediate/the-interview", // [new]
-            label: "The Interview",
-          },
-        ],
-      },
-      {
-        label: "Chapter 9 • Career Path",
-        links: [
-          {
-            href: "/courses/intermediate/job-hunting", // [new]
-            label: "Job Hunting",
-          },
-          {
-            href: "/courses/intermediate/career-choices", // [new]
-            label: "Career Choices",
-          },
-        ],
-      },
-      {
-        label: "Chapter 10 • Relationships",
-        links: [
-          {
-            href: "/courses/intermediate/reading-people", // [new]
-            label: "Reading People",
-          },
-          {
-            href: "/courses/intermediate/social-situations", // [new]
-            label: "Social Situations",
-          },
-        ],
-      },
-    ],
-  },
 
-  // B2 Upper-Intermediate
-  {
-    label: "B2 Upper-Intermediate",
-    iconClassName: "text-green-500",
-    links: [
+      // B1 Intermediate
       {
-        label: "Chapter 1 • Dream Scenarios",
+        label: "B1 Intermediate",
+        iconClassName: "text-blue-500",
         links: [
+          // Chapter 1 • Life Experiences
           {
-            href: "/courses/upper-intermediate/wishing-for-change", // [new]
-            label: "Wishing For Change",
+            label: "Chapter 1 • Life Experiences",
+            links: [
+              {
+                href: "/course/intermediate/milestones",
+                label: "Milestones",
+              },
+              {
+                href: "/course/intermediate/looking-back",
+                label: "Looking Back",
+              },
+            ],
           },
+          // Chapter 2 • Storytelling
           {
-            href: "/courses/upper-intermediate/life-goals", // [new]
-            label: "Life Goals",
+            label: "Chapter 2 • Storytelling",
+            links: [
+              {
+                href: "/course/intermediate/narrative-tenses",
+                label: "Narrative Tenses",
+              },
+              {
+                href: "/course/intermediate/tell-your-story",
+                label: "Tell Your Story",
+              },
+            ],
+          },
+          // Chapter 3 • Making Plans
+          {
+            label: "Chapter 3 • Making Plans",
+            links: [
+              {
+                href: "/course/intermediate/future-arrangements",
+                label: "Future Arrangements",
+              },
+              {
+                href: "/course/intermediate/lets-meet-up",
+                label: "Let's Meet Up",
+              },
+            ],
+          },
+          // Chapter 4 • What If?
+          {
+            label: "Chapter 4 • What If?",
+            links: [
+              {
+                href: "/course/intermediate/real-possibilities",
+                label: "Real Possibilities",
+              },
+              {
+                href: "/course/intermediate/imaginary-situations",
+                label: "Imaginary Situations",
+              },
+            ],
+          },
+          // Chapter 5 • Green Planet
+          {
+            label: "Chapter 5 • Green Planet",
+            links: [
+              {
+                href: "/course/intermediate/our-planet",
+                label: "Our Planet",
+              },
+              {
+                href: "/course/intermediate/taking-action",
+                label: "Taking Action",
+              },
+            ],
+          },
+          // Chapter 6 • Technology Today
+          {
+            label: "Chapter 6 • Technology Today",
+            links: [
+              {
+                href: "/course/intermediate/digital-life",
+                label: "Digital Life",
+              },
+              {
+                href: "/course/intermediate/pros-and-cons",
+                label: "Pros & Cons",
+              },
+            ],
+          },
+          // Chapter 7 • News Report
+          {
+            label: "Chapter 7 • News Report",
+            links: [
+              {
+                href: "/course/intermediate/in-the-news",
+                label: "In The News",
+              },
+              {
+                href: "/course/intermediate/breaking-news",
+                label: "Breaking News",
+              },
+            ],
+          },
+          // Chapter 8 • What Did They Say?
+          {
+            label: "Chapter 8 • What Did They Say?",
+            links: [
+              {
+                href: "/course/intermediate/he-said-she-said",
+                label: "He Said, She Said",
+              },
+              {
+                href: "/course/intermediate/the-interview",
+                label: "The Interview",
+              },
+            ],
+          },
+          // Chapter 9 • Career Path
+          {
+            label: "Chapter 9 • Career Path",
+            links: [
+              {
+                href: "/course/intermediate/job-hunting",
+                label: "Job Hunting",
+              },
+              {
+                href: "/course/intermediate/career-choices",
+                label: "Career Choices",
+              },
+            ],
+          },
+          // Chapter 10 • Relationships
+          {
+            label: "Chapter 10 • Relationships",
+            links: [
+              {
+                href: "/course/intermediate/reading-people",
+                label: "Reading People",
+              },
+              {
+                href: "/course/intermediate/social-situations",
+                label: "Social Situations",
+              },
+            ],
           },
         ],
       },
-      {
-        label: "Chapter 2 • Regrets",
-        links: [
-          {
-            href: "/courses/upper-intermediate/if-only", // [new]
-            label: "If Only...",
-          },
-          {
-            href: "/courses/upper-intermediate/looking-back", // [new]
-            label: "Looking Back",
-          },
-        ],
-      },
-      {
-        label: "Chapter 3 • Business Communication",
-        links: [
-          {
-            href: "/courses/upper-intermediate/meeting-language", // [new]
-            label: "Meeting Language",
-          },
-          {
-            href: "/courses/upper-intermediate/lets-negotiate", // [new]
-            label: "Let's Negotiate",
-          },
-        ],
-      },
-      {
-        label: "Chapter 4 • Leadership",
-        links: [
-          {
-            href: "/courses/upper-intermediate/qualities-of-a-leader", // [new]
-            label: "Qualities of a Leader",
-          },
-          {
-            href: "/courses/upper-intermediate/leading-a-team", // [new]
-            label: "Leading a Team",
-          },
-        ],
-      },
-      {
-        label: "Chapter 5 • Innovation",
-        links: [
-          {
-            href: "/courses/upper-intermediate/future-of-work", // [new]
-            label: "The Future of Work",
-          },
-          {
-            href: "/courses/upper-intermediate/pitch-your-idea", // [new]
-            label: "Pitch Your Idea",
-          },
-        ],
-      },
-      {
-        label: "Chapter 6 • Global Issues",
-        links: [
-          {
-            href: "/courses/upper-intermediate/world-problems", // [new]
-            label: "World Problems",
-          },
-          {
-            href: "/courses/upper-intermediate/finding-solutions", // [new]
-            label: "Finding Solutions",
-          },
-        ],
-      },
-      {
-        label: "Chapter 7 • Debate Club",
-        links: [
-          {
-            href: "/courses/upper-intermediate/making-your-case", // [new]
-            label: "Making Your Case",
-          },
-          {
-            href: "/courses/upper-intermediate/the-big-debate", // [new]
-            label: "The Big Debate",
-          },
-        ],
-      },
-      {
-        label: "Chapter 8 • Media and Marketing",
-        links: [
-          {
-            href: "/courses/upper-intermediate/selling-an-idea", // [new]
-            label: "Selling An Idea",
-          },
-          {
-            href: "/courses/upper-intermediate/ad-campaign", // [new]
-            label: "Ad Campaign",
-          },
-        ],
-      },
-      {
-        label: "Chapter 9 • Idiomatic English in Context",
-        links: [
-          {
-            href: "/courses/upper-intermediate/everyday-idioms", // [new]
-            label: "Everyday Idioms",
-          },
-          {
-            href: "/courses/upper-intermediate/using-idioms-naturally", // [new]
-            label: "Using Idioms Naturally",
-          },
-        ],
-      },
-      {
-        label: "Chapter 10 • Natural English",
-        links: [
-          {
-            href: "/courses/upper-intermediate/sounding-natural", // [new]
-            label: "Sounding Natural",
-          },
-          {
-            href: "/courses/upper-intermediate/real-conversations", // [new]
-            label: "Real Conversations",
-          },
-        ],
-      },
-    ],
-  },
 
-  // C1 Advanced
-  // {
-  //   label: "C1 Advanced",
-  //   links: [
-  //     {
-  //       href: "/courses/advanced/reading-between-the-lines",
-  //       label: "Reading Between the Lines",
-  //     },
-  //     {
-  //       href: "/courses/advanced/synthesizing-sources",
-  //       label: "Synthesizing Sources",
-  //     },
-  //     {
-  //       href: "/courses/advanced/building-complex-arguments",
-  //       label: "Building Complex Arguments",
-  //     },
-  //     {
-  //       href: "/courses/advanced/diplomatic-communication",
-  //       label: "Diplomatic Communication",
-  //     },
-  //     {
-  //       href: "/courses/advanced/academic-presentations",
-  //       label: "Academic Presentations",
-  //     },
-  //     {
-  //       href: "/courses/advanced/mediation-and-clarification",
-  //       label: "Mediation and Clarification",
-  //     },
-  //     {
-  //       href: "/courses/advanced/critical-reviews",
-  //       label: "Critical Reviews",
-  //     },
-  //     {
-  //       href: "/courses/advanced/negotiation-and-consensus",
-  //       label: "Negotiation and Consensus",
-  //     },
-  //     {
-  //       href: "/courses/advanced/precision-and-nuance",
-  //       label: "Precision and Nuance",
-  //     },
-  //     {
-  //       href: "/courses/advanced/research-briefing",
-  //       label: "Research Briefing",
-  //     },
-  //   ],
-  // },
+      // B2 Upper-Intermediate
+      {
+        label: "B2 Upper-Intermediate",
+        iconClassName: "text-green-500",
+        links: [
+          // Chapter 1 • Dream Scenarios
+          {
+            label: "Chapter 1 • Dream Scenarios",
+            links: [
+              {
+                href: "/course/upper-intermediate/wishing-for-change",
+                label: "Wishing For Change",
+              },
+              {
+                href: "/course/upper-intermediate/life-goals",
+                label: "Life Goals",
+              },
+            ],
+          },
+          // Chapter 2 • Regrets
+          {
+            label: "Chapter 2 • Regrets",
+            links: [
+              {
+                href: "/course/upper-intermediate/if-only",
+                label: "If Only...",
+              },
+              {
+                href: "/course/upper-intermediate/looking-back",
+                label: "Looking Back",
+              },
+            ],
+          },
+          // Chapter 3 • Business Communication
+          {
+            label: "Chapter 3 • Business Communication",
+            links: [
+              {
+                href: "/course/upper-intermediate/meeting-language",
+                label: "Meeting Language",
+              },
+              {
+                href: "/course/upper-intermediate/lets-negotiate",
+                label: "Let's Negotiate",
+              },
+            ],
+          },
+          // Chapter 4 • Leadership
+          {
+            label: "Chapter 4 • Leadership",
+            links: [
+              {
+                href: "/course/upper-intermediate/qualities-of-a-leader",
+                label: "Qualities of a Leader",
+              },
+              {
+                href: "/course/upper-intermediate/leading-a-team",
+                label: "Leading a Team",
+              },
+            ],
+          },
+          // Chapter 5 • Innovation
+          {
+            label: "Chapter 5 • Innovation",
+            links: [
+              {
+                href: "/course/upper-intermediate/future-of-work",
+                label: "The Future of Work",
+              },
+              {
+                href: "/course/upper-intermediate/pitch-your-idea",
+                label: "Pitch Your Idea",
+              },
+            ],
+          },
+          // Chapter 6 • Global Issues
+          {
+            label: "Chapter 6 • Global Issues",
+            links: [
+              {
+                href: "/course/upper-intermediate/world-problems",
+                label: "World Problems",
+              },
+              {
+                href: "/course/upper-intermediate/finding-solutions",
+                label: "Finding Solutions",
+              },
+            ],
+          },
+          // Chapter 7 • Debate Club
+          {
+            label: "Chapter 7 • Debate Club",
+            links: [
+              {
+                href: "/course/upper-intermediate/making-your-case",
+                label: "Making Your Case",
+              },
+              {
+                href: "/course/upper-intermediate/the-big-debate",
+                label: "The Big Debate",
+              },
+            ],
+          },
+          // Chapter 8 • Media and Marketing
+          {
+            label: "Chapter 8 • Media and Marketing",
+            links: [
+              {
+                href: "/course/upper-intermediate/selling-an-idea",
+                label: "Selling An Idea",
+              },
+              {
+                href: "/course/upper-intermediate/ad-campaign",
+                label: "Ad Campaign",
+              },
+            ],
+          },
+          // Chapter 9 • Idiomatic English in Context
+          {
+            label: "Chapter 9 • Idiomatic English in Context",
+            links: [
+              {
+                href: "/course/upper-intermediate/everyday-idioms",
+                label: "Everyday Idioms",
+              },
+              {
+                href: "/course/upper-intermediate/using-idioms-naturally",
+                label: "Using Idioms Naturally",
+              },
+            ],
+          },
+          // Chapter 10 • Natural English
+          {
+            label: "Chapter 10 • Natural English",
+            links: [
+              {
+                href: "/course/upper-intermediate/sounding-natural",
+                label: "Sounding Natural",
+              },
+              {
+                href: "/course/upper-intermediate/real-conversations",
+                label: "Real Conversations",
+              },
+            ],
+          },
+        ],
+      },
+
+      // C1 Advanced
+      // {
+      //   label: "C1 Advanced",
+      //   links: [
+      //     {
+      //       href: "/courses/advanced/reading-between-the-lines",
+      //       label: "Reading Between the Lines",
+      //     },
+      //     {
+      //       href: "/courses/advanced/synthesizing-sources",
+      //       label: "Synthesizing Sources",
+      //     },
+      //     {
+      //       href: "/courses/advanced/building-complex-arguments",
+      //       label: "Building Complex Arguments",
+      //     },
+      //     {
+      //       href: "/courses/advanced/diplomatic-communication",
+      //       label: "Diplomatic Communication",
+      //     },
+      //     {
+      //       href: "/courses/advanced/academic-presentations",
+      //       label: "Academic Presentations",
+      //     },
+      //     {
+      //       href: "/courses/advanced/mediation-and-clarification",
+      //       label: "Mediation and Clarification",
+      //     },
+      //     {
+      //       href: "/courses/advanced/critical-reviews",
+      //       label: "Critical Reviews",
+      //     },
+      //     {
+      //       href: "/courses/advanced/negotiation-and-consensus",
+      //       label: "Negotiation and Consensus",
+      //     },
+      //     {
+      //       href: "/courses/advanced/precision-and-nuance",
+      //       label: "Precision and Nuance",
+      //     },
+      //     {
+      //       href: "/courses/advanced/research-briefing",
+      //       label: "Research Briefing",
+      //     },
+      //   ],
+      // },
     ],
   },
   // Authentic Content

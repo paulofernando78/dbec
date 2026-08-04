@@ -4,15 +4,15 @@ export const beginnerMyRelatives = {
   whiteboard: {
     title: "A1 Beginner",
     subtitle: "My Relatives",
-    descriptions: ["This is my husband, Daniel.", "Sofia is my half-sister."],
+    descriptions: ["This is Sofia. She is my cousin."],
   },
 
   introduction: {
     blocks: [
       {
         type: "line",
-        value: ["Think about different kinds of families."],
-        className: "font-bold mb-4",
+        as: "span",
+        value: [bold("Look at the rest of Laura’s family.")],
       },
       {
         type: "image",
@@ -24,16 +24,10 @@ export const beginnerMyRelatives = {
         value: [
           [
             audio("Who lives in your home?"),
-            "Who lives in your home?",
+            "Who lives in your home? ",
             portuguese("Quem mora na sua casa?"),
           ],
-          [
-            audio("Do all families look the same?"),
-            "Do all families look the same?",
-            portuguese("Todas as famílias são iguais?"),
-          ],
         ],
-        className: "mb-4",
       },
       {
         type: "radio",

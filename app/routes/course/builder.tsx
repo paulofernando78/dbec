@@ -53,19 +53,11 @@ const renderBlock = (
   switch (block.type) {
     case "line":
       return (
-        <Line
-          key={index}
-          value={block.value}
-          className={block.className}
-        />
+        <Line key={index} value={block.value}/>
       );
     case "lines":
       return (
-        <Lines
-          key={index}
-          value={block.value}
-          className={block.className}
-        />
+        <Lines key={index} value={block.value} />
       );
     case "image":
       return <Image key={index} src={block.src} alt={block.alt} />;
@@ -83,11 +75,7 @@ const renderBlock = (
       return <CCQ key={index} value={block.value} />;
     case "subsection":
       return (
-        <Subsection
-          key={index}
-          label={block.label}
-          heading={block.heading}
-        />
+        <Subsection key={index} label={block.label} heading={block.heading} />
       );
     case "column":
       return <ColumnDrag key={index} {...(block as any)} />;
@@ -127,7 +115,7 @@ const renderBlocks = (
   context: RenderBlockContext,
 ) => blocks?.map((block, index) => renderBlock(block, index, context));
 
-export function Course({ lesson, lessonCard, imgSrc, imgAlt }: CourseProps) {
+export function Course({ lesson, lessonCard }: CourseProps) {
   const heading = 4;
   const card = lessonCard ?? lesson.lessonCard;
   const lessonVocabulary = getLessonVocabulary(lesson, card?.vocabulary);
@@ -181,7 +169,7 @@ export default function Lesson() {
     level === "template" ? courseTemplate : getCourseLesson({ level, slug });
   const courseLessonCard =
     level && slug
-      ? getCourseLessonCard("/courses/" + level + "/" + slug)
+      ? getCourseLessonCard("/course/" + level + "/" + slug)
       : undefined;
   const lessonCard = courseLessonCard
     ? {
