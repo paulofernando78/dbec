@@ -511,11 +511,6 @@ export const theBodysHiddenBalance = {
           },
           {
             content: [
-              "How should public-health advice balance simplicity with individual variation?",
-            ],
-          },
-          {
-            content: [
               "Which groups may be particularly vulnerable to dehydration or overhydration, and why?",
             ],
           },
