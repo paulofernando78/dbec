@@ -63,10 +63,10 @@ export const theBodysHiddenBalance = {
 
       radio: {
         exercise: {
-          questions: shuffle([
+          questions: [
             {
               question: "What is the main purpose of the video?",
-              options: shuffle([
+              options: [
                 {
                   option:
                     "To explain how the body regulates fluid and why both deficiency and excess can be harmful.",
@@ -87,9 +87,9 @@ export const theBodysHiddenBalance = {
                     "To argue that beverages other than water should never be consumed.",
                   isCorrect: false,
                 },
-              ]),
+              ],
             },
-          ]),
+          ],
         },
       },
     },
@@ -522,11 +522,6 @@ export const theBodysHiddenBalance = {
           {
             content: [
               "To what extent should food and other beverages count toward a person’s daily fluid target?",
-            ],
-          },
-          {
-            content: [
-              "Design a short evidence-based hydration recommendation for someone whose age, activity level, and environment differ from yours.",
             ],
           },
         ],

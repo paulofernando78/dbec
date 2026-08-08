@@ -62,7 +62,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
     // My Relatives
     {
       href: "/course/beginner/chapter-1/my-relatives",
-      label: "MMy Relatives",
+      label: "My Relatives",
       objective:
         "Describe relationships in extended, married, and blended families.",
       usefulLanguage:
@@ -246,7 +246,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       ],
     },
     //! Chapter 9 • Real-Life Project
-    // Rea-life Project
+    // Real-life Project
     {
       href: "/course/beginner/real-life-project",
       label: "Real-Life Project",
