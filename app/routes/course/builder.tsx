@@ -28,6 +28,7 @@ import { Guess } from "@/features/exercises/Guess";
 
 import { getCourseLesson } from "@/data/course/lessons-slug";
 import { getCourseLessonCard } from "@/data/course/course-lessons-card-data";
+import { getCourseSyllabusLessonCard } from "@/data/course/course-syllabus-sections";
 import { lesson as courseTemplate } from "@/data/course/template";
 import {
   getLessonVocabulary,
@@ -165,14 +166,15 @@ export function Course({ lesson, lessonCard }: CourseProps) {
 
 export default function Lesson() {
   const { level, slug } = useParams();
+  const href = level && slug ? "/course/" + level + "/" + slug : undefined;
+  const courseLessonCard = href
+    ? getCourseLessonCard(href) ?? getCourseSyllabusLessonCard(href)
+    : undefined;
   const lesson =
     level === "template" ? courseTemplate : getCourseLesson({ level, slug });
-  const courseLessonCard =
-    level && slug
-      ? getCourseLessonCard("/course/" + level + "/" + slug)
-      : undefined;
   const lessonCard = courseLessonCard
     ? {
+        label: courseLessonCard.label,
         objective: courseLessonCard.objective,
         usefulLanguage: courseLessonCard.usefulLanguage,
         vocabulary: courseLessonCard.vocabulary,
@@ -184,9 +186,36 @@ export default function Lesson() {
       }
     : undefined;
 
-  if (!lesson) {
+  if (!lesson && !lessonCard) {
     return <h1>Lesson not found.</h1>;
   }
 
-  return <Course lesson={lesson} lessonCard={lessonCard} />;
+  if (!lesson && lessonCard) {
+    return (
+      <Course
+        lesson={{
+          whiteboard: {
+            title: lessonCard.label ?? "Lesson",
+            subtitle: "CEFR syllabus lesson",
+            descriptions: [lessonCard.objective],
+          },
+          lessonCard,
+          introduction: {
+            blocks: [
+              {
+                type: "line",
+                value: [
+                  "This syllabus lesson has been mapped from the CEFR/CELTA course plan. Detailed lesson staging can be added here.",
+                ],
+                className: "font-bold mb-4",
+              },
+            ],
+          },
+        }}
+        lessonCard={lessonCard}
+      />
+    );
+  }
+
+  return <Course lesson={lesson!} lessonCard={lessonCard} />;
 }

@@ -7,11 +7,14 @@ import {
   AudioLines,
   BookOpenText,
   CalendarDays,
+  CheckCircle2,
   Clock2,
   Flag,
   Goal,
+  Layers,
   MessageCircle,
   Plus,
+  RotateCcw,
   Minus
 } from "lucide-react";
 
@@ -42,8 +45,11 @@ export const LessonCard = ({
   objective,
   usefulLanguage,
   vocabulary,
+  skills,
+  recycles,
   pronunciation,
   finalTask,
+  successCriteria,
   date,
   duration,
   collapsible = false,
@@ -104,7 +110,7 @@ export const LessonCard = ({
         <Goal size={23} className="text-gray-400 shrink-0" />
 
         <span>
-          <b>Objective:</b> {objective}
+          <b>Can do:</b> {objective}
         </span>
       </p>
 
@@ -139,6 +145,26 @@ export const LessonCard = ({
           </div>
         )}
 
+        {skills && (
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
+            <Layers size={23} className="shrink-0 text-gray-400" />
+
+            <span>
+              <b>Skills:</b> {skills}
+            </span>
+          </div>
+        )}
+
+        {recycles && (
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
+            <RotateCcw size={23} className="shrink-0 text-gray-400" />
+
+            <span>
+              <b>Recycles:</b> {recycles}
+            </span>
+          </div>
+        )}
+
         {finalTask && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
             <Flag size={23} className="shrink-0 text-gray-400" />
@@ -148,6 +174,21 @@ export const LessonCard = ({
             </span>
           </div>
         )}
+
+        {successCriteria?.length ? (
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
+            <CheckCircle2 size={23} className="shrink-0 text-gray-400" />
+
+            <div>
+              <b>Success criteria:</b>
+              <ul className="mt-1 list-disc pl-5">
+                {successCriteria.map((criterion) => (
+                  <li key={criterion}>{criterion}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : null}
 
         {date && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">

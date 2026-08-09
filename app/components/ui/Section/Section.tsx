@@ -7,6 +7,7 @@ import { formatSectionLabel } from "@/utils/formatSectionLabel";
 type SectionProps = {
   id: string;
   label?: string;
+  className?: string;
   tocTitle?: string;
   iconClassName?: string;
   tocItemClassName?: string;
@@ -15,14 +16,20 @@ type SectionProps = {
   children: ReactNode;
 };
 
-export const Section = ({ id, label, heading = 2, children }: SectionProps) => {
+export const Section = ({
+  id,
+  label,
+  className = "",
+  heading = 2,
+  children,
+}: SectionProps) => {
   const HeadingTag = `h${heading}` as ElementType;
 
   // If no label is passed, build one from the id
   const resolvedLabel = label ?? formatSectionLabel(id);
 
   return (
-    <section id={id} className="scroll-mt-2">
+    <section id={id} className={`scroll-mt-2 ${className}`}>
       <Ribbon>
         <HeadingTag>{resolvedLabel}</HeadingTag>
       </Ribbon>

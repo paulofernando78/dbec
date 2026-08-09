@@ -15,7 +15,11 @@ type LibrarySection = {
   label: string;
   tocTitle?: string;
   iconClassName?: string;
-  lessons: LibraryLesson[];
+  lessons?: LibraryLesson[];
+  groups?: Array<{
+    label: string;
+    lessons: LibraryLesson[];
+  }>;
 };
 
 type LibraryPageProps = {
@@ -25,6 +29,28 @@ type LibraryPageProps = {
 };
 
 const getSectionId = (label: string) => label.toLowerCase().replaceAll(" ", "-");
+
+const levelColorClasses: Record<
+  string,
+  { section: string; group: string }
+> = {
+  "text-yellow-500": {
+    section: "[&>div:first-child]:bg-yellow-400",
+    group: "bg-yellow-100 border border-yellow-200 text-yellow-950 rounded-lg",
+  },
+  "text-red-500": {
+    section: "[&>div:first-child]:bg-red-500",
+    group: "bg-red-200 border border-red-300 text-red-950 rounded-lg",
+  },
+  "text-blue-500": {
+    section: "[&>div:first-child]:bg-blue-500",
+    group: "bg-blue-200 border border-blue-300 text-blue-950 rounded-lg",
+  },
+  "text-green-500": {
+    section: "[&>div:first-child]:bg-green-500",
+    group: "bg-green-200 border border-green-300 text-green-950 rounded-lg",
+  },
+};
 
 export function LibraryPage({
   title,
@@ -40,12 +66,29 @@ export function LibraryPage({
       itemIconClassName="text-gray-400"
     >
       {sections.map((section, sectionIndex) => {
+        const colorClasses =
+          levelColorClasses[section.iconClassName ?? ""] ??
+          {
+            section: "[&>div:first-child]:bg-gray-900",
+            group: "bg-gray-100 text-gray-950",
+          };
         const previousLessonCount = sections
           .slice(0, sectionIndex)
           .reduce(
-            (total, previousSection) => total + previousSection.lessons.length,
+            (total, previousSection) =>
+              total +
+              (previousSection.lessons?.length ??
+                previousSection.groups?.reduce(
+                  (groupTotal, group) => groupTotal + group.lessons.length,
+                  0,
+                ) ??
+                0),
             0,
           );
+        const lessonGroups = section.groups ?? [
+          { label: "", lessons: section.lessons ?? [] },
+        ];
+        let sectionLessonOffset = 0;
 
         return (
           <Section
@@ -54,15 +97,37 @@ export function LibraryPage({
             label={section.label}
             tocTitle={section.tocTitle}
             iconClassName={section.iconClassName}
+            className={colorClasses.section}
           >
-            {section.lessons.map((lesson, lessonIndex) => (
-              <LessonCard
-                key={lesson.href}
-                {...lesson}
-                index={startIndex + previousLessonCount + lessonIndex}
-                collapsible
-              />
-            ))}
+            {lessonGroups.map((group) => {
+              const groupStartIndex = sectionLessonOffset;
+              sectionLessonOffset += group.lessons.length;
+
+              return (
+                <div key={group.label || section.label}>
+                  {group.label && (
+                    <h3
+                      className={`mb-3 mt-5 rounded px-3 py-2 font-bold first:mt-0 ${colorClasses.group}`}
+                    >
+                      {group.label}
+                    </h3>
+                  )}
+                  {group.lessons.map((lesson, lessonIndex) => (
+                    <LessonCard
+                      key={lesson.href}
+                      {...lesson}
+                      index={
+                        startIndex +
+                        previousLessonCount +
+                        groupStartIndex +
+                        lessonIndex
+                      }
+                      collapsible
+                    />
+                  ))}
+                </div>
+              );
+            })}
           </Section>
         );
       })}

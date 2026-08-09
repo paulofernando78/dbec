@@ -23,7 +23,7 @@ type NavBarProps = {
 
 const getCourseLessonLinks = (items: NavItem[]): NavItem[] =>
   items.flatMap((item) => {
-    if (item.href?.startsWith("/courses/")) return [item];
+    if (item.href?.startsWith("/course/")) return [item];
     return item.links ? getCourseLessonLinks(item.links) : [];
   });
 
