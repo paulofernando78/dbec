@@ -12,7 +12,6 @@ type TableOfContentsItem = {
   label?: RichContent | string;
   iconClassName?: string;
   className?: string;
-  progress?: ReactNode;
   contentAfter?: ReactNode;
 };
 
@@ -79,9 +78,6 @@ export const TableOfContents = ({
                         <InlineRichContent value={toValue(item.label)} />
                       )}
                     </a>
-                    {item.progress && (
-                      <span className="ml-auto text-sm">{item.progress}</span>
-                    )}
                   </li>
                 )}
 

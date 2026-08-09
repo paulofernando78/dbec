@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 284" role="img" aria-label="Google Classroom">
+  <defs>
+    <linearGradient id="classroom-green" x1="30" x2="300" y1="142" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#20a464"/>
+      <stop offset="1" stop-color="#159955"/>
+    </linearGradient>
+    <linearGradient id="classroom-shadow" x1="194" x2="286" y1="240" y2="284" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#db9f00" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#db9f00" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="330" height="284" rx="19" fill="#fbbc04"/>
+  <rect x="30" y="30" width="270" height="224" fill="url(#classroom-green)"/>
+
+  <path d="M195 240h67v14h-67z" fill="#f5f5f5"/>
+  <path d="M195 254h67l32 30h-67z" fill="url(#classroom-shadow)"/>
+
+  <circle cx="165" cy="113" r="22" fill="#f5f5f5"/>
+  <path d="M113 195v-18c0-14 23-27 52-27s52 13 52 27v18z" fill="#f5f5f5"/>
+
+  <circle cx="105" cy="133" r="17" fill="#62c38f"/>
+  <path d="M68 195v-16c0-10 17-18 37-18 10 0 20 2 27 6-12 7-19 17-19 28z" fill="#62c38f"/>
+
+  <circle cx="225" cy="133" r="17" fill="#62c38f"/>
+  <path d="M217 195c0-11-7-21-19-28 7-4 17-6 27-6 20 0 37 8 37 18v16z" fill="#62c38f"/>
+</svg>

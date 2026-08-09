@@ -1,7 +1,6 @@
 import { useEffect, useId, useState } from "react";
 
 import { Card } from "@/components/ui/Card";
-import { Checkbox } from "@/components/ui/Checkbox";
 import { Link } from "react-router";
 
 import {
@@ -34,7 +33,6 @@ type LessonCardProps = LessonCardContent & {
   date?: string;
   duration?: string;
   collapsible?: boolean;
-  updateProgress?: () => void;
 };
 
 export const LessonCard = ({
@@ -49,36 +47,22 @@ export const LessonCard = ({
   date,
   duration,
   collapsible = false,
-  updateProgress,
 }: LessonCardProps) => {
-  const storageKey = href ? `lesson-completed:${href}` : undefined;
-
-  const [checked, setChecked] = useState(() => {
-    if (typeof window === "undefined" || !storageKey) {
-      return false;
-    }
-
-    const saved = localStorage.getItem(storageKey);
-    return saved ? JSON.parse(saved) : false;
-  });
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const [classroomShareUrl, setClassroomShareUrl] = useState<string>();
   const detailsId = useId();
 
   useEffect(() => {
-    if (!storageKey) return;
+    if (!href) return;
 
-    localStorage.setItem(storageKey, JSON.stringify(checked));
-    updateProgress?.();
-  }, [storageKey, checked]);
+    const lessonUrl = new URL(href, window.location.origin).toString();
+    setClassroomShareUrl(
+      `https://classroom.google.com/share?url=${encodeURIComponent(lessonUrl)}`,
+    );
+  }, [href]);
 
   const cardHeader = (
-    <div className="flex gap-2">
-      {href && (
-        <span onClick={(event) => event.stopPropagation()}>
-          <Checkbox checked={checked} onCheckedChange={setChecked} />
-        </span>
-      )}
-
+    <div className="flex flex-col gap-1">
       {href ? (
         <Link to={href} onClick={(event) => event.stopPropagation()}>
           <b>
@@ -88,6 +72,24 @@ export const LessonCard = ({
       ) : (
         <b>{label}</b>
       )}
+
+      {classroomShareUrl && (
+        <a
+          href={classroomShareUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gray-800"
+          aria-label={`Share ${label ?? "lesson"} to Google Classroom`}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <img
+            src="/assets/img/icons/google-classroom.svg"
+            alt=""
+            className="h-5 w-5 shrink-0"
+          />
+          <span>Share to Classroom</span>
+        </a>
+      )}
     </div>
   );
 
@@ -95,7 +97,7 @@ export const LessonCard = ({
     <>
       {href && <hr className="mt-3 mb-4 text-gray-300" />}
 
-      <p className="flex items-start gap-2">
+      <p className="flex pl-[-0.1rem] items-start gap-2">
         <Goal size={23} className="text-gray-400 shrink-0" />
 
         <span>
@@ -105,7 +107,7 @@ export const LessonCard = ({
 
       <div className="mb-[.1rem]">
         {usefulLanguage && (
-          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
             <MessageCircle size={23} className="shrink-0 text-gray-400" />
 
             <span>
@@ -115,7 +117,7 @@ export const LessonCard = ({
         )}
 
         {vocabulary && (
-          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
             <BookOpenText size={23} className="shrink-0 text-gray-400" />
 
             <span>
@@ -125,7 +127,7 @@ export const LessonCard = ({
         )}
 
         {pronunciation && (
-          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2 ">
             <AudioLines size={23} className="shrink-0 text-gray-400" />
 
             <span>
@@ -135,7 +137,7 @@ export const LessonCard = ({
         )}
 
         {finalTask && (
-          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
             <Flag size={23} className="shrink-0 text-gray-400" />
 
             <span>
@@ -145,14 +147,14 @@ export const LessonCard = ({
         )}
 
         {date && (
-          <div className="mt-2 flex items-start gap-2 translate-x-[-0.1rem]">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
             <CalendarDays size={23} className="shrink-0 text-gray-400" />
             <span>{date}</span>
           </div>
         )}
 
         {duration && (
-          <div className="mt-2 flex items-start gap-1 translate-x-[-0.1rem]">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-1">
             <Clock2 size={23} className="shrink-0 text-gray-400" />
             <span>{duration}</span>
           </div>
@@ -166,26 +168,39 @@ export const LessonCard = ({
       {collapsible ? (
         <div>
           <div
+            role="button"
+            tabIndex={0}
             className="
+            w-full
             list-none
             select-none
             flex
             items-center
             justify-between
+            text-left
+            cursor-pointer
+            rounded
+            focus-visible:outline-2
+            focus-visible:outline-offset-2
           "
+            aria-expanded={isDetailsOpen}
+            aria-controls={detailsId}
+            onClick={() => setIsDetailsOpen((current) => !current)}
+            onKeyDown={(event) => {
+              if (event.key !== "Enter" && event.key !== " ") return;
+
+              event.preventDefault();
+              setIsDetailsOpen((current) => !current);
+            }}
           >
             {cardHeader}
 
-            <button
-              type="button"
-              className="cursor-pointer rounded p-1 font-bold hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2"
-              aria-expanded={isDetailsOpen}
-              aria-controls={detailsId}
-              aria-label={isDetailsOpen ? "Hide lesson details" : "Show lesson details"}
-              onClick={() => setIsDetailsOpen((current) => !current)}
+            <span
+              className="rounded p-1 font-bold"
+              aria-hidden="true"
             >
               {isDetailsOpen ? <Minus size={18} /> : <Plus size={18} />}
-            </button>
+            </span>
           </div>
 
           <div

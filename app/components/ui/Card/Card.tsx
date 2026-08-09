@@ -35,12 +35,12 @@ export const Card = ({
   return (
     <div
       className={`
-      p-4
+      p-3
       ${hasTrailingRadio ? "pb-[0.4rem]" : "pb-3"}
       text-gray-800
       border
       border-gray-300
-      rounded-xl
+      rounded-lg
       shadow-md shadow-gray-300
       ${maxContent ? "w-fit max-w-full" : ""} ${className}`}
     >

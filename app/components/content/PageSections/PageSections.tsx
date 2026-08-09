@@ -16,7 +16,6 @@ type SectionElementProps = {
   tocTitle?: string;
   iconClassName?: string;
   tocItemClassName?: string;
-  tocProgress?: ReactNode;
   tocContentAfter?: ReactNode;
 };
 
@@ -61,7 +60,6 @@ export const PageSections = ({
       title: child.props.tocTitle,
       iconClassName: child.props.iconClassName,
       className: child.props.tocItemClassName,
-      progress: child.props.tocProgress,
       contentAfter: child.props.tocContentAfter,
     }));
 

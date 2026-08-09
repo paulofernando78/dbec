@@ -20,6 +20,8 @@ export const links = [
   // Courses
   {
     title: "Course",
+    href: "/course",
+    iconClassName: "text-gray-400",
     links: [
       // A1 Beginner
       {
@@ -577,6 +579,8 @@ export const links = [
   // Authentic Content
   {
     title: "Authentic Content",
+    href: "/authentic-content",
+    iconClassName: "text-gray-400",
     links: [
       // News
       {
@@ -604,6 +608,8 @@ export const links = [
   // Games
   {
     title: "GAMES",
+    href: "/games",
+    iconClassName: "text-gray-400",
     links: [
       // {
       //   href: "/",

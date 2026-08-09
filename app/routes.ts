@@ -45,6 +45,10 @@ export default [
     //! ─────────────────────────────────────────────
     //! Course
     //! ─────────────────────────────────────────────
+
+    route(
+      "/course",
+      "routes/course.tsx"),
     
     route(
       "/course/:level/:chapter/:slug?",
@@ -53,6 +57,10 @@ export default [
     //! ─────────────────────────────────────────────
     //! Authentic Content
     //! ─────────────────────────────────────────────
+
+    route(
+      "/authentic-content",
+      "routes/authentic-content.tsx"),
     
     route(
       "/authentic-content/:category/:slug?",
@@ -62,6 +70,10 @@ export default [
     //! ─────────────────────────────────────────────
     //! Games
     //! ─────────────────────────────────────────────
+
+    route(
+      "/games",
+      "routes/game.tsx"),
     
     route(
       "/games/:developer/:slug",

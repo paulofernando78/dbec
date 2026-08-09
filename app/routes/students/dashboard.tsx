@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { useParams } from "react-router";
 import { students, type StudentId } from "@/data/students";
 
@@ -9,13 +7,13 @@ import { Calendar } from "@/components/content/Calendar";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 
-import { DashboardLessonTable } from "@/components/content/DashboardLessonTable";
+import { LessonCard } from "@/components/content/LessonCard";
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/news/news-card-data";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { gamesLucasArtsCardData } from "@/data/games/lucas-arts/games-lucas-arts-card-data";
 
-import { LibraryBig, BookText, BookCopy } from "lucide-react";
+import { LibraryBig, BookText } from "lucide-react";
 
 const lessonSections = [
   {
@@ -76,44 +74,6 @@ export default function Dashboard() {
         };
 
   const storagePrefix = studentId ? `dashboard:${studentId}` : "dashbaord";
-  const [completedLessons, setCompletedLessons] = useState(0);
-  const [completedLessonsHref, setCompletedLessonsHref] = useState<Set<string>>(
-    new Set(),
-  );
-  const updateProgress = () => {
-    const prefix = "lesson-completed:";
-
-    const completedHrefs = new Set(
-      Object.keys(localStorage)
-        .filter(
-          (key) =>
-            key.startsWith(prefix) && localStorage.getItem(key) === "true",
-        )
-        .map((key) => key.slice(prefix.length)),
-    );
-
-    setCompletedLessons(completedHrefs.size);
-    setCompletedLessonsHref(completedHrefs);
-  };
-  const totalLessons = lessonSections
-    .slice(
-      0,
-      lessonSections.findIndex((section) => section.label === "C1 Advanced") +
-        1,
-    )
-    .reduce(
-      (total, section) => total + Object.values(section.lessons).length,
-      0,
-    );
-
-  const totalPercentage =
-    totalLessons === 0
-      ? 0
-      : Math.round((completedLessons / totalLessons) * 100);
-
-  useEffect(() => {
-    updateProgress();
-  }, []);
 
   return (
     <>
@@ -127,7 +87,7 @@ export default function Dashboard() {
         <ImportantNotes storageKey={`${storagePrefix}:important-notes`} />
         <Calendar />
         <PageSections
-          title="Course Library"
+          title="LIBRARY"
           headerIcon={LibraryBig}
           itemIcon={BookText}
           headerIconClassName="text-gray-400"
@@ -142,15 +102,6 @@ export default function Dashboard() {
                 0,
               );
 
-            const completed = section.lessons.filter((lesson) =>
-              completedLessonsHref.has(lesson.href),
-            ).length;
-
-            const total = section.lessons.length;
-
-            const percentage =
-              total === 0 ? 0 : Math.round((completed / total) * 100);
-
             return (
               <Section
                 key={section.label}
@@ -158,35 +109,15 @@ export default function Dashboard() {
                 label={section.label}
                 tocTitle={section.tocTitle}
                 iconClassName={section.iconClassName}
-                tocContentAfter={
-                  section.label === "C1 Advanced" ? (
-                    <div className=" mt-2 mb-4 ml-4 flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <BookCopy size={20} className="text-gray-400" />
-                        <span>A1-C1 Progress</span>
-                      </div>
-                      <div className="text-sm">
-                        <span>{completedLessons}</span> /{" "}
-                        <span>{totalLessons}</span>
-                        <span> • {totalPercentage}%</span>
-                      </div>
-                    </div>
-                  ) : undefined
-                }
-                tocProgress={
-                  sectionIndex <=
-                  lessonSections.findIndex(
-                    (lessonSection) => lessonSection.label === "C1 Advanced",
-                  )
-                    ? `${completed}/${total} • ${percentage}%`
-                    : undefined
-                }
               >
-                <DashboardLessonTable
-                  lessons={section.lessons}
-                  startIndex={previousLessonCount}
-                  updateProgress={updateProgress}
-                />
+                {section.lessons.map((lesson, lessonIndex) => (
+                  <LessonCard
+                    key={lesson.href}
+                    {...lesson}
+                    index={previousLessonCount + lessonIndex}
+                    collapsible
+                  />
+                ))}
               </Section>
             );
           })}

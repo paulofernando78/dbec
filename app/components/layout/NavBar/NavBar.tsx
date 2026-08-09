@@ -1,14 +1,20 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 
-import { BookText, Minus, Plus } from "lucide-react";
-// import { Checkbox } from "@/components/ui/Checkbox";
+import { LibraryBig, BookText, Minus, Plus } from "lucide-react";
 
 type NavItem = {
   label: string;
   href?: string;
   links?: NavItem[];
   iconClassName?: string;
+};
+
+type NavGroup = {
+  title?: string;
+  href?: string;
+  iconClassName?: string;
+  links: NavItem[];
 };
 
 type NavBarProps = {
@@ -21,7 +27,8 @@ const getCourseLessonLinks = (items: NavItem[]): NavItem[] =>
     return item.links ? getCourseLessonLinks(item.links) : [];
   });
 
-const courseLinks = links.find((group) => group.title === "Course")?.links ?? [];
+const navGroups = links as NavGroup[];
+const courseLinks = navGroups.find((group) => group.title === "Course")?.links ?? [];
 const numberedCourseLessons = getCourseLessonLinks(courseLinks);
 
 const lessonNumberByHref = new Map(
@@ -160,20 +167,54 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         overflow-y-auto
         "
     >
-      {links.map((group, index) => (
+      {navGroups.map((group, index) => (
         <div key={group.title ?? `group-${index}`}>
           {group.title && (
             <>
-              <span
-                className="
-                block
+              {group.href ? (
+                <NavLink
+                  to={group.href}
+                  end
+                  onClick={closeNavBar}
+                  className={({ isActive }) => `
+                  flex
+                  items-center
+                  gap-2
+                  font-bold
+                  mt-4
+                  mb-1
+                  uppercase
+                  ${isActive ? "text-blue-400" : ""}
+                `}
+                >
+                  {group.iconClassName && (
+                    <LibraryBig
+                      size={20}
+                      className={`shrink-0 ${group.iconClassName}`}
+                    />
+                  )}
+                  {group.title}
+                </NavLink>
+              ) : (
+                <span
+                  className="
+                flex
+                items-center
+                gap-2
                 font-bold
                 mt-4
                 mb-1
                 uppercase"
-              >
-                {group.title}
-              </span>
+                >
+                  {group.iconClassName && (
+                    <BookText
+                      size={20}
+                      className={`shrink-0 ${group.iconClassName}`}
+                    />
+                  )}
+                  {group.title}
+                </span>
+              )}
             </>
           )}
 
