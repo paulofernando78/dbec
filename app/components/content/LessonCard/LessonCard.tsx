@@ -56,10 +56,13 @@ export const LessonCard = ({
     if (!href) return;
 
     const lessonUrl = new URL(href, window.location.origin).toString();
-    setClassroomShareUrl(
-      `https://classroom.google.com/share?url=${encodeURIComponent(lessonUrl)}`,
-    );
-  }, [href]);
+    const shareUrl = new URL("https://classroom.google.com/share");
+    shareUrl.searchParams.set("url", lessonUrl);
+    shareUrl.searchParams.set("title", `Lesson ${index + 1} • ${label}`);
+    shareUrl.searchParams.set("itemtype", "material");
+
+    setClassroomShareUrl(shareUrl.toString());
+  }, [href, index, label]);
 
   const cardHeader = (
     <div className="flex flex-col gap-1">
