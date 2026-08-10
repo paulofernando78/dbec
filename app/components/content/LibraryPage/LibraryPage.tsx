@@ -36,7 +36,7 @@ const levelColorClasses: Record<
 > = {
   "text-yellow-500": {
     section: "[&>div:first-child]:bg-yellow-400",
-    group: "bg-yellow-100 border border-yellow-200 text-yellow-950 rounded-lg",
+    group: "bg-yellow-100 border border-yellow-300 text-yellow-950 rounded-lg",
   },
   "text-red-500": {
     section: "[&>div:first-child]:bg-red-500",

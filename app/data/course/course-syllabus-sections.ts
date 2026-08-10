@@ -31,8 +31,6 @@ const lesson = (
   objective: `Can use the target language to handle a ${label.toLowerCase()} situation at this CEFR level.`,
   usefulLanguage,
   vocabulary,
-  skills: "Lead-in, meaning clarification, controlled practice, freer speaking, and feedback",
-  recycles: "Previously taught language from the same CEFR band",
   pronunciation,
   finalTask: `Complete a communicative task based on ${label.toLowerCase()}.`,
 });

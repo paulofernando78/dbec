@@ -9,12 +9,13 @@ import {
   CalendarDays,
   CheckCircle2,
   Clock2,
+  ClipboardList,
   Flag,
   Goal,
-  Layers,
   MessageCircle,
+  Megaphone,
   Plus,
-  RotateCcw,
+  CircleHelp,
   Minus
 } from "lucide-react";
 
@@ -28,6 +29,45 @@ export type LessonCardContent = {
   finalTask?: string;
   successCriteria?: string[];
 };
+
+const objectivePrefix = "By the end of the lesson students will be able to";
+
+const formatObjective = (objective: string) => {
+  const trimmedObjective = objective.trim();
+
+  if (trimmedObjective.toLowerCase().startsWith("by the end of the lesson")) {
+    return trimmedObjective;
+  }
+
+  const normalizedObjective = trimmedObjective
+    .replace(/^can\s+/i, "")
+    .replace(/\.$/, "");
+
+  return `${objectivePrefix} ${normalizedObjective}.`;
+};
+
+const classroomPostTypes = [
+  {
+    itemtype: "material",
+    label: "Material",
+    Icon: BookOpenText,
+  },
+  {
+    itemtype: "assignment",
+    label: "Assignment",
+    Icon: ClipboardList,
+  },
+  {
+    itemtype: "question",
+    label: "Question",
+    Icon: CircleHelp,
+  },
+  {
+    itemtype: "announcement",
+    label: "Announcement",
+    Icon: Megaphone,
+  },
+] as const;
 
 type LessonCardProps = LessonCardContent & {
   href?: string;
@@ -45,8 +85,6 @@ export const LessonCard = ({
   objective,
   usefulLanguage,
   vocabulary,
-  skills,
-  recycles,
   pronunciation,
   finalTask,
   successCriteria,
@@ -55,20 +93,27 @@ export const LessonCard = ({
   collapsible = false,
 }: LessonCardProps) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  const [classroomShareUrl, setClassroomShareUrl] = useState<string>();
+  const [classroomLessonUrl, setClassroomLessonUrl] = useState<string>();
   const detailsId = useId();
 
   useEffect(() => {
     if (!href) return;
 
-    const lessonUrl = new URL(href, window.location.origin).toString();
-    const shareUrl = new URL("https://classroom.google.com/share");
-    shareUrl.searchParams.set("url", lessonUrl);
-    shareUrl.searchParams.set("title", `Lesson ${index + 1} • ${label}`);
-    shareUrl.searchParams.set("itemtype", "material");
+    setClassroomLessonUrl(new URL(href, window.location.origin).toString());
+  }, [href]);
 
-    setClassroomShareUrl(shareUrl.toString());
-  }, [href, index, label]);
+  const getClassroomShareUrl = (
+    itemtype: (typeof classroomPostTypes)[number]["itemtype"],
+  ) => {
+    if (!classroomLessonUrl) return "";
+
+    const shareUrl = new URL("https://classroom.google.com/share");
+    shareUrl.searchParams.set("url", classroomLessonUrl);
+    shareUrl.searchParams.set("title", `Lesson ${index + 1} • ${label}`);
+    shareUrl.searchParams.set("itemtype", itemtype);
+
+    return shareUrl.toString();
+  };
 
   const cardHeader = (
     <div className="flex flex-col gap-1">
@@ -82,23 +127,6 @@ export const LessonCard = ({
         <b>{label}</b>
       )}
 
-      {classroomShareUrl && (
-        <a
-          href={classroomShareUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-gray-500 hover:text-gray-800"
-          aria-label={`Share ${label ?? "lesson"} to Google Classroom`}
-          onClick={(event) => event.stopPropagation()}
-        >
-          <img
-            src="/assets/img/icons/google-classroom.svg"
-            alt=""
-            className="h-5 w-5 shrink-0"
-          />
-          <span>Share to Classroom</span>
-        </a>
-      )}
     </div>
   );
 
@@ -110,7 +138,7 @@ export const LessonCard = ({
         <Goal size={23} className="text-gray-400 shrink-0" />
 
         <span>
-          <b>Can do:</b> {objective}
+          <b>Objective:</b> {formatObjective(objective)}
         </span>
       </p>
 
@@ -145,26 +173,6 @@ export const LessonCard = ({
           </div>
         )}
 
-        {skills && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
-            <Layers size={23} className="shrink-0 text-gray-400" />
-
-            <span>
-              <b>Skills:</b> {skills}
-            </span>
-          </div>
-        )}
-
-        {recycles && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
-            <RotateCcw size={23} className="shrink-0 text-gray-400" />
-
-            <span>
-              <b>Recycles:</b> {recycles}
-            </span>
-          </div>
-        )}
-
         {finalTask && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
             <Flag size={23} className="shrink-0 text-gray-400" />
@@ -173,6 +181,35 @@ export const LessonCard = ({
               <b>Final task:</b> {finalTask}
             </span>
           </div>
+        )}
+
+        {classroomLessonUrl && (
+          <>
+            <hr className="mt-4 mb-3 text-gray-300" />
+            <div
+              className="flex flex-wrap items-center gap-2 text-sm"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src="/assets/img/icons/google-classroom.svg"
+                alt=""
+                className="h-5 w-5 shrink-0"
+              />
+              {classroomPostTypes.map(({ itemtype, label: postLabel, Icon }) => (
+                <a
+                  key={itemtype}
+                  href={getClassroomShareUrl(itemtype)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-1 rounded border border-gray-300 bg-white px-2 py-1 font-semibold text-gray-500 hover:border-gray-400 hover:text-gray-800"
+                  aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
+                >
+                  <Icon size={16} className="shrink-0" />
+                  <span>{postLabel}</span>
+                </a>
+              ))}
+            </div>
+          </>
         )}
 
         {successCriteria?.length ? (

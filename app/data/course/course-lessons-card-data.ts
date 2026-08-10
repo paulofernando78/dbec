@@ -17,8 +17,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Hi. Hello. I'm...; What's your name?; Nice to meet you.; Sorry?; Please repeat.; Bye.",
       vocabulary: "Greetings, first names, goodbyes",
-      skills: "Listening for names, drilling useful chunks, and controlled spoken interaction",
-      recycles: "Classroom language and polite turn-taking",
       pronunciation: "Friendly greeting intonation; linking in 'meet you'",
       finalTask: "Meet a classmate and have a short first conversation.",
     }),
@@ -30,8 +28,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "What's your full name?; How do you spell it?; How old are you?; What's your email address?",
       vocabulary: "Alphabet, numbers 0-100, countries, nationalities, contact details",
-      skills: "Listening for details, spelling aloud, note-taking, and form completion",
-      recycles: "Greetings, names, and the verb be",
       pronunciation: "English letter names; clear grouping in phone numbers and email addresses",
       finalTask: "Interview a partner and complete a simple registration form.",
     }),
@@ -43,8 +39,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "This is my...; Who's he/she?; He's my...; She's my...; His/Her name is...",
       vocabulary: "Mother, father, sister, brother, son, daughter, parents, children",
-      skills: "Using visual support, listening for relationships, and short prepared speaking",
-      recycles: "Names, possessive adjectives, and the verb be",
       pronunciation: "Contractions in who's, he's, and she's; stress on family words",
       finalTask: "Use a photo or drawing to introduce three family members.",
     }),
@@ -56,8 +50,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "This is my uncle.; She's my cousin.; It's my dad's car.; Who are they?",
       vocabulary: "Aunt, uncle, cousin, grandparents, husband, wife, nephew, niece",
-      skills: "Describing a family tree, checking meaning, and short writing",
-      recycles: "Core family words, this/that, and possessive adjectives",
       pronunciation: "Possessive 's as /s/ or /z/; word stress in family vocabulary",
       finalTask: "Create a simple family tree and describe four relationships.",
     }),
@@ -69,8 +61,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "There's a...; There are two...; Is there a...?; It's in the living room.",
       vocabulary: "Rooms, furniture, household objects, basic prepositions of place",
-      skills: "Listening for objects and locations, describing from a picture, and pair checking",
-      recycles: "Numbers, colors, and familiar objects",
       pronunciation: "There is/there are; /th/ in 'there'; plural -s",
       finalTask: "Describe a room so a partner can identify it.",
     }),
@@ -82,8 +72,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "How many rooms are there?; Is there a kitchen?; There's a small bedroom.; It has...",
       vocabulary: "Apartment, house, bedroom, bathroom, kitchen, rent, small, big",
-      skills: "Reading a simple listing, asking factual questions, and controlled role-play",
-      recycles: "There is/there are, rooms, furniture, and numbers",
       pronunciation: "Sentence stress in questions about rooms and features",
       finalTask: "Role-play a short conversation about a simple rental listing.",
     }),
@@ -95,8 +83,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I get up at seven.; I start work at eight.; What time do you...?; I go to bed at...",
       vocabulary: "Daily routine verbs, clock times, parts of the day",
-      skills: "Listening for times, ordering routine events, and prepared speaking",
-      recycles: "Numbers, personal information, and simple present chunks",
       pronunciation: "Sentence stress in clock-time phrases; routine verb stress",
       finalTask: "Describe four parts of your weekday routine and ask two time questions.",
     }),
@@ -108,8 +94,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I usually...; I sometimes...; I never...; On Mondays...; How often do you...?",
       vocabulary: "Days of the week, frequency adverbs, free-time activities",
-      skills: "Reading a weekly schedule, personalizing language, and pair interviews",
-      recycles: "Daily routines, activities, and times",
       pronunciation: "Stress in days of the week and frequency expressions",
       finalTask: "Plan and present a simple weekly schedule.",
     }),
@@ -121,8 +105,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I like...; I don't like...; Do you like...?; Yes, I do.; No, I don't.",
       vocabulary: "Everyday food and drinks, meals, simple adjectives",
-      skills: "Listening for preferences, drilling question forms, and class survey",
-      recycles: "Present Simple with I/you and short answers",
       pronunciation: "Weak do in questions; don't; polite response intonation",
       finalTask: "Survey classmates about food preferences and report two results.",
     }),
@@ -134,8 +116,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Can I have..., please?; I'd like...; Here you are.; Anything else?; Thank you.",
       vocabulary: "Cafe items, menu words, prices, polite service expressions",
-      skills: "Transactional speaking, listening for prices, and role-play",
-      recycles: "Food vocabulary, prices, and polite expressions",
       pronunciation: "Polite request intonation; linking in 'Can I have...?'",
       finalTask: "Role-play a short cafe exchange with a partner.",
     }),
@@ -147,8 +127,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "How much is this?; How much are these?; Can I have that one, please?; I'll take it.",
       vocabulary: "Clothes, colors, sizes, prices",
-      skills: "Listening for prices, identifying items, and controlled transaction practice",
-      recycles: "Numbers, colors, this/that, and polite requests",
       pronunciation: "This/these and that/those; clear prices",
       finalTask: "Role-play a short clothes-shop exchange.",
     }),
@@ -160,8 +138,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "It's cheap.; It's expensive.; This one, please.; Do you have a smaller size?",
       vocabulary: "Cheap, expensive, size, sale, color, item names",
-      skills: "Reading simple labels, asking for help, and making a choice",
-      recycles: "Shopping language, colors, prices, and demonstratives",
       pronunciation: "Contrastive stress when choosing between items",
       finalTask: "Choose an item from a small shop display and explain the choice simply.",
     }),
@@ -173,8 +149,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Where's the...?; It's next to...; It's across from...; It's between...",
       vocabulary: "Places in town, location phrases, simple map words",
-      skills: "Reading a simple map, listening for locations, and pair interaction",
-      recycles: "The verb be, places, and prepositions of place",
       pronunciation: "Where's...? and stress in location phrases",
       finalTask: "Use a simple map to ask for and give three locations.",
     }),
@@ -186,8 +160,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Go straight.; Turn left.; Turn right.; It's on the corner.; It's near the...",
       vocabulary: "Directions, street, corner, left, right, near, far",
-      skills: "Listening for directions, following a route, and guided speaking",
-      recycles: "Places in town and prepositions of place",
       pronunciation: "Chunking and pausing in short directions",
       finalTask: "Guide a partner to two places on a simple map.",
     }),
@@ -199,8 +171,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "What are you doing?; I'm cooking.; What's she doing?; She's reading.",
       vocabulary: "Common actions and activities",
-      skills: "Picture description, listening for actions, and controlled interaction",
-      recycles: "Subject pronouns, the verb be, and activity verbs",
       pronunciation: "Contractions with be; -ing ending",
       finalTask: "Describe actions in a picture for a partner to identify.",
     }),
@@ -212,8 +182,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I can...; I can't...; Can you...?; Yes, I can.; No, I can't.",
       vocabulary: "Skills, sports, everyday abilities",
-      skills: "Listening discrimination, controlled questions, and class mingling",
-      recycles: "Activity vocabulary and yes/no questions",
       pronunciation: "Can /kən/ vs can /kæn/; can't /kænt/",
       finalTask: "Find classmates with three different abilities and report back.",
     }),
@@ -225,8 +193,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I'm...; I'm from...; I like...; Can you...?; Saturday or Sunday?; Let's meet at...",
       vocabulary: "Personal information, routines, preferences, places, times",
-      skills: "Integrated listening, speaking, reading, and short writing",
-      recycles: "A1 language from introductions, routines, food, town, and abilities",
       pronunciation: "Clear chunks, names, days, and times",
       finalTask: "Meet a new person, complete a short profile, and agree on a simple plan.",
     }),
@@ -238,8 +204,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Nice to meet you.; Please repeat.; I usually...; I like...; Where's...?; I can...",
       vocabulary: "Core A1 review vocabulary",
-      skills: "Review, self-correction, peer feedback, and fluency practice",
-      recycles: "All A1 course language",
       pronunciation: "Intelligibility review: stress, rhythm, and useful chunks",
       finalTask: "Complete a short A1 speaking interview and reflect on next steps.",
     }),
@@ -254,8 +218,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I stayed home.; I cleaned the kitchen.; I didn't go out.; What did you do?",
       vocabulary: "Household chores, free-time activities, weekend time expressions",
-      skills: "Listening for past actions, controlled practice, and personal storytelling",
-      recycles: "Daily routines and home vocabulary",
       pronunciation: "Regular past -ed endings: /t/, /d/, and /ɪd/",
       finalTask: "Interview a partner and compare two weekends.",
     }),
@@ -267,8 +229,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "We went to the beach.; I swam.; Then we ate.; Did you...?; What happened?",
       vocabulary: "Beach activities, weather, seaside places",
-      skills: "Sequencing, listening for details, and asking follow-up questions",
-      recycles: "Past Simple regular verbs and time expressions",
       pronunciation: "Clear irregular past forms; weak did you",
       finalTask: "Tell a partner about a real or invented beach day.",
     }),
@@ -280,8 +240,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I saw...; Who did you go with?; Did you like it?; It was...; I'd recommend it.",
       vocabulary: "Movies, cinema, genres, opinions",
-      skills: "Listening for opinions, asking past questions, and recommending",
-      recycles: "Past Simple questions and adjectives",
       pronunciation: "Sentence stress in opinions and recommendations",
       finalTask: "Interview a partner and choose a movie to watch.",
     }),
@@ -293,8 +251,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "First...; Then...; After that...; Finally...; What happened next?",
       vocabulary: "Family events, celebrations, special occasions",
-      skills: "Story planning, sequencing, listening and retelling",
-      recycles: "Family vocabulary and Past Simple",
       pronunciation: "Pausing after sequence markers; past endings review",
       finalTask: "Tell a family story that a partner can retell.",
     }),
@@ -306,8 +262,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I'm going to...; Where are you going to stay?; We're going to visit...",
       vocabulary: "Transport, accommodation, destinations, travel activities",
-      skills: "Planning, asking for details, and presenting an itinerary",
-      recycles: "Places, activities, and time expressions",
       pronunciation: "Going to in connected speech; stress on destinations",
       finalTask: "Plan a short trip with a partner and present the itinerary.",
     }),
@@ -319,8 +273,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I think... will...; Maybe...; I don't think... will...; What do you think?",
       vocabulary: "Technology, work, transport, future life",
-      skills: "Speculating, giving reasons, and responding to ideas",
-      recycles: "Present Simple facts and future time expressions",
       pronunciation: "Will/won't contractions; intonation for certainty and uncertainty",
       finalTask: "Create and discuss three predictions for life in 2040.",
     }),
@@ -332,8 +284,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "It's bigger than...; It's more convenient.; I prefer... because...",
       vocabulary: "City features, transport, services, adjectives",
-      skills: "Comparing, justifying preferences, and reading simple information",
-      recycles: "Places in town and descriptive adjectives",
       pronunciation: "Comparative -er endings; weak than; contrastive stress",
       finalTask: "Compare two cities and recommend one to a visitor.",
     }),
@@ -345,8 +295,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "It's the cheapest.; It has the best...; I'd choose... because...",
       vocabulary: "Travel destinations, attractions, descriptive adjectives",
-      skills: "Group decision-making, ranking, and short presentation",
-      recycles: "Comparatives and travel vocabulary",
       pronunciation: "Weak the before superlatives; stress on compared qualities",
       finalTask: "Choose the best destination for a group and explain why.",
     }),
@@ -358,8 +306,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "If you..., you...; When you..., you...; You should...; You shouldn't...",
       vocabulary: "Health problems, habits, food, exercise",
-      skills: "Reading advice, classifying habits, and giving recommendations",
-      recycles: "Daily routines, frequency, and food vocabulary",
       pronunciation: "Sentence stress and pausing after an if-clause",
       finalTask: "Create and discuss a simple healthy-habits guide.",
     }),
@@ -371,8 +317,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "You should...; You could...; Why don't you...?; I think you need to...",
       vocabulary: "Everyday problems, feelings, health and study habits",
-      skills: "Listening to a problem, selecting advice, and role-playing",
-      recycles: "Should/shouldn't and health vocabulary",
       pronunciation: "Softening advice with intonation",
       finalTask: "Give advice for three everyday problem cards.",
     }),
@@ -384,8 +328,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "You have to...; You must...; You mustn't...; Do we have to...?",
       vocabulary: "Public places, school rules, workplace rules",
-      skills: "Reading signs, checking rules, and negotiating a shared list",
-      recycles: "Imperatives and classroom language",
       pronunciation: "Must vs mustn't; connected speech in have to",
       finalTask: "Agree on five clear rules for a shared space.",
     }),
@@ -397,8 +339,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "We have to...; We don't have to...; We're allowed to...; We can't...",
       vocabulary: "Duties, permission, schedules, classroom and work routines",
-      skills: "Comparing contexts, explaining rules, and asking clarification questions",
-      recycles: "Have to, must, and mustn't",
       pronunciation: "Weak to in have to; contrastive stress for obligation vs permission",
       finalTask: "Present a simple rules poster for a class or workplace.",
     }),
@@ -410,8 +350,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "How much...?; How many...?; Do we have any...?; We need some...",
       vocabulary: "Food products, containers, quantities, prices",
-      skills: "Budgeting, reading labels, and transactional speaking",
-      recycles: "Food, prices, and shopping language",
       pronunciation: "Stress on quantities; much/many and some/any questions",
       finalTask: "Plan a small event and buy items within a budget.",
     }),
@@ -423,8 +361,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I'd like to return this.; It's damaged.; It doesn't work.; Can I have a refund?",
       vocabulary: "Receipts, faults, sizes, refunds, exchanges",
-      skills: "Role-play, problem explanation, and polite repair strategies",
-      recycles: "Shopping language, too/enough, and polite requests",
       pronunciation: "Polite but firm intonation",
       finalTask: "Role-play a simple return or complaint at a shop.",
     }),
@@ -436,8 +372,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Have you ever...?; Yes, I have.; No, I haven't.; When did you...?",
       vocabulary: "Travel, achievements, unusual experiences",
-      skills: "Class survey, follow-up questions, and reporting one result",
-      recycles: "Past Simple questions and travel vocabulary",
       pronunciation: "Weak have; contractions with haven't; stress on ever and never",
       finalTask: "Conduct an experience survey and report one result.",
     }),
@@ -449,8 +383,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I enjoy...; I'm interested in...; I'd like to...; How often do you...?",
       vocabulary: "Hobbies, equipment, frequency, preferences",
-      skills: "Personalization, interviewing, and giving recommendations",
-      recycles: "Frequency adverbs, likes/preferences, and abilities",
       pronunciation: "-ing endings; contractions in I'd/we'd",
       finalTask: "Recommend a suitable hobby to a partner.",
     }),
@@ -465,8 +397,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Have you ever...?; I've already...; I haven't... yet.; I did it when...",
       vocabulary: "Milestones, achievements, travel, memorable events",
-      skills: "Interviewing, follow-up questions, and short presentation",
-      recycles: "Past Simple and A2 experiences",
       pronunciation: "Weak have in Present Perfect; stress on finished-time details",
       finalTask: "Interview a partner and present one significant experience.",
     }),
@@ -478,8 +408,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I used to...; I didn't use to...; Now I've...; Things have changed because...",
       vocabulary: "Childhood, lifestyle changes, personal history",
-      skills: "Comparing past and present, storytelling, and peer questions",
-      recycles: "Past Simple and Present Perfect",
       pronunciation: "Used to /ˈjuːstə/; contrastive stress on then vs now",
       finalTask: "Give a short talk about a personal life change.",
     }),
@@ -491,8 +419,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I was... when...; While...; Suddenly...; In the end...",
       vocabulary: "Narrative events, reactions, sequencing expressions",
-      skills: "Listening to a model story, noticing language, and guided storytelling",
-      recycles: "Past Simple and Past Continuous",
       pronunciation: "Weak was/were; prominence on main events",
       finalTask: "Tell a two-minute story from a visual prompt.",
     }),
@@ -504,8 +430,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "At first...; I realized that...; The best/worst part was...; Looking back...",
       vocabulary: "Anecdotes, feelings, reactions, story evaluation",
-      skills: "Planning, rehearsal, fluency practice, and feedback",
-      recycles: "Narrative tenses and sequencing linkers",
       pronunciation: "Pausing, chunking, and engaging storytelling rhythm",
       finalTask: "Tell a personal story and respond to follow-up questions.",
     }),
@@ -517,8 +441,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I'm planning to...; I'm meeting...; Are you doing anything...?; That works for me.",
       vocabulary: "Goals, schedules, arrangements, invitations",
-      skills: "Negotiating times, checking availability, and confirming plans",
-      recycles: "Going to and Present Continuous for future",
       pronunciation: "Contractions in future forms; stress on fixed arrangements",
       finalTask: "Arrange a realistic weekend plan with a partner.",
     }),
@@ -530,8 +452,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "How about...?; I'd rather...; Could we...?; Let's do that instead.",
       vocabulary: "Social plans, preferences, schedules, compromises",
-      skills: "Turn-taking, agreeing, disagreeing, and confirming details",
-      recycles: "Future arrangements and preference language",
       pronunciation: "Natural intonation in suggestions and responses",
       finalTask: "Negotiate and confirm a group plan.",
     }),
@@ -543,8 +463,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "If..., I'll...; Unless...; What will happen if...?; It depends on...",
       vocabulary: "Choices, consequences, risks, practical decisions",
-      skills: "Problem-solving, predicting outcomes, and justifying choices",
-      recycles: "Future forms and modals",
       pronunciation: "Contractions with will; clause-level sentence stress",
       finalTask: "Choose the best response to a practical dilemma and justify it.",
     }),
@@ -556,8 +474,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "If I were you, I'd...; If I had more time, I'd...; What would you do if...?",
       vocabulary: "Personal problems, wishes, choices, advice",
-      skills: "Role-play, problem analysis, and supportive responses",
-      recycles: "Advice language and First Conditional",
       pronunciation: "Would contractions; sympathetic intonation",
       finalTask: "Respond to a problem scenario with advice and reasons.",
     }),
@@ -569,8 +485,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "There is too much...; There aren't enough...; This causes...; One problem is...",
       vocabulary: "Pollution, recycling, waste, energy, climate, conservation",
-      skills: "Reading short texts, categorizing problems, and explaining causes",
-      recycles: "Quantifiers and opinion language",
       pronunciation: "Stress on quantifiers and problem nouns",
       finalTask: "Explain one environmental problem and its local effects.",
     }),
@@ -582,8 +496,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "We could...; If people..., it would...; One solution is...; I suggest...",
       vocabulary: "Community action, campaigns, solutions, sustainability",
-      skills: "Group discussion, planning, persuasion, and presentation",
-      recycles: "Conditionals, quantifiers, and persuasive language",
       pronunciation: "Persuasive stress on solutions and benefits",
       finalTask: "Create a small environmental action plan for the community.",
     }),
@@ -595,8 +507,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I've been using... for...; How long have you been...?; It helps me...",
       vocabulary: "Devices, apps, features, digital habits",
-      skills: "Interviewing, explaining routines, and comparing habits",
-      recycles: "Present Perfect and time expressions",
       pronunciation: "Been /bɪn/; duration phrase stress",
       finalTask: "Interview a partner about digital habits and report one trend.",
     }),
@@ -608,8 +518,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "The main advantage is...; On the other hand...; It can be useful because...",
       vocabulary: "Pros, cons, convenience, privacy, distraction, addiction",
-      skills: "Balanced discussion, note-taking, and short presentation",
-      recycles: "Comparatives, opinion phrases, and technology vocabulary",
       pronunciation: "Balanced contrast intonation",
       finalTask: "Present the pros and cons of an app or device.",
     }),
@@ -621,8 +529,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "According to...; It was reported that...; The report says...; What happened was...",
       vocabulary: "News events, sources, reporting verbs, public issues",
-      skills: "Reading for gist/detail, summarizing, and source awareness",
-      recycles: "Past Simple, passive voice, and reported facts",
       pronunciation: "Weak passive auxiliaries; prominence on the main event",
       finalTask: "Deliver a concise news bulletin from a fact sheet.",
     }),
@@ -634,8 +540,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "New information suggests...; It has been confirmed that...; Details are still unclear.",
       vocabulary: "Breaking news, updates, confirmation, uncertainty",
-      skills: "Prioritizing information, hedging, and spoken reporting",
-      recycles: "Passive voice and reporting language",
       pronunciation: "Formal reporting tone and information focus",
       finalTask: "Give a short breaking-news update using confirmed and unconfirmed details.",
     }),
@@ -647,8 +551,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "She said that...; He told me...; They asked whether...; Apparently...",
       vocabulary: "Messages, communication, reporting verbs, requests",
-      skills: "Listening for key points, note-taking, and message relay",
-      recycles: "Past tenses and question forms",
       pronunciation: "Connected speech in reported clauses; stress on relayed information",
       finalTask: "Listen to a message and relay it to a third person.",
     }),
@@ -660,8 +562,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "She asked me if...; I explained that...; He wanted to know whether...",
       vocabulary: "Interview questions, answers, clarification, summaries",
-      skills: "Interviewing, reporting, and summarizing",
-      recycles: "Reported speech and question forms",
       pronunciation: "Clear reporting verbs and natural clause chunking",
       finalTask: "Interview a partner and report three key answers.",
     }),
@@ -673,8 +573,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "You should...; You might...; You have to...; You don't need to...",
       vocabulary: "Jobs, skills, responsibilities, qualifications",
-      skills: "Reading profiles, matching advice, and explaining choices",
-      recycles: "Modals of advice, possibility, and obligation",
       pronunciation: "Weak modal forms; contrastive stress for advice vs obligation",
       finalTask: "Recommend a career path for a profile and justify the advice.",
     }),
@@ -686,8 +584,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I'm interested in...; The best option would be...; It depends on...",
       vocabulary: "Career paths, strengths, experience, goals",
-      skills: "Comparing options, giving reasons, and responding to questions",
-      recycles: "Advice language, conditionals, and work vocabulary",
       pronunciation: "Confident listing intonation",
       finalTask: "Present two career options and defend one choice.",
     }),
@@ -699,8 +595,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "They get along.; They fell out.; It seems like...; Maybe she feels...",
       vocabulary: "Relationships, feelings, common phrasal verbs",
-      skills: "Inferring, discussing scenarios, and giving careful opinions",
-      recycles: "Advice, speculation, and narrative language",
       pronunciation: "Stress patterns in relationship phrasal verbs",
       finalTask: "Interpret a relationship scenario and explain possible feelings.",
     }),
@@ -712,8 +606,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "If I were you...; You could...; It might help to...; I see your point, but...",
       vocabulary: "Social situations, feelings, misunderstandings, advice",
-      skills: "Advice circles, turn-taking, and supportive disagreement",
-      recycles: "Second Conditional and relationship vocabulary",
       pronunciation: "Softening and tactful intonation",
       finalTask: "Respond to a social dilemma in an advice-circle discussion.",
     }),
@@ -728,8 +620,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "If I were...; I'd be more likely to...; Suppose...; On balance...",
       vocabulary: "Dreams, ambitions, priorities, life choices",
-      skills: "Hypothesizing, evaluating options, and defending a position",
-      recycles: "Second Conditional and advice language",
       pronunciation: "I'd/we'd and contrastive stress in hypothetical choices",
       finalTask: "Discuss a life-changing scenario and defend your choice.",
     }),
@@ -741,8 +631,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "My long-term goal is...; I'd prioritize...; The downside would be...",
       vocabulary: "Goals, priorities, motivation, trade-offs",
-      skills: "Personal reflection, structured discussion, and follow-up questions",
-      recycles: "Hypothetical language and comparatives",
       pronunciation: "Emphasis on priorities and concessions",
       finalTask: "Present a life-goal plan and respond to questions.",
     }),
@@ -754,8 +642,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "If I had...; I would have...; I wish I'd...; In hindsight...",
       vocabulary: "Regrets, decisions, consequences, reflection",
-      skills: "Case analysis, reflection, and careful advice",
-      recycles: "Past narrative and hypothetical language",
       pronunciation: "Contractions in I'd and would've; stress on alternative outcomes",
       finalTask: "Analyze a case study and present a better course of action.",
     }),
@@ -767,8 +653,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I should have...; It might have been better to...; The lesson is...",
       vocabulary: "Reflection, responsibility, lessons learned",
-      skills: "Evaluating decisions, giving retrospective advice, and summarizing lessons",
-      recycles: "Third Conditional and regret language",
       pronunciation: "Modal perfect connected speech",
       finalTask: "Give a reflective account of a decision and its alternatives.",
     }),
@@ -780,8 +664,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "We may need to...; You're expected to...; I'd strongly recommend...; It must be...",
       vocabulary: "Projects, deadlines, responsibilities, workplace decisions",
-      skills: "Meeting participation, clarification, and summarizing decisions",
-      recycles: "Modals, advice, and workplace language",
       pronunciation: "Stress for certainty, obligation, and recommendation",
       finalTask: "Resolve a workplace problem in a short team meeting.",
     }),
@@ -793,8 +675,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Would you be willing to...?; Could we compromise on...?; I can agree to that if...",
       vocabulary: "Negotiation, concessions, priorities, deadlines",
-      skills: "Negotiating, active listening, and reformulating proposals",
-      recycles: "Meeting language and conditionals",
       pronunciation: "Polite firmness and concession intonation",
       finalTask: "Negotiate a deadline, budget, or responsibility change.",
     }),
@@ -806,8 +686,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "A good leader tends to...; Could you take responsibility for...?; We need to get...",
       vocabulary: "Leadership, delegation, performance, responsibility",
-      skills: "Ranking qualities, delegating tasks, and justifying choices",
-      recycles: "Professional language and modals",
       pronunciation: "Prominence on delegated tasks and responsibilities",
       finalTask: "Allocate roles for a time-sensitive project.",
     }),
@@ -819,8 +697,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I'll have... done.; We need to get...; The reason for this decision is...",
       vocabulary: "Teamwork, services, performance, support",
-      skills: "Explaining decisions, assigning roles, and responding to concerns",
-      recycles: "Causative structures and meeting language",
       pronunciation: "Sentence stress in have/get something done",
       finalTask: "Lead a short planning meeting and explain task allocation.",
     }),
@@ -832,8 +708,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "By 2035, ... will have...; It is likely to...; One breakthrough could...",
       vocabulary: "Innovation, research, automation, remote work, technology",
-      skills: "Predicting, evaluating evidence, and presenting a timeline",
-      recycles: "Future forms and speculation",
       pronunciation: "Connected will have; prominence on deadlines and milestones",
       finalTask: "Present a plausible innovation timeline and answer questions.",
     }),
@@ -845,8 +719,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "The problem we're solving is...; What makes this viable is...; The main risk is...",
       vocabulary: "Pitching, benefits, risks, feasibility, innovation",
-      skills: "Persuasion, concise presenting, Q&A, and reformulation",
-      recycles: "Future predictions, argument structure, and concession language",
       pronunciation: "Pitch rhythm and emphasis on key benefits",
       finalTask: "Pitch an innovation and respond to two objections.",
     }),
@@ -858,8 +730,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "It is widely believed...; ... has been affected by...; One measure would be...",
       vocabulary: "Inequality, migration, public policy, sustainability",
-      skills: "Briefing, comparing policy responses, and distinguishing claims from facts",
-      recycles: "Passive voice, reporting language, and argumentation",
       pronunciation: "Prominence in reporting passives; claim vs fact intonation",
       finalTask: "Brief a group on a global issue and recommend one response.",
     }),
@@ -871,8 +741,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "A more sustainable approach would be...; This would address...; A limitation is...",
       vocabulary: "Policy, impact, feasibility, stakeholders, sustainability",
-      skills: "Problem-solution analysis, prioritizing, and defending recommendations",
-      recycles: "Global issues vocabulary and advanced linking",
       pronunciation: "Pausing around problem-solution stages",
       finalTask: "Compare three solutions and defend the most realistic one.",
     }),
@@ -884,8 +752,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "To begin with...; That said...; I take your point, but...; Therefore...",
       vocabulary: "Claims, evidence, counterarguments, rebuttals",
-      skills: "Argument planning, rebuttal, and structured speaking",
-      recycles: "Linkers, opinion language, and concession",
       pronunciation: "Pausing after discourse markers; contrastive intonation in concessions",
       finalTask: "Take part in a structured debate and deliver a closing statement.",
     }),
@@ -897,8 +763,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "The evidence suggests...; I'd challenge that because...; Could you clarify...?",
       vocabulary: "Debate roles, evidence, claims, clarification",
-      skills: "Extended interaction, active listening, challenging, and summarizing",
-      recycles: "Argumentation and formal discussion language",
       pronunciation: "Turn-taking intonation and emphatic stress",
       finalTask: "Debate a current issue and summarize both sides fairly.",
     }),
@@ -910,8 +774,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "The audience it targets...; What makes it effective is...; Whereas...",
       vocabulary: "Campaigns, branding, audiences, persuasion",
-      skills: "Media analysis, audience profiling, and persuasive explanation",
-      recycles: "Relative clauses, contrast, and argument language",
       pronunciation: "Pauses around added information; prominence on persuasive claims",
       finalTask: "Analyze a campaign and explain why it works or fails.",
     }),
@@ -923,8 +785,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Our campaign is aimed at...; The key message is...; This appeals to...",
       vocabulary: "Slogans, channels, audience, brand voice, persuasion",
-      skills: "Collaborative planning, pitching, defending choices, and feedback",
-      recycles: "Media analysis and persuasive language",
       pronunciation: "Persuasive pitch stress and confident delivery",
       finalTask: "Pitch and defend a campaign concept for a defined audience.",
     }),
@@ -936,8 +796,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "From the context, it seems to mean...; A natural way to say this is...",
       vocabulary: "High-frequency idioms and fixed expressions",
-      skills: "Inferring meaning, checking register, and controlled personalization",
-      recycles: "Context clues and conversational repair",
       pronunciation: "Chunk stress and conversational intonation in fixed expressions",
       finalTask: "Use target expressions in a natural problem-solving dialogue.",
     }),
@@ -949,8 +807,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "That sounds too informal.; In this context, I'd say...; It depends who you're speaking to.",
       vocabulary: "Idioms, register, tone, natural alternatives",
-      skills: "Register analysis, reformulation, and spoken practice",
-      recycles: "Everyday idioms and conversational language",
       pronunciation: "Natural chunking without over-stressing idioms",
       finalTask: "Reformulate formal and informal messages using appropriate expressions.",
     }),
@@ -962,8 +818,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "It largely depends on...; I ended up...; We need to take into account...",
       vocabulary: "High-frequency B2 collocations and phrasal verbs",
-      skills: "Noticing natural word partnerships, reformulation, and fluency practice",
-      recycles: "Idioms, register, and discourse markers",
       pronunciation: "Chunking in collocations; particle stress in phrasal verbs",
       finalTask: "Retell a situation using target word partnerships naturally.",
     }),
@@ -975,8 +829,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "What I mean is...; That's a fair point.; Sorry, let me rephrase that.; Exactly.",
       vocabulary: "Conversation management, reactions, clarification, repair",
-      skills: "Interaction management, fluency, active listening, and self-correction",
-      recycles: "Natural English, idioms, and register choices",
       pronunciation: "Backchanneling, response intonation, and natural rhythm",
       finalTask: "Hold a natural discussion and repair misunderstandings when needed.",
     }),
@@ -991,7 +843,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "The implication seems to be...; This suggests...; The writer appears to assume...",
       vocabulary: "Inference, stance, implication, ambiguity, nuance",
-      skills: "Critical reading, inference, and evidence-based discussion",
       pronunciation: "Prominence for contrast and implied meaning",
       finalTask: "Defend an interpretation of an ambiguous text or statement.",
     }),
@@ -1003,7 +854,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "Taken together, the sources suggest...; This contrasts with...; A gap remains...",
       vocabulary: "Sources, evidence, synthesis, limitations, reliability",
-      skills: "Academic reading, synthesis, summarizing, and source evaluation",
       pronunciation: "Clear chunking in dense academic summaries",
       finalTask: "Produce and present a neutral synthesis of two sources.",
     }),
@@ -1015,7 +865,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "While this is persuasive...; It would be misleading to claim...; A stronger case is...",
       vocabulary: "Claims, qualifications, assumptions, counterevidence",
-      skills: "Advanced argumentation, rebuttal, and Q&A",
       pronunciation: "Prominence across claims, concessions, and conclusions",
       finalTask: "Present and defend a position under critical questioning.",
     }),
@@ -1027,7 +876,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "I appreciate your position.; My concern is...; Could we explore an alternative?",
       vocabulary: "Diplomacy, conflict, constraints, compromise, escalation",
-      skills: "Mediation, tactful disagreement, and professional repair",
       pronunciation: "Polite firmness, softening, and controlled emphasis",
       finalTask: "Handle a sensitive workplace conversation diplomatically.",
     }),
@@ -1039,7 +887,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "This brings me to...; The data point to...; A reasonable interpretation is...",
       vocabulary: "Findings, methodology, implications, limitations",
-      skills: "Presentation structure, evidence explanation, and Q&A",
       pronunciation: "Pacing, pausing, and prominence in formal presentations",
       finalTask: "Deliver a short academic presentation and answer questions.",
     }),
@@ -1051,7 +898,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "What they mean is...; To put that another way...; The key distinction is...",
       vocabulary: "Mediation, clarification, paraphrase, distinction, summary",
-      skills: "Paraphrasing, clarification, summarizing, and interaction management",
       pronunciation: "Clarity through chunking and contrastive stress",
       finalTask: "Mediate a complex explanation for a different audience.",
     }),
@@ -1063,7 +909,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "One strength is...; A limitation is...; This is effective insofar as...",
       vocabulary: "Criteria, strengths, limitations, evaluation, recommendation",
-      skills: "Critical evaluation, balanced writing, and spoken review",
       pronunciation: "Measured evaluative tone",
       finalTask: "Present a balanced critical review with recommendations.",
     }),
@@ -1075,7 +920,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "What would make this acceptable?; Can we agree on...?; The trade-off is...",
       vocabulary: "Consensus, priorities, constraints, trade-offs, stakeholders",
-      skills: "Facilitation, negotiation, summarizing positions, and consensus building",
       pronunciation: "Turn management and diplomatic emphasis",
       finalTask: "Facilitate a group decision and summarize the agreement.",
     }),
@@ -1087,7 +931,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "It's not exactly..., but rather...; The distinction is subtle.; I'd qualify that by saying...",
       vocabulary: "Nuance, precision, qualification, implication, register",
-      skills: "Reformulation, lexical choice, and feedback-led improvement",
       pronunciation: "Prominence that clarifies subtle contrast",
       finalTask: "Refine a statement to make it more precise and nuanced.",
     }),
@@ -1099,7 +942,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       usefulLanguage:
         "The evidence indicates...; This should not be taken to mean...; On balance, we recommend...",
       vocabulary: "Research methods, findings, limitations, recommendations",
-      skills: "Critical reading, synthesis, briefing, and Q&A",
       pronunciation: "Prominence separating findings, limitations, and recommendations",
       finalTask: "Present a concise evidence-based briefing with justified recommendations.",
     }),

@@ -16,7 +16,6 @@ export const lesson = {
     objective: "...",
     usefulLanguage: "...",
     vocabulary: "...",
-    skills: "...",
     finalTask: "...",
   },
 
