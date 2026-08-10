@@ -78,7 +78,6 @@ export default function AuthenticContents() {
             objective={lessonCard.objective}
             usefulLanguage={lessonCard.usefulLanguage}
             vocabulary={lessonCard.vocabulary}
-            skills={lessonCard.skills}
             finalTask={lessonCard.finalTask}
           />
         )}

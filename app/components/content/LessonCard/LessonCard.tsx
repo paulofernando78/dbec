@@ -2,20 +2,22 @@ import { useEffect, useId, useState } from "react";
 
 import { Card } from "@/components/ui/Card";
 import { Link } from "react-router";
+import {
+  GoogleClassroomAnnouncement,
+  GoogleClassroomAssignment,
+  GoogleClassroomMaterial,
+  GoogleClassroomQuestion,
+  LessonFinalTask,
+  LessonObjective,
+  LessonPronunciation,
+  LessonUsefulLanguage,
+  LessonVocabulary,
+} from "@/components/GoogleIcons";
 
 import {
-  AudioLines,
-  BookOpenText,
   CalendarDays,
-  CheckCircle2,
   Clock2,
-  ClipboardList,
-  Flag,
-  Goal,
-  MessageCircle,
-  Megaphone,
   Plus,
-  CircleHelp,
   Minus
 } from "lucide-react";
 
@@ -23,11 +25,8 @@ export type LessonCardContent = {
   objective: string;
   usefulLanguage?: string;
   vocabulary?: string;
-  skills?: string;
-  recycles?: string;
   pronunciation?: string;
   finalTask?: string;
-  successCriteria?: string[];
 };
 
 const objectivePrefix = "By the end of the lesson students will be able to";
@@ -48,24 +47,24 @@ const formatObjective = (objective: string) => {
 
 const classroomPostTypes = [
   {
+    itemtype: "announcement",
+    label: "Announcement",
+    Icon: GoogleClassroomAnnouncement,
+  },
+  {
     itemtype: "material",
     label: "Material",
-    Icon: BookOpenText,
+    Icon: GoogleClassroomMaterial,
   },
   {
     itemtype: "assignment",
     label: "Assignment",
-    Icon: ClipboardList,
+    Icon: GoogleClassroomAssignment,
   },
   {
     itemtype: "question",
     label: "Question",
-    Icon: CircleHelp,
-  },
-  {
-    itemtype: "announcement",
-    label: "Announcement",
-    Icon: Megaphone,
+    Icon: GoogleClassroomQuestion,
   },
 ] as const;
 
@@ -87,7 +86,6 @@ export const LessonCard = ({
   vocabulary,
   pronunciation,
   finalTask,
-  successCriteria,
   date,
   duration,
   collapsible = false,
@@ -135,7 +133,7 @@ export const LessonCard = ({
       {href && <hr className="mt-3 mb-4 text-gray-300" />}
 
       <p className="flex pl-[-0.1rem] items-start gap-2">
-        <Goal size={23} className="text-gray-400 shrink-0" />
+        <LessonObjective className="text-gray-400 shrink-0" />
 
         <span>
           <b>Objective:</b> {formatObjective(objective)}
@@ -145,7 +143,7 @@ export const LessonCard = ({
       <div className="mb-[.1rem]">
         {usefulLanguage && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
-            <MessageCircle size={23} className="shrink-0 text-gray-400" />
+            <LessonUsefulLanguage className="shrink-0 text-gray-400" />
 
             <span>
               <b>Useful language:</b> {usefulLanguage}
@@ -155,7 +153,7 @@ export const LessonCard = ({
 
         {vocabulary && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
-            <BookOpenText size={23} className="shrink-0 text-gray-400" />
+            <LessonVocabulary className="shrink-0 text-gray-400" />
 
             <span>
               <b>Vocabulary:</b> {vocabulary}
@@ -165,7 +163,7 @@ export const LessonCard = ({
 
         {pronunciation && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2 ">
-            <AudioLines size={23} className="shrink-0 text-gray-400" />
+            <LessonPronunciation className="shrink-0 text-gray-400" />
 
             <span>
               <b>Pronunciation:</b> {pronunciation}
@@ -175,7 +173,7 @@ export const LessonCard = ({
 
         {finalTask && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
-            <Flag size={23} className="shrink-0 text-gray-400" />
+            <LessonFinalTask className="shrink-0 text-gray-400" />
 
             <span>
               <b>Final task:</b> {finalTask}
@@ -190,42 +188,29 @@ export const LessonCard = ({
               className="flex flex-wrap items-center gap-2 text-sm"
               onClick={(event) => event.stopPropagation()}
             >
-              <img
-                src="/assets/img/icons/google-classroom.svg"
-                alt=""
-                className="h-5 w-5 shrink-0"
-              />
+              <span className="inline-flex h-10 items-center gap-2 pr-1 font-semibold text-gray-500">
+                <img
+                  src="/assets/img/icons/google-classroom.svg"
+                  alt=""
+                  className="h-8 w-8 shrink-0"
+                />
+              </span>
               {classroomPostTypes.map(({ itemtype, label: postLabel, Icon }) => (
                 <a
                   key={itemtype}
                   href={getClassroomShareUrl(itemtype)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-1 rounded border border-gray-300 bg-white px-2 py-1 font-semibold text-gray-500 hover:border-gray-400 hover:text-gray-800"
+                  className="inline-flex h-10 w-fit items-center gap-2 rounded border border-gray-300 bg-white px-3 font-semibold leading-none text-gray-500 hover:border-gray-400 hover:bg-gray-50 hover:text-gray-800"
                   aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
                 >
-                  <Icon size={16} className="shrink-0" />
+                  <Icon className="shrink-0" />
                   <span>{postLabel}</span>
                 </a>
               ))}
             </div>
           </>
         )}
-
-        {successCriteria?.length ? (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
-            <CheckCircle2 size={23} className="shrink-0 text-gray-400" />
-
-            <div>
-              <b>Success criteria:</b>
-              <ul className="mt-1 list-disc pl-5">
-                {successCriteria.map((criterion) => (
-                  <li key={criterion}>{criterion}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ) : null}
 
         {date && (
           <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
