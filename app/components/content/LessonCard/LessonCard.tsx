@@ -50,21 +50,25 @@ const classroomPostTypes = [
     itemtype: "announcement",
     label: "Announcement",
     Icon: GoogleClassroomAnnouncement,
+    labelClassName: "pr-[0.2rem]"
   },
   {
     itemtype: "material",
     label: "Material",
     Icon: GoogleClassroomMaterial,
+    labelClassName: "pr-[0.2rem]"
   },
   {
     itemtype: "assignment",
     label: "Assignment",
     Icon: GoogleClassroomAssignment,
+    labelClassName: "pr-[0.2rem]"
   },
   {
     itemtype: "question",
     label: "Question",
     Icon: GoogleClassroomQuestion,
+    labelClassName: "pr-[0.2rem]"
   },
 ] as const;
 
@@ -195,17 +199,31 @@ export const LessonCard = ({
                   className="h-8 w-8 shrink-0"
                 />
               </span>
-              {classroomPostTypes.map(({ itemtype, label: postLabel, Icon }) => (
+              {classroomPostTypes.map(({ itemtype, label: postLabel, Icon, labelClassName }) => (
                 <a
                   key={itemtype}
                   href={getClassroomShareUrl(itemtype)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-10 w-fit items-center gap-2 rounded border border-gray-300 bg-white px-3 font-semibold leading-none text-gray-500 hover:border-gray-400 hover:bg-gray-50 hover:text-gray-800"
+                  className="inline-flex
+                  gap-2
+                  items-center
+                  w-fit
+                  p-2
+                  font-semibold
+                  text-gray-500
+                  border
+                  border-gray-300
+                  bg-white
+                  rounded
+                  leading-none
+                  hover:border-gray-400
+                  hover:bg-gray-50
+                  hover:text-gray-800"
                   aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
                 >
                   <Icon className="shrink-0" />
-                  <span>{postLabel}</span>
+                  <span className={labelClassName}>{postLabel}</span>
                 </a>
               ))}
             </div>

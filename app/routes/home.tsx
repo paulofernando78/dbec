@@ -69,12 +69,19 @@ export default function Home() {
           {greetingsList[greetingIndex]}
         </li>
       </ul>
-      <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
+      {/* <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
         <b>DAILY BASIS ENGLISH COURSE</b> offers specialized English classes
         focused on the four core language skills: Speaking (with an emphasis on
         conversation), Listening (listening comprehension), Reading, and
         Writing. On this web site, you’ll find a variety of useful learning
         materials. Please use them wisely.
+      </p> */}
+      <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
+        <b>O DAILY BASIS ENGLISH COURSE</b> oferece aulas de inglês
+        especializadas e focadas nas quatro habilidades linguísticas
+        fundamentais: Fala (com ênfase em conversação), Escuta (compreensão
+        auditiva), Leitura e Escrita. Utilizamos o <span className="underline">Google Classroom</span> como nossa
+        plataforma de aprendizagem.
       </p>
       <div className="w-max mx-auto">
         <Contact />

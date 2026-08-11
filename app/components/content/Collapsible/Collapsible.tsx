@@ -2,8 +2,6 @@ import { useId, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 
-import { ScrollText } from "lucide-react";
-
 interface CollapsibleProps {
   title?: string;
   content: {
@@ -39,7 +37,7 @@ export const Collapsible = ({ title, content }: CollapsibleProps) => {
         aria-hidden={!isOpen}
       >
         <div className="smooth-collapse__inner">
-          <div className="bg-white p-3 border rounded-xl">
+          <div className="bg-white border rounded-lg">
             {content.map((line) => (
               <div key={line.en} className="mb-4 last:mb-0">
                 <p>{line.en}</p>

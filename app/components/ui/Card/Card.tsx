@@ -35,8 +35,8 @@ export const Card = ({
   return (
     <div
       className={`
-      p-3
-      ${hasTrailingRadio ? "pb-[0.4rem]" : "pb-3"}
+      px-3 py-2
+      ${hasTrailingRadio ? "pb-[0.4rem]" : "pb-2"}
       text-gray-800
       border
       border-gray-300
