@@ -42,6 +42,103 @@ type CourseProps = {
   imgAlt?: string;
 };
 
+const splitField = (value?: string) =>
+  value
+    ?.split(";")
+    .map((item) => item.trim())
+    .filter(Boolean) ?? [];
+
+const createSyllabusLesson = (lessonCard: LessonCardContent & { label?: string }) => {
+  const usefulLanguage = splitField(lessonCard.usefulLanguage);
+  const vocabulary = splitField(lessonCard.vocabulary);
+
+  return {
+    whiteboard: {
+      title: lessonCard.label ?? "Lesson",
+      subtitle: "CEFR syllabus lesson",
+      descriptions: [lessonCard.objective],
+    },
+    lessonCard,
+    introduction: {
+      blocks: [
+        {
+          type: "line",
+          value: [
+            `Today students work with ${lessonCard.label ?? "this lesson"} through a guided communicative lesson sequence.`,
+          ],
+          className: "font-bold mb-4",
+        },
+        {
+          type: "task",
+          instruction: "Lead-in:",
+          listType: "ul",
+          items: [
+            { content: ["Personalize the topic with one simple question."] },
+            { content: ["Elicit what students already know about the situation."] },
+            { content: ["Set a clear communicative reason to use the target language."] },
+          ],
+        },
+      ],
+    },
+    presentation: {
+      blocks: [
+        {
+          type: "task",
+          instruction: "Target language:",
+          listType: "ul",
+          items: usefulLanguage.map((item) => ({ content: [item] })),
+        },
+      ],
+    },
+    languageFocus: {
+      blocks: [
+        {
+          type: "task",
+          instruction: "Vocabulary:",
+          listType: "ul",
+          items: vocabulary.map((item) => ({ content: [item] })),
+        },
+        ...(lessonCard.pronunciation
+          ? [
+              {
+                type: "line",
+                value: [`Pronunciation: ${lessonCard.pronunciation}`],
+                className: "font-bold mt-4",
+              },
+            ]
+          : []),
+      ],
+    },
+    practice: {
+      blocks: [
+        {
+          type: "task",
+          instruction: "Controlled practice:",
+          listType: "ol",
+          items: [
+            { content: ["Model the useful language with clear teacher examples."] },
+            { content: ["Students repeat, substitute details, and check meaning."] },
+            { content: ["Students practise short exchanges in pairs."] },
+          ],
+        },
+      ],
+    },
+    production: {
+      blocks: [
+        {
+          type: "task",
+          instruction: "Final task:",
+          listType: "checkbox",
+          items: [
+            { content: [lessonCard.finalTask ?? "Complete a communicative task using the target language."] },
+            { content: ["Give feedback on successful communication and useful corrections."] },
+          ],
+        },
+      ],
+    },
+  };
+};
+
 type RenderBlockContext = {
   lessonVocabulary: ReturnType<typeof getLessonVocabulary>;
 };
@@ -119,9 +216,18 @@ const renderBlocks = (
 export function Course({ lesson, lessonCard }: CourseProps) {
   const heading = 4;
   const card = lessonCard ?? lesson.lessonCard;
-  const lessonVocabulary = getLessonVocabulary(lesson, card?.vocabulary);
+  const displayedLesson = card?.label
+    ? {
+        ...lesson,
+        whiteboard: {
+          ...lesson.whiteboard,
+          title: card.label,
+        },
+      }
+    : lesson;
+  const lessonVocabulary = getLessonVocabulary(displayedLesson, card?.vocabulary);
   const renderContext = { lessonVocabulary };
-  const practiceCounts = getPracticeExerciseCounts(lesson);
+  const practiceCounts = getPracticeExerciseCounts(displayedLesson);
 
   if (
     import.meta.env.DEV &&
@@ -129,34 +235,34 @@ export function Course({ lesson, lessonCard }: CourseProps) {
   ) {
     console.warn(
       `Lesson practice requires at least 8 Radio and 8 FillInTheBlanks items. Received Radio: ${practiceCounts.radio}, FillInTheBlanks: ${practiceCounts.fillInTheBlanks}.`,
-      lesson.whiteboard?.subtitle,
+      displayedLesson.whiteboard?.subtitle,
     );
   }
 
   return (
     <>
-      <Whiteboard {...lesson.whiteboard} />
+      <Whiteboard {...displayedLesson.whiteboard} />
       <div>
         {card && <LessonCard {...card} />}
         <PageSections>
           <Section id="introduction" heading={heading}>
-            {renderBlocks(lesson.introduction?.blocks, renderContext)}
+            {renderBlocks(displayedLesson.introduction?.blocks, renderContext)}
           </Section>
 
           <Section id="Presentation" heading={heading}>
-            {renderBlocks(lesson.presentation?.blocks, renderContext)}
+            {renderBlocks(displayedLesson.presentation?.blocks, renderContext)}
           </Section>
 
           <Section id="Language Focus" heading={heading}>
-            {renderBlocks(lesson.languageFocus?.blocks, renderContext)}
+            {renderBlocks(displayedLesson.languageFocus?.blocks, renderContext)}
           </Section>
 
           <Section id="Practice" heading={heading}>
-            {renderBlocks(lesson.practice?.blocks, renderContext)}
+            {renderBlocks(displayedLesson.practice?.blocks, renderContext)}
           </Section>
 
           <Section id="Production" heading={heading}>
-            {renderBlocks(lesson.production?.blocks, renderContext)}
+            {renderBlocks(displayedLesson.production?.blocks, renderContext)}
           </Section>
         </PageSections>
       </div>
@@ -165,13 +271,19 @@ export function Course({ lesson, lessonCard }: CourseProps) {
 }
 
 export default function Lesson() {
-  const { level, slug } = useParams();
-  const href = level && slug ? "/course/" + level + "/" + slug : undefined;
+  const { level, chapter, slug } = useParams();
+  const lessonSlug = slug ?? chapter;
+  const href =
+    level && chapter
+      ? `/course/${level}/${chapter}${slug ? `/${slug}` : ""}`
+      : undefined;
   const courseLessonCard = href
     ? getCourseLessonCard(href) ?? getCourseSyllabusLessonCard(href)
     : undefined;
   const lesson =
-    level === "template" ? courseTemplate : getCourseLesson({ level, slug });
+    level === "template"
+      ? courseTemplate
+      : getCourseLesson({ level, slug: lessonSlug });
   const lessonCard = courseLessonCard
     ? {
         label: courseLessonCard.label,
@@ -190,25 +302,7 @@ export default function Lesson() {
   if (!lesson && lessonCard) {
     return (
       <Course
-        lesson={{
-          whiteboard: {
-            title: lessonCard.label ?? "Lesson",
-            subtitle: "CEFR syllabus lesson",
-            descriptions: [lessonCard.objective],
-          },
-          lessonCard,
-          introduction: {
-            blocks: [
-              {
-                type: "line",
-                value: [
-                  "This syllabus lesson has been mapped from the CEFR/CELTA course plan. Detailed lesson staging can be added here.",
-                ],
-                className: "font-bold mb-4",
-              },
-            ],
-          },
-        }}
+        lesson={createSyllabusLesson(lessonCard)}
         lessonCard={lessonCard}
       />
     );

@@ -1,4 +1,5 @@
 import type { CourseLessonCard } from "@/data/course/course-lessons-card-data";
+import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 
 export type CourseSyllabusGroup = {
   label: string;
@@ -18,6 +19,23 @@ const slug = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
+const courseLessonCardDataKeyByLevel: Record<string, keyof typeof courseLessonsCardData> = {
+  beginner: "beginner",
+  elementary: "elementary",
+  intermediate: "intermediate",
+  "upper-intermediate": "upperIntermediate",
+};
+
+const normalizeLabel = (value: string) => slug(value);
+
+const getCanonicalCourseCard = (level: string, label: string) => {
+  const key = courseLessonCardDataKeyByLevel[level];
+
+  return courseLessonsCardData[key]?.find(
+    (card) => normalizeLabel(card.label) === normalizeLabel(label),
+  );
+};
+
 const lesson = (
   level: string,
   label: string,
@@ -25,15 +43,20 @@ const lesson = (
   vocabulary: string,
   languageFocus: string,
   pronunciation: string,
-): CourseLessonCard => ({
-  href: `/course/${level}/${slug(label)}`,
-  label,
-  objective: `Can use the target language to handle a ${label.toLowerCase()} situation at this CEFR level.`,
-  usefulLanguage,
-  vocabulary,
-  pronunciation,
-  finalTask: `Complete a communicative task based on ${label.toLowerCase()}.`,
-});
+): CourseLessonCard => {
+  const canonicalCard = getCanonicalCourseCard(level, label);
+  const cardLabel = canonicalCard?.label ?? label;
+
+  return {
+    href: canonicalCard?.href ?? `/course/${level}/${slug(label)}`,
+    label: cardLabel,
+    objective: `Can use the target language to handle a ${cardLabel.toLowerCase()} situation at this CEFR level.`,
+    usefulLanguage,
+    vocabulary,
+    pronunciation,
+    finalTask: `Complete a communicative task based on ${cardLabel.toLowerCase()}.`,
+  };
+};
 
 const group = (label: string, lessons: CourseLessonCard[]): CourseSyllabusGroup => ({
   label,
