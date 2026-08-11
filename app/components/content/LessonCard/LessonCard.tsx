@@ -50,25 +50,25 @@ const classroomPostTypes = [
     itemtype: "announcement",
     label: "Announcement",
     Icon: GoogleClassroomAnnouncement,
-    labelClassName: "pr-[0.2rem]"
+    classroomCardPadding: "pr-[0.6rem]"
   },
   {
     itemtype: "material",
     label: "Material",
     Icon: GoogleClassroomMaterial,
-    labelClassName: "pr-[0.2rem]"
+    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]"
   },
   {
     itemtype: "assignment",
     label: "Assignment",
     Icon: GoogleClassroomAssignment,
-    labelClassName: "pr-[0.2rem]"
+    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]"
   },
   {
     itemtype: "question",
     label: "Question",
     Icon: GoogleClassroomQuestion,
-    labelClassName: "pr-[0.2rem]"
+    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]"
   },
 ] as const;
 
@@ -199,13 +199,13 @@ export const LessonCard = ({
                   className="h-8 w-8 shrink-0"
                 />
               </span>
-              {classroomPostTypes.map(({ itemtype, label: postLabel, Icon, labelClassName }) => (
+              {classroomPostTypes.map(({ itemtype, label: postLabel, Icon, classroomCardPadding }) => (
                 <a
                   key={itemtype}
                   href={getClassroomShareUrl(itemtype)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex
+                  className={`inline-flex
                   gap-2
                   items-center
                   w-fit
@@ -219,11 +219,11 @@ export const LessonCard = ({
                   leading-none
                   hover:border-gray-400
                   hover:bg-gray-50
-                  hover:text-gray-800"
+                  hover:text-gray-800 ${classroomCardPadding}`}
                   aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
                 >
                   <Icon className="shrink-0" />
-                  <span className={labelClassName}>{postLabel}</span>
+                  <span>{postLabel}</span>
                 </a>
               ))}
             </div>
