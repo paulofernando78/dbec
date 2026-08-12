@@ -48,7 +48,9 @@ const splitField = (value?: string) =>
     .map((item) => item.trim())
     .filter(Boolean) ?? [];
 
-const createSyllabusLesson = (lessonCard: LessonCardContent & { label?: string }) => {
+const createSyllabusLesson = (
+  lessonCard: LessonCardContent & { label?: string },
+) => {
   const usefulLanguage = splitField(lessonCard.usefulLanguage);
   const vocabulary = splitField(lessonCard.vocabulary);
 
@@ -74,8 +76,16 @@ const createSyllabusLesson = (lessonCard: LessonCardContent & { label?: string }
           listType: "ul",
           items: [
             { content: ["Personalize the topic with one simple question."] },
-            { content: ["Elicit what students already know about the situation."] },
-            { content: ["Set a clear communicative reason to use the target language."] },
+            {
+              content: [
+                "Elicit what students already know about the situation.",
+              ],
+            },
+            {
+              content: [
+                "Set a clear communicative reason to use the target language.",
+              ],
+            },
           ],
         },
       ],
@@ -116,8 +126,16 @@ const createSyllabusLesson = (lessonCard: LessonCardContent & { label?: string }
           instruction: "Controlled practice:",
           listType: "ol",
           items: [
-            { content: ["Model the useful language with clear teacher examples."] },
-            { content: ["Students repeat, substitute details, and check meaning."] },
+            {
+              content: [
+                "Model the useful language with clear teacher examples.",
+              ],
+            },
+            {
+              content: [
+                "Students repeat, substitute details, and check meaning.",
+              ],
+            },
             { content: ["Students practise short exchanges in pairs."] },
           ],
         },
@@ -130,13 +148,125 @@ const createSyllabusLesson = (lessonCard: LessonCardContent & { label?: string }
           instruction: "Final task:",
           listType: "checkbox",
           items: [
-            { content: [lessonCard.finalTask ?? "Complete a communicative task using the target language."] },
-            { content: ["Give feedback on successful communication and useful corrections."] },
+            {
+              content: [
+                lessonCard.finalTask ??
+                  "Complete a communicative task using the target language.",
+              ],
+            },
+            {
+              content: [
+                "Give feedback on successful communication and useful corrections.",
+              ],
+            },
           ],
         },
       ],
     },
   };
+};
+
+const createFillInTheBlanksBlocks = (lessonCard: LessonCardContent) => {
+  const sourceItems = [
+    ...splitField(lessonCard.usefulLanguage),
+    ...splitField(lessonCard.finalTask),
+  ];
+
+  return sourceItems.slice(0, 6).flatMap((sentence) => {
+    const words = [...sentence.matchAll(/[A-Za-z']+/g)];
+    const word = words
+      .filter((match) => match[0].length >= 3)
+      .sort((a, b) => b[0].length - a[0].length)[0];
+
+    if (!word || word.index === undefined) return [];
+
+    const start = word.index;
+    const end = start + word[0].length;
+
+    return [
+      {
+        lineBreak: true,
+        block: [
+          { text: sentence.slice(0, start) },
+          { blank: word[0] },
+          { text: sentence.slice(end) },
+        ],
+      },
+    ];
+  });
+};
+
+const createAssignmentRadioQuestions = (lessonCard: LessonCardContent) => {
+  const usefulLanguage = splitField(lessonCard.usefulLanguage).slice(0, 4);
+  const fallback = lessonCard.finalTask ?? lessonCard.objective;
+  const correctItems = usefulLanguage.length > 0 ? usefulLanguage : [fallback];
+  const distractors = [
+    "This expression is unrelated to the lesson.",
+    "This sentence does not fit the situation.",
+  ];
+
+  return correctItems.map((item, index) => ({
+    question: `Which option uses the target language from this lesson?`,
+    options: [
+      { option: distractors[index % distractors.length], isCorrect: false },
+      { option: item, isCorrect: true },
+      {
+        option: distractors[(index + 1) % distractors.length],
+        isCorrect: false,
+      },
+    ],
+  }));
+};
+
+const Assignment = ({
+  lessonCard,
+}: {
+  lessonCard: LessonCardContent & { label?: string };
+}) => {
+  const fillInTheBlanksBlocks = createFillInTheBlanksBlocks(lessonCard);
+
+  return (
+    <>
+      <Whiteboard
+        title={lessonCard.label ?? "Assignment"}
+        subtitle="Assignment"
+        descriptions={[lessonCard.objective]}
+      />
+      <PageSections>
+        <Section id="Multiple Choice" heading={3}>
+          <Radio
+            instruction="Choose the target language from the lesson."
+            exercise={{ questions: createAssignmentRadioQuestions(lessonCard) }}
+          />
+        </Section>
+
+        {fillInTheBlanksBlocks.length > 0 && (
+          <Section id="Fill in the Blanks" heading={3}>
+            <FillInTheBlanks
+              instruction="Complete the sentences with the missing words."
+              exercise={{ blocks: fillInTheBlanksBlocks }}
+            />
+          </Section>
+        )}
+
+        <Section id="Production" heading={3}>
+          <List
+            instruction="Complete the assignment:"
+            type="checkbox"
+            items={[
+              {
+                content: [
+                  lessonCard.finalTask ??
+                    "Complete the final task using the target language.",
+                ],
+              },
+              { content: ["Review your answers before submitting."] },
+            ]}
+          />
+        </Section>
+      </PageSections>
+    </>
+  );
 };
 
 type RenderBlockContext = {
@@ -150,13 +280,9 @@ const renderBlock = (
 ) => {
   switch (block.type) {
     case "line":
-      return (
-        <Line key={index} value={block.value}/>
-      );
+      return <Line key={index} value={block.value} />;
     case "lines":
-      return (
-        <Lines key={index} value={block.value} />
-      );
+      return <Lines key={index} value={block.value} />;
     case "image":
       return <Image key={index} src={block.src} alt={block.alt} />;
     case "carousel":
@@ -225,7 +351,10 @@ export function Course({ lesson, lessonCard }: CourseProps) {
         },
       }
     : lesson;
-  const lessonVocabulary = getLessonVocabulary(displayedLesson, card?.vocabulary);
+  const lessonVocabulary = getLessonVocabulary(
+    displayedLesson,
+    card?.vocabulary,
+  );
   const renderContext = { lessonVocabulary };
   const practiceCounts = getPracticeExerciseCounts(displayedLesson);
 
@@ -271,14 +400,21 @@ export function Course({ lesson, lessonCard }: CourseProps) {
 }
 
 export default function Lesson() {
-  const { level, chapter, slug } = useParams();
-  const lessonSlug = slug ?? chapter;
+  const { level, chapter, resourceType, slug } = useParams();
+  const isTypedResource =
+    resourceType === "material" || resourceType === "assignment";
+  const resolvedResourceType = isTypedResource ? resourceType : "material";
+  const lessonSlug = isTypedResource
+    ? (slug ?? chapter)
+    : (resourceType ?? chapter);
   const href =
     level && chapter
-      ? `/course/${level}/${chapter}${slug ? `/${slug}` : ""}`
+      ? isTypedResource && slug
+        ? `/course/${level}/${chapter}/${resourceType}/${slug}`
+        : `/course/${level}/${chapter}${resourceType ? `/${resourceType}` : ""}`
       : undefined;
   const courseLessonCard = href
-    ? getCourseLessonCard(href) ?? getCourseSyllabusLessonCard(href)
+    ? (getCourseLessonCard(href) ?? getCourseSyllabusLessonCard(href))
     : undefined;
   const lesson =
     level === "template"
@@ -292,8 +428,15 @@ export default function Lesson() {
         vocabulary: courseLessonCard.vocabulary,
         pronunciation: courseLessonCard.pronunciation,
         finalTask: courseLessonCard.finalTask,
+        href: courseLessonCard.materialHref ?? courseLessonCard.href,
+        assignmentHref: courseLessonCard.assignmentHref,
+        classroom: courseLessonCard.classroom,
       }
     : undefined;
+
+  if (resolvedResourceType === "assignment" && lessonCard) {
+    return <Assignment lessonCard={lessonCard} />;
+  }
 
   if (!lesson && !lessonCard) {
     return <h1>Lesson not found.</h1>;

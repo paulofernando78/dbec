@@ -3,34 +3,17 @@ import { useEffect, useId, useState } from "react";
 import { Card } from "@/components/ui/Card";
 import { Link } from "react-router";
 import {
-  GoogleClassroomAnnouncement,
-  GoogleClassroomAssignment,
-  GoogleClassroomMaterial,
-  GoogleClassroomMultipleChoice,
-  GoogleClassroomQuestion,
-  GoogleClassroomShortAnswer,
-  LessonFinalTask,
   LessonObjective,
-  LessonPronunciation,
   LessonUsefulLanguage,
+  LessonPronunciation,
   LessonVocabulary,
+  LessonFinalTask,
+  GoogleClassroomAnnouncement,
+  GoogleClassroomMaterial,
+  GoogleClassroomAssignment,
 } from "@/components/GoogleIcons";
 
 import { CalendarDays, Clock2, Plus, Minus } from "lucide-react";
-
-export type ClassroomQuestion =
-  | {
-      type: "short-answer";
-      title: string;
-      description?: string;
-    }
-  | {
-      type: "multiple-choice";
-      title: string;
-      description?: string;
-      options: string[];
-      correctOption?: string;
-    };
 
 type ClassroomPostContent = {
   title: string;
@@ -51,11 +34,11 @@ export type LessonCardContent = {
   vocabulary?: string;
   pronunciation?: string;
   finalTask?: string;
+  assignmentHref?: string;
   classroom?: {
     announcement?: ClassroomAnnouncementContent;
     material?: ClassroomMaterialContent;
     assignment?: ClassroomPostContent;
-    questions?: ClassroomQuestion[];
   };
 };
 
@@ -81,24 +64,25 @@ const classroomPostTypes = [
     label: "New Announcement",
     Icon: GoogleClassroomAnnouncement,
     classroomCardPadding: "pr-[0.6rem]",
+    classroomCardLabel: "-translate-x-[0.1rem]",
   },
   {
     itemtype: "material",
     label: "Material",
     Icon: GoogleClassroomMaterial,
     classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]",
+    classroomCardLabel: "-translate-x-[0.1rem]",
   },
   {
     itemtype: "assignment",
     label: "Assignment",
     Icon: GoogleClassroomAssignment,
     classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]",
+    classroomCardLabel: "-translate-x-[0.1rem]",
   },
 ] as const;
 
-type ClassroomPostType =
-  | (typeof classroomPostTypes)[number]["itemtype"]
-  | "question";
+type ClassroomPostType = (typeof classroomPostTypes)[number]["itemtype"];
 
 type LessonCardProps = LessonCardContent & {
   href?: string;
@@ -118,6 +102,7 @@ export const LessonCard = ({
   vocabulary,
   pronunciation,
   finalTask,
+  assignmentHref,
   classroom,
   date,
   duration,
@@ -133,8 +118,6 @@ export const LessonCard = ({
 
     setClassroomLessonUrl(new URL(href, window.location.origin).toString());
   }, [href]);
-
-  const classroomQuestions = classroom?.questions ?? [];
 
   const getClassroomShareUrl = (
     itemtype: ClassroomPostType,
@@ -160,15 +143,7 @@ export const LessonCard = ({
 
   const cardHeader = (
     <div className="flex flex-col gap-1">
-      {href ? (
-        <Link to={href} onClick={(event) => event.stopPropagation()}>
-          <b>
-            Lesson {index + 1} • {label}
-          </b>
-        </Link>
-      ) : (
-        <b>{label}</b>
-      )}
+      <b>{href ? `Lesson ${index + 1} • ${label}` : label}</b>
     </div>
   );
 
@@ -176,7 +151,7 @@ export const LessonCard = ({
     <>
       {href && <hr className="mt-3 mb-4 text-gray-300" />}
 
-      <p className="flex pl-[-0.1rem] items-start gap-2">
+      <p className="flex pl-[-0.1rem] items-start gap-3">
         <LessonObjective className="text-gray-400 shrink-0" />
 
         <span>
@@ -186,7 +161,7 @@ export const LessonCard = ({
 
       <div className="mb-[.1rem]">
         {usefulLanguage && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
             <LessonUsefulLanguage className="shrink-0 text-gray-400" />
 
             <span>
@@ -196,7 +171,7 @@ export const LessonCard = ({
         )}
 
         {vocabulary && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
             <LessonVocabulary className="shrink-0 text-gray-400" />
 
             <span>
@@ -206,7 +181,7 @@ export const LessonCard = ({
         )}
 
         {pronunciation && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2 ">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
             <LessonPronunciation className="shrink-0 text-gray-400" />
 
             <span>
@@ -216,7 +191,7 @@ export const LessonCard = ({
         )}
 
         {finalTask && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
+          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
             <LessonFinalTask className="shrink-0 text-gray-400" />
 
             <span>
@@ -225,9 +200,47 @@ export const LessonCard = ({
           </div>
         )}
 
+        <hr className="mt-4 mb-3 text-gray-300" />
+
+        <div className="flex flex-col gap-2">
+          {href && (
+            <Link
+              to={href}
+              onClick={(event) => event.stopPropagation()}
+              className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  font-semibold
+                  text-gray-500
+                  hover:text-gray-700"
+            >
+              <GoogleClassroomMaterial className="shrink-0" />
+              <span>Open material</span>
+            </Link>
+          )}
+          {assignmentHref && (
+            <Link
+              to={assignmentHref}
+              onClick={(event) => event.stopPropagation()}
+              className="
+                inline-flex
+                items-center
+                gap-2 
+                font-semibold
+                text-gray-500
+                hover:text-gray-700"
+            >
+              <GoogleClassroomAssignment className="shrink-0" />
+              <span>Open assignment</span>
+            </Link>
+          )}
+        </div>
+
+        <hr className="mt-4 mb-3 text-gray-300" />
+
         {classroomLessonUrl && (
           <>
-            <hr className="mt-4 mb-3 text-gray-300" />
             <div
               className="flex flex-col gap-2 text-sm"
               onClick={(event) => event.stopPropagation()}
@@ -257,12 +270,13 @@ export const LessonCard = ({
                 </span>
                 <span className="font-bold">Share to Classroom</span>
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 mb-1">
                 {classroomPostTypes.map(
                   ({
                     itemtype,
                     label: postLabel,
                     Icon,
+                    classroomCardLabel,
                     classroomCardPadding,
                   }) => (
                     <a
@@ -296,64 +310,9 @@ export const LessonCard = ({
                       aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
                     >
                       <Icon className="shrink-0" />
-                      <span>{postLabel}</span>
+                      <span className={classroomCardLabel}>{postLabel}</span>
                     </a>
                   ),
-                )}
-
-                {classroomQuestions.length > 0 ? (
-                  <div
-                    className={
-                      classroomQuestions.length > 1
-                        ? "flex flex-wrap items-stretch gap-2"
-                        : "flex"
-                    }
-                  >
-                    {classroomQuestions.map((question, questionIndex) => (
-                      <a
-                        key={`${question.type}-${questionIndex}`}
-                        href={getClassroomShareUrl("question", {
-                          title: question.title,
-                          body: question.description,
-                        })}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-10 max-w-full items-start gap-2 rounded border border-gray-300 bg-white p-2 text-gray-400 hover:border-gray-500 hover:bg-gray-50 hover:text-gray-500 sm:max-w-72"
-                        aria-label={`Post question ${question.title} to Google Classroom`}
-                      >
-                        <GoogleClassroomQuestion className="shrink-0" />
-                        <span className="flex min-w-0 flex-col gap-1">
-                          <span className="font-semibold leading-tight">
-                            {question.title}
-                          </span>
-                          <span className="inline-flex items-center gap-1 text-xs leading-none">
-                            {question.type === "short-answer" ? (
-                              <>
-                                <GoogleClassroomShortAnswer className="shrink-0" />
-                                <span>Short answer</span>
-                              </>
-                            ) : (
-                              <>
-                                <GoogleClassroomMultipleChoice className="shrink-0" />
-                                <span>Multiple choice</span>
-                              </>
-                            )}
-                          </span>
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                ) : (
-                  <a
-                    href={getClassroomShareUrl("question")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-fit items-center gap-2 rounded border border-gray-300 bg-white p-2 pl-[0.4rem] pr-[0.6rem] font-semibold leading-none text-gray-400 hover:border-gray-500 hover:bg-gray-50 hover:text-gray-500"
-                    aria-label={`Post ${label ?? "lesson"} to Google Classroom as Question`}
-                  >
-                    <GoogleClassroomQuestion className="shrink-0" />
-                    <span>Question</span>
-                  </a>
                 )}
               </div>
             </div>

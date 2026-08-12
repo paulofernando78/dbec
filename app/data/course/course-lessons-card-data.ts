@@ -1,16 +1,49 @@
 import type { LessonCardContent } from "@/components/content/LessonCard";
 
-export type CourseLessonCard = LessonCardContent & {
-  href: string;
+type CourseLessonCardInput = LessonCardContent & {
+  href?: string;
+  materialHref?: string;
+  assignmentHref?: string;
   label: string;
 };
 
-const card = (lesson: CourseLessonCard): CourseLessonCard => lesson;
+export type CourseLessonCard = CourseLessonCardInput & {
+  href: string;
+  assignmentHref: string;
+};
+
+const createAssignmentHref = (materialHref: string) => {
+  const segments = materialHref.split("/").filter(Boolean);
+  const level = segments[1];
+  const materialIndex = segments.indexOf("material");
+  const slug = segments.at(-1);
+  const chapter =
+    materialIndex >= 0 ? segments[materialIndex - 1] : (segments[2] ?? slug);
+
+  if (!level || !chapter || !slug) {
+    throw new Error(`Invalid materialHref: "${materialHref}".`);
+  }
+
+  return `/course/${level}/${chapter}/assignment/${slug}`;
+};
+
+const card = (lesson: CourseLessonCardInput): CourseLessonCard => {
+  const href = lesson.materialHref ?? lesson.href;
+
+  if (!href) {
+    throw new Error(`Missing materialHref for "${lesson.label}".`);
+  }
+
+  return {
+    ...lesson,
+    href,
+    assignmentHref: lesson.assignmentHref ?? createAssignmentHref(href),
+  };
+};
 
 export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   beginner: [
     card({
-      href: "/course/beginner/chapter-1/hello",
       label: "Introducing Yourself",
       objective:
         "Can greet someone, give a first name, ask someone's name, and close a short first meeting.",
@@ -19,6 +52,8 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       vocabulary: "Greetings, first names, goodbyes",
       pronunciation: "Friendly greeting intonation; linking in 'meet you'",
       finalTask: "Meet a classmate and have a short first conversation.",
+      materialHref: "/course/beginner/chapter-1/material/hello",
+      assignmentHref: "/course/beginner/chapter-1/assignment/hello",
       classroom: {
         announcement: {
           description: "Review this lesson before our next class.",
@@ -30,40 +65,6 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
           title: "Introducing Yourself - Assignment",
           description: "Complete the final task.",
         },
-        questions: [
-          {
-            type: "short-answer",
-            title: "Introduce yourself",
-            description: "Write a short introduction about yourself.",
-          },
-          {
-            type: "short-answer",
-            title: "Ask for personal information",
-            description: "Write two questions you can ask a new classmate.",
-          },
-          {
-            type: "multiple-choice",
-            title: "Choose the best greeting",
-            description: "Select the most appropriate introduction.",
-            options: [
-              "Hello, I'm Paulo.",
-              "Goodbye, I'm Paulo.",
-              "Thanks, I'm Paulo.",
-            ],
-            correctOption: "Hello, I'm Paulo.",
-          },
-          {
-            type: "multiple-choice",
-            title: "Choose the correct question",
-            description: "Select the question used to ask someone their name.",
-            options: [
-              "What's your name?",
-              "How old is it?",
-              "Where is the classroom?",
-            ],
-            correctOption: "What's your name?",
-          },
-        ],
       },
     }),
     card({
@@ -1033,4 +1034,9 @@ const allCourseLessonCards = Object.values(courseLessonsCardData).flat();
 export const getCourseLessonCard = (
   href: string,
 ): CourseLessonCard | undefined =>
-  allCourseLessonCards.find((lesson) => lesson.href === href);
+  allCourseLessonCards.find(
+    (lesson) =>
+      lesson.href === href ||
+      lesson.materialHref === href ||
+      lesson.assignmentHref === href,
+  );

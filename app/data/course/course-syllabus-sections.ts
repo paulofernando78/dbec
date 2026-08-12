@@ -52,6 +52,9 @@ const lesson = (
 
   return {
     href: canonicalCard?.href ?? `/course/${level}/${slug(label)}`,
+    assignmentHref:
+      canonicalCard?.assignmentHref ??
+      `/course/${level}/${slug(label)}/assignment/${slug(label)}`,
     label: cardLabel,
     objective: `Can use the target language to handle a ${cardLabel.toLowerCase()} situation at this CEFR level.`,
     usefulLanguage,

@@ -6,62 +6,47 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-  
   // Home
   index("routes/home.tsx"),
 
   // About
-  route(
-    "/about",
-    "routes/about.tsx"),
+  route("/about", "routes/about.tsx"),
 
   //! Layout
   layout("routes/layout/layout.tsx", [
-
     //! ─────────────────────────────────────────────
     //! General
     //! ─────────────────────────────────────────────
-    
+
     // Lab
-    route(
-      "/lab",
-      "routes/lab.tsx"),
+    route("/lab", "routes/lab.tsx"),
 
     // Students Pages
-    route(
-      "dashboard/:studentId?",
-      "routes/students/dashboard.tsx"),
+    route("dashboard/:studentId?", "routes/students/dashboard.tsx"),
 
     // Welcome Page
-    route(
-      "/welcome",
-      "routes/welcome.tsx"),
+    route("/welcome", "routes/welcome.tsx"),
 
     // What’s CEFR Page
-    route(
-      "/cefr",
-      "routes/whats-cefr.tsx"),
+    route("/cefr", "routes/whats-cefr.tsx"),
 
     //! ─────────────────────────────────────────────
     //! Course
     //! ─────────────────────────────────────────────
 
+    route("/course", "routes/course.tsx"),
+
     route(
-      "/course",
-      "routes/course.tsx"),
-    
-    route(
-      "/course/:level/:chapter/:slug?",
-      "routes/course/builder.tsx"),
+      "/course/:level/:chapter/:resourceType?/:slug?",
+      "routes/course/builder.tsx",
+    ),
 
     //! ─────────────────────────────────────────────
     //! Authentic Content
     //! ─────────────────────────────────────────────
 
-    route(
-      "/authentic-content",
-      "routes/authentic-content.tsx"),
-    
+    route("/authentic-content", "routes/authentic-content.tsx"),
+
     route(
       "/authentic-content/:category/:slug?",
       "routes/authentic-content/builder.tsx",
@@ -71,13 +56,8 @@ export default [
     //! Games
     //! ─────────────────────────────────────────────
 
-    route(
-      "/games",
-      "routes/game.tsx"),
-    
-    route(
-      "/games/:developer/:slug",
-      "routes/games/builder.tsx",
-),
+    route("/games", "routes/game.tsx"),
+
+    route("/games/:developer/:slug", "routes/games/builder.tsx"),
   ]),
 ] satisfies RouteConfig;
