@@ -213,7 +213,6 @@ export const LessonCard = ({
                   items-center
                   gap-2
                   font-semibold
-                  text-gray-500
                   hover:text-gray-700"
             >
               <GoogleClassroomMaterial className="shrink-0" />
@@ -229,7 +228,6 @@ export const LessonCard = ({
                 items-center
                 gap-2 
                 font-semibold
-                text-gray-500
                 hover:text-gray-700"
             >
               <GoogleClassroomAssignment className="shrink-0" />
@@ -299,7 +297,6 @@ export const LessonCard = ({
                     w-fit
                     p-2
                     font-semibold
-                    text-gray-400
                     border
                     border-gray-300
                     bg-white
@@ -307,7 +304,7 @@ export const LessonCard = ({
                     leading-none
                     hover:border-gray-500
                     hover:bg-gray-50
-                    hover:text-gray-500 ${classroomCardPadding}`}
+                    ${classroomCardPadding}`}
                       aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
                     >
                       <Icon className="shrink-0" />

@@ -1,10 +1,7 @@
 import { useParams } from "react-router";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
-import {
-  LessonCard,
-  type LessonCardContent,
-} from "@/components/content/LessonCard";
+import type { LessonCardContent } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
@@ -378,7 +375,6 @@ export function Course({ lesson, lessonCard }: CourseProps) {
     <>
       <Whiteboard {...displayedLesson.whiteboard} />
       <div>
-        {card && <LessonCard {...card} />}
         <PageSections>
           <Section id="introduction" heading={heading}>
             {renderBlocks(displayedLesson.introduction?.blocks, renderContext)}
