@@ -53,7 +53,6 @@ export const links: NavGroup[] = [
   {
     title: "Course",
     href: "/course",
-    iconClassName: "text-gray-400",
     links: [
       {
         label: "A1 Beginner",
@@ -83,11 +82,10 @@ export const links: NavGroup[] = [
   {
     title: "Authentic Content",
     href: "/authentic-content",
-    iconClassName: "text-gray-400",
     links: [
       {
         label: "News",
-        iconClassName: "text-gray-400",
+  
         links: [
           {
             href: "/authentic-content/news/a-soccer-match-dramatic-moment",
@@ -97,7 +95,7 @@ export const links: NavGroup[] = [
       },
       {
         label: "TED-Ed",
-        iconClassName: "text-gray-400",
+  
         links: authenticContentTedEdLessons.map(({ href, label }) => ({
           href,
           label,
@@ -106,13 +104,32 @@ export const links: NavGroup[] = [
     ],
   },
   {
+    title: "VOCABULARY",
+    href: "/games",
+    links: [
+      {
+        label: "Which one?",
+  
+        links: [
+          {
+            href: "/vocabulary/",
+            label: "hear vs. listen",
+          },
+          {
+            href: "/vocabulary/",
+            label: "speak vs. say vs. tell",
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: "GAMES",
     href: "/games",
-    iconClassName: "text-gray-400",
     links: [
       {
         label: "Lucas Arts",
-        iconClassName: "text-gray-400",
+  
         links: [
           {
             href: "/games/lucas-arts/thimbleweed-park",

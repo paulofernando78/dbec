@@ -6,7 +6,9 @@ import {
   GoogleClassroomAnnouncement,
   GoogleClassroomAssignment,
   GoogleClassroomMaterial,
+  GoogleClassroomMultipleChoice,
   GoogleClassroomQuestion,
+  GoogleClassroomShortAnswer,
   LessonFinalTask,
   LessonObjective,
   LessonPronunciation,
@@ -14,12 +16,34 @@ import {
   LessonVocabulary,
 } from "@/components/GoogleIcons";
 
-import {
-  CalendarDays,
-  Clock2,
-  Plus,
-  Minus
-} from "lucide-react";
+import { CalendarDays, Clock2, Plus, Minus } from "lucide-react";
+
+export type ClassroomQuestion =
+  | {
+      type: "short-answer";
+      title: string;
+      description?: string;
+    }
+  | {
+      type: "multiple-choice";
+      title: string;
+      description?: string;
+      options: string[];
+      correctOption?: string;
+    };
+
+type ClassroomPostContent = {
+  title: string;
+  description?: string;
+};
+
+type ClassroomAnnouncementContent = {
+  description: string;
+};
+
+type ClassroomMaterialContent = {
+  description?: string;
+};
 
 export type LessonCardContent = {
   objective: string;
@@ -27,6 +51,12 @@ export type LessonCardContent = {
   vocabulary?: string;
   pronunciation?: string;
   finalTask?: string;
+  classroom?: {
+    announcement?: ClassroomAnnouncementContent;
+    material?: ClassroomMaterialContent;
+    assignment?: ClassroomPostContent;
+    questions?: ClassroomQuestion[];
+  };
 };
 
 const objectivePrefix = "By the end of the lesson students will be able to";
@@ -48,29 +78,27 @@ const formatObjective = (objective: string) => {
 const classroomPostTypes = [
   {
     itemtype: "announcement",
-    label: "Announcement",
+    label: "New Announcement",
     Icon: GoogleClassroomAnnouncement,
-    classroomCardPadding: "pr-[0.6rem]"
+    classroomCardPadding: "pr-[0.6rem]",
   },
   {
     itemtype: "material",
     label: "Material",
     Icon: GoogleClassroomMaterial,
-    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]"
+    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]",
   },
   {
     itemtype: "assignment",
     label: "Assignment",
     Icon: GoogleClassroomAssignment,
-    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]"
-  },
-  {
-    itemtype: "question",
-    label: "Question",
-    Icon: GoogleClassroomQuestion,
-    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]"
+    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]",
   },
 ] as const;
+
+type ClassroomPostType =
+  | (typeof classroomPostTypes)[number]["itemtype"]
+  | "question";
 
 type LessonCardProps = LessonCardContent & {
   href?: string;
@@ -90,6 +118,7 @@ export const LessonCard = ({
   vocabulary,
   pronunciation,
   finalTask,
+  classroom,
   date,
   duration,
   collapsible = false,
@@ -98,21 +127,33 @@ export const LessonCard = ({
   const [classroomLessonUrl, setClassroomLessonUrl] = useState<string>();
   const detailsId = useId();
 
+  // Google Classroom
   useEffect(() => {
     if (!href) return;
 
     setClassroomLessonUrl(new URL(href, window.location.origin).toString());
   }, [href]);
 
+  const classroomQuestions = classroom?.questions ?? [];
+
   const getClassroomShareUrl = (
-    itemtype: (typeof classroomPostTypes)[number]["itemtype"],
+    itemtype: ClassroomPostType,
+    content?: { title?: string; body?: string },
   ) => {
     if (!classroomLessonUrl) return "";
 
     const shareUrl = new URL("https://classroom.google.com/share");
     shareUrl.searchParams.set("url", classroomLessonUrl);
-    shareUrl.searchParams.set("title", `Lesson ${index + 1} • ${label}`);
+    if (content?.title) {
+      shareUrl.searchParams.set("title", content.title);
+    } else if (itemtype !== "announcement") {
+      shareUrl.searchParams.set("title", `Lesson ${index + 1} • ${label}`);
+    }
     shareUrl.searchParams.set("itemtype", itemtype);
+
+    if (content?.body) {
+      shareUrl.searchParams.set("body", content.body);
+    }
 
     return shareUrl.toString();
   };
@@ -128,7 +169,6 @@ export const LessonCard = ({
       ) : (
         <b>{label}</b>
       )}
-
     </div>
   );
 
@@ -189,43 +229,133 @@ export const LessonCard = ({
           <>
             <hr className="mt-4 mb-3 text-gray-300" />
             <div
-              className="flex flex-wrap items-center gap-2 text-sm"
+              className="flex flex-col gap-2 text-sm"
               onClick={(event) => event.stopPropagation()}
             >
-              <span className="inline-flex h-10 items-center gap-2 pr-1 font-semibold text-gray-500">
-                <img
-                  src="/assets/img/icons/google-classroom.svg"
-                  alt=""
-                  className="h-8 w-8 shrink-0"
-                />
-              </span>
-              {classroomPostTypes.map(({ itemtype, label: postLabel, Icon, classroomCardPadding }) => (
-                <a
-                  key={itemtype}
-                  href={getClassroomShareUrl(itemtype)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex
-                  gap-2
+              <div
+                className="
+                flex
+                items-center
+                text-gray-500
+                gap-2"
+              >
+                <span
+                  className="
+                  inline-flex
+                  h-10
                   items-center
-                  w-fit
-                  p-2
+                  gap-2
+                  pr-1
                   font-semibold
-                  text-gray-500
-                  border
-                  border-gray-300
-                  bg-white
-                  rounded
-                  leading-none
-                  hover:border-gray-400
-                  hover:bg-gray-50
-                  hover:text-gray-800 ${classroomCardPadding}`}
-                  aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
+                  text-gray-500"
                 >
-                  <Icon className="shrink-0" />
-                  <span>{postLabel}</span>
-                </a>
-              ))}
+                  <img
+                    src="/assets/img/icons/google-classroom.svg"
+                    alt=""
+                    className="h-8 w-8 shrink-0"
+                  />
+                </span>
+                <span className="font-bold">Share to Classroom</span>
+              </div>
+              <div className="flex flex-col gap-2">
+                {classroomPostTypes.map(
+                  ({
+                    itemtype,
+                    label: postLabel,
+                    Icon,
+                    classroomCardPadding,
+                  }) => (
+                    <a
+                      key={itemtype}
+                      href={getClassroomShareUrl(itemtype, {
+                        title:
+                          itemtype === "announcement"
+                            ? undefined
+                            : itemtype === "material"
+                              ? `Lesson ${index + 1} • ${label}`
+                              : classroom?.[itemtype]?.title,
+                        body: classroom?.[itemtype]?.description,
+                      })}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex
+                    gap-2
+                    items-center
+                    w-fit
+                    p-2
+                    font-semibold
+                    text-gray-400
+                    border
+                    border-gray-300
+                    bg-white
+                    rounded
+                    leading-none
+                    hover:border-gray-500
+                    hover:bg-gray-50
+                    hover:text-gray-500 ${classroomCardPadding}`}
+                      aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
+                    >
+                      <Icon className="shrink-0" />
+                      <span>{postLabel}</span>
+                    </a>
+                  ),
+                )}
+
+                {classroomQuestions.length > 0 ? (
+                  <div
+                    className={
+                      classroomQuestions.length > 1
+                        ? "flex flex-wrap items-stretch gap-2"
+                        : "flex"
+                    }
+                  >
+                    {classroomQuestions.map((question, questionIndex) => (
+                      <a
+                        key={`${question.type}-${questionIndex}`}
+                        href={getClassroomShareUrl("question", {
+                          title: question.title,
+                          body: question.description,
+                        })}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-10 max-w-full items-start gap-2 rounded border border-gray-300 bg-white p-2 text-gray-400 hover:border-gray-500 hover:bg-gray-50 hover:text-gray-500 sm:max-w-72"
+                        aria-label={`Post question ${question.title} to Google Classroom`}
+                      >
+                        <GoogleClassroomQuestion className="shrink-0" />
+                        <span className="flex min-w-0 flex-col gap-1">
+                          <span className="font-semibold leading-tight">
+                            {question.title}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-xs leading-none">
+                            {question.type === "short-answer" ? (
+                              <>
+                                <GoogleClassroomShortAnswer className="shrink-0" />
+                                <span>Short answer</span>
+                              </>
+                            ) : (
+                              <>
+                                <GoogleClassroomMultipleChoice className="shrink-0" />
+                                <span>Multiple choice</span>
+                              </>
+                            )}
+                          </span>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <a
+                    href={getClassroomShareUrl("question")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-2 rounded border border-gray-300 bg-white p-2 pl-[0.4rem] pr-[0.6rem] font-semibold leading-none text-gray-400 hover:border-gray-500 hover:bg-gray-50 hover:text-gray-500"
+                    aria-label={`Post ${label ?? "lesson"} to Google Classroom as Question`}
+                  >
+                    <GoogleClassroomQuestion className="shrink-0" />
+                    <span>Question</span>
+                  </a>
+                )}
+              </div>
             </div>
           </>
         )}
@@ -279,10 +409,7 @@ export const LessonCard = ({
           >
             {cardHeader}
 
-            <span
-              className="rounded p-1 font-bold"
-              aria-hidden="true"
-            >
+            <span className="rounded p-1 font-bold" aria-hidden="true">
               {isDetailsOpen ? <Minus size={18} /> : <Plus size={18} />}
             </span>
           </div>

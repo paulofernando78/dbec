@@ -52,7 +52,7 @@ export default function Home() {
   });
 
   return (
-    <div className="mt-[50px] flex flex-col gap-[40px]">
+    <div className="mt-12 flex flex-col gap-[40px]">
       <div className="w-max mx-auto leading-[1.13]">
         <h1 style={dbecCSS} className="text-[4rem]">
           DAILY BAISIS
@@ -63,7 +63,7 @@ export default function Home() {
       </div>
       <ul className="w-max mx-auto">
         <li
-          className="font-luckiest-guy text-[1.5rem] m-5 transition-opacity duration-500 ease-in-out"
+          className="font-luckiest-guy text-[1.5rem] mt-3 transition-opacity duration-500 ease-in-out"
           style={{ opacity }}
         >
           {greetingsList[greetingIndex]}
