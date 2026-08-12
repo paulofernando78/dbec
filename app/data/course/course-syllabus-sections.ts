@@ -167,7 +167,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "My Neighborhood",
+          "Renting a Home",
           "It's very noisy.; I love living here.; I hate living here.",
           "adjectives for places and prepositions of place",
           "there is/are negative and questions",
@@ -195,7 +195,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 5 • Food & Meals", [
         lesson(
           "beginner",
-          "Offering Food",
+          "Food Preferences",
           "Would you like some coffee?; Yes, please.; No, thanks.",
           "food and drink items",
           "countable/uncountable nouns; some/any as chunks",
@@ -203,7 +203,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Quantities",
+          "Eating Out",
           "How much is...?; How many... are there?",
           "menu items, prices, quantities",
           "How much/How many; a lot of",
@@ -213,7 +213,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 6 • Shopping", [
         lesson(
           "beginner",
-          "In The Shop",
+          "Shopping Basics",
           "Can I help you?; I'm looking for...; I'll take it.",
           "clothes, colors, sizes",
           "object pronouns",
@@ -221,7 +221,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Prices",
+          "Bargain Hunting",
           "How much does it cost?; It's on sale.",
           "money, prices, discounts",
           "this/that; one/ones",
@@ -239,7 +239,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Transportation",
+          "Simple Directions",
           "How do I get to...?; Take the bus.; It's a 5-minute walk.",
           "transportation",
           "Imperatives for directions",
@@ -249,7 +249,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 8 • Actions & Abilities", [
         lesson(
           "beginner",
-          "Abilities",
+          "Actions Now",
           "I can swim.; I can't...",
           "sports and activities",
           "can/can't for ability",
@@ -257,7 +257,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Could You Help Me?",
+          "Abilities",
           "Could you...?; Can I...?; Sure, no problem.",
           "requests and favors",
           "can/could for requests and permission",
@@ -267,7 +267,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 9 • Last Weekend", [
         lesson(
           "beginner",
-          "Where Were You?",
+          "Real-Life Project",
           "Where were you last weekend?",
           "places in town and feelings",
           "past of verb be: was/were",
@@ -275,7 +275,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "How Was It?",
+          "Course Review",
           "I was at home.; It was fantastic.",
           "common irregular verbs",
           "past of verb be negative and interrogative",
