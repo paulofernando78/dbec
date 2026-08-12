@@ -78,8 +78,9 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       vocabulary: "Greetings, first names, goodbyes",
       pronunciation: "Friendly greeting intonation; linking in 'meet you'",
       finalTask: "Meet a classmate and have a short first conversation.",
-      materialHref: "/course/beginner/section-1/material/hello",
-      assignmentHref: "/course/beginner/section-1/assignment/hello",
+      materialHref: "/course/beginner/section-1/material/introducing-yourself",
+      assignmentHref:
+        "/course/beginner/section-1/assignment/introducing-yourself",
       classroom: {
         announcement: {
           description: "Review this lesson before our next class.",
@@ -107,7 +108,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Interview a partner and complete a simple registration form.",
     }),
     card({
-      materialHref: "/course/beginner/section-2/material/my-family",
+      materialHref: "/course/beginner/section-2/material/nuclear-family",
       label: "Nuclear Family",
       objective:
         "Can introduce close family members and say how people are related.",
@@ -120,7 +121,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Use a photo or drawing to introduce three family members.",
     }),
     card({
-      materialHref: "/course/beginner/section-2/material/my-relatives",
+      materialHref: "/course/beginner/section-2/material/extended-family",
       label: "Extended Family",
       objective:
         "Can describe simple extended-family relationships using prepared language.",
@@ -133,7 +134,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Create a simple family tree and describe four relationships.",
     }),
     card({
-      href: "/course/beginner/my-house",
+      href: "/course/beginner/welcome-home",
       label: "Welcome Home",
       objective:
         "Can name rooms and furniture and describe a room in simple sentences.",
@@ -158,7 +159,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Role-play a short conversation about a simple rental listing.",
     }),
     card({
-      href: "/course/beginner/daily-routine",
+      href: "/course/beginner/time-and-actions",
       label: "Time & Actions",
       objective:
         "Can describe a simple weekday routine and say what time things happen.",
@@ -171,7 +172,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Describe four parts of your weekday routine and ask two time questions.",
     }),
     card({
-      href: "/course/beginner/my-week",
+      href: "/course/beginner/habits-and-frequency",
       label: "Habits & Frequency",
       objective:
         "Can talk about weekly habits and say how often common activities happen.",
@@ -182,7 +183,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Plan and present a simple weekly schedule.",
     }),
     card({
-      href: "/course/beginner/food-and-drinks",
+      href: "/course/beginner/food-preferences",
       label: "Food Preferences",
       objective:
         "Can say what food and drinks they like and ask about preferences.",
@@ -205,7 +206,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Role-play a short cafe exchange with a partner.",
     }),
     card({
-      href: "/course/beginner/shopping",
+      href: "/course/beginner/shopping-basics",
       label: "Shopping Basics",
       objective:
         "Can ask about a clothing item, identify it, and ask the price.",
@@ -228,7 +229,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
         "Choose an item from a small shop display and explain the choice simply.",
     }),
     card({
-      href: "/course/beginner/around-town",
+      href: "/course/beginner/locations",
       label: "Locations",
       objective:
         "Can ask where a familiar place is and give its basic location.",
@@ -239,7 +240,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Use a simple map to ask for and give three locations.",
     }),
     card({
-      href: "/course/beginner/finding-your-way",
+      href: "/course/beginner/simple-directions",
       label: "Simple Directions",
       objective: "Can understand and give very simple directions using a map.",
       usefulLanguage:
@@ -249,7 +250,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Guide a partner to two places on a simple map.",
     }),
     card({
-      href: "/course/beginner/what-are-you-doing",
+      href: "/course/beginner/actions-now",
       label: "Actions Now",
       objective:
         "Can ask and say what people are doing now using picture support.",
@@ -299,7 +300,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
 
   elementary: [
     card({
-      href: "/course/elementary/past-home",
+      href: "/course/elementary/a-weekend-at-home",
       label: "A Weekend at Home",
       objective:
         "Can describe completed home and free-time activities in simple connected sentences.",
@@ -311,7 +312,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Interview a partner and compare two weekends.",
     }),
     card({
-      href: "/course/elementary/past-beach",
+      href: "/course/elementary/a-day-at-the-beach",
       label: "A Day at the Beach",
       objective:
         "Can tell a simple past story using common irregular verbs and follow-up questions.",
@@ -322,7 +323,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Tell a partner about a real or invented beach day.",
     }),
     card({
-      href: "/course/elementary/past-movies",
+      href: "/course/elementary/movie-night",
       label: "Movie Night",
       objective:
         "Can describe a recent movie experience and give a simple opinion.",
@@ -333,7 +334,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Interview a partner and choose a movie to watch.",
     }),
     card({
-      href: "/course/elementary/past-family",
+      href: "/course/elementary/a-family-celebration",
       label: "A Family Celebration",
       objective: "Can tell a short chronological story about a family event.",
       usefulLanguage:
@@ -793,7 +794,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Lead a short planning meeting and explain task allocation.",
     }),
     card({
-      href: "/course/upper-intermediate/future-of-work",
+      href: "/course/upper-intermediate/the-future-of-work",
       label: "The Future of Work",
       objective:
         "Can discuss innovation and project what will have changed by a future date.",

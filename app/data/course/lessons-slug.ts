@@ -89,37 +89,48 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
     lessons: {
       // Chapter 1 • Introduction
       hello: beginnerHello,
+      "introducing-yourself": beginnerHello,
       "personal-information": beginnerPersonalInformation,
       "countries-and-nationalities": beginnerCountriesAndNationalities,
 
       // Chapter 2 • Family
       "my-family": beginnerMyFamily,
+      "nuclear-family": beginnerMyFamily,
       "my-relatives": beginnerMyRelatives,
+      "extended-family": beginnerMyRelatives,
 
       // Chapter 3 • Home
       "my-house": beginnerMyHouse,
+      "welcome-home": beginnerMyHouse,
       "renting-a-home": beginnerRentingAHome,
 
       // Chapter 4 • Daily Routine
       "my-daily-routine": beginnerMyDailyRoutine,
+      "time-and-actions": beginnerMyDailyRoutine,
       "my-week": beginnerMyWeek,
+      "habits-and-frequency": beginnerMyWeek,
 
       // Chapter 5 • Food and Drinks
       "i-love-pizza": beginnerFavoriteFood,
+      "food-preferences": beginnerFavoriteFood,
       "eating-out": beginnerEatingOut,
 
       // Chapter 6 • Shopping
       shopping: beginnerShopping,
+      "shopping-basics": beginnerShopping,
       "bargain-hunting": beginnerShopping,
 
       // Chapter 7 • Around Town
       "around-town": beginnerAroundTown,
+      locations: beginnerAroundTown,
       "finding-your-way": beginnerAroundTown,
+      "simple-directions": beginnerAroundTown,
 
       // Chapter 8 • Actions & Abilities
 
       // Chapter 9 • Real-Life Project
       "what-are-you-doing": beginnerWhatAreYouDoing,
+      "actions-now": beginnerWhatAreYouDoing,
       abilities: beginnerAbilities,
       "real-life-project": beginnerRealLifeProject,
       "course-review": beginnerRealLifeProject,
@@ -128,9 +139,13 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
   elementary: {
     lessons: {
       "past-beach": elementaryPastBeach,
+      "a-day-at-the-beach": elementaryPastBeach,
       "past-movies": elementaryPastMovies,
+      "movie-night": elementaryPastMovies,
       "past-family": elementaryPastFamily,
+      "a-family-celebration": elementaryPastFamily,
       "past-home": elementaryPastHome,
+      "a-weekend-at-home": elementaryPastHome,
       "travel-plans": elementaryTravelPlans,
       "future-predictions": elementaryFuturePredictions,
       "city-life": elementaryCityLife,
@@ -200,6 +215,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       "qualities-of-a-leader": upperIntermediateLeadership,
       "leading-a-team": upperIntermediateLeadership,
       "future-of-work": upperIntermediateInnovation,
+      "the-future-of-work": upperIntermediateInnovation,
       "pitch-your-idea": upperIntermediateInnovation,
       "world-problems": upperIntermediateGlobalIssues,
       "finding-solutions": upperIntermediateGlobalIssues,

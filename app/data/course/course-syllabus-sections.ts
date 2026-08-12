@@ -15,6 +15,7 @@ export type CourseSyllabusLevel = {
 const slug = (value: string) =>
   value
     .toLowerCase()
+    .replace(/[’']/g, "")
     .replace(/&/g, "and")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
