@@ -125,7 +125,8 @@ export const template = {
     followUp: {
       list: {
         type: "ol" as const,
-        instruction: "Discuss the questions below, using ideas and examples from the video.",
+        instruction:
+          "Discuss the questions below, using ideas and examples from the video.",
         items: [
           {
             content: ["..."],

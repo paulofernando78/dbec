@@ -10,7 +10,6 @@ const words = [
 export const intermediateWhatIf = {
   whiteboard: {
     title: "B1 Intermediate",
-    subtitle: "What If?",
     descriptions: [
       "Discuss realistic future possibilities and consequences.",
       "Use the First Conditional to explain decisions.",

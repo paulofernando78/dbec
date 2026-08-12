@@ -3,6 +3,7 @@ import { LessonCard } from "@/components/content/LessonCard";
 import { Section } from "@/components/ui/Section";
 
 import { BookText, LibraryBig } from "lucide-react";
+import type { ElementType } from "react";
 
 import type { LessonCardContent } from "@/components/content/LessonCard";
 
@@ -13,6 +14,7 @@ type LibraryLesson = LessonCardContent & {
 
 type LibrarySection = {
   label: string;
+  numbered?: boolean;
   tocTitle?: string;
   iconClassName?: string;
   lessons?: LibraryLesson[];
@@ -26,27 +28,27 @@ type LibraryPageProps = {
   title: string;
   sections: LibrarySection[];
   startIndex?: number;
+  headerIcon?: ElementType;
+  itemIcon?: ElementType;
 };
 
-const getSectionId = (label: string) => label.toLowerCase().replaceAll(" ", "-");
+const getSectionId = (label: string) =>
+  label.toLowerCase().replaceAll(" ", "-");
 
-const levelColorClasses: Record<
-  string,
-  { section: string; group: string }
-> = {
-  "text-yellow-500": {
+const levelColorClasses: Record<string, { section: string; group: string }> = {
+  yellow: {
     section: "[&>div:first-child]:bg-yellow-400",
     group: "bg-yellow-100 border border-yellow-300 text-yellow-950 rounded-lg",
   },
-  "text-red-500": {
+  red: {
     section: "[&>div:first-child]:bg-red-500",
     group: "bg-red-200 border border-red-300 text-red-950 rounded-lg",
   },
-  "text-blue-500": {
+  blue: {
     section: "[&>div:first-child]:bg-blue-500",
     group: "bg-blue-200 border border-blue-300 text-blue-950 rounded-lg",
   },
-  "text-green-500": {
+  green: {
     section: "[&>div:first-child]:bg-green-500",
     group: "bg-green-200 border border-green-300 text-green-950 rounded-lg",
   },
@@ -56,22 +58,25 @@ export function LibraryPage({
   title,
   sections,
   startIndex = 0,
+  headerIcon = LibraryBig,
+  itemIcon = BookText,
 }: LibraryPageProps) {
   return (
     <PageSections
       title={title}
-      headerIcon={LibraryBig}
-      itemIcon={BookText}
+      headerIcon={headerIcon}
+      itemIcon={itemIcon}
       headerIconClassName="text-gray-400"
       itemIconClassName="text-gray-400"
     >
       {sections.map((section, sectionIndex) => {
-        const colorClasses =
-          levelColorClasses[section.iconClassName ?? ""] ??
-          {
-            section: "[&>div:first-child]:bg-gray-900",
-            group: "bg-gray-100 text-gray-950",
-          };
+        const colorName = section.iconClassName?.match(
+          /text-(yellow|red|blue|green)-/,
+        )?.[1];
+        const colorClasses = levelColorClasses[colorName ?? ""] ?? {
+          section: "[&>div:first-child]:bg-gray-900",
+          group: "bg-gray-100 text-gray-950",
+        };
         const previousLessonCount = sections
           .slice(0, sectionIndex)
           .reduce(
@@ -122,6 +127,7 @@ export function LibraryPage({
                         groupStartIndex +
                         lessonIndex
                       }
+                      numbered={section.numbered}
                       collapsible
                     />
                   ))}

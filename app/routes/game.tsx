@@ -17,6 +17,7 @@ const authenticContentLessonCount =
 const gameSections = [
   {
     label: "Lucas Arts Games",
+    numbered: false,
     lessons: Object.values(gamesLucasArtsCardData),
   },
 ];

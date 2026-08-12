@@ -30,7 +30,10 @@ type ClassroomMaterialContent = {
 
 export type LessonCardContent = {
   index?: number;
-  objective: string;
+  description?: string;
+  date?: string;
+  duration?: string;
+  objective?: string;
   usefulLanguage?: string;
   vocabulary?: string;
   pronunciation?: string;
@@ -89,8 +92,7 @@ type LessonCardProps = LessonCardContent & {
   href?: string;
   index?: number;
   label?: string;
-  date?: string;
-  duration?: string;
+  numbered?: boolean;
   collapsible?: boolean;
 };
 
@@ -98,6 +100,10 @@ export const LessonCard = ({
   href,
   index = 0,
   label,
+  numbered = true,
+  description,
+  date,
+  duration,
   objective,
   usefulLanguage,
   vocabulary,
@@ -105,8 +111,6 @@ export const LessonCard = ({
   finalTask,
   assignmentHref,
   classroom,
-  date,
-  duration,
   collapsible = false,
 }: LessonCardProps) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
@@ -131,7 +135,10 @@ export const LessonCard = ({
     if (content?.title) {
       shareUrl.searchParams.set("title", content.title);
     } else if (itemtype !== "announcement") {
-      shareUrl.searchParams.set("title", `${index + 1} • ${label}`);
+      shareUrl.searchParams.set(
+        "title",
+        numbered ? `${index + 1} • ${label}` : (label ?? ""),
+      );
     }
     shareUrl.searchParams.set("itemtype", itemtype);
 
@@ -144,7 +151,7 @@ export const LessonCard = ({
 
   const cardHeader = (
     <div className="flex flex-col gap-1">
-      <b>{href ? `${index + 1} • ${label}` : label}</b>
+      <b>{href && numbered ? `${index + 1} • ${label}` : label}</b>
     </div>
   );
 
@@ -152,13 +159,34 @@ export const LessonCard = ({
     <>
       {href && <hr className="mt-3 mb-4 text-gray-300" />}
 
-      <p className="flex pl-[-0.1rem] items-start gap-3">
-        <LessonObjective className="text-gray-400 shrink-0" />
+      {description && <p>{description}</p>}
 
-        <span>
-          <b>Objective:</b> {formatObjective(objective)}
-        </span>
-      </p>
+      {(date || duration) && (
+        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
+          {date && (
+            <span className="inline-flex items-center gap-2">
+              <CalendarDays size={19} className="shrink-0" />
+              <span>{date}</span>
+            </span>
+          )}
+          {duration && (
+            <span className="inline-flex items-center gap-2">
+              <Clock2 size={19} className="shrink-0" />
+              <span>{duration}</span>
+            </span>
+          )}
+        </div>
+      )}
+
+      {objective && (
+        <p className="mt-3 flex pl-[-0.1rem] items-start gap-3">
+          <LessonObjective className="text-gray-400 shrink-0" />
+
+          <span>
+            <b>Objective:</b> {formatObjective(objective)}
+          </span>
+        </p>
+      )}
 
       <div className="mb-[.1rem]">
         {usefulLanguage && (
@@ -285,7 +313,9 @@ export const LessonCard = ({
                           itemtype === "announcement"
                             ? undefined
                             : itemtype === "material"
-                              ? `${index + 1} • ${label}`
+                              ? numbered
+                                ? `${index + 1} • ${label}`
+                                : label
                               : classroom?.[itemtype]?.title,
                         body: classroom?.[itemtype]?.description,
                       })}
@@ -317,19 +347,6 @@ export const LessonCard = ({
           </>
         )}
 
-        {date && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-2">
-            <CalendarDays size={23} className="shrink-0 text-gray-400" />
-            <span>{date}</span>
-          </div>
-        )}
-
-        {duration && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-1">
-            <Clock2 size={23} className="shrink-0 text-gray-400" />
-            <span>{duration}</span>
-          </div>
-        )}
       </div>
     </>
   );

@@ -101,7 +101,7 @@ const group = (
 export const courseSyllabusSections: CourseSyllabusLevel[] = [
   {
     label: "A1 Beginner",
-    iconClassName: "text-yellow-500",
+    iconClassName: "text-yellow-600",
     groups: [
       group("Section 1 • Introductions & Personal Information", [
         lesson(
@@ -303,7 +303,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
   },
   {
     label: "A2 Elementary",
-    iconClassName: "text-red-500",
+    iconClassName: "text-red-600",
     groups: [
       group("Section 1 • Past Events and Experiences", [
         lesson(
@@ -601,7 +601,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
   },
   {
     label: "B1 Intermediate",
-    iconClassName: "text-blue-500",
+    iconClassName: "text-blue-600",
     groups: [
       group("Section 1 • Life Experiences", [
         lesson(
@@ -901,7 +901,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
   },
   {
     label: "B2 Upper-Intermediate",
-    iconClassName: "text-green-500",
+    iconClassName: "text-green-600",
     groups: [
       group("Section 1 • Argumentation and Debate", [
         lesson(

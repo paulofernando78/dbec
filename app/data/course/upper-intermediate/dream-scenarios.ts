@@ -3,7 +3,6 @@ import { shuffle } from "@/utils/shuffle";
 export const upperIntermediateDreamScenarios = {
   whiteboard: {
     title: "B2 Upper-Intermediate",
-    subtitle: "Dream Scenarios",
     descriptions: [
       "Explore imaginary present and future situations.",
       "Use the Second Conditional to evaluate life choices.",

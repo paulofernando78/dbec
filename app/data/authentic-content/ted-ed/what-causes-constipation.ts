@@ -33,7 +33,6 @@ export const whatCausesConstipation = {
   },
   whiteboard: {
     title: "C1-C2 Videos",
-    subtitle: "Ted-ED",
     descriptions: ["How food moves through your body"],
   },
   sections: {
@@ -587,11 +586,11 @@ export const whatCausesConstipation = {
             {
               prompt:
                 "its walls / the rectum / distending / waste enters / expands",
-              answer: "The rectum expands, distending its walls, as waste enters.",
+              answer:
+                "The rectum expands, distending its walls, as waste enters.",
             },
             {
-              prompt:
-                "the stool / can / expel / the body / or retain",
+              prompt: "the stool / can / expel / the body / or retain",
               answer: "The body can expel or retain the stool.",
             },
             {

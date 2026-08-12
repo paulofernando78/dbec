@@ -24,7 +24,6 @@ export const howDidAncientCivilizationsBrewBeer = {
   },
   whiteboard: {
     title: "C1-C2 Videos",
-    subtitle: "Ted-ED",
     descriptions: ["A Drink with a Long History"],
   },
   sections: {
@@ -681,7 +680,9 @@ export const howDidAncientCivilizationsBrewBeer = {
               block: [
                 { text: "" },
                 { blank: "Unbeknownst" },
-                { text: " to ancient brewers, airborne organisms entered the mixture." },
+                {
+                  text: " to ancient brewers, airborne organisms entered the mixture.",
+                },
               ],
               lineBreak: true,
             },

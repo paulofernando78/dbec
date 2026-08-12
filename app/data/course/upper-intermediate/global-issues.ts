@@ -3,7 +3,6 @@ import { shuffle } from "@/utils/shuffle";
 export const upperIntermediateGlobalIssues = {
   whiteboard: {
     title: "B2 Upper-Intermediate",
-    subtitle: "Global Issues",
     descriptions: [
       "Report claims objectively and describe complex processes.",
       "Use advanced passive and reporting structures.",
@@ -15,110 +14,114 @@ export const upperIntermediateGlobalIssues = {
         type: "carousel",
         aspectRatio: "wide",
         ...{
-      instruction:
-        "Read the statements. Which ones report a claim, describe an action, or identify an expected result?",
-      imgs: [
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EImpersonal%20report%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Impersonal report",
-          content: [
-            "It is believed that millions lack reliable access to clean water.",
+          instruction:
+            "Read the statements. Which ones report a claim, describe an action, or identify an expected result?",
+          imgs: [
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EImpersonal%20report%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Impersonal report",
+              content: [
+                "It is believed that millions lack reliable access to clean water.",
+              ],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPersonal%20report%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Personal report",
+              content: ["The policy is expected to reduce inequality."],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPassive%20infinitive%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Passive infinitive",
+              content: ["More resources need to be allocated to prevention."],
+            },
           ],
         },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPersonal%20report%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Personal report",
-          content: ["The policy is expected to reduce inequality."],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPassive%20infinitive%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Passive infinitive",
-          content: ["More resources need to be allocated to prevention."],
-        },
-      ],
-    },
       },
       {
         type: "imageQuiz",
         ...{
-      questions: [
-        {
-          word: "inequality",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Einequality%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "inequality",
-          options: shuffle([
-            { option: "inequality", isCorrect: true },
-            { option: "displaced", isCorrect: false },
-            { option: "policy", isCorrect: false },
-            { option: "resources", isCorrect: false },
-          ]),
+          questions: [
+            {
+              word: "inequality",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Einequality%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "inequality",
+              options: shuffle([
+                { option: "inequality", isCorrect: true },
+                { option: "displaced", isCorrect: false },
+                { option: "policy", isCorrect: false },
+                { option: "resources", isCorrect: false },
+              ]),
+            },
+            {
+              word: "displaced",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Edisplaced%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "displaced",
+              options: shuffle([
+                { option: "inequality", isCorrect: false },
+                { option: "displaced", isCorrect: true },
+                { option: "policy", isCorrect: false },
+                { option: "resources", isCorrect: false },
+              ]),
+            },
+            {
+              word: "policy",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Epolicy%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "policy",
+              options: shuffle([
+                { option: "inequality", isCorrect: false },
+                { option: "displaced", isCorrect: false },
+                { option: "policy", isCorrect: true },
+                { option: "resources", isCorrect: false },
+              ]),
+            },
+            {
+              word: "resources",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eresources%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "resources",
+              options: shuffle([
+                { option: "inequality", isCorrect: false },
+                { option: "displaced", isCorrect: false },
+                { option: "policy", isCorrect: false },
+                { option: "resources", isCorrect: true },
+              ]),
+            },
+          ],
         },
-        {
-          word: "displaced",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Edisplaced%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "displaced",
-          options: shuffle([
-            { option: "inequality", isCorrect: false },
-            { option: "displaced", isCorrect: true },
-            { option: "policy", isCorrect: false },
-            { option: "resources", isCorrect: false },
-          ]),
-        },
-        {
-          word: "policy",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Epolicy%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "policy",
-          options: shuffle([
-            { option: "inequality", isCorrect: false },
-            { option: "displaced", isCorrect: false },
-            { option: "policy", isCorrect: true },
-            { option: "resources", isCorrect: false },
-          ]),
-        },
-        {
-          word: "resources",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eresources%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "resources",
-          options: shuffle([
-            { option: "inequality", isCorrect: false },
-            { option: "displaced", isCorrect: false },
-            { option: "policy", isCorrect: false },
-            { option: "resources", isCorrect: true },
-          ]),
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Check your understanding of the situations.",
-      exercise: {
-        questions: [
-          {
-            question: "Is there one confirmed cause?",
-            options: [
+          instruction: "Check your understanding of the situations.",
+          exercise: {
+            questions: [
               {
-                option: "No, several factors are thought to contribute.",
-                isCorrect: true,
+                question: "Is there one confirmed cause?",
+                options: [
+                  {
+                    option: "No, several factors are thought to contribute.",
+                    isCorrect: true,
+                  },
+                  {
+                    option: "Yes, one person caused everything.",
+                    isCorrect: false,
+                  },
+                ],
               },
               {
-                option: "Yes, one person caused everything.",
-                isCorrect: false,
+                question: "What are authorities expected to receive?",
+                options: [
+                  { option: "Additional funding.", isCorrect: true },
+                  { option: "Fewer responsibilities.", isCorrect: false },
+                ],
               },
             ],
           },
-          {
-            question: "What are authorities expected to receive?",
-            options: [
-              { option: "Additional funding.", isCorrect: true },
-              { option: "Fewer responsibilities.", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   presentation: {
@@ -126,69 +129,71 @@ export const upperIntermediateGlobalIssues = {
       {
         type: "dialogue",
         ...{
-      instruction:
-        "Read or listen once: which responses to the housing crisis are mentioned? Then read or listen again and distinguish claims from confirmed actions.",
-      audioSrc: "",
-      lines: [
-        {
-          speaker: "Host",
-          line: ["Why has the housing crisis become so severe?"],
-        },
-        {
-          speaker: "Analyst",
-          line: ["It is thought that several factors have contributed."],
-        },
-        { speaker: "Host", line: ["What is being done?"] },
-        {
-          speaker: "Analyst",
-          line: [
-            "New homes are being built, and local authorities are expected to receive additional funding.",
+          instruction:
+            "Read or listen once: which responses to the housing crisis are mentioned? Then read or listen again and distinguish claims from confirmed actions.",
+          audioSrc: "",
+          lines: [
+            {
+              speaker: "Host",
+              line: ["Why has the housing crisis become so severe?"],
+            },
+            {
+              speaker: "Analyst",
+              line: ["It is thought that several factors have contributed."],
+            },
+            { speaker: "Host", line: ["What is being done?"] },
+            {
+              speaker: "Analyst",
+              line: [
+                "New homes are being built, and local authorities are expected to receive additional funding.",
+              ],
+            },
+            {
+              speaker: "Host",
+              line: [
+                "Critics say more vulnerable people need to be protected.",
+              ],
+            },
           ],
         },
-        {
-          speaker: "Host",
-          line: ["Critics say more vulnerable people need to be protected."],
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Choose the answer supported by the dialogue.",
-      exercise: {
-        questions: [
-          {
-            question: "Is there one confirmed cause?",
-            options: [
+          instruction: "Choose the answer supported by the dialogue.",
+          exercise: {
+            questions: [
               {
-                option: "No, several factors are thought to contribute.",
-                isCorrect: true,
+                question: "Is there one confirmed cause?",
+                options: [
+                  {
+                    option: "No, several factors are thought to contribute.",
+                    isCorrect: true,
+                  },
+                  {
+                    option: "Yes, one person caused everything.",
+                    isCorrect: false,
+                  },
+                ],
               },
               {
-                option: "Yes, one person caused everything.",
-                isCorrect: false,
+                question: "What are authorities expected to receive?",
+                options: [
+                  { option: "Additional funding.", isCorrect: true },
+                  { option: "Fewer responsibilities.", isCorrect: false },
+                ],
+              },
+              {
+                question: "Who do critics say needs protection?",
+                options: [
+                  { option: "Vulnerable people.", isCorrect: true },
+                  { option: "Only construction companies.", isCorrect: false },
+                ],
               },
             ],
           },
-          {
-            question: "What are authorities expected to receive?",
-            options: [
-              { option: "Additional funding.", isCorrect: true },
-              { option: "Fewer responsibilities.", isCorrect: false },
-            ],
-          },
-          {
-            question: "Who do critics say needs protection?",
-            options: [
-              { option: "Vulnerable people.", isCorrect: true },
-              { option: "Only construction companies.", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   languageFocus: {
@@ -196,86 +201,86 @@ export const upperIntermediateGlobalIssues = {
       {
         type: "meaning",
         value: [
-      {
-        as: "p",
-        parts: [
-          { part: "Passive (advanced): ", type: "bold" },
-          "Advanced passives support an objective style by foregrounding information and distancing the writer from unverified claims.",
+          {
+            as: "p",
+            parts: [
+              { part: "Passive (advanced): ", type: "bold" },
+              "Advanced passives support an objective style by foregrounding information and distancing the writer from unverified claims.",
+            ],
+          },
         ],
-      },
-    ],
       },
       {
         type: "column",
         ...{
-      width: 320,
-      cols: [
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "It + passive + that",
-          items: [
-            { as: "p", parts: ["It is believed that costs will rise."] },
-            { as: "p", parts: ["It has been reported that talks failed."] },
+          width: 320,
+          cols: [
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "It + passive + that",
+              items: [
+                { as: "p", parts: ["It is believed that costs will rise."] },
+                { as: "p", parts: ["It has been reported that talks failed."] },
+              ],
+            },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Subject + passive + infinitive",
+              items: [
+                { as: "p", parts: ["Costs are expected to rise."] },
+                { as: "p", parts: ["The talks are reported to have failed."] },
+              ],
+            },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Modal / infinitive passive",
+              items: [
+                { as: "p", parts: ["The issue must be addressed."] },
+                { as: "p", parts: ["Resources need to be allocated."] },
+              ],
+            },
           ],
         },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Subject + passive + infinitive",
-          items: [
-            { as: "p", parts: ["Costs are expected to rise."] },
-            { as: "p", parts: ["The talks are reported to have failed."] },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Modal / infinitive passive",
-          items: [
-            { as: "p", parts: ["The issue must be addressed."] },
-            { as: "p", parts: ["Resources need to be allocated."] },
-          ],
-        },
-      ],
-    },
       },
       {
         type: "notes",
         value: [
-      {
-        as: "p",
-        parts: [
-          "Use a perfect infinitive after reporting passives for an earlier event: The talks are reported to have failed.",
+          {
+            as: "p",
+            parts: [
+              "Use a perfect infinitive after reporting passives for an earlier event: The talks are reported to have failed.",
+            ],
+          },
+          {
+            as: "p",
+            parts: [
+              "Reporting passives create distance from a claim. Name the source when credibility matters and avoid presenting an unverified report as an established fact.",
+            ],
+          },
         ],
-      },
-      {
-        as: "p",
-        parts: [
-          "Reporting passives create distance from a claim. Name the source when credibility matters and avoid presenting an unverified report as an established fact.",
-        ],
-      },
-    ],
       },
       {
         type: "ccq",
         value: [
-      {
-        as: "p",
-        parts: [
-          "Does 'is believed' present the claim as the writer's confirmed fact?",
+          {
+            as: "p",
+            parts: [
+              "Does 'is believed' present the claim as the writer's confirmed fact?",
+            ],
+          },
+          {
+            as: "p",
+            parts: ["Which structure foregrounds the subject of the report?"],
+          },
+          { as: "p", parts: ["When do we use to have + past participle?"] },
         ],
       },
-      {
-        as: "p",
-        parts: ["Which structure foregrounds the subject of the report?"],
-      },
-      { as: "p", parts: ["When do we use to have + past participle?"] },
-    ],
-      }
     ],
   },
   practice: {
@@ -286,115 +291,115 @@ export const upperIntermediateGlobalIssues = {
       {
         type: "radio",
         ...{
-      instruction: "Choose the most accurate option.",
-      exercise: {
-        questions: [
-          {
-            question: "The policy ___ to reduce poverty.",
-            options: [
-              { option: "is expected", isCorrect: true },
-              { option: "expects itself", isCorrect: false },
-            ],
-          },
-          {
-            question: "It ___ that the figures were incomplete.",
-            options: [
-              { option: "was reported", isCorrect: true },
-              { option: "reported actively by it", isCorrect: false },
-            ],
-          },
-          {
-            question: "More support needs ___.",
-            options: [
-              { option: "to be provided", isCorrect: true },
-              { option: "to provide itself", isCorrect: false },
-            ],
-          },
-          {
-            question: "The company is believed ___ the data.",
-            options: [
-              { option: "to have hidden", isCorrect: true },
+          instruction: "Choose the most accurate option.",
+          exercise: {
+            questions: [
               {
-                option: "to hide yesterday earlier without have",
-                isCorrect: false,
+                question: "The policy ___ to reduce poverty.",
+                options: [
+                  { option: "is expected", isCorrect: true },
+                  { option: "expects itself", isCorrect: false },
+                ],
+              },
+              {
+                question: "It ___ that the figures were incomplete.",
+                options: [
+                  { option: "was reported", isCorrect: true },
+                  { option: "reported actively by it", isCorrect: false },
+                ],
+              },
+              {
+                question: "More support needs ___.",
+                options: [
+                  { option: "to be provided", isCorrect: true },
+                  { option: "to provide itself", isCorrect: false },
+                ],
+              },
+              {
+                question: "The company is believed ___ the data.",
+                options: [
+                  { option: "to have hidden", isCorrect: true },
+                  {
+                    option: "to hide yesterday earlier without have",
+                    isCorrect: false,
+                  },
+                ],
               },
             ],
           },
-        ],
-      },
-    },
+        },
       },
       {
         type: "fillInTheBlanks",
         ...{
-      showWordBank: true,
-      instruction: "Complete the sentences with the target language.",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [
-              { text: "It is " },
-              { blank: "believed" },
-              { text: " that demand will grow." },
+          showWordBank: true,
+          instruction: "Complete the sentences with the target language.",
+          numbered: true,
+          exercise: {
+            blocks: [
+              {
+                block: [
+                  { text: "It is " },
+                  { blank: "believed" },
+                  { text: " that demand will grow." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "The programme is expected " },
+                  { blank: "to help" },
+                  { text: " families." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "More resources must " },
+                  { blank: "be allocated" },
+                  { text: "." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "The talks are reported to have " },
+                  { blank: "failed" },
+                  { text: "." },
+                ],
+                lineBreak: true,
+              },
             ],
-            lineBreak: true,
           },
-          {
-            block: [
-              { text: "The programme is expected " },
-              { blank: "to help" },
-              { text: " families." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "More resources must " },
-              { blank: "be allocated" },
-              { text: "." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "The talks are reported to have " },
-              { blank: "failed" },
-              { text: "." },
-            ],
-            lineBreak: true,
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "unscramble",
         ...{
-      showWordBank: false,
-      instruction: "Unscramble the sentences.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "believed / is / that / it / prices will rise",
-            answer: "It is believed that prices will rise.",
+          showWordBank: false,
+          instruction: "Unscramble the sentences.",
+          numbered: true,
+          exercise: {
+            items: [
+              {
+                prompt: "believed / is / that / it / prices will rise",
+                answer: "It is believed that prices will rise.",
+              },
+              {
+                prompt: "expected / is / improve / to / access",
+                answer: "Access is expected to improve.",
+              },
+              {
+                prompt: "must / addressed / be / inequality",
+                answer: "Inequality must be addressed.",
+              },
+            ],
           },
-          {
-            prompt: "expected / is / improve / to / access",
-            answer: "Access is expected to improve.",
-          },
-          {
-            prompt: "must / addressed / be / inequality",
-            answer: "Inequality must be addressed.",
-          },
-        ],
+        },
       },
-    },
-      }
     ],
-  }, 
-  
+  },
+
   production: {
     blocks: [
       {
@@ -402,24 +407,24 @@ export const upperIntermediateGlobalIssues = {
         instruction: "Brief a partner objectively on a complex public issue:",
         listType: "checkbox",
         items: [
-        {
-          content: ["Write a neutral briefing about one global issue."],
-          textarea: true,
-        },
-        {
-          content: [
-            "Include three different advanced passive reporting patterns.",
-          ],
-          textarea: true,
-        },
-        {
-          content: [
-            "Compare your wording with a more personal opinion paragraph.",
-          ],
-          textarea: false,
-        },
-      ],
-      }
+          {
+            content: ["Write a neutral briefing about one global issue."],
+            textarea: true,
+          },
+          {
+            content: [
+              "Include three different advanced passive reporting patterns.",
+            ],
+            textarea: true,
+          },
+          {
+            content: [
+              "Compare your wording with a more personal opinion paragraph.",
+            ],
+            textarea: false,
+          },
+        ],
+      },
     ],
   },
 };

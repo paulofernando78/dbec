@@ -5,7 +5,6 @@ import { shuffle } from "@/utils/shuffle";
 export const beginnerMyFamily = {
   whiteboard: {
     title: "A1 Beginner",
-    subtitle: "My Nuclear Family",
     descriptions: ["This is my family.", "Who's she? She's my sister."],
   },
 

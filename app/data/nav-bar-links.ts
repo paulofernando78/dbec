@@ -1,6 +1,8 @@
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { courseSyllabusSections } from "@/data/course/course-syllabus-sections";
 import type { CourseLessonCard } from "@/data/course/course-lessons-card-data";
+import { AuthenticContent, Course } from "@/components/Icons";
+import type { ElementType } from "react";
 
 type NavLinkItem = {
   href: string;
@@ -17,6 +19,7 @@ type NavItem = {
 type NavGroup = {
   title?: string;
   href?: string;
+  icon?: ElementType;
   iconClassName?: string;
   links: Array<NavItem | NavLinkItem>;
 };
@@ -24,18 +27,18 @@ type NavGroup = {
 const lessonLinks = (lessons: CourseLessonCard[]): NavLinkItem[] =>
   lessons.map(({ href, label }) => ({ href, label }));
 
-const chapter = (
-  label: string,
-  lessons: CourseLessonCard[],
-): NavItem => ({
+const chapter = (label: string, lessons: CourseLessonCard[]): NavItem => ({
   label,
   links: lessonLinks(lessons),
 });
 
+const getCourseLevel = (levelLabel: string) =>
+  courseSyllabusSections.find((level) => level.label === levelLabel);
+
 const levelLinks = (levelLabel: string) =>
-  courseSyllabusSections
-    .find((level) => level.label === levelLabel)
-    ?.groups.map((group) => chapter(group.label, group.lessons)) ?? [];
+  getCourseLevel(levelLabel)?.groups.map((group) =>
+    chapter(group.label, group.lessons),
+  ) ?? [];
 
 export const links: NavGroup[] = [
   {
@@ -53,25 +56,27 @@ export const links: NavGroup[] = [
   {
     title: "Course",
     href: "/course",
+    icon: Course,
+    iconClassName: "text-white",
     links: [
       {
         label: "A1 Beginner",
-        iconClassName: "text-yellow-500",
+        iconClassName: getCourseLevel("A1 Beginner")?.iconClassName,
         links: levelLinks("A1 Beginner"),
       },
       {
         label: "A2 Elementary",
-        iconClassName: "text-red-500",
+        iconClassName: getCourseLevel("A2 Elementary")?.iconClassName,
         links: levelLinks("A2 Elementary"),
       },
       {
         label: "B1 Intermediate",
-        iconClassName: "text-blue-500",
+        iconClassName: getCourseLevel("B1 Intermediate")?.iconClassName,
         links: levelLinks("B1 Intermediate"),
       },
       {
         label: "B2 Upper-Intermediate",
-        iconClassName: "text-green-500",
+        iconClassName: getCourseLevel("B2 Upper-Intermediate")?.iconClassName,
         links: levelLinks("B2 Upper-Intermediate"),
       },
       // C1 Advanced is intentionally kept out of the main library for now.
@@ -82,10 +87,12 @@ export const links: NavGroup[] = [
   {
     title: "Authentic Content",
     href: "/authentic-content",
+    icon: AuthenticContent,
+    iconClassName: "text-white",
     links: [
       {
         label: "News",
-  
+
         links: [
           {
             href: "/authentic-content/news/a-soccer-match-dramatic-moment",
@@ -95,7 +102,7 @@ export const links: NavGroup[] = [
       },
       {
         label: "TED-Ed",
-  
+
         links: authenticContentTedEdLessons.map(({ href, label }) => ({
           href,
           label,
@@ -109,7 +116,7 @@ export const links: NavGroup[] = [
     links: [
       {
         label: "Which one?",
-  
+
         links: [
           {
             href: "/vocabulary/",
@@ -129,7 +136,7 @@ export const links: NavGroup[] = [
     links: [
       {
         label: "Lucas Arts",
-  
+
         links: [
           {
             href: "/games/lucas-arts/thimbleweed-park",

@@ -8,7 +8,6 @@ import { content, audio, bold } from "@/helpers/content";
 export const beginnerShopping = {
   whiteboard: {
     title: "A1 BEGINNER",
-    subtitle: "Shopping",
     descriptions: ["This shirt is cheap.", "Those shoes are expensive."],
   },
 
@@ -17,85 +16,85 @@ export const beginnerShopping = {
       {
         type: "lines",
         value: [
-      [
-        audio("What clothes do you usually buy?"),
-        "What clothes do you usually buy?",
-      ],
-    ],
+          [
+            audio("What clothes do you usually buy?"),
+            "What clothes do you usually buy?",
+          ],
+        ],
         className: "mb-4",
       },
       {
         type: "carousel",
         aspectRatio: "wide",
         ...{
-      instruction: "Look at the pictures and listen to the sentences.",
-      imgs: [
-        {
-          alt: "T-shirt",
-          content: [
-            ...content({
-              parts: ["This is a T-shirt."],
-            }),
+          instruction: "Look at the pictures and listen to the sentences.",
+          imgs: [
+            {
+              alt: "T-shirt",
+              content: [
+                ...content({
+                  parts: ["This is a T-shirt."],
+                }),
+              ],
+            },
+            {
+              alt: "Shoes",
+              content: [
+                ...content({
+                  parts: ["These are shoes."],
+                }),
+              ],
+            },
+            {
+              alt: "Jacket",
+              content: [
+                ...content({
+                  parts: ["That is a jacket."],
+                }),
+              ],
+            },
+            {
+              alt: "Jeans",
+              content: [
+                ...content({
+                  parts: ["Those are jeans."],
+                }),
+              ],
+            },
           ],
         },
-        {
-          alt: "Shoes",
-          content: [
-            ...content({
-              parts: ["These are shoes."],
-            }),
-          ],
-        },
-        {
-          alt: "Jacket",
-          content: [
-            ...content({
-              parts: ["That is a jacket."],
-            }),
-          ],
-        },
-        {
-          alt: "Jeans",
-          content: [
-            ...content({
-              parts: ["Those are jeans."],
-            }),
-          ],
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "Which one do you wear on your feet?",
-            options: [
-              { option: "Shoes", isCorrect: true },
-              { option: "Hat", isCorrect: false },
+          instruction: "Choose the correct answer.",
+          exercise: {
+            questions: [
+              {
+                question: "Which one do you wear on your feet?",
+                options: [
+                  { option: "Shoes", isCorrect: true },
+                  { option: "Hat", isCorrect: false },
+                ],
+              },
+              {
+                question: "Which one do you wear on your head?",
+                options: [
+                  { option: "Hat", isCorrect: true },
+                  { option: "Shoes", isCorrect: false },
+                ],
+              },
+              {
+                question: "Do people buy clothes in a shop?",
+                options: [
+                  { option: "Yes", isCorrect: true },
+                  { option: "No", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "Which one do you wear on your head?",
-            options: [
-              { option: "Hat", isCorrect: true },
-              { option: "Shoes", isCorrect: false },
-            ],
-          },
-          {
-            question: "Do people buy clothes in a shop?",
-            options: [
-              { option: "Yes", isCorrect: true },
-              { option: "No", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
 
@@ -104,64 +103,64 @@ export const beginnerShopping = {
       {
         type: "dialogue",
         ...{
-      instruction: "Listen once: is the customer buying food or clothes?",
-      audioSrc: "",
-      lines: [
-        {
-          speaker: "Customer",
-          line: ["Excuse me. How much is this T-shirt?"],
+          instruction: "Listen once: is the customer buying food or clothes?",
+          audioSrc: "",
+          lines: [
+            {
+              speaker: "Customer",
+              line: ["Excuse me. How much is this T-shirt?"],
+            },
+            {
+              speaker: "Shop Assistant",
+              line: ["It's twenty dollars."],
+            },
+            {
+              speaker: "Customer",
+              line: ["And how much are these shoes?"],
+            },
+            {
+              speaker: "Shop Assistant",
+              line: ["They're forty-five dollars."],
+            },
+            {
+              speaker: "Customer",
+              line: ["I like those shoes."],
+            },
+            {
+              speaker: "Customer",
+              line: ["Can I have those shoes, please?"],
+            },
+            {
+              speaker: "Shop Assistant",
+              line: ["Of course. Here you are."],
+            },
+          ],
         },
-        {
-          speaker: "Shop Assistant",
-          line: ["It's twenty dollars."],
-        },
-        {
-          speaker: "Customer",
-          line: ["And how much are these shoes?"],
-        },
-        {
-          speaker: "Shop Assistant",
-          line: ["They're forty-five dollars."],
-        },
-        {
-          speaker: "Customer",
-          line: ["I like those shoes."],
-        },
-        {
-          speaker: "Customer",
-          line: ["Can I have those shoes, please?"],
-        },
-        {
-          speaker: "Shop Assistant",
-          line: ["Of course. Here you are."],
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Listen again and choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question: "How much is the T-shirt?",
-            options: [
-              { option: "$20", isCorrect: true },
-              { option: "$45", isCorrect: false },
+          instruction: "Listen again and choose the correct answer.",
+          exercise: {
+            questions: [
+              {
+                question: "How much is the T-shirt?",
+                options: [
+                  { option: "$20", isCorrect: true },
+                  { option: "$45", isCorrect: false },
+                ],
+              },
+              {
+                question: "What does the customer like?",
+                options: [
+                  { option: "Shoes", isCorrect: true },
+                  { option: "Hat", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "What does the customer like?",
-            options: [
-              { option: "Shoes", isCorrect: true },
-              { option: "Hat", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
 
@@ -170,143 +169,143 @@ export const beginnerShopping = {
       {
         type: "meaning",
         value: [
-      {
-        as: "span",
-        parts: [bold("this"), " = singular, near"],
-      },
-      {
-        as: "span",
-        parts: [bold("that"), " = singular, far"],
-      },
-      {
-        as: "span",
-        parts: [bold("these"), " = plural, near"],
-      },
-      {
-        as: "span",
-        parts: [bold("those"), " = plural, far"],
-      },
-    ],
+          {
+            as: "span",
+            parts: [bold("this"), " = singular, near"],
+          },
+          {
+            as: "span",
+            parts: [bold("that"), " = singular, far"],
+          },
+          {
+            as: "span",
+            parts: [bold("these"), " = plural, near"],
+          },
+          {
+            as: "span",
+            parts: [bold("those"), " = plural, far"],
+          },
+        ],
       },
       {
         type: "column",
         ...{
-      width: 300,
-      cols: [
-        {
-          column: "Singular",
-          items: [
+          width: 300,
+          cols: [
             {
-              parts: [bold("Q:"), " What is this?"],
-            },
-            {
-              parts: [bold("A:"), " This is a shirt."],
-              lineBreak: true,
+              column: "Singular",
+              items: [
+                {
+                  parts: [bold("Q:"), " What is this?"],
+                },
+                {
+                  parts: [bold("A:"), " This is a shirt."],
+                  lineBreak: true,
+                },
+
+                {
+                  parts: [bold("Q:"), " How much is this shirt?"],
+                },
+                {
+                  parts: [bold("A:"), " It's twenty dollars."],
+                },
+              ],
             },
 
             {
-              parts: [bold("Q:"), " How much is this shirt?"],
+              column: "Plural",
+              items: [
+                {
+                  parts: [bold("Q:"), " What are these?"],
+                },
+                {
+                  parts: [bold("A:"), " These are shoes."],
+                  lineBreak: true,
+                },
+                {
+                  parts: [bold("Q:"), " How much are these shoes?"],
+                },
+                {
+                  parts: [bold("A:"), " They're forty-five dollars."],
+                },
+              ],
             },
-            {
-              parts: [bold("A:"), " It's twenty dollars."],
-            },
-          ],
-        },
 
-        {
-          column: "Plural",
-          items: [
             {
-              parts: [bold("Q:"), " What are these?"],
-            },
-            {
-              parts: [bold("A:"), " These are shoes."],
-              lineBreak: true,
-            },
-            {
-              parts: [bold("Q:"), " How much are these shoes?"],
-            },
-            {
-              parts: [bold("A:"), " They're forty-five dollars."],
-            },
-          ],
-        },
-
-        {
-          column: "Distance",
-          items: [
-            {
-              parts: [bold("Q:"), " What is that?"],
-            },
-            {
-              parts: [bold("A:"), " That is a jacket."],
-              lineBreak: true,
-            },
-            {
-              parts: [bold("Q:"), " What are those?"],
-            },
-            {
-              parts: [bold("A:"), " Those are jeans."],
+              column: "Distance",
+              items: [
+                {
+                  parts: [bold("Q:"), " What is that?"],
+                },
+                {
+                  parts: [bold("A:"), " That is a jacket."],
+                  lineBreak: true,
+                },
+                {
+                  parts: [bold("Q:"), " What are those?"],
+                },
+                {
+                  parts: [bold("A:"), " Those are jeans."],
+                },
+              ],
             },
           ],
         },
-      ],
-    },
       },
       {
         type: "notes",
         value: [
-      {
-        as: "span",
-        parts: [bold("cheap"), " = low price"],
-      },
-      {
-        as: "span",
-        parts: [bold("expensive"), " = high price"],
-      },
-      {
-        as: "span",
-        parts: [
-          "Use ",
-          bold("this/these"),
-          " for items near you and ",
-          bold("that/those"),
-          " for items farther away. Ask ",
-          bold("How much is/are...?"),
-          " to check the price.",
+          {
+            as: "span",
+            parts: [bold("cheap"), " = low price"],
+          },
+          {
+            as: "span",
+            parts: [bold("expensive"), " = high price"],
+          },
+          {
+            as: "span",
+            parts: [
+              "Use ",
+              bold("this/these"),
+              " for items near you and ",
+              bold("that/those"),
+              " for items farther away. Ask ",
+              bold("How much is/are...?"),
+              " to check the price.",
+            ],
+          },
         ],
-      },
-    ],
       },
       {
         type: "ccq",
         value: [
-      {
-        as: "span",
-        parts: ["Do we use 'this' for one thing or many things?"],
-        options: [
-          { option: "One thing", isCorrect: true },
-          { option: "Many things", isCorrect: false },
+          {
+            as: "span",
+            parts: ["Do we use 'this' for one thing or many things?"],
+            options: [
+              { option: "One thing", isCorrect: true },
+              { option: "Many things", isCorrect: false },
+            ],
+          },
+          {
+            as: "span",
+            parts: ["Do we use 'these' for one thing or many things?"],
+            options: [
+              { option: "Many things", isCorrect: true },
+              { option: "One thing", isCorrect: false },
+            ],
+          },
+          {
+            as: "span",
+            parts: ["If the object is far away, do we use 'this' or 'that'?"],
+            options: [
+              { option: "That", isCorrect: true },
+              { option: "This", isCorrect: false },
+            ],
+          },
         ],
       },
-      {
-        as: "span",
-        parts: ["Do we use 'these' for one thing or many things?"],
-        options: [
-          { option: "Many things", isCorrect: true },
-          { option: "One thing", isCorrect: false },
-        ],
-      },
-      {
-        as: "span",
-        parts: ["If the object is far away, do we use 'this' or 'that'?"],
-        options: [
-          { option: "That", isCorrect: true },
-          { option: "This", isCorrect: false },
-        ],
-      },
-    ],
-      }
     ],
   },
 
@@ -318,88 +317,90 @@ export const beginnerShopping = {
       {
         type: "radio",
         ...{
-      instruction: "Choose the correct answer.",
-      exercise: {
-        questions: [
-          {
-            question:
-              "The shoes here are very expensive. _____ shoes are very expensive.",
-            options: [
-              { option: "These", isCorrect: true },
-              { option: "This", isCorrect: false },
+          instruction: "Choose the correct answer.",
+          exercise: {
+            questions: [
+              {
+                question:
+                  "The shoes here are very expensive. _____ shoes are very expensive.",
+                options: [
+                  { option: "These", isCorrect: true },
+                  { option: "This", isCorrect: false },
+                ],
+              },
+              {
+                question:
+                  "Look at the jacket over there. _____ jacket is nice.",
+                options: [
+                  { option: "That", isCorrect: true },
+                  { option: "Those", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "Look at the jacket over there. _____ jacket is nice.",
-            options: [
-              { option: "That", isCorrect: true },
-              { option: "Those", isCorrect: false },
-            ],
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "fillInTheBlanks",
         ...{
-      showWordBank: true,
-      instruction: "Complete the sentences with this, that, these, or those.",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [
-              { text: "" },
-              { blank: "This" },
-              { text: " shirt here is blue." },
+          showWordBank: true,
+          instruction:
+            "Complete the sentences with this, that, these, or those.",
+          numbered: true,
+          exercise: {
+            blocks: [
+              {
+                block: [
+                  { text: "" },
+                  { blank: "This" },
+                  { text: " shirt here is blue." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "" },
+                  { blank: "These" },
+                  { text: " shoes here are black." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "" },
+                  { blank: "Those" },
+                  { text: " jeans over there are expensive." },
+                ],
+                lineBreak: true,
+              },
             ],
-            lineBreak: true,
           },
-          {
-            block: [
-              { text: "" },
-              { blank: "These" },
-              { text: " shoes here are black." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "" },
-              { blank: "Those" },
-              { text: " jeans over there are expensive." },
-            ],
-            lineBreak: true,
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "unscramble",
         ...{
-      showWordBank: false,
-      instruction: "Unscramble the sentence.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "this / is / shirt / a",
-            answer: "This is a shirt.",
+          showWordBank: false,
+          instruction: "Unscramble the sentence.",
+          numbered: true,
+          exercise: {
+            items: [
+              {
+                prompt: "this / is / shirt / a",
+                answer: "This is a shirt.",
+              },
+              {
+                prompt: "those / shoes / are",
+                answer: "Those are shoes.",
+              },
+              {
+                prompt: "much / this / how / is / jacket",
+                answer: "How much is this jacket?",
+              },
+            ],
           },
-          {
-            prompt: "those / shoes / are",
-            answer: "Those are shoes.",
-          },
-          {
-            prompt: "much / this / how / is / jacket",
-            answer: "How much is this jacket?",
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
 
@@ -410,21 +411,21 @@ export const beginnerShopping = {
         instruction: "Prepare and role-play a short clothes-shop exchange:",
         listType: "checkbox",
         items: [
-        {
-          content: [
-            "Choose an item and identify it with this, that, these, or those and a color.",
-          ],
-        },
-        {
-          content: ["Ask for the price and listen for the number."],
-        },
-        {
-          content: [
-            "Role-play the customer and shop assistant. Request the item with “Can I have…, please?” Then change roles.",
-          ],
-        },
-      ],
-      }
+          {
+            content: [
+              "Choose an item and identify it with this, that, these, or those and a color.",
+            ],
+          },
+          {
+            content: ["Ask for the price and listen for the number."],
+          },
+          {
+            content: [
+              "Role-play the customer and shop assistant. Request the item with “Can I have…, please?” Then change roles.",
+            ],
+          },
+        ],
+      },
     ],
   },
 };

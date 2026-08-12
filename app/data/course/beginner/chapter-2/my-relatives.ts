@@ -3,7 +3,6 @@ import { audio, bold, portuguese } from "@/helpers/content";
 export const beginnerMyRelatives = {
   whiteboard: {
     title: "A1 Beginner",
-    subtitle: "My Relatives",
     descriptions: ["This is Sofia. She is my cousin."],
   },
 

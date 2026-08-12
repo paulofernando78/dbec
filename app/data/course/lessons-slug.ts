@@ -2,6 +2,7 @@
 // Chapter 1
 import { beginnerHello } from "@/data/course/beginner/chapter-1/hello";
 import { beginnerPersonalInformation } from "@/data/course/beginner/chapter-1/personal-information";
+import { beginnerCountriesAndNationalities } from "@/data/course/beginner/chapter-1/countries-and-nationalities";
 
 // Chapter 2
 import { beginnerMyFamily } from "@/data/course/beginner/chapter-2/my-family";
@@ -89,6 +90,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       // Chapter 1 • Introduction
       hello: beginnerHello,
       "personal-information": beginnerPersonalInformation,
+      "countries-and-nationalities": beginnerCountriesAndNationalities,
 
       // Chapter 2 • Family
       "my-family": beginnerMyFamily,
@@ -109,7 +111,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       // Chapter 6 • Shopping
       shopping: beginnerShopping,
       "bargain-hunting": beginnerShopping,
-      
+
       // Chapter 7 • Around Town
       "around-town": beginnerAroundTown,
       "finding-your-way": beginnerAroundTown,

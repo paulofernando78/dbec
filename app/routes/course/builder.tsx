@@ -1,7 +1,10 @@
 import { useParams } from "react-router";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
-import type { LessonCardContent } from "@/components/content/LessonCard";
+import {
+  LessonCard,
+  type LessonCardContent,
+} from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
@@ -41,8 +44,17 @@ import {
 type CourseProps = {
   lesson: Record<string, any>;
   lessonCard?: LessonCardContent;
+  levelTitle?: string;
   imgSrc?: string;
   imgAlt?: string;
+};
+
+const courseLevelTitles: Record<string, string> = {
+  beginner: "A1 Beginner",
+  elementary: "A2 Elementary",
+  intermediate: "B1 Intermediate",
+  "upper-intermediate": "B2 Upper-Intermediate",
+  advanced: "C1 Advanced",
 };
 
 const splitField = (value?: string) =>
@@ -233,7 +245,7 @@ const Assignment = ({
       <Whiteboard
         title={lessonCard.label ?? "Assignment"}
         subtitle="Assignment"
-        descriptions={[lessonCard.objective]}
+        descriptions={[lessonCard.objective ?? lessonCard.description ?? ""]}
       />
       <PageSections>
         <Section id="Multiple Choice" heading={3}>
@@ -342,15 +354,20 @@ const renderBlocks = (
   context: RenderBlockContext,
 ) => blocks?.map((block, index) => renderBlock(block, index, context));
 
-export function Course({ lesson, lessonCard }: CourseProps) {
+export function Course({ lesson, lessonCard, levelTitle }: CourseProps) {
   const heading = 4;
   const card = lessonCard ?? lesson.lessonCard;
+  const lessonTitle =
+    typeof card?.index === "number"
+      ? `${card.index + 1} • ${card.label}`
+      : card?.label;
   const displayedLesson = card?.label
     ? {
         ...lesson,
         whiteboard: {
           ...lesson.whiteboard,
-          title: card.label,
+          title: levelTitle ?? lesson.whiteboard.title,
+          subtitle: lessonTitle,
         },
       }
     : lesson;
@@ -375,6 +392,8 @@ export function Course({ lesson, lessonCard }: CourseProps) {
     <>
       <Whiteboard {...displayedLesson.whiteboard} />
       <div>
+        {card && <LessonCard {...card} />}
+
         <PageSections>
           <Section id="introduction" heading={heading}>
             {renderBlocks(displayedLesson.introduction?.blocks, renderContext)}
@@ -403,6 +422,7 @@ export function Course({ lesson, lessonCard }: CourseProps) {
 
 export default function Lesson() {
   const { level, section, resourceType, slug } = useParams();
+  const levelTitle = level ? courseLevelTitles[level] : undefined;
   const isTypedResource =
     resourceType === "material" || resourceType === "assignment";
   const resolvedResourceType = isTypedResource ? resourceType : "material";
@@ -452,9 +472,12 @@ export default function Lesson() {
       <Course
         lesson={createSyllabusLesson(lessonCard)}
         lessonCard={lessonCard}
+        levelTitle={levelTitle}
       />
     );
   }
 
-  return <Course lesson={lesson!} lessonCard={lessonCard} />;
+  return (
+    <Course lesson={lesson!} lessonCard={lessonCard} levelTitle={levelTitle} />
+  );
 }

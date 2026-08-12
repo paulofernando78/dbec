@@ -115,6 +115,7 @@ export default function Dashboard() {
                     key={lesson.href}
                     {...lesson}
                     index={previousLessonCount + lessonIndex}
+                    numbered={section.tocTitle === "COURSE"}
                     collapsible
                   />
                 ))}

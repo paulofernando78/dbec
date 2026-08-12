@@ -20,10 +20,7 @@ export type GameData = {
   sections: GameSection[];
 };
 
-export const games: Record<
-  string,
-  Record<string, GameData>
-> = {
+export const games: Record<string, Record<string, GameData>> = {
   "lucas-arts": {
     "thimbleweed-park": thimbleweedPark,
   },

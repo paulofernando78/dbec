@@ -3,7 +3,6 @@ import { shuffle } from "@/utils/shuffle";
 export const upperIntermediateMediaAndMarketing = {
   whiteboard: {
     title: "B2 Upper-Intermediate",
-    subtitle: "Media and Marketing",
     descriptions: [
       "Add precise and supplementary information to descriptions.",
       "Use complex relative clauses in marketing analysis.",
@@ -15,106 +14,112 @@ export const upperIntermediateMediaAndMarketing = {
         type: "carousel",
         aspectRatio: "wide",
         ...{
-      instruction:
-        "Read the campaign descriptions. Which details identify something essential, and which add supplementary information?",
-      imgs: [
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ENon-defining%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Non-defining",
-          content: [
-            "The campaign, which launched in May, exceeded its target.",
+          instruction:
+            "Read the campaign descriptions. Which details identify something essential, and which add supplementary information?",
+          imgs: [
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ENon-defining%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Non-defining",
+              content: [
+                "The campaign, which launched in May, exceeded its target.",
+              ],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPossession%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Possession",
+              content: [
+                "The creator whose video went viral signed a partnership.",
+              ],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EFormal%20connection%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Formal connection",
+              content: [
+                "The platform through which customers responded collected useful data.",
+              ],
+            },
           ],
         },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPossession%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Possession",
-          content: ["The creator whose video went viral signed a partnership."],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EFormal%20connection%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Formal connection",
-          content: [
-            "The platform through which customers responded collected useful data.",
-          ],
-        },
-      ],
-    },
       },
       {
         type: "imageQuiz",
         ...{
-      questions: [
-        {
-          word: "campaign",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ecampaign%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "campaign",
-          options: shuffle([
-            { option: "campaign", isCorrect: true },
-            { option: "target audience", isCorrect: false },
-            { option: "endorsement", isCorrect: false },
-            { option: "engagement", isCorrect: false },
-          ]),
+          questions: [
+            {
+              word: "campaign",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ecampaign%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "campaign",
+              options: shuffle([
+                { option: "campaign", isCorrect: true },
+                { option: "target audience", isCorrect: false },
+                { option: "endorsement", isCorrect: false },
+                { option: "engagement", isCorrect: false },
+              ]),
+            },
+            {
+              word: "target audience",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Etarget%20audience%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "target audience",
+              options: shuffle([
+                { option: "campaign", isCorrect: false },
+                { option: "target audience", isCorrect: true },
+                { option: "endorsement", isCorrect: false },
+                { option: "engagement", isCorrect: false },
+              ]),
+            },
+            {
+              word: "endorsement",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eendorsement%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "endorsement",
+              options: shuffle([
+                { option: "campaign", isCorrect: false },
+                { option: "target audience", isCorrect: false },
+                { option: "endorsement", isCorrect: true },
+                { option: "engagement", isCorrect: false },
+              ]),
+            },
+            {
+              word: "engagement",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eengagement%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "engagement",
+              options: shuffle([
+                { option: "campaign", isCorrect: false },
+                { option: "target audience", isCorrect: false },
+                { option: "endorsement", isCorrect: false },
+                { option: "engagement", isCorrect: true },
+              ]),
+            },
+          ],
         },
-        {
-          word: "target audience",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Etarget%20audience%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "target audience",
-          options: shuffle([
-            { option: "campaign", isCorrect: false },
-            { option: "target audience", isCorrect: true },
-            { option: "endorsement", isCorrect: false },
-            { option: "engagement", isCorrect: false },
-          ]),
-        },
-        {
-          word: "endorsement",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eendorsement%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "endorsement",
-          options: shuffle([
-            { option: "campaign", isCorrect: false },
-            { option: "target audience", isCorrect: false },
-            { option: "endorsement", isCorrect: true },
-            { option: "engagement", isCorrect: false },
-          ]),
-        },
-        {
-          word: "engagement",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eengagement%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "engagement",
-          options: shuffle([
-            { option: "campaign", isCorrect: false },
-            { option: "target audience", isCorrect: false },
-            { option: "endorsement", isCorrect: false },
-            { option: "engagement", isCorrect: true },
-          ]),
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Check your understanding of the situations.",
-      exercise: {
-        questions: [
-          {
-            question: "Who does the campaign target?",
-            options: [
-              { option: "First-time buyers.", isCorrect: true },
-              { option: "Only existing investors.", isCorrect: false },
+          instruction: "Check your understanding of the situations.",
+          exercise: {
+            questions: [
+              {
+                question: "Who does the campaign target?",
+                options: [
+                  { option: "First-time buyers.", isCorrect: true },
+                  { option: "Only existing investors.", isCorrect: false },
+                ],
+              },
+              {
+                question: "What became a meme?",
+                options: [
+                  { option: "The slogan.", isCorrect: true },
+                  { option: "The entire company.", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "What became a meme?",
-            options: [
-              { option: "The slogan.", isCorrect: true },
-              { option: "The entire company.", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   presentation: {
@@ -122,72 +127,78 @@ export const upperIntermediateMediaAndMarketing = {
       {
         type: "dialogue",
         ...{
-      instruction:
-        "Read or listen once: why did the campaign spread widely? Then read or listen again for the extra information about the campaign, channel, and audience.",
-      audioSrc: "",
-      lines: [
-        {
-          speaker: "Leah",
-          line: [
-            "The campaign, which targets first-time buyers, has strong engagement.",
+          instruction:
+            "Read or listen once: why did the campaign spread widely? Then read or listen again for the extra information about the campaign, channel, and audience.",
+          audioSrc: "",
+          lines: [
+            {
+              speaker: "Leah",
+              line: [
+                "The campaign, which targets first-time buyers, has strong engagement.",
+              ],
+            },
+            {
+              speaker: "Omar",
+              line: ["Is that the one whose slogan became a meme?"],
+            },
+            {
+              speaker: "Leah",
+              line: [
+                "Yes. The channel through which it spread was mainly short-form video.",
+              ],
+            },
+            {
+              speaker: "Omar",
+              line: [
+                "The audience, many of whom were under thirty, shared it widely.",
+              ],
+            },
+            {
+              speaker: "Leah",
+              line: [
+                "That's precisely the group for whom the product was designed.",
+              ],
+            },
           ],
         },
-        {
-          speaker: "Omar",
-          line: ["Is that the one whose slogan became a meme?"],
-        },
-        {
-          speaker: "Leah",
-          line: [
-            "Yes. The channel through which it spread was mainly short-form video.",
-          ],
-        },
-        {
-          speaker: "Omar",
-          line: [
-            "The audience, many of whom were under thirty, shared it widely.",
-          ],
-        },
-        {
-          speaker: "Leah",
-          line: [
-            "That's precisely the group for whom the product was designed.",
-          ],
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Choose the answer supported by the dialogue.",
-      exercise: {
-        questions: [
-          {
-            question: "Who does the campaign target?",
-            options: [
-              { option: "First-time buyers.", isCorrect: true },
-              { option: "Only existing investors.", isCorrect: false },
+          instruction: "Choose the answer supported by the dialogue.",
+          exercise: {
+            questions: [
+              {
+                question: "Who does the campaign target?",
+                options: [
+                  { option: "First-time buyers.", isCorrect: true },
+                  { option: "Only existing investors.", isCorrect: false },
+                ],
+              },
+              {
+                question: "What became a meme?",
+                options: [
+                  { option: "The slogan.", isCorrect: true },
+                  { option: "The entire company.", isCorrect: false },
+                ],
+              },
+              {
+                question: "How did the campaign spread?",
+                options: [
+                  {
+                    option: "Mainly through short-form video.",
+                    isCorrect: true,
+                  },
+                  {
+                    option: "Only through printed newspapers.",
+                    isCorrect: false,
+                  },
+                ],
+              },
             ],
           },
-          {
-            question: "What became a meme?",
-            options: [
-              { option: "The slogan.", isCorrect: true },
-              { option: "The entire company.", isCorrect: false },
-            ],
-          },
-          {
-            question: "How did the campaign spread?",
-            options: [
-              { option: "Mainly through short-form video.", isCorrect: true },
-              { option: "Only through printed newspapers.", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   languageFocus: {
@@ -195,89 +206,94 @@ export const upperIntermediateMediaAndMarketing = {
       {
         type: "meaning",
         value: [
-      {
-        as: "p",
-        parts: [
-          { part: "Complex Relative Clauses: ", type: "bold" },
-          "Complex relative clauses add supplementary detail, express possession, refer to quantities, or follow prepositions in formal English.",
+          {
+            as: "p",
+            parts: [
+              { part: "Complex Relative Clauses: ", type: "bold" },
+              "Complex relative clauses add supplementary detail, express possession, refer to quantities, or follow prepositions in formal English.",
+            ],
+          },
         ],
-      },
-    ],
       },
       {
         type: "column",
         ...{
-      width: 320,
-      cols: [
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Non-defining",
-          items: [
+          width: 320,
+          cols: [
             {
-              as: "p",
-              parts: ["The campaign, which launched in May, succeeded."],
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Non-defining",
+              items: [
+                {
+                  as: "p",
+                  parts: ["The campaign, which launched in May, succeeded."],
+                },
+                { as: "p", parts: ["Mia, who led the team, presented it."] },
+              ],
             },
-            { as: "p", parts: ["Mia, who led the team, presented it."] },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Preposition + relative",
+              items: [
+                { as: "p", parts: ["The channel through which it spread..."] },
+                {
+                  as: "p",
+                  parts: ["The audience for whom it was designed..."],
+                },
+              ],
+            },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Quantity / possession",
+              items: [
+                { as: "p", parts: ["Users, many of whom were young,..."] },
+                { as: "p", parts: ["The creator whose post went viral..."] },
+              ],
+            },
           ],
         },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Preposition + relative",
-          items: [
-            { as: "p", parts: ["The channel through which it spread..."] },
-            { as: "p", parts: ["The audience for whom it was designed..."] },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Quantity / possession",
-          items: [
-            { as: "p", parts: ["Users, many of whom were young,..."] },
-            { as: "p", parts: ["The creator whose post went viral..."] },
-          ],
-        },
-      ],
-    },
       },
       {
         type: "notes",
         value: [
-      {
-        as: "p",
-        parts: [
-          "Non-defining clauses use commas and cannot normally use that. In formal structures, place a preposition before whom or which.",
+          {
+            as: "p",
+            parts: [
+              "Non-defining clauses use commas and cannot normally use that. In formal structures, place a preposition before whom or which.",
+            ],
+          },
+          {
+            as: "p",
+            parts: [
+              "Use a non-defining clause for supplementary information, not to identify which person or thing you mean. In speech, mark it with a brief pause and appropriate intonation.",
+            ],
+          },
         ],
-      },
-      {
-        as: "p",
-        parts: [
-          "Use a non-defining clause for supplementary information, not to identify which person or thing you mean. In speech, mark it with a brief pause and appropriate intonation.",
-        ],
-      },
-    ],
       },
       {
         type: "ccq",
         value: [
-      {
-        as: "p",
-        parts: [
-          "Is the information between commas essential for identifying the noun?",
+          {
+            as: "p",
+            parts: [
+              "Is the information between commas essential for identifying the noun?",
+            ],
+          },
+          {
+            as: "p",
+            parts: [
+              "Can that normally replace which in a non-defining clause?",
+            ],
+          },
+          { as: "p", parts: ["What does many of whom refer to?"] },
         ],
       },
-      {
-        as: "p",
-        parts: ["Can that normally replace which in a non-defining clause?"],
-      },
-      { as: "p", parts: ["What does many of whom refer to?"] },
-    ],
-      }
     ],
   },
   practice: {
@@ -288,112 +304,114 @@ export const upperIntermediateMediaAndMarketing = {
       {
         type: "radio",
         ...{
-      instruction: "Choose the most accurate option.",
-      exercise: {
-        questions: [
-          {
-            question: "The campaign, ___ launched in May, went viral.",
-            options: [
-              { option: "which", isCorrect: true },
-              { option: "that without commas", isCorrect: false },
+          instruction: "Choose the most accurate option.",
+          exercise: {
+            questions: [
+              {
+                question: "The campaign, ___ launched in May, went viral.",
+                options: [
+                  { option: "which", isCorrect: true },
+                  { option: "that without commas", isCorrect: false },
+                ],
+              },
+              {
+                question: "The designer ___ idea won joined us.",
+                options: [
+                  { option: "whose", isCorrect: true },
+                  { option: "where", isCorrect: false },
+                ],
+              },
+              {
+                question: "The platform through ___ it spread was new.",
+                options: [
+                  { option: "which", isCorrect: true },
+                  { option: "who", isCorrect: false },
+                ],
+              },
+              {
+                question:
+                  "The users, many of ___ were students, responded well.",
+                options: [
+                  { option: "whom", isCorrect: true },
+                  { option: "that", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "The designer ___ idea won joined us.",
-            options: [
-              { option: "whose", isCorrect: true },
-              { option: "where", isCorrect: false },
-            ],
-          },
-          {
-            question: "The platform through ___ it spread was new.",
-            options: [
-              { option: "which", isCorrect: true },
-              { option: "who", isCorrect: false },
-            ],
-          },
-          {
-            question: "The users, many of ___ were students, responded well.",
-            options: [
-              { option: "whom", isCorrect: true },
-              { option: "that", isCorrect: false },
-            ],
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "fillInTheBlanks",
         ...{
-      showWordBank: true,
-      instruction: "Complete the sentences with the target language.",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [
-              { text: "The advert, " },
-              { blank: "which" },
-              { text: " cost very little, went viral." },
+          showWordBank: true,
+          instruction: "Complete the sentences with the target language.",
+          numbered: true,
+          exercise: {
+            blocks: [
+              {
+                block: [
+                  { text: "The advert, " },
+                  { blank: "which" },
+                  { text: " cost very little, went viral." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "She is the creator " },
+                  { blank: "whose" },
+                  { text: " slogan we used." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "The channel through " },
+                  { blank: "which" },
+                  { text: " it spread was unexpected." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "The respondents, most of " },
+                  { blank: "whom" },
+                  { text: " were under thirty, approved." },
+                ],
+                lineBreak: true,
+              },
             ],
-            lineBreak: true,
           },
-          {
-            block: [
-              { text: "She is the creator " },
-              { blank: "whose" },
-              { text: " slogan we used." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "The channel through " },
-              { blank: "which" },
-              { text: " it spread was unexpected." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "The respondents, most of " },
-              { blank: "whom" },
-              { text: " were under thirty, approved." },
-            ],
-            lineBreak: true,
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "unscramble",
         ...{
-      showWordBank: false,
-      instruction: "Unscramble the sentences.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "which / launched in May / succeeded / the campaign",
-            answer: "The campaign, which launched in May, succeeded.",
+          showWordBank: false,
+          instruction: "Unscramble the sentences.",
+          numbered: true,
+          exercise: {
+            items: [
+              {
+                prompt: "which / launched in May / succeeded / the campaign",
+                answer: "The campaign, which launched in May, succeeded.",
+              },
+              {
+                prompt: "whose / met / we / the creator / video went viral",
+                answer: "We met the creator whose video went viral.",
+              },
+              {
+                prompt:
+                  "many of whom / users / were students / responded / the",
+                answer: "The users, many of whom were students, responded.",
+              },
+            ],
           },
-          {
-            prompt: "whose / met / we / the creator / video went viral",
-            answer: "We met the creator whose video went viral.",
-          },
-          {
-            prompt: "many of whom / users / were students / responded / the",
-            answer: "The users, many of whom were students, responded.",
-          },
-        ],
+        },
       },
-    },
-      }
     ],
-  }, 
-  
+  },
+
   production: {
     blocks: [
       {
@@ -401,26 +419,26 @@ export const upperIntermediateMediaAndMarketing = {
         instruction: "Analyse a campaign and present its audience and impact:",
         listType: "checkbox",
         items: [
-        {
-          content: [
-            "Analyse a real or fictional marketing campaign in six sentences.",
-          ],
-          textarea: true,
-        },
-        {
-          content: [
-            "Use a non-defining clause, whose, preposition + which, and quantity + whom.",
-          ],
-          textarea: true,
-        },
-        {
-          content: [
-            "Explain how the language makes your analysis more precise.",
-          ],
-          textarea: false,
-        },
-      ],
-      }
+          {
+            content: [
+              "Analyse a real or fictional marketing campaign in six sentences.",
+            ],
+            textarea: true,
+          },
+          {
+            content: [
+              "Use a non-defining clause, whose, preposition + which, and quantity + whom.",
+            ],
+            textarea: true,
+          },
+          {
+            content: [
+              "Explain how the language makes your analysis more precise.",
+            ],
+            textarea: false,
+          },
+        ],
+      },
     ],
   },
 };

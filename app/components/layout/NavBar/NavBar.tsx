@@ -1,7 +1,9 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
+import type { ElementType } from "react";
+import { CourseBook } from "@/components/Icons";
 
-import { LibraryBig, BookText, Minus, Plus } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 
 type NavItem = {
   label: string;
@@ -13,6 +15,7 @@ type NavItem = {
 type NavGroup = {
   title?: string;
   href?: string;
+  icon?: ElementType;
   iconClassName?: string;
   links: NavItem[];
 };
@@ -82,8 +85,9 @@ function RenderNavItem({
           </span>
 
           {item.iconClassName && (
-            <BookText
-              size={20}
+            <CourseBook
+              width={25}
+              height={25}
               className={`ml-[0.2rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`}
             />
           )}
@@ -187,10 +191,11 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                   ${isActive ? "text-blue-400" : ""}
                 `}
                 >
-                  {group.iconClassName && (
-                    <LibraryBig
-                      size={20}
-                      className={`shrink-0 ${group.iconClassName}`}
+                  {group.icon && (
+                    <group.icon
+                      width={25}
+                      height={25}
+                      className={`shrink-0 ${group.iconClassName ?? ""}`}
                     />
                   )}
                   {group.title}
@@ -207,8 +212,9 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 uppercase"
                 >
                   {group.iconClassName && (
-                    <BookText
-                      size={20}
+                    <CourseBook
+                      width={25}
+                      height={25}
                       className={`shrink-0 ${group.iconClassName}`}
                     />
                   )}

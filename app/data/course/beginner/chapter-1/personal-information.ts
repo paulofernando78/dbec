@@ -1,9 +1,15 @@
-import { content, audio, bold, italic, portuguese, spacer } from "@/helpers/content";
+import {
+  content,
+  audio,
+  bold,
+  italic,
+  portuguese,
+  spacer,
+} from "@/helpers/content";
 
 export const beginnerPersonalInformation = {
   whiteboard: {
     title: "A1 BEGINNER",
-    subtitle: "Personal Information",
     descriptions: ["I’m Laura. I’m from Brazil.", "What’s your phone number?"],
   },
 
@@ -187,7 +193,10 @@ export const beginnerPersonalInformation = {
           {
             display: "block",
             as: "p",
-            parts: [audio("Everything’s going great!"), "Everything’s going great!"],
+            parts: [
+              audio("Everything’s going great!"),
+              "Everything’s going great!",
+            ],
           },
           spacer(),
           {

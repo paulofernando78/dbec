@@ -13,7 +13,6 @@ import {
 export const beginnerHello = {
   whiteboard: {
     title: "A1 Beginner",
-    subtitle: "Hello!",
     descriptions: ["Hi! I'm Laura.", "What's your name?"],
   },
 
@@ -373,10 +372,7 @@ export const beginnerHello = {
           {
             display: "block",
             as: "span",
-            parts: [
-              icon("spotlight"),
-              audio("I'm = I am"),
-              "I'm = I am"],
+            parts: [icon("spotlight"), audio("I'm = I am"), "I'm = I am"],
           },
           {
             display: "block",
@@ -384,7 +380,8 @@ export const beginnerHello = {
             parts: [
               icon("spotlight"),
               audio("What’s = What is"),
-              "What’s = What is"],
+              "What’s = What is",
+            ],
           },
           spacer(),
           {

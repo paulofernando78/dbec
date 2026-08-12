@@ -3,7 +3,6 @@ import { content, audio, bold } from "@/helpers/content";
 export const beginnerMyHouse = {
   whiteboard: {
     title: "A1 BEGINNER",
-    subtitle: "My House",
     descriptions: [
       "There is a sofa in the living room.",
       "There are two bedrooms in my house.",

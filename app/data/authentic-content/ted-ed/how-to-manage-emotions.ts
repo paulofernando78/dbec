@@ -1,8 +1,4 @@
-import {
-  content,
-  mark,
-  attentionMark,
-} from "@/helpers/content";
+import { content, mark, attentionMark } from "@/helpers/content";
 
 import { shuffle } from "@/utils/shuffle";
 
@@ -29,7 +25,6 @@ export const howToManageEmotions = {
   },
   whiteboard: {
     title: "C1-C2 Videos",
-    subtitle: "Ted-ED",
     descriptions: ["How We React Differently"],
   },
   sections: {
@@ -427,8 +422,7 @@ export const howToManageEmotions = {
             {
               prompt:
                 "the situation / by reappraising / she reduced / her distress",
-              answer:
-                "She reduced her distress by reappraising the situation.",
+              answer: "She reduced her distress by reappraising the situation.",
             },
             {
               prompt:
@@ -437,8 +431,7 @@ export const howToManageEmotions = {
                 "People may try tempering their emotional response after it arises.",
             },
             {
-              prompt:
-                "the principle / she had internalized / through practice",
+              prompt: "the principle / she had internalized / through practice",
               answer: "She had internalized the principle through practice.",
             },
           ],

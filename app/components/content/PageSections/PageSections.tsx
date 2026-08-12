@@ -1,14 +1,13 @@
 import {
   Children,
   isValidElement,
+  type ElementType,
   type ReactNode,
   type ReactElement,
 } from "react";
 
 import { TableOfContents } from "@/components/content/TableOfContents";
 import { formatSectionLabel } from "@/utils/formatSectionLabel";
-
-import type { LucideIcon } from "lucide-react";
 
 type SectionElementProps = {
   id: string;
@@ -22,8 +21,8 @@ type SectionElementProps = {
 type PageSectionsProps = {
   children: ReactNode;
   title?: ReactNode;
-  headerIcon?: LucideIcon;
-  itemIcon?: LucideIcon;
+  headerIcon?: ElementType;
+  itemIcon?: ElementType;
   headerIconClassName?: string;
   itemIconClassName?: string;
 };

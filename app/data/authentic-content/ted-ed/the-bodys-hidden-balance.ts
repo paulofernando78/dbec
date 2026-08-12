@@ -23,7 +23,6 @@ export const theBodysHiddenBalance = {
 
   whiteboard: {
     title: "C1-C2 Videos",
-    subtitle: "Ted-ED",
     descriptions: ["The Body’s Hidden Balance"],
   },
 

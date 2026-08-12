@@ -1,4 +1,5 @@
 import { LibraryPage } from "@/components/content/LibraryPage";
+import { AuthenticContent as AuthenticContentIcon } from "@/components/Icons";
 import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/news/news-card-data";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
@@ -26,6 +27,7 @@ export default function AuthenticContent() {
       title="AUTHENTIC CONTENT"
       sections={authenticContentSections}
       startIndex={courseLessonCount}
+      headerIcon={AuthenticContentIcon}
     />
   );
 }

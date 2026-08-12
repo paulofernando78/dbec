@@ -1,9 +1,9 @@
-import { Fragment, type ReactNode } from "react";
+import { Fragment, type ElementType, type ReactNode } from "react";
 import { Card } from "@/components/ui/Card";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { RichContent } from "@/helpers/content";
 
-import { Notebook, NotebookText, type LucideIcon } from "lucide-react";
+import { Notebook, NotebookText } from "lucide-react";
 
 type TableOfContentsItem = {
   title?: RichContent | string;
@@ -18,8 +18,8 @@ type TableOfContentsItem = {
 type TableOfContentsProps = {
   title?: ReactNode;
   items?: TableOfContentsItem[];
-  headerIcon?: LucideIcon;
-  itemIcon?: LucideIcon;
+  headerIcon?: ElementType;
+  itemIcon?: ElementType;
   headerIconClassName?: string;
   itemIconClassName?: string;
 };
@@ -36,7 +36,7 @@ export const TableOfContents = ({
     Array.isArray(value) ? value : [value];
 
   return (
-    <Card className="mb-4 px-4 pt-[1.1rem] pb-3 bg-gray-100">
+    <Card className="mb-4 px-4 pt-[1.1rem] pb-3 bg-gray-100 font-oswald text-lg">
       <div
         className="
         flex

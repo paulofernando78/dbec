@@ -3,22 +3,14 @@ import { content, audio, bold } from "@/helpers/content";
 export const beginnerRentingAHome = {
   whiteboard: {
     title: "A1 BEGINNER",
-    subtitle: "Renting a Home",
-    descriptions: [
-      "...",
-    ],
+    descriptions: ["..."],
   },
 
   introduction: {
     blocks: [
       {
         type: "lines",
-        value: [
-          [
-            audio("..."),
-            "...",
-          ],
-        ],
+        value: [[audio("..."), "..."]],
         className: "mb-4",
       },
       {

@@ -2,6 +2,8 @@ export const authenticContentNewsLessonsCardData = {
   ismalKoneBreaksLeg: {
     href: "/authentic-content/news/a-soccer-match-dramatic-moment",
     label: "A Soccer Match's Dramatic Moment",
+    description:
+      "A dramatic moment changes the atmosphere of an important soccer match.",
     objective:
       "Identify a report’s central event and consequences, then justify a position using evidence.",
     usefulLanguage:

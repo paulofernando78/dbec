@@ -2,25 +2,15 @@ export const gamesLucasArtsCardData = {
   monkeyIsland: {
     href: "/games/lucas-arts/monkey-island",
     label: "The Secret of Monkey Island",
-    objective:
-      "Follow a humorous adventure narrative, infer character motives, and explain puzzle decisions.",
-    usefulLanguage:
-      "He is trying to…; The clue suggests…; If we use… on…, we may…",
-    vocabulary: "Pirates, quests, clues, inventory, intentions",
-    skills: "Reading, inference, problem-solving, and collaborative speaking",
-    finalTask: "Explain and justify a solution to a story-based puzzle.",
+    description:
+      "Follow Guybrush Threepwood's humorous adventure as he tries to become a pirate, solves puzzles, and faces the ghost pirate LeChuck.",
+    date: "Oct 1990",
   },
   thimbleWeedPark: {
     href: "/games/lucas-arts/thimbleweed-park",
     label: "Thimbleweed Park",
-    objective:
-      "Track multiple perspectives, evaluate clues, and form a reasoned mystery hypothesis.",
-    usefulLanguage:
-      "From this character’s perspective…; The clue may imply…; My hypothesis is…",
-    vocabulary: "Mystery, investigation, suspects, clues, motives",
-    skills: "Reading, inference, note-taking, and collaborative speaking",
-    finalTask:
-      "Present and defend a theory about the mystery using collected clues.",
+    description:
+      "A dead body is the least of your problems. Switch between five playable characters to uncover the surreal secrets of a strange town in a modern mystery adventure game.",
+    date: "Mar 30, 2017",
   },
-  // date: "Mar 30, 2017",
 };

@@ -15,9 +15,7 @@ import {
 export const thimbleweedPark = {
   whiteboard: {
     title: "Advanced",
-    subtitle: "Games",
     descriptions: [
-      "Thimbleweed Park",
       "In Thimbleweed Park, a dead body is the least of your problems. Switch between five playable characters to uncover the surreal secrets of this strange town in a modern mystery adventure game from the creators of Monkey Island and Maniac Mansion. The deeper you go, the weirder it gets.",
     ],
     date: "Mar 30, 2017",

@@ -3,7 +3,6 @@ import { shuffle } from "@/utils/shuffle";
 export const intermediateGreenPlanet = {
   whiteboard: {
     title: "B1 Intermediate",
-    subtitle: "Green Planet",
     descriptions: [
       "Explain environmental facts and predictable results.",
       "Use the Zero Conditional for general truths.",

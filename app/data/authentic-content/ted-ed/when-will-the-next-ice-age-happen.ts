@@ -29,7 +29,6 @@ export const whenWillTheNextIceAgeHappen = {
   },
   whiteboard: {
     title: "C1-C2 Videos",
-    subtitle: "Ted-ED",
     descriptions: ["Earth’s Climate Cycle"],
   },
   sections: {

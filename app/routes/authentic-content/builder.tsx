@@ -68,18 +68,22 @@ export default function AuthenticContents() {
       : category === "ted-ed"
         ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
         : undefined;
+  const displayedWhiteboard = lessonCard
+    ? {
+        ...content.whiteboard,
+        title: "AUTHENTIC CONTENT",
+        subtitle: lessonCard.label,
+        date: lessonCard.date,
+        time: lessonCard.duration,
+      }
+    : content.whiteboard;
 
   return (
     <>
-      <Whiteboard {...content.whiteboard} />
+      <Whiteboard {...displayedWhiteboard} />
       <div>
         {lessonCard && (
-          <LessonCard
-            objective={lessonCard.objective}
-            usefulLanguage={lessonCard.usefulLanguage}
-            vocabulary={lessonCard.vocabulary}
-            finalTask={lessonCard.finalTask}
-          />
+          <LessonCard {...lessonCard} numbered={false} />
         )}
 
         <PageSections>

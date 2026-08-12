@@ -21,8 +21,7 @@ export const columnTranslations: Record<string, string> = {
   "This is my mother.": "Esta é minha mãe.",
   "His name is Robert.": "O nome dele é Robert.",
   "Her name is Heather.": "O nome dela é Heather.",
-  "Their names are James and Patricia.":
-    "Os nomes deles são James e Patricia.",
+  "Their names are James and Patricia.": "Os nomes deles são James e Patricia.",
   "living room": "sala de estar",
   kitchen: "cozinha",
   bedroom: "quarto",

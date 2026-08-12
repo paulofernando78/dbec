@@ -29,7 +29,6 @@ export const howDidAncientCivilizationsMakeIceCream = {
 
   whiteboard: {
     title: "Authentic Content",
-    subtitle: "Ted-ED",
     descriptions: ["The History of a Popular Ice Treat"],
   },
 

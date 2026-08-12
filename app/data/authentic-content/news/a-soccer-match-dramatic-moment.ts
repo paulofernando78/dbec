@@ -9,7 +9,6 @@ export const aSoccerMatchDramaticMoment = {
   },
   whiteboard: {
     title: "C1 Advanced",
-    subtitle: "News",
     descriptions: [
       "A dramatic moment changes the atmosphere of an important soccer match.",
     ],
@@ -376,8 +375,7 @@ export const aSoccerMatchDramaticMoment = {
             {
               prompt:
                 "sparked / the decision / an angry reaction / from both teams",
-              answer:
-                "The decision sparked an angry reaction from both teams.",
+              answer: "The decision sparked an angry reaction from both teams.",
             },
             {
               prompt: "announcement / emotions / after / the / boiled over",
@@ -398,8 +396,7 @@ export const aSoccerMatchDramaticMoment = {
                 "The medical staff immediately recognized the seriousness of the injury.",
             },
             {
-              prompt:
-                "onto the pitch / players / from both benches / ran",
+              prompt: "onto the pitch / players / from both benches / ran",
               answer: "Players from both benches ran onto the pitch.",
             },
             {
