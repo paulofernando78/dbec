@@ -38,7 +38,6 @@ import {
 import { lesson as courseTemplate } from "@/data/course/template";
 import {
   getLessonVocabulary,
-  getPracticeExerciseCounts,
 } from "@/utils/getLessonVocabulary";
 
 type CourseProps = {
@@ -376,18 +375,6 @@ export function Course({ lesson, lessonCard, levelTitle }: CourseProps) {
     card?.vocabulary,
   );
   const renderContext = { lessonVocabulary };
-  const practiceCounts = getPracticeExerciseCounts(displayedLesson);
-
-  if (
-    import.meta.env.DEV &&
-    (practiceCounts.radio < 8 || practiceCounts.fillInTheBlanks < 8)
-  ) {
-    console.warn(
-      `Lesson practice requires at least 8 Radio and 8 FillInTheBlanks items. Received Radio: ${practiceCounts.radio}, FillInTheBlanks: ${practiceCounts.fillInTheBlanks}.`,
-      displayedLesson.whiteboard?.subtitle,
-    );
-  }
-
   return (
     <>
       <Whiteboard {...displayedLesson.whiteboard} />
