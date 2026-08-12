@@ -27,8 +27,14 @@ import { Unscramble } from "@/features/exercises/Unscramble";
 import { Guess } from "@/features/exercises/Guess";
 
 import { getCourseLesson } from "@/data/course/lessons-slug";
-import { getCourseLessonCard } from "@/data/course/course-lessons-card-data";
-import { getCourseSyllabusLessonCard } from "@/data/course/course-syllabus-sections";
+import {
+  getCourseLessonCard,
+  getCourseLessonIndex,
+} from "@/data/course/course-lessons-card-data";
+import {
+  getCourseSyllabusLessonCard,
+  getCourseSyllabusLessonIndex,
+} from "@/data/course/course-syllabus-sections";
 import { lesson as courseTemplate } from "@/data/course/template";
 import {
   getLessonVocabulary,
@@ -422,6 +428,9 @@ export default function Lesson() {
       : getCourseLesson({ level, slug: lessonSlug });
   const lessonCard = courseLessonCard
     ? {
+        index: href
+          ? (getCourseSyllabusLessonIndex(href) ?? getCourseLessonIndex(href))
+          : undefined,
         label: courseLessonCard.label,
         objective: courseLessonCard.objective,
         usefulLanguage: courseLessonCard.usefulLanguage,

@@ -1040,3 +1040,14 @@ export const getCourseLessonCard = (
       lesson.materialHref === href ||
       lesson.assignmentHref === href,
   );
+
+export const getCourseLessonIndex = (href: string) => {
+  const index = allCourseLessonCards.findIndex(
+    (lesson) =>
+      lesson.href === href ||
+      lesson.materialHref === href ||
+      lesson.assignmentHref === href,
+  );
+
+  return index >= 0 ? index : undefined;
+};

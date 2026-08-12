@@ -1182,3 +1182,14 @@ export const allCourseSyllabusLessons = courseSyllabusSections.flatMap(
 
 export const getCourseSyllabusLessonCard = (href: string) =>
   allCourseSyllabusLessons.find((lesson) => lesson.href === href);
+
+export const getCourseSyllabusLessonIndex = (href: string) => {
+  const index = allCourseSyllabusLessons.findIndex(
+    (lesson) =>
+      lesson.href === href ||
+      lesson.materialHref === href ||
+      lesson.assignmentHref === href,
+  );
+
+  return index >= 0 ? index : undefined;
+};

@@ -29,6 +29,7 @@ type ClassroomMaterialContent = {
 };
 
 export type LessonCardContent = {
+  index?: number;
   objective: string;
   usefulLanguage?: string;
   vocabulary?: string;
@@ -130,7 +131,7 @@ export const LessonCard = ({
     if (content?.title) {
       shareUrl.searchParams.set("title", content.title);
     } else if (itemtype !== "announcement") {
-      shareUrl.searchParams.set("title", `Lesson ${index + 1} • ${label}`);
+      shareUrl.searchParams.set("title", `${index + 1} • ${label}`);
     }
     shareUrl.searchParams.set("itemtype", itemtype);
 
@@ -143,7 +144,7 @@ export const LessonCard = ({
 
   const cardHeader = (
     <div className="flex flex-col gap-1">
-      <b>{href ? `Lesson ${index + 1} • ${label}` : label}</b>
+      <b>{href ? `${index + 1} • ${label}` : label}</b>
     </div>
   );
 
@@ -286,7 +287,7 @@ export const LessonCard = ({
                           itemtype === "announcement"
                             ? undefined
                             : itemtype === "material"
-                              ? `Lesson ${index + 1} • ${label}`
+                              ? `${index + 1} • ${label}`
                               : classroom?.[itemtype]?.title,
                         body: classroom?.[itemtype]?.description,
                       })}

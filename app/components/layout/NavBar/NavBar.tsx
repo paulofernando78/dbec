@@ -28,7 +28,8 @@ const getCourseLessonLinks = (items: NavItem[]): NavItem[] =>
   });
 
 const navGroups = links as NavGroup[];
-const courseLinks = navGroups.find((group) => group.title === "Course")?.links ?? [];
+const courseLinks =
+  navGroups.find((group) => group.title === "Course")?.links ?? [];
 const numberedCourseLessons = getCourseLessonLinks(courseLinks);
 
 const lessonNumberByHref = new Map(
@@ -40,7 +41,7 @@ const getNavItemLabel = (item: NavItem) => {
     ? lessonNumberByHref.get(item.href)
     : undefined;
 
-  return lessonNumber ? `Lesson ${lessonNumber} • ${item.label}` : item.label;
+  return lessonNumber ? `${lessonNumber} • ${item.label}` : item.label;
 };
 
 const getNavItemKey = (item: NavItem) =>
@@ -53,7 +54,6 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
-
   const isLesson = item.href ? lessonNumberByHref.has(item.href) : false;
 
   if (item.links?.length) {
@@ -97,7 +97,7 @@ function RenderNavItem({
           )}
         </summary>
 
-        <div >
+        <div>
           {item.links.map((child) => (
             <RenderNavItem
               key={getNavItemKey(child)}
