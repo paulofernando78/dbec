@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
+import { LogIn, LogOut, MoonStar, Sun } from "@/components/Icons";
 
-import { Menu, Sun, MoonStar, LogIn, LogOut } from "lucide-react";
-
-import styles from "./Header.module.css";
+import { Menu } from "lucide-react";
 
 interface HeadersProps {
   onClick: () => void;
@@ -62,11 +61,15 @@ export const Header = ({ onClick }: HeadersProps) => {
             font-bold
           "
         >
-          <Link to="/" className="text-lg">HOME</Link>
+          <Link to="/" className="text-lg">
+            HOME
+          </Link>
 
           <span className="w-0.75 h-5 bg-gray-500" />
 
-          <Link to="/about" className="text-lg">ABOUT</Link>
+          <Link to="/about" className="text-lg">
+            ABOUT
+          </Link>
         </div>
       )}
 
@@ -77,14 +80,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         />
 
         <Button
-          className={styles.logInOutBtn}
-          icon={
-            isLoggedIn ? (
-              <LogOut className={styles.logOutArrow} />
-            ) : (
-              <LogIn className={styles.logInArrow} />
-            )
-          }
+          icon={isLoggedIn ? <LogOut /> : <LogIn />}
           onClick={handleLogin}
         />
       </div>

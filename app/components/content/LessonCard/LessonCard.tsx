@@ -307,7 +307,7 @@ export const LessonCard = ({
                     ${classroomCardPadding}`}
                       aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
                     >
-                      <Icon className="shrink-0" />
+                      <Icon className="shrink-0 text-gray-400" />
                       <span className={classroomCardLabel}>{postLabel}</span>
                     </a>
                   ),

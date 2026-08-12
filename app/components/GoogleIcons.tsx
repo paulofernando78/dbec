@@ -8,7 +8,7 @@ export const LessonObjective = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -22,7 +22,7 @@ export const LessonUsefulLanguage = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -36,7 +36,7 @@ export const LessonVocabulary = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -50,7 +50,7 @@ export const LessonPronunciation = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -64,7 +64,7 @@ export const LessonFinalTask = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -78,7 +78,7 @@ export const GoogleClassroomAnnouncement = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="22"
     height="22"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -92,7 +92,7 @@ export const GoogleClassroomMaterial = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -106,7 +106,7 @@ export const GoogleClassroomAssignment = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -120,7 +120,7 @@ export const GoogleClassroomQuestion = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -134,7 +134,7 @@ export const GoogleClassroomShortAnswer = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="15"
     height="15"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
@@ -148,7 +148,7 @@ export const GoogleClassroomMultipleChoice = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="15"
     height="15"
-    fill="currentColor"
+    fill="gray"
     aria-hidden="true"
     {...props}
   >
