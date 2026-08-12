@@ -31,8 +31,9 @@ export const intermediateWhatIf = {
       {
         type: "dialogue",
         ...{
-          instruction:
+          instruction: [
             "Read or listen once: what is the backup plan if it rains? Then read or listen again for the conditions and their consequences.",
+          ],
           audioSrc: "",
           lines: [
             { speaker: "Kai", line: ["What will we do if it rains tomorrow?"] },

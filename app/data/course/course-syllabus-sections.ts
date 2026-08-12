@@ -49,12 +49,16 @@ const lesson = (
 ): CourseLessonCard => {
   const canonicalCard = getCanonicalCourseCard(level, label);
   const cardLabel = canonicalCard?.label ?? label;
+  const lessonSlug = slug(label);
+  const fallbackMaterialHref = `/course/${level}/section-${lessonSlug}/material/${lessonSlug}`;
 
   return {
-    href: canonicalCard?.href ?? `/course/${level}/${slug(label)}`,
+    href: canonicalCard?.href ?? fallbackMaterialHref,
+    materialHref: canonicalCard?.materialHref ?? fallbackMaterialHref,
     assignmentHref:
       canonicalCard?.assignmentHref ??
-      `/course/${level}/${slug(label)}/assignment/${slug(label)}`,
+      `/course/${level}/section-${lessonSlug}/assignment/${lessonSlug}`,
+    legacyHref: canonicalCard?.legacyHref ?? `/course/${level}/${lessonSlug}`,
     label: cardLabel,
     objective: `Can use the target language to handle a ${cardLabel.toLowerCase()} situation at this CEFR level.`,
     usefulLanguage,
@@ -68,10 +72,31 @@ const lesson = (
 const group = (
   label: string,
   lessons: CourseLessonCard[],
-): CourseSyllabusGroup => ({
-  label,
-  lessons,
-});
+): CourseSyllabusGroup => {
+  const sectionNumber = label.match(/^Section (\d+)/i)?.[1];
+
+  if (!sectionNumber) return { label, lessons };
+
+  return {
+    label,
+    lessons: lessons.map((lesson) => {
+      const segments = lesson.href.split("/").filter(Boolean);
+      const level = segments[1];
+      const lessonSlug = segments.at(-1);
+
+      if (!level || !lessonSlug) return lesson;
+
+      const materialHref = `/course/${level}/section-${sectionNumber}/material/${lessonSlug}`;
+
+      return {
+        ...lesson,
+        href: materialHref,
+        materialHref,
+        assignmentHref: `/course/${level}/section-${sectionNumber}/assignment/${lessonSlug}`,
+      };
+    }),
+  };
+};
 
 export const courseSyllabusSections: CourseSyllabusLevel[] = [
   {
@@ -693,7 +718,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 5 • Work and Career", [
         lesson(
           "intermediate",
-          "First Conditional",
+          "What If?",
           "If I get the job, I'll move to London.",
           "work situations",
           "First Conditional",
@@ -753,7 +778,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 7 • The Environment", [
         lesson(
           "intermediate",
-          "Environmental Problems",
+          "Green Planet",
           "There is too much pollution.; There aren't enough recycling bins.",
           "environment",
           "too much/many; enough",
@@ -915,7 +940,15 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 2 • Hypotheses and Regrets", [
         lesson(
           "upper-intermediate",
-          "Third Conditional",
+          "Dream Scenarios",
+          "If I had more freedom, I would travel more.",
+          "hypothetical choices and consequences",
+          "Second Conditional",
+          "would contractions and hypothetical stress",
+        ),
+        lesson(
+          "upper-intermediate",
+          "Regrets",
           "If I had known, I would have told you.",
           "past hypotheticals",
           "Third Conditional",
@@ -1181,14 +1214,21 @@ export const allCourseSyllabusLessons = courseSyllabusSections.flatMap(
 );
 
 export const getCourseSyllabusLessonCard = (href: string) =>
-  allCourseSyllabusLessons.find((lesson) => lesson.href === href);
+  allCourseSyllabusLessons.find(
+    (lesson) =>
+      lesson.href === href ||
+      lesson.materialHref === href ||
+      lesson.assignmentHref === href ||
+      lesson.legacyHref === href,
+  );
 
 export const getCourseSyllabusLessonIndex = (href: string) => {
   const index = allCourseSyllabusLessons.findIndex(
     (lesson) =>
       lesson.href === href ||
       lesson.materialHref === href ||
-      lesson.assignmentHref === href,
+      lesson.assignmentHref === href ||
+      lesson.legacyHref === href,
   );
 
   return index >= 0 ? index : undefined;

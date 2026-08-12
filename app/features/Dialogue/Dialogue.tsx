@@ -10,7 +10,7 @@ type DialogueLine = {
 };
 
 type DialogueProps = {
-  instruction: RichContent;
+  instruction: RichContent | string;
   audioSrc: string;
   lines: DialogueLine[];
 };

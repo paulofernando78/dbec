@@ -8,7 +8,6 @@ import {
   Scripts,
   ScrollRestoration,
   useNavigation,
-  useLocation
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -17,8 +16,6 @@ import "./app.css";
 import { Loading } from "@/components/ui/Loading";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "./components/layout/Footer";
-
-import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -42,8 +39,6 @@ export default function App() {
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
-
-  const location = useLocation();
 
   const toggleNav = () => {
     setIsNavBarOpen((prev) => !prev);
@@ -79,7 +74,6 @@ export default function App() {
             ) : (
               <Outlet context={{ isNavBarOpen, closeNavBar }} />
             )}
-            {location.pathname !== "/" && <ScrollToTop />}
           </div>
         </div>
         <Footer />

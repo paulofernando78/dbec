@@ -9,35 +9,61 @@ type CourseLessonCardInput = LessonCardContent & {
 
 export type CourseLessonCard = CourseLessonCardInput & {
   href: string;
+  materialHref: string;
   assignmentHref: string;
+  legacyHref?: string;
 };
 
-const createAssignmentHref = (materialHref: string) => {
-  const segments = materialHref.split("/").filter(Boolean);
+const getCourseResourceParts = (href: string) => {
+  const segments = href.split("/").filter(Boolean);
   const level = segments[1];
   const materialIndex = segments.indexOf("material");
+  const assignmentIndex = segments.indexOf("assignment");
+  const resourceIndex =
+    materialIndex >= 0
+      ? materialIndex
+      : assignmentIndex >= 0
+        ? assignmentIndex
+        : -1;
   const slug = segments.at(-1);
-  const chapter =
-    materialIndex >= 0 ? segments[materialIndex - 1] : (segments[2] ?? slug);
+  const rawSection =
+    resourceIndex >= 0 ? segments[resourceIndex - 1] : (segments[2] ?? slug);
+  const section = rawSection.replace(/^chapter-/, "section-");
 
-  if (!level || !chapter || !slug) {
-    throw new Error(`Invalid materialHref: "${materialHref}".`);
+  if (!level || !section || !slug) {
+    throw new Error(`Invalid course href: "${href}".`);
   }
 
-  return `/course/${level}/${chapter}/assignment/${slug}`;
+  return { level, section, slug };
+};
+
+const createResourceHref = (
+  href: string,
+  resourceType: "material" | "assignment",
+) => {
+  const { level, section, slug } = getCourseResourceParts(href);
+
+  return `/course/${level}/${section}/${resourceType}/${slug}`;
 };
 
 const card = (lesson: CourseLessonCardInput): CourseLessonCard => {
-  const href = lesson.materialHref ?? lesson.href;
+  const sourceHref = lesson.materialHref ?? lesson.href;
 
-  if (!href) {
+  if (!sourceHref) {
     throw new Error(`Missing materialHref for "${lesson.label}".`);
   }
 
+  const materialHref = createResourceHref(sourceHref, "material");
+
   return {
     ...lesson,
-    href,
-    assignmentHref: lesson.assignmentHref ?? createAssignmentHref(href),
+    href: materialHref,
+    materialHref,
+    assignmentHref: createResourceHref(
+      lesson.assignmentHref ?? sourceHref,
+      "assignment",
+    ),
+    legacyHref: lesson.href !== materialHref ? lesson.href : undefined,
   };
 };
 
@@ -52,8 +78,8 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       vocabulary: "Greetings, first names, goodbyes",
       pronunciation: "Friendly greeting intonation; linking in 'meet you'",
       finalTask: "Meet a classmate and have a short first conversation.",
-      materialHref: "/course/beginner/chapter-1/material/hello",
-      assignmentHref: "/course/beginner/chapter-1/assignment/hello",
+      materialHref: "/course/beginner/section-1/material/hello",
+      assignmentHref: "/course/beginner/section-1/assignment/hello",
       classroom: {
         announcement: {
           description: "Review this lesson before our next class.",
@@ -68,7 +94,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       },
     }),
     card({
-      href: "/course/beginner/chapter-1/personal-information",
+      materialHref: "/course/beginner/section-1/material/personal-information",
       label: "Personal Information",
       objective:
         "Can ask for and give basic personal information in a simple form or interview.",
@@ -81,7 +107,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Interview a partner and complete a simple registration form.",
     }),
     card({
-      href: "/course/beginner/chapter-1/my-family",
+      materialHref: "/course/beginner/section-2/material/my-family",
       label: "Nuclear Family",
       objective:
         "Can introduce close family members and say how people are related.",
@@ -94,7 +120,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Use a photo or drawing to introduce three family members.",
     }),
     card({
-      href: "/course/beginner/chapter-1/my-relatives",
+      materialHref: "/course/beginner/section-2/material/my-relatives",
       label: "Extended Family",
       objective:
         "Can describe simple extended-family relationships using prepared language.",
@@ -519,8 +545,8 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Negotiate and confirm a group plan.",
     }),
     card({
-      href: "/course/intermediate/real-possibilities",
-      label: "Real Possibilities",
+      href: "/course/intermediate/what-if",
+      label: "What If?",
       objective:
         "Can discuss likely future situations and explain their consequences.",
       usefulLanguage:
@@ -542,8 +568,8 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Respond to a problem scenario with advice and reasons.",
     }),
     card({
-      href: "/course/intermediate/our-planet",
-      label: "Our Planet",
+      href: "/course/intermediate/green-planet",
+      label: "Green Planet",
       objective:
         "Can describe environmental problems using quantity and cause-effect language.",
       usefulLanguage:
@@ -679,8 +705,8 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
 
   upperIntermediate: [
     card({
-      href: "/course/upper-intermediate/wishing-for-change",
-      label: "Wishing For Change",
+      href: "/course/upper-intermediate/dream-scenarios",
+      label: "Dream Scenarios",
       objective:
         "Can explore hypothetical life choices and evaluate possible consequences.",
       usefulLanguage:
@@ -700,8 +726,8 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
       finalTask: "Present a life-goal plan and respond to questions.",
     }),
     card({
-      href: "/course/upper-intermediate/if-only",
-      label: "If Only...",
+      href: "/course/upper-intermediate/regrets",
+      label: "Regrets",
       objective:
         "Can reflect on past decisions and discuss alternative outcomes.",
       usefulLanguage:
@@ -1038,7 +1064,8 @@ export const getCourseLessonCard = (
     (lesson) =>
       lesson.href === href ||
       lesson.materialHref === href ||
-      lesson.assignmentHref === href,
+      lesson.assignmentHref === href ||
+      lesson.legacyHref === href,
   );
 
 export const getCourseLessonIndex = (href: string) => {
@@ -1046,7 +1073,8 @@ export const getCourseLessonIndex = (href: string) => {
     (lesson) =>
       lesson.href === href ||
       lesson.materialHref === href ||
-      lesson.assignmentHref === href,
+      lesson.assignmentHref === href ||
+      lesson.legacyHref === href,
   );
 
   return index >= 0 ? index : undefined;

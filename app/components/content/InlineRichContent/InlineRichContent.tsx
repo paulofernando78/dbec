@@ -16,11 +16,11 @@ import { CircleCheck, CircleX, Dot, Spotlight, ArrowRight } from "lucide-react";
 import styles from "./InlineRichContent.module.css";
 
 type InlineRichContentProps = {
-  value: RichContent;
+  value: RichContent | string;
 };
 
 export const InlineRichContent = ({ value }: InlineRichContentProps) => {
-  const contentArray = value || [];
+  const contentArray = Array.isArray(value) ? value : value ? [value] : [];
 
   const bulletCount = contentArray.filter(
     (part) => typeof part === "object" && part?.bullet,

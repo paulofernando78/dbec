@@ -402,18 +402,18 @@ export function Course({ lesson, lessonCard }: CourseProps) {
 }
 
 export default function Lesson() {
-  const { level, chapter, resourceType, slug } = useParams();
+  const { level, section, resourceType, slug } = useParams();
   const isTypedResource =
     resourceType === "material" || resourceType === "assignment";
   const resolvedResourceType = isTypedResource ? resourceType : "material";
   const lessonSlug = isTypedResource
-    ? (slug ?? chapter)
-    : (resourceType ?? chapter);
+    ? (slug ?? section)
+    : (resourceType ?? section);
   const href =
-    level && chapter
+    level && section
       ? isTypedResource && slug
-        ? `/course/${level}/${chapter}/${resourceType}/${slug}`
-        : `/course/${level}/${chapter}${resourceType ? `/${resourceType}` : ""}`
+        ? `/course/${level}/${section}/${resourceType}/${slug}`
+        : `/course/${level}/${section}${resourceType ? `/${resourceType}` : ""}`
       : undefined;
   const courseLessonCard = href
     ? (getCourseLessonCard(href) ?? getCourseSyllabusLessonCard(href))

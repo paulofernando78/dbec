@@ -37,7 +37,7 @@ export default [
     route("/course", "routes/course.tsx"),
 
     route(
-      "/course/:level/:chapter/:resourceType?/:slug?",
+      "/course/:level/:section/:resourceType?/:slug?",
       "routes/course/builder.tsx",
     ),
 
