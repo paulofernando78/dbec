@@ -15,109 +15,116 @@ export const upperIntermediateRegrets = {
         type: "carousel",
         aspectRatio: "wide",
         ...{
-      instruction:
-        "Read the situations. What past decision is being reconsidered, and what alternative result is imagined?",
-      imgs: [
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPast%20condition%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Past condition",
-          content: [
-            "If I had checked the route, I wouldn't have missed the train.",
+          instruction:
+            "Read the situations. What past decision is being reconsidered, and what alternative result is imagined?",
+          imgs: [
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EPast%20condition%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Past condition",
+              content: [
+                "If I had checked the route, I wouldn't have missed the train.",
+              ],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EAlternative%20outcome%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Alternative outcome",
+              content: ["We could have won if we had prepared more carefully."],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EReflection%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Reflection",
+              content: [
+                "If she had known the cost, she might have chosen differently.",
+              ],
+            },
           ],
         },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EAlternative%20outcome%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Alternative outcome",
-          content: ["We could have won if we had prepared more carefully."],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EReflection%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Reflection",
-          content: [
-            "If she had known the cost, she might have chosen differently.",
-          ],
-        },
-      ],
-    },
       },
       {
         type: "imageQuiz",
         ...{
-      questions: [
-        {
-          word: "hindsight",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ehindsight%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "hindsight",
-          options: shuffle([
-            { option: "hindsight", isCorrect: true },
-            { option: "outcome", isCorrect: false },
-            { option: "misjudge", isCorrect: false },
-            { option: "consequence", isCorrect: false },
-          ]),
+          questions: [
+            {
+              word: "hindsight",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ehindsight%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "hindsight",
+              options: shuffle([
+                { option: "hindsight", isCorrect: true },
+                { option: "outcome", isCorrect: false },
+                { option: "misjudge", isCorrect: false },
+                { option: "consequence", isCorrect: false },
+              ]),
+            },
+            {
+              word: "outcome",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eoutcome%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "outcome",
+              options: shuffle([
+                { option: "hindsight", isCorrect: false },
+                { option: "outcome", isCorrect: true },
+                { option: "misjudge", isCorrect: false },
+                { option: "consequence", isCorrect: false },
+              ]),
+            },
+            {
+              word: "misjudge",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Emisjudge%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "misjudge",
+              options: shuffle([
+                { option: "hindsight", isCorrect: false },
+                { option: "outcome", isCorrect: false },
+                { option: "misjudge", isCorrect: true },
+                { option: "consequence", isCorrect: false },
+              ]),
+            },
+            {
+              word: "consequence",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Econsequence%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "consequence",
+              options: shuffle([
+                { option: "hindsight", isCorrect: false },
+                { option: "outcome", isCorrect: false },
+                { option: "misjudge", isCorrect: false },
+                { option: "consequence", isCorrect: true },
+              ]),
+            },
+          ],
         },
-        {
-          word: "outcome",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eoutcome%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "outcome",
-          options: shuffle([
-            { option: "hindsight", isCorrect: false },
-            { option: "outcome", isCorrect: true },
-            { option: "misjudge", isCorrect: false },
-            { option: "consequence", isCorrect: false },
-          ]),
-        },
-        {
-          word: "misjudge",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Emisjudge%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "misjudge",
-          options: shuffle([
-            { option: "hindsight", isCorrect: false },
-            { option: "outcome", isCorrect: false },
-            { option: "misjudge", isCorrect: true },
-            { option: "consequence", isCorrect: false },
-          ]),
-        },
-        {
-          word: "consequence",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Econsequence%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "consequence",
-          options: shuffle([
-            { option: "hindsight", isCorrect: false },
-            { option: "outcome", isCorrect: false },
-            { option: "misjudge", isCorrect: false },
-            { option: "consequence", isCorrect: true },
-          ]),
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Check your understanding of the situations.",
-      exercise: {
-        questions: [
-          {
-            question: "What did Ari reject?",
-            options: [
-              { option: "An internship.", isCorrect: true },
-              { option: "A permanent promotion.", isCorrect: false },
-            ],
-          },
-          {
-            question: "Why did Ari reject it?",
-            options: [
+          instruction: "Check your understanding of the situations.",
+          exercise: {
+            questions: [
               {
-                option: "A mistaken judgement about travel time.",
-                isCorrect: true,
+                question: "What did Ari reject?",
+                options: [
+                  { option: "An internship.", isCorrect: true },
+                  { option: "A permanent promotion.", isCorrect: false },
+                ],
               },
-              { option: "A lack of interest in the work.", isCorrect: false },
+              {
+                question: "Why did Ari reject it?",
+                options: [
+                  {
+                    option: "A mistaken judgement about travel time.",
+                    isCorrect: true,
+                  },
+                  {
+                    option: "A lack of interest in the work.",
+                    isCorrect: false,
+                  },
+                ],
+              },
             ],
           },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   presentation: {
@@ -125,67 +132,73 @@ export const upperIntermediateRegrets = {
       {
         type: "dialogue",
         ...{
-      instruction:
-        "Read or listen once: which opportunity does Ari regret rejecting? Then read or listen again for the unreal cause and imagined result.",
-      audioSrc: "",
-      lines: [
-        { speaker: "Ari", line: ["I wish I'd accepted the internship."] },
-        { speaker: "Bea", line: ["Why did you turn it down?"] },
-        {
-          speaker: "Ari",
-          line: [
-            "I misjudged the travel time. If I'd researched it properly, I would have accepted.",
+          instruction:
+            "Read or listen once: which opportunity does Ari regret rejecting? Then read or listen again for the unreal cause and imagined result.",
+          audioSrc: "",
+          lines: [
+            { speaker: "Ari", line: ["I wish I'd accepted the internship."] },
+            { speaker: "Bea", line: ["Why did you turn it down?"] },
+            {
+              speaker: "Ari",
+              line: [
+                "I misjudged the travel time. If I'd researched it properly, I would have accepted.",
+              ],
+            },
+            {
+              speaker: "Bea",
+              line: [
+                "The outcome might have been different, but you learned from it.",
+              ],
+            },
+            {
+              speaker: "Ari",
+              line: [
+                "True. If I hadn't made that mistake, I wouldn't be as careful now.",
+              ],
+            },
           ],
         },
-        {
-          speaker: "Bea",
-          line: [
-            "The outcome might have been different, but you learned from it.",
-          ],
-        },
-        {
-          speaker: "Ari",
-          line: [
-            "True. If I hadn't made that mistake, I wouldn't be as careful now.",
-          ],
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Choose the answer supported by the dialogue.",
-      exercise: {
-        questions: [
-          {
-            question: "What did Ari reject?",
-            options: [
-              { option: "An internship.", isCorrect: true },
-              { option: "A permanent promotion.", isCorrect: false },
-            ],
-          },
-          {
-            question: "Why did Ari reject it?",
-            options: [
+          instruction: "Choose the answer supported by the dialogue.",
+          exercise: {
+            questions: [
               {
-                option: "A mistaken judgement about travel time.",
-                isCorrect: true,
+                question: "What did Ari reject?",
+                options: [
+                  { option: "An internship.", isCorrect: true },
+                  { option: "A permanent promotion.", isCorrect: false },
+                ],
               },
-              { option: "A lack of interest in the work.", isCorrect: false },
+              {
+                question: "Why did Ari reject it?",
+                options: [
+                  {
+                    option: "A mistaken judgement about travel time.",
+                    isCorrect: true,
+                  },
+                  {
+                    option: "A lack of interest in the work.",
+                    isCorrect: false,
+                  },
+                ],
+              },
+              {
+                question: "What positive result came from the mistake?",
+                options: [
+                  { option: "Ari is more careful now.", isCorrect: true },
+                  {
+                    option: "Ari never makes decisions now.",
+                    isCorrect: false,
+                  },
+                ],
+              },
             ],
           },
-          {
-            question: "What positive result came from the mistake?",
-            options: [
-              { option: "Ari is more careful now.", isCorrect: true },
-              { option: "Ari never makes decisions now.", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   languageFocus: {
@@ -193,86 +206,89 @@ export const upperIntermediateRegrets = {
       {
         type: "meaning",
         value: [
-      {
-        as: "p",
-        parts: [
-          { part: "Third Conditional: ", type: "bold" },
-          "Use the Third Conditional to imagine an unreal past condition and an alternative past result. Neither event actually happened as described.",
+          {
+            as: "p",
+            parts: [
+              { part: "Third Conditional: ", type: "bold" },
+              "Use the Third Conditional to imagine an unreal past condition and an alternative past result. Neither event actually happened as described.",
+            ],
+          },
         ],
-      },
-    ],
       },
       {
         type: "column",
         ...{
-      width: 320,
-      cols: [
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Condition",
-          items: [
-            { as: "p", parts: ["If I had checked..."] },
-            { as: "p", parts: ["If they hadn't rushed..."] },
-            { as: "p", parts: ["Had we known..."] },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Result",
-          items: [
-            { as: "p", parts: ["...I would have noticed."] },
-            { as: "p", parts: ["...they might have succeeded."] },
-            { as: "p", parts: ["...we could have helped."] },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Mixed reflection",
-          items: [
+          width: 320,
+          cols: [
             {
-              as: "p",
-              parts: ["If I hadn't moved, I wouldn't live here now."],
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Condition",
+              items: [
+                { as: "p", parts: ["If I had checked..."] },
+                { as: "p", parts: ["If they hadn't rushed..."] },
+                { as: "p", parts: ["If we had known..."] },
+              ],
             },
-            { as: "p", parts: ["That mistake made me more careful."] },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Result",
+              items: [
+                { as: "p", parts: ["...I would have noticed."] },
+                { as: "p", parts: ["...they might have succeeded."] },
+                { as: "p", parts: ["...we could have helped."] },
+              ],
+            },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Past reality",
+              items: [
+                {
+                  as: "p",
+                  parts: ["I moved, so I live here now."],
+                },
+                {
+                  as: "p",
+                  parts: ["The conditional imagines a different past result."],
+                },
+              ],
+            },
           ],
         },
-      ],
-    },
       },
       {
         type: "notes",
         value: [
-      {
-        as: "p",
-        parts: [
-          "Use had + past participle in the condition and would/could/might have + past participle in the result.",
+          {
+            as: "p",
+            parts: [
+              "Use had + past participle in the condition and would/could/might have + past participle in the result.",
+            ],
+          },
+          {
+            as: "p",
+            parts: [
+              "Use the Third Conditional to evaluate an unreal past alternative, not simply to narrate what happened. Avoid would have in the if-clause.",
+            ],
+          },
         ],
-      },
-      {
-        as: "p",
-        parts: [
-          "Use the Third Conditional to evaluate an unreal past alternative, not simply to narrate what happened. Avoid would have in the if-clause.",
-        ],
-      },
-    ],
       },
       {
         type: "ccq",
         value: [
-      { as: "p", parts: ["Did Ari research the journey properly?"] },
-      { as: "p", parts: ["Did Ari accept the internship?"] },
-      {
-        as: "p",
-        parts: ["Are we changing reality or imagining an alternative?"],
+          { as: "p", parts: ["Did Ari research the journey properly?"] },
+          { as: "p", parts: ["Did Ari accept the internship?"] },
+          {
+            as: "p",
+            parts: ["Are we changing reality or imagining an alternative?"],
+          },
+        ],
       },
-    ],
-      }
     ],
   },
   practice: {
@@ -283,152 +299,188 @@ export const upperIntermediateRegrets = {
       {
         type: "radio",
         ...{
-      instruction: "Choose the most accurate option.",
-      exercise: {
-        questions: [
-          {
-            question: "If we ___ earlier, we wouldn't have missed it.",
-            options: [
-              { option: "had left", isCorrect: true },
-              { option: "would leave", isCorrect: false },
-              { option: "would have left", isCorrect: false },
+          instruction: "Choose the most accurate option.",
+          exercise: {
+            questions: [
+              {
+                question: "If we ___ earlier, we wouldn't have missed it.",
+                options: [
+                  { option: "had left", isCorrect: true },
+                  { option: "would leave", isCorrect: false },
+                  { option: "would have left", isCorrect: false },
+                ],
+              },
+              {
+                question: "She might have succeeded if she ___ more support.",
+                options: [
+                  { option: "had received", isCorrect: true },
+                  { option: "would have receive", isCorrect: false },
+                  { option: "received", isCorrect: false },
+                ],
+              },
+              {
+                question: "If I had known, I ___ you.",
+                options: [
+                  { option: "would have told", isCorrect: true },
+                  { option: "had tell", isCorrect: false },
+                  { option: "would tell", isCorrect: false },
+                ],
+              },
+              {
+                question: "They ___ the error if they had checked the figures.",
+                options: [
+                  { option: "could have found", isCorrect: true },
+                  { option: "could find", isCorrect: false },
+                  { option: "had found", isCorrect: false },
+                ],
+              },
+              {
+                question: "If you had warned me, I ___ a different route.",
+                options: [
+                  { option: "would have taken", isCorrect: true },
+                  { option: "had taken", isCorrect: false },
+                  { option: "would take", isCorrect: false },
+                ],
+              },
+              {
+                question:
+                  "If they hadn't ignored the warning, the accident ___.",
+                options: [
+                  { option: "might have been prevented", isCorrect: true },
+                  { option: "might prevent", isCorrect: false },
+                  { option: "had prevented", isCorrect: false },
+                ],
+              },
+              {
+                question: "If he had prepared better, he ___ the interview.",
+                options: [
+                  { option: "might have passed", isCorrect: true },
+                  { option: "might pass", isCorrect: false },
+                  { option: "had passed", isCorrect: false },
+                ],
+              },
+              {
+                question: "We would have arrived earlier if the train ___.",
+                options: [
+                  { option: "had not been delayed", isCorrect: true },
+                  { option: "would not be delayed", isCorrect: false },
+                  { option: "was not delayed", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "She might have succeeded if she ___ more support.",
-            options: [
-              { option: "had received", isCorrect: true },
-              { option: "would have receive", isCorrect: false },
-              { option: "received", isCorrect: false },
-            ],
-          },
-          {
-            question: "If I had known, I ___ you.",
-            options: [
-              { option: "would have told", isCorrect: true },
-              { option: "had tell", isCorrect: false },
-              { option: "would tell", isCorrect: false },
-            ],
-          },
-          {
-            question: "They ___ the error if they had checked the figures.",
-            options: [
-              { option: "could have found", isCorrect: true },
-              { option: "could find", isCorrect: false },
-              { option: "had found", isCorrect: false },
-            ],
-          },
-          {
-            question: "Had you warned me, I ___ a different route.",
-            options: [
-              { option: "would have taken", isCorrect: true },
-              { option: "had taken", isCorrect: false },
-              { option: "would take", isCorrect: false },
-            ],
-          },
-          {
-            question: "If they hadn't ignored the warning, the accident ___.",
-            options: [
-              { option: "might have been prevented", isCorrect: true },
-              { option: "might prevent", isCorrect: false },
-              { option: "had prevented", isCorrect: false },
-            ],
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "fillInTheBlanks",
         ...{
-      showWordBank: true,
-      instruction: "Complete the sentences with the target language.",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [
-              { text: "If I had listened, I " },
-              { blank: "would have avoided" },
-              { text: " the problem." },
+          showWordBank: true,
+          instruction: "Complete the sentences with the target language.",
+          numbered: true,
+          exercise: {
+            blocks: [
+              {
+                block: [
+                  { text: "If I had listened, I " },
+                  { blank: "would have avoided" },
+                  { text: " the problem." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "We could have arrived on time if we " },
+                  { blank: "had left" },
+                  { text: " earlier." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "If she hadn't rushed, she " },
+                  { blank: "might have noticed" },
+                  { text: " the mistake." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "If they had known, they " },
+                  { blank: "would have acted" },
+                  { text: " differently." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "If you had asked for help, we " },
+                  { blank: "could have supported" },
+                  { text: " you." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "She wouldn't have resigned if the situation " },
+                  { blank: "had improved" },
+                  { text: "." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "If he had checked the address, he " },
+                  { blank: "would have found" },
+                  { text: " the correct building." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "They might have avoided the delay if they " },
+                  { blank: "had booked" },
+                  { text: " earlier." },
+                ],
+                lineBreak: true,
+              },
             ],
-            lineBreak: true,
           },
-          {
-            block: [
-              { text: "We could have arrived on time if we " },
-              { blank: "had left" },
-              { text: " earlier." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "If she hadn't rushed, she " },
-              { blank: "might have noticed" },
-              { text: " the mistake." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "Had they known, they " },
-              { blank: "would have acted" },
-              { text: " differently." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "If you had asked for help, we " },
-              { blank: "could have supported" },
-              { text: " you." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "She wouldn't have resigned if the situation " },
-              { blank: "had improved" },
-              { text: "." },
-            ],
-            lineBreak: true,
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "unscramble",
         ...{
-      showWordBank: false,
-      instruction: "Unscramble the sentences.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "had known / I / would have called / if / I",
-            answer: "I would have called if I had known.",
+          showWordBank: false,
+          instruction: "Unscramble the sentences.",
+          numbered: true,
+          exercise: {
+            items: [
+              {
+                prompt: "had known / I / would have called / if / I",
+                answer: "I would have called if I had known.",
+              },
+              {
+                prompt:
+                  "missed / hadn't / if / rushed / she / it / wouldn't have",
+                answer: "She wouldn't have missed it if she hadn't rushed.",
+              },
+              {
+                prompt: "could have / if / prepared / they / won / they / had",
+                answer: "They could have won if they had prepared.",
+              },
+              {
+                prompt:
+                  "hadn't ignored / might have avoided / if / the warning / we / the delay",
+                answer:
+                  "We might have avoided the delay if we hadn't ignored the warning.",
+              },
+            ],
           },
-          {
-            prompt: "missed / hadn't / if / rushed / she / it / wouldn't have",
-            answer: "She wouldn't have missed it if she hadn't rushed.",
-          },
-          {
-            prompt: "could have / prepared / they / won / had / they",
-            answer: "They could have won had they prepared.",
-          },
-          {
-            prompt: "hadn't ignored / might have avoided / if / the warning / we / the delay",
-            answer: "We might have avoided the delay if we hadn't ignored the warning.",
-          },
-        ],
+        },
       },
-    },
-      }
     ],
-  }, 
-  
+  },
+
   production: {
     blocks: [
       {
@@ -436,26 +488,26 @@ export const upperIntermediateRegrets = {
         instruction: "Reflect on a past decision and extract a useful lesson:",
         listType: "checkbox",
         items: [
-        {
-          content: [
-            "Describe a fictional decision that produced an unexpected outcome.",
-          ],
-          textarea: true,
-        },
-        {
-          content: [
-            "Write three Third Conditional alternatives to that decision.",
-          ],
-          textarea: true,
-        },
-        {
-          content: [
-            "Discuss which alternative outcome would have been most likely.",
-          ],
-          textarea: false,
-        },
-      ],
-      }
+          {
+            content: [
+              "Describe a fictional decision that produced an unexpected outcome.",
+            ],
+            textarea: true,
+          },
+          {
+            content: [
+              "Write three Third Conditional alternatives to that decision.",
+            ],
+            textarea: true,
+          },
+          {
+            content: [
+              "Discuss which alternative outcome would have been most likely.",
+            ],
+            textarea: false,
+          },
+        ],
+      },
     ],
   },
 };

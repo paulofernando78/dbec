@@ -15,102 +15,110 @@ export const upperIntermediateDreamScenarios = {
         type: "carousel",
         aspectRatio: "wide",
         ...{
-      instruction:
-        "Read the scenarios. Which imaginary change would have the greatest practical effect? Explain your choice.",
-      imgs: [
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EImaginary%20choice%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Imaginary choice",
-          content: ["If I had a year off, I'd travel across South America."],
+          instruction:
+            "Read the scenarios. Which imaginary change would have the greatest practical effect? Explain your choice.",
+          imgs: [
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EImaginary%20choice%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Imaginary choice",
+              content: [
+                "If I had a year off, I'd travel across South America.",
+              ],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EAdvice%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Advice",
+              content: [
+                "If I were in your position, I'd pursue the opportunity.",
+              ],
+            },
+            {
+              src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EConsequence%3C%2Ftext%3E%3C%2Fsvg%3E",
+              alt: "Consequence",
+              content: ["We could relocate if the company covered the costs."],
+            },
+          ],
         },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EAdvice%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Advice",
-          content: ["If I were in your position, I'd pursue the opportunity."],
-        },
-        {
-          src: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EConsequence%3C%2Ftext%3E%3C%2Fsvg%3E",
-          alt: "Consequence",
-          content: ["We could relocate if the company covered the costs."],
-        },
-      ],
-    },
       },
       {
         type: "imageQuiz",
         ...{
-      questions: [
-        {
-          word: "pursue",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Epursue%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "pursue",
-          options: shuffle([
-            { option: "pursue", isCorrect: true },
-            { option: "relocate", isCorrect: false },
-            { option: "opportunity", isCorrect: false },
-            { option: "compromise", isCorrect: false },
-          ]),
+          questions: [
+            {
+              word: "pursue",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Epursue%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "pursue",
+              options: shuffle([
+                { option: "pursue", isCorrect: true },
+                { option: "relocate", isCorrect: false },
+                { option: "opportunity", isCorrect: false },
+                { option: "compromise", isCorrect: false },
+              ]),
+            },
+            {
+              word: "relocate",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Erelocate%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "relocate",
+              options: shuffle([
+                { option: "pursue", isCorrect: false },
+                { option: "relocate", isCorrect: true },
+                { option: "opportunity", isCorrect: false },
+                { option: "compromise", isCorrect: false },
+              ]),
+            },
+            {
+              word: "opportunity",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eopportunity%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "opportunity",
+              options: shuffle([
+                { option: "pursue", isCorrect: false },
+                { option: "relocate", isCorrect: false },
+                { option: "opportunity", isCorrect: true },
+                { option: "compromise", isCorrect: false },
+              ]),
+            },
+            {
+              word: "compromise",
+              imgSrc:
+                "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ecompromise%3C%2Ftext%3E%3C%2Fsvg%3E",
+              imgAlt: "compromise",
+              options: shuffle([
+                { option: "pursue", isCorrect: false },
+                { option: "relocate", isCorrect: false },
+                { option: "opportunity", isCorrect: false },
+                { option: "compromise", isCorrect: true },
+              ]),
+            },
+          ],
         },
-        {
-          word: "relocate",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Erelocate%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "relocate",
-          options: shuffle([
-            { option: "pursue", isCorrect: false },
-            { option: "relocate", isCorrect: true },
-            { option: "opportunity", isCorrect: false },
-            { option: "compromise", isCorrect: false },
-          ]),
-        },
-        {
-          word: "opportunity",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Eopportunity%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "opportunity",
-          options: shuffle([
-            { option: "pursue", isCorrect: false },
-            { option: "relocate", isCorrect: false },
-            { option: "opportunity", isCorrect: true },
-            { option: "compromise", isCorrect: false },
-          ]),
-        },
-        {
-          word: "compromise",
-          imgSrc: "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%237c3aed%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230f172a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22800%22%20height%3D%22500%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22690%22%20cy%3D%2290%22%20r%3D%22120%22%20fill%3D%22white%22%20opacity%3D%22.08%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22430%22%20r%3D%22170%22%20fill%3D%22white%22%20opacity%3D%22.06%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20fill%3D%22white%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2248%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3Ecompromise%3C%2Ftext%3E%3C%2Fsvg%3E",
-          imgAlt: "compromise",
-          options: shuffle([
-            { option: "pursue", isCorrect: false },
-            { option: "relocate", isCorrect: false },
-            { option: "opportunity", isCorrect: false },
-            { option: "compromise", isCorrect: true },
-          ]),
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Check your understanding of the situations.",
-      exercise: {
-        questions: [
-          {
-            question: "Which career would Jon choose?",
-            options: [
-              { option: "Wildlife photography.", isCorrect: true },
-              { option: "Accounting.", isCorrect: false },
+          instruction: "Check your understanding of the situations.",
+          exercise: {
+            questions: [
+              {
+                question: "Which career would Jon choose?",
+                options: [
+                  { option: "Wildlife photography.", isCorrect: true },
+                  { option: "Accounting.", isCorrect: false },
+                ],
+              },
+              {
+                question: "What condition might make relocation possible?",
+                options: [
+                  { option: "His partner working remotely.", isCorrect: true },
+                  { option: "Selling all his equipment.", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "What condition might make relocation possible?",
-            options: [
-              { option: "His partner working remotely.", isCorrect: true },
-              { option: "Selling all his equipment.", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   presentation: {
@@ -118,65 +126,71 @@ export const upperIntermediateDreamScenarios = {
       {
         type: "dialogue",
         ...{
-      instruction:
-        "Read or listen once: what career change would Jon consider? Then read or listen again for the conditions that would make it possible.",
-      audioSrc: "",
-      lines: [
-        {
-          speaker: "Mara",
-          line: ["What would you do if you could change careers?"],
-        },
-        {
-          speaker: "Jon",
-          line: [
-            "I'd become a wildlife photographer if I had the right training.",
+          instruction:
+            "Read or listen once: what career change would Jon consider? Then read or listen again for the conditions that would make it possible.",
+          audioSrc: "",
+          lines: [
+            {
+              speaker: "Mara",
+              line: ["What would you do if you could change careers?"],
+            },
+            {
+              speaker: "Jon",
+              line: [
+                "I'd become a wildlife photographer if I had the right training.",
+              ],
+            },
+            { speaker: "Mara", line: ["Would you relocate for that?"] },
+            {
+              speaker: "Jon",
+              line: [
+                "Possibly. If my partner could work remotely, we'd consider it.",
+              ],
+            },
+            {
+              speaker: "Mara",
+              line: ["If I were you, I'd research the practical side first."],
+            },
           ],
         },
-        { speaker: "Mara", line: ["Would you relocate for that?"] },
-        {
-          speaker: "Jon",
-          line: [
-            "Possibly. If my partner could work remotely, we'd consider it.",
-          ],
-        },
-        {
-          speaker: "Mara",
-          line: ["If I were you, I'd research the practical side first."],
-        },
-      ],
-    },
       },
       {
         type: "radio",
         ...{
-      instruction: "Choose the answer supported by the dialogue.",
-      exercise: {
-        questions: [
-          {
-            question: "Which career would Jon choose?",
-            options: [
-              { option: "Wildlife photography.", isCorrect: true },
-              { option: "Accounting.", isCorrect: false },
+          instruction: "Choose the answer supported by the dialogue.",
+          exercise: {
+            questions: [
+              {
+                question: "Which career would Jon choose?",
+                options: [
+                  { option: "Wildlife photography.", isCorrect: true },
+                  { option: "Accounting.", isCorrect: false },
+                ],
+              },
+              {
+                question: "What condition might make relocation possible?",
+                options: [
+                  { option: "His partner working remotely.", isCorrect: true },
+                  { option: "Selling all his equipment.", isCorrect: false },
+                ],
+              },
+              {
+                question: "What does Mara recommend?",
+                options: [
+                  {
+                    option: "Researching the practical side.",
+                    isCorrect: true,
+                  },
+                  {
+                    option: "Rejecting the idea immediately.",
+                    isCorrect: false,
+                  },
+                ],
+              },
             ],
           },
-          {
-            question: "What condition might make relocation possible?",
-            options: [
-              { option: "His partner working remotely.", isCorrect: true },
-              { option: "Selling all his equipment.", isCorrect: false },
-            ],
-          },
-          {
-            question: "What does Mara recommend?",
-            options: [
-              { option: "Researching the practical side.", isCorrect: true },
-              { option: "Rejecting the idea immediately.", isCorrect: false },
-            ],
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
   languageFocus: {
@@ -184,85 +198,88 @@ export const upperIntermediateDreamScenarios = {
       {
         type: "meaning",
         value: [
-      {
-        as: "p",
-        parts: [
-          { part: "Second Conditional: ", type: "bold" },
-          "Use the Second Conditional for hypothetical, unlikely, or imaginary present and future situations and their possible consequences.",
+          {
+            as: "p",
+            parts: [
+              { part: "Second Conditional: ", type: "bold" },
+              "Use the Second Conditional for hypothetical, unlikely, or imaginary present and future situations and their possible consequences.",
+            ],
+          },
         ],
-      },
-    ],
       },
       {
         type: "column",
         ...{
-      width: 320,
-      cols: [
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Condition",
-          items: [
-            { as: "p", parts: ["If I had more time..."] },
-            { as: "p", parts: ["If the role were flexible..."] },
-            { as: "p", parts: ["If we could relocate..."] },
+          width: 320,
+          cols: [
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Condition",
+              items: [
+                { as: "p", parts: ["If I had more time..."] },
+                { as: "p", parts: ["If the role were flexible..."] },
+                { as: "p", parts: ["If we could relocate..."] },
+              ],
+            },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Result",
+              items: [
+                { as: "p", parts: ["...I would learn another language."] },
+                { as: "p", parts: ["...we could accept it."] },
+                { as: "p", parts: ["...I might apply."] },
+              ],
+            },
+            {
+              borderColor: "border-slate-500",
+              bgColor: "bg-purple-600",
+              textColor: "text-white",
+              column: "Advice",
+              items: [
+                { as: "p", parts: ["If I were you, I'd ask for details."] },
+                {
+                  as: "p",
+                  parts: ["I wouldn't rush if I were in your position."],
+                },
+              ],
+            },
           ],
         },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Result",
-          items: [
-            { as: "p", parts: ["...I would learn another language."] },
-            { as: "p", parts: ["...we could accept it."] },
-            { as: "p", parts: ["...I might apply."] },
-          ],
-        },
-        {
-          borderColor: "border-slate-500",
-          bgColor: "bg-purple-600",
-          textColor: "text-white",
-          column: "Advice",
-          items: [
-            { as: "p", parts: ["If I were you, I'd ask for details."] },
-            { as: "p", parts: ["I wouldn't rush if I were in your position."] },
-          ],
-        },
-      ],
-    },
       },
       {
         type: "notes",
         value: [
-      {
-        as: "p",
-        parts: [
-          "Were is common for all persons in formal or careful hypothetical English: If I were you; If she were available.",
+          {
+            as: "p",
+            parts: [
+              "Were is common for all persons in formal or careful hypothetical English: If I were you; If she were available.",
+            ],
+          },
+          {
+            as: "p",
+            parts: [
+              "The past form marks distance from reality here; it does not refer to past time. Use would, could, or might to show a different result, ability, or degree of certainty.",
+            ],
+          },
         ],
-      },
-      {
-        as: "p",
-        parts: [
-          "The past form marks distance from reality here; it does not refer to past time. Use would, could, or might to show a different result, ability, or degree of certainty.",
-        ],
-      },
-    ],
       },
       {
         type: "ccq",
         value: [
-      { as: "p", parts: ["Is the speaker describing a confirmed plan?"] },
-      { as: "p", parts: ["Does the past form refer to past time here?"] },
-      {
-        as: "p",
-        parts: [
-          "Can could or might replace would to change certainty or ability?",
+          { as: "p", parts: ["Is the speaker describing a confirmed plan?"] },
+          { as: "p", parts: ["Does the past form refer to past time here?"] },
+          {
+            as: "p",
+            parts: [
+              "Can could or might replace would to change certainty or ability?",
+            ],
+          },
         ],
       },
-    ],
-      }
     ],
   },
   practice: {
@@ -273,179 +290,213 @@ export const upperIntermediateDreamScenarios = {
       {
         type: "radio",
         ...{
-      instruction: "Choose the most accurate option.",
-      exercise: {
-        questions: [
-          {
-            question: "If I ___ more confidence, I'd apply.",
-            options: [
-              { option: "had", isCorrect: true },
-              { option: "will have", isCorrect: false },
-              { option: "would have", isCorrect: false },
+          instruction: "Choose the most accurate option.",
+          exercise: {
+            questions: [
+              {
+                question: "If I ___ more confidence, I'd apply.",
+                options: [
+                  { option: "had", isCorrect: true },
+                  { option: "will have", isCorrect: false },
+                  { option: "would have", isCorrect: false },
+                ],
+              },
+              {
+                question: "What ___ you do if you won a scholarship?",
+                options: [
+                  { option: "would", isCorrect: true },
+                  { option: "will", isCorrect: false },
+                  { option: "did", isCorrect: false },
+                ],
+              },
+              {
+                question: "If she were available, we ___ invite her.",
+                options: [
+                  { option: "could", isCorrect: true },
+                  { option: "can", isCorrect: false },
+                  { option: "will", isCorrect: false },
+                ],
+              },
+              {
+                question: "I wouldn't accept unless the hours ___ flexible.",
+                options: [
+                  { option: "were", isCorrect: true },
+                  { option: "will be", isCorrect: false },
+                  { option: "would be", isCorrect: false },
+                ],
+              },
+              {
+                question: "If he ___ closer, he could walk to work.",
+                options: [
+                  { option: "lived", isCorrect: true },
+                  { option: "would live", isCorrect: false },
+                  { option: "had lived", isCorrect: false },
+                ],
+              },
+              {
+                question: "I ___ that position if it involved frequent travel.",
+                options: [
+                  { option: "wouldn't take", isCorrect: true },
+                  { option: "won't take", isCorrect: false },
+                  { option: "didn't take", isCorrect: false },
+                ],
+              },
+              {
+                question: "If we had a larger budget, we ___ more staff.",
+                options: [
+                  { option: "would hire", isCorrect: true },
+                  { option: "will hire", isCorrect: false },
+                  { option: "had hired", isCorrect: false },
+                ],
+              },
+              {
+                question: "If I were in your position, I ___ for more time.",
+                options: [
+                  { option: "would ask", isCorrect: true },
+                  { option: "will ask", isCorrect: false },
+                  { option: "asked", isCorrect: false },
+                ],
+              },
             ],
           },
-          {
-            question: "What ___ you do if you won a scholarship?",
-            options: [
-              { option: "would", isCorrect: true },
-              { option: "will", isCorrect: false },
-              { option: "did", isCorrect: false },
-            ],
-          },
-          {
-            question: "If she were available, we ___ invite her.",
-            options: [
-              { option: "could", isCorrect: true },
-              { option: "can", isCorrect: false },
-              { option: "will", isCorrect: false },
-            ],
-          },
-          {
-            question: "I wouldn't accept unless the hours ___ flexible.",
-            options: [
-              { option: "were", isCorrect: true },
-              { option: "will be", isCorrect: false },
-              { option: "would be", isCorrect: false },
-            ],
-          },
-          {
-            question: "If he ___ closer, he could walk to work.",
-            options: [
-              { option: "lived", isCorrect: true },
-              { option: "would live", isCorrect: false },
-              { option: "had lived", isCorrect: false },
-            ],
-          },
-          {
-            question: "I ___ that position if it involved frequent travel.",
-            options: [
-              { option: "wouldn't take", isCorrect: true },
-              { option: "won't take", isCorrect: false },
-              { option: "didn't take", isCorrect: false },
-            ],
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "fillInTheBlanks",
         ...{
-      showWordBank: true,
-      instruction: "Complete the sentences with the target language.",
-      numbered: true,
-      exercise: {
-        blocks: [
-          {
-            block: [
-              { text: "If I " },
-              { blank: "were" },
-              { text: " you, I'd negotiate." },
+          showWordBank: true,
+          instruction: "Complete the sentences with the target language.",
+          numbered: true,
+          exercise: {
+            blocks: [
+              {
+                block: [
+                  { text: "If I " },
+                  { blank: "were" },
+                  { text: " you, I'd negotiate." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "We would relocate if they " },
+                  { blank: "covered" },
+                  { text: " the costs." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "If he had more time, he " },
+                  { blank: "could study" },
+                  { text: " abroad." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "What would you do if you " },
+                  { blank: "lost" },
+                  { text: " your job?" },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "If the role were remote, she " },
+                  { blank: "might apply" },
+                  { text: " for it." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "I wouldn't move unless the company " },
+                  { blank: "paid" },
+                  { text: " my relocation costs." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "If we lived closer, we " },
+                  { blank: "would commute" },
+                  { text: " by bicycle." },
+                ],
+                lineBreak: true,
+              },
+              {
+                block: [
+                  { text: "She could lead the project if she " },
+                  { blank: "had" },
+                  { text: " more experience." },
+                ],
+                lineBreak: true,
+              },
             ],
-            lineBreak: true,
           },
-          {
-            block: [
-              { text: "We would relocate if they " },
-              { blank: "covered" },
-              { text: " the costs." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "If he had more time, he " },
-              { blank: "could study" },
-              { text: " abroad." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "What would you do if you " },
-              { blank: "lost" },
-              { text: " your job?" },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "If the role were remote, she " },
-              { blank: "might apply" },
-              { text: " for it." },
-            ],
-            lineBreak: true,
-          },
-          {
-            block: [
-              { text: "I wouldn't move unless the company " },
-              { blank: "paid" },
-              { text: " my relocation costs." },
-            ],
-            lineBreak: true,
-          },
-        ],
-      },
-    },
+        },
       },
       {
         type: "unscramble",
         ...{
-      showWordBank: false,
-      instruction: "Unscramble the sentences.",
-      numbered: true,
-      exercise: {
-        items: [
-          {
-            prompt: "would / if / I / travel / had time / I",
-            answer: "I would travel if I had time.",
+          showWordBank: false,
+          instruction: "Unscramble the sentences.",
+          numbered: true,
+          exercise: {
+            items: [
+              {
+                prompt: "would / if / I / travel / had time / I",
+                answer: "I would travel if I had time.",
+              },
+              {
+                prompt: "were / what / you / would / do / free",
+                answer: "What would you do if you were free?",
+              },
+              {
+                prompt: "if / could / she / remotely / relocate / worked",
+                answer: "She could relocate if she worked remotely.",
+              },
+              {
+                prompt:
+                  "unless / wouldn't / the salary / I / accept / were higher",
+                answer: "I wouldn't accept unless the salary were higher.",
+              },
+            ],
           },
-          {
-            prompt: "were / what / you / would / do / free",
-            answer: "What would you do if you were free?",
-          },
-          {
-            prompt: "if / could / she / remotely / relocate / worked",
-            answer: "She could relocate if she worked remotely.",
-          },
-          {
-            prompt: "unless / wouldn't / the salary / I / accept / were higher",
-            answer: "I wouldn't accept unless the salary were higher.",
-          },
-        ],
+        },
       },
-    },
-      }
     ],
   },
-  
+
   production: {
     blocks: [
       {
         type: "task",
-        instruction: "Compare hypothetical changes and choose the most realistic one:",
+        instruction:
+          "Compare hypothetical changes and choose the most realistic one:",
         listType: "checkbox",
         items: [
-        {
-          content: [
-            "Write three hypothetical changes you would make to your life or community.",
-          ],
-          textarea: true,
-        },
-        {
-          content: [
-            "Explain one benefit, risk, and compromise for each scenario.",
-          ],
-          textarea: true,
-        },
-        {
-          content: [
-            "Discuss the scenarios and decide which one is most realistic.",
-          ],
-          textarea: false,
-        },
-      ],
-      }
+          {
+            content: [
+              "Write three hypothetical changes you would make to your life or community.",
+            ],
+            textarea: true,
+          },
+          {
+            content: [
+              "Explain one benefit, risk, and compromise for each scenario.",
+            ],
+            textarea: true,
+          },
+          {
+            content: [
+              "Discuss the scenarios and decide which one is most realistic.",
+            ],
+            textarea: false,
+          },
+        ],
+      },
     ],
   },
 };
