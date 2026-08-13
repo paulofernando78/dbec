@@ -1,50 +1,46 @@
+import type { CCQ } from "@/components/content/CCQ/";
 import type { Meaning } from "@/components/content/Meaning";
 import type { Notes } from "@/components/content/Notes";
-import type { CCQ } from "@/components/content/CCQ/";
 
-import { content, audio, lineBreak } from "@/helpers/content";
+import { audio, bold, content, lineBreak } from "@/helpers/content";
 
 export const lesson = {
   whiteboard: {
-    title: "...",
-    subtitle: "...",
-    descriptions: ["...", "..."],
-    date: "...",
+    title: "Course Template",
+    subtitle: "Blank lesson structure",
+    descriptions: ["Lesson aim goes here.", "Target language goes here."],
+    date: "",
   },
 
   lessonCard: {
-    objective: "...",
-    usefulLanguage: "...",
-    vocabulary: "...",
-    finalTask: "...",
+    objective: "Write the lesson objective here.",
+    usefulLanguage: "Useful expression 1; Useful expression 2",
+    vocabulary: "word 1, word 2, word 3",
+    pronunciation: "Pronunciation focus goes here.",
+    finalTask: "Write the final communicative task here.",
   },
 
   introduction: {
     blocks: [
       {
         type: "line",
-        value: ["..."],
+        value: ["Lead-in question or short context goes here."],
         className: "font-bold mb-4",
-      },
-      {
-        type: "image",
-        src: "/",
-        alt: "...",
       },
       {
         type: "lines",
         value: [
-          [audio("..."), "question 1"],
-          [audio("..."), "question 2"],
+          [audio("Question one goes here."), "Question one goes here."],
+          [audio("Question two goes here."), "Question two goes here."],
         ],
         className: "mb-4",
       },
       {
         type: "imageQuiz",
         words: [
-          { word: "cushion", img: 0 },
-          { word: "lubricate", img: 0 },
-          { word: "moisture", img: 0 },
+          { word: "example", img: 0 },
+          { word: "option", img: 0 },
+          { word: "result", img: 0 },
         ],
       },
       {
@@ -53,10 +49,10 @@ export const lesson = {
         exercise: {
           questions: [
             {
-              question: "...",
+              question: "Comprehension question goes here.",
               options: [
-                { option: "...", isCorrect: false },
-                { option: "...", isCorrect: true },
+                { option: "Incorrect option", isCorrect: false },
+                { option: "Correct option", isCorrect: true },
               ],
             },
           ],
@@ -69,35 +65,34 @@ export const lesson = {
     blocks: [
       {
         type: "line",
-        value: ["Look at the picture."],
+        value: ["Set the listening or reading task here."],
         className: "font-bold mb-4",
       },
       {
-        type: "image",
-        src: "/",
-        alt: "...",
-      },
-      {
         type: "dialogue",
-        instruction: "Listen to the dialogue.",
-        audioSrc: "/",
+        instruction: "Read the dialogue.",
+        audioSrc: "",
         lines: [
           {
-            speaker: "...",
-            line: ["..."],
+            speaker: "A",
+            line: ["First dialogue line goes here."],
+          },
+          {
+            speaker: "B",
+            line: ["Second dialogue line goes here."],
           },
         ],
       },
       {
         type: "radio",
-        instruction: "Choose the correct answer.",
+        instruction: "Choose the answer supported by the dialogue.",
         exercise: {
           questions: [
             {
-              question: "...",
+              question: "Dialogue comprehension question goes here.",
               options: [
-                { option: "...", isCorrect: false },
-                { option: "...", isCorrect: true },
+                { option: "Incorrect option", isCorrect: false },
+                { option: "Correct option", isCorrect: true },
               ],
             },
           ],
@@ -111,14 +106,31 @@ export const lesson = {
       {
         type: "carousel",
         aspectRatio: "wide",
-        instruction: "Look ...",
+        instruction: "Look at the examples and listen to the sentences.",
         imgs: [
           {
-            src: "/",
-            alt: "...",
+            alt: "Example one",
             content: [
               ...content({
-                parts: [audio("/"), "...", lineBreak(), "..."],
+                parts: [
+                  audio("Example sentence one goes here."),
+                  "Example sentence one goes here.",
+                  lineBreak(),
+                  "Short explanation goes here.",
+                ],
+              }),
+            ],
+          },
+          {
+            alt: "Example two",
+            content: [
+              ...content({
+                parts: [
+                  audio("Example sentence two goes here."),
+                  "Example sentence two goes here.",
+                  lineBreak(),
+                  "Short explanation goes here.",
+                ],
               }),
             ],
           },
@@ -130,7 +142,12 @@ export const lesson = {
           {
             display: "block",
             as: "span",
-            parts: [audio("/"), "..."],
+            parts: [bold("Meaning:"), " explanation goes here."],
+          },
+          {
+            display: "block",
+            as: "span",
+            parts: [bold("Form:"), " form explanation goes here."],
           },
         ] satisfies Meaning[],
       },
@@ -145,7 +162,10 @@ export const lesson = {
             column: "Column 1",
             items: [
               {
-                parts: [audio("/"), "..."],
+                parts: [bold("Q:"), " Example question goes here."],
+              },
+              {
+                parts: [bold("A:"), " Example answer goes here."],
               },
             ],
           },
@@ -156,7 +176,10 @@ export const lesson = {
             column: "Column 2",
             items: [
               {
-                parts: [audio("/"), "..."],
+                parts: [bold("Q:"), " Another example question goes here."],
+              },
+              {
+                parts: [bold("A:"), " Another example answer goes here."],
               },
             ],
           },
@@ -167,7 +190,7 @@ export const lesson = {
         value: [
           {
             as: "span",
-            parts: [audio("/"), "..."],
+            parts: [bold("Note:"), " important note goes here."],
           },
         ] satisfies Notes[],
       },
@@ -176,15 +199,15 @@ export const lesson = {
         value: [
           {
             as: "span",
-            parts: ["..."],
+            parts: ["Concept-checking question goes here."],
             options: [
-              { option: "...", isCorrect: true },
-              { option: "...", isCorrect: false },
+              { option: "Correct answer", isCorrect: true },
+              { option: "Incorrect answer", isCorrect: false },
             ],
           },
           {
             as: "span",
-            parts: ["..."],
+            parts: ["Second concept-checking question goes here."],
           },
         ] satisfies CCQ[],
       },
@@ -194,15 +217,23 @@ export const lesson = {
   practice: {
     blocks: [
       {
+        type: "guess",
+        words: [
+          { word: "example" },
+          { word: "option" },
+          { word: "result" },
+        ],
+      },
+      {
         type: "radio",
         instruction: "Choose the correct answer.",
         exercise: {
           questions: [
             {
-              question: "...",
+              question: "Practice question goes here.",
               options: [
-                { option: "...", isCorrect: true },
-                { option: "...", isCorrect: false },
+                { option: "Correct option", isCorrect: true },
+                { option: "Incorrect option", isCorrect: false },
               ],
             },
           ],
@@ -216,7 +247,11 @@ export const lesson = {
         exercise: {
           blocks: [
             {
-              block: [{ text: "..." }, { blank: "..." }, { text: "..." }],
+              block: [
+                { text: "Sentence start " },
+                { blank: "answer" },
+                { text: " sentence end." },
+              ],
               lineBreak: true,
             },
           ],
@@ -225,13 +260,13 @@ export const lesson = {
       {
         type: "unscramble",
         showWordBank: false,
-        instruction: "Unscramble the sentences.",
+        instruction: "Unscramble the sentence.",
         numbered: true,
         exercise: {
           items: [
             {
-              prompt: "... / ...",
-              answer: "...",
+              prompt: "sentence / example / an / is / this",
+              answer: "This is an example sentence.",
             },
           ],
         },
@@ -243,17 +278,20 @@ export const lesson = {
     blocks: [
       {
         type: "task",
-        instruction: "Complete the tasks:",
+        instruction: "Complete the final task:",
         listType: "checkbox",
         items: [
           {
-            content: ["..."],
+            content: ["Use the target language."],
+            textarea: true,
           },
           {
-            content: ["..."],
+            content: ["Use the key vocabulary."],
+            textarea: true,
           },
           {
-            content: ["..."],
+            content: ["Practise with a partner."],
+            textarea: true,
           },
         ],
       },

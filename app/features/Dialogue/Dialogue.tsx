@@ -1,5 +1,4 @@
 import { InlineRichContent } from "@/components/content/InlineRichContent";
-import { Audio } from "@/components/ui/Audio";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 
 import type { RichContent } from "@/helpers/content";
@@ -20,20 +19,9 @@ export const Dialogue = ({
   audioSrc,
   lines = [],
 }: DialogueProps) => {
-  const dialogueText = lines
-    .map(({ speaker, line }) => {
-      const text = line
-        .map((part) => (typeof part === "string" ? part : (part.part ?? "")))
-        .join("");
-
-      return `${speaker ?? ""}. ${text}`;
-    })
-    .join(" ");
-
   return (
     <div className="space-y-4 mb-4">
       <div className="flex items-center gap-2">
-        {!audioSrc && dialogueText && <Audio src={dialogueText} />}
         <b><InlineRichContent value={instruction}/></b>
       </div>
       {audioSrc && <AudioPlayer src={audioSrc} />}

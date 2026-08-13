@@ -1,5 +1,4 @@
 import type { CourseLessonCard } from "@/data/course/course-lessons-card-data";
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
 
 export type CourseSyllabusGroup = {
   label: string;
@@ -20,26 +19,6 @@ const slug = (value: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-const courseLessonCardDataKeyByLevel: Record<
-  string,
-  keyof typeof courseLessonsCardData
-> = {
-  beginner: "beginner",
-  elementary: "elementary",
-  intermediate: "intermediate",
-  "upper-intermediate": "upperIntermediate",
-};
-
-const normalizeLabel = (value: string) => slug(value);
-
-const getCanonicalCourseCard = (level: string, label: string) => {
-  const key = courseLessonCardDataKeyByLevel[level];
-
-  return courseLessonsCardData[key]?.find(
-    (card) => normalizeLabel(card.label) === normalizeLabel(label),
-  );
-};
-
 const lesson = (
   level: string,
   label: string,
@@ -48,25 +27,20 @@ const lesson = (
   languageFocus: string,
   pronunciation: string,
 ): CourseLessonCard => {
-  const canonicalCard = getCanonicalCourseCard(level, label);
-  const cardLabel = canonicalCard?.label ?? label;
   const lessonSlug = slug(label);
   const fallbackMaterialHref = `/course/${level}/section-${lessonSlug}/material/${lessonSlug}`;
 
   return {
-    href: canonicalCard?.href ?? fallbackMaterialHref,
-    materialHref: canonicalCard?.materialHref ?? fallbackMaterialHref,
-    assignmentHref:
-      canonicalCard?.assignmentHref ??
-      `/course/${level}/section-${lessonSlug}/assignment/${lessonSlug}`,
-    legacyHref: canonicalCard?.legacyHref ?? `/course/${level}/${lessonSlug}`,
-    label: cardLabel,
-    objective: `Can use the target language to handle a ${cardLabel.toLowerCase()} situation at this CEFR level.`,
+    href: fallbackMaterialHref,
+    materialHref: fallbackMaterialHref,
+    assignmentHref: `/course/${level}/section-${lessonSlug}/assignment/${lessonSlug}`,
+    legacyHref: `/course/${level}/${lessonSlug}`,
+    label,
+    objective: `Can understand and use: ${usefulLanguage}`,
     usefulLanguage,
     vocabulary,
     pronunciation,
-    finalTask: `Complete a communicative task based on ${cardLabel.toLowerCase()}.`,
-    classroom: canonicalCard?.classroom,
+    finalTask: `Use the lesson language in a short ${label.toLowerCase()} exchange.`,
   };
 };
 
@@ -167,7 +141,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Renting a Home",
+          "My Neighborhood",
           "It's very noisy.; I love living here.; I hate living here.",
           "adjectives for places and prepositions of place",
           "there is/are negative and questions",
@@ -195,7 +169,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 5 • Food & Meals", [
         lesson(
           "beginner",
-          "Food Preferences",
+          "Offering Food",
           "Would you like some coffee?; Yes, please.; No, thanks.",
           "food and drink items",
           "countable/uncountable nouns; some/any as chunks",
@@ -203,7 +177,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Eating Out",
+          "Quantities",
           "How much is...?; How many... are there?",
           "menu items, prices, quantities",
           "How much/How many; a lot of",
@@ -213,7 +187,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 6 • Shopping", [
         lesson(
           "beginner",
-          "Shopping Basics",
+          "In The Shop",
           "Can I help you?; I'm looking for...; I'll take it.",
           "clothes, colors, sizes",
           "object pronouns",
@@ -221,7 +195,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Bargain Hunting",
+          "Prices",
           "How much does it cost?; It's on sale.",
           "money, prices, discounts",
           "this/that; one/ones",
@@ -239,17 +213,17 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Simple Directions",
+          "Transportation",
           "How do I get to...?; Take the bus.; It's a 5-minute walk.",
           "transportation",
           "Imperatives for directions",
           "rising intonation in wh- direction questions",
         ),
       ]),
-      group("Section 8 • Actions & Abilities", [
+      group("Section 8 • Action & Abilities", [
         lesson(
           "beginner",
-          "Actions Now",
+          "Abilities",
           "I can swim.; I can't...",
           "sports and activities",
           "can/can't for ability",
@@ -257,7 +231,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Abilities",
+          "Could You Help Me?",
           "Could you...?; Can I...?; Sure, no problem.",
           "requests and favors",
           "can/could for requests and permission",
@@ -267,7 +241,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
       group("Section 9 • Last Weekend", [
         lesson(
           "beginner",
-          "Real-Life Project",
+          "Where Were You?",
           "Where were you last weekend?",
           "places in town and feelings",
           "past of verb be: was/were",
@@ -275,7 +249,7 @@ export const courseSyllabusSections: CourseSyllabusLevel[] = [
         ),
         lesson(
           "beginner",
-          "Course Review",
+          "How Was It?",
           "I was at home.; It was fantastic.",
           "common irregular verbs",
           "past of verb be negative and interrogative",

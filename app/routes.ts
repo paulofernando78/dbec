@@ -36,6 +36,8 @@ export default [
 
     route("/course", "routes/course.tsx"),
 
+    route("/course/template", "routes/course/template.tsx"),
+
     route(
       "/course/:level/:section/:resourceType?/:slug?",
       "routes/course/builder.tsx",

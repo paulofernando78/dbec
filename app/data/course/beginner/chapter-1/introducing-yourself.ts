@@ -19,20 +19,10 @@ export const beginnerHello = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [
-          [
-            audio("What do you say when you meet someone for the first time?"),
-            "What do you say when you meet someone for the first time?",
-          ],
-        ],
-        className: "mb-4",
-      },
-      {
         type: "carousel",
         aspectRatio: "wide",
         ...{
-          instruction: "Look at the pictures. Listen to the sentences.",
+          instruction: "Look at the pictures and listen to the sentences.",
           imgs: [
             {
               src: "/assets/img/course/a1/hello/introduction/pic-1.avif",

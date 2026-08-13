@@ -32,6 +32,7 @@ export type GuessProps = {
 };
 
 export const Guess = ({ words }: GuessProps) => {
+  const wordsSignature = JSON.stringify(words);
   // STEP 1: Create all keyboard letters
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ'".split("");
 
@@ -71,7 +72,7 @@ export const Guess = ({ words }: GuessProps) => {
     }
 
     loadWord(currentWord.word);
-  }, [currentIndex, words]);
+  }, [currentIndex, wordsSignature]);
 
   // STEP 7: Move to next word and reset round state
   const nextWord = () => {

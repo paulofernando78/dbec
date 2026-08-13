@@ -8,7 +8,7 @@ import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 
 import { LessonCard } from "@/components/content/LessonCard";
-import { courseLessonsCardData } from "@/data/course/course-lessons-card-data";
+import { courseSyllabusSections } from "@/data/course/course-syllabus-sections";
 import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/news/news-card-data";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { gamesLucasArtsCardData } from "@/data/games/lucas-arts/games-lucas-arts-card-data";
@@ -16,39 +16,24 @@ import { gamesLucasArtsCardData } from "@/data/games/lucas-arts/games-lucas-arts
 import { LibraryBig, BookText } from "lucide-react";
 
 const lessonSections = [
-  {
-    label: "A1 Beginner",
-    tocTitle: "COURSE",
-    iconClassName: "text-yellow-500",
-    lessons: courseLessonsCardData.beginner,
-  },
-  {
-    label: "A2 Elementary",
-    iconClassName: "text-red-500",
-    lessons: courseLessonsCardData.elementary,
-  },
-  {
-    label: "B1 Intermediate",
-    iconClassName: "text-blue-500",
-    lessons: courseLessonsCardData.intermediate,
-  },
-  {
-    label: "B2 Upper-Intermediate",
-    iconClassName: "text-green-500",
-    lessons: courseLessonsCardData.upperIntermediate,
-  },
-  // {
-  //   label: "C1 Advanced",
-  //   iconClassName: "text-purple-500",
-  //   lessons: courseLessonsCardData.advanced,
-  // },
+  ...courseSyllabusSections.map((level, index) => ({
+    label: level.label,
+    tocTitle: index === 0 ? "COURSE" : undefined,
+    iconClassName: level.iconClassName,
+    numbered: true,
+    lessons: level.groups.flatMap((group) => group.lessons),
+  })),
   {
     label: "News",
     tocTitle: "AUTHENTIC CONTENT",
+    iconClassName: undefined,
+    numbered: false,
     lessons: Object.values(authenticContentNewsLessonsCardData),
   },
   {
     label: "TED-Ed",
+    iconClassName: undefined,
+    numbered: false,
     lessons: authenticContentTedEdLessons,
   },
   // {
@@ -58,6 +43,8 @@ const lessonSections = [
   {
     label: "Lucas Arts Games",
     tocTitle: "GAMES",
+    iconClassName: undefined,
+    numbered: false,
     lessons: Object.values(gamesLucasArtsCardData),
   },
 ];
@@ -115,7 +102,7 @@ export default function Dashboard() {
                     key={lesson.href}
                     {...lesson}
                     index={previousLessonCount + lessonIndex}
-                    numbered={section.tocTitle === "COURSE"}
+                    numbered={section.numbered}
                     collapsible
                   />
                 ))}

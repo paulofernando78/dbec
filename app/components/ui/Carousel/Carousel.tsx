@@ -83,6 +83,7 @@ export const Carousel = ({
   aspectRatio,
 }: CarouselProps) => {
   const finalWords = words || imgs || [];
+  const finalWordsSignature = JSON.stringify(finalWords);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleContentIndex, setVisibleContentIndex] = useState(0);
@@ -112,7 +113,7 @@ export const Carousel = ({
     };
 
     loadWords();
-  }, [finalWords]);
+  }, [finalWordsSignature]);
 
   useEffect(() => {
     if (currentIndex === visibleContentIndex) {

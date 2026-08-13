@@ -86,6 +86,7 @@ export const FillInTheBlanks = ({
   const descriptionText = exercise?.description;
   const rawBlocks = exercise?.blocks;
   const blocks = Array.isArray(rawBlocks) ? rawBlocks : [];
+  const blocksSignature = JSON.stringify(rawBlocks ?? []);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [results, setResults] = useState<Record<string, boolean>>({});
   const [checked, setChecked] = useState(false);
@@ -111,7 +112,7 @@ export const FillInTheBlanks = ({
     setDescription(
       showWordBank ? buildDescription(descriptionText, nextBlocks) : "",
     );
-  }, [descriptionText, rawBlocks, showWordBank]);
+  }, [descriptionText, blocksSignature, showWordBank]);
 
   if (!exercise || !rawBlocks) {
     return null;

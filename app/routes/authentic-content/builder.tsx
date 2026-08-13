@@ -10,7 +10,6 @@ import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/ne
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
-import { LessonCard } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { List } from "@/components/content/List";
@@ -82,10 +81,6 @@ export default function AuthenticContents() {
     <>
       <Whiteboard {...displayedWhiteboard} />
       <div>
-        {lessonCard && (
-          <LessonCard {...lessonCard} numbered={false} />
-        )}
-
         <PageSections>
           <Section id="Before watching" heading={3}>
             <List {...content.sections.beforeWatching} />

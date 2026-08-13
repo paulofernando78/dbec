@@ -35,6 +35,8 @@ export const ImageQuiz = ({
   questions: explicitQuestions = [],
   words = [],
 }: ImageQuizProps) => {
+  const explicitQuestionsSignature = JSON.stringify(explicitQuestions);
+  const wordsSignature = JSON.stringify(words);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -142,7 +144,7 @@ export const ImageQuiz = ({
     return () => {
       active = false;
     };
-  }, [explicitQuestions.length, words]);
+  }, [explicitQuestions.length, wordsSignature]);
 
   useEffect(() => {
     let active = true;
@@ -183,7 +185,7 @@ export const ImageQuiz = ({
     return () => {
       active = false;
     };
-  }, [currentQuestion?.options]);
+  }, [currentQuestion?.word, explicitQuestionsSignature]);
 
   useEffect(() => {
     if (!isCorrect) return;

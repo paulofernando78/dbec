@@ -429,3 +429,268 @@ export const beginnerShopping = {
     ],
   },
 };
+
+export const beginnerPrices = {
+  whiteboard: {
+    title: "A1 BEGINNER",
+    descriptions: ["How much does it cost?", "It's on sale."],
+  },
+
+  introduction: {
+    blocks: [
+      {
+        type: "lines",
+        value: [
+          [
+            audio("What do you usually ask before you buy something?"),
+            "What do you usually ask before you buy something?",
+          ],
+        ],
+        className: "mb-4",
+      },
+      {
+        type: "radio",
+        instruction: "Choose the price question.",
+        exercise: {
+          questions: [
+            {
+              question: "Which sentence asks for a price?",
+              options: [
+                { option: "How much does it cost?", isCorrect: true },
+                { option: "What color is it?", isCorrect: false },
+              ],
+            },
+            {
+              question: "Which phrase means the price is lower now?",
+              options: [
+                { option: "It's on sale.", isCorrect: true },
+                { option: "It's on the table.", isCorrect: false },
+              ],
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  presentation: {
+    blocks: [
+      {
+        type: "dialogue",
+        instruction: "Listen once: is the jacket full price or on sale?",
+        audioSrc: "",
+        lines: [
+          {
+            speaker: "Customer",
+            line: ["Excuse me. How much does this jacket cost?"],
+          },
+          {
+            speaker: "Shop Assistant",
+            line: ["It costs sixty dollars."],
+          },
+          {
+            speaker: "Customer",
+            line: ["Is it on sale?"],
+          },
+          {
+            speaker: "Shop Assistant",
+            line: ["Yes, it is. Today it's forty-five dollars."],
+          },
+          {
+            speaker: "Customer",
+            line: ["Great. I'll take it."],
+          },
+        ],
+      },
+      {
+        type: "radio",
+        instruction: "Listen again and choose the correct answer.",
+        exercise: {
+          questions: [
+            {
+              question: "What is the full price?",
+              options: [
+                { option: "$60", isCorrect: true },
+                { option: "$45", isCorrect: false },
+              ],
+            },
+            {
+              question: "What is the sale price?",
+              options: [
+                { option: "$45", isCorrect: true },
+                { option: "$60", isCorrect: false },
+              ],
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  languageFocus: {
+    blocks: [
+      {
+        type: "meaning",
+        value: [
+          {
+            as: "p",
+            parts: [bold("How much does it cost?"), " asks for the price."],
+          },
+          {
+            as: "p",
+            parts: [bold("It costs sixty dollars."), " gives the price."],
+          },
+          {
+            as: "p",
+            parts: [bold("It's on sale."), " means the price is lower now."],
+          },
+        ],
+      },
+      {
+        type: "column",
+        width: 300,
+        cols: [
+          {
+            column: "Question",
+            items: [
+              { parts: [bold("Q:"), " How much does it cost?"] },
+              { parts: [bold("Q:"), " Is it on sale?"] },
+            ],
+          },
+          {
+            column: "Price",
+            items: [
+              { parts: [bold("A:"), " It costs sixty dollars."] },
+              { parts: [bold("A:"), " It's forty-five dollars today."] },
+            ],
+          },
+          {
+            column: "Buying",
+            items: [
+              { parts: [bold("A:"), " Great."] },
+              { parts: [bold("A:"), " I'll take it."] },
+            ],
+          },
+        ],
+      },
+      {
+        type: "ccq",
+        value: [
+          {
+            as: "span",
+            parts: ["Does How much does it cost? ask about price?"],
+            options: [
+              { option: "Yes", isCorrect: true },
+              { option: "No", isCorrect: false },
+            ],
+          },
+          {
+            as: "span",
+            parts: ["If an item is on sale, is the price usually lower?"],
+            options: [
+              { option: "Yes", isCorrect: true },
+              { option: "No", isCorrect: false },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  practice: {
+    blocks: [
+      { type: "guess" },
+      {
+        type: "radio",
+        instruction: "Choose the correct answer.",
+        exercise: {
+          questions: [
+            {
+              question: "How much ___ it cost?",
+              options: [
+                { option: "does", isCorrect: true },
+                { option: "do", isCorrect: false },
+              ],
+            },
+            {
+              question: "It ___ sixty dollars.",
+              options: [
+                { option: "costs", isCorrect: true },
+                { option: "cost", isCorrect: false },
+              ],
+            },
+            {
+              question: "It's ___ sale.",
+              options: [
+                { option: "on", isCorrect: true },
+                { option: "in", isCorrect: false },
+              ],
+            },
+          ],
+        },
+      },
+      {
+        type: "fillInTheBlanks",
+        showWordBank: true,
+        numbered: true,
+        instruction: "Complete the price questions and answers.",
+        exercise: {
+          blocks: [
+            {
+              block: [{ text: "How much " }, { blank: "does" }, { text: " it cost?" }],
+              lineBreak: true,
+            },
+            {
+              block: [{ text: "It " }, { blank: "costs" }, { text: " sixty dollars." }],
+              lineBreak: true,
+            },
+            {
+              block: [{ text: "It's on " }, { blank: "sale" }, { text: "." }],
+              lineBreak: true,
+            },
+            {
+              block: [{ text: "I'll " }, { blank: "take" }, { text: " it." }],
+              lineBreak: true,
+            },
+          ],
+        },
+      },
+      {
+        type: "unscramble",
+        instruction: "Put the words in order.",
+        numbered: true,
+        exercise: {
+          items: [
+            {
+              prompt: "much / does / cost / it / how",
+              answer: "How much does it cost?",
+            },
+            {
+              prompt: "sale / it's / on",
+              answer: "It's on sale.",
+            },
+            {
+              prompt: "take / it / I'll",
+              answer: "I'll take it.",
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  production: {
+    blocks: [
+      {
+        type: "task",
+        instruction: "Role-play a short price conversation:",
+        listType: "checkbox",
+        items: [
+          { content: ["Ask how much an item costs."], textarea: true },
+          { content: ["Say the price and whether it is on sale."], textarea: true },
+          { content: ["Choose an item and say, \"I'll take it.\""], textarea: true },
+        ],
+      },
+    ],
+  },
+};

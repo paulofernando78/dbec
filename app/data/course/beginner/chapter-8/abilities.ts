@@ -378,3 +378,265 @@ export const beginnerAbilities = {
     ],
   },
 };
+
+export const beginnerCouldYouHelpMe = {
+  whiteboard: {
+    title: "A1 BEGINNER",
+    descriptions: ["Could you help me?", "Sure, no problem."],
+  },
+
+  introduction: {
+    blocks: [
+      {
+        type: "lines",
+        value: [
+          [
+            audio("When do you ask someone for help?"),
+            "When do you ask someone for help?",
+          ],
+        ],
+        className: "mb-4",
+      },
+      {
+        type: "radio",
+        instruction: "Choose the polite request.",
+        exercise: {
+          questions: [
+            {
+              question: "Which sentence asks for help politely?",
+              options: [
+                { option: "Could you help me?", isCorrect: true },
+                { option: "You help me now.", isCorrect: false },
+              ],
+            },
+            {
+              question: "Which answer accepts a request?",
+              options: [
+                { option: "Sure, no problem.", isCorrect: true },
+                { option: "No help.", isCorrect: false },
+              ],
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  presentation: {
+    blocks: [
+      {
+        type: "dialogue",
+        instruction: "Listen once: what does Emma need help with?",
+        audioSrc: "",
+        lines: [
+          {
+            speaker: "Emma",
+            line: ["Excuse me. Could you help me?"],
+          },
+          {
+            speaker: "Jake",
+            line: ["Sure, no problem."],
+          },
+          {
+            speaker: "Emma",
+            line: ["Can you open this window, please?"],
+          },
+          {
+            speaker: "Jake",
+            line: ["Of course."],
+          },
+          {
+            speaker: "Emma",
+            line: ["Thank you."],
+          },
+          {
+            speaker: "Jake",
+            line: ["You're welcome."],
+          },
+        ],
+      },
+      {
+        type: "radio",
+        instruction: "Listen again and choose the correct answer.",
+        exercise: {
+          questions: [
+            {
+              question: "What does Emma ask Jake to open?",
+              options: [
+                { option: "The window", isCorrect: true },
+                { option: "The door", isCorrect: false },
+              ],
+            },
+            {
+              question: "Does Jake agree to help?",
+              options: [
+                { option: "Yes", isCorrect: true },
+                { option: "No", isCorrect: false },
+              ],
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  languageFocus: {
+    blocks: [
+      {
+        type: "meaning",
+        value: [
+          {
+            as: "p",
+            parts: [bold("Could you...?"), " is a polite request."],
+          },
+          {
+            as: "p",
+            parts: [bold("Can I...?"), " asks for permission."],
+          },
+          {
+            as: "p",
+            parts: [bold("Sure, no problem."), " accepts a request."],
+          },
+        ],
+      },
+      {
+        type: "column",
+        width: 300,
+        cols: [
+          {
+            column: "Request",
+            items: [
+              { parts: [bold("Q:"), " Could you help me?"] },
+              { parts: [bold("A:"), " Sure, no problem."] },
+            ],
+          },
+          {
+            column: "Permission",
+            items: [
+              { parts: [bold("Q:"), " Can I sit here?"] },
+              { parts: [bold("A:"), " Of course."] },
+            ],
+          },
+          {
+            column: "Thanks",
+            items: [
+              { parts: [bold("A:"), " Thank you."] },
+              { parts: [bold("A:"), " You're welcome."] },
+            ],
+          },
+        ],
+      },
+      {
+        type: "ccq",
+        value: [
+          {
+            as: "span",
+            parts: ["Is Could you help me? polite?"],
+            options: [
+              { option: "Yes", isCorrect: true },
+              { option: "No", isCorrect: false },
+            ],
+          },
+          {
+            as: "span",
+            parts: ["Does Sure, no problem accept the request?"],
+            options: [
+              { option: "Yes", isCorrect: true },
+              { option: "No", isCorrect: false },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  practice: {
+    blocks: [
+      { type: "guess" },
+      {
+        type: "radio",
+        instruction: "Choose the correct answer.",
+        exercise: {
+          questions: [
+            {
+              question: "___ you help me?",
+              options: [
+                { option: "Could", isCorrect: true },
+                { option: "Helping", isCorrect: false },
+              ],
+            },
+            {
+              question: "Can I sit here? ___ course.",
+              options: [
+                { option: "Of", isCorrect: true },
+                { option: "On", isCorrect: false },
+              ],
+            },
+          ],
+        },
+      },
+      {
+        type: "fillInTheBlanks",
+        showWordBank: true,
+        numbered: true,
+        instruction: "Complete the requests and responses.",
+        exercise: {
+          blocks: [
+            {
+              block: [{ blank: "Could" }, { text: " you help me?" }],
+              lineBreak: true,
+            },
+            {
+              block: [{ text: "Sure, no " }, { blank: "problem" }, { text: "." }],
+              lineBreak: true,
+            },
+            {
+              block: [{ blank: "Can" }, { text: " I sit here?" }],
+              lineBreak: true,
+            },
+            {
+              block: [{ text: "Of " }, { blank: "course" }, { text: "." }],
+              lineBreak: true,
+            },
+          ],
+        },
+      },
+      {
+        type: "unscramble",
+        instruction: "Put the words in order.",
+        numbered: true,
+        exercise: {
+          items: [
+            {
+              prompt: "you / could / help / me",
+              answer: "Could you help me?",
+            },
+            {
+              prompt: "problem / sure / no",
+              answer: "Sure, no problem.",
+            },
+            {
+              prompt: "sit / can / here / I",
+              answer: "Can I sit here?",
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  production: {
+    blocks: [
+      {
+        type: "task",
+        instruction: "Role-play a short help request:",
+        listType: "checkbox",
+        items: [
+          { content: ["Ask for help politely."], textarea: true },
+          { content: ["Accept the request."], textarea: true },
+          { content: ["Say thank you and respond politely."], textarea: true },
+        ],
+      },
+    ],
+  },
+};

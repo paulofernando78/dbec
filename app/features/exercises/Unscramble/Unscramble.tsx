@@ -31,6 +31,7 @@ export const Unscramble = ({
   const descriptionText = exercise?.description;
   const rawItems = exercise?.items;
   const items = Array.isArray(rawItems) ? rawItems : [];
+  const itemsSignature = JSON.stringify(rawItems ?? []);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [results, setResults] = useState<Record<string, boolean>>({});
   const [checked, setChecked] = useState(false);
@@ -50,7 +51,7 @@ export const Unscramble = ({
     setChecked(false);
     setTotalScore(0);
     setIsShown(false);
-  }, [rawItems]);
+  }, [itemsSignature]);
 
   if (!exercise || !rawItems) {
     return null;

@@ -1,8 +1,9 @@
 //! Beginner
 // Chapter 1
-import { beginnerHello } from "@/data/course/beginner/chapter-1/hello";
+import { beginnerHello } from "@/data/course/beginner/chapter-1/introducing-yourself";
 import { beginnerPersonalInformation } from "@/data/course/beginner/chapter-1/personal-information";
 import { beginnerCountriesAndNationalities } from "@/data/course/beginner/chapter-1/countries-and-nationalities";
+import { beginnerJobs } from "@/data/course/beginner/chapter-1/jobs";
 
 // Chapter 2
 import { beginnerMyFamily } from "@/data/course/beginner/chapter-2/my-family";
@@ -11,6 +12,7 @@ import { beginnerMyRelatives } from "@/data/course/beginner/chapter-2/my-relativ
 // Chapter 3
 import { beginnerMyHouse } from "@/data/course/beginner/chapter-3/my-house";
 import { beginnerRentingAHome } from "@/data/course/beginner/chapter-3/renting-a-home";
+import { beginnerMyNeighborhood } from "@/data/course/beginner/chapter-3/my-neighborhood";
 
 // Chapter 4
 import { beginnerMyDailyRoutine } from "@/data/course/beginner/chapter-4/my-daily-routine";
@@ -19,19 +21,38 @@ import { beginnerMyWeek } from "@/data/course/beginner/chapter-4/my-week";
 // Chapter 5
 import { beginnerFavoriteFood } from "@/data/course/beginner/chapter-5/favorite-food";
 import { beginnerEatingOut } from "./beginner/chapter-5/eating-out";
+import {
+  beginnerOfferingFood,
+  beginnerQuantities,
+} from "@/data/course/beginner/chapter-5/food-and-quantities";
 
 // Chapter 6
-import { beginnerShopping } from "@/data/course/beginner/chapter-6/shopping";
+import {
+  beginnerPrices,
+  beginnerShopping,
+} from "@/data/course/beginner/chapter-6/shopping";
 
 // Chapter 7
 import { beginnerAroundTown } from "@/data/course/beginner/chapter-7/around-town";
+import { beginnerTransportation } from "@/data/course/beginner/chapter-7/transportation";
 
 // Chapter 8
+import {
+  beginnerAbilities,
+  beginnerCouldYouHelpMe,
+} from "@/data/course/beginner/chapter-8/abilities";
 import { beginnerWhatAreYouDoing } from "@/data/course/beginner/chapter-8/what-are-you-doing";
 
 // Chapter 9
-import { beginnerAbilities } from "@/data/course/beginner/chapter-8/abilities";
+import {
+  beginnerHowWasIt,
+  beginnerWhereWereYou,
+} from "@/data/course/beginner/chapter-9/last-weekend";
 import { beginnerRealLifeProject } from "@/data/course/beginner/chapter-9/real-life-project";
+import {
+  beginnerMonthsAndSeasons,
+  beginnerWeatherToday,
+} from "@/data/course/beginner/chapter-10/weather";
 
 //! Elementary
 // Past
@@ -92,6 +113,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       "introducing-yourself": beginnerHello,
       "personal-information": beginnerPersonalInformation,
       "countries-and-nationalities": beginnerCountriesAndNationalities,
+      jobs: beginnerJobs,
 
       // Chapter 2 • Family
       "my-family": beginnerMyFamily,
@@ -103,6 +125,7 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       "my-house": beginnerMyHouse,
       "welcome-home": beginnerMyHouse,
       "renting-a-home": beginnerRentingAHome,
+      "my-neighborhood": beginnerMyNeighborhood,
 
       // Chapter 4 • Daily Routine
       "my-daily-routine": beginnerMyDailyRoutine,
@@ -113,18 +136,22 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       // Chapter 5 • Food and Drinks
       "i-love-pizza": beginnerFavoriteFood,
       "food-preferences": beginnerFavoriteFood,
+      "offering-food": beginnerOfferingFood,
       "eating-out": beginnerEatingOut,
+      quantities: beginnerQuantities,
 
       // Chapter 6 • Shopping
       shopping: beginnerShopping,
       "shopping-basics": beginnerShopping,
-      "bargain-hunting": beginnerShopping,
+      "in-the-shop": beginnerShopping,
+      prices: beginnerPrices,
 
       // Chapter 7 • Around Town
       "around-town": beginnerAroundTown,
       locations: beginnerAroundTown,
       "finding-your-way": beginnerAroundTown,
       "simple-directions": beginnerAroundTown,
+      transportation: beginnerTransportation,
 
       // Chapter 8 • Actions & Abilities
 
@@ -132,8 +159,13 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
       "what-are-you-doing": beginnerWhatAreYouDoing,
       "actions-now": beginnerWhatAreYouDoing,
       abilities: beginnerAbilities,
+      "could-you-help-me": beginnerCouldYouHelpMe,
+      "where-were-you": beginnerWhereWereYou,
+      "how-was-it": beginnerHowWasIt,
       "real-life-project": beginnerRealLifeProject,
       "course-review": beginnerRealLifeProject,
+      "the-weather-today": beginnerWeatherToday,
+      "months-and-seasons": beginnerMonthsAndSeasons,
     },
   },
   elementary: {

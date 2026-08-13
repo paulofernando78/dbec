@@ -1,10 +1,8 @@
+import { useMemo } from "react";
 import { useParams } from "react-router";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
-import {
-  LessonCard,
-  type LessonCardContent,
-} from "@/components/content/LessonCard";
+import type { LessonCardContent } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
@@ -67,111 +65,180 @@ const createSyllabusLesson = (
 ) => {
   const usefulLanguage = splitField(lessonCard.usefulLanguage);
   const vocabulary = splitField(lessonCard.vocabulary);
+  const mainLanguage = usefulLanguage[0] ?? lessonCard.label ?? "this lesson";
+  const responseLanguage = usefulLanguage[1] ?? "Yes, that's right.";
+  const focusLanguage = usefulLanguage.slice(0, 4);
+  const vocabularyItems = vocabulary.slice(0, 6);
+  const fillInTheBlanksBlocks = createFillInTheBlanksBlocks(lessonCard);
 
   return {
     whiteboard: {
       title: lessonCard.label ?? "Lesson",
-      subtitle: "CEFR syllabus lesson",
-      descriptions: [lessonCard.objective],
+      descriptions: usefulLanguage.slice(0, 2),
     },
     lessonCard,
     introduction: {
       blocks: [
         {
-          type: "line",
-          value: [
-            `Today students work with ${lessonCard.label ?? "this lesson"} through a guided communicative lesson sequence.`,
-          ],
-          className: "font-bold mb-4",
+          type: "lines",
+          value: [[lessonCard.objective]],
+          className: "mb-4",
         },
         {
-          type: "task",
-          instruction: "Lead-in:",
-          listType: "ul",
-          items: [
-            { content: ["Personalize the topic with one simple question."] },
-            {
-              content: [
-                "Elicit what students already know about the situation.",
-              ],
-            },
-            {
-              content: [
-                "Set a clear communicative reason to use the target language.",
-              ],
-            },
-          ],
+          type: "radio",
+          instruction: "Choose the sentence from this lesson.",
+          exercise: {
+            questions: [
+              {
+                question: "Which sentence belongs to this lesson?",
+                options: [
+                  { option: mainLanguage, isCorrect: true },
+                  {
+                    option: "This sentence belongs to a different topic.",
+                    isCorrect: false,
+                  },
+                ],
+              },
+            ],
+          },
         },
       ],
     },
     presentation: {
       blocks: [
         {
-          type: "task",
-          instruction: "Target language:",
-          listType: "ul",
-          items: usefulLanguage.map((item) => ({ content: [item] })),
+          type: "dialogue",
+          instruction: "Read the conversation and identify the useful language.",
+          audioSrc: "",
+          lines: [
+            {
+              speaker: "A",
+              line: [mainLanguage],
+            },
+            {
+              speaker: "B",
+              line: [responseLanguage],
+            },
+            ...(usefulLanguage[2]
+              ? [
+                  {
+                    speaker: "A",
+                    line: [usefulLanguage[2]],
+                  },
+                ]
+              : []),
+          ],
+        },
+        {
+          type: "radio",
+          instruction: "Choose the answer supported by the conversation.",
+          exercise: {
+            questions: [
+              {
+                question: "Which expression appears in the conversation?",
+                options: [
+                  { option: mainLanguage, isCorrect: true },
+                  {
+                    option: "An unrelated expression.",
+                    isCorrect: false,
+                  },
+                ],
+              },
+            ],
+          },
         },
       ],
     },
     languageFocus: {
       blocks: [
         {
-          type: "task",
-          instruction: "Vocabulary:",
-          listType: "ul",
-          items: vocabulary.map((item) => ({ content: [item] })),
+          type: "meaning",
+          value: [
+            ...focusLanguage.map((item) => ({
+              as: "p",
+              parts: [item],
+            })),
+            ...(lessonCard.pronunciation
+              ? [
+                  {
+                    as: "p",
+                    parts: [`Pronunciation: ${lessonCard.pronunciation}`],
+                  },
+                ]
+              : []),
+          ],
         },
-        ...(lessonCard.pronunciation
+        ...(vocabularyItems.length
           ? [
               {
-                type: "line",
-                value: [`Pronunciation: ${lessonCard.pronunciation}`],
-                className: "font-bold mt-4",
+                type: "task",
+                instruction: "Vocabulary:",
+                listType: "ul",
+                items: vocabularyItems.map((item) => ({ content: [item] })),
               },
             ]
           : []),
+        {
+          type: "ccq",
+          value: [
+            {
+              as: "span",
+              parts: ["Does this language match the lesson topic?"],
+              options: [
+                { option: "Yes", isCorrect: true },
+                { option: "No", isCorrect: false },
+              ],
+            },
+            {
+              as: "span",
+              parts: ["Should students use it in a short exchange?"],
+              options: [
+                { option: "Yes", isCorrect: true },
+                { option: "No", isCorrect: false },
+              ],
+            },
+          ],
+        },
       ],
     },
     practice: {
       blocks: [
         {
-          type: "task",
-          instruction: "Controlled practice:",
-          listType: "ol",
-          items: [
-            {
-              content: [
-                "Model the useful language with clear teacher examples.",
-              ],
-            },
-            {
-              content: [
-                "Students repeat, substitute details, and check meaning.",
-              ],
-            },
-            { content: ["Students practise short exchanges in pairs."] },
-          ],
+          type: "radio",
+          instruction: "Choose the best option.",
+          exercise: { questions: createAssignmentRadioQuestions(lessonCard) },
         },
+        ...(fillInTheBlanksBlocks.length
+          ? [
+              {
+                type: "fillInTheBlanks",
+                showWordBank: true,
+                numbered: true,
+                instruction: "Complete the lesson language.",
+                exercise: { blocks: fillInTheBlanksBlocks },
+              },
+            ]
+          : []),
       ],
     },
     production: {
       blocks: [
         {
           type: "task",
-          instruction: "Final task:",
+          instruction: lessonCard.finalTask ?? "Create a short exchange.",
           listType: "checkbox",
           items: [
             {
-              content: [
-                lessonCard.finalTask ??
-                  "Complete a communicative task using the target language.",
-              ],
+              content: ["Use at least two expressions from the lesson."],
+              textarea: true,
             },
             {
-              content: [
-                "Give feedback on successful communication and useful corrections.",
-              ],
+              content: ["Use at least two vocabulary items from the lesson."],
+              textarea: true,
+            },
+            {
+              content: ["Practise the exchange with a partner."],
+              textarea: true,
             },
           ],
         },
@@ -360,27 +427,29 @@ export function Course({ lesson, lessonCard, levelTitle }: CourseProps) {
     typeof card?.index === "number"
       ? `${card.index + 1} • ${card.label}`
       : card?.label;
-  const displayedLesson = card?.label
-    ? {
-        ...lesson,
-        whiteboard: {
-          ...lesson.whiteboard,
-          title: levelTitle ?? lesson.whiteboard.title,
-          subtitle: lessonTitle,
-        },
-      }
-    : lesson;
-  const lessonVocabulary = getLessonVocabulary(
-    displayedLesson,
-    card?.vocabulary,
+  const displayedLesson = useMemo(
+    () =>
+      card?.label
+        ? {
+            ...lesson,
+            whiteboard: {
+              ...lesson.whiteboard,
+              title: levelTitle ?? lesson.whiteboard.title,
+              subtitle: lessonTitle,
+            },
+          }
+        : lesson,
+    [card?.label, lesson, lessonTitle, levelTitle],
   );
-  const renderContext = { lessonVocabulary };
+  const lessonVocabulary = useMemo(
+    () => getLessonVocabulary(displayedLesson, card?.vocabulary),
+    [displayedLesson, card?.vocabulary],
+  );
+  const renderContext = useMemo(() => ({ lessonVocabulary }), [lessonVocabulary]);
   return (
     <>
       <Whiteboard {...displayedLesson.whiteboard} />
       <div>
-        {card && <LessonCard {...card} />}
-
         <PageSections>
           <Section id="introduction" heading={heading}>
             {renderBlocks(displayedLesson.introduction?.blocks, renderContext)}
@@ -409,6 +478,10 @@ export function Course({ lesson, lessonCard, levelTitle }: CourseProps) {
 
 export default function Lesson() {
   const { level, section, resourceType, slug } = useParams();
+  if (level === "template") {
+    return <Course lesson={courseTemplate} />;
+  }
+
   const levelTitle = level ? courseLevelTitles[level] : undefined;
   const isTypedResource =
     resourceType === "material" || resourceType === "assignment";
@@ -425,26 +498,32 @@ export default function Lesson() {
   const courseLessonCard = href
     ? (getCourseLessonCard(href) ?? getCourseSyllabusLessonCard(href))
     : undefined;
-  const lesson =
-    level === "template"
-      ? courseTemplate
-      : getCourseLesson({ level, slug: lessonSlug });
-  const lessonCard = courseLessonCard
-    ? {
-        index: href
-          ? (getCourseSyllabusLessonIndex(href) ?? getCourseLessonIndex(href))
-          : undefined,
-        label: courseLessonCard.label,
-        objective: courseLessonCard.objective,
-        usefulLanguage: courseLessonCard.usefulLanguage,
-        vocabulary: courseLessonCard.vocabulary,
-        pronunciation: courseLessonCard.pronunciation,
-        finalTask: courseLessonCard.finalTask,
-        href: courseLessonCard.materialHref ?? courseLessonCard.href,
-        assignmentHref: courseLessonCard.assignmentHref,
-        classroom: courseLessonCard.classroom,
-      }
-    : undefined;
+  const lesson = getCourseLesson({ level, slug: lessonSlug });
+  const lessonCard = useMemo(
+    () =>
+      courseLessonCard
+        ? {
+            index: href
+              ? (getCourseSyllabusLessonIndex(href) ??
+                getCourseLessonIndex(href))
+              : undefined,
+            label: courseLessonCard.label,
+            objective: courseLessonCard.objective,
+            usefulLanguage: courseLessonCard.usefulLanguage,
+            vocabulary: courseLessonCard.vocabulary,
+            pronunciation: courseLessonCard.pronunciation,
+            finalTask: courseLessonCard.finalTask,
+            href: courseLessonCard.materialHref ?? courseLessonCard.href,
+            assignmentHref: courseLessonCard.assignmentHref,
+            classroom: courseLessonCard.classroom,
+          }
+        : undefined,
+    [courseLessonCard, href],
+  );
+  const syllabusLesson = useMemo(
+    () => (lessonCard ? createSyllabusLesson(lessonCard) : undefined),
+    [lessonCard],
+  );
 
   if (resolvedResourceType === "assignment" && lessonCard) {
     return <Assignment lessonCard={lessonCard} />;
@@ -457,7 +536,7 @@ export default function Lesson() {
   if (!lesson && lessonCard) {
     return (
       <Course
-        lesson={createSyllabusLesson(lessonCard)}
+        lesson={syllabusLesson!}
         lessonCard={lessonCard}
         levelTitle={levelTitle}
       />
