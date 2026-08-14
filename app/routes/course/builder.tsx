@@ -31,7 +31,6 @@ import {
   getCourseSyllabusLessonCard,
   getCourseSyllabusLessonIndex,
 } from "@/data/course/course-syllabus-sections";
-import { courseTemplate } from "@/data/course/course-template";
 import { getLessonVocabulary } from "@/utils/getLessonVocabulary";
 
 type CourseProps = {
@@ -55,194 +54,6 @@ const splitField = (value?: string) =>
     ?.split(";")
     .map((item) => item.trim())
     .filter(Boolean) ?? [];
-
-const createSyllabusLesson = (
-  lessonCard: LessonCardContent & { label?: string },
-) => {
-  const usefulLanguage = splitField(lessonCard.usefulLanguage);
-  const vocabulary = splitField(lessonCard.vocabulary);
-  const mainLanguage = usefulLanguage[0] ?? lessonCard.label ?? "this lesson";
-  const responseLanguage = usefulLanguage[1] ?? "Yes, that's right.";
-  const focusLanguage = usefulLanguage.slice(0, 4);
-  const vocabularyItems = vocabulary.slice(0, 6);
-  const fillInTheBlanksBlocks = createFillInTheBlanksBlocks(lessonCard);
-
-  return {
-    whiteboard: {
-      title: lessonCard.label ?? "Lesson",
-      descriptions: usefulLanguage.slice(0, 2),
-    },
-    lessonCard,
-    introduction: {
-      blocks: [
-        {
-          type: "text",
-          value: [{ parts: [lessonCard.objective] }],
-          className: "mb-4",
-        },
-        {
-          type: "radio",
-          instruction: "Choose the sentence from this lesson.",
-          exercise: {
-            questions: [
-              {
-                question: "Which sentence belongs to this lesson?",
-                options: [
-                  { option: mainLanguage, isCorrect: true },
-                  {
-                    option: "This sentence belongs to a different topic.",
-                    isCorrect: false,
-                  },
-                ],
-              },
-            ],
-          },
-        },
-      ],
-    },
-    presentation: {
-      blocks: [
-        {
-          type: "dialogue",
-          instruction:
-            "Read the conversation and identify the useful language.",
-          audioSrc: "",
-          lines: [
-            {
-              speaker: "A",
-              line: [mainLanguage],
-            },
-            {
-              speaker: "B",
-              line: [responseLanguage],
-            },
-            ...(usefulLanguage[2]
-              ? [
-                  {
-                    speaker: "A",
-                    line: [usefulLanguage[2]],
-                  },
-                ]
-              : []),
-          ],
-        },
-        {
-          type: "radio",
-          instruction: "Choose the answer supported by the conversation.",
-          exercise: {
-            questions: [
-              {
-                question: "Which expression appears in the conversation?",
-                options: [
-                  { option: mainLanguage, isCorrect: true },
-                  {
-                    option: "An unrelated expression.",
-                    isCorrect: false,
-                  },
-                ],
-              },
-            ],
-          },
-        },
-      ],
-    },
-    languageFocus: {
-      blocks: [
-        {
-          type: "text",
-          value: [
-            ...focusLanguage.map((item) => ({
-              as: "p",
-              parts: [item],
-            })),
-            ...(lessonCard.pronunciation
-              ? [
-                  {
-                    as: "p",
-                    parts: [`Pronunciation: ${lessonCard.pronunciation}`],
-                  },
-                ]
-              : []),
-          ],
-        },
-        ...(vocabularyItems.length
-          ? [
-              {
-                type: "task",
-                instruction: "Vocabulary:",
-                listType: "ul",
-                items: vocabularyItems.map((item) => ({ content: [item] })),
-              },
-            ]
-          : []),
-        {
-          type: "ccq",
-          value: [
-            {
-              as: "span",
-              parts: ["Does this language match the lesson topic?"],
-              options: [
-                { option: "Yes", isCorrect: true },
-                { option: "No", isCorrect: false },
-              ],
-            },
-            {
-              as: "span",
-              parts: ["Should students use it in a short exchange?"],
-              options: [
-                { option: "Yes", isCorrect: true },
-                { option: "No", isCorrect: false },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    practice: {
-      blocks: [
-        {
-          type: "radio",
-          instruction: "Choose the best option.",
-          exercise: { questions: createAssignmentRadioQuestions(lessonCard) },
-        },
-        ...(fillInTheBlanksBlocks.length
-          ? [
-              {
-                type: "fillInTheBlanks",
-                showWordBank: true,
-                numbered: true,
-                instruction: "Complete the lesson language.",
-                exercise: { blocks: fillInTheBlanksBlocks },
-              },
-            ]
-          : []),
-      ],
-    },
-    production: {
-      blocks: [
-        {
-          type: "task",
-          instruction: lessonCard.finalTask ?? "Create a short exchange.",
-          listType: "checkbox",
-          items: [
-            {
-              content: ["Use at least two expressions from the lesson."],
-              textarea: true,
-            },
-            {
-              content: ["Use at least two vocabulary items from the lesson."],
-              textarea: true,
-            },
-            {
-              content: ["Practise the exchange with a partner."],
-              textarea: true,
-            },
-          ],
-        },
-      ],
-    },
-  };
-};
 
 const createFillInTheBlanksBlocks = (lessonCard: LessonCardContent) => {
   const sourceItems = [
@@ -484,9 +295,6 @@ export function Course({ lesson, lessonCard, levelTitle }: CourseProps) {
 
 export default function Lesson() {
   const { level, section, resourceType, slug } = useParams();
-  if (level === "template") {
-    return <Course lesson={courseTemplate} />;
-  }
 
   const levelTitle = level ? courseLevelTitles[level] : undefined;
   const isTypedResource =
@@ -526,30 +334,15 @@ export default function Lesson() {
         : undefined,
     [courseLessonCard, href],
   );
-  const syllabusLesson = useMemo(
-    () => (lessonCard ? createSyllabusLesson(lessonCard) : undefined),
-    [lessonCard],
-  );
-
   if (resolvedResourceType === "assignment" && lessonCard) {
     return <Assignment lessonCard={lessonCard} />;
   }
 
-  if (!lesson && !lessonCard) {
+  if (!lesson) {
     return <h1>Lesson not found.</h1>;
   }
 
-  if (!lesson && lessonCard) {
-    return (
-      <Course
-        lesson={syllabusLesson!}
-        lessonCard={lessonCard}
-        levelTitle={levelTitle}
-      />
-    );
-  }
-
   return (
-    <Course lesson={lesson!} lessonCard={lessonCard} levelTitle={levelTitle} />
+    <Course lesson={lesson} lessonCard={lessonCard} levelTitle={levelTitle} />
   );
 }

@@ -137,8 +137,8 @@ export const beginnerHello = {
         type: "dialogue",
         ...{
           instruction: [
-            "Listen to Laura and Eric. They meet for the first time. ",
-            portuguese("Laura e Eric se encontram pela primeira vez."),
+            "Listen to the dialogue.",
+            portuguese("Ouça o diálogo."),
           ],
           audioSrc: "/",
           lines: [

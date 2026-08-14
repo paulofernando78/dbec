@@ -81,37 +81,9 @@ export const courseTemplate = {
   presentation: {
     blocks: [
       {
-        type: "carousel",
-        aspectRatio: "wide",
-        instruction: "Look at the examples and listen to the sentences.",
-        imgs: [
-          {
-            alt: "Example one",
-            content: [
-              ...content({
-                parts: [
-                  audio("Example sentence one goes here."),
-                  "Example sentence one goes here.",
-                  lineBreak(),
-                  "Short explanation goes here.",
-                ],
-              }),
-            ],
-          },
-          {
-            alt: "Example two",
-            content: [
-              ...content({
-                parts: [
-                  audio("Example sentence two goes here."),
-                  "Example sentence two goes here.",
-                  lineBreak(),
-                  "Short explanation goes here.",
-                ],
-              }),
-            ],
-          },
-        ],
+        type: "image",
+        src: "/.avif",
+        alt: "...",
       },
       {
         type: "dialogue",
@@ -119,11 +91,11 @@ export const courseTemplate = {
         audioSrc: "",
         lines: [
           {
-            speaker: "A",
+            speaker: "Person A",
             line: ["First dialogue line goes here."],
           },
           {
-            speaker: "B",
+            speaker: "Person B",
             line: ["Second dialogue line goes here."],
           },
         ],
