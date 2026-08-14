@@ -941,7 +941,7 @@ export const courseLessonsCardData: Record<string, CourseLessonCard[]> = {
   advanced: [
     card({
       href: "/course/advanced/reading-between-the-lines",
-      label: "Reading Between the Lines",
+      label: "Reading Between the Text",
       objective:
         "Can infer implicit meaning, stance, and attitude from nuanced texts.",
       usefulLanguage:

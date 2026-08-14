@@ -199,7 +199,7 @@ export const upperIntermediateGlobalIssues = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

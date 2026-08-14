@@ -9,9 +9,9 @@ export const beginnerMyRelatives = {
   introduction: {
     blocks: [
       {
-        type: "line",
+        type: "text",
         as: "span",
-        value: [bold("Look at the rest of Laura’s family.")],
+        value: [{ parts: [bold("Look at the rest of Laura’s family.")] }],
       },
       {
         type: "image",
@@ -19,7 +19,7 @@ export const beginnerMyRelatives = {
         alt: "Laura with members of her extended, married, and blended family",
       },
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Who lives in your home?"),
@@ -143,7 +143,7 @@ export const beginnerMyRelatives = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",

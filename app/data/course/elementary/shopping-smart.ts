@@ -9,7 +9,7 @@ export const elementaryShoppingSmart = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What is usually on your shopping list?"),
@@ -188,7 +188,7 @@ export const elementaryShoppingSmart = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

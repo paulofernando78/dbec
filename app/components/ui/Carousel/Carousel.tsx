@@ -6,7 +6,7 @@ import {
   type ContentValue,
 } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 import { Dot } from "lucide-react";
 import { Image } from "@/components/ui/Image";
 
@@ -203,7 +203,7 @@ export const Carousel = ({
 
         return (
           <span key={index} className="inline-flex items-center">
-            <Line
+            <Text
               display={display}
               as={as}
               value={content({ parts })}

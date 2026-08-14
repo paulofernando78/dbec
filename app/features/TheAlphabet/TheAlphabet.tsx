@@ -1,8 +1,8 @@
 import { Ribbon } from "@/components/ui/Ribbon";
-// import { Line } from "@/components/molecules/Line";
+// import { Text } from "@/components/molecules/Text";
 import { Card } from "@/components/ui/Card";
 import { Audio } from "@/components/ui/Audio";
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 import { LineBreak } from "@/components/content/LineBreak";
 import { content } from "@/helpers/content";
 import { Notes } from "@/components/content/Notes";
@@ -198,7 +198,7 @@ export const TheAlphabet = () => {
     <>
       <Ribbon label="The Alphabet" bgColor="bg-slate-500" />
       <LineBreak />
-      <Line
+      <Text
         value={[
           ...content({
             audio: "/assets/audio/pronunciation/the-alphabet/26-letters.mp3",

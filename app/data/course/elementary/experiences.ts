@@ -12,7 +12,7 @@ export const elementaryExperiences = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What new experience would you like to try?"),
@@ -194,7 +194,7 @@ export const elementaryExperiences = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

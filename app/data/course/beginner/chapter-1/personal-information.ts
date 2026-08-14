@@ -16,7 +16,7 @@ export const beginnerPersonalInformation = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What information do people usually share when they meet?"),
@@ -152,7 +152,7 @@ export const beginnerPersonalInformation = {
         heading: 5,
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             display: "block",
@@ -237,7 +237,7 @@ export const beginnerPersonalInformation = {
         heading: 5,
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             display: "block",

@@ -9,8 +9,8 @@ export const beginnerRentingAHome = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("..."), "..."]],
+        type: "text",
+        value: [{ parts: [audio("..."), "..."] }],
         className: "mb-4",
       },
       {
@@ -163,7 +163,7 @@ export const beginnerRentingAHome = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",

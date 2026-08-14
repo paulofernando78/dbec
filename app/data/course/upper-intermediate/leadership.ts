@@ -189,7 +189,7 @@ export const upperIntermediateLeadership = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

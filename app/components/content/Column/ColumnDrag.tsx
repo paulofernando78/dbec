@@ -2,7 +2,7 @@ import styles from "./Column.module.css";
 
 import { useRef } from "react";
 import { Ribbon } from "@/components/ui/Ribbon";
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 import { Portuguese } from "@/components/content/Portuguese";
 import { useDragScroll } from "@/hooks/useDragScroll";
 import { getColumnTranslation } from "@/data/course/columnTranslations";
@@ -108,7 +108,7 @@ export const ColumnDrag = ({
                 return (
                   <div key={index} className={item.lineBreak ? "mb-4" : ""}>
                     {item.parts && (
-                      <Line display={display} as={as} value={item.parts} />
+                      <Text display={display} as={as} value={item.parts} />
                     )}
                     {translation && !hasPortuguese(item.parts) && (
                       <div>

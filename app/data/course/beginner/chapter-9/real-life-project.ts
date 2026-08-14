@@ -1,6 +1,6 @@
 import type { CCQ } from "@/components/content/CCQ";
 import type { ListProps } from "@/components/content/List";
-import type { Meaning } from "@/components/content/Meaning";
+import type { TextItem } from "@/components/content/Text";
 import type { Notes } from "@/components/content/Notes";
 
 import { content, audio, bold } from "@/helpers/content";
@@ -17,7 +17,7 @@ export const beginnerRealLifeProject = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("How do you make a simple plan with a friend?"),
@@ -119,7 +119,7 @@ export const beginnerRealLifeProject = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             display: "block",

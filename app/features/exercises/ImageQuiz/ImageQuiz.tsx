@@ -230,7 +230,7 @@ export const ImageQuiz = ({
   return (
     <div className="mb-4">
       <p className="mb-4 font-bold">
-        Look at the pictures. Describe what you see, then match to the words.
+        Look at the pictures. Describe what you see.
       </p>
 
       {completed ? (

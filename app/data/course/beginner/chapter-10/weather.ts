@@ -8,8 +8,8 @@ export const beginnerWeatherToday = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("What's the weather like today?"), "What's the weather like today?"]],
+        type: "text",
+        value: [{ parts: [audio("What's the weather like today?"), "What's the weather like today?"] }],
         className: "mb-4",
       },
       {
@@ -54,7 +54,7 @@ export const beginnerWeatherToday = {
     blocks: [
       { type: "subsection", label: "Weather words", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("sunny"), " - with a lot of sun"] },
           { display: "block", as: "p", parts: [bold("cloudy"), " - with many clouds"] },
@@ -148,8 +148,8 @@ export const beginnerMonthsAndSeasons = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("What month is it? What season is it?"), "What month is it? What season is it?"]],
+        type: "text",
+        value: [{ parts: [audio("What month is it? What season is it?"), "What month is it? What season is it?"] }],
         className: "mb-4",
       },
       {
@@ -190,7 +190,7 @@ export const beginnerMonthsAndSeasons = {
     blocks: [
       { type: "subsection", label: "Months and seasons", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("January, February, March, April, May, June")] },
           { display: "block", as: "p", parts: [bold("July, August, September, October, November, December")] },

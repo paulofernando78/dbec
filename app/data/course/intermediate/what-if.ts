@@ -142,7 +142,7 @@ export const intermediateWhatIf = {
         },
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

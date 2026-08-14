@@ -1,47 +1,64 @@
 import type { CCQ } from "@/components/content/CCQ/";
-import type { Meaning } from "@/components/content/Meaning";
+import type { TextItem } from "@/components/content/Text";
 import type { Notes } from "@/components/content/Notes";
 
-import { audio, bold, content, lineBreak } from "@/helpers/content";
+import {
+  content,
+  audio,
+  bold,
+  mark,
+  portuguese,
+  lineBreak,
+  spacer,
+} from "@/helpers/content";
 
-export const lesson = {
+export const courseTemplate = {
   whiteboard: {
     title: "Course Template",
-    subtitle: "Blank lesson structure",
-    descriptions: ["Lesson aim goes here.", "Target language goes here."],
+    subtitle: 'Material "import"',
+    descriptions: ["Description"],
     date: "",
-  },
-
-  lessonCard: {
-    objective: "Write the lesson objective here.",
-    usefulLanguage: "Useful expression 1; Useful expression 2",
-    vocabulary: "word 1, word 2, word 3",
-    pronunciation: "Pronunciation focus goes here.",
-    finalTask: "Write the final communicative task here.",
   },
 
   introduction: {
     blocks: [
       {
-        type: "line",
-        value: ["Lead-in question or short context goes here."],
-        className: "font-bold mb-4",
+        type: "carousel",
+        aspectRatio: "wide",
+        ...{
+          instruction: "Look at the pictures and listen to the sentences.",
+          imgs: [
+            {
+              src: "/.avif",
+              alt: "alt",
+              content: [
+                ...content({
+                  parts: [audio("..."), lineBreak(), portuguese("...”")],
+                }),
+              ],
+            },
+          ],
+        },
       },
       {
-        type: "lines",
+        type: "text",
+        as: "p",
         value: [
-          [audio("Question one goes here."), "Question one goes here."],
-          [audio("Question two goes here."), "Question two goes here."],
+          {
+            parts: [bold("Now answer the questions.")],
+          },
+          spacer(),
+          {
+            parts: [audio("Question two."), "Question two."],
+          },
+          {
+            parts: [audio("Question two."), "Question one."],
+          },
         ],
-        className: "mb-4",
       },
       {
         type: "imageQuiz",
-        words: [
-          { word: "example", img: 0 },
-          { word: "option", img: 0 },
-          { word: "result", img: 0 },
-        ],
+        words: [{ word: "option", img: 0 }],
       },
       {
         type: "radio",
@@ -51,8 +68,8 @@ export const lesson = {
             {
               question: "Comprehension question goes here.",
               options: [
-                { option: "Incorrect option", isCorrect: false },
                 { option: "Correct option", isCorrect: true },
+                { option: "Incorrect option", isCorrect: false },
               ],
             },
           ],
@@ -62,46 +79,6 @@ export const lesson = {
   },
 
   presentation: {
-    blocks: [
-      {
-        type: "line",
-        value: ["Set the listening or reading task here."],
-        className: "font-bold mb-4",
-      },
-      {
-        type: "dialogue",
-        instruction: "Read the dialogue.",
-        audioSrc: "",
-        lines: [
-          {
-            speaker: "A",
-            line: ["First dialogue line goes here."],
-          },
-          {
-            speaker: "B",
-            line: ["Second dialogue line goes here."],
-          },
-        ],
-      },
-      {
-        type: "radio",
-        instruction: "Choose the answer supported by the dialogue.",
-        exercise: {
-          questions: [
-            {
-              question: "Dialogue comprehension question goes here.",
-              options: [
-                { option: "Incorrect option", isCorrect: false },
-                { option: "Correct option", isCorrect: true },
-              ],
-            },
-          ],
-        },
-      },
-    ],
-  },
-
-  languageFocus: {
     blocks: [
       {
         type: "carousel",
@@ -137,7 +114,42 @@ export const lesson = {
         ],
       },
       {
-        type: "meaning",
+        type: "dialogue",
+        instruction: "Listen to the dialogue.",
+        audioSrc: "",
+        lines: [
+          {
+            speaker: "A",
+            line: ["First dialogue line goes here."],
+          },
+          {
+            speaker: "B",
+            line: ["Second dialogue line goes here."],
+          },
+        ],
+      },
+      {
+        type: "radio",
+        instruction: "Choose the answer supported by the dialogue.",
+        exercise: {
+          questions: [
+            {
+              question: "Dialogue comprehension question goes here.",
+              options: [
+                { option: "Incorrect option", isCorrect: false },
+                { option: "Correct option", isCorrect: true },
+              ],
+            },
+          ],
+        },
+      },
+    ],
+  },
+
+  languageFocus: {
+    blocks: [
+      {
+        type: "text",
         value: [
           {
             display: "block",
@@ -149,7 +161,7 @@ export const lesson = {
             as: "span",
             parts: [bold("Form:"), " form explanation goes here."],
           },
-        ] satisfies Meaning[],
+        ] satisfies TextItem[],
       },
       {
         type: "column",
@@ -218,11 +230,7 @@ export const lesson = {
     blocks: [
       {
         type: "guess",
-        words: [
-          { word: "example" },
-          { word: "option" },
-          { word: "result" },
-        ],
+        words: [{ word: "example" }, { word: "option" }, { word: "result" }],
       },
       {
         type: "radio",

@@ -2,7 +2,7 @@
 
 import { Image } from "@/components/ui/Image";
 import { Audio } from "@/components/ui/Audio";
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 
 const emojis = [
   {

@@ -1,4 +1,4 @@
-import type { Meaning } from "@/components/content/Meaning";
+import type { TextItem } from "@/components/content/Text";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -14,8 +14,8 @@ export const beginnerAbilities = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("What can you do well?"), "What can you do well?"]],
+        type: "text",
+        value: [{ parts: [audio("What can you do well?"), "What can you do well?"] }],
         className: "mb-4",
       },
       {
@@ -152,7 +152,7 @@ export const beginnerAbilities = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",
@@ -388,7 +388,7 @@ export const beginnerCouldYouHelpMe = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("When do you ask someone for help?"),
@@ -483,7 +483,7 @@ export const beginnerCouldYouHelpMe = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

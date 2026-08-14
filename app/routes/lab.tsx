@@ -1,7 +1,7 @@
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 import { Paragraph } from "@/components/content/Paragraph";
 import { Image } from "@/components/ui/Image";
 import { Carousel } from "@/components/ui/Carousel";
@@ -47,12 +47,12 @@ export default function Playground() {
       />
       <div className="line-break">
         <PageSections>
-          {/* Line */}
+          {/* Text */}
           <Section id="line (<span> / <p>)" heading={3}>
             <Subsection label="Subsection" heading={3} />
             <Subsection label="Subsection" heading={4} />
             <Subsection label="Subsection" heading={5} />
-            <Line as="span" value={line} />
+            <Text as="span" value={line} />
           </Section>
 
           {/* Paragraph */}

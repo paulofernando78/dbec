@@ -9,7 +9,7 @@ export const beginnerWhereWereYou = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Where were you last weekend?"),
@@ -86,7 +86,7 @@ export const beginnerWhereWereYou = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           { as: "p", parts: [bold("was"), " = past of am/is"] },
           { as: "p", parts: [bold("were"), " = past of are"] },
@@ -249,8 +249,8 @@ export const beginnerHowWasIt = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("How was your weekend?"), "How was your weekend?"]],
+        type: "text",
+        value: [{ parts: [audio("How was your weekend?"), "How was your weekend?"] }],
         className: "mb-4",
       },
       {
@@ -321,7 +321,7 @@ export const beginnerHowWasIt = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           { as: "p", parts: [bold("How was...?"), " asks for an opinion about the past."] },
           { as: "p", parts: [bold("It was great."), " gives a positive opinion."] },

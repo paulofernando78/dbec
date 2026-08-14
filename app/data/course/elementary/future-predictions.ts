@@ -1,4 +1,4 @@
-import type { Meaning } from "@/components/content/Meaning";
+import type { TextItem } from "@/components/content/Text";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -14,7 +14,7 @@ export const elementaryFuturePredictions = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What do you think life will be like in 2050?"),
@@ -183,7 +183,7 @@ export const elementaryFuturePredictions = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",

@@ -12,7 +12,7 @@ export const beginnerMyDailyRoutine = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [audio("What time do you wake up?"), "What time do you wake up?"],
         ],
@@ -160,7 +160,7 @@ export const beginnerMyDailyRoutine = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",

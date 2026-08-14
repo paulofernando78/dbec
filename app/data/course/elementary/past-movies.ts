@@ -1,4 +1,4 @@
-import type { Meaning } from "@/components/content/Meaning";
+import type { TextItem } from "@/components/content/Text";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -16,12 +16,12 @@ export const elementaryPastMovies = {
   introduction: {
     blocks: [
       {
-        type: "line",
-        value: ["Talk about movies before you begin."],
+        type: "text",
+        value: [{ parts: ["Talk about movies before you begin."] }],
         className: "font-bold mb-4",
       },
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Do you like watching movies?"),
@@ -321,7 +321,7 @@ export const elementaryPastMovies = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

@@ -8,8 +8,8 @@ export const beginnerOfferingFood = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("What do you offer a guest in your home?"), "What do you offer a guest in your home?"]],
+        type: "text",
+        value: [{ parts: [audio("What do you offer a guest in your home?"), "What do you offer a guest in your home?"] }],
         className: "mb-4",
       },
       {
@@ -51,7 +51,7 @@ export const beginnerOfferingFood = {
     blocks: [
       { type: "subsection", label: "Offering food and drinks", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("Would you like some coffee?"), " Yes, please."] },
           { display: "block", as: "p", parts: [bold("Would you like a sandwich?"), " No, thanks."] },
@@ -139,8 +139,8 @@ export const beginnerQuantities = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("What food do you buy by number or by amount?"), "What food do you buy by number or by amount?"]],
+        type: "text",
+        value: [{ parts: [audio("What food do you buy by number or by amount?"), "What food do you buy by number or by amount?"] }],
         className: "mb-4",
       },
       {
@@ -182,7 +182,7 @@ export const beginnerQuantities = {
     blocks: [
       { type: "subsection", label: "How much and how many", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("How many"), " + countable plural: How many apples?"] },
           { display: "block", as: "p", parts: [bold("How much"), " + uncountable noun: How much water?"] },

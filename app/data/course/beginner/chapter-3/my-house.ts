@@ -12,7 +12,7 @@ export const beginnerMyHouse = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Which room do you spend the most time in?"),
@@ -171,7 +171,7 @@ export const beginnerMyHouse = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",

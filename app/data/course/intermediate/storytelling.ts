@@ -189,7 +189,7 @@ export const intermediateStorytelling = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

@@ -10,7 +10,7 @@ export const elementaryHealthyLiving = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What healthy habit gives you more energy?"),
@@ -207,7 +207,7 @@ export const elementaryHealthyLiving = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

@@ -2,7 +2,7 @@ import { useState, type ChangeEvent } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Image } from "@/components/ui/Image";
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 
 import type { RichContent } from "@/helpers/content";
 
@@ -96,7 +96,7 @@ const RadioComponent = ({
             <div className="mb-px flex gap-1">
               <span>{qIndex + 1}.</span>
               {Array.isArray(q.question) ? (
-                <Line value={q.question} />
+                <Text value={q.question} />
               ) : (
                 <span>{q.question}</span>
               )}

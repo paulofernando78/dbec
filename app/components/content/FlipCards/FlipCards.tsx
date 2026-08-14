@@ -10,7 +10,7 @@ import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 
 import { FlipHorizontal2 } from "lucide-react";
 
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 import type { ContentValue } from "@/helpers/content";
 
 type ResolvedCardImage = {
@@ -168,7 +168,7 @@ const SingleFlipCard = ({
               text-black
               text-[1rem]
             ">
-              <Line value={frontLine} />
+              <Text value={frontLine} />
             </span>
           ) : resolvedFrontImg ? (
             <Image
@@ -211,7 +211,7 @@ const SingleFlipCard = ({
               text-black
               text-[1rem]
               ">
-              <Line value={backLine} />
+              <Text value={backLine} />
             </div>
           ) : resolvedBackImg ? (
             <Image

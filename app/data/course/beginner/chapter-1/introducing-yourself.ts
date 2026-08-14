@@ -217,7 +217,7 @@ export const beginnerHello = {
         heading: 5,
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             display: "block",
@@ -276,7 +276,7 @@ export const beginnerHello = {
         heading: 5,
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             display: "block",
@@ -349,7 +349,7 @@ export const beginnerHello = {
         heading: 4,
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             display: "block",

@@ -6,12 +6,10 @@ import type { LessonCardContent } from "@/components/content/LessonCard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Subsection } from "@/components/ui/Subsection";
-import { Line } from "@/components/content/Line";
-import { Lines } from "@/components/content/Lines";
+import { Text } from "@/components/content/Text";
 import { Image } from "@/components/ui/Image";
 import { Carousel } from "@/components/ui/Carousel";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
-import { Meaning } from "@/components/content/Meaning";
 import { Notes } from "@/components/content/Notes";
 import { List } from "@/components/content/List";
 import { CCQ } from "@/components/content/CCQ";
@@ -33,10 +31,8 @@ import {
   getCourseSyllabusLessonCard,
   getCourseSyllabusLessonIndex,
 } from "@/data/course/course-syllabus-sections";
-import { lesson as courseTemplate } from "@/data/course/template";
-import {
-  getLessonVocabulary,
-} from "@/utils/getLessonVocabulary";
+import { courseTemplate } from "@/data/course/course-template";
+import { getLessonVocabulary } from "@/utils/getLessonVocabulary";
 
 type CourseProps = {
   lesson: Record<string, any>;
@@ -80,8 +76,8 @@ const createSyllabusLesson = (
     introduction: {
       blocks: [
         {
-          type: "lines",
-          value: [[lessonCard.objective]],
+          type: "text",
+          value: [{ parts: [lessonCard.objective] }],
           className: "mb-4",
         },
         {
@@ -108,7 +104,8 @@ const createSyllabusLesson = (
       blocks: [
         {
           type: "dialogue",
-          instruction: "Read the conversation and identify the useful language.",
+          instruction:
+            "Read the conversation and identify the useful language.",
           audioSrc: "",
           lines: [
             {
@@ -152,7 +149,7 @@ const createSyllabusLesson = (
     languageFocus: {
       blocks: [
         {
-          type: "meaning",
+          type: "text",
           value: [
             ...focusLanguage.map((item) => ({
               as: "p",
@@ -360,10 +357,18 @@ const renderBlock = (
   context: RenderBlockContext,
 ) => {
   switch (block.type) {
+    case "text":
     case "line":
-      return <Line key={index} value={block.value} />;
     case "lines":
-      return <Lines key={index} value={block.value} />;
+      return (
+        <Text
+          key={index}
+          as={block.as}
+          display={block.display}
+          value={block.value}
+          className={block.className}
+        />
+      );
     case "image":
       return <Image key={index} src={block.src} alt={block.alt} />;
     case "carousel":
@@ -372,8 +377,6 @@ const renderBlock = (
       return <AudioPlayer key={index} src={block.src} />;
     case "dialogue":
       return <Dialogue key={index} {...(block as any)} />;
-    case "meaning":
-      return <Meaning key={index} value={block.value} />;
     case "notes":
       return <Notes key={index} value={block.value} />;
     case "ccq":
@@ -445,7 +448,10 @@ export function Course({ lesson, lessonCard, levelTitle }: CourseProps) {
     () => getLessonVocabulary(displayedLesson, card?.vocabulary),
     [displayedLesson, card?.vocabulary],
   );
-  const renderContext = useMemo(() => ({ lessonVocabulary }), [lessonVocabulary]);
+  const renderContext = useMemo(
+    () => ({ lessonVocabulary }),
+    [lessonVocabulary],
+  );
   return (
     <>
       <Whiteboard {...displayedLesson.whiteboard} />

@@ -11,8 +11,8 @@ export const beginnerMyFamily = {
   introduction: {
     blocks: [
       {
-        type: "line",
-        value: ["Look at Laura’s family."],
+        type: "text",
+        value: [{ parts: ["Look at Laura’s family."] }],
         className: "font-bold mb-4",
       },
       {
@@ -21,7 +21,7 @@ export const beginnerMyFamily = {
         alt: "Laura’s family tree showing three generations",
       },
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Is Laura’s family big or small?"),
@@ -57,9 +57,9 @@ export const beginnerMyFamily = {
   presentation: {
     blocks: [
       {
-        type: "line",
+        type: "text",
         value: [
-          "Look at Laura and Liz talking about Laura’s family photo album.",
+          ["Look at Laura and Liz talking about Laura’s family photo album."],
         ],
         className: "font-bold mb-4",
       },
@@ -265,7 +265,7 @@ export const beginnerMyFamily = {
         },
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

@@ -2,7 +2,7 @@ import { Whiteboard } from "@/components/content/Whiteboard";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Paragraph } from "@/components/content/Paragraph";
-import { Line } from "@/components/content/Line";
+import { Text } from "@/components/content/Text";
 import { List } from "@/components/content/List";
 
 import { content, portuguese } from "@/helpers/content";
@@ -573,7 +573,7 @@ export default function WhatsCEFR() {
                 </span>
                 {section.lines &&
                   section.lines.map((line, index) => (
-                    <Line key={index} value={line} />
+                    <Text key={index} value={line} />
                   ))}
                 <List
                   type={section.questions.type}

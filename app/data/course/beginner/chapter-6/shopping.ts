@@ -1,4 +1,4 @@
-import type { Meaning } from "@/components/content/Meaning";
+import type { TextItem } from "@/components/content/Text";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -14,7 +14,7 @@ export const beginnerShopping = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What clothes do you usually buy?"),
@@ -167,7 +167,7 @@ export const beginnerShopping = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",
@@ -439,7 +439,7 @@ export const beginnerPrices = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What do you usually ask before you buy something?"),
@@ -530,7 +530,7 @@ export const beginnerPrices = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

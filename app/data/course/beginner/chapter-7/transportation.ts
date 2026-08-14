@@ -9,8 +9,8 @@ export const beginnerTransportation = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("How do you travel around your town?"), "How do you travel around your town?"]],
+        type: "text",
+        value: [{ parts: [audio("How do you travel around your town?"), "How do you travel around your town?"] }],
         className: "mb-4",
       },
       {
@@ -58,7 +58,7 @@ export const beginnerTransportation = {
     blocks: [
       { type: "subsection", label: "Transportation", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("bus, train, subway, taxi, bicycle")] },
           { display: "block", as: "p", parts: [bold("by bus / by train / by subway / by taxi")] },

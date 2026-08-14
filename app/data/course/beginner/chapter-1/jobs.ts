@@ -9,7 +9,7 @@ export const beginnerJobs = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What jobs do you know in English?"),
@@ -90,7 +90,7 @@ export const beginnerJobs = {
     blocks: [
       { type: "subsection", label: "Jobs", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("teacher"), " - a person who teaches"] },
           { display: "block", as: "p", parts: [bold("doctor"), " - a person who treats sick people"] },
@@ -110,7 +110,7 @@ export const beginnerJobs = {
         heading: 4,
       },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: ["Use ", bold("a"), " before a consonant sound: a teacher, a developer."] },
           { display: "block", as: "p", parts: ["Use ", bold("an"), " before a vowel sound: an engineer, an architect."] },

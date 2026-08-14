@@ -9,7 +9,7 @@ export const beginnerCountriesAndNationalities = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Where are you from? What is your nationality?"),
@@ -86,7 +86,7 @@ export const beginnerCountriesAndNationalities = {
     blocks: [
       { type: "subsection", label: "Countries and nationalities", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             display: "block",

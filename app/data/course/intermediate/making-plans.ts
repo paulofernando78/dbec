@@ -183,7 +183,7 @@ export const intermediateMakingPlans = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

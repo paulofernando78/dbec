@@ -198,7 +198,7 @@ export const upperIntermediateBusinessCommunication = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

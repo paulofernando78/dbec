@@ -12,7 +12,7 @@ export const elementaryCityLife = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Do you prefer city life or life in a small town? Why?"),
@@ -197,7 +197,7 @@ export const elementaryCityLife = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

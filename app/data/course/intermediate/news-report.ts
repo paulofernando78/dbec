@@ -184,7 +184,7 @@ export const intermediateNewsReport = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

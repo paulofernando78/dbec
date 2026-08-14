@@ -193,7 +193,7 @@ export const upperIntermediateNativeLikeEnglish = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

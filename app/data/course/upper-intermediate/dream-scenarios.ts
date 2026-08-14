@@ -195,7 +195,7 @@ export const upperIntermediateDreamScenarios = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

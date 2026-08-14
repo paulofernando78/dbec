@@ -9,8 +9,8 @@ export const beginnerMyNeighborhood = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("What is your neighborhood like?"), "What is your neighborhood like?"]],
+        type: "text",
+        value: [{ parts: [audio("What is your neighborhood like?"), "What is your neighborhood like?"] }],
         className: "mb-4",
       },
       {
@@ -58,7 +58,7 @@ export const beginnerMyNeighborhood = {
     blocks: [
       { type: "subsection", label: "Describing a neighborhood", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("quiet / noisy"), " - with little or a lot of noise"] },
           { display: "block", as: "p", parts: [bold("safe / dangerous"), " - with little or a lot of risk"] },
@@ -72,7 +72,7 @@ export const beginnerMyNeighborhood = {
       },
       { type: "subsection", label: "Prepositions of place", heading: 4 },
       {
-        type: "meaning",
+        type: "text",
         value: [
           { display: "block", as: "p", parts: [bold("next to"), " - beside another place"] },
           { display: "block", as: "p", parts: [bold("between"), " - in the middle of two places"] },

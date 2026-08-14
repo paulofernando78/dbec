@@ -9,7 +9,7 @@ export const elementaryRules = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("Where do you have to follow important rules?"),
@@ -198,7 +198,7 @@ export const elementaryRules = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

@@ -204,7 +204,7 @@ export const upperIntermediateMediaAndMarketing = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

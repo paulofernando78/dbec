@@ -12,7 +12,7 @@ export const elementaryTheBestPlace = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What is the best place to visit near your home?"),
@@ -200,7 +200,7 @@ export const elementaryTheBestPlace = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

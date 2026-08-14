@@ -1,4 +1,4 @@
-import { Line } from "../Line";
+import { Text } from "../Text";
 import { Card } from "@/components/ui/Card";
 
 import type { RichContent } from "@/helpers/content";
@@ -25,7 +25,7 @@ export const Notes = ({ value = [] }: NotesProps) => {
         </span>
       </div>
       {value.map((note, index) => (
-        <Line
+        <Text
           key={index}
           display={note.display ?? "block"}
           as={note.as}

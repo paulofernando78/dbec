@@ -1,4 +1,4 @@
-import type { Meaning } from "@/components/content/Meaning";
+import type { TextItem } from "@/components/content/Text";
 import type { Notes } from "@/components/content/Notes";
 import type { ListProps } from "@/components/content/List";
 import type { CCQ } from "@/components/content/CCQ/";
@@ -14,8 +14,8 @@ export const beginnerWhatAreYouDoing = {
   introduction: {
     blocks: [
       {
-        type: "lines",
-        value: [[audio("What are you doing now?"), "What are you doing now?"]],
+        type: "text",
+        value: [{ parts: [audio("What are you doing now?"), "What are you doing now?"] }],
         className: "mb-4",
       },
       {
@@ -152,7 +152,7 @@ export const beginnerWhatAreYouDoing = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",

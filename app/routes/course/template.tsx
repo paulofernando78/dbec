@@ -1,4 +1,4 @@
-import { lesson as courseTemplate } from "@/data/course/template";
+import { courseTemplate } from "@/data/course/course-template";
 import { Course } from "./builder";
 
 export default function CourseTemplate() {

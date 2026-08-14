@@ -9,7 +9,7 @@ export const elementaryHobbies = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What do you enjoy doing in your free time?"),
@@ -191,7 +191,7 @@ export const elementaryHobbies = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "p",

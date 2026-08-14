@@ -12,7 +12,7 @@ export const beginnerMyWeek = {
   introduction: {
     blocks: [
       {
-        type: "lines",
+        type: "text",
         value: [
           [
             audio("What do you usually do on Saturday?"),
@@ -163,7 +163,7 @@ export const beginnerMyWeek = {
   languageFocus: {
     blocks: [
       {
-        type: "meaning",
+        type: "text",
         value: [
           {
             as: "span",
