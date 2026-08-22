@@ -116,6 +116,8 @@ export const LessonCard = ({
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [classroomLessonUrl, setClassroomLessonUrl] = useState<string>();
   const detailsId = useId();
+  const lessonTitle =
+    href && numbered ? `${index + 1} • ${label}` : (label ?? "");
 
   // Google Classroom
   useEffect(() => {
@@ -135,10 +137,7 @@ export const LessonCard = ({
     if (content?.title) {
       shareUrl.searchParams.set("title", content.title);
     } else if (itemtype !== "announcement") {
-      shareUrl.searchParams.set(
-        "title",
-        numbered ? `${index + 1} • ${label}` : (label ?? ""),
-      );
+      shareUrl.searchParams.set("title", lessonTitle);
     }
     shareUrl.searchParams.set("itemtype", itemtype);
 
@@ -151,7 +150,7 @@ export const LessonCard = ({
 
   const cardHeader = (
     <div className="flex flex-col gap-1">
-      <b>{href && numbered ? `${index + 1} • ${label}` : label}</b>
+      <b>{lessonTitle}</b>
     </div>
   );
 
@@ -313,9 +312,7 @@ export const LessonCard = ({
                           itemtype === "announcement"
                             ? undefined
                             : itemtype === "material"
-                              ? numbered
-                                ? `${index + 1} • ${label}`
-                                : label
+                              ? lessonTitle
                               : classroom?.[itemtype]?.title,
                         body: classroom?.[itemtype]?.description,
                       })}

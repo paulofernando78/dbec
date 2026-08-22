@@ -24,28 +24,7 @@ type NavBarProps = {
   closeNavBar: () => void;
 };
 
-const getCourseLessonLinks = (items: NavItem[]): NavItem[] =>
-  items.flatMap((item) => {
-    if (item.href?.startsWith("/course/")) return [item];
-    return item.links ? getCourseLessonLinks(item.links) : [];
-  });
-
 const navGroups = links as NavGroup[];
-const courseLinks =
-  navGroups.find((group) => group.title === "Course")?.links ?? [];
-const numberedCourseLessons = getCourseLessonLinks(courseLinks);
-
-const lessonNumberByHref = new Map(
-  numberedCourseLessons.map((lesson, index) => [lesson.href, index + 1]),
-);
-
-const getNavItemLabel = (item: NavItem) => {
-  const lessonNumber = item.href
-    ? lessonNumberByHref.get(item.href)
-    : undefined;
-
-  return lessonNumber ? `${lessonNumber} • ${item.label}` : item.label;
-};
 
 const getNavItemKey = (item: NavItem) =>
   "href" in item && item.href ? item.href : item.label;
@@ -57,7 +36,7 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
-  const isLesson = item.href ? lessonNumberByHref.has(item.href) : false;
+  const isLesson = item.href?.startsWith("/course/") ?? false;
 
   if (item.links?.length) {
     return (
@@ -94,10 +73,10 @@ function RenderNavItem({
 
           {item.href ? (
             <NavLink to={item.href} onClick={(e) => e.stopPropagation()}>
-              <span>{getNavItemLabel(item)}</span>
+              <span>{item.label}</span>
             </NavLink>
           ) : (
-            <span>{getNavItemLabel(item)}</span>
+            <span>{item.label}</span>
           )}
         </summary>
 
@@ -144,7 +123,7 @@ function RenderNavItem({
           ${isActive ? "text-blue-400" : ""}
           `}
       >
-        <span>{getNavItemLabel(item)}</span>
+        <span>{item.label}</span>
       </NavLink>
     </div>
   );

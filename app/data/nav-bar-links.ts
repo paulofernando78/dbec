@@ -3,7 +3,10 @@ import {
   courseSyllabusSections,
   type CourseSyllabusLesson,
 } from "@/data/course/course-syllabus-sections";
-import type { CourseLessonCard } from "@/data/course/course-lessons-card-data";
+import {
+  getCourseLessonIndex,
+  type CourseLessonCard,
+} from "@/data/course/course-lessons-card-data";
 import { AuthenticContent, Course } from "@/components/Icons";
 import type { ElementType } from "react";
 
@@ -30,7 +33,15 @@ type NavGroup = {
 const lessonLinks = (
   lessons: Array<CourseLessonCard | CourseSyllabusLesson>,
 ): NavLinkItem[] =>
-  lessons.map(({ href, label }) => ({ href, label }));
+  lessons.map(({ href, label }) => {
+    const courseIndex = href ? getCourseLessonIndex(href) : undefined;
+
+    return {
+      href,
+      label:
+        typeof courseIndex === "number" ? `${courseIndex + 1} • ${label}` : label,
+    };
+  });
 
 const chapter = (
   label: string,
