@@ -62,7 +62,7 @@ export const Header = ({ onClick }: HeadersProps) => {
           "
         >
           <Link to="/" className="text-lg">
-            HOMEa
+            HOME
           </Link>
 
           <span className="w-0.75 h-5 bg-gray-500" />
