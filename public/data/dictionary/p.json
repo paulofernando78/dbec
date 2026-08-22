@@ -34,6 +34,38 @@
         ]
       },
       {
+        "word": "pollutants",
+        "phonetics": "/pəˈluː.t̬ənts/",
+        "partOfSpeech": "noun",
+        "enDefinition": "Harmful substances that make air, water, or land dirty or unsafe.",
+        "ptDefinition": "Poluentes; substâncias nocivas que tornam o ar, a água ou o solo sujos ou inseguros.",
+        "examples": [
+          {
+            "enExample": "Trees can trap some airborne pollutants and improve air quality.",
+            "ptExample": "As árvores podem reter alguns poluentes no ar e melhorar a qualidade do ar."
+          },
+          {
+            "enExample": "Factories must reduce the pollutants they release into the atmosphere.",
+            "ptExample": "As fábricas devem reduzir os poluentes que liberam na atmosfera."
+          }
+        ],
+        "synonyms": ["contaminants", "toxins", "impurities"],
+        "antonyms": ["clean air", "purity"],
+        "seeAlso": ["pollution", "carbon dioxide", "smog", "emissions"],
+        "notes": [
+          {
+            "enNote": "Pollutants may be gases, particles, chemicals, or waste materials that damage the environment or health.",
+            "ptNote": "Poluentes podem ser gases, partículas, produtos químicos ou resíduos que prejudicam o meio ambiente ou a saúde."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "pollutants.avif",
+            "alt": "Factory smoke and traffic releasing harmful pollutants into the air above a city."
+          }
+        ]
+      },
+      {
         "word": "popcorn",
         "phonetics": "/ˈpɑːp.kɔːrn/",
         "partOfSpeech": "noun",

@@ -1,11 +1,14 @@
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
-import { courseSyllabusSections } from "@/data/course/course-syllabus-sections";
+import {
+  courseSyllabusSections,
+  type CourseSyllabusLesson,
+} from "@/data/course/course-syllabus-sections";
 import type { CourseLessonCard } from "@/data/course/course-lessons-card-data";
 import { AuthenticContent, Course } from "@/components/Icons";
 import type { ElementType } from "react";
 
 type NavLinkItem = {
-  href: string;
+  href?: string;
   label: string;
 };
 
@@ -24,10 +27,15 @@ type NavGroup = {
   links: Array<NavItem | NavLinkItem>;
 };
 
-const lessonLinks = (lessons: CourseLessonCard[]): NavLinkItem[] =>
+const lessonLinks = (
+  lessons: Array<CourseLessonCard | CourseSyllabusLesson>,
+): NavLinkItem[] =>
   lessons.map(({ href, label }) => ({ href, label }));
 
-const chapter = (label: string, lessons: CourseLessonCard[]): NavItem => ({
+const chapter = (
+  label: string,
+  lessons: Array<CourseLessonCard | CourseSyllabusLesson>,
+): NavItem => ({
   label,
   links: lessonLinks(lessons),
 });

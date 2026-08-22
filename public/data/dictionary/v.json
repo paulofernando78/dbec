@@ -34,6 +34,38 @@
         ]
       },
       {
+        "word": "vertical garden",
+        "phonetics": "/ˈvɝː.t̬ə.kəl ˈɡɑːr.dən/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "A wall or upright structure covered with plants that grow vertically instead of across the ground.",
+        "ptDefinition": "Jardim vertical; uma parede ou estrutura erguida coberta por plantas que crescem verticalmente em vez de se espalharem pelo chão.",
+        "examples": [
+          {
+            "enExample": "The office building installed a vertical garden to cool the facade and improve air quality.",
+            "ptExample": "O prédio comercial instalou um jardim vertical para refrescar a fachada e melhorar a qualidade do ar."
+          },
+          {
+            "enExample": "Vertical gardens can bring more greenery into crowded cities.",
+            "ptExample": "Jardins verticais podem trazer mais verde para cidades lotadas."
+          }
+        ],
+        "synonyms": ["living wall", "green wall"],
+        "antonyms": ["bare wall"],
+        "seeAlso": ["plants", "facade", "urban greening", "biodiversity"],
+        "notes": [
+          {
+            "enNote": "Vertical gardens are often used in cities to save space while adding vegetation to buildings.",
+            "ptNote": "Jardins verticais são frequentemente usados nas cidades para economizar espaço ao mesmo tempo que adicionam vegetação aos edifícios."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "vertical-garden.avif",
+            "alt": "A modern building facade covered with organized panels of green plants growing vertically."
+          }
+        ]
+      },
+      {
         "word": "vigorous",
         "phonetics": "/ˈvɪɡ.ɚ.əs/",
         "partOfSpeech": "adjective",

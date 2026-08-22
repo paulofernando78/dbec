@@ -1,8 +1,17 @@
-import type { CourseLessonCard } from "@/data/course/course-lessons-card-data";
+import type {
+  CourseLessonCard,
+} from "@/data/course/course-lessons-card-data";
+import { courseLessons } from "@/data/course/lessons-slug";
+
+export type CourseSyllabusLesson = Omit<
+  CourseLessonCard,
+  "href" | "materialHref" | "assignmentHref"
+> &
+  Partial<Pick<CourseLessonCard, "href" | "materialHref" | "assignmentHref">>;
 
 export type CourseSyllabusGroup = {
   label: string;
-  lessons: CourseLessonCard[];
+  lessons: CourseSyllabusLesson[];
 };
 
 export type CourseSyllabusLevel = {
@@ -26,14 +35,10 @@ const lesson = (
   vocabulary: string,
   languageFocus: string,
   pronunciation: string,
-): CourseLessonCard => {
+): CourseSyllabusLesson => {
   const lessonSlug = slug(label);
-  const fallbackMaterialHref = `/course/${level}/section-${lessonSlug}/material/${lessonSlug}`;
 
   return {
-    href: fallbackMaterialHref,
-    materialHref: fallbackMaterialHref,
-    assignmentHref: `/course/${level}/section-${lessonSlug}/assignment/${lessonSlug}`,
     legacyHref: `/course/${level}/${lessonSlug}`,
     label,
     objective: `Can understand and use: ${usefulLanguage}`,
@@ -46,7 +51,7 @@ const lesson = (
 
 const group = (
   label: string,
-  lessons: CourseLessonCard[],
+  lessons: CourseSyllabusLesson[],
 ): CourseSyllabusGroup => {
   const sectionNumber = label.match(/^Section (\d+)/i)?.[1];
 
@@ -55,11 +60,12 @@ const group = (
   return {
     label,
     lessons: lessons.map((lesson) => {
-      const segments = lesson.href.split("/").filter(Boolean);
-      const level = segments[1];
-      const lessonSlug = segments.at(-1);
+      const legacySegments = lesson.legacyHref?.split("/").filter(Boolean);
+      const level = legacySegments?.[1];
+      const lessonSlug = legacySegments?.at(-1);
 
       if (!level || !lessonSlug) return lesson;
+      if (!courseLessons[level]?.lessons[lessonSlug]) return lesson;
 
       const materialHref = `/course/${level}/section-${sectionNumber}/material/${lessonSlug}`;
 

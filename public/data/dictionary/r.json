@@ -34,6 +34,38 @@
         ]
       },
       {
+        "word": "resilience",
+        "phonetics": "/rɪˈzɪl.jəns/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The ability to recover, adapt, or remain strong after difficulty, stress, or damage.",
+        "ptDefinition": "Resiliência; a capacidade de se recuperar, adaptar ou permanecer forte após dificuldades, estresse ou danos.",
+        "examples": [
+          {
+            "enExample": "Green spaces can improve a city's resilience to heat and flooding.",
+            "ptExample": "Áreas verdes podem melhorar a resiliência de uma cidade ao calor e às enchentes."
+          },
+          {
+            "enExample": "She showed resilience after losing her job and starting again.",
+            "ptExample": "Ela demonstrou resiliência depois de perder o emprego e recomeçar."
+          }
+        ],
+        "synonyms": ["strength", "adaptability", "toughness"],
+        "antonyms": ["fragility", "weakness", "vulnerability"],
+        "seeAlso": ["recover", "adapt", "endurance", "stability"],
+        "notes": [
+          {
+            "enNote": "Resilience can describe people, communities, ecosystems, or systems that recover after disruption.",
+            "ptNote": "Resilience pode descrever pessoas, comunidades, ecossistemas ou sistemas que se recuperam após uma perturbação."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "resilience.avif",
+            "alt": "A tree bending in a storm and standing strong again under clear skies, representing resilience."
+          }
+        ]
+      },
+      {
         "word": "retain",
         "phonetics": "/rɪˈteɪn/",
         "partOfSpeech": "verb",
@@ -62,6 +94,70 @@
           {
             "src": "retain.avif",
             "alt": "A container retaining water without allowing it to escape."
+          }
+        ]
+      },
+      {
+        "word": "roots",
+        "phonetics": "/ruːts/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The parts of a plant that grow underground or into another surface, absorbing water and holding the plant in place.",
+        "ptDefinition": "Raízes; as partes de uma planta que crescem no solo ou em outra superfície, absorvem água e mantêm a planta firme.",
+        "examples": [
+          {
+            "enExample": "Tree roots help soil retain water and prevent erosion.",
+            "ptExample": "As raízes das árvores ajudam o solo a reter água e a prevenir erosão."
+          },
+          {
+            "enExample": "The plant's roots spread deep into the ground.",
+            "ptExample": "As raízes da planta se espalham profundamente pelo solo."
+          }
+        ],
+        "synonyms": ["root system"],
+        "antonyms": ["branch", "leaf"],
+        "seeAlso": ["soil", "tree", "erosion", "plant"],
+        "notes": [
+          {
+            "enNote": "Roots anchor plants and are essential for absorbing water and nutrients.",
+            "ptNote": "As raízes fixam as plantas e são essenciais para absorver água e nutrientes."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "roots.avif",
+            "alt": "A tree with a visible underground root system spreading through the soil."
+          }
+        ]
+      },
+      {
+        "word": "runoff",
+        "phonetics": "/ˈrʌn.ɔːf/",
+        "partOfSpeech": "noun",
+        "enDefinition": "Rainwater or other liquid that flows over land instead of being absorbed into the ground.",
+        "ptDefinition": "Escoamento; água da chuva ou outro líquido que corre sobre a superfície em vez de ser absorvido pelo solo.",
+        "examples": [
+          {
+            "enExample": "Trees can reduce runoff by helping the soil absorb more rainwater.",
+            "ptExample": "As árvores podem reduzir o escoamento ajudando o solo a absorver mais água da chuva."
+          },
+          {
+            "enExample": "Heavy runoff carried dirt and litter into the storm drain.",
+            "ptExample": "O forte escoamento levou terra e lixo para o bueiro."
+          }
+        ],
+        "synonyms": ["surface flow", "drainage flow"],
+        "antonyms": ["absorption", "infiltration"],
+        "seeAlso": ["flood", "storm drain", "rainwater", "erosion"],
+        "notes": [
+          {
+            "enNote": "Runoff often increases in cities because concrete and asphalt prevent water from soaking into the ground.",
+            "ptNote": "O escoamento frequentemente aumenta nas cidades porque concreto e asfalto impedem que a água penetre no solo."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "runoff.avif",
+            "alt": "Rainwater running along a city street and flowing into a storm drain."
           }
         ]
       },

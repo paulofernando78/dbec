@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "shade",
+        "phonetics": "/ʃeɪd/",
+        "partOfSpeech": "noun, verb",
+        "enDefinition": "A cooler, darker area created when light is blocked; as a verb, to protect something from strong light or heat.",
+        "ptDefinition": "Sombra; uma área mais fresca e escura criada quando a luz é bloqueada; como verbo, proteger algo da luz ou do calor fortes.",
+        "examples": [
+          {
+            "enExample": "We sat in the shade of the tree to stay cool.",
+            "ptExample": "Sentamos na sombra da árvore para ficar mais frescos."
+          },
+          {
+            "enExample": "Trees shade the sidewalk during the hottest part of the day.",
+            "ptExample": "As árvores fazem sombra na calçada durante a parte mais quente do dia."
+          }
+        ],
+        "synonyms": ["shadow", "shelter", "cover"],
+        "antonyms": ["sunlight", "exposure"],
+        "seeAlso": ["shadow", "sunlight", "cool", "tree"],
+        "notes": [
+          {
+            "enNote": "In urban contexts, shade helps reduce heat and make outdoor spaces more comfortable.",
+            "ptNote": "Em contextos urbanos, a sombra ajuda a reduzir o calor e tornar os espaços externos mais confortáveis."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "shade.avif",
+            "alt": "A person resting comfortably in the cool shade of a large tree on a sunny day."
+          }
+        ]
+      },
+      {
         "word": "settler",
         "phonetics": "/ˈsetlər/",
         "partOfSpeech": "noun",

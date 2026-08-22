@@ -9,6 +9,7 @@ import { howDidAncientCivilizationsMakeIceCream } from "./how-did-ancient-civili
 // ...
 import { howDidAncientCivilizationsBrewBeer } from "./how-did-ancient-civilization-brew-beer";
 import { theBodysHiddenBalance } from "./the-bodys-hidden-balance";
+import { whyCitiesNeedTrees } from "./why-cities-need-trees";
 
 export const authenticContentsTedEdRoutes = {
   // ...
@@ -23,4 +24,6 @@ export const authenticContentsTedEdRoutes = {
   "a-drink-with-a-long-history": howDidAncientCivilizationsBrewBeer,
   // ...
   "the-bodys-hidden-balance": theBodysHiddenBalance,
+  // ...
+  "why-cities-need-trees": whyCitiesNeedTrees,
 };

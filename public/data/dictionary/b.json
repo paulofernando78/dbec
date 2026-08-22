@@ -34,6 +34,38 @@
         ]
       },
       {
+        "word": "biodiversity",
+        "phonetics": "/ˌbaɪ.oʊ.daɪˈvɝː.sə.t̬i/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The variety of plant and animal life in a particular place or ecosystem.",
+        "ptDefinition": "Biodiversidade; a variedade de vida vegetal e animal presente em um lugar ou ecossistema.",
+        "examples": [
+          {
+            "enExample": "Urban parks can increase biodiversity by creating habitats for many species.",
+            "ptExample": "Parques urbanos podem aumentar a biodiversidade ao criar habitats para muitas espécies."
+          },
+          {
+            "enExample": "Protecting forests is important for global biodiversity.",
+            "ptExample": "Proteger florestas é importante para a biodiversidade global."
+          }
+        ],
+        "synonyms": ["biological diversity", "ecosystem variety"],
+        "antonyms": ["monoculture", "uniformity"],
+        "seeAlso": ["ecosystem", "species", "habitat", "conservation"],
+        "notes": [
+          {
+            "enNote": "Biodiversity includes the variety of genes, species, and ecosystems in an area.",
+            "ptNote": "Biodiversidade inclui a variedade de genes, espécies e ecossistemas em uma área."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "biodiversity.avif",
+            "alt": "A city park with different plants, a bird, a butterfly, and a small mammal representing biodiversity."
+          }
+        ]
+      },
+      {
         "word": "brewery",
         "phonetics": "/ˈbruː.ər.i/",
         "partOfSpeech": "noun",

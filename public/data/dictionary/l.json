@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "landmass",
+        "phonetics": "/ˈlænd.mæs/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A large continuous area of land such as a continent or a major island.",
+        "ptDefinition": "Massa de terra; uma grande área contínua de terra, como um continente ou uma grande ilha.",
+        "examples": [
+          {
+            "enExample": "Australia is often described as both a country and a landmass.",
+            "ptExample": "A Austrália é frequentemente descrita tanto como um país quanto como uma massa de terra."
+          },
+          {
+            "enExample": "Vegetation covers more than half of Singapore's landmass.",
+            "ptExample": "A vegetação cobre mais da metade da área territorial de Singapura."
+          }
+        ],
+        "synonyms": ["continent", "mainland", "territory"],
+        "antonyms": ["ocean", "sea"],
+        "seeAlso": ["island", "continent", "terrain", "geography"],
+        "notes": [
+          {
+            "enNote": "Landmass is commonly used in geography to compare how much physical land an area contains.",
+            "ptNote": "Landmass é comumente usado em geografia para comparar a quantidade de terra física que uma área possui."
+          }
+        ],
+        "imgs": [
+          {
+            "src": "landmass.avif",
+            "alt": "A globe showing large continental landmasses surrounded by oceans."
+          }
+        ]
+      },
+      {
         "word": "lubricate",
         "phonetics": "/ˈluː.brə.keɪt/",
         "partOfSpeech": "verb",

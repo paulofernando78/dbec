@@ -15,7 +15,8 @@ export const authenticContentTedEdLessonsCardData = {
   whatCausesConstipation: {
     href: "/authentic-content/ted-ed/how-food-moves-through-your-body",
     label: "How Food Moves Through Your Body",
-    description: "How food moves through your body.",
+    description:
+      "A clear look at digestion, constipation, and how waste moves through the body.",
     objective:
       "Reconstruct a scientific cause-and-effect explanation and evaluate its recommendations.",
     usefulLanguage:
@@ -32,7 +33,8 @@ export const authenticContentTedEdLessonsCardData = {
   whenWillTheNextIceAgeHappen: {
     href: "/authentic-content/ted-ed/earths-climate-cycle",
     label: "Earth’s Climate Cycle",
-    description: "Earth’s climate cycle.",
+    description:
+      "How natural climate cycles work and how they differ from human-driven warming.",
     objective:
       "Summarize interacting causes, distinguish natural cycles from human influence, and evaluate evidence.",
     usefulLanguage:
@@ -49,7 +51,8 @@ export const authenticContentTedEdLessonsCardData = {
   howToManageEmotions: {
     href: "/authentic-content/ted-ed/how-we-react-differently",
     label: "How We React Differently",
-    description: "Why we react differently.",
+    description:
+      "Why people respond differently to emotions and how those reactions can be managed.",
     objective:
       "Distinguish emotion-regulation strategies and evaluate their usefulness in context.",
     usefulLanguage:
@@ -65,7 +68,8 @@ export const authenticContentTedEdLessonsCardData = {
   howDidAncientCivilizationsMakeIceCream: {
     href: "/authentic-content/ted-ed/the-history-of-a-popular-ice-treat",
     label: "The History of a Popular Ice Treat",
-    description: "The history of a popular ice treat.",
+    description:
+      "From ancient luxury to everyday dessert: how frozen treats evolved over time.",
     objective:
       "Understand the historical evolution of cold treats and practice listening for specific facts, dates, and historical details.",
     usefulLanguage:
@@ -84,7 +88,8 @@ export const authenticContentTedEdLessonsCardData = {
   howDidAncientCivilizationsBrewBeer: {
     href: "/authentic-content/ted-ed/a-drink-with-a-long-history",
     label: "A Drink With a Long History",
-    description: "A drink with a long history.",
+    description:
+      "How brewing began, spread across cultures, and changed with science.",
     objective:
       "Reconstruct a historical process and explain how scientific knowledge changed it.",
     usefulLanguage:
@@ -101,7 +106,8 @@ export const authenticContentTedEdLessonsCardData = {
   theBodysHiddenBalance: {
     href: "/authentic-content/ted-ed/the-bodys-hidden-balance",
     label: "The Body’s Hidden Balance",
-    description: "The body’s hidden balance.",
+    description:
+      "How the body controls hydration and what happens when that balance is lost.",
     objective:
       "Explain how the body regulates fluid, distinguish deficiency from excess, and evaluate generalized health advice.",
     usefulLanguage:
@@ -115,6 +121,26 @@ export const authenticContentTedEdLessonsCardData = {
     date: "Mar 2016",
     publishedAt: "2016-03-01",
     duration: "04:51",
+  },
+  // Apr 24, 2020
+  whyCitiesNeedTrees: {
+    href: "/authentic-content/ted-ed/why-cities-need-trees",
+    label: "Why Cities Need Trees",
+    description:
+      "How trees protect urban life by cooling streets, cleaning air, and managing water.",
+    objective:
+      "Explain how trees support urban infrastructure, public health, and long-term environmental planning.",
+    usefulLanguage:
+      "This helps by…; As a result…; A greener city can…; The evidence suggests…",
+    vocabulary:
+      "Runoff, roots, pollutants, shade, resilience, biodiversity, landmass",
+    skills:
+      "Authentic listening, cause-and-effect explanation, and evaluative discussion",
+    finalTask:
+      "Recommend one tree-based improvement for a city and justify it with evidence from the video.",
+    date: "Apr 24, 2020",
+    publishedAt: "2020-04-24",
+    duration: "05:26",
   },
 };
 

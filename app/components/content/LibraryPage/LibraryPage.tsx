@@ -8,7 +8,7 @@ import type { ElementType } from "react";
 import type { LessonCardContent } from "@/components/content/LessonCard";
 
 type LibraryLesson = LessonCardContent & {
-  href: string;
+  href?: string;
   label: string;
 };
 
@@ -119,7 +119,7 @@ export function LibraryPage({
                   )}
                   {group.lessons.map((lesson, lessonIndex) => (
                     <LessonCard
-                      key={lesson.href}
+                      key={lesson.href ?? lesson.label}
                       {...lesson}
                       index={
                         startIndex +

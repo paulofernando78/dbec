@@ -171,8 +171,10 @@ export const courseLessons: Record<string, CourseLessonLevel> = {
   elementary: {
     lessons: {
       "past-beach": elementaryPastBeach,
+      "talking-about-the-past": elementaryPastBeach,
       "a-day-at-the-beach": elementaryPastBeach,
       "past-movies": elementaryPastMovies,
+      "past-questions": elementaryPastMovies,
       "movie-night": elementaryPastMovies,
       "past-family": elementaryPastFamily,
       "a-family-celebration": elementaryPastFamily,
