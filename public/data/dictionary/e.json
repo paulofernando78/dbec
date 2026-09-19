@@ -297,6 +297,21 @@
             "ptNote": "Este idiom é informal e geralmente usado para descrever uma situação em que alguém é criticado por um longo tempo."
           }
         ]
+      },
+      {
+        "word": "evade",
+        "phonetics": "/ɪˈveɪd/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To escape or avoid someone or something, especially through skill or speed.",
+        "ptDefinition": "Escapar ou evitar alguém ou algo, especialmente com habilidade ou rapidez.",
+        "examples": [
+          { "enExample": "The mosquito evaded the person's hand.", "ptExample": "O mosquito escapou da mão da pessoa." },
+          { "enExample": "The cyclist swerved to evade the obstacle.", "ptExample": "O ciclista desviou para evitar o obstáculo." }
+        ],
+        "synonyms": ["avoid", "escape", "elude"],
+        "antonyms": ["confront", "face", "meet"],
+        "seeAlso": ["dodge", "avoid", "escape"],
+        "imgs": [{ "src": "evade.avif", "alt": "A mosquito quickly evading a hand trying to swat it." }]
       }
     ]
   },

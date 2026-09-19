@@ -142,6 +142,46 @@ export const authenticContentTedEdLessonsCardData = {
     publishedAt: "2020-04-24",
     duration: "05:26",
   },
+  // Sep 26, 2023
+  theUnseenInvitation: {
+    href: "/authentic-content/ted-ed/the-unseen-invitation",
+    label: "The Unseen Invitation",
+    description:
+      "How subtle biological signals shape an unequal encounter—and why understanding them matters.",
+    objective:
+      "Explain how multiple sensory cues guide host selection and evaluate how scientific findings can improve public-health interventions.",
+    usefulLanguage:
+      "This cue enables…; A contributing factor is…; The findings could lead to…",
+    vocabulary:
+      "Sustenance, lineage, predilection, evade, volatile compounds, microbiome, repellent, transmission",
+    skills:
+      "Prediction, authentic listening for detail, causal explanation, and evidence-based discussion",
+    finalTask:
+      "Propose and justify a targeted strategy for reducing disease transmission.",
+    date: "Sep 26, 2023",
+    publishedAt: "2023-09-26",
+    duration: "04:22",
+  },
+  // Apr 20, 2023
+  theAccidentalMainstay: {
+    href: "/authentic-content/ted-ed/the-accidental-mainstay",
+    label: "The Accidental Mainstay",
+    description:
+      "How science, social change, and an economic crisis transformed a modest product into a cultural institution.",
+    objective:
+      "Reconstruct a product's scientific and historical development and explain how economic incentives shaped its cultural role.",
+    usefulLanguage:
+      "Initially…; A turning point occurred when…; This enabled…; The financial incentive was…",
+    vocabulary:
+      "Whimsical, teosinte, pericarp, materialize, mainstay, roving, low-brow, markup",
+    skills:
+      "Prediction, authentic listening for chronology and detail, causal explanation, and critical discussion",
+    finalTask:
+      "Explain how an inexpensive product became an enduring cultural and commercial tradition.",
+    date: "Apr 20, 2023",
+    publishedAt: "2023-04-20",
+    duration: "05:20",
+  },
 };
 
 export const authenticContentTedEdLessons = Object.values(

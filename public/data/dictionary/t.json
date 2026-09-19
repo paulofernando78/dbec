@@ -1838,6 +1838,36 @@
           }
         ],
         "seeAlso": "interpret"
+      },
+      {
+        "word": "transmission",
+        "phonetics": "/trænzˈmɪʃ.ən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The process by which a disease passes from one person or organism to another.",
+        "ptDefinition": "Transmissão; processo pelo qual uma doença passa de uma pessoa ou organismo para outro.",
+        "examples": [
+          { "enExample": "Bed nets can reduce malaria transmission.", "ptExample": "Mosquiteiros podem reduzir a transmissão da malária." },
+          { "enExample": "Vaccination helps interrupt disease transmission.", "ptExample": "A vacinação ajuda a interromper a transmissão de doenças." }
+        ],
+        "synonyms": ["spread", "transfer", "passing"],
+        "antonyms": ["containment", "prevention"],
+        "seeAlso": ["transmit", "infection", "vector"],
+        "imgs": [{ "src": "transmission.avif", "alt": "A mosquito vector linking an infected person to another person in a disease transmission cycle." }]
+      },
+      {
+        "word": "teosinte",
+        "phonetics": "/ˌteɪ.oʊˈsɪn.teɪ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A wild grass native to Mexico and Central America from which modern maize was domesticated.",
+        "ptDefinition": "Teosinto; gramínea silvestre do México e da América Central da qual o milho moderno foi domesticado.",
+        "examples": [
+          { "enExample": "Indigenous farmers selectively bred teosinte thousands of years ago.", "ptExample": "Agricultores indígenas selecionaram o teosinto milhares de anos atrás." },
+          { "enExample": "Teosinte looks very different from modern corn.", "ptExample": "O teosinto parece muito diferente do milho moderno." }
+        ],
+        "synonyms": ["wild maize", "Mexican grass"],
+        "antonyms": [],
+        "seeAlso": ["maize", "domestication", "selective breeding"],
+        "imgs": [{ "src": "teosinte.avif", "alt": "A teosinte plant beside modern maize showing their evolutionary relationship." }]
       }
     ]
   }

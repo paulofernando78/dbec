@@ -1275,6 +1275,66 @@
             "ptExample": "Por favor, não conte a ninguém sobre o nosso novo projeto. Lembre-se: boca fechada!"
           }
         ]
+      },
+      {
+        "word": "microbiome",
+        "phonetics": "/ˌmaɪ.kroʊˈbaɪ.oʊm/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The community of microorganisms living in a particular environment, such as the human skin.",
+        "ptDefinition": "Microbioma; comunidade de microrganismos que vive em um ambiente, como a pele humana.",
+        "examples": [
+          { "enExample": "Each person's skin microbiome helps create a distinctive odor.", "ptExample": "O microbioma da pele de cada pessoa ajuda a criar um odor distinto." },
+          { "enExample": "Diet can influence the gut microbiome.", "ptExample": "A alimentação pode influenciar o microbioma intestinal." }
+        ],
+        "synonyms": ["microbial community", "microbiota"],
+        "antonyms": [],
+        "seeAlso": ["microbe", "bacteria", "microorganism"],
+        "imgs": [{ "src": "microbiome.avif", "alt": "A magnified view of diverse microorganisms living on human skin." }]
+      },
+      {
+        "word": "materialize",
+        "phonetics": "/məˈtɪr.i.ə.laɪz/",
+        "partOfSpeech": "verb",
+        "enDefinition": "To appear, become real, or begin to exist, often unexpectedly.",
+        "ptDefinition": "Materializar-se ou surgir; aparecer ou começar a existir.",
+        "examples": [
+          { "enExample": "Hundreds of new recipes materialized as the snack spread.", "ptExample": "Centenas de novas receitas surgiram à medida que o lanche se espalhou." },
+          { "enExample": "The expected difficulties never materialized.", "ptExample": "As dificuldades esperadas nunca se concretizaram." }
+        ],
+        "synonyms": ["appear", "emerge", "develop"],
+        "antonyms": ["disappear", "vanish", "dissolve"],
+        "seeAlso": ["emerge", "manifest", "arise"],
+        "imgs": [{ "src": "materialize.avif", "alt": "Several new recipe ideas visibly emerging around a simple bowl of food." }]
+      },
+      {
+        "word": "mainstay",
+        "phonetics": "/ˈmeɪn.steɪ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A person or thing that is essential, dependable, or consistently important in a place or activity.",
+        "ptDefinition": "Elemento fundamental; algo essencial, confiável ou constantemente importante.",
+        "examples": [
+          { "enExample": "The inexpensive snack became a mainstay at public events.", "ptExample": "O lanche barato tornou-se presença constante em eventos públicos." },
+          { "enExample": "Tourism is a mainstay of the local economy.", "ptExample": "O turismo é um pilar da economia local." }
+        ],
+        "synonyms": ["staple", "pillar", "foundation"],
+        "antonyms": ["nonessential", "rarity"],
+        "seeAlso": ["essential", "staple", "institution"],
+        "imgs": [{ "src": "mainstay.avif", "alt": "A familiar snack standing as the central pillar of a lively public event." }]
+      },
+      {
+        "word": "markup",
+        "phonetics": "/ˈmɑːrk.ʌp/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The amount or percentage added to a product's cost to determine its selling price.",
+        "ptDefinition": "Margem de acréscimo; valor ou porcentagem adicionada ao custo para definir o preço de venda.",
+        "examples": [
+          { "enExample": "The theater charges a large markup on concessions.", "ptExample": "O cinema aplica uma grande margem de acréscimo aos produtos da bomboniere." },
+          { "enExample": "The retailer reduced its usual markup during the sale.", "ptExample": "O varejista reduziu sua margem habitual durante a promoção." }
+        ],
+        "synonyms": ["price increase", "margin", "surcharge"],
+        "antonyms": ["discount", "markdown"],
+        "seeAlso": ["profit", "retail price", "cost"],
+        "imgs": [{ "src": "markup.avif", "alt": "A low production cost growing into a much higher retail price at a concession counter." }]
       }
     ]
   }

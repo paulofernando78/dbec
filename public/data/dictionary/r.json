@@ -1262,6 +1262,36 @@
         ],
         "synonyms": ["crunch the numbers", "analyze the data", "calculate"],
         "antonyms": ["ignore the numbers", "skip the analysis"]
+      },
+      {
+        "word": "repellent",
+        "phonetics": "/rɪˈpel.ənt/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A substance that discourages insects or other animals from approaching.",
+        "ptDefinition": "Repelente; substância que impede ou desencoraja a aproximação de insetos ou outros animais.",
+        "examples": [
+          { "enExample": "She applied insect repellent before going outside.", "ptExample": "Ela aplicou repelente antes de sair." },
+          { "enExample": "Researchers hope to develop more effective repellents.", "ptExample": "Pesquisadores esperam desenvolver repelentes mais eficazes." }
+        ],
+        "synonyms": ["deterrent", "insect spray"],
+        "antonyms": ["attractant", "lure"],
+        "seeAlso": ["repel", "protect", "deterrent"],
+        "imgs": [{ "src": "repellent.avif", "alt": "A person applying mosquito repellent to an exposed forearm outdoors." }]
+      },
+      {
+        "word": "roving",
+        "phonetics": "/ˈroʊ.vɪŋ/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "Traveling from place to place rather than remaining in one fixed location.",
+        "ptDefinition": "Itinerante; que se desloca de um lugar para outro sem permanecer em um local fixo.",
+        "examples": [
+          { "enExample": "Roving vendors sold snacks from mobile machines.", "ptExample": "Vendedores itinerantes vendiam lanches em máquinas móveis." },
+          { "enExample": "A roving reporter interviewed people across the city.", "ptExample": "Um repórter itinerante entrevistou pessoas por toda a cidade." }
+        ],
+        "synonyms": ["traveling", "wandering", "mobile"],
+        "antonyms": ["stationary", "fixed", "settled"],
+        "seeAlso": ["roam", "wander", "itinerant"],
+        "imgs": [{ "src": "roving.avif", "alt": "A traveling street vendor pushing a mobile popcorn machine through a city." }]
       }
     ]
   }

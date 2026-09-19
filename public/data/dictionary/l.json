@@ -778,6 +778,36 @@
             "ptNote": "O termo vem da ideia de uma pessoa saltando sobre outra em uma corrida, simbolizando um grande avanço. Também é um jogo popular entre crianças em que uma criança se agacha e a outra pula sobre ela."
           }
         ]
+      },
+      {
+        "word": "lineage",
+        "phonetics": "/ˈlɪn.i.ɪdʒ/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A line of descent or evolutionary development from an ancestor.",
+        "ptDefinition": "Linhagem; linha de descendência ou desenvolvimento evolutivo a partir de um ancestral.",
+        "examples": [
+          { "enExample": "Several mosquito lineages evolved a preference for humans.", "ptExample": "Várias linhagens de mosquitos desenvolveram preferência por humanos." },
+          { "enExample": "Scientists traced the species' lineage through genetic evidence.", "ptExample": "Cientistas rastrearam a linhagem da espécie por evidências genéticas." }
+        ],
+        "synonyms": ["descent", "ancestry", "family line"],
+        "antonyms": [],
+        "seeAlso": ["ancestor", "evolution", "heredity"],
+        "imgs": [{ "src": "lineage.avif", "alt": "Branching generations of mosquitoes illustrating an evolutionary lineage." }]
+      },
+      {
+        "word": "low-brow",
+        "phonetics": "/ˌloʊˈbraʊ/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "Intended for popular taste and considered unsophisticated or lacking intellectual refinement.",
+        "ptDefinition": "Popular ou pouco sofisticado; considerado sem refinamento intelectual ou cultural.",
+        "examples": [
+          { "enExample": "Early cinema operators viewed the snack as low-brow street food.", "ptExample": "Os primeiros administradores de cinema viam o lanche como comida de rua pouco sofisticada." },
+          { "enExample": "The critic unfairly dismissed the comedy as low-brow entertainment.", "ptExample": "O crítico descartou injustamente a comédia como entretenimento pouco sofisticado." }
+        ],
+        "synonyms": ["unsophisticated", "popular", "unrefined"],
+        "antonyms": ["highbrow", "refined", "intellectual"],
+        "seeAlso": ["highbrow", "prestige", "popular culture"],
+        "imgs": [{ "src": "low-brow.avif", "alt": "An elegant theater entrance contrasting with a humble street-food cart outside." }]
       }
     ]
   }

@@ -219,7 +219,7 @@ export const whyCitiesNeedTrees = {
             },
             {
               question:
-                "What makes Singapore the strongest modern example in the video?",
+                "What makes Singapore the strongest modern example?",
               options: shuffle([
                 {
                   option:

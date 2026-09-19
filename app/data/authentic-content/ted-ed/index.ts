@@ -10,6 +10,8 @@ import { howDidAncientCivilizationsMakeIceCream } from "./how-did-ancient-civili
 import { howDidAncientCivilizationsBrewBeer } from "./how-did-ancient-civilization-brew-beer";
 import { theBodysHiddenBalance } from "./the-bodys-hidden-balance";
 import { whyCitiesNeedTrees } from "./why-cities-need-trees";
+import { theUnseenInvitation } from "./the-unseen-invitation";
+import { theAccidentalMainstay } from "./the-accidental-mainstay";
 
 export const authenticContentsTedEdRoutes = {
   // ...
@@ -26,4 +28,8 @@ export const authenticContentsTedEdRoutes = {
   "the-bodys-hidden-balance": theBodysHiddenBalance,
   // ...
   "why-cities-need-trees": whyCitiesNeedTrees,
+  // Sep 26, 2023
+  "the-unseen-invitation": theUnseenInvitation,
+  // Apr 20, 2023
+  "the-accidental-mainstay": theAccidentalMainstay,
 };

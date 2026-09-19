@@ -83,6 +83,21 @@
         ],
         "synonyms": ["energetic", "forceful", "robust"],
         "antonyms": ["weak", "sluggish", "feeble"]
+      },
+      {
+        "word": "volatile compound",
+        "phonetics": "/ˈvɑː.lə.t̬əl ˈkɑːm.paʊnd/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "A chemical substance that easily becomes a gas and can travel through the air.",
+        "ptDefinition": "Composto volátil; substância química que se transforma facilmente em gás e pode se espalhar pelo ar.",
+        "examples": [
+          { "enExample": "Skin microbes produce volatile compounds that mosquitoes can detect.", "ptExample": "Micróbios da pele produzem compostos voláteis que os mosquitos conseguem detectar." },
+          { "enExample": "The flower releases volatile compounds into the air.", "ptExample": "A flor libera compostos voláteis no ar." }
+        ],
+        "synonyms": ["airborne chemical", "volatile substance"],
+        "antonyms": ["nonvolatile compound"],
+        "seeAlso": ["odor", "molecule", "evaporate"],
+        "imgs": [{ "src": "volatile-compound.avif", "alt": "Invisible odor molecules drifting from human skin toward a mosquito." }]
       }
     ]
   }

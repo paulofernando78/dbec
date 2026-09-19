@@ -1556,6 +1556,36 @@
             "ptExample": "Você se importaria de fazer uma boa recomendação para mim?"
           }
         ]
+      },
+      {
+        "word": "predilection",
+        "phonetics": "/ˌpred.əlˈek.ʃən/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A strong preference or special liking for something.",
+        "ptDefinition": "Predileção; preferência ou gosto especial por algo.",
+        "examples": [
+          { "enExample": "Some mosquito species developed a predilection for human hosts.", "ptExample": "Algumas espécies de mosquito desenvolveram predileção por hospedeiros humanos." },
+          { "enExample": "She has a predilection for quiet places.", "ptExample": "Ela tem predileção por lugares tranquilos." }
+        ],
+        "synonyms": ["preference", "liking", "inclination"],
+        "antonyms": ["aversion", "dislike"],
+        "seeAlso": ["prefer", "inclination", "partiality"],
+        "imgs": [{ "src": "predilection.avif", "alt": "A mosquito choosing a human silhouette among several possible animal hosts." }]
+      },
+      {
+        "word": "pericarp",
+        "phonetics": "/ˈper.ɪ.kɑːrp/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The outer wall or covering of a fruit or grain, including the hard shell of a popcorn kernel.",
+        "ptDefinition": "Pericarpo; parede ou revestimento externo de um fruto ou grão, incluindo a casca dura do milho de pipoca.",
+        "examples": [
+          { "enExample": "Steam pressure eventually breaks the kernel's pericarp.", "ptExample": "A pressão do vapor acaba rompendo o pericarpo do grão." },
+          { "enExample": "The pericarp keeps water and starch sealed inside.", "ptExample": "O pericarpo mantém a água e o amido selados no interior." }
+        ],
+        "synonyms": ["outer shell", "fruit wall", "husk"],
+        "antonyms": ["interior", "core"],
+        "seeAlso": ["kernel", "shell", "starch"],
+        "imgs": [{ "src": "pericarp.avif", "alt": "A scientific cutaway of a popcorn kernel emphasizing its hard outer pericarp." }]
       }
     ]
   }

@@ -1056,6 +1056,21 @@
             "ptNote": "O termo 'weirdo' é frequentemente usado de maneira informal e pode ser considerado pejorativo."
           }
         ]
+      },
+      {
+        "word": "whimsical",
+        "phonetics": "/ˈwɪm.zɪ.kəl/",
+        "partOfSpeech": "adjective",
+        "enDefinition": "Playfully unusual, imaginative, or charming in an unexpected way.",
+        "ptDefinition": "Caprichoso ou fantasioso; incomum de maneira divertida e imaginativa.",
+        "examples": [
+          { "enExample": "The animation presents the food's history in a whimsical style.", "ptExample": "A animação apresenta a história do alimento em um estilo fantasioso." },
+          { "enExample": "The café has whimsical decorations shaped like clouds.", "ptExample": "O café tem decorações peculiares em forma de nuvens." }
+        ],
+        "synonyms": ["playful", "fanciful", "quirky"],
+        "antonyms": ["serious", "conventional", "practical"],
+        "seeAlso": ["whim", "imaginative", "eccentric"],
+        "imgs": [{ "src": "whimsical.avif", "alt": "A playful cloud-like snack transformation in an imaginative educational scene." }]
       }
     ]
   }

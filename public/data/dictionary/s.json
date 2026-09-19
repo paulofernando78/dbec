@@ -2047,6 +2047,21 @@
             "ptNote": "Este idiom é informal e frequentemente usado para dizer a alguém para não exagerar na reação."
           }
         ]
+      },
+      {
+        "word": "sustenance",
+        "phonetics": "/ˈsʌs.tə.nəns/",
+        "partOfSpeech": "noun",
+        "enDefinition": "Food or nourishment needed to stay alive and healthy.",
+        "ptDefinition": "Sustento ou alimento necessário para permanecer vivo e saudável.",
+        "examples": [
+          { "enExample": "Male mosquitoes obtain sustenance from nectar.", "ptExample": "Mosquitos machos obtêm sustento do néctar." },
+          { "enExample": "The travelers carried enough sustenance for three days.", "ptExample": "Os viajantes levaram alimento suficiente para três dias." }
+        ],
+        "synonyms": ["nourishment", "food", "nutrition"],
+        "antonyms": ["starvation", "deprivation"],
+        "seeAlso": ["sustain", "nourish", "nutrition"],
+        "imgs": [{ "src": "sustenance.avif", "alt": "A butterfly and a male mosquito feeding on flower nectar for sustenance." }]
       }
     ]
   },
