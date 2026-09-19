@@ -15,6 +15,7 @@ import { a1Unit06 } from "./a1/unit-06/unit";
 import { whatTimeIsItThereLesson } from "./a1/unit-06/lesson-01-what-time-is-it-there";
 import { whatAreTheyDoingLesson } from "./a1/unit-06/lesson-02-what-are-they-doing";
 import { a1Cycle02Lessons, a1Cycle02Units } from "./a1/cycle-02-units";
+import { a2Lessons, a2Units } from "./a2/curriculum";
 
 export const learningLevels = {
   a1: {
@@ -32,6 +33,13 @@ export const learningLevels = {
       ...a1Cycle02Units,
     ],
   },
+  a2: {
+    id: "a2",
+    label: "A2 Elementary",
+    title: "Build everyday confidence",
+    description: "Handle common situations and connect ideas with more detail.",
+    units: a2Units,
+  },
 };
 
 export const learningLessons = [
@@ -46,6 +54,7 @@ export const learningLessons = [
   whatTimeIsItThereLesson,
   whatAreTheyDoingLesson,
   ...a1Cycle02Lessons,
+  ...a2Lessons,
 ];
 
 export const getLearningLesson = (

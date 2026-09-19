@@ -19,21 +19,24 @@
 .exerciseCard h1 { margin: 7px 0 32px; color: var(--ink); font-size: clamp(1.55rem, 5vw, 2.2rem); font-weight: 900; }
 .prompt { padding: 22px; color: var(--ink); background: #f5f7f8; border: 2px solid #e1e6e8; border-radius: 18px; font-size: clamp(1.08rem, 3vw, 1.35rem); font-weight: 650; line-height: 1.5; }
 .choices { display: grid; gap: 12px; margin-top: 25px; }
-.choices button { display: flex; align-items: center; gap: 14px; width: 100%; padding: 15px; color: #445158; text-align: left; background: white; border: 2px solid #dce2e4; border-radius: 15px; box-shadow: 0 3px 0 #dce2e4; font-size: 1rem; font-weight: 650; }
-.choices button:not(:disabled):hover, .choices .selected { color: #1687a7; background: #eefaff; border-color: #55c5e7; box-shadow: 0 3px 0 #55c5e7; }
+.choices button { display: flex; align-items: center; gap: 14px; width: 100%; padding: 15px; color: #445158; text-align: left; background: #f8fafc; border: 0; border-radius: 15px; box-shadow: inset 0 1px 0 #fff, 0 1px 0 #edf0f2, 0 2px 0 #e4e8ea, 0 4px 0 #dce2e4, 0 5px 0 #d3dade, 0 6px 0 #cbd3d7, 0 7px 0 #bbc5ca, 0 7px 9px #c5cdd1; font-size: 1rem; font-weight: 650; transition: .15s ease; cursor: pointer; }
+.choices button:not(:disabled):hover, .choices .selected { color: #1687a7; background: #e0f7ff; box-shadow: inset 0 1px 0 #f0fbff, 0 1px 0 #bdefff, 0 2px 0 #8addf5, 0 4px 0 #55c5e7, 0 5px 0 #2daed4, 0 6px 0 #168dad, 0 7px 0 #0e7490, 0 7px 9px #8bd5e8; }
 .choices button > span { display: grid; place-items: center; width: 28px; height: 28px; flex: none; border: 2px solid currentColor; border-radius: 8px; font-size: .78rem; }
-.choices .correctChoice { color: #3a9700; background: #f2ffe8; border-color: #78d43a; box-shadow: 0 3px 0 #78d43a; }
-.choices .incorrectChoice { color: #d63434; background: #fff1f1; border-color: #ff7777; box-shadow: 0 3px 0 #ff7777; }
+.choices .correctChoice { color: #277500; background: #dcfce7; box-shadow: inset 0 1px 0 #f0fdf4, 0 1px 0 #bbf7d0, 0 2px 0 #86efac, 0 4px 0 #4ade80, 0 5px 0 #22c55e, 0 6px 0 #16a34a, 0 7px 0 #15803d, 0 7px 9px #86c99d; }
+.choices .incorrectChoice { color: #b91c1c; background: #fee2e2; box-shadow: inset 0 1px 0 #fef2f2, 0 1px 0 #fecaca, 0 2px 0 #fca5a5, 0 4px 0 #f87171, 0 5px 0 #ef4444, 0 6px 0 #dc2626, 0 7px 0 #991b1b, 0 7px 9px #e6a2a2; }
+.choices button:not(:disabled):active { transform: translateY(.225em); box-shadow: inset 0 .03em 0 #f0fbff, 0 .03em 0 #bdefff, 0 .0625em 0 #8addf5, 0 .125em 0 #55c5e7, 0 .125em 0 #2daed4, 0 .2em 0 #168dad, 0 .225em 0 #0e7490, 0 .225em .375em #8bd5e8; transition: .15s ease; }
 
 .wordOrder { margin-top: 25px; }
 .answerLine { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 9px; min-height: 110px; padding: 15px 5px; border-top: 2px solid #e1e5e7; border-bottom: 2px solid #e1e5e7; }
 .answerLine > span { color: #a1aaae; }
 .wordBank { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
-.wordOrder button { padding: 11px 15px; color: #435158; background: white; border: 2px solid #d9e0e2; border-radius: 12px; box-shadow: 0 3px 0 #d9e0e2; font-weight: 750; }
+.wordOrder button { padding: 11px 15px; color: #435158; background: #f8fafc; border: 0; border-radius: 12px; box-shadow: inset 0 1px 0 #fff, 0 1px 0 #edf0f2, 0 2px 0 #e4e8ea, 0 4px 0 #d9e0e2, 0 5px 0 #cbd3d7, 0 6px 0 #bbc5ca, 0 6px 8px #c5cdd1; font-weight: 750; transition: transform .15s ease, box-shadow .15s ease; cursor: pointer; }
+.wordOrder button:not(:disabled):active { transform: translateY(4px); box-shadow: inset 0 1px 0 #fff, 0 1px 0 #e4e8ea, 0 2px 0 #d9e0e2, 0 3px 0 #bbc5ca; }
 
 .checkBar { display: flex; justify-content: space-between; align-items: center; gap: 30px; min-height: 110px; padding: 20px max(24px, calc((100% - 680px) / 2)); border-top: 2px solid #e3e7e9; }
-.checkBar > button { min-width: 150px; padding: 14px 25px; color: white; background: var(--green); border: 0; border-radius: 14px; box-shadow: 0 4px 0 var(--green-dark); font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
-.checkBar > button:disabled { color: #9ca6aa; background: #e1e6e8; box-shadow: 0 4px 0 #cbd2d5; }
+.checkBar > button { min-width: 150px; padding: 14px 25px; color: #14532d; background: #86efac; border: 0; border-radius: 14px; box-shadow: inset 0 1px 0 #dcfce7, 0 1px 0 #bbf7d0, 0 2px 0 #86efac, 0 4px 0 #4ade80, 0 5px 0 #22c55e, 0 6px 0 #16a34a, 0 7px 0 #15803d, 0 7px 9px #86c99d; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; transition: transform .15s ease, box-shadow .15s ease; cursor: pointer; }
+.checkBar > button:not(:disabled):active { transform: translateY(4px); box-shadow: inset 0 1px 0 #dcfce7, 0 1px 0 #86efac, 0 2px 0 #4ade80, 0 3px 0 #15803d; }
+.checkBar > button:disabled { color: #9ca6aa; background: #e1e6e8; box-shadow: inset 0 1px 0 #f8fafc, 0 1px 0 #e4e8ea, 0 2px 0 #dce2e4, 0 4px 0 #cbd2d5; cursor: not-allowed; }
 .checkBar.correct { background: #efffdf; border-color: #c9eea7; }
 .checkBar.incorrect { background: #fff0f0; border-color: #ffc8c8; }
 .feedback { display: flex; align-items: center; gap: 15px; }
@@ -59,6 +62,144 @@
 .continueButton { display: block; margin-top: 22px; padding: 14px; color: white; background: var(--green); border-radius: 13px; box-shadow: 0 4px 0 var(--green-dark); font-weight: 900; text-decoration: none; text-transform: uppercase; }
 .retryButton { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; color: #758187; background: transparent; border: 0; font-weight: 750; }
 
+:global(.dark) .lessonPage {
+  --ink: #f1f5f9;
+  background: #0f172a;
+}
+
+:global(.dark) .lessonTopbar > a {
+  color: #94a3b8;
+}
+
+:global(.dark) .progressTrack {
+  background: #334155;
+}
+
+:global(.dark) .step {
+  color: #94a3b8;
+}
+
+:global(.dark) .prompt {
+  color: #f1f5f9;
+  background: #1e293b;
+  border-color: #475569;
+}
+
+:global(.dark) .choices button {
+  color: #e2e8f0;
+  background: #1e293b;
+  box-shadow: inset 0 1px 0 #475569, 0 1px 0 #3e4c5f, 0 2px 0 #37465a, 0 4px 0 #334155, 0 5px 0 #29374a, 0 6px 0 #1e293b, 0 7px 0 #111827, 0 7px 9px #020617;
+}
+
+:global(.dark) .choices button:not(:disabled):hover,
+:global(.dark) .choices .selected {
+  color: #7dd3fc;
+  background: #173247;
+  box-shadow: inset 0 1px 0 #67e8f9, 0 1px 0 #38bdf8, 0 2px 0 #0ea5e9, 0 4px 0 #0284c7, 0 5px 0 #0369a1, 0 6px 0 #075985, 0 7px 0 #0c4a6e, 0 7px 9px #020617;
+}
+
+:global(.dark) .choices .correctChoice {
+  color: #bef264;
+  background: #203616;
+  box-shadow: inset 0 1px 0 #bef264, 0 1px 0 #a3e635, 0 2px 0 #84cc16, 0 4px 0 #65a30d, 0 5px 0 #4d7c0f, 0 6px 0 #3f6212, 0 7px 0 #365314, 0 7px 9px #020617;
+}
+
+:global(.dark) .choices .incorrectChoice {
+  color: #fca5a5;
+  background: #451a1a;
+  box-shadow: inset 0 1px 0 #fca5a5, 0 1px 0 #f87171, 0 2px 0 #ef4444, 0 4px 0 #dc2626, 0 5px 0 #b91c1c, 0 6px 0 #991b1b, 0 7px 0 #7f1d1d, 0 7px 9px #020617;
+}
+
+:global(.dark) .choices button:not(:disabled):active {
+  transform: translateY(.225em);
+  box-shadow:
+    inset 0 .03em 0 #67e8f9,
+    0 .03em 0 #38bdf8,
+    0 .0625em 0 #0ea5e9,
+    0 .125em 0 #0284c7,
+    0 .125em 0 #0369a1,
+    0 .2em 0 #075985,
+    0 .225em 0 #0c4a6e,
+    0 .225em .375em #020617;
+}
+
+:global(.dark) .answerLine {
+  border-color: #475569;
+}
+
+:global(.dark) .answerLine > span {
+  color: #94a3b8;
+}
+
+:global(.dark) .wordOrder button {
+  color: #e2e8f0;
+  background: #1e293b;
+  box-shadow: inset 0 1px 0 #475569, 0 1px 0 #3e4c5f, 0 2px 0 #37465a, 0 4px 0 #334155, 0 5px 0 #29374a, 0 6px 0 #1e293b, 0 6px 8px #020617;
+}
+
+:global(.dark) .checkBar {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+:global(.dark) .checkBar > button {
+  color: #ecfccb;
+  background: #65a30d;
+  border: 0;
+  box-shadow: inset 0 1px 0 #bef264, 0 1px 0 #a3e635, 0 2px 0 #84cc16, 0 4px 0 #65a30d, 0 5px 0 #4d7c0f, 0 6px 0 #3f6212, 0 7px 0 #365314, 0 7px 9px #020617;
+}
+
+:global(.dark) .checkBar > button:disabled {
+  color: #94a3b8;
+  background: #334155;
+  border: 0;
+  box-shadow: inset 0 1px 0 #475569, 0 1px 0 #3e4c5f, 0 2px 0 #37465a, 0 4px 0 #1e293b;
+}
+
+:global(.dark) .checkBar.correct {
+  background: #1b3317;
+  border-color: #3f6212;
+}
+
+:global(.dark) .checkBar.incorrect {
+  background: #3b1c23;
+  border-color: #7f1d1d;
+}
+
+:global(.dark) .feedbackIcon {
+  background: #1e293b;
+}
+
+:global(.dark) .feedback p {
+  color: #cbd5e1;
+}
+
+:global(.dark) .completeCard {
+  background: #111c2e;
+  border-color: #334155;
+  box-shadow: 0 6px 0 #1e293b;
+}
+
+:global(.dark) .completeCard > p,
+:global(.dark) .retryButton {
+  color: #cbd5e1;
+}
+
+:global(.dark) .results div,
+:global(.dark) .summary {
+  background: #1e293b;
+}
+
+:global(.dark) .summary {
+  border-color: #475569;
+}
+
+:global(.dark) .summary span {
+  color: #e2e8f0;
+  background: #0f172a;
+  border-color: #475569;
+}
+
 @media (max-width: 620px) {
   .lessonPage { min-height: calc(100vh - 95px); }
   .exerciseCard { padding-top: 28px; }
@@ -66,4 +207,10 @@
   .checkBar > button { width: 100%; }
   .feedback { align-items: flex-start; }
   .completeCard { padding: 30px 20px; }
+}
+
+@media (max-width: 620px) {
+  :global(.dark) .checkBar {
+    background: #0f172a;
+  }
 }

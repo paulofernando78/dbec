@@ -4,8 +4,6 @@ import { learningLevels } from "@/data/learning";
 import styles from "./learn.module.css";
 
 export default function LearnIndex() {
-  const level = learningLevels.a1;
-
   return (
     <div className={styles.page}>
       <header className={styles.hero}>
@@ -20,18 +18,22 @@ export default function LearnIndex() {
         <div><BookOpen aria-hidden="true" /><strong>A1</strong><span>current level</span></div>
       </section>
 
-      <section className={styles.levelCard}>
-        <div className={styles.levelBadge}>A1</div>
-        <div className={styles.levelCopy}>
-          <span>BEGINNER</span>
-          <h2>{level.title}</h2>
-          <p>{level.description}</p>
-          <small>1 unit available</small>
-        </div>
-        <Link className={styles.primaryButton} to="/learn/a1">
-          Start learning <ArrowRight size={20} aria-hidden="true" />
-        </Link>
-      </section>
+      <div className={styles.levelList}>
+        {Object.values(learningLevels).map((level) => (
+          <section className={styles.levelCard} key={level.id}>
+            <div className={styles.levelBadge}>{level.id.toUpperCase()}</div>
+            <div className={styles.levelCopy}>
+              <span>{level.label.split(" ").slice(1).join(" ").toUpperCase()}</span>
+              <h2>{level.title}</h2>
+              <p>{level.description}</p>
+              <small>{level.units.length} units available</small>
+            </div>
+            <Link className={styles.primaryButton} to={`/learn/${level.id}`}>
+              View level <ArrowRight size={20} aria-hidden="true" />
+            </Link>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }
