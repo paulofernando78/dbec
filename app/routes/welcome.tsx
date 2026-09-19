@@ -1,8 +1,6 @@
-// import styles from "./Emoji.module.css";
-
-import { Image } from "@/components/ui/Image";
-import { Audio } from "@/components/ui/Audio";
-import { Text } from "@/components/content/Text";
+import { useState } from "react";
+import { ArrowRight, BookOpen, Check, Clock3, Flame, Play, Sparkles, Star, Target, Volume2 } from "lucide-react";
+import { Link } from "react-router";
 
 const emojis = [
   {
@@ -354,30 +352,95 @@ const emojis = [
 ];
 
 export default function Welcome() {
+  const feelings = [
+    { label: "Great", emoji: "😄", phrase: "I'm feeling great today.", audio: "/assets/audio/dictionary/g/good.mp3" },
+    { label: "Good", emoji: "🙂", phrase: "I'm feeling good today.", audio: "/assets/audio/dictionary/g/good.mp3" },
+    { label: "Okay", emoji: "😐", phrase: "I'm feeling okay today.", audio: "/assets/audio/dictionary/c/calm.mp3" },
+    { label: "Sad", emoji: "😔", phrase: "I'm feeling sad today.", audio: "/assets/audio/dictionary/s/sad.mp3" },
+    { label: "Tired", emoji: "😴", phrase: "I'm feeling tired today.", audio: "/assets/audio/dictionary/t/tired.mp3" },
+  ];
+  const [selectedFeeling, setSelectedFeeling] = useState<(typeof feelings)[number] | null>(null);
+
+  const playFeeling = () => {
+    if (selectedFeeling) new Audio(selectedFeeling.audio).play();
+  };
+
   return (
-    <>
-      <div className="my-8 text-center">
-        <h2 className="mb-6 text-3xl font-bold">Welcome</h2>
-        <h3 className="mb-4 text-2xl font-bold">How are you feeling today?</h3>
-      </div>
-      <div className="grid grid-cols-[repeat(auto-fill,9rem)] gap-2 justify-center">
-        {emojis.map((emoji, emojiIndex) => (
-          <div key={emojiIndex}>
-            <div className="p-1 flex flex-col border border-gray-300 rounded-lg">
-              <Image src={emoji.img} alt={emoji.alt} width={60} height={60} />
-              {emoji.words &&
-                emoji.words.map((word, wordIndex) => (
-                  <div key={wordIndex} className="flex items-center gap-2">
-                    {word.audio && <Audio src={word.audio} />}
-                    <span key={wordIndex} className="">
-                      {word.word}
-                    </span>
-                  </div>
-                ))}
+    <main className="mx-auto w-[calc(100%_-_24px)] max-w-[980px] pb-20 pt-6 text-slate-800 dark:text-slate-100">
+      <header className="mb-7 flex items-end justify-between gap-5 max-[620px]:items-start">
+        <div>
+          <span className="inline-flex items-center gap-1.5 text-xs font-black tracking-[.13em] text-green-700 dark:text-lime-400"><Sparkles size={15} /> YOUR DAILY ENGLISH</span>
+          <h1 className="mt-2 text-[clamp(2rem,6vw,3.4rem)] leading-none font-black">Good morning, Paulo!</h1>
+          <p className="mt-3 text-slate-500 dark:text-slate-300">Ready for a quick English session?</p>
+        </div>
+        <div className="flex shrink-0 items-center gap-2 rounded-2xl bg-orange-50 px-4 py-3 font-black text-orange-600 shadow-[0_4px_0_#fed7aa] dark:bg-orange-950 dark:text-orange-300 dark:shadow-[0_4px_0_#7c2d12] max-[620px]:hidden"><Flame fill="currentColor" /> 3 days</div>
+      </header>
+
+      <section className="mb-6 grid grid-cols-[1.6fr_1fr] gap-5 max-[760px]:grid-cols-1">
+        <article className="relative overflow-hidden rounded-[26px] bg-linear-to-br from-lime-500 to-green-600 p-7 text-white shadow-[0_8px_0_#2e9300] max-[520px]:p-5">
+          <div className="absolute -right-10 -top-12 size-48 rounded-full bg-white/10" />
+          <div className="absolute -bottom-20 right-20 size-40 rounded-full bg-white/10" />
+          <div className="relative">
+            <span className="text-xs font-black tracking-[.13em] text-white/80">CONTINUE LEARNING</span>
+            <h2 className="mt-2 text-3xl font-black">Hello & Introductions</h2>
+            <p className="mt-2 max-w-[490px] text-white/90">Practice greetings and introduce people using my, your, his, and her.</p>
+            <div className="mt-6 flex items-center gap-3">
+              <div className="h-3 flex-1 overflow-hidden rounded-full bg-green-900/30"><span className="block h-full w-[14%] rounded-full bg-white" /></div>
+              <span className="text-sm font-extrabold">1 / 7</span>
             </div>
+            <Link className="mt-6 inline-flex items-center gap-2 rounded-[14px] bg-white px-5 py-3.5 font-black text-green-700 no-underline shadow-[0_5px_0_#b8e89f] transition-[transform,box-shadow] active:translate-y-[3px] active:shadow-[0_2px_0_#b8e89f]" to="/learn/a1/unit-1/hello"><Play size={19} fill="currentColor" /> Continue learning</Link>
           </div>
+        </article>
+
+        <article className="rounded-[24px] border-2 border-slate-200 bg-white p-6 shadow-[0_5px_0_#e2e8f0] dark:border-slate-600 dark:bg-slate-800 dark:shadow-[0_5px_0_#334155]">
+          <div className="flex items-center justify-between">
+            <div className="grid size-11 place-items-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-300"><Target /></div>
+            <span className="text-xs font-black tracking-[.1em] text-slate-400">DAILY GOAL</span>
+          </div>
+          <h2 className="mt-5 text-2xl font-black">6 of 10 minutes</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-300">You're more than halfway there.</p>
+          <div className="mt-5 h-3 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700"><span className="block h-full w-3/5 rounded-full bg-sky-500" /></div>
+          <div className="mt-4 flex items-center gap-2 text-sm font-bold text-sky-700 dark:text-sky-300"><Clock3 size={16} /> 4 minutes to go</div>
+        </article>
+      </section>
+
+      <section className="mb-6 grid grid-cols-3 gap-4 max-[620px]:grid-cols-1">
+        {[
+          { icon: Flame, value: "3", label: "day streak", color: "text-orange-500 bg-orange-50 dark:bg-orange-950" },
+          { icon: Star, value: "120", label: "total XP", color: "text-amber-500 bg-amber-50 dark:bg-amber-950" },
+          { icon: Check, value: "4", label: "lessons done", color: "text-green-600 bg-green-50 dark:bg-green-950" },
+        ].map(({ icon: Icon, value, label, color }) => (
+          <article className="flex items-center gap-3 rounded-[18px] border-2 border-slate-200 bg-white p-4 dark:border-slate-600 dark:bg-slate-800" key={label}>
+            <div className={`grid size-11 shrink-0 place-items-center rounded-xl ${color}`}><Icon size={22} /></div>
+            <div><strong className="block text-xl font-black">{value}</strong><span className="text-xs font-bold text-slate-500 dark:text-slate-400">{label}</span></div>
+          </article>
         ))}
-      </div>
-    </>
+      </section>
+
+      <section className="mb-6 rounded-[24px] border-2 border-slate-200 bg-white p-6 dark:border-slate-600 dark:bg-slate-800 max-[520px]:p-4">
+        <div className="mb-5 flex items-center justify-between gap-4">
+          <div><span className="text-xs font-black tracking-[.12em] text-sky-600 dark:text-sky-400">QUICK PRACTICE</span><h2 className="mt-1 text-2xl font-black">How are you feeling today?</h2></div>
+          <span className="text-4xl" aria-hidden="true">{selectedFeeling?.emoji ?? "👋"}</span>
+        </div>
+        <div className="grid grid-cols-5 gap-3 max-[620px]:grid-cols-3 max-[400px]:grid-cols-2">
+          {feelings.map((feeling) => {
+            const selected = selectedFeeling?.label === feeling.label;
+            return <button className={`rounded-[15px] border-0 px-3 py-4 font-extrabold transition-[transform,box-shadow,background-color,color] active:translate-y-[3px] ${selected ? "bg-sky-100 text-sky-700 shadow-[0_3px_0_#38bdf8] dark:bg-sky-950 dark:text-sky-300 dark:shadow-[0_3px_0_#0284c7]" : "bg-slate-50 text-slate-600 shadow-[0_5px_0_#d7dce0] hover:bg-sky-50 hover:text-sky-700 active:shadow-[0_2px_0_#d7dce0] dark:bg-slate-700 dark:text-slate-200 dark:shadow-[0_5px_0_#334155]"}`} key={feeling.label} onClick={() => setSelectedFeeling(feeling)}><span className="mb-1 block text-3xl">{feeling.emoji}</span>{feeling.label}</button>;
+          })}
+        </div>
+        {selectedFeeling && <div className="mt-6 flex items-center gap-3 rounded-[16px] bg-sky-50 p-4 text-sky-800 dark:bg-sky-950 dark:text-sky-200"><button className="grid size-11 shrink-0 place-items-center rounded-full border-0 bg-sky-500 text-white shadow-[0_4px_0_#0369a1] active:translate-y-[2px] active:shadow-[0_2px_0_#0369a1]" onClick={playFeeling} aria-label={`Listen to ${selectedFeeling.phrase}`}><Volume2 /></button><div><span className="text-xs font-black tracking-[.1em]">SAY IT OUT LOUD</span><p className="font-extrabold">{selectedFeeling.phrase}</p></div></div>}
+      </section>
+
+      <section>
+        <div className="mb-4 flex items-end justify-between"><div><span className="text-xs font-black tracking-[.12em] text-green-700 dark:text-lime-400">KEEP PRACTICING</span><h2 className="mt-1 text-2xl font-black">What do you want to do?</h2></div><Link className="flex items-center gap-1 text-sm font-extrabold text-green-700 no-underline dark:text-lime-400" to="/learn">View path <ArrowRight size={16} /></Link></div>
+        <div className="grid grid-cols-3 gap-4 max-[620px]:grid-cols-1">
+          {[
+            { icon: BookOpen, title: "Review vocabulary", detail: "8 words ready" },
+            { icon: Volume2, title: "Practice speaking", detail: "5 quick phrases" },
+            { icon: Star, title: "Earn more XP", detail: "Complete a lesson" },
+          ].map(({ icon: Icon, title, detail }) => <Link className="group flex items-center gap-3 rounded-[18px] border-2 border-slate-200 bg-white p-4 text-slate-700 no-underline shadow-[0_4px_0_#e2e8f0] transition-transform hover:-translate-y-0.5 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:shadow-[0_4px_0_#334155]" to="/learn" key={title}><div className="grid size-11 shrink-0 place-items-center rounded-xl bg-lime-100 text-green-700 dark:bg-green-950 dark:text-lime-400"><Icon size={21} /></div><div><strong className="block text-sm font-extrabold">{title}</strong><span className="text-xs text-slate-500 dark:text-slate-400">{detail}</span></div><ArrowRight className="ml-auto text-slate-300 transition-transform group-hover:translate-x-1" size={18} /></Link>)}
+        </div>
+      </section>
+    </main>
   );
 }

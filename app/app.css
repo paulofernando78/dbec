@@ -4,6 +4,9 @@
 
 @import "tailwindcss";
 
+/* Keep Tailwind's dark utilities in sync with the DBEC theme button. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 ::-webkit-scrollbar {
   width: 0.6vw;
   height: 0.6vw;
