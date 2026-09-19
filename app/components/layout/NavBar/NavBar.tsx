@@ -3,7 +3,7 @@ import { links } from "../../../data/nav-bar-links";
 import type { ElementType } from "react";
 import { CourseBook } from "@/components/Icons";
 
-import { Minus, Plus } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 type NavItem = {
   label: string;
@@ -40,7 +40,7 @@ function RenderNavItem({
 
   if (item.links?.length) {
     return (
-      <details className="open:[&>summary_.plus]:hidden open:[&>summary_.minus]:block mb-1">
+      <details className="open:[&>summary_.chevron-right]:hidden open:[&>summary_.chevron-down]:block mb-1">
         <summary
           className="
           list-none
@@ -59,8 +59,14 @@ function RenderNavItem({
             top-px
           "
           >
-            <Plus size={18} className="plus translate-y-[0.3rem]" />
-            <Minus size={18} className="minus hidden translate-y-[0.3rem]" />
+            <ChevronRight
+              size={18}
+              className="chevron-right translate-y-[0.3rem]"
+            />
+            <ChevronDown
+              size={18}
+              className="chevron-down hidden translate-y-[0.3rem]"
+            />
           </span>
 
           {item.iconClassName && (

@@ -30,6 +30,11 @@ export default [
     // What’s CEFR Page
     route("/cefr", "routes/whats-cefr.tsx"),
 
+    // New gamified learning experience
+    route("/learn", "routes/learn/index.tsx"),
+    route("/learn/:level", "routes/learn/level.tsx"),
+    route("/learn/:level/:unit/:lesson", "routes/learn/lesson.tsx"),
+
     //! ─────────────────────────────────────────────
     //! Course
     //! ─────────────────────────────────────────────
