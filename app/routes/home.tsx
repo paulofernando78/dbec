@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 
 import { Contact } from "@/components/layout/Contact";
 
@@ -30,8 +31,40 @@ const dbecCSS = {
 };
 
 export default function Home() {
+  const homeRef = useRef<HTMLDivElement>(null);
   const [greetingIndex, setGreetingIndex] = useState(0);
   const [opacity, setOpacity] = useState(1);
+
+  useLayoutEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (mediaQuery.matches) return;
+
+    const animation = gsap.context(() => {
+      const timeline = gsap.timeline({
+        defaults: { duration: 0.65, ease: "power3.out" },
+      });
+
+      timeline
+        .from(".home-title-top", { x: -55, autoAlpha: 0 })
+        .from(".home-title-bottom", { x: 55, autoAlpha: 0 }, "-=0.42")
+        .from(".home-greeting", { y: 22, autoAlpha: 0 }, "-=0.2")
+        .from(".home-description", { y: 18, autoAlpha: 0 }, "-=0.38")
+        .from(
+          ".home-contact li",
+          {
+            y: 16,
+            scale: 0.7,
+            autoAlpha: 0,
+            stagger: 0.08,
+            ease: "back.out(1.7)",
+          },
+          "-=0.28",
+        );
+    }, homeRef);
+
+    return () => animation.revert();
+  }, []);
 
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
@@ -49,21 +82,21 @@ export default function Home() {
       clearInterval(interval);
       clearTimeout(timeout);
     };
-  });
+  }, []);
 
   return (
-    <div className="mt-12 flex flex-col gap-[40px]">
-      <div className="w-max mx-auto leading-[1.13]">
-        <h1 style={dbecCSS} className="text-[4rem]">
+    <div ref={homeRef} className="mt-12 flex flex-col gap-[40px]">
+      <div className="mx-auto w-max leading-[1.13]">
+        <h1 style={dbecCSS} className="home-title-top text-[4rem]">
           DAILY BAISIS
         </h1>
-        <h1 style={dbecCSS} className="text-[3.06rem]">
+        <h1 style={dbecCSS} className="home-title-bottom text-[3.06rem]">
           ENGLISH COURSE
         </h1>
       </div>
-      <ul className="w-max mx-auto">
+      <ul className="mx-auto w-max">
         <li
-          className="font-luckiest-guy text-[1.5rem] mt-3 transition-opacity duration-500 ease-in-out"
+          className="home-greeting mt-3 font-luckiest-guy text-[1.5rem] transition-opacity duration-500 ease-in-out"
           style={{ opacity }}
         >
           {greetingsList[greetingIndex]}
@@ -76,14 +109,15 @@ export default function Home() {
         Writing. On this web site, you’ll find a variety of useful learning
         materials. Please use them wisely.
       </p> */}
-      <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
+      <p className="home-description mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
         <b>O DAILY BASIS ENGLISH COURSE</b> oferece aulas de inglês
         especializadas e focadas nas quatro habilidades linguísticas
         fundamentais: Fala (com ênfase em conversação), Escuta (compreensão
-        auditiva), Leitura e Escrita. Utilizamos o <span className="underline">Google Classroom</span> como nossa
+        auditiva), Leitura e Escrita. Utilizamos o{" "}
+        <span className="underline">Google Classroom</span> como nossa
         plataforma de aprendizagem.
       </p>
-      <div className="w-max mx-auto">
+      <div className="home-contact mx-auto w-max">
         <Contact />
       </div>
     </div>
