@@ -367,6 +367,15 @@ export default function Welcome() {
     (typeof emojis)[number] | null
   >(null);
 
+  const hour = new Date().getHours();
+
+  const greetings =
+    hour < 12
+    ? "Good morning."
+    : hour < 18
+      ? "Good afternoon"
+      : "Good evening"
+
   const playFeeling = (audio: string) => {
     new Audio(audio).play();
   };
@@ -379,7 +388,7 @@ export default function Welcome() {
             <Sparkles size={15} /> YOUR DAILY ENGLISH
           </span>
           <h1 className="mt-2 text-[clamp(2rem,6vw,3.4rem)] leading-none font-black">
-            Good morning, Paulo!
+            {greetings}, Paulo!
           </h1>
           <p className="mt-3 text-slate-500 dark:text-slate-300">
             Ready for a quick English session?
@@ -388,7 +397,7 @@ export default function Welcome() {
       </header>
 
       <section className="mb-6 grid grid-cols-[1.6fr_1fr] gap-5 max-[760px]:grid-cols-1">
-        <article className="relative overflow-hidden rounded-[26px] bg-linear-to-br from-lime-500 to-green-600 p-7 text-white shadow-[0_8px_0_#2e9300] max-[520px]:p-5">
+        <article className="relative overflow-hidden rounded-[26px] bg-linear-to-br from-lime-500 to-green-600 p-7 text-white max-[520px]:p-5">
           <div className="absolute -top-12 -right-10 size-48 rounded-full bg-white/10" />
           <div className="absolute right-20 -bottom-20 size-40 rounded-full bg-white/10" />
           <div className="relative">
@@ -415,7 +424,7 @@ export default function Welcome() {
           </div>
         </article>
 
-        <article className="rounded-[24px] border-2 border-slate-200 bg-white p-6 shadow-[0_5px_0_#e2e8f0] dark:border-slate-600 dark:bg-slate-800 dark:shadow-[0_5px_0_#334155]">
+        <article className="rounded-[24px] border-2 border-slate-200 bg-white p-6 dark:border-slate-600 dark:bg-slate-800">
           <div className="flex items-center justify-between">
             <div className="grid size-11 place-items-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-300">
               <Target />

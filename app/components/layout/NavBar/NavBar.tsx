@@ -44,28 +44,26 @@ function RenderNavItem({
   if (item.links?.length) {
     return (
       <details className="mb-1 open:[&>summary_.chevron-down]:block open:[&>summary_.chevron-right]:hidden">
-        <summary className="relative ml-4 flex cursor-pointer list-none items-center gap-2">
-          <span className="absolute top-px -left-5">
-            <ChevronRight
-              size={18}
-              className="chevron-right translate-y-[0.3rem]"
-            />
-            <ChevronDown
-              size={18}
-              className="chevron-down hidden translate-y-[0.3rem]"
-            />
+        <summary className="flex cursor-pointer list-none items-center gap-2">
+          <span className="flex shrink-0 items-center">
+            <ChevronRight size={25} className="chevron-right" />
+            <ChevronDown size={25} className="chevron-down hidden" />
           </span>
 
           {item.iconClassName && (
             <CourseBook
               width={25}
               height={25}
-              className={`ml-[0.2rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`}
+              className={`shrink-0 ${item.iconClassName}`}
             />
           )}
 
           {item.href ? (
-            <NavLink to={item.href} onClick={(e) => e.stopPropagation()}>
+            <NavLink
+              to={item.href}
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center"
+            >
               <span>{item.label}</span>
             </NavLink>
           ) : (
@@ -110,7 +108,7 @@ function RenderNavItem({
 
 export function NavBar({ closeNavBar }: NavBarProps) {
   return (
-    <nav className="mx-1.25 mt-1.25 mb-2.5 h-full overflow-y-auto rounded-tl-lg rounded-tr-lg rounded-br-lg bg-gray-900 px-5 py-4 font-oswald text-lg text-white shadow-[2px_2px_5px_var(--slate-5)]">
+    <nav className="mx-1.25 mt-1.25 mb-2.5 h-full overflow-y-auto rounded-tl-lg rounded-tr-lg rounded-br-lg bg-gray-900 px-5 py-4 font-oswald text-base text-lg text-white shadow-[2px_2px_5px_var(--slate-5)]">
       {navGroups.map((group, index) => (
         <div key={group.title ?? `group-${index}`}>
           {group.title && (
@@ -139,7 +137,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                     <CourseBook
                       width={25}
                       height={25}
-                      className={`shrink-0 ${group.iconClassName}`}
+                      className={`shrink-0${group.iconClassName}`}
                     />
                   )}
                   {group.title}

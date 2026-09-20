@@ -11,23 +11,23 @@ export default function LearnIndex() {
         <p className="text-[1.05rem] text-slate-500 dark:text-slate-300">Short, practical lessons that turn English into a daily habit.</p>
       </header>
 
-      <section className="mb-7 grid grid-cols-3 gap-3 max-[620px]:grid-cols-1 [&>div]:grid [&>div]:grid-cols-[auto_1fr] [&>div]:items-center [&>div]:gap-x-2.5 [&>div]:rounded-[18px] [&>div]:border-2 [&>div]:border-slate-200 [&>div]:p-4 [&>div]:shadow-[0_3px_0_#e2e8f0] dark:[&>div]:border-slate-600 dark:[&>div]:shadow-[0_3px_0_#334155] [&_svg]:row-span-2 [&_svg]:text-orange-400 [&_strong]:text-slate-800 dark:[&_strong]:text-slate-100 [&_span]:text-xs [&_span]:text-slate-500 dark:[&_span]:text-slate-400" aria-label="Learning statistics">
+      <section className="mb-7 grid grid-cols-3 gap-3 max-[620px]:grid-cols-1 [&>div]:grid [&>div]:grid-cols-[auto_1fr] [&>div]:items-center [&>div]:gap-x-2.5 [&>div]:rounded-[18px] [&>div]:border-2 [&>div]:border-slate-200 [&>div]:p-4 dark:[&>div]:border-slate-600 [&_svg]:row-span-2 [&_svg]:text-orange-400 [&_strong]:text-slate-800 dark:[&_strong]:text-slate-100 [&_span]:text-xs [&_span]:text-slate-500 dark:[&_span]:text-slate-400" aria-label="Learning statistics">
         <div><Flame aria-hidden="true" /><strong>0</strong><span>day streak</span></div>
         <div><Trophy aria-hidden="true" /><strong>0</strong><span>total XP</span></div>
         <div><BookOpen aria-hidden="true" /><strong>A1</strong><span>current level</span></div>
       </section>
 
       <div className="grid gap-5.5">
-        {Object.values(learningLevels).map((level, index) => (
-          <section className={`grid grid-cols-[auto_1fr_auto] items-center gap-5 rounded-3xl p-7 text-white max-[620px]:grid-cols-[auto_1fr] max-[620px]:px-4.5 max-[620px]:py-5.5 ${index === 0 ? "bg-linear-to-br from-lime-500 to-green-600 shadow-[0_7px_0_#2e9300]" : "bg-linear-to-br from-sky-500 to-sky-700 shadow-[0_7px_0_#1177ad]"}`} key={level.id}>
+        {Object.values(learningLevels).map((level) => (
+          <section className={`grid grid-cols-[auto_1fr_auto] items-center gap-5 rounded-3xl p-7 max-[620px]:grid-cols-[auto_1fr] max-[620px]:px-4.5 max-[620px]:py-5.5 ${level.id === "a1" ? "bg-linear-to-br from-yellow-400 to-amber-600 text-slate-900" : "bg-linear-to-br from-red-500 to-red-700 text-white"}`} key={level.id}>
             <div className="grid size-17 place-items-center rounded-[20px] border-3 border-current text-[1.4rem] font-black">{level.id.toUpperCase()}</div>
             <div>
-              <span className="text-xs font-extrabold tracking-[.12em] text-white/85">{level.label.split(" ").slice(1).join(" ").toUpperCase()}</span>
+              <span className="text-xs font-extrabold tracking-[.12em] opacity-85">{level.label.split(" ").slice(1).join(" ").toUpperCase()}</span>
               <h2 className="my-1 text-2xl font-extrabold">{level.title}</h2>
               <p className="mb-1 opacity-95">{level.description}</p>
               <small className="opacity-80">{level.units.length} units available</small>
             </div>
-            <Link className={`flex items-center gap-2 rounded-[14px] bg-white px-4.5 py-3.5 font-extrabold no-underline active:translate-y-[3px] max-[620px]:col-span-full max-[620px]:justify-center ${index === 0 ? "text-green-700 shadow-[0_4px_0_#c5eeb0]" : "text-sky-700 shadow-[0_4px_0_#b9e5f8]"}`} to={`/learn/${level.id}`}>
+            <Link className={`flex items-center gap-2 rounded-[14px] bg-white px-4.5 py-3.5 font-extrabold no-underline active:translate-y-[3px] max-[620px]:col-span-full max-[620px]:justify-center ${level.id === "a1" ? "text-amber-700 shadow-[0_4px_0_#fef3c7]" : "text-red-700 shadow-[0_4px_0_#fecaca]"}`} to={`/learn/${level.id}`}>
               View level <ArrowRight size={20} aria-hidden="true" />
             </Link>
           </section>

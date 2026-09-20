@@ -1,8 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, Check, Heart, RotateCcw, X } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router";
-import { getLearningLesson } from "@/data/learning";
+import { getLearningLesson, learningLessons } from "@/data/learning";
 import type { LearningExercise } from "@/data/learning/types";
+import {
+  completeLearningLesson,
+  isLearningLessonCompleted,
+} from "@/utils/learning-progress";
 
 const threeDimensionalButton =
   "border-0 transition-[transform,box-shadow,background-color,color] duration-150 ease-out active:translate-y-[.225em]";
@@ -74,6 +78,7 @@ export default function LearningLessonRoute() {
   const [result, setResult] = useState<"correct" | "incorrect" | null>(null);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [finished, setFinished] = useState(false);
+  const [accessAllowed, setAccessAllowed] = useState<boolean | null>(null);
 
   useEffect(() => {
     setIndex(0);
@@ -83,7 +88,24 @@ export default function LearningLessonRoute() {
     setFinished(false);
   }, [lesson?.id]);
 
+  useEffect(() => {
+    if (!lesson) return;
+
+    const levelLessons = learningLessons.filter(
+      (item) => item.level === lesson.level,
+    );
+    const lessonIndex = levelLessons.findIndex((item) => item.id === lesson.id);
+    setAccessAllowed(
+      lessonIndex === 0 ||
+        (lessonIndex > 0 &&
+          isLearningLessonCompleted(levelLessons[lessonIndex - 1].id)),
+    );
+  }, [lesson]);
+
   if (!lesson) return <Navigate to="/learn" replace />;
+  if (accessAllowed === false) {
+    return <Navigate to={`/learn/${lesson.level}`} replace />;
+  }
 
   const exercise = lesson.exercises[index];
   const progress = finished ? 100 : (index / lesson.exercises.length) * 100;
@@ -97,7 +119,7 @@ export default function LearningLessonRoute() {
   const continueLesson = () => {
     if (index === lesson.exercises.length - 1) {
       setFinished(true);
-      localStorage.setItem(`learning:${lesson.id}:completed`, "true");
+      completeLearningLesson(lesson.id);
       localStorage.setItem(`learning:${lesson.id}:score`, String(correctAnswers));
       return;
     }
@@ -110,7 +132,7 @@ export default function LearningLessonRoute() {
     return (
       <div className="min-h-[calc(100vh-64px)] bg-white px-4 py-14 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
         <div className="mx-auto flex max-w-[620px] flex-col items-center text-center">
-          <div className="mb-5 grid size-24 place-items-center rounded-full bg-lime-500 text-white shadow-[0_8px_0_#46a302]"><Check size={48} /></div>
+          <div className="mb-5 grid size-24 place-items-center rounded-full bg-lime-500 text-white"><Check size={48} /></div>
           <span className="text-xs font-black tracking-[.14em] text-green-700 dark:text-lime-400">LESSON COMPLETE</span>
           <h1 className="mt-2 mb-2 text-[clamp(2.2rem,8vw,3.5rem)] font-black">Great work!</h1>
           <p className="max-w-[500px] text-slate-500 dark:text-slate-300">{lesson.description}</p>

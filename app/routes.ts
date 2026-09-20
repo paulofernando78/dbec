@@ -21,9 +21,6 @@ export default [
     // Lab
     route("/lab", "routes/lab.tsx"),
 
-    // Students Pages
-    route("dashboard/:studentId?", "routes/students/dashboard.tsx"),
-
     // Welcome Page
     route("/welcome", "routes/welcome.tsx"),
 

@@ -39,7 +39,7 @@ export const links: NavGroup[] = [
     title: "Learn",
     href: "/learn",
     icon: Course,
-    iconClassName: "text-lime-400",
+    iconClassName: "text-gray-400",
     links: Object.values(learningLevels).map((level) => ({
       href: `/learn/${level.id}`,
       label: level.label.replace(" ", " · "),

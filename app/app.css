@@ -32,7 +32,7 @@ body {
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #495057
+  color: #495057;
   /* user-select: none; */
 }
 
@@ -46,13 +46,12 @@ body {
 }
 
 .app-container {
-  min-height: 0; 
+  min-height: 0;
   padding: 5px;
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  
 }
 
 .app-content {
@@ -69,8 +68,8 @@ body {
 }
 
 .phonetics {
-  font-family: 'Times New Roman', Times, serif;
-  @apply text-blue-500
+  font-family: "Times New Roman", Times, serif;
+  @apply text-blue-500;
 }
 
 /*
@@ -112,6 +111,10 @@ body {
   .smooth-collapse[data-open="true"] {
     height: auto;
   }
+}
+
+.red {
+  @apply border-2 border-red-500;
 }
 
 @media (prefers-reduced-motion: reduce) {
