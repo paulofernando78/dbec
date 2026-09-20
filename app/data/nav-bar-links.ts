@@ -1,5 +1,5 @@
-import { Course } from "@/components/Icons";
 import { learningLevels } from "@/data/learning";
+import { LibraryBig as Course } from "lucide-react";
 import type { ElementType } from "react";
 
 type NavLinkItem = {

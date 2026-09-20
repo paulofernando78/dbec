@@ -3,17 +3,19 @@ import { useEffect, useId, useState } from "react";
 import { Card } from "@/components/ui/Card";
 import { Link } from "react-router";
 import {
-  LessonObjective,
-  LessonUsefulLanguage,
-  LessonPronunciation,
-  LessonVocabulary,
-  LessonFinalTask,
-  GoogleClassroomAnnouncement,
-  GoogleClassroomMaterial,
-  GoogleClassroomAssignment,
-} from "@/components/GoogleIcons";
-
-import { CalendarDays, Clock2, Plus, Minus } from "lucide-react";
+  AudioLines as LessonPronunciation,
+  BookOpen as LessonVocabulary,
+  Bookmark as GoogleClassroomMaterial,
+  CalendarDays,
+  ClipboardList as GoogleClassroomAssignment,
+  Clock2,
+  Flag as LessonFinalTask,
+  Goal as LessonObjective,
+  MessageSquareText as LessonUsefulLanguage,
+  Minus,
+  Pencil as GoogleClassroomAnnouncement,
+  Plus,
+} from "lucide-react";
 
 type ClassroomPostContent = {
   title: string;
@@ -178,8 +180,8 @@ export const LessonCard = ({
       )}
 
       {objective && (
-        <p className="mt-3 flex pl-[-0.1rem] items-start gap-3">
-          <LessonObjective className="text-gray-400 shrink-0" />
+        <p className="mt-3 flex items-start gap-3 pl-[-0.1rem]">
+          <LessonObjective className="shrink-0 text-gray-400" />
 
           <span>
             <b>Objective:</b> {formatObjective(objective)}
@@ -189,7 +191,7 @@ export const LessonCard = ({
 
       <div className="mb-[.1rem]">
         {usefulLanguage && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
+          <div className="mt-2 flex items-start gap-3 pl-[-0.1rem]">
             <LessonUsefulLanguage className="shrink-0 text-gray-400" />
 
             <span>
@@ -199,7 +201,7 @@ export const LessonCard = ({
         )}
 
         {vocabulary && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
+          <div className="mt-2 flex items-start gap-3 pl-[-0.1rem]">
             <LessonVocabulary className="shrink-0 text-gray-400" />
 
             <span>
@@ -209,7 +211,7 @@ export const LessonCard = ({
         )}
 
         {pronunciation && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
+          <div className="mt-2 flex items-start gap-3 pl-[-0.1rem]">
             <LessonPronunciation className="shrink-0 text-gray-400" />
 
             <span>
@@ -219,7 +221,7 @@ export const LessonCard = ({
         )}
 
         {finalTask && (
-          <div className="mt-2 pl-[-0.1rem] flex items-start gap-3">
+          <div className="mt-2 flex items-start gap-3 pl-[-0.1rem]">
             <LessonFinalTask className="shrink-0 text-gray-400" />
 
             <span>
@@ -235,12 +237,7 @@ export const LessonCard = ({
             <Link
               to={href}
               onClick={(event) => event.stopPropagation()}
-              className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  font-semibold
-                  hover:text-gray-700"
+              className="inline-flex items-center gap-2 font-semibold hover:text-gray-700"
             >
               <GoogleClassroomMaterial className="shrink-0" />
               <span>Open material</span>
@@ -250,12 +247,7 @@ export const LessonCard = ({
             <Link
               to={assignmentHref}
               onClick={(event) => event.stopPropagation()}
-              className="
-                inline-flex
-                items-center
-                gap-2 
-                font-semibold
-                hover:text-gray-700"
+              className="inline-flex items-center gap-2 font-semibold hover:text-gray-700"
             >
               <GoogleClassroomAssignment className="shrink-0" />
               <span>Open assignment</span>
@@ -271,23 +263,8 @@ export const LessonCard = ({
               className="flex flex-col gap-2 text-sm"
               onClick={(event) => event.stopPropagation()}
             >
-              <div
-                className="
-                flex
-                items-center
-                text-gray-500
-                gap-2"
-              >
-                <span
-                  className="
-                  inline-flex
-                  h-10
-                  items-center
-                  gap-2
-                  pr-1
-                  font-semibold
-                  text-gray-500"
-                >
+              <div className="flex items-center gap-2 text-gray-500">
+                <span className="inline-flex h-10 items-center gap-2 pr-1 font-semibold text-gray-500">
                   <img
                     src="/assets/img/icons/google-classroom.svg"
                     alt=""
@@ -296,7 +273,7 @@ export const LessonCard = ({
                 </span>
                 <span className="font-bold">Share to Classroom</span>
               </div>
-              <div className="flex flex-col gap-2 mb-1">
+              <div className="mb-1 flex flex-col gap-2">
                 {classroomPostTypes.map(
                   ({
                     itemtype,
@@ -318,20 +295,7 @@ export const LessonCard = ({
                       })}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex
-                    gap-2
-                    items-center
-                    w-fit
-                    p-2
-                    font-semibold
-                    border
-                    border-gray-300
-                    bg-white
-                    rounded
-                    leading-none
-                    hover:border-gray-500
-                    hover:bg-gray-50
-                    ${classroomCardPadding}`}
+                      className={`inline-flex w-fit items-center gap-2 rounded border border-gray-300 bg-white p-2 leading-none font-semibold hover:border-gray-500 hover:bg-gray-50 ${classroomCardPadding}`}
                       aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
                     >
                       <Icon className="shrink-0 text-gray-400" />
@@ -343,7 +307,6 @@ export const LessonCard = ({
             </div>
           </>
         )}
-
       </div>
     </>
   );
@@ -355,19 +318,7 @@ export const LessonCard = ({
           <div
             role="button"
             tabIndex={0}
-            className="
-            w-full
-            list-none
-            select-none
-            flex
-            items-center
-            justify-between
-            text-left
-            cursor-pointer
-            rounded
-            focus-visible:outline-2
-            focus-visible:outline-offset-2
-          "
+            className="flex w-full cursor-pointer list-none items-center justify-between rounded text-left select-none focus-visible:outline-2 focus-visible:outline-offset-2"
             aria-expanded={isDetailsOpen}
             aria-controls={detailsId}
             onClick={() => setIsDetailsOpen((current) => !current)}

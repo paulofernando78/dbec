@@ -1,6 +1,9 @@
 import { LibraryPage } from "@/components/content/LibraryPage";
-import { Course as CourseIcon, CourseBook } from "@/components/Icons";
 import { courseSyllabusSections } from "@/data/course/course-syllabus-sections";
+import {
+  BookMarked as CourseBook,
+  LibraryBig as CourseIcon,
+} from "lucide-react";
 
 export default function Course() {
   return (

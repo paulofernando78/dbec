@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
-import { LogIn, LogOut, MoonStar, Sun } from "@/components/Icons";
-
-import { Menu } from "lucide-react";
+import { LogIn, LogOut, Menu, MoonStar, Sun } from "lucide-react";
 
 interface HeadersProps {
   onClick: () => void;
@@ -37,35 +35,22 @@ export const Header = ({ onClick }: HeadersProps) => {
     location.pathname === "/" || location.pathname === "/about";
 
   return (
-    <div className="w-full h-10 p-1.25 flex items-center justify-between mb-1.25">
+    <div className="mb-1.25 flex h-10 w-full items-center justify-between p-1.25">
       {!isPresentationPage && (
         <Button
           icon={<Menu />}
           onClick={onClick}
-          className="
-            min-[700px]:-translate-x-13.75
-            transition-all
-            duration-1000
-          "
+          className="transition-all duration-1000 min-[700px]:-translate-x-13.75"
         />
       )}
 
       {isPresentationPage && (
-        <div
-          className="
-            flex
-            items-center
-            gap-2.5
-            font-font-oswald
-            text-[1.3rem]
-            font-bold
-          "
-        >
+        <div className="font-font-oswald flex items-center gap-2.5 text-[1.3rem] font-bold">
           <Link to="/" className="text-lg">
             HOME
           </Link>
 
-          <span className="w-0.75 h-5 bg-gray-500" />
+          <span className="h-5 w-0.75 bg-gray-500" />
 
           <Link to="/about" className="text-lg">
             ABOUT

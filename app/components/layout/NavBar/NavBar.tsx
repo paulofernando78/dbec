@@ -1,9 +1,12 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import type { ElementType } from "react";
-import { CourseBook } from "@/components/Icons";
 
-import { ChevronDown, ChevronRight } from "lucide-react";
+import {
+  BookMarked as CourseBook,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
 
 type NavItem = {
   label: string;
@@ -40,25 +43,9 @@ function RenderNavItem({
 
   if (item.links?.length) {
     return (
-      <details className="open:[&>summary_.chevron-right]:hidden open:[&>summary_.chevron-down]:block mb-1">
-        <summary
-          className="
-          list-none
-          ml-4
-          flex
-          items-center
-          gap-2
-          relative
-          cursor-pointer
-        "
-        >
-          <span
-            className="
-            absolute
-            -left-5
-            top-px
-          "
-          >
+      <details className="mb-1 open:[&>summary_.chevron-down]:block open:[&>summary_.chevron-right]:hidden">
+        <summary className="relative ml-4 flex cursor-pointer list-none items-center gap-2">
+          <span className="absolute top-px -left-5">
             <ChevronRight
               size={18}
               className="chevron-right translate-y-[0.3rem]"
@@ -101,33 +88,19 @@ function RenderNavItem({
 
   if (!item.href) {
     return (
-      <div
-        className="
-        flex
-        gap-3
-        "
-      >
+      <div className="flex gap-3">
         <span>{item.label}</span>
       </div>
     );
   }
 
   return (
-    <div
-      className={`
-        flex
-        gap-3
-        ${isLesson ? "ml-4" : ""}
-      `}
-    >
+    <div className={`flex gap-3 ${isLesson ? "ml-4" : ""} `}>
       <NavLink
         to={item.href}
         end
         onClick={closeNavBar}
-        className={({ isActive }) => `
-          mb-1
-          ${isActive ? "text-blue-400" : ""}
-          `}
+        className={({ isActive }) => `mb-1 ${isActive ? "text-blue-400" : ""} `}
       >
         <span>{item.label}</span>
       </NavLink>
@@ -137,25 +110,7 @@ function RenderNavItem({
 
 export function NavBar({ closeNavBar }: NavBarProps) {
   return (
-    <nav
-      className="
-        h-full
-        font-oswald
-        text-lg
-        mt-1.25
-        mx-1.25
-        mb-2.5
-        px-5
-        py-4
-        text-white
-        bg-gray-900
-        rounded-tl-lg
-        rounded-tr-lg
-        rounded-br-lg
-        shadow-[2px_2px_5px_var(--slate-5)]
-        overflow-y-auto
-        "
-    >
+    <nav className="mx-1.25 mt-1.25 mb-2.5 h-full overflow-y-auto rounded-tl-lg rounded-tr-lg rounded-br-lg bg-gray-900 px-5 py-4 font-oswald text-lg text-white shadow-[2px_2px_5px_var(--slate-5)]">
       {navGroups.map((group, index) => (
         <div key={group.title ?? `group-${index}`}>
           {group.title && (
@@ -165,16 +120,9 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                   to={group.href}
                   end
                   onClick={closeNavBar}
-                  className={({ isActive }) => `
-                  flex
-                  items-center
-                  gap-2
-                  font-bold
-                  mt-4
-                  mb-1
-                  uppercase
-                  ${isActive ? "text-blue-400" : ""}
-                `}
+                  className={({ isActive }) =>
+                    `mt-4 mb-1 flex items-center gap-2 font-bold uppercase ${isActive ? "text-blue-400" : ""} `
+                  }
                 >
                   {group.icon && (
                     <group.icon
@@ -186,16 +134,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                   {group.title}
                 </NavLink>
               ) : (
-                <span
-                  className="
-                flex
-                items-center
-                gap-2
-                font-bold
-                mt-4
-                mb-1
-                uppercase"
-                >
+                <span className="mt-4 mb-1 flex items-center gap-2 font-bold uppercase">
                   {group.iconClassName && (
                     <CourseBook
                       width={25}
