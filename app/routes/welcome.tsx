@@ -411,22 +411,16 @@ export default function Welcome() {
           <h1 className="mt-2 text-[clamp(2rem,6vw,3.4rem)] leading-none font-black">
             {greetings}, Paulo!
           </h1>
-          <p className="mt-3 text-slate-500 dark:text-slate-300">
-            Ready for a quick English session?
-          </p>
         </div>
       </header>
 
       <section className="mb-6 grid grid-cols-[1.6fr_1fr] gap-5 max-[760px]:grid-cols-1">
         <article
-          className={`relative overflow-hidden rounded-[26px] bg-linear-to-br p-7 max-[520px]:p-5 ${isCurrentLevelA1 ? "from-yellow-400 to-amber-600 text-slate-900" : "from-red-500 to-red-700 text-white"}`}
+          className={`relative overflow-hidden rounded-3xl bg-linear-to-br px-6 py-4 max-[520px]:p-5 ${isCurrentLevelA1 ? "from-yellow-400 to-amber-600 text-slate-900" : "from-red-500 to-red-700 text-white"}`}
         >
           <div className="absolute -top-12 -right-10 size-48 rounded-full bg-white/10" />
           <div className="absolute right-20 -bottom-20 size-40 rounded-full bg-white/10" />
           <div className="relative">
-            <span className="text-xs font-black tracking-[.13em] opacity-80">
-              CONTINUE LEARNING
-            </span>
             <h2 className="mt-2 text-3xl font-extrabold">
               {currentLevel.label.replace(" ", " · ")}
             </h2>
@@ -446,7 +440,7 @@ export default function Welcome() {
               </span>
             </div>
             <Button
-              className="mt-6"
+              className="mt-6 mb-4"
               to={`/learn/${currentLesson.level}/${currentLesson.unitId}/${currentLesson.slug}`}
             >
               Continue learning
