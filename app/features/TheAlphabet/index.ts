@@ -1,1 +1,0 @@
-export { TheAlphabet } from "./TheAlphabet"

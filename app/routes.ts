@@ -18,50 +18,16 @@ export default [
     //! General
     //! ─────────────────────────────────────────────
 
-    // Lab
-    route("/lab", "routes/lab.tsx"),
-
     // Welcome Page
     route("/welcome", "routes/welcome.tsx"),
 
     // What’s CEFR Page
     route("/cefr", "routes/whats-cefr.tsx"),
 
-    // New gamified learning experience
+    // Learning path
     route("/learn", "routes/learn/index.tsx"),
     route("/learn/:level", "routes/learn/level.tsx"),
     route("/learn/:level/:unit/:lesson", "routes/learn/lesson.tsx"),
 
-    //! ─────────────────────────────────────────────
-    //! Course
-    //! ─────────────────────────────────────────────
-
-    route("/course", "routes/course.tsx"),
-
-    route("/course/template", "routes/course/template.tsx"),
-
-    route(
-      "/course/:level/:section/:resourceType?/:slug?",
-      "routes/course/builder.tsx",
-    ),
-
-    //! ─────────────────────────────────────────────
-    //! Authentic Content
-    //! ─────────────────────────────────────────────
-
-    route("/authentic-content", "routes/authentic-content.tsx"),
-
-    route(
-      "/authentic-content/:category/:slug?",
-      "routes/authentic-content/builder.tsx",
-    ),
-
-    //! ─────────────────────────────────────────────
-    //! Games
-    //! ─────────────────────────────────────────────
-
-    route("/games", "routes/game.tsx"),
-
-    route("/games/:developer/:slug", "routes/games/builder.tsx"),
   ]),
 ] satisfies RouteConfig;

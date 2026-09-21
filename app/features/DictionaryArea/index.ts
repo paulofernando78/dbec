@@ -1,1 +1,0 @@
-export { DictionaryArea } from "./DictionaryArea";

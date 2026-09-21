@@ -1,16 +1,19 @@
 .button {
   all: unset;
   position: fixed;
-  right: max(15px, calc((100vw - 1100px) / 2 + 10px));
+  right: max(10px, calc((100vw - 1100px) / 2 + 10px));
   bottom: 50px;
   z-index: 999;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  border-radius: 50%;
+  padding-right: 11px;
+  border: 2px solid lightgray;
+  border-right: none;
+  border-radius: 10% 0% 0% 10%;
   background-color: var(--gray-1);
+  cursor: pointer;
 
   /* hidden by default */
   opacity: 0;
@@ -19,11 +22,11 @@
   transition:
     opacity 0.3s ease,
     transform 0.3s ease;
-  transform: translateY(8px);
+  transform: translateX(45px);
 }
 
 .visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateX(0);
 }

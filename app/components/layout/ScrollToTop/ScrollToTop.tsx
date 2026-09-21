@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { CircleArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 import styles from "./ScrollToTop.module.css";
 
@@ -44,7 +44,7 @@ export const ScrollToTop = () => {
       aria-label="Scroll to top"
       className={`${styles.button} ${visible ? styles.visible : ""}`}
     >
-      <CircleArrowUp size={30} className="text-gray-500" />
+      <ArrowUp size={30} className="text-gray-500 p-[0.1rem]" />
     </button>
   );
 };

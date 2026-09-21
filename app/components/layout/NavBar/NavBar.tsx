@@ -39,8 +39,6 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
-  const isLesson = item.href?.startsWith("/course/") ?? false;
-
   if (item.links?.length) {
     return (
       <details className="mb-1 open:[&>summary_.chevron-down]:block open:[&>summary_.chevron-right]:hidden">
@@ -93,7 +91,7 @@ function RenderNavItem({
   }
 
   return (
-    <div className={`flex gap-3 ${isLesson ? "ml-4" : ""} `}>
+    <div className="flex gap-3">
       <NavLink
         to={item.href}
         end
