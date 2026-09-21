@@ -1,8 +1,13 @@
 import {
   AlertTriangle,
+  BookOpen,
   Check,
+  CheckCircle2,
   Lock,
   LockOpen,
+  MessageCircle,
+  Pencil,
+  Play,
   RotateCcw,
   Star,
   X,
@@ -179,62 +184,49 @@ export default function LearningLevel() {
                     .every((item) => completedLessonIds.has(item.id)));
               const checkpoint = "checkpoint" in lesson && lesson.checkpoint;
               const href = `/learn/${level.id}/${unit.id}/${lesson.slug}`;
+              const isHelloLesson = lesson.id === "a1-u01-l01";
+              const lessonSteps = [
+                "Get ready",
+                "See it",
+                "Try it",
+                "Use it",
+                "Can you...?",
+              ];
 
               return (
                 <div
                   className="relative grid min-h-32 grid-cols-[74px_1fr] items-center gap-6 max-[620px]:grid-cols-[64px_1fr] max-[620px]:gap-4"
                   key={lesson.id}
                 >
-                  {index > 0 && (
-                    <div className="absolute bottom-16 left-8.5 z-0 h-32 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
+                  {index < unit.lessons.length - 1 && (
+                    <div className="absolute inset-y-0 left-8.5 z-0 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
                   )}
-                  {locked ? (
-                    <Button
-                      className="z-1"
-                      size="lesson"
-                      disabled
-                      ariaLabel={`${lesson.title}, locked`}
-                      icon={
-                        checkpoint ? (
-                          <Star aria-hidden="true" />
-                        ) : (
-                          <Lock aria-hidden="true" />
-                        )
-                      }
-                    />
-                  ) : (
-                    <Button
-                      className="z-1"
-                      size="lesson"
-                      variant={isA1 ? "answer" : "danger"}
-                      to={href}
-                      onClick={() => {
-                        const scrollContainer = document.querySelector<HTMLElement>(
-                          "[data-scroll-container]",
-                        );
-                        if (!scrollContainer) return;
-                        sessionStorage.setItem(
-                          `learning-scroll:${level.id}`,
-                          JSON.stringify({
-                            x: scrollContainer.scrollLeft,
-                            y: scrollContainer.scrollTop,
-                          }),
-                        );
-                      }}
-                      ariaLabel={
-                        completed
-                          ? `Review ${lesson.title}`
-                          : `Start ${lesson.title}`
-                      }
-                      icon={
-                        completed ? (
-                          <Check aria-hidden="true" />
-                        ) : (
-                          <LockOpen aria-hidden="true" />
-                        )
-                      }
-                    />
+                  {index === unit.lessons.length - 1 && index > 0 && (
+                    <div className="absolute top-0 bottom-[50%] left-8.5 z-0 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
                   )}
+                  <div
+                    className={`z-1 grid h-[66px] w-[72px] place-items-center self-start rounded-xl border-2 pt-0 max-[620px]:h-[58px] max-[620px]:w-[64px] [&_svg]:size-[25px] ${
+                      locked
+                        ? "border-slate-200 bg-white dark:border-slate-600 dark:bg-slate-800 [&_svg]:stroke-gray-400"
+                        : isA1
+                          ? "border-yellow-400 bg-yellow-400 text-slate-900"
+                          : "border-red-500 bg-red-500 text-white"
+                    }`}
+                    aria-label={`${lesson.title}${locked ? ", locked" : ""}`}
+                    title={locked ? `${lesson.title}, locked` : lesson.title}
+                  >
+                    {locked ? (
+                      checkpoint ? (
+                        <Star aria-hidden="true" />
+                      ) : (
+                        <Lock aria-hidden="true" />
+                      )
+                    ) : completed ? (
+                      <Check aria-hidden="true" />
+                    ) : (
+                      <LockOpen aria-hidden="true" />
+                    )}
+                  </div>
                   <div>
                     <span
                       className={`text-xs font-extrabold tracking-[.12em] ${locked ? "text-slate-400" : accentText}`}
@@ -248,12 +240,64 @@ export default function LearningLevel() {
                       {lesson.description}
                     </p>
                     {!locked && (
-                      <small
-                        className={`mt-1 flex items-center gap-1 font-bold ${accentText}`}
-                      >
-                        <Check size={14} />
-                        {completed ? "Completed" : "Ready to start"}
-                      </small>
+                      <>
+                        {isHelloLesson ? (
+                          <div className="mt-3 max-w-[500px]">
+                            <div className="mb-2 flex items-center justify-between gap-3">
+                              <small
+                                className={`flex items-center gap-1 font-bold ${accentText}`}
+                              >
+                                <Check size={14} />
+                                {completed ? "Completed" : "1 of 5 steps"}
+                              </small>
+                            </div>
+                            <div className="flex flex-col gap-3">
+                              {lessonSteps.map((step, stepIndex) => {
+                                const stepAvailable = stepIndex === 0;
+                                const stepCompleted =
+                                  completed || stepIndex < 1;
+                                return (
+                                  <Button
+                                    key={step}
+                                    size="choice"
+                                    className="!py-4 !h-[30px] !w-[140.77px] !rounded-lg !border !border-slate-200 !bg-slate-100 !px-3 !py-0 !text-sm !font-bold !text-slate-700 shadow-[0_.2em_0_#cbd5e1] dark:!border-slate-600 dark:!bg-slate-700 dark:!text-slate-100 dark:shadow-[0_.2em_0_#334155]"
+                                    disabled={!stepAvailable}
+                                    to={stepAvailable ? href : undefined}
+                                    icon={
+                                      stepAvailable && !completed ? (
+                                        <Play aria-hidden="true" />
+                                      ) : stepCompleted ? (
+                                        <Check aria-hidden="true" />
+                                      ) : stepIndex === 1 ? (
+                                        <BookOpen aria-hidden="true" />
+                                      ) : stepIndex === 2 ? (
+                                        <Pencil aria-hidden="true" />
+                                      ) : stepIndex === 3 ? (
+                                        <MessageCircle aria-hidden="true" />
+                                      ) : (
+                                        <CheckCircle2 aria-hidden="true" />
+                                      )
+                                    }
+                                    ariaLabel={`${step}${stepAvailable ? " available" : ", locked"}`}
+                                  >
+                                    {step}
+                                  </Button>
+                                );
+                              })}
+                            </div>
+                            <p className="mt-2 mb-0 text-xs text-slate-400 dark:text-slate-500">
+                              Complete each step to unlock the next.
+                            </p>
+                          </div>
+                        ) : (
+                          <small
+                            className={`mt-1 flex items-center gap-1 font-bold ${accentText}`}
+                          >
+                            <Check size={14} />
+                            {completed ? "Completed" : "Ready to start"}
+                          </small>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
@@ -280,7 +324,13 @@ export default function LearningLevel() {
             className="w-full max-w-[430px] rounded-[24px] border-2 border-slate-200 bg-white p-6 text-slate-800 shadow-2xl dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
           >
             <div className="flex items-start gap-4">
-              <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-red-100 text-red-600 dark:bg-red-950 dark:text-red-400">
+              <div
+                className={`grid size-12 shrink-0 place-items-center rounded-2xl ${
+                  isA1
+                    ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-950 dark:text-yellow-400"
+                    : "bg-red-100 text-red-600 dark:bg-red-950 dark:text-red-400"
+                }`}
+              >
                 <AlertTriangle size={24} aria-hidden="true" />
               </div>
               <div className="min-w-0 flex-1">
@@ -305,7 +355,7 @@ export default function LearningLevel() {
             <div className="mt-6 flex justify-end gap-3">
               <Button onClick={() => setResetConfirmation(null)}>Cancel</Button>
               <Button
-                variant="danger"
+                variant={isA1 ? "answer" : "danger"}
                 icon={<RotateCcw aria-hidden="true" />}
                 onClick={() => {
                   resetLearningLessons(resetConfirmation.lessonIds);
