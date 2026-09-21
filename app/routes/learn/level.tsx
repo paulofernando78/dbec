@@ -93,7 +93,7 @@ export default function LearningLevel() {
               });
             }}
           >
-            <span className="max-[620px]:hidden">Reset all</span>
+            <span>Reset all</span>
           </Button>
         </div>
       </header>
@@ -117,7 +117,7 @@ export default function LearningLevel() {
                 {unit.description}
               </p>
             </div>
-            <div className="flex items-center gap-2 self-center max-[620px]:self-start">
+            <div className="flex gap-2 self-start max-[620px]:self-start">
               <div className="rounded-xl border-2 border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-slate-500 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
                 {
                   unit.lessons.filter((lesson) =>
@@ -145,6 +145,7 @@ export default function LearningLevel() {
                       .map((lesson) => lesson.id),
                   });
                 }}
+                className="translate-y-[-0.1rem]"
               />
             </div>
           </header>
@@ -155,9 +156,12 @@ export default function LearningLevel() {
                 (item) => item.id === lesson.id,
               );
               const hasExercises = lessonIndex !== -1;
+              const completed =
+                hasExercises && completedLessonIds.has(lesson.id);
               const locked =
                 !hasExercises ||
-                (lessonIndex > 0 &&
+                (!completed &&
+                  lessonIndex > 0 &&
                   !levelLessons
                     .slice(0, lessonIndex)
                     .every((item) => completedLessonIds.has(item.id)));
@@ -192,8 +196,18 @@ export default function LearningLevel() {
                       size="lesson"
                       variant={isA1 ? "answer" : "danger"}
                       to={href}
-                      ariaLabel={`Start ${lesson.title}`}
-                      icon={<LockOpen aria-hidden="true" />}
+                      ariaLabel={
+                        completed
+                          ? `Review ${lesson.title}`
+                          : `Start ${lesson.title}`
+                      }
+                      icon={
+                        completed ? (
+                          <Check aria-hidden="true" />
+                        ) : (
+                          <LockOpen aria-hidden="true" />
+                        )
+                      }
                     />
                   )}
                   <div>
@@ -212,7 +226,8 @@ export default function LearningLevel() {
                       <small
                         className={`mt-1 flex items-center gap-1 font-bold ${accentText}`}
                       >
-                        <Check size={14} /> Ready to start
+                        <Check size={14} />
+                        {completed ? "Completed" : "Ready to start"}
                       </small>
                     )}
                   </div>
