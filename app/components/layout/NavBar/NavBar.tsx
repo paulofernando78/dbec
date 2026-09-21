@@ -106,7 +106,7 @@ function RenderNavItem({
 
 export function NavBar({ closeNavBar }: NavBarProps) {
   return (
-    <nav className="mx-1.25 mt-1.25 mb-2.5 h-full overflow-y-auto rounded-tl-lg rounded-tr-lg rounded-br-lg bg-gray-900 px-5 py-4 font-oswald text-base text-lg text-white shadow-[2px_2px_5px_var(--slate-5)]">
+    <nav className="mx-1.25 mt-1.25 mb-2.5 h-full overflow-y-auto rounded-tl-lg rounded-tr-lg rounded-br-lg bg-gray-900 px-5 py-4 font-bold text-white shadow-[2px_2px_5px_var(--slate-5)]">
       {navGroups.map((group, index) => (
         <div key={group.title ?? `group-${index}`}>
           {group.title && (

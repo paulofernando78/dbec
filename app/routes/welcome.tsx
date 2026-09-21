@@ -516,7 +516,7 @@ export default function Welcome() {
         ))}
       </section>
 
-      <section className="mb-6 rounded-[24px] border-2 border-slate-200 bg-white p-6 max-[520px]:p-4 dark:border-slate-600 dark:bg-slate-800">
+      <section className="mb-6 rounded-3xl border-2 border-slate-200 bg-white p-6 max-[520px]:p-4 dark:border-slate-600 dark:bg-slate-800">
         <div className="mb-5 flex items-center justify-between gap-4">
           <div>
             <span className="text-xs font-black tracking-[.12em] text-sky-600 dark:text-sky-400">
@@ -526,25 +526,15 @@ export default function Welcome() {
               How are you feeling today?
             </h2>
           </div>
-          {selectedFeeling ? (
-            <img
-              className="size-14 object-contain"
-              src={selectedFeeling.img}
-              alt={selectedFeeling.alt}
-            />
-          ) : (
-            <span className="text-4xl" aria-hidden="true">
-              👋
-            </span>
-          )}
+          
         </div>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(112px,1fr))] gap-3">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(130px,1fr))] place-items-center gap-4">
           {emojis.map((feeling) => {
             const label = feeling.words[0]?.word ?? "Feeling";
             const selected = selectedFeeling?.img === feeling.img;
             return (
               <button
-                className={`flex min-h-32 flex-col items-center justify-center rounded-[15px] border-0 px-3 py-4 font-extrabold capitalize transition-[transform,box-shadow,background-color,color] active:translate-y-[3px] ${selected ? "bg-sky-100 text-sky-700 shadow-[0_3px_0_#38bdf8] dark:bg-sky-950 dark:text-sky-300 dark:shadow-[0_3px_0_#0284c7]" : "bg-slate-50 text-slate-600 shadow-[0_5px_0_#d7dce0] hover:bg-sky-50 hover:text-sky-700 active:shadow-[0_2px_0_#d7dce0] dark:bg-slate-700 dark:text-slate-200 dark:shadow-[0_5px_0_#334155]"}`}
+                className={`flex w-35 h-30 flex-col items-center justify-center rounded-[15px] border-0 px-3 py-4 font-extrabold capitalize transition-[transform,box-shadow,background-color,color] active:translate-y-[3px] ${selected ? "bg-sky-100 text-sky-700 shadow-[0_3px_0_#38bdf8] dark:bg-sky-950 dark:text-sky-300 dark:shadow-[0_3px_0_#0284c7]" : "bg-slate-50 text-slate-600 shadow-[0_5px_0_#d7dce0] hover:bg-sky-50 hover:text-sky-700 active:shadow-[0_2px_0_#d7dce0] dark:bg-slate-700 dark:text-slate-200 dark:shadow-[0_5px_0_#334155]"}`}
                 key={feeling.img}
                 onClick={() => setSelectedFeeling(feeling)}
               >

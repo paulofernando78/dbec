@@ -36,7 +36,7 @@ export const links: NavGroup[] = [
     ],
   },
   {
-    title: "Learn",
+    title: "Levels",
     href: "/learn",
     icon: Course,
     iconClassName: "text-gray-400",
