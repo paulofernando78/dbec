@@ -7,8 +7,8 @@ import {
   Star,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { Navigate, useParams } from "react-router";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { Navigate, useLocation, useParams } from "react-router";
 import { Button } from "@/components/ui/Button/Button";
 import { learningLessons, learningLevels } from "@/data/learning";
 import {
@@ -24,6 +24,7 @@ type ResetConfirmation = {
 
 export default function LearningLevel() {
   const { level: levelId } = useParams();
+  const location = useLocation();
   const [completedLessonIds, setCompletedLessonIds] = useState<Set<string>>(
     new Set(),
   );
@@ -51,6 +52,17 @@ export default function LearningLevel() {
   useEffect(() => {
     refreshProgress();
   }, [levelId]);
+
+  useLayoutEffect(() => {
+    if (!location.state?.restoreLearningScroll || !levelId) return;
+    const savedPosition = sessionStorage.getItem(`learning-scroll:${levelId}`);
+    const scrollContainer = document.querySelector<HTMLElement>(
+      "[data-scroll-container]",
+    );
+    if (!savedPosition || !scrollContainer) return;
+    const { x, y } = JSON.parse(savedPosition) as { x: number; y: number };
+    scrollContainer.scrollTo(x, y);
+  }, [levelId, location.key, location.state]);
 
   useEffect(() => {
     if (!resetConfirmation) return;
@@ -196,6 +208,19 @@ export default function LearningLevel() {
                       size="lesson"
                       variant={isA1 ? "answer" : "danger"}
                       to={href}
+                      onClick={() => {
+                        const scrollContainer = document.querySelector<HTMLElement>(
+                          "[data-scroll-container]",
+                        );
+                        if (!scrollContainer) return;
+                        sessionStorage.setItem(
+                          `learning-scroll:${level.id}`,
+                          JSON.stringify({
+                            x: scrollContainer.scrollLeft,
+                            y: scrollContainer.scrollTop,
+                          }),
+                        );
+                      }}
                       ariaLabel={
                         completed
                           ? `Review ${lesson.title}`

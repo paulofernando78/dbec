@@ -50,7 +50,7 @@ export const Button = ({
 
   if (to) {
     return (
-      <Link className={classes} to={to} aria-label={ariaLabel} title={title}>
+      <Link className={classes} to={to} onClick={onClick} aria-label={ariaLabel} title={title}>
         {icon}
         {children}
       </Link>

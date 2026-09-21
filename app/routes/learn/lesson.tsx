@@ -231,6 +231,7 @@ export default function LearningLessonRoute() {
           <Link
             className={`${threeDimensionalButton} ${primaryButton} w-full rounded-[15px] px-6 py-4 font-black no-underline`}
             to={`/learn/${lesson.level}`}
+            state={{ restoreLearningScroll: true }}
           >
             Continue path
           </Link>
