@@ -311,7 +311,7 @@ export default function LearningLevel() {
                                       ariaLabel={`${step}${stepAvailable ? " available" : ", locked"}`}
                                     />
                                     <span
-                                      className={`translate-y-1 font-bold ${stepAvailable ? "text-slate-700 dark:text-slate-200" : "text-slate-400 dark:text-slate-500"}`}
+                                      className={`translate-y-1.5 font-bold ${stepAvailable ? "text-slate-700 dark:text-slate-200" : "text-slate-400 dark:text-slate-500"}`}
                                     >
                                       {step}
                                     </span>
