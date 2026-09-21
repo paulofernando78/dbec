@@ -22,6 +22,7 @@
     0 0.425em 0.5em 0 #cecece;
   transition: 0.15s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button:active {
@@ -143,7 +144,59 @@
     0 0.225em 0.375em 0 var(--color-blue-800);
 }
 
+.danger {
+  background-color: var(--color-red-400);
+  color: white;
+  text-shadow: none;
+  box-shadow:
+    inset 0 0.0625em 0 0 var(--color-red-200),
+    0 0.0625em 0 0 var(--color-red-300),
+    0 0.125em 0 0 var(--color-red-400),
+    0 0.25em 0 0 var(--color-red-500),
+    0 0.3125em 0 0 var(--color-red-600),
+    0 0.375em 0 0 var(--color-red-700),
+    0 0.425em 0 0 var(--color-red-800),
+    0 0.425em 0.5em 0 var(--color-red-900);
+}
 
+.danger svg {
+  stroke: white;
+}
+
+.danger:active {
+  box-shadow:
+    inset 0 0.03em 0 0 var(--color-red-200),
+    0 0.03em 0 0 var(--color-red-300),
+    0 0.0625em 0 0 var(--color-red-400),
+    0 0.125em 0 0 var(--color-red-500),
+    0 0.125em 0 0 var(--color-red-600),
+    0 0.2em 0 0 var(--color-red-700),
+    0 0.225em 0 0 var(--color-red-800),
+    0 0.225em 0.375em 0 var(--color-red-900);
+}
+
+.lesson {
+  width: 72px;
+  height: 66px;
+  padding-top: 0;
+  border-radius: 21px;
+}
+
+.lesson svg {
+  width: 25px;
+  height: 25px;
+}
+
+.answer.lesson svg {
+  stroke: currentColor;
+}
+
+@media (max-width: 620px) {
+  .lesson {
+    width: 64px;
+    height: 58px;
+  }
+}
 
 .withText {
   display: inline-flex !important;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   BookOpen,
@@ -12,6 +12,9 @@ import {
   Volume2,
 } from "lucide-react";
 import { Link } from "react-router";
+import { Button } from "@/components/ui/Button/Button";
+import { learningLessons, learningLevels } from "@/data/learning";
+import { isLearningLessonCompleted } from "@/utils/learning-progress";
 
 const emojis = [
   {
@@ -366,15 +369,33 @@ export default function Welcome() {
   const [selectedFeeling, setSelectedFeeling] = useState<
     (typeof emojis)[number] | null
   >(null);
+  const [currentLesson, setCurrentLesson] = useState(learningLessons[0]);
+
+  useEffect(() => {
+    setCurrentLesson(
+      learningLessons.find((lesson) => !isLearningLessonCompleted(lesson.id)) ??
+        learningLessons[learningLessons.length - 1],
+    );
+  }, []);
+
+  const currentUnitLessons = learningLessons.filter(
+    (lesson) =>
+      lesson.level === currentLesson.level &&
+      lesson.unitId === currentLesson.unitId,
+  );
+  const currentLessonPosition =
+    currentUnitLessons.findIndex((lesson) => lesson.id === currentLesson.id) +
+    1;
+  const currentProgress =
+    (currentLessonPosition / currentUnitLessons.length) * 100;
+  const isCurrentLevelA1 = currentLesson.level === "a1";
+  const currentLevel =
+    learningLevels[currentLesson.level as keyof typeof learningLevels];
 
   const hour = new Date().getHours();
 
   const greetings =
-    hour < 12
-    ? "Good morning."
-    : hour < 18
-      ? "Good afternoon"
-      : "Good evening"
+    hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
 
   const playFeeling = (audio: string) => {
     new Audio(audio).play();
@@ -397,30 +418,39 @@ export default function Welcome() {
       </header>
 
       <section className="mb-6 grid grid-cols-[1.6fr_1fr] gap-5 max-[760px]:grid-cols-1">
-        <article className="relative overflow-hidden rounded-[26px] bg-linear-to-br from-lime-500 to-green-600 p-7 text-white max-[520px]:p-5">
+        <article
+          className={`relative overflow-hidden rounded-[26px] bg-linear-to-br p-7 max-[520px]:p-5 ${isCurrentLevelA1 ? "from-yellow-400 to-amber-600 text-slate-900" : "from-red-500 to-red-700 text-white"}`}
+        >
           <div className="absolute -top-12 -right-10 size-48 rounded-full bg-white/10" />
           <div className="absolute right-20 -bottom-20 size-40 rounded-full bg-white/10" />
           <div className="relative">
-            <span className="text-xs font-black tracking-[.13em] text-white/80">
+            <span className="text-xs font-black tracking-[.13em] opacity-80">
               CONTINUE LEARNING
             </span>
-            <h2 className="mt-2 text-3xl font-black">Hello & Introductions</h2>
-            <p className="mt-2 max-w-[490px] text-white/90">
-              Practice greetings and introduce people using my, your, his, and
-              her.
+            <h2 className="mt-2 text-3xl font-extrabold">
+              {currentLevel.label.replace(" ", " · ")}
+            </h2>
+            <h3 className="mt-2 text-2xl font-black">{currentLesson.title}</h3>
+            <p className="mt-2 max-w-[490px] opacity-90">
+              {currentLesson.description}
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <div className="h-3 flex-1 overflow-hidden rounded-full bg-green-900/30">
-                <span className="block h-full w-[14%] rounded-full bg-white" />
+              <div className="h-3 flex-1 overflow-hidden rounded-full bg-slate-950/20">
+                <span
+                  className="block h-full rounded-full bg-white"
+                  style={{ width: `${currentProgress}%` }}
+                />
               </div>
-              <span className="text-sm font-extrabold">1 / 7</span>
+              <span className="text-sm font-extrabold">
+                {currentLessonPosition} / {currentUnitLessons.length}
+              </span>
             </div>
-            <Link
-              className="mt-6 inline-flex items-center gap-2 rounded-[14px] bg-white px-5 py-3.5 font-black text-green-700 no-underline shadow-[0_5px_0_#b8e89f] transition-[transform,box-shadow] active:translate-y-[3px] active:shadow-[0_2px_0_#b8e89f]"
-              to="/learn/a1/unit-1/hello"
+            <Button
+              className="mt-6"
+              to={`/learn/${currentLesson.level}/${currentLesson.unitId}/${currentLesson.slug}`}
             >
-              <Play size={19} fill="currentColor" /> Continue learning
-            </Link>
+              Continue learning
+            </Button>
           </div>
         </article>
 
