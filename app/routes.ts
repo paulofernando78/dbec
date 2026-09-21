@@ -27,7 +27,7 @@ export default [
     // Learning path
     route("/learn", "routes/learn/index.tsx"),
     route("/learn/:level", "routes/learn/level.tsx"),
+    route("/learn/:level/:unit/:lesson/:step", "routes/learn/step.tsx"),
     route("/learn/:level/:unit/:lesson", "routes/learn/lesson.tsx"),
-
   ]),
 ] satisfies RouteConfig;

@@ -17,6 +17,7 @@ import { Navigate, useLocation, useParams } from "react-router";
 import { Button } from "@/components/ui/Button/Button";
 import { learningLessons, learningLevels } from "@/data/learning";
 import {
+  getLearningStep,
   isLearningLessonCompleted,
   resetLearningLessons,
 } from "@/utils/learning-progress";
@@ -33,6 +34,7 @@ export default function LearningLevel() {
   const [completedLessonIds, setCompletedLessonIds] = useState<Set<string>>(
     new Set(),
   );
+  const [stepProgress, setStepProgress] = useState<Record<string, number>>({});
   const [resetConfirmation, setResetConfirmation] =
     useState<ResetConfirmation | null>(null);
   const level =
@@ -45,6 +47,11 @@ export default function LearningLevel() {
   );
 
   const refreshProgress = () => {
+    setStepProgress(
+      Object.fromEntries(
+        levelLessons.map((lesson) => [lesson.id, getLearningStep(lesson.id)]),
+      ),
+    );
     setCompletedLessonIds(
       new Set(
         levelLessons
@@ -184,13 +191,20 @@ export default function LearningLevel() {
                     .every((item) => completedLessonIds.has(item.id)));
               const checkpoint = "checkpoint" in lesson && lesson.checkpoint;
               const href = `/learn/${level.id}/${unit.id}/${lesson.slug}`;
-              const isHelloLesson = lesson.id === "a1-u01-l01";
+              const showLessonSteps = true;
               const lessonSteps = [
                 "Get ready",
                 "See it",
                 "Try it",
                 "Use it",
                 "Can you...?",
+              ];
+              const lessonStepSlugs = [
+                "get-ready",
+                "see-it",
+                "try-it",
+                "use-it",
+                "can-you",
               ];
 
               return (
@@ -241,51 +255,71 @@ export default function LearningLevel() {
                     </p>
                     {!locked && (
                       <>
-                        {isHelloLesson ? (
+                        {showLessonSteps ? (
                           <div className="mt-3 max-w-[500px]">
                             <div className="mb-2 flex items-center justify-between gap-3">
                               <small
                                 className={`flex items-center gap-1 font-bold ${accentText}`}
                               >
                                 <Check size={14} />
-                                {completed ? "Completed" : "1 of 5 steps"}
+                                {completed
+                                  ? "Completed"
+                                  : `${Math.min((stepProgress[lesson.id] ?? 0) + 1, 5)} of 5 steps`}
                               </small>
                             </div>
                             <div className="flex flex-col gap-3">
                               {lessonSteps.map((step, stepIndex) => {
-                                const stepAvailable = stepIndex === 0;
+                                const stepAvailable =
+                                  completed ||
+                                  stepIndex <= (stepProgress[lesson.id] ?? 0);
                                 const stepCompleted =
-                                  completed || stepIndex < 1;
+                                  completed ||
+                                  stepIndex < (stepProgress[lesson.id] ?? 0);
                                 return (
-                                  <Button
+                                  <div
                                     key={step}
-                                    size="choice"
-                                    className="!py-4 !h-[30px] !w-[140.77px] !rounded-lg !border !border-slate-200 !bg-slate-100 !px-3 !py-0 !text-sm !font-bold !text-slate-700 shadow-[0_.2em_0_#cbd5e1] dark:!border-slate-600 dark:!bg-slate-700 dark:!text-slate-100 dark:shadow-[0_.2em_0_#334155]"
-                                    disabled={!stepAvailable}
-                                    to={stepAvailable ? href : undefined}
-                                    icon={
-                                      stepAvailable && !completed ? (
-                                        <Play aria-hidden="true" />
-                                      ) : stepCompleted ? (
-                                        <Check aria-hidden="true" />
-                                      ) : stepIndex === 1 ? (
-                                        <BookOpen aria-hidden="true" />
-                                      ) : stepIndex === 2 ? (
-                                        <Pencil aria-hidden="true" />
-                                      ) : stepIndex === 3 ? (
-                                        <MessageCircle aria-hidden="true" />
-                                      ) : (
-                                        <CheckCircle2 aria-hidden="true" />
-                                      )
-                                    }
-                                    ariaLabel={`${step}${stepAvailable ? " available" : ", locked"}`}
+                                    className="flex items-center gap-3"
                                   >
-                                    {step}
-                                  </Button>
+                                    <Button
+                                      variant={isA1 ? "answer" : "danger"}
+                                      className={`!rounded-lg ${
+                                        isA1
+                                          ? "disabled:!bg-yellow-300 [&_svg]:!stroke-yellow-700"
+                                          : "disabled:!bg-red-400 [&_svg]:!stroke-red-800"
+                                      }`}
+                                      disabled={!stepAvailable}
+                                      to={
+                                        stepAvailable
+                                          ? `${href}/${lessonStepSlugs[stepIndex]}`
+                                          : undefined
+                                      }
+                                      icon={
+                                        stepCompleted ? (
+                                          <Check aria-hidden="true" />
+                                        ) : stepIndex === 0 ? (
+                                          <Play aria-hidden="true" />
+                                        ) : stepIndex === 1 ? (
+                                          <BookOpen aria-hidden="true" />
+                                        ) : stepIndex === 2 ? (
+                                          <Pencil aria-hidden="true" />
+                                        ) : stepIndex === 3 ? (
+                                          <MessageCircle aria-hidden="true" />
+                                        ) : (
+                                          <CheckCircle2 aria-hidden="true" />
+                                        )
+                                      }
+                                      ariaLabel={`${step}${stepAvailable ? " available" : ", locked"}`}
+                                    />
+                                    <span
+                                      className={`translate-y-1 font-bold ${stepAvailable ? "text-slate-700 dark:text-slate-200" : "text-slate-400 dark:text-slate-500"}`}
+                                    >
+                                      {step}
+                                    </span>
+                                  </div>
                                 );
                               })}
                             </div>
-                            <p className="mt-2 mb-0 text-xs text-slate-400 dark:text-slate-500">
+                            <p className="mt-6 mb-0 text-xs text-slate-400 dark:text-slate-500">
                               Complete each step to unlock the next.
                             </p>
                           </div>
