@@ -21,6 +21,18 @@ const normalize = (value: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
+const shuffleChoices = (choices: string[]) => {
+  const shuffled = [...choices];
+  for (let index = shuffled.length - 1; index > 0; index--) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[randomIndex]] = [
+      shuffled[randomIndex],
+      shuffled[index],
+    ];
+  }
+  return shuffled;
+};
+
 function WordOrder({
   exercise,
   answer,
@@ -86,6 +98,10 @@ export default function LearningLessonRoute() {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [finished, setFinished] = useState(false);
   const [accessAllowed, setAccessAllowed] = useState<boolean | null>(null);
+  const [choiceOrders, setChoiceOrders] = useState<{
+    lessonId: string;
+    choices: Record<string, string[]>;
+  } | null>(null);
 
   useEffect(() => {
     setIndex(0);
@@ -97,6 +113,15 @@ export default function LearningLessonRoute() {
 
   useEffect(() => {
     if (!lesson) return;
+
+    setChoiceOrders({
+      lessonId: lesson.id,
+      choices: Object.fromEntries(
+        lesson.exercises
+          .filter((exercise) => exercise.type === "multiple-choice")
+          .map((exercise) => [exercise.id, shuffleChoices(exercise.choices)]),
+      ),
+    });
 
     const levelLessons = learningLessons.filter(
       (item) => item.level === lesson.level,
@@ -115,6 +140,12 @@ export default function LearningLessonRoute() {
   }
 
   const exercise = lesson.exercises[index];
+  const choices =
+    exercise.type === "multiple-choice"
+      ? choiceOrders?.lessonId === lesson.id
+        ? choiceOrders.choices[exercise.id]
+        : []
+      : [];
   const progress = finished ? 100 : (index / lesson.exercises.length) * 100;
   const isA1 = lesson.level === "a1";
   const accentText = isA1
@@ -256,7 +287,7 @@ export default function LearningLessonRoute() {
 
         {exercise.type === "multiple-choice" ? (
           <div className="mt-7 grid gap-4">
-            {exercise.choices.map((choice, choiceIndex) => (
+            {choices.map((choice, choiceIndex) => (
               <Button
                 size="choice"
                 variant={
