@@ -39,7 +39,7 @@ export const Button = ({
       : "";
   const choiceClasses =
     size === "choice"
-      ? "!flex !h-auto !w-full items-center justify-start gap-4 rounded-[15px] px-5 py-4 text-left text-base font-bold hover:drop-shadow-md"
+      ? "!flex !h-auto !w-full items-center justify-start gap-4 rounded-[15px] px-5 !py-4 text-left text-base font-bold hover:drop-shadow-md"
       : "";
   const withTextClasses =
     hasText && size !== "choice"

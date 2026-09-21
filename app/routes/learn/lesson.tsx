@@ -277,7 +277,7 @@ export default function LearningLessonRoute() {
                 <span className="grid size-8 shrink-0 place-items-center rounded-[9px] border-2 border-current text-sm">
                   {choiceIndex + 1}
                 </span>
-                {choice}
+                <span className="min-w-0 flex-1 leading-snug">{choice}</span>
               </Button>
             ))}
           </div>
@@ -292,7 +292,7 @@ export default function LearningLessonRoute() {
       </main>
 
       <footer
-        className={`fixed right-0 bottom-0 left-0 border-t-2 border-slate-200 bg-white/95 px-6 py-5 backdrop-blur dark:border-slate-700 dark:bg-slate-900/95 ${result === "correct" ? "border-green-200 bg-green-50/95 dark:border-green-800 dark:bg-green-950/95" : ""} ${result === "incorrect" ? "border-red-200 bg-red-50/95 dark:border-red-800 dark:bg-red-950/95" : ""}`}
+        className={`sticky bottom-0 shrink-0 border-t-2 border-slate-200 bg-white/95 px-6 py-5 backdrop-blur dark:border-slate-700 dark:bg-slate-900/95 ${result === "correct" ? "border-green-200 bg-green-50/95 dark:border-green-800 dark:bg-green-950/95" : ""} ${result === "incorrect" ? "border-red-200 bg-red-50/95 dark:border-red-800 dark:bg-red-950/95" : ""}`}
       >
         <div className="mx-auto flex max-w-[900px] items-center justify-between gap-6 max-[620px]:items-end max-[620px]:gap-3">
           {result ? (
