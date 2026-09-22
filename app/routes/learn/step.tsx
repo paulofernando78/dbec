@@ -128,7 +128,7 @@ export default function LearningStepRoute() {
             <span>{lesson.title}</span>
           </div>
         </header>
-        <div className="my-4 flex w-max items-center gap-2 rounded-2xl border border-slate-300 px-2 py-1">
+        <div className="my-4 flex w-max items-center gap-2 rounded-2xl border border-slate-300 px-2 py-1 mb-10">
           <span className="font-bold">{stepLabels[step]}</span>
           <span className="text-sm font-bold text-red-700">
             Step {stepIndex + 1} of {learningSteps.length}
