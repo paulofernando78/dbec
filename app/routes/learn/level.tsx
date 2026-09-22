@@ -233,14 +233,14 @@ export default function LearningLevel() {
                   >
                     {locked ? (
                       checkpoint ? (
-                        <Star aria-hidden="true" />
+                        <Star aria-hidden="true" className="text-yellow-600"/>
                       ) : (
-                        <Lock aria-hidden="true" />
+                        <Lock aria-hidden="true" className="text-yellow-600"/>
                       )
                     ) : completed ? (
-                      <Check aria-hidden="true" />
+                      <Check aria-hidden="true" className="text-yellow-600"/>
                     ) : (
-                      <LockOpen aria-hidden="true" />
+                      <LockOpen aria-hidden="true" className="text-yellow-600"/>
                     )}
                   </div>
                   <div>
@@ -279,7 +279,7 @@ export default function LearningLevel() {
                                       variant={isA1 ? "answer" : "danger"}
                                       className={`!rounded-lg ${
                                         isA1
-                                          ? "disabled:!bg-yellow-300 [&_svg]:!stroke-yellow-700"
+                                          ? "disabled:!bg-yellow-300 [&_svg]:!stroke-yellow-500"
                                           : "disabled:!bg-red-400 [&_svg]:!stroke-red-800"
                                       }`}
                                       disabled={!stepAvailable}
