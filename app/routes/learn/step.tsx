@@ -166,11 +166,9 @@ export default function LearningStepRoute() {
   const { level = "", unit = "", lesson: slug = "", step = "" } = useParams();
   const navigate = useNavigate();
   const lesson = getLearningLesson(level, unit, slug);
-  const [revealed, setRevealed] = useState(0);
   const [checkedQuestions, setCheckedQuestions] = useState<string[]>([]);
   const [accessAllowed, setAccessAllowed] = useState<boolean | null>(null);
   useEffect(() => {
-    setRevealed(0);
     setCheckedQuestions([]);
   }, [lesson?.id, step]);
   useEffect(() => {
@@ -290,28 +288,12 @@ export default function LearningStepRoute() {
             </div>
           </div>
         ) : step === "see-it" ? (
-          <div className="my-6 grid gap-3">
+          <div className="my-6">
             <div className="min-h-32 rounded-2xl bg-slate-100 p-6 text-lg leading-relaxed text-slate-700 dark:bg-slate-700 dark:text-slate-100">
-              {examples.slice(0, revealed).map((line) => (
+              {examples.map((line) => (
                 <div key={line}>{line}</div>
               ))}
             </div>
-            <button
-              type="button"
-              onClick={() =>
-                setRevealed((value) => Math.min(value + 1, examples.length))
-              }
-              disabled={revealed === examples.length}
-              className={`rounded-xl px-4 py-3 font-bold disabled:cursor-default ${
-                isA1 ? "bg-yellow-400 text-slate-900" : "bg-red-400 text-white"
-              }`}
-            >
-              {revealed === 0
-                ? "Start dialogue"
-                : revealed === examples.length
-                  ? "Examples complete"
-                  : "Show next example"}
-            </button>
           </div>
         ) : step === "can-you" ? (
           <div className="my-6 grid gap-3 rounded-2xl bg-slate-100 p-6 dark:bg-slate-700">
