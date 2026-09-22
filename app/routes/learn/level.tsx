@@ -221,7 +221,7 @@ export default function LearningLevel() {
                     <div className="absolute top-0 bottom-[50%] left-8.5 z-0 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
                   )}
                   <div
-                    className={`z-1 grid h-[66px] w-[72px] place-items-center self-start rounded-full border-2 pt-0 max-[620px]:h-[58px] max-[620px]:w-[64px] [&_svg]:size-[25px] ${
+                    className={`z-1 grid h-[66px] w-[72px] place-items-center self-start rounded-xl border-2 pt-0 max-[620px]:h-[58px] max-[620px]:w-[64px] [&_svg]:size-[25px] ${
                       locked
                         ? "border-slate-200 bg-white dark:border-slate-600 dark:bg-slate-800 [&_svg]:stroke-gray-400"
                         : isA1
