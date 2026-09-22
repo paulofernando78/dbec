@@ -176,7 +176,7 @@ export default function LearningLevel() {
             </div>
           </header>
 
-          <div className="px-[clamp(22px,7vw,60px)] py-7.5 max-[620px]:px-5">
+          <div className="flex flex-col gap-8 px-[clamp(22px,7vw,60px)] py-7.5 max-[620px]:px-5">
             {unit.lessons.map((lesson, index) => {
               const lessonIndex = levelLessons.findIndex(
                 (item) => item.id === lesson.id,
@@ -215,7 +215,7 @@ export default function LearningLevel() {
                   key={lesson.id}
                 >
                   {index < unit.lessons.length - 1 && (
-                    <div className="absolute inset-y-0 left-8.5 z-0 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
+                    <div className="absolute inset-y-0 left-8.5 z-0 w-1.5 h-90 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
                   )}
                   {index === unit.lessons.length - 1 && index > 0 && (
                     <div className="absolute top-0 bottom-[50%] left-8.5 z-0 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
