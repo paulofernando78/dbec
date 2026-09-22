@@ -93,9 +93,9 @@ export default function LearningLevel() {
     : "text-red-700 dark:text-red-400";
 
   return (
-    <div className="mx-auto w-[calc(100%_-_32px)] max-w-[760px] py-12 pb-20 max-[620px]:w-[calc(100%_-_20px)] max-[620px]:pt-6">
+    <div className="mx-auto flex w-[calc(100%_-_32px)] max-w-[760px] flex-col gap-4 max-[620px]:w-[calc(100%_-_20px)] max-[620px]:pt-6">
       <header
-        className={`mb-7 flex items-center gap-5.5 rounded-[22px] bg-linear-to-br p-6 max-[620px]:items-start max-[620px]:p-5 ${isA1 ? "from-yellow-400 to-amber-600 text-slate-900" : "from-red-500 to-red-700 text-white"}`}
+        className={`mb-4 flex items-center gap-5.5 rounded-[22px] bg-linear-to-br p-6 max-[620px]:items-start max-[620px]:p-5 ${isA1 ? "from-yellow-400 to-amber-600 text-slate-900" : "from-red-500 to-red-700 text-white"}`}
       >
         <div>
           <div className="text-[clamp(2rem,8vw,3rem)] leading-none font-black">
@@ -104,27 +104,29 @@ export default function LearningLevel() {
           <h1 className="text-[clamp(1.6rem,5vw,2.3rem)] font-black">
             {level.title}
           </h1>
-          <p className="mb-6 opacity-90">{level.description}</p>
-          <Button
-            variant={isA1 ? "answer" : "danger"}
-            icon={<RotateCcw aria-hidden="true" />}
-            onClick={() => {
-              setResetConfirmation({
-                title: `Reset ${level.label}?`,
-                description:
-                  "All completed lessons and scores in this level will be removed.",
-                lessonIds: levelLessons.map((lesson) => lesson.id),
-              });
-            }}
-          >
-            <span>Reset all</span>
-          </Button>
+          <p className="opacity-90">{level.description}</p>
         </div>
       </header>
 
+      <Button
+        variant={isA1 ? "answer" : "danger"}
+        icon={<RotateCcw aria-hidden="true" />}
+        onClick={() => {
+          setResetConfirmation({
+            title: `Reset ${level.label}?`,
+            description:
+              "All completed lessons and scores in this level will be removed.",
+            lessonIds: levelLessons.map((lesson) => lesson.id),
+          });
+        }}
+        className="mb-2"
+      >
+        <span className="text-yellow-600">Reset all</span>
+      </Button>
+
       {level.units.map((unit) => (
         <section
-          className="mb-6 overflow-hidden rounded-[22px] border-2 border-slate-200 dark:border-slate-600"
+          className="overflow-hidden rounded-[22px] border-2 border-slate-200 dark:border-slate-600"
           key={unit.id}
         >
           <header className="flex justify-between gap-5 border-b-2 border-slate-200 bg-slate-50 p-6 max-[620px]:flex-col dark:border-slate-600 dark:bg-slate-800">
