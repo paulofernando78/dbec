@@ -225,8 +225,8 @@ export default function LearningLevel() {
                       locked
                         ? "border-slate-200 bg-white dark:border-slate-600 dark:bg-slate-800 [&_svg]:stroke-gray-400"
                         : isA1
-                          ? "border-yellow-400 bg-yellow-400 text-slate-900 shadow-md shadow-yellow-600"
-                          : "border-red-500 bg-red-500 text-white shadow-md shadow-red-600"
+                          ? "border-yellow-400 bg-yellow-400 text-slate-900 shadow-md shadow-yellow-500"
+                          : "border-red-500 bg-red-500 text-white shadow-md shadow-red-500"
                     }`}
                     aria-label={`${lesson.title}${locked ? ", locked" : ""}`}
                     title={locked ? `${lesson.title}, locked` : lesson.title}
@@ -259,16 +259,9 @@ export default function LearningLevel() {
                       <>
                         {showLessonSteps ? (
                           <div className="mt-3 max-w-[500px]">
-                            <div className="mb-2 flex items-center justify-between gap-3">
-                              <small
-                                className={`flex items-center gap-1 font-bold ${accentText}`}
-                              >
-                                <Check size={14} />
-                                {completed
-                                  ? "Completed"
-                                  : `${Math.min((stepProgress[lesson.id] ?? 0) + 1, 5)} of 5 steps`}
-                              </small>
-                            </div>
+                            <p className="my-4 text-xs text-slate-400 dark:text-slate-500">
+                              Complete each step to unlock the next.
+                            </p>
                             <div className="flex flex-col gap-3">
                               {lessonSteps.map((step, stepIndex) => {
                                 const stepAvailable =
@@ -321,9 +314,6 @@ export default function LearningLevel() {
                                 );
                               })}
                             </div>
-                            <p className="mt-6 mb-0 text-xs text-slate-400 dark:text-slate-500">
-                              Complete each step to unlock the next.
-                            </p>
                           </div>
                         ) : (
                           <small
