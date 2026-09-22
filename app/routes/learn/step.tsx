@@ -116,19 +116,24 @@ export default function LearningStepRoute() {
       </Link>
       <LevelBanner levelId={isA1 ? "a1" : "a2"} />
       <section>
-        <header className="flex items-center gap-4 py-4">
-          <div className="grid gap-2">
-            <span className="text-2xl font-black dark:text-slate-100">
-              Lesson {lesson.order} · {lesson.title}
+        <header className="grid grid-cols-2">
+          <div className="grid rounded-tl-2xl rounded-bl-2xl border-2 border-r-0 border-slate-200 bg-slate-50 p-4 text-2xl font-black">
+            <span className="text-xs text-amber-700 uppercase">unit 1</span>
+            <span>Meeting People</span>
+          </div>
+          <div className="grid rounded-tr-2xl rounded-br-2xl border-2 border-slate-200 p-4 text-2xl font-black">
+            <span className="text-xs text-amber-700 uppercase">
+              Lesson {lesson.order}{" "}
             </span>
-            <div className="space-x-2">
-              <span className="font-bold">{stepLabels[step]}</span>
-              <span className="text-sm text-red-700 font-bold">
-                Step {stepIndex + 1} of {learningSteps.length}
-              </span>
-            </div>
+            <span>{lesson.title}</span>
           </div>
         </header>
+        <div className="my-4 flex w-max items-center gap-2 rounded-2xl border border-slate-300 px-2 py-1">
+          <span className="font-bold">{stepLabels[step]}</span>
+          <span className="text-sm font-bold text-red-700">
+            Step {stepIndex + 1} of {learningSteps.length}
+          </span>
+        </div>
 
         <p className="text-lg font-bold text-slate-700 dark:text-slate-200">
           {material.instruction}
