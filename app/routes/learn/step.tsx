@@ -10,6 +10,7 @@ import {
 import { Link, Navigate, useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { getLearningLesson, learningLessons } from "@/data/learning";
+import type { LearningLesson } from "@/data/learning/types";
 import { Button } from "@/components/ui/Button/Button";
 import {
   advanceLearningStep,
@@ -63,13 +64,103 @@ const material: Record<
       prompt: "Mark each sentence when you can do it.",
     },
   },
+  "stay-in-touch": {
+    "get-ready": {
+      instruction:
+        "Imagine you have just met someone you want to contact again.",
+      content:
+        "Before you leave, you exchange a phone number or email address and say goodbye in a friendly way.",
+      prompt:
+        "Think: How would you ask for contact information? What would you say before leaving?",
+    },
+    "see-it": {
+      instruction: "Read how two new friends exchange contact information.",
+      content:
+        "A: What is your phone number?\nB: My number is 555-0198.\nA: And what is your email address?\nB: It is marina@email.com. See you!",
+      prompt: "Notice: What is your…? / My … is… / See you!",
+    },
+    "try-it": {
+      instruction: "Complete the contact details with the correct words.",
+      content:
+        "What ___ your phone number?\n___ number is 555-0124.\nWhat is ___ email address?",
+      prompt: "Use: is · my · your",
+    },
+    "use-it": {
+      instruction: "Create a short conversation with a new contact.",
+      content:
+        "A: What is your phone number?\nB: My number is _____.\nA: What is your email address?\nB: My email address is _____. See you!",
+      prompt: "Replace the blanks with your own example information.",
+    },
+    "can-you": {
+      instruction: "Check your progress.",
+      content:
+        "Can you ask for a phone number?\nCan you share an email address?\nCan you use I am, he is, and she is?\nCan you say goodbye in a friendly way?",
+      prompt: "Mark each sentence when you can do it.",
+    },
+  },
 };
 
-const fallback = (title: string) => ({
-  instruction: `Practice the language from ${title}.`,
-  content: "Review the examples from this lesson and complete the activity.",
-  prompt: "Use the new language in a short answer.",
-});
+const exerciseExample = (exercise: LearningLesson["exercises"][number]) => {
+  if (exercise.type === "word-order") return exercise.correctAnswer;
+  return exercise.prompt.includes("___")
+    ? exercise.prompt.replace("___", exercise.correctAnswer)
+    : `${exercise.prompt} — ${exercise.correctAnswer}`;
+};
+
+const lessonContent = (lesson: LearningLesson, step: string) => {
+  const vocabulary = lesson.vocabulary.join(" · ");
+  const examples = lesson.exercises.slice(0, 4).map(exerciseExample);
+  const prompts = lesson.exercises
+    .slice(0, 3)
+    .map((exercise) =>
+      exercise.type === "word-order"
+        ? exercise.prompt || exercise.words.join(" / ")
+        : exercise.prompt,
+    );
+
+  if (step === "get-ready") {
+    return {
+      instruction: lesson.description,
+      content: lesson.objective,
+      prompt: `Key language: ${vocabulary}`,
+    };
+  }
+
+  if (step === "see-it") {
+    return {
+      instruction: `Study useful examples for ${lesson.title}.`,
+      content: examples.join("\n"),
+      prompt: `Notice how these words are used: ${vocabulary}`,
+    };
+  }
+
+  if (step === "try-it") {
+    return {
+      instruction: `Try the language from ${lesson.title}.`,
+      content: prompts.join("\n"),
+      prompt: "Answer each prompt before checking the lesson examples.",
+    };
+  }
+
+  if (step === "use-it") {
+    return {
+      instruction: lesson.description,
+      content: `Create a short response about this topic. Include at least three of these expressions:\n${vocabulary}`,
+      prompt: `Use the language to show that you can ${lesson.description.toLowerCase()}`,
+    };
+  }
+
+  return {
+    instruction: `Check what you can do after ${lesson.title}.`,
+    content: [
+      `Can you ${lesson.description.toLowerCase()}`,
+      `Can you use ${lesson.vocabulary.slice(0, 2).join(" and ")}?`,
+      `Can you understand an example about ${lesson.title.toLowerCase()}?`,
+      `Can you create your own response about this topic?`,
+    ].join("\n"),
+    prompt: "Mark each sentence when you can do it confidently.",
+  };
+};
 
 export default function LearningStepRoute() {
   const { level = "", unit = "", lesson: slug = "", step = "" } = useParams();
@@ -78,6 +169,10 @@ export default function LearningStepRoute() {
   const [revealed, setRevealed] = useState(0);
   const [checkedQuestions, setCheckedQuestions] = useState<string[]>([]);
   const [accessAllowed, setAccessAllowed] = useState<boolean | null>(null);
+  useEffect(() => {
+    setRevealed(0);
+    setCheckedQuestions([]);
+  }, [lesson?.id, step]);
   useEffect(() => {
     if (!lesson) return;
     const currentStep = steps.indexOf(step);
@@ -97,12 +192,13 @@ export default function LearningStepRoute() {
     return <Navigate to={`/learn/${level}`} replace />;
   if (accessAllowed === false)
     return <Navigate to={`/learn/${level}`} replace />;
-  const content = material[slug]?.[step] ?? fallback(lesson.title);
+  const content = material[slug]?.[step] ?? lessonContent(lesson, step);
   const canYouQuestions = content.content.split("\n").filter(Boolean);
   const stepIndex = steps.indexOf(step);
   const lessonPath = `/learn/${level}/${unit}/${slug}`;
   const levelLessons = learningLessons.filter((item) => item.level === level);
   const lessonIndex = levelLessons.findIndex((item) => item.id === lesson.id);
+  const isA1 = level === "a1";
   const previousLesson = levelLessons[lessonIndex - 1];
   const previousPath =
     stepIndex === 0
@@ -149,12 +245,7 @@ export default function LearningStepRoute() {
     ) : (
       <CheckCircle2 />
     );
-  const dialogue = [
-    "A: Hi! My name is Ana.",
-    "B: Hello, Ana. I’m Lucas.",
-    "A: Nice to meet you.",
-    "B: Nice to meet you, too.",
-  ];
+  const examples = content.content.split("\n").filter(Boolean);
 
   return (
     <main className="mx-auto w-[calc(100%_-_32px)] max-w-[700px] py-12 pb-20 max-[620px]:w-[calc(100%_-_20px)] max-[620px]:pt-6">
@@ -166,11 +257,21 @@ export default function LearningStepRoute() {
       </Link>
       <section className="rounded-[22px] border-2 border-slate-200 bg-white p-7 shadow-sm dark:border-slate-600 dark:bg-slate-800">
         <div className="mb-6 flex items-center gap-4">
-          <div className="grid size-12 place-items-center rounded-xl bg-yellow-400 text-slate-900">
+          <div
+            className={`grid size-12 place-items-center rounded-xl ${
+              isA1
+                ? "bg-yellow-400 text-slate-900"
+                : "bg-red-400 text-white [&_svg]:stroke-red-700"
+            }`}
+          >
             {icon}
           </div>
           <div>
-            <span className="text-xs font-black tracking-widest text-amber-700 uppercase">
+            <span
+              className={`text-xs font-black tracking-widest uppercase ${
+                isA1 ? "text-amber-700" : "text-red-700 dark:text-red-400"
+              }`}
+            >
               Step {stepIndex + 1} of 5
             </span>
             <h1 className="m-0 text-3xl font-black text-slate-800 dark:text-slate-100">
@@ -191,23 +292,25 @@ export default function LearningStepRoute() {
         ) : step === "see-it" ? (
           <div className="my-6 grid gap-3">
             <div className="min-h-32 rounded-2xl bg-slate-100 p-6 text-lg leading-relaxed text-slate-700 dark:bg-slate-700 dark:text-slate-100">
-              {dialogue.slice(0, revealed).map((line) => (
+              {examples.slice(0, revealed).map((line) => (
                 <div key={line}>{line}</div>
               ))}
             </div>
             <button
               type="button"
               onClick={() =>
-                setRevealed((value) => Math.min(value + 1, dialogue.length))
+                setRevealed((value) => Math.min(value + 1, examples.length))
               }
-              disabled={revealed === dialogue.length}
-              className="rounded-xl bg-slate-800 px-4 py-3 font-bold text-white disabled:opacity-50 dark:bg-slate-100 dark:text-slate-900"
+              disabled={revealed === examples.length}
+              className={`rounded-xl px-4 py-3 font-bold disabled:cursor-default ${
+                isA1 ? "bg-yellow-400 text-slate-900" : "bg-red-400 text-white"
+              }`}
             >
               {revealed === 0
                 ? "Start dialogue"
-                : revealed === dialogue.length
-                  ? "Dialogue complete"
-                  : "Show next line"}
+                : revealed === examples.length
+                  ? "Examples complete"
+                  : "Show next example"}
             </button>
           </div>
         ) : step === "can-you" ? (
@@ -227,7 +330,9 @@ export default function LearningStepRoute() {
                         : current.filter((item) => item !== question),
                     )
                   }
-                  className="mt-1 size-5 shrink-0 accent-yellow-500"
+                  className={`mt-1 size-5 shrink-0 ${
+                    isA1 ? "accent-yellow-500" : "accent-red-500"
+                  }`}
                 />
                 <span>{question}</span>
               </label>
@@ -251,7 +356,7 @@ export default function LearningStepRoute() {
             onClick={() => navigate(previousPath)}
             ariaLabel={previousLabel}
             icon={<ArrowLeft aria-hidden="true" />}
-            variant={level === "a1" ? "answer" : "danger"}
+            variant={isA1 ? "answer" : "danger"}
             className="!size-11 !rounded-xl"
           />
           <span className="text-sm font-bold text-slate-600 dark:text-slate-300">
@@ -270,11 +375,9 @@ export default function LearningStepRoute() {
             }
             ariaLabel={nextLabel}
             icon={<ArrowRight aria-hidden="true" />}
-            variant={level === "a1" ? "answer" : "danger"}
+            variant={isA1 ? "answer" : "danger"}
             className={`!size-11 !rounded-xl ${
-              level === "a1"
-                ? "disabled:!bg-yellow-300"
-                : "disabled:!bg-red-400"
+              isA1 ? "disabled:!bg-yellow-300" : "disabled:!bg-red-400"
             }`}
           />
         </div>
