@@ -1,13 +1,8 @@
 import {
   AlertTriangle,
-  BookOpen,
   Check,
-  CheckCircle2,
   Lock,
   LockOpen,
-  MessageCircle,
-  Pencil,
-  Play,
   RotateCcw,
   Star,
   X,
@@ -17,7 +12,6 @@ import { Navigate, useLocation, useParams } from "react-router";
 import { Button } from "@/components/ui/Button/Button";
 import { learningLessons, learningLevels } from "@/data/learning";
 import {
-  getLearningStep,
   isLearningLessonCompleted,
   resetLearningLessons,
 } from "@/utils/learning-progress";
@@ -34,7 +28,6 @@ export default function LearningLevel() {
   const [completedLessonIds, setCompletedLessonIds] = useState<Set<string>>(
     new Set(),
   );
-  const [stepProgress, setStepProgress] = useState<Record<string, number>>({});
   const [resetConfirmation, setResetConfirmation] =
     useState<ResetConfirmation | null>(null);
   const level =
@@ -47,11 +40,6 @@ export default function LearningLevel() {
   );
 
   const refreshProgress = () => {
-    setStepProgress(
-      Object.fromEntries(
-        levelLessons.map((lesson) => [lesson.id, getLearningStep(lesson.id)]),
-      ),
-    );
     setCompletedLessonIds(
       new Set(
         levelLessons
@@ -193,57 +181,42 @@ export default function LearningLevel() {
                     .every((item) => completedLessonIds.has(item.id)));
               const checkpoint = "checkpoint" in lesson && lesson.checkpoint;
               const href = `/learn/${level.id}/${unit.id}/${lesson.slug}`;
-              const showLessonSteps = true;
-              const lessonSteps = [
-                "Get ready",
-                "See it",
-                "Try it",
-                "Use it",
-                "Can you...?",
-              ];
-              const lessonStepSlugs = [
-                "get-ready",
-                "see-it",
-                "try-it",
-                "use-it",
-                "can-you",
-              ];
+              const lessonStepHref = `${href}/get-ready`;
 
               return (
                 <div
-                  className="relative grid min-h-32 grid-cols-[74px_1fr] items-center gap-6 max-[620px]:grid-cols-[64px_1fr] max-[620px]:gap-4"
+                  className="relative grid min-h-32 grid-cols-[74px_1fr] items-center gap-4 max-[620px]:grid-cols-[64px_1fr] max-[620px]:gap-4"
                   key={lesson.id}
                 >
                   {index < unit.lessons.length - 1 && (
-                    <div className="absolute inset-y-0 left-8.5 z-0 w-1.5 h-90 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
+                    <div className="absolute inset-y-0 left-8.5 z-0 h-90 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
                   )}
                   {index === unit.lessons.length - 1 && index > 0 && (
                     <div className="absolute top-0 bottom-[50%] left-8.5 z-0 w-1.5 bg-slate-200 max-[620px]:left-7.25 dark:bg-slate-600" />
                   )}
-                  <div
-                    className={`z-1 grid h-[66px] w-[72px] place-items-center self-start rounded-xl border-2 pt-0 max-[620px]:h-[58px] max-[620px]:w-[64px] [&_svg]:size-[25px] ${
-                      locked
-                        ? "border-slate-200 bg-white dark:border-slate-600 dark:bg-slate-800 [&_svg]:stroke-gray-400"
-                        : isA1
-                          ? "border-yellow-400 bg-yellow-400 text-slate-900 shadow-md shadow-yellow-500"
-                          : "border-red-500 bg-red-500 text-white shadow-md shadow-red-500"
-                    }`}
-                    aria-label={`${lesson.title}${locked ? ", locked" : ""}`}
+                  <Button
+                    size="lesson"
+                    variant={locked ? "default" : isA1 ? "answer" : "danger"}
+                    disabled={locked}
+                    to={locked ? undefined : lessonStepHref}
+                    className="z-1 self-start"
+                    ariaLabel={`${lesson.title}${locked ? ", locked" : ", continue lesson"}`}
                     title={locked ? `${lesson.title}, locked` : lesson.title}
-                  >
-                    {locked ? (
-                      checkpoint ? (
-                        <Star aria-hidden="true" className="text-yellow-600"/>
+                    icon={
+                      locked ? (
+                        checkpoint ? (
+                          <Star aria-hidden="true" />
+                        ) : (
+                          <Lock aria-hidden="true" />
+                        )
+                      ) : completed ? (
+                        <Check aria-hidden="true" />
                       ) : (
-                        <Lock aria-hidden="true" className="text-yellow-600"/>
+                        <LockOpen aria-hidden="true" />
                       )
-                    ) : completed ? (
-                      <Check aria-hidden="true" className="text-yellow-600"/>
-                    ) : (
-                      <LockOpen aria-hidden="true" className="text-yellow-600"/>
-                    )}
-                  </div>
-                  <div>
+                    }
+                  />
+                  <div className="self-start">
                     <span
                       className={`text-xs font-extrabold tracking-[.12em] ${locked ? "text-slate-400" : accentText}`}
                     >
@@ -255,76 +228,6 @@ export default function LearningLevel() {
                     <p className="m-0 text-sm text-slate-500 dark:text-slate-300">
                       {lesson.description}
                     </p>
-                    {!locked && (
-                      <>
-                        {showLessonSteps ? (
-                          <div className="mt-3 max-w-[500px]">
-                            <p className="my-4 text-xs text-slate-400 dark:text-slate-500">
-                              Complete each step to unlock the next.
-                            </p>
-                            <div className="flex flex-col gap-3">
-                              {lessonSteps.map((step, stepIndex) => {
-                                const stepAvailable =
-                                  completed ||
-                                  stepIndex <= (stepProgress[lesson.id] ?? 0);
-                                const stepCompleted =
-                                  completed ||
-                                  stepIndex < (stepProgress[lesson.id] ?? 0);
-                                return (
-                                  <div
-                                    key={step}
-                                    className="flex items-center gap-3"
-                                  >
-                                    <Button
-                                      variant={isA1 ? "answer" : "danger"}
-                                      className={`!rounded-lg ${
-                                        isA1
-                                          ? "disabled:!bg-yellow-300 [&_svg]:!stroke-yellow-500"
-                                          : "disabled:!bg-red-400 [&_svg]:!stroke-red-800"
-                                      }`}
-                                      disabled={!stepAvailable}
-                                      to={
-                                        stepAvailable
-                                          ? `${href}/${lessonStepSlugs[stepIndex]}`
-                                          : undefined
-                                      }
-                                      icon={
-                                        stepCompleted ? (
-                                          <Check aria-hidden="true" />
-                                        ) : stepIndex === 0 ? (
-                                          <Play aria-hidden="true" />
-                                        ) : stepIndex === 1 ? (
-                                          <BookOpen aria-hidden="true" />
-                                        ) : stepIndex === 2 ? (
-                                          <Pencil aria-hidden="true" />
-                                        ) : stepIndex === 3 ? (
-                                          <MessageCircle aria-hidden="true" />
-                                        ) : (
-                                          <CheckCircle2 aria-hidden="true" />
-                                        )
-                                      }
-                                      ariaLabel={`${step}${stepAvailable ? " available" : ", locked"}`}
-                                    />
-                                    <span
-                                      className={`translate-y-1.5 font-bold ${stepAvailable ? "text-slate-700 dark:text-slate-200" : "text-slate-400 dark:text-slate-500"}`}
-                                    >
-                                      {step}
-                                    </span>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        ) : (
-                          <small
-                            className={`mt-1 flex items-center gap-1 font-bold ${accentText}`}
-                          >
-                            <Check size={14} />
-                            {completed ? "Completed" : "Ready to start"}
-                          </small>
-                        )}
-                      </>
-                    )}
                   </div>
                 </div>
               );

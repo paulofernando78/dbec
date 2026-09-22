@@ -251,6 +251,7 @@ export default function LearningStepRoute() {
             onClick={() => navigate(previousPath)}
             ariaLabel={previousLabel}
             icon={<ArrowLeft aria-hidden="true" />}
+            variant={level === "a1" ? "answer" : "danger"}
             className="!size-11 !rounded-xl"
           />
           <span className="text-sm font-bold text-slate-600 dark:text-slate-300">
@@ -270,7 +271,11 @@ export default function LearningStepRoute() {
             ariaLabel={nextLabel}
             icon={<ArrowRight aria-hidden="true" />}
             variant={level === "a1" ? "answer" : "danger"}
-            className="!size-11 !rounded-xl"
+            className={`!size-11 !rounded-xl ${
+              level === "a1"
+                ? "disabled:!bg-yellow-300"
+                : "disabled:!bg-red-400"
+            }`}
           />
         </div>
       </nav>
