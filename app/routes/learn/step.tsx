@@ -4,6 +4,8 @@ import {
   BookOpen,
   Check,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   Headphones,
   Pencil,
   Play,
@@ -13,6 +15,7 @@ import { useEffect, useState } from "react";
 import { getLearningLesson, learningLessons } from "@/data/learning";
 import type { LearningLesson } from "@/data/learning/types";
 import { Button } from "@/components/ui/Button/Button";
+import { Audio } from "@/components/ui/Audio/Audio";
 import {
   advanceLearningStep,
   completeLearningLesson,
@@ -35,7 +38,7 @@ const material: Record<
 > = {
   hello: {
     "get-ready": {
-      instruction: "Imagine your first day in a new class.",
+      instruction: "Look at the pictures and listen to the sentences.",
       content:
         "You sit next to someone you have never met. They smile and turn to you. You want to start a conversation.",
       prompt:
@@ -164,6 +167,80 @@ const lessonContent = (lesson: LearningLesson, step: string) => {
 };
 
 type TryToken = { id: string; text: string };
+
+const helloGetReadySlides = [
+  {
+    image: "/assets/images/learning/a1/hello-get-ready/01-arriving.png",
+    text: "Sofia and Daniel arrive at the language school.",
+  },
+  {
+    image: "/assets/images/learning/a1/hello-get-ready/02-conversation.png",
+    text: "Sofia says, Hi! My name is Sofia. Daniel introduces himself.",
+  },
+  {
+    image: "/assets/images/learning/a1/hello-get-ready/03-handshake.png",
+    text: "They say, Nice to meet you, and shake hands.",
+  },
+];
+
+function GetReadySlider() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slide = helloGetReadySlides[currentSlide];
+
+  return (
+    <div className="my-6 grid gap-4">
+      <div className="relative aspect-video overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-700">
+        <img
+          src={slide.image}
+          alt={slide.text}
+          className="h-full w-full object-cover"
+        />
+        <button
+          type="button"
+          onClick={() =>
+            setCurrentSlide(
+              (currentSlide - 1 + helloGetReadySlides.length) %
+                helloGetReadySlides.length,
+            )
+          }
+          className="absolute top-1/2 left-3 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-slate-800 shadow-md backdrop-blur-sm"
+          aria-label="Previous picture"
+        >
+          <ChevronLeft aria-hidden="true" />
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setCurrentSlide((currentSlide + 1) % helloGetReadySlides.length)
+          }
+          className="absolute top-1/2 right-3 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-slate-800 shadow-md backdrop-blur-sm"
+          aria-label="Next picture"
+        >
+          <ChevronRight aria-hidden="true" />
+        </button>
+        <div className="absolute right-0 bottom-3 left-0 flex justify-center gap-2">
+          {helloGetReadySlides.map((item, index) => (
+            <button
+              key={item.image}
+              type="button"
+              onClick={() => setCurrentSlide(index)}
+              className={`size-2.5 rounded-full shadow ${
+                index === currentSlide ? "bg-yellow-400" : "bg-white/80"
+              }`}
+              aria-label={`Go to picture ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center gap-3 rounded-2xl bg-slate-100 p-4 text-lg font-bold text-slate-700 dark:bg-slate-700 dark:text-slate-100">
+        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-yellow-400 [--icon-color:var(--color-slate-900)]">
+          <Audio src={slide.text} className="size-5 cursor-pointer" />
+        </span>
+        <p className="m-0">{slide.text}</p>
+      </div>
+    </div>
+  );
+}
 
 function ScrambleActivity({
   sentence,
@@ -527,7 +604,7 @@ export default function LearningStepRoute() {
   const examples = content.content.split("\n").filter(Boolean);
 
   return (
-    <main className="mx-auto w-[calc(100%_-_32px)] max-w-[700px] py-12 pb-20 max-[620px]:w-[calc(100%_-_20px)] max-[620px]:pt-6">
+    <main className="mx-auto w-[calc(100%_-_32px)] max-w-[700px] py-12 pb-32 max-[620px]:w-[calc(100%_-_20px)] max-[620px]:pt-6">
       <Link
         className="mb-6 inline-flex items-center gap-2 font-bold text-slate-500"
         to={`/learn/${level}`}
@@ -562,7 +639,9 @@ export default function LearningStepRoute() {
         <p className="text-lg font-bold text-slate-700 dark:text-slate-200">
           {content.instruction}
         </p>
-        {step === "get-ready" ? (
+        {step === "get-ready" && slug === "hello" ? (
+          <GetReadySlider />
+        ) : step === "get-ready" ? (
           <div className="my-6 grid gap-3">
             <div className="rounded-2xl bg-slate-100 p-6 text-lg text-slate-700 dark:bg-slate-700 dark:text-slate-100">
               {content.content}
@@ -608,14 +687,13 @@ export default function LearningStepRoute() {
             {content.content}
           </div>
         )}
-        {(step === "get-ready" || step === "can-you") && (
+        {step === "can-you" && (
           <p className="m-0 rounded-xl border-2 border-slate-200 p-4 font-bold text-slate-500 dark:border-slate-600">
             {content.prompt}
           </p>
         )}
-      </section>
-      <nav
-        className="mt-6 flex flex-wrap items-center justify-between gap-3"
+        <nav
+        className="fixed bottom-0 left-[calc(50%+130px)] z-40 flex w-[calc(100%_-_292px)] max-w-[700px] -translate-x-1/2 flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-slate-200 bg-white/95 px-4 py-4 backdrop-blur-sm max-[700px]:left-1/2 max-[700px]:w-[calc(100%_-_20px)] dark:border-slate-600 dark:bg-slate-900/95"
         aria-label="Lesson navigation"
       >
         <div className="flex items-center gap-2">
@@ -649,6 +727,7 @@ export default function LearningStepRoute() {
           />
         </div>
       </nav>
+      </section>
     </main>
   );
 }
