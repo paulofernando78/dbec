@@ -2,11 +2,14 @@
 
 import { useRef, useState } from "react";
 
-import { LoaderCircle, Play, Square } from "lucide-react";
+import { LoaderCircle, Play, Square, Volume2 } from "lucide-react";
+import { Button } from "@/components/ui/Button/Button";
 
 type AudioProps = {
   src: string;
   className?: string;
+  asButton?: boolean;
+  buttonVariant?: "answer" | "danger";
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -74,7 +77,12 @@ const waitForVoices = () =>
     );
   });
 
-export const Audio = ({ src, className }: AudioProps) => {
+export const Audio = ({
+  src,
+  className,
+  asButton = false,
+  buttonVariant = "answer",
+}: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -82,8 +90,8 @@ export const Audio = ({ src, className }: AudioProps) => {
 
   const isAudioFile = /\.(mp3|wav|ogg)$/i.test(src);
 
-  const handlePlay = async (e: React.MouseEvent<SVGElement>) => {
-    e.stopPropagation();
+  const handlePlay = async (event?: React.SyntheticEvent) => {
+    event?.stopPropagation();
 
     if (!isAudioFile) {
       stopCurrentSpeech();
@@ -171,8 +179,8 @@ export const Audio = ({ src, className }: AudioProps) => {
     }
   };
 
-  const handleStop = (e: React.MouseEvent<SVGElement>) => {
-    e.stopPropagation();
+  const handleStop = (event?: React.SyntheticEvent) => {
+    event?.stopPropagation();
     setLoading(false);
 
     if (utteranceRef.current) {
@@ -218,6 +226,53 @@ export const Audio = ({ src, className }: AudioProps) => {
     setPlaying(false);
   };
 
+  const audioElement = isAudioFile ? (
+    <audio
+      ref={audioRef}
+      src={src}
+      preload="metadata"
+      onWaiting={() => setLoading(true)}
+      onPlaying={() => {
+        setLoading(false);
+        setPlaying(true);
+      }}
+      onCanPlay={() => setLoading(false)}
+      onEnded={handleEnded}
+      onPause={handlePause}
+      onError={() => {
+        console.error("Audio failed to load:", src);
+        setLoading(false);
+        setPlaying(false);
+      }}
+    />
+  ) : null;
+
+  if (asButton) {
+    const icon = loading ? (
+      <LoaderCircle className="animate-spin" aria-hidden="true" />
+    ) : playing ? (
+      <Square aria-hidden="true" />
+    ) : (
+      <Volume2 aria-hidden="true" />
+    );
+
+    return (
+      <span className="inline-flex">
+        <Button
+          variant={buttonVariant}
+          icon={icon}
+          ariaLabel={playing ? "Stop audio" : "Play audio"}
+          className={className}
+          onClick={() => {
+            if (playing || loading) handleStop();
+            else void handlePlay();
+          }}
+        />
+        {audioElement}
+      </span>
+    );
+  }
+
   return (
     <span className="inline-flex">
       {loading ? (
@@ -245,26 +300,7 @@ export const Audio = ({ src, className }: AudioProps) => {
         />
       )}
 
-      {isAudioFile && (
-        <audio
-          ref={audioRef}
-          src={src}
-          preload="metadata"
-          onWaiting={() => setLoading(true)}
-          onPlaying={() => {
-            setLoading(false);
-            setPlaying(true);
-          }}
-          onCanPlay={() => setLoading(false)}
-          onEnded={handleEnded}
-          onPause={handlePause}
-          onError={() => {
-            console.error("Audio failed to load:", src);
-            setLoading(false);
-            setPlaying(false);
-          }}
-        />
-      )}
+      {audioElement}
     </span>
   );
 };

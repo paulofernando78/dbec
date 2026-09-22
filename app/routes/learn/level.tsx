@@ -9,6 +9,10 @@ import {
 } from "lucide-react";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Navigate, useLocation, useParams } from "react-router";
+import {
+  LevelBanner,
+  type LearningLevelId,
+} from "@/components/learning/LevelBanner";
 import { Button } from "@/components/ui/Button/Button";
 import { learningLessons, learningLevels } from "@/data/learning";
 import {
@@ -30,10 +34,11 @@ export default function LearningLevel() {
   );
   const [resetConfirmation, setResetConfirmation] =
     useState<ResetConfirmation | null>(null);
-  const level =
+  const currentLevelId =
     levelId && levelId in learningLevels
-      ? learningLevels[levelId as keyof typeof learningLevels]
+      ? (levelId as LearningLevelId)
       : undefined;
+  const level = currentLevelId ? learningLevels[currentLevelId] : undefined;
 
   const levelLessons = learningLessons.filter(
     (lesson) => lesson.level === levelId,
@@ -73,7 +78,7 @@ export default function LearningLevel() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [resetConfirmation]);
 
-  if (!level) return <Navigate to="/learn" replace />;
+  if (!level || !currentLevelId) return <Navigate to="/learn" replace />;
 
   const isA1 = level.id === "a1";
   const accentText = isA1
@@ -82,19 +87,7 @@ export default function LearningLevel() {
 
   return (
     <div className="mx-auto flex w-[calc(100%_-_32px)] max-w-[760px] flex-col gap-4 max-[620px]:w-[calc(100%_-_20px)] max-[620px]:pt-6">
-      <header
-        className={`mb-4 flex items-center gap-5.5 rounded-[22px] bg-linear-to-br p-6 max-[620px]:items-start max-[620px]:p-5 ${isA1 ? "from-yellow-400 to-amber-600 text-slate-900" : "from-red-500 to-red-700 text-white"}`}
-      >
-        <div>
-          <div className="text-[clamp(2rem,8vw,3rem)] leading-none font-black">
-            {level.label}
-          </div>
-          <h1 className="text-[clamp(1.6rem,5vw,2.3rem)] font-black">
-            {level.title}
-          </h1>
-          <p className="opacity-90">{level.description}</p>
-        </div>
-      </header>
+      <LevelBanner levelId={currentLevelId} className="mb-4" />
 
       <Button
         variant={isA1 ? "answer" : "danger"}
