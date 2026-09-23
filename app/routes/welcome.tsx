@@ -14,7 +14,11 @@ import {
 import { Link } from "react-router";
 import { Button } from "@/components/ui/Button/Button";
 import { learningLessons, learningLevels } from "@/data/learning";
-import { isLearningLessonCompleted } from "@/utils/learning-progress";
+import {
+  getLearningStep,
+  isLearningLessonCompleted,
+} from "@/utils/learning-progress";
+import { learningSteps } from "./learn/step/types";
 
 const emojis = [
   {
@@ -391,6 +395,10 @@ export default function Welcome() {
   const isCurrentLevelA1 = currentLesson.level === "a1";
   const currentLevel =
     learningLevels[currentLesson.level as keyof typeof learningLevels];
+  const currentStep =
+    learningSteps[
+      Math.min(getLearningStep(currentLesson.id), learningSteps.length - 1)
+    ] ?? learningSteps[0];
 
   const hour = new Date().getHours();
 
@@ -441,7 +449,7 @@ export default function Welcome() {
             </div>
             <Button
               className="mt-6 mb-4"
-              to={`/learn/${currentLesson.level}/${currentLesson.unitId}/${currentLesson.slug}`}
+              to={`/learn/${currentLesson.level}/${currentLesson.unitId}/${currentLesson.slug}/${currentStep}`}
             >
               Continue learning
             </Button>

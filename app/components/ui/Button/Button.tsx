@@ -12,6 +12,7 @@ type ButtonProps = {
   ariaLabel?: string;
   title?: string;
   className?: string;
+  joined?: "start" | "end";
   size?: "default" | "lesson" | "choice";
   variant?: "default" | "check" | "answer" | "reset" | "danger";
 };
@@ -25,6 +26,7 @@ export const Button = ({
   ariaLabel,
   title,
   className = "",
+  joined,
   size = "default",
   variant = "default",
 }: ButtonProps) => {
@@ -46,7 +48,13 @@ export const Button = ({
       ? "!inline-flex !h-[30px] !w-fit items-center justify-center gap-1.5 whitespace-nowrap px-2.5"
       : "";
   const variantClass = variant === "default" ? "" : styles[variant];
-  const classes = `${baseClasses} ${disabledClasses} ${styles.button} ${variantClass} ${lessonClasses} ${choiceClasses} ${withTextClasses} ${className}`;
+  const joinedClass =
+    joined === "start"
+      ? styles.joinedStart
+      : joined === "end"
+        ? styles.joinedEnd
+        : "";
+  const classes = `${baseClasses} ${disabledClasses} ${styles.button} ${variantClass} ${joinedClass} ${lessonClasses} ${choiceClasses} ${withTextClasses} ${className}`;
 
   if (to) {
     return (

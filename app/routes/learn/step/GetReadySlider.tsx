@@ -52,10 +52,11 @@ export function GetReadySlider({ slides, isA1 }: Props) {
           />
         )}
       </div>
-      <div className="mb-4 grid grid-cols-2 items-center">
+      <div className="mb-4 grid grid-cols-2 items-center -translate-y-[0.2rem]">
         <Button
           onClick={() => setCurrentSlide((current) => Math.max(current - 1, 0))}
           disabled={currentSlide === 0}
+          joined="start"
           ariaLabel="Previous picture"
           icon={<ChevronLeft aria-hidden="true" />}
           variant={currentSlide === 0 ? "default" : isA1 ? "answer" : "danger"}
@@ -68,6 +69,7 @@ export function GetReadySlider({ slides, isA1 }: Props) {
             )
           }
           disabled={currentSlide === slides.length - 1}
+          joined="end"
           ariaLabel="Next picture"
           icon={<ChevronRight aria-hidden="true" />}
           variant={

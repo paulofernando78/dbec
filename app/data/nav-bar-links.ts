@@ -48,7 +48,7 @@ export const links: NavGroup[] = [
         links: unit.lessons
           .filter((lesson) => "exercises" in lesson)
           .map((lesson) => ({
-            href: `/learn/${level.id}/${unit.id}/${lesson.slug}`,
+            href: `/learn/${level.id}/${unit.id}/${lesson.slug}/get-ready`,
             label: `${lesson.order} · ${lesson.title}`,
           })),
       })),
