@@ -20,7 +20,7 @@ export function LessonNavigation({
 }: Props) {
   return (
     <nav
-      className="sticky bottom-0 z-30 mt-8 flex w-full flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-slate-200 bg-white/95 px-4 pt-3 pb-4.75 backdrop-blur-sm dark:border-slate-600 dark:bg-slate-900/95"
+      className="mt-8 flex w-full flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-slate-200 bg-white px-4 pt-3 pb-4.75 dark:border-slate-600 dark:bg-slate-900"
       aria-label="Lesson navigation"
     >
       <div className="flex items-center gap-4">
@@ -29,7 +29,6 @@ export function LessonNavigation({
           ariaLabel={previousLabel}
           icon={<ArrowLeft aria-hidden="true" />}
           variant={isA1 ? "answer" : "danger"}
-          className="!size-10 !rounded-xl"
         />
         <span className="translate-y-1 text-sm font-bold text-slate-600 dark:text-slate-300">
           {previousLabel}
@@ -45,9 +44,7 @@ export function LessonNavigation({
           ariaLabel={nextLabel}
           icon={<ArrowRight aria-hidden="true" />}
           variant={isA1 ? "answer" : "danger"}
-          className={`!size-10 !rounded-xl ${
-            isA1 ? "disabled:!bg-yellow-300" : "disabled:!bg-red-400"
-          }`}
+          className={isA1 ? "disabled:bg-yellow-300!" : "disabled:bg-red-400!"}
         />
       </div>
     </nav>

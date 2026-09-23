@@ -190,6 +190,10 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
         </div>
       </div>
       <hr className="mt-[0.2rem] border-gray-300" />
+      <div
+        className="pointer-events-none relative z-20 -mb-10 h-10 bg-linear-to-b from-white to-transparent dark:from-[#0a0a0a]"
+        aria-hidden="true"
+      />
     </>
   );
 };
