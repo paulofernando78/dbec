@@ -32,7 +32,7 @@ export const Button = ({
   const baseClasses =
     "grid h-[30px] w-[35px] cursor-pointer place-items-center rounded-[0.5em] border-0 bg-[#f0f0f0] pt-[3px] text-[#242424] no-underline transition duration-150 ease-in-out active:translate-y-[0.225em] disabled:cursor-not-allowed disabled:opacity-100 disabled:filter-none [&_svg]:size-[21px] [&_svg]:stroke-gray-400";
   const disabledClasses =
-    size === "choice" ? "disabled:cursor-default" : "disabled:!bg-white";
+    size === "choice" ? "disabled:cursor-default" : "disabled:!bg-[#f0f0f0]";
   const lessonClasses =
     size === "lesson"
       ? "h-[66px] w-[72px] rounded-xl pt-0 max-[620px]:h-[58px] max-[620px]:w-[64px] [&_svg]:size-[25px]"

@@ -36,8 +36,8 @@ export function GetReadySlider({ slides, isA1 }: Props) {
   }
 
   return (
-    <div className="my-6 grid gap-4">
-      <div className="relative aspect-video overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-700">
+    <div className="my-6 grid">
+      <div className="aspect-video overflow-hidden rounded-t-2xl bg-slate-100 dark:bg-slate-700">
         {slide.type === "video" ? (
           <video
             src={slide.src}
@@ -51,32 +51,34 @@ export function GetReadySlider({ slides, isA1 }: Props) {
             className="h-full w-full object-cover"
           />
         )}
-        <div className="absolute top-1/2 left-3 -translate-y-1/2">
-          <Button
-            onClick={() =>
-              setCurrentSlide((current) => Math.max(current - 1, 0))
-            }
-            disabled={currentSlide === 0}
-            ariaLabel="Previous picture"
-            icon={<ChevronLeft aria-hidden="true" />}
-            variant={isA1 ? "answer" : "danger"}
-            className="!size-10 !rounded-full disabled:!opacity-40 translate-y-1"
-          />
-        </div>
-        <div className="absolute top-1/2 right-3 -translate-y-1/2">
-          <Button
-            onClick={() =>
-              setCurrentSlide((current) =>
-                Math.min(current + 1, slides.length - 1),
-              )
-            }
-            disabled={currentSlide === slides.length - 1}
-            ariaLabel="Next picture"
-            icon={<ChevronRight aria-hidden="true" />}
-            variant={isA1 ? "answer" : "danger"}
-            className="!size-10 !rounded-full disabled:!opacity-40"
-          />
-        </div>
+      </div>
+      <div className="mb-4 grid grid-cols-2 items-center">
+        <Button
+          onClick={() => setCurrentSlide((current) => Math.max(current - 1, 0))}
+          disabled={currentSlide === 0}
+          ariaLabel="Previous picture"
+          icon={<ChevronLeft aria-hidden="true" />}
+          variant={currentSlide === 0 ? "default" : isA1 ? "answer" : "danger"}
+          className="w-full! rounded-none! rounded-bl-2xl!"
+        />
+        <Button
+          onClick={() =>
+            setCurrentSlide((current) =>
+              Math.min(current + 1, slides.length - 1),
+            )
+          }
+          disabled={currentSlide === slides.length - 1}
+          ariaLabel="Next picture"
+          icon={<ChevronRight aria-hidden="true" />}
+          variant={
+            currentSlide === slides.length - 1
+              ? "default"
+              : isA1
+                ? "answer"
+                : "danger"
+          }
+          className="w-full! rounded-none! rounded-br-2xl!"
+        />
       </div>
       <div className="mx-auto flex w-max justify-center gap-2 rounded-lg border border-slate-200 bg-slate-100 p-2">
         {slides.map((item, index) => (
@@ -91,7 +93,8 @@ export function GetReadySlider({ slides, isA1 }: Props) {
           />
         ))}
       </div>
-      <div className="items-start flex items-center gap-3 text-lg font-bold text-slate-700 dark:text-slate-100 ">
+
+      <div className="flex items-center items-start gap-3 text-lg font-bold text-slate-700 dark:text-slate-100">
         <Audio
           src={slide.text}
           asButton
