@@ -82,13 +82,13 @@ export function GetReadySlider({ slides, isA1 }: Props) {
           className="w-full! rounded-none! rounded-br-2xl!"
         />
       </div>
-      <div className="mx-auto flex w-max justify-center gap-2 rounded-lg border border-slate-200 bg-slate-100 p-2">
+      <div className="mx-auto flex w-max justify-center gap-2 my-4">
         {slides.map((item, index) => (
           <button
             key={item.src}
             type="button"
             onClick={() => setCurrentSlide(index)}
-            className={`size-2.5 rounded-full shadow ${
+            className={`size-2.5 rounded-full shadow shadow-black dark:shadow-white ${
               index === currentSlide ? "bg-yellow-400" : "bg-slate/80"
             }`}
             aria-label={`Go to picture ${index + 1}`}
@@ -96,7 +96,7 @@ export function GetReadySlider({ slides, isA1 }: Props) {
         ))}
       </div>
 
-      <div className="flex items-center items-start gap-3 text-lg font-bold text-slate-700 dark:text-slate-100">
+      <div className="flex items-start gap-3 text-lg font-bold text-slate-700 dark:text-slate-100">
         <Audio
           src={slide.text}
           asButton
