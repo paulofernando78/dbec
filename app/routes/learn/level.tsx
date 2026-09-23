@@ -100,9 +100,9 @@ export default function LearningLevel() {
             lessonIds: levelLessons.map((lesson) => lesson.id),
           });
         }}
-        className="mb-2"
+        className="mb-2 "
       >
-        <span className="text-yellow-600">Reset all</span>
+        Reset all
       </Button>
 
       {level.units.map((unit) => (

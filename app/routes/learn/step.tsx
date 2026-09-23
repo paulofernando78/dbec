@@ -9,7 +9,11 @@ import {
 import { useEffect, useState } from "react";
 import { Link, Navigate, useNavigate, useParams } from "react-router";
 import { LevelBanner } from "@/components/learning/LevelBanner";
-import { getLearningLesson, learningLessons } from "@/data/learning";
+import {
+  getLearningLesson,
+  learningLessons,
+  learningLevels,
+} from "@/data/learning";
 import {
   advanceLearningStep,
   completeLearningLesson,
@@ -34,9 +38,19 @@ const isLearningStep = (value: string): value is LearningStep =>
   learningSteps.some((step) => step === value);
 
 export default function LearningStepRoute() {
-  const { level = "", unit = "", lesson: slug = "", step = "" } = useParams();
   const navigate = useNavigate();
+
+  const { level = "", unit = "", lesson: slug = "", step = "" } = useParams();
+  // Captura os valores presentes na URL
+  // Examplo: pegue o parâmetro chamado lesson, mas guarde seu valor na variável slug
+
   const lesson = getLearningLesson(level, unit, slug);
+  // Essa função procura a aula correspondente ao nível, à Unit e ao slug da URL.
+  // Agora Lesson {lesson.order}, {lesson.title} funcionam dinamicamanete
+
+  const currentLevel = learningLevels[level as keyof typeof learningLevels];
+  const currentUnit = currentLevel?.units.find((item) => item.id === unit);
+
   const [checkedQuestions, setCheckedQuestions] = useState<string[]>([]);
   const [accessAllowed, setAccessAllowed] = useState<boolean | null>(null);
 
@@ -59,8 +73,14 @@ export default function LearningStepRoute() {
     );
   }, [lesson, level, step]);
 
-  if (!lesson || !isLearningStep(step))
+  if (!lesson || !currentUnit || !isLearningStep(step))
     return <Navigate to={`/learn/${level}`} replace />;
+  // Essa verificação significa:
+  // - se a Lesson não existir;
+  // - ou se a Unit não existir;
+  // - ou se o Step não for válido;
+  // o usuário será redirecionado para a página do nível.
+
   if (accessAllowed === false)
     return <Navigate to={`/learn/${level}`} replace />;
 
@@ -118,8 +138,8 @@ export default function LearningStepRoute() {
       <section>
         <header className="grid grid-cols-2">
           <div className="grid rounded-tl-2xl rounded-bl-2xl border-2 border-r-0 border-slate-200 bg-slate-50 p-4 text-2xl font-black">
-            <span className="text-xs text-amber-700 uppercase">unit 1</span>
-            <span>Meeting People</span>
+            <span className="text-xs text-amber-700 uppercase">unit {currentUnit.order}</span>
+            <span>{currentUnit.title}</span>
           </div>
           <div className="grid rounded-tr-2xl rounded-br-2xl border-2 border-slate-200 p-4 text-2xl font-black">
             <span className="text-xs text-amber-700 uppercase">
@@ -128,7 +148,7 @@ export default function LearningStepRoute() {
             <span>{lesson.title}</span>
           </div>
         </header>
-        <div className="my-4 flex w-max items-center gap-2 rounded-2xl border border-slate-300 px-2 py-1 mb-10">
+        <div className="my-4 mb-10 flex w-max items-center gap-2 rounded-2xl border border-slate-300 px-2 py-1">
           <span className="font-bold">{stepLabels[step]}</span>
           <span className="text-sm font-bold text-red-700">
             Step {stepIndex + 1} of {learningSteps.length}

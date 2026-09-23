@@ -72,20 +72,20 @@ export function GetReadySlider({ slides, isA1 }: Props) {
         >
           <ChevronRight aria-hidden="true" />
         </button>
-        <div className="absolute right-0 bottom-3 left-0 flex justify-center gap-2">
+      </div>
+        <div className="flex justify-center gap-2">
           {slides.map((item, index) => (
             <button
               key={item.src}
               type="button"
               onClick={() => setCurrentSlide(index)}
               className={`size-2.5 rounded-full shadow ${
-                index === currentSlide ? "bg-yellow-400" : "bg-white/80"
+                index === currentSlide ? "bg-yellow-400" : "bg-slate/80"
               }`}
               aria-label={`Go to picture ${index + 1}`}
             />
           ))}
         </div>
-      </div>
       <div className="flex items-center gap-3 text-lg font-bold text-slate-700 dark:text-slate-100">
         <Audio
           src={slide.text}
