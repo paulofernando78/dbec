@@ -7,17 +7,13 @@ import {
 
 export default [
   // Home
-  index("routes/home.tsx"),
+  index("routes/login.tsx"),
 
   // About
   route("/about", "routes/about.tsx"),
 
   //! Layout
   layout("routes/layout/layout.tsx", [
-    //! ─────────────────────────────────────────────
-    //! General
-    //! ─────────────────────────────────────────────
-
     // Welcome Page
     route("/welcome", "routes/welcome.tsx"),
 

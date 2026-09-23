@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
-import { LogIn, LogOut, Menu, MoonStar, Sun } from "lucide-react";
+import { Menu, MoonStar, Sun } from "lucide-react";
 
 interface HeadersProps {
   onClick: () => void;
@@ -10,23 +10,26 @@ interface HeadersProps {
 
 export const Header = ({ onClick }: HeadersProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
+    const savedTheme = window.localStorage.getItem("dbec:theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const shouldUseDark =
+      savedTheme === "dark" || (savedTheme === null && prefersDark);
+
+    setIsDarkMode(shouldUseDark);
+    document.documentElement.classList.toggle("dark", shouldUseDark);
+  }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-  };
-
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    const next = !isLoggedIn;
-
-    setIsLoggedIn(next);
-    navigate(next ? "/welcome" : "/");
+    setIsDarkMode((current) => {
+      const next = !current;
+      document.documentElement.classList.toggle("dark", next);
+      window.localStorage.setItem("dbec:theme", next ? "dark" : "light");
+      return next;
+    });
   };
 
   const location = useLocation();
@@ -62,11 +65,8 @@ export const Header = ({ onClick }: HeadersProps) => {
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
-        />
-
-        <Button
-          icon={isLoggedIn ? <LogOut /> : <LogIn />}
-          onClick={handleLogin}
+          ariaLabel={isDarkMode ? "Use light mode" : "Use dark mode"}
+          title={isDarkMode ? "Light mode" : "Dark mode"}
         />
       </div>
     </div>
