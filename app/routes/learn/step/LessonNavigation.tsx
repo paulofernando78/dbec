@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button/Button";
 
 type Props = {
@@ -18,10 +19,37 @@ export function LessonNavigation({
   onNext,
   nextDisabled,
 }: Props) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const scrollContainer = document.querySelector<HTMLElement>(
+      "[data-scroll-container]",
+    );
+    if (!scrollContainer) return;
+
+    const updateVisibility = () => {
+      setIsVisible(scrollContainer.scrollTop >= 300);
+    };
+
+    updateVisibility();
+    scrollContainer.addEventListener("scroll", updateVisibility, {
+      passive: true,
+    });
+
+    return () =>
+      scrollContainer.removeEventListener("scroll", updateVisibility);
+  }, []);
+
   return (
     <nav
-      className="sticky bottom-0 z-30 mt-8 flex w-full flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-slate-200 bg-white/95 px-4 pb-4.75 pt-3 backdrop-blur-sm dark:border-slate-600 dark:bg-slate-900/95"
+      className={`sticky bottom-0 z-30 mt-8 flex w-full flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-slate-200 bg-white/95 px-4 pt-3 pb-4.75 backdrop-blur-sm transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-none dark:border-slate-600 dark:bg-slate-900/95 ${
+        isVisible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none translate-y-4 opacity-0"
+      }`}
       aria-label="Lesson navigation"
+      aria-hidden={!isVisible}
+      inert={!isVisible}
     >
       <div className="flex items-center gap-4">
         <Button
@@ -31,12 +59,12 @@ export function LessonNavigation({
           variant={isA1 ? "answer" : "danger"}
           className="!size-11 !rounded-xl"
         />
-        <span className="text-sm font-bold text-slate-600 dark:text-slate-300 translate-y-1">
+        <span className="translate-y-1 text-sm font-bold text-slate-600 dark:text-slate-300">
           {previousLabel}
         </span>
       </div>
       <div className="flex items-center gap-4">
-        <span className="text-sm font-bold text-slate-600 dark:text-slate-300 translate-y-1">
+        <span className="translate-y-1 text-sm font-bold text-slate-600 dark:text-slate-300">
           {nextLabel}
         </span>
         <Button

@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Audio } from "@/components/ui/Audio/Audio";
+import { Button } from "@/components/ui/Button/Button";
 import type { GetReadySlide } from "./types";
 
 type Props = {
@@ -50,50 +51,54 @@ export function GetReadySlider({ slides, isA1 }: Props) {
             className="h-full w-full object-cover"
           />
         )}
-        <button
-          type="button"
-          onClick={() => setCurrentSlide((current) => Math.max(current - 1, 0))}
-          disabled={currentSlide === 0}
-          className="absolute top-1/2 left-3 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-slate-800 shadow-md backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label="Previous picture"
-        >
-          <ChevronLeft aria-hidden="true" />
-        </button>
-        <button
-          type="button"
-          onClick={() =>
-            setCurrentSlide((current) =>
-              Math.min(current + 1, slides.length - 1),
-            )
-          }
-          disabled={currentSlide === slides.length - 1}
-          className="absolute top-1/2 right-3 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-slate-800 shadow-md backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label="Next picture"
-        >
-          <ChevronRight aria-hidden="true" />
-        </button>
-      </div>
-        <div className="flex justify-center gap-2">
-          {slides.map((item, index) => (
-            <button
-              key={item.src}
-              type="button"
-              onClick={() => setCurrentSlide(index)}
-              className={`size-2.5 rounded-full shadow ${
-                index === currentSlide ? "bg-yellow-400" : "bg-slate/80"
-              }`}
-              aria-label={`Go to picture ${index + 1}`}
-            />
-          ))}
+        <div className="absolute top-1/2 left-3 -translate-y-1/2">
+          <Button
+            onClick={() =>
+              setCurrentSlide((current) => Math.max(current - 1, 0))
+            }
+            disabled={currentSlide === 0}
+            ariaLabel="Previous picture"
+            icon={<ChevronLeft aria-hidden="true" />}
+            variant={isA1 ? "answer" : "danger"}
+            className="!size-10 !rounded-full disabled:!opacity-40 translate-y-1"
+          />
         </div>
-      <div className="flex items-center gap-3 text-lg font-bold text-slate-700 dark:text-slate-100">
+        <div className="absolute top-1/2 right-3 -translate-y-1/2">
+          <Button
+            onClick={() =>
+              setCurrentSlide((current) =>
+                Math.min(current + 1, slides.length - 1),
+              )
+            }
+            disabled={currentSlide === slides.length - 1}
+            ariaLabel="Next picture"
+            icon={<ChevronRight aria-hidden="true" />}
+            variant={isA1 ? "answer" : "danger"}
+            className="!size-10 !rounded-full disabled:!opacity-40"
+          />
+        </div>
+      </div>
+      <div className="mx-auto flex w-max justify-center gap-2 rounded-lg border border-slate-200 bg-slate-100 p-2">
+        {slides.map((item, index) => (
+          <button
+            key={item.src}
+            type="button"
+            onClick={() => setCurrentSlide(index)}
+            className={`size-2.5 rounded-full shadow ${
+              index === currentSlide ? "bg-yellow-400" : "bg-slate/80"
+            }`}
+            aria-label={`Go to picture ${index + 1}`}
+          />
+        ))}
+      </div>
+      <div className="items-start flex items-center gap-3 text-lg font-bold text-slate-700 dark:text-slate-100 ">
         <Audio
           src={slide.text}
           asButton
           buttonVariant={isA1 ? "answer" : "danger"}
           className="shrink-0"
         />
-        <p className="m-0">{slide.text}</p>
+        <p className="m-0 translate-y-[0.4rem]">{slide.text}</p>
       </div>
     </div>
   );
