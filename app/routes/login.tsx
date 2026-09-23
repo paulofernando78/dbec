@@ -77,7 +77,7 @@ export default function Login() {
       <section className="self-start">
         <header className="mb-8">
           <h2 className="mb-2 text-4xl font-black">
-            DAILY BASIS ENGLISH COURSE
+            Learn a little every day.
           </h2>
           <p className="max-w-[620px] text-[1.05rem] text-slate-500 dark:text-slate-300">
             Short, practical lessons that turn English into a daily habit.

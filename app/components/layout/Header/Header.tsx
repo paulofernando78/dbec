@@ -47,6 +47,8 @@ export const Header = ({ onClick }: HeadersProps) => {
         />
       )}
 
+      <h1 className="uppercase font-black">daily basis english course</h1>
+
       {isPresentationPage && (
         <div className="font-font-oswald flex items-center gap-2.5 text-[1.3rem] font-bold">
           {/* <Link to="/about" className="text-lg">
