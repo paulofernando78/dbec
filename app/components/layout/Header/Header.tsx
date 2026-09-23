@@ -66,7 +66,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
       document.removeEventListener("mousedown", closeOnOutsideClick);
       document.removeEventListener("keydown", closeOnEscape);
     };
-}, [isLoginOpen]);
+  }, [isLoginOpen]);
 
   return (
     <>
@@ -79,7 +79,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
           />
         )}
         <h1 className="font-black uppercase">daily basis english</h1>
-  
+
         {isPresentationPage && (
           <div className="font-font-oswald flex items-center gap-2.5 text-[1.3rem] font-bold">
             {/* <Link to="/about" className="text-lg">
@@ -87,7 +87,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
             </Link> */}
           </div>
         )}
-  
+
         <div className="flex gap-2">
           <Button
             icon={isDarkMode ? <Sun /> : <MoonStar />}
@@ -95,7 +95,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
             ariaLabel={isDarkMode ? "Use light mode" : "Use dark mode"}
             title={isDarkMode ? "Light mode" : "Dark mode"}
           />
-  
+
           <div className="flex gap-1.75">
             {!isLoggedIn && isPresentationPage && (
               <div className="relative" ref={loginPopoverRef}>
@@ -105,7 +105,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
                   ariaLabel={isLoginOpen ? "Close login" : "Open login"}
                   title="Log in"
                 />
-  
+
                 {isLoginOpen && (
                   <div
                     className="absolute top-11 right-0 z-50 w-72 rounded-2xl border-2 border-slate-200 bg-white p-4 shadow-xl dark:border-slate-600 dark:bg-slate-800"
@@ -120,7 +120,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
                         ariaLabel="Close login"
                       />
                     </div>
-  
+
                     <loginFetcher.Form
                       method="post"
                       action="/?index"
@@ -174,7 +174,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
                 )}
               </div>
             )}
-  
+
             {isLoggedIn && (
               <loginFetcher.Form method="post" action="/logout">
                 <Button
@@ -193,6 +193,6 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
         className="pointer-events-none relative z-20 -mb-3 h-3 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.12)_65%,rgba(255,255,255,0)_100%)] dark:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.27)_0%,rgba(0,0,0,0.06)_65%,rgba(0,0,0,0)_100%)]"
         aria-hidden="true"
       />
-    </> 
+    </>
   );
 };

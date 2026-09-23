@@ -15,6 +15,7 @@ import { Link } from "react-router";
 
 import { learningLessons, learningLevels } from "@/data/learning";
 import {
+  getLearningProgressSummary,
   getLearningStep,
   isLearningLessonCompleted,
 } from "@/utils/learning-progress";
@@ -376,12 +377,18 @@ export default function Welcome() {
     (typeof emojis)[number] | null
   >(null);
   const [currentLesson, setCurrentLesson] = useState(learningLessons[0]);
+  const [progressSummary, setProgressSummary] = useState({
+    completedLessons: 0,
+    streak: 0,
+    totalXp: 0,
+  });
 
   useEffect(() => {
     setCurrentLesson(
       learningLessons.find((lesson) => !isLearningLessonCompleted(lesson.id)) ??
         learningLessons[learningLessons.length - 1],
     );
+    setProgressSummary(getLearningProgressSummary(learningLessons));
   }, []);
 
   const currentUnitLessons = learningLessons.filter(
@@ -485,19 +492,19 @@ export default function Welcome() {
         {[
           {
             icon: Flame,
-            value: "3",
+            value: String(progressSummary.streak),
             label: "day streak",
             color: "text-orange-500 bg-orange-50 dark:bg-orange-950",
           },
           {
             icon: Star,
-            value: "120",
+            value: String(progressSummary.totalXp),
             label: "total XP",
             color: "text-amber-500 bg-amber-50 dark:bg-amber-950",
           },
           {
             icon: Check,
-            value: "4",
+            value: String(progressSummary.completedLessons),
             label: "lessons done",
             color: "text-green-600 bg-green-50 dark:bg-green-950",
           },
