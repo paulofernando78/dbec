@@ -193,6 +193,6 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
         className="pointer-events-none relative z-20 -mb-10 h-10 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.12)_65%,rgba(255,255,255,0)_100%)] dark:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.27)_0%,rgba(0,0,0,0.06)_65%,rgba(0,0,0,0)_100%)]"
         aria-hidden="true"
       />
-    </>
+    </> 
   );
 };
