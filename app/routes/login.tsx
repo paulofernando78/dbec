@@ -76,11 +76,8 @@ export default function Login() {
     <main className="mx-auto grid w-[calc(100%_-_32px)] max-w-[980px] grid-cols-[1.35fr_0.8fr] items-center gap-10 py-12 max-[760px]:grid-cols-1 max-[620px]:w-[calc(100%_-_20px)]">
       <section className="self-start">
         <header className="mb-8">
-          <span className="text-xs font-extrabold tracking-[.12em] text-gray-500 dark:text-gray-400">
-            YOUR ENGLISH JOURNEY
-          </span>
-          <h1>DAILY BASIS ENGLISH COURSE</h1>
-          <h2 className="my-3 text-[clamp(0.5rem,7vw,2.5rem)] leading-[1.02] font-black text-slate-800 dark:text-slate-100">
+          <h1 className="text-4xl mb-6">DAILY BASIS ENGLISH COURSE</h1>
+          <h2 className="my-3 text-2xl leading-[1.02] font-black text-slate-800 dark:text-slate-100">
             Learn a little every day.
           </h2>
           <p className="max-w-[620px] text-[1.05rem] text-slate-500 dark:text-slate-300">
@@ -90,7 +87,7 @@ export default function Login() {
 
         <div className="text-center dark:border-slate-600">
           <p
-            className="m-0 font-luckiest-guy text-[clamp(1.5rem,4vw,2.25rem)] text-amber-600 transition-opacity duration-300 dark:text-yellow-400"
+            className="m-0 font-luckiest-guy text-[clamp(1.5rem,4vw,2.25rem)] text-gray-800 transition-opacity duration-300 dark:text-gray-200"
             style={{ opacity: greetingOpacity }}
           >
             {greetingsList[greetingIndex]}

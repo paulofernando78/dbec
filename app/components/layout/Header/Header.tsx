@@ -49,15 +49,9 @@ export const Header = ({ onClick }: HeadersProps) => {
 
       {isPresentationPage && (
         <div className="font-font-oswald flex items-center gap-2.5 text-[1.3rem] font-bold">
-          <Link to="/" className="text-lg">
-            HOME
-          </Link>
-
-          <span className="h-5 w-0.75 bg-gray-500" />
-
-          <Link to="/about" className="text-lg">
+          {/* <Link to="/about" className="text-lg">
             ABOUT
-          </Link>
+          </Link> */}
         </div>
       )}
 
