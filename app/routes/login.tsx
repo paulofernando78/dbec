@@ -73,12 +73,11 @@ export default function Login() {
   }, []);
 
   return (
-    <main className="mx-auto grid w-[calc(100%_-_32px)] max-w-[980px] grid-cols-[1.35fr_0.8fr] items-center gap-10 py-12 max-[760px]:grid-cols-1 max-[620px]:w-[calc(100%_-_20px)]">
+    <main className="mx-auto grid w-[calc(100%_-_32px)] max-w-[980px] grid-cols-[1.35fr_0.8fr] items-center gap-8 py-12 max-[760px]:grid-cols-1 max-[620px]:w-[calc(100%_-_20px)]">
       <section className="self-start">
         <header className="mb-8">
-          <h1 className="text-4xl mb-6">DAILY BASIS ENGLISH COURSE</h1>
-          <h2 className="my-3 text-2xl leading-[1.02] font-black text-slate-800 dark:text-slate-100">
-            Learn a little every day.
+          <h2 className="mb-2 text-4xl font-black">
+            DAILY BASIS ENGLISH COURSE
           </h2>
           <p className="max-w-[620px] text-[1.05rem] text-slate-500 dark:text-slate-300">
             Short, practical lessons that turn English into a daily habit.
