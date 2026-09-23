@@ -16,9 +16,18 @@
   --font-fredericka-the-great: "Fredericka the Great", system-ui;
 }
 
+:root {
+  --background: #ffffff;
+  --text-color: var(--color-slate-800);
+  --text-color-muted: var(--color-slate-500);
+  --placeholder-color: var(--color-slate-400);
+}
+
 .dark {
   --background: #0a0a0a;
   --ribbon: var(--gray-5);
-  --text-color: var(--slate-2);
+  --text-color: var(--color-slate-100);
+  --text-color-muted: var(--color-slate-300);
+  --placeholder-color: var(--color-slate-500);
   --text-color-fixed: var(--slate-7);
 }

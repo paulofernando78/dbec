@@ -77,6 +77,18 @@ export const createLoginSession = async (
   });
 };
 
+export const destroyLoginSession = async (request: Request) => {
+  const session = await sessionStorage.getSession(
+    request.headers.get("Cookie"),
+  );
+
+  return redirect("/", {
+    headers: {
+      "Set-Cookie": await sessionStorage.destroySession(session),
+    },
+  });
+};
+
 export const safeRedirect = (value: string | null, fallback = "/welcome") => {
   if (!value || !value.startsWith("/") || value.startsWith("//")) {
     return fallback;

@@ -11,6 +11,7 @@ type ButtonProps = {
   to?: string;
   ariaLabel?: string;
   title?: string;
+  type?: "button" | "submit" | "reset";
   className?: string;
   joined?: "start" | "end";
   size?: "default" | "lesson" | "choice";
@@ -25,6 +26,7 @@ export const Button = ({
   to,
   ariaLabel,
   title,
+  type = "button",
   className = "",
   joined,
   size = "default",
@@ -73,7 +75,7 @@ export const Button = ({
 
   return (
     <button
-      type="button"
+      type={type}
       className={classes}
       onClick={onClick}
       disabled={disabled}

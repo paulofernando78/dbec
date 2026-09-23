@@ -12,6 +12,9 @@ export default [
   // About
   route("/about", "routes/about.tsx"),
 
+  // Logout
+  route("/logout", "routes/logout.tsx"),
+
   //! Layout
   layout("routes/layout/layout.tsx", [
     // Welcome Page

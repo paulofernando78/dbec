@@ -7,8 +7,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
   useNavigation,
 } from "react-router";
+import type { LoaderFunctionArgs } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -16,6 +18,11 @@ import "./app.css";
 import { Loading } from "@/components/ui/Loading";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "./components/layout/Footer";
+import { getLoggedInUser } from "@/utils/auth.server";
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  return { userEmail: await getLoggedInUser(request) };
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -36,6 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const { userEmail } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
   const isLoading = navigation.state === "loading";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
@@ -66,7 +74,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-container">
-        <Header onClick={toggleNav} />
+        <Header onClick={toggleNav} isLoggedIn={Boolean(userEmail)} />
         <div className="app-content">
           <div id="content-scroll" className="app-scrollArea">
             {isLoading ? (
@@ -99,11 +107,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
+    <main className="container mx-auto p-4 pt-16">
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
+        <pre className="w-full overflow-x-auto p-4">
           <code>{stack}</code>
         </pre>
       )}

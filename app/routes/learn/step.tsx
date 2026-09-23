@@ -140,20 +140,20 @@ export default function LearningStepRoute() {
       <LevelBanner levelId={isA1 ? "a1" : "a2"} />
       <section>
         <header className="grid grid-cols-2">
-          <div className="grid rounded-tl-2xl rounded-bl-2xl border-2 border-r-0 border-slate-200 bg-slate-50 p-4 text-2xl font-black">
+          <div className="grid rounded-tl-2xl rounded-bl-2xl border-2 border-r-0 border-slate-200 bg-slate-50 p-4 text-2xl font-black text-slate-800 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100">
             <span className={`text-xs uppercase ${accentText}`}>
               Unit {currentUnit.order}
             </span>
             <span>{currentUnit.title}</span>
           </div>
-          <div className="grid rounded-tr-2xl rounded-br-2xl border-2 border-slate-200 p-4 text-2xl font-black">
+          <div className="grid rounded-tr-2xl rounded-br-2xl border-2 border-slate-200 bg-white p-4 text-2xl font-black text-slate-800 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100">
             <span className={`text-xs uppercase ${accentText}`}>
               Lesson {lesson.order}{" "}
             </span>
             <span>{lesson.title}</span>
           </div>
         </header>
-        <div className="my-4 mb-10 flex w-max items-center gap-2 rounded-2xl border border-slate-300 px-2 py-1">
+        <div className="my-4 mb-10 flex w-max items-center gap-2 rounded-2xl border border-slate-300 px-2 py-1 text-slate-800 dark:border-slate-600 dark:text-slate-100">
           <span className="font-bold">{stepLabels[step]}</span>
           <span className={`text-sm font-bold ${accentText}`}>
             Step {stepIndex + 1} of {learningSteps.length}

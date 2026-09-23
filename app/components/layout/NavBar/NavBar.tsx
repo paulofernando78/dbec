@@ -2,11 +2,7 @@ import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import type { ElementType } from "react";
 
-import {
-  BookMarked as CourseBook,
-  ChevronDown,
-  ChevronRight,
-} from "lucide-react";
+import { BookMarked as CourseBook } from "lucide-react";
 
 type NavItem = {
   label: string;
@@ -39,49 +35,6 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
-  if (item.links?.length) {
-    return (
-      <details className="mb-1 open:[&>summary_.chevron-down]:block open:[&>summary_.chevron-right]:hidden">
-        <summary className="flex cursor-pointer list-none items-center gap-2">
-          <span className="flex shrink-0 items-center">
-            <ChevronRight size={25} className="chevron-right" />
-            <ChevronDown size={25} className="chevron-down hidden" />
-          </span>
-
-          {item.iconClassName && (
-            <CourseBook
-              width={25}
-              height={25}
-              className={`shrink-0 ${item.iconClassName}`}
-            />
-          )}
-
-          {item.href ? (
-            <NavLink
-              to={item.href}
-              onClick={(e) => e.stopPropagation()}
-              className="flex items-center"
-            >
-              <span>{item.label}</span>
-            </NavLink>
-          ) : (
-            <span>{item.label}</span>
-          )}
-        </summary>
-
-        <div>
-          {item.links.map((child) => (
-            <RenderNavItem
-              key={getNavItemKey(child)}
-              item={child}
-              closeNavBar={closeNavBar}
-            />
-          ))}
-        </div>
-      </details>
-    );
-  }
-
   if (!item.href) {
     return (
       <div className="flex gap-3">

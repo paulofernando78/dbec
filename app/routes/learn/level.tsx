@@ -107,7 +107,7 @@ export default function LearningLevel() {
 
       {level.units.map((unit) => (
         <section
-          className="overflow-hidden rounded-[22px] border-2 border-slate-200 dark:border-slate-600"
+          className="overflow-hidden rounded-2xl border-2 border-slate-200 dark:border-slate-600"
           key={unit.id}
         >
           <header className="flex justify-between gap-5 border-b-2 border-slate-200 bg-slate-50 p-6 max-[620px]:flex-col dark:border-slate-600 dark:bg-slate-800">
@@ -125,7 +125,7 @@ export default function LearningLevel() {
               </p>
             </div>
             <div className="flex gap-2 self-start max-[620px]:self-start">
-              <div className="rounded-xl border-2 border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-slate-500 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
+              <div className="shrink-0 rounded-xl border-2 border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-slate-500 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
                 {
                   unit.lessons.filter((lesson) =>
                     completedLessonIds.has(lesson.id),
@@ -152,7 +152,7 @@ export default function LearningLevel() {
                       .map((lesson) => lesson.id),
                   });
                 }}
-                className="translate-y-[-0.1rem]"
+                className="shrink-0 translate-y-[-0.1rem]"
               />
             </div>
           </header>

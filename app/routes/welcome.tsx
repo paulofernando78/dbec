@@ -12,13 +12,15 @@ import {
   Volume2,
 } from "lucide-react";
 import { Link } from "react-router";
-import { Button } from "@/components/ui/Button/Button";
+
 import { learningLessons, learningLevels } from "@/data/learning";
 import {
   getLearningStep,
   isLearningLessonCompleted,
 } from "@/utils/learning-progress";
 import { learningSteps } from "./learn/step/types";
+
+import { Button } from "@/components/ui/Button/Button";
 
 const emojis = [
   {
@@ -448,6 +450,7 @@ export default function Welcome() {
               </span>
             </div>
             <Button
+              variant={isCurrentLevelA1 ? "answer" : "danger"}
               className="mt-6 mb-4"
               to={`/learn/${currentLesson.level}/${currentLesson.unitId}/${currentLesson.slug}/${currentStep}`}
             >
@@ -528,7 +531,6 @@ export default function Welcome() {
               How are you feeling today?
             </h2>
           </div>
-          
         </div>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(130px,1fr))] place-items-center gap-4">
           {emojis.map((feeling) => {
@@ -536,7 +538,7 @@ export default function Welcome() {
             const selected = selectedFeeling?.img === feeling.img;
             return (
               <button
-                className={`flex w-35 h-30 flex-col items-center justify-center rounded-[15px] border-0 px-3 py-4 font-extrabold capitalize transition-[transform,box-shadow,background-color,color] active:translate-y-[3px] ${selected ? "bg-sky-100 text-sky-700 shadow-[0_3px_0_#38bdf8] dark:bg-sky-950 dark:text-sky-300 dark:shadow-[0_3px_0_#0284c7]" : "bg-slate-50 text-slate-600 shadow-[0_5px_0_#d7dce0] hover:bg-sky-50 hover:text-sky-700 active:shadow-[0_2px_0_#d7dce0] dark:bg-slate-700 dark:text-slate-200 dark:shadow-[0_5px_0_#334155]"}`}
+                className={`flex h-30 w-35 flex-col items-center justify-center rounded-[15px] border-0 px-3 py-4 font-extrabold capitalize transition-[transform,box-shadow,background-color,color] active:translate-y-[3px] ${selected ? "bg-sky-100 text-sky-700 shadow-[0_3px_0_#38bdf8] dark:bg-sky-950 dark:text-sky-300 dark:shadow-[0_3px_0_#0284c7]" : "bg-slate-50 text-slate-600 shadow-[0_5px_0_#d7dce0] hover:bg-sky-50 hover:text-sky-700 active:shadow-[0_2px_0_#d7dce0] dark:bg-slate-700 dark:text-slate-200 dark:shadow-[0_5px_0_#334155]"}`}
                 key={feeling.img}
                 onClick={() => setSelectedFeeling(feeling)}
               >

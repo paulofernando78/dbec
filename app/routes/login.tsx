@@ -1,13 +1,6 @@
-import { LogIn } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
-import {
-  Form,
-  redirect,
-  useActionData,
-  useLoaderData,
-  useNavigation,
-} from "react-router";
+import { redirect } from "react-router";
 import {
   createLoginSession,
   getLoggedInUser,
@@ -27,8 +20,7 @@ const greetingsList = [
 
 export async function loader({ request }: LoaderFunctionArgs) {
   if (await getLoggedInUser(request)) throw redirect("/welcome");
-  const url = new URL(request.url);
-  return { redirectTo: safeRedirect(url.searchParams.get("redirectTo")) };
+  return null;
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -45,10 +37,6 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Login() {
-  const { redirectTo } = useLoaderData<typeof loader>();
-  const actionData = useActionData<typeof action>();
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === "submitting";
   const [greetingIndex, setGreetingIndex] = useState(0);
   const [greetingOpacity, setGreetingOpacity] = useState(1);
 
@@ -73,75 +61,19 @@ export default function Login() {
   }, []);
 
   return (
-    <main className="mx-auto grid w-[calc(100%_-_32px)] max-w-[980px] grid-cols-[1.35fr_0.8fr] items-center gap-8 py-12 max-[760px]:grid-cols-1 max-[620px]:w-[calc(100%_-_20px)]">
-      <section className="self-start">
-        <header className="mb-8">
-          <h2 className="mb-2 text-4xl font-black">
-            Learn a little every day.
-          </h2>
-          <p className="max-w-[620px] text-[1.05rem] text-slate-500 dark:text-slate-300">
-            Short, practical lessons that turn English into a daily habit.
-          </p>
-        </header>
-
-        <div className="text-center dark:border-slate-600">
-          <p
-            className="m-0 font-luckiest-guy text-[clamp(1.5rem,4vw,2.25rem)] text-gray-800 transition-opacity duration-300 dark:text-gray-200"
-            style={{ opacity: greetingOpacity }}
-          >
-            {greetingsList[greetingIndex]}
-          </p>
-        </div>
-      </section>
-
-      <section className="rounded-3xl border-2 border-slate-200 bg-white p-7 shadow-xl shadow-slate-200/50 dark:border-slate-600 dark:bg-slate-800 dark:shadow-none">
-        <h2 className="mb-2 text-2xl font-black text-slate-800 dark:text-slate-100">
-          Welcome
-        </h2>
-        <p className="mb-6 text-sm text-slate-500 dark:text-slate-300">
-          Log in to continue your English journey.
+    <main className="mx-auto flex w-[calc(100%_-_32px)] max-w-[760px] items-center justify-center py-12 max-[620px]:w-[calc(100%_-_20px)]">
+      <section className="w-full text-center">
+        <h2 className="mb-2 text-4xl font-black">Learn a little every day.</h2>
+        <p className="mb-20 text-lg">
+          Short, practical lessons that turn English into a daily habit.
         </p>
 
-        <Form className="grid gap-4" method="post">
-          <input type="hidden" name="redirectTo" value={redirectTo} />
-          <label className="grid gap-1.5 text-sm font-bold text-slate-700 dark:text-slate-200">
-            Email
-            <input
-              required
-              type="email"
-              name="email"
-              autoComplete="email"
-              className="rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 font-normal transition outline-none focus:border-amber-400 dark:border-slate-600 dark:bg-slate-900"
-              placeholder="you@example.com"
-            />
-          </label>
-          <label className="grid gap-1.5 text-sm font-bold text-slate-700 dark:text-slate-200">
-            Password
-            <input
-              required
-              type="password"
-              name="password"
-              autoComplete="current-password"
-              className="rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-3 font-normal transition outline-none focus:border-amber-400 dark:border-slate-600 dark:bg-slate-900"
-              placeholder="Enter your password"
-            />
-          </label>
-          {actionData?.error && (
-            <p
-              className="m-0 rounded-xl bg-red-50 px-4 py-3 text-sm font-bold text-red-700 dark:bg-red-950 dark:text-red-300"
-              role="alert"
-            >
-              {actionData.error}
-            </p>
-          )}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="mt-2 rounded-xl border-0 bg-amber-400 px-5 py-3 font-black text-amber-900 shadow-[0_4px_0_#d97706] transition active:translate-y-1 active:shadow-none disabled:cursor-wait disabled:opacity-70"
-          >
-            {isSubmitting ? "Logging in..." : "Log in"}
-          </button>
-        </Form>
+        <p
+          className="font-luckiest-guy text-[clamp(1.5rem,4vw,2.25rem)] transition-opacity duration-300"
+          style={{ opacity: greetingOpacity }}
+        >
+          {greetingsList[greetingIndex]}
+        </p>
       </section>
     </main>
   );

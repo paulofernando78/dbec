@@ -13,7 +13,7 @@ export function LevelBanner({ levelId, className = "" }: Props) {
 
   return (
     <header
-      className={`rounded-[22px] bg-linear-to-br p-6 max-[620px]:p-5 ${
+      className={`rounded-2xl bg-linear-to-br p-6 max-[620px]:p-5 ${
         isA1
           ? "from-yellow-400 to-amber-600 text-slate-900"
           : "from-red-500 to-red-700 text-white"

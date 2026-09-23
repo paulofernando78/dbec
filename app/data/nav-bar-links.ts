@@ -42,16 +42,7 @@ export const links: NavGroup[] = [
     iconClassName: "text-gray-400",
     links: Object.values(learningLevels).map((level) => ({
       href: `/learn/${level.id}`,
-      label: level.label.replace(" ", " · "),
-      links: level.units.map((unit) => ({
-        label: `Unit ${unit.order} · ${unit.title}`,
-        links: unit.lessons
-          .filter((lesson) => "exercises" in lesson)
-          .map((lesson) => ({
-            href: `/learn/${level.id}/${unit.id}/${lesson.slug}/get-ready`,
-            label: `${lesson.order} · ${lesson.title}`,
-          })),
-      })),
+      label: level.label.replace(" ", " - "),
     })),
   },
 ];

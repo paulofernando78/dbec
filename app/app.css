@@ -30,8 +30,24 @@ body {
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #495057;
-  /* user-select: none; */
+  user-select: none;
+}
+
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+}
+
+::placeholder {
+  color: var(--placeholder-color);
+  opacity: 1;
+}
+
+.text-muted {
+  color: var(--text-color-muted);
 }
 
 .app {
