@@ -18,7 +18,7 @@ export default function Layout() {
   const { isNavBarOpen, closeNavBar } = useOutletContext<LayoutContext>();
 
   return (
-    <div className="grid h-full min-h-0 flex-1 grid-cols-[260px_minmax(0,1fr)] gap-2 overflow-hidden max-[700px]:grid-cols-1">
+    <div className="grid h-full min-h-0 flex-1 grid-cols-[250px_minmax(0,1fr)] gap-2 overflow-hidden max-[700px]:grid-cols-1">
       <aside
         className={`z-20 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute max-[700px]:w-[260px] ${
           isNavBarOpen

@@ -36,7 +36,7 @@ export function GetReadySlider({ slides, isA1 }: Props) {
   }
 
   return (
-    <div className="my-6 grid">
+    <div className="my-6 p-2 grid">
       <div className="aspect-video overflow-hidden rounded-t-2xl bg-slate-100 dark:bg-slate-700">
         {slide.type === "video" ? (
           <video
@@ -52,7 +52,7 @@ export function GetReadySlider({ slides, isA1 }: Props) {
           />
         )}
       </div>
-      <div className="mb-4 grid grid-cols-2 items-center -translate-y-[0.2rem]">
+      <div className="mb-4 grid grid-cols-2 items-center translate-y-[-0.2rem]">
         <Button
           onClick={() => setCurrentSlide((current) => Math.max(current - 1, 0))}
           disabled={currentSlide === 0}
