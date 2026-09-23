@@ -4,8 +4,6 @@ import { NavBar } from "@/components/layout/NavBar";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { requireLoggedInUser } from "@/utils/auth.server";
 
-import styles from "./layout.module.css";
-
 type LayoutContext = {
   isNavBarOpen: boolean;
   closeNavBar: () => void;
@@ -20,11 +18,20 @@ export default function Layout() {
   const { isNavBarOpen, closeNavBar } = useOutletContext<LayoutContext>();
 
   return (
-    <div className={styles.layout}>
-      <aside className={`${styles.aside} ${isNavBarOpen ? styles.open : ""}`}>
+    <div className="grid h-full min-h-0 flex-1 grid-cols-[260px_minmax(0,1fr)] gap-2 overflow-hidden max-[700px]:grid-cols-1">
+      <aside
+        className={`z-20 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute max-[700px]:w-[260px] ${
+          isNavBarOpen
+            ? "max-[700px]:translate-x-0"
+            : "max-[700px]:-translate-x-[265px]"
+        }`}
+      >
         <NavBar closeNavBar={closeNavBar} />
       </aside>
-      <main className={styles.main} data-scroll-container>
+      <main
+        className="min-h-0 w-full overflow-y-auto"
+        data-scroll-container
+      >
         <Outlet />
         <ScrollToTop />
       </main>

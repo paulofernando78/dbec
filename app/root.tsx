@@ -73,9 +73,9 @@ export default function App() {
 
   return (
     <div className="app">
-      <div className="app-container">
+      <div className="flex min-h-0 flex-1 flex-col gap-1.25 p-1.25">
         <Header onClick={toggleNav} isLoggedIn={Boolean(userEmail)} />
-        <div className="app-content">
+        <div className="flex min-h-0 flex-1 flex-col">
           <div id="content-scroll" className="app-scrollArea">
             {isLoading ? (
               <Loading />
@@ -107,7 +107,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="container mx-auto p-4 pt-16">
+    <main className="container mx-auto p- pt-16">
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
