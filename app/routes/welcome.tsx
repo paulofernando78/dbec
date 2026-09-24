@@ -482,7 +482,45 @@ export default function Welcome() {
             </Button>
           </div>
         </article>
-
+        <section className="grid gap-4 max-[620px]:grid-cols-1">
+          {[
+            {
+              icon: Check,
+              value: `${progressSummary.completedLessons} of ${learningLessons.length}`,
+              label: "lessons done",
+              color: "text-green-600 bg-green-50 dark:bg-green-950",
+            },
+            {
+              icon: Star,
+              value: `${progressSummary.totalXp} of ${maximumXp}`,
+              label: "total XP",
+              color: "text-amber-500 bg-amber-50 dark:bg-amber-950",
+            },
+            {
+              icon: Flame,
+              value: String(progressSummary.streak),
+              label: "day streak",
+              color: "text-orange-500 bg-orange-50 dark:bg-orange-950",
+            },
+          ].map(({ icon: Icon, value, label, color }) => (
+            <article
+              className="flex items-center gap-3 rounded-[18px] border-2 border-slate-200 bg-white p-4 dark:border-slate-600 dark:bg-slate-800"
+              key={label}
+            >
+              <div
+                className={`grid size-11 shrink-0 place-items-center rounded-xl ${color}`}
+              >
+                <Icon size={22} />
+              </div>
+              <div>
+                <strong className="block text-xl font-black">{value}</strong>
+                <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                  {label}
+                </span>
+              </div>
+            </article>
+          ))}
+        </section>
         {/* <article className="rounded-[24px] border-2 border-slate-200 bg-white p-6 dark:border-slate-600 dark:bg-slate-800">
           <div className="flex items-center justify-between">
             <div className="grid size-11 place-items-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-300">
@@ -505,49 +543,9 @@ export default function Welcome() {
         </article> */}
       </section>
 
-      <section className="mb-6 grid grid-cols-3 gap-4 max-[620px]:grid-cols-1">
-        {[
-          {
-            icon: Flame,
-            value: String(progressSummary.streak),
-            label: "day streak",
-            color: "text-orange-500 bg-orange-50 dark:bg-orange-950",
-          },
-          {
-            icon: Star,
-            value: `${progressSummary.totalXp} of ${maximumXp}`,
-            label: "total XP",
-            color: "text-amber-500 bg-amber-50 dark:bg-amber-950",
-          },
-          {
-            icon: Check,
-            value: `${progressSummary.completedLessons} of ${learningLessons.length}`,
-            label: "lessons done",
-            color: "text-green-600 bg-green-50 dark:bg-green-950",
-          },
-        ].map(({ icon: Icon, value, label, color }) => (
-          <article
-            className="flex items-center gap-3 rounded-[18px] border-2 border-slate-200 bg-white p-4 dark:border-slate-600 dark:bg-slate-800"
-            key={label}
-          >
-            <div
-              className={`grid size-11 shrink-0 place-items-center rounded-xl ${color}`}
-            >
-              <Icon size={22} />
-            </div>
-            <div>
-              <strong className="block text-xl font-black">{value}</strong>
-              <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
-                {label}
-              </span>
-            </div>
-          </article>
-        ))}
-      </section>
-
       <section className="mb-6">
         <div className="mb-5 flex items-center justify-between gap-4">
-          <div >
+          <div>
             <h2 className="mt-1 text-2xl font-black">
               How are you feeling today?
             </h2>

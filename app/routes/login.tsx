@@ -80,7 +80,14 @@ export default function Login() {
   return (
     <main className="mx-auto w-[calc(100%_-_32px)] max-w-[900px] py-12 max-[620px]:w-[calc(100%_-_20px)]">
       <section className="mb-24 w-full text-center max-[620px]:mb-16">
-        <h2 className="mb-2 text-4xl font-black uppercase">daily basis english course</h2>
+        <div className="mb-4 font-luckiest-guy text-gray-400 [-webkit-text-stroke:10px_#000] [paint-order:stroke_fill]">
+          <h2 className="text-[3.12rem] font-black uppercase text-edge-cap text-trim-both">
+            daily basis
+          </h2>
+          <h2 className="translate-y-3 text-4xl font-black uppercase">
+            english course
+          </h2>
+        </div>
         <p className="mb-16 text-lg text-slate-500 dark:text-slate-400">
           Short, practical lessons that turn English into a daily habit.
         </p>
@@ -95,13 +102,13 @@ export default function Login() {
 
       <section aria-labelledby="plans-title">
         <div className="mb-8 text-center">
-          <p className="mb-2 text-sm font-black tracking-[0.16em] text-amber-500 uppercase">
+          <h2 className="mb-2 text-xl font-black tracking-[0.16em] uppercase">
             Choose your journey
-          </p>
-          <h2 id="plans-title" className="text-3xl font-black">
-            Learn for free. Go further when you’re ready.
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-slate-500 dark:text-slate-400">
+          {/* <h2 id="plans-title" className="text-3xl font-black">
+            Learn for free. Go further when you’re ready.
+          </h2> */}
+          <p className="mx-auto max-w-2xl text-slate-500 dark:text-slate-400">
             Start building your English habit now. Premium features will be
             available later for learners who want the complete experience.
           </p>
@@ -135,9 +142,7 @@ export default function Login() {
             <Button
               icon={<LogIn />}
               className="mt-auto w-full!"
-              onClick={() =>
-                window.dispatchEvent(new Event("dbec:open-login"))
-              }
+              onClick={() => window.dispatchEvent(new Event("dbec:open-login"))}
             >
               Start for free
             </Button>

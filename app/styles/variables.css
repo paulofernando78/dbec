@@ -16,6 +16,13 @@
   --font-fredericka-the-great: "Fredericka the Great", system-ui;
 }
 
+@utility text-trim-both {
+  text-box-trim: trim-both;
+}
+@utility text-edge-cap {
+  text-box-edge: cap alphabetic;
+}
+
 :root {
   --background: #ffffff;
   --text-color: var(--color-slate-800);

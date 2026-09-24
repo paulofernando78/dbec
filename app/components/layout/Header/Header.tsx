@@ -168,7 +168,6 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
                       )}
                       <Button
                         type="submit"
-                        icon={<LogIn />}
                         disabled={loginFetcher.state !== "idle"}
                         className="mt-1 w-full!"
                       >
