@@ -85,7 +85,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
             className="transition-all duration-1000 min-[700px]:-translate-x-13.75"
           />
         )}
-        <h1 className="font-black uppercase">daily basis english</h1>
+        {/* <h1 className="font-black uppercase">daily basis english</h1> */}
 
         {isPresentationPage && (
           <div className="font-font-oswald flex items-center gap-2.5 text-[1.3rem] font-bold">

@@ -447,7 +447,7 @@ export default function Welcome() {
               {currentLevel.label.replace(" ", " · ")}
             </h2>
             <h3 className="mt-2 text-2xl font-black">{currentLesson.title}</h3>
-            <p className="mt-2 max-w-[490px] opacity-90">
+            <p className="mt-2 max-w-122.5 opacity-90">
               {currentLesson.description}
             </p>
             <div className="mt-6 flex items-center gap-3">
@@ -543,7 +543,7 @@ export default function Welcome() {
         </article> */}
       </section>
 
-      <section className="mb-6">
+      <section className="mb-6 ">
         <div className="mb-5 flex items-center justify-between gap-4">
           <div>
             <h2 className="mt-1 text-2xl font-black">
@@ -551,7 +551,7 @@ export default function Welcome() {
             </h2>
           </div>
         </div>
-        <div className="grid grid-cols-3 items-start gap-4 max-[760px]:grid-cols-2 max-[480px]:grid-cols-1">
+        <div className="grid grid-cols-3 items-start gap-4 max-[835px]:grid-cols-2">
           {emojis.map((feeling) => (
             <article
               className="grid justify-items-center gap-4"
@@ -582,7 +582,7 @@ export default function Welcome() {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="mb-4 flex items-end justify-between">
           <div>
             <span className="text-xs font-black tracking-[.12em] text-green-700 dark:text-lime-400">
@@ -636,7 +636,7 @@ export default function Welcome() {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
