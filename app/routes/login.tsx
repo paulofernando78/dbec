@@ -93,7 +93,7 @@ export default function Login() {
         </p>
 
         <p
-          className="font-luckiest-guy text-[clamp(1.5rem,4vw,2.25rem)] transition-opacity duration-300"
+          className="font-rock-salt text-[clamp(1.5rem,4vw,2.25rem)] transition-opacity duration-300 h-12"
           style={{ opacity: greetingOpacity }}
         >
           {greetingsList[greetingIndex]}
