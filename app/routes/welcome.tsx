@@ -373,9 +373,6 @@ const emojis = [
 ];
 
 export default function Welcome() {
-  const [selectedFeeling, setSelectedFeeling] = useState<
-    (typeof emojis)[number] | null
-  >(null);
   const [currentLesson, setCurrentLesson] = useState(learningLessons[0]);
   const [progressSummary, setProgressSummary] = useState({
     completedLessons: 0,
@@ -401,7 +398,15 @@ export default function Welcome() {
     1;
   const currentProgress =
     (currentLessonPosition / currentUnitLessons.length) * 100;
+  const maximumXp = learningLessons.reduce(
+    (total, lesson) => total + lesson.xpReward,
+    0,
+  );
   const isCurrentLevelA1 = currentLesson.level === "a1";
+  const isCurrentLevelPreIntermediate = currentLesson.level === "a2-b1";
+  const isCurrentLevelB1 = currentLesson.level === "b1";
+  const isCurrentLevelB2 = currentLesson.level === "b2";
+  const isCurrentLevelC1 = currentLesson.level === "c1";
   const currentLevel =
     learningLevels[currentLesson.level as keyof typeof learningLevels];
   const currentStep =
@@ -419,7 +424,7 @@ export default function Welcome() {
   };
 
   return (
-    <main className="mx-auto w-[calc(100%_-_24px)] max-w-[980px] pt-6 pb-20 text-slate-800 dark:text-slate-100">
+    <main>
       <header className="mb-7 flex items-end justify-between gap-5 max-[620px]:items-start">
         <div>
           <span className="inline-flex items-center gap-1.5 text-xs font-black tracking-[.13em] text-green-700 dark:text-lime-400">
@@ -433,7 +438,7 @@ export default function Welcome() {
 
       <section className="mb-6 grid grid-cols-[1.6fr_1fr] gap-5 max-[760px]:grid-cols-1">
         <article
-          className={`relative overflow-hidden rounded-3xl bg-linear-to-br px-6 py-4 max-[520px]:p-5 ${isCurrentLevelA1 ? "from-yellow-400 to-amber-600 text-slate-900" : "from-red-500 to-red-700 text-white"}`}
+          className={`relative overflow-hidden rounded-3xl bg-linear-to-br px-6 py-4 max-[520px]:p-5 ${isCurrentLevelA1 ? "from-yellow-400 to-amber-600 text-slate-900" : isCurrentLevelPreIntermediate ? "from-sky-500 to-blue-700 text-white" : isCurrentLevelB1 ? "from-emerald-500 to-green-700 text-white" : isCurrentLevelB2 ? "from-purple-500 to-purple-700 text-white" : isCurrentLevelC1 ? "from-indigo-600 to-violet-900 text-white" : "from-red-500 to-red-700 text-white"}`}
         >
           <div className="absolute -top-12 -right-10 size-48 rounded-full bg-white/10" />
           <div className="absolute right-20 -bottom-20 size-40 rounded-full bg-white/10" />
@@ -457,7 +462,19 @@ export default function Welcome() {
               </span>
             </div>
             <Button
-              variant={isCurrentLevelA1 ? "answer" : "danger"}
+              variant={
+                isCurrentLevelA1
+                  ? "answer"
+                  : isCurrentLevelPreIntermediate
+                    ? "reset"
+                    : isCurrentLevelB1
+                      ? "check"
+                      : isCurrentLevelB2
+                        ? "purple"
+                        : isCurrentLevelC1
+                          ? "indigo"
+                          : "danger"
+              }
               className="mt-6 mb-4"
               to={`/learn/${currentLesson.level}/${currentLesson.unitId}/${currentLesson.slug}/${currentStep}`}
             >
@@ -466,7 +483,7 @@ export default function Welcome() {
           </div>
         </article>
 
-        <article className="rounded-[24px] border-2 border-slate-200 bg-white p-6 dark:border-slate-600 dark:bg-slate-800">
+        {/* <article className="rounded-[24px] border-2 border-slate-200 bg-white p-6 dark:border-slate-600 dark:bg-slate-800">
           <div className="flex items-center justify-between">
             <div className="grid size-11 place-items-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-300">
               <Target />
@@ -485,7 +502,7 @@ export default function Welcome() {
           <div className="mt-4 flex items-center gap-2 text-sm font-bold text-sky-700 dark:text-sky-300">
             <Clock3 size={16} /> 4 minutes to go
           </div>
-        </article>
+        </article> */}
       </section>
 
       <section className="mb-6 grid grid-cols-3 gap-4 max-[620px]:grid-cols-1">
@@ -498,13 +515,13 @@ export default function Welcome() {
           },
           {
             icon: Star,
-            value: String(progressSummary.totalXp),
+            value: `${progressSummary.totalXp} of ${maximumXp}`,
             label: "total XP",
             color: "text-amber-500 bg-amber-50 dark:bg-amber-950",
           },
           {
             icon: Check,
-            value: String(progressSummary.completedLessons),
+            value: `${progressSummary.completedLessons} of ${learningLessons.length}`,
             label: "lessons done",
             color: "text-green-600 bg-green-50 dark:bg-green-950",
           },
@@ -528,64 +545,43 @@ export default function Welcome() {
         ))}
       </section>
 
-      <section className="mb-6 rounded-3xl border-2 border-slate-200 bg-white p-6 max-[520px]:p-4 dark:border-slate-600 dark:bg-slate-800">
+      <section className="mb-6">
         <div className="mb-5 flex items-center justify-between gap-4">
-          <div>
-            <span className="text-xs font-black tracking-[.12em] text-sky-600 dark:text-sky-400">
-              QUICK PRACTICE
-            </span>
+          <div >
             <h2 className="mt-1 text-2xl font-black">
               How are you feeling today?
             </h2>
           </div>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(130px,1fr))] place-items-center gap-4">
-          {emojis.map((feeling) => {
-            const label = feeling.words[0]?.word ?? "Feeling";
-            const selected = selectedFeeling?.img === feeling.img;
-            return (
-              <button
-                className={`flex h-30 w-35 flex-col items-center justify-center rounded-[15px] border-0 px-3 py-4 font-extrabold capitalize transition-[transform,box-shadow,background-color,color] active:translate-y-[3px] ${selected ? "bg-sky-100 text-sky-700 shadow-[0_3px_0_#38bdf8] dark:bg-sky-950 dark:text-sky-300 dark:shadow-[0_3px_0_#0284c7]" : "bg-slate-50 text-slate-600 shadow-[0_5px_0_#d7dce0] hover:bg-sky-50 hover:text-sky-700 active:shadow-[0_2px_0_#d7dce0] dark:bg-slate-700 dark:text-slate-200 dark:shadow-[0_5px_0_#334155]"}`}
-                key={feeling.img}
-                onClick={() => setSelectedFeeling(feeling)}
-              >
+        <div className="grid grid-cols-3 items-start gap-4 max-[760px]:grid-cols-2 max-[480px]:grid-cols-1">
+          {emojis.map((feeling) => (
+            <article
+              className="grid justify-items-center gap-4"
+              key={feeling.img}
+            >
+              <div className="grid aspect-square w-full place-items-center rounded-2xl border-2 border-slate-200 dark:border-slate-600">
                 <img
-                  className="mb-2 size-16 object-contain"
+                  className="size-16 object-contain"
                   src={feeling.img}
-                  alt=""
+                  alt={feeling.alt}
                 />
-                <span>{label}</span>
-              </button>
-            );
-          })}
+              </div>
+              <div className="grid w-full max-w-45 gap-3 pb-2">
+                {feeling.words.map((word) => (
+                  <Button
+                    icon={<Volume2 aria-hidden="true" />}
+                    key={word.word}
+                    onClick={() => playFeeling(word.audio)}
+                    ariaLabel={`Listen to ${word.word}`}
+                    className="w-full! capitalize"
+                  >
+                    {word.word}
+                  </Button>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
-        {selectedFeeling && (
-          <div className="mt-6 flex flex-wrap items-center gap-4 rounded-[16px] bg-sky-50 p-4 text-sky-800 dark:bg-sky-950 dark:text-sky-200">
-            <img
-              className="size-16 object-contain"
-              src={selectedFeeling.img}
-              alt={selectedFeeling.alt}
-            />
-            <div className="mr-auto">
-              <span className="text-xs font-black tracking-[.1em]">
-                LISTEN AND REPEAT
-              </span>
-              <p className="font-extrabold">How are you feeling today?</p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {selectedFeeling.words.map((word) => (
-                <button
-                  className="flex items-center gap-2 rounded-[13px] border-0 bg-white px-4 py-3 font-extrabold text-sky-700 shadow-[0_4px_0_#bae6fd] active:translate-y-[2px] active:shadow-[0_2px_0_#bae6fd] dark:bg-slate-800 dark:text-sky-300 dark:shadow-[0_4px_0_#075985]"
-                  key={word.word}
-                  onClick={() => playFeeling(word.audio)}
-                  aria-label={`Listen to ${word.word}`}
-                >
-                  <Volume2 size={18} /> {word.word}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
       </section>
 
       <section>

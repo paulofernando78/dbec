@@ -16,6 +16,10 @@ import { whatTimeIsItThereLesson } from "./a1/unit-06/lesson-01-what-time-is-it-
 import { whatAreTheyDoingLesson } from "./a1/unit-06/lesson-02-what-are-they-doing";
 import { a1Cycle02Lessons, a1Cycle02Units } from "./a1/cycle-02-units";
 import { a2Lessons, a2Units } from "./a2/curriculum";
+import { preIntermediateLessons, preIntermediateUnits } from "./b1/curriculum";
+import { intermediateLessons, intermediateUnits } from "./b2/curriculum";
+import { b2Lessons, b2Units } from "./passages/b2";
+import { c1Lessons, c1Units } from "./passages/c1";
 
 export const learningLevels = {
   a1: {
@@ -40,6 +44,38 @@ export const learningLevels = {
     description: "Handle common situations and connect ideas with more detail.",
     units: a2Units,
   },
+  "a2-b1": {
+    id: "a2-b1",
+    label: "A2–B1 Pre-Intermediate",
+    title: "Handle real-life conversations",
+    description:
+      "Share experiences, explain ideas, and communicate with growing confidence.",
+    units: preIntermediateUnits,
+  },
+  b1: {
+    id: "b1",
+    label: "B1 Intermediate",
+    title: "Communicate with precision",
+    description:
+      "Explain complex ideas, support opinions, and interact confidently.",
+    units: intermediateUnits,
+  },
+  b2: {
+    id: "b2",
+    label: "B2 Upper-Intermediate",
+    title: "Engage with complex ideas",
+    description:
+      "Discuss, evaluate, and defend ideas with fluency and precision.",
+    units: b2Units,
+  },
+  c1: {
+    id: "c1",
+    label: "C1 Advanced",
+    title: "Communicate with sophistication",
+    description:
+      "Use flexible, nuanced English in social, academic, and professional contexts.",
+    units: c1Units,
+  },
 };
 
 export const learningLessons = [
@@ -55,16 +91,14 @@ export const learningLessons = [
   whatAreTheyDoingLesson,
   ...a1Cycle02Lessons,
   ...a2Lessons,
+  ...preIntermediateLessons,
+  ...intermediateLessons,
+  ...b2Lessons,
+  ...c1Lessons,
 ];
 
-export const getLearningLesson = (
-  level: string,
-  unit: string,
-  slug: string,
-) =>
+export const getLearningLesson = (level: string, unit: string, slug: string) =>
   learningLessons.find(
     (lesson) =>
-      lesson.level === level &&
-      lesson.unitId === unit &&
-      lesson.slug === slug,
+      lesson.level === level && lesson.unitId === unit && lesson.slug === slug,
   );

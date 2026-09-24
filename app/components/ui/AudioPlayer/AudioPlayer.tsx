@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import { LoaderCircle, Play, Square, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/Button/Button";
 
+import styles from "../Button/Button.module.css";
+
 type AudioProps = {
   src: string;
   className?: string;
@@ -75,7 +77,7 @@ const waitForVoices = () =>
     );
   });
 
-export const Audio = ({
+export const AudioPlayer = ({
   src,
   className,
   asButton = false,
@@ -255,19 +257,22 @@ export const Audio = ({
     );
 
     return (
-      <span className="inline-flex">
+      <div className="flex gap-[0.1rem] px-2">
         <Button
           variant={buttonVariant}
           icon={icon}
           ariaLabel={playing ? "Stop audio" : "Play audio"}
-          className={className}
+          className="rounded-tr-none! rounded-br-none!"
           onClick={() => {
             if (playing || loading) handleStop();
             else void handlePlay();
           }}
         />
         {audioElement}
-      </span>
+        <div
+          className={`${styles.button} flex-1 rounded-tr-lg rounded-br-lg`}
+        ></div>
+      </div>
     );
   }
 

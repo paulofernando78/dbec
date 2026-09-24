@@ -19,6 +19,23 @@ export type LearningProgressSummary = {
 const learningKey = (lessonId: string, field: string) =>
   `learning:${lessonId}:${field}`;
 
+const legacyLessonId = (lessonId: string) => {
+  if (lessonId.startsWith("a2-b1-")) return lessonId.replace("a2-b1-", "b1-");
+  if (lessonId.startsWith("b1-")) return lessonId.replace("b1-", "b2-");
+  return null;
+};
+
+const readLearningValue = (lessonId: string, field: string) => {
+  const storage = getStorage();
+  if (!storage) return null;
+
+  const currentValue = storage.getItem(learningKey(lessonId, field));
+  if (currentValue !== null) return currentValue;
+
+  const legacyId = legacyLessonId(lessonId);
+  return legacyId ? storage.getItem(learningKey(legacyId, field)) : null;
+};
+
 export const learningCompletionKey = (lessonId: string) =>
   learningKey(lessonId, "completed");
 
@@ -41,8 +58,8 @@ const getStorage = () => {
   }
 };
 
-const readNumber = (key: string, fallback = 0) => {
-  const storedValue = getStorage()?.getItem(key);
+const readNumber = (lessonId: string, field: string, fallback = 0) => {
+  const storedValue = readLearningValue(lessonId, field);
   if (storedValue === null || storedValue === undefined) return fallback;
 
   const value = Number(storedValue);
@@ -53,7 +70,7 @@ const clampInteger = (value: number, minimum: number, maximum: number) =>
   Math.min(maximum, Math.max(minimum, Math.round(value)));
 
 export const getLearningStep = (lessonId: string) =>
-  Math.max(0, Math.round(readNumber(learningStepKey(lessonId))));
+  Math.max(0, Math.round(readNumber(lessonId, "step")));
 
 export const advanceLearningStep = (lessonId: string, nextStep: number) => {
   const storage = getStorage();
@@ -66,7 +83,7 @@ export const advanceLearningStep = (lessonId: string, nextStep: number) => {
 };
 
 export const isLearningLessonCompleted = (lessonId: string) =>
-  getStorage()?.getItem(learningCompletionKey(lessonId)) === "true";
+  readLearningValue(lessonId, "completed") === "true";
 
 export const completeLearningLesson = (lessonId: string) => {
   const storage = getStorage();
@@ -79,12 +96,12 @@ export const completeLearningLesson = (lessonId: string) => {
 };
 
 export const getLearningCompletedAt = (lessonId: string) => {
-  const value = readNumber(learningCompletedAtKey(lessonId), Number.NaN);
+  const value = readNumber(lessonId, "completedAt", Number.NaN);
   return Number.isFinite(value) && value > 0 ? value : null;
 };
 
 export const getLearningScore = (lessonId: string) =>
-  clampInteger(readNumber(learningScoreKey(lessonId)), 0, 100);
+  clampInteger(readNumber(lessonId, "score"), 0, 100);
 
 export const saveLearningScore = (lessonId: string, score: number) => {
   const storage = getStorage();
@@ -147,9 +164,12 @@ export const resetLearningLessons = (lessonIds: string[]) => {
   if (!storage) return;
 
   lessonIds.forEach((lessonId) => {
-    storage.removeItem(learningCompletionKey(lessonId));
-    storage.removeItem(learningCompletedAtKey(lessonId));
-    storage.removeItem(learningStepKey(lessonId));
-    storage.removeItem(learningScoreKey(lessonId));
+    [lessonId, legacyLessonId(lessonId)].forEach((id) => {
+      if (!id) return;
+      storage.removeItem(learningCompletionKey(id));
+      storage.removeItem(learningCompletedAtKey(id));
+      storage.removeItem(learningStepKey(id));
+      storage.removeItem(learningScoreKey(id));
+    });
   });
 };

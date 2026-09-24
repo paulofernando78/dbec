@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button/Button";
 
 type Props = {
-  isA1: boolean;
+  variant: "answer" | "check" | "danger" | "reset" | "purple" | "indigo";
   previousLabel: string;
   nextLabel: string;
   onPrevious: () => void;
@@ -11,7 +11,7 @@ type Props = {
 };
 
 export function LessonNavigation({
-  isA1,
+  variant,
   previousLabel,
   nextLabel,
   onPrevious,
@@ -28,7 +28,7 @@ export function LessonNavigation({
           onClick={onPrevious}
           ariaLabel={previousLabel}
           icon={<ArrowLeft aria-hidden="true" />}
-          variant={isA1 ? "answer" : "danger"}
+          variant={variant}
         />
         <span className="translate-y-1 text-sm font-bold text-slate-600 dark:text-slate-300">
           {previousLabel}
@@ -43,8 +43,16 @@ export function LessonNavigation({
           disabled={nextDisabled}
           ariaLabel={nextLabel}
           icon={<ArrowRight aria-hidden="true" />}
-          variant={isA1 ? "answer" : "danger"}
-          className={isA1 ? "disabled:bg-yellow-300!" : "disabled:bg-red-400!"}
+          variant={variant}
+          className={
+            variant === "answer"
+              ? "disabled:bg-yellow-300!"
+              : variant === "reset"
+                ? "disabled:bg-blue-300!"
+                : variant === "check"
+                  ? "disabled:bg-green-300!"
+                  : "disabled:bg-red-400!"
+          }
         />
       </div>
     </nav>

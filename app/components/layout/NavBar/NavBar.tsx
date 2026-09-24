@@ -28,6 +28,15 @@ const navGroups = links as NavGroup[];
 const getNavItemKey = (item: NavItem) =>
   "href" in item && item.href ? item.href : item.label;
 
+const levelLinkClasses: Record<string, string> = {
+  "/learn/a1": "bg-yellow-400 text-slate-900",
+  "/learn/a2": "bg-red-500 text-white",
+  "/learn/a2-b1": "bg-blue-500 text-white",
+  "/learn/b1": "bg-green-500 text-white",
+  "/learn/b2": "bg-purple-600 text-white",
+  "/learn/c1": "bg-indigo-700 text-white",
+};
+
 function RenderNavItem({
   item,
   closeNavBar,
@@ -43,13 +52,19 @@ function RenderNavItem({
     );
   }
 
+  const levelColors = levelLinkClasses[item.href];
+
   return (
-    <div className="flex gap-3">
+    <div className="flex w-full">
       <NavLink
         to={item.href}
         end
         onClick={closeNavBar}
-        className={({ isActive }) => `mb-1 ${isActive ? "text-blue-400" : ""} `}
+        className={({ isActive }) =>
+          levelColors
+            ? `mb-2 w-full rounded-lg px-3 py-2 transition-[filter,box-shadow] hover:brightness-110 ${levelColors} ${isActive ? "ring-2 ring-white/80" : ""}`
+            : `mb-1 ${isActive ? "text-blue-400" : ""}`
+        }
       >
         <span>{item.label}</span>
       </NavLink>

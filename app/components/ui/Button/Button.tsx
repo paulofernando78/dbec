@@ -15,7 +15,8 @@ type ButtonProps = {
   className?: string;
   joined?: "start" | "end";
   size?: "default" | "lesson" | "choice";
-  variant?: "default" | "check" | "answer" | "reset" | "danger";
+  variant?:
+    "default" | "check" | "answer" | "reset" | "danger" | "purple" | "indigo";
 };
 
 export const Button = ({

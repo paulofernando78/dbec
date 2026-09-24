@@ -10,7 +10,7 @@ const customMaterial: Record<
       instruction: "Look at the pictures and listen to the sentences.",
     },
     "see-it": {
-      instruction: "Listen and follow the conversation.",
+      instruction: "Listen to and follow the conversation.",
       content:
         "A: Hi! My name is Ana.\nB: Hello, Ana. I’m Lucas.\nA: Nice to meet you.\nB: Nice to meet you, too.",
     },
@@ -31,7 +31,8 @@ const customMaterial: Record<
       instruction: "Look at the pictures and listen to the sentences.",
     },
     "see-it": {
-      instruction: "Read how two new friends exchange contact information.",
+      instruction:
+        "Listen to how two new friends exchange contact information.",
       content:
         "A: What is your phone number?\nB: My number is 555-0198.\nA: And what is your email address?\nB: It is marina@email.com. See you!",
     },
@@ -75,8 +76,20 @@ const generatedMaterial = (
       };
     case "see-it":
       return {
-        instruction: `Study useful examples for ${lesson.title}.`,
-        content: examples.join("\n"),
+        instruction: `Listen to a conversation about ${lesson.title.toLowerCase()}.`,
+        content: [
+          `A: What do you think about ${lesson.title.toLowerCase()}?`,
+          ...examples.map(
+            (example, index) => `${index % 2 === 0 ? "B" : "A"}: ${example}`,
+          ),
+        ].join("\n"),
+      };
+    case "language-focus":
+      return {
+        instruction:
+          "Understand the grammar and vocabulary from the conversation.",
+        content: lesson.objective,
+        prompt: examples.join("\n"),
       };
     case "try-it":
       return { instruction: `Try the language from ${lesson.title}.` };

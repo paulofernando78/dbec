@@ -9,15 +9,18 @@ type Props = {
 
 export function LevelBanner({ levelId, className = "" }: Props) {
   const level = learningLevels[levelId];
-  const isA1 = levelId === "a1";
+  const colors = {
+    a1: "from-yellow-400 to-amber-600 text-slate-900",
+    a2: "from-red-500 to-red-700 text-white",
+    "a2-b1": "from-sky-500 to-blue-700 text-white",
+    b1: "from-emerald-500 to-green-700 text-white",
+    b2: "from-purple-500 to-purple-700 text-white",
+    c1: "from-indigo-600 to-violet-900 text-white",
+  }[levelId];
 
   return (
     <header
-      className={`rounded-2xl bg-linear-to-br p-6 max-[620px]:p-5 ${
-        isA1
-          ? "from-yellow-400 to-amber-600 text-slate-900"
-          : "from-red-500 to-red-700 text-white"
-      } ${className}`}
+      className={`rounded-2xl bg-linear-to-br p-6 max-[620px]:p-5 ${colors} ${className}`}
     >
       <div className="text-[clamp(2rem,8vw,3rem)] leading-none font-black">
         {level.label}

@@ -8,11 +8,11 @@ type TryToken = { id: string; text: string };
 
 function ScrambleActivity({
   sentence,
-  isA1,
+  variant,
   number,
 }: {
   sentence: string;
-  isA1: boolean;
+  variant: "answer" | "check" | "danger" | "reset" | "purple" | "indigo";
   number: number;
 }) {
   const targetWords = sentence.split(/\s+/);
@@ -116,7 +116,13 @@ function ScrambleActivity({
             onDragStart={() => setDragged({ id: token.id, source: "answer" })}
             onClick={() => moveToken(token.id, "answer", "available")}
             className={`cursor-grab rounded-xl px-3 py-2 font-bold active:cursor-grabbing ${
-              isA1 ? "bg-yellow-300 text-slate-900" : "bg-red-400 text-white"
+              variant === "answer"
+                ? "bg-yellow-300 text-slate-900"
+                : variant === "reset"
+                  ? "bg-blue-300 text-slate-900"
+                  : variant === "check"
+                    ? "bg-green-300 text-slate-900"
+                    : "bg-red-400 text-white"
             }`}
           >
             {token.text}
@@ -125,10 +131,18 @@ function ScrambleActivity({
       </div>
       <div className="flex items-center gap-3">
         <Button
-          variant={isA1 ? "answer" : "danger"}
+          variant={variant}
           icon={<Check aria-hidden="true" />}
           disabled={available.length > 0}
-          className={isA1 ? "disabled:!bg-yellow-300" : "disabled:!bg-red-400"}
+          className={
+            variant === "answer"
+              ? "disabled:!bg-yellow-300"
+              : variant === "reset"
+                ? "disabled:!bg-blue-300"
+                : variant === "check"
+                  ? "disabled:!bg-green-300"
+                  : "disabled:!bg-red-400"
+          }
           onClick={() =>
             setResult(
               answer.map((token) => token.text).join(" ") ===
@@ -154,10 +168,10 @@ function ScrambleActivity({
 
 export function TryItActivity({
   lesson,
-  isA1,
+  variant,
 }: {
   lesson: LearningLesson;
-  isA1: boolean;
+  variant: "answer" | "check" | "danger" | "reset" | "purple" | "indigo";
 }) {
   const [selectedAnswers, setSelectedAnswers] = useState<
     Record<number, string>
@@ -226,9 +240,13 @@ export function TryItActivity({
                     }}
                     className={`rounded-xl border-2 px-4 py-3 text-left font-bold ${
                       selected === choice
-                        ? isA1
+                        ? variant === "answer"
                           ? "border-yellow-500 bg-yellow-100 text-slate-900"
-                          : "border-red-500 bg-red-100 text-red-900"
+                          : variant === "reset"
+                            ? "border-blue-500 bg-blue-100 text-blue-900"
+                            : variant === "check"
+                              ? "border-green-500 bg-green-100 text-green-900"
+                              : "border-red-500 bg-red-100 text-red-900"
                         : "border-slate-200 bg-white text-slate-700 dark:border-slate-500 dark:bg-slate-800 dark:text-slate-100"
                     }`}
                   >
@@ -238,11 +256,17 @@ export function TryItActivity({
               </div>
               <div className="mt-3 flex items-center gap-3">
                 <Button
-                  variant={isA1 ? "answer" : "danger"}
+                  variant={variant}
                   icon={<Check aria-hidden="true" />}
                   disabled={!selected}
                   className={
-                    isA1 ? "disabled:!bg-yellow-300" : "disabled:!bg-red-400"
+                    variant === "answer"
+                      ? "disabled:!bg-yellow-300"
+                      : variant === "reset"
+                        ? "disabled:!bg-blue-300"
+                        : variant === "check"
+                          ? "disabled:!bg-green-300"
+                          : "disabled:!bg-red-400"
                   }
                   onClick={() =>
                     setCheckedAnswers((current) => ({
@@ -273,7 +297,7 @@ export function TryItActivity({
           <ScrambleActivity
             key={`${lesson.id}-${index}`}
             sentence={sentence}
-            isA1={isA1}
+            variant={variant}
             number={index + 1}
           />
         ))}

@@ -81,16 +81,40 @@ export default function LearningLevel() {
   if (!level || !currentLevelId) return <Navigate to="/learn" replace />;
 
   const isA1 = level.id === "a1";
+  const isA2 = level.id === "a2";
+  const isPreIntermediate = level.id === "a2-b1";
+  const isB1 = level.id === "b1";
+  const isB2 = level.id === "b2";
+  const isC1 = level.id === "c1";
+  const buttonVariant = isA1
+    ? "answer"
+    : isPreIntermediate
+      ? "reset"
+      : isB1
+        ? "check"
+        : isB2
+          ? "purple"
+          : isC1
+            ? "indigo"
+            : "danger";
   const accentText = isA1
     ? "text-amber-700 dark:text-yellow-400"
-    : "text-red-700 dark:text-red-400";
+    : isA2
+      ? "text-red-700 dark:text-red-400"
+      : isPreIntermediate
+        ? "text-blue-700 dark:text-blue-400"
+        : isB1
+          ? "text-green-700 dark:text-green-400"
+          : isB2
+            ? "text-purple-700 dark:text-purple-400"
+            : "text-indigo-700 dark:text-indigo-300";
 
   return (
-    <div className="mx-auto flex w-[calc(100%_-_32px)] max-w-[760px] flex-col gap-4 max-[620px]:w-[calc(100%_-_20px)] max-[620px]:pt-6">
+    <div className="pl-1 flex flex-col gap-4">
       <LevelBanner levelId={currentLevelId} className="mb-4" />
 
       <Button
-        variant={isA1 ? "answer" : "danger"}
+        variant={buttonVariant}
         icon={<RotateCcw aria-hidden="true" />}
         onClick={() => {
           setResetConfirmation({
@@ -100,9 +124,9 @@ export default function LearningLevel() {
             lessonIds: levelLessons.map((lesson) => lesson.id),
           });
         }}
-        className="mb-2 "
+        className="mb-2"
       >
-        Reset all
+        Reset all units
       </Button>
 
       {level.units.map((unit) => (
@@ -134,7 +158,7 @@ export default function LearningLevel() {
                 / {unit.lessons.length}
               </div>
               <Button
-                variant={isA1 ? "answer" : "danger"}
+                variant={buttonVariant}
                 icon={<RotateCcw aria-hidden="true" />}
                 ariaLabel={`Reset ${unit.title} progress`}
                 title="Reset unit progress"
@@ -189,7 +213,7 @@ export default function LearningLevel() {
                   )}
                   <Button
                     size="lesson"
-                    variant={locked ? "default" : isA1 ? "answer" : "danger"}
+                    variant={locked ? "default" : buttonVariant}
                     disabled={locked}
                     to={locked ? undefined : lessonStepHref}
                     className="z-1 self-start"
@@ -243,14 +267,20 @@ export default function LearningLevel() {
             aria-modal="true"
             aria-labelledby="reset-dialog-title"
             aria-describedby="reset-dialog-description"
-            className="w-full max-w-[430px] rounded-[24px] border-2 border-slate-200 bg-white p-6 text-slate-800 shadow-2xl dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
+            className="w-full max-w-107.5 rounded-3xl border-2 border-slate-200 bg-white p-6 text-slate-800 shadow-2xl dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
           >
             <div className="flex items-start gap-4">
               <div
                 className={`grid size-12 shrink-0 place-items-center rounded-2xl ${
                   isA1
                     ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-950 dark:text-yellow-400"
-                    : "bg-red-100 text-red-600 dark:bg-red-950 dark:text-red-400"
+                    : isPreIntermediate
+                      ? "bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400"
+                      : isB1
+                        ? "bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-400"
+                        : isB2
+                          ? "bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300"
+                          : "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300"
                 }`}
               >
                 <AlertTriangle size={24} aria-hidden="true" />
@@ -277,7 +307,7 @@ export default function LearningLevel() {
             <div className="mt-6 flex justify-end gap-3">
               <Button onClick={() => setResetConfirmation(null)}>Cancel</Button>
               <Button
-                variant={isA1 ? "answer" : "danger"}
+                variant={buttonVariant}
                 icon={<RotateCcw aria-hidden="true" />}
                 onClick={() => {
                   resetLearningLessons(resetConfirmation.lessonIds);

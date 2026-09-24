@@ -68,9 +68,16 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
     };
   }, [isLoginOpen]);
 
+  useEffect(() => {
+    const openLogin = () => setIsLoginOpen(true);
+
+    window.addEventListener("dbec:open-login", openLogin);
+    return () => window.removeEventListener("dbec:open-login", openLogin);
+  }, []);
+
   return (
     <>
-      <div className="mb-1.25 flex h-10 w-full items-center justify-between p-1.25">
+      <div className="mb-1.25 flex h-10 w-full items-center justify-between border-slate-200 p-1.25 dark:border-slate-700">
         {!isPresentationPage && (
           <Button
             icon={<Menu />}
@@ -96,7 +103,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
             title={isDarkMode ? "Light mode" : "Dark mode"}
           />
 
-          <div className="flex gap-1.75">
+          <div>
             {!isLoggedIn && isPresentationPage && (
               <div className="relative" ref={loginPopoverRef}>
                 <Button
@@ -108,7 +115,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
 
                 {isLoginOpen && (
                   <div
-                    className="absolute top-11 right-0 z-50 w-72 rounded-2xl border-2 border-slate-200 bg-white p-4 shadow-xl dark:border-slate-600 dark:bg-slate-800"
+                    className="absolute top-14 right-0 z-50 w-72 rounded-2xl border-2 border-slate-200 bg-white px-4 pt-3 pb-5.5 shadow-xl dark:border-slate-600 dark:bg-slate-800"
                     role="dialog"
                     aria-label="Log in"
                   >
@@ -163,7 +170,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
                         type="submit"
                         icon={<LogIn />}
                         disabled={loginFetcher.state !== "idle"}
-                        className="mt-1 !w-full"
+                        className="mt-1 w-full!"
                       >
                         {loginFetcher.state !== "idle"
                           ? "Logging in..."
@@ -189,10 +196,7 @@ export const Header = ({ onClick, isLoggedIn }: HeadersProps) => {
           </div>
         </div>
       </div>
-      <div
-        className="pointer-events-none relative z-20 -mb-3 h-3 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.12)_65%,rgba(255,255,255,0)_100%)] dark:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.27)_0%,rgba(0,0,0,0.06)_65%,rgba(0,0,0,0)_100%)]"
-        aria-hidden="true"
-      />
+      <hr className="border-gray-300" />
     </>
   );
 };
