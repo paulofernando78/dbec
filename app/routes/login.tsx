@@ -81,10 +81,10 @@ export default function Login() {
     <main className="mx-auto w-[calc(100%_-_32px)] max-w-[900px] py-12 max-[620px]:w-[calc(100%_-_20px)]">
       <section className="mb-24 w-full text-center max-[620px]:mb-16">
         <div className="mb-4 font-luckiest-guy text-gray-400 [-webkit-text-stroke:10px_#000] [paint-order:stroke_fill]">
-          <h2 className="text-[3.12rem] font-black uppercase text-edge-cap text-trim-both">
+          <h2 className="text-[3.5rem] font-black uppercase text-edge-cap text-trim-both">
             daily basis
           </h2>
-          <h2 className="translate-y-3 text-4xl font-black uppercase">
+          <h2 className="translate-y-2 text-[2.5rem] font-black uppercase">
             english course
           </h2>
         </div>
@@ -93,7 +93,7 @@ export default function Login() {
         </p>
 
         <p
-          className="font-rock-salt text-[clamp(1.5rem,4vw,2.25rem)] transition-opacity duration-300 h-12"
+          className="h-12 font-rock-salt text-[1.5rem] transition-opacity duration-300"
           style={{ opacity: greetingOpacity }}
         >
           {greetingsList[greetingIndex]}
