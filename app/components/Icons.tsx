@@ -58,34 +58,6 @@ export const LogOut = (props: IconProps) => (
   </svg>
 );
 
-export const Course = (props: IconProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 -960 960 960"
-    width="25"
-    height="25"
-    fill="currentColor"
-    aria-hidden="true"
-    {...props}
-  >
-    <path d="M80-160v-80h800v80H80Zm80-160v-320h80v320h-80Zm160 0v-480h80v480h-80Zm160 0v-480h80v480h-80Zm280 0L600-600l70-40 160 280-70 40Z" />
-  </svg>
-);
-
-export const CourseBook = (props: IconProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 -960 960 960"
-    width="25"
-    height="25"
-    fill="color-mix(in srgb, currentColor 50%, white)"
-    aria-hidden="true"
-    {...props}
-  >
-    <path d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H240Zm0-80h480v-640h-80v280l-100-60-100 60v-280H240v640Zm0 0v-640 640Zm200-360 100-60 100 60-100-60-100 60Z" />
-  </svg>
-);
-
 export const AuthenticContent = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

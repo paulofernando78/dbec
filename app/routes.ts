@@ -18,30 +18,13 @@ export default [
     //! General
     //! ─────────────────────────────────────────────
 
-    // Lab
     route("/lab", "routes/lab.tsx"),
 
-    // Students Pages
     route("dashboard/:studentId?", "routes/students/dashboard.tsx"),
 
-    // Welcome Page
-    route("/welcome", "routes/welcome.tsx"),
+    route("/dashboard", "routes/dashboard.tsx"),
 
-    // What’s CEFR Page
     route("/cefr", "routes/whats-cefr.tsx"),
-
-    //! ─────────────────────────────────────────────
-    //! Course
-    //! ─────────────────────────────────────────────
-
-    route("/course", "routes/course.tsx"),
-
-    route("/course/template", "routes/course/template.tsx"),
-
-    route(
-      "/course/:level/:section/:resourceType?/:slug?",
-      "routes/course/builder.tsx",
-    ),
 
     //! ─────────────────────────────────────────────
     //! Authentic Content
@@ -53,6 +36,8 @@ export default [
       "/authentic-content/:category/:slug?",
       "routes/authentic-content/builder.tsx",
     ),
+
+    route("/vocabulary", "routes/vocabulary.tsx"),
 
     //! ─────────────────────────────────────────────
     //! Games

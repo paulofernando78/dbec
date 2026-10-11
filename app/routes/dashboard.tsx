@@ -353,7 +353,7 @@ const emojis = [
   },
 ];
 
-export default function Welcome() {
+export default function Dashboard() {
   return (
     <>
       <div className="my-8 text-center">

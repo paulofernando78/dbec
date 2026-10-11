@@ -28,7 +28,7 @@ export const Header = ({ onClick }: HeadersProps) => {
     const next = !isLoggedIn;
 
     setIsLoggedIn(next);
-    navigate(next ? "/welcome" : "/");
+    navigate(next ? "/dashboard" : "/");
   };
 
   const location = useLocation();

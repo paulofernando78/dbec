@@ -5,7 +5,6 @@ import { Ribbon } from "@/components/ui/Ribbon";
 import { Text } from "@/components/content/Text";
 import { Portuguese } from "@/components/content/Portuguese";
 import { useDragScroll } from "@/hooks/useDragScroll";
-import { getColumnTranslation } from "@/data/course/columnTranslations";
 
 type ColumnContentItem = {
   display?: string;
@@ -23,21 +22,6 @@ type ColumnItem = ColumnContentItem | ColumnSpacerItem;
 
 const isSpacerItem = (item: ColumnItem): item is ColumnSpacerItem =>
   "type" in item && item.type === "spacer";
-
-const getPlainText = (parts: any[] = []) =>
-  parts
-    .map((part) => {
-      if (typeof part === "string") return part;
-      if (!part || typeof part !== "object") return "";
-      if (
-        ["portuguese", "portuguese-bold", "bold-portuguese"].includes(part.type)
-      ) {
-        return "";
-      }
-      return typeof part.part === "string" ? part.part : "";
-    })
-    .join("")
-    .trim();
 
 const hasPortuguese = (parts: any[] = []) =>
   parts.some(
@@ -101,9 +85,7 @@ export const ColumnDrag = ({
                     : undefined;
                 const as =
                   item.as === "p" || item.as === "span" ? item.as : undefined;
-                const translation =
-                  item.translation ??
-                  getColumnTranslation(getPlainText(item.parts));
+                const translation = item.translation;
 
                 return (
                   <div key={index} className={item.lineBreak ? "mb-4" : ""}>

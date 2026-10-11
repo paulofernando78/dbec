@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 
 import { Card } from "@/components/ui/Card";
 import { Link } from "react-router";
@@ -8,7 +8,6 @@ import {
   LessonPronunciation,
   LessonVocabulary,
   LessonFinalTask,
-  GoogleClassroomAnnouncement,
   GoogleClassroomMaterial,
   GoogleClassroomAssignment,
 } from "@/components/GoogleIcons";
@@ -62,32 +61,6 @@ const formatObjective = (objective: string) => {
   return `${objectivePrefix} ${normalizedObjective}.`;
 };
 
-const classroomPostTypes = [
-  {
-    itemtype: "announcement",
-    label: "New Announcement",
-    Icon: GoogleClassroomAnnouncement,
-    classroomCardPadding: "pr-[0.6rem]",
-    classroomCardLabel: "-translate-x-[0.1rem]",
-  },
-  {
-    itemtype: "material",
-    label: "Material",
-    Icon: GoogleClassroomMaterial,
-    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]",
-    classroomCardLabel: "-translate-x-[0.1rem]",
-  },
-  {
-    itemtype: "assignment",
-    label: "Assignment",
-    Icon: GoogleClassroomAssignment,
-    classroomCardPadding: "pl-[0.4rem] pr-[0.6rem]",
-    classroomCardLabel: "-translate-x-[0.1rem]",
-  },
-] as const;
-
-type ClassroomPostType = (typeof classroomPostTypes)[number]["itemtype"];
-
 type LessonCardProps = LessonCardContent & {
   href?: string;
   index?: number;
@@ -110,43 +83,12 @@ export const LessonCard = ({
   pronunciation,
   finalTask,
   assignmentHref,
-  classroom,
   collapsible = false,
 }: LessonCardProps) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  const [classroomLessonUrl, setClassroomLessonUrl] = useState<string>();
   const detailsId = useId();
   const lessonTitle =
     href && numbered ? `${index + 1} • ${label}` : (label ?? "");
-
-  // Google Classroom
-  useEffect(() => {
-    if (!href) return;
-
-    setClassroomLessonUrl(new URL(href, window.location.origin).toString());
-  }, [href]);
-
-  const getClassroomShareUrl = (
-    itemtype: ClassroomPostType,
-    content?: { title?: string; body?: string },
-  ) => {
-    if (!classroomLessonUrl) return "";
-
-    const shareUrl = new URL("https://classroom.google.com/share");
-    shareUrl.searchParams.set("url", classroomLessonUrl);
-    if (content?.title) {
-      shareUrl.searchParams.set("title", content.title);
-    } else if (itemtype !== "announcement") {
-      shareUrl.searchParams.set("title", lessonTitle);
-    }
-    shareUrl.searchParams.set("itemtype", itemtype);
-
-    if (content?.body) {
-      shareUrl.searchParams.set("body", content.body);
-    }
-
-    return shareUrl.toString();
-  };
 
   const cardHeader = (
     <div className="flex flex-col gap-1">
@@ -264,85 +206,6 @@ export const LessonCard = ({
         </div>
 
         <hr className="mt-4 mb-3 text-gray-300" />
-
-        {classroomLessonUrl && (
-          <>
-            <div
-              className="flex flex-col gap-2 text-sm"
-              onClick={(event) => event.stopPropagation()}
-            >
-              <div
-                className="
-                flex
-                items-center
-                text-gray-500
-                gap-2"
-              >
-                <span
-                  className="
-                  inline-flex
-                  h-10
-                  items-center
-                  gap-2
-                  pr-1
-                  font-semibold
-                  text-gray-500"
-                >
-                  <img
-                    src="/assets/img/icons/google-classroom.svg"
-                    alt=""
-                    className="h-8 w-8 shrink-0"
-                  />
-                </span>
-                <span className="font-bold">Share to Classroom</span>
-              </div>
-              <div className="flex flex-col gap-2 mb-1">
-                {classroomPostTypes.map(
-                  ({
-                    itemtype,
-                    label: postLabel,
-                    Icon,
-                    classroomCardLabel,
-                    classroomCardPadding,
-                  }) => (
-                    <a
-                      key={itemtype}
-                      href={getClassroomShareUrl(itemtype, {
-                        title:
-                          itemtype === "announcement"
-                            ? undefined
-                            : itemtype === "material"
-                              ? lessonTitle
-                              : classroom?.[itemtype]?.title,
-                        body: classroom?.[itemtype]?.description,
-                      })}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex
-                    gap-2
-                    items-center
-                    w-fit
-                    p-2
-                    font-semibold
-                    border
-                    border-gray-300
-                    bg-white
-                    rounded
-                    leading-none
-                    hover:border-gray-500
-                    hover:bg-gray-50
-                    ${classroomCardPadding}`}
-                      aria-label={`Post ${label ?? "lesson"} to Google Classroom as ${postLabel}`}
-                    >
-                      <Icon className="shrink-0 text-gray-400" />
-                      <span className={classroomCardLabel}>{postLabel}</span>
-                    </a>
-                  ),
-                )}
-              </div>
-            </div>
-          </>
-        )}
 
       </div>
     </>

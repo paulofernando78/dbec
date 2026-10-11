@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
+import { ClassroomLinks } from "@/components/content/ClassroomLinks";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { List } from "@/components/content/List";
@@ -32,6 +33,10 @@ export default function GameBuilder() {
   return (
     <>
       <Whiteboard {...displayedWhiteboard} />
+
+      {gameCard && (
+        <ClassroomLinks href={gameHref} label={gameCard.label} />
+      )}
 
       <PageSections>
         {game.sections.map((section) => (

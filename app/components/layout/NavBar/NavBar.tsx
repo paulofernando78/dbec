@@ -1,15 +1,12 @@
 import { NavLink } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import type { ElementType } from "react";
-import { CourseBook } from "@/components/Icons";
-
 import { Minus, Plus } from "lucide-react";
 
 type NavItem = {
   label: string;
   href?: string;
   links?: NavItem[];
-  iconClassName?: string;
 };
 
 type NavGroup = {
@@ -36,8 +33,6 @@ function RenderNavItem({
   item: NavItem;
   closeNavBar: () => void;
 }) {
-  const isLesson = item.href?.startsWith("/course/") ?? false;
-
   if (item.links?.length) {
     return (
       <details className="open:[&>summary_.plus]:hidden open:[&>summary_.minus]:block mb-1">
@@ -62,14 +57,6 @@ function RenderNavItem({
             <Plus size={18} className="plus translate-y-[0.3rem]" />
             <Minus size={18} className="minus hidden translate-y-[0.3rem]" />
           </span>
-
-          {item.iconClassName && (
-            <CourseBook
-              width={25}
-              height={25}
-              className={`ml-[0.2rem] shrink-0 translate-y-[0.1rem] ${item.iconClassName}`}
-            />
-          )}
 
           {item.href ? (
             <NavLink to={item.href} onClick={(e) => e.stopPropagation()}>
@@ -111,7 +98,6 @@ function RenderNavItem({
       className={`
         flex
         gap-3
-        ${isLesson ? "ml-4" : ""}
       `}
     >
       <NavLink
@@ -190,13 +176,6 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 mb-1
                 uppercase"
                 >
-                  {group.iconClassName && (
-                    <CourseBook
-                      width={25}
-                      height={25}
-                      className={`shrink-0 ${group.iconClassName}`}
-                    />
-                  )}
                   {group.title}
                 </span>
               )}
