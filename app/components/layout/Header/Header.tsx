@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
 import { LogIn, LogOut, MoonStar, Sun } from "@/components/Icons";
@@ -12,7 +12,6 @@ interface HeadersProps {
 
 export const Header = ({ onClick }: HeadersProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
@@ -22,19 +21,19 @@ export const Header = ({ onClick }: HeadersProps) => {
     setIsDarkMode((prev) => !prev);
   };
 
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    const next = !isLoggedIn;
-
-    setIsLoggedIn(next);
-    navigate(next ? "/dashboard" : "/");
-  };
-
   const location = useLocation();
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
+
+  const handleAuthentication = () => {
+    if (isPresentationPage) {
+      window.location.assign("/dashboard");
+      return;
+    }
+
+    window.location.assign("/");
+  };
 
   return (
     <div className="w-full h-10 p-1.25 flex items-center justify-between mb-1.25">
@@ -80,8 +79,8 @@ export const Header = ({ onClick }: HeadersProps) => {
         />
 
         <Button
-          icon={isLoggedIn ? <LogOut /> : <LogIn />}
-          onClick={handleLogin}
+          icon={isPresentationPage ? <LogIn /> : <LogOut />}
+          onClick={handleAuthentication}
         />
       </div>
     </div>
