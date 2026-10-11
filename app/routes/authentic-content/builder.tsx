@@ -4,9 +4,7 @@ import type { ComponentProps } from "react";
 import { template } from "@/data/authentic-content/template";
 
 // Content routes
-import { authenticContentsNewsRoutes } from "@/data/authentic-content/news";
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
-import { authenticContentNewsLessonsCardData } from "@/data/authentic-content/news/news-card-data";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
@@ -33,10 +31,6 @@ export default function AuthenticContents() {
     let contents;
 
     switch (category) {
-      case "news":
-        contents = authenticContentsNewsRoutes;
-        break;
-
       case "ted-ed":
         contents = authenticContentsTedEdRoutes;
         break;
@@ -61,13 +55,9 @@ export default function AuthenticContents() {
 
   const lessonHref = `/authentic-content/${category}/${slug}`;
   const lessonCard =
-    category === "news"
-      ? Object.values(authenticContentNewsLessonsCardData).find(
-          (card) => card.href === lessonHref,
-        )
-      : category === "ted-ed"
-        ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
-        : undefined;
+    category === "ted-ed"
+      ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
+      : undefined;
   const displayedWhiteboard = lessonCard
     ? {
         ...content.whiteboard,

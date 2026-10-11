@@ -37,15 +37,6 @@ export const links: NavGroup[] = [
     iconClassName: "text-white",
     links: [
       {
-        label: "News",
-        links: [
-          {
-            href: "/authentic-content/news/a-soccer-match-dramatic-moment",
-            label: "A Soccer Match's Dramatic Moment",
-          },
-        ],
-      },
-      {
         label: "TED-Ed",
         links: authenticContentTedEdLessons.map(({ href, label }) => ({
           href,
