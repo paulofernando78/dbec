@@ -2,12 +2,14 @@ import { createSession, getUsers } from "../_auth.js";
 
 export async function onRequestPost(context) {
   try {
-    if (!context.env.AUTH_SESSION_SECRET) {
-      throw new Error("AUTH_SESSION_SECRET_MISSING");
-    }
-
     const { username, password } = await context.request.json();
     const users = getUsers(context.env);
+    const sessionSecret =
+      context.env.AUTH_SESSION_SECRET || context.env.AUTH_USERS;
+
+    if (!sessionSecret) {
+      throw new Error("AUTH_SESSION_SECRET_MISSING");
+    }
 
     if (
       typeof username !== "string" ||
@@ -21,7 +23,7 @@ export async function onRequestPost(context) {
       );
     }
 
-    const token = await createSession(username, context.env.AUTH_SESSION_SECRET);
+    const token = await createSession(username, sessionSecret);
 
     return Response.json(
       { ok: true },
