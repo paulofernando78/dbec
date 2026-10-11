@@ -3,7 +3,7 @@ import { createSession, getUsers } from "../_auth.js";
 export async function onRequestPost(context) {
   try {
     if (!context.env.AUTH_SESSION_SECRET) {
-      throw new Error("Session secret is not configured.");
+      throw new Error("AUTH_SESSION_SECRET_MISSING");
     }
 
     const { username, password } = await context.request.json();
@@ -32,9 +32,23 @@ export async function onRequestPost(context) {
         },
       },
     );
-  } catch {
+  } catch (error) {
+    const configurationCode =
+      error instanceof Error &&
+      [
+        "AUTH_SESSION_SECRET_MISSING",
+        "AUTH_USERS_MISSING",
+        "AUTH_USERS_INVALID_JSON",
+        "AUTH_USERS_INVALID",
+      ].includes(error.message)
+        ? error.message
+        : "AUTH_CONFIGURATION_ERROR";
+
     return Response.json(
-      { error: "A autenticação não está configurada corretamente." },
+      {
+        error: "A autenticação não está configurada corretamente.",
+        code: configurationCode,
+      },
       { status: 503, headers: { "Cache-Control": "no-store" } },
     );
   }

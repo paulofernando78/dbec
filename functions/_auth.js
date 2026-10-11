@@ -29,11 +29,20 @@ const sign = async (value, secret) => {
 };
 
 export const getUsers = (env) => {
-  const users = env.AUTH_USERS
-    ? JSON.parse(env.AUTH_USERS)
-    : env.AUTH_USERNAME && env.AUTH_PASSWORD
-      ? { [env.AUTH_USERNAME]: env.AUTH_PASSWORD }
-      : undefined;
+  let users;
+
+  if (env.AUTH_USERS) {
+    try {
+      users = JSON.parse(env.AUTH_USERS.trim());
+    } catch {
+      throw new Error("AUTH_USERS_INVALID_JSON");
+    }
+  } else if (env.AUTH_USERNAME && env.AUTH_PASSWORD) {
+    users = { [env.AUTH_USERNAME]: env.AUTH_PASSWORD };
+  } else {
+    throw new Error("AUTH_USERS_MISSING");
+  }
+
   const entries = users && typeof users === "object" ? Object.entries(users) : [];
 
   if (
@@ -45,7 +54,7 @@ export const getUsers = (env) => {
         !username || typeof password !== "string" || !password,
     )
   ) {
-    throw new Error("Authentication users are not configured.");
+    throw new Error("AUTH_USERS_INVALID");
   }
 
   return users;
