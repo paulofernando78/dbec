@@ -21,10 +21,7 @@ export async function onRequest(context) {
   }
 
   const token = readCookie(context.request, "dbec_session");
-  const sessionSecret =
-    context.env.AUTH_SESSION_SECRET || context.env.AUTH_USERS;
-
-  if (await verifySession(token, sessionSecret)) {
+  if (await verifySession(token, context.env.AUTH_USERS)) {
     return context.next();
   }
 

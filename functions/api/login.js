@@ -4,12 +4,6 @@ export async function onRequestPost(context) {
   try {
     const { username, password } = await context.request.json();
     const users = getUsers(context.env);
-    const sessionSecret =
-      context.env.AUTH_SESSION_SECRET || context.env.AUTH_USERS;
-
-    if (!sessionSecret) {
-      throw new Error("AUTH_SESSION_SECRET_MISSING");
-    }
 
     if (
       typeof username !== "string" ||
@@ -23,7 +17,7 @@ export async function onRequestPost(context) {
       );
     }
 
-    const token = await createSession(username, sessionSecret);
+    const token = await createSession(username, context.env.AUTH_USERS);
 
     return Response.json(
       { ok: true },
@@ -38,7 +32,6 @@ export async function onRequestPost(context) {
     const configurationCode =
       error instanceof Error &&
       [
-        "AUTH_SESSION_SECRET_MISSING",
         "AUTH_USERS_MISSING",
         "AUTH_USERS_INVALID_JSON",
         "AUTH_USERS_INVALID",
