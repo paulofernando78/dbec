@@ -1,19 +1,13 @@
-@import "@fontsource/anton";
 /* Supports weights 100-900 */
 @import "@fontsource-variable/montserrat/wght.css";
 @import "@fontsource/luckiest-guy";
-/* Supports weights 200-700 */
-@import "@fontsource-variable/oswald/wght.css";
-@import "@fontsource/bebas-neue";
+@import "@fontsource/walter-turncoat";
 @import "@fontsource/fredericka-the-great";
 
 @theme {
-  --font-anton: "Anton", sans-serif;
   --font-montserrat: "Montserrat Variable", sans-serif;
   --font-luckiest-guy: "Luckiest Guy", system-ui;
-  --font-oswald: "Oswald Variable", sans-serif;
-  --font-bebas-neue: "Bebas Neue", sans-serif;
-  --font-fredericka-the-great: "Fredericka the Great", system-ui;
+  --font-walter: "Walter Turncoat", cursive;
 }
 
 :root {

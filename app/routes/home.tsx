@@ -21,7 +21,7 @@ const greetingsList = [
 ];
 
 const dbecCSS = {
-  fontFamily: "var(--font-anton)",
+  fontFamily: "var(--font-luckiest-guy)",
   color: "#222222",
   WebkitTextStroke: "12px var(--gray-2)",
   paintOrder: "stroke fill" as const,
@@ -52,18 +52,19 @@ export default function Home() {
   });
 
   return (
-    <div className="mt-12 flex flex-col gap-[40px]">
-      <div className="w-max mx-auto leading-[1.13]">
-        <h1 style={dbecCSS} className="text-[4rem]">
+    <div className="mt-12 flex flex-col gap-10">
+      <div style={dbecCSS} className="w-max mx-auto leading-[1.13]">
+        <h1 className="text-[4rem]">
           DAILY BAISIS
         </h1>
-        <h1 style={dbecCSS} className="text-[3.06rem]">
+        <h1 className="text-[3.06rem]">
           ENGLISH COURSE
         </h1>
+        <span className="block text-right">private</span>
       </div>
       <ul className="w-max mx-auto">
         <li
-          className="font-luckiest-guy text-[1.5rem] mt-3 transition-opacity duration-500 ease-in-out"
+          className="font-walter text-4xl mt-3 transition-opacity duration-500 ease-in-out"
           style={{ opacity }}
         >
           {greetingsList[greetingIndex]}
