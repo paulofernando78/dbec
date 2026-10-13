@@ -1,10 +1,4 @@
 const contacts: ContactItem[] = [
-  // email
-  {
-    link: "mailto:paulofernando78@gmail.com",
-    icon: "/assets/img/icons/contacts/email.png",
-    alt: "Email",
-  },
   // youtube
   {
     link: "https://www.youtube.com/@dbec11",
@@ -26,17 +20,6 @@ const contacts: ContactItem[] = [
 ];
 
 const patron: ContactItem[] = [
-  // Vakinha
-  {
-    link: "https://www.vakinha.com.br/vaquinha/site-para-dar-aula-de-ingles?utm_internal_source=search_results",
-    icon: "/assets/img/icons/contacts/vakinha.jpg",
-    alt: "Vakinha",
-    tooltip: "Support us on Vakinha",
-    width: 28,
-    height: 28,
-    className:
-      "mx-auto !w-[26px] !h-[26px] ml-[0.3rem] mr-[0.4rem] rounded-sm border-[1.5px] shadow-[0_0_0_2px_#F2F2F2,2px_2px_0_#9B9FA3,0_3px_1px_#9B9FA3,2px_2px_1px_#9B9FA3] translate-y-[3.5px]",
-  },
   // buy me a coffee
   {
     link: "https://www.buymeacoffee.com/paulofernando78",
