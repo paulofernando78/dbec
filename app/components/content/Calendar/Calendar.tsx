@@ -22,7 +22,7 @@ const statusOptions = [
     value: "ROK",
     label: "ROK",
     description: "Replacement OK",
-    color: "bg-green-400 border border-green-600 text-white",
+    color: "bg-green-400 border border-green-700 text-white",
   },
   {
     value: "SC",
