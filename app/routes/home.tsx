@@ -58,14 +58,14 @@ export default function Home() {
     <div className="mt-12 flex flex-col gap-10">
       <div className="w-max mx-auto">
         <div style={dbecCSS} className=" leading-14">
-          <h1 className="text-[4rem]">DAILY BAISIS</h1>
-          <h1 className="text-[3.06rem]">ENGLISH COURSE</h1>
+          <h1 className="text-[3rem]">DAILY BAISIS</h1>
+          <h1 className="text-[2.26rem]">ENGLISH COURSE</h1>
         </div>
         <span className="block text-3xl font-edu text-right">private</span>
       </div>
       <ul className="w-max mx-auto">
         <li
-          className="font-walter text-4xl mt-3 transition-opacity duration-500 ease-in-out"
+          className="font-walter text-2xl mt-3 transition-opacity duration-500 ease-in-out"
           style={{ opacity }}
         >
           {greetingsList[greetingIndex]}
