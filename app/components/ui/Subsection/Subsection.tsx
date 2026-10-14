@@ -33,7 +33,7 @@ export const Subsection = ({
         py-2 
         text-white
         ${bgColor}
-        rounded-lg
+        rounded-xl
         shadow
         shadow-slate-400
       `}

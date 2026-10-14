@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 
 import { Card } from "@/components/ui/Card";
+import { Checkbox } from "@/components/ui/Checkbox/Checkbox";
 import { Link } from "react-router";
 import {
   LessonObjective,
@@ -67,6 +68,8 @@ type LessonCardProps = LessonCardContent & {
   label?: string;
   numbered?: boolean;
   collapsible?: boolean;
+  checked?: boolean;
+  onCheckedChange?: (checked: boolean) => void;
 };
 
 export const LessonCard = ({
@@ -84,6 +87,8 @@ export const LessonCard = ({
   finalTask,
   assignmentHref,
   collapsible = false,
+  checked,
+  onCheckedChange,
 }: LessonCardProps) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const detailsId = useId();
@@ -91,14 +96,25 @@ export const LessonCard = ({
     href && numbered ? `${index + 1} • ${label}` : (label ?? "");
 
   const cardHeader = (
-    <div className="flex flex-col gap-1">
+    <div className="flex items-center gap-2 p-1">
+      {onCheckedChange && (
+        <span
+          onClick={(event) => event.stopPropagation()}
+          onKeyDown={(event) => event.stopPropagation()}
+        >
+          <Checkbox
+            checked={checked ?? false}
+            onCheckedChange={onCheckedChange}
+          />
+        </span>
+      )}
       <b>{lessonTitle}</b>
     </div>
   );
 
   const cardDetails = (
     <>
-      {href && <hr className="mt-3 mb-4 text-gray-300" />}
+      {href && <hr className="my-2 text-gray-300" />}
 
       {description && <p>{description}</p>}
 
@@ -204,8 +220,6 @@ export const LessonCard = ({
             </Link>
           )}
         </div>
-
-        <hr className="mt-4 mb-3 text-gray-300" />
 
       </div>
     </>

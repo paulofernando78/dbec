@@ -36,7 +36,7 @@ export const TableOfContents = ({
     Array.isArray(value) ? value : [value];
 
   return (
-    <Card className="mb-4 px-4 pt-[1.1rem] pb-3 bg-gray-100 font-oswald text-lg">
+    <Card className="mb-4  bg-gray-100 font-oswald text-lg">
       <div
         className="
         flex

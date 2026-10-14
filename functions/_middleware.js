@@ -25,6 +25,12 @@ export async function onRequest(context) {
   const session = await verifySession(token, context.env.AUTH_USERS);
 
   if (session) {
+    if (session.role === "teacher" && url.pathname === "/dashboard") {
+      url.pathname = "/teacher/dashboard";
+      url.search = "";
+      return Response.redirect(url.toString(), 302);
+    }
+
     if (
       url.pathname === "/teacher/dashboard" ||
       url.pathname.startsWith("/teacher/dashboard/")

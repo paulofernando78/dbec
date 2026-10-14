@@ -25,6 +25,7 @@ type PageSectionsProps = {
   itemIcon?: ElementType;
   headerIconClassName?: string;
   itemIconClassName?: string;
+  showTableOfContents?: boolean;
 };
 
 export const PageSections = ({
@@ -34,6 +35,7 @@ export const PageSections = ({
   itemIcon,
   headerIconClassName,
   itemIconClassName,
+  showTableOfContents = true,
 }: PageSectionsProps) => {
   // Convert children into a normal array and keep only valid React elements
   const childArray = Children.toArray(children).filter(
@@ -65,14 +67,16 @@ export const PageSections = ({
   return (
     <>
       {/* Build the TableOfContents menu automatically from the Section components */}
-      <TableOfContents
-        title={title}
-        items={items}
-        headerIcon={headerIcon}
-        itemIcon={itemIcon}
-        headerIconClassName={headerIconClassName}
-        itemIconClassName={itemIconClassName}
-      />
+      {showTableOfContents && (
+        <TableOfContents
+          title={title}
+          items={items}
+          headerIcon={headerIcon}
+          itemIcon={itemIcon}
+          headerIconClassName={headerIconClassName}
+          itemIconClassName={itemIconClassName}
+        />
+      )}
 
       {/* Render the original sections below the TableOfContents */}
       {children}

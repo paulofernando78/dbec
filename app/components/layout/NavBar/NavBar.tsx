@@ -1,6 +1,6 @@
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
 import { links } from "../../../data/nav-bar-links";
-import type { ElementType } from "react";
+import { useEffect, useState, type ElementType } from "react";
 import { Minus, Plus } from "lucide-react";
 
 type NavItem = {
@@ -29,9 +29,11 @@ const getNavItemKey = (item: NavItem) =>
 function RenderNavItem({
   item,
   closeNavBar,
+  dashboardPath,
 }: {
   item: NavItem;
   closeNavBar: () => void;
+  dashboardPath: string;
 }) {
   if (item.links?.length) {
     return (
@@ -73,6 +75,7 @@ function RenderNavItem({
               key={getNavItemKey(child)}
               item={child}
               closeNavBar={closeNavBar}
+              dashboardPath={dashboardPath}
             />
           ))}
         </div>
@@ -101,7 +104,7 @@ function RenderNavItem({
       `}
     >
       <NavLink
-        to={item.href}
+        to={item.href === "/dashboard" ? dashboardPath : item.href}
         end
         onClick={closeNavBar}
         className={({ isActive }) => `
@@ -116,6 +119,34 @@ function RenderNavItem({
 }
 
 export function NavBar({ closeNavBar }: NavBarProps) {
+  const [dashboardPath, setDashboardPath] = useState("/dashboard");
+  const location = useLocation();
+
+  useEffect(() => {
+    const storedDashboardPath = localStorage.getItem("dbec_dashboard_path");
+    if (storedDashboardPath) setDashboardPath(storedDashboardPath);
+
+    if (location.pathname.startsWith("/teacher/dashboard")) {
+      localStorage.setItem("dbec_dashboard_path", "/teacher/dashboard");
+      setDashboardPath("/teacher/dashboard");
+    } else if (location.pathname.startsWith("/dashboard/")) {
+      localStorage.setItem("dbec_dashboard_path", location.pathname);
+      setDashboardPath(location.pathname);
+    }
+
+    fetch("/api/session")
+      .then((response) => {
+        if (!response.ok) throw new Error("Could not load session.");
+        return response.json();
+      })
+      .then((session) => {
+        const nextDashboardPath = session.dashboardPath ?? "/dashboard";
+        localStorage.setItem("dbec_dashboard_path", nextDashboardPath);
+        setDashboardPath(nextDashboardPath);
+      })
+      .catch(() => {});
+  }, [location.pathname]);
+
   return (
     <nav
       className="
@@ -129,9 +160,8 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         py-4
         text-white
         bg-gray-900
-        rounded-tl-lg
-        rounded-tr-lg
-        rounded-br-lg
+        rounded-tl-xl
+        rounded-tr-xl
         shadow-[2px_2px_5px_var(--slate-5)]
         overflow-y-auto
         "
@@ -188,6 +218,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 key={getNavItemKey(item)}
                 item={item}
                 closeNavBar={closeNavBar}
+                dashboardPath={dashboardPath}
               />
             ))}
           </div>

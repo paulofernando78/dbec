@@ -77,7 +77,6 @@ export default function TeacherDashboard() {
         subtitle={student?.name}
         date={student?.schedule}
         time={student?.time}
-        compactTitle={!student}
       />
 
       <div className="mb-4">

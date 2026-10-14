@@ -63,6 +63,7 @@ export default function AuthenticContents() {
         ...content.whiteboard,
         title: "AUTHENTIC CONTENT",
         subtitle: lessonCard.label,
+        descriptions: [],
         date: lessonCard.date,
         time: lessonCard.duration,
       }

@@ -37,3 +37,17 @@ CREATE INDEX IF NOT EXISTS idx_calendar_entries_student_date
 
 CREATE INDEX IF NOT EXISTS idx_notes_student_type
   ON notes (student_id, note_type);
+
+CREATE TABLE IF NOT EXISTS lesson_progress (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  lesson_id TEXT NOT NULL,
+  completed INTEGER NOT NULL DEFAULT 0
+    CHECK (completed IN (0, 1)),
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  UNIQUE (user_id, lesson_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_lesson_progress_user
+  ON lesson_progress (user_id);

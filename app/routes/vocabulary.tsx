@@ -1,5 +1,6 @@
 import { BookOpenText } from "lucide-react";
 
+import { Whiteboard } from "@/components/content/Whiteboard";
 import { LibraryPage } from "@/components/content/LibraryPage";
 
 const vocabularySections = [
@@ -13,8 +14,7 @@ const vocabularySections = [
       },
       {
         label: "Speak vs. Say vs. Tell",
-        description:
-          "Understand the differences between speak, say, and tell.",
+        description: "Understand the differences between speak, say, and tell.",
       },
     ],
   },
@@ -22,10 +22,14 @@ const vocabularySections = [
 
 export default function Vocabulary() {
   return (
-    <LibraryPage
-      title="VOCABULARY"
-      sections={vocabularySections}
-      headerIcon={BookOpenText}
-    />
+    <div>
+      <Whiteboard title="Vocabulary" />
+      <LibraryPage
+        showTableOfContents={false}
+        title="VOCABULARY"
+        sections={vocabularySections}
+        headerIcon={BookOpenText}
+      />
+    </div>
   );
 }

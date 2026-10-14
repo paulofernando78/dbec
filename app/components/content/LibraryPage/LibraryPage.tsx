@@ -1,6 +1,7 @@
 import { PageSections } from "@/components/content/PageSections";
 import { LessonCard } from "@/components/content/LessonCard";
 import { Section } from "@/components/ui/Section";
+import { Subsection } from "@/components/ui/Subsection";
 
 import { BookText, LibraryBig } from "lucide-react";
 import type { ElementType } from "react";
@@ -30,6 +31,9 @@ type LibraryPageProps = {
   startIndex?: number;
   headerIcon?: ElementType;
   itemIcon?: ElementType;
+  lessonCompletion?: Record<string, boolean>;
+  onLessonCompletionChange?: (lessonId: string, completed: boolean) => void;
+  showTableOfContents?: boolean;
 };
 
 const getSectionId = (label: string) =>
@@ -60,6 +64,9 @@ export function LibraryPage({
   startIndex = 0,
   headerIcon = LibraryBig,
   itemIcon = BookText,
+  lessonCompletion,
+  onLessonCompletionChange,
+  showTableOfContents = true,
 }: LibraryPageProps) {
   return (
     <PageSections
@@ -68,6 +75,7 @@ export function LibraryPage({
       itemIcon={itemIcon}
       headerIconClassName="text-gray-400"
       itemIconClassName="text-gray-400"
+      showTableOfContents={showTableOfContents}
     >
       {sections.map((section, sectionIndex) => {
         const colorName = section.iconClassName?.match(
@@ -111,11 +119,7 @@ export function LibraryPage({
               return (
                 <div key={group.label || section.label}>
                   {group.label && (
-                    <h3
-                      className={`mb-3 mt-5 rounded px-3 py-2 font-bold first:mt-0 ${colorClasses.group}`}
-                    >
-                      {group.label}
-                    </h3>
+                    <Subsection label={group.label} heading={3} />
                   )}
                   {group.lessons.map((lesson, lessonIndex) => (
                     <LessonCard
@@ -129,6 +133,17 @@ export function LibraryPage({
                       }
                       numbered={section.numbered}
                       collapsible
+                      checked={
+                        lesson.href
+                          ? (lessonCompletion?.[lesson.href] ?? false)
+                          : undefined
+                      }
+                      onCheckedChange={
+                        lesson.href && onLessonCompletionChange
+                          ? (completed) =>
+                              onLessonCompletionChange(lesson.href!, completed)
+                          : undefined
+                      }
                     />
                   ))}
                 </div>

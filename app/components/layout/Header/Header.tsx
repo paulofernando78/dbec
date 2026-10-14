@@ -54,6 +54,7 @@ export const Header = ({ onClick }: HeadersProps) => {
     }
 
     await fetch("/api/logout", { method: "POST" });
+    localStorage.removeItem("dbec_dashboard_path");
     window.location.assign("/");
   };
 
@@ -74,7 +75,9 @@ export const Header = ({ onClick }: HeadersProps) => {
 
     if (response.ok) {
       const result = (await response.json()) as { redirectTo?: string };
-      window.location.assign(result.redirectTo ?? "/dashboard");
+      const redirectTo = result.redirectTo ?? "/dashboard";
+      localStorage.setItem("dbec_dashboard_path", redirectTo);
+      window.location.assign(redirectTo);
       return;
     }
 
