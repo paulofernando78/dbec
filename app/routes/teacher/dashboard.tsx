@@ -115,13 +115,6 @@ export default function TeacherDashboard() {
 
   return (
     <>
-      <Whiteboard
-        title="Teacher's Dashboard"
-        subtitle={student?.name}
-        date={student?.schedule}
-        time={student?.time}
-      />
-
       <div className="mb-4">
         <label htmlFor="teacher-student"></label>
         <select
@@ -141,6 +134,13 @@ export default function TeacherDashboard() {
           ))}
         </select>
       </div>
+
+      <Whiteboard
+        title="Teacher's Dashboard"
+        subtitle={student?.name}
+        date={student?.schedule}
+        time={student?.time}
+      />
 
       {isLoadingStudent && studentId && (
         <p className="text-gray-500">Carregando aluno…</p>
