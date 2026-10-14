@@ -10,6 +10,7 @@ type WhiteboardProps = {
   description?: string;
   date?: string;
   time?: string;
+  compactTitle?: boolean;
 };
 
 export const Whiteboard = ({
@@ -18,10 +19,13 @@ export const Whiteboard = ({
   descriptions = [],
   date,
   time,
+  compactTitle = false,
 }: WhiteboardProps) => {
   return (
     <Card className="mb-8">
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
+      <h1 className={`text-4xl font-bold ${compactTitle ? "" : "mb-4"}`}>
+        {title}
+      </h1>
       {subtitle && <h2 className="text-3xl">{subtitle}</h2>}
       {descriptions?.length > 0 &&
         descriptions.map((description, index) => (

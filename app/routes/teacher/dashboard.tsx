@@ -16,29 +16,48 @@ export default function TeacherDashboard() {
   const student = data?.student;
 
   useEffect(() => {
-    fetch("/api/dashboard").then((response) => response.json()).then((result) => setStudents(result.students ?? []));
+    fetch("/api/dashboard")
+      .then((response) => response.json())
+      .then((result) => setStudents(result.students ?? []));
   }, []);
 
   useEffect(() => {
-    if (!studentId) { setData(null); return; }
+    if (!studentId) {
+      setData(null);
+      return;
+    }
     fetch(`/api/dashboard?studentId=${encodeURIComponent(studentId)}`)
       .then((response) => response.json())
       .then((result) => {
         setData(result);
         setNotes(result.notes ?? { teacher: "", student: "" });
-        setCalendar(Object.fromEntries((result.calendar ?? []).map((entry: any) => [entry.lessonDate, entry.status])));
+        setCalendar(
+          Object.fromEntries(
+            (result.calendar ?? []).map((entry: any) => [
+              entry.lessonDate,
+              entry.status,
+            ]),
+          ),
+        );
       });
   }, [studentId]);
 
-  const saveTeacherNote = () => fetch("/api/notes", {
-    method: "PUT", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ studentId, noteType: "teacher", content: notes.teacher }),
-  });
+  const saveTeacherNote = () =>
+    fetch("/api/notes", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        studentId,
+        noteType: "teacher",
+        content: notes.teacher,
+      }),
+    });
 
   const saveCalendar = (lessonDate: string, status: string) => {
     setCalendar((current) => ({ ...current, [lessonDate]: status }));
     void fetch("/api/calendar", {
-      method: "PUT", headers: { "Content-Type": "application/json" },
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ studentId, lessonDate, status }),
     });
   };
@@ -55,18 +74,14 @@ export default function TeacherDashboard() {
     <>
       <Whiteboard
         title="Teacher's Dashboard"
-        subtitle={student?.name ?? "Select a student"}
+        subtitle={student?.name}
         date={student?.schedule}
         time={student?.time}
+        compactTitle={!student}
       />
 
       <div className="mb-4">
-        <label
-          htmlFor="teacher-student"
-          className="mb-1 block text-sm font-bold"
-        >
-          Student
-        </label>
+        <label htmlFor="teacher-student"></label>
         <select
           id="teacher-student"
           value={studentId ?? ""}
@@ -75,7 +90,10 @@ export default function TeacherDashboard() {
         >
           <option value="">Select a student</option>
           {students.map((currentStudent) => (
-            <option key={currentStudent.studentId} value={currentStudent.studentId}>
+            <option
+              key={currentStudent.studentId}
+              value={currentStudent.studentId}
+            >
               {currentStudent.name}
             </option>
           ))}
@@ -90,7 +108,9 @@ export default function TeacherDashboard() {
             <DashboardNotes
               title="Teacher's Notes"
               value={notes.teacher}
-              onChange={(value) => setNotes((current) => ({ ...current, teacher: value }))}
+              onChange={(value) =>
+                setNotes((current) => ({ ...current, teacher: value }))
+              }
               onSave={saveTeacherNote}
             />
             <DashboardNotes
@@ -104,11 +124,7 @@ export default function TeacherDashboard() {
 
           <Calendar statuses={calendar} onStatusChange={saveCalendar} />
         </div>
-      ) : (
-        <p className="rounded-lg border border-gray-300 p-4 text-gray-600">
-          Select a student to view their dashboard.
-        </p>
-      )}
+      ) : null}
     </>
   );
 }
