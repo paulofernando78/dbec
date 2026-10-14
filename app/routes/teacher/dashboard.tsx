@@ -13,6 +13,9 @@ export default function TeacherDashboard() {
   const [data, setData] = useState<any>(null);
   const [notes, setNotes] = useState({ teacher: "", student: "" });
   const [calendar, setCalendar] = useState<Record<string, string>>({});
+  const [isLoadingStudent, setIsLoadingStudent] = useState(false);
+  const [studentError, setStudentError] = useState("");
+  const [reloadKey, setReloadKey] = useState(0);
   const student = data?.student;
 
   useEffect(() => {
@@ -22,13 +25,32 @@ export default function TeacherDashboard() {
   }, []);
 
   useEffect(() => {
+    let cancelled = false;
+
     if (!studentId) {
       setData(null);
+      setIsLoadingStudent(false);
+      setStudentError("");
       return;
     }
-    fetch(`/api/dashboard?studentId=${encodeURIComponent(studentId)}`)
-      .then((response) => response.json())
-      .then((result) => {
+
+    setData(null);
+    setIsLoadingStudent(true);
+    setStudentError("");
+
+    const loadStudent = async () => {
+      let lastError: unknown;
+
+      for (let attempt = 0; attempt < 2; attempt += 1) {
+        try {
+          const response = await fetch(
+            `/api/dashboard?studentId=${encodeURIComponent(studentId)}`,
+          );
+          if (!response.ok) throw new Error(`Dashboard HTTP ${response.status}`);
+
+          const result = await response.json();
+          if (cancelled) return;
+
         setData(result);
         setNotes(result.notes ?? { teacher: "", student: "" });
         setCalendar(
@@ -39,8 +61,29 @@ export default function TeacherDashboard() {
             ]),
           ),
         );
-      });
-  }, [studentId]);
+          setIsLoadingStudent(false);
+          return;
+        } catch (error) {
+          lastError = error;
+          if (attempt === 0) {
+            await new Promise((resolve) => setTimeout(resolve, 500));
+          }
+        }
+      }
+
+      if (!cancelled) {
+        console.error(lastError);
+        setIsLoadingStudent(false);
+        setStudentError("Não foi possível carregar o aluno.");
+      }
+    };
+
+    void loadStudent();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [studentId, reloadKey]);
 
   const saveTeacherNote = () =>
     fetch("/api/notes", {
@@ -98,6 +141,23 @@ export default function TeacherDashboard() {
           ))}
         </select>
       </div>
+
+      {isLoadingStudent && studentId && (
+        <p className="text-gray-500">Carregando aluno…</p>
+      )}
+
+      {studentError && studentId && (
+        <div className="flex items-center gap-3">
+          <p className="text-red-600">{studentError}</p>
+          <button
+            type="button"
+            onClick={() => setReloadKey((current) => current + 1)}
+            className="rounded bg-gray-900 px-3 py-1 text-sm font-semibold text-white"
+          >
+            Tentar novamente
+          </button>
+        </div>
+      )}
 
       {student && studentId ? (
         <div className="grid gap-4">
