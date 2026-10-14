@@ -2,12 +2,13 @@
 @import "@fontsource-variable/montserrat/wght.css";
 @import "@fontsource/luckiest-guy";
 @import "@fontsource/walter-turncoat";
-@import "@fontsource/fredericka-the-great";
+@import '@fontsource-variable/edu-qld-beginner';
 
 @theme {
   --font-montserrat: "Montserrat Variable", sans-serif;
   --font-luckiest-guy: "Luckiest Guy", system-ui;
   --font-walter: "Walter Turncoat", cursive;
+  --font-edu: 'Edu QLD Beginner Variable', cursive;
 }
 
 :root {

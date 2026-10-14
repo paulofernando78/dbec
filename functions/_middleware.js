@@ -2,6 +2,7 @@ import { readCookie, verifySession } from "./_auth.js";
 
 const protectedPaths = [
   "/dashboard",
+  "/teacher/dashboard",
   "/authentic-content",
   "/vocabulary",
   "/games",
@@ -21,7 +22,32 @@ export async function onRequest(context) {
   }
 
   const token = readCookie(context.request, "dbec_session");
-  if (await verifySession(token, context.env.AUTH_USERS)) {
+  const session = await verifySession(token, context.env.AUTH_USERS);
+
+  if (session) {
+    if (
+      url.pathname === "/teacher/dashboard" ||
+      url.pathname.startsWith("/teacher/dashboard/")
+    ) {
+      if (session.role === "teacher") return context.next();
+
+      url.pathname = `/dashboard/${encodeURIComponent(session.studentId)}`;
+      url.search = "";
+      return Response.redirect(url.toString(), 302);
+    }
+
+    if (
+      session.role === "student" &&
+      (url.pathname === "/dashboard" ||
+        (url.pathname.startsWith("/dashboard/") &&
+          url.pathname !==
+            `/dashboard/${encodeURIComponent(session.studentId)}`))
+    ) {
+      url.pathname = `/dashboard/${encodeURIComponent(session.studentId)}`;
+      url.search = "";
+      return Response.redirect(url.toString(), 302);
+    }
+
     return context.next();
   }
 

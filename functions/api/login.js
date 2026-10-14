@@ -8,8 +8,7 @@ export async function onRequestPost(context) {
     if (
       typeof username !== "string" ||
       typeof password !== "string" ||
-      !Object.prototype.hasOwnProperty.call(users, username) ||
-      users[username] !== password
+      !Object.prototype.hasOwnProperty.call(users, username)
     ) {
       return Response.json(
         { error: "Usuário ou senha inválidos." },
@@ -17,10 +16,26 @@ export async function onRequestPost(context) {
       );
     }
 
-    const token = await createSession(username, context.env.AUTH_USERS);
+    const user = users[username];
+
+    if (user.password !== password) {
+      return Response.json(
+        { error: "Usuário ou senha inválidos." },
+        { status: 401, headers: { "Cache-Control": "no-store" } },
+      );
+    }
+
+    const token = await createSession(
+      { username, role: user.role, studentId: user.studentId },
+      context.env.AUTH_USERS,
+    );
+    const redirectTo =
+      user.role === "teacher"
+        ? "/teacher/dashboard"
+        : `/dashboard/${encodeURIComponent(user.studentId ?? username)}`;
 
     return Response.json(
-      { ok: true },
+      { ok: true, role: user.role, redirectTo },
       {
         headers: {
           "Cache-Control": "no-store",

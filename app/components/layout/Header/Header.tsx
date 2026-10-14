@@ -30,6 +30,7 @@ export const Header = ({ onClick }: HeadersProps) => {
     location.pathname === "/" || location.pathname === "/about";
   const isProtectedPage = [
     "/dashboard",
+    "/teacher/dashboard",
     "/authentic-content",
     "/vocabulary",
     "/games",
@@ -72,7 +73,8 @@ export const Header = ({ onClick }: HeadersProps) => {
     });
 
     if (response.ok) {
-      window.location.assign("/dashboard");
+      const result = (await response.json()) as { redirectTo?: string };
+      window.location.assign(result.redirectTo ?? "/dashboard");
       return;
     }
 

@@ -1,8 +1,5 @@
-// import styles from "./Emoji.module.css";
-
 import { Image } from "@/components/ui/Image";
 import { Audio } from "@/components/ui/Audio";
-import { Text } from "@/components/content/Text";
 
 const emojis = [
   {
@@ -341,23 +338,12 @@ const emojis = [
       },
     ],
   },
-  {
-    img: "/assets/img/emojis/i-dont-know.gif",
-    alt: '"i-dont-know" emoji',
-    words: [
-      {
-        audio: "/assets/audio/dictionary/i/i-dont-know.mp3",
-        word: "I dont know",
-      },
-    ],
-  },
 ];
 
-export default function Dashboard() {
+export default function Emojis() {
   return (
-    <>
+    <div>
       <div className="my-8 text-center">
-        <h2 className="mb-6 text-3xl font-bold">Welcome</h2>
         <h3 className="mb-4 text-2xl font-bold">How are you feeling today?</h3>
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,9rem)] gap-2 justify-center">
@@ -378,6 +364,6 @@ export default function Dashboard() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

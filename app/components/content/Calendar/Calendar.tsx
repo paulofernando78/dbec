@@ -132,8 +132,8 @@ const calendarMonths = months.map((month, index) => ({
 
 type CalendarStatusMap = Record<string, string>;
 
-const getStorageKey = (month: string, day: number) =>
-  `calendar-2026-${month}-${day}`;
+const getStorageKey = (storagePrefix: string, month: string, day: number) =>
+  `${storagePrefix}:calendar-2026-${month}-${day}`;
 
 //! SELECT
 const StatusSelect = ({
@@ -165,7 +165,11 @@ const StatusSelect = ({
   );
 };
 
-export const Calendar = () => {
+type CalendarProps = {
+  storagePrefix?: string;
+};
+
+export const Calendar = ({ storagePrefix = "dashboard" }: CalendarProps) => {
   const [calendarStatus, setCalendarStatus] = useState<CalendarStatusMap>(
     () => {
       if (typeof window === "undefined") {
@@ -176,7 +180,7 @@ export const Calendar = () => {
 
       calendarMonths.forEach(({ month, dates }) => {
         dates.forEach(({ day, status }) => {
-          const storageKey = getStorageKey(month, day);
+          const storageKey = getStorageKey(storagePrefix, month, day);
           initialStatus[storageKey] =
             localStorage.getItem(storageKey) ?? status;
         });
@@ -199,65 +203,66 @@ export const Calendar = () => {
 
   return (
     <>
-      <span
-        className="
-        block
-        px-[.3rem] py-[.2rem]
-        font-bold
-        text-sm
-        border-t
-        border-r
-        border-l 
-        border-gray-300
-        bg-gray-300
-        rounded-t
-        rounded-b-none
-        "
-      >
-        Legend
-      </span>
-      <ul
-        className="
-        mb-4
-        p-2
-        grid
-        grid-cols-3
-        gap-2
-        border
-        border-gray-300
-        rounded-t-none
-        rounded-b
-        "
-      >
-        {statusOptions
-          .filter((options) => options.value !== "...")
-          .map((option) => (
-            <li
-              key={option.value}
-              className="
-              flex
-              items-center
-              gap-2
-              text-[.7rem]
-              "
-            >
-              <span
-                className={`
-                inline-flex
+      <div>
+        <span
+          className="
+          block
+          px-[.4rem] py-[.2rem]
+          font-bold
+          text-sm
+          border-t
+          border-r
+          border-l 
+          border-gray-300
+          bg-gray-300
+          rounded-t
+          rounded-b-none
+          "
+        >
+          Legend
+        </span>
+        <ul
+          className="
+          p-2
+          grid
+          grid-cols-3
+          gap-2
+          border
+          border-gray-300
+          rounded-t-none
+          rounded-b
+          "
+        >
+          {statusOptions
+            .filter((options) => options.value !== "...")
+            .map((option) => (
+              <li
+                key={option.value}
+                className="
+                flex
                 items-center
-                justify-center
-                w-9
-                h-6
-                rounded-lg
-                ${option.color}
-            `}
+                gap-2
+                text-[.7rem]
+                "
               >
-                {option.label}
-              </span>
-              <span>{option.description}</span>
-            </li>
-          ))}
-      </ul>
+                <span
+                  className={`
+                  inline-flex
+                  items-center
+                  justify-center
+                  w-9
+                  h-6
+                  rounded-lg
+                  ${option.color}
+              `}
+                >
+                  {option.label}
+                </span>
+                <span>{option.description}</span>
+              </li>
+            ))}
+        </ul>
+      </div>
       <div
         ref={scrollRef}
         {...events} // Isso injeta automaticamente o onMouseDown, onMouseUp, etc.
@@ -280,7 +285,8 @@ export const Calendar = () => {
           text-lg
           font-bold
           px-2
-          py-1
+          pt-1
+          pb-0.5
           bg-gray-300"
         >
           Calendar
@@ -293,7 +299,7 @@ export const Calendar = () => {
         >
           {calendarMonths.map(({ month, dates }) => {
             const totalClasses = dates.filter(({ day }) => {
-              const storageKey = getStorageKey(month, day);
+              const storageKey = getStorageKey(storagePrefix, month, day);
               const currentStatus = calendarStatus[storageKey];
 
               return currentStatus === "OK" || currentStatus === "ROK";
@@ -334,7 +340,11 @@ export const Calendar = () => {
 
                   <ol className="space-y-1">
                     {dates.map(({ day, weekday, status }, index) => {
-                      const storageKey = getStorageKey(month, day);
+                      const storageKey = getStorageKey(
+                        storagePrefix,
+                        month,
+                        day,
+                      );
                       const currentStatus =
                         calendarStatus[storageKey] ?? status;
 

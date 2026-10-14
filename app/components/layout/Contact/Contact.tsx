@@ -1,10 +1,4 @@
 const contacts: ContactItem[] = [
-  // youtube
-  {
-    link: "https://www.youtube.com/@dbec11",
-    icon: "/assets/img/icons/contacts/youtube.png",
-    alt: "Youtube",
-  },
   // linkedin
   {
     link: "https://www.linkedin.com/in/paulo-fernando-70930725/",
@@ -123,7 +117,7 @@ export const Contact = ({ className }: ContactProps) => {
                 group-hover:opacity-100 group-focus-within:opacity-100
                 z-10
                 pointer-events-none"
-                >
+            >
               {contact.tooltip}
             </span>
           </li>

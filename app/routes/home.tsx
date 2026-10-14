@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import { useEffect, useState } from "react";
 
 import { Contact } from "@/components/layout/Contact";
+import { Image } from "@/components/ui/Image";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,6 +10,8 @@ export function meta({}: Route.MetaArgs) {
     { name: "description", content: "Private English Classes" },
   ];
 }
+
+
 
 const greetingsList = [
   "Hi there!",
@@ -53,14 +56,12 @@ export default function Home() {
 
   return (
     <div className="mt-12 flex flex-col gap-10">
-      <div style={dbecCSS} className="w-max mx-auto leading-[1.13]">
-        <h1 className="text-[4rem]">
-          DAILY BAISIS
-        </h1>
-        <h1 className="text-[3.06rem]">
-          ENGLISH COURSE
-        </h1>
-        <span className="block text-right">private</span>
+      <div className="w-max mx-auto">
+        <div style={dbecCSS} className=" leading-14">
+          <h1 className="text-[4rem]">DAILY BAISIS</h1>
+          <h1 className="text-[3.06rem]">ENGLISH COURSE</h1>
+        </div>
+        <span className="block text-3xl font-edu text-right">private</span>
       </div>
       <ul className="w-max mx-auto">
         <li
@@ -81,7 +82,8 @@ export default function Home() {
         <b>O DAILY BASIS ENGLISH COURSE</b> oferece aulas de inglês
         especializadas e focadas nas quatro habilidades linguísticas
         fundamentais: Fala (com ênfase em conversação), Escuta (compreensão
-        auditiva), Leitura e Escrita. Utilizamos o <span className="underline">Google Classroom</span> como nossa
+        auditiva), Leitura e Escrita. Utilizamos o{" "}
+        <span className="underline">Google Classroom</span> como nossa
         plataforma de aprendizagem.
       </p>
       <div className="w-max mx-auto">

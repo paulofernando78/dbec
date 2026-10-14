@@ -21,8 +21,7 @@ export default [
     route("/lab", "routes/lab.tsx"),
 
     route("dashboard/:studentId?", "routes/students/dashboard.tsx"),
-
-    route("/dashboard", "routes/dashboard.tsx"),
+    route("/teacher/dashboard/:studentId?", "routes/teacher/dashboard.tsx"),
 
     route("/cefr", "routes/whats-cefr.tsx"),
 

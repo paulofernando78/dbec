@@ -45,41 +45,80 @@ export const getUsers = (env) => {
 
   const entries = users && typeof users === "object" ? Object.entries(users) : [];
 
-  if (
-    !users ||
-    Array.isArray(users) ||
-    entries.length === 0 ||
-    entries.some(
-      ([username, password]) =>
-        !username || typeof password !== "string" || !password,
-    )
-  ) {
+  if (!users || Array.isArray(users) || entries.length === 0) {
     throw new Error("AUTH_USERS_INVALID");
   }
 
-  return users;
+  return Object.fromEntries(
+    entries.map(([username, value]) => {
+      if (!username) throw new Error("AUTH_USERS_INVALID");
+
+      // Compatibilidade temporária com { "usuario": "senha" }.
+      if (typeof value === "string" && value) {
+        return [
+          username,
+          { password: value, role: "student", studentId: username },
+        ];
+      }
+
+      if (
+        !value ||
+        typeof value !== "object" ||
+        typeof value.password !== "string" ||
+        !value.password ||
+        !["teacher", "student"].includes(value.role) ||
+        (value.role === "student" &&
+          (typeof value.studentId !== "string" || !value.studentId))
+      ) {
+        throw new Error("AUTH_USERS_INVALID");
+      }
+
+      return [
+        username,
+        {
+          password: value.password,
+          role: value.role,
+          studentId: value.role === "student" ? value.studentId : undefined,
+        },
+      ];
+    }),
+  );
 };
 
-export const createSession = async (username, secret) => {
+export const createSession = async (user, secret) => {
   const payload = toBase64Url(
-    JSON.stringify({ username, expiresAt: Date.now() + 7 * 24 * 60 * 60 * 1000 }),
+    JSON.stringify({
+      username: user.username,
+      role: user.role,
+      studentId: user.studentId,
+      expiresAt: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    }),
   );
   return `${payload}.${await sign(payload, secret)}`;
 };
 
 export const verifySession = async (token, secret) => {
-  if (!token || !secret) return false;
+  if (!token || !secret) return null;
 
   try {
     const [payload, signature] = token.split(".");
     if (!payload || !signature || signature !== (await sign(payload, secret))) {
-      return false;
+      return null;
     }
 
     const session = JSON.parse(fromBase64Url(payload));
-    return typeof session.expiresAt === "number" && session.expiresAt > Date.now();
+    if (
+      typeof session.username !== "string" ||
+      !["teacher", "student"].includes(session.role) ||
+      typeof session.expiresAt !== "number" ||
+      session.expiresAt <= Date.now()
+    ) {
+      return null;
+    }
+
+    return session;
   } catch {
-    return false;
+    return null;
   }
 };
 
