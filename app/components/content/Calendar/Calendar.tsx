@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDraggableScroll } from "@/utils/useDraggableScroll";
 
 const statusOptions = [
@@ -132,21 +131,21 @@ const calendarMonths = months.map((month, index) => ({
 
 type CalendarStatusMap = Record<string, string>;
 
-const getStorageKey = (storagePrefix: string, month: string, day: number) =>
-  `${storagePrefix}:calendar-2026-${month}-${day}`;
-
 //! SELECT
 const StatusSelect = ({
   status,
   onStatusChange,
+  disabled,
 }: {
   status: string;
   onStatusChange: (nextStatus: string) => void;
+  disabled: boolean;
 }) => {
   return (
     <select
       value={status}
       onChange={(event) => onStatusChange(event.target.value)}
+      disabled={disabled}
       className={`
         w-full
         h-6
@@ -166,40 +165,14 @@ const StatusSelect = ({
 };
 
 type CalendarProps = {
-  storagePrefix?: string;
+  statuses?: CalendarStatusMap;
+  readOnly?: boolean;
+  onStatusChange?: (lessonDate: string, status: string) => void;
 };
 
-export const Calendar = ({ storagePrefix = "dashboard" }: CalendarProps) => {
-  const [calendarStatus, setCalendarStatus] = useState<CalendarStatusMap>(
-    () => {
-      if (typeof window === "undefined") {
-        return {};
-      }
-
-      const initialStatus: CalendarStatusMap = {};
-
-      calendarMonths.forEach(({ month, dates }) => {
-        dates.forEach(({ day, status }) => {
-          const storageKey = getStorageKey(storagePrefix, month, day);
-          initialStatus[storageKey] =
-            localStorage.getItem(storageKey) ?? status;
-        });
-      });
-
-      return initialStatus;
-    },
-  );
+export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: CalendarProps) => {
 
   const { ref: scrollRef, isDragging, events } = useDraggableScroll();
-
-  const handleStatusChange = (storageKey: string, nextStatus: string) => {
-    setCalendarStatus((currentStatus) => ({
-      ...currentStatus,
-      [storageKey]: nextStatus,
-    }));
-
-    localStorage.setItem(storageKey, nextStatus);
-  };
 
   return (
     <>
@@ -299,8 +272,8 @@ export const Calendar = ({ storagePrefix = "dashboard" }: CalendarProps) => {
         >
           {calendarMonths.map(({ month, dates }) => {
             const totalClasses = dates.filter(({ day }) => {
-              const storageKey = getStorageKey(storagePrefix, month, day);
-              const currentStatus = calendarStatus[storageKey];
+              const lessonDate = getDateKey(2026, months.indexOf(month), day);
+              const currentStatus = statuses[lessonDate];
 
               return currentStatus === "OK" || currentStatus === "ROK";
             }).length;
@@ -340,13 +313,8 @@ export const Calendar = ({ storagePrefix = "dashboard" }: CalendarProps) => {
 
                   <ol className="space-y-1">
                     {dates.map(({ day, weekday, status }, index) => {
-                      const storageKey = getStorageKey(
-                        storagePrefix,
-                        month,
-                        day,
-                      );
-                      const currentStatus =
-                        calendarStatus[storageKey] ?? status;
+                      const lessonDate = getDateKey(2026, months.indexOf(month), day);
+                      const currentStatus = statuses[lessonDate] ?? status;
 
                       return (
                         <li
@@ -360,9 +328,8 @@ export const Calendar = ({ storagePrefix = "dashboard" }: CalendarProps) => {
                           <span>{index + 1}.</span>
                           <StatusSelect
                             status={currentStatus}
-                            onStatusChange={(nextStatus) =>
-                              handleStatusChange(storageKey, nextStatus)
-                            }
+                            disabled={readOnly}
+                            onStatusChange={(nextStatus) => onStatusChange?.(lessonDate, nextStatus)}
                           />
                           <span>
                             &bull; {weekday} {day}

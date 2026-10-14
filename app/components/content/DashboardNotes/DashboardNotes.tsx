@@ -2,12 +2,18 @@ import { TextArea } from "@/components/ui/TextArea";
 
 type DashboardNotesProps = {
   title: string;
-  storageKey?: string;
+  value: string;
+  readOnly?: boolean;
+  onChange: (value: string) => void;
+  onSave: () => void;
 };
 
 export const DashboardNotes = ({
   title,
-  storageKey = "dashboard-notes",
+  value,
+  readOnly = false,
+  onChange,
+  onSave,
 }: DashboardNotesProps) => {
   return (
     <div className="w-full">
@@ -19,7 +25,10 @@ export const DashboardNotes = ({
       </h2>
       <TextArea
         rows={5}
-        storageKey={storageKey}
+        value={value}
+        readOnly={readOnly}
+        onChange={(event) => onChange(event.target.value)}
+        onBlur={onSave}
         className=" border-r border-b border-l border-gray-300 rounded-t-none
       "
       />

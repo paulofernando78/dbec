@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { students, type StudentId } from "@/data/students";
 
 import { Whiteboard } from "@/components/content/Whiteboard";
 import { DashboardNotes } from "@/components/content/DashboardNotes";
@@ -8,16 +8,28 @@ import Emojis from "@/features/Emojis/Emojis";
 
 export default function Dashboard() {
   const { studentId } = useParams();
-  const student =
-    studentId && studentId in students
-      ? students[studentId as StudentId]
-      : {
-          name: "Student’s Name",
-          schedule: "...",
-          time: "...",
-        };
+  const [data, setData] = useState<any>(null);
+  const [notes, setNotes] = useState({ teacher: "", student: "" });
+  const [calendar, setCalendar] = useState<Record<string, string>>({});
 
-  const storagePrefix = studentId ? `dashboard:${studentId}` : "dashboard";
+  useEffect(() => {
+    fetch("/api/dashboard")
+      .then((response) => response.json())
+      .then((result) => {
+        setData(result);
+        setNotes(result.notes ?? { teacher: "", student: "" });
+        setCalendar(Object.fromEntries((result.calendar ?? []).map((entry: any) => [entry.lessonDate, entry.status])));
+      });
+  }, [studentId]);
+
+  const saveStudentNote = () => fetch("/api/notes", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ studentId, noteType: "student", content: notes.student }),
+  });
+
+  const student = data?.student;
+  if (!student) return <p>Loading dashboard…</p>;
 
   return (
     <>
@@ -33,14 +45,19 @@ export default function Dashboard() {
         <div className="flex gap-4 justify-between max-[800px]:flex-col">
           <DashboardNotes
             title="Teacher's Notes"
-            storageKey={`${storagePrefix}:teacher-notes`}
+            value={notes.teacher}
+            readOnly
+            onChange={() => {}}
+            onSave={() => {}}
           />
           <DashboardNotes
             title="Student's Notes"
-            storageKey={`${storagePrefix}:student-notes`}
+            value={notes.student}
+            onChange={(value) => setNotes((current) => ({ ...current, student: value }))}
+            onSave={saveStudentNote}
           />
         </div>
-        <Calendar key={storagePrefix} storagePrefix={storagePrefix} />
+        <Calendar statuses={calendar} readOnly />
       </div>
     </>
   );
