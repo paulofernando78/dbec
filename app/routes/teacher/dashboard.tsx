@@ -86,7 +86,7 @@ export default function TeacherDashboard() {
           id="teacher-student"
           value={studentId ?? ""}
           onChange={(event) => handleStudentChange(event.target.value)}
-          className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 md:max-w-sm"
+          className="rounded-lg border border-gray-300 bg-white px-1 py-2 md:max-w-sm"
         >
           <option value="">Select a student</option>
           {students.map((currentStudent) => (
