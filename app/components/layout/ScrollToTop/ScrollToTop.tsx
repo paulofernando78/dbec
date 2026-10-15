@@ -58,7 +58,7 @@ export const ScrollToTop = ({ inline = false }: { inline?: boolean }) => {
 
   if (inline) {
     return (
-      <div className="fixed right-4 bottom-35 z-50">
+      <div className="fixed right-4 bottom-38 z-50">
         {button}
       </div>
     );

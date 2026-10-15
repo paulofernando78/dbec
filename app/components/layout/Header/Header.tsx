@@ -126,7 +126,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         </div>
       )}
 
-      <div className="flex gap-1.75">
+      <div className="flex gap-4">
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
