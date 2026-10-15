@@ -18,6 +18,7 @@ export type ListenData = {
   instruction: string;
   audio: string;
   dialogue: readonly (readonly [speaker: string, text: RichContent])[];
+  questionInstruction: string;
   question: string;
   options: readonly string[];
   answer: string;

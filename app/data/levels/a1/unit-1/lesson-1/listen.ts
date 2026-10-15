@@ -37,17 +37,26 @@ export const listen = {
     ["Eric", [mark("Thanks."), " ", mark("See you"), " in the office."]],
     ["Laura", ["All right. ", mark("Bye.")]],
   ],
+  questionInstruction: "Answer the questions.",
   question: "Are Laura and Eric old friends?",
   options: ["True", "False"],
   answer: "False",
   followUp: [
     {
-      question: "What is the woman's name?",
+      question: "What is the woman's first name?",
       answer: "Laura",
     },
     {
-      question: "What is the man's name?",
+      question: "What is the man's first name?",
       answer: "Eric",
+    },
+    {
+      question: "What is the woman's last name?",
+      answer: "Palmer",
+    },
+    {
+      question: "What is the man's last name?",
+      answer: "Silva",
     },
   ],
 } satisfies ListenData;
