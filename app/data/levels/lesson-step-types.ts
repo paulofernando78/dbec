@@ -2,8 +2,11 @@ export type GetReadyData = {
   type: "get-ready";
   slug: string;
   label: string;
-  quote: string;
-  images: readonly string[];
+  slides: readonly {
+    image: string;
+    audio: string;
+    quote: string;
+  }[];
 };
 
 export type ListenData = {

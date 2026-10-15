@@ -1,13 +1,45 @@
-import { useRef, useState, type PointerEvent } from "react";
-import { Play } from "lucide-react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
+import { Play, Square } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import type { GetReadyData } from "@/data/levels/lesson-step-types";
 
 export function GetReadyStep({ data }: { data: GetReadyData }) {
   const [currentImage, setCurrentImage] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const drag = useRef({ active: false, startX: 0, scrollLeft: 0 });
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.pause();
+    audio.currentTime = 0;
+    audio.load();
+    setIsPlaying(false);
+  }, [currentImage]);
+
+  const toggleAudio = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (!audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+      setIsPlaying(false);
+      return;
+    }
+
+    try {
+      await audio.play();
+      setIsPlaying(true);
+    } catch (error) {
+      console.error("Não foi possível tocar o áudio:", error);
+      setIsPlaying(false);
+    }
+  };
 
   const showImage = (index: number) => {
     const carousel = carouselRef.current;
@@ -56,13 +88,13 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
         onPointerUp={stopDrag}
         onPointerCancel={stopDrag}
       >
-        {data.images.map((image, index) => (
+        {data.slides.map((slide, index) => (
           <div
-            key={image}
+            key={slide.image}
             className="aspect-video w-full shrink-0 snap-center overflow-hidden bg-linear-to-r from-slate-300 via-slate-200 to-slate-300"
           >
             <img
-              src={image}
+              src={slide.image}
               alt={`Meeting People scene ${index + 1}`}
               draggable={false}
               className="size-full object-cover"
@@ -71,9 +103,9 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
         ))}
       </div>
       <div className="mt-4 flex justify-center gap-2">
-        {data.images.map((image, index) => (
+        {data.slides.map((slide, index) => (
           <button
-            key={image}
+            key={slide.image}
             type="button"
             aria-label={`Show image ${index + 1}`}
             aria-current={index === currentImage}
@@ -84,10 +116,18 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
       </div>
       <div className="mt-4 flex items-center gap-3">
         <Button
-          ariaLabel="Play introduction"
-          icon={<Play />}
+          ariaLabel={isPlaying ? "Stop introduction" : "Play introduction"}
+          icon={isPlaying ? <Square /> : <Play />}
+          onClick={toggleAudio}
         />
-        <p>“{data.quote}”</p>
+        <p>“{data.slides[currentImage].quote}”</p>
+        <audio
+          ref={audioRef}
+          src={data.slides[currentImage].audio}
+          preload="metadata"
+          onEnded={() => setIsPlaying(false)}
+          onPause={() => setIsPlaying(false)}
+        />
       </div>
     </div>
   );
