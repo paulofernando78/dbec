@@ -14,6 +14,7 @@ export type ListenData = {
   slug: string;
   label: string;
   instruction: string;
+  audio: string;
   dialogue: readonly (readonly [string, string])[];
   question: string;
   options: readonly string[];

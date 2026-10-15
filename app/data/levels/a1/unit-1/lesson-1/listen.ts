@@ -5,6 +5,7 @@ export const listen = {
   slug: "listen",
   label: "Listen",
   instruction: "Listen to Laura and Eric meeting for the first time.",
+  audio: "/media/levels/a1/unit-1/lesson-1-hello/listen/listen.mp3",
   dialogue: [
     ["Laura", "Hi! My name's Laura, Laura Palmer. What's your name?"],
     ["Eric", "Hello, I'm Eric Silva. Nice to meet you, Laura."],

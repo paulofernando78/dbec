@@ -21,7 +21,7 @@ export function ListenStep({ data }: { data: ListenData }) {
     <div className="mt-12 rounded-2xl bg-gray-200 p-4">
       <h3 className="mb-4 text-lg font-bold">{data.instruction}</h3>
       <div className="mb-4 flex items-center gap-3 rounded-full bg-white p-4">
-        <Audio src={data.dialogue.map(([speaker, text]) => `${speaker}: ${text}`).join(" ")} />
+        <Audio src={data.audio} />
         <span className="h-1 flex-1 rounded bg-gray-400" />
         <Volume2 size={18} />
       </div>
