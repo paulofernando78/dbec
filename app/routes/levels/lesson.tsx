@@ -36,7 +36,7 @@ export default function LessonPage() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl mt-4 mb-2">
+    <div className="mx-auto max-w-4xl mb-2">
       <LevelHeader level={a1} />
 
       <header className="grid grid-cols-2 overflow-hidden rounded-xl border border-slate-300 max-[560px]:grid-cols-1">

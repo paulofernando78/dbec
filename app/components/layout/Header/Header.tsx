@@ -89,12 +89,13 @@ export const Header = ({ onClick }: HeadersProps) => {
   };
 
   return (
-    <div className="w-full h-10 p-1.25 flex items-center justify-between mb-1.25">
+    <div className="w-full h-10 px-2 mt-2 flex items-center justify-between">
       {!isPresentationPage && (
         <Button
           icon={<Menu />}
           onClick={onClick}
           className="
+            icon
             min-[700px]:-translate-x-13.75
             transition-all
             duration-1000
@@ -129,13 +130,13 @@ export const Header = ({ onClick }: HeadersProps) => {
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
-          className="!h-[30px] !w-[35px]"
+          className="icon"
         />
 
         <Button
           icon={isProtectedPage ? <LogOut /> : <LogIn />}
           onClick={handleAuthentication}
-          className="!h-[30px] !w-[35px]"
+          className="icon"
         />
       </div>
 

@@ -103,9 +103,6 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         h-full
         font-oswald
         text-lg
-        mt-1.25
-        mx-1.25
-        mb-2.5
         px-5
         py-4
         text-white
