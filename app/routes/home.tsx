@@ -5,13 +5,29 @@ import { Contact } from "@/components/layout/Contact";
 import { Image } from "@/components/ui/Image";
 
 export function meta({}: Route.MetaArgs) {
+  const title = "Daily Basis English Course | Aulas particulares de inglês";
+  const description =
+    "Aulas particulares de inglês com foco em conversação, compreensão auditiva, leitura e escrita.";
+  const url = "https://dbec.com.br/";
+  const image = "https://dbec.com.br/assets/img/og.png";
+
   return [
-    { title: "Daily Basis English Course" },
-    { name: "description", content: "Private English Classes" },
+    { title },
+    { name: "description", content: description },
+    { name: "robots", content: "index, follow" },
+    { tagName: "link", rel: "canonical", href: url },
+    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "Daily Basis English Course" },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: url },
+    { property: "og:image", content: image },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: image },
   ];
 }
-
-
 
 const greetingsList = [
   "Hi there!",
@@ -58,8 +74,10 @@ export default function Home() {
     <div className="mt-12 flex flex-col gap-10">
       <div className="w-max mx-auto">
         <div style={dbecCSS} className=" leading-14">
-          <h1 className="text-[3rem]">DAILY BAISIS</h1>
-          <h1 className="text-[2.26rem]">ENGLISH COURSE</h1>
+          <h1 className="text-[3rem]">
+            DAILY BASIS
+            <span className="block text-[2.26rem]">ENGLISH COURSE</span>
+          </h1>
         </div>
         <span className="block text-3xl font-edu text-right">private</span>
       </div>

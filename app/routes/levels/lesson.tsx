@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/Button";
 import { a1 } from "@/data/levels/a1";
 import { lessonRegistry } from "@/data/levels/lesson-registry";
 
+export function meta() {
+  return [
+    { title: "Lesson | Daily Basis English Course" },
+    { name: "robots", content: "noindex, nofollow" },
+  ];
+}
+
 export default function LessonPage() {
   const navigate = useNavigate();
   const {
@@ -58,7 +65,7 @@ export default function LessonPage() {
         {current.slug} — Step {stepIndex + 1} of {lessonData.steps.length}
       </p>
 
-      <StepRenderer data={current}/>
+      <StepRenderer data={current} />
 
       <nav
         className="mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
