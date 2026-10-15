@@ -21,12 +21,14 @@ export const getReady = {
       quote: "Nice to meet you too, Eric.",
     },
     {
-      image: "/media/levels/a1/unit-1/lesson-1-hello/get-ready/pic-4.avif",
+      image:
+        "/media/levels/a1/unit-1/lesson-1-hello/get-ready/pic-4.avif?v=2",
       audio: "/media/levels/a1/unit-1/lesson-1-hello/get-ready/audio-4.mp3",
       quote: "They shake hands.",
     },
     {
-      image: "/media/levels/a1/unit-1/lesson-1-hello/get-ready/pic-5.avif",
+      image:
+        "/media/levels/a1/unit-1/lesson-1-hello/get-ready/pic-5.avif?v=2",
       audio: "/media/levels/a1/unit-1/lesson-1-hello/get-ready/audio-5.mp3",
       quote: "Bye. See you in the office.",
     },
