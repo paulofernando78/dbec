@@ -1,3 +1,5 @@
+import type { RichContent } from "@/helpers/content";
+
 export type GetReadyData = {
   type: "get-ready";
   slug: string;
@@ -15,7 +17,7 @@ export type ListenData = {
   label: string;
   instruction: string;
   audio: string;
-  dialogue: readonly (readonly [string, string])[];
+  dialogue: readonly (readonly [speaker: string, text: RichContent])[];
   question: string;
   options: readonly string[];
   answer: string;

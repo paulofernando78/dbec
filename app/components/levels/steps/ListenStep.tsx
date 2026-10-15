@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Check, Eye, EyeClosed, RotateCcw, Volume2, X } from "lucide-react";
+import { Check, Eye, EyeClosed, RotateCcw, X } from "lucide-react";
 
-import { Audio } from "@/components/ui/Audio";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
 import { Button } from "@/components/ui/Button";
 import type { ListenData } from "@/data/levels/lesson-step-types";
 
@@ -20,13 +20,18 @@ export function ListenStep({ data }: { data: ListenData }) {
   return (
     <div className="mt-12 rounded-2xl bg-gray-200 p-4">
       <h3 className="mb-4 text-lg font-bold">{data.instruction}</h3>
-      <div className="mb-4 flex items-center gap-3 rounded-full bg-white p-4">
-        <Audio src={data.audio} />
-        <span className="h-1 flex-1 rounded bg-gray-400" />
-        <Volume2 size={18} />
-      </div>
+      <audio
+        controls
+        preload="metadata"
+        src={data.audio}
+        className="mb-4 w-full"
+      />
       <div className="mb-4">
-        {data.dialogue.map(([speaker, text]) => <p key={`${speaker}-${text}`}><b>{speaker}:</b> <mark className="rounded bg-amber-200 px-1">{text}</mark></p>)}
+        {data.dialogue.map(([speaker, text], index) => (
+          <p key={`${speaker}-${index}`}>
+            <b>{speaker}:</b> <InlineRichContent value={text} />
+          </p>
+        ))}
       </div>
       <fieldset>
         <legend className="mb-2 font-bold">{data.question}</legend>

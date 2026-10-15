@@ -1,4 +1,5 @@
 import type { ListenData } from "../../../lesson-step-types";
+import { mark } from "@/helpers/content";
 
 export const listen = {
   type: "listen",
@@ -7,15 +8,34 @@ export const listen = {
   instruction: "Listen to Laura and Eric meeting for the first time.",
   audio: "/media/levels/a1/unit-1/lesson-1-hello/listen/listen.mp3",
   dialogue: [
-    ["Laura", "Hi! My name's Laura, Laura Palmer. What's your name?"],
-    ["Eric", "Hello, I'm Eric Silva. Nice to meet you, Laura."],
-    ["Laura", "Nice to meet you too, Eric."],
-    ["Eric", "What's your last name again?"],
-    ["Laura", "It's Palmer."],
-    ["Eric", "How do you spell it?"],
-    ["Laura", "It's P-A-L-M-E-R."],
-    ["Eric", "Thanks. See you in the office."],
-    ["Laura", "All right. Bye."],
+    [
+      "Laura",
+      [
+        mark("Hi!"),
+        " ",
+        mark("My name's"),
+        " Laura, Laura Palmer. ",
+        mark("What's your name?"),
+      ],
+    ],
+    [
+      "Eric",
+      [
+        mark("Hello,"),
+        " ",
+        mark("I'm"),
+        " Eric Silva. ",
+        mark("Nice to meet you"),
+        ", Laura.",
+      ],
+    ],
+    ["Laura", [mark("Nice to meet you too"), ", Eric."]],
+    ["Eric", [mark("What's your last name again?")]],
+    ["Laura", ["It's Palmer."]],
+    ["Eric", [mark("How do you spell it?")]],
+    ["Laura", ["It's P-A-L-M-E-R."]],
+    ["Eric", [mark("Thanks."), " ", mark("See you"), " in the office."]],
+    ["Laura", ["All right. ", mark("Bye.")]],
   ],
   question: "Are Laura and Eric old friends?",
   options: ["True", "False"],
