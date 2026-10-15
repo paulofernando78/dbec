@@ -64,9 +64,5 @@ export const ScrollToTop = ({ inline = false }: { inline?: boolean }) => {
     );
   }
 
-  return (
-    <div className="fixed right-[max(15px,calc((100vw-1100px)/2+10px))] bottom-12.5 z-999">
-      {button}
-    </div>
-  );
+  
 };

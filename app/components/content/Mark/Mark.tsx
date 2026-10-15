@@ -5,5 +5,5 @@ type MarkedProps = {
 }
 
 export const Mark = ({ children }: MarkedProps) => {
-  return <mark className="px-[.3rem] bg-yellow-400 rounded-lg">{children}</mark>;
+  return <mark className="my-[.1rem] px-[.3rem] bg-yellow-400 rounded-lg">{children}</mark>;
 };

@@ -61,7 +61,7 @@ export default function LessonPage() {
       <StepRenderer data={current} />
 
       <nav
-        className="relative mt-12 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
+        className="relative mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
         aria-label="Lesson steps"
       >
         <Button
@@ -70,6 +70,7 @@ export default function LessonPage() {
             previous ? go(previous.slug) : navigate(`/levels/${level}`)
           }
           icon={<ChevronLeft />}
+          className="absolute z-10"
         />
         <b>{previous?.label ?? `${a1.code} ${a1.name}`}</b>
         <ScrollToTop inline />
