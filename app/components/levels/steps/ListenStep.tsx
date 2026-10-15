@@ -18,7 +18,7 @@ export function ListenStep({ data }: { data: ListenData }) {
   };
 
   return (
-    <div className="mt-12 space-y-4">
+    <div className="space-y-4">
       <section className="rounded-2xl bg-gray-200 p-4">
         <h3 className="mb-4 font-bold">{data.instruction}</h3>
         <audio

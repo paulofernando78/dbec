@@ -36,7 +36,7 @@ export default function LessonPage() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl mb-2">
+    <div className="mx-auto max-w-4xl m-4 mb-0 p-4 pt-0">
       <LevelHeader level={a1} />
 
       <header className="grid grid-cols-2 overflow-hidden rounded-xl border border-slate-300 max-[560px]:grid-cols-1">
@@ -54,14 +54,14 @@ export default function LessonPage() {
         </div>
       </header>
 
-      <p className="mt-4 inline-block rounded-full border border-gray-300 px-3 py-1 text-sm font-bold">
+      <p className="mt-4 inline-block rounded-full border border-gray-300 px-3 py-1 text-sm font-bold mb-12">
         {current.slug} — Step {stepIndex + 1} of {lessonData.steps.length}
       </p>
 
-      <StepRenderer data={current} />
+      <StepRenderer data={current}/>
 
       <nav
-        className="relative mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
+        className="mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
         aria-label="Lesson steps"
       >
         <Button
@@ -70,7 +70,7 @@ export default function LessonPage() {
             previous ? go(previous.slug) : navigate(`/levels/${level}`)
           }
           icon={<ChevronLeft />}
-          className="absolute z-10"
+          className=""
         />
         <b>{previous?.label ?? `${a1.code} ${a1.name}`}</b>
         <ScrollToTop inline />
@@ -79,6 +79,7 @@ export default function LessonPage() {
           ariaLabel="Next step"
           onClick={() => (next ? go(next.slug) : finish())}
           icon={<ChevronRight />}
+          className=""
         />
       </nav>
     </div>

@@ -13,7 +13,7 @@ export default function Layout() {
   const isLessonPage = /^\/levels\/[^/]+\/unit\//.test(location.pathname);
 
   return (
-    <div className="flex-1 grid gap-4 h-full min-h-0 m-4 grid-cols-[260px_minmax(0,1fr)] overflow-hidden max-[700px]:grid-cols-1">
+    <div className="flex-1 grid h-full min-h-0 grid-cols-[260px_minmax(0,1fr)] overflow-hidden max-[700px]:grid-cols-1">
       <aside
         className={`z-20 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute max-[700px]:w-65 max-[700px]:-translate-x-70 ${isNavBarOpen ? "max-[700px]:translate-x-0" : ""}`}
       >

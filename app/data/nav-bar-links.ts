@@ -3,54 +3,35 @@ import { BookOpenCheck, BookOpenText, Gamepad2 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
 
-type NavLinkItem = {
-  href?: string;
+export type NavItem = {
+  href: string;
   label: string;
-};
-
-type NavGroup = {
-  title?: string;
-  href?: string;
   icon?: ElementType;
-  iconClassName?: string;
-  links: NavLinkItem[];
 };
 
-export const links: NavGroup[] = [
+export const links: NavItem[] = [
   {
-    links: [
-      {
-        href: "/dashboard",
-        label: "Dashboard",
-      },
-    ],
+    href: "/dashboard",
+    label: "Dashboard",
   },
   {
-    title: "Levels",
     href: "/levels",
+    label: "Levels",
     icon: BookOpenCheck,
-    iconClassName: "text-white",
-    links: [],
   },
   {
-    title: "Authentic Content",
     href: "/authentic-content",
+    label: "Authentic Content",
     icon: AuthenticContent,
-    iconClassName: "text-white",
-    links: [],
   },
   {
-    title: "Vocabulary",
     href: "/vocabulary",
+    label: "Vocabulary",
     icon: BookOpenText,
-    iconClassName: "text-white",
-    links: [],
   },
   {
-    title: "Games",
     href: "/games",
+    label: "Games",
     icon: Gamepad2,
-    iconClassName: "text-white",
-    links: [],
   },
 ];
