@@ -19,19 +19,11 @@ export const Whiteboard = ({
   date,
   time,
 }: WhiteboardProps) => {
-  const hasContentAfterTitle = Boolean(
-    subtitle || descriptions.length > 0 || date || time,
-  );
-
   return (
-    <Card className="mb-8">
-      <div className="px-3 py-2 bg-gray-200 rounded-lg">
-        <h1
-          className={`text-4xl font-black ${hasContentAfterTitle ? "mb-4" : ""}`}
-        >
-          {title}
-        </h1>
-        {subtitle && <h2 className="text-3xl">{subtitle}</h2>}
+    <Card className="mb-8 p-2!">
+      <div className="px-4 py-3 bg-gray-200 rounded-lg">
+        <h1 className="text-4xl font-black">{title}</h1>
+        {subtitle && <h2 className="text-2xl mb-1">{subtitle}</h2>}
         {descriptions?.length > 0 &&
           descriptions.map((description, index) => (
             <h2 key={index} className="text-1xl">

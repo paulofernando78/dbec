@@ -5,6 +5,7 @@ import {
   GoogleClassroomAssignment,
   GoogleClassroomMaterial,
 } from "@/components/GoogleIcons";
+import { Card } from "@/components/ui/Card";
 
 export type ClassroomContent = {
   announcement?: { description: string };
@@ -71,7 +72,7 @@ export function ClassroomLinks({ href, label, classroom }: ClassroomLinksProps) 
   if (!pageUrl) return null;
 
   return (
-    <aside className="mx-1 mb-5 rounded-lg border border-gray-300 bg-gray-50 p-3">
+    <Card className="mb-4 rounded-lg border border-gray-300 bg-gray-50">
       <div className="mb-2 flex items-center gap-2 text-gray-600">
         <img
           src="/assets/img/icons/google-classroom.svg"
@@ -95,6 +96,6 @@ export function ClassroomLinks({ href, label, classroom }: ClassroomLinksProps) 
           </a>
         ))}
       </div>
-    </aside>
+    </Card>
   );
 }

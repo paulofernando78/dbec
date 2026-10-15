@@ -1,4 +1,4 @@
-import { Outlet, useOutletContext } from "react-router";
+import { Outlet, useLocation, useOutletContext } from "react-router";
 import { NavBar } from "@/components/layout/NavBar";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
@@ -11,6 +11,8 @@ type LayoutContext = {
 
 export default function Layout() {
   const { isNavBarOpen, closeNavBar } = useOutletContext<LayoutContext>();
+  const location = useLocation();
+  const isLessonPage = /^\/levels\/[^/]+\/unit\//.test(location.pathname);
 
   return (
     <div className={styles.layout}>
@@ -19,7 +21,7 @@ export default function Layout() {
       </aside>
       <main className={styles.main} data-scroll-container>
         <Outlet />
-        <ScrollToTop />
+        {!isLessonPage && <ScrollToTop />}
       </main>
     </div>
   );

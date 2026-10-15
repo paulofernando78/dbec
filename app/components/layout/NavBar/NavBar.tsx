@@ -1,12 +1,10 @@
 import { NavLink, useLocation } from "react-router";
 import { links } from "../../../data/nav-bar-links";
 import { useEffect, useState, type ElementType } from "react";
-import { Minus, Plus } from "lucide-react";
 
 type NavItem = {
   label: string;
   href?: string;
-  links?: NavItem[];
 };
 
 type NavGroup = {
@@ -35,54 +33,6 @@ function RenderNavItem({
   closeNavBar: () => void;
   dashboardPath: string;
 }) {
-  if (item.links?.length) {
-    return (
-      <details className="open:[&>summary_.plus]:hidden open:[&>summary_.minus]:block mb-1">
-        <summary
-          className="
-          list-none
-          ml-4
-          flex
-          items-center
-          gap-2
-          relative
-          cursor-pointer
-        "
-        >
-          <span
-            className="
-            absolute
-            -left-5
-            top-px
-          "
-          >
-            <Plus size={18} className="plus translate-y-[0.3rem]" />
-            <Minus size={18} className="minus hidden translate-y-[0.3rem]" />
-          </span>
-
-          {item.href ? (
-            <NavLink to={item.href} onClick={(e) => e.stopPropagation()}>
-              <span>{item.label}</span>
-            </NavLink>
-          ) : (
-            <span>{item.label}</span>
-          )}
-        </summary>
-
-        <div>
-          {item.links.map((child) => (
-            <RenderNavItem
-              key={getNavItemKey(child)}
-              item={child}
-              closeNavBar={closeNavBar}
-              dashboardPath={dashboardPath}
-            />
-          ))}
-        </div>
-      </details>
-    );
-  }
-
   if (!item.href) {
     return (
       <div

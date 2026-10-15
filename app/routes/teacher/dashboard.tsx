@@ -1,10 +1,38 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
-import { Whiteboard } from "@/components/content/Whiteboard";
 import { DashboardNotes } from "@/components/content/DashboardNotes";
 import { Calendar } from "@/components/content/Calendar";
 import Emojis from "@/features/Emojis/Emojis";
+import { students as developmentStudents } from "@/data/students";
+
+const localStudents = Object.entries(developmentStudents).map(
+  ([studentId, student]) => ({
+    studentId,
+    name: student.name,
+    schedule: student.schedule,
+    time: student.time,
+  }),
+);
+
+function getLocalStudent(studentId: string) {
+  const student = developmentStudents[
+    studentId as keyof typeof developmentStudents
+  ];
+
+  if (!student) return null;
+
+  return {
+    student: {
+      studentId,
+      name: student.name,
+      schedule: student.schedule,
+      time: student.time,
+    },
+    notes: { teacher: "", student: "" },
+    calendar: student.calendar ?? [],
+  };
+}
 
 export default function TeacherDashboard() {
   const navigate = useNavigate();
@@ -17,11 +45,34 @@ export default function TeacherDashboard() {
   const [studentError, setStudentError] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
   const student = data?.student;
+  const now = new Date();
+  const currentHour = now.getHours();
+  const greeting =
+    currentHour < 12
+      ? "Good morning"
+      : currentHour < 18
+        ? "Good afternoon"
+        : "Good evening";
+  const formattedDate = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  }).format(now);
 
   useEffect(() => {
     fetch("/api/dashboard")
-      .then((response) => response.json())
-      .then((result) => setStudents(result.students ?? []));
+      .then((response) => {
+        if (!response.ok) throw new Error(`Dashboard HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((result) => setStudents(result.students ?? []))
+      .catch((error) => {
+        if (import.meta.env.DEV) {
+          setStudents(localStudents);
+          return;
+        }
+        console.error(error);
+      });
   }, []);
 
   useEffect(() => {
@@ -65,6 +116,22 @@ export default function TeacherDashboard() {
           return;
         } catch (error) {
           lastError = error;
+
+          if (import.meta.env.DEV) {
+            const localData = getLocalStudent(studentId);
+            if (localData && !cancelled) {
+              setData(localData);
+              setNotes(localData.notes);
+              setCalendar(
+                Object.fromEntries(
+                  localData.calendar.map((entry) => [entry.date, entry.status]),
+                ),
+              );
+              setIsLoadingStudent(false);
+              return;
+            }
+          }
+
           if (attempt === 0) {
             await new Promise((resolve) => setTimeout(resolve, 500));
           }
@@ -135,12 +202,16 @@ export default function TeacherDashboard() {
         </select>
       </div>
 
-      <Whiteboard
-        title="Teacher's Dashboard"
-        subtitle={student?.name}
-        date={student?.schedule}
-        time={student?.time}
-      />
+      {student && (
+        <header className="mb-8">
+          <p className="mb-1 text-sm font-bold text-slate-500">
+            {formattedDate}
+          </p>
+          <h1 className="text-4xl font-black tracking-tight text-black md:text-5xl">
+            {greeting}, {student.name.split(" ")[0]}.
+          </h1>
+        </header>
+      )}
 
       {isLoadingStudent && studentId && (
         <p className="text-gray-500">Carregando aluno…</p>

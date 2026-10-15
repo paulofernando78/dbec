@@ -1,50 +1,72 @@
 import { useEffect, useState } from "react";
 
 import { CircleArrowUp } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
-import styles from "./ScrollToTop.module.css";
-
-export const ScrollToTop = () => {
+export const ScrollToTop = ({ inline = false }: { inline?: boolean }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const content =
-      document.querySelector<HTMLElement>("[data-scroll-container]") ??
-      document.getElementById("content-scroll");
-
-    if (!content) return;
+    const containers = [
+      document.querySelector<HTMLElement>("[data-scroll-container]"),
+      document.getElementById("content-scroll"),
+    ].filter((container): container is HTMLElement => container !== null);
 
     const handleScroll = () => {
-      setVisible(content.scrollTop > 300);
+      setVisible(
+        window.scrollY > 300 ||
+          containers.some((container) => container.scrollTop > 300),
+      );
     };
 
     handleScroll();
-
-    content.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    containers.forEach((container) =>
+      container.addEventListener("scroll", handleScroll, { passive: true }),
+    );
 
     return () => {
-      content.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
+      containers.forEach((container) =>
+        container.removeEventListener("scroll", handleScroll),
+      );
     };
   }, []);
 
   const handleClick = () => {
-    const content =
-      document.querySelector<HTMLElement>("[data-scroll-container]") ??
-      document.getElementById("content-scroll");
-
-    content?.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    document
+      .querySelector<HTMLElement>("[data-scroll-container]")
+      ?.scrollTo({ top: 0, behavior: "smooth" });
+    document
+      .getElementById("content-scroll")
+      ?.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return (
-    <button
+  const visibilityClasses = visible
+    ? "pointer-events-auto translate-y-0 opacity-100"
+    : "pointer-events-none translate-y-2 opacity-0";
+
+  const button = (
+    <Button
       onClick={handleClick}
-      aria-label="Scroll to top"
-      className={`${styles.button} ${visible ? styles.visible : ""}`}
-    >
-      <CircleArrowUp size={30} className="text-gray-500" />
-    </button>
+      ariaLabel="Scroll to top"
+      icon={<CircleArrowUp />}
+      className={`transition-all duration-300 ${visibilityClasses}`}
+    />
+  );
+
+  if (inline) {
+    return (
+      <div className="fixed right-3 bottom-33 z-50">
+        {button}
+      </div>
+    );
+  }
+
+  return (
+    <div className="fixed right-[max(15px,calc((100vw-1100px)/2+10px))] bottom-12.5 z-999">
+      {button}
+    </div>
   );
 };

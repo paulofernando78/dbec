@@ -129,11 +129,13 @@ export const Header = ({ onClick }: HeadersProps) => {
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
+          className="!h-[30px] !w-[35px]"
         />
 
         <Button
           icon={isProtectedPage ? <LogOut /> : <LogIn />}
           onClick={handleAuthentication}
+          className="!h-[30px] !w-[35px]"
         />
       </div>
 

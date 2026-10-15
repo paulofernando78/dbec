@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-import { Whiteboard } from "@/components/content/Whiteboard";
 import { DashboardNotes } from "@/components/content/DashboardNotes";
 import { Calendar } from "@/components/content/Calendar";
 import Emojis from "@/features/Emojis/Emojis";
@@ -31,14 +30,31 @@ export default function Dashboard() {
   const student = data?.student;
   if (!student) return <p>Loading dashboard…</p>;
 
+  const now = new Date();
+  const currentHour = now.getHours();
+  const greeting =
+    currentHour < 12
+      ? "Good morning"
+      : currentHour < 18
+        ? "Good afternoon"
+        : "Good evening";
+  const formattedDate = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  }).format(now);
+  const firstName = student.name.split(" ")[0];
+
   return (
     <>
-      <Whiteboard
-        title="Dashboard"
-        subtitle={student.name}
-        date={student.schedule}
-        time={student.time}
-      />
+      <header className="mb-8">
+        <p className="mb-1 text-sm font-bold text-slate-500">
+          {formattedDate}
+        </p>
+        <h1 className="text-4xl font-black tracking-tight text-black md:text-5xl">
+          {greeting}, {firstName}.
+        </h1>
+      </header>
       <div className="grid gap-4">
         
         <Emojis />
