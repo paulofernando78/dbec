@@ -11,10 +11,27 @@ export default function Dashboard() {
   const [data, setData] = useState<any>(null);
   const [notes, setNotes] = useState({ teacher: "", student: "" });
   const [calendar, setCalendar] = useState<Record<string, string>>({});
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/dashboard")
-      .then((response) => response.json())
+    if (!studentId) {
+      setError("Aluno não informado.");
+      return;
+    }
+
+    setData(null);
+    setError("");
+
+    fetch(`/api/dashboard?studentId=${encodeURIComponent(studentId)}`)
+      .then(async (response) => {
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error ?? "Não foi possível carregar o dashboard.");
+        }
+
+        return result;
+      })
       .then((result) => {
         setData(result);
         setNotes(result.notes ?? { teacher: "", student: "" });
@@ -25,6 +42,13 @@ export default function Dashboard() {
               entry.status,
             ]),
           ),
+        );
+      })
+      .catch((requestError: unknown) => {
+        setError(
+          requestError instanceof Error
+            ? requestError.message
+            : "Não foi possível carregar o dashboard.",
         );
       });
   }, [studentId]);
@@ -41,6 +65,7 @@ export default function Dashboard() {
     });
 
   const student = data?.student;
+  if (error) return <p className="font-semibold text-red-600">{error}</p>;
   if (!student) return <p>Loading dashboard…</p>;
 
   const now = new Date();

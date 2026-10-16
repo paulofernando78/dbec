@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router";
 
 import { DashboardNotes } from "@/components/content/DashboardNotes";
 import { Calendar } from "@/components/content/Calendar";
+import { PageHeader } from "@/components/content/PageHeader";
 import { StudentForm } from "@/components/content/StudentForm";
 import { Card } from "@/components/ui/Card";
 
@@ -180,6 +181,8 @@ export default function TeacherDashboard() {
 
   return (
     <>
+      <PageHeader title="Teacher's Dashboard" />
+
       <Card className="mb-4 pb-6">
         <h2 className="mb-4 border-b border-gray-200 pb-4 text-lg font-bold">
           Student Registration
