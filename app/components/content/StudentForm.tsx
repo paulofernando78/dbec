@@ -211,9 +211,6 @@ export const StudentForm = ({
             required={!isEditing}
             minLength={8}
             autoComplete="new-password"
-            placeholder={
-              isEditing ? "Leave blank to keep the current password" : ""
-            }
             className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
           />
         </label>
