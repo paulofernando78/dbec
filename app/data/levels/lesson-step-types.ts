@@ -33,7 +33,13 @@ export type LanguageFocusData = {
   slug: string;
   label: string;
   instruction: string;
-  items: readonly (readonly [string, string, string, string])[];
+  items: readonly (readonly [
+    title: string,
+    meaning: string,
+    pronunciation: string,
+    form: string,
+    audio?: string,
+  ])[];
 };
 
 export type TryItData = {
