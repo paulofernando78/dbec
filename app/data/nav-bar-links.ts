@@ -1,5 +1,5 @@
 import type { ElementType } from "react";
-import { BookOpenCheck, BookOpenText, Gamepad2 } from "lucide-react";
+import { User, BookOpenCheck, BookOpenText, Gamepad2 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
 
@@ -13,6 +13,7 @@ export const links: NavItem[] = [
   {
     href: "/dashboard",
     label: "Dashboard",
+    icon: User,
   },
   {
     href: "/levels",

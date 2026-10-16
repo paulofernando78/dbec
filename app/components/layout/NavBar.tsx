@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router";
-import { links } from "../../../data/nav-bar-links";
+import { links } from "@/data/nav-bar-links";
 import { useEffect, useState } from "react";
 
 type NavBarProps = {

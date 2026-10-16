@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 
 import { Card } from "@/components/ui/Card";
-import { Checkbox } from "@/components/ui/Checkbox/Checkbox";
+import { Checkbox } from "@/components/ui/Checkbox";
 import { Link } from "react-router";
 import {
   LessonObjective,

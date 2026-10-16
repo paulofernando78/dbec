@@ -1,4 +1,4 @@
-import { Text } from "../Text";
+import { Text } from "./Text";
 import { Card } from "@/components/ui/Card";
 
 import type { RichContent } from "@/helpers/content";

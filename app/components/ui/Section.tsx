@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from "react";
 
-import { Ribbon } from "@/components/ui/Ribbon/";
+import { Ribbon } from "@/components/ui/Ribbon";
 
 import { formatSectionLabel } from "@/utils/formatSectionLabel";
 
