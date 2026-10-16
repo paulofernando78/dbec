@@ -1,38 +1,97 @@
 import { createSession, getUsers } from "../_auth.js";
+import { verifyPassword } from "../_password.js";
+
+const invalidCredentials = () =>
+  Response.json(
+    { error: "Usuário ou senha inválidos." },
+    {
+      status: 401,
+      headers: { "Cache-Control": "no-store" },
+    },
+  );
 
 export async function onRequestPost(context) {
   try {
     const { username, password } = await context.request.json();
-    const users = getUsers(context.env);
 
     if (
       typeof username !== "string" ||
       typeof password !== "string" ||
-      !Object.prototype.hasOwnProperty.call(users, username)
+      !username.trim() ||
+      !password
     ) {
-      return Response.json(
-        { error: "Usuário ou senha inválidos." },
-        { status: 401, headers: { "Cache-Control": "no-store" } },
-      );
+      return invalidCredentials();
     }
 
-    const user = users[username];
+    const normalizedUsername = username.trim().toLowerCase();
+    const users = getUsers(context.env);
 
-    if (user.password !== password) {
-      return Response.json(
-        { error: "Usuário ou senha inválidos." },
-        { status: 401, headers: { "Cache-Control": "no-store" } },
+    const configuredUser = users[normalizedUsername];
+    let user;
+
+    if (configuredUser?.role === "teacher") {
+      if (configuredUser.password !== password) {
+        return invalidCredentials();
+      }
+
+      user = {
+        username: normalizedUsername,
+        role: "teacher",
+        studentId: undefined,
+      };
+    } else {
+      if (!context.env.DB) {
+        return invalidCredentials();
+      }
+
+      const student = await context.env.DB.prepare(
+        `SELECT
+      username,
+      student_slug AS studentId,
+      password_hash AS passwordHash,
+      password_salt AS passwordSalt
+    FROM users
+    WHERE username = ?
+      AND role = 'student'
+      AND active = 1`,
+      )
+        .bind(normalizedUsername)
+        .first();
+
+      if (!student || !student.passwordHash || !student.passwordSalt) {
+        return invalidCredentials();
+      }
+
+      const passwordIsValid = await verifyPassword(
+        password,
+        student.passwordHash,
+        student.passwordSalt,
       );
+
+      if (!passwordIsValid) {
+        return invalidCredentials();
+      }
+
+      user = {
+        username: student.username,
+        role: "student",
+        studentId: student.studentId,
+      };
     }
 
     const token = await createSession(
-      { username, role: user.role, studentId: user.studentId },
-      context.env.AUTH_USERS,
+      {
+        username: user.username,
+        role: user.role,
+        studentId: user.studentId,
+      },
+      context.env.SESSION_SECRET,
     );
+
     const redirectTo =
       user.role === "teacher"
         ? "/teacher/dashboard"
-        : `/dashboard/${encodeURIComponent(user.studentId ?? username)}`;
+        : `/dashboard/${encodeURIComponent(user.studentId)}`;
 
     return Response.json(
       { ok: true, role: user.role, redirectTo },

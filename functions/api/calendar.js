@@ -5,7 +5,7 @@ const statuses = new Set(["...", "P", "OK", "ROK", "SC", "TC", "R", "H"]);
 export async function onRequestPut(context) {
   const session = await verifySession(
     readCookie(context.request, "dbec_session"),
-    context.env.AUTH_USERS,
+    context.env.SESSION_SECRET,
   );
   if (!session) return Response.json({ error: "Não autorizado." }, { status: 401 });
   if (session.role !== "teacher") {

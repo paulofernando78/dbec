@@ -40,7 +40,7 @@ export const Card = ({
       border
       border-gray-300
       rounded-xl
-      shadow-md shadow-gray-300
+      shadows
       ${maxContent ? "w-fit max-w-full" : ""} ${className}`}
     >
       {children}

@@ -1,7 +1,7 @@
-import { Whiteboard } from "@/components/content/Whiteboard";
+import { PageHeader } from "@/components/content/PageHeader";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
-import { Paragraph } from "@/components/content/Paragraph";
+import { Paragraph } from "@/components/content/PageSections/Paragraph";
 import { Text } from "@/components/content/Text";
 import { List } from "@/components/content/List";
 
@@ -113,7 +113,9 @@ const sections: SectionData[] = [
           content: [...content({ parts: ["Do you have a job?"] })],
         },
         {
-          content: [...content({ parts: ["What do you do in your free time?"] })],
+          content: [
+            ...content({ parts: ["What do you do in your free time?"] }),
+          ],
         },
         {
           content: [...content({ parts: ["Do you like sports?"] })],
@@ -151,7 +153,9 @@ const sections: SectionData[] = [
       items: [
         { content: [...content({ parts: ["What's your favorite movie?"] })] },
         {
-          content: [...content({ parts: ["What kinds of movies do you like?"] })],
+          content: [
+            ...content({ parts: ["What kinds of movies do you like?"] }),
+          ],
         },
         { content: [...content({ parts: ["Where did you grow up?"] })] },
         { content: [...content({ parts: ["What did you do yesterday?"] })] },
@@ -163,7 +167,9 @@ const sections: SectionData[] = [
           ],
         },
         { content: [...content({ parts: ["What was your favorite class?"] })] },
-        { content: [...content({ parts: ["What are you doing later today?"] })] },
+        {
+          content: [...content({ parts: ["What are you doing later today?"] })],
+        },
         {
           content: [
             ...content({ parts: ["Are you doing anything this evening?"] }),
@@ -272,7 +278,9 @@ const sections: SectionData[] = [
           content: [...content({ parts: ["What happened?"] })],
         },
         {
-          content: [...content({ parts: ["What were you doing at the time?"] })],
+          content: [
+            ...content({ parts: ["What were you doing at the time?"] }),
+          ],
         },
         {
           content: [
@@ -554,7 +562,7 @@ type SectionData = {
 export default function WhatsCEFR() {
   return (
     <>
-      <Whiteboard title="CEFR" subtitle="Common European Frame Reference" />
+      <PageHeader title="CEFR" subtitle="Common European Frame Reference" />
       <PageSections>
         {sections.map((section) => (
           <Section
@@ -563,9 +571,9 @@ export default function WhatsCEFR() {
             label={section.label}
             heading={section.heading}
           >
-              {section.paragraphs.map((paragraph, index) => (
-                <Paragraph key={index} value={paragraph}/>
-              ))}
+            {section.paragraphs.map((paragraph, index) => (
+              <Paragraph key={index} value={paragraph} />
+            ))}
             {section.questions && (
               <>
                 <span className="block mb-4">

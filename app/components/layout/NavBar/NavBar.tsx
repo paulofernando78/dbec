@@ -39,8 +39,6 @@ export function NavBar({ closeNavBar }: NavBarProps) {
     <nav
       className="
         h-full
-        font-oswald
-        text-lg
         m-4
         mr-0
         p-4
@@ -48,7 +46,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         bg-gray-900
         rounded-tl-xl
         rounded-tr-xl
-        shadow-[2px_2px_5px_var(--slate-5)]
+        shadows
         overflow-y-auto
         "
     >
@@ -59,9 +57,9 @@ export function NavBar({ closeNavBar }: NavBarProps) {
           end
           onClick={closeNavBar}
           className={({ isActive }) => `
-            mb-1 flex items-center gap-2
-            ${Icon ? "mt-4 font-bold uppercase" : ""}
-            ${isActive ? "text-blue-400" : ""}
+            flex items-center gap-2
+            ${Icon ? "mt-2 font-bold uppercase" : ""}
+            ${isActive ? "text-gray-400" : ""}
           `}
         >
           {Icon && <Icon width={25} height={25} className="shrink-0" />}

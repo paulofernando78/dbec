@@ -7,7 +7,7 @@ import { template } from "@/data/authentic-content/template";
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
-import { Whiteboard } from "@/components/content/Whiteboard";
+import { PageHeader } from "@/components/content/PageHeader";
 import { ClassroomLinks } from "@/components/content/ClassroomLinks";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
@@ -58,7 +58,7 @@ export default function AuthenticContents() {
     category === "ted-ed"
       ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
       : undefined;
-  const displayedWhiteboard = lessonCard
+  const displayedHeader = lessonCard
     ? {
         ...content.whiteboard,
         title: "AUTHENTIC CONTENT",
@@ -71,12 +71,9 @@ export default function AuthenticContents() {
 
   return (
     <>
-      <Whiteboard {...displayedWhiteboard} />
+      <PageHeader {...displayedHeader} />
       {lessonCard && (
-        <ClassroomLinks
-          href={lessonHref}
-          label={lessonCard.label}
-        />
+        <ClassroomLinks href={lessonHref} label={lessonCard.label} />
       )}
       <div>
         <PageSections>

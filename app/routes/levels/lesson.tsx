@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate, useParams } from "react-router";
 
-import { LevelHeader } from "@/components/levels/LevelHeader";
+import { PageHeader } from "@/components/content/PageHeader";
 import { StepRenderer } from "@/components/levels/steps/StepRenderer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Button } from "@/components/ui/Button";
@@ -43,8 +43,14 @@ export default function LessonPage() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl m-4 mb-0 p-4 pt-0">
-      <LevelHeader level={a1} />
+    <div className="mx-auto max-w-4xl">
+      <PageHeader
+        title={`${a1.code} ${a1.name}`}
+        subtitle={a1.subtitle}
+        description={a1.description}
+        footer={`${a1.units.length} units available`}
+        variant="level"
+      />
 
       <header className="grid grid-cols-2 overflow-hidden rounded-xl border border-slate-300 max-[560px]:grid-cols-1">
         <div className="p-4 bg-gray-200">

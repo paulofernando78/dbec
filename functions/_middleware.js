@@ -22,7 +22,7 @@ export async function onRequest(context) {
   }
 
   const token = readCookie(context.request, "dbec_session");
-  const session = await verifySession(token, context.env.AUTH_USERS);
+  const session = await verifySession(token, context.env.SESSION_SECRET);
 
   if (session) {
     if (session.role === "teacher" && url.pathname === "/dashboard") {

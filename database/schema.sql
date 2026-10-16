@@ -5,6 +5,10 @@ CREATE TABLE IF NOT EXISTS users (
   display_name TEXT NOT NULL,
   schedule TEXT,
   class_time TEXT,
+  password_hash TEXT,
+  password_salt TEXT,
+  active INTEGER NOT NULL DEFAULT 1
+    CHECK (active IN (0, 1)),
   role TEXT NOT NULL DEFAULT 'student'
     CHECK (role IN ('teacher', 'student')),
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP

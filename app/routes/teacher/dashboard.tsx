@@ -3,12 +3,15 @@ import { useNavigate, useParams } from "react-router";
 
 import { DashboardNotes } from "@/components/content/DashboardNotes";
 import { Calendar } from "@/components/content/Calendar";
-import Emojis from "@/features/Emojis/Emojis";
+import { StudentForm } from "@/components/content/StudentForm";
+import { Card } from "@/components/ui/Card";
+
 import { students as developmentStudents } from "@/data/students";
 
 const localStudents = Object.entries(developmentStudents).map(
   ([studentId, student]) => ({
     studentId,
+    username: studentId.split("-")[0],
     name: student.name,
     schedule: student.schedule,
     time: student.time,
@@ -16,9 +19,8 @@ const localStudents = Object.entries(developmentStudents).map(
 );
 
 function getLocalStudent(studentId: string) {
-  const student = developmentStudents[
-    studentId as keyof typeof developmentStudents
-  ];
+  const student =
+    developmentStudents[studentId as keyof typeof developmentStudents];
 
   if (!student) return null;
 
@@ -30,7 +32,7 @@ function getLocalStudent(studentId: string) {
       time: student.time,
     },
     notes: { teacher: "", student: "" },
-    calendar: student.calendar ?? [],
+    calendar: [] as Array<{ date: string; status: string }>,
   };
 }
 
@@ -45,34 +47,29 @@ export default function TeacherDashboard() {
   const [studentError, setStudentError] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
   const student = data?.student;
-  const now = new Date();
-  const currentHour = now.getHours();
-  const greeting =
-    currentHour < 12
-      ? "Good morning"
-      : currentHour < 18
-        ? "Good afternoon"
-        : "Good evening";
-  const formattedDate = new Intl.DateTimeFormat("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  }).format(now);
+
+  const loadStudents = async () => {
+    try {
+      const response = await fetch("/api/students");
+
+      if (!response.ok) {
+        throw new Error(`Students HTTP ${response.status}`);
+      }
+
+      const result = await response.json();
+      setStudents(result.students ?? []);
+    } catch (error) {
+      if (import.meta.env.DEV) {
+        setStudents(localStudents);
+        return;
+      }
+
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
-    fetch("/api/dashboard")
-      .then((response) => {
-        if (!response.ok) throw new Error(`Dashboard HTTP ${response.status}`);
-        return response.json();
-      })
-      .then((result) => setStudents(result.students ?? []))
-      .catch((error) => {
-        if (import.meta.env.DEV) {
-          setStudents(localStudents);
-          return;
-        }
-        console.error(error);
-      });
+    void loadStudents();
   }, []);
 
   useEffect(() => {
@@ -97,21 +94,22 @@ export default function TeacherDashboard() {
           const response = await fetch(
             `/api/dashboard?studentId=${encodeURIComponent(studentId)}`,
           );
-          if (!response.ok) throw new Error(`Dashboard HTTP ${response.status}`);
+          if (!response.ok)
+            throw new Error(`Dashboard HTTP ${response.status}`);
 
           const result = await response.json();
           if (cancelled) return;
 
-        setData(result);
-        setNotes(result.notes ?? { teacher: "", student: "" });
-        setCalendar(
-          Object.fromEntries(
-            (result.calendar ?? []).map((entry: any) => [
-              entry.lessonDate,
-              entry.status,
-            ]),
-          ),
-        );
+          setData(result);
+          setNotes(result.notes ?? { teacher: "", student: "" });
+          setCalendar(
+            Object.fromEntries(
+              (result.calendar ?? []).map((entry: any) => [
+                entry.lessonDate,
+                entry.status,
+              ]),
+            ),
+          );
           setIsLoadingStudent(false);
           return;
         } catch (error) {
@@ -182,36 +180,18 @@ export default function TeacherDashboard() {
 
   return (
     <>
-      <div className="mb-4">
-        <label htmlFor="teacher-student"></label>
-        <select
-          id="teacher-student"
-          value={studentId ?? ""}
-          onChange={(event) => handleStudentChange(event.target.value)}
-          className="rounded-lg border border-gray-300 bg-white px-1 py-2 md:max-w-sm"
-        >
-          <option value="">Select a student</option>
-          {students.map((currentStudent) => (
-            <option
-              key={currentStudent.studentId}
-              value={currentStudent.studentId}
-            >
-              {currentStudent.name}
-            </option>
-          ))}
-        </select>
-      </div>
+      <Card className="mb-4 pb-6">
+        <h2 className="mb-4 border-b border-gray-200 pb-4 text-lg font-bold">
+          Student Registration
+        </h2>
 
-      {student && (
-        <header className="mb-8">
-          <p className="mb-1 text-sm font-bold text-slate-500">
-            {formattedDate}
-          </p>
-          <h1 className="text-4xl font-black tracking-tight text-black md:text-5xl">
-            {greeting}, {student.name.split(" ")[0]}.
-          </h1>
-        </header>
-      )}
+        <StudentForm
+          students={students}
+          selectedStudentId={studentId ?? ""}
+          onStudentSelect={handleStudentChange}
+          onStudentSaved={loadStudents}
+        />
+      </Card>
 
       {isLoadingStudent && studentId && (
         <p className="text-gray-500">Carregando aluno…</p>
@@ -232,8 +212,6 @@ export default function TeacherDashboard() {
 
       {student && studentId ? (
         <div className="grid gap-4">
-          <Emojis />
-
           <div className="flex justify-between gap-4 max-[800px]:flex-col max-[800px]:gap-0">
             <DashboardNotes
               title="Teacher's Notes"

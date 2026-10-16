@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/Button";
 
 type Level = {
@@ -72,9 +73,7 @@ export default function Levels() {
 
   return (
     <>
-      <h1 className="mb-4 text-4xl font-black text-black md:text-5xl">
-        Levels
-      </h1>
+      <PageHeader title="Levels" />
 
       <div className="grid gap-4">
         {levels.map((item) => (

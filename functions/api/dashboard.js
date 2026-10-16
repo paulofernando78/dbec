@@ -6,7 +6,7 @@ const noStoreHeaders = {
 
 export async function onRequestGet(context) {
   const token = readCookie(context.request, "dbec_session");
-  const session = await verifySession(token, context.env.AUTH_USERS);
+  const session = await verifySession(token, context.env.SESSION_SECRET);
 
   if (!session) {
     return Response.json(

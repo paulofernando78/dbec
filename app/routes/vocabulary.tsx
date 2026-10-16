@@ -1,6 +1,6 @@
 import { BookOpenText } from "lucide-react";
 
-import { Whiteboard } from "@/components/content/Whiteboard";
+import { PageHeader } from "@/components/content/PageHeader";
 import { LibraryPage } from "@/components/content/LibraryPage";
 
 const vocabularySections = [
@@ -23,7 +23,7 @@ const vocabularySections = [
 export default function Vocabulary() {
   return (
     <div>
-      <Whiteboard title="Vocabulary" />
+      <PageHeader title="Vocabulary" />
       <LibraryPage
         showTableOfContents={false}
         title="VOCABULARY"

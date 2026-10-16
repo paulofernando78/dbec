@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 
-import { LevelHeader } from "@/components/levels/LevelHeader";
+import { PageHeader } from "@/components/content/PageHeader";
 import { UnitCard } from "@/components/levels/UnitCard";
 import { levels } from "@/data/levels";
 
@@ -12,9 +12,17 @@ export default function LevelBuilder() {
 
   return (
     <div className="mx-auto max-w-4xl">
-      <LevelHeader level={level} />
+      <PageHeader
+        title={`${level.code} ${level.name}`}
+        subtitle={level.subtitle}
+        description={level.description}
+        footer={`${level.units.length} units available`}
+        variant="level"
+      />
       <div className="grid gap-4">
-        {level.units.map((unit) => <UnitCard key={unit.number} unit={unit} />)}
+        {level.units.map((unit) => (
+          <UnitCard key={unit.number} unit={unit} />
+        ))}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 
-import { Whiteboard } from "@/components/content/Whiteboard";
+import { PageHeader } from "@/components/content/PageHeader";
 import { ClassroomLinks } from "@/components/content/ClassroomLinks";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
@@ -21,7 +21,7 @@ export default function GameBuilder() {
   const gameCards = Object.values(gamesLucasArtsCardData);
   const gameCardIndex = gameCards.findIndex((card) => card.href === gameHref);
   const gameCard = gameCards[gameCardIndex];
-  const displayedWhiteboard = gameCard
+  const displayedHeader = gameCard
     ? {
         ...game.whiteboard,
         title: "GAMES",
@@ -32,11 +32,9 @@ export default function GameBuilder() {
 
   return (
     <>
-      <Whiteboard {...displayedWhiteboard} />
+      <PageHeader {...displayedHeader} />
 
-      {gameCard && (
-        <ClassroomLinks href={gameHref} label={gameCard.label} />
-      )}
+      {gameCard && <ClassroomLinks href={gameHref} label={gameCard.label} />}
 
       <PageSections>
         {game.sections.map((section) => (

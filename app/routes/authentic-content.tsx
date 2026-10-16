@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Whiteboard } from "@/components/content/Whiteboard";
+import { PageHeader } from "@/components/content/PageHeader";
 import { LibraryPage } from "@/components/content/LibraryPage";
 import { AuthenticContent as AuthenticContentIcon } from "@/components/Icons";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
@@ -66,7 +66,7 @@ export default function AuthenticContent() {
 
   return (
     <div>
-      <Whiteboard title="Authentic Content" />
+      <PageHeader title="Authentic Content" />
       <LibraryPage
         showTableOfContents={false}
         title="AUTHENTIC CONTENT"

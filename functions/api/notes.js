@@ -3,7 +3,7 @@ import { readCookie, verifySession } from "../_auth.js";
 export async function onRequestPut(context) {
   const session = await verifySession(
     readCookie(context.request, "dbec_session"),
-    context.env.AUTH_USERS,
+    context.env.SESSION_SECRET,
   );
   if (!session) return Response.json({ error: "Não autorizado." }, { status: 401 });
 

@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { Paragraph } from "@/components/content/Paragraph";
+import { Paragraph } from "@/components/content/PageSections/Paragraph";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import type { RichContent } from "@/helpers/content";
 

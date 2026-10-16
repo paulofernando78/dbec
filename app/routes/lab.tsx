@@ -1,8 +1,8 @@
-import { Whiteboard } from "@/components/content/Whiteboard";
+import { PageHeader } from "@/components/content/PageHeader";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/content/Text";
-import { Paragraph } from "@/components/content/Paragraph";
+import { Paragraph } from "@/components/content/PageSections/Paragraph";
 import { Image } from "@/components/ui/Image";
 import { Carousel } from "@/components/ui/Carousel";
 import { FlipCards } from "@/components/content/FlipCards";
@@ -40,7 +40,7 @@ import { Subsection } from "@/components/ui/Subsection";
 export default function Playground() {
   return (
     <>
-      <Whiteboard
+      <PageHeader
         title="Title (Mock)"
         subtitle="Subtitle"
         descriptions={["description"]}

@@ -1,0 +1,6 @@
+ALTER TABLE users ADD COLUMN password_hash TEXT;
+
+ALTER TABLE users ADD COLUMN password_salt TEXT;
+
+ALTER TABLE users ADD COLUMN active INTEGER NOT NULL DEFAULT 1
+  CHECK (active IN (0, 1));

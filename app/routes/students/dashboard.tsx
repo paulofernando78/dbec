@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 
 import { DashboardNotes } from "@/components/content/DashboardNotes";
 import { Calendar } from "@/components/content/Calendar";
+import { PageHeader } from "@/components/content/PageHeader";
 import Emojis from "@/features/Emojis/Emojis";
 
 export default function Dashboard() {
@@ -17,15 +18,27 @@ export default function Dashboard() {
       .then((result) => {
         setData(result);
         setNotes(result.notes ?? { teacher: "", student: "" });
-        setCalendar(Object.fromEntries((result.calendar ?? []).map((entry: any) => [entry.lessonDate, entry.status])));
+        setCalendar(
+          Object.fromEntries(
+            (result.calendar ?? []).map((entry: any) => [
+              entry.lessonDate,
+              entry.status,
+            ]),
+          ),
+        );
       });
   }, [studentId]);
 
-  const saveStudentNote = () => fetch("/api/notes", {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ studentId, noteType: "student", content: notes.student }),
-  });
+  const saveStudentNote = () =>
+    fetch("/api/notes", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        studentId,
+        noteType: "student",
+        content: notes.student,
+      }),
+    });
 
   const student = data?.student;
   if (!student) return <p>Loading dashboard…</p>;
@@ -47,16 +60,13 @@ export default function Dashboard() {
 
   return (
     <>
-      <header className="mb-8">
-        <p className="mb-1 text-sm font-bold text-slate-500">
-          {formattedDate}
-        </p>
-        <h1 className="text-4xl font-black tracking-tight text-black md:text-5xl">
-          {greeting}, {firstName}.
-        </h1>
-      </header>
+      <PageHeader
+        eyebrow={formattedDate}
+        title={`${greeting}, ${firstName}.`}
+        date={student.schedule}
+        time={student.time}
+      />
       <div className="grid gap-4">
-        
         <Emojis />
         <div className="flex gap-4 justify-between max-[800px]:flex-col">
           <DashboardNotes
@@ -69,7 +79,9 @@ export default function Dashboard() {
           <DashboardNotes
             title="Student's Notes"
             value={notes.student}
-            onChange={(value) => setNotes((current) => ({ ...current, student: value }))}
+            onChange={(value) =>
+              setNotes((current) => ({ ...current, student: value }))
+            }
             onSave={saveStudentNote}
           />
         </div>

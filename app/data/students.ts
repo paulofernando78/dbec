@@ -1,56 +1,40 @@
+type Student = {
+  id: string;
+  name: string;
+  schedule: string;
+  time: string;
+  importantNotes: string[];
+};
+
 export const students = {
   "alvaro-theodoro": {
     id: "Alvaro Theodoro",
     name: "Alvaro Theodoro",
-    schedule: "...",
-    time: "...",
+    schedule: "Tue / Fri",
+    time: "15:00 - 16:00",
     importantNotes: [],
-    calendar: [
-      {
-        id: crypto.randomUUID(),
-        date: "2026-01-01",
-        status: "...",
-      },
-    ],
-    lessonProgress: [
-      {
-        lessonId: "day-1",
-        completed: true,
-      },
-      {
-        lessonId: "day-2",
-        completed: false,
-      },
-      {
-        lessonId: "day-3",
-        completed: true,
-      },
-    ],
   },
   "gabriel-sette": {
     id: "Gabriel Sette",
     name: "Gabriel Sette",
     schedule: "Mon / Wed",
-    time: "15-16",
+    time: "15:00 - 16:00",
     importantNotes: [],
-    calendar: [],
   },
   "mauricio-theodoro": {
     id: "Maurício Theodoro",
     name: "Maurício Theodoro",
     schedule: "Wed / Fri",
-    time: "7:30-8:30",
+    time: "07:30 - 08:30",
     importantNotes: [],
-    calendar: [],
   },
   "rafael-bezerra": {
     id: "rafael-bezerra",
     name: "Rafael Bezerra",
-    schedule: "Tue / Thu",
-    time: "21-22",
+    schedule: "Fri",
+    time: "21:30 - 22:30",
     importantNotes: [],
-    calendar: [],
   },
-};
+} satisfies Record<string, Student>;
 
 export type StudentId = keyof typeof students;

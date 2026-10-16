@@ -4,7 +4,7 @@ const headers = { "Cache-Control": "no-store" };
 
 const getSession = async (context) => {
   const token = readCookie(context.request, "dbec_session");
-  return verifySession(token, context.env.AUTH_USERS);
+  return verifySession(token, context.env.SESSION_SECRET);
 };
 
 const prepareTable = (db) =>
