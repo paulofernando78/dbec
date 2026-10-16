@@ -224,6 +224,22 @@ export async function onRequestPut(context) {
     );
   }
 
+  const existingUsername = await context.env.DB.prepare(
+    `SELECT student_slug
+     FROM users
+     WHERE username = ? AND student_slug != ?
+     LIMIT 1`,
+  )
+    .bind(username, studentId)
+    .first();
+
+  if (existingUsername) {
+    return Response.json(
+      { error: "Esse usuário já está sendo utilizado." },
+      { status: 409, headers: noStoreHeaders },
+    );
+  }
+
   let result;
 
   try {
@@ -251,8 +267,8 @@ export async function onRequestPut(context) {
     console.error(error);
 
     return Response.json(
-      { error: "Esse usuário já está sendo utilizado." },
-      { status: 409, headers: noStoreHeaders },
+      { error: "Não foi possível atualizar o aluno." },
+      { status: 500, headers: noStoreHeaders },
     );
   }
 

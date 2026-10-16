@@ -147,7 +147,7 @@ export const StudentForm = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4">
+    <form onSubmit={handleSubmit} autoComplete="off" className="grid gap-4">
       <label className="grid gap-1">
         <span className="text-sm font-semibold">Student</span>
         <select
@@ -201,6 +201,7 @@ export const StudentForm = ({
           <span className="text-sm font-semibold">Password</span>
           <input
             type="password"
+            name="student-password"
             value={form.password}
             onChange={(event) =>
               setForm((current) => ({
@@ -210,7 +211,7 @@ export const StudentForm = ({
             }
             required={!isEditing}
             minLength={8}
-            autoComplete="new-password"
+            autoComplete="off"
             className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
           />
         </label>
