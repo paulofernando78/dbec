@@ -57,14 +57,9 @@ export const pronunciationSections: PronunciationSection[] = [
     items: [
       { phoneme: "k..." },
       {
-        english: "I lik(e) it.",
+        english: ["I lik", underline("(e) i"), "t"],
         translation: "Eu gosto.",
         audio: media("consonant-vowel/i-like-it.mp3"),
-      },
-      {
-        english: "I like it a lot.",
-        translation: "Pegue.",
-        audio: media("consonant-vowel/i-like-it-a-lot.mp3"),
       },
       {
         english: "Tak(e) it.",
@@ -219,6 +214,16 @@ export const pronunciationSections: PronunciationSection[] = [
         english: "Where’s your phone?",
         translation: "Cadê o seu telefone?",
         audio: media("s+y/wheres-your-phone.mp3"),
+      },
+    ],
+  },
+  {
+    title: "Flap T",
+    items: [
+      {
+        english: "I like it a lot.",
+        translation: "Eu gosto muito.",
+        audio: media("flap-t/i-like-it-a-lot.mp3"),
       },
     ],
   },

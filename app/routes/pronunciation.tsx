@@ -14,26 +14,6 @@ export function meta() {
   return [{ title: "Pronunciation | Daily Basis English Course" }];
 }
 
-function MarkedSentence({ text }: { text: string | RichContent }) {
-  if (Array.isArray(text)) {
-    return <InlineRichContent value={text} />;
-  }
-
-  const parts = text.split(/(\([^)]*\))/g);
-
-  return (
-    <>
-      {parts.map((part, index) =>
-        part.startsWith("(") && part.endsWith(")") ? (
-          <u key={`${part}-${index}`}>{part}</u>
-        ) : (
-          part
-        ),
-      )}
-    </>
-  );
-}
-
 const toPlainText = (value: string | RichContent | undefined) =>
   Array.isArray(value)
     ? value
@@ -58,7 +38,7 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
         ) : (
           <>
             <span className="text-black">
-              <MarkedSentence text={item.english ?? ""} />
+              <InlineRichContent value={item.english ?? ""} />
             </span>{" "}
             <span className="text-slate-500">{item.translation}</span>
           </>
