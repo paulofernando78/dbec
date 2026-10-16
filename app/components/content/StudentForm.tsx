@@ -153,7 +153,7 @@ export const StudentForm = ({
         <select
           value={selectedStudentId}
           onChange={(event) => handleStudentSelection(event.target.value)}
-          className="rounded-lg border border-gray-300 bg-white px-3 py-2"
+          className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
         >
           <option value="">New student</option>
           {students.map((student) => (
@@ -163,62 +163,64 @@ export const StudentForm = ({
           ))}
         </select>
       </label>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <label className="grid min-w-0 gap-1">
+          <span className="text-sm font-semibold">Name</span>
+          <input
+            type="text"
+            value={form.name}
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+                name: event.target.value,
+              }))
+            }
+            required
+            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+          />
+        </label>
 
-      <label className="grid gap-1">
-        <span className="text-sm font-semibold">Name</span>
-        <input
-          type="text"
-          value={form.name}
-          onChange={(event) =>
-            setForm((current) => ({
-              ...current,
-              name: event.target.value,
-            }))
-          }
-          required
-          className="rounded-lg border border-gray-300 bg-white px-3 py-2"
-        />
-      </label>
+        <label className="grid min-w-0 gap-1">
+          <span className="text-sm font-semibold">Username</span>
+          <input
+            type="text"
+            value={form.username}
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+                username: event.target.value,
+              }))
+            }
+            required
+            autoComplete="username"
+            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+          />
+        </label>
 
-      <label className="grid gap-1">
-        <span className="text-sm font-semibold">Username</span>
-        <input
-          type="text"
-          value={form.username}
-          onChange={(event) =>
-            setForm((current) => ({
-              ...current,
-              username: event.target.value,
-            }))
-          }
-          required
-          autoComplete="username"
-          className="rounded-lg border border-gray-300 bg-white px-3 py-2"
-        />
-      </label>
+        <label className="grid min-w-0 gap-1 md:col-span-2 lg:col-span-1">
+          <span className="text-sm font-semibold">Password</span>
+          <input
+            type="password"
+            value={form.password}
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+                password: event.target.value,
+              }))
+            }
+            required={!isEditing}
+            minLength={8}
+            autoComplete="new-password"
+            placeholder={
+              isEditing ? "Leave blank to keep the current password" : ""
+            }
+            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+          />
+        </label>
+      </div>
 
-      <label className="grid gap-1">
-        <span className="text-sm font-semibold">Password</span>
-        <input
-          type="password"
-          value={form.password}
-          onChange={(event) =>
-            setForm((current) => ({
-              ...current,
-              password: event.target.value,
-            }))
-          }
-          required={!isEditing}
-          minLength={8}
-          autoComplete="new-password"
-          placeholder={
-            isEditing ? "Leave blank to keep the current password" : ""
-          }
-          className="rounded-lg border border-gray-300 bg-white px-3 py-2"
-        />
-      </label>
       <div className="grid gap-4 md:grid-cols-2">
-        <label className="grid gap-1">
+        <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Schedule</span>
 
           <select
@@ -230,7 +232,7 @@ export const StudentForm = ({
               }))
             }
             required
-            className="rounded-lg border border-gray-300 bg-white px-3 py-2"
+            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
           >
             <option value="">Select the days</option>
 
@@ -242,7 +244,7 @@ export const StudentForm = ({
           </select>
         </label>
 
-        <label className="grid gap-1">
+        <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Time</span>
 
           <select
@@ -254,7 +256,7 @@ export const StudentForm = ({
               }))
             }
             required
-            className="rounded-lg border border-gray-300 bg-white px-3 py-2"
+            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
           >
             <option value="">Select the time</option>
 
