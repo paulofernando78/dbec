@@ -1,5 +1,7 @@
+import { underline, type RichContent } from "@/helpers/content";
+
 export type PronunciationItem = {
-  english?: string;
+  english?: string | RichContent;
   translation?: string;
   phoneme?: string;
   audio?: string;
@@ -19,28 +21,32 @@ export const pronunciationSections: PronunciationSection[] = [
     items: [
       { phoneme: "/w/" },
       {
-        english: "Go on.",
+        english: ["G", underline("o o"), "n."],
         translation: "Vá em frente.",
         audio: media("vowel-vowel/w/go-on.mp3"),
       },
       {
-        english: "Do it again.",
+        english: ["D", underline("o i"), "t again."],
         translation: "Faça novamente.",
         audio: media("vowel-vowel/w/do-it-again.mp3"),
       },
       {
-        english: "Ge(t) used to it.",
+        english: ["Ge(t) used t", underline("o i"), "(t)"],
         translation: "Se acostumar.",
         audio: media("vowel-vowel/w/get-used-to-it.mp3"),
       },
       { phoneme: "/j/" },
       {
-        english: "I agree with you.",
+        english: [underline("I a"), "gree with you.", ],
         translation: "Eu concordo com você.",
         audio: media("vowel-vowel/j/i-agree-with-you.mp3"),
       },
       {
-        english: "She asked me a question.",
+        english: [
+          "Sh", underline("e a"),
+          "sked m",
+          underline("e a"),
+          " question.", ],
         translation: "Ela me fez uma pergunta.",
         audio: media("vowel-vowel/j/she-asked-me-a-question.mp3"),
       },

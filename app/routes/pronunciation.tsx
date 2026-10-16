@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/content/PageHeader";
 import { PageSections } from "@/components/content/PageSections";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
 import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
@@ -7,12 +8,17 @@ import {
   pronunciationSections,
   type PronunciationItem,
 } from "@/data/pronunciation";
+import type { RichContent } from "@/helpers/content";
 
 export function meta() {
   return [{ title: "Pronunciation | Daily Basis English Course" }];
 }
 
-function MarkedSentence({ text }: { text: string }) {
+function MarkedSentence({ text }: { text: string | RichContent }) {
+  if (Array.isArray(text)) {
+    return <InlineRichContent value={text} />;
+  }
+
   const parts = text.split(/(\([^)]*\))/g);
 
   return (
@@ -28,9 +34,17 @@ function MarkedSentence({ text }: { text: string }) {
   );
 }
 
+const toPlainText = (value: string | RichContent | undefined) =>
+  Array.isArray(value)
+    ? value
+        .map((part) => (typeof part === "string" ? part : part.part ?? ""))
+        .join("")
+    : value ?? "";
+
 function PronunciationRow({ item }: { item: PronunciationItem }) {
   const audioSource = item.audio ?? item.phoneme ?? "";
-  const audioLabel = item.english ?? item.phoneme ?? "pronunciation";
+  const audioLabel =
+    toPlainText(item.english) || item.phoneme || "pronunciation";
 
   return (
     <li className="flex min-h-[68px] items-center gap-3">
