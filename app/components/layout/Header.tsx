@@ -31,6 +31,7 @@ export const Header = ({ onClick }: HeadersProps) => {
   const isProtectedPage = [
     "/dashboard",
     "/teacher/dashboard",
+    "/levels",
     "/authentic-content",
     "/vocabulary",
     "/games",
