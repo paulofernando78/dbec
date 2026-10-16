@@ -41,7 +41,10 @@ export type TryItData = {
   slug: string;
   label: string;
   instruction: string;
-  items: readonly (readonly string[])[];
+  items: readonly {
+    words: readonly string[];
+    answer: readonly string[];
+  }[];
 };
 
 export type UseItData = {

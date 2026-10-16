@@ -171,7 +171,6 @@ export const Header = ({ onClick }: HeadersProps) => {
                 <input
                   name="username"
                   autoComplete="username"
-                  autoFocus
                   required
                   className="w-full rounded border border-gray-300 px-3 py-2"
                 />

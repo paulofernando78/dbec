@@ -170,4 +170,3 @@ Recommended UI labels:
 
 - Decide whether each row equals one lesson, one chapter, or a 3-5 lesson unit.
 - Decide if DBEC should keep the current numbered lesson count or renumber around this revised syllabus.
-- Decide whether Google Classroom posts should use `Material` by default or sometimes `Assignment`.

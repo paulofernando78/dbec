@@ -100,9 +100,7 @@ export default function Home() {
         <b>O DAILY BASIS ENGLISH COURSE</b> oferece aulas de inglês
         especializadas e focadas nas quatro habilidades linguísticas
         fundamentais: Fala (com ênfase em conversação), Escuta (compreensão
-        auditiva), Leitura e Escrita. Utilizamos o{" "}
-        <span className="underline">Google Classroom</span> como nossa
-        plataforma de aprendizagem.
+        auditiva), Leitura e Escrita.
       </p>
       <div className="w-max mx-auto">
         <Contact />

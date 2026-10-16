@@ -1,7 +1,6 @@
 import { useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { ClassroomLinks } from "@/components/content/ClassroomLinks";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { List } from "@/components/content/List";
@@ -33,8 +32,6 @@ export default function GameBuilder() {
   return (
     <>
       <PageHeader {...displayedHeader} />
-
-      {gameCard && <ClassroomLinks href={gameHref} label={gameCard.label} />}
 
       <PageSections>
         {game.sections.map((section) => (

@@ -9,24 +9,16 @@ import {
   LessonPronunciation,
   LessonVocabulary,
   LessonFinalTask,
-  GoogleClassroomMaterial,
-  GoogleClassroomAssignment,
 } from "@/components/GoogleIcons";
 
-import { CalendarDays, Clock2, Plus, Minus } from "lucide-react";
-
-type ClassroomPostContent = {
-  title: string;
-  description?: string;
-};
-
-type ClassroomAnnouncementContent = {
-  description: string;
-};
-
-type ClassroomMaterialContent = {
-  description?: string;
-};
+import {
+  BookOpen,
+  CalendarDays,
+  ClipboardList,
+  Clock2,
+  Plus,
+  Minus,
+} from "lucide-react";
 
 export type LessonCardContent = {
   index?: number;
@@ -39,11 +31,6 @@ export type LessonCardContent = {
   pronunciation?: string;
   finalTask?: string;
   assignmentHref?: string;
-  classroom?: {
-    announcement?: ClassroomAnnouncementContent;
-    material?: ClassroomMaterialContent;
-    assignment?: ClassroomPostContent;
-  };
 };
 
 const objectivePrefix = "By the end of the lesson students will be able to";
@@ -200,7 +187,7 @@ export const LessonCard = ({
                   font-semibold
                   hover:text-gray-700"
             >
-              <GoogleClassroomMaterial className="shrink-0" />
+              <BookOpen className="shrink-0" />
               <span>Open material</span>
             </Link>
           )}
@@ -215,12 +202,11 @@ export const LessonCard = ({
                 font-semibold
                 hover:text-gray-700"
             >
-              <GoogleClassroomAssignment className="shrink-0" />
+              <ClipboardList className="shrink-0" />
               <span>Open assignment</span>
             </Link>
           )}
         </div>
-
       </div>
     </>
   );

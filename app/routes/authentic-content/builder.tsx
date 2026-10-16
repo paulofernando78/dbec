@@ -8,7 +8,6 @@ import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { ClassroomLinks } from "@/components/content/ClassroomLinks";
 import { PageSections } from "@/components/content/PageSections";
 import { Section } from "@/components/ui/Section";
 import { List } from "@/components/content/List";
@@ -72,9 +71,6 @@ export default function AuthenticContents() {
   return (
     <>
       <PageHeader {...displayedHeader} />
-      {lessonCard && (
-        <ClassroomLinks href={lessonHref} label={lessonCard.label} />
-      )}
       <div>
         <PageSections>
           <Section id="Before watching" heading={3}>
