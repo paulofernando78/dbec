@@ -1,6 +1,7 @@
 // Essas funções convertem o hash e o salt entre bytes e texto para podermos armazená-los no D1.
 
 const encoder = new TextEncoder();
+const PBKDF2_ITERATIONS = 100_000;
 
 const toHex = (buffer) =>
   [...new Uint8Array(buffer)]
@@ -31,7 +32,7 @@ export const createPassword = async (password) => {
       name: "PBKDF2",
       hash: "SHA-256",
       salt,
-      iterations: 210_000,
+      iterations: PBKDF2_ITERATIONS,
     },
     key,
     256,
@@ -57,7 +58,7 @@ export const verifyPassword = async (password, expectedHash, salt) => {
       name: "PBKDF2",
       hash: "SHA-256",
       salt: fromHex(salt),
-      iterations: 210_000,
+      iterations: PBKDF2_ITERATIONS,
     },
     key,
     256,
