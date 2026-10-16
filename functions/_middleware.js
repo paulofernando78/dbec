@@ -5,6 +5,7 @@ const protectedPaths = [
   "/teacher/dashboard",
   "/authentic-content",
   "/vocabulary",
+  "/pronunciation",
   "/games",
   "/lab",
 ];

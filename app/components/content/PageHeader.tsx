@@ -36,21 +36,25 @@ export const PageHeader = ({
         className={`relative overflow-hidden rounded-lg p-4 ${
           isLevel
             ? "bg-linear-to-br from-amber-400 to-orange-500 text-black"
-            : "bg-gray-200"
+            : "bg-linear-to-br from-gray-200 to-gray-300"
         }`}
       >
-        {isLevel && (
-          <>
-            <span
-              aria-hidden="true"
-              className="absolute -right-10 -top-10 size-32 rounded-full bg-white/20"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute -bottom-20 right-8 size-40 rounded-full bg-white/20"
-            />
-          </>
-        )}
+        <span
+          aria-hidden="true"
+          className={`absolute rounded-full ${
+            isLevel
+              ? "-right-10 -top-10 size-32 bg-white/20"
+              : "-right-6 -top-8 size-24 bg-slate-500/15"
+          }`}
+        />
+        <span
+          aria-hidden="true"
+          className={`absolute rounded-full ${
+            isLevel
+              ? "-bottom-20 right-8 size-40 bg-white/20"
+              : "-bottom-20 right-8 size-28 bg-white/35"
+          }`}
+        />
 
         <div className="relative z-10">
           {eyebrow && (

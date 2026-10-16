@@ -43,6 +43,7 @@ export default [
     ),
 
     route("/vocabulary", "routes/vocabulary.tsx"),
+    route("/pronunciation", "routes/pronunciation.tsx"),
 
     //! ─────────────────────────────────────────────
     //! Games
