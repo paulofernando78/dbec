@@ -94,12 +94,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         <Button
           icon={<Menu />}
           onClick={onClick}
-          className="
-            icon
-            min-[700px]:-translate-x-13.75
-            transition-all
-            duration-1000
-          "
+          className="icon transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:-translate-x-14 min-[700px]:opacity-0"
         />
       )}
 
@@ -126,7 +121,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         </div>
       )}
 
-      <div className="flex gap-4">
+      <div className="ml-auto flex gap-4">
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
