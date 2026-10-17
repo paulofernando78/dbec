@@ -1,7 +1,6 @@
-import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router";
 import type { ComponentProps } from "react";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { template } from "@/data/authentic-content/template";
 
@@ -10,9 +9,8 @@ import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { PageSections } from "@/components/content/PageSections";
-import { Card } from "@/components/ui/Card";
-import { Section } from "@/components/ui/Section";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { Button } from "@/components/ui/Button";
 import { List } from "@/components/content/List";
 import { ImageQuiz } from "@/features/exercises/ImageQuiz";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
@@ -22,42 +20,18 @@ import { Guess } from "@/features/exercises/Guess";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
 
-function useCompleteLessonAtFinalSection(
-  lessonHref: string,
-  enabled: boolean,
-) {
-  useEffect(() => {
-    if (!enabled) return;
-
-    const finalSection = document.getElementById("Follow-up discussion");
-    if (!finalSection) return;
-
-    let hasMarkedComplete = false;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (hasMarkedComplete || !entries.some((entry) => entry.isIntersecting)) {
-          return;
-        }
-
-        hasMarkedComplete = true;
-        observer.disconnect();
-
-        void fetch("/api/lesson-progress", {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ lessonId: lessonHref, completed: true }),
-        });
-      },
-      { threshold: 0.35 },
-    );
-
-    observer.observe(finalSection);
-    return () => observer.disconnect();
-  }, [enabled, lessonHref]);
-}
+const lessonSteps = [
+  { slug: "before-watching", label: "Before watching" },
+  { slug: "vocabulary", label: "Vocabulary" },
+  { slug: "gist", label: "Gist" },
+  { slug: "details", label: "Details" },
+  { slug: "practice", label: "Practice" },
+  { slug: "follow-up-discussion", label: "Follow-up discussion" },
+] as const;
 
 export default function AuthenticContents() {
-  const { category, slug } = useParams();
+  const navigate = useNavigate();
+  const { category, slug, step = "before-watching" } = useParams();
   const lessonHref = `/authentic-content/${category}/${slug}`;
   const lessonCard =
     category === "ted-ed"
@@ -84,8 +58,6 @@ export default function AuthenticContents() {
       slug && contents ? contents[slug as keyof typeof contents] : undefined;
   }
 
-  useCompleteLessonAtFinalSection(lessonHref, Boolean(content && lessonCard));
-
   if (!content) {
     return <h1>Authentic content not found.</h1>;
   }
@@ -96,63 +68,114 @@ export default function AuthenticContents() {
     }
   ).guessFillInTheBlanks;
 
+  const stepIndex = Math.max(
+    0,
+    lessonSteps.findIndex((item) => item.slug === step),
+  );
+  const current = lessonSteps[stepIndex];
+  const previous = lessonSteps[stepIndex - 1];
+  const next = lessonSteps[stepIndex + 1];
+  const basePath = `/authentic-content/${category}/${slug}`;
+  const go = (stepSlug: string) => navigate(`${basePath}/${stepSlug}`);
+  const finish = async () => {
+    if (lessonCard) {
+      try {
+        await fetch("/api/lesson-progress", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ lessonId: lessonHref, completed: true }),
+        });
+      } finally {
+        navigate("/authentic-content");
+      }
+      return;
+    }
+
+    navigate("/authentic-content");
+  };
+
+  const stepContent = {
+    "before-watching": <List {...content.sections.beforeWatching} />,
+    vocabulary: <ImageQuiz {...content.sections.vocabulary} />,
+    gist: (
+      <>
+        <VideoPlayer {...content.sections.gist.videoPlayer} />
+        <Radio {...content.sections.gist.radio} />
+      </>
+    ),
+    details: (
+      <>
+        <Radio {...content.sections.details.radio} />
+        <Script {...content.sections.script} />
+      </>
+    ),
+    practice: (
+      <>
+        <Guess {...content.sections.practice.guess} />
+        {guessFillInTheBlanks && (
+          <FillInTheBlanks {...guessFillInTheBlanks} />
+        )}
+        <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
+        <Unscramble {...content.sections.practice.unscramble} />
+      </>
+    ),
+    "follow-up-discussion": <List {...content.sections.followUp.list} />,
+  }[current.slug];
+
   return (
-    <>
+    <div className="mx-auto max-w-4xl">
       <PageHeader
         title="Authentic Content"
         description="Learn English with authentic videos and real-world topics."
       />
-      <div>
-        {lessonCard && (
-          <Card className="mb-4 bg-gray-100 p-4!">
-            <h2 className="text-2xl font-black text-black">
-              {lessonCard.label}
-            </h2>
-            <p className="text-lg text-slate-500">
-              {lessonCard.description}
+
+      {lessonCard && (
+        <header className="grid grid-cols-2 overflow-hidden rounded-xl border border-slate-300 max-[560px]:grid-cols-1">
+          <div className="bg-gray-200 p-4">
+            <p className="text-xs font-bold uppercase text-orange-700">
+              TED-Ed
             </p>
-            <div className="mt-3 flex items-center text-sm text-gray-500">
-              <span className="inline-flex items-center gap-2">
-                <CalendarDays size={19} className="shrink-0" />
-                <span>{lessonCard.date}</span>
-              </span>
-            </div>
-          </Card>
-        )}
+            <h2 className="text-xl font-black">{lessonCard.date}</h2>
+            <p className="mt-1 flex items-center gap-2 text-sm text-slate-500">
+              <CalendarDays size={18} /> Published lesson
+            </p>
+          </div>
+          <div className="border-l border-slate-300 p-4 max-[560px]:border-l-0 max-[560px]:border-t">
+            <p className="text-xs font-bold uppercase text-orange-700">
+              Lesson
+            </p>
+            <h1 className="text-xl font-black">{lessonCard.label}</h1>
+            <p className="text-slate-500">{lessonCard.description}</p>
+          </div>
+        </header>
+      )}
 
-        <PageSections>
-          <Section id="Before watching" heading={3}>
-            <List {...content.sections.beforeWatching} />
-          </Section>
+      <p className="mb-12 mt-4 inline-block rounded-full border border-gray-300 px-3 py-1 text-sm font-bold">
+        {current.slug} — Step {stepIndex + 1} of {lessonSteps.length}
+      </p>
 
-          <Section id="Vocabulary" heading={3}>
-            <ImageQuiz {...content.sections.vocabulary} />
-          </Section>
+      {stepContent}
 
-          <Section id="Gist" heading={3}>
-            <VideoPlayer {...content.sections.gist.videoPlayer} />
-            <Radio {...content.sections.gist.radio} />
-          </Section>
-
-          <Section id="Details" heading={3}>
-            <Radio {...content.sections.details.radio} />
-            <Script {...content.sections.script} />
-          </Section>
-
-          <Section id="Practice" heading={3}>
-            <Guess {...content.sections.practice.guess} />
-            {guessFillInTheBlanks && (
-              <FillInTheBlanks {...guessFillInTheBlanks} />
-            )}
-            <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
-            <Unscramble {...content.sections.practice.unscramble} />
-          </Section>
-
-          <Section id="Follow-up discussion" heading={3}>
-            <List {...content.sections.followUp.list} />
-          </Section>
-        </PageSections>
-      </div>
-    </>
+      <nav
+        className="mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
+        aria-label="Lesson steps"
+      >
+        <Button
+          ariaLabel="Previous step"
+          onClick={() =>
+            previous ? go(previous.slug) : navigate("/authentic-content")
+          }
+          icon={<ChevronLeft />}
+        />
+        <b>{previous?.label ?? "Authentic Content"}</b>
+        <ScrollToTop inline />
+        <b className="text-right">{next?.label ?? "Authentic Content"}</b>
+        <Button
+          ariaLabel="Next step"
+          onClick={() => (next ? go(next.slug) : void finish())}
+          icon={<ChevronRight />}
+        />
+      </nav>
+    </div>
   );
 }

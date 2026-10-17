@@ -38,7 +38,7 @@ export default [
     route("/authentic-content", "routes/authentic-content.tsx"),
 
     route(
-      "/authentic-content/:category/:slug?",
+      "/authentic-content/:category/:slug?/:step?",
       "routes/authentic-content/builder.tsx",
     ),
 
