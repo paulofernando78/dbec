@@ -1,6 +1,6 @@
 import type { ElementType } from "react";
 import {
-  User,
+  CircleUserRound,
   BookOpenCheck,
   BookOpenText,
   Gamepad2,
@@ -19,7 +19,7 @@ export const links: NavItem[] = [
   {
     href: "/dashboard",
     label: "Dashboard",
-    icon: User,
+    icon: CircleUserRound,
   },
   {
     href: "/levels",

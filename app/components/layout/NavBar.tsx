@@ -42,8 +42,8 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         m-4
         mr-0
         p-4
-        text-white
-        bg-gray-900
+        text-gray-500
+        bg-gray-300
         rounded-tl-xl
         rounded-tr-xl
         shadows
@@ -59,7 +59,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
           className={({ isActive }) => `
             flex items-center gap-2
             ${Icon ? "mt-2 font-bold uppercase" : ""}
-            ${isActive ? "text-gray-400" : ""}
+            ${isActive ? "text-black" : ""}
             ${href === "/dashboard" ? "mb-8" : ""}
           `}
         >
