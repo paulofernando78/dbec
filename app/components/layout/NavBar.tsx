@@ -60,6 +60,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
             flex items-center gap-2
             ${Icon ? "mt-2 font-bold uppercase" : ""}
             ${isActive ? "text-gray-400" : ""}
+            ${href === "/dashboard" ? "mb-8" : ""}
           `}
         >
           {Icon && <Icon width={25} height={25} className="shrink-0" />}
