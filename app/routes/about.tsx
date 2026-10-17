@@ -73,7 +73,7 @@ const experience = [
 
 export default function About() {
   return (
-    <div className="mx-[min(200px,max(0px,calc((100vw-380px)*0.135)))]">
+    <div className="mx-[min(200px,max(10px,calc((100vw-380px)*0.135)))]">
       <div className="flex flex-col items-center gap-7.5">
         <Image
           src="/assets/img/about/me.png"
