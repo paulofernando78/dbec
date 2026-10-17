@@ -1,35 +1,32 @@
 import { useEffect, useState } from "react";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { LibraryPage } from "@/components/content/LibraryPage";
+import { PageSections } from "@/components/content/PageSections";
+import { AuthenticDateCard } from "@/components/authentic-content/AuthenticDateCard";
 import { AuthenticContent as AuthenticContentIcon } from "@/components/Icons";
+import { Section } from "@/components/ui/Section";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
-const tedEdLessonGroups = authenticContentTedEdLessons.reduce<
+const tedEdYearGroups = authenticContentTedEdLessons.reduce<
   Array<{
-    label: string;
+    year: string;
     lessons: typeof authenticContentTedEdLessons;
   }>
 >((groups, lesson) => {
   const year = lesson.publishedAt.slice(0, 4);
   const currentGroup = groups.at(-1);
 
-  if (currentGroup?.label === year) {
+  if (currentGroup?.year === year) {
     currentGroup.lessons.push(lesson);
   } else {
-    groups.push({ label: year, lessons: [lesson] });
+    groups.push({
+      year,
+      lessons: [lesson],
+    });
   }
 
   return groups;
 }, []);
-
-const authenticContentSections = [
-  {
-    label: "TED-Ed",
-    numbered: false,
-    groups: tedEdLessonGroups,
-  },
-];
 
 export default function AuthenticContent() {
   const [lessonCompletion, setLessonCompletion] = useState<
@@ -67,14 +64,23 @@ export default function AuthenticContent() {
   return (
     <div>
       <PageHeader title="Authentic Content" />
-      <LibraryPage
+      <PageSections
         showTableOfContents={false}
         title="AUTHENTIC CONTENT"
-        sections={authenticContentSections}
         headerIcon={AuthenticContentIcon}
-        lessonCompletion={lessonCompletion}
-        onLessonCompletionChange={saveLessonCompletion}
-      />
+      >
+        <Section id="ted-ed" label="TED-Ed">
+          {tedEdYearGroups.map((group) => (
+            <AuthenticDateCard
+              key={group.year}
+              year={group.year}
+              lessons={group.lessons}
+              lessonCompletion={lessonCompletion}
+              onLessonCompletionChange={saveLessonCompletion}
+            />
+          ))}
+        </Section>
+      </PageSections>
     </div>
   );
 }

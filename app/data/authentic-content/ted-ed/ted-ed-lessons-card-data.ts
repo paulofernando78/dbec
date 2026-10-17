@@ -191,3 +191,6 @@ export const authenticContentTedEdLessons = Object.values(
   .sort((firstLesson, secondLesson) =>
     firstLesson.publishedAt.localeCompare(secondLesson.publishedAt),
   );
+
+export type AuthenticContentTedEdLesson =
+  (typeof authenticContentTedEdLessons)[number];
