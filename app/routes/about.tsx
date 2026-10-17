@@ -71,53 +71,42 @@ const experience = [
   },
 ];
 
+const backgroundSections = [
+  { id: "formation", label: "FORMAÇÃO", items: formation },
+  { id: "experience", label: "EXPERIÊNCIA", items: experience },
+];
+
 export default function About() {
   return (
-    <div className="mx-[min(200px,max(10px,calc((100vw-380px)*0.135)))]">
-      <div className="flex flex-col items-center gap-7.5">
-        <Image
-          src="/assets/img/about/me.png"
-          alt="My picture"
-          width={150}
-          height={150}
-          className="rounded-[50%] border-[5px] border-slate-300"
-          rounded={false}
-        />
-        <p className="text-justify mb-4">
-          Fundador do <b>Daily Basis English Course</b>, é apaixonado pelos
-          estudos da língua inglesa desde 96. Começou a lecionar aulas de inglês
-          particulares em meados de 2004. Já morou nos EUA - Califórnia. Estuda
-          web development e programação desde 2022 com o objetivo de criar a sua
-          própria plataforma de ensino.
-        </p>
-      </div>
-      <LineBreak />
-      <Section id="background" label="FORMAÇÃO" heading={2}>
-        <ul>
-          {formation.map((item, index) => (
-            <>
-              <li key={index} className="mb-2">
+    <div className="mx-[min(200px,max(10px,calc((100vw-380px)*0.135)))] grid gap-4">
+      <Image
+        src="/assets/img/about/me.png"
+        alt="My picture"
+        width={150}
+        height={150}
+        className="rounded-[50%] border-[5px] border-slate-300"
+        rounded={false}
+      />
+      <p className="text-justify">
+        Fundador do <b>Daily Basis English Course</b>, é apaixonado pelos
+        estudos da língua inglesa desde 96. Começou a lecionar aulas de inglês
+        particulares em meados de 2004. Já morou nos EUA - Califórnia. Estuda
+        web development e programação desde 2022 com o objetivo de criar a sua
+        própria plataforma de ensino.
+      </p>
+      {backgroundSections.map(({ id, label, items }) => (
+        <Section key={id} id={id} label={label} heading={2}>
+          <ul>
+            {items.map((item) => (
+              <li key={`${item.institution}-${item.period}`} className="mb-2">
                 <strong>{item.institution}</strong>
                 <span className="block">{item.period}</span>
                 <span className="block">{item.program}</span>
               </li>
-            </>
-          ))}
-        </ul>
-      </Section>
-      <Section id="background" label="EXPERIÊNCIA" heading={2}>
-        <ul>
-          {experience.map((item, index) => (
-            <>
-              <li key={index}>
-                <strong>{item.institution}</strong>
-                <span className="block">{item.period}</span>
-                <span className="block">{item.program}</span>
-              </li>
-            </>
-          ))}
-        </ul>
-      </Section>
+            ))}
+          </ul>
+        </Section>
+      ))}
     </div>
   );
 }
