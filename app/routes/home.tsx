@@ -96,7 +96,7 @@ export default function Home() {
         Writing. On this web site, you’ll find a variety of useful learning
         materials. Please use them wisely.
       </p> */}
-      <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
+      <p className="mx-[min(100px,max(10px,calc((100vw-360px)*0.135)))]">
         <b>O DAILY BASIS ENGLISH COURSE</b> oferece aulas de inglês
         especializadas e focadas nas quatro habilidades linguísticas
         fundamentais: Fala (com ênfase em conversação), Escuta (compreensão

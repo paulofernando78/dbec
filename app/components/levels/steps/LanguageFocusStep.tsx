@@ -66,23 +66,24 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                     }
                   />
                   <h4 className="text-xl font-black">
-                    {isPortuguese ? translationPt ?? title : title}
+                    {title}
+                    {isPortuguese && translationPt ? (
+                      <span className="font-normal text-slate-500">
+                        {" "}— {translationPt}
+                      </span>
+                    ) : null}
                   </h4>
                 </div>
-                {!isPortuguese && (
-                  <>
-                    <p>
-                      <b>Meaning:</b> {meaning}
-                    </p>
-                    <p>
-                      <b>Pronunciation:</b>{" "}
-                      <span className="text-blue-500">{pronunciation}</span>
-                    </p>
-                    <p>
-                      <b>Form:</b> {form}
-                    </p>
-                  </>
-                )}
+                <p>
+                  <b>Meaning:</b> {meaning}
+                </p>
+                <p>
+                  <b>Pronunciation:</b>{" "}
+                  <span className="text-blue-500">{pronunciation}</span>
+                </p>
+                <p>
+                  <b>Form:</b> {form}
+                </p>
               </article>
             );
           },
