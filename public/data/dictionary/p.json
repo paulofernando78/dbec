@@ -1587,6 +1587,22 @@
         "seeAlso": ["kernel", "shell", "starch"],
         "imgs": [{ "src": "pericarp.avif", "alt": "A scientific cutaway of a popcorn kernel emphasizing its hard outer pericarp." }]
       }
+      ,{
+        "word": "paralysis",
+        "phonetics": "/pəˈræl.ə.sɪs/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The loss of the ability to move part or all of the body.",
+        "ptDefinition": "Paralisia; perda da capacidade de movimentar parte ou todo o corpo.",
+        "imgs": [{ "src": "paralysis.avif", "alt": "A person using a wheelchair in a rehabilitation clinic" }]
+      },
+      {
+        "word": "prophylaxis",
+        "phonetics": "/ˌproʊ.fəˈlæk.sɪs/",
+        "partOfSpeech": "noun",
+        "enDefinition": "Medical treatment or action taken to prevent a disease.",
+        "ptDefinition": "Profilaxia; tratamento ou medida médica adotada para prevenir uma doença.",
+        "imgs": [{ "src": "prophylaxis.avif", "alt": "A healthcare professional administering a preventive vaccine" }]
+      }
     ]
   }
 ]

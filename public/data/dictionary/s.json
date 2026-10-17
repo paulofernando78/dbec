@@ -2063,6 +2063,14 @@
         "seeAlso": ["sustain", "nourish", "nutrition"],
         "imgs": [{ "src": "sustenance.avif", "alt": "A butterfly and a male mosquito feeding on flower nectar for sustenance." }]
       }
+      ,{
+        "word": "saliva",
+        "phonetics": "/səˈlaɪ.və/",
+        "partOfSpeech": "noun",
+        "enDefinition": "The clear liquid produced in the mouth that helps with swallowing and digestion.",
+        "ptDefinition": "Saliva; líquido transparente produzido na boca que ajuda a engolir e digerir alimentos.",
+        "imgs": [{ "src": "saliva.avif", "alt": "A close-up illustrating saliva at the mouth" }]
+      }
     ]
   },
   {

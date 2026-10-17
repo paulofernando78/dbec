@@ -1720,6 +1720,14 @@
         "antonyms": ["lose money", "make a profit"],
         "seeAlso": ["in the black", "in the red"]
       }
+      ,{
+        "word": "blood-brain barrier",
+        "phonetics": "/ˌblʌd ˈbreɪn ˌber.i.ɚ/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "A protective boundary that controls which substances can pass from the blood into the brain.",
+        "ptDefinition": "Barreira hematoencefálica; limite protetor que controla a passagem de substâncias do sangue para o cérebro.",
+        "imgs": [{ "src": "blood-brain-barrier.avif", "alt": "A cross-section of the protective barrier between blood and brain tissue" }]
+      }
     ]
   }
 ]

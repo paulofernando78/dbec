@@ -99,6 +99,14 @@
         "seeAlso": ["odor", "molecule", "evaporate"],
         "imgs": [{ "src": "volatile-compound.avif", "alt": "Invisible odor molecules drifting from human skin toward a mosquito." }]
       }
+      ,{
+        "word": "virion",
+        "phonetics": "/ˈvɪr.i.ɑːn/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A complete virus particle capable of infecting a cell.",
+        "ptDefinition": "Vírion; partícula viral completa capaz de infectar uma célula.",
+        "imgs": [{ "src": "virion.avif", "alt": "A detailed educational illustration of a virus particle" }]
+      }
     ]
   }
 ]

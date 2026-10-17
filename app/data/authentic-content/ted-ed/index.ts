@@ -12,6 +12,7 @@ import { theBodysHiddenBalance } from "./the-bodys-hidden-balance";
 import { whyCitiesNeedTrees } from "./why-cities-need-trees";
 import { theUnseenInvitation } from "./the-unseen-invitation";
 import { theAccidentalMainstay } from "./the-accidental-mainstay";
+import { theSilentRaceToTheBrain } from "./the-silent-race-to-the-brain";
 
 export const authenticContentsTedEdRoutes = {
   // ...
@@ -32,4 +33,5 @@ export const authenticContentsTedEdRoutes = {
   "the-unseen-invitation": theUnseenInvitation,
   // Apr 20, 2023
   "the-accidental-mainstay": theAccidentalMainstay,
+  "the-silent-race-to-the-brain": theSilentRaceToTheBrain,
 };

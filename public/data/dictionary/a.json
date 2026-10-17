@@ -1020,6 +1020,14 @@
           }
         ]
       }
+      ,{
+        "word": "axon",
+        "phonetics": "/ˈæk.sɑːn/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A long, thread-like part of a nerve cell that carries electrical signals away from the cell body.",
+        "ptDefinition": "Axônio; prolongamento de uma célula nervosa que conduz sinais elétricos.",
+        "imgs": [{ "src": "axon.avif", "alt": "A neuron with signals traveling along its axon" }]
+      }
     ]
   }
 ]

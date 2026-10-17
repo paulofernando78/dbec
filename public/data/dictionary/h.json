@@ -815,6 +815,14 @@
         "synonyms": ["at risk", "on the line", "under threat", "in jeopardy"],
         "antonyms": ["safe", "out of harm's way"]
       }
+      ,{
+        "word": "hydrophobia",
+        "phonetics": "/ˌhaɪ.drəˈfoʊ.bi.ə/",
+        "partOfSpeech": "noun",
+        "enDefinition": "An intense difficulty or fear associated with swallowing water, especially as a symptom of rabies.",
+        "ptDefinition": "Hidrofobia; dificuldade intensa ou medo associado a engolir água, especialmente como sintoma da raiva.",
+        "imgs": [{ "src": "hydrophobia.avif", "alt": "A person experiencing difficulty when reaching for a glass of water" }]
+      }
     ]
   }
 ]

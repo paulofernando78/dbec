@@ -182,6 +182,26 @@ export const authenticContentTedEdLessonsCardData = {
     publishedAt: "2023-04-20",
     duration: "05:20",
   },
+  // May 19, 2026
+  theSilentRaceToTheBrain: {
+    href: "/authentic-content/ted-ed/the-silent-race-to-the-brain",
+    label: "The Silent Race to the Brain",
+    description:
+      "How a hidden infection travels through the nervous system—and why timing determines survival.",
+    objective:
+      "Explain how rabies reaches the central nervous system and evaluate why rapid prevention is essential.",
+    usefulLanguage:
+      "Once exposure occurs…; The virus travels through…; Intervention is effective provided that…",
+    vocabulary:
+      "Virion, mammal, saliva, axon, blood-brain barrier, paralysis, hydrophobia, prophylaxis",
+    skills:
+      "Authentic listening, scientific sequencing, causal explanation, and evidence-based discussion",
+    finalTask:
+      "Create and justify a concise public-health response to a possible exposure.",
+    date: "May 19, 2026",
+    publishedAt: "2026-05-19",
+    duration: "06:11",
+  },
 };
 
 export const authenticContentTedEdLessons = Object.values(

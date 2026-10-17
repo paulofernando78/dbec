@@ -1336,6 +1336,14 @@
         "seeAlso": ["profit", "retail price", "cost"],
         "imgs": [{ "src": "markup.avif", "alt": "A low production cost growing into a much higher retail price at a concession counter." }]
       }
+      ,{
+        "word": "mammal",
+        "phonetics": "/ˈmæm.əl/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A warm-blooded animal whose females produce milk to feed their young.",
+        "ptDefinition": "Mamífero; animal de sangue quente cujas fêmeas produzem leite para alimentar os filhotes.",
+        "imgs": [{ "src": "mammal.avif", "alt": "A dog, bat, fox, and raccoon representing mammals" }]
+      }
     ]
   }
 ]
