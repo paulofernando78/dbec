@@ -30,7 +30,13 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
     <li className="flex min-h-[68px] items-center gap-3">
       <Button
         ariaLabel={`Play ${audioLabel}`}
-        icon={<Audio src={audioSource} className="size-6!" />}
+        icon={
+          <Audio
+            src={audioSource}
+            className="size-6!"
+            wrapperClassName="size-full items-center justify-center"
+          />
+        }
       />
       <p className="min-w-0 text-sm leading-6 md:text-base">
         {item.phoneme ? (

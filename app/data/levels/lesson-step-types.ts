@@ -38,7 +38,8 @@ export type LanguageFocusData = {
     meaning: string,
     pronunciation: string,
     form: string,
-    audio?: string,
+    audio?: { us?: string; uk?: string },
+    translationPt?: string,
   ])[];
 };
 

@@ -7,6 +7,8 @@ import { LoaderCircle, Play, Square } from "lucide-react";
 type AudioProps = {
   src: string;
   className?: string;
+  wrapperClassName?: string;
+  speechLang?: string;
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -28,19 +30,20 @@ const stopCurrentSpeech = () => {
   resetPreviousAudio?.();
 };
 
-const selectBestVoice = (voices: SpeechSynthesisVoice[]) => {
+const selectBestVoice = (voices: SpeechSynthesisVoice[], language: string) => {
+  const languagePrefix = language.split("-")[0];
   const findVoice = (term: string) =>
     voices.find(
       (voice) =>
-        voice.lang === "en-US" && voice.name.toLowerCase().includes(term),
+        voice.lang === language && voice.name.toLowerCase().includes(term),
     );
 
   return (
     findVoice("natural") ??
     findVoice("premium") ??
     findVoice("google") ??
-    voices.find((voice) => voice.lang === "en-US") ??
-    voices.find((voice) => voice.lang.startsWith("en")) ??
+    voices.find((voice) => voice.lang === language) ??
+    voices.find((voice) => voice.lang.startsWith(languagePrefix)) ??
     voices[0]
   );
 };
@@ -74,7 +77,12 @@ const waitForVoices = () =>
     );
   });
 
-export const Audio = ({ src, className }: AudioProps) => {
+export const Audio = ({
+  src,
+  className,
+  wrapperClassName,
+  speechLang = "en-US",
+}: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -82,7 +90,7 @@ export const Audio = ({ src, className }: AudioProps) => {
 
   const isAudioFile = /\.(mp3|wav|ogg)$/i.test(src);
 
-  const handlePlay = async (e: React.MouseEvent<SVGElement>) => {
+  const handlePlay = async (e: React.MouseEvent<Element>) => {
     e.stopPropagation();
 
     if (!isAudioFile) {
@@ -97,7 +105,7 @@ export const Audio = ({ src, className }: AudioProps) => {
       const requestId = speechRequestId;
 
       const utterance = new SpeechSynthesisUtterance(src);
-      utterance.lang = "en-US";
+      utterance.lang = speechLang;
       utterance.rate = 0.92;
       utterance.pitch = 1;
       utterance.volume = 1;
@@ -106,7 +114,7 @@ export const Audio = ({ src, className }: AudioProps) => {
 
       if (requestId !== speechRequestId) return;
 
-      const voice = selectBestVoice(voices);
+      const voice = selectBestVoice(voices, speechLang);
 
       if (voice) {
         utterance.voice = voice;
@@ -171,7 +179,7 @@ export const Audio = ({ src, className }: AudioProps) => {
     }
   };
 
-  const handleStop = (e: React.MouseEvent<SVGElement>) => {
+  const handleStop = (e: React.MouseEvent<Element>) => {
     e.stopPropagation();
     setLoading(false);
 
@@ -219,17 +227,18 @@ export const Audio = ({ src, className }: AudioProps) => {
   };
 
   return (
-    <span className="inline-flex">
+    <span
+      className={`inline-flex cursor-pointer ${wrapperClassName ?? ""}`}
+      onClick={loading || playing ? handleStop : handlePlay}
+    >
       {loading ? (
         <LoaderCircle
-          onClick={handleStop}
           size={16}
           className={`${className ?? ""} animate-spin`}
           color="var(--icon-color)"
         />
       ) : playing ? (
         <Square
-          onClick={handleStop}
           size={16}
           className={className}
           color="var(--icon-color)"
@@ -237,7 +246,6 @@ export const Audio = ({ src, className }: AudioProps) => {
         />
       ) : (
         <Play
-          onClick={handlePlay}
           size={16}
           className={className}
           color="var(--icon-color)"
