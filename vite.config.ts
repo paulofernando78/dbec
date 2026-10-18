@@ -5,9 +5,41 @@ import { resolve } from "node:path";
 import { defineConfig, type Plugin } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+import { students as developmentStudents } from "./app/data/students";
+
 const localLessonCompletion = new Map<string, boolean>();
 let localSession: { username: string; role: string; studentId?: string } | null =
   null;
+
+type LocalStudent = {
+  studentId: string;
+  username: string;
+  name: string;
+  schedule: string;
+  time: string;
+};
+
+const localStudents = new Map<string, LocalStudent>(
+  Object.entries(developmentStudents).map(([studentId, student]) => [
+    studentId,
+    {
+      studentId,
+      username: studentId.split("-")[0],
+      name: student.name,
+      schedule: student.schedule,
+      time: student.time,
+    },
+  ]),
+);
+
+const createStudentSlug = (name: string) =>
+  name
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 
 const localAuth = (): Plugin => ({
   name: "local-auth",
@@ -100,6 +132,119 @@ const localAuth = (): Plugin => ({
       response.statusCode = 200;
       response.end(JSON.stringify({ ...localSession, dashboardPath }));
     });
+
+    server.middlewares.use(
+      "/api/students",
+      async (request, response, next) => {
+        if (!request.method || !["GET", "POST", "PUT"].includes(request.method)) {
+          return next();
+        }
+
+        response.setHeader("Content-Type", "application/json");
+        response.setHeader("Cache-Control", "no-store");
+
+        if (localSession?.role !== "teacher") {
+          response.statusCode = 401;
+          response.end(JSON.stringify({ error: "Não autorizado." }));
+          return;
+        }
+
+        if (request.method === "GET") {
+          response.statusCode = 200;
+          response.end(
+            JSON.stringify({
+              students: [...localStudents.values()].sort((a, b) =>
+                a.name.localeCompare(b.name),
+              ),
+            }),
+          );
+          return;
+        }
+
+        try {
+          request.setEncoding("utf8");
+          let body = "";
+          for await (const chunk of request) body += chunk;
+
+          const input = JSON.parse(body);
+          const name = input.name?.trim();
+          const username = input.username?.trim().toLowerCase();
+          const schedule = input.schedule;
+          const time = input.time;
+
+          if (!name || !username || !schedule || !time) {
+            response.statusCode = 400;
+            response.end(JSON.stringify({ error: "Preencha os dados do aluno." }));
+            return;
+          }
+
+          if (request.method === "POST") {
+            if (typeof input.password !== "string" || input.password.length < 8) {
+              response.statusCode = 400;
+              response.end(
+                JSON.stringify({
+                  error: "A senha deve ter pelo menos 8 caracteres.",
+                }),
+              );
+              return;
+            }
+
+            const studentId = createStudentSlug(name);
+            const duplicate = [...localStudents.values()].some(
+              (student) =>
+                student.studentId === studentId || student.username === username,
+            );
+
+            if (duplicate) {
+              response.statusCode = 409;
+              response.end(
+                JSON.stringify({ error: "Usuário ou aluno já cadastrado." }),
+              );
+              return;
+            }
+
+            const student = { studentId, username, name, schedule, time };
+            localStudents.set(studentId, student);
+            response.statusCode = 201;
+            response.end(JSON.stringify({ ok: true, student }));
+            return;
+          }
+
+          const studentId = input.studentId;
+          if (!studentId || !localStudents.has(studentId)) {
+            response.statusCode = 404;
+            response.end(JSON.stringify({ error: "Aluno não encontrado." }));
+            return;
+          }
+
+          const duplicateUsername = [...localStudents.values()].some(
+            (student) =>
+              student.studentId !== studentId && student.username === username,
+          );
+
+          if (duplicateUsername) {
+            response.statusCode = 409;
+            response.end(
+              JSON.stringify({ error: "Esse usuário já está sendo utilizado." }),
+            );
+            return;
+          }
+
+          localStudents.set(studentId, {
+            studentId,
+            username,
+            name,
+            schedule,
+            time,
+          });
+          response.statusCode = 200;
+          response.end(JSON.stringify({ ok: true }));
+        } catch {
+          response.statusCode = 400;
+          response.end(JSON.stringify({ error: "JSON inválido." }));
+        }
+      },
+    );
 
     server.middlewares.use(
       "/api/lesson-progress",

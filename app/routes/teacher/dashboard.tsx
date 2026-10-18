@@ -215,7 +215,7 @@ export default function TeacherDashboard() {
 
       {student && studentId ? (
         <div className="grid gap-4">
-          <div className="flex justify-between gap-4 max-[800px]:flex-col max-[800px]:gap-4">
+          <div className="flex justify-between gap-4 max-[900px]:flex-col max-[900px]:gap-4">
             <DashboardNotes
               title="Teacher's Notes"
               value={notes.teacher}

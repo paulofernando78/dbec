@@ -18,7 +18,7 @@ export const DashboardNotes = ({
   return (
     <div className="w-full">
       <h2
-        className="px-2 pt-1 pb-0.5 text-lg font-bold bg-gray-300 border-t border-r border-l border-gray-300 rounded-t-lg
+        className="px-4 pt-2 pb-0.5 text-lg font-bold bg-gray-300 border-t border-r border-l border-gray-300 rounded-t-xl
         "
       >
         {title}

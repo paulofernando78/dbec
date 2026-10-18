@@ -125,6 +125,12 @@ export const StudentForm = ({
         }),
       });
 
+      const contentType = response.headers.get("content-type") ?? "";
+
+      if (!contentType.includes("application/json")) {
+        throw new Error("A API de estudantes retornou uma resposta inválida.");
+      }
+
       const result = await response.json();
 
       if (!response.ok) {
@@ -152,39 +158,41 @@ export const StudentForm = ({
       autoComplete="off"
       className="grid grid-cols-1 gap-4 min-[830px]:grid-cols-[auto_1fr]"
     >
-      <div className="pb-4 space-y-4 border-b border-gray-200 min-[830px]:border-r min-[830px]:border-b-0 min-[830px]:pr-4">
-          <span className="block text-sm font-semibold">Students</span>
-
-          {students.map((student) => {
-            const isSelected = selectedStudentId === student.studentId;
-
-            return (
-              <button
-                key={student.studentId}
-                type="button"
-                onClick={() => handleStudentSelection(student.studentId)}
-                className={`
-                    flex w-full items-center gap-3 rounded-xl p-2 text-left
-                    transition-colors hover:bg-gray-100
-                    ${isSelected ? "bg-gray-100 ring-1 ring-gray-300" : ""}
-                  `}
-              >
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-yellow-200 font-bold">
-                  {student.name.charAt(0).toUpperCase()}
-                </div>
-
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold">
-                    {student.name}
-                  </p>
-
-                  <p className="truncate text-xs font-normal text-gray-500">
-                    {student.schedule} · {student.time}
-                  </p>
-                </div>
-              </button>
-            );
-          })}
+      <div className="overflow-x-auto border-b border-gray-200 pb-4 min-[830px]:border-r min-[830px]:border-b-0 min-[830px]:pr-4">
+          <div className="m-[0.1rem] space-y-4">
+            <span className="block text-sm font-semibold">Students</span>
+  
+            {students.map((student) => {
+              const isSelected = selectedStudentId === student.studentId;
+  
+              return (
+                <button
+                  key={student.studentId}
+                  type="button"
+                  onClick={() => handleStudentSelection(student.studentId)}
+                  className={`
+                      flex w-full items-center gap-3 rounded-xl p-2 text-left
+                      transition-colors hover:bg-gray-100
+                      ${isSelected ? "bg-gray-100 ring-1 ring-gray-300" : ""}
+                    `}
+                >
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-yellow-200 font-bold">
+                    {student.name.charAt(0).toUpperCase()}
+                  </div>
+  
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold">
+                      {student.name}
+                    </p>
+  
+                    <p className="truncate text-xs font-normal text-gray-500">
+                      {student.schedule} · {student.time}
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
       </div>
 
       <div className="grid gap-4">

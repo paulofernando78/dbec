@@ -75,7 +75,7 @@ body {
 }
 
 .shadows {
-  @apply shadow-[0_0_5px_var(--slate-3)];
+  @apply shadow-[0_0_3px_var(--slate-3)];
 }
 
 /*
