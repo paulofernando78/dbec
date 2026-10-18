@@ -147,23 +147,52 @@ export const StudentForm = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off" className="grid gap-4">
-      <label className="grid gap-1">
-        <span className="text-sm font-semibold">Student</span>
-        <select
-          value={selectedStudentId}
-          onChange={(event) => handleStudentSelection(event.target.value)}
-          className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-        >
-          <option value="">New student</option>
-          {students.map((student) => (
-            <option key={student.studentId} value={student.studentId}>
-              {student.name}
-            </option>
-          ))}
-        </select>
-      </label>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <form
+      onSubmit={handleSubmit}
+      autoComplete="off"
+      className="grid grid-cols-2 gap-4 max-[600px]:grid-cols-1"
+    >
+      <div className="space-y-4">
+        <div className="grid gap-1">
+          <span className="text-sm font-semibold mb-2">Students</span>
+
+          <div className="grid gap-2">
+            {students.map((student) => {
+              const isSelected = selectedStudentId === student.studentId;
+
+              return (
+                <button
+                  key={student.studentId}
+                  type="button"
+                  onClick={() => handleStudentSelection(student.studentId)}
+                  className={`
+                    flex w-full items-center gap-3 rounded-xl p-2 text-left
+                    transition-colors hover:bg-gray-100
+                    ${isSelected ? "bg-gray-100 ring-1 ring-gray-300" : ""}
+                  `}
+                >
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-yellow-200 font-bold">
+                    {student.name.charAt(0).toUpperCase()}
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold">
+                      {student.name}
+                    </p>
+
+                    <p className="truncate text-xs font-normal text-gray-500">
+                      {student.schedule} · {student.time}
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid gap-4">
+        {/* Name */}
         <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Name</span>
           <input
@@ -180,6 +209,7 @@ export const StudentForm = ({
           />
         </label>
 
+        {/* Username */}
         <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Username</span>
           <input
@@ -197,6 +227,7 @@ export const StudentForm = ({
           />
         </label>
 
+        {/* Password */}
         <label className="grid min-w-0 gap-1 md:col-span-2 lg:col-span-1">
           <span className="text-sm font-semibold">Password</span>
           <input
@@ -215,9 +246,8 @@ export const StudentForm = ({
             className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
           />
         </label>
-      </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+        {/* Schedule */}
         <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Schedule</span>
 
@@ -242,6 +272,7 @@ export const StudentForm = ({
           </select>
         </label>
 
+        {/* Time */}
         <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Time</span>
 
@@ -265,26 +296,23 @@ export const StudentForm = ({
             ))}
           </select>
         </label>
+
+        {error && (
+          <p role="alert" className="text-sm font-semibold text-red-600">
+            {error}
+          </p>
+        )}
+
+        {message && (
+          <p role="status" className="text-sm font-semibold text-green-700">
+            {message}
+          </p>
+        )}
+
+        <Button type="submit" disabled={isSaving} className="!w-full">
+          {isSaving ? "Saving..." : isEditing ? "Update" : "Add student"}
+        </Button>
       </div>
-      {error && (
-        <p role="alert" className="text-sm font-semibold text-red-600">
-          {error}
-        </p>
-      )}
-
-      {message && (
-        <p role="status" className="text-sm font-semibold text-green-700">
-          {message}
-        </p>
-      )}
-
-      <Button
-        type="submit"
-        disabled={isSaving}
-        className="font-bold uppercase text-gray-600"
-      >
-        {isSaving ? "Saving..." : isEditing ? "Save student" : "Add student"}
-      </Button>
     </form>
   );
 };
