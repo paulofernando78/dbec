@@ -150,9 +150,9 @@ export const StudentForm = ({
     <form
       onSubmit={handleSubmit}
       autoComplete="off"
-      className="grid grid-cols-1 gap-4 min-[925px]:grid-cols-[auto_1fr]"
+      className="grid grid-cols-1 gap-4 min-[830px]:grid-cols-[auto_1fr]"
     >
-      <div className="space-y-4 border-b border-gray-200 min-[925px]:border-r min-[925px]:border-b-0 min-[925px]:pr-4">
+      <div className="pb-4 space-y-4 border-b border-gray-200 min-[830px]:border-r min-[830px]:border-b-0 min-[830px]:pr-4">
           <span className="block text-sm font-semibold">Students</span>
 
           {students.map((student) => {
@@ -188,6 +188,14 @@ export const StudentForm = ({
       </div>
 
       <div className="grid gap-4">
+        <Button
+          type="button"
+          onClick={() => handleStudentSelection("")}
+          className="w-full!"
+        >
+          Add student
+        </Button>
+
         {/* Name */}
         <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Name</span>
@@ -224,7 +232,7 @@ export const StudentForm = ({
         </label>
 
         {/* Password */}
-        <label className="grid min-w-0 gap-1 md:col-span-2 lg:col-span-1">
+        <label className="grid min-w-0 gap-1">
           <span className="text-sm font-semibold">Password</span>
           <input
             type="password"
@@ -306,7 +314,7 @@ export const StudentForm = ({
         )}
 
         <Button type="submit" disabled={isSaving} className="w-full!">
-          {isSaving ? "Saving..." : isEditing ? "Update" : "Add student"}
+          {isSaving ? "Saving..." : isEditing ? "Update" : "Save"}
         </Button>
       </div>
     </form>
