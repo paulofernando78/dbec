@@ -150,45 +150,41 @@ export const StudentForm = ({
     <form
       onSubmit={handleSubmit}
       autoComplete="off"
-      className="grid grid-cols-2 gap-4 max-[600px]:grid-cols-1"
+      className="grid grid-cols-1 gap-4 min-[925px]:grid-cols-[auto_1fr]"
     >
-      <div className="space-y-4">
-        <div className="grid gap-1">
-          <span className="text-sm font-semibold mb-2">Students</span>
+      <div className="space-y-4 border-b border-gray-200 min-[925px]:border-r min-[925px]:border-b-0 min-[925px]:pr-4">
+          <span className="block text-sm font-semibold">Students</span>
 
-          <div className="grid gap-2">
-            {students.map((student) => {
-              const isSelected = selectedStudentId === student.studentId;
+          {students.map((student) => {
+            const isSelected = selectedStudentId === student.studentId;
 
-              return (
-                <button
-                  key={student.studentId}
-                  type="button"
-                  onClick={() => handleStudentSelection(student.studentId)}
-                  className={`
+            return (
+              <button
+                key={student.studentId}
+                type="button"
+                onClick={() => handleStudentSelection(student.studentId)}
+                className={`
                     flex w-full items-center gap-3 rounded-xl p-2 text-left
                     transition-colors hover:bg-gray-100
                     ${isSelected ? "bg-gray-100 ring-1 ring-gray-300" : ""}
                   `}
-                >
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-yellow-200 font-bold">
-                    {student.name.charAt(0).toUpperCase()}
-                  </div>
+              >
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-yellow-200 font-bold">
+                  {student.name.charAt(0).toUpperCase()}
+                </div>
 
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold">
-                      {student.name}
-                    </p>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold">
+                    {student.name}
+                  </p>
 
-                    <p className="truncate text-xs font-normal text-gray-500">
-                      {student.schedule} · {student.time}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
+                  <p className="truncate text-xs font-normal text-gray-500">
+                    {student.schedule} · {student.time}
+                  </p>
+                </div>
+              </button>
+            );
+          })}
       </div>
 
       <div className="grid gap-4">
@@ -309,7 +305,7 @@ export const StudentForm = ({
           </p>
         )}
 
-        <Button type="submit" disabled={isSaving} className="!w-full">
+        <Button type="submit" disabled={isSaving} className="w-full!">
           {isSaving ? "Saving..." : isEditing ? "Update" : "Add student"}
         </Button>
       </div>
