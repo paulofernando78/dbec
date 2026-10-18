@@ -1,3 +1,4 @@
+import { Card } from "@/components/ui/Card";
 import { useDraggableScroll } from "@/utils/useDraggableScroll";
 
 const statusOptions = [
@@ -176,34 +177,13 @@ export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: Ca
 
   return (
     <>
-      <div>
-        <span
-          className="
-          block
-          px-[.4rem] py-[.2rem]
-          font-bold
-          text-sm
-          border-t
-          border-r
-          border-l 
-          border-gray-300
-          bg-gray-300
-          rounded-t
-          rounded-b-none
-          "
-        >
-          Legend
-        </span>
+      <Card title="Legend">
         <ul
           className="
-          p-2
           grid
-          grid-cols-3
+          grid-cols-2
+          min-[810px]:grid-cols-3
           gap-2
-          border
-          border-gray-300
-          rounded-t-none
-          rounded-b
           "
         >
           {statusOptions
@@ -235,42 +215,26 @@ export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: Ca
               </li>
             ))}
         </ul>
-      </div>
-      <div
-        ref={scrollRef}
-        {...events} // Isso injeta automaticamente o onMouseDown, onMouseUp, etc.
-        className={`
-          mb-4
-          overflow-x-auto
-          border
-          border-gray-300
-          rounded-lg
-          ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}
-        `}
-      >
-        <h2
-          className="
-           sticky
-          left-0
-          z-10
-          inline-block
-          min-w-full
-          text-lg
-          font-bold
-          px-2
-          pt-1
-          pb-0.5
-          bg-gray-300"
-        >
-          Calendar
-        </h2>
+      </Card>
+
+      <Card title="Calendar" className="mb-4">
         <div
-          className="
-          grid
-          min-w-540
-          grid-cols-12"
+          ref={scrollRef}
+          {...events} // Isso injeta automaticamente o onMouseDown, onMouseUp, etc.
+          className={`
+            min-w-0
+            max-w-full
+            overflow-x-auto
+            ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}
+          `}
         >
-          {calendarMonths.map(({ month, dates }) => {
+          <div
+            className="
+            grid
+            min-w-540
+            grid-cols-12"
+          >
+            {calendarMonths.map(({ month, dates }) => {
             const totalClasses = dates.filter(({ day }) => {
               const lessonDate = getDateKey(2026, months.indexOf(month), day);
               const currentStatus = statuses[lessonDate];
@@ -341,9 +305,10 @@ export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: Ca
                 </div>
               </section>
             );
-          })}
+            })}
+          </div>
         </div>
-      </div>
+      </Card>
     </>
   );
 };
