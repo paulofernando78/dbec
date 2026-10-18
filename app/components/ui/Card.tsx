@@ -1,6 +1,7 @@
 import { Children, Fragment, isValidElement, type ReactNode } from "react";
 
 type CardProps = {
+  title?: string;
   children: ReactNode;
   className?: string;
   maxContent?: boolean;
@@ -20,6 +21,7 @@ const getLastChild = (children: ReactNode): ReactNode => {
 };
 
 export const Card = ({
+  title,
   children,
   maxContent = false,
   className,
@@ -43,6 +45,7 @@ export const Card = ({
       shadows
       ${maxContent ? "w-fit max-w-full" : ""} ${className}`}
     >
+      {title && <h2 className="mb-4 pb-3 text-lg font-bold border-b border-gray-200">{title}</h2>}
       {children}
     </div>
   );

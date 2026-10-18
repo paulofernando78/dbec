@@ -183,59 +183,57 @@ export default function TeacherDashboard() {
     <>
       <PageHeader title="Teacher's Dashboard" />
 
-      <Card className="mb-4 pb-6">
-        <h2 className="mb-4 border-b border-gray-200 pb-4 text-lg font-bold">
-          Student Registration
-        </h2>
-
-        <StudentForm
-          students={students}
-          selectedStudentId={studentId ?? ""}
-          onStudentSelect={handleStudentChange}
-          onStudentSaved={loadStudents}
-        />
-      </Card>
-
-      {isLoadingStudent && studentId && (
-        <p className="text-gray-500">Carregando aluno…</p>
-      )}
-
-      {studentError && studentId && (
-        <div className="flex items-center gap-3">
-          <p className="text-red-600">{studentError}</p>
-          <button
-            type="button"
-            onClick={() => setReloadKey((current) => current + 1)}
-            className="rounded bg-gray-900 px-3 py-1 text-sm font-semibold text-white"
-          >
-            Tentar novamente
-          </button>
-        </div>
-      )}
-
-      {student && studentId ? (
-        <div className="grid gap-4">
-          <div className="flex justify-between gap-4 max-[900px]:flex-col max-[900px]:gap-4">
-            <DashboardNotes
-              title="Teacher's Notes"
-              value={notes.teacher}
-              onChange={(value) =>
-                setNotes((current) => ({ ...current, teacher: value }))
-              }
-              onSave={saveTeacherNote}
-            />
-            <DashboardNotes
-              title="Student's Notes"
-              value={notes.student}
-              readOnly
-              onChange={() => {}}
-              onSave={() => {}}
-            />
+      <div className="grid gap-4">
+        <Card title="Student Registration">
+          <StudentForm
+            students={students}
+            selectedStudentId={studentId ?? ""}
+            onStudentSelect={handleStudentChange}
+            onStudentSaved={loadStudents}
+          />
+        </Card>
+  
+        {isLoadingStudent && studentId && (
+          <p className="text-gray-500">Carregando aluno…</p>
+        )}
+  
+        {studentError && studentId && (
+          <div className="flex items-center gap-3">
+            <p className="text-red-600">{studentError}</p>
+            <button
+              type="button"
+              onClick={() => setReloadKey((current) => current + 1)}
+              className="rounded bg-gray-900 px-3 py-1 text-sm font-semibold text-white"
+            >
+              Tentar novamente
+            </button>
           </div>
-
-          <Calendar statuses={calendar} onStatusChange={saveCalendar} />
-        </div>
-      ) : null}
+        )}
+  
+        {student && studentId ? (
+          <div className="grid gap-4">
+            <div className="flex justify-between gap-4 max-[900px]:flex-col max-[900px]:gap-4">
+              <DashboardNotes
+                title="Teacher's Notes"
+                value={notes.teacher}
+                onChange={(value) =>
+                  setNotes((current) => ({ ...current, teacher: value }))
+                }
+                onSave={saveTeacherNote}
+              />
+              <DashboardNotes
+                title="Student's Notes"
+                value={notes.student}
+                readOnly
+                onChange={() => {}}
+                onSave={() => {}}
+              />
+            </div>
+  
+            <Calendar statuses={calendar} onStatusChange={saveCalendar} />
+          </div>
+        ) : null}
+      </div>
     </>
   );
 }

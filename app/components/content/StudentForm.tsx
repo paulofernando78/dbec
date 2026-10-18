@@ -321,7 +321,7 @@ export const StudentForm = ({
           </p>
         )}
 
-        <Button type="submit" disabled={isSaving} className="w-full!">
+        <Button type="submit" disabled={isSaving} className="w-full! mb-2">
           {isSaving ? "Saving..." : isEditing ? "Update" : "Save"}
         </Button>
       </div>
