@@ -17,6 +17,7 @@ type LocalStudent = {
   name: string;
   schedule: string;
   time: string;
+  plan: "free" | "plus";
 };
 
 const localStudents = new Map<string, LocalStudent>(
@@ -28,6 +29,7 @@ const localStudents = new Map<string, LocalStudent>(
       name: student.name,
       schedule: student.schedule,
       time: student.time,
+      plan: "free",
     },
   ]),
 );
@@ -141,6 +143,7 @@ const localAuth = (): Plugin => ({
           displayName: student?.name ?? localSession.username,
           schedule: student?.schedule ?? null,
           time: student?.time ?? null,
+          plan: student?.plan ?? null,
         }),
       );
     });
@@ -183,8 +186,15 @@ const localAuth = (): Plugin => ({
           const username = input.username?.trim().toLowerCase();
           const schedule = input.schedule;
           const time = input.time;
+          const plan = input.plan;
 
-          if (!name || !username || !schedule || !time) {
+          if (
+            !name ||
+            !username ||
+            !schedule ||
+            !time ||
+            (plan !== "free" && plan !== "plus")
+          ) {
             response.statusCode = 400;
             response.end(JSON.stringify({ error: "Preencha os dados do aluno." }));
             return;
@@ -215,7 +225,14 @@ const localAuth = (): Plugin => ({
               return;
             }
 
-            const student = { studentId, username, name, schedule, time };
+            const student = {
+              studentId,
+              username,
+              name,
+              schedule,
+              time,
+              plan,
+            };
             localStudents.set(studentId, student);
             response.statusCode = 201;
             response.end(JSON.stringify({ ok: true, student }));
@@ -248,6 +265,7 @@ const localAuth = (): Plugin => ({
             name,
             schedule,
             time,
+            plan,
           });
           response.statusCode = 200;
           response.end(JSON.stringify({ ok: true }));

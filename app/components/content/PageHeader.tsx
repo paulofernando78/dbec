@@ -12,6 +12,7 @@ export type PageHeaderProps = {
   date?: string;
   time?: string;
   variant?: "default" | "level";
+  levelTheme?: "amber" | "red" | "blue" | "green" | "purple" | "indigo";
 };
 
 export const PageHeader = ({
@@ -24,6 +25,7 @@ export const PageHeader = ({
   date,
   time,
   variant = "default",
+  levelTheme = "amber",
 }: PageHeaderProps) => {
   const isLevel = variant === "level";
   const contentDescriptions = description
@@ -35,7 +37,17 @@ export const PageHeader = ({
       <header
         className={`relative overflow-hidden rounded-lg p-4 ${
           isLevel
-            ? "bg-linear-to-br from-amber-400 to-orange-500 text-black"
+            ? levelTheme === "red"
+              ? "bg-linear-to-br from-red-500 to-red-700 text-white"
+              : levelTheme === "blue"
+                ? "bg-linear-to-br from-sky-500 to-blue-700 text-white"
+                : levelTheme === "green"
+                  ? "bg-linear-to-br from-emerald-500 to-green-700 text-white"
+                  : levelTheme === "purple"
+                    ? "bg-linear-to-br from-fuchsia-500 to-purple-700 text-white"
+                    : levelTheme === "indigo"
+                      ? "bg-linear-to-br from-indigo-500 to-violet-800 text-white"
+              : "bg-linear-to-br from-amber-400 to-orange-500 text-black"
             : "bg-linear-to-br from-gray-200 to-gray-300"
         }`}
       >

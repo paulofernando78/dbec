@@ -2,6 +2,8 @@ import { useEffect, useState, type FormEvent } from "react";
 
 import { Button } from "@/components/ui/Button";
 
+type StudentPlan = "free" | "plus";
+
 type StudentFormProps = {
   students: Student[];
   selectedStudentId: string;
@@ -15,6 +17,16 @@ type Student = {
   name: string;
   schedule: string;
   time: string;
+  plan: StudentPlan;
+};
+
+type StudentFormState = {
+  name: string;
+  username: string;
+  password: string;
+  schedule: string;
+  time: string;
+  plan: StudentPlan;
 };
 
 const scheduleOptions = [
@@ -62,12 +74,13 @@ const timeOptions = [
   "21:30 - 22:30",
 ];
 
-const initialForm = {
+const initialForm: StudentFormState = {
   name: "",
   username: "",
   password: "",
   schedule: "",
   time: "",
+  plan: "free",
 };
 
 export const StudentForm = ({
@@ -95,6 +108,7 @@ export const StudentForm = ({
             password: "",
             schedule: student.schedule,
             time: student.time,
+            plan: student.plan,
           }
         : initialForm,
     );
@@ -308,6 +322,38 @@ export const StudentForm = ({
             ))}
           </select>
         </label>
+
+        {/* Plan */}
+        <div className="flex items-center justify-between gap-4 rounded-lg border border-gray-300 px-4 py-3">
+          <div>
+            <p className="font-semibold">Student plan</p>
+            <p className="text-xs text-gray-500">
+              {form.plan === "plus" ? "Plus plan" : "Free plan"}
+            </p>
+          </div>
+
+          <button
+            type="button"
+            role="switch"
+            aria-checked={form.plan === "plus"}
+            aria-label="Enable Plus plan"
+            onClick={() =>
+              setForm((current) => ({
+                ...current,
+                plan: current.plan === "plus" ? "free" : "plus",
+              }))
+            }
+            className={`relative h-7 w-12 shrink-0 cursor-pointer rounded-full transition-colors ${
+              form.plan === "plus" ? "bg-green-500" : "bg-gray-300"
+            }`}
+          >
+            <span
+              className={`absolute top-1 left-1 size-5 rounded-full bg-white shadow-sm transition-transform ${
+                form.plan === "plus" ? "translate-x-5" : "translate-x-0"
+              }`}
+            />
+          </button>
+        </div>
 
         {error && (
           <p role="alert" className="text-sm font-semibold text-red-600">

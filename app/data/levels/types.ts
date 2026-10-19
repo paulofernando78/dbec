@@ -16,5 +16,6 @@ export type Level = {
   name: string;
   subtitle: string;
   description: string;
+  theme: "amber" | "red" | "blue" | "green" | "purple" | "indigo";
   units: Unit[];
 };

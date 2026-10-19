@@ -31,7 +31,8 @@ export async function onRequestGet(context) {
         student_slug AS studentId,
         display_name AS name,
         schedule,
-        class_time AS time
+        class_time AS time,
+        plan
       FROM users
       WHERE role = 'student'
       ORDER BY display_name`,
@@ -63,7 +64,8 @@ export async function onRequestGet(context) {
       student_slug AS studentId,
       display_name AS name,
       schedule,
-      class_time AS time
+      class_time AS time,
+      plan
     FROM users
     WHERE role = 'student' AND student_slug = ?`,
   )
@@ -111,6 +113,7 @@ export async function onRequestGet(context) {
         name: student.name,
         schedule: student.schedule,
         time: student.time,
+        plan: student.plan,
       },
       notes,
       calendar: calendarResult.results,

@@ -16,6 +16,7 @@ const localStudents = Object.entries(developmentStudents).map(
     name: student.name,
     schedule: student.schedule,
     time: student.time,
+    plan: "free" as const,
   }),
 );
 
@@ -31,6 +32,7 @@ function getLocalStudent(studentId: string) {
       name: student.name,
       schedule: student.schedule,
       time: student.time,
+      plan: "free" as const,
     },
     notes: { teacher: "", student: "" },
     calendar: [] as Array<{ date: string; status: string }>,

@@ -9,6 +9,8 @@ CREATE TABLE IF NOT EXISTS users (
   password_salt TEXT,
   active INTEGER NOT NULL DEFAULT 1
     CHECK (active IN (0, 1)),
+  plan TEXT NOT NULL DEFAULT 'free'
+    CHECK (plan IN ('free', 'plus')),
   role TEXT NOT NULL DEFAULT 'student'
     CHECK (role IN ('teacher', 'student')),
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP

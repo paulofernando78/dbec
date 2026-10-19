@@ -18,10 +18,11 @@ export default function LevelBuilder() {
         description={level.description}
         footer={`${level.units.length} units available`}
         variant="level"
+        levelTheme={level.theme}
       />
       <div className="grid gap-4">
         {level.units.map((unit) => (
-          <UnitCard key={unit.number} unit={unit} />
+          <UnitCard key={unit.number} unit={unit} levelSlug={level.slug} />
         ))}
       </div>
     </div>

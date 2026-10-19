@@ -20,6 +20,7 @@ export async function onRequestGet(context) {
     displayName: session.username,
     schedule: null,
     time: null,
+    plan: null,
   };
 
   if (session.role === "student" && context.env.DB) {
@@ -27,7 +28,8 @@ export async function onRequestGet(context) {
       `SELECT
         display_name AS displayName,
         schedule,
-        class_time AS time
+        class_time AS time,
+        plan
       FROM users
       WHERE role = 'student' AND student_slug = ?`,
     )

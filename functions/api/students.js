@@ -35,7 +35,7 @@ const validateStudentInput = (input) => {
 
   // Essa validação será executada também no servidor. A validação do formulário no React, sozinha, não é suficiente porque pode ser ignorada pelo navegador.
 
-  const { name, username, password, schedule, time } = input;
+  const { name, username, password, schedule, time, plan } = input;
 
   if (typeof name !== "string" || name.trim().length < 3) {
     return "Informe o nome do aluno.";
@@ -55,6 +55,10 @@ const validateStudentInput = (input) => {
 
   if (typeof time !== "string" || !time) {
     return "Selecione o horário das aulas.";
+  }
+
+  if (plan !== "free" && plan !== "plus") {
+    return "Selecione um plano válido.";
   }
 
   return null;
@@ -84,6 +88,7 @@ export async function onRequestGet(context) {
       display_name AS name,
       schedule,
       class_time AS time,
+      plan,
       active
     FROM users
     WHERE role = 'student'
@@ -143,13 +148,23 @@ export async function onRequestPost(context) {
         display_name,
         schedule,
         class_time,
+        plan,
         password_hash,
         password_salt,
         role
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, 'student')`,
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'student')`,
     )
-      .bind(username, studentId, name, input.schedule, input.time, hash, salt)
+      .bind(
+        username,
+        studentId,
+        name,
+        input.schedule,
+        input.time,
+        input.plan,
+        hash,
+        salt,
+      )
       .run();
 
     return Response.json(
@@ -161,6 +176,7 @@ export async function onRequestPost(context) {
           name,
           schedule: input.schedule,
           time: input.time,
+          plan: input.plan,
         },
       },
       { status: 201, headers: noStoreHeaders },
@@ -209,8 +225,16 @@ export async function onRequestPut(context) {
   const password = input?.password;
   const schedule = input?.schedule;
   const time = input?.time;
+  const plan = input?.plan;
 
-  if (!studentId || !name || !username || !schedule || !time) {
+  if (
+    !studentId ||
+    !name ||
+    !username ||
+    !schedule ||
+    !time ||
+    (plan !== "free" && plan !== "plus")
+  ) {
     return Response.json(
       { error: "Preencha os dados do aluno." },
       { status: 400, headers: noStoreHeaders },
@@ -248,19 +272,19 @@ export async function onRequestPut(context) {
 
       result = await context.env.DB.prepare(
         `UPDATE users
-         SET display_name = ?, username = ?, schedule = ?, class_time = ?,
+         SET display_name = ?, username = ?, schedule = ?, class_time = ?, plan = ?,
              password_hash = ?, password_salt = ?
          WHERE student_slug = ? AND role = 'student'`,
       )
-        .bind(name, username, schedule, time, hash, salt, studentId)
+        .bind(name, username, schedule, time, plan, hash, salt, studentId)
         .run();
     } else {
       result = await context.env.DB.prepare(
         `UPDATE users
-         SET display_name = ?, username = ?, schedule = ?, class_time = ?
+         SET display_name = ?, username = ?, schedule = ?, class_time = ?, plan = ?
          WHERE student_slug = ? AND role = 'student'`,
       )
-        .bind(name, username, schedule, time, studentId)
+        .bind(name, username, schedule, time, plan, studentId)
         .run();
     }
   } catch (error) {

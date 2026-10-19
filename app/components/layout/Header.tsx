@@ -16,6 +16,7 @@ type Session = {
   displayName: string;
   schedule: string | null;
   time: string | null;
+  plan: "free" | "plus" | null;
 };
 
 interface HeadersProps {
@@ -163,7 +164,9 @@ export const Header = ({ onClick }: HeadersProps) => {
             name={session.displayName}
             subtitle={
               session.role === "student"
-                ? [session.schedule, session.time].filter(Boolean).join(" · ")
+                ? session.plan === "plus"
+                  ? "Plus plan"
+                  : "Free plan"
                 : "Teacher"
             }
             className="translate-y-1"

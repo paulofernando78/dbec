@@ -9,6 +9,7 @@ type Level = {
   description: string;
   background: string;
   textColor: string;
+  unitCount?: number;
   href?: string;
 };
 
@@ -29,6 +30,7 @@ const levels: Level[] = [
     description: "Handle common situations and connect ideas with more detail.",
     background: "bg-gradient-to-br from-red-500 to-red-700",
     textColor: "text-white",
+    href: "/levels/a2",
   },
   {
     level: "A2–B1",
@@ -38,6 +40,7 @@ const levels: Level[] = [
       "Share experiences, explain ideas, and communicate with growing confidence.",
     background: "bg-gradient-to-br from-sky-500 to-blue-700",
     textColor: "text-white",
+    href: "/levels/a2-b1",
   },
   {
     level: "B1",
@@ -47,6 +50,7 @@ const levels: Level[] = [
       "Explain complex ideas, support opinions, and interact confidently.",
     background: "bg-gradient-to-br from-emerald-500 to-green-700",
     textColor: "text-white",
+    href: "/levels/b1",
   },
   {
     level: "B2",
@@ -56,6 +60,8 @@ const levels: Level[] = [
       "Understand complex ideas, interact fluently, argue clearly, and mediate information and perspectives.",
     background: "bg-gradient-to-br from-fuchsia-500 to-purple-700",
     textColor: "text-white",
+    unitCount: 12,
+    href: "/levels/b2",
   },
   {
     level: "C1",
@@ -65,6 +71,8 @@ const levels: Level[] = [
       "Use flexible, nuanced English in social, academic, and professional contexts.",
     background: "bg-gradient-to-br from-indigo-500 to-violet-800",
     textColor: "text-white",
+    unitCount: 12,
+    href: "/levels/c1",
   },
 ];
 
@@ -100,7 +108,7 @@ export default function Levels() {
                 <p className="text-xl md:text-2xl">{item.subtitle}</p>
                 <p className="mb-5 text-base md:text-lg">{item.description}</p>
                 <p className="mb-4 mt-auto text-sm font-semibold">
-                  16 units available
+                  {item.unitCount ?? 16} units available
                 </p>
                 <Button
                   disabled={!item.href}

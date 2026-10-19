@@ -6,18 +6,25 @@ import { Button } from "@/components/ui/Button";
 import type { Unit } from "@/data/levels";
 import { LessonItem } from "./LessonItem";
 
-export function UnitCard({ unit }: { unit: Unit }) {
+type UnitCardProps = {
+  unit: Unit;
+  levelSlug: string;
+};
+
+export function UnitCard({ unit, levelSlug }: UnitCardProps) {
   const navigate = useNavigate();
   const [completedLessons, setCompletedLessons] = useState(0);
 
   useEffect(() => {
-    if (unit.number === 1) {
+    if (levelSlug === "a1" && unit.number === 1) {
       setCompletedLessons(Number(localStorage.getItem("dbec_a1_progress") ?? 0));
     }
-  }, [unit.number]);
+  }, [levelSlug, unit.number]);
 
   const resetUnit = () => {
-    if (unit.number === 1) localStorage.removeItem("dbec_a1_progress");
+    if (levelSlug === "a1" && unit.number === 1) {
+      localStorage.removeItem("dbec_a1_progress");
+    }
     setCompletedLessons(0);
   };
 
@@ -32,7 +39,9 @@ export function UnitCard({ unit }: { unit: Unit }) {
           <p className="text-lg text-slate-500">{unit.description}</p>
         </div>
         <div className="flex shrink-0 flex-col items-center gap-3">
-          <span className="rounded-lg border border-gray-300 bg-white px-2 py-1 text-xs text-black">{completedLessons} / 3</span>
+          <span className="rounded-lg border border-gray-300 bg-white px-2 py-1 text-xs text-black">
+            {completedLessons} / {unit.lessons.length}
+          </span>
           <Button
             ariaLabel={`Reset unit ${unit.number}`}
             icon={<RotateCcw />}
@@ -44,12 +53,12 @@ export function UnitCard({ unit }: { unit: Unit }) {
       <ol className="px-4 py-4">
         {unit.lessons.map((lesson, index) => (
           <LessonItem
-            key={lesson.title}
+            key={`${unit.number}-${index}`}
             lesson={lesson}
             number={index + 1}
             isLast={index === unit.lessons.length - 1}
             onClick={
-              unit.number === 1 && index === 0
+              levelSlug === "a1" && unit.number === 1 && index === 0
                 ? () => navigate("/levels/a1/unit/1/lesson/1/get-ready")
                 : undefined
             }

@@ -23,6 +23,7 @@ export const a1: Level = {
   name: "Beginner",
   subtitle: "Start using English",
   description: "Learn to communicate in simple, everyday situations.",
+  theme: "amber",
   units: [
     unit(1, "Meeting People", "Say hello, share names, and make simple introductions.", ["Hello", "Say hello and introduce people."], ["Stay in Touch", "Say goodbye and exchange contact information."]),
     unit(2, "Things Around Us", "Identify and talk about everyday objects.", ["What's This?", "Identify personal and office objects."], ["Where Is It?", "Ask and say where everyday objects are."]),
