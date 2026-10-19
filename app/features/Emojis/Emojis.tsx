@@ -1,5 +1,6 @@
 import { Image } from "@/components/ui/Image";
 import { Audio } from "@/components/ui/Audio";
+import { Card } from "@/components/ui/Card";
 
 const emojis = [
   {
@@ -346,21 +347,27 @@ export default function Emojis() {
       <div className="my-8 text-center">
         <h3 className="mb-4 text-2xl font-bold">How are you feeling today?</h3>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fill,9rem)] gap-2 justify-center">
+      <div className="grid grid-cols-[repeat(auto-fill,12rem)] gap-2 justify-center">
         {emojis.map((emoji, emojiIndex) => (
           <div key={emojiIndex}>
-            <div className="p-1 flex flex-col border border-gray-300 rounded-lg">
-              <Image src={emoji.img} alt={emoji.alt} width={60} height={60} />
-              {emoji.words &&
-                emoji.words.map((word, wordIndex) => (
-                  <div key={wordIndex} className="flex items-center gap-2">
-                    {word.audio && <Audio src={word.audio} />}
-                    <span key={wordIndex} className="">
-                      {word.word}
-                    </span>
-                  </div>
-                ))}
-            </div>
+            <Card className="p-2!">
+              <div className="flex flex-col gap-4  p-2">
+                <Image src={emoji.img} alt={emoji.alt} width={60} height={60} />
+                {emoji.words &&
+                  emoji.words.map((word, wordIndex) => (
+                    <Audio
+                      key={wordIndex}
+                      src={word.audio}
+                      showIcon={false}
+                      wrapperClassName="h-12! min-h-12! w-full! px-2 text-center text-sm uppercase last:mb-2"
+                    >
+                      <span>
+                        {word.word}
+                      </span>
+                    </Audio>
+                  ))}
+              </div>
+            </Card>
           </div>
         ))}
       </div>

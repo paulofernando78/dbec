@@ -1,11 +1,11 @@
 import type { ElementType } from "react";
 import {
-  House,
   CircleUserRound,
   BookOpenCheck,
   BookOpenText,
   Gamepad2,
   AudioLines,
+  LogOut,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -17,11 +17,6 @@ export type NavItem = {
 };
 
 export const links: NavItem[] = [
-  {
-    href: "/",
-    label: "Presentation",
-    icon: House,
-  },
   {
     href: "/dashboard",
     label: "Dashboard",
@@ -51,5 +46,10 @@ export const links: NavItem[] = [
     href: "/games",
     label: "Games",
     icon: Gamepad2,
+  },
+  {
+    href: "/",
+    label: "Exit",
+    icon: LogOut,
   },
 ];

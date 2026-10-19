@@ -82,7 +82,11 @@ export default function Dashboard() {
   if (!studentId) {
     return (
       <>
-        <PageHeader eyebrow={formattedDate} title="Welcome!" />
+        <PageHeader
+          eyebrow={formattedDate}
+          title="Welcome!"
+          variant="dashboard"
+        />
         <div className="grid gap-4">
           <Emojis />
         </div>
@@ -103,6 +107,7 @@ export default function Dashboard() {
         title={`${greeting}, ${firstName}.`}
         date={student.schedule}
         time={student.time}
+        variant="dashboard"
       />
       <div className="grid gap-4">
         <Emojis />

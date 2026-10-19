@@ -183,7 +183,7 @@ export default function TeacherDashboard() {
 
   return (
     <>
-      <PageHeader title="Teacher's Dashboard" />
+      <PageHeader title="Teacher's Dashboard" variant="dashboard" />
 
       <div className="grid gap-4">
         <Card title="Student Registration">

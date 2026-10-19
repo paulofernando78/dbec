@@ -11,7 +11,7 @@ export type PageHeaderProps = {
   footer?: string;
   date?: string;
   time?: string;
-  variant?: "default" | "level";
+  variant?: "default" | "level" | "dashboard";
   levelTheme?: "amber" | "red" | "blue" | "green" | "purple" | "indigo";
 };
 
@@ -28,15 +28,23 @@ export const PageHeader = ({
   levelTheme = "amber",
 }: PageHeaderProps) => {
   const isLevel = variant === "level";
+  const isDashboard = variant === "dashboard";
   const contentDescriptions = description
     ? [description, ...descriptions]
     : descriptions;
 
-  return (
-    <Card className={`${isLevel ? "mb-4" : "mb-8"} p-2!`}>
+  const header = (
       <header
-        className={`relative overflow-hidden rounded-lg p-4 ${
-          isLevel
+        className={`relative overflow-hidden rounded-lg ${
+          isDashboard
+            ? "p-0"
+            : isLevel
+              ? "p-4"
+              : "bg-linear-to-br from-gray-200 to-gray-300 p-4"
+        } ${
+          isDashboard
+            ? ""
+            : isLevel
             ? levelTheme === "red"
               ? "bg-linear-to-br from-red-500 to-red-700 text-white"
               : levelTheme === "blue"
@@ -48,25 +56,29 @@ export const PageHeader = ({
                     : levelTheme === "indigo"
                       ? "bg-linear-to-br from-indigo-500 to-violet-800 text-white"
               : "bg-linear-to-br from-amber-400 to-orange-500 text-black"
-            : "bg-linear-to-br from-gray-200 to-gray-300"
+            : ""
         }`}
       >
-        <span
-          aria-hidden="true"
-          className={`absolute rounded-full ${
-            isLevel
-              ? "-right-10 -top-10 size-32 bg-white/20"
-              : "-right-6 -top-8 size-24 bg-slate-500/15"
-          }`}
-        />
-        <span
-          aria-hidden="true"
-          className={`absolute rounded-full ${
-            isLevel
-              ? "-bottom-20 right-8 size-40 bg-white/20"
-              : "-bottom-20 right-8 size-28 bg-white/35"
-          }`}
-        />
+        {!isDashboard && (
+          <>
+            <span
+              aria-hidden="true"
+              className={`absolute rounded-full ${
+                isLevel
+                  ? "-right-10 -top-10 size-32 bg-white/20"
+                  : "-right-6 -top-8 size-24 bg-slate-500/15"
+              }`}
+            />
+            <span
+              aria-hidden="true"
+              className={`absolute rounded-full ${
+                isLevel
+                  ? "-bottom-20 right-8 size-40 bg-white/20"
+                  : "-bottom-20 right-8 size-28 bg-white/35"
+              }`}
+            />
+          </>
+        )}
 
         <div className="relative z-10">
           {eyebrow && (
@@ -108,6 +120,15 @@ export const PageHeader = ({
           )}
         </div>
       </header>
+  );
+
+  if (isDashboard) {
+    return <div className="mb-8">{header}</div>;
+  }
+
+  return (
+    <Card className={`${isLevel ? "mb-4" : "mb-8"} p-2!`}>
+      {header}
     </Card>
   );
 };

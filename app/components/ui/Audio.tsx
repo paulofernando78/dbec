@@ -1,14 +1,17 @@
 // import styles from "";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 
 import { LoaderCircle, Play, Square } from "lucide-react";
+import { Button } from "@/components/ui/Button/Button";
 
 type AudioProps = {
   src: string;
   className?: string;
   wrapperClassName?: string;
   speechLang?: string;
+  children?: ReactNode;
+  showIcon?: boolean;
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -82,6 +85,8 @@ export const Audio = ({
   className,
   wrapperClassName,
   speechLang = "en-US",
+  children,
+  showIcon = true,
 }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -90,8 +95,8 @@ export const Audio = ({
 
   const isAudioFile = /\.(mp3|wav|ogg)$/i.test(src);
 
-  const handlePlay = async (e: React.MouseEvent<Element>) => {
-    e.stopPropagation();
+  const handlePlay = async (e?: React.MouseEvent<Element>) => {
+    e?.stopPropagation();
 
     if (!isAudioFile) {
       stopCurrentSpeech();
@@ -179,8 +184,8 @@ export const Audio = ({
     }
   };
 
-  const handleStop = (e: React.MouseEvent<Element>) => {
-    e.stopPropagation();
+  const handleStop = (e?: React.MouseEvent<Element>) => {
+    e?.stopPropagation();
     setLoading(false);
 
     if (utteranceRef.current) {
@@ -226,12 +231,7 @@ export const Audio = ({
     setPlaying(false);
   };
 
-  return (
-    <span
-      className={`inline-flex cursor-pointer ${wrapperClassName ?? ""}`}
-      onClick={loading || playing ? handleStop : handlePlay}
-    >
-      {loading ? (
+  const icon = loading ? (
         <LoaderCircle
           size={16}
           className={`${className ?? ""} animate-spin`}
@@ -251,7 +251,12 @@ export const Audio = ({
           color="var(--icon-color)"
           fill="var(--icon-color)"
         />
-      )}
+      );
+
+  const content = (
+    <>
+      {showIcon && icon}
+      {children}
 
       {isAudioFile && (
         <audio
@@ -273,6 +278,26 @@ export const Audio = ({
           }}
         />
       )}
+    </>
+  );
+
+  if (children) {
+    return (
+      <Button
+        className={wrapperClassName}
+        onClick={loading || playing ? handleStop : handlePlay}
+      >
+        {content}
+      </Button>
+    );
+  }
+
+  return (
+    <span
+      className={`inline-flex cursor-pointer ${wrapperClassName ?? ""}`}
+      onClick={loading || playing ? handleStop : handlePlay}
+    >
+      {content}
     </span>
   );
 };
