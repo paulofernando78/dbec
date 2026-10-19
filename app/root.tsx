@@ -8,13 +8,11 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
-  useNavigation,
 } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 
-import { Loading } from "@/components/ui/Loading";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 
@@ -37,9 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const navigation = useNavigation();
   const location = useLocation();
-  const isLoading = navigation.state === "loading";
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
@@ -76,11 +72,7 @@ export default function App() {
             id="content-scroll"
             className={`app-scrollArea ${isPresentationPage ? "app-scrollArea--document" : ""}`}
           >
-            {isLoading ? (
-              <Loading />
-            ) : (
-              <Outlet context={{ isNavBarOpen, closeNavBar }} />
-            )}
+            <Outlet context={{ isNavBarOpen, closeNavBar }} />
           </div>
         </div>
         <Footer />
