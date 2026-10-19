@@ -129,8 +129,20 @@ const localAuth = (): Plugin => ({
           ? "/teacher/dashboard"
           : `/dashboard/${encodeURIComponent(localSession.studentId ?? localSession.username)}`;
 
+      const student = localSession.studentId
+        ? localStudents.get(localSession.studentId)
+        : undefined;
+
       response.statusCode = 200;
-      response.end(JSON.stringify({ ...localSession, dashboardPath }));
+      response.end(
+        JSON.stringify({
+          ...localSession,
+          dashboardPath,
+          displayName: student?.name ?? localSession.username,
+          schedule: student?.schedule ?? null,
+          time: student?.time ?? null,
+        }),
+      );
     });
 
     server.middlewares.use(

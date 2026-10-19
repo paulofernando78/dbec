@@ -48,7 +48,7 @@ export const Card = ({
       shadows
       ${maxContent ? "w-fit max-w-full" : ""} ${className}`}
     >
-      {title && <h2 className="mb-4 pb-3 text-lg font-bold">{title}</h2>}
+      {title && <h2 className="mb-4 text-lg font-bold">{title}</h2>}
       {children}
     </div>
   );

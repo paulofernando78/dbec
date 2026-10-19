@@ -6,6 +6,18 @@ import { LogIn, LogOut, MoonStar, Sun } from "@/components/Icons";
 
 import { Menu, X } from "lucide-react";
 
+import { AccountSummary } from "./AccountSummary";
+
+type Session = {
+  username: string;
+  role: "teacher" | "student";
+  studentId?: string;
+  dashboardPath: string;
+  displayName: string;
+  schedule: string | null;
+  time: string | null;
+};
+
 interface HeadersProps {
   onClick: () => void;
 }
@@ -15,6 +27,7 @@ export const Header = ({ onClick }: HeadersProps) => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState("");
+  const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
@@ -28,18 +41,6 @@ export const Header = ({ onClick }: HeadersProps) => {
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
-  const isProtectedPage = [
-    "/dashboard",
-    "/teacher/dashboard",
-    "/levels",
-    "/authentic-content",
-    "/vocabulary",
-    "/games",
-    "/lab",
-  ].some(
-    (path) =>
-      location.pathname === path || location.pathname.startsWith(`${path}/`),
-  );
 
   useEffect(() => {
     if (new URLSearchParams(location.search).get("login") === "required") {
@@ -47,8 +48,28 @@ export const Header = ({ onClick }: HeadersProps) => {
     }
   }, [location.search]);
 
+  useEffect(() => {
+    let isCurrent = true;
+
+    fetch("/api/session", { headers: { Accept: "application/json" } })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        return (await response.json()) as Session;
+      })
+      .then((nextSession) => {
+        if (isCurrent) setSession(nextSession);
+      })
+      .catch(() => {
+        if (isCurrent) setSession(null);
+      });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, [location.pathname]);
+
   const handleAuthentication = async () => {
-    if (!isProtectedPage) {
+    if (!session) {
       setLoginError("");
       setIsLoginOpen(true);
       return;
@@ -122,7 +143,18 @@ export const Header = ({ onClick }: HeadersProps) => {
         </div>
       )}
 
-      <div className="ml-auto flex gap-4">
+      <div className="ml-auto flex items-center gap-4">
+        {session && (
+          <AccountSummary
+            name={session.displayName}
+            subtitle={
+              session.role === "student"
+                ? [session.schedule, session.time].filter(Boolean).join(" · ")
+                : "Teacher"
+            }
+          />
+        )}
+
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
@@ -130,7 +162,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         />
 
         <Button
-          icon={isProtectedPage ? <LogOut /> : <LogIn />}
+          icon={session ? <LogOut /> : <LogIn />}
           onClick={handleAuthentication}
           className="icon"
         />
