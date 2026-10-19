@@ -166,6 +166,7 @@ export const Header = ({ onClick }: HeadersProps) => {
                 ? [session.schedule, session.time].filter(Boolean).join(" · ")
                 : "Teacher"
             }
+            className="translate-y-1"
           />
         )}
 
@@ -190,7 +191,7 @@ export const Header = ({ onClick }: HeadersProps) => {
             if (event.target === event.currentTarget) setIsLoginOpen(false);
           }}
         >
-          <div className="pointer-events-none mx-auto mt-4 flex w-full max-w-[1100px] justify-end">
+          <div className="pointer-events-none mx-auto mt-4 flex w-full max-w-275 justify-end">
             <form
               onSubmit={handleLogin}
               className="pointer-events-auto w-full max-w-sm rounded-lg border border-gray-300 bg-white p-4 text-gray-900 shadow-xl"
