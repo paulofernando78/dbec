@@ -1,8 +1,10 @@
 import type { Route } from "./+types/home";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 import { Contact } from "@/components/layout/Contact";
 import { Image } from "@/components/ui/Image";
+import { Button } from "@/components/ui/Button/Button";
 
 export function meta({}: Route.MetaArgs) {
   const title = "Daily Basis English Course | Aulas particulares de inglês";
@@ -49,6 +51,7 @@ const dbecCSS = {
 };
 
 export default function Home() {
+  const navigate = useNavigate();
   const [greetingIndex, setGreetingIndex] = useState(0);
   const [opacity, setOpacity] = useState(1);
 
@@ -102,6 +105,14 @@ export default function Home() {
         fundamentais: Fala (com ênfase em conversação), Escuta (compreensão
         auditiva), Leitura e Escrita.
       </p>
+      <div className="mx-auto">
+        <Button
+          onClick={() => navigate("/dashboard")}
+          className="uppercase"
+        >
+          Start for free
+        </Button>
+      </div>
       <div className="w-max mx-auto">
         <Contact />
       </div>

@@ -42,19 +42,7 @@ export const Header = ({ onClick }: HeadersProps) => {
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
-  const isProtectedPage = [
-    "/dashboard",
-    "/teacher/dashboard",
-    "/levels",
-    "/authentic-content",
-    "/vocabulary",
-    "/games",
-    "/lab",
-  ].some(
-    (path) =>
-      location.pathname === path || location.pathname.startsWith(`${path}/`),
-  );
-  const isAuthenticated = Boolean(session) || isProtectedPage;
+  const isAuthenticated = Boolean(session);
 
   useEffect(() => {
     if (new URLSearchParams(location.search).get("login") === "required") {
@@ -179,22 +167,24 @@ export const Header = ({ onClick }: HeadersProps) => {
           className="icon"
         />
 
-        <Button
-          icon={isAuthenticated ? <LogOut /> : <LogIn />}
-          onClick={handleAuthentication}
-          className="icon"
-        />
+        {(!isPresentationPage || session) && (
+          <Button
+            icon={isAuthenticated ? <LogOut /> : <LogIn />}
+            onClick={handleAuthentication}
+            className="icon"
+          />
+        )}
       </div>
 
       {isLoginOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/20 p-4 pt-16"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-[2px]"
           role="presentation"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) setIsLoginOpen(false);
           }}
         >
-          <div className="pointer-events-none mx-auto mt-4 flex w-full max-w-275 justify-end">
+          <div className="pointer-events-none flex w-full justify-center">
             <form
               onSubmit={handleLogin}
               className="pointer-events-auto w-full max-w-sm rounded-lg border border-gray-300 bg-white p-4 text-gray-900 shadow-xl"

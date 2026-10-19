@@ -58,6 +58,10 @@ export async function onRequest(context) {
     return context.next();
   }
 
+  if (url.pathname === "/dashboard") {
+    return context.next();
+  }
+
   url.pathname = "/";
   url.searchParams.set("login", "required");
   return Response.redirect(url.toString(), 302);

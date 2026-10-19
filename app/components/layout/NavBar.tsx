@@ -32,7 +32,10 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         localStorage.setItem("dbec_dashboard_path", nextDashboardPath);
         setDashboardPath(nextDashboardPath);
       })
-      .catch(() => {});
+      .catch(() => {
+        localStorage.removeItem("dbec_dashboard_path");
+        setDashboardPath("/dashboard");
+      });
   }, [location.pathname]);
 
   return (

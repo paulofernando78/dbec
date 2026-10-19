@@ -1,5 +1,6 @@
 import type { ElementType } from "react";
 import {
+  House,
   CircleUserRound,
   BookOpenCheck,
   BookOpenText,
@@ -17,13 +18,18 @@ export type NavItem = {
 
 export const links: NavItem[] = [
   {
+    href: "/",
+    label: "Presentation",
+    icon: House,
+  },
+  {
     href: "/dashboard",
     label: "Dashboard",
     icon: CircleUserRound,
   },
   {
     href: "/levels",
-    label: "Levels",
+    label: "Course",
     icon: BookOpenCheck,
   },
   {

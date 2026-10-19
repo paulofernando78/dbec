@@ -15,7 +15,8 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (!studentId) {
-      setError("Aluno não informado.");
+      setData(null);
+      setError("");
       return;
     }
 
@@ -64,10 +65,6 @@ export default function Dashboard() {
       }),
     });
 
-  const student = data?.student;
-  if (error) return <p className="font-semibold text-red-600">{error}</p>;
-  if (!student) return <p>Loading dashboard…</p>;
-
   const now = new Date();
   const currentHour = now.getHours();
   const greeting =
@@ -81,6 +78,22 @@ export default function Dashboard() {
     month: "long",
     day: "numeric",
   }).format(now);
+
+  if (!studentId) {
+    return (
+      <>
+        <PageHeader eyebrow={formattedDate} title="Welcome!" />
+        <div className="grid gap-4">
+          <Emojis />
+        </div>
+      </>
+    );
+  }
+
+  const student = data?.student;
+  if (error) return <p className="font-semibold text-red-600">{error}</p>;
+  if (!student) return <p>Loading dashboard…</p>;
+
   const firstName = student.name.split(" ")[0];
 
   return (
