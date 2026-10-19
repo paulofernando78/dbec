@@ -41,6 +41,19 @@ export const Header = ({ onClick }: HeadersProps) => {
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
+  const isProtectedPage = [
+    "/dashboard",
+    "/teacher/dashboard",
+    "/levels",
+    "/authentic-content",
+    "/vocabulary",
+    "/games",
+    "/lab",
+  ].some(
+    (path) =>
+      location.pathname === path || location.pathname.startsWith(`${path}/`),
+  );
+  const isAuthenticated = Boolean(session) || isProtectedPage;
 
   useEffect(() => {
     if (new URLSearchParams(location.search).get("login") === "required") {
@@ -69,7 +82,7 @@ export const Header = ({ onClick }: HeadersProps) => {
   }, [location.pathname]);
 
   const handleAuthentication = async () => {
-    if (!session) {
+    if (!isAuthenticated) {
       setLoginError("");
       setIsLoginOpen(true);
       return;
@@ -129,6 +142,7 @@ export const Header = ({ onClick }: HeadersProps) => {
             font-font-oswald
             text-[1.3rem]
             font-bold
+            self-start
           "
         >
           <Link to="/" className="text-lg">
@@ -162,7 +176,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         />
 
         <Button
-          icon={session ? <LogOut /> : <LogIn />}
+          icon={isAuthenticated ? <LogOut /> : <LogIn />}
           onClick={handleAuthentication}
           className="icon"
         />
