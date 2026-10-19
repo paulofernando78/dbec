@@ -127,7 +127,7 @@ export const PageHeader = ({
   }
 
   return (
-    <Card className={`${isLevel ? "mb-4" : "mb-8"} p-2!`}>
+    <Card className={`${isLevel ? "mb-4" : "mb-8"} bg-white p-2!`}>
       {header}
     </Card>
   );

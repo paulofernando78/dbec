@@ -5,7 +5,6 @@ import {
   BookOpenText,
   Gamepad2,
   AudioLines,
-  LogOut,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -46,10 +45,5 @@ export const links: NavItem[] = [
     href: "/games",
     label: "Games",
     icon: Gamepad2,
-  },
-  {
-    href: "/",
-    label: "Exit",
-    icon: LogOut,
   },
 ];

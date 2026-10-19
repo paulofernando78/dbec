@@ -13,6 +13,7 @@
 
 :root {
   --background: white;
+  --navbar-background: var(--gray-1);
   --ribbon: var(--gray-8);
   --text-color: var(--slate-8);
   --text-color-fixed: var(--slate-7);
@@ -23,6 +24,7 @@
 
 .dark {
   --background: #0a0a0a;
+  --navbar-background: var(--gray-8);
   --ribbon: var(--gray-5);
   --text-color: var(--slate-2);
   --text-color-fixed: var(--slate-7);

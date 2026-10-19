@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from "react-router";
 import { links } from "@/data/nav-bar-links";
 import { useEffect, useState } from "react";
+import { LogIn, LogOut } from "lucide-react";
 
 type NavBarProps = {
   closeNavBar: () => void;
@@ -8,6 +9,7 @@ type NavBarProps = {
 
 export function NavBar({ closeNavBar }: NavBarProps) {
   const [dashboardPath, setDashboardPath] = useState("/dashboard");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,15 +30,28 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         return response.json();
       })
       .then((session) => {
+        setIsAuthenticated(true);
         const nextDashboardPath = session.dashboardPath ?? "/dashboard";
         localStorage.setItem("dbec_dashboard_path", nextDashboardPath);
         setDashboardPath(nextDashboardPath);
       })
       .catch(() => {
+        setIsAuthenticated(false);
         localStorage.removeItem("dbec_dashboard_path");
         setDashboardPath("/dashboard");
       });
   }, [location.pathname]);
+
+  const handleAuthentication = async () => {
+    if (!isAuthenticated) {
+      window.dispatchEvent(new Event("dbec:open-login"));
+      return;
+    }
+
+    await fetch("/api/logout", { method: "POST" });
+    localStorage.removeItem("dbec_dashboard_path");
+    window.location.assign("/");
+  };
 
   return (
     <nav
@@ -46,29 +61,47 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         mr-0
         p-4
         text-gray-500
-        bg-gray-300
+        bg-[var(--navbar-background)]
         rounded-tl-xl
         rounded-tr-xl
         shadows
         overflow-y-auto
         "
     >
+      <button
+        type="button"
+        onClick={handleAuthentication}
+        className={`flex cursor-pointer items-center gap-2 font-bold uppercase ${
+          isAuthenticated ? "" : "mb-4"
+        }`}
+      >
+        {isAuthenticated ? (
+          <LogOut width={25} height={25} className="shrink-0" />
+        ) : (
+          <LogIn width={25} height={25} className="shrink-0" />
+        )}
+        <span>{isAuthenticated ? "Logout" : "Login"}</span>
+      </button>
+
       {links.map(({ href, label, icon: Icon }) => (
-        <NavLink
-          key={href}
-          to={href === "/dashboard" ? dashboardPath : href}
-          end
-          onClick={closeNavBar}
-          className={({ isActive }) => `
-            flex items-center gap-2
-            ${Icon ? "mt-2 font-bold uppercase" : ""}
-            ${isActive ? "text-black" : ""}
-            ${href === "/dashboard" ? "mb-4" : ""}
-          `}
-        >
-          {Icon && <Icon width={25} height={25} className="shrink-0" />}
-          <span>{label}</span>
-        </NavLink>
+        <div key={href}>
+          {(href !== "/dashboard" || isAuthenticated) && (
+            <NavLink
+              to={href === "/dashboard" ? dashboardPath : href}
+              end
+              onClick={closeNavBar}
+              className={({ isActive }) => `
+                flex items-center gap-2
+                ${Icon ? "mt-2 font-bold uppercase" : ""}
+                ${isActive ? "text-black" : ""}
+                ${href === "/dashboard" ? "mb-4" : ""}
+              `}
+            >
+              {Icon && <Icon width={25} height={25} className="shrink-0" />}
+              <span>{label}</span>
+            </NavLink>
+          )}
+        </div>
       ))}
     </nav>
   );

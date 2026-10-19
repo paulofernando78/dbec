@@ -2,7 +2,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Link, useLocation } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
-import { LogIn, LogOut, MoonStar, Sun } from "@/components/Icons";
+import { MoonStar, Sun } from "@/components/Icons";
 
 import { Menu, X } from "lucide-react";
 
@@ -42,13 +42,21 @@ export const Header = ({ onClick }: HeadersProps) => {
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
-  const isAuthenticated = Boolean(session);
-
   useEffect(() => {
     if (new URLSearchParams(location.search).get("login") === "required") {
       setIsLoginOpen(true);
     }
   }, [location.search]);
+
+  useEffect(() => {
+    const openLogin = () => {
+      setLoginError("");
+      setIsLoginOpen(true);
+    };
+
+    window.addEventListener("dbec:open-login", openLogin);
+    return () => window.removeEventListener("dbec:open-login", openLogin);
+  }, []);
 
   useEffect(() => {
     let isCurrent = true;
@@ -69,18 +77,6 @@ export const Header = ({ onClick }: HeadersProps) => {
       isCurrent = false;
     };
   }, [location.pathname]);
-
-  const handleAuthentication = async () => {
-    if (!isAuthenticated) {
-      setLoginError("");
-      setIsLoginOpen(true);
-      return;
-    }
-
-    await fetch("/api/logout", { method: "POST" });
-    localStorage.removeItem("dbec_dashboard_path");
-    window.location.assign("/");
-  };
 
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -167,13 +163,6 @@ export const Header = ({ onClick }: HeadersProps) => {
           className="icon"
         />
 
-        {(!isPresentationPage || session) && (
-          <Button
-            icon={isAuthenticated ? <LogOut /> : <LogIn />}
-            onClick={handleAuthentication}
-            className="icon"
-          />
-        )}
       </div>
 
       {isLoginOpen && (

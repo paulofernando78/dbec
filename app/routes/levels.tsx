@@ -87,7 +87,7 @@ export default function Levels() {
         {levels.map((item) => (
           <article
             key={item.level}
-            className="rounded-xl border border-gray-300 bg-white p-2 shadow-md shadow-gray-300"
+            className="rounded-xl border border-gray-300 bg-white p-2 shadows"
           >
             <div
               className={`relative min-h-60 overflow-hidden rounded-lg p-4 ${item.background} ${item.textColor}`}
