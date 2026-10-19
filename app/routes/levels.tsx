@@ -21,7 +21,7 @@ const levels: Level[] = [
     description: "Learn to communicate in simple, everyday situations.",
     background: "bg-gradient-to-br from-amber-400 to-orange-500",
     textColor: "text-black",
-    href: "/levels/a1",
+    href: "/course/a1",
   },
   {
     level: "A2",
@@ -30,7 +30,7 @@ const levels: Level[] = [
     description: "Handle common situations and connect ideas with more detail.",
     background: "bg-gradient-to-br from-red-500 to-red-700",
     textColor: "text-white",
-    href: "/levels/a2",
+    href: "/course/a2",
   },
   {
     level: "A2–B1",
@@ -40,7 +40,7 @@ const levels: Level[] = [
       "Share experiences, explain ideas, and communicate with growing confidence.",
     background: "bg-gradient-to-br from-sky-500 to-blue-700",
     textColor: "text-white",
-    href: "/levels/a2-b1",
+    href: "/course/a2-b1",
   },
   {
     level: "B1",
@@ -50,7 +50,7 @@ const levels: Level[] = [
       "Explain complex ideas, support opinions, and interact confidently.",
     background: "bg-gradient-to-br from-emerald-500 to-green-700",
     textColor: "text-white",
-    href: "/levels/b1",
+    href: "/course/b1",
   },
   {
     level: "B2",
@@ -61,7 +61,7 @@ const levels: Level[] = [
     background: "bg-gradient-to-br from-fuchsia-500 to-purple-700",
     textColor: "text-white",
     unitCount: 12,
-    href: "/levels/b2",
+    href: "/course/b2",
   },
   {
     level: "C1",
@@ -72,7 +72,7 @@ const levels: Level[] = [
     background: "bg-gradient-to-br from-indigo-500 to-violet-800",
     textColor: "text-white",
     unitCount: 12,
-    href: "/levels/c1",
+    href: "/course/c1",
   },
 ];
 

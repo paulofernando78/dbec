@@ -37,6 +37,9 @@ export function ListenStep({ data }: { data: ListenData }) {
         />
 
         <div className="mt-4">
+          {data.followUpInstruction && (
+            <h4 className="mb-2 font-bold">{data.followUpInstruction}</h4>
+          )}
           {data.followUp.map(({ question, answer: followUpAnswer }) => (
             <p key={question}>
               <span className="font-black">•</span> {question}

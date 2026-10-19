@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/content/PageHeader";
 import { StepRenderer } from "@/components/levels/steps/StepRenderer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Button } from "@/components/ui/Button";
-import { a1 } from "@/data/levels/a1";
+import { levels } from "@/data/levels";
 import { lessonRegistry } from "@/data/levels/lesson-registry";
 
 export function meta() {
@@ -25,8 +25,9 @@ export default function LessonPage() {
   } = useParams();
   const lessonData =
     lessonRegistry[`${level}/${unit}/${lesson}` as keyof typeof lessonRegistry];
+  const levelData = levels[level as keyof typeof levels];
 
-  if (!lessonData) return <p>Lesson not found.</p>;
+  if (!lessonData || !levelData) return <p>Lesson not found.</p>;
 
   const stepIndex = Math.max(
     0,
@@ -35,21 +36,22 @@ export default function LessonPage() {
   const current = lessonData.steps[stepIndex];
   const previous = lessonData.steps[stepIndex - 1];
   const next = lessonData.steps[stepIndex + 1];
-  const basePath = `/levels/${level}/unit/${unit}/lesson/${lesson}`;
+  const basePath = `/course/${level}/unit/${unit}/lesson/${lesson}`;
   const go = (slug: string) => navigate(`${basePath}/${slug}`);
   const finish = () => {
-    localStorage.setItem("dbec_a1_progress", "1");
-    navigate(`/levels/${level}`);
+    localStorage.setItem(`dbec_${level}_progress`, "1");
+    navigate(`/course/${level}`);
   };
 
   return (
     <div className="mx-auto max-w-4xl">
       <PageHeader
-        title={`${a1.code} ${a1.name}`}
-        subtitle={a1.subtitle}
-        description={a1.description}
-        footer={`${a1.units.length} units available`}
+        title={`${levelData.code} ${levelData.name}`}
+        subtitle={levelData.subtitle}
+        description={levelData.description}
+        footer={`${levelData.units.length} units available`}
         variant="level"
+        levelTheme={levelData.theme}
       />
 
       <header className="grid grid-cols-2 overflow-hidden rounded-xl border border-slate-300 max-[560px]:grid-cols-1">
@@ -80,14 +82,14 @@ export default function LessonPage() {
         <Button
           ariaLabel="Previous step"
           onClick={() =>
-            previous ? go(previous.slug) : navigate(`/levels/${level}`)
+            previous ? go(previous.slug) : navigate(`/course/${level}`)
           }
           icon={<ChevronLeft />}
           className=""
         />
-        <b>{previous?.label ?? `${a1.code} ${a1.name}`}</b>
+        <b>{previous?.label ?? `${levelData.code} ${levelData.name}`}</b>
         <ScrollToTop inline />
-        <b className="text-right">{next?.label ?? "Stay in Touch"}</b>
+        <b className="text-right">{next?.label ?? "Course"}</b>
         <Button
           ariaLabel="Next step"
           onClick={() => (next ? go(next.slug) : finish())}

@@ -33,7 +33,7 @@ export const Button = ({
     <button
       type={type}
       aria-label={ariaLabel}
-      className={`${styles.depth} ${baseClasses} ${textClasses} ${className}`}
+      className={`${styles.depth} ${baseClasses} ${textClasses} ${className} shrink-0`}
       onClick={onClick}
       disabled={disabled}
     >

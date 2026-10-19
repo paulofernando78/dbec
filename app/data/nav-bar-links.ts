@@ -22,7 +22,7 @@ export const links: NavItem[] = [
     icon: CircleUserRound,
   },
   {
-    href: "/levels",
+    href: "/course",
     label: "Course",
     icon: BookOpenCheck,
   },

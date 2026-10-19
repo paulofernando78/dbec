@@ -1,4 +1,4 @@
-import { LockKeyhole } from "lucide-react";
+import { BookOpenCheck, LockKeyhole } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import type { Lesson } from "@/data/levels";
@@ -21,7 +21,7 @@ export function LessonItem({ lesson, number, isLast, onClick }: LessonItemProps)
       )}
       <Button
         ariaLabel={`Open lesson ${number}`}
-        icon={<LockKeyhole />}
+        icon={onClick ? <BookOpenCheck /> : <LockKeyhole />}
         onClick={onClick}
         className="z-10"
       />

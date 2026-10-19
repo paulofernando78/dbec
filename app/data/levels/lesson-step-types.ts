@@ -5,8 +5,8 @@ export type GetReadyData = {
   slug: string;
   label: string;
   slides: readonly {
-    image: string;
-    audio: string;
+    image?: string;
+    audio?: string;
     quote: string;
   }[];
 };
@@ -22,6 +22,7 @@ export type ListenData = {
   question: string;
   options: readonly string[];
   answer: string;
+  followUpInstruction?: string;
   followUp: readonly {
     question: string;
     answer: string;

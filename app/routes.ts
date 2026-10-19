@@ -22,12 +22,14 @@ export default [
 
     route("dashboard/:studentId?", "routes/students/dashboard.tsx"),
     route("/teacher/dashboard/:studentId?", "routes/teacher/dashboard.tsx"),
-    route("/levels", "routes/levels.tsx"),
-    route("/levels/:level", "routes/levels/builder.tsx"),
+    route("/course", "routes/levels.tsx"),
+    route("/course/:level", "routes/levels/builder.tsx"),
     route(
-      "/levels/:level/unit/:unit/lesson/:lesson/:step?",
+      "/course/:level/unit/:unit/lesson/:lesson/:step?",
       "routes/levels/lesson.tsx",
     ),
+    route("/levels", "routes/legacy-levels.tsx"),
+    route("/levels/*", "routes/legacy-levels.tsx"),
 
     route("/cefr", "routes/whats-cefr.tsx"),
 

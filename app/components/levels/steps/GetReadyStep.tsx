@@ -90,22 +90,28 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
       >
         {data.slides.map((slide, index) => (
           <div
-            key={slide.image}
+            key={`${index}-${slide.quote}`}
             className="aspect-video w-full shrink-0 snap-center overflow-hidden bg-linear-to-r from-slate-300 via-slate-200 to-slate-300"
           >
-            <img
-              src={slide.image}
-              alt={`Meeting People scene ${index + 1}`}
-              draggable={false}
-              className="size-full object-cover"
-            />
+            {slide.image ? (
+              <img
+                src={slide.image}
+                alt={`Lesson scene ${index + 1}`}
+                draggable={false}
+                className="size-full object-cover"
+              />
+            ) : (
+              <div className="grid size-full place-items-center text-sm font-bold uppercase text-slate-500">
+                Image placeholder {index + 1}
+              </div>
+            )}
           </div>
         ))}
       </div>
       <div className="mt-4 flex justify-center gap-2">
         {data.slides.map((slide, index) => (
           <button
-            key={slide.image}
+            key={`${index}-${slide.quote}`}
             type="button"
             aria-label={`Show image ${index + 1}`}
             aria-current={index === currentImage}
@@ -119,15 +125,18 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
           ariaLabel={isPlaying ? "Stop introduction" : "Play introduction"}
           icon={isPlaying ? <Square /> : <Play />}
           onClick={toggleAudio}
+          disabled={!data.slides[currentImage].audio}
         />
         <p>“{data.slides[currentImage].quote}”</p>
-        <audio
-          ref={audioRef}
-          src={data.slides[currentImage].audio}
-          preload="metadata"
-          onEnded={() => setIsPlaying(false)}
-          onPause={() => setIsPlaying(false)}
-        />
+        {data.slides[currentImage].audio && (
+          <audio
+            ref={audioRef}
+            src={data.slides[currentImage].audio}
+            preload="metadata"
+            onEnded={() => setIsPlaying(false)}
+            onPause={() => setIsPlaying(false)}
+          />
+        )}
       </div>
     </div>
   );

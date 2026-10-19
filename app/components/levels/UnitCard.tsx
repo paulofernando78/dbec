@@ -58,8 +58,11 @@ export function UnitCard({ unit, levelSlug }: UnitCardProps) {
             number={index + 1}
             isLast={index === unit.lessons.length - 1}
             onClick={
-              levelSlug === "a1" && unit.number === 1 && index === 0
-                ? () => navigate("/levels/a1/unit/1/lesson/1/get-ready")
+              ["a1", "a2"].includes(levelSlug) && index < 2
+                ? () =>
+                    navigate(
+                      `/course/${levelSlug}/unit/${unit.number}/lesson/${index + 1}/get-ready`,
+                    )
                 : undefined
             }
           />
