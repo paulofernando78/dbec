@@ -20,7 +20,7 @@ export default function Layout() {
         <NavBar closeNavBar={closeNavBar} />
       </aside>
       <main
-        className="min-h-0 w-full overflow-y-auto p-4"
+        className="min-h-0 w-full overflow-x-hidden overflow-y-auto p-4"
         data-scroll-container
       >
         <Outlet />

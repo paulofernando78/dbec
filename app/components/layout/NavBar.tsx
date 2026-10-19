@@ -41,7 +41,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
   return (
     <nav
       className="
-        h-full
+        h-[calc(100%_-_2rem)]
         m-4
         mr-0
         p-4

@@ -7,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
   useNavigation,
 } from "react-router";
 
@@ -37,7 +38,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const navigation = useNavigation();
+  const location = useLocation();
   const isLoading = navigation.state === "loading";
+  const isPresentationPage =
+    location.pathname === "/" || location.pathname === "/about";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
   const toggleNav = () => {
@@ -68,7 +72,10 @@ export default function App() {
       <div className="app-container">
         <Header onClick={toggleNav} />
         <div className="app-content">
-          <div id="content-scroll" className="app-scrollArea">
+          <div
+            id="content-scroll"
+            className={`app-scrollArea ${isPresentationPage ? "app-scrollArea--document" : ""}`}
+          >
             {isLoading ? (
               <Loading />
             ) : (

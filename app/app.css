@@ -19,11 +19,15 @@
 }
 
 html {
+  height: 100%;
+  overflow: hidden;
   scrollbar-gutter: stable;
   /* user-select: none; */
 }
 
 body {
+  height: 100%;
+  overflow: hidden;
   font-family: var(--font-montserrat);
   background: var(--background);
   color: var(--text-color);
@@ -36,13 +40,15 @@ body {
 .app {
   max-width: 1100px;
   margin: 0 auto;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .app-container {
+  height: 100%;
   min-height: 0;
   flex: 1;
   display: flex;
@@ -62,6 +68,10 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.app-scrollArea--document {
   overflow-y: auto;
 }
 
