@@ -84,7 +84,7 @@ export default function Home() {
               <span className="block text-[2.26rem]">ENGLISH COURSE</span>
             </h1>
           </div>
-          <span className="block text-3xl font-edu text-right">private</span>
+          <span className="block text-2xl font-edu text-right">private</span>
         </div>
         <ul className="w-max mx-auto">
           <li

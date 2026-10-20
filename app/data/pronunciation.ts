@@ -197,18 +197,18 @@ export const pronunciationSections: PronunciationSection[] = [
       {
         english: "This year I wanna learn Spanish.",
         translation: "Este ano eu quero aprender espanhol.",
-        audio: media("s+y/this-year-i-wanna-learn-spanish.mp3"),
+        audio: media("s+y/ʃ/this-year-i-wanna-learn-spanish.mp3"),
       },
       { phoneme: "/ʒ/" },
       {
         english: "How’s your family?",
         translation: "Como está a sua família?",
-        audio: media("s+y/hows-your-family.mp3"),
+        audio: media("s+y/ʒ/hows-your-family.mp3"),
       },
       {
         english: "Where’s your phone?",
         translation: "Cadê o seu telefone?",
-        audio: media("s+y/wheres-your-phone.mp3"),
+        audio: media("s+y/ʒ/wheres-your-phone.mp3"),
       },
     ],
   },

@@ -22,3 +22,16 @@ Application URL in both environments:
 Images and audio stay together in the same step folder, exactly as they do in
 R2. In production, the existing `/media/*` Cloudflare Function reads the same
 key from the `MEDIA` R2 binding.
+
+The same mapping is used for pronunciation audio:
+
+```text
+Application URL:
+/media/pronunciation/linking-sounds/flap-t/i-like-it-a-lot.mp3
+
+Local file:
+local-media/pronunciation/linking-sounds/flap-t/i-like-it-a-lot.mp3
+
+R2 key:
+pronunciation/linking-sounds/flap-t/i-like-it-a-lot.mp3
+```
