@@ -7,6 +7,7 @@ type ButtonProps = {
   icon?: ReactNode | string;
   children?: ReactNode;
   disabled?: boolean;
+  pressed?: boolean;
   onClick?: () => void;
   className?: string;
   variant?: "default" | "check" | "answer" | "reset";
@@ -19,6 +20,7 @@ export const Button = ({
   icon,
   children,
   disabled,
+  pressed,
   onClick,
   className = "",
 }: ButtonProps) => {
@@ -33,6 +35,7 @@ export const Button = ({
     <button
       type={type}
       aria-label={ariaLabel}
+      aria-pressed={pressed}
       className={`${styles.depth} ${baseClasses} ${textClasses} ${className} shrink-0`}
       onClick={onClick}
       disabled={disabled}
