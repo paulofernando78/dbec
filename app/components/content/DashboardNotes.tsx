@@ -19,7 +19,7 @@ export const DashboardNotes = ({
   return (
     <Card title={title} className="min-w-0 flex-1">
       <TextArea
-        rows={5}
+        rows={10}
         value={value}
         readOnly={readOnly}
         onChange={(event) => onChange(event.target.value)}
