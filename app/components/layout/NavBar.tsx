@@ -71,7 +71,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         type="button"
         onClick={handleAuthentication}
         className={`flex cursor-pointer items-center gap-2 font-bold uppercase ${
-          isAuthenticated ? "" : "mb-4"
+          isAuthenticated ? "" : "mb-8"
         }`}
       >
         {isAuthenticated ? (
@@ -93,7 +93,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 flex items-center gap-2
                 ${Icon ? "mt-2 font-bold uppercase" : ""}
                 ${isActive ? "text-black" : ""}
-                ${href === "/dashboard" ? "mb-4" : ""}
+                ${href === "/dashboard" ? "mb-8" : ""}
               `}
             >
               {Icon && <Icon width={25} height={25} className="shrink-0" />}
