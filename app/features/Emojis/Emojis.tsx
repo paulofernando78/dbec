@@ -341,13 +341,22 @@ const emojis = [
   },
 ];
 
+const getWordSizeClass = (word: string) => {
+  const length = word.trim().length;
+
+  if (length >= 10) return "text-[0.65rem]";
+  if (length >= 9) return "text-xs";
+
+  return "text-sm";
+};
+
 export default function Emojis() {
   return (
     <div>
       <div className="my-8 text-center">
         <h3 className="mb-4 text-2xl font-bold">How are you feeling today?</h3>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fill,12rem)] gap-2 justify-center">
+      <div className="grid grid-cols-[repeat(auto-fill,9rem)] gap-2 justify-center">
         {emojis.map((emoji, emojiIndex) => (
           <div key={emojiIndex}>
             <Card className="p-2!">
@@ -359,9 +368,11 @@ export default function Emojis() {
                       key={wordIndex}
                       src={word.audio}
                       showIcon={false}
-                      wrapperClassName="h-12! min-h-12! w-full! px-2 text-center text-sm uppercase last:mb-2"
+                      wrapperClassName="h-12! min-h-12! w-full! overflow-hidden px-2! text-center text-sm uppercase last:mb-2"
                     >
-                      <span>
+                      <span
+                        className={`block w-full max-w-full whitespace-nowrap text-center leading-none ${getWordSizeClass(word.word)}`}
+                      >
                         {word.word}
                       </span>
                     </Audio>

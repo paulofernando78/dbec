@@ -14,7 +14,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 import { Header } from "@/components/layout/Header";
-import { Footer } from "./components/layout/Footer";
+import { Footer } from "@/components/layout/Footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -88,7 +88,7 @@ export default function App() {
             <Outlet context={{ isNavBarOpen, closeNavBar }} />
           </div>
         </div>
-        <Footer />
+          {location.pathname !== "/" && <Footer />}
       </div>
     </div>
   );

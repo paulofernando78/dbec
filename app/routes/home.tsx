@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 import { Contact } from "@/components/layout/Contact";
+import { Footer } from "@/components/layout/Footer";
 import { Image } from "@/components/ui/Image";
 import { Button } from "@/components/ui/Button/Button";
 
@@ -74,24 +75,25 @@ export default function Home() {
   });
 
   return (
-    <div className="mt-12 flex flex-col gap-10">
-      <div className="w-max mx-auto">
-        <div style={dbecCSS} className=" leading-14">
-          <h1 className="text-[3rem]">
-            DAILY BASIS
-            <span className="block text-[2.26rem]">ENGLISH COURSE</span>
-          </h1>
+    <div className="flex min-h-full flex-col">
+      <div className="mt-12 flex flex-col gap-10">
+        <div className="w-max mx-auto">
+          <div style={dbecCSS} className=" leading-14">
+            <h1 className="text-[3rem]">
+              DAILY BASIS
+              <span className="block text-[2.26rem]">ENGLISH COURSE</span>
+            </h1>
+          </div>
+          <span className="block text-3xl font-edu text-right">private</span>
         </div>
-        <span className="block text-3xl font-edu text-right">private</span>
-      </div>
-      <ul className="w-max mx-auto">
-        <li
-          className="font-walter text-2xl mt-3 transition-opacity duration-500 ease-in-out"
-          style={{ opacity }}
-        >
-          {greetingsList[greetingIndex]}
-        </li>
-      </ul>
+        <ul className="w-max mx-auto">
+          <li
+            className="font-walter text-2xl mt-3 transition-opacity duration-500 ease-in-out"
+            style={{ opacity }}
+          >
+            {greetingsList[greetingIndex]}
+          </li>
+        </ul>
       {/* <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
         <b>DAILY BASIS ENGLISH COURSE</b> offers specialized English classes
         focused on the four core language skills: Speaking (with an emphasis on
@@ -99,22 +101,27 @@ export default function Home() {
         Writing. On this web site, you’ll find a variety of useful learning
         materials. Please use them wisely.
       </p> */}
-      <p className="mx-[min(100px,max(10px,calc((100vw-360px)*0.135)))]">
-        <b>O DAILY BASIS ENGLISH COURSE</b> oferece aulas de inglês
-        especializadas e focadas nas quatro habilidades linguísticas
-        fundamentais: Fala (com ênfase em conversação), Escuta (compreensão
-        auditiva), Leitura e Escrita.
-      </p>
-      <div className="mx-auto">
-        <Button
-          onClick={() => navigate("/dashboard")}
-          className="uppercase"
-        >
-          Start for free
-        </Button>
+        <p className="mx-[min(100px,max(10px,calc((100vw-360px)*0.135)))]">
+          <b>O DAILY BASIS ENGLISH COURSE</b> oferece aulas de inglês
+          especializadas e focadas nas quatro habilidades linguísticas
+          fundamentais: Fala (com ênfase em conversação), Escuta (compreensão
+          auditiva), Leitura e Escrita.
+        </p>
+        <div className="mx-auto">
+          <Button
+            onClick={() => navigate("/dashboard")}
+            className="uppercase"
+          >
+            Start for free
+          </Button>
+        </div>
+        <div className="w-max mx-auto">
+          <Contact />
+        </div>
       </div>
-      <div className="w-max mx-auto">
-        <Contact />
+
+      <div className="mt-auto pt-4">
+        <Footer />
       </div>
     </div>
   );
