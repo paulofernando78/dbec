@@ -146,13 +146,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         {session && (
           <AccountSummary
             name={session.displayName}
-            subtitle={
-              session.role === "student"
-                ? session.plan === "plus"
-                  ? "Plus plan"
-                  : "Free plan"
-                : "Teacher"
-            }
+            subtitle={session.role === "student" ? "Full access" : "Teacher"}
             className="translate-y-1"
           />
         )}

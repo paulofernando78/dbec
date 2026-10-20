@@ -323,38 +323,6 @@ export const StudentForm = ({
           </select>
         </label>
 
-        {/* Plan */}
-        <div className="flex items-center justify-between gap-4 rounded-lg px-4 py-3">
-          <div>
-            <p className="font-semibold">Student plan</p>
-            <p className="text-xs text-gray-500">
-              {form.plan === "plus" ? "Plus plan" : "Free plan"}
-            </p>
-          </div>
-
-          <button
-            type="button"
-            role="switch"
-            aria-checked={form.plan === "plus"}
-            aria-label="Enable Plus plan"
-            onClick={() =>
-              setForm((current) => ({
-                ...current,
-                plan: current.plan === "plus" ? "free" : "plus",
-              }))
-            }
-            className={`relative h-7 w-12 shrink-0 cursor-pointer rounded-full transition-colors ${
-              form.plan === "plus" ? "bg-green-500" : "bg-gray-300"
-            }`}
-          >
-            <span
-              className={`absolute top-1 left-1 size-5 rounded-full bg-white shadow-sm transition-transform ${
-                form.plan === "plus" ? "translate-x-5" : "translate-x-0"
-              }`}
-            />
-          </button>
-        </div>
-
         {error && (
           <p role="alert" className="text-sm font-semibold text-red-600">
             {error}

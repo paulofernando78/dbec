@@ -10,9 +10,10 @@ import { LessonItem } from "./LessonItem";
 type UnitCardProps = {
   unit: Unit;
   levelSlug: string;
+  isAuthenticated: boolean;
 };
 
-export function UnitCard({ unit, levelSlug }: UnitCardProps) {
+export function UnitCard({ unit, levelSlug, isAuthenticated }: UnitCardProps) {
   const navigate = useNavigate();
   const [completedLessons, setCompletedLessons] = useState<Set<number>>(
     new Set(),
@@ -68,14 +69,20 @@ export function UnitCard({ unit, levelSlug }: UnitCardProps) {
             isLast={index === unit.lessons.length - 1}
             isCompleted={completedLessons.has(index + 1)}
             onClick={
-              ["a1", "a2", "a2-b1", "b1", "b2", "c1"].includes(
-                levelSlug,
-              ) &&
               index < 2
-                ? () =>
+                ? () => {
+                    const isFreeLesson =
+                      levelSlug === "a1" && unit.number <= 3;
+
+                    if (!isAuthenticated && !isFreeLesson) {
+                      window.dispatchEvent(new Event("dbec:open-login"));
+                      return;
+                    }
+
                     navigate(
                       `/course/${levelSlug}/unit/${unit.number}/lesson/${index + 1}/get-ready`,
-                    )
+                    );
+                  }
                 : undefined
             }
           />

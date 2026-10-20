@@ -1,4 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
@@ -27,8 +28,38 @@ export default function LessonPage() {
   const lessonData =
     lessonRegistry[`${level}/${unit}/${lesson}` as keyof typeof lessonRegistry];
   const levelData = levels[level as keyof typeof levels];
+  const isFreeLesson = level === "a1" && Number(unit) <= 3;
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    if (isFreeLesson) {
+      setIsAuthenticated(false);
+      return;
+    }
+
+    let active = true;
+    fetch("/api/session", { headers: { Accept: "application/json" } })
+      .then((response) => {
+        if (active) setIsAuthenticated(response.ok);
+      })
+      .catch(() => {
+        if (active) setIsAuthenticated(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [isFreeLesson]);
+
+  useEffect(() => {
+    if (!isFreeLesson && isAuthenticated === false) {
+      navigate(`/course/${level}`, { replace: true });
+      window.dispatchEvent(new Event("dbec:open-login"));
+    }
+  }, [isAuthenticated, isFreeLesson, level, navigate]);
 
   if (!lessonData || !levelData) return <p>Lesson not found.</p>;
+  if (!isFreeLesson && isAuthenticated !== true) return null;
 
   const stepIndex = Math.max(
     0,
