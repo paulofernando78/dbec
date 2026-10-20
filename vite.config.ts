@@ -1,7 +1,8 @@
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
-import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { createReadStream } from "node:fs";
+import { readFile, stat } from "node:fs/promises";
+import { extname, resolve, sep } from "node:path";
 import { defineConfig, type Plugin } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -42,6 +43,79 @@ const createStudentSlug = (name: string) =>
     .trim()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
+
+const mediaTypes: Record<string, string> = {
+  ".aac": "audio/aac",
+  ".avif": "image/avif",
+  ".gif": "image/gif",
+  ".jpeg": "image/jpeg",
+  ".jpg": "image/jpeg",
+  ".m4a": "audio/mp4",
+  ".mp3": "audio/mpeg",
+  ".ogg": "audio/ogg",
+  ".png": "image/png",
+  ".svg": "image/svg+xml",
+  ".wav": "audio/wav",
+  ".webp": "image/webp",
+};
+
+const localMedia = (): Plugin => ({
+  name: "local-media",
+  apply: "serve",
+  configureServer(server) {
+    server.middlewares.use("/media", async (request, response, next) => {
+      if (!request.url || !["GET", "HEAD"].includes(request.method ?? "")) {
+        return next();
+      }
+
+      try {
+        const mediaPath = decodeURIComponent(request.url.split("?")[0])
+          .replace(/^\/+/, "");
+        const extension = extname(mediaPath).toLowerCase();
+        const mediaRoot = resolve(process.cwd(), "local-media");
+        const filePath = resolve(mediaRoot, mediaPath);
+
+        if (!filePath.startsWith(`${mediaRoot}${sep}`)) return next();
+
+        const file = await stat(filePath);
+        if (!file.isFile()) return next();
+
+        response.setHeader(
+          "Content-Type",
+          mediaTypes[extension] ?? "application/octet-stream",
+        );
+        response.setHeader("Accept-Ranges", "bytes");
+        response.setHeader("Cache-Control", "no-store");
+
+        const range = request.headers.range?.match(/bytes=(\d*)-(\d*)/);
+        if (range) {
+          const start = range[1] ? Number(range[1]) : 0;
+          const end = range[2] ? Number(range[2]) : file.size - 1;
+
+          if (start > end || end >= file.size) {
+            response.statusCode = 416;
+            response.setHeader("Content-Range", `bytes */${file.size}`);
+            response.end();
+            return;
+          }
+
+          response.statusCode = 206;
+          response.setHeader("Content-Range", `bytes ${start}-${end}/${file.size}`);
+          response.setHeader("Content-Length", String(end - start + 1));
+          if (request.method === "HEAD") return response.end();
+          createReadStream(filePath, { start, end }).pipe(response);
+          return;
+        }
+
+        response.setHeader("Content-Length", String(file.size));
+        if (request.method === "HEAD") return response.end();
+        createReadStream(filePath).pipe(response);
+      } catch {
+        next();
+      }
+    });
+  },
+});
 
 const localAuth = (): Plugin => ({
   name: "local-auth",
@@ -322,6 +396,7 @@ const localAuth = (): Plugin => ({
 
 export default defineConfig({
   plugins: [
+    localMedia(),
     localAuth(),
     tailwindcss(),
     reactRouter(),

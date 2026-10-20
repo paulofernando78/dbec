@@ -8,3 +8,6 @@
 /.react-router/
 /build/
 /.wrangler/
+
+# Local R2 mirror used only by the Vite development server.
+/local-media/
