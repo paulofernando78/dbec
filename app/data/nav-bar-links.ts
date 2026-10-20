@@ -30,9 +30,19 @@ export const links: NavItem[] = [
     icon: CircleUserRound,
   },
   {
-    href: "/course",
-    label: "course",
-    icon: BookOpenCheck,
+    group: "path",
+    children: [
+      {
+        href: "/course",
+        label: "course",
+        icon: BookOpenCheck,
+      },
+      {
+        href: "/authentic-content",
+        label: "authentic content",
+        icon: AuthenticContent,
+      },
+    ],
   },
   {
     group: "extra",
@@ -57,16 +67,11 @@ export const links: NavItem[] = [
         label: "travel",
         icon: Plane,
       },
+      {
+        href: "/games",
+        label: "games",
+        icon: Gamepad2,
+      },
     ],
-  },
-  {
-    href: "/authentic-content",
-    label: "authentic vontent",
-    icon: AuthenticContent,
-  },
-  {
-    href: "/games",
-    label: "games",
-    icon: Gamepad2,
   },
 ];
