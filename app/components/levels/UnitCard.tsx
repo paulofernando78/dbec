@@ -11,9 +11,15 @@ type UnitCardProps = {
   unit: Unit;
   levelSlug: string;
   isAuthenticated: boolean;
+  basePath?: string;
 };
 
-export function UnitCard({ unit, levelSlug, isAuthenticated }: UnitCardProps) {
+export function UnitCard({
+  unit,
+  levelSlug,
+  isAuthenticated,
+  basePath = `/course/${levelSlug}`,
+}: UnitCardProps) {
   const navigate = useNavigate();
   const [completedLessons, setCompletedLessons] = useState<Set<number>>(
     new Set(),
@@ -80,7 +86,7 @@ export function UnitCard({ unit, levelSlug, isAuthenticated }: UnitCardProps) {
                     }
 
                     navigate(
-                      `/course/${levelSlug}/unit/${unit.number}/lesson/${index + 1}/get-ready`,
+                      `${basePath}/unit/${unit.number}/lesson/${index + 1}/get-ready`,
                     );
                   }
                 : undefined

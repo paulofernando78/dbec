@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { StepRenderer } from "@/components/levels/steps/StepRenderer";
@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Button } from "@/components/ui/Button";
 import { levels } from "@/data/levels";
 import { lessonRegistry } from "@/data/levels/lesson-registry";
+import { travel } from "@/data/travel";
 import { completeLesson } from "@/utils/course-progress";
 
 export function meta() {
@@ -19,15 +20,19 @@ export function meta() {
 
 export default function LessonPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const {
-    level = "a1",
+    level: routeLevel,
     unit = "1",
     lesson = "1",
     step = "get-ready",
   } = useParams();
+  const isTravel = location.pathname.startsWith("/travel/");
+  const level = isTravel ? "travel" : (routeLevel ?? "a1");
+  const sectionPath = isTravel ? "/travel" : `/course/${level}`;
   const lessonData =
     lessonRegistry[`${level}/${unit}/${lesson}` as keyof typeof lessonRegistry];
-  const levelData = levels[level as keyof typeof levels];
+  const levelData = isTravel ? travel : levels[level as keyof typeof levels];
   const isFreeLesson = level === "a1" && Number(unit) <= 3;
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
@@ -53,10 +58,10 @@ export default function LessonPage() {
 
   useEffect(() => {
     if (!isFreeLesson && isAuthenticated === false) {
-      navigate(`/course/${level}`, { replace: true });
+      navigate(sectionPath, { replace: true });
       window.dispatchEvent(new Event("dbec:open-login"));
     }
-  }, [isAuthenticated, isFreeLesson, level, navigate]);
+  }, [isAuthenticated, isFreeLesson, navigate, sectionPath]);
 
   if (!lessonData || !levelData) return <p>Lesson not found.</p>;
   if (!isFreeLesson && isAuthenticated !== true) return null;
@@ -68,11 +73,11 @@ export default function LessonPage() {
   const current = lessonData.steps[stepIndex];
   const previous = lessonData.steps[stepIndex - 1];
   const next = lessonData.steps[stepIndex + 1];
-  const basePath = `/course/${level}/unit/${unit}/lesson/${lesson}`;
+  const basePath = `${sectionPath}/unit/${unit}/lesson/${lesson}`;
   const go = (slug: string) => navigate(`${basePath}/${slug}`);
   const finish = () => {
     completeLesson(level, unit, lesson);
-    navigate(`/course/${level}`);
+    navigate(sectionPath);
   };
 
   return (
@@ -114,14 +119,14 @@ export default function LessonPage() {
         <Button
           ariaLabel="Previous step"
           onClick={() =>
-            previous ? go(previous.slug) : navigate(`/course/${level}`)
+            previous ? go(previous.slug) : navigate(sectionPath)
           }
           icon={<ChevronLeft />}
           className=""
         />
         <b>{previous?.label ?? `${levelData.code} ${levelData.name}`}</b>
         <ScrollToTop inline />
-        <b className="text-right">{next?.label ?? "Course"}</b>
+        <b className="text-right">{next?.label ?? (isTravel ? "Travel" : "Course")}</b>
         <Button
           ariaLabel="Next step"
           onClick={() => (next ? go(next.slug) : finish())}

@@ -81,7 +81,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         )}
         <span>{isAuthenticated ? "Logout" : "Login"}</span>
       </button>
-
+  
       {links.map(({ href, label, icon: Icon }) => (
         <div key={href}>
           {(href !== "/dashboard" || isAuthenticated) && (

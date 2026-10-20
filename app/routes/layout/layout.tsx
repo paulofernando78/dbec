@@ -10,7 +10,9 @@ type LayoutContext = {
 export default function Layout() {
   const { isNavBarOpen, closeNavBar } = useOutletContext<LayoutContext>();
   const location = useLocation();
-  const isLessonPage = /^\/course\/[^/]+\/unit\//.test(location.pathname);
+  const isLessonPage =
+    /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
+    /^\/travel\/unit\//.test(location.pathname);
 
   return (
     <div className="flex-1 grid h-full min-h-0 grid-cols-[270px_minmax(0,1fr)] overflow-hidden max-[700px]:grid-cols-1">
