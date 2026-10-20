@@ -7,6 +7,7 @@ import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Button } from "@/components/ui/Button";
 import { levels } from "@/data/levels";
 import { lessonRegistry } from "@/data/levels/lesson-registry";
+import { completeLesson } from "@/utils/course-progress";
 
 export function meta() {
   return [
@@ -39,7 +40,7 @@ export default function LessonPage() {
   const basePath = `/course/${level}/unit/${unit}/lesson/${lesson}`;
   const go = (slug: string) => navigate(`${basePath}/${slug}`);
   const finish = () => {
-    localStorage.setItem(`dbec_${level}_progress`, "1");
+    completeLesson(level, unit, lesson);
     navigate(`/course/${level}`);
   };
 

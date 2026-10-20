@@ -1,4 +1,4 @@
-import { BookOpenCheck, LockKeyhole } from "lucide-react";
+import { LockKeyhole, LockKeyholeOpen } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import type { Lesson } from "@/data/levels";
@@ -7,10 +7,17 @@ type LessonItemProps = {
   lesson: Lesson;
   number: number;
   isLast: boolean;
+  isCompleted: boolean;
   onClick?: () => void;
 };
 
-export function LessonItem({ lesson, number, isLast, onClick }: LessonItemProps) {
+export function LessonItem({
+  lesson,
+  number,
+  isLast,
+  isCompleted,
+  onClick,
+}: LessonItemProps) {
   return (
     <li className="relative grid min-h-36 grid-cols-[60px_1fr] gap-4 pb-5 last:min-h-15 last:pb-0">
       {!isLast && (
@@ -20,8 +27,8 @@ export function LessonItem({ lesson, number, isLast, onClick }: LessonItemProps)
         />
       )}
       <Button
-        ariaLabel={`Open lesson ${number}`}
-        icon={onClick ? <BookOpenCheck /> : <LockKeyhole />}
+        ariaLabel={`${isCompleted ? "Completed" : "Open"} lesson ${number}`}
+        icon={isCompleted ? <LockKeyholeOpen /> : <LockKeyhole />}
         onClick={onClick}
         className="z-10"
       />

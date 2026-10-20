@@ -7,6 +7,7 @@ import { List } from "@/components/content/List";
 
 import { getGameSlug } from "@/data/games/games-slug";
 import { gamesLucasArtsCardData } from "@/data/games/lucas-arts/games-lucas-arts-card-data";
+import { gamesSierraCardData } from "@/data/games/sierra/games-sierra-card-data";
 
 export default function GameBuilder() {
   const { developer, slug } = useParams();
@@ -17,7 +18,10 @@ export default function GameBuilder() {
   }
 
   const gameHref = `/games/${developer}/${slug}`;
-  const gameCards = Object.values(gamesLucasArtsCardData);
+  const gameCards = [
+    ...Object.values(gamesLucasArtsCardData),
+    ...Object.values(gamesSierraCardData),
+  ];
   const gameCardIndex = gameCards.findIndex((card) => card.href === gameHref);
   const gameCard = gameCards[gameCardIndex];
   const displayedHeader = gameCard

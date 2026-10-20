@@ -4,6 +4,10 @@ import {
   type LessonContent,
 } from "./a1/skeleton-lessons";
 import { a2SkeletonLessons } from "./a2/skeleton-lessons";
+import { a2B1SkeletonLessons } from "./a2-b1/skeleton-lessons";
+import { b1SkeletonLessons } from "./b1/skeleton-lessons";
+import { b2SkeletonLessons } from "./b2/skeleton-lessons";
+import { c1SkeletonLessons } from "./c1/skeleton-lessons";
 
 export const lessonRegistry: Record<string, LessonContent> = {
   "a1/1/1": a1Unit1Lesson1,
@@ -16,6 +20,30 @@ export const lessonRegistry: Record<string, LessonContent> = {
   ...Object.fromEntries(
     Object.entries(a2SkeletonLessons).map(([key, lesson]) => [
       `a2/${key}`,
+      lesson,
+    ]),
+  ),
+  ...Object.fromEntries(
+    Object.entries(a2B1SkeletonLessons).map(([key, lesson]) => [
+      `a2-b1/${key}`,
+      lesson,
+    ]),
+  ),
+  ...Object.fromEntries(
+    Object.entries(b1SkeletonLessons).map(([key, lesson]) => [
+      `b1/${key}`,
+      lesson,
+    ]),
+  ),
+  ...Object.fromEntries(
+    Object.entries(b2SkeletonLessons).map(([key, lesson]) => [
+      `b2/${key}`,
+      lesson,
+    ]),
+  ),
+  ...Object.fromEntries(
+    Object.entries(c1SkeletonLessons).map(([key, lesson]) => [
+      `c1/${key}`,
       lesson,
     ]),
   ),

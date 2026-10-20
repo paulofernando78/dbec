@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 
 import {
   isRouteErrorResponse,
@@ -39,6 +39,19 @@ export default function App() {
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+
+    const contentScroll = document.getElementById("content-scroll");
+    if (contentScroll) contentScroll.scrollTop = 0;
+
+    document
+      .querySelectorAll<HTMLElement>("[data-scroll-container]")
+      .forEach((container) => {
+        container.scrollTop = 0;
+      });
+  }, [location.key]);
 
   const toggleNav = () => {
     setIsNavBarOpen((prev) => !prev);

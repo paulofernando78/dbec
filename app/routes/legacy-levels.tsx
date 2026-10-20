@@ -1,10 +1,6 @@
-import { redirect, type LoaderFunctionArgs } from "react-router";
-
-export function loader({ params }: LoaderFunctionArgs) {
-  const suffix = params["*"];
-  return redirect(suffix ? `/course/${suffix}` : "/course");
-}
+import { Navigate, useParams } from "react-router";
 
 export default function LegacyLevelsRedirect() {
-  return null;
+  const suffix = useParams()["*"];
+  return <Navigate to={suffix ? `/course/${suffix}` : "/course"} replace />;
 }

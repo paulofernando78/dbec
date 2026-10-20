@@ -109,7 +109,7 @@ export const Header = ({ onClick }: HeadersProps) => {
   };
 
   return (
-    <div className="w-full h-10 px-4 mt-4 flex items-center justify-between">
+    <div className="w-full h-10 px-4 my-4 flex items-center justify-between">
       {!isPresentationPage && (
         <Button
           icon={<Menu />}

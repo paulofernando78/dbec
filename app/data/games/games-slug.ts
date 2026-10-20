@@ -1,7 +1,10 @@
 import type { ListProps } from "@/components/content/List";
 
 import { thimbleweedPark } from "./lucas-arts/thimbleweed-park";
-// import { kingsQuest } from "./sierra/kings-quest";
+import { monkeyIsland } from "./lucas-arts/monkey-island";
+import { kingsQuestI } from "./sierra/kings-quest-i";
+import { kingsQuestII } from "./sierra/kings-quest-ii";
+import { kingsQuestIII } from "./sierra/kings-quest-iii";
 
 type GameSection = {
   id: string;
@@ -22,11 +25,14 @@ export type GameData = {
 
 export const games: Record<string, Record<string, GameData>> = {
   "lucas-arts": {
+    "monkey-island": monkeyIsland,
     "thimbleweed-park": thimbleweedPark,
   },
 
   sierra: {
-    // "kings-quest": kingsQuest,
+    "kings-quest-i": kingsQuestI,
+    "kings-quest-ii": kingsQuestII,
+    "kings-quest-iii": kingsQuestIII,
   },
 };
 

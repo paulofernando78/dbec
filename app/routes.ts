@@ -28,7 +28,6 @@ export default [
       "/course/:level/unit/:unit/lesson/:lesson/:step?",
       "routes/levels/lesson.tsx",
     ),
-    route("/levels", "routes/legacy-levels.tsx"),
     route("/levels/*", "routes/legacy-levels.tsx"),
 
     route("/cefr", "routes/whats-cefr.tsx"),

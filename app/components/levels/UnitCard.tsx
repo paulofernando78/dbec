@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import type { Unit } from "@/data/levels";
+import { isLessonCompleted, resetLesson } from "@/utils/course-progress";
 import { LessonItem } from "./LessonItem";
 
 type UnitCardProps = {
@@ -13,19 +14,27 @@ type UnitCardProps = {
 
 export function UnitCard({ unit, levelSlug }: UnitCardProps) {
   const navigate = useNavigate();
-  const [completedLessons, setCompletedLessons] = useState(0);
+  const [completedLessons, setCompletedLessons] = useState<Set<number>>(
+    new Set(),
+  );
 
   useEffect(() => {
-    if (levelSlug === "a1" && unit.number === 1) {
-      setCompletedLessons(Number(localStorage.getItem("dbec_a1_progress") ?? 0));
-    }
-  }, [levelSlug, unit.number]);
+    setCompletedLessons(
+      new Set(
+        unit.lessons
+          .map((_, index) => index + 1)
+          .filter((lessonNumber) =>
+            isLessonCompleted(levelSlug, unit.number, lessonNumber),
+          ),
+      ),
+    );
+  }, [levelSlug, unit.number, unit.lessons]);
 
   const resetUnit = () => {
-    if (levelSlug === "a1" && unit.number === 1) {
-      localStorage.removeItem("dbec_a1_progress");
-    }
-    setCompletedLessons(0);
+    unit.lessons.forEach((_, index) =>
+      resetLesson(levelSlug, unit.number, index + 1),
+    );
+    setCompletedLessons(new Set());
   };
 
   return (
@@ -40,7 +49,7 @@ export function UnitCard({ unit, levelSlug }: UnitCardProps) {
         </div>
         <div className="flex shrink-0 flex-col items-center gap-3">
           <span className="rounded-lg border border-gray-300 bg-white px-2 py-1 text-xs text-black">
-            {completedLessons} / {unit.lessons.length}
+            {completedLessons.size} / {unit.lessons.length}
           </span>
           <Button
             ariaLabel={`Reset unit ${unit.number}`}
@@ -57,8 +66,12 @@ export function UnitCard({ unit, levelSlug }: UnitCardProps) {
             lesson={lesson}
             number={index + 1}
             isLast={index === unit.lessons.length - 1}
+            isCompleted={completedLessons.has(index + 1)}
             onClick={
-              ["a1", "a2"].includes(levelSlug) && index < 2
+              ["a1", "a2", "a2-b1", "b1", "b2", "c1"].includes(
+                levelSlug,
+              ) &&
+              index < 2
                 ? () =>
                     navigate(
                       `/course/${levelSlug}/unit/${unit.number}/lesson/${index + 1}/get-ready`,
