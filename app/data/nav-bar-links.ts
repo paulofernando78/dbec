@@ -10,46 +10,63 @@ import {
 
 import { AuthenticContent } from "@/components/Icons";
 
-export type NavItem = {
+export type NavLinkItem = {
   href: string;
   label: string;
   icon?: ElementType;
 };
 
+export type NavGroup = {
+  group: string;
+  children: NavLinkItem[];
+};
+
+export type NavItem = NavLinkItem | NavGroup;
+
 export const links: NavItem[] = [
   {
     href: "/dashboard",
-    label: "Dashboard",
+    label: "dashboard",
     icon: CircleUserRound,
   },
   {
     href: "/course",
-    label: "Course",
+    label: "course",
     icon: BookOpenCheck,
   },
   {
-    href: "/travel",
-    label: "Travel",
-    icon: Plane,
+    group: "extra",
+    children: [
+      {
+        href: "/vocabulary",
+        label: "vocabulary",
+        icon: BookOpenText,
+      },
+      {
+        href: "/pronunciation",
+        label: "Pronunciation",
+        icon: AudioLines,
+      },
+    ],
+  },
+  {
+    group: "specific purposes",
+    children: [
+      {
+        href: "/travel",
+        label: "travel",
+        icon: Plane,
+      },
+    ],
   },
   {
     href: "/authentic-content",
-    label: "Authentic Content",
+    label: "authentic vontent",
     icon: AuthenticContent,
   },
   {
-    href: "/vocabulary",
-    label: "Vocabulary",
-    icon: BookOpenText,
-  },
-  {
-    href: "/pronunciation",
-    label: "Pronunciation",
-    icon: AudioLines,
-  },
-  {
     href: "/games",
-    label: "Games",
+    label: "games",
     icon: Gamepad2,
   },
 ];

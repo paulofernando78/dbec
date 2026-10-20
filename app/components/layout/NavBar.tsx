@@ -82,26 +82,59 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         <span>{isAuthenticated ? "Logout" : "Login"}</span>
       </button>
   
-      {links.map(({ href, label, icon: Icon }) => (
-        <div key={href}>
-          {(href !== "/dashboard" || isAuthenticated) && (
-            <NavLink
-              to={href === "/dashboard" ? dashboardPath : href}
-              end
-              onClick={closeNavBar}
-              className={({ isActive }) => `
-                flex items-center gap-2
-                ${Icon ? "mt-2 font-bold uppercase" : ""}
-                ${isActive ? "text-black" : ""}
-                ${href === "/dashboard" ? "mb-8" : ""}
-              `}
-            >
-              {Icon && <Icon width={25} height={25} className="shrink-0" />}
-              <span>{label}</span>
-            </NavLink>
-          )}
-        </div>
-      ))}
+      {links.map((item) => {
+        if ("group" in item) {
+          return (
+            <div key={item.group} className="mt-6">
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider">
+                {item.group}
+              </p>
+              <div className="pl-2">
+                {item.children.map(({ href, label, icon: Icon }) => (
+                  <NavLink
+                    key={href}
+                    to={href}
+                    end
+                    onClick={closeNavBar}
+                    className={({ isActive }) => `
+                      mt-2 flex items-center gap-2 font-bold uppercase
+                      ${isActive ? "text-black" : ""}
+                    `}
+                  >
+                    {Icon && (
+                      <Icon width={25} height={25} className="shrink-0" />
+                    )}
+                    <span>{label}</span>
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          );
+        }
+
+        const { href, label, icon: Icon } = item;
+
+        return (
+          <div key={href}>
+            {(href !== "/dashboard" || isAuthenticated) && (
+              <NavLink
+                to={href === "/dashboard" ? dashboardPath : href}
+                end
+                onClick={closeNavBar}
+                className={({ isActive }) => `
+                  flex items-center gap-2
+                  ${Icon ? "mt-2 font-bold uppercase" : ""}
+                  ${isActive ? "text-black" : ""}
+                  ${href === "/dashboard" ? "mb-8" : ""}
+                `}
+              >
+                {Icon && <Icon width={25} height={25} className="shrink-0" />}
+                <span>{label}</span>
+              </NavLink>
+            )}
+          </div>
+        );
+      })}
     </nav>
   );
 }
