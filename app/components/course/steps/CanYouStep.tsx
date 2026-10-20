@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Checkbox } from "@/components/ui/Checkbox";
-import type { CanYouData } from "@/data/levels/lesson-step-types";
+import type { CanYouData } from "@/data/course/lesson-step-types";
 
 export function CanYouStep({ data }: { data: CanYouData }) {
   const [checks, setChecks] = useState(() => data.checks.map(() => false));

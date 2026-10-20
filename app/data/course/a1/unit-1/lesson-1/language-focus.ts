@@ -1,7 +1,7 @@
 import type { LanguageFocusData } from "../../../lesson-step-types";
 
 const audio = (accent: "us" | "uk", file: string) =>
-  `/media/levels/a1/unit-1/lesson-1-hello/language-focus/${accent}/${file}`;
+  `/media/course/a1/unit-1/lesson-1-hello/language-focus/${accent}/${file}`;
 
 export const languageFocus = {
   type: "language-focus",

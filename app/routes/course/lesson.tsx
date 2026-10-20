@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { StepRenderer } from "@/components/levels/steps/StepRenderer";
+import { StepRenderer } from "@/components/course/steps/StepRenderer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Button } from "@/components/ui/Button";
-import { levels } from "@/data/levels";
-import { lessonRegistry } from "@/data/levels/lesson-registry";
+import { levels } from "@/data/course";
+import { lessonRegistry } from "@/data/course/lesson-registry";
 import { travel } from "@/data/travel";
 import { completeLesson } from "@/utils/course-progress";
 

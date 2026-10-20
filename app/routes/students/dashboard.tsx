@@ -110,7 +110,6 @@ export default function Dashboard() {
         variant="dashboard"
       />
       <div className="grid gap-4">
-        <Emojis />
         <div className="flex gap-4 justify-between max-[800px]:flex-col">
           <DashboardNotes
             title="Teacher's Notes"

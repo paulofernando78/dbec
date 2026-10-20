@@ -1,1 +1,1 @@
-export { default, meta } from "@/routes/levels/lesson";
+export { default, meta } from "@/routes/course/lesson";

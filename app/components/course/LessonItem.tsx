@@ -1,7 +1,7 @@
 import { LockKeyhole, LockKeyholeOpen } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
-import type { Lesson } from "@/data/levels";
+import type { Lesson } from "@/data/course";
 
 type LessonItemProps = {
   lesson: Lesson;

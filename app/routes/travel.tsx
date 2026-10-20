@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { UnitCard } from "@/components/levels/UnitCard";
+import { UnitCard } from "@/components/course/UnitCard";
 import { travel } from "@/data/travel";
 
 export default function Travel() {

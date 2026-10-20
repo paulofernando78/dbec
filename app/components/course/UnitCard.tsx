@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import type { Unit } from "@/data/levels";
+import type { Unit } from "@/data/course";
 import { isLessonCompleted, resetLesson } from "@/utils/course-progress";
 import { LessonItem } from "./LessonItem";
 

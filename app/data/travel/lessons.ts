@@ -1,5 +1,5 @@
-import type { LessonStepData } from "@/data/levels/lesson-step-types";
-import type { LessonContent } from "@/data/levels/a1/skeleton-lessons";
+import type { LessonStepData } from "@/data/course/lesson-step-types";
+import type { LessonContent } from "@/data/course/a1/skeleton-lessons";
 import { travel } from ".";
 
 type DialogueLine = readonly [speaker: string, line: string];

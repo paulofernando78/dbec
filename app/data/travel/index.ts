@@ -1,4 +1,4 @@
-import type { Level } from "@/data/levels";
+import type { Level } from "@/data/course";
 
 const unit = (
   number: number,

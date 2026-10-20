@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
-import type { LanguageFocusData } from "@/data/levels/lesson-step-types";
+import type { LanguageFocusData } from "@/data/course/lesson-step-types";
 
 type Accent = "us" | "uk";
 

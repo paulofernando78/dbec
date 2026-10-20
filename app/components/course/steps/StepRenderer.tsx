@@ -1,4 +1,4 @@
-import type { LessonStepData } from "@/data/levels/lesson-step-types";
+import type { LessonStepData } from "@/data/course/lesson-step-types";
 import { CanYouStep } from "./CanYouStep";
 import { GetReadyStep } from "./GetReadyStep";
 import { LanguageFocusStep } from "./LanguageFocusStep";

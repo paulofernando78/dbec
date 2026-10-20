@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Eye, EyeClosed } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
-import type { ListenData } from "@/data/levels/lesson-step-types";
+import type { ListenData } from "@/data/course/lesson-step-types";
 import { Dialogue } from "@/features/Dialogue";
 import { Radio } from "@/features/exercises/Radio";
 

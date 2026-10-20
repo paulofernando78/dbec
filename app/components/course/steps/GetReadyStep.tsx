@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type PointerEvent } from "react";
 import { Play, Square } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
-import type { GetReadyData } from "@/data/levels/lesson-step-types";
+import type { GetReadyData } from "@/data/course/lesson-step-types";
 
 export function GetReadyStep({ data }: { data: GetReadyData }) {
   const [currentImage, setCurrentImage] = useState(0);

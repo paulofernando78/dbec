@@ -20,7 +20,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { Check, Eye, RotateCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
-import type { TryItData } from "@/data/levels/lesson-step-types";
+import type { TryItData } from "@/data/course/lesson-step-types";
 
 type Token = { id: string; word: string };
 type ContainerName = "bank" | "answer";
