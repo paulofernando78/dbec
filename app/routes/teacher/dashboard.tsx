@@ -76,6 +76,12 @@ export default function TeacherDashboard() {
   }, []);
 
   useEffect(() => {
+    if (studentId) {
+      localStorage.setItem("dbec_selected_student_id", studentId);
+    }
+  }, [studentId]);
+
+  useEffect(() => {
     let cancelled = false;
 
     if (!studentId) {
@@ -174,6 +180,12 @@ export default function TeacherDashboard() {
   };
 
   const handleStudentChange = (nextStudentId: string) => {
+    if (nextStudentId) {
+      localStorage.setItem("dbec_selected_student_id", nextStudentId);
+    } else {
+      localStorage.removeItem("dbec_selected_student_id");
+    }
+
     navigate(
       nextStudentId
         ? `/teacher/dashboard/${nextStudentId}`

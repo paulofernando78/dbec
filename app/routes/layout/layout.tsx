@@ -1,6 +1,7 @@
 import { Outlet, useLocation, useOutletContext } from "react-router";
 import { NavBar } from "@/components/layout/NavBar";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { StudentNotesPanel } from "@/components/content/StudentNotesPanel";
 
 type LayoutContext = {
   isNavBarOpen: boolean;
@@ -22,9 +23,10 @@ export default function Layout() {
         <NavBar closeNavBar={closeNavBar} />
       </aside>
       <main
-        className="min-h-0 w-full overflow-x-hidden overflow-y-auto p-4"
+        className="relative min-h-0 w-full overflow-x-hidden overflow-y-auto p-4"
         data-scroll-container
       >
+        <StudentNotesPanel />
         <Outlet />
         {!isLessonPage && <ScrollToTop />}
       </main>

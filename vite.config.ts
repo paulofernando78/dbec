@@ -9,6 +9,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { students as developmentStudents } from "./app/data/students";
 
 const localLessonCompletion = new Map<string, boolean>();
+const localNotes = new Map<string, { teacher: string; student: string }>();
 let localSession: { username: string; role: string; studentId?: string } | null =
   null;
 
@@ -220,6 +221,101 @@ const localAuth = (): Plugin => ({
           plan: student?.plan ?? null,
         }),
       );
+    });
+
+    server.middlewares.use("/api/dashboard", (request, response, next) => {
+      if (request.method !== "GET") return next();
+
+      response.setHeader("Content-Type", "application/json");
+      response.setHeader("Cache-Control", "no-store");
+
+      if (!localSession) {
+        response.statusCode = 401;
+        response.end(JSON.stringify({ error: "Não autorizado." }));
+        return;
+      }
+
+      const requestedStudentId = new URL(
+        request.url ?? "",
+        "http://localhost",
+      ).searchParams.get("studentId");
+      const studentId =
+        localSession.role === "teacher"
+          ? requestedStudentId
+          : localSession.studentId;
+      const student = studentId ? localStudents.get(studentId) : undefined;
+
+      if (!studentId || !student) {
+        response.statusCode = 404;
+        response.end(JSON.stringify({ error: "Aluno não encontrado." }));
+        return;
+      }
+
+      response.statusCode = 200;
+      response.end(
+        JSON.stringify({
+          viewer: {
+            username: localSession.username,
+            role: localSession.role,
+          },
+          student,
+          notes: localNotes.get(studentId) ?? { teacher: "", student: "" },
+          calendar: [],
+        }),
+      );
+    });
+
+    server.middlewares.use("/api/notes", async (request, response, next) => {
+      if (request.method !== "PUT") return next();
+
+      response.setHeader("Content-Type", "application/json");
+      response.setHeader("Cache-Control", "no-store");
+
+      if (!localSession) {
+        response.statusCode = 401;
+        response.end(JSON.stringify({ error: "Não autorizado." }));
+        return;
+      }
+
+      try {
+        request.setEncoding("utf8");
+        let body = "";
+        for await (const chunk of request) body += chunk;
+
+        const { studentId, noteType, content } = JSON.parse(body);
+        const allowedStudentId =
+          localSession.role === "teacher"
+            ? studentId
+            : localSession.studentId;
+        const allowedNoteType =
+          localSession.role === "teacher" ? "teacher" : "student";
+
+        if (
+          !allowedStudentId ||
+          !localStudents.has(allowedStudentId) ||
+          noteType !== allowedNoteType ||
+          typeof content !== "string"
+        ) {
+          response.statusCode = 403;
+          response.end(JSON.stringify({ error: "Operação não permitida." }));
+          return;
+        }
+
+        const current = localNotes.get(allowedStudentId) ?? {
+          teacher: "",
+          student: "",
+        };
+        localNotes.set(allowedStudentId, {
+          ...current,
+          [noteType]: content,
+        });
+
+        response.statusCode = 200;
+        response.end(JSON.stringify({ ok: true }));
+      } catch {
+        response.statusCode = 400;
+        response.end(JSON.stringify({ error: "Dados inválidos." }));
+      }
     });
 
     server.middlewares.use(

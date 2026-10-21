@@ -21,6 +21,13 @@ const toPlainText = (value: string | RichContent | undefined) =>
         .join("")
     : value ?? "";
 
+const groupByPhoneme = (items: PronunciationItem[]) =>
+  items.reduce<PronunciationItem[][]>((groups, item) => {
+    if (item.phoneme || groups.length === 0) groups.push([]);
+    groups[groups.length - 1].push(item);
+    return groups;
+  }, []);
+
 function PronunciationRow({ item }: { item: PronunciationItem }) {
   const audioSource = item.audio ?? item.phoneme ?? "";
   const audioLabel =
@@ -70,16 +77,21 @@ export default function Pronunciation() {
             id={section.title.toLowerCase().replaceAll(" + ", "-").replaceAll(" ", "-")}
             label={section.title}
             heading={2}
-            className="mb-7"
+            className="mb-4"
           >
-            <ul className="grid gap-1">
-              {section.items.map((item, index) => (
-                <PronunciationRow
-                  key={`${section.title}-${item.english ?? item.phoneme}-${index}`}
-                  item={item}
-                />
-              ))}
-            </ul>
+            {groupByPhoneme(section.items).map((group, groupIndex) => (
+              <ul
+                key={`${section.title}-group-${groupIndex}`}
+                className="grid gap-1 [&+&]:mt-5"
+              >
+                {group.map((item, itemIndex) => (
+                  <PronunciationRow
+                    key={`${section.title}-${item.english ?? item.phoneme}-${itemIndex}`}
+                    item={item}
+                  />
+                ))}
+              </ul>
+            ))}
           </Section>
         ))}
       </PageSections>
