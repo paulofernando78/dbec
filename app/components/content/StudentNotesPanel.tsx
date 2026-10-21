@@ -120,7 +120,7 @@ export function StudentNotesPanel() {
   if (!session || isDashboard) return null;
 
   return (
-    <div className="absolute right-4 top-28 z-40 flex flex-col items-end">
+    <div className="sticky top-o z-40 ml-auto flex h-0 w-fit flex-col items-end">
       <Button
         ariaLabel={isOpen ? "Close student notes" : "Open student notes"}
         pressed={isOpen}
@@ -128,11 +128,10 @@ export function StudentNotesPanel() {
         icon={isOpen ? <X /> : <NotebookPen />}
         className="h-12! w-fit! px-3!"
       >
-        {isOpen ? "Close notes" : "Notes"}
       </Button>
 
       {isOpen && (
-        <div className="mt-3 w-[min(720px,calc(100vw-2rem))] rounded-xl bg-[var(--background)] p-3 shadow-2xl ring-1 ring-slate-300">
+        <div className="mt-3 w-full rounded-xl bg-[var(--background)] p-3 shadow-2xl ring-1 ring-slate-300">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
               <h2 className="text-lg font-black">Student notes</h2>
