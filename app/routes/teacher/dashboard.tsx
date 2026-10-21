@@ -6,6 +6,7 @@ import { Calendar } from "@/components/content/Calendar";
 import { PageHeader } from "@/components/content/PageHeader";
 import { StudentForm } from "@/components/content/StudentForm";
 import { Card } from "@/components/ui/Card";
+import { useNotesRealtime } from "@/hooks/useNotesRealtime";
 
 import { students as developmentStudents } from "@/data/students";
 
@@ -50,6 +51,14 @@ export default function TeacherDashboard() {
   const [studentError, setStudentError] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
   const student = data?.student;
+
+  const { sendNote } = useNotesRealtime(
+    studentId,
+    "teacher",
+    (noteType, content) => {
+      setNotes((current) => ({ ...current, [noteType]: content }));
+    },
+  );
 
   const loadStudents = async () => {
     try {
@@ -230,9 +239,10 @@ export default function TeacherDashboard() {
               <DashboardNotes
                 title="Teacher's Notes"
                 value={notes.teacher}
-                onChange={(value) =>
-                  setNotes((current) => ({ ...current, teacher: value }))
-                }
+                onChange={(value) => {
+                  setNotes((current) => ({ ...current, teacher: value }));
+                  sendNote("teacher", value);
+                }}
                 onSave={saveTeacherNote}
               />
               <DashboardNotes

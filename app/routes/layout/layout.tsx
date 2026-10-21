@@ -13,7 +13,8 @@ export default function Layout() {
   const location = useLocation();
   const isLessonPage =
     /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
-    /^\/travel\/unit\//.test(location.pathname);
+    /^\/travel\/unit\//.test(location.pathname) ||
+    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
 
   return (
     <div className="flex-1 grid h-full min-h-0 grid-cols-[270px_minmax(0,1fr)] overflow-hidden max-[700px]:grid-cols-1">
@@ -26,7 +27,7 @@ export default function Layout() {
         className="relative min-h-0 w-full overflow-x-hidden overflow-y-auto p-4"
         data-scroll-container
       >
-        <StudentNotesPanel />
+        {isLessonPage && <StudentNotesPanel />}
         <Outlet />
         {!isLessonPage && <ScrollToTop />}
       </main>

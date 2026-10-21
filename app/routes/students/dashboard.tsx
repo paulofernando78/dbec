@@ -5,6 +5,7 @@ import { DashboardNotes } from "@/components/content/DashboardNotes";
 import { Calendar } from "@/components/content/Calendar";
 import { PageHeader } from "@/components/content/PageHeader";
 import Emojis from "@/features/Emojis/Emojis";
+import { useNotesRealtime } from "@/hooks/useNotesRealtime";
 
 export default function Dashboard() {
   const { studentId } = useParams();
@@ -12,6 +13,14 @@ export default function Dashboard() {
   const [notes, setNotes] = useState({ teacher: "", student: "" });
   const [calendar, setCalendar] = useState<Record<string, string>>({});
   const [error, setError] = useState("");
+
+  const { sendNote } = useNotesRealtime(
+    studentId,
+    "student",
+    (noteType, content) => {
+      setNotes((current) => ({ ...current, [noteType]: content }));
+    },
+  );
 
   useEffect(() => {
     if (!studentId) {
@@ -121,9 +130,10 @@ export default function Dashboard() {
           <DashboardNotes
             title="Student's Notes"
             value={notes.student}
-            onChange={(value) =>
-              setNotes((current) => ({ ...current, student: value }))
-            }
+            onChange={(value) => {
+              setNotes((current) => ({ ...current, student: value }));
+              sendNote("student", value);
+            }}
             onSave={saveStudentNote}
           />
         </div>

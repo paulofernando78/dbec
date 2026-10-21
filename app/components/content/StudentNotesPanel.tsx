@@ -5,6 +5,7 @@ import { useLocation } from "react-router";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { TextArea } from "@/components/ui/TextArea";
+import { useNotesRealtime } from "@/hooks/useNotesRealtime";
 
 type Session = {
   role: "teacher" | "student";
@@ -31,6 +32,14 @@ export function StudentNotesPanel() {
   const isDashboard =
     location.pathname.startsWith("/dashboard") ||
     location.pathname.startsWith("/teacher/dashboard");
+
+  const { connectionState, sendNote } = useNotesRealtime(
+    studentId,
+    session?.role,
+    (noteType, content) => {
+      setNotes((current) => ({ ...current, [noteType]: content }));
+    },
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -131,13 +140,16 @@ export function StudentNotesPanel() {
       </Button>
 
       {isOpen && (
-        <div className="mt-3 w-full rounded-xl bg-[var(--background)] p-3 shadow-2xl ring-1 ring-slate-300">
+        <div className="mt-3 w-full rounded-xl bg-(--background) p-3 shadow-2xl ring-1 ring-slate-300">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
               <h2 className="text-lg font-black">Student notes</h2>
               {studentName && (
                 <p className="text-sm text-slate-500">{studentName}</p>
               )}
+              <p className="text-xs text-slate-400">
+                {connectionState === "connected" ? "Live" : "Reconnecting…"}
+              </p>
             </div>
             {isLoading && <LoaderCircle className="animate-spin text-slate-400" />}
           </div>
@@ -151,12 +163,11 @@ export function StudentNotesPanel() {
                   rows={8}
                   value={notes.teacher}
                   readOnly={session.role !== "teacher"}
-                  onChange={(event) =>
-                    setNotes((current) => ({
-                      ...current,
-                      teacher: event.target.value,
-                    }))
-                  }
+                  onChange={(event) => {
+                    const content = event.target.value;
+                    setNotes((current) => ({ ...current, teacher: content }));
+                    sendNote("teacher", content);
+                  }}
                   onBlur={() => void saveNote("teacher")}
                 />
               </Card>
@@ -166,12 +177,11 @@ export function StudentNotesPanel() {
                   rows={8}
                   value={notes.student}
                   readOnly={session.role !== "student"}
-                  onChange={(event) =>
-                    setNotes((current) => ({
-                      ...current,
-                      student: event.target.value,
-                    }))
-                  }
+                  onChange={(event) => {
+                    const content = event.target.value;
+                    setNotes((current) => ({ ...current, student: content }));
+                    sendNote("student", content);
+                  }}
                   onBlur={() => void saveNote("student")}
                 />
               </Card>

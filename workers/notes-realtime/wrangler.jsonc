@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "dbec-notes-realtime",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-21",
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "NOTES_REALTIME",
+        "class_name": "NotesRoom"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["NotesRoom"]
+    }
+  ]
+}
