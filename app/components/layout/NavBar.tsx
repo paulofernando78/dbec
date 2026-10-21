@@ -86,7 +86,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         if ("group" in item) {
           return (
             <div key={item.group} className="mt-6">
-              <p className="mb-2 text-xs font-bold uppercase tracking-wider">
+              <p className="mb-2 font-black uppercase tracking-wider">
                 {item.group}
               </p>
               <div className="pl-2">
