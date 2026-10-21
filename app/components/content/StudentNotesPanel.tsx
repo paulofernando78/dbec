@@ -135,7 +135,7 @@ export function StudentNotesPanel() {
         pressed={isOpen}
         onClick={togglePanel}
         icon={isOpen ? <X /> : <NotebookPen />}
-        className="h-12! w-fit! px-3!"
+        className="size-12! p-[3px]!"
       >
       </Button>
 

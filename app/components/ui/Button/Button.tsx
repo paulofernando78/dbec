@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-import styles from "./Button.module.css";
-
 type ButtonProps = {
   ariaLabel?: string;
   icon?: ReactNode | string;
@@ -26,9 +24,9 @@ export const Button = ({
 }: ButtonProps) => {
   const hasText = children != null;
   const baseClasses =
-    "grid size-[60px] cursor-pointer place-items-center rounded-xl border border-gray-200 bg-[linear-gradient(145deg,#f8fafc_0%,#e2e8f0_100%)] pt-[3px] text-[#242424] [text-shadow:0_0.0625em_0_#fff] transition-all duration-150 ease-in-out active:translate-y-[0.225em] disabled:cursor-not-allowed disabled:opacity-55 disabled:brightness-[1.15] [&_svg]:size-[21px] [&_svg]:stroke-slate-400";
+    "group relative grid size-[60px] cursor-pointer place-items-center rounded-[12px] border border-[var(--button-border)] bg-gradient-to-b from-[var(--button-outer-start)] to-[var(--button-outer-end)] p-[3px] text-[var(--button-text)] shadow-[0_1px_3px_rgba(0,0,0,0.5)] transition-[transform,box-shadow] duration-80 active:scale-[0.995] active:shadow-[0_0px_1px_rgba(0,0,0,0.5)] disabled:cursor-not-allowed disabled:opacity-55 disabled:brightness-[1.15]";
   const textClasses = hasText
-    ? "!inline-flex !h-[60px] !w-fit items-center justify-center gap-[6px] whitespace-nowrap px-6 font-bold text-gray-600"
+    ? "!inline-flex !h-[60px] !w-fit items-center justify-center whitespace-nowrap font-bold"
     : "";
 
   return (
@@ -36,12 +34,20 @@ export const Button = ({
       type={type}
       aria-label={ariaLabel}
       aria-pressed={pressed}
-      className={`${styles.depth} ${baseClasses} ${textClasses} ${className} shrink-0`}
+      className={`${baseClasses} ${textClasses} ${className} shrink-0`}
       onClick={onClick}
       disabled={disabled}
     >
-      {icon}
-      {children}
+      <span
+        className={`${
+          hasText ? "h-full w-full px-2 py-2" : "absolute inset-1"
+        } grid place-items-center rounded-lg bg-linear-to-b from-[var(--button-inner-start)] to-[var(--button-inner-end)]`}
+      >
+        <span className="flex items-center gap-2 [&_svg]:size-5.25 [&_svg]:stroke-[var(--button-icon)]">
+          {icon}
+          {children}
+        </span>
+      </span>
     </button>
   );
 };

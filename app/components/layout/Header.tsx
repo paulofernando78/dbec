@@ -149,7 +149,7 @@ export const Header = ({ onClick }: HeadersProps) => {
           <Button
             icon={<Menu />}
             onClick={onClick}
-            className="icon transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:opacity-0"
+            className="size-10! p-[3px]! transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:opacity-0"
           />
         )}
 
@@ -185,7 +185,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         <Button
           icon={isDarkMode ? <Sun /> : <MoonStar />}
           onClick={toggleTheme}
-          className="icon"
+          className="size-10! p-[3px]!"
         />
 
       </div>
