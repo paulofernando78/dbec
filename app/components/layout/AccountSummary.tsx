@@ -1,7 +1,7 @@
 type AccountSummaryProps = {
   name: string;
   subtitle: string;
-  className: string
+  className?: string
 };
 
 export const AccountSummary = ({ name, subtitle, className }: AccountSummaryProps) => (

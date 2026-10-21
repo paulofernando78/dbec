@@ -31,6 +31,7 @@ export const Header = ({ onClick }: HeadersProps) => {
   const [session, setSession] = useState<Session | null>(null);
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
+  const [shortDate, setShortDate] = useState("");
 
   useEffect(() => {
     const updateDateTime = () => {
@@ -43,13 +44,18 @@ export const Header = ({ onClick }: HeadersProps) => {
           second: "2-digit",
         }),
       );
-      const month = now.toLocaleDateString("en-US", { month: "short" });
+      const month = now.toLocaleDateString("en-US", { month: "long" });
       const weekday = now.toLocaleDateString("en-US", {
+        weekday: "long",
+      });
+      const shortMonth = now.toLocaleDateString("en-US", { month: "short" });
+      const shortWeekday = now.toLocaleDateString("en-US", {
         weekday: "short",
       });
       const day = now.toLocaleDateString("en-US", { day: "2-digit" });
 
-      setDate(`${month} ${weekday} ${day}`);
+      setDate(`${month}, ${weekday} ${day}`);
+      setShortDate(`${shortMonth}, ${shortWeekday} ${day}`);
     };
 
     updateDateTime();
@@ -164,7 +170,8 @@ export const Header = ({ onClick }: HeadersProps) => {
 
       <div className="text-center text-xs leading-tight tabular-nums">
         <p>{time}</p>
-        <p>{date}</p>
+        <p className="max-[700px]:hidden">{date}</p>
+        <p className="hidden max-[700px]:block">{shortDate}</p>
       </div>
 
       <div className="flex min-w-0 items-center gap-4 justify-self-end">
@@ -172,7 +179,6 @@ export const Header = ({ onClick }: HeadersProps) => {
           <AccountSummary
             name={session.displayName}
             subtitle={session.role === "student" ? "Full access" : "Teacher"}
-            className="translate-y-1"
           />
         )}
 
