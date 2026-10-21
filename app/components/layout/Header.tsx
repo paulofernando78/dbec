@@ -1,11 +1,11 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Link, useLocation } from "react-router";
 
+import { Card } from "../ui/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { MoonStar, Sun } from "@/components/Icons";
 
 import { Menu, X } from "lucide-react";
-
 import { AccountSummary } from "./AccountSummary";
 
 type Session = {
@@ -29,6 +29,34 @@ export const Header = ({ onClick }: HeadersProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [session, setSession] = useState<Session | null>(null);
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    const updateDateTime = () => {
+      const now = new Date();
+
+      setTime(
+        now.toLocaleTimeString("pt-BR", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        }),
+      );
+      const month = now.toLocaleDateString("en-US", { month: "short" });
+      const weekday = now.toLocaleDateString("en-US", {
+        weekday: "short",
+      });
+      const day = now.toLocaleDateString("en-US", { day: "2-digit" });
+
+      setDate(`${month} ${weekday} ${day}`);
+    };
+
+    updateDateTime();
+    const intervalId = window.setInterval(updateDateTime, 1_000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
@@ -109,40 +137,37 @@ export const Header = ({ onClick }: HeadersProps) => {
   };
 
   return (
-    <div className="w-full h-10 px-4 my-4 flex items-center justify-between">
-      {!isPresentationPage && (
-        <Button
-          icon={<Menu />}
-          onClick={onClick}
-          className="icon transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:-translate-x-14 min-[700px]:opacity-0"
-        />
-      )}
+    <Card className="my-2 grid min-h-14 w-full shrink-0 grid-cols-[1fr_auto_1fr] items-center rounded-xl border px-4 py-0">
+      <div className="min-w-0 justify-self-start">
+        {!isPresentationPage && (
+          <Button
+            icon={<Menu />}
+            onClick={onClick}
+            className="icon transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:opacity-0"
+          />
+        )}
 
-      {isPresentationPage && (
-        <div
-          className="
-            flex
-            items-center
-            gap-2.5
-            font-font-oswald
-            text-[1.3rem]
-            font-bold
-            self-start
-          "
-        >
-          <Link to="/" className="text-lg">
-            HOME
-          </Link>
+        {isPresentationPage && (
+          <div className="flex items-center gap-2.5 font-font-oswald text-[1.3rem] font-bold">
+            <Link to="/" className="text-lg">
+              HOME
+            </Link>
 
-          <span className="w-0.75 h-5 bg-gray-500" />
+            <span className="h-5 w-0.75 bg-gray-500" />
 
-          <Link to="/about" className="text-lg">
-            ABOUT
-          </Link>
-        </div>
-      )}
+            <Link to="/about" className="text-lg">
+              ABOUT
+            </Link>
+          </div>
+        )}
+      </div>
 
-      <div className="ml-auto flex items-center gap-4">
+      <div className="text-center text-xs leading-tight tabular-nums">
+        <p>{time}</p>
+        <p>{date}</p>
+      </div>
+
+      <div className="flex min-w-0 items-center gap-4 justify-self-end">
         {session && (
           <AccountSummary
             name={session.displayName}
@@ -230,6 +255,6 @@ export const Header = ({ onClick }: HeadersProps) => {
           </div>
         </div>
       )}
-    </div>
+    </Card>
   );
 };
