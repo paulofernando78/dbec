@@ -56,9 +56,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
   return (
     <nav
       className="
-        h-[calc(100%_-_2rem)]
-        m-4
-        mr-0
+        h-[calc(100%_-_0rem)]
         p-4
         text-gray-500
         bg-[var(--navbar-background)]

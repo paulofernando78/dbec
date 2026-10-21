@@ -17,14 +17,14 @@ export default function Layout() {
     /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
 
   return (
-    <div className="flex-1 grid h-full min-h-0 grid-cols-[270px_minmax(0,1fr)] overflow-hidden max-[700px]:grid-cols-1">
+    <div className="flex-1 gap-4 grid h-full min-h-0 grid-cols-[270px_minmax(0,1fr)] overflow-hidden max-[700px]:grid-cols-1">
       <aside
         className={`z-20 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute max-[700px]:w-65 max-[700px]:-translate-x-70 ${isNavBarOpen ? "max-[700px]:translate-x-0" : ""}`}
       >
         <NavBar closeNavBar={closeNavBar} />
       </aside>
       <main
-        className="relative min-h-0 w-full overflow-x-hidden overflow-y-auto p-4"
+        className="relative min-h-0 w-full overflow-x-hidden overflow-y-auto"
         data-scroll-container
       >
         {isLessonPage && <StudentNotesPanel />}

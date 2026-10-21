@@ -368,7 +368,7 @@ export default function Emojis() {
                       key={wordIndex}
                       src={word.audio}
                       showIcon={false}
-                      wrapperClassName="h-12! min-h-12! w-full! overflow-hidden text-center text-sm uppercase last:mb-2"
+                      wrapperClassName="h-12! min-h-12! w-full! overflow-hidden text-center text-sm uppercase"
                     >
                       <span
                         className={`block w-full max-w-full whitespace-nowrap text-center leading-none ${getWordSizeClass(word.word)}`}

@@ -143,7 +143,7 @@ export const Header = ({ onClick }: HeadersProps) => {
   };
 
   return (
-    <Card className="my-2 grid min-h-14 w-full shrink-0 grid-cols-[1fr_auto_1fr] items-center rounded-xl border px-4 py-0">
+    <Card className="grid min-h-14 w-full shrink-0 grid-cols-[1fr_auto_1fr] items-center rounded-xl border ">
       <div className="min-w-0 justify-self-start">
         {!isPresentationPage && (
           <Button
