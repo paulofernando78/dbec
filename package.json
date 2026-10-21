@@ -7,7 +7,7 @@
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "deploy": "git add . && git commit -m \"wip\" && git push"
+    "deploy": "git add . && git commit --allow-empty -m \"wip\" && git push"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
