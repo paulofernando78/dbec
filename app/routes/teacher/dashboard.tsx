@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 import { DashboardNotes } from "@/components/content/DashboardNotes";
+import { DashboardProgress } from "@/components/content/DashboardProgress";
 import { Calendar } from "@/components/content/Calendar";
 import { PageHeader } from "@/components/content/PageHeader";
 import { StudentForm } from "@/components/content/StudentForm";
 import { Card } from "@/components/ui/Card";
 import { useNotesRealtime } from "@/hooks/useNotesRealtime";
+import {
+  getCourseProgressSummary,
+  type CourseProgressSummary,
+} from "@/utils/course-progress";
 
 import { students as developmentStudents } from "@/data/students";
 
@@ -50,7 +55,12 @@ export default function TeacherDashboard() {
   const [isLoadingStudent, setIsLoadingStudent] = useState(false);
   const [studentError, setStudentError] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
+  const [progress, setProgress] = useState<CourseProgressSummary | null>(null);
   const student = data?.student;
+
+  useEffect(() => {
+    setProgress(getCourseProgressSummary());
+  }, []);
 
   const { sendNote } = useNotesRealtime(
     studentId,
@@ -235,6 +245,7 @@ export default function TeacherDashboard() {
   
         {student && studentId ? (
           <div className="grid gap-4">
+            {progress && <DashboardProgress progress={progress} />}
             <div className="flex justify-between gap-4 max-[900px]:flex-col max-[900px]:gap-4">
               <DashboardNotes
                 title="Teacher's Notes"
