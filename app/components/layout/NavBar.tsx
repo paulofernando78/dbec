@@ -114,7 +114,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
 
         return (
           <div key={href}>
-            {(href !== "/dashboard" || isAuthenticated) && (
+            {(!["/dashboard", "/guide"].includes(href) || isAuthenticated) && (
               <NavLink
                 to={href === "/dashboard" ? dashboardPath : href}
                 end
@@ -123,7 +123,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                   flex w-fit items-center gap-2
                   ${Icon ? "mt-2 font-bold uppercase" : ""}
                   ${isActive ? "text-black" : ""}
-                  ${href === "/dashboard" ? "mb-8" : ""}
+                  ${href === "/guide" ? "mb-8" : ""}
                 `}
               >
                 {Icon && <Icon width={25} height={25} className="shrink-0" />}

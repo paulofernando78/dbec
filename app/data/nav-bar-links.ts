@@ -6,6 +6,7 @@ import {
   Gamepad2,
   AudioLines,
   Plane,
+  BadgeHelp,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -28,6 +29,11 @@ export const links: NavItem[] = [
     href: "/dashboard",
     label: "dashboard",
     icon: CircleUserRound,
+  },
+  {
+    href: "/guide",
+    label: "guide",
+    icon: BadgeHelp,
   },
   {
     group: "path",

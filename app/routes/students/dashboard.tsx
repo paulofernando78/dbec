@@ -4,8 +4,13 @@ import { useParams } from "react-router";
 import { DashboardNotes } from "@/components/content/DashboardNotes";
 import { Calendar } from "@/components/content/Calendar";
 import { PageHeader } from "@/components/content/PageHeader";
+import { DashboardProgress } from "@/components/content/DashboardProgress";
 import Emojis from "@/features/Emojis/Emojis";
 import { useNotesRealtime } from "@/hooks/useNotesRealtime";
+import {
+  getCourseProgressSummary,
+  type CourseProgressSummary,
+} from "@/utils/course-progress";
 
 export default function Dashboard() {
   const { studentId } = useParams();
@@ -13,6 +18,11 @@ export default function Dashboard() {
   const [notes, setNotes] = useState({ teacher: "", student: "" });
   const [calendar, setCalendar] = useState<Record<string, string>>({});
   const [error, setError] = useState("");
+  const [progress, setProgress] = useState<CourseProgressSummary | null>(null);
+
+  useEffect(() => {
+    setProgress(getCourseProgressSummary());
+  }, []);
 
   const { sendNote } = useNotesRealtime(
     studentId,
@@ -118,6 +128,7 @@ export default function Dashboard() {
         time={student.time}
         variant="dashboard"
       />
+      {progress && <DashboardProgress progress={progress} />}
       <div className="grid gap-4">
         <div className="flex gap-4 justify-between max-[800px]:flex-col">
           <DashboardNotes
