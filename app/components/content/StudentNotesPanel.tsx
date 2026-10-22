@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { LoaderCircle, NotebookPen, X } from "lucide-react";
 import { useLocation } from "react-router";
 
@@ -28,10 +29,11 @@ export function StudentNotesPanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [panelHost, setPanelHost] = useState<HTMLElement | null>(null);
 
-  const isDashboard =
-    location.pathname.startsWith("/dashboard") ||
-    location.pathname.startsWith("/teacher/dashboard");
+  useEffect(() => {
+    setPanelHost(document.getElementById("student-notes-panel-host"));
+  }, []);
 
   const { connectionState, sendNote } = useNotesRealtime(
     studentId,
@@ -68,7 +70,7 @@ export function StudentNotesPanel() {
     };
   }, [location.pathname]);
 
-  const loadNotes = async () => {
+  const loadNotes = useCallback(async () => {
     if (!studentId) {
       setError("Select a student in the Teacher's Dashboard first.");
       return;
@@ -99,12 +101,15 @@ export function StudentNotesPanel() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [studentId]);
+
+  useEffect(() => {
+    if (isOpen) void loadNotes();
+  }, [isOpen, loadNotes]);
 
   const togglePanel = () => {
     const nextOpen = !isOpen;
     setIsOpen(nextOpen);
-    if (nextOpen) void loadNotes();
   };
 
   const saveNote = async (noteType: "teacher" | "student") => {
@@ -126,24 +131,25 @@ export function StudentNotesPanel() {
     }
   };
 
-  if (!session || isDashboard) return null;
+  if (!session) return null;
 
   return (
-    <div className="sticky top-o z-40 ml-auto flex h-0 w-fit flex-col items-end">
+    <div className="relative z-40 flex w-14 flex-col items-center max-[700px]:w-12">
       <Button
         ariaLabel={isOpen ? "Close student notes" : "Open student notes"}
         pressed={isOpen}
         onClick={togglePanel}
         icon={isOpen ? <X /> : <NotebookPen />}
-        className="size-12! p-[3px]!"
-      >
-      </Button>
+        className="size-10!"
+      />
 
-      {isOpen && (
-        <div className="mt-3 w-full rounded-xl bg-(--background) p-3 shadow-2xl ring-1 ring-slate-300">
+      {isOpen &&
+        panelHost &&
+        createPortal(
+        <div className="pointer-events-auto w-full translate-y-[0.05rem] rounded-xl bg-(--background) p-3 shadow-2xl ring-1 ring-slate-300">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
-              <h2 className="text-lg font-black">Student notes</h2>
+              <h2 className="text-lg font-black">Notes</h2>
               {studentName && (
                 <p className="text-sm text-slate-500">{studentName}</p>
               )}
@@ -187,7 +193,8 @@ export function StudentNotesPanel() {
               </Card>
             </div>
           )}
-        </div>
+        </div>,
+        panelHost,
       )}
     </div>
   );

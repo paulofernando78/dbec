@@ -39,6 +39,7 @@ export default function App() {
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -61,11 +62,16 @@ export default function App() {
     setIsNavBarOpen(false);
   };
 
+  const toggleSideBar = () => {
+    setIsSideBarOpen((prev) => !prev);
+  };
+
   useEffect(() => {
     const mobileBreakpoint = window.matchMedia("(max-width: 700px)");
     const handleBreakpointChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
         setIsNavBarOpen(false);
+        setIsSideBarOpen(false);
       }
     };
 
@@ -79,13 +85,23 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-container">
-        <Header onClick={toggleNav} />
+        <Header
+          onClick={toggleNav}
+          isSideBarOpen={isSideBarOpen}
+          onSideBarClick={toggleSideBar}
+        />
         <div className="app-content">
           <div
             id="content-scroll"
             className={`app-scrollArea ${isPresentationPage ? "app-scrollArea--document" : ""}`}
           >
-            <Outlet context={{ isNavBarOpen, closeNavBar }} />
+            <Outlet
+              context={{
+                isNavBarOpen,
+                closeNavBar,
+                isSideBarOpen,
+              }}
+            />
           </div>
         </div>
           {location.pathname !== "/" && <Footer />}

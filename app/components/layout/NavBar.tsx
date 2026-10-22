@@ -59,7 +59,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         h-[calc(100%_-_0rem)]
         p-4
         text-gray-500
-        bg-[var(--navbar-background)]
+        bg-(--navbar-background)
         rounded-xl
         shadows
         overflow-y-auto
@@ -95,7 +95,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                     end
                     onClick={closeNavBar}
                     className={({ isActive }) => `
-                      mt-2 flex items-center gap-2 font-bold uppercase
+                      mt-2 flex w-fit items-center gap-2 font-bold uppercase
                       ${isActive ? "text-black" : ""}
                     `}
                   >
@@ -120,7 +120,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
                 end
                 onClick={closeNavBar}
                 className={({ isActive }) => `
-                  flex items-center gap-2
+                  flex w-fit items-center gap-2
                   ${Icon ? "mt-2 font-bold uppercase" : ""}
                   ${isActive ? "text-black" : ""}
                   ${href === "/dashboard" ? "mb-8" : ""}

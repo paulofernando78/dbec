@@ -5,7 +5,7 @@ import { Card } from "../ui/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { MoonStar, Sun } from "@/components/Icons";
 
-import { Menu, X } from "lucide-react";
+import { Menu, PanelRightClose, PanelRightOpen, X } from "lucide-react";
 import { AccountSummary } from "./AccountSummary";
 
 type Session = {
@@ -21,9 +21,15 @@ type Session = {
 
 interface HeadersProps {
   onClick: () => void;
+  isSideBarOpen: boolean;
+  onSideBarClick: () => void;
 }
 
-export const Header = ({ onClick }: HeadersProps) => {
+export const Header = ({
+  onClick,
+  isSideBarOpen,
+  onSideBarClick,
+}: HeadersProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,6 +82,10 @@ export const Header = ({ onClick }: HeadersProps) => {
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
+  const isLessonPage =
+    /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
+    /^\/travel\/unit\//.test(location.pathname) ||
+    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
   useEffect(() => {
     if (new URLSearchParams(location.search).get("login") === "required") {
       setIsLoginOpen(true);
@@ -168,7 +178,7 @@ export const Header = ({ onClick }: HeadersProps) => {
         )}
       </div>
 
-      <div className="text-center text-xs leading-tight tabular-nums">
+      <div className="text-center text-xs leading-tight tabular-nums font-bold">
         <p>{time}</p>
         <p className="max-[700px]:hidden">{date}</p>
         <p className="hidden max-[700px]:block">{shortDate}</p>
@@ -188,6 +198,19 @@ export const Header = ({ onClick }: HeadersProps) => {
           className="size-10! p-[3px]!"
         />
 
+        {isLessonPage && (
+          <Button
+            ariaLabel={
+              isSideBarOpen ? "Close notes sidebar" : "Open notes sidebar"
+            }
+            pressed={isSideBarOpen}
+            icon={
+              isSideBarOpen ? <PanelRightClose /> : <PanelRightOpen />
+            }
+            onClick={onSideBarClick}
+            className="hidden size-10! p-[3px]! max-[700px]:grid!"
+          />
+        )}
       </div>
 
       {isLoginOpen && (
