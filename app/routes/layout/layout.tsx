@@ -2,7 +2,6 @@ import { Outlet, useLocation, useOutletContext } from "react-router";
 import { NavBar } from "@/components/layout/NavBar";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { StudentNotesPanel } from "@/components/content/StudentNotesPanel";
-import { Card } from "@/components/ui/Card";
 
 type LayoutContext = {
   isNavBarOpen: boolean;
@@ -14,7 +13,7 @@ export default function Layout() {
   const { isNavBarOpen, closeNavBar, isSideBarOpen } =
     useOutletContext<LayoutContext>();
   const location = useLocation();
-  const isLessonPage =
+  const hasNotesSidebar =
     /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
     /^\/travel\/unit\//.test(location.pathname) ||
     /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
@@ -22,7 +21,7 @@ export default function Layout() {
   return (
     <div
       className={`relative grid h-full min-h-0 flex-1 gap-4 overflow-hidden max-[700px]:grid-cols-1! ${
-        isLessonPage
+        hasNotesSidebar
           ? "grid-cols-[max-content_minmax(0,1fr)_3.5rem]"
           : "grid-cols-[max-content_minmax(0,1fr)]"
       }`}
@@ -33,27 +32,27 @@ export default function Layout() {
         <NavBar closeNavBar={closeNavBar} />
       </aside>
       <main
-        className="relative min-h-0 w-full overflow-x-hidden overflow-y-auto"
+        className="relative min-h-0 w-full overflow-x-hidden overflow-y-auto pb-1.25"
         data-scroll-container
       >
-        {isLessonPage && (
+        {hasNotesSidebar && (
           <div
             id="student-notes-panel-host"
-            className="pointer-events-none sticky top-0 z-40 mx-auto h-0 w-[calc(100%_-_0.2rem)] max-w-4xl max-[700px]:mr-auto max-[700px]:ml-0 max-[700px]:w-[calc(100%_-_5rem)]"
+            className="pointer-events-none sticky top-0 z-40 mx-auto h-0 w-[calc(100%_-_0.1rem)] max-w-4xl max-[700px]:mr-auto max-[700px]:ml-[0.05rem] max-[700px]:w-[calc(100%_-_4.8rem)]"
           />
         )}
         <Outlet />
-        {!isLessonPage && <ScrollToTop />}
+        {!hasNotesSidebar && <ScrollToTop />}
       </main>
-      {isLessonPage && (
+      {hasNotesSidebar && (
         <aside
-          className={`bg-(--navbar-background) relative z-30 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute! max-[700px]:inset-y-0 max-[700px]:right-0 max-[700px]:w-16 ${isSideBarOpen ? "max-[700px]:translate-x-0" : "max-[700px]:translate-x-[calc(100%+1rem)]"}`}
+          className={`bg-(--navbar-background) rounded-xl relative z-30 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute!  max-[700px]:right-0 max-[700px]:w-16 ${isSideBarOpen ? "max-[700px]:translate-x-0" : "max-[700px]:translate-x-[calc(100%+1rem)]"}`}
         >
-          <Card className="h-full p-2!">
+          <div className="h-full">
             <div className="flex h-full justify-center">
-              <StudentNotesPanel />
+              <StudentNotesPanel isSideBarOpen={isSideBarOpen} />
             </div>
-          </Card>
+          </div>
         </aside>
       )}
     </div>

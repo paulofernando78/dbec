@@ -151,7 +151,7 @@ export default function AuthenticContents() {
       )}
 
       <p className="mb-12 mt-4 inline-block rounded-full border border-gray-300 px-3 py-1 text-sm font-bold">
-        {current.slug} — Step {stepIndex + 1} of {lessonSteps.length}
+        {current.label} — Step {stepIndex + 1} of {lessonSteps.length}
       </p>
 
       {stepContent}

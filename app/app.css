@@ -70,10 +70,12 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  
 }
 
 .app-scrollArea--document {
   overflow-y: auto;
+  
 }
 
 .phonetics {
@@ -82,7 +84,7 @@ body {
 }
 
 .shadows {
-  @apply shadow-[0_0_3px_var(--slate-3)];
+  @apply shadow-[0_0_1px_var(--slate-3)];
 }
 
 /*

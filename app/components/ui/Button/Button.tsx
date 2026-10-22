@@ -24,7 +24,7 @@ export const Button = ({
 }: ButtonProps) => {
   const hasText = children != null;
   const baseClasses =
-    "group relative grid size-[60px] cursor-pointer place-items-center rounded-[12px] border border-[var(--button-border)] bg-gradient-to-b from-[var(--button-outer-start)] to-[var(--button-outer-end)] p-[3px] text-[var(--button-text)] shadow-[0_1px_3px_rgba(0,0,0,0.5)] transition-[transform,box-shadow] duration-80 active:scale-[0.995] active:shadow-[0_0px_1px_rgba(0,0,0,0.5)] disabled:cursor-not-allowed disabled:opacity-55 disabled:brightness-[1.15]";
+    "group relative grid size-[60px] cursor-pointer place-items-center rounded-[12px] border border-[var(--button-border)] bg-gradient-to-b from-[var(--button-outer-start)] to-[var(--button-outer-end)] p-[3px] text-[var(--button-text)] shadow-[0_1px_1px_rgba(0,0,0,0.3)] transition-[transform,box-shadow] duration-80 active:scale-[0.995] active:shadow-[0_0px_1px_rgba(0,0,0,0.5)] disabled:cursor-not-allowed disabled:opacity-55 disabled:brightness-[1.15]";
   const textClasses = hasText
     ? "!inline-flex !h-[60px] !w-fit items-center justify-center whitespace-nowrap font-bold"
     : "";

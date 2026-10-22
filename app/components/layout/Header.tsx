@@ -1,11 +1,18 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { Link, useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 import { Card } from "../ui/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { MoonStar, Sun } from "@/components/Icons";
 
-import { Menu, PanelRightClose, PanelRightOpen, X } from "lucide-react";
+import {
+  House,
+  Info,
+  Menu,
+  PanelRightClose,
+  PanelRightOpen,
+  X,
+} from "lucide-react";
 import { AccountSummary } from "./AccountSummary";
 
 type Session = {
@@ -30,6 +37,7 @@ export const Header = ({
   isSideBarOpen,
   onSideBarClick,
 }: HeadersProps) => {
+  const navigate = useNavigate();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -82,7 +90,7 @@ export const Header = ({
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
-  const isLessonPage =
+  const hasNotesSidebar =
     /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
     /^\/travel\/unit\//.test(location.pathname) ||
     /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
@@ -153,7 +161,7 @@ export const Header = ({
   };
 
   return (
-    <Card className="grid min-h-14 w-full shrink-0 grid-cols-[1fr_auto_1fr] items-center rounded-xl border ">
+    <div className="p-4 bg-(--navbar-background) grid min-h-14 w-full shrink-0 grid-cols-[1fr_auto_1fr] items-center rounded-xl ">
       <div className="min-w-0 justify-self-start">
         {!isPresentationPage && (
           <Button
@@ -164,24 +172,33 @@ export const Header = ({
         )}
 
         {isPresentationPage && (
-          <div className="flex items-center gap-2.5 font-font-oswald text-[1.3rem] font-bold">
-            <Link to="/" className="text-lg">
-              HOME
-            </Link>
-
-            <span className="h-5 w-0.75 bg-gray-500" />
-
-            <Link to="/about" className="text-lg">
-              ABOUT
-            </Link>
+          <div className="flex items-center gap-2.5">
+            <Button
+              ariaLabel="Home"
+              icon={<House />}
+              pressed={location.pathname === "/"}
+              onClick={() => navigate("/")}
+              className="size-10! p-[3px]!"
+            />
+            <Button
+              ariaLabel="About"
+              icon={<Info />}
+              pressed={location.pathname === "/about"}
+              onClick={() => navigate("/about")}
+              className="size-10! p-[3px]!"
+            />
           </div>
         )}
       </div>
 
       <div className="text-center text-xs leading-tight tabular-nums font-bold">
-        <p>{time}</p>
-        <p className="max-[700px]:hidden">{date}</p>
-        <p className="hidden max-[700px]:block">{shortDate}</p>
+        {session && location.pathname !== "/" && (
+          <>
+            <p>{time}</p>
+            <p className="max-[700px]:hidden">{date}</p>
+            <p className="hidden max-[700px]:block">{shortDate}</p>
+          </>
+        )}
       </div>
 
       <div className="flex min-w-0 items-center gap-4 justify-self-end">
@@ -198,7 +215,7 @@ export const Header = ({
           className="size-10! p-[3px]!"
         />
 
-        {isLessonPage && (
+        {hasNotesSidebar && (
           <Button
             ariaLabel={
               isSideBarOpen ? "Close notes sidebar" : "Open notes sidebar"
@@ -284,6 +301,6 @@ export const Header = ({
           </div>
         </div>
       )}
-    </Card>
+    </div>
   );
 };

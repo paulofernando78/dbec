@@ -57,11 +57,13 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                 <div className="mb-2 flex items-center gap-3">
                   <Button
                     ariaLabel={`Play ${title}`}
+                    className="shrink-0"
                     icon={
                       <Audio
                         key={`${accent}-${audioSource}`}
                         src={audioSource}
                         speechLang={speechLang}
+                        className="stroke-0!"
                         wrapperClassName="size-full items-center justify-center"
                       />
                     }

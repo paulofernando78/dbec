@@ -20,7 +20,13 @@ type Notes = {
 
 const emptyNotes: Notes = { teacher: "", student: "" };
 
-export function StudentNotesPanel() {
+type StudentNotesPanelProps = {
+  isSideBarOpen?: boolean;
+};
+
+export function StudentNotesPanel({
+  isSideBarOpen,
+}: StudentNotesPanelProps) {
   const location = useLocation();
   const [session, setSession] = useState<Session | null>(null);
   const [studentId, setStudentId] = useState("");
@@ -34,6 +40,10 @@ export function StudentNotesPanel() {
   useEffect(() => {
     setPanelHost(document.getElementById("student-notes-panel-host"));
   }, []);
+
+  useEffect(() => {
+    if (isSideBarOpen === false) setIsOpen(false);
+  }, [isSideBarOpen]);
 
   const { connectionState, sendNote } = useNotesRealtime(
     studentId,
@@ -163,7 +173,7 @@ export function StudentNotesPanel() {
           {error && <p className="mb-3 text-sm font-semibold text-red-600">{error}</p>}
 
           {studentId && (
-            <div className="grid grid-cols-2 gap-3 max-[650px]:grid-cols-1">
+            <div className="grid grid-cols-2 gap-3 max-[930px]:grid-cols-1">
               <Card title="Teacher's Notes" className="bg-[var(--background)]">
                 <TextArea
                   rows={8}

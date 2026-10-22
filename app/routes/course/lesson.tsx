@@ -107,7 +107,9 @@ export default function LessonPage() {
       </header>
 
       <p className="mt-4 inline-block rounded-full border border-gray-300 px-3 py-1 text-sm font-bold mb-12">
-        {current.slug} — Step {stepIndex + 1} of {lessonData.steps.length}
+        {current.slug.charAt(0).toUpperCase() +
+          current.slug.slice(1).replaceAll("-", " ")}{" — Step "}
+        {stepIndex + 1} of {lessonData.steps.length}
       </p>
 
       <StepRenderer data={current} />
