@@ -34,7 +34,7 @@ export const TableOfContents = ({
     Array.isArray(value) ? value : [value];
 
   return (
-    <Card className="mb-4 bg-[var(--navbar-background)] font-oswald text-lg">
+    <Card className="mb-4 bg-[var(--surface)] font-oswald text-lg">
       <div
         className="
         flex

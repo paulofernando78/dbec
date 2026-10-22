@@ -34,15 +34,21 @@ function SortableWord({
   container: ContainerName;
   onClick: () => void;
 }) {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
-    useSortable({ id: token.id, data: { container } });
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: token.id, data: { container } });
 
   return (
     <button
       ref={setNodeRef}
       type="button"
       style={{ transform: CSS.Transform.toString(transform), transition }}
-      className={`touch-none cursor-grab rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 select-none active:cursor-grabbing ${
+      className={`touch-none cursor-grab rounded-lg border border-gray-300 bg-[var(--background)] px-3 py-2 select-none active:cursor-grabbing ${
         isDragging ? "z-10 opacity-40" : ""
       }`}
       onClick={onClick}
@@ -80,7 +86,9 @@ function WordContainer({
         } ${isOver ? "border-sky-500 bg-sky-50" : "border-gray-300"}`}
       >
         {tokens.length === 0 && placeholder ? (
-          <span className="pointer-events-none text-slate-500">{placeholder}</span>
+          <span className="pointer-events-none text-slate-500">
+            {placeholder}
+          </span>
         ) : null}
         {tokens.map((token) => (
           <SortableWord
@@ -113,7 +121,9 @@ function SentenceBuilder({
   const [result, setResult] = useState<"correct" | "incorrect" | null>(null);
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    }),
   );
 
   const moveToken = (
@@ -123,7 +133,8 @@ function SentenceBuilder({
     targetIndex?: number,
   ) => {
     if (from === to) return;
-    const nextIndex = targetIndex ?? (to === "answer" ? answer.length : bank.length);
+    const nextIndex =
+      targetIndex ?? (to === "answer" ? answer.length : bank.length);
     if (from === "bank") {
       setBank((items) => items.filter((item) => item.id !== token.id));
       setAnswer((items) => {
@@ -193,8 +204,12 @@ function SentenceBuilder({
   };
 
   return (
-    <article>
-      <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+    <article className="rounded-xl bg-[var(--background)] p-4">
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleDragEnd}
+      >
         <div className="mb-3 flex items-start gap-2">
           <b className="pt-3">{number}.</b>
           <div className="min-w-0 flex-1">
@@ -219,7 +234,11 @@ function SentenceBuilder({
         }`}
         aria-live="polite"
       >
-        {result === "correct" ? "Correct!" : result === "incorrect" ? "Try again." : ""}
+        {result === "correct"
+          ? "Correct!"
+          : result === "incorrect"
+            ? "Try again."
+            : ""}
       </p>
 
       <div className="mt-1 flex gap-3">
@@ -233,7 +252,7 @@ function SentenceBuilder({
 
 export function TryItStep({ data }: { data: TryItData }) {
   return (
-    <div className="rounded-2xl bg-gray-200 p-4">
+    <div className="rounded-2xl bg-[var(--surface)] p-4">
       <h3 className="mb-4 text-lg font-bold">{data.instruction}</h3>
       <div className="grid gap-6">
         {data.items.map((item, index) => (

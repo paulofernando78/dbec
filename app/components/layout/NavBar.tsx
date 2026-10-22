@@ -59,7 +59,7 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         h-[calc(100%_-_0rem)]
         p-4
         text-gray-500
-        bg-(--navbar-background)
+        bg-(--surface)
         rounded-xl
         overflow-y-auto
         "

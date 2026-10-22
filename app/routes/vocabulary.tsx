@@ -37,10 +37,10 @@ function WordUsage({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-xl border border-gray-300 bg-[var(--background)] p-4 dark:border-gray-700">
+    <section className="rounded-xl bg-[var(--background)] p-4">
       <h3 className="text-xl font-black text-[var(--text-color)]">{word}</h3>
       <p className="mb-2 text-slate-500">{meaning}</p>
-      <p className="mb-3 rounded-lg bg-[var(--navbar-background)] px-3 py-2 font-mono text-sm">
+      <p className="mb-3 rounded-lg bg-[var(--surface)] px-3 py-2 font-mono text-sm">
         {pattern}
       </p>
       <ul className="grid gap-2">{children}</ul>
@@ -141,7 +141,7 @@ export default function Vocabulary() {
             showHeader={false}
             className="mb-4"
           >
-            <Card title={topic.title} className="bg-[var(--navbar-background)]">
+            <Card title={topic.title} className="bg-[var(--surface)]">
               <p className="mb-4 text-slate-500">{topic.description}</p>
               <TopicContent id={topic.id} />
             </Card>

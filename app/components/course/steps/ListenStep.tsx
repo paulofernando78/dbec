@@ -10,8 +10,8 @@ export function ListenStep({ data }: { data: ListenData }) {
   const [showAnswers, setShowAnswers] = useState(false);
 
   return (
-    <div className="space-y-4">
-      <section className="rounded-2xl bg-gray-200 p-4">
+    <div className="space-y-4 rounded-2xl bg-[var(--surface)] p-4">
+      <section className="rounded-xl bg-[var(--background)] p-4">
         <Dialogue
           instruction={data.instruction}
           audioSrc={data.audio}
@@ -19,7 +19,7 @@ export function ListenStep({ data }: { data: ListenData }) {
         />
       </section>
 
-      <section className="rounded-2xl bg-gray-200 p-4">
+      <section className="rounded-xl bg-[var(--background)] p-4">
         <Radio
           instruction={data.questionInstruction}
           score={false}

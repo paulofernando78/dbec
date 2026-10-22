@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 
 import { CircleArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-export const ScrollToTop = ({ inline = false }: { inline?: boolean }) => {
+export const ScrollToTop = () => {
+  const location = useLocation();
   const [visible, setVisible] = useState(false);
+  const isLessonPage =
+    /^\/course\/[^/]+\/unit\/[^/]+\/lesson\/[^/]+/.test(location.pathname) ||
+    /^\/travel\/unit\/[^/]+\/lesson\/[^/]+/.test(location.pathname) ||
+    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
 
   useEffect(() => {
     const containers = [
@@ -56,13 +62,11 @@ export const ScrollToTop = ({ inline = false }: { inline?: boolean }) => {
     />
   );
 
-  if (inline) {
-    return (
-      <div className="fixed right-4 bottom-38 z-50">
-        {button}
-      </div>
-    );
-  }
-
-  
+  return (
+    <div
+      className={`absolute right-1 z-50 ${isLessonPage ? "bottom-19" : "bottom-1"}`}
+    >
+      {button}
+    </div>
+  );
 };

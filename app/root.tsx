@@ -15,6 +15,7 @@ import "./app.css";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { DateTime } from "@/components/layout/DateTime";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -90,6 +91,7 @@ export default function App() {
           isSideBarOpen={isSideBarOpen}
           onSideBarClick={toggleSideBar}
         />
+        <DateTime />
         <div className="app-content">
           <div
             id="content-scroll"
@@ -104,7 +106,7 @@ export default function App() {
             />
           </div>
         </div>
-          {location.pathname !== "/" && <Footer />}
+        {location.pathname !== "/" && <Footer />}
       </div>
     </div>
   );

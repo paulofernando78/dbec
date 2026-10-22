@@ -4,7 +4,6 @@ import { useLocation, useNavigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { StepRenderer } from "@/components/course/steps/StepRenderer";
-import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Button } from "@/components/ui/Button";
 import { levels } from "@/data/course";
 import { lessonRegistry } from "@/data/course/lesson-registry";
@@ -108,7 +107,8 @@ export default function LessonPage() {
 
       <p className="mt-4 inline-block rounded-full border border-gray-300 px-3 py-1 text-sm font-bold mb-12">
         {current.slug.charAt(0).toUpperCase() +
-          current.slug.slice(1).replaceAll("-", " ")}{" — Step "}
+          current.slug.slice(1).replaceAll("-", " ")}
+        {" — Step "}
         {stepIndex + 1} of {lessonData.steps.length}
       </p>
 
@@ -120,15 +120,14 @@ export default function LessonPage() {
       >
         <Button
           ariaLabel="Previous step"
-          onClick={() =>
-            previous ? go(previous.slug) : navigate(sectionPath)
-          }
+          onClick={() => (previous ? go(previous.slug) : navigate(sectionPath))}
           icon={<ChevronLeft />}
           className=""
         />
         <b>{previous?.label ?? `${levelData.code} ${levelData.name}`}</b>
-        <ScrollToTop inline />
-        <b className="text-right">{next?.label ?? (isTravel ? "Travel" : "Course")}</b>
+        <b className="text-right">
+          {next?.label ?? (isTravel ? "Travel" : "Course")}
+        </b>
         <Button
           ariaLabel="Next step"
           onClick={() => (next ? go(next.slug) : finish())}

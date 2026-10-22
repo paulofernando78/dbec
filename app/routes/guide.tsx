@@ -38,7 +38,7 @@ export default function Guide() {
       </header>
 
       <div className="grid gap-4">
-        <Card className="bg-gray-100">
+        <Card className="bg-[var(--surface)]">
           <GuideTitle icon={<Star className="text-orange-500" />}>XP by level</GuideTitle>
           <p className="mb-3 text-slate-500">
             Each Course lesson counts when its padlock opens. Opening it for the first time also earns the XP shown for its level.
@@ -58,21 +58,21 @@ export default function Guide() {
           </div>
         </Card>
 
-        <Card className="bg-gray-100">
+        <Card className="bg-[var(--surface)]">
           <GuideTitle icon={<Flame className="text-orange-600" />}>Day streak</GuideTitle>
           <p className="text-slate-500">
             Finish at least one new lesson on consecutive days to grow your streak. Completing several lessons on the same day still counts as one active day.
           </p>
         </Card>
 
-        <Card className="bg-gray-100">
+        <Card className="bg-[var(--surface)]">
           <GuideTitle icon={<LockKeyholeOpen className="text-green-600" />}>Unlocking lessons</GuideTitle>
           <p className="text-slate-500">
             Lessons unlock in order. Finish every step of the current lesson to open its padlock and add one to your Lessons total. Checkpoints are reviews and do not enter the lesson or XP totals.
           </p>
         </Card>
 
-        <Card className="bg-gray-100">
+        <Card className="bg-[var(--surface)]">
           <GuideTitle icon={<BookOpenCheck className="text-blue-600" />}>Completing a lesson</GuideTitle>
           <div className="grid gap-2 text-slate-500">
             <p className="flex items-start gap-3"><Check className="shrink-0 text-green-600" size={18} />Move through every activity and use the final navigation button.</p>

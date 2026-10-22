@@ -9,7 +9,6 @@ import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { Button } from "@/components/ui/Button";
 import { List } from "@/components/content/List";
 import { ImageQuiz } from "@/features/exercises/ImageQuiz";
@@ -112,9 +111,7 @@ export default function AuthenticContents() {
     practice: (
       <>
         <Guess {...content.sections.practice.guess} />
-        {guessFillInTheBlanks && (
-          <FillInTheBlanks {...guessFillInTheBlanks} />
-        )}
+        {guessFillInTheBlanks && <FillInTheBlanks {...guessFillInTheBlanks} />}
         <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
         <Unscramble {...content.sections.practice.unscramble} />
       </>
@@ -168,7 +165,6 @@ export default function AuthenticContents() {
           icon={<ChevronLeft />}
         />
         <b>{previous?.label ?? "Authentic Content"}</b>
-        <ScrollToTop inline />
         <b className="text-right">{next?.label ?? "Authentic Content"}</b>
         <Button
           ariaLabel="Next step"

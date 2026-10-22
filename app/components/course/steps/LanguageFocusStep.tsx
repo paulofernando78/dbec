@@ -16,7 +16,7 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
   const [showPortuguese, setShowPortuguese] = useState(false);
 
   return (
-    <div className="rounded-2xl bg-gray-200 p-4">
+    <div className="rounded-2xl bg-[var(--surface)] p-4">
       <h3 className="mb-4 text-lg font-bold">{data.instruction}</h3>
 
       <div
@@ -28,7 +28,9 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
             key={id}
             pressed={accent === id}
             onClick={() => setAccent(id)}
-            className={accent === id ? "ring-2 ring-blue-500 text-blue-700!" : ""}
+            className={
+              accent === id ? "ring-2 ring-blue-500 text-blue-700!" : ""
+            }
           >
             {label}
           </Button>
@@ -37,7 +39,9 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
         <Button
           pressed={showPortuguese}
           onClick={() => setShowPortuguese((current) => !current)}
-          className={showPortuguese ? "ring-2 ring-blue-500 text-blue-700!" : ""}
+          className={
+            showPortuguese ? "ring-2 ring-blue-500 text-blue-700!" : ""
+          }
         >
           PT
         </Button>
@@ -52,7 +56,7 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
             return (
               <article
                 key={title}
-                className="rounded-xl border border-gray-300 p-4"
+                className="rounded-xl bg-[var(--background)] p-4"
               >
                 <div className="mb-2 flex items-center gap-3">
                   <Button
@@ -72,7 +76,8 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                     {title}
                     {showPortuguese && translationPt ? (
                       <span className="font-normal text-slate-500">
-                        {" "}— {translationPt}
+                        {" "}
+                        — {translationPt}
                       </span>
                     ) : null}
                   </h4>

@@ -75,13 +75,15 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
   };
 
   return (
-    <div className="rounded-2xl bg-gray-200 p-4 pb-5.5">
+    <div className="rounded-2xl bg-[var(--surface)] p-4 pb-5.5">
       <div
         ref={carouselRef}
         className="flex cursor-grab snap-x snap-mandatory overflow-x-auto rounded-xl select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         onScroll={(event) => {
           const carousel = event.currentTarget;
-          setCurrentImage(Math.round(carousel.scrollLeft / carousel.clientWidth));
+          setCurrentImage(
+            Math.round(carousel.scrollLeft / carousel.clientWidth),
+          );
         }}
         onPointerDown={startDrag}
         onPointerMove={moveDrag}

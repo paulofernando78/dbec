@@ -27,7 +27,7 @@ export function DashboardProgress({ progress }: DashboardProgressProps) {
       {items.map(({ key, label, Icon, color }) => (
         <div
           key={key}
-          className="flex min-w-28 flex-col items-center rounded-xl bg-gray-100 p-4 text-center max-[480px]:min-w-0 max-[480px]:p-2"
+          className="flex min-w-28 flex-col items-center rounded-xl bg-[var(--surface)] p-4 text-center max-[480px]:min-w-0 max-[480px]:p-2"
         >
           <Icon aria-hidden="true" className={`mb-4 ${color}`} size={28} />
           <span className="font-bold text-gray-500">{label}</span>

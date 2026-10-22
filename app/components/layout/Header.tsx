@@ -43,40 +43,6 @@ export const Header = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [session, setSession] = useState<Session | null>(null);
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState("");
-  const [shortDate, setShortDate] = useState("");
-
-  useEffect(() => {
-    const updateDateTime = () => {
-      const now = new Date();
-
-      setTime(
-        now.toLocaleTimeString("pt-BR", {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        }),
-      );
-      const month = now.toLocaleDateString("en-US", { month: "long" });
-      const weekday = now.toLocaleDateString("en-US", {
-        weekday: "long",
-      });
-      const shortMonth = now.toLocaleDateString("en-US", { month: "short" });
-      const shortWeekday = now.toLocaleDateString("en-US", {
-        weekday: "short",
-      });
-      const day = now.toLocaleDateString("en-US", { day: "2-digit" });
-
-      setDate(`${month}, ${weekday} ${day}`);
-      setShortDate(`${shortMonth}, ${shortWeekday} ${day}`);
-    };
-
-    updateDateTime();
-    const intervalId = window.setInterval(updateDateTime, 1_000);
-
-    return () => window.clearInterval(intervalId);
-  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
@@ -161,73 +127,73 @@ export const Header = ({
   };
 
   return (
-    <div className="p-4 bg-(--navbar-background) grid min-h-14 w-full shrink-0 grid-cols-[1fr_auto_1fr] items-center rounded-xl ">
-      <div className="min-w-0 justify-self-start">
-        {!isPresentationPage && (
-          <Button
-            icon={<Menu />}
-            onClick={onClick}
-            className="size-10! p-[3px]! transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:opacity-0"
-          />
-        )}
+    <>
+      <div className="w-full shrink-0 rounded-xl bg-(--surface) p-4">
+        <div className="grid min-h-10 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4">
+          <div className="min-w-0 justify-self-start">
+            {!isPresentationPage && (
+              <Button
+                icon={<Menu />}
+                onClick={onClick}
+                className="size-10! p-[3px]! transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:opacity-0"
+              />
+            )}
 
-        {isPresentationPage && (
-          <div className="flex items-center gap-2.5">
-            <Button
-              ariaLabel="Home"
-              icon={<House />}
-              pressed={location.pathname === "/"}
-              onClick={() => navigate("/")}
-              className="size-10! p-[3px]!"
-            />
-            <Button
-              ariaLabel="About"
-              icon={<Info />}
-              pressed={location.pathname === "/about"}
-              onClick={() => navigate("/about")}
-              className="size-10! p-[3px]!"
-            />
+            {isPresentationPage && (
+              <div className="flex items-center gap-2.5">
+                <Button
+                  ariaLabel="Home"
+                  icon={<House />}
+                  pressed={location.pathname === "/"}
+                  onClick={() => navigate("/")}
+                  className="size-10! p-[3px]!"
+                />
+                <Button
+                  ariaLabel="About"
+                  icon={<Info />}
+                  pressed={location.pathname === "/about"}
+                  onClick={() => navigate("/about")}
+                  className="size-10! p-[3px]!"
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className="text-center text-xs leading-tight tabular-nums font-bold">
-        {session && location.pathname !== "/" && (
-          <>
-            <p>{time}</p>
-            <p className="max-[700px]:hidden">{date}</p>
-            <p className="hidden max-[700px]:block">{shortDate}</p>
-          </>
-        )}
-      </div>
-
-      <div className="flex min-w-0 items-center gap-4 justify-self-end">
-        {session && (
-          <AccountSummary
-            name={session.displayName}
-            subtitle={session.role === "student" ? "Full access" : "Teacher"}
+          <img
+            src="/assets/img/home/dbec-private.svg"
+            alt="Daily Basis English Course"
+            className="w-28 max-w-full justify-self-center dark:invert"
           />
-        )}
 
-        <Button
-          icon={isDarkMode ? <Sun /> : <MoonStar />}
-          onClick={toggleTheme}
-          className="size-10! p-[3px]!"
-        />
+          <div className="flex min-w-0 items-center gap-4 justify-self-end">
+            {session && (
+              <AccountSummary
+                name={session.displayName}
+                subtitle={
+                  session.role === "student" ? "Full access" : "Teacher"
+                }
+              />
+            )}
 
-        {hasNotesSidebar && (
-          <Button
-            ariaLabel={
-              isSideBarOpen ? "Close notes sidebar" : "Open notes sidebar"
-            }
-            pressed={isSideBarOpen}
-            icon={
-              isSideBarOpen ? <PanelRightClose /> : <PanelRightOpen />
-            }
-            onClick={onSideBarClick}
-            className="hidden size-10! p-[3px]! max-[700px]:grid!"
-          />
-        )}
+            <Button
+              icon={isDarkMode ? <Sun /> : <MoonStar />}
+              onClick={toggleTheme}
+              className="size-10! p-[3px]!"
+            />
+
+            {hasNotesSidebar && (
+              <Button
+                ariaLabel={
+                  isSideBarOpen ? "Close notes sidebar" : "Open notes sidebar"
+                }
+                pressed={isSideBarOpen}
+                icon={isSideBarOpen ? <PanelRightClose /> : <PanelRightOpen />}
+                onClick={onSideBarClick}
+                className="hidden size-10! p-[3px]! max-[700px]:grid!"
+              />
+            )}
+          </div>
+        </div>
       </div>
 
       {isLoginOpen && (
@@ -301,6 +267,6 @@ export const Header = ({
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
