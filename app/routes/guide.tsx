@@ -41,7 +41,7 @@ export default function Guide() {
         <Card className="bg-gray-100">
           <GuideTitle icon={<Star className="text-orange-500" />}>XP by level</GuideTitle>
           <p className="mb-3 text-slate-500">
-            Complete a lesson for the first time to earn XP. More advanced levels are worth more XP.
+            Each Course lesson counts when its padlock opens. Opening it for the first time also earns the XP shown for its level.
           </p>
           <div className="overflow-hidden rounded-xl border border-gray-300 bg-white">
             {levels.map(([label, slug, color], index) => (
@@ -68,7 +68,7 @@ export default function Guide() {
         <Card className="bg-gray-100">
           <GuideTitle icon={<LockKeyholeOpen className="text-green-600" />}>Unlocking lessons</GuideTitle>
           <p className="text-slate-500">
-            Lessons unlock in order. Finish every step of the current lesson to open the next one. A completed lesson displays the color of its level.
+            Lessons unlock in order. Finish every step of the current lesson to open its padlock and add one to your Lessons total. Checkpoints are reviews and do not enter the lesson or XP totals.
           </p>
         </Card>
 

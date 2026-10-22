@@ -1,3 +1,5 @@
+import { levels } from "@/data/course";
+
 export function lessonProgressKey(
   level: string,
   unit: number | string,
@@ -15,8 +17,31 @@ export const XP_BY_LEVEL = {
   c1: 45,
 } as const;
 
-export const COURSE_TOTAL_LESSONS = 288;
-export const COURSE_TOTAL_XP = 9360;
+const courseLevels = Object.values(levels);
+const countableLessons = (lessonCount: number) => Math.min(lessonCount, 2);
+
+export const COURSE_TOTAL_LESSONS = courseLevels.reduce(
+  (levelTotal, level) =>
+    levelTotal +
+    level.units.reduce(
+      (unitTotal, unit) => unitTotal + countableLessons(unit.lessons.length),
+      0,
+    ),
+  0,
+);
+
+export const COURSE_TOTAL_XP = courseLevels.reduce(
+  (levelTotal, level) =>
+    levelTotal +
+    level.units.reduce(
+      (unitTotal, unit) =>
+        unitTotal +
+        countableLessons(unit.lessons.length) *
+          XP_BY_LEVEL[level.slug as keyof typeof XP_BY_LEVEL],
+      0,
+    ),
+  0,
+);
 
 function lessonCompletionDateKey(
   level: string,
@@ -98,21 +123,20 @@ export function getCourseProgressSummary(): CourseProgressSummary {
     savedStudyDays = [];
   }
   const studyDays = new Set<string>(savedStudyDays);
-  const pattern = /^dbec_course_(a1|a2|a2-b1|b1|b2|c1)_unit_\d+_lesson_\d+_completed$/;
+  courseLevels.forEach((level) => {
+    level.units.forEach((unit) => {
+      unit.lessons.slice(0, 2).forEach((_, lessonIndex) => {
+        const key = lessonProgressKey(level.slug, unit.number, lessonIndex + 1);
+        if (localStorage.getItem(key) !== "1") return;
 
-  for (let index = 0; index < localStorage.length; index += 1) {
-    const key = localStorage.key(index);
-    if (!key || localStorage.getItem(key) !== "1") continue;
+        completedLessons += 1;
+        earnedXp += XP_BY_LEVEL[level.slug as keyof typeof XP_BY_LEVEL];
 
-    const match = key.match(pattern);
-    if (!match) continue;
-
-    completedLessons += 1;
-    earnedXp += XP_BY_LEVEL[match[1] as keyof typeof XP_BY_LEVEL];
-
-    const completedAt = localStorage.getItem(`${key}_at`);
-    if (completedAt) studyDays.add(completedAt);
-  }
+        const completedAt = localStorage.getItem(`${key}_at`);
+        if (completedAt) studyDays.add(completedAt);
+      });
+    });
+  });
 
   let dayStreak = 0;
   const cursor = new Date();
@@ -131,3 +155,4 @@ export function getCourseProgressSummary(): CourseProgressSummary {
     dayStreak,
   };
 }
+
