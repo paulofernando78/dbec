@@ -1,10 +1,16 @@
+import { Fragment } from "react";
+import { Plus } from "lucide-react";
+
 import { PageHeader } from "@/components/content/PageHeader";
 import { PageSections } from "@/components/content/PageSections";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
+import { Phonetics } from "@/components/content/Phonetics";
 import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import {
+  phoneticSections,
   pronunciationSections,
   type PronunciationItem,
 } from "@/data/pronunciation";
@@ -28,10 +34,76 @@ const groupByPhoneme = (items: PronunciationItem[]) =>
     return groups;
   }, []);
 
+function PhoneticSoundGrid({
+  sounds,
+}: {
+  sounds: readonly { phoneme: string; audio: string }[];
+}) {
+  if (sounds.length === 0) {
+    return <p className="p-4 text-slate-500">No audio files available yet.</p>;
+  }
+
+  return (
+    <div className="grid grid-cols-[repeat(auto-fill,60px)] justify-center gap-3">
+      {sounds.map(({ phoneme, audio }) => (
+        <Audio
+          key={phoneme}
+          src={audio}
+          ariaLabel={`Play ${phoneme}`}
+          showIcon={false}
+          wrapperClassName="w-[60px]! min-w-[60px]!"
+        >
+          <span className="text-base font-medium leading-none">
+            <Phonetics>{phoneme}</Phonetics>
+          </span>
+        </Audio>
+      ))}
+    </div>
+  );
+}
+
 function PronunciationRow({ item }: { item: PronunciationItem }) {
-  const audioSource = item.audio ?? item.phoneme ?? "";
+  const phonemes = item.phoneme
+    ? Array.isArray(item.phoneme)
+      ? item.phoneme
+      : item.phoneme.split(/\s*\+\s*/)
+    : [];
+  const audioSources = Array.isArray(item.audio)
+    ? item.audio
+    : item.audio
+      ? [item.audio]
+      : [];
+  const audioSource =
+    audioSources[0] ?? phonemes[0] ?? toPlainText(item.english) ?? "";
   const audioLabel =
-    toPlainText(item.english) || item.phoneme || "pronunciation";
+    toPlainText(item.english) || phonemes.join(" + ") || "pronunciation";
+
+  if (phonemes.length > 0) {
+    return (
+      <li className="flex min-h-[68px] flex-wrap items-center gap-3">
+        {phonemes.map((phoneme, index) => (
+          <Fragment key={`${phoneme}-${index}`}>
+            {index > 0 && (
+              <Plus
+                aria-hidden="true"
+                size={18}
+                strokeWidth={4}
+                className="shrink-0 text-[var(--button-icon)]"
+              />
+            )}
+            <Audio
+              ariaLabel={`Play ${phoneme}`}
+              src={audioSources[index] ?? phoneme}
+              showIcon={false}
+              wrapperClassName="w-[60px]! min-w-[60px]!"
+            >
+              <Phonetics>{phoneme}</Phonetics>
+            </Audio>
+          </Fragment>
+        ))}
+      </li>
+    );
+  }
 
   return (
     <li className="flex min-h-[68px] items-center gap-3">
@@ -46,16 +118,10 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
         }
       />
       <p className="min-w-0 text-sm leading-6 md:text-base">
-        {item.phoneme ? (
-          <span className="font-medium text-blue-500">{item.phoneme}</span>
-        ) : (
-          <>
-            <span className="text-black">
-              <InlineRichContent value={item.english ?? ""} />
-            </span>{" "}
-            <span className="text-slate-500">{item.translation}</span>
-          </>
-        )}
+        <span className="text-black">
+          <InlineRichContent value={item.english ?? ""} />
+        </span>{" "}
+        <span className="text-slate-500">{item.translation}</span>
       </p>
     </li>
   );
@@ -70,27 +136,48 @@ export default function Pronunciation() {
         description="Understand how native speakers sound"
       />
 
-      <PageSections title="Linking Sounds">
-        {pronunciationSections.map((section) => (
+      <PageSections>
+        {phoneticSections.map((section, sectionIndex) => (
+          <Section
+            key={section.title}
+            id={`phonetics-${section.title.toLowerCase()}`}
+            label={section.title}
+            tocTitle={sectionIndex === 0 ? "Phonetics" : undefined}
+            tocItemClassName={
+              sectionIndex === phoneticSections.length - 1 ? "mb-4" : undefined
+            }
+            heading={2}
+            showHeader={false}
+            className="mb-4"
+          >
+            <Card title={section.title}>
+              <PhoneticSoundGrid sounds={section.sounds} />
+            </Card>
+          </Section>
+        ))}
+        {pronunciationSections.map((section, sectionIndex) => (
           <Section
             key={section.title}
             id={section.title.toLowerCase().replaceAll(" + ", "-").replaceAll(" ", "-")}
             label={section.title}
+            tocTitle={sectionIndex === 0 ? "Linking Sounds" : undefined}
             heading={2}
             className="mb-4"
           >
             {groupByPhoneme(section.items).map((group, groupIndex) => (
-              <ul
-                key={`${section.title}-group-${groupIndex}`}
-                className="grid gap-1 [&+&]:mt-5"
-              >
-                {group.map((item, itemIndex) => (
-                  <PronunciationRow
-                    key={`${section.title}-${item.english ?? item.phoneme}-${itemIndex}`}
-                    item={item}
-                  />
-                ))}
-              </ul>
+              <Fragment key={`${section.title}-group-${groupIndex}`}>
+                {groupIndex > 0 && (
+                  <hr className="my-5 border-0 border-t border-gray-300" />
+                )}
+                <ul className="grid gap-1">
+                  {group.map((item, itemIndex) => (
+                    <PronunciationRow
+                      key={`${section.title}-${item.english ?? item.phoneme}-${itemIndex}`}
+                      item={item}
+                    />
+                  ))}
+                </ul>
+              </Fragment>
             ))}
           </Section>
         ))}
@@ -98,3 +185,4 @@ export default function Pronunciation() {
     </div>
   );
 }
+

@@ -70,7 +70,7 @@ export function LibraryPage({
 }: LibraryPageProps) {
   return (
     <PageSections
-      title={title}
+      subtitle={title}
       headerIcon={headerIcon}
       itemIcon={itemIcon}
       headerIconClassName="text-gray-400"

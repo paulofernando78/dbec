@@ -53,7 +53,7 @@ export default function Game() {
       <PageHeader title="Games" />
       <PageSections
         showTableOfContents={false}
-        title="GAMES"
+        subtitle="GAMES"
       >
         <Section id="game-studios" label="Studios">
           {gameStudios.map((group) => (

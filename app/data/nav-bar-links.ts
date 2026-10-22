@@ -7,6 +7,7 @@ import {
   AudioLines,
   Plane,
   BadgeHelp,
+  BookMarked,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -57,6 +58,11 @@ export const links: NavItem[] = [
         href: "/vocabulary",
         label: "vocabulary",
         icon: BookOpenText,
+      },
+      {
+        href: "/grammar",
+        label: "grammar",
+        icon: BookMarked,
       },
       {
         href: "/pronunciation",

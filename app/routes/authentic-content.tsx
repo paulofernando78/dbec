@@ -66,7 +66,7 @@ export default function AuthenticContent() {
       <PageHeader title="Authentic Content" />
       <PageSections
         showTableOfContents={false}
-        title="AUTHENTIC CONTENT"
+        subtitle="AUTHENTIC CONTENT"
         headerIcon={AuthenticContentIcon}
       >
         <Section id="ted-ed" label="TED-Ed">

@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-import styles from "./Phonetics.module.css"
-
 type PhoneticsProps = {
   children: ReactNode;
 };
@@ -9,9 +7,5 @@ type PhoneticsProps = {
 export const Phonetics = ({
   children,
 }: PhoneticsProps) => {
-  return (
-    <span className={styles.phonetics}>
-      {children}
-    </span>
-  );
+  return <span className="phonetics">{children}</span>;
 };

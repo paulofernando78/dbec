@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button/Button";
 
 type AudioProps = {
   src: string;
+  ariaLabel?: string;
   className?: string;
   wrapperClassName?: string;
   speechLang?: string;
@@ -82,6 +83,7 @@ const waitForVoices = () =>
 
 export const Audio = ({
   src,
+  ariaLabel,
   className,
   wrapperClassName,
   speechLang = "en-US",
@@ -241,15 +243,17 @@ export const Audio = ({
         <Square
           size={16}
           className={className}
-          color="var(--icon-color)"
           fill="var(--icon-color)"
+          stroke="none"
+          style={{ stroke: "none" }}
         />
       ) : (
         <Play
           size={16}
           className={className}
-          color="var(--icon-color)"
           fill="var(--icon-color)"
+          stroke="none"
+          style={{ stroke: "none" }}
         />
       );
 
@@ -284,6 +288,7 @@ export const Audio = ({
   if (children) {
     return (
       <Button
+        ariaLabel={ariaLabel}
         className={wrapperClassName}
         onClick={loading || playing ? handleStop : handlePlay}
       >

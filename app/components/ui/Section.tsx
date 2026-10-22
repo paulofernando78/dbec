@@ -13,6 +13,7 @@ type SectionProps = {
   tocItemClassName?: string;
   tocContentAfter?: ReactNode;
   heading?: 1 | 2 | 3 | 4 | 5 | 6;
+  showHeader?: boolean;
   children: ReactNode;
 };
 
@@ -21,6 +22,7 @@ export const Section = ({
   label,
   className = "",
   heading = 2,
+  showHeader = true,
   children,
 }: SectionProps) => {
   const HeadingTag = `h${heading}` as ElementType;
@@ -30,9 +32,11 @@ export const Section = ({
 
   return (
     <section id={id} className={`scroll-mt-2 ${className}`}>
-      <Ribbon>
-        <HeadingTag>{resolvedLabel}</HeadingTag>
-      </Ribbon>
+      {showHeader && (
+        <Ribbon>
+          <HeadingTag>{resolvedLabel}</HeadingTag>
+        </Ribbon>
+      )}
       <div>{children}</div>
     </section>
   );

@@ -40,7 +40,7 @@ export const Button = ({
     >
       <span
         className={`${
-          hasText ? "h-full w-full px-2 py-2" : "absolute inset-1"
+          hasText ? "h-full w-full px-4 py-2" : "absolute inset-1"
         } grid place-items-center rounded-lg bg-linear-to-b from-[var(--button-inner-start)] to-[var(--button-inner-end)]`}
       >
         <span className="flex items-center gap-2 [&_svg]:size-5.25 [&_svg]:stroke-[var(--button-icon)]">

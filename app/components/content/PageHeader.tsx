@@ -127,8 +127,8 @@ export const PageHeader = ({
   }
 
   return (
-    <Card className={`${isLevel ? "mb-4" : "mb-8"} bg-white p-2!`}>
+    <div className={`border border-gray-300 rounded-xl ${isLevel ? "mb-4" : "mb-8"} bg-white p-2!`}>
       {header}
-    </Card>
+    </div>
   );
 };

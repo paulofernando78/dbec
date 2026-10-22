@@ -41,11 +41,8 @@ export const Card = ({
       p-4
       min-w-0
       max-w-full
-      text-gray-800
-      border
-      border-gray-300
+      text-[var(--text-color)]
       rounded-xl
-      shadows
       ${maxContent ? "w-fit max-w-full" : ""} ${className}`}
     >
       {title && <h2 className="mb-4 text-lg font-bold">{title}</h2>}

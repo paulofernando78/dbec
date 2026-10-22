@@ -61,7 +61,6 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         text-gray-500
         bg-(--navbar-background)
         rounded-xl
-        shadows
         overflow-y-auto
         "
     >

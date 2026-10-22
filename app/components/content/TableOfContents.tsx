@@ -14,7 +14,7 @@ type TableOfContentsItem = {
 };
 
 type TableOfContentsProps = {
-  title?: ReactNode;
+  subtitle?: ReactNode;
   items?: TableOfContentsItem[];
   headerIcon?: ElementType;
   itemIcon?: ElementType;
@@ -23,8 +23,10 @@ type TableOfContentsProps = {
 };
 
 export const TableOfContents = ({
-  title = "Table of Contents",
+  subtitle,
   items = [],
+  headerIcon: HeaderIcon,
+  itemIcon: ItemIcon,
   headerIconClassName = "text-gray-400",
   itemIconClassName = "text-gray-400",
 }: TableOfContentsProps) => {
@@ -32,17 +34,22 @@ export const TableOfContents = ({
     Array.isArray(value) ? value : [value];
 
   return (
-    <Card className="mb-4 bg-gray-100 font-oswald text-lg">
+    <Card className="mb-4 bg-[var(--navbar-background)] font-oswald text-lg">
       <div
         className="
         flex
         gap-2
         mb-2"
       >
-        <span>
-          <b>{title}</b>
-        </span>
+        {HeaderIcon && (
+          <HeaderIcon
+            aria-hidden="true"
+            className={`size-6 shrink-0 ${headerIconClassName}`}
+          />
+        )}
+        <h2 className="text-2xl font-bold">Table of Contents</h2>
       </div>
+      {subtitle && <p className="mb-2 font-bold">{subtitle}</p>}
       <nav>
         <ul>
           {items.map((item, index) => {
@@ -58,9 +65,16 @@ export const TableOfContents = ({
 
                 {item.href && (
                   <li
-                    className={`flex items-center gap-2 ${item.className ?? ""}`}
+                    className={`flex items-center gap-2 ml-4 ${item.className ?? ""}`}
                   >
-                    •
+                    {ItemIcon ? (
+                      <ItemIcon
+                        aria-hidden="true"
+                        className={`size-4 shrink-0 ${item.iconClassName ?? itemIconClassName}`}
+                      />
+                    ) : (
+                      <span className="font-bold">•</span>
+                    )}
                     <a href={`#${item.href}`}>
                       {item.label && (
                         <InlineRichContent value={toValue(item.label)} />

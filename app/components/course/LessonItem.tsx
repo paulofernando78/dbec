@@ -23,7 +23,7 @@ export function LessonItem({
       {!isLast && (
         <span
           aria-hidden="true"
-          className="absolute -bottom-5 left-6.5 top-13 z-0 w-2 bg-slate-300"
+          className="absolute -bottom-5 left-6.5 top-13 z-0 w-2 bg-slate-300 dark:bg-slate-600"
         />
       )}
       <Button
@@ -36,7 +36,9 @@ export function LessonItem({
         <p className="text-xs font-bold uppercase text-orange-700!">
           Lesson {number}
         </p>
-        <h3 className="text-xl font-black text-black">{lesson.title}</h3>
+        <h3 className="text-xl font-black text-black dark:text-[var(--text-color)]">
+          {lesson.title}
+        </h3>
         <p className="text-lg text-slate-500">{lesson.description}</p>
       </div>
     </li>

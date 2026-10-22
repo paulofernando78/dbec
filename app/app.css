@@ -2,7 +2,10 @@
 @import "./styles/reset.css";
 @import "./styles/variables.css";
 
+
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 ::-webkit-scrollbar {
   width: 0.6vw;
@@ -78,13 +81,13 @@ body {
   
 }
 
-.phonetics {
-  font-family: "Times New Roman", Times, serif;
-  @apply text-blue-500;
+.shadows {
+  @apply shadow-[0_0_1px_var(--slate-3)] border;
 }
 
-.shadows {
-  @apply shadow-[0_0_1px_var(--slate-3)];
+.phonetics {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--color-blue-500);
 }
 
 /*

@@ -45,17 +45,19 @@ export function UnitCard({
   };
 
   return (
-    <article className="overflow-hidden rounded-xl border border-gray-300 bg-gray-50">
-      <header className="flex items-start justify-between gap-4 border-b border-gray-300 bg-gray-200 p-4">
+    <article className="overflow-hidden rounded-xl bg-gray-50 dark:bg-[var(--navbar-background)]">
+      <header className="flex items-start justify-between gap-4 border-b border-gray-300 bg-gray-200 p-4  dark:border-gray-600 dark:bg-gray-700">
         <div>
           <p className="text-xs font-bold uppercase text-orange-700!">
             Unit {unit.number}
           </p>
-          <h2 className="text-2xl font-black text-black">{unit.title}</h2>
+          <h2 className="text-2xl font-black text-black dark:text-[var(--text-color)]">
+            {unit.title}
+          </h2>
           <p className="text-lg text-slate-500">{unit.description}</p>
         </div>
         <div className="flex shrink-0 flex-col items-center gap-3">
-          <span className="rounded-lg border border-gray-300 bg-white px-2 py-1 text-xs text-black">
+          <span className="rounded-lg border border-gray-300 bg-white px-2 py-1 text-xs text-black dark:bg-[var(--background)] dark:text-[var(--text-color)]">
             {completedLessons.size} / {unit.lessons.length}
           </span>
           <Button

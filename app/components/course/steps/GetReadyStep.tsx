@@ -123,7 +123,21 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
       <div className="mt-4 flex items-center gap-3">
         <Button
           ariaLabel={isPlaying ? "Stop introduction" : "Play introduction"}
-          icon={isPlaying ? <Square /> : <Play />}
+          icon={
+            isPlaying ? (
+              <Square
+                fill="currentColor"
+                stroke="none"
+                style={{ stroke: "none" }}
+              />
+            ) : (
+              <Play
+                fill="currentColor"
+                stroke="none"
+                style={{ stroke: "none" }}
+              />
+            )
+          }
           onClick={toggleAudio}
           disabled={!data.slides[currentImage].audio}
         />
