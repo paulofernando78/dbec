@@ -23,7 +23,7 @@ export type PronunciationSection = {
 const media = (path: string) => `/media/pronunciation/linking-sounds/${path}`;
 
 const phoneticsMedia = (group: "vowels" | "consonants", sound: string) =>
-  `/media/pronunciation/phonetics/${group}/${sound}.mp3`;
+  `/media/pronunciation/phonetics/${group}/${sound}.mp3?v=1`;
 
 const consonantSounds = [
   "b",

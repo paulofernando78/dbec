@@ -95,7 +95,7 @@ export const Audio = ({
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const isAudioFile = /\.(mp3|wav|ogg)$/i.test(src);
+  const isAudioFile = /\.(mp3|wav|ogg)(?:[?#]|$)/i.test(src);
 
   const handlePlay = async (e?: React.MouseEvent<Element>) => {
     e?.stopPropagation();
