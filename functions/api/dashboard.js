@@ -88,7 +88,10 @@ export async function onRequestGet(context) {
       .bind(student.id)
       .all(),
     context.env.DB.prepare(
-      `SELECT lesson_date AS lessonDate, status, updated_at AS updatedAt
+      `SELECT lesson_date AS lessonDate,
+              replacement_date AS replacementDate,
+              status,
+              updated_at AS updatedAt
        FROM calendar_entries
        WHERE student_id = ?
        ORDER BY lesson_date`,

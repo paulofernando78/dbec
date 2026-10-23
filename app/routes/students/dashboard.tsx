@@ -19,6 +19,7 @@ export default function Dashboard() {
   const [data, setData] = useState<any>(null);
   const [notes, setNotes] = useState({ teacher: "", student: "" });
   const [calendar, setCalendar] = useState<Record<string, string>>({});
+  const [replacementDates, setReplacementDates] = useState<Record<string, string>>({});
   const [error, setError] = useState("");
   const [progress, setProgress] = useState<CourseProgressSummary | null>(null);
 
@@ -63,6 +64,13 @@ export default function Dashboard() {
               entry.lessonDate,
               entry.status,
             ]),
+          ),
+        );
+        setReplacementDates(
+          Object.fromEntries(
+            (result.calendar ?? [])
+              .filter((entry: any) => entry.replacementDate)
+              .map((entry: any) => [entry.lessonDate, entry.replacementDate]),
           ),
         );
       })
@@ -144,7 +152,11 @@ export default function Dashboard() {
       )}
       <div className="grid gap-4">
         <div id="calendar" className="scroll-mt-4">
-          <Calendar statuses={calendar} readOnly />
+          <Calendar
+            statuses={calendar}
+            replacementDates={replacementDates}
+            readOnly
+          />
         </div>
         <div id="notes" className="relative scroll-mt-4">
           <span id="teacher-notes" className="absolute top-0" />

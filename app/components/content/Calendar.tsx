@@ -20,12 +20,6 @@ const statusOptions = [
     color: "bg-green-400 border border-green-600 text-white",
   },
   {
-    value: "ROK",
-    label: "ROK",
-    description: "Replacement OK",
-    color: "bg-green-400 border border-green-700 text-white",
-  },
-  {
     value: "SC",
     label: "SC",
     description: "Student canceled",
@@ -42,6 +36,12 @@ const statusOptions = [
     label: "R",
     description: "Replacement",
     color: "bg-yellow-400 border border-yellow-600 text-white",
+  },
+  {
+    value: "ROK",
+    label: "ROK",
+    description: "Replacement OK",
+    color: "bg-green-400 border border-green-700 text-white",
   },
   {
     value: "H",
@@ -167,11 +167,19 @@ const StatusSelect = ({
 
 type CalendarProps = {
   statuses?: CalendarStatusMap;
+  replacementDates?: Record<string, string>;
   readOnly?: boolean;
   onStatusChange?: (lessonDate: string, status: string) => void;
+  onReplacementDateChange?: (lessonDate: string, replacementDate: string) => void;
 };
 
-export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: CalendarProps) => {
+export const Calendar = ({
+  statuses = {},
+  replacementDates = {},
+  readOnly = false,
+  onStatusChange,
+  onReplacementDateChange,
+}: CalendarProps) => {
 
   const { ref: scrollRef, isDragging, events } = useDraggableScroll();
 
@@ -255,7 +263,7 @@ export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: Ca
               <Card
                 key={month}
                 title={month}
-                className="w-56! shrink-0 bg-(--background)"
+                className="w-80! shrink-0 bg-(--background)"
               >
                 <p
                   className="
@@ -274,20 +282,37 @@ export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: Ca
                       <li
                         key={`${month}-${day}`}
                         className="
-                          grid
-                          grid-cols-[1.35rem_3.5rem_1fr]
+                          flex
                           items-center
                           gap-1"
                       >
-                        <span>{index + 1}.</span>
-                        <StatusSelect
-                          status={currentStatus}
-                          disabled={readOnly}
-                          onStatusChange={(nextStatus) => onStatusChange?.(lessonDate, nextStatus)}
-                        />
-                        <span className="whitespace-nowrap">
+                        <span className="w-[1.35rem] shrink-0">{index + 1}.</span>
+                        <div className="w-14 shrink-0">
+                          <StatusSelect
+                            status={currentStatus}
+                            disabled={readOnly}
+                            onStatusChange={(nextStatus) =>
+                              onStatusChange?.(lessonDate, nextStatus)
+                            }
+                          />
+                        </div>
+                        <span className="shrink-0 whitespace-nowrap">
                           &bull; {weekday} {day}
                         </span>
+                        {(currentStatus === "R" || currentStatus === "ROK") && (
+                          <input
+                            type="text"
+                            aria-label={`Replacement date for ${month} ${day}`}
+                            maxLength={30}
+                            value={replacementDates[lessonDate] ?? ""}
+                            disabled={readOnly}
+                            onMouseDown={(event) => event.stopPropagation()}
+                            onChange={(event) =>
+                              onReplacementDateChange?.(lessonDate, event.target.value)
+                            }
+                            className="ml-1 h-6 min-w-0 w-full rounded-lg border border-gray-300 bg-(--surface) px-1 text-xs disabled:opacity-100"
+                          />
+                        )}
                       </li>
                     );
                   })}

@@ -42,7 +42,11 @@ function getLocalStudent(studentId: string) {
       plan: "free" as const,
     },
     notes: { teacher: "", student: "" },
-    calendar: [] as Array<{ date: string; status: string }>,
+    calendar: [] as Array<{
+      date: string;
+      status: string;
+      replacementDate?: string;
+    }>,
   };
 }
 
@@ -53,6 +57,7 @@ export default function TeacherDashboard() {
   const [data, setData] = useState<any>(null);
   const [notes, setNotes] = useState({ teacher: "", student: "" });
   const [calendar, setCalendar] = useState<Record<string, string>>({});
+  const [replacementDates, setReplacementDates] = useState<Record<string, string>>({});
   const [isLoadingStudent, setIsLoadingStudent] = useState(false);
   const [studentError, setStudentError] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
@@ -139,6 +144,13 @@ export default function TeacherDashboard() {
               ]),
             ),
           );
+          setReplacementDates(
+            Object.fromEntries(
+              (result.calendar ?? [])
+                .filter((entry: any) => entry.replacementDate)
+                .map((entry: any) => [entry.lessonDate, entry.replacementDate]),
+            ),
+          );
           setIsLoadingStudent(false);
           return;
         } catch (error) {
@@ -152,6 +164,13 @@ export default function TeacherDashboard() {
               setCalendar(
                 Object.fromEntries(
                   localData.calendar.map((entry) => [entry.date, entry.status]),
+                ),
+              );
+              setReplacementDates(
+                Object.fromEntries(
+                  localData.calendar
+                    .filter((entry) => entry.replacementDate)
+                    .map((entry) => [entry.date, entry.replacementDate as string]),
                 ),
               );
               setIsLoadingStudent(false);
@@ -195,7 +214,29 @@ export default function TeacherDashboard() {
     void fetch("/api/calendar", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ studentId, lessonDate, status }),
+      body: JSON.stringify({
+        studentId,
+        lessonDate,
+        status,
+        replacementDate: replacementDates[lessonDate] ?? null,
+      }),
+    });
+  };
+
+  const saveReplacementDate = (lessonDate: string, replacementDate: string) => {
+    setReplacementDates((current) => ({
+      ...current,
+      [lessonDate]: replacementDate,
+    }));
+    void fetch("/api/calendar", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        studentId,
+        lessonDate,
+        status: calendar[lessonDate] ?? "R",
+        replacementDate: replacementDate || null,
+      }),
     });
   };
 
@@ -268,7 +309,12 @@ export default function TeacherDashboard() {
             )}
 
             <div id="calendar" className="scroll-mt-4">
-              <Calendar statuses={calendar} onStatusChange={saveCalendar} />
+              <Calendar
+                statuses={calendar}
+                replacementDates={replacementDates}
+                onStatusChange={saveCalendar}
+                onReplacementDateChange={saveReplacementDate}
+              />
             </div>
 
             <div id="notes" className="relative scroll-mt-4">

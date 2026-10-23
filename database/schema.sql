@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS calendar_entries (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   student_id INTEGER NOT NULL,
   lesson_date TEXT NOT NULL,
+  replacement_date TEXT,
   status TEXT NOT NULL DEFAULT '...'
     CHECK (status IN ('...', 'P', 'OK', 'ROK', 'SC', 'TC', 'R', 'H')),
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
