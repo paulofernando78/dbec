@@ -20,7 +20,8 @@ export type PronunciationSection = {
   items: PronunciationItem[];
 };
 
-const media = (path: string) => `/media/pronunciation/linking-sounds/${path}`;
+const media = (path: string) =>
+  `/media/pronunciation/linking-sounds/${path}?v=1`;
 
 const phoneticsMedia = (group: "vowels" | "consonants", sound: string) =>
   `/media/pronunciation/phonetics/${group}/${sound}.mp3?v=1`;
@@ -310,7 +311,7 @@ export const pronunciationSections: PronunciationSection[] = [
           {
             english: ["I lo", underline("v(e) i"), " (t)."],
             translation: "Eu amo.",
-            audio: media("consonant-vowel/v-ɪ/i-love-it.mp3"),
+            audio: media("consonant-vowel/v-ɪ/I-love-it.mp3"),
           }
         ],
       },
@@ -327,7 +328,7 @@ export const pronunciationSections: PronunciationSection[] = [
           {
             english: ["I lik(e) i", underline("t a"), " lo(t)."],
             translation: "Eu gosto muito.",
-            audio: media("flap-t/i-like-it-a-lot.mp3"),
+            audio: media("consonant-vowel/t-ə/i-like-it-a-lot.mp3"),
           },
           // I’m out of time.
           {
