@@ -78,7 +78,7 @@ export const paragraph = [
 ];
 
 export const image = {
-  src: "/assets/img/aspect-ratio-square.png",
+  src: "/media/images/lab/aspect-ratio-square.png",
   alt: "...",
   applyPadding: true,
 };
@@ -98,7 +98,7 @@ export const vocabularyCarousel = {
   words: [
     // Local igs
     {
-      src: "/assets/img/aspect-ratio-square.png",
+      src: "/media/images/lab/aspect-ratio-square.png",
       alt: "...",
       content: [
         ...content({
@@ -179,7 +179,7 @@ export const storyCarousel = {
   instruction: "Look at the pictures and describe what you see.",
   words: [
     {
-      src: "/assets/img/aspect-ratio-16-9.png",
+      src: "/media/images/lab/aspect-ratio-16-9.png",
       alt: "...",
       content: [
         ...content({
@@ -324,7 +324,7 @@ export const flipCards = {
     },
     {
       frontLine: ["aaa"],
-      backImg: "/assets/img/dictionary/b/brain.avif",
+      backImg: "/media/images/dictionary/b/brain.avif",
     },
     {
       frontLine: ["aaa"],

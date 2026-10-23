@@ -31,11 +31,19 @@ type DictionaryEntry = {
   definitions?: DictionaryDefinition[];
 };
 
+const dictionaryLetters = import.meta.glob<unknown>(
+  "../data/dictionary/*.json",
+  { eager: true, import: "default" },
+);
+
 export const loadDictionaryLetter = async (
   letter: string,
 ): Promise<unknown> => {
-  const response = await fetch(`/data/dictionary/${letter}.json`);
-  return response.json();
+  const normalizedLetter = letter.toLowerCase();
+  const data = dictionaryLetters[`../data/dictionary/${normalizedLetter}.json`];
+
+  if (!data) throw new Error(`Dictionary letter not found: ${normalizedLetter}`);
+  return data;
 };
 
 export const flattenDictionaryDefinitions = (

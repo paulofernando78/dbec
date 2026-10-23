@@ -12,7 +12,10 @@ export const BuyMeACoffee = ({ className }: BuyMeACoffeeProps) => {
       rel="noopener noreferrer"
       className={`${styles.coffee} coffee`}
     >
-      <img src="/assets/img/coffee.png" className={styles.img} />
+      <img
+        src="/media/images/icons/contacts/coffee.png"
+        className={styles.img}
+      />
     </a>
   );
 };

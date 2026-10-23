@@ -80,7 +80,7 @@ export default function About() {
   return (
     <div className="mx-[min(200px,max(10px,calc((100vw-380px)*0.135)))] grid gap-4">
       <Image
-        src="/assets/img/about/me.png"
+        src="/media/images/about.png"
         alt="My picture"
         width={150}
         height={150}

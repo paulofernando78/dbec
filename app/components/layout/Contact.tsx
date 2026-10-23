@@ -2,13 +2,13 @@ const contacts: ContactItem[] = [
   // linkedin
   {
     link: "https://www.linkedin.com/in/paulo-fernando-70930725/",
-    icon: "/assets/img/icons/contacts/linkedin.png",
+    icon: "/media/images/icons/contacts/linkedin.png",
     alt: "LinkedIn",
   },
   // whatsapp
   {
     link: "https://wa.me/5511981672145",
-    icon: "/assets/img/icons/contacts/whatsapp.png",
+    icon: "/media/images/icons/contacts/whatsapp.png",
     alt: "Whatsapp",
   },
 ];
@@ -17,7 +17,7 @@ const patron: ContactItem[] = [
   // buy me a coffee
   {
     link: "https://www.buymeacoffee.com/paulofernando78",
-    icon: "/assets/img/icons/contacts/coffee.gif",
+    icon: "/media/images/icons/contacts/coffee.gif",
     alt: "By me a coffee",
     tooltip: "Buy me a coffee",
     className:

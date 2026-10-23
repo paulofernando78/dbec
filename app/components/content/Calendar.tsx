@@ -177,62 +177,71 @@ export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: Ca
 
   return (
     <>
-      <Card title="Legend">
-        <ul
-          className="
-          grid
-          grid-cols-2
-          min-[810px]:grid-cols-3
-          gap-2
-          "
-        >
-          {statusOptions
-            .filter((options) => options.value !== "...")
-            .map((option) => (
-              <li
-                key={option.value}
-                className="
-                flex
-                items-center
-                gap-2
-                text-[.7rem]
-                "
-              >
-                <span
-                  className={`
-                  inline-flex
+      <Card title="Legend" className="w-full">
+        <Card className="bg-(--background)">
+          <ul
+            className="
+            grid
+            grid-cols-2
+            min-[810px]:grid-cols-3
+            gap-2
+            "
+          >
+            {statusOptions
+              .filter((options) => options.value !== "...")
+              .map((option) => (
+                <li
+                  key={option.value}
+                  className="
+                  flex
                   items-center
-                  justify-center
-                  w-9
-                  h-6
-                  rounded-lg
-                  ${option.color}
-              `}
+                  gap-2
+                  text-[.7rem]
+                  "
                 >
-                  {option.label}
-                </span>
-                <span>{option.description}</span>
-              </li>
-            ))}
-        </ul>
+                  <span
+                    className={`
+                    inline-flex
+                    items-center
+                    justify-center
+                    w-9
+                    h-6
+                    rounded-lg
+                    ${option.color}
+                `}
+                  >
+                    {option.label}
+                  </span>
+                  <span>{option.description}</span>
+                </li>
+              ))}
+          </ul>
+        </Card>
       </Card>
 
-      <Card title="Calendar" className="mb-4">
+      <Card
+        title="Calendar"
+        className="mt-4 mb-4 w-full min-w-0 overflow-hidden [contain:inline-size]"
+      >
         <div
           ref={scrollRef}
           {...events} // Isso injeta automaticamente o onMouseDown, onMouseUp, etc.
           className={`
+            w-full
             min-w-0
             max-w-full
             overflow-x-auto
+            pb-2
             ${isDragging ? "cursor-grabbing select-none" : "cursor-grab"}
           `}
         >
           <div
             className="
-            grid
-            min-w-540
-            grid-cols-12"
+            flex
+            w-max
+            min-w-full
+            gap-4
+            items-stretch"
           >
             {calendarMonths.map(({ month, dates }) => {
             const totalClasses = dates.filter(({ day }) => {
@@ -243,67 +252,47 @@ export const Calendar = ({ statuses = {}, readOnly = false, onStatusChange }: Ca
             }).length;
 
             return (
-              <section
+              <Card
                 key={month}
-                className="
-                  border-r
-                  border-gray-300
-                  last:border-r-0"
+                title={month}
+                className="w-56! shrink-0 bg-(--background)"
               >
-                <h3
+                <p
                   className="
-                  bg-black
-                  px-2
-                  py-2
-                  text-center
-                  font-bold
-                  text-white"
+                  mb-2
+                  font-bold"
                 >
-                  {month}
-                </h3>
+                  Total: <span className="font-normal">{totalClasses}</span>
+                </p>
 
-                <div
-                  className="
-                  px-2
-                  py-2"
-                >
-                  <p
-                    className="
-                    mb-2
-                    font-bold"
-                  >
-                    Total: <span className="font-normal">{totalClasses}</span>
-                  </p>
+                <ol className="space-y-1">
+                  {dates.map(({ day, weekday, status }, index) => {
+                    const lessonDate = getDateKey(2026, months.indexOf(month), day);
+                    const currentStatus = statuses[lessonDate] ?? status;
 
-                  <ol className="space-y-1">
-                    {dates.map(({ day, weekday, status }, index) => {
-                      const lessonDate = getDateKey(2026, months.indexOf(month), day);
-                      const currentStatus = statuses[lessonDate] ?? status;
-
-                      return (
-                        <li
-                          key={`${month}-${day}`}
-                          className="
-                            grid
-                            grid-cols-[1.35rem_3.5rem_1fr]
-                            items-center
-                            gap-1"
-                        >
-                          <span>{index + 1}.</span>
-                          <StatusSelect
-                            status={currentStatus}
-                            disabled={readOnly}
-                            onStatusChange={(nextStatus) => onStatusChange?.(lessonDate, nextStatus)}
-                          />
-                          <span>
-                            &bull; {weekday} {day}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </div>
-              </section>
+                    return (
+                      <li
+                        key={`${month}-${day}`}
+                        className="
+                          grid
+                          grid-cols-[1.35rem_3.5rem_1fr]
+                          items-center
+                          gap-1"
+                      >
+                        <span>{index + 1}.</span>
+                        <StatusSelect
+                          status={currentStatus}
+                          disabled={readOnly}
+                          onStatusChange={(nextStatus) => onStatusChange?.(lessonDate, nextStatus)}
+                        />
+                        <span className="whitespace-nowrap">
+                          &bull; {weekday} {day}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </Card>
             );
             })}
           </div>

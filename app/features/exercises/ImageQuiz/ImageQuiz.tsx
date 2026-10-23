@@ -123,7 +123,7 @@ export const ImageQuiz = ({
         return [
           {
             word: item.word,
-            imgSrc: `/assets/img/dictionary/${item.word[0].toLowerCase()}/${image.src}`,
+            imgSrc: `/media/images/dictionary/${item.word[0].toLowerCase()}/${image.src}`,
             imgAlt: image.alt ?? item.word,
             options: optionIndexes.map((wordIndex) => ({
               option: words[wordIndex].word,

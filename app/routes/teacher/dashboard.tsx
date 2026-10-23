@@ -6,6 +6,7 @@ import { DashboardProgress } from "@/components/content/DashboardProgress";
 import { Calendar } from "@/components/content/Calendar";
 import { PageHeader } from "@/components/content/PageHeader";
 import { StudentForm } from "@/components/content/StudentForm";
+import { TableOfContents } from "@/components/content/TableOfContents";
 import { Card } from "@/components/ui/Card";
 import { useNotesRealtime } from "@/hooks/useNotesRealtime";
 import {
@@ -217,14 +218,29 @@ export default function TeacherDashboard() {
       <PageHeader title="Teacher's Dashboard" variant="dashboard" />
 
       <div className="grid gap-4">
-        <Card title="Student Registration">
-          <StudentForm
-            students={students}
-            selectedStudentId={studentId ?? ""}
-            onStudentSelect={handleStudentChange}
-            onStudentSaved={loadStudents}
-          />
-        </Card>
+        <TableOfContents
+          items={[
+            { href: "student-registration", label: "Student Registration" },
+            ...(student && studentId
+              ? [
+                  { href: "progress", label: "Progress" },
+                  { href: "calendar", label: "Calendar" },
+                  { href: "notes", label: "Notes" },
+                ]
+              : []),
+          ]}
+        />
+
+        <div id="student-registration" className="scroll-mt-4">
+          <Card title="Student Registration">
+            <StudentForm
+              students={students}
+              selectedStudentId={studentId ?? ""}
+              onStudentSelect={handleStudentChange}
+              onStudentSaved={loadStudents}
+            />
+          </Card>
+        </div>
   
         {isLoadingStudent && studentId && (
           <p className="text-gray-500">Carregando aluno…</p>
@@ -245,27 +261,40 @@ export default function TeacherDashboard() {
   
         {student && studentId ? (
           <div className="grid gap-4">
-            {progress && <DashboardProgress progress={progress} />}
-            <div className="flex justify-between gap-4 max-[900px]:flex-col max-[900px]:gap-4">
-              <DashboardNotes
-                title="Teacher's Notes"
-                value={notes.teacher}
-                onChange={(value) => {
-                  setNotes((current) => ({ ...current, teacher: value }));
-                  sendNote("teacher", value);
-                }}
-                onSave={saveTeacherNote}
-              />
-              <DashboardNotes
-                title="Student's Notes"
-                value={notes.student}
-                readOnly
-                onChange={() => {}}
-                onSave={() => {}}
-              />
+            {progress && (
+              <div id="progress" className="scroll-mt-4">
+                <DashboardProgress progress={progress} />
+              </div>
+            )}
+
+            <div id="calendar" className="scroll-mt-4">
+              <Calendar statuses={calendar} onStatusChange={saveCalendar} />
             </div>
-  
-            <Calendar statuses={calendar} onStatusChange={saveCalendar} />
+
+            <div id="notes" className="relative scroll-mt-4">
+              <span id="teacher-notes" className="absolute top-0" />
+              <span id="student-notes" className="absolute top-0" />
+              <Card title="Notes">
+                <div className="flex w-full gap-4 max-[900px]:flex-col">
+                  <DashboardNotes
+                    title="Teacher's"
+                    value={notes.teacher}
+                    onChange={(value) => {
+                      setNotes((current) => ({ ...current, teacher: value }));
+                      sendNote("teacher", value);
+                    }}
+                    onSave={saveTeacherNote}
+                  />
+                  <DashboardNotes
+                    title="Student's"
+                    value={notes.student}
+                    readOnly
+                    onChange={() => {}}
+                    onSave={() => {}}
+                  />
+                </div>
+              </Card>
+            </div>
           </div>
         ) : null}
       </div>

@@ -1,5 +1,6 @@
 import { Check, Flame, Star } from "lucide-react";
 
+import { Card } from "@/components/ui/Card";
 import type { CourseProgressSummary } from "@/utils/course-progress";
 
 type DashboardProgressProps = {
@@ -20,20 +21,21 @@ export function DashboardProgress({ progress }: DashboardProgressProps) {
   };
 
   return (
-    <section
-      aria-label="Course progress"
-      className="mx-auto grid w-fit max-w-full grid-cols-3 gap-2 max-[480px]:w-full"
-    >
-      {items.map(({ key, label, Icon, color }) => (
-        <div
-          key={key}
-          className="flex min-w-28 flex-col items-center rounded-xl bg-[var(--surface)] p-4 text-center max-[480px]:min-w-0 max-[480px]:p-2"
-        >
-          <Icon aria-hidden="true" className={`mb-4 ${color}`} size={28} />
-          <span className="font-bold text-gray-500">{label}</span>
-          <strong className="text-xl text-black">{values[key]}</strong>
-        </div>
-      ))}
-    </section>
+    <Card title="Progress">
+      <section
+        aria-label="Course progress"
+        className="grid w-full grid-cols-3 gap-4"
+      >
+        {items.map(({ key, label, Icon, color }) => (
+          <Card key={key} className="bg-(--background) max-[480px]:p-2">
+            <div className="flex min-w-0 flex-col items-center text-center">
+              <Icon aria-hidden="true" className={`mb-4 ${color}`} size={28} />
+              <span className="font-bold text-gray-500">{label}</span>
+              <strong className="text-xl text-black">{values[key]}</strong>
+            </div>
+          </Card>
+        ))}
+      </section>
+    </Card>
   );
 }

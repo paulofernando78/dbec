@@ -89,7 +89,7 @@ export default function Playground() {
             <MediaWrapper mediaPosition="left">
               <MediaWrapper.Item>
                 <Image
-                  src="/assets/img/home/home-me.png"
+                  src="/media/images/home/home-me.png"
                   alt="..."
                   width={250}
                 />

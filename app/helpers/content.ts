@@ -255,7 +255,7 @@ export const wordComparison = ({
 export const dictionary = (file: string): string => {
   const first = file?.[0]?.toLowerCase();
 
-  return `/assets/img/dictionary/${first}/${file}`;
+  return `/media/images/dictionary/${first}/${file}`;
 };
 
 export const lineBreak = (): ContentToken => ({

@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/Card";
 import { TextArea } from "@/components/ui/TextArea";
 
 type DashboardNotesProps = {
@@ -17,7 +16,8 @@ export const DashboardNotes = ({
   onSave,
 }: DashboardNotesProps) => {
   return (
-    <Card title={title} className="min-w-0 flex-1">
+    <div className="w-full min-w-0 rounded-xl bg-(--background) p-4">
+      <h3 className="mb-4 text-lg font-bold">{title}</h3>
       <TextArea
         rows={10}
         value={value}
@@ -25,6 +25,6 @@ export const DashboardNotes = ({
         onChange={(event) => onChange(event.target.value)}
         onBlur={onSave}
       />
-    </Card>
+    </div>
   );
 };

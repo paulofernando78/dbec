@@ -13,7 +13,7 @@ export function meta({}: Route.MetaArgs) {
   const description =
     "Aulas particulares de inglês com foco em conversação, compreensão auditiva, leitura e escrita.";
   const url = "https://dbec.com.br/";
-  const image = "https://dbec.com.br/assets/img/og.png";
+  const image = "https://dbec.com.br/media/images/og.png";
 
   return [
     { title },

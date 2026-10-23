@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/Card";
 
 const emojis = [
   {
-    img: "/assets/img/emojis/good.gif",
+    img: "/media/images/emojis/good.gif",
     alt: '"thumb" up emoji',
     words: [
       {
@@ -18,7 +18,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/happy.gif",
+    img: "/media/images/emojis/happy.gif",
     alt: '"happy" emoji',
     words: [
       {
@@ -32,7 +32,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/sad.gif",
+    img: "/media/images/emojis/sad.gif",
     alt: '"sad" emoji',
     words: [
       {
@@ -46,7 +46,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/angry.gif",
+    img: "/media/images/emojis/angry.gif",
     alt: '"angry" emoji',
     words: [
       {
@@ -60,7 +60,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/annoyed.gif",
+    img: "/media/images/emojis/annoyed.gif",
     alt: '"annoyed" emoji',
     words: [
       {
@@ -74,7 +74,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/calm.gif",
+    img: "/media/images/emojis/calm.gif",
     alt: '"calm" emoji',
     words: [
       {
@@ -88,7 +88,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/crazy.gif",
+    img: "/media/images/emojis/crazy.gif",
     alt: '"crazy" emoji',
     words: [
       {
@@ -102,7 +102,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/tired.gif",
+    img: "/media/images/emojis/tired.gif",
     alt: '"tired" emoji',
     words: [
       {
@@ -116,7 +116,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/anxious.gif",
+    img: "/media/images/emojis/anxious.gif",
     alt: '"anxious" emoji',
     words: [
       {
@@ -130,7 +130,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/bored.gif",
+    img: "/media/images/emojis/bored.gif",
     alt: '"bored" emoji',
     words: [
       {
@@ -144,7 +144,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/hot.gif",
+    img: "/media/images/emojis/hot.gif",
     alt: '"hot" emoji',
     words: [
       {
@@ -158,7 +158,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/in-love.gif",
+    img: "/media/images/emojis/in-love.gif",
     alt: '"in love" emoji',
     words: [
       {
@@ -172,7 +172,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/loved.gif",
+    img: "/media/images/emojis/loved.gif",
     alt: '"loved" emoji',
     words: [
       {
@@ -186,7 +186,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/heartbroken.gif",
+    img: "/media/images/emojis/heartbroken.gif",
     alt: '"heartbroken" emoji',
     words: [
       {
@@ -200,7 +200,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/silly.gif",
+    img: "/media/images/emojis/silly.gif",
     alt: '"silly" emoji',
     words: [
       {
@@ -214,7 +214,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/scared.gif",
+    img: "/media/images/emojis/scared.gif",
     alt: '"scared" emoji',
     words: [
       {
@@ -228,7 +228,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/thoughtful.gif",
+    img: "/media/images/emojis/thoughtful.gif",
     alt: '"thoughtful" emoji',
     words: [
       {
@@ -242,7 +242,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/frustrated.gif",
+    img: "/media/images/emojis/frustrated.gif",
     alt: '"frustrated" emoji',
     words: [
       {
@@ -256,7 +256,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/disappointed.gif",
+    img: "/media/images/emojis/disappointed.gif",
     alt: '"disappointed" emoji',
     words: [
       {
@@ -270,7 +270,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/embarrassed.gif",
+    img: "/media/images/emojis/embarrassed.gif",
     alt: '"embarrassed" emoji',
     words: [
       {
@@ -284,7 +284,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/sleepy.gif",
+    img: "/media/images/emojis/sleepy.gif",
     alt: '"sleepy" emoji',
     words: [
       {
@@ -298,7 +298,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/peaceful.gif",
+    img: "/media/images/emojis/peaceful.gif",
     alt: '"peaceful" emoji',
     words: [
       {
@@ -312,7 +312,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/thankful.gif",
+    img: "/media/images/emojis/thankful.gif",
     alt: '"thankful" emoji',
     words: [
       {
@@ -326,7 +326,7 @@ const emojis = [
     ],
   },
   {
-    img: "/assets/img/emojis/sick.gif",
+    img: "/media/images/emojis/sick.gif",
     alt: '"sick" emoji',
     words: [
       {

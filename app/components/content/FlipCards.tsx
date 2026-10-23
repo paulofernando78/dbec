@@ -183,7 +183,7 @@ const SingleFlipCard = ({
                 />
               ) : (
                 <Image
-                src="/assets/img/icons/question-mark.gif"
+                src="/media/images/icons/question-mark.gif"
                 alt="Question mark gif"
                 width={100}
                 height={100}
