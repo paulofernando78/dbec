@@ -170,7 +170,10 @@ type CalendarProps = {
   replacementDates?: Record<string, string>;
   readOnly?: boolean;
   onStatusChange?: (lessonDate: string, status: string) => void;
-  onReplacementDateChange?: (lessonDate: string, replacementDate: string) => void;
+  onReplacementDateChange?: (
+    lessonDate: string,
+    replacementDate: string,
+  ) => void;
 };
 
 export const Calendar = ({
@@ -180,7 +183,6 @@ export const Calendar = ({
   onStatusChange,
   onReplacementDateChange,
 }: CalendarProps) => {
-
   const { ref: scrollRef, isDragging, events } = useDraggableScroll();
 
   return (
@@ -252,73 +254,80 @@ export const Calendar = ({
             items-stretch"
           >
             {calendarMonths.map(({ month, dates }) => {
-            const totalClasses = dates.filter(({ day }) => {
-              const lessonDate = getDateKey(2026, months.indexOf(month), day);
-              const currentStatus = statuses[lessonDate];
+              const totalClasses = dates.filter(({ day }) => {
+                const lessonDate = getDateKey(2026, months.indexOf(month), day);
+                const currentStatus = statuses[lessonDate];
 
-              return currentStatus === "OK" || currentStatus === "ROK";
-            }).length;
+                return currentStatus === "OK" || currentStatus === "ROK";
+              }).length;
 
-            return (
-              <Card
-                key={month}
-                title={month}
-                className="w-80! shrink-0 bg-(--background)"
-              >
-                <p
-                  className="
+              return (
+                <Card
+                  key={month}
+                  title={month}
+                  className="w-max! shrink-0 bg-(--background)"
+                >
+                  <p
+                    className="
                   mb-2
                   font-bold"
-                >
-                  Total: <span className="font-normal">{totalClasses}</span>
-                </p>
+                  >
+                    Total: <span className="font-normal">{totalClasses}</span>
+                  </p>
 
-                <ol className="space-y-1">
-                  {dates.map(({ day, weekday, status }, index) => {
-                    const lessonDate = getDateKey(2026, months.indexOf(month), day);
-                    const currentStatus = statuses[lessonDate] ?? status;
+                  <ol className="space-y-1">
+                    {dates.map(({ day, weekday, status }, index) => {
+                      const lessonDate = getDateKey(
+                        2026,
+                        months.indexOf(month),
+                        day,
+                      );
+                      const currentStatus = statuses[lessonDate] ?? status;
 
-                    return (
-                      <li
-                        key={`${month}-${day}`}
-                        className="
-                          flex
-                          items-center
-                          gap-1"
-                      >
-                        <span className="w-[1.35rem] shrink-0">{index + 1}.</span>
-                        <div className="w-14 shrink-0">
-                          <StatusSelect
-                            status={currentStatus}
-                            disabled={readOnly}
-                            onStatusChange={(nextStatus) =>
-                              onStatusChange?.(lessonDate, nextStatus)
-                            }
-                          />
-                        </div>
-                        <span className="shrink-0 whitespace-nowrap">
-                          &bull; {weekday} {day}
-                        </span>
-                        {(currentStatus === "R" || currentStatus === "ROK") && (
-                          <input
-                            type="text"
-                            aria-label={`Replacement date for ${month} ${day}`}
-                            maxLength={30}
-                            value={replacementDates[lessonDate] ?? ""}
-                            disabled={readOnly}
-                            onMouseDown={(event) => event.stopPropagation()}
-                            onChange={(event) =>
-                              onReplacementDateChange?.(lessonDate, event.target.value)
-                            }
-                            className="ml-1 h-6 min-w-0 w-full rounded-lg border border-gray-300 bg-(--surface) px-1 text-xs disabled:opacity-100"
-                          />
-                        )}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </Card>
-            );
+                      return (
+                        <li
+                          key={`${month}-${day}`}
+                          className="flex items-center gap-1"
+                        >
+                          <span className="w-[1.35rem] shrink-0">
+                            {index + 1}.
+                          </span>
+                          <div className="w-14 shrink-0">
+                            <StatusSelect
+                              status={currentStatus}
+                              disabled={readOnly}
+                              onStatusChange={(nextStatus) =>
+                                onStatusChange?.(lessonDate, nextStatus)
+                              }
+                            />
+                          </div>
+                          <span className="shrink-0 whitespace-nowrap">
+                            &bull; {weekday} {day}
+                          </span>
+                          {(currentStatus === "R" ||
+                            currentStatus === "ROK") && (
+                            <input
+                              type="text"
+                              aria-label={`Replacement date for ${month} ${day}`}
+                              maxLength={30}
+                              value={replacementDates[lessonDate] ?? ""}
+                              disabled={readOnly}
+                              onMouseDown={(event) => event.stopPropagation()}
+                              onChange={(event) =>
+                                onReplacementDateChange?.(
+                                  lessonDate,
+                                  event.target.value,
+                                )
+                              }
+                              className="ml-1 px-[.4rem] w-[3.8rem] min-w-0 h-6 text-xs rounded-lg border border-gray-300 bg-(--surface) disabled:opacity-100"
+                            />
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </Card>
+              );
             })}
           </div>
         </div>
