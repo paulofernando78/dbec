@@ -217,7 +217,7 @@ export default function TeacherDashboard() {
       <PageHeader title="Teacher's Dashboard" variant="dashboard" />
 
       <div className="grid gap-4">
-        <Card title="Student Registration" className="bg-(--surface)">
+        <Card title="Student Registration">
           <StudentForm
             students={students}
             selectedStudentId={studentId ?? ""}

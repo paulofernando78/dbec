@@ -123,7 +123,7 @@ export default function Grammar() {
             showHeader={false}
             className="mb-4"
           >
-            <Card title={topic.title} className="bg-[var(--surface)]">
+            <Card title={topic.title}>
               <p className="mb-4 text-slate-500">{topic.description}</p>
               <GrammarContent id={topic.id} />
             </Card>

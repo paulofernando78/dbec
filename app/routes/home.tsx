@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 
 import { Contact } from "@/components/layout/Contact";
 import { Footer } from "@/components/layout/Footer";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Image } from "@/components/ui/Image";
 import { Button } from "@/components/ui/Button/Button";
 
@@ -42,15 +43,6 @@ const greetingsList = [
   "What's up?",
 ];
 
-const dbecCSS = {
-  fontFamily: "var(--font-luckiest-guy)",
-  color: "#222222",
-  WebkitTextStroke: "12px var(--gray-2)",
-  paintOrder: "stroke fill" as const,
-  filter: "drop-shadow(2px 2px 1px var(--gray-4))",
-  textShadow: "1px 1px 1px var(--gray-4)",
-};
-
 export default function Home() {
   const navigate = useNavigate();
   const [greetingIndex, setGreetingIndex] = useState(0);
@@ -77,15 +69,7 @@ export default function Home() {
   return (
     <div className="flex min-h-full flex-col">
       <div className="mt-12 flex flex-col gap-10">
-        <div className="w-max mx-auto">
-          <div style={dbecCSS} className=" leading-14">
-            <h1 className="text-[3rem]">
-              DAILY BASIS
-              <span className="block text-[2.26rem]">ENGLISH COURSE</span>
-            </h1>
-          </div>
-          <span className="block text-2xl font-edu text-right">private</span>
-        </div>
+        <BrandLogo heading className="mx-auto" />
         <ul className="w-max mx-auto">
           <li
             className="font-walter text-2xl mt-3 transition-opacity duration-500 ease-in-out"
@@ -94,7 +78,7 @@ export default function Home() {
             {greetingsList[greetingIndex]}
           </li>
         </ul>
-      {/* <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
+        {/* <p className="mx-[min(100px,max(0px,calc((100vw-360px)*0.135)))]">
         <b>DAILY BASIS ENGLISH COURSE</b> offers specialized English classes
         focused on the four core language skills: Speaking (with an emphasis on
         conversation), Listening (listening comprehension), Reading, and
@@ -108,10 +92,7 @@ export default function Home() {
           auditiva), Leitura e Escrita.
         </p>
         <div className="mx-auto">
-          <Button
-            onClick={() => navigate("/dashboard")}
-            className="uppercase"
-          >
+          <Button onClick={() => navigate("/dashboard")} className="uppercase">
             Start for free
           </Button>
         </div>

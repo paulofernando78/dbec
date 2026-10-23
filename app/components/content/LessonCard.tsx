@@ -212,7 +212,7 @@ export const LessonCard = ({
   );
 
   return (
-    <Card className="mb-4 bg-[var(--surface)]">
+    <Card className="mb-4">
       {collapsible ? (
         <div>
           <div

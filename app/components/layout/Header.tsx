@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { AccountSummary } from "./AccountSummary";
+import { BrandLogo } from "./BrandLogo";
 
 type Session = {
   username: string;
@@ -129,13 +130,25 @@ export const Header = ({
   return (
     <>
       <div className="w-full shrink-0 rounded-xl bg-(--surface) p-4">
-        <div className="grid min-h-10 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4">
-          <div className="min-w-0 justify-self-start">
+        <div
+          className={`grid min-h-10 items-center gap-4 ${
+            isPresentationPage
+              ? "grid-cols-[auto_minmax(0,1fr)_auto]"
+              : "grid-cols-[60px_minmax(0,1fr)_auto] min-[700px]:grid-cols-[minmax(0,1fr)_auto]"
+          }`}
+        >
+          <div
+            className={`min-w-0 justify-self-start ${
+              isPresentationPage
+                ? ""
+                : "w-[60px] min-[700px]:hidden"
+            }`}
+          >
             {!isPresentationPage && (
               <Button
                 icon={<Menu />}
                 onClick={onClick}
-                className="size-10! p-[3px]! transition-all duration-1000 min-[700px]:pointer-events-none min-[700px]:invisible min-[700px]:opacity-0"
+                className="size-10! p-[3px]! transition-opacity duration-500 ease-in-out min-[700px]:pointer-events-none min-[700px]:opacity-0"
               />
             )}
 
@@ -159,11 +172,12 @@ export const Header = ({
             )}
           </div>
 
-          <img
-            src="/assets/img/home/dbec-private.svg"
-            alt="Daily Basis English Course"
-            className="w-28 max-w-full justify-self-center dark:invert"
-          />
+          <div className="relative h-9 min-w-0">
+            <BrandLogo
+              compact
+              className="absolute top-1/2 left-1/2 max-w-full -translate-x-1/2 -translate-y-[45%] transition-[left,transform] duration-500 ease-in-out dark:invert min-[700px]:left-0 min-[700px]:translate-x-0"
+            />
+          </div>
 
           <div className="flex min-w-0 items-center gap-4 justify-self-end">
             {session && (

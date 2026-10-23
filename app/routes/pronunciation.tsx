@@ -27,13 +27,6 @@ const toPlainText = (value: string | RichContent | undefined) =>
         .join("")
     : value ?? "";
 
-const groupByPhoneme = (items: PronunciationItem[]) =>
-  items.reduce<PronunciationItem[][]>((groups, item) => {
-    if (item.phoneme || groups.length === 0) groups.push([]);
-    groups[groups.length - 1].push(item);
-    return groups;
-  }, []);
-
 function PhoneticSoundGrid({
   sounds,
 }: {
@@ -150,7 +143,7 @@ export default function Pronunciation() {
             showHeader={false}
             className="mb-4"
           >
-            <Card title={section.title}>
+            <Card title={section.title} inset>
               <PhoneticSoundGrid sounds={section.sounds} />
             </Card>
           </Section>
@@ -162,23 +155,32 @@ export default function Pronunciation() {
             label={section.title}
             tocTitle={sectionIndex === 0 ? "Linking Sounds" : undefined}
             heading={2}
+            showHeader={false}
             className="mb-4"
           >
-            {groupByPhoneme(section.items).map((group, groupIndex) => (
-              <Fragment key={`${section.title}-group-${groupIndex}`}>
-                {groupIndex > 0 && (
-                  <hr className="my-5 border-0 border-t border-gray-300" />
-                )}
-                <ul className="grid gap-1">
-                  {group.map((item, itemIndex) => (
+            <Card title={section.title} className="grid gap-4">
+              {section.items.map((item, itemIndex) => (
+                <ul
+                  key={`${section.title}-group-${itemIndex}`}
+                  className="grid gap-1 rounded-xl bg-(--background) p-4"
+                >
+                  {item.title && (
+                    <li>
+                      <h3 className="text-lg font-bold">{item.title}</h3>
+                    </li>
+                  )}
+                  {(item.phoneme || item.english || item.audio) && (
+                    <PronunciationRow item={item} />
+                  )}
+                  {item.group?.map((example, exampleIndex) => (
                     <PronunciationRow
-                      key={`${section.title}-${item.english ?? item.phoneme}-${itemIndex}`}
-                      item={item}
+                      key={`${section.title}-example-${itemIndex}-${exampleIndex}`}
+                      item={example}
                     />
                   ))}
                 </ul>
-              </Fragment>
-            ))}
+              ))}
+            </Card>
           </Section>
         ))}
       </PageSections>
