@@ -143,6 +143,7 @@ export const pronunciationSections: PronunciationSection[] = [
       },
     ],
   },
+  // Consonanet + Vowel
   {
     title: "Consonant + Vowel",
     items: [
@@ -215,7 +216,7 @@ export const pronunciationSections: PronunciationSection[] = [
           },
           // An easy task.
           {
-            english: "An easy task.",
+            english: ["A", underline("n ea"), "sy task."],
             translation: "Uma tarefa fácil.",
             audio: media("consonant-vowel/n-i/an-easy-task.mp3"),
           },
@@ -231,7 +232,7 @@ export const pronunciationSections: PronunciationSection[] = [
         group: [
           // An incredibe memory.
           {
-            english: ["A", underline("n i"), "ncredible memory."],
+            english: ["A", underline("n i"), "ncredibl(e) memory."],
             translation: "Uma memória incrível.",
             audio: media("consonant-vowel/n-ɪ/an-incredible-memory.mp3"),
           },
@@ -246,9 +247,9 @@ export const pronunciationSections: PronunciationSection[] = [
         ],
         group: [
           {
-            english: "I’m out of time.",
-            translation: "Estou sem tempo.",
-            audio: media("consonant-vowel/t-ə/im-out-of-time.mp3"),
+            english: ["I’", underline("m o"), "u(t)."],
+            translation: "Estou fora.",
+            audio: media("consonant-vowel/m-aʊ/im-out.mp3"),
           },
         ],
       },
@@ -261,12 +262,12 @@ export const pronunciationSections: PronunciationSection[] = [
         ],
         group: [
           {
-            english: ["U", underline("s(e) i"), "t."],
+            english: ["U", underline("s(e) i"), "(t)."],
             translation: "Use.",
             audio: media("consonant-vowel/z-ɪ/use-it.mp3"),
           },
           {
-            english: ["Ta", underline("k(e) (i)"), "t."],
+            english: ["Ta", underline("k(e) i"), "t())."],
             translation: "Pegue.",
             audio: media("consonant-vowel/k-ɪ/take-it.mp3"),
           },
@@ -280,22 +281,48 @@ export const pronunciationSections: PronunciationSection[] = [
           phoneticsMedia("vowels", "ə"),
         ],
         group: [
-          {
-            english: "You hav(e) an incredible memory.",
-            translation: "Você tem uma memória incrível.",
-            audio: media(
-              "consonant-vowel/v-ə/you-have-an-incredible-memory.mp3",
-            ),
-          },
+          // Have a seat, please.
           {
             english: ["Ha", underline("v(e) a"), " sea(t), please."],
             translation: "Sente-se, por favor.",
             audio: media("consonant-vowel/v-ə/have-a-seat-please.mp3"),
           },
+          // I've always wanted it.
           {
-            english: "I’v(e) always wanted it.",
+            english: ["I’", underline("v(e) a"), "lways wanted it."],
             translation: "Eu sempre quis.",
             audio: media("consonant-vowel/v-ə/Ive-always-wanted-it.mp3"),
+          },
+        ],
+      },
+      // Flap T
+      {
+        title: "Flat T",
+        phoneme: "/t/ + /ə/",
+        audio: [
+          phoneticsMedia("consonants", "t"),
+          phoneticsMedia("vowels", "ə"),
+        ],
+        group: [
+          {
+            english: ["I lik(e) i", underline("t a"), " lo(t)."],
+            translation: "Eu gosto muito.",
+            audio: media("flap-t/i-like-it-a-lot.mp3"),
+          },
+          {
+            english: ["I’m ou", underline("t o"), "f tim(e)."],
+            translation: "Estou sem tempo.",
+            audio: media("consonant-vowel/t-ə/im-out-of-time.mp3"),
+          },
+          {
+            english: ["Ge", underline("t a"), " jo(b)."],
+            translation: "Arranje um emprego.",
+            audio: media("consonant-vowel/t-ə/get-a-job.mp3"),
+          },
+          {
+            english: ["Pick i", underline("t u"), "(p)."],
+            translation: "Pegue.",
+            audio: media("consonant-vowel/t-ə/pick-it-up.mp3"),
           },
         ],
       },
@@ -303,16 +330,6 @@ export const pronunciationSections: PronunciationSection[] = [
       {
         title: "Misc",
         group: [
-          {
-            english: "I work in an offic(e).",
-            translation: "Trabalho em um escritório.",
-            audio: media("consonant-vowel/i-work-in-an-office.mp3"),
-          },
-          {
-            english: "He works in an offic(e).",
-            translation: "Ele trabalha no escritório.",
-            audio: media("consonant-vowel/he-works-in-an-office.mp3"),
-          },
           {
             english: "Embark on an extraordinary journey.",
             translation: "Embarque em uma jornada extraordinária.",
@@ -331,6 +348,7 @@ export const pronunciationSections: PronunciationSection[] = [
       // /dʒ/
       {
         phoneme: "/dʒ/",
+        audio: phoneticsMedia("consonants", "dʒ"),
         group: [
           {
             english: "Did you like i(t)?",
@@ -362,6 +380,7 @@ export const pronunciationSections: PronunciationSection[] = [
     items: [
       {
         phoneme: "/tʃ/",
+        audio: phoneticsMedia("consonants", "tʃ"),
         group: [
           {
             english: "What’(s) your name?",
@@ -393,6 +412,7 @@ export const pronunciationSections: PronunciationSection[] = [
     items: [
       {
         phoneme: "/ʃ/",
+        audio: phoneticsMedia("consonants", "ʃ"),
         group: [
           {
             english: "This year I wanna learn Spanish.",
@@ -403,6 +423,7 @@ export const pronunciationSections: PronunciationSection[] = [
       },
       {
         phoneme: "/ʒ/",
+        audio: phoneticsMedia("consonants", "ʒ"),
         group: [
           {
             english: "How’s your family?",
@@ -418,36 +439,29 @@ export const pronunciationSections: PronunciationSection[] = [
       },
     ],
   },
-  // Flap T
+  // Multiple Linking
   {
-    title: "Flap T",
+    title: "Multiple Linking",
     items: [
       {
-        phoneme: "/t/ + /ə/",
-        audio: [
-          phoneticsMedia("consonants", "t"),
-          phoneticsMedia("vowels", "ə"),
-        ],
         group: [
+          // I work in an office.
           {
-            english: ["I lik(e) i", underline("t a"), " lo(t)."],
-            translation: "Eu gosto muito.",
-            audio: media("flap-t/i-like-it-a-lot.mp3"),
+            english: ["I wor", underline("k in an o"), "ffic(e)."],
+            translation: "Trabalho em um escritório.",
+            audio: media("multiple-linking/i-work-in-an-office.mp3"),
           },
+          // He works n an office.
           {
-            english: ["I’m ou", underline("t o"), "f time."],
-            translation: "Estou sem tempo.",
-            audio: media("consonant-vowel/t-ə/im-out-of-time.mp3"),
+            english: ["He work", underline("s in an o"), "ffic(e)."],
+            translation: "Ele trabalha em um escritório.",
+            audio: media("multiple-linking/he-works-in-an-office.mp3"),
           },
+          // He’s on an adventure.
           {
-            english: ["Ge", underline("t a"), " better job."],
-            translation: "Arranje um emprego melhor.",
-            audio: media("consonant-vowel/t-ə/get-a-better-job.mp3"),
-          },
-          {
-            english: ["Pick i", underline("t u"), "(p)."],
-            translation: "Pegue.",
-            audio: media("consonant-vowel/t-ə/pick-it-up.mp3"),
+            english: ["He’", underline("s on an a"), "dventure."],
+            translation: "Ele está em uma aventura.",
+            audio: media("multiple-linking/hes-on-an-adventure.mp3"),
           },
         ],
       },

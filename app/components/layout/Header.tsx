@@ -1,7 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useLocation, useNavigate } from "react-router";
 
-import { Card } from "../ui/Card";
 import { Button } from "@/components/ui/Button/Button";
 import { MoonStar, Sun } from "@/components/Icons";
 
@@ -141,14 +140,14 @@ export const Header = ({
             className={`min-w-0 justify-self-start ${
               isPresentationPage
                 ? ""
-                : "w-[60px] min-[700px]:hidden"
+                : "w-[15 min-[700px]:hidden"
             }`}
           >
             {!isPresentationPage && (
               <Button
                 icon={<Menu />}
                 onClick={onClick}
-                className="size-10! p-[3px]! transition-opacity duration-500 ease-in-out min-[700px]:pointer-events-none min-[700px]:opacity-0"
+                className="size-10! p-0.75! transition-opacity duration-500 ease-in-out min-[700px]:pointer-events-none min-[700px]:opacity-0"
               />
             )}
 
