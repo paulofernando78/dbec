@@ -177,6 +177,12 @@ export const pronunciationSections: PronunciationSection[] = [
             translation: "Eu gosto.",
             audio: media("consonant-vowel/k-ɪ/i-like-it.mp3"),
           },
+            // Make it.
+          {
+            english: ["Mak", underline("(e) i"), "(t)."],
+            translation: "Faça",
+            audio: media("consonant-vowel/k-ɪ/make-it.mp3"),
+          },
           // Pick it up.
           {
             english: ["Pic", underline("k i"), "t u(p)."],
@@ -193,6 +199,7 @@ export const pronunciationSections: PronunciationSection[] = [
           phoneticsMedia("vowels", "ɑ"),
         ],
         group: [
+          // Turn off the lights.
           {
             english: ["Tur", underline("n o"), "ff the lights."],
             translation: "Apague as luzes.",
@@ -261,15 +268,11 @@ export const pronunciationSections: PronunciationSection[] = [
           phoneticsMedia("vowels", "ɪ"),
         ],
         group: [
+          // Use it.
           {
             english: ["U", underline("s(e) i"), "(t)."],
             translation: "Use.",
             audio: media("consonant-vowel/z-ɪ/use-it.mp3"),
-          },
-          {
-            english: ["Ta", underline("k(e) i"), "t())."],
-            translation: "Pegue.",
-            audio: media("consonant-vowel/k-ɪ/take-it.mp3"),
           },
         ],
       },
@@ -295,7 +298,7 @@ export const pronunciationSections: PronunciationSection[] = [
           },
         ],
       },
-      // Flap T
+      // Flap T - /t/ + /ə/
       {
         title: "Flat T",
         phoneme: "/t/ + /ə/",
@@ -304,38 +307,29 @@ export const pronunciationSections: PronunciationSection[] = [
           phoneticsMedia("vowels", "ə"),
         ],
         group: [
+          // I like it a lot.
           {
             english: ["I lik(e) i", underline("t a"), " lo(t)."],
             translation: "Eu gosto muito.",
             audio: media("flap-t/i-like-it-a-lot.mp3"),
           },
+          // I’m out of time.
           {
             english: ["I’m ou", underline("t o"), "f tim(e)."],
             translation: "Estou sem tempo.",
             audio: media("consonant-vowel/t-ə/im-out-of-time.mp3"),
           },
+          // Get a job.
           {
             english: ["Ge", underline("t a"), " jo(b)."],
             translation: "Arranje um emprego.",
             audio: media("consonant-vowel/t-ə/get-a-job.mp3"),
           },
+          // Pick it up.
           {
             english: ["Pick i", underline("t u"), "(p)."],
             translation: "Pegue.",
             audio: media("consonant-vowel/t-ə/pick-it-up.mp3"),
-          },
-        ],
-      },
-      // Misc
-      {
-        title: "Misc",
-        group: [
-          {
-            english: "Embark on an extraordinary journey.",
-            translation: "Embarque em uma jornada extraordinária.",
-            audio: media(
-              "consonant-vowel/n-æ/embark-on-an-extraordinary-journey.mp3",
-            ),
           },
         ],
       },
@@ -350,21 +344,25 @@ export const pronunciationSections: PronunciationSection[] = [
         phoneme: "/dʒ/",
         audio: phoneticsMedia("consonants", "dʒ"),
         group: [
+          // Did you like i(t)?
           {
             english: "Did you like i(t)?",
             translation: "Você gostou?",
             audio: media("d+y/did-you-like-it.mp3"),
           },
+          // Did you eat?
           {
             english: "Did you ea(t)?",
             translation: "Você comeu?",
             audio: media("d+y/did-you-eat.mp3"),
           },
+          // Do you know what I mean?
           {
             english: "D(o) you know what I mean?",
             translation: "Você me entende?",
             audio: media("d+y/do-you-know-what-I-mean.mp3"),
           },
+          // Would you like i(t)?
           {
             english: "Would you like i(t)?",
             translation: "Você gostaria?",
@@ -382,21 +380,25 @@ export const pronunciationSections: PronunciationSection[] = [
         phoneme: "/tʃ/",
         audio: phoneticsMedia("consonants", "tʃ"),
         group: [
+          // What’s your name?
           {
             english: "What’(s) your name?",
             translation: "Qual é o seu nome?",
             audio: media("t+y/whats-your-name.mp3"),
           },
+          // Dont’t you like it?
           {
             english: "Don’t you like it?",
             translation: "Você não gosta?",
             audio: media("t+y/dont-you-like-it.mp3"),
           },
+          // Dont’t you want it?
           {
             english: "Don’t you want it?",
             translation: "Você não quer?",
             audio: media("t+y/dont-you-want-it.mp3"),
           },
+          // Didn’t you like it?
           {
             english: "Didn’t you like it?",
             translation: "Você não gostou?",
@@ -414,6 +416,7 @@ export const pronunciationSections: PronunciationSection[] = [
         phoneme: "/ʃ/",
         audio: phoneticsMedia("consonants", "ʃ"),
         group: [
+          // This year I wanna learn Spanish.
           {
             english: "This year I wanna learn Spanish.",
             translation: "Este ano eu quero aprender espanhol.",
@@ -421,15 +424,18 @@ export const pronunciationSections: PronunciationSection[] = [
           },
         ],
       },
+      // /ʒ/
       {
         phoneme: "/ʒ/",
         audio: phoneticsMedia("consonants", "ʒ"),
         group: [
+          // How’s your family?
           {
             english: "How’s your family?",
             translation: "Como está a sua família?",
             audio: media("s+y/ʒ/hows-your-family.mp3"),
           },
+          // Where’s your phone?
           {
             english: "Where’s your phone?",
             translation: "Cadê o seu telefone?",
