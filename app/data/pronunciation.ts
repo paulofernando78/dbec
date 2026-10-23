@@ -298,6 +298,22 @@ export const pronunciationSections: PronunciationSection[] = [
           },
         ],
       },
+      // /v/ + /ɪ/
+      {
+        phoneme: "/v/ + /ɪ/",
+        audio: [
+          phoneticsMedia("consonants", "v"),
+          phoneticsMedia("vowels", "ɪ"),
+        ],
+        group: [
+          // Have a seat, please.
+          {
+            english: ["I lo", underline("v(e) i"), " (t)."],
+            translation: "Eu amo.",
+            audio: media("consonant-vowel/v-ɪ/i-love-it.mp3"),
+          }
+        ],
+      },
       // Flap T - /t/ + /ə/
       {
         title: "Flat T",
