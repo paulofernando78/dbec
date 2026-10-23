@@ -10,10 +10,10 @@ import {
   Menu,
   PanelRightClose,
   PanelRightOpen,
+  User,
   X,
 } from "lucide-react";
 import { AccountSummary } from "./AccountSummary";
-import { BrandLogo } from "./BrandLogo";
 
 type Session = {
   username: string;
@@ -132,15 +132,15 @@ export const Header = ({
         <div
           className={`grid min-h-10 items-center gap-4 ${
             isPresentationPage
-              ? "grid-cols-[auto_minmax(0,1fr)_auto]"
-              : "grid-cols-[60px_minmax(0,1fr)_auto] min-[700px]:grid-cols-[minmax(0,1fr)_auto]"
+              ? "grid-cols-[auto_minmax(0,1fr)]"
+              : "grid-cols-[60px_minmax(0,1fr)] min-[700px]:grid-cols-1"
           }`}
         >
           <div
             className={`min-w-0 justify-self-start ${
               isPresentationPage
                 ? ""
-                : "w-[15 min-[700px]:hidden"
+                : "min-[700px]:hidden"
             }`}
           >
             {!isPresentationPage && (
@@ -170,22 +170,24 @@ export const Header = ({
               </div>
             )}
           </div>
-
-          <div className="relative h-9 min-w-0">
-            <BrandLogo
-              compact
-              className="absolute top-1/2 left-1/2 max-w-full -translate-x-1/2 -translate-y-[45%] transition-[left,transform] duration-500 ease-in-out dark:invert min-[700px]:left-0 min-[700px]:translate-x-0"
-            />
-          </div>
-
           <div className="flex min-w-0 items-center gap-4 justify-self-end">
             {session && (
-              <AccountSummary
-                name={session.displayName}
-                subtitle={
-                  session.role === "student" ? "Full access" : "Teacher"
-                }
-              />
+              <>
+                <AccountSummary
+                  name={session.displayName}
+                  subtitle={
+                    session.role === "student" ? "Full access" : "Teacher"
+                  }
+                />
+
+                <Button
+                  ariaLabel="Dashboard"
+                  pressed={location.pathname.startsWith(session.dashboardPath)}
+                  icon={<User />}
+                  onClick={() => navigate(session.dashboardPath)}
+                  className="size-10! p-[3px]!"
+                />
+              </>
             )}
 
             <Button

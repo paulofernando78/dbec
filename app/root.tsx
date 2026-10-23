@@ -16,6 +16,8 @@ import "./app.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DateTime } from "@/components/layout/DateTime";
+import { BrandLogo } from "./components/layout/BrandLogo";
+import { Card } from "./components/ui/Card";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -86,12 +88,19 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-container">
+        <Card className="flex items-center justify-between gap-4">
+          <BrandLogo
+            compact
+            layout="responsive"
+            className="dark:invert translate-y-[0.1rem]"
+          />
+          <DateTime />
+        </Card>
         <Header
           onClick={toggleNav}
           isSideBarOpen={isSideBarOpen}
           onSideBarClick={toggleSideBar}
         />
-        <DateTime />
         <div className="app-content">
           <div
             id="content-scroll"

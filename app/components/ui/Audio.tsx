@@ -13,6 +13,7 @@ type AudioProps = {
   speechLang?: string;
   children?: ReactNode;
   showIcon?: boolean;
+  asButton?: boolean;
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -89,6 +90,7 @@ export const Audio = ({
   speechLang = "en-US",
   children,
   showIcon = true,
+  asButton = false,
 }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -294,6 +296,17 @@ export const Audio = ({
       >
         {content}
       </Button>
+    );
+  }
+
+  if (asButton) {
+    return (
+      <Button
+        ariaLabel={ariaLabel}
+        className={wrapperClassName}
+        icon={content}
+        onClick={loading || playing ? handleStop : handlePlay}
+      />
     );
   }
 

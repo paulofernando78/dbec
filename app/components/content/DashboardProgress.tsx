@@ -7,9 +7,9 @@ type DashboardProgressProps = {
 };
 
 const items = [
-  { key: "lessons", label: "lessons", Icon: Check, color: "text-green-600" },
-  { key: "xp", label: "total XP", Icon: Star, color: "text-orange-500" },
-  { key: "streak", label: "day streak", Icon: Flame, color: "text-orange-600" },
+  { key: "lessons", label: "Course Lessons", Icon: Check, color: "text-green-600" },
+  { key: "xp", label: "Total XP", Icon: Star, color: "text-orange-500" },
+  { key: "streak", label: "Day Streak", Icon: Flame, color: "text-orange-600" },
 ] as const;
 
 export function DashboardProgress({ progress }: DashboardProgressProps) {
@@ -22,7 +22,7 @@ export function DashboardProgress({ progress }: DashboardProgressProps) {
   return (
     <section
       aria-label="Course progress"
-      className="mx-auto mb-4 grid w-fit max-w-full grid-cols-3 gap-2 max-[480px]:w-full"
+      className="mx-auto grid w-fit max-w-full grid-cols-3 gap-2 max-[480px]:w-full"
     >
       {items.map(({ key, label, Icon, color }) => (
         <div

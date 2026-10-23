@@ -8,22 +8,10 @@ type NavBarProps = {
 };
 
 export function NavBar({ closeNavBar }: NavBarProps) {
-  const [dashboardPath, setDashboardPath] = useState("/dashboard");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const storedDashboardPath = localStorage.getItem("dbec_dashboard_path");
-    if (storedDashboardPath) setDashboardPath(storedDashboardPath);
-
-    if (location.pathname.startsWith("/teacher/dashboard")) {
-      localStorage.setItem("dbec_dashboard_path", "/teacher/dashboard");
-      setDashboardPath("/teacher/dashboard");
-    } else if (location.pathname.startsWith("/dashboard/")) {
-      localStorage.setItem("dbec_dashboard_path", location.pathname);
-      setDashboardPath(location.pathname);
-    }
-
     fetch("/api/session")
       .then((response) => {
         if (!response.ok) throw new Error("Could not load session.");
@@ -33,12 +21,10 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         setIsAuthenticated(true);
         const nextDashboardPath = session.dashboardPath ?? "/dashboard";
         localStorage.setItem("dbec_dashboard_path", nextDashboardPath);
-        setDashboardPath(nextDashboardPath);
       })
       .catch(() => {
         setIsAuthenticated(false);
         localStorage.removeItem("dbec_dashboard_path");
-        setDashboardPath("/dashboard");
       });
   }, [location.pathname]);
 
@@ -113,9 +99,10 @@ export function NavBar({ closeNavBar }: NavBarProps) {
 
         return (
           <div key={href}>
-            {(!["/dashboard", "/guide"].includes(href) || isAuthenticated) && (
+            {href !== "/dashboard" &&
+              (href !== "/guide" || isAuthenticated) && (
               <NavLink
-                to={href === "/dashboard" ? dashboardPath : href}
+                to={href}
                 end
                 onClick={closeNavBar}
                 className={({ isActive }) => `

@@ -350,6 +350,41 @@ const getWordSizeClass = (word: string) => {
   return "text-sm";
 };
 
+const getSpeechText = (word: string) =>
+  word.replace(/\s*\([^)]*\)/g, "").trim();
+
+const recordedEmojiAudio: Record<string, string> = {
+  good: "/media/dictionary/g/good.mp3",
+  happy: "/media/dictionary/h/happy.mp3",
+  sad: "/media/dictionary/s/sad.mp3",
+  angry: "/media/dictionary/a/angry.mp3",
+  annoyed: "/media/dictionary/a/annoyed.mp3",
+  calm: "/media/dictionary/c/calm.mp3",
+  crazy: "/media/dictionary/c/crazy.mp3",
+  tired: "/media/dictionary/t/tired.mp3",
+  anxious: "/media/dictionary/a/anxious.mp3",
+  bored: "/media/dictionary/b/bored.mp3",
+  hot: "/media/dictionary/h/hot.mp3",
+  "in love": "/media/dictionary/i/in-love.mp3",
+  loved: "/media/dictionary/l/loved.mp3",
+  heartbroken: "/media/dictionary/h/heartbroken.mp3",
+  silly: "/media/dictionary/s/silly.mp3",
+  scared: "/media/dictionary/s/scared.mp3",
+  thoughtful: "/media/dictionary/t/thoughtful.mp3",
+  frustrated: "/media/dictionary/f/frustrated.mp3",
+  disappointed: "/media/dictionary/d/disappointed-1.mp3",
+  embarrassed: "/media/dictionary/e/embarrassed.mp3",
+  sleepy: "/media/dictionary/s/sleepy.mp3",
+  peaceful: "/media/dictionary/p/peaceful.mp3",
+  thankful: "/media/dictionary/t/thankful.mp3",
+  sick: "/media/dictionary/s/sick.mp3",
+};
+
+const getAudioSource = (word: string) => {
+  const speechText = getSpeechText(word);
+  return recordedEmojiAudio[speechText] ?? speechText;
+};
+
 export default function Emojis() {
   return (
     <div>
@@ -366,7 +401,7 @@ export default function Emojis() {
                   emoji.words.map((word, wordIndex) => (
                     <Audio
                       key={wordIndex}
-                      src={word.audio}
+                      src={getAudioSource(word.word)}
                       showIcon={false}
                       wrapperClassName="h-12! min-h-12! w-full! overflow-hidden text-center text-sm uppercase"
                     >

@@ -6,7 +6,6 @@ import { PageSections } from "@/components/content/PageSections";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import { Phonetics } from "@/components/content/Phonetics";
 import { Audio } from "@/components/ui/Audio";
-import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import {
@@ -100,15 +99,11 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
 
   return (
     <li className="flex min-h-[68px] items-center gap-3">
-      <Button
+      <Audio
+        asButton
         ariaLabel={`Play ${audioLabel}`}
-        icon={
-          <Audio
-            src={audioSource}
-            className="size-6!"
-            wrapperClassName="size-full items-center justify-center"
-          />
-        }
+        src={audioSource}
+        className="size-6!"
       />
       <p className="min-w-0 text-sm leading-6 md:text-base">
         <span className="text-black">
