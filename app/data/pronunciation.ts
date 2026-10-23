@@ -311,7 +311,7 @@ export const pronunciationSections: PronunciationSection[] = [
           {
             english: ["I lo", underline("v(e) i"), " (t)."],
             translation: "Eu amo.",
-            audio: media("consonant-vowel/v-ɪ/I-love-it.mp3"),
+            audio: media("consonant-vowel/v-ɪ/i-love-it.mp3"),
           }
         ],
       },
