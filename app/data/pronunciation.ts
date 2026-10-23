@@ -21,10 +21,10 @@ export type PronunciationSection = {
 };
 
 const media = (path: string) =>
-  `/media/pronunciation/linking-sounds/${path}?v=1`;
+  `/media/audio/pronunciation/linking-sounds/${path}?v=1`;
 
 const phoneticsMedia = (group: "vowels" | "consonants", sound: string) =>
-  `/media/pronunciation/phonetics/${group}/${sound}.mp3?v=1`;
+  `/media/audio/pronunciation/phonetics/${group}/${sound}.mp3?v=1`;
 
 const consonantSounds = [
   "b",
