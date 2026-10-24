@@ -1,6 +1,11 @@
 import type { RichContent } from "@/helpers/content";
+import type { ComponentType } from "react";
 
-export type GetReadyData = {
+type StepExtension = {
+  component?: ComponentType;
+};
+
+export type GetReadyData = StepExtension & {
   type: "get-ready";
   slug: string;
   label: string;
@@ -11,7 +16,7 @@ export type GetReadyData = {
   }[];
 };
 
-export type ListenData = {
+export type ListenData = StepExtension & {
   type: "listen";
   slug: string;
   label: string;
@@ -29,7 +34,7 @@ export type ListenData = {
   }[];
 };
 
-export type LanguageFocusData = {
+export type LanguageFocusData = StepExtension & {
   type: "language-focus";
   slug: string;
   label: string;
@@ -44,7 +49,7 @@ export type LanguageFocusData = {
   ])[];
 };
 
-export type TryItData = {
+export type TryItData = StepExtension & {
   type: "try-it";
   slug: string;
   label: string;
@@ -55,7 +60,7 @@ export type TryItData = {
   }[];
 };
 
-export type UseItData = {
+export type UseItData = StepExtension & {
   type: "use-it";
   slug: string;
   label: string;
@@ -64,7 +69,7 @@ export type UseItData = {
   model: readonly (readonly [string, string])[];
 };
 
-export type CanYouData = {
+export type CanYouData = StepExtension & {
   type: "can-you";
   slug: string;
   label: string;

@@ -1,9 +1,8 @@
 import { Text } from "./Text";
 import { Card } from "@/components/ui/Card";
+import { Audio } from "@/components/ui/Audio";
 
 import type { RichContent } from "@/helpers/content";
-
-import { Megaphone } from 'lucide-react';
 
 export type Notes = {
   display?: "block" | "inline";
@@ -17,21 +16,36 @@ export type NotesProps = {
 
 export const Notes = ({ value = [] }: NotesProps) => {
   return (
-    <Card className="bg-amber-100 border mb-4">
-      <div className="flex gap-2">
-        <Megaphone className="text-gray-400" />
-        <span className="block mb-4 relative top-0.5">
-          <b>NOTES</b>
-        </span>
+    <Card title="Notes" inset className="mb-4">
+      <div className="grid gap-3">
+        {value.map((note, index) => {
+          const audio = note.parts.find(
+            (part) => typeof part === "object" && part.audio,
+          );
+          const audioSource =
+            typeof audio === "object" ? audio.audio : undefined;
+          const text = note.parts.filter((part) => part !== audio);
+
+          return (
+            <div key={index} className="flex items-center gap-3">
+              {audioSource && (
+                <Audio
+                  asButton
+                  ariaLabel={`Play note ${index + 1}`}
+                  src={audioSource}
+                  className="size-6!"
+                  wrapperClassName="shrink-0"
+                />
+              )}
+              <Text
+                display={note.display ?? "block"}
+                as={note.as}
+                value={text}
+              />
+            </div>
+          );
+        })}
       </div>
-      {value.map((note, index) => (
-        <Text
-          key={index}
-          display={note.display ?? "block"}
-          as={note.as}
-          value={note.parts}
-        />
-      ))}
     </Card>
   );
 };

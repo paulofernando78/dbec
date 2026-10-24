@@ -1,9 +1,5 @@
-import { Ribbon } from "@/components/ui/Ribbon";
-// import { Text } from "@/components/molecules/Text";
 import { Card } from "@/components/ui/Card";
 import { Audio } from "@/components/ui/Audio";
-import { Text } from "@/components/content/Text";
-import { LineBreak } from "@/components/content/LineBreak";
 import { content } from "@/helpers/content";
 import { Notes } from "@/components/content/Notes";
 
@@ -196,44 +192,52 @@ const notes = [
 export const TheAlphabet = () => {
   return (
     <>
-      <Ribbon label="The Alphabet" bgColor="bg-slate-500" />
-      <LineBreak />
-      <Text
-        value={[
-          ...content({
-            audio: "/assets/audio/pronunciation/the-alphabet/26-letters.mp3",
-            parts: ["There are 26 letters in the English alphabet."],
-          }),
-        ]}
-      />
-      <div className="flex justify-center flex-wrap gap-2 my-4">
-        {alphabet.map((a, i) => (
-          <div
-            key={i}
-            className="w-25.5 px-1.25 py-2.25  flex flex-col items-center justify-center gap-1.25 border border-gray-400 rounded-lg"
-          >
-            <>
+      <Card title="The Alphabet" inset className="mb-4">
+        <div className="flex items-center gap-3">
+          <Audio
+            asButton
+            ariaLabel="Play alphabet introduction"
+            src="/assets/audio/pronunciation/the-alphabet/26-letters.mp3"
+            className="size-6!"
+            wrapperClassName="shrink-0"
+          />
+          <p>There are 26 letters in the English alphabet.</p>
+        </div>
+        <div className="my-4 flex flex-wrap justify-center gap-2">
+          {alphabet.map((a, i) => (
+            <div
+              key={i}
+              className="flex w-[60px] shrink-0 flex-col items-center gap-1"
+            >
               <span className="text-[0.8rem]">{a.number}</span>
-              <span className="text-[1.4rem] font-bold">{a.letter}</span>
-              <span className="phonetics">{a.phonetics}</span>
-              <Audio src={a.audio} />
-            </>
-          </div>
-        ))}
-      </div>
-      <div>
-        <Notes
-          value={notes.map((n) => ({
-            as: "p",
-            parts: [
-              ...content({
-                audio: n.audio,
-                parts: [n.note],
-              }),
-            ],
-          }))}
-        />
-      </div>
+              <span className="phonetics whitespace-nowrap text-sm leading-none">
+                {a.phonetics}
+              </span>
+              <Audio
+                ariaLabel={`Play letter ${a.letter}`}
+                src={a.audio}
+                showIcon={false}
+                wrapperClassName="size-[60px]! min-w-[60px]! [&>span]:p-1!"
+              >
+                <span className="text-[1.4rem] font-bold leading-none">
+                  {a.letter}
+                </span>
+              </Audio>
+            </div>
+          ))}
+        </div>
+      </Card>
+      <Notes
+        value={notes.map((n) => ({
+          as: "p",
+          parts: [
+            ...content({
+              audio: n.audio,
+              parts: [n.note],
+            }),
+          ],
+        }))}
+      />
     </>
   );
 };

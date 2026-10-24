@@ -1,9 +1,11 @@
 import type { LanguageFocusData } from "../../../lesson-step-types";
+import { TheAlphabet } from "@/features/TheAlphabet";
 
 export const languageFocus = {
   type: "language-focus",
   slug: "language-focus",
   label: "Grammar focus",
+  component: TheAlphabet,
   instruction:
     "Introduce yourself, greet someone, ask about first and last names, and use my, your, his, and her.",
   items: [

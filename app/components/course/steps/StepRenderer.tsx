@@ -7,12 +7,38 @@ import { TryItStep } from "./TryItStep";
 import { UseItStep } from "./UseItStep";
 
 export function StepRenderer({ data }: { data: LessonStepData }) {
+  const Component = data.component;
+  let step;
+
   switch (data.type) {
-    case "get-ready": return <GetReadyStep data={data} />;
-    case "listen": return <ListenStep data={data} />;
-    case "language-focus": return <LanguageFocusStep data={data} />;
-    case "try-it": return <TryItStep data={data} />;
-    case "use-it": return <UseItStep data={data} />;
-    case "can-you": return <CanYouStep data={data} />;
+    case "get-ready":
+      step = <GetReadyStep data={data} />;
+      break;
+    case "listen":
+      step = <ListenStep data={data} />;
+      break;
+    case "language-focus":
+      step = <LanguageFocusStep data={data} />;
+      break;
+    case "try-it":
+      step = <TryItStep data={data} />;
+      break;
+    case "use-it":
+      step = <UseItStep data={data} />;
+      break;
+    case "can-you":
+      step = <CanYouStep data={data} />;
+      break;
   }
+
+  return (
+    <>
+      {step}
+      {Component && (
+        <div className="mt-4">
+          <Component />
+        </div>
+      )}
+    </>
+  );
 }
