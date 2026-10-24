@@ -81,7 +81,7 @@ function WordContainer({
     >
       <div
         ref={setNodeRef}
-        className={`flex min-h-14 flex-wrap items-center gap-2 rounded-xl border p-3 transition-colors ${
+        className={`flex min-h-17 flex-wrap items-center gap-2 rounded-xl border border-dashed p-3 transition-colors ${
           id === "answer" ? "bg-white" : "border-transparent"
         } ${isOver ? "border-sky-500 bg-sky-50" : "border-gray-300"}`}
       >
