@@ -63,7 +63,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
 
   return (
     <nav
-      className="
+      className="w-max
         h-[calc(100%_-_0rem)]
         p-4
         text-gray-500
