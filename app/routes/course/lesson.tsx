@@ -115,7 +115,7 @@ export default function LessonPage() {
       <StepRenderer data={current} />
 
       <nav
-        className="mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
+        className="mt-4 mx-1 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
         aria-label="Lesson steps"
       >
         <Button

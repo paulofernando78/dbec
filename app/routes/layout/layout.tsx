@@ -6,15 +6,15 @@ import { StudentNotesPanel } from "@/components/content/StudentNotesPanel";
 type LayoutContext = {
   isNavBarOpen: boolean;
   closeNavBar: () => void;
-  isSideBarOpen: boolean;
-  toggleSideBar: () => void;
+  isNotesOpen: boolean;
+  toggleNotes: () => void;
 };
 
 export default function Layout() {
-  const { isNavBarOpen, closeNavBar, isSideBarOpen, toggleSideBar } =
+  const { isNavBarOpen, closeNavBar, isNotesOpen, toggleNotes } =
     useOutletContext<LayoutContext>();
   const location = useLocation();
-  const hasNotesSidebar =
+  const hasNotes =
     /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
     /^\/travel\/unit\//.test(location.pathname) ||
     /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
@@ -26,8 +26,8 @@ export default function Layout() {
       >
         <NavBar
           closeNavBar={closeNavBar}
-          isNotesOpen={isSideBarOpen}
-          toggleNotes={toggleSideBar}
+          isNotesOpen={isNotesOpen}
+          toggleNotes={toggleNotes}
         />
       </aside>
       <main className="relative min-h-0 w-full">
@@ -35,7 +35,7 @@ export default function Layout() {
           className="h-full min-h-0 overflow-x-hidden overflow-y-auto pb-1.25"
           data-scroll-container
         >
-          {hasNotesSidebar && (
+          {hasNotes && (
             <div
               id="student-notes-panel-host"
               className="pointer-events-none sticky top-0 z-40 mx-auto h-0 w-[calc(100%_-_0.1rem)] max-w-4xl max-[700px]:mr-auto max-[700px]:ml-[0.05rem] max-[700px]:w-[calc(100%_-_4.8rem)]"
@@ -44,10 +44,10 @@ export default function Layout() {
           <Outlet />
         </div>
         <ScrollToTop />
-        {hasNotesSidebar && (
+        {hasNotes && (
           <StudentNotesPanel
-            isSideBarOpen={isSideBarOpen}
-            onClose={toggleSideBar}
+            isOpen={isNotesOpen}
+            onClose={toggleNotes}
           />
         )}
       </main>

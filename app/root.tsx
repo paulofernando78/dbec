@@ -46,7 +46,7 @@ export default function App() {
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isNotesOpen, setIsNotesOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -93,8 +93,8 @@ export default function App() {
     setIsNavBarOpen(false);
   };
 
-  const toggleSideBar = () => {
-    setIsSideBarOpen((prev) => !prev);
+  const toggleNotes = () => {
+    setIsNotesOpen((current) => !current);
   };
 
   useEffect(() => {
@@ -102,7 +102,7 @@ export default function App() {
     const handleBreakpointChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
         setIsNavBarOpen(false);
-        setIsSideBarOpen(false);
+        setIsNotesOpen(false);
       }
     };
 
@@ -183,8 +183,8 @@ export default function App() {
               context={{
                 isNavBarOpen,
                 closeNavBar,
-                isSideBarOpen,
-                toggleSideBar,
+                isNotesOpen,
+                toggleNotes,
               }}
             />
           </div>

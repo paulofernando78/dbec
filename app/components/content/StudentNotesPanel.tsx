@@ -21,12 +21,12 @@ type Notes = {
 const emptyNotes: Notes = { teacher: "", student: "" };
 
 type StudentNotesPanelProps = {
-  isSideBarOpen: boolean;
+  isOpen: boolean;
   onClose: () => void;
 };
 
 export function StudentNotesPanel({
-  isSideBarOpen,
+  isOpen,
   onClose,
 }: StudentNotesPanelProps) {
   const location = useLocation();
@@ -111,8 +111,8 @@ export function StudentNotesPanel({
   }, [studentId]);
 
   useEffect(() => {
-    if (isSideBarOpen) void loadNotes();
-  }, [isSideBarOpen, loadNotes]);
+    if (isOpen) void loadNotes();
+  }, [isOpen, loadNotes]);
 
   const saveNote = async (noteType: "teacher" | "student") => {
     if (!studentId || session?.role !== noteType) return;
@@ -133,7 +133,7 @@ export function StudentNotesPanel({
     }
   };
 
-  if (!session || !isSideBarOpen || !panelHost) return null;
+  if (!session || !isOpen || !panelHost) return null;
 
   return createPortal(
         <div className="pointer-events-auto w-full translate-y-[0.05rem] rounded-xl bg-(--surface) p-3 shadow-2xl ring-1 ring-slate-300">
