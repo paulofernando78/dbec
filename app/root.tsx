@@ -16,6 +16,8 @@ import "./app.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DateTime } from "@/components/layout/DateTime";
+import { Button } from "@/components/ui/Button/Button";
+import { Menu } from "lucide-react";
 import { BrandLogo } from "./components/layout/BrandLogo";
 import { Card } from "./components/ui/Card";
 
@@ -88,16 +90,27 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-container">
-        <Card className="flex items-center justify-between gap-4">
+        <Card className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 min-[700px]:flex min-[700px]:justify-between min-[700px]:gap-4">
+          {!isPresentationPage && (
+            <Button
+              ariaLabel="Menu"
+              icon={<Menu />}
+              onClick={toggleNav}
+              className="size-10! justify-self-start p-0.75! min-[700px]:hidden!"
+            />
+          )}
           <BrandLogo
             compact
             layout="responsive"
-            className="dark:invert translate-y-[0.1rem]"
+            className={`dark:invert translate-y-[0.1rem] max-[699px]:col-start-2 max-[699px]:justify-self-center ${
+              isPresentationPage ? "max-[699px]:col-start-1" : ""
+            }`}
           />
-          <DateTime />
+          <div className="col-start-3 justify-self-end">
+            <DateTime />
+          </div>
         </Card>
         <Header
-          onClick={toggleNav}
           isSideBarOpen={isSideBarOpen}
           onSideBarClick={toggleSideBar}
         />

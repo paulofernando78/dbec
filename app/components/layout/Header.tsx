@@ -7,7 +7,6 @@ import { MoonStar, Sun } from "@/components/Icons";
 import {
   House,
   Info,
-  Menu,
   PanelRightClose,
   PanelRightOpen,
   User,
@@ -27,13 +26,11 @@ type Session = {
 };
 
 interface HeadersProps {
-  onClick: () => void;
   isSideBarOpen: boolean;
   onSideBarClick: () => void;
 }
 
 export const Header = ({
-  onClick,
   isSideBarOpen,
   onSideBarClick,
 }: HeadersProps) => {
@@ -133,22 +130,30 @@ export const Header = ({
           className={`grid min-h-10 items-center gap-4 ${
             isPresentationPage
               ? "grid-cols-[auto_minmax(0,1fr)]"
-              : "grid-cols-[60px_minmax(0,1fr)] min-[700px]:grid-cols-1"
+              : "grid-cols-[minmax(0,1fr)_auto] min-[700px]:grid-cols-1"
           }`}
         >
           <div
-            className={`min-w-0 justify-self-start ${
+            className={`min-w-0 items-center gap-4 justify-self-start ${
               isPresentationPage
-                ? ""
-                : "min-[700px]:hidden"
+                ? "flex"
+                : "flex min-[700px]:hidden"
             }`}
           >
-            {!isPresentationPage && (
-              <Button
-                icon={<Menu />}
-                onClick={onClick}
-                className="size-10! p-0.75! transition-opacity duration-500 ease-in-out min-[700px]:pointer-events-none min-[700px]:opacity-0"
-              />
+            {!isPresentationPage && session && (
+              <>
+                <Button
+                  ariaLabel="Dashboard"
+                  pressed={location.pathname.startsWith(session.dashboardPath)}
+                  icon={<User />}
+                  onClick={() => navigate(session.dashboardPath)}
+                  className="size-10! shrink-0 p-[3px]!"
+                />
+                <AccountSummary
+                  name={session.displayName}
+                  subtitle={session.role === "student" ? "Full access" : "Teacher"}
+                />
+              </>
             )}
 
             {isPresentationPage && (
@@ -178,6 +183,7 @@ export const Header = ({
                   subtitle={
                     session.role === "student" ? "Full access" : "Teacher"
                   }
+                  className="max-[699px]:hidden"
                 />
 
                 <Button
@@ -185,7 +191,7 @@ export const Header = ({
                   pressed={location.pathname.startsWith(session.dashboardPath)}
                   icon={<User />}
                   onClick={() => navigate(session.dashboardPath)}
-                  className="size-10! p-[3px]!"
+                  className="size-10! p-[3px]! max-[699px]:hidden!"
                 />
               </>
             )}
