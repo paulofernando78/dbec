@@ -15,7 +15,7 @@ import "./app.css";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { DateTime } from "@/components/layout/DateTime";
+import { MoonStar, Sun } from "@/components/Icons";
 import { Button } from "@/components/ui/Button/Button";
 import { Menu } from "lucide-react";
 import { BrandLogo } from "./components/layout/BrandLogo";
@@ -45,6 +45,11 @@ export default function App() {
     location.pathname === "/" || location.pathname === "/about";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -107,7 +112,12 @@ export default function App() {
             }`}
           />
           <div className="col-start-3 justify-self-end">
-            <DateTime />
+            <Button
+              ariaLabel={isDarkMode ? "Light mode" : "Dark mode"}
+              icon={isDarkMode ? <Sun /> : <MoonStar />}
+              onClick={() => setIsDarkMode((current) => !current)}
+              className="size-10! p-[3px]!"
+            />
           </div>
         </Card>
         <Header

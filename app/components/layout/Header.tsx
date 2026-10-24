@@ -2,7 +2,6 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useLocation, useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
-import { MoonStar, Sun } from "@/components/Icons";
 
 import {
   House,
@@ -25,6 +24,13 @@ type Session = {
   plan: "free" | "plus" | null;
 };
 
+type SelectedStudent = {
+  studentId: string;
+  name: string;
+  schedule: string;
+  time: string;
+};
+
 interface HeadersProps {
   isSideBarOpen: boolean;
   onSideBarClick: () => void;
@@ -35,19 +41,12 @@ export const Header = ({
   onSideBarClick,
 }: HeadersProps) => {
   const navigate = useNavigate();
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [session, setSession] = useState<Session | null>(null);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-  };
+  const [selectedStudent, setSelectedStudent] =
+    useState<SelectedStudent | null>(null);
 
   const location = useLocation();
 
@@ -93,6 +92,44 @@ export const Header = ({
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+    let isCurrent = true;
+
+    if (session?.role !== "teacher") {
+      setSelectedStudent(null);
+      return;
+    }
+
+    const selectedStudentId = localStorage.getItem("dbec_selected_student_id");
+    if (!selectedStudentId) {
+      setSelectedStudent(null);
+      return;
+    }
+
+    fetch("/api/students", { headers: { Accept: "application/json" } })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        const result = (await response.json()) as {
+          students?: SelectedStudent[];
+        };
+        return (
+          result.students?.find(
+            (student) => student.studentId === selectedStudentId,
+          ) ?? null
+        );
+      })
+      .then((student) => {
+        if (isCurrent) setSelectedStudent(student);
+      })
+      .catch(() => {
+        if (isCurrent) setSelectedStudent(null);
+      });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, [session?.role, location.pathname]);
+
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
@@ -130,16 +167,10 @@ export const Header = ({
           className={`grid min-h-10 items-center gap-4 ${
             isPresentationPage
               ? "grid-cols-[auto_minmax(0,1fr)]"
-              : "grid-cols-[minmax(0,1fr)_auto] min-[700px]:grid-cols-1"
+              : "grid-cols-[minmax(0,1fr)_auto]"
           }`}
         >
-          <div
-            className={`min-w-0 items-center gap-4 justify-self-start ${
-              isPresentationPage
-                ? "flex"
-                : "flex min-[700px]:hidden"
-            }`}
-          >
+          <div className="flex min-w-0 items-center gap-4 justify-self-start">
             {!isPresentationPage && session && (
               <>
                 <Button
@@ -152,7 +183,18 @@ export const Header = ({
                 <AccountSummary
                   name={session.displayName}
                   subtitle={session.role === "student" ? "Full access" : "Teacher"}
+                  className={
+                    selectedStudent
+                      ? "border-r border-gray-300 pr-4 dark:border-gray-600"
+                      : ""
+                  }
                 />
+                {selectedStudent && (
+                  <AccountSummary
+                    name={selectedStudent.name}
+                    subtitle={`${selectedStudent.schedule} · ${selectedStudent.time}`}
+                  />
+                )}
               </>
             )}
 
@@ -176,14 +218,13 @@ export const Header = ({
             )}
           </div>
           <div className="flex min-w-0 items-center gap-4 justify-self-end">
-            {session && (
+            {session && isPresentationPage && (
               <>
                 <AccountSummary
                   name={session.displayName}
                   subtitle={
                     session.role === "student" ? "Full access" : "Teacher"
                   }
-                  className="max-[699px]:hidden"
                 />
 
                 <Button
@@ -191,16 +232,10 @@ export const Header = ({
                   pressed={location.pathname.startsWith(session.dashboardPath)}
                   icon={<User />}
                   onClick={() => navigate(session.dashboardPath)}
-                  className="size-10! p-[3px]! max-[699px]:hidden!"
+                  className="size-10! p-[3px]!"
                 />
               </>
             )}
-
-            <Button
-              icon={isDarkMode ? <Sun /> : <MoonStar />}
-              onClick={toggleTheme}
-              className="size-10! p-[3px]!"
-            />
 
             {hasNotesSidebar && (
               <Button
