@@ -36,10 +36,7 @@ interface HeadersProps {
   onSideBarClick: () => void;
 }
 
-export const Header = ({
-  isSideBarOpen,
-  onSideBarClick,
-}: HeadersProps) => {
+export const Header = ({ isSideBarOpen, onSideBarClick }: HeadersProps) => {
   const navigate = useNavigate();
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -164,10 +161,12 @@ export const Header = ({
     <>
       <div className="w-full shrink-0 rounded-xl bg-(--surface) p-4">
         <div
-          className={`grid min-h-10 items-center gap-4 ${
+          className={`grid min-h-10 items-center ${
             isPresentationPage
-              ? "grid-cols-[auto_minmax(0,1fr)]"
-              : "grid-cols-[minmax(0,1fr)_auto]"
+              ? "grid-cols-[auto_minmax(0,1fr)] gap-4"
+              : hasNotesSidebar
+                ? "grid-cols-[minmax(0,1fr)_auto] gap-4"
+                : "grid-cols-1"
           }`}
         >
           <div className="flex min-w-0 items-center gap-4 justify-self-start">
@@ -178,11 +177,13 @@ export const Header = ({
                   pressed={location.pathname.startsWith(session.dashboardPath)}
                   icon={<User />}
                   onClick={() => navigate(session.dashboardPath)}
-                  className="size-10! shrink-0 p-[3px]!"
+                  className="size-10! shrink-0 self-end p-[3px]!"
                 />
                 <AccountSummary
                   name={session.displayName}
-                  subtitle={session.role === "student" ? "Full access" : "Teacher"}
+                  subtitle={
+                    session.role === "student" ? "Full access" : "Teacher"
+                  }
                   className={
                     selectedStudent
                       ? "border-r border-gray-300 pr-4 dark:border-gray-600"

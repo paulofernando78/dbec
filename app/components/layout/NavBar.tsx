@@ -1,7 +1,6 @@
 import { NavLink, useLocation } from "react-router";
 import { links } from "@/data/nav-bar-links";
 import { useEffect, useState } from "react";
-import { LogIn, LogOut } from "lucide-react";
 
 type NavBarProps = {
   closeNavBar: () => void;
@@ -28,17 +27,6 @@ export function NavBar({ closeNavBar }: NavBarProps) {
       });
   }, [location.pathname]);
 
-  const handleAuthentication = async () => {
-    if (!isAuthenticated) {
-      window.dispatchEvent(new Event("dbec:open-login"));
-      return;
-    }
-
-    await fetch("/api/logout", { method: "POST" });
-    localStorage.removeItem("dbec_dashboard_path");
-    window.location.assign("/");
-  };
-
   return (
     <nav
       className="
@@ -50,21 +38,6 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         overflow-y-auto
         "
     >
-      <button
-        type="button"
-        onClick={handleAuthentication}
-        className={`flex cursor-pointer items-center gap-2 font-bold uppercase ${
-          isAuthenticated ? "" : "mb-8"
-        }`}
-      >
-        {isAuthenticated ? (
-          <LogOut width={25} height={25} className="shrink-0" />
-        ) : (
-          <LogIn width={25} height={25} className="shrink-0" />
-        )}
-        <span>{isAuthenticated ? "Logout" : "Login"}</span>
-      </button>
-  
       {links.map((item) => {
         if ("group" in item) {
           return (

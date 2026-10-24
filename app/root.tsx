@@ -17,7 +17,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MoonStar, Sun } from "@/components/Icons";
 import { Button } from "@/components/ui/Button/Button";
-import { Menu } from "lucide-react";
+import { LogIn, LogOut, Menu } from "lucide-react";
 import { BrandLogo } from "./components/layout/BrandLogo";
 import { Card } from "./components/ui/Card";
 
@@ -46,10 +46,29 @@ export default function App() {
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
+
+  useEffect(() => {
+    fetch("/api/session", { headers: { Accept: "application/json" } })
+      .then((response) => setIsAuthenticated(response.ok))
+      .catch(() => setIsAuthenticated(false));
+  }, [location.pathname]);
+
+  const handleAuthentication = async () => {
+    if (!isAuthenticated) {
+      window.dispatchEvent(new Event("dbec:open-login"));
+      return;
+    }
+
+    await fetch("/api/logout", { method: "POST" });
+    localStorage.removeItem("dbec_dashboard_path");
+    localStorage.removeItem("dbec_selected_student_id");
+    window.location.assign("/");
+  };
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -95,7 +114,13 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-container">
-        <Card className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 min-[700px]:flex min-[700px]:justify-between min-[700px]:gap-4">
+        <Card
+          className={`grid items-center gap-2 min-[700px]:flex min-[700px]:justify-between min-[700px]:gap-4 ${
+            isPresentationPage
+              ? "grid-cols-[1fr_auto]"
+              : "grid-cols-[auto_minmax(0,1fr)_auto]"
+          }`}
+        >
           {!isPresentationPage && (
             <Button
               ariaLabel="Menu"
@@ -111,13 +136,25 @@ export default function App() {
               isPresentationPage ? "max-[699px]:col-start-1" : ""
             }`}
           />
-          <div className="col-start-3 justify-self-end">
+          <div
+            className={`flex items-center gap-2 justify-self-end ${
+              isPresentationPage ? "col-start-2" : "col-start-3"
+            }`}
+          >
             <Button
               ariaLabel={isDarkMode ? "Light mode" : "Dark mode"}
               icon={isDarkMode ? <Sun /> : <MoonStar />}
               onClick={() => setIsDarkMode((current) => !current)}
               className="size-10! p-[3px]!"
             />
+            {!isPresentationPage && (
+              <Button
+                ariaLabel={isAuthenticated ? "Log out" : "Log in"}
+                icon={isAuthenticated ? <LogOut /> : <LogIn />}
+                onClick={handleAuthentication}
+                className="size-10! p-[3px]!"
+              />
+            )}
           </div>
         </Card>
         <Header

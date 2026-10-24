@@ -10,7 +10,7 @@ export const AccountSummary = ({ name, subtitle, className }: AccountSummaryProp
       {name.charAt(0).toUpperCase()}
     </span>
 
-    <div className="min-w-0 leading-tight">
+    <div className="min-w-0 leading-tight max-[489px]:hidden">
       <p className="truncate text-sm font-semibold text-gray-800">{name}</p>
       <p className="truncate text-xs text-gray-500">{subtitle}</p>
     </div>

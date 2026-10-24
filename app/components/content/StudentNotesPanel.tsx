@@ -144,7 +144,7 @@ export function StudentNotesPanel({
   if (!session) return null;
 
   return (
-    <div className="relative z-40 flex w-14 flex-col items-center max-[700px]:w-12">
+    <div className="relative flex pt-2 w-14 flex-col items-center z-40 max-[700px]:w-12">
       <Button
         ariaLabel={isOpen ? "Close student notes" : "Open student notes"}
         pressed={isOpen}
