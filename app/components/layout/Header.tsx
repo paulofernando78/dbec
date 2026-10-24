@@ -1,16 +1,9 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation } from "react-router";
 
 import { Button } from "@/components/ui/Button/Button";
 
-import {
-  House,
-  Info,
-  PanelRightClose,
-  PanelRightOpen,
-  User,
-  X,
-} from "lucide-react";
+import { X } from "lucide-react";
 import { AccountSummary } from "./AccountSummary";
 
 type Session = {
@@ -31,13 +24,7 @@ type SelectedStudent = {
   time: string;
 };
 
-interface HeadersProps {
-  isSideBarOpen: boolean;
-  onSideBarClick: () => void;
-}
-
-export const Header = ({ isSideBarOpen, onSideBarClick }: HeadersProps) => {
-  const navigate = useNavigate();
+export const Header = () => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState("");
@@ -49,10 +36,6 @@ export const Header = ({ isSideBarOpen, onSideBarClick }: HeadersProps) => {
 
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
-  const hasNotesSidebar =
-    /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
-    /^\/travel\/unit\//.test(location.pathname) ||
-    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
   useEffect(() => {
     if (new URLSearchParams(location.search).get("login") === "required") {
       setIsLoginOpen(true);
@@ -159,26 +142,18 @@ export const Header = ({ isSideBarOpen, onSideBarClick }: HeadersProps) => {
 
   return (
     <>
-      <div className="w-full shrink-0 rounded-xl bg-(--surface) p-4">
+      {(!isPresentationPage || session) && (
+      <div className="w-full shrink-0 rounded-xl bg-(--surface) p-4 [container-type:inline-size]">
         <div
           className={`grid min-h-10 items-center ${
             isPresentationPage
               ? "grid-cols-[auto_minmax(0,1fr)] gap-4"
-              : hasNotesSidebar
-                ? "grid-cols-[minmax(0,1fr)_auto] gap-4"
-                : "grid-cols-1"
+              : "grid-cols-1"
           }`}
         >
           <div className="flex min-w-0 items-center gap-4 justify-self-start">
             {!isPresentationPage && session && (
               <>
-                <Button
-                  ariaLabel="Dashboard"
-                  pressed={location.pathname.startsWith(session.dashboardPath)}
-                  icon={<User />}
-                  onClick={() => navigate(session.dashboardPath)}
-                  className="size-10! shrink-0 self-end p-[3px]!"
-                />
                 <AccountSummary
                   name={session.displayName}
                   subtitle={
@@ -199,59 +174,21 @@ export const Header = ({ isSideBarOpen, onSideBarClick }: HeadersProps) => {
               </>
             )}
 
-            {isPresentationPage && (
-              <div className="flex items-center gap-2.5">
-                <Button
-                  ariaLabel="Home"
-                  icon={<House />}
-                  pressed={location.pathname === "/"}
-                  onClick={() => navigate("/")}
-                  className="size-10! p-[3px]!"
-                />
-                <Button
-                  ariaLabel="About"
-                  icon={<Info />}
-                  pressed={location.pathname === "/about"}
-                  onClick={() => navigate("/about")}
-                  className="size-10! p-[3px]!"
-                />
-              </div>
-            )}
           </div>
           <div className="flex min-w-0 items-center gap-4 justify-self-end">
             {session && isPresentationPage && (
-              <>
-                <AccountSummary
-                  name={session.displayName}
-                  subtitle={
-                    session.role === "student" ? "Full access" : "Teacher"
-                  }
-                />
-
-                <Button
-                  ariaLabel="Dashboard"
-                  pressed={location.pathname.startsWith(session.dashboardPath)}
-                  icon={<User />}
-                  onClick={() => navigate(session.dashboardPath)}
-                  className="size-10! p-[3px]!"
-                />
-              </>
-            )}
-
-            {hasNotesSidebar && (
-              <Button
-                ariaLabel={
-                  isSideBarOpen ? "Close notes sidebar" : "Open notes sidebar"
+              <AccountSummary
+                name={session.displayName}
+                subtitle={
+                  session.role === "student" ? "Full access" : "Teacher"
                 }
-                pressed={isSideBarOpen}
-                icon={isSideBarOpen ? <PanelRightClose /> : <PanelRightOpen />}
-                onClick={onSideBarClick}
-                className="hidden size-10! p-[3px]! max-[700px]:grid!"
               />
             )}
+
           </div>
         </div>
       </div>
+      )}
 
       {isLoginOpen && (
         <div

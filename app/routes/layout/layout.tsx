@@ -7,10 +7,11 @@ type LayoutContext = {
   isNavBarOpen: boolean;
   closeNavBar: () => void;
   isSideBarOpen: boolean;
+  toggleSideBar: () => void;
 };
 
 export default function Layout() {
-  const { isNavBarOpen, closeNavBar, isSideBarOpen } =
+  const { isNavBarOpen, closeNavBar, isSideBarOpen, toggleSideBar } =
     useOutletContext<LayoutContext>();
   const location = useLocation();
   const hasNotesSidebar =
@@ -19,17 +20,15 @@ export default function Layout() {
     /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
 
   return (
-    <div
-      className={`relative grid h-full min-h-0 flex-1 gap-4 overflow-hidden max-[700px]:grid-cols-1! ${
-        hasNotesSidebar
-          ? "grid-cols-[max-content_minmax(0,1fr)_3.5rem]"
-          : "grid-cols-[max-content_minmax(0,1fr)]"
-      }`}
-    >
+    <div className="relative grid h-full min-h-0 flex-1 grid-cols-[max-content_minmax(0,1fr)] gap-4 overflow-hidden max-[700px]:grid-cols-1!">
       <aside
         className={`z-20 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute max-[700px]:w-65 max-[700px]:-translate-x-70 ${isNavBarOpen ? "max-[700px]:translate-x-0" : ""}`}
       >
-        <NavBar closeNavBar={closeNavBar} />
+        <NavBar
+          closeNavBar={closeNavBar}
+          isNotesOpen={isSideBarOpen}
+          toggleNotes={toggleSideBar}
+        />
       </aside>
       <main className="relative min-h-0 w-full">
         <div
@@ -45,18 +44,13 @@ export default function Layout() {
           <Outlet />
         </div>
         <ScrollToTop />
+        {hasNotesSidebar && (
+          <StudentNotesPanel
+            isSideBarOpen={isSideBarOpen}
+            onClose={toggleSideBar}
+          />
+        )}
       </main>
-      {hasNotesSidebar && (
-        <aside
-          className={`bg-(--surface) rounded-xl relative z-30 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute!  max-[700px]:right-0 max-[700px]:w-16 ${isSideBarOpen ? "max-[700px]:translate-x-0" : "max-[700px]:translate-x-[calc(100%+1rem)]"}`}
-        >
-          <div className="h-full">
-            <div className="flex h-full justify-center">
-              <StudentNotesPanel isSideBarOpen={isSideBarOpen} />
-            </div>
-          </div>
-        </aside>
-      )}
     </div>
   );
 }

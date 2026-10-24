@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
+  useNavigate,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -17,7 +18,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MoonStar, Sun } from "@/components/Icons";
 import { Button } from "@/components/ui/Button/Button";
-import { LogIn, LogOut, Menu } from "lucide-react";
+import { House, Info, LogIn, LogOut, Menu } from "lucide-react";
 import { BrandLogo } from "./components/layout/BrandLogo";
 import { Card } from "./components/ui/Card";
 
@@ -41,6 +42,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isPresentationPage =
     location.pathname === "/" || location.pathname === "/about";
   const [isNavBarOpen, setIsNavBarOpen] = useState(false);
@@ -117,7 +119,7 @@ export default function App() {
         <Card
           className={`grid items-center gap-2 min-[700px]:flex min-[700px]:justify-between min-[700px]:gap-4 ${
             isPresentationPage
-              ? "grid-cols-[1fr_auto]"
+              ? "grid-cols-[auto_minmax(0,1fr)_auto]"
               : "grid-cols-[auto_minmax(0,1fr)_auto]"
           }`}
         >
@@ -129,18 +131,32 @@ export default function App() {
               className="size-10! justify-self-start p-0.75! min-[700px]:hidden!"
             />
           )}
-          <BrandLogo
-            compact
-            layout="responsive"
-            className={`dark:invert translate-y-[0.1rem] max-[699px]:col-start-2 max-[699px]:justify-self-center ${
-              isPresentationPage ? "max-[699px]:col-start-1" : ""
-            }`}
-          />
-          <div
-            className={`flex items-center gap-2 justify-self-end ${
-              isPresentationPage ? "col-start-2" : "col-start-3"
-            }`}
-          >
+          {isPresentationPage && (
+            <div className="flex items-center gap-2 justify-self-start">
+              <Button
+                ariaLabel="Home"
+                icon={<House />}
+                pressed={location.pathname === "/"}
+                onClick={() => navigate("/")}
+                className="size-10! p-[3px]!"
+              />
+              <Button
+                ariaLabel="About"
+                icon={<Info />}
+                pressed={location.pathname === "/about"}
+                onClick={() => navigate("/about")}
+                className="size-10! p-[3px]!"
+              />
+            </div>
+          )}
+          {location.pathname !== "/" && (
+            <BrandLogo
+              compact
+              layout="responsive"
+              className="dark:invert translate-y-[0.1rem] max-[699px]:col-start-2 max-[699px]:justify-self-center"
+            />
+          )}
+          <div className="col-start-3 flex items-center gap-2 justify-self-end">
             <Button
               ariaLabel={isDarkMode ? "Light mode" : "Dark mode"}
               icon={isDarkMode ? <Sun /> : <MoonStar />}
@@ -157,10 +173,7 @@ export default function App() {
             )}
           </div>
         </Card>
-        <Header
-          isSideBarOpen={isSideBarOpen}
-          onSideBarClick={toggleSideBar}
-        />
+        <Header />
         <div className="app-content">
           <div
             id="content-scroll"
@@ -171,6 +184,7 @@ export default function App() {
                 isNavBarOpen,
                 closeNavBar,
                 isSideBarOpen,
+                toggleSideBar,
               }}
             />
           </div>

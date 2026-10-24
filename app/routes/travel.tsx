@@ -30,8 +30,6 @@ export default function Travel() {
         subtitle={travel.subtitle}
         description={travel.description}
         footer={`${travel.units.length} units available`}
-        variant="level"
-        levelTheme={travel.theme}
       />
       <div className="grid gap-4">
         {travel.units.map((unit) => (

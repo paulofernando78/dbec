@@ -47,9 +47,9 @@ export const TableOfContents = ({
             className={`size-6 shrink-0 ${headerIconClassName}`}
           />
         )}
-        <h2 className="text-2xl font-bold">Table of Contents</h2>
+        <h2 className="mb-4 text-2xl font-bold">Table of Contents</h2>
       </div>
-      {subtitle && <p className="mb-2 font-bold">{subtitle}</p>}
+      {subtitle && <p className="mb-2 font-bold border">{subtitle}</p>}
       <nav>
         <ul>
           {items.map((item, index) => {

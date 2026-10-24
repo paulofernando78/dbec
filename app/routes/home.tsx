@@ -49,6 +49,26 @@ export default function Home() {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
+    let active = true;
+
+    fetch("/api/session", { headers: { Accept: "application/json" } })
+      .then(async (response) => {
+        if (!response.ok) return null;
+        return (await response.json()) as { dashboardPath?: string };
+      })
+      .then((session) => {
+        if (active && session?.dashboardPath) {
+          navigate(session.dashboardPath, { replace: true });
+        }
+      })
+      .catch(() => undefined);
+
+    return () => {
+      active = false;
+    };
+  }, [navigate]);
+
+  useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
 
     const interval = setInterval(() => {

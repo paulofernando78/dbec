@@ -18,6 +18,20 @@ const isProtectedPath = (pathname) =>
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
+  if (url.pathname === "/") {
+    const token = readCookie(context.request, "dbec_session");
+    const session = await verifySession(token, context.env.SESSION_SECRET);
+
+    if (session) {
+      url.pathname =
+        session.role === "teacher"
+          ? "/teacher/dashboard"
+          : `/dashboard/${encodeURIComponent(session.studentId)}`;
+      url.search = "";
+      return Response.redirect(url.toString(), 302);
+    }
+  }
+
   if (!isProtectedPath(url.pathname)) {
     return context.next();
   }

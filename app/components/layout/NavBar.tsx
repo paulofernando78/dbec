@@ -1,14 +1,23 @@
-import { NavLink, useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { links } from "@/data/nav-bar-links";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ElementType } from "react";
+import { NotebookPen, User } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 type NavBarProps = {
   closeNavBar: () => void;
+  isNotesOpen: boolean;
+  toggleNotes: () => void;
 };
 
-export function NavBar({ closeNavBar }: NavBarProps) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
+  const [dashboardPath, setDashboardPath] = useState<string | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const hasNotes =
+    /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
+    /^\/travel\/unit\//.test(location.pathname) ||
+    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
 
   useEffect(() => {
     fetch("/api/session")
@@ -17,15 +26,40 @@ export function NavBar({ closeNavBar }: NavBarProps) {
         return response.json();
       })
       .then((session) => {
-        setIsAuthenticated(true);
         const nextDashboardPath = session.dashboardPath ?? "/dashboard";
+        setDashboardPath(nextDashboardPath);
         localStorage.setItem("dbec_dashboard_path", nextDashboardPath);
       })
       .catch(() => {
-        setIsAuthenticated(false);
+        setDashboardPath(null);
         localStorage.removeItem("dbec_dashboard_path");
       });
   }, [location.pathname]);
+
+  const renderNavigationButton = (
+    href: string,
+    label: string,
+    Icon: ElementType,
+    className = "",
+  ) => (
+    <div className={`flex items-center gap-2 ${className}`}>
+      <Button
+        ariaLabel={label}
+        pressed={
+          href === dashboardPath
+            ? location.pathname.startsWith(href)
+            : location.pathname === href
+        }
+        icon={<Icon />}
+        onClick={() => {
+          navigate(href);
+          closeNavBar();
+        }}
+        className="size-10! p-[3px]!"
+      />
+      <span className="font-bold uppercase">{label}</span>
+    </div>
+  );
 
   return (
     <nav
@@ -45,50 +79,60 @@ export function NavBar({ closeNavBar }: NavBarProps) {
               <p className="mb-2 font-black uppercase tracking-wider">
                 {item.group}
               </p>
-              <div className="pl-2">
-                {item.children.map(({ href, label, icon: Icon }) => (
-                  <NavLink
-                    key={href}
-                    to={href}
-                    end
-                    onClick={closeNavBar}
-                    className={({ isActive }) => `
-                      mt-2 flex w-fit items-center gap-2 font-bold uppercase
-                      ${isActive ? "text-black" : ""}
-                    `}
-                  >
-                    {Icon && (
-                      <Icon width={25} height={25} className="shrink-0" />
-                    )}
-                    <span>{label}</span>
-                  </NavLink>
-                ))}
+              <div className="space-y-2 pl-2">
+                {item.children.map(
+                  ({ href, label, icon: Icon }) =>
+                    Icon && (
+                      <div key={href}>
+                        {renderNavigationButton(href, label, Icon)}
+                      </div>
+                    ),
+                )}
               </div>
             </div>
           );
         }
 
         const { href, label, icon: Icon } = item;
+        const isAuthenticatedLink = href === "/dashboard";
+        const resolvedHref = href === "/dashboard" ? dashboardPath : href;
+
+        if (href === "/dashboard") {
+          return dashboardPath ? (
+            <div key={href}>
+              {renderNavigationButton(
+                dashboardPath,
+                "Dashboard",
+                User,
+                "mb-2",
+              )}
+              {hasNotes && (
+                <div className="mb-2 flex items-center gap-2">
+                  <Button
+                    ariaLabel={isNotesOpen ? "Close notes" : "Open notes"}
+                    pressed={isNotesOpen}
+                    icon={<NotebookPen />}
+                    onClick={toggleNotes}
+                    className="size-10! p-[3px]!"
+                  />
+                  <span className="font-bold uppercase">Notes</span>
+                </div>
+              )}
+            </div>
+          ) : null;
+        }
 
         return (
           <div key={href}>
-            {href !== "/dashboard" &&
-              (href !== "/guide" || isAuthenticated) && (
-              <NavLink
-                to={href}
-                end
-                onClick={closeNavBar}
-                className={({ isActive }) => `
-                  flex w-fit items-center gap-2
-                  ${Icon ? "mt-2 font-bold uppercase" : ""}
-                  ${isActive ? "text-black" : ""}
-                  ${href === "/guide" ? "mb-8" : ""}
-                `}
-              >
-                {Icon && <Icon width={25} height={25} className="shrink-0" />}
-                <span>{label}</span>
-              </NavLink>
-            )}
+            {resolvedHref &&
+              Icon &&
+              (!isAuthenticatedLink || dashboardPath) &&
+              renderNavigationButton(
+                resolvedHref,
+                label,
+                Icon,
+                "",
+              )}
           </div>
         );
       })}

@@ -1,7 +1,7 @@
 type AccountSummaryProps = {
   name: string;
   subtitle: string;
-  className?: string
+  className?: string;
 };
 
 export const AccountSummary = ({ name, subtitle, className }: AccountSummaryProps) => (
@@ -10,9 +10,13 @@ export const AccountSummary = ({ name, subtitle, className }: AccountSummaryProp
       {name.charAt(0).toUpperCase()}
     </span>
 
-    <div className="min-w-0 leading-tight max-[489px]:hidden">
-      <p className="truncate text-sm font-semibold text-gray-800">{name}</p>
-      <p className="truncate text-xs text-gray-500">{subtitle}</p>
+    <div className="min-w-0 leading-tight">
+      <p className="truncate text-[clamp(0.55rem,3.5cqw,0.875rem)] font-semibold text-gray-800">
+        {name}
+      </p>
+      <p className="truncate text-[clamp(0.45rem,3cqw,0.75rem)] text-gray-500">
+        {subtitle}
+      </p>
     </div>
   </div>
 );
