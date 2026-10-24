@@ -31,7 +31,7 @@ export default function Layout() {
       >
         <NavBar closeNavBar={closeNavBar} />
       </aside>
-      <main className="relative min-h-0 w-full overflow-hidden">
+      <main className="relative min-h-0 w-full">
         <div
           className="h-full min-h-0 overflow-x-hidden overflow-y-auto pb-1.25"
           data-scroll-container

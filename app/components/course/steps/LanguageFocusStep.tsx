@@ -58,7 +58,7 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                 key={title}
                 className="rounded-xl bg-[var(--background)] p-4"
               >
-                <div className="mb-2 flex items-center gap-3">
+                <div className="mb-2 flex items-start gap-3">
                   <Audio
                     asButton
                     ariaLabel={`Play ${title}`}
@@ -66,7 +66,7 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                     src={audioSource}
                     speechLang={speechLang}
                     className="stroke-0!"
-                    wrapperClassName="shrink-0"
+                    wrapperClassName="shrink-0 self-start"
                   />
                   <h4 className="text-xl font-black">
                     {title}

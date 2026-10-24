@@ -64,7 +64,7 @@ export const ScrollToTop = () => {
 
   return (
     <div
-      className={`absolute right-1 z-50 ${isLessonPage ? "bottom-19" : "bottom-1"}`}
+      className={`absolute right-[calc(0.6vw+0.25rem)] z-50 ${isLessonPage ? "bottom-19" : "bottom-1"}`}
     >
       {button}
     </div>

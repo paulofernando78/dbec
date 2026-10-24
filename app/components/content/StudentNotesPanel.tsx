@@ -156,7 +156,7 @@ export function StudentNotesPanel({
       {isOpen &&
         panelHost &&
         createPortal(
-        <div className="pointer-events-auto w-full translate-y-[0.05rem] rounded-xl bg-(--background) p-3 shadow-2xl ring-1 ring-slate-300">
+        <div className="pointer-events-auto w-full translate-y-[0.05rem] rounded-xl bg-(--surface) p-3 shadow-2xl ring-1 ring-slate-300">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
               <h2 className="text-lg font-black">Notes</h2>

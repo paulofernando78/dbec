@@ -27,9 +27,13 @@ export const Dialogue = ({
       {audioSrc && <AudioPlayer src={audioSrc} />}
       {lines.map((line, index) => (
         <p key={index}>
-          <b className="py-1 px-1 border border-gray-400 rounded-lg">
-            {line.speaker}
-          </b>{" "}
+          {line.speaker && (
+            <>
+              <b className="rounded-lg border border-gray-400 px-1 py-1">
+                {line.speaker}
+              </b>{" "}
+            </>
+          )}
           <InlineRichContent value={line.line ?? []} />
         </p>
       ))}
