@@ -26,29 +26,42 @@ const toPlainText = (value: string | RichContent | undefined) =>
         .join("")
     : value ?? "";
 
-function PhoneticSoundGrid({
+function PhoneticSoundRows({
   sounds,
 }: {
-  sounds: readonly { phoneme: string; audio: string }[];
+  sounds: readonly {
+    phoneme: string;
+    audio: string;
+    examples: readonly RichContent[];
+  }[];
 }) {
   if (sounds.length === 0) {
     return <p className="p-4 text-slate-500">No audio files available yet.</p>;
   }
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,60px)] justify-center gap-3">
-      {sounds.map(({ phoneme, audio }) => (
-        <Audio
+    <div className="grid gap-3">
+      {sounds.map(({ phoneme, audio, examples }) => (
+        <div
           key={phoneme}
-          src={audio}
-          ariaLabel={`Play ${phoneme}`}
-          showIcon={false}
-          wrapperClassName="w-[60px]! min-w-[60px]!"
+          className="grid grid-cols-[60px_repeat(3,minmax(0,1fr))] items-center gap-3 rounded-xl bg-(--surface) p-3 max-[560px]:grid-cols-[60px_1fr]"
         >
-          <span className="text-base font-medium leading-none">
-            <Phonetics>{phoneme}</Phonetics>
-          </span>
-        </Audio>
+          <Audio
+            src={audio}
+            ariaLabel={`Play ${phoneme}`}
+            showIcon={false}
+            wrapperClassName="w-[60px]! min-w-[60px]! max-[560px]:row-span-3"
+          >
+            <span className="text-base font-medium leading-none">
+              <Phonetics>{phoneme}</Phonetics>
+            </span>
+          </Audio>
+          {examples.map((example, index) => (
+            <p key={`${phoneme}-example-${index}`} className="min-w-0 text-lg">
+              <InlineRichContent value={example} />
+            </p>
+          ))}
+        </div>
       ))}
     </div>
   );
@@ -139,7 +152,7 @@ export default function Pronunciation() {
             className="mb-4"
           >
             <Card title={section.title} inset>
-              <PhoneticSoundGrid sounds={section.sounds} />
+              <PhoneticSoundRows sounds={section.sounds} />
             </Card>
           </Section>
         ))}

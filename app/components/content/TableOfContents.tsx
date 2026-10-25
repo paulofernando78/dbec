@@ -49,7 +49,7 @@ export const TableOfContents = ({
         )}
         <h2 className="mb-4 text-2xl font-bold">Table of Contents</h2>
       </div>
-      {subtitle && <p className="mb-2 font-bold border">{subtitle}</p>}
+      {subtitle && <p className="mb-2 font-bold">{subtitle}</p>}
       <nav>
         <ul>
           {items.map((item, index) => {
