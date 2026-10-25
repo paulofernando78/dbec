@@ -116,10 +116,10 @@ export const wordAudio = (file: string): string => {
   const first = file?.[0]?.toLowerCase();
 
   if (!first || !/[a-z]/.test(first)) {
-    return `/assets/audio/dictionary/${file}`;
+    return `/media/audio/dictionary/${file}`;
   }
 
-  return `/assets/audio/dictionary/${first}/${file}`;
+  return `/media/audio/dictionary/${first}/${file}`;
 };
 
 // bold

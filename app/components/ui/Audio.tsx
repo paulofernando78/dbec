@@ -5,8 +5,10 @@ import { useRef, useState, type ReactNode } from "react";
 import { LoaderCircle, Play, Square } from "lucide-react";
 import { Button } from "@/components/ui/Button/Button";
 
+type AudioSource = string | { src: string; fallbackText?: string };
+
 type AudioProps = {
-  src: string;
+  src: string | readonly AudioSource[];
   ariaLabel?: string;
   className?: string;
   wrapperClassName?: string;
@@ -14,7 +16,7 @@ type AudioProps = {
   children?: ReactNode;
   showIcon?: boolean;
   asButton?: boolean;
-  compactButton?: boolean;
+  pauseAfterFirstMs?: number;
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -92,73 +94,153 @@ export const Audio = ({
   children,
   showIcon = true,
   asButton = false,
-  compactButton = false,
+  pauseAfterFirstMs = 0,
 }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const playlistIndexRef = useRef(0);
+  const advancingPlaylistRef = useRef(false);
+  const playbackRequestRef = useRef(0);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const isAudioFile = /\.(mp3|wav|ogg)(?:[?#]|$)/i.test(src);
+  const sources = (typeof src === "string" ? [src] : [...src]).map((source) =>
+    typeof source === "string" ? { src: source } : source,
+  );
+  const primarySource = sources[0]?.src ?? "";
+  const isAudioFile =
+    sources.length > 0 &&
+    sources.every(({ src: source }) =>
+      /\.(mp3|wav|ogg)(?:[?#]|$)/i.test(source),
+    );
+
+  const finishPlaylist = () => {
+    const el = audioRef.current;
+
+    playlistIndexRef.current = 0;
+    advancingPlaylistRef.current = false;
+
+    if (el && el.getAttribute("src") !== primarySource) {
+      el.src = primarySource;
+      el.load();
+    }
+
+    if (currentGlobalAudio === el) {
+      currentGlobalAudio = null;
+    }
+
+    setLoading(false);
+    setPlaying(false);
+  };
+
+  const playNextSource = async () => {
+    const el = audioRef.current;
+    if (!el) return;
+
+    const currentIndex = playlistIndexRef.current;
+    const nextIndex = currentIndex + 1;
+    const requestId = playbackRequestRef.current;
+
+    if (nextIndex >= sources.length) {
+      finishPlaylist();
+      return;
+    }
+
+    if (currentIndex === 0 && pauseAfterFirstMs > 0) {
+      setLoading(false);
+      await new Promise((resolve) =>
+        window.setTimeout(resolve, pauseAfterFirstMs),
+      );
+
+      if (requestId !== playbackRequestRef.current) return;
+    }
+
+    playlistIndexRef.current = nextIndex;
+    advancingPlaylistRef.current = true;
+    setLoading(true);
+    el.src = sources[nextIndex].src;
+    el.load();
+
+    try {
+      await el.play();
+      currentGlobalAudio = el;
+    } catch {
+      if (!el.error) {
+        await playNextSource();
+      }
+    }
+  };
+
+  const playSpeech = async (text: string, onComplete?: () => void) => {
+    stopCurrentSpeech();
+
+    if (currentGlobalAudio) {
+      currentGlobalAudio.pause();
+      currentGlobalAudio.currentTime = 0;
+      currentGlobalAudio = null;
+    }
+
+    const requestId = speechRequestId;
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = speechLang;
+    utterance.rate = 0.92;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    const voices = await waitForVoices();
+
+    if (requestId !== speechRequestId) return;
+
+    const voice = selectBestVoice(voices, speechLang);
+
+    if (voice) {
+      utterance.voice = voice;
+    }
+
+    utterance.onend = () => {
+      if (currentUtterance !== utterance) return;
+
+      currentUtterance = null;
+      currentUtteranceReset = null;
+      utteranceRef.current = null;
+      setLoading(false);
+      setPlaying(false);
+      onComplete?.();
+    };
+    utterance.onerror = (event) => {
+      if (event.error !== "canceled" && event.error !== "interrupted") {
+        console.error("Speech synthesis failed:", event.error, text);
+      }
+
+      if (currentUtterance === utterance) {
+        currentUtterance = null;
+        currentUtteranceReset = null;
+        utteranceRef.current = null;
+        setLoading(false);
+        setPlaying(false);
+        onComplete?.();
+      }
+    };
+
+    currentUtterance = utterance;
+    utteranceRef.current = utterance;
+    currentUtteranceReset = () => {
+      utteranceRef.current = null;
+      setLoading(false);
+      setPlaying(false);
+    };
+    setLoading(false);
+    setPlaying(true);
+    window.speechSynthesis.resume();
+    window.speechSynthesis.speak(utterance);
+  };
 
   const handlePlay = async (e?: React.MouseEvent<Element>) => {
     e?.stopPropagation();
 
     if (!isAudioFile) {
-      stopCurrentSpeech();
-
-      if (currentGlobalAudio) {
-        currentGlobalAudio.pause();
-        currentGlobalAudio.currentTime = 0;
-        currentGlobalAudio = null;
-      }
-
-      const requestId = speechRequestId;
-
-      const utterance = new SpeechSynthesisUtterance(src);
-      utterance.lang = speechLang;
-      utterance.rate = 0.92;
-      utterance.pitch = 1;
-      utterance.volume = 1;
-
-      const voices = await waitForVoices();
-
-      if (requestId !== speechRequestId) return;
-
-      const voice = selectBestVoice(voices, speechLang);
-
-      if (voice) {
-        utterance.voice = voice;
-      }
-
-      const handleSpeechEnd = () => {
-        if (currentUtterance !== utterance) return;
-
-        currentUtterance = null;
-        currentUtteranceReset = null;
-        utteranceRef.current = null;
-        setPlaying(false);
-      };
-
-      utterance.onend = handleSpeechEnd;
-      utterance.onerror = (event) => {
-        if (event.error !== "canceled" && event.error !== "interrupted") {
-          console.error("Speech synthesis failed:", event.error, src);
-        }
-
-        handleSpeechEnd();
-      };
-
-      currentUtterance = utterance;
-      utteranceRef.current = utterance;
-      currentUtteranceReset = () => {
-        utteranceRef.current = null;
-        setLoading(false);
-        setPlaying(false);
-      };
-      setPlaying(true);
-      window.speechSynthesis.resume();
-      window.speechSynthesis.speak(utterance);
+      await playSpeech(primarySource);
       return;
     }
 
@@ -176,6 +258,14 @@ export const Audio = ({
     }
 
     setLoading(true);
+    playbackRequestRef.current += 1;
+    playlistIndexRef.current = 0;
+    advancingPlaylistRef.current = false;
+
+    if (el.getAttribute("src") !== primarySource) {
+      el.src = primarySource;
+      el.load();
+    }
 
     try {
       await el.play();
@@ -193,6 +283,7 @@ export const Audio = ({
   const handleStop = (e?: React.MouseEvent<Element>) => {
     e?.stopPropagation();
     setLoading(false);
+    playbackRequestRef.current += 1;
 
     if (utteranceRef.current) {
       stopCurrentSpeech();
@@ -204,6 +295,8 @@ export const Audio = ({
 
     el.pause();
     el.currentTime = 0;
+    playlistIndexRef.current = 0;
+    advancingPlaylistRef.current = false;
 
     if (currentGlobalAudio === el) {
       currentGlobalAudio = null;
@@ -213,20 +306,16 @@ export const Audio = ({
   };
 
   const handleEnded = () => {
-    const el = audioRef.current;
-    if (!el) return;
-
-    if (currentGlobalAudio === el) {
-      currentGlobalAudio = null;
-    }
-
-    setLoading(false);
-    setPlaying(false);
+    void playNextSource();
   };
 
   const handlePause = () => {
     const el = audioRef.current;
     if (!el) return;
+
+    if (advancingPlaylistRef.current) return;
+
+    playbackRequestRef.current += 1;
 
     // If this audio was the global one, clear it
     if (currentGlobalAudio === el) {
@@ -269,10 +358,11 @@ export const Audio = ({
       {isAudioFile && (
         <audio
           ref={audioRef}
-          src={src}
+          src={primarySource}
           preload="metadata"
           onWaiting={() => setLoading(true)}
           onPlaying={() => {
+            advancingPlaylistRef.current = false;
             setLoading(false);
             setPlaying(true);
           }}
@@ -280,9 +370,14 @@ export const Audio = ({
           onEnded={handleEnded}
           onPause={handlePause}
           onError={() => {
-            console.error("Audio failed to load:", src);
-            setLoading(false);
-            setPlaying(false);
+            const fallbackText =
+              sources[playlistIndexRef.current]?.fallbackText;
+
+            if (fallbackText) {
+              void playSpeech(fallbackText, () => void playNextSource());
+            } else {
+              void playNextSource();
+            }
           }}
         />
       )}
@@ -293,7 +388,6 @@ export const Audio = ({
     return (
       <Button
         ariaLabel={ariaLabel}
-        compact={compactButton}
         className={wrapperClassName}
         onClick={loading || playing ? handleStop : handlePlay}
       >

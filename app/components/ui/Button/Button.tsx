@@ -8,7 +8,6 @@ type ButtonProps = {
   pressed?: boolean;
   onClick?: () => void;
   className?: string;
-  compact?: boolean;
   variant?: "default" | "check" | "answer" | "reset";
   type?: "button" | "submit" | "reset";
 };
@@ -22,15 +21,13 @@ export const Button = ({
   pressed,
   onClick,
   className = "",
-  compact = false,
 }: ButtonProps) => {
   const hasText = children != null;
   const baseClasses =
     "group relative grid size-10 cursor-pointer place-items-center rounded-[12px] border border-[var(--button-border)] bg-gradient-to-b from-[var(--button-outer-start)] to-[var(--button-outer-end)] p-[3px] text-[var(--button-text)] shadow-[0_1px_1px_rgba(0,0,0,0.3)] transition-[transform,box-shadow] duration-80 active:scale-[0.995] active:shadow-[0_0px_1px_rgba(0,0,0,0.5)] disabled:cursor-not-allowed disabled:opacity-55 disabled:brightness-[1.15]";
-  const textClasses =
-    hasText && !compact
-      ? "!inline-flex !h-[60px] !w-fit !min-w-[60px] items-center justify-center whitespace-nowrap font-bold"
-      : "";
+  const textClasses = hasText
+    ? "!inline-flex !h-[60px] !w-fit !min-w-[60px] items-center justify-center whitespace-nowrap font-bold"
+    : "";
 
   return (
     <button
@@ -43,9 +40,7 @@ export const Button = ({
     >
       <span
         className={`${
-          hasText && !compact
-            ? "h-full w-full px-4 py-2"
-            : "absolute inset-1"
+          hasText ? "h-full w-full px-4 py-2" : "absolute inset-1"
         } grid place-items-center rounded-lg bg-linear-to-b from-[var(--button-inner-start)] to-[var(--button-inner-end)]`}
       >
         <span className="flex items-center gap-2 [&_svg]:size-4.5 [&_svg]:stroke-[var(--button-icon)]">

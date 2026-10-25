@@ -8,6 +8,7 @@ import {
   Plane,
   BadgeHelp,
   BookMarked,
+  Music2,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -68,6 +69,11 @@ export const links: NavItem[] = [
         href: "/pronunciation",
         label: "Pronunciation",
         icon: AudioLines,
+      },
+      {
+        href: "/songs",
+        label: "songs",
+        icon: Music2,
       },
     ],
   },

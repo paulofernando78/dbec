@@ -13,7 +13,7 @@ import {
   pronunciationSections,
   type PronunciationItem,
 } from "@/data/pronunciation";
-import type { RichContent } from "@/helpers/content";
+import { wordAudio, type RichContent } from "@/helpers/content";
 
 export function meta() {
   return [{ title: "Pronunciation | Daily Basis English Course" }];
@@ -44,23 +44,34 @@ function PhoneticSoundRows({
       {sounds.map(({ phoneme, audio, examples }) => (
         <div
           key={phoneme}
-          className="grid grid-cols-[40px_minmax(0,1fr)] items-center gap-3"
+          className="flex min-w-0 items-center gap-3"
         >
           <Audio
-            src={audio}
-            ariaLabel={`Play ${phoneme}`}
-            showIcon={false}
-            compactButton
-          >
-            <span className="text-base font-medium leading-none">
-              <Phonetics>{phoneme}</Phonetics>
-            </span>
-          </Audio>
-          <div className="flex min-w-0 items-center justify-start gap-3 max-[560px]:flex-col max-[560px]:items-start">
+            asButton
+            src={[
+              audio,
+              ...examples.map((example) => {
+                const word = toPlainText(example).toLowerCase();
+
+                return {
+                  src: wordAudio(`${word}.mp3`),
+                  fallbackText: word,
+                };
+              }),
+            ]}
+            ariaLabel={`Play ${phoneme} and example words`}
+            pauseAfterFirstMs={1000}
+          />
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            <Phonetics>{phoneme}</Phonetics>
+            <span>:</span>
             {examples.map((example, index) => (
-              <p key={`${phoneme}-example-${index}`} className="min-w-0 text-base">
-                <InlineRichContent value={example} />
-              </p>
+              <Fragment key={`${phoneme}-example-${index}`}>
+                {index > 0 && <span aria-hidden="true">•</span>}
+                <span className="min-w-0 text-base">
+                  <InlineRichContent value={example} />
+                </span>
+              </Fragment>
             ))}
           </div>
         </div>
