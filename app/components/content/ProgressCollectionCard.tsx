@@ -100,7 +100,7 @@ export function ProgressCollectionCard({
                     item.isCompleted ? <LockKeyholeOpen /> : <LockKeyhole />
                   }
                   onClick={item.onClick}
-                  className="z-10"
+                  className="z-10 size-[60px]!"
                 />
 
                 <div className="min-w-0 pt-1">
