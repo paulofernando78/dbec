@@ -64,7 +64,7 @@ export const AuthenticContent = (props: IconProps) => (
     viewBox="0 -960 960 960"
     width="25"
     height="25"
-    fill="currentColor"
+    fill="var(--button-icon)"
     aria-hidden="true"
     {...props}
   >

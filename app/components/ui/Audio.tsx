@@ -14,6 +14,7 @@ type AudioProps = {
   children?: ReactNode;
   showIcon?: boolean;
   asButton?: boolean;
+  compactButton?: boolean;
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -91,6 +92,7 @@ export const Audio = ({
   children,
   showIcon = true,
   asButton = false,
+  compactButton = false,
 }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -239,13 +241,13 @@ export const Audio = ({
         <LoaderCircle
           size={16}
           className={`${className ?? ""} animate-spin`}
-          color="var(--icon-color)"
+          color="var(--button-icon)"
         />
       ) : playing ? (
         <Square
           size={16}
           className={className}
-          fill="var(--icon-color)"
+          fill="var(--button-icon)"
           stroke="none"
           style={{ stroke: "none" }}
         />
@@ -253,7 +255,7 @@ export const Audio = ({
         <Play
           size={16}
           className={className}
-          fill="var(--icon-color)"
+          fill="var(--button-icon)"
           stroke="none"
           style={{ stroke: "none" }}
         />
@@ -291,6 +293,7 @@ export const Audio = ({
     return (
       <Button
         ariaLabel={ariaLabel}
+        compact={compactButton}
         className={wrapperClassName}
         onClick={loading || playing ? handleStop : handlePlay}
       >

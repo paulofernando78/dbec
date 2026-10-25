@@ -33,7 +33,6 @@ export const Notes = ({ value = [] }: NotesProps) => {
                   asButton
                   ariaLabel={`Play note ${index + 1}`}
                   src={audioSource}
-                  className="size-6!"
                   wrapperClassName="shrink-0"
                 />
               )}

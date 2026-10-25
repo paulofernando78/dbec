@@ -10,6 +10,7 @@ import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/te
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 import { List } from "@/components/content/List";
 import { ImageQuiz } from "@/features/exercises/ImageQuiz";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
@@ -94,29 +95,59 @@ export default function AuthenticContents() {
   };
 
   const stepContent = {
-    "before-watching": <List {...content.sections.beforeWatching} />,
-    vocabulary: <ImageQuiz {...content.sections.vocabulary} />,
+    "before-watching": (
+      <Card inset>
+        <List {...content.sections.beforeWatching} />
+      </Card>
+    ),
+    vocabulary: (
+      <Card inset>
+        <ImageQuiz {...content.sections.vocabulary} />
+      </Card>
+    ),
     gist: (
-      <>
-        <VideoPlayer {...content.sections.gist.videoPlayer} />
-        <Radio {...content.sections.gist.radio} />
-      </>
+      <Card className="grid gap-4">
+        <div className="rounded-xl bg-(--background) p-4">
+          <VideoPlayer {...content.sections.gist.videoPlayer} />
+        </div>
+        <div className="rounded-xl bg-(--background) p-4">
+          <Radio {...content.sections.gist.radio} />
+        </div>
+      </Card>
     ),
     details: (
-      <>
-        <Radio {...content.sections.details.radio} />
-        <Script {...content.sections.script} />
-      </>
+      <Card className="grid gap-4">
+        <div className="rounded-xl bg-(--background) p-4">
+          <Radio {...content.sections.details.radio} />
+        </div>
+        <div className="rounded-xl bg-(--background) p-4">
+          <Script {...content.sections.script} />
+        </div>
+      </Card>
     ),
     practice: (
-      <>
-        <Guess {...content.sections.practice.guess} />
-        {guessFillInTheBlanks && <FillInTheBlanks {...guessFillInTheBlanks} />}
-        <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
-        <Unscramble {...content.sections.practice.unscramble} />
-      </>
+      <Card className="grid gap-4">
+        <div className="rounded-xl bg-(--background) p-4">
+          <Guess {...content.sections.practice.guess} />
+        </div>
+        {guessFillInTheBlanks && (
+          <div className="rounded-xl bg-(--background) p-4">
+            <FillInTheBlanks {...guessFillInTheBlanks} />
+          </div>
+        )}
+        <div className="rounded-xl bg-(--background) p-4">
+          <FillInTheBlanks {...content.sections.practice.fillInTheBlanks} />
+        </div>
+        <div className="rounded-xl bg-(--background) p-4">
+          <Unscramble {...content.sections.practice.unscramble} />
+        </div>
+      </Card>
     ),
-    "follow-up-discussion": <List {...content.sections.followUp.list} />,
+    "follow-up-discussion": (
+      <Card inset>
+        <List {...content.sections.followUp.list} />
+      </Card>
+    ),
   }[current.slug];
 
   return (

@@ -198,7 +198,6 @@ export const TheAlphabet = () => {
             asButton
             ariaLabel="Play alphabet introduction"
             src="/assets/audio/pronunciation/the-alphabet/26-letters.mp3"
-            className="size-6!"
             wrapperClassName="shrink-0"
           />
           <p>There are 26 letters in the English alphabet.</p>

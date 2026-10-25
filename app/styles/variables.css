@@ -26,7 +26,7 @@
   --button-inner-end: #fff;
   --button-border: #d6d3d1;
   --button-text: var(--gray-6);
-  --button-icon: var(--slate-5);
+  --button-icon: var(--slate-4);
 }
 
 .dark {

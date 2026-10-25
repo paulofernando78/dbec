@@ -44,19 +44,19 @@ function PhoneticSoundRows({
       {sounds.map(({ phoneme, audio, examples }) => (
         <div
           key={phoneme}
-          className="grid grid-cols-[60px_minmax(0,1fr)] items-center gap-3"
+          className="grid grid-cols-[40px_minmax(0,1fr)] items-center gap-3"
         >
           <Audio
             src={audio}
             ariaLabel={`Play ${phoneme}`}
             showIcon={false}
-            wrapperClassName="w-[60px]! min-w-[60px]!"
+            compactButton
           >
             <span className="text-base font-medium leading-none">
               <Phonetics>{phoneme}</Phonetics>
             </span>
           </Audio>
-          <div className="flex min-w-0 items-center justify-between gap-3 max-[560px]:flex-col max-[560px]:items-start">
+          <div className="flex min-w-0 items-center justify-start gap-3 max-[560px]:flex-col max-[560px]:items-start">
             {examples.map((example, index) => (
               <p key={`${phoneme}-example-${index}`} className="min-w-0 text-base">
                 <InlineRichContent value={example} />
@@ -118,7 +118,6 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
         asButton
         ariaLabel={`Play ${audioLabel}`}
         src={audioSource}
-        className="size-6!"
       />
       <p className="min-w-0 text-sm leading-6 md:text-base">
         <span className="text-black">
