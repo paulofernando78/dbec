@@ -44,23 +44,25 @@ function PhoneticSoundRows({
       {sounds.map(({ phoneme, audio, examples }) => (
         <div
           key={phoneme}
-          className="grid grid-cols-[60px_repeat(3,minmax(0,1fr))] items-center gap-3 rounded-xl bg-(--surface) p-3 max-[560px]:grid-cols-[60px_1fr]"
+          className="grid grid-cols-[60px_minmax(0,1fr)] items-center gap-3"
         >
           <Audio
             src={audio}
             ariaLabel={`Play ${phoneme}`}
             showIcon={false}
-            wrapperClassName="w-[60px]! min-w-[60px]! max-[560px]:row-span-3"
+            wrapperClassName="w-[60px]! min-w-[60px]!"
           >
             <span className="text-base font-medium leading-none">
               <Phonetics>{phoneme}</Phonetics>
             </span>
           </Audio>
-          {examples.map((example, index) => (
-            <p key={`${phoneme}-example-${index}`} className="min-w-0 text-lg">
-              <InlineRichContent value={example} />
-            </p>
-          ))}
+          <div className="flex min-w-0 items-center justify-between gap-3 max-[560px]:flex-col max-[560px]:items-start">
+            {examples.map((example, index) => (
+              <p key={`${phoneme}-example-${index}`} className="min-w-0 text-base">
+                <InlineRichContent value={example} />
+              </p>
+            ))}
+          </div>
         </div>
       ))}
     </div>

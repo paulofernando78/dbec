@@ -1,4 +1,4 @@
-import { underline, type RichContent } from "@/helpers/content";
+import { bold, underline, type RichContent } from "@/helpers/content";
 
 export type PronunciationExample = {
   english?: string | RichContent;
@@ -77,13 +77,22 @@ const consonantSounds: PhoneticSound[] = [
   { file: "θ", phoneme: "/θ/", examples: [[underline("th"), "ink"], ["ba", underline("th")], ["heal", underline("th"), "y"]] },
 ];
 
+const useBoldSoundHighlight = (examples: RichContent[]) =>
+  examples.map((example) =>
+    example.map((part) =>
+      typeof part === "string" || part.type !== "underline"
+        ? part
+        : bold(part.part ?? ""),
+    ),
+  );
+
 export const phoneticSections = [
   {
     title: "Vowels",
     sounds: vowelSounds.map(({ file, phoneme, examples }) => ({
       phoneme,
       audio: phoneticsMedia("vowels", file),
-      examples,
+      examples: useBoldSoundHighlight(examples),
     })),
   },
   {
@@ -91,7 +100,7 @@ export const phoneticSections = [
     sounds: consonantSounds.map(({ file, phoneme, examples }) => ({
       phoneme,
       audio: phoneticsMedia("consonants", file),
-      examples,
+      examples: useBoldSoundHighlight(examples),
     })),
   },
 ] as const;
