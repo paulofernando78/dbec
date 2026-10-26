@@ -50,7 +50,7 @@ export default function SongsSong() {
               {song.lines.map((line, index) => (
                 <div
                   key={`${line.english}-${index}`}
-                  className="border-b border-slate-300 pb-4 last:border-b-0 last:pb-0"
+                  className="last:pb-0"
                 >
                   <p className="font-semibold">{line.english}</p>
                   <p className="mt-1 text-slate-500">{line.portuguese}</p>

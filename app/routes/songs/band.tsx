@@ -1,11 +1,13 @@
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { Disc3 } from "lucide-react";
 
 import { PageHeader } from "@/components/content/PageHeader";
+import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { findBand } from "@/data/songs";
 
 export default function SongsBand() {
+  const navigate = useNavigate();
   const { band: bandSlug } = useParams();
   const band = findBand(bandSlug);
 
@@ -19,6 +21,22 @@ export default function SongsBand() {
     );
   }
 
+  const albums = band.songs.reduce<
+    { title: string; year: number; songs: typeof band.songs }[]
+  >((groups, song) => {
+    const album = groups.find(
+      (group) => group.title === song.album && group.year === song.year,
+    );
+
+    if (album) {
+      album.songs.push(song);
+    } else {
+      groups.push({ title: song.album, year: song.year, songs: [song] });
+    }
+
+    return groups;
+  }, []);
+
   return (
     <div>
       <PageHeader
@@ -27,29 +45,45 @@ export default function SongsBand() {
         description={band.description}
       />
 
-      <Card title="Songs" className="grid gap-4">
-        {band.songs.length > 0 ? (
-          band.songs.map((song) => (
-            <Link
-              key={song.slug}
-              to={`/songs/${band.slug}/${song.slug}`}
-              className="flex items-center gap-3 rounded-xl bg-(--background) p-4 transition-transform hover:-translate-y-0.5"
+      {albums.length > 0 ? (
+        <div className="grid gap-4">
+          {albums.map((album) => (
+            <Card
+              key={`${album.title}-${album.year}`}
+              title={`${album.title} (${album.year})`}
+              inset
+              contentClassName="grid"
             >
-              <Disc3 className="shrink-0 text-[var(--button-icon)]" />
-              <span className="min-w-0">
-                <span className="block text-lg font-bold">{song.title}</span>
-                <span className="block text-sm text-slate-500">
-                  <i>{song.album}</i> ({song.year})
-                </span>
-              </span>
-            </Link>
-          ))
-        ) : (
-          <div className="rounded-xl bg-(--background) p-4 text-slate-500">
-            No songs added yet.
-          </div>
-        )}
-      </Card>
+              {album.songs.map((song) => {
+                const songPath = `/songs/${band.slug}/${song.slug}`;
+
+                return (
+                  <div
+                    key={song.slug}
+                    className="flex items-center gap-3 border-b border-slate-300 py-3 first:pt-0 last:border-b-0 last:pb-0"
+                  >
+                    <Button
+                      ariaLabel={`Open ${song.title}`}
+                      icon={<Disc3 />}
+                      onClick={() => navigate(songPath)}
+                    />
+                    <Link
+                      to={songPath}
+                      className="text-lg font-bold transition-transform hover:translate-x-1"
+                    >
+                      {song.title}
+                    </Link>
+                  </div>
+                );
+              })}
+            </Card>
+          ))}
+        </div>
+      ) : (
+        <Card inset title="Songs">
+          <p className="text-slate-500">No songs added yet.</p>
+        </Card>
+      )}
     </div>
   );
 }
