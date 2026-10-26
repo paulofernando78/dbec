@@ -1,9 +1,11 @@
 import { Link, useParams } from "react-router";
+import { Video } from "lucide-react";
 
 import { PageHeader } from "@/components/content/PageHeader";
+import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
-import { findBand, findSong } from "@/data/songs";
+import { findBand, findSong } from "@/data/songs/index";
 
 export default function SongsSong() {
   const { band: bandSlug, song: songSlug } = useParams();
@@ -34,14 +36,16 @@ export default function SongsSong() {
             src={song.youtubeUrl}
             instruction="Watch and listen."
           />
-          <a
-            href={song.youtubeUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="font-bold underline"
-          >
-            Open on YouTube
-          </a>
+          <div className="flex items-center gap-2">
+            <Button
+              ariaLabel="Open on YouTube"
+              icon={<Video />}
+              onClick={() =>
+                window.open(song.youtubeUrl, "_blank", "noopener,noreferrer")
+              }
+            />
+            <span className="font-bold">Open on YouTube</span>
+          </div>
         </section>
 
         <section className="rounded-xl bg-(--background) p-4">

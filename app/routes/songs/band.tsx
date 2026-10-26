@@ -4,7 +4,7 @@ import { Disc3 } from "lucide-react";
 import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { findBand } from "@/data/songs";
+import { findBand } from "@/data/songs/index";
 
 export default function SongsBand() {
   const navigate = useNavigate();

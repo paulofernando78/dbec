@@ -4,7 +4,7 @@ import { Music2 } from "lucide-react";
 import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { bands } from "@/data/songs";
+import { bands } from "@/data/songs/index";
 
 export function meta() {
   return [{ title: "Songs | Daily Basis English Course" }];
