@@ -115,7 +115,11 @@ export function StudentNotesPanel({
   }, [isOpen, loadNotes]);
 
   const saveNote = async (noteType: "teacher" | "student") => {
-    if (!studentId || session?.role !== noteType) return;
+    const canEditNote =
+      session?.role === "teacher" ||
+      (session?.role === "student" && noteType === "student");
+
+    if (!studentId || !canEditNote) return;
 
     const response = await fetch("/api/notes", {
       method: "PUT",
@@ -178,7 +182,9 @@ export function StudentNotesPanel({
                 <TextArea
                   rows={8}
                   value={notes.student}
-                  readOnly={session.role !== "student"}
+                  readOnly={
+                    session.role !== "teacher" && session.role !== "student"
+                  }
                   onChange={(event) => {
                     const content = event.target.value;
                     setNotes((current) => ({ ...current, student: content }));

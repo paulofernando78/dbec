@@ -86,7 +86,10 @@ export function useNotesRealtime(
 
   const sendNote = useCallback(
     (noteType: NoteType, content: string) => {
-      if (noteType !== role || socketRef.current?.readyState !== WebSocket.OPEN) {
+      const canEditNote =
+        role === "teacher" || (role === "student" && noteType === "student");
+
+      if (!canEditNote || socketRef.current?.readyState !== WebSocket.OPEN) {
         return;
       }
 

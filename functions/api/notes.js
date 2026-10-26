@@ -9,9 +9,12 @@ export async function onRequestPut(context) {
 
   const { studentId, noteType, content } = await context.request.json();
   const allowedStudentId = session.role === "teacher" ? studentId : session.studentId;
-  const allowedNoteType = session.role === "teacher" ? "teacher" : "student";
+  const canEditNote =
+    session.role === "teacher"
+      ? noteType === "teacher" || noteType === "student"
+      : noteType === "student";
 
-  if (!allowedStudentId || noteType !== allowedNoteType || typeof content !== "string") {
+  if (!allowedStudentId || !canEditNote || typeof content !== "string") {
     return Response.json({ error: "Operação não permitida." }, { status: 403 });
   }
 

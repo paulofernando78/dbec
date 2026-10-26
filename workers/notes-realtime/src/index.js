@@ -28,10 +28,14 @@ export class NotesRoom {
     try {
       const message = JSON.parse(rawMessage);
       const attachment = socket.deserializeAttachment();
+      const canEditNote =
+        attachment?.role === "teacher"
+          ? message.noteType === "teacher" || message.noteType === "student"
+          : message.noteType === "student";
 
       if (
         message.type !== "note:update" ||
-        message.noteType !== attachment?.role ||
+        !canEditNote ||
         typeof message.content !== "string" ||
         message.content.length > 100_000
       ) {

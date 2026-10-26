@@ -209,6 +209,17 @@ export default function TeacherDashboard() {
       }),
     });
 
+  const saveStudentNote = () =>
+    fetch("/api/notes", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        studentId,
+        noteType: "student",
+        content: notes.student,
+      }),
+    });
+
   const saveCalendar = (lessonDate: string, status: string) => {
     setCalendar((current) => ({ ...current, [lessonDate]: status }));
     void fetch("/api/calendar", {
@@ -334,9 +345,11 @@ export default function TeacherDashboard() {
                   <DashboardNotes
                     title="Student's"
                     value={notes.student}
-                    readOnly
-                    onChange={() => {}}
-                    onSave={() => {}}
+                    onChange={(value) => {
+                      setNotes((current) => ({ ...current, student: value }));
+                      sendNote("student", value);
+                    }}
+                    onSave={saveStudentNote}
                   />
                 </div>
               </Card>
