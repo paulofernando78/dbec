@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { LanguageFocusData } from "@/data/course/lesson-step-types";
 
 type Accent = "us" | "uk";
@@ -50,26 +51,36 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
       <div className="grid gap-4">
         {data.items.map(
           ([title, meaning, pronunciation, form, audio, translationPt]) => {
-            const audioSource = audio?.[accent] ?? title;
+            const titleText =
+              typeof title === "string"
+                ? title
+                : title
+                    .map((part) =>
+                      typeof part === "string" ? part : (part.part ?? ""),
+                    )
+                    .join("");
+            const audioSource = audio?.[accent] ?? titleText;
             const speechLang = accent === "uk" ? "en-GB" : "en-US";
 
             return (
               <article
-                key={title}
+                key={titleText}
                 className="rounded-xl bg-[var(--background)] p-4"
               >
                 <div className="mb-2 flex items-start gap-3">
                   <Audio
                     asButton
-                    ariaLabel={`Play ${title}`}
+                    ariaLabel={`Play ${titleText}`}
                     key={`${accent}-${audioSource}`}
                     src={audioSource}
                     speechLang={speechLang}
                     className="stroke-0!"
                     wrapperClassName="shrink-0 self-start"
                   />
-                  <h4 className="text-xl font-black">
-                    {title}
+                  <h4
+                    className={`text-xl ${typeof title === "string" ? "font-black" : "font-normal"}`}
+                  >
+                    <InlineRichContent value={title} />
                     {showPortuguese && translationPt ? (
                       <span className="font-normal text-slate-500">
                         {" "}

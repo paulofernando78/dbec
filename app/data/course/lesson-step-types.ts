@@ -40,7 +40,7 @@ export type LanguageFocusData = StepExtension & {
   label: string;
   instruction: string;
   items: readonly (readonly [
-    title: string,
+    title: RichContent | string,
     meaning: string,
     pronunciation: string,
     form: string,
