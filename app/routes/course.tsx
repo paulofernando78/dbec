@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { Presentation } from "lucide-react";
 import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/Button";
 
@@ -87,10 +88,10 @@ export default function Levels() {
         {levels.map((item) => (
           <article
             key={item.level}
-            className="rounded-xl border border-gray-300 bg-white p-2 shadows"
+            className="rounded-xl border-gray-300 bg-white p-2 shadows"
           >
             <div
-              className={`relative min-h-60 overflow-hidden rounded-lg p-4 ${item.background} ${item.textColor}`}
+              className={`relative overflow-hidden rounded-lg p-4 ${item.background} ${item.textColor}`}
             >
               <span
                 aria-hidden="true"
@@ -101,22 +102,23 @@ export default function Levels() {
                 className="absolute -bottom-20 right-8 size-40 rounded-full bg-white/15"
               />
 
-              <div className="relative z-10 flex min-h-52 flex-col items-start">
+              <div className="relative z-10 flex flex-col items-start">
                 <h2 className="text-3xl font-black md:text-4xl">
                   {item.level} {item.name}
                 </h2>
                 <p className="text-xl md:text-2xl">{item.subtitle}</p>
                 <p className="mb-5 text-base md:text-lg">{item.description}</p>
-                <p className="mb-4 mt-auto text-sm font-semibold">
-                  {item.unitCount ?? 16} units available
-                </p>
-                <Button
-                  disabled={!item.href}
-                  onClick={() => item.href && navigate(item.href)}
-                  className="font-bold uppercase text-gray-500"
-                >
-                  Access
-                </Button>
+                <div className="flex items-center gap-3">
+                  <Button
+                    ariaLabel={`Access ${item.level} ${item.name}`}
+                    disabled={!item.href}
+                    onClick={() => item.href && navigate(item.href)}
+                    icon={<Presentation />}
+                  />
+                  <p className="font-semibold">
+                    {item.unitCount ?? 16} units
+                  </p>
+                </div>
               </div>
             </div>
           </article>
