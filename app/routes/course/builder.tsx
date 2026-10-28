@@ -44,6 +44,7 @@ export default function LevelBuilder() {
             key={unit.number}
             unit={unit}
             levelSlug={level.slug}
+            levelTheme={level.theme}
             isAuthenticated={isAuthenticated}
           />
         ))}

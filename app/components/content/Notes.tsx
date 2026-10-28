@@ -25,6 +25,11 @@ export const Notes = ({ value = [] }: NotesProps) => {
           const audioSource =
             typeof audio === "object" ? audio.audio : undefined;
           const text = note.parts.filter((part) => part !== audio);
+          const fallbackText = text
+            .map((part) =>
+              typeof part === "string" ? part : (part.part ?? ""),
+            )
+            .join("");
 
           return (
             <div key={index} className="flex items-center gap-3">
@@ -33,6 +38,7 @@ export const Notes = ({ value = [] }: NotesProps) => {
                   asButton
                   ariaLabel={`Play note ${index + 1}`}
                   src={audioSource}
+                  fallbackText={fallbackText}
                   wrapperClassName="shrink-0"
                 />
               )}

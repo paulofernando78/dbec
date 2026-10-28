@@ -1,0 +1,1 @@
+export { FamilyWords } from "./FamilyWords";

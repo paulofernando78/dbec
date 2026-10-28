@@ -1,0 +1,1 @@
+export { FurnitureAndAppliances } from "./FurnitureAndAppliances";

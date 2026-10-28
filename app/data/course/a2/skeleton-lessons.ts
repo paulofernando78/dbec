@@ -48,6 +48,10 @@ const words = (sentence: string) => sentence.split(" ");
 const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
   const unitData = a2.units[unit - 1];
   const lessonData = unitData.lessons[lesson - 1];
+  const lessonObjective = lessonData.description.replace(
+    /^By the end of this lesson, students will be (?:better )?able to /,
+    "",
+  );
 
   const steps: readonly LessonStepData[] = [
     {
@@ -79,7 +83,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       type: "language-focus",
       slug: "language-focus",
       label: "Language focus",
-      instruction: lessonData.description,
+      instruction: lessonObjective,
       items: phrases.map((phrase) => [
         phrase,
         `Use this expression to communicate about ${lessonData.title.toLowerCase()}.`,
@@ -105,7 +109,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       label: "Use it",
       instruction: `Practice ${lessonData.title.toLowerCase()} with a partner.`,
       prompts: [
-        lessonData.description,
+        `Share your own ideas about ${lessonData.title.toLowerCase()}.`,
         "Use at least two expressions from this lesson.",
         "Personalize the exchange with your own information.",
       ],
@@ -117,7 +121,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       label: "Can you…?",
       instruction: "Check your progress.",
       checks: [
-        `Can you ${lessonData.description.charAt(0).toLowerCase()}${lessonData.description.slice(1)}`,
+        `Can you ${lessonObjective}`,
         `Can you understand key expressions about ${lessonData.title.toLowerCase()}?`,
         "Can you ask and answer questions about this topic?",
         "Can you complete a short communicative task using the target language?",

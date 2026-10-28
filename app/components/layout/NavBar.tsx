@@ -55,7 +55,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
           navigate(href);
           closeNavBar();
         }}
-        className="size-10! p-[3px]!"
+        className="size-10! p-0.75!"
       />
       <span className="font-bold uppercase">{label}</span>
     </div>
@@ -103,8 +103,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
               {renderNavigationButton(
                 dashboardPath,
                 "Dashboard",
-                User,
-                "mb-2",
+                User
               )}
               {hasNotes && (
                 <div className="mb-2 flex items-center gap-2">
@@ -113,7 +112,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
                     pressed={isNotesOpen}
                     icon={<NotebookPen />}
                     onClick={toggleNotes}
-                    className="size-10! p-[3px]!"
+                    className="size-10! p-0.75!"
                   />
                   <span className="font-bold uppercase">Notes</span>
                 </div>
@@ -131,7 +130,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
                 resolvedHref,
                 label,
                 Icon,
-                "",
+                "mb-2",
               )}
           </div>
         );

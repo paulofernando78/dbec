@@ -49,7 +49,7 @@ function PhoneticSoundRows({
           <Audio
             asButton
             src={[
-              audio,
+              { src: audio, fallbackText: phoneme },
               ...examples.map((example) => {
                 const word = toPlainText(example).toLowerCase();
 
@@ -112,6 +112,7 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
             <Audio
               ariaLabel={`Play ${phoneme}`}
               src={audioSources[index] ?? phoneme}
+              fallbackText={phoneme}
               showIcon={false}
               wrapperClassName="w-[60px]! min-w-[60px]!"
             >
@@ -129,6 +130,7 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
         asButton
         ariaLabel={`Play ${audioLabel}`}
         src={audioSource}
+        fallbackText={audioLabel}
       />
       <p className="min-w-0 text-sm leading-6 md:text-base">
         <span className="text-black">

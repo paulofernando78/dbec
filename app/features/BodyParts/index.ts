@@ -1,0 +1,1 @@
+export { BodyParts } from "./BodyParts";

@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Use modals and adverbs to explain possible and certain meanings of gestures.",
+  items: [
+    [
+      ["It ", bold("might"), "/", bold("may"), " mean the person wants you to wait."],
+      "Use might or may when a meaning is possible but uncertain.",
+      "Stress might or may, mean, and wait.",
+      "might/may + base verb",
+      undefined,
+      "Pode significar que a pessoa quer que você espere.",
+      "Modals",
+    ],
+    [
+      ["It ", bold("could"), " mean the person is unsure."],
+      "Use could to offer another possible interpretation.",
+      "Stress could, mean, and unsure.",
+      "could + base verb",
+      undefined,
+      "Pode significar que a pessoa está insegura.",
+      "Modals",
+    ],
+    [
+      ["That ", bold("must"), " mean everything is fine."],
+      "Use must when you are nearly certain about the meaning.",
+      "Stress must, mean, and fine.",
+      "must + base verb",
+      undefined,
+      "Isso deve significar que está tudo bem.",
+      "Modals",
+    ],
+    [
+      [bold("Maybe"), "/", bold("Perhaps"), " the person wants you to wait."],
+      "Use maybe or perhaps at the beginning of a sentence for an uncertain interpretation.",
+      "Stress maybe or perhaps and wait.",
+      "maybe/perhaps + clause",
+      undefined,
+      "Talvez a pessoa queira que você espere.",
+      "Adverbs",
+    ],
+    [
+      ["It ", bold("probably"), " means the person is unsure."],
+      "Use probably when an interpretation is likely but not completely certain.",
+      "Stress probably, means, and unsure.",
+      "subject + probably + verb",
+      undefined,
+      "Provavelmente significa que a pessoa está insegura.",
+      "Adverbs",
+    ],
+    [
+      ["That ", bold("definitely"), " means everything is fine."],
+      "Use definitely when you are certain about the interpretation.",
+      "Stress definitely, means, and fine.",
+      "subject + definitely + verb",
+      undefined,
+      "Isso definitivamente significa que está tudo bem.",
+      "Adverbs",
+    ],
+  ],
+} satisfies LanguageFocusData;

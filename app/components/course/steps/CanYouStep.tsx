@@ -11,7 +11,7 @@ export function CanYouStep({ data }: { data: CanYouData }) {
       <h3 className="mb-4 text-lg font-bold">{data.instruction}</h3>
       <div className="grid gap-3 rounded-xl bg-[var(--background)] p-4">
         {data.checks.map((label, index) => (
-          <div key={label} className="flex items-center gap-3">
+          <div key={label} className="flex items-start gap-3">
             <Checkbox
               checked={checks[index]}
               onCheckedChange={(checked) =>

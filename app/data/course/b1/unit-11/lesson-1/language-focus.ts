@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Talk about milestones and connect events with time clauses.",
+  items: [
+    [
+      [bold("Before"), " I graduated from high school, I had never worked."],
+      "Use before to place one past event earlier than another.",
+      "Stress the two main events; before is usually unstressed.",
+      "before + simple past, past perfect",
+      undefined,
+      "Antes de me formar no ensino médio, eu nunca tinha trabalhado.",
+    ],
+    [
+      [bold("After"), " I graduated, I went to Alaska to work as a fisherman."],
+      "Use after when the event in the time clause happens first.",
+      "Pause lightly after an introductory time clause.",
+      "after + simple past, simple past",
+      undefined,
+      "Depois que me formei, fui ao Alasca trabalhar como pescador.",
+    ],
+    [
+      [bold("Once"), " I moved away from home, I learned to take care of myself."],
+      "Use once or the moment to emphasize when a new situation began.",
+      "Stress the result or personal change.",
+      "once / the moment + simple past, simple past",
+      undefined,
+      "Assim que saí de casa, aprendi a cuidar de mim mesmo.",
+    ],
+    [
+      [bold("As soon as"), " I got my own bank account, I started to be more responsible."],
+      "Use as soon as to show that the second action followed immediately.",
+      "Link as soon as naturally in connected speech.",
+      "as soon as + simple past, simple past",
+      undefined,
+      "Assim que abri minha própria conta bancária, comecei a ser mais responsável.",
+    ],
+    [
+      [bold("Until"), " I moved to Alaska, I had never been away from home."],
+      "Use until to mark the point when a previous situation changed.",
+      "Stress the milestone after until.",
+      "until + simple past, past perfect",
+      undefined,
+      "Até me mudar para o Alasca, eu nunca tinha ficado longe de casa.",
+    ],
+    [
+      [bold("By the time"), " I went to college, I had already lived away from home."],
+      "Use by the time with the past perfect for something completed before a later past point.",
+      "Already is often reduced but still carries contrastive meaning.",
+      "by the time + simple past, past perfect",
+      undefined,
+      "Quando entrei na faculdade, eu já tinha morado longe de casa.",
+    ],
+    [
+      ["People reach milestones at different ages: getting a driver's license, moving out, graduating, getting married, and retiring."],
+      "Use milestone expressions to describe important stages and memorable first experiences.",
+      "Stress the key milestone in each example.",
+      "get a first job · move out · graduate · get married · retire",
+      undefined,
+      "As pessoas alcançam marcos em idades diferentes: tirar carteira, sair de casa, formar-se, casar-se e aposentar-se.",
+    ],
+    [
+      ["She was ambitious and rebellious in her teens, but became more pragmatic and dependable in her thirties."],
+      "Use personal-characteristic adjectives to describe how people change over time.",
+      "Stress the contrasting adjectives and age periods.",
+      "ambitious · argumentative · carefree · dependable · naive · pragmatic · rebellious · sophisticated · wise",
+      undefined,
+      "Ela era ambiciosa e rebelde na adolescência, mas ficou mais pragmática e confiável aos trinta anos.",
+    ],
+  ],
+} satisfies LanguageFocusData;

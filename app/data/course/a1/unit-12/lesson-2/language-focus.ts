@@ -1,0 +1,76 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { CommonRemedies } from "@/features/CommonRemedies";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  component: CommonRemedies,
+  instruction: "Use affirmative and negative imperatives to give simple advice.",
+  items: [
+    [
+      [bold("Rest"), " at home."],
+      "Use the base verb without a subject to give affirmative advice.",
+      "Stress rest and home.",
+      "base verb + complement",
+      undefined,
+      "Descanse em casa.",
+      "Affirmative imperatives",
+    ],
+    [
+      [bold("Drink"), " warm tea."],
+      "Begin with the base verb. The subject you is understood.",
+      "Stress drink and warm tea.",
+      "base verb + noun phrase",
+      undefined,
+      "Beba chá quente.",
+      "Affirmative imperatives",
+    ],
+    [
+      [bold("Use"), " an ice pack."],
+      "Use an imperative to tell someone what action to take.",
+      "Stress use and ice pack.",
+      "base verb + a/an + noun",
+      undefined,
+      "Use uma bolsa de gelo.",
+      "Affirmative imperatives",
+    ],
+    [
+      [bold("Take"), " your medicine."],
+      "Use take with medicine when telling someone to use it.",
+      "Stress take and medicine.",
+      "take + noun",
+      undefined,
+      "Tome seu remédio.",
+      "Affirmative imperatives",
+    ],
+    [
+      [bold("Don't go"), " to work today."],
+      "Use don't plus the base verb for negative advice.",
+      "Stress don't, work, and today.",
+      "don't + base verb + complement",
+      undefined,
+      "Não vá trabalhar hoje.",
+      "Negative imperatives",
+    ],
+    [
+      [bold("Don't exercise"), " with a fever."],
+      "Use don't before the action the person should avoid.",
+      "Stress don't, exercise, and fever.",
+      "don't + base verb",
+      undefined,
+      "Não se exercite com febre.",
+      "Negative imperatives",
+    ],
+    [
+      [bold("Don't stay"), " outside in the cold."],
+      "Use a negative imperative for an action that is not a good idea.",
+      "Stress don't, outside, and cold.",
+      "don't + base verb + complement",
+      undefined,
+      "Não fique do lado de fora no frio.",
+      "Negative imperatives",
+    ],
+  ],
+} satisfies LanguageFocusData;

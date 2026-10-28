@@ -402,6 +402,7 @@ export default function Emojis() {
                     <Audio
                       key={wordIndex}
                       src={getAudioSource(word.word)}
+                      fallbackText={getSpeechText(word.word)}
                       showIcon={false}
                       wrapperClassName="h-12! min-h-12! w-full! overflow-hidden text-center text-sm uppercase"
                     >

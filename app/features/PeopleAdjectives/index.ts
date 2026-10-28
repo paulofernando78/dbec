@@ -1,0 +1,1 @@
+export { PeopleAdjectives } from "./PeopleAdjectives";

@@ -17,6 +17,7 @@ type AudioProps = {
   showIcon?: boolean;
   asButton?: boolean;
   pauseAfterFirstMs?: number;
+  fallbackText?: string;
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -95,12 +96,15 @@ export const Audio = ({
   showIcon = true,
   asButton = false,
   pauseAfterFirstMs = 0,
+  fallbackText,
 }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const playlistIndexRef = useRef(0);
   const advancingPlaylistRef = useRef(false);
   const playbackRequestRef = useRef(0);
+  const playbackActiveRef = useRef(false);
+  const fallbackStartedRef = useRef(false);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -108,6 +112,8 @@ export const Audio = ({
     typeof source === "string" ? { src: source } : source,
   );
   const primarySource = sources[0]?.src ?? "";
+  const defaultFallbackText =
+    fallbackText ?? ariaLabel?.replace(/^play\s+/i, "").trim();
   const isAudioFile =
     sources.length > 0 &&
     sources.every(({ src: source }) =>
@@ -119,6 +125,8 @@ export const Audio = ({
 
     playlistIndexRef.current = 0;
     advancingPlaylistRef.current = false;
+    playbackActiveRef.current = false;
+    fallbackStartedRef.current = false;
 
     if (el && el.getAttribute("src") !== primarySource) {
       el.src = primarySource;
@@ -157,6 +165,7 @@ export const Audio = ({
 
     playlistIndexRef.current = nextIndex;
     advancingPlaylistRef.current = true;
+    fallbackStartedRef.current = false;
     setLoading(true);
     el.src = sources[nextIndex].src;
     el.load();
@@ -165,9 +174,7 @@ export const Audio = ({
       await el.play();
       currentGlobalAudio = el;
     } catch {
-      if (!el.error) {
-        await playNextSource();
-      }
+      playCurrentSourceFallback();
     }
   };
 
@@ -236,6 +243,22 @@ export const Audio = ({
     window.speechSynthesis.speak(utterance);
   };
 
+  const playCurrentSourceFallback = () => {
+    if (!playbackActiveRef.current || fallbackStartedRef.current) return;
+
+    fallbackStartedRef.current = true;
+    const sourceFallbackText =
+      sources[playlistIndexRef.current]?.fallbackText ??
+      (playlistIndexRef.current === 0 ? defaultFallbackText : undefined);
+
+    if (sourceFallbackText) {
+      void playSpeech(sourceFallbackText, () => void playNextSource());
+      return;
+    }
+
+    void playNextSource();
+  };
+
   const handlePlay = async (e?: React.MouseEvent<Element>) => {
     e?.stopPropagation();
 
@@ -259,6 +282,8 @@ export const Audio = ({
 
     setLoading(true);
     playbackRequestRef.current += 1;
+    playbackActiveRef.current = true;
+    fallbackStartedRef.current = false;
     playlistIndexRef.current = 0;
     advancingPlaylistRef.current = false;
 
@@ -275,8 +300,7 @@ export const Audio = ({
       setPlaying(true);
     } catch (error) {
       console.error("Não foi possível tocar o áudio:", error);
-      setLoading(false);
-      setPlaying(false);
+      playCurrentSourceFallback();
     }
   };
 
@@ -284,6 +308,8 @@ export const Audio = ({
     e?.stopPropagation();
     setLoading(false);
     playbackRequestRef.current += 1;
+    playbackActiveRef.current = false;
+    fallbackStartedRef.current = false;
 
     if (utteranceRef.current) {
       stopCurrentSpeech();
@@ -370,14 +396,7 @@ export const Audio = ({
           onEnded={handleEnded}
           onPause={handlePause}
           onError={() => {
-            const fallbackText =
-              sources[playlistIndexRef.current]?.fallbackText;
-
-            if (fallbackText) {
-              void playSpeech(fallbackText, () => void playNextSource());
-            } else {
-              void playNextSource();
-            }
+            playCurrentSourceFallback();
           }}
         />
       )}

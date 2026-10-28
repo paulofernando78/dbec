@@ -46,6 +46,7 @@ export type LanguageFocusData = StepExtension & {
     form: string,
     audio?: { us?: string; uk?: string },
     translationPt?: string,
+    group?: string,
   ])[];
 };
 

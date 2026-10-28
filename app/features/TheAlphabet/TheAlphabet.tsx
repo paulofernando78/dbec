@@ -198,6 +198,7 @@ export const TheAlphabet = () => {
             asButton
             ariaLabel="Play alphabet introduction"
             src="/assets/audio/pronunciation/the-alphabet/26-letters.mp3"
+            fallbackText="There are 26 letters in the English alphabet."
             wrapperClassName="shrink-0"
           />
           <p>There are 26 letters in the English alphabet.</p>
@@ -215,6 +216,7 @@ export const TheAlphabet = () => {
               <Audio
                 ariaLabel={`Play letter ${a.letter}`}
                 src={a.audio}
+                fallbackText={`The letter ${a.letter}`}
                 showIcon={false}
                 wrapperClassName="size-[60px]! min-w-[60px]! [&>span]:p-1!"
               >

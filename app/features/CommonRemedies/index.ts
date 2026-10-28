@@ -1,0 +1,1 @@
+export { CommonRemedies } from "./CommonRemedies";

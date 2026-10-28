@@ -45,22 +45,22 @@ export const listen = {
     ],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where was Elena born?",
+  question: "Where was speaker B born?",
   options: ["Buenos Aires", "Córdoba", "Los Angeles"],
   answer: "Córdoba",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {
-      question: "When did Elena move to Los Angeles?",
-      answer: "She moved there ten years ago.",
+      question: "When did speaker B move to Los Angeles?",
+      answer: "Speaker B moved there ten years ago.",
     },
     {
-      question: "Did she speak English when she moved?",
-      answer: "No, she didn't.",
+      question: "Did speaker B speak English after moving?",
+      answer: "No, speaker B didn't.",
     },
     {
-      question: "Who taught her English at home?",
-      answer: "Her aunt taught her at home.",
+      question: "Who taught speaker B English at home?",
+      answer: "Speaker B's aunt taught them at home.",
     },
   ],
 } satisfies ListenData;

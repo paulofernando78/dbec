@@ -1,0 +1,76 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { WeekendActivities } from "@/features/WeekendActivities";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  component: WeekendActivities,
+  instruction: "Use the simple past of regular verbs to talk about finished activities.",
+  items: [
+    [
+      ["I ", bold("visited"), " a museum. — I ", bold("didn't visit"), " the park."],
+      "Add -ed to a regular verb in an affirmative past statement. Use didn't plus the base verb in a negative statement.",
+      "Stress visited, museum, didn't, and park.",
+      "subject + verb-ed · subject + didn't + base verb",
+      undefined,
+      "Eu visitei um museu. — Eu não visitei o parque.",
+      "Simple past: regular verbs",
+    ],
+    [
+      ["You ", bold("cleaned"), " your room. — You ", bold("didn't clean"), " the kitchen."],
+      "The past form is the same with I, you, he, she, we, and they.",
+      "Stress cleaned, room, didn't, and kitchen.",
+      "regular verb + ed · didn't + base verb",
+      undefined,
+      "Você limpou seu quarto. — Você não limpou a cozinha.",
+      "Simple past: regular verbs",
+    ],
+    [
+      ["She ", bold("danced"), " at the party. — She ", bold("didn't dance"), " at home."],
+      "After didn't, use dance, not danced.",
+      "Stress danced, party, didn't, and home.",
+      "danced · didn't dance",
+      undefined,
+      "Ela dançou na festa. — Ela não dançou em casa.",
+      "Simple past: regular verbs",
+    ],
+    [
+      ["We ", bold("carried"), " the bags. — We ", bold("didn't carry"), " the boxes."],
+      "For a verb ending in consonant plus y, change y to i and add -ed.",
+      "Stress carried, bags, didn't, and boxes.",
+      "carry → carried · didn't carry",
+      undefined,
+      "Nós carregamos as bolsas. — Nós não carregamos as caixas.",
+      "Simple past: regular verbs",
+    ],
+    [
+      ["They ", bold("planned"), " a picnic. — They ", bold("didn't plan"), " a party."],
+      "For some short verbs, double the final consonant before -ed.",
+      "Stress planned, picnic, didn't, and party.",
+      "plan → planned · didn't plan",
+      undefined,
+      "Eles planejaram um piquenique. — Eles não planejaram uma festa.",
+      "Simple past: regular verbs",
+    ],
+    [
+      [bold("play → played"), " · ", bold("live → lived"), " · ", bold("carry → carried"), " · ", bold("plan → planned")],
+      "Usually add -ed. Add only -d after e. Change consonant + y to -ied. Double the final consonant in some short verbs.",
+      "Say each past form clearly.",
+      "verb + ed · final e + d · consonant + y → ied · double consonant + ed",
+      undefined,
+      "play → played · live → lived · carry → carried · plan → planned",
+      "Spelling",
+    ],
+    [
+      [bold("washed /t/"), " · ", bold("called /d/"), " · ", bold("needed /ɪd/")],
+      "The -ed ending has three common sounds: /t/, /d/, and /ɪd/.",
+      "Washed ends in /t/. Called ends in /d/. Needed ends in /ɪd/.",
+      "-ed = /t/, /d/, or /ɪd/",
+      undefined,
+      "Pronúncia das terminações -ed: /t/, /d/ ou /ɪd/.",
+      "Pronunciation: simple past -ed endings",
+    ],
+  ],
+} satisfies LanguageFocusData;

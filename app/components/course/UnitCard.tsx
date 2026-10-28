@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { ProgressCollectionCard } from "@/components/content/ProgressCollectionCard";
 import type { Unit } from "@/data/course";
 import { isLessonCompleted, resetLesson } from "@/utils/course-progress";
+import type { LevelTheme } from "@/utils/level-theme";
 
 type UnitCardProps = {
   unit: Unit;
   levelSlug: string;
+  levelTheme?: LevelTheme;
   isAuthenticated: boolean;
   basePath?: string;
 };
@@ -15,6 +17,7 @@ type UnitCardProps = {
 export function UnitCard({
   unit,
   levelSlug,
+  levelTheme,
   isAuthenticated,
   basePath = `/course/${levelSlug}`,
 }: UnitCardProps) {
@@ -52,6 +55,7 @@ export function UnitCard({
       resetAriaLabel={`Reset unit ${unit.number}`}
       resetConfirmationMessage={`Are you sure you want to reset all lesson progress for Unit ${unit.number}?`}
       onReset={resetUnit}
+      levelTheme={levelTheme}
       items={unit.lessons.map((lesson, index) => ({
         id: `${unit.number}-${index}`,
         eyebrow: `Lesson ${index + 1}`,

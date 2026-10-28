@@ -94,6 +94,9 @@ export const StudentForm = ({
   const [error, setError] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const isEditing = Boolean(selectedStudentId);
+  const selectedStudent = students.find(
+    (student) => student.studentId === selectedStudentId,
+  );
 
   useEffect(() => {
     const student = students.find(
@@ -113,6 +116,29 @@ export const StudentForm = ({
         : initialForm,
     );
   }, [selectedStudentId, students]);
+
+  useEffect(() => {
+    const username = form.username.trim().toLowerCase();
+
+    if (!username) return;
+
+    const timeout = window.setTimeout(() => {
+      const existingStudent = students.find(
+        (student) => student.username.trim().toLowerCase() === username,
+      );
+
+      if (
+        existingStudent &&
+        existingStudent.studentId !== selectedStudentId
+      ) {
+        setMessage("");
+        setError("");
+        onStudentSelect(existingStudent.studentId);
+      }
+    }, 400);
+
+    return () => window.clearTimeout(timeout);
+  }, [form.username, onStudentSelect, selectedStudentId, students]);
 
   const handleStudentSelection = (studentId: string) => {
     setMessage("");
@@ -170,9 +196,174 @@ export const StudentForm = ({
     <form
       onSubmit={handleSubmit}
       autoComplete="off"
-      className="grid grid-cols-1 gap-4 min-[830px]:grid-cols-[auto_1fr]"
+      className="grid grid-cols-1 gap-4 min-[830px]:grid-cols-[minmax(240px,auto)_minmax(0,1fr)]"
     >
-      <div className="overflow-x-auto rounded-xl bg-[var(--background)] p-4">
+      <div className="grid gap-4 rounded-xl bg-(--background) p-4">
+        {/* Name */}
+        <label className="grid min-w-0 gap-1">
+          <span className="text-sm font-semibold">Name</span>
+          <input
+            type="text"
+            value={form.name}
+            onChange={(event) =>
+              setForm((current) => ({
+                ...current,
+                name: event.target.value,
+              }))
+            }
+            required
+            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+          />
+        </label>
+
+        <div className="grid grid-cols-2 gap-4 max-[950px]:grid-cols-1">
+          {/* Username */}
+          <label className="grid min-w-0 gap-1">
+            <span className="text-sm font-semibold">Username</span>
+            <input
+              type="text"
+              value={form.username}
+              onChange={(event) => {
+                setMessage("");
+                setError("");
+                setForm((current) => ({
+                  ...current,
+                  username: event.target.value,
+                }));
+              }}
+              required
+              autoComplete="username"
+              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+            />
+          </label>
+
+          {/* Password */}
+          <label className="grid min-w-0 gap-1">
+            <span className="text-sm font-semibold">Password</span>
+            <input
+              type="password"
+              name="student-password"
+              value={form.password}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  password: event.target.value,
+                }))
+              }
+              required={!isEditing}
+              minLength={8}
+              autoComplete="off"
+              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+            />
+          </label>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 max-[950px]:grid-cols-1">
+          {/* Schedule */}
+          <label className="grid min-w-0 gap-1">
+            <span className="text-sm font-semibold">Schedule</span>
+
+            <select
+              value={form.schedule}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  schedule: event.target.value,
+                }))
+              }
+              required
+              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+            >
+              <option value="">...</option>
+
+              {scheduleOptions.map((schedule) => (
+                <option key={schedule} value={schedule}>
+                  {schedule}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          {/* Time */}
+          <label className="grid min-w-0 gap-1">
+            <span className="text-sm font-semibold">Time</span>
+
+            <select
+              value={form.time}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  time: event.target.value,
+                }))
+              }
+              required
+              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+            >
+              <option value="">...</option>
+
+              {timeOptions.map((time) => (
+                <option key={time} value={time}>
+                  {time}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        {error && (
+          <p role="alert" className="text-sm font-semibold text-red-600">
+            {error}
+          </p>
+        )}
+
+        {message && (
+          <p role="status" className="text-sm font-semibold text-green-700">
+            {message}
+          </p>
+        )}
+
+        {selectedStudent && (
+          <div
+            role="status"
+            className="flex items-center justify-between gap-4 rounded-lg border border-amber-300 bg-amber-50 p-3 max-[950px]:items-start max-[950px]:flex-col"
+          >
+            <div>
+              <p className="text-sm font-bold text-amber-950">
+                Existing student found — editing {selectedStudent.name}.
+              </p>
+              <p className="text-xs text-amber-800">
+                Leave the password blank to keep the current password.
+              </p>
+            </div>
+
+            <Button
+              type="button"
+              onClick={() => handleStudentSelection("")}
+              className="shrink-0!"
+            >
+              Cancel editing
+            </Button>
+          </div>
+        )}
+
+        <div>
+          <Button
+            type="submit"
+            disabled={isSaving}
+            className="w-full!"
+          >
+            {isSaving
+              ? isEditing
+                ? "Updating student..."
+                : "Adding student..."
+              : isEditing
+                ? "Update student"
+                : "Add student"}
+          </Button>
+        </div>
+      </div>
+
+      <div className="overflow-x-auto rounded-xl bg-(--background) p-4 min-[830px]:order-first">
         <div className="space-y-4">
           <span className="block text-sm font-semibold">Students</span>
 
@@ -207,137 +398,6 @@ export const StudentForm = ({
             );
           })}
         </div>
-      </div>
-
-      <div className="grid gap-4 rounded-xl bg-[var(--background)] p-4">
-        <Button
-          type="button"
-          onClick={() => handleStudentSelection("")}
-          className="w-full!"
-        >
-          Add student
-        </Button>
-
-        {/* Name */}
-        <label className="grid min-w-0 gap-1">
-          <span className="text-sm font-semibold">Name</span>
-          <input
-            type="text"
-            value={form.name}
-            onChange={(event) =>
-              setForm((current) => ({
-                ...current,
-                name: event.target.value,
-              }))
-            }
-            required
-            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-          />
-        </label>
-
-        {/* Username */}
-        <label className="grid min-w-0 gap-1">
-          <span className="text-sm font-semibold">Username</span>
-          <input
-            type="text"
-            value={form.username}
-            onChange={(event) =>
-              setForm((current) => ({
-                ...current,
-                username: event.target.value,
-              }))
-            }
-            required
-            autoComplete="username"
-            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-          />
-        </label>
-
-        {/* Password */}
-        <label className="grid min-w-0 gap-1">
-          <span className="text-sm font-semibold">Password</span>
-          <input
-            type="password"
-            name="student-password"
-            value={form.password}
-            onChange={(event) =>
-              setForm((current) => ({
-                ...current,
-                password: event.target.value,
-              }))
-            }
-            required={!isEditing}
-            minLength={8}
-            autoComplete="off"
-            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-          />
-        </label>
-
-        {/* Schedule */}
-        <label className="grid min-w-0 gap-1">
-          <span className="text-sm font-semibold">Schedule</span>
-
-          <select
-            value={form.schedule}
-            onChange={(event) =>
-              setForm((current) => ({
-                ...current,
-                schedule: event.target.value,
-              }))
-            }
-            required
-            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-          >
-            <option value="">Select the days</option>
-
-            {scheduleOptions.map((schedule) => (
-              <option key={schedule} value={schedule}>
-                {schedule}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        {/* Time */}
-        <label className="grid min-w-0 gap-1">
-          <span className="text-sm font-semibold">Time</span>
-
-          <select
-            value={form.time}
-            onChange={(event) =>
-              setForm((current) => ({
-                ...current,
-                time: event.target.value,
-              }))
-            }
-            required
-            className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-          >
-            <option value="">Select the time</option>
-
-            {timeOptions.map((time) => (
-              <option key={time} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        {error && (
-          <p role="alert" className="text-sm font-semibold text-red-600">
-            {error}
-          </p>
-        )}
-
-        {message && (
-          <p role="status" className="text-sm font-semibold text-green-700">
-            {message}
-          </p>
-        )}
-
-        <Button type="submit" disabled={isSaving} className="w-full! mb-2">
-          {isSaving ? "Saving..." : isEditing ? "Update" : "Save"}
-        </Button>
       </div>
     </form>
   );

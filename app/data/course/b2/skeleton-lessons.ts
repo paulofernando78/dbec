@@ -40,6 +40,10 @@ const words = (sentence: string) => sentence.split(" ");
 const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
   const unitData = b2.units[unit - 1];
   const lessonData = unitData.lessons[lesson - 1];
+  const lessonObjective = lessonData.description.replace(
+    /^By the end of this lesson, students will be (?:better )?able to /,
+    "",
+  );
 
   const steps: readonly LessonStepData[] = [
     {
@@ -71,7 +75,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       type: "language-focus",
       slug: "language-focus",
       label: "Language focus",
-      instruction: lessonData.description,
+      instruction: lessonObjective,
       items: phrases.map((phrase) => [
         phrase,
         `Use this language to ${lessonData.description.charAt(0).toLowerCase()}${lessonData.description.slice(1)}`,
@@ -97,7 +101,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       label: "Use it",
       instruction: `Discuss and evaluate different perspectives on ${lessonData.title.toLowerCase()}.`,
       prompts: [
-        lessonData.description,
+        `Develop a clear position on ${lessonData.title.toLowerCase()}.`,
         "Develop your position with reasons, evidence, and a relevant example.",
         "Respond to another perspective, acknowledge a valid point, and clarify your conclusion.",
       ],
@@ -109,7 +113,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       label: "Can you…?",
       instruction: "Evaluate your communicative performance.",
       checks: [
-        `Can you ${lessonData.description.charAt(0).toLowerCase()}${lessonData.description.slice(1)}`,
+        `Can you ${lessonObjective}`,
         `Can you identify attitudes, supporting details, and implications in a discussion about ${lessonData.title.toLowerCase()}?`,
         "Can you use the target language accurately and appropriately for the register?",
         "Can you defend a position while engaging constructively with another perspective?",

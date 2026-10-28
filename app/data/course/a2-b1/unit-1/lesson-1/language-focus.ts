@@ -18,9 +18,7 @@ export const languageFocus = {
     [
       [
         bold("Were"),
-        " you born in Buenos Aires? — Yes, I ",
-        bold("was"),
-        ". / No, I ",
+        " you born in Buenos Aires? — No, I ",
         bold("wasn't"),
         ". I ",
         bold("was"),
@@ -30,7 +28,7 @@ export const languageFocus = {
       "Were is usually unstressed in the question. Stress was or wasn't in the answer.",
       "Was/Were + subject + complement? · Yes, subject + was/were. · No, subject + wasn't/weren't.",
       undefined,
-      "Você nasceu em Buenos Aires? — Sim. / Não. Eu nasci em Córdoba.",
+      "Você nasceu em Buenos Aires? — Não. Eu nasci em Córdoba.",
     ],
     [
       [
@@ -42,13 +40,13 @@ export const languageFocus = {
         bold("moved"),
         " here ten years ago. I ",
         bold("didn't speak"),
-        " English.",
+        " English then.",
       ],
       "Use did to ask about a completed past action. Use the simple past in affirmative answers.",
       "Did is usually unstressed. Stress move, moved, and didn't.",
       "Wh-word + did + subject + base verb? · Subject + past verb. · Subject + didn't + base verb.",
       undefined,
-      "Quando você se mudou para Los Angeles? — Eu me mudei para cá há dez anos. Eu não falava inglês.",
+      "Quando você se mudou para Los Angeles? — Eu me mudei para cá há dez anos. Eu não falava inglês naquela época.",
     ],
     [
       [
@@ -59,9 +57,7 @@ export const languageFocus = {
         bold("did"),
         ". I ",
         bold("took"),
-        " classes for a year. / No, I ",
-        bold("didn't"),
-        ". My aunt ",
+        " classes for a year. My aunt also ",
         bold("taught"),
         " me at home.",
       ],
@@ -69,7 +65,7 @@ export const languageFocus = {
       "Stress did or didn't in short answers and the main information in the complete answer.",
       "Did + subject + base verb? · Yes, subject + did. · No, subject + didn't.",
       undefined,
-      "Você fez aulas de inglês na Argentina? — Sim. Fiz aulas por um ano. / Não. Minha tia me ensinou em casa.",
+      "Você fez aulas de inglês na Argentina? — Sim. Fiz aulas por um ano. Minha tia também me ensinou em casa.",
     ],
   ],
 } satisfies LanguageFocusData;

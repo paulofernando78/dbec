@@ -40,6 +40,10 @@ const words = (sentence: string) => sentence.split(" ");
 const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
   const unitData = c1.units[unit - 1];
   const lessonData = unitData.lessons[lesson - 1];
+  const lessonObjective = lessonData.description.replace(
+    /^By the end of this lesson, students will be (?:better )?able to /,
+    "",
+  );
 
   const steps: readonly LessonStepData[] = [
     {
@@ -71,7 +75,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       type: "language-focus",
       slug: "language-focus",
       label: "Language focus",
-      instruction: lessonData.description,
+      instruction: lessonObjective,
       items: phrases.map((phrase) => [
         phrase,
         `Use this language flexibly to ${lessonData.description.charAt(0).toLowerCase()}${lessonData.description.slice(1)}`,
@@ -97,7 +101,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       label: "Use it",
       instruction: `Synthesize and critically evaluate perspectives on ${lessonData.title.toLowerCase()}.`,
       prompts: [
-        lessonData.description,
+        `Formulate a nuanced response to ${lessonData.title.toLowerCase()}.`,
         "Frame a nuanced position, distinguish evidence from assumption, and anticipate a counterargument.",
         "Reformulate another viewpoint fairly before challenging or integrating it into your conclusion.",
       ],
@@ -109,7 +113,7 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       label: "Can you…?",
       instruction: "Evaluate your control, flexibility, and precision.",
       checks: [
-        `Can you ${lessonData.description.charAt(0).toLowerCase()}${lessonData.description.slice(1)}`,
+        `Can you ${lessonObjective}`,
         `Can you infer stance, implication, and rhetorical purpose in a discussion about ${lessonData.title.toLowerCase()}?`,
         "Can you adapt the target language accurately across different registers and formulations?",
         "Can you synthesize competing perspectives into a coherent, appropriately qualified conclusion?",

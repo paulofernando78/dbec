@@ -1,0 +1,1 @@
+export { ClothesAndColors } from "./ClothesAndColors";

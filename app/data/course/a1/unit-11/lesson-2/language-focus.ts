@@ -1,0 +1,76 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { LessonExtras } from "./extras";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  component: LessonExtras,
+  instruction: "Use Wh-questions with be going to to ask about future plans.",
+  items: [
+    [
+      [bold("What are you going to do"), " on New Year's Eve? — I'm going to watch fireworks."],
+      "Use what to ask about a planned activity.",
+      "Stress what, New Year's Eve, and fireworks.",
+      "What + be + subject + going to + do?",
+      undefined,
+      "O que você vai fazer no Ano-Novo? — Vou assistir aos fogos de artifício.",
+      "Wh-questions with be going to",
+    ],
+    [
+      ["I'm ", bold("not going to stay"), " home. I'm going to go downtown."],
+      "Put not after be to describe a negative future plan.",
+      "Stress not, stay home, and downtown.",
+      "subject + be + not + going to + base verb",
+      undefined,
+      "Não vou ficar em casa. Vou ao centro.",
+      "Negative future plans",
+    ],
+    [
+      [bold("How is Mia going to get"), " to the party? — She's going to take a taxi."],
+      "Use how to ask about transportation or the way something will happen.",
+      "Stress how, party, and taxi.",
+      "How + is + he/she + going to + base verb?",
+      undefined,
+      "Como Mia vai chegar à festa? — Ela vai pegar um táxi.",
+      "Questions with how",
+    ],
+    [
+      ["She ", bold("isn't going to drive"), "."],
+      "Use isn't going to for a negative plan with he or she.",
+      "Stress isn't and drive.",
+      "he/she + isn't + going to + base verb",
+      undefined,
+      "Ela não vai dirigir.",
+      "Negative future plans",
+    ],
+    [
+      [bold("Where are they going to celebrate"), "? — They're going to celebrate at home."],
+      "Use where to ask about the place of a future plan.",
+      "Stress where, celebrate, and home.",
+      "Where + are + they + going to + base verb?",
+      undefined,
+      "Onde eles vão comemorar? — Eles vão comemorar em casa.",
+      "Questions with where",
+    ],
+    [
+      [bold("Who is going to come"), "? — Our cousins are going to come."],
+      "Use who to ask which people are part of a future plan.",
+      "Stress who, come, and cousins.",
+      "Who + is + going to + base verb?",
+      undefined,
+      "Quem vai vir? — Nossos primos vão vir.",
+      "Questions with who",
+    ],
+    [
+      [bold("When is the party going to start"), "? — It's going to start at eight."],
+      "Use when to ask about the day or time of a future plan.",
+      "Stress when, party, start, and eight.",
+      "When + is + subject + going to + base verb?",
+      undefined,
+      "Quando a festa vai começar? — Vai começar às oito.",
+      "Questions with when",
+    ],
+  ],
+} satisfies LanguageFocusData;

@@ -50,7 +50,8 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
 
       <div className="grid gap-4">
         {data.items.map(
-          ([title, meaning, pronunciation, form, audio, translationPt]) => {
+          ([title, meaning, pronunciation, form, audio, translationPt, group], index) => {
+            const previousGroup = index > 0 ? data.items[index - 1]?.[6] : undefined;
             const titleText =
               typeof title === "string"
                 ? title
@@ -63,16 +64,18 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
             const speechLang = accent === "uk" ? "en-GB" : "en-US";
 
             return (
-              <article
-                key={titleText}
-                className="rounded-xl bg-[var(--background)] p-4"
-              >
+              <div key={titleText} className="grid gap-2">
+                {group && group !== previousGroup && (
+                  <h4 className="text-lg font-black">{group}</h4>
+                )}
+                <article className="rounded-xl bg-[var(--background)] p-4">
                 <div className="mb-2 flex items-start gap-3">
                   <Audio
                     asButton
                     ariaLabel={`Play ${titleText}`}
                     key={`${accent}-${audioSource}`}
                     src={audioSource}
+                    fallbackText={titleText}
                     speechLang={speechLang}
                     className="stroke-0!"
                     wrapperClassName="shrink-0 self-start"
@@ -99,7 +102,8 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                 <p>
                   <b>Form:</b> {form}
                 </p>
-              </article>
+                </article>
+              </div>
             );
           },
         )}

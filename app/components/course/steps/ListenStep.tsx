@@ -40,9 +40,9 @@ export function ListenStep({ data }: { data: ListenData }) {
           {data.followUpInstruction && (
             <h4 className="mb-2 font-bold">{data.followUpInstruction}</h4>
           )}
-          {data.followUp.map(({ question, answer: followUpAnswer }) => (
+          {data.followUp.map(({ question, answer: followUpAnswer }, index) => (
             <p key={question}>
-              <span className="font-black">•</span> {question}
+              <span className="font-black">{index + 1}.</span> {question}
               {showAnswers && (
                 <>
                   {" "}

@@ -20,11 +20,11 @@
   --border: 1px solid var(--slate-5);
   --border-radius: 10px;
   --icon-color: var(--gray-4);
-  --button-outer-start: #fff;
-  --button-outer-end: #e7e5e4;
-  --button-inner-start: #f5f5f4;
-  --button-inner-end: #fff;
-  --button-border: #d6d3d1;
+  --button-outer-start: var(--color-white);
+  --button-outer-end: var(--color-stone-200);
+  --button-inner-start: var(--color-stone-200);
+  --button-inner-end: var(--color-white);
+  --button-border: var(--color-stone-300);
   --button-text: var(--gray-6);
   --button-icon: var(--slate-4);
 }

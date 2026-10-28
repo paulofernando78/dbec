@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Use yes/no and where questions with be to ask about things in an office.",
+  items: [
+    [
+      [bold("Is this"), " your ID card? — Yes, ", bold("it is"), ". / No, ", bold("it's not"), "."],
+      "Use Is this...? to ask about one thing.",
+      "Use rising intonation in the question. Stress yes or no in the answer.",
+      "Is + this + noun? · Yes, it is. · No, it's not.",
+      undefined,
+      "Este é o seu crachá? — Sim. / Não.",
+      "Yes/No questions",
+    ],
+    [
+      [bold("Are these"), " your keys? — Yes, ", bold("they are"), ". / No, ", bold("they're not"), "."],
+      "Use Are these...? to ask about two or more things.",
+      "Use rising intonation in the question. Stress keys.",
+      "Are + these + plural noun? · Yes, they are. · No, they're not.",
+      undefined,
+      "Estas são as suas chaves? — Sim. / Não.",
+      "Yes/No questions",
+    ],
+    [
+      [bold("Where's"), " your ID card? — ", bold("It's in"), " the drawer."],
+      "Use Where's...? to ask about one thing. Use in for something inside another thing.",
+      "Stress where, ID card, and drawer.",
+      "Where's = Where is · in + place",
+      undefined,
+      "Onde está o seu crachá? — Está na gaveta.",
+      "Where questions",
+    ],
+    [
+      [bold("Where are"), " my keys? — ", bold("They're on"), " the desk."],
+      "Use Where are...? to ask about two or more things. Use on for something on top of a surface.",
+      "Stress where, keys, and desk.",
+      "Where + are + plural noun? · on + place",
+      undefined,
+      "Onde estão as minhas chaves? — Estão na mesa.",
+      "Where questions",
+    ],
+    [
+      ["Where's the charger? — ", bold("It's under"), " the monitor."],
+      "Use under for something below another thing.",
+      "Stress charger, under, and monitor.",
+      "under + noun",
+      undefined,
+      "Onde está o carregador? — Está embaixo do monitor.",
+      "Prepositions of place",
+    ],
+    [
+      ["Where are the folders? — ", bold("They're next to"), " the printer."],
+      "Use next to for something beside another thing.",
+      "Stress folders, next to, and printer.",
+      "next to + noun",
+      undefined,
+      "Onde estão as pastas? — Estão ao lado da impressora.",
+      "Prepositions of place",
+    ],
+  ],
+} satisfies LanguageFocusData;

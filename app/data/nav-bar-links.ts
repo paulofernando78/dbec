@@ -28,14 +28,14 @@ export type NavItem = NavLinkItem | NavGroup;
 
 export const links: NavItem[] = [
   {
-    href: "/dashboard",
-    label: "dashboard",
-    icon: CircleUserRound,
-  },
-  {
     href: "/guide",
     label: "guide",
     icon: BadgeHelp,
+  },
+  {
+    href: "/dashboard",
+    label: "dashboard",
+    icon: CircleUserRound,
   },
   {
     group: "path",
@@ -75,6 +75,11 @@ export const links: NavItem[] = [
         label: "songs",
         icon: Music2,
       },
+      {
+        href: "/games",
+        label: "games",
+        icon: Gamepad2,
+      },
     ],
   },
   {
@@ -84,11 +89,6 @@ export const links: NavItem[] = [
         href: "/travel",
         label: "travel",
         icon: Plane,
-      },
-      {
-        href: "/games",
-        label: "games",
-        icon: Gamepad2,
       },
     ],
   },

@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Use present participles to describe things and past participles to describe people's feelings.",
+  items: [
+    [
+      ["That nature documentary sounds ", bold("inspiring"), "."],
+      "Use an -ing adjective to describe the quality or effect of a thing.",
+      "Stress nature documentary and inspiring.",
+      "thing + linking verb + present participle adjective",
+      undefined,
+      "Aquele documentário sobre a natureza parece inspirador.",
+      "Present participles",
+    ],
+    [
+      ["The mystery novel seems ", bold("confusing"), " at first."],
+      "Use an -ing adjective to describe what produces a feeling.",
+      "Stress mystery novel, confusing, and at first.",
+      "thing + linking verb + present participle adjective",
+      undefined,
+      "O romance de mistério parece confuso no começo.",
+      "Present participles",
+    ],
+    [
+      ["I think the new cooking show is ", bold("relaxing"), "."],
+      "Use an -ing adjective for the effect a program has on viewers.",
+      "Stress cooking show and relaxing.",
+      "thing + be + present participle adjective",
+      undefined,
+      "Acho que o novo programa de culinária é relaxante.",
+      "Present participles",
+    ],
+    [
+      ["I'm ", bold("inspired"), " by stories about wildlife rescuers."],
+      "Use an -ed adjective to describe how a person feels.",
+      "Stress inspired and wildlife rescuers.",
+      "person + be + past participle adjective",
+      undefined,
+      "Fico inspirado por histórias sobre socorristas de animais silvestres.",
+      "Past participles",
+    ],
+    [
+      ["I'm still ", bold("confused"), " by the first chapter."],
+      "Use an -ed adjective for a feeling caused by something.",
+      "Stress still, confused, and first chapter.",
+      "person + be + past participle adjective",
+      undefined,
+      "Ainda estou confuso com o primeiro capítulo.",
+      "Past participles",
+    ],
+    [
+      ["I feel ", bold("relaxed"), " after watching it."],
+      "Use an -ed adjective after feel to describe a person's state.",
+      "Stress feel, relaxed, and after watching.",
+      "person + feel + past participle adjective",
+      undefined,
+      "Eu me sinto relaxado depois de assistir ao programa.",
+      "Past participles",
+    ],
+  ],
+} satisfies LanguageFocusData;

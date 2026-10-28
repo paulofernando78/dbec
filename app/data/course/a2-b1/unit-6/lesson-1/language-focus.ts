@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Use separable two-part verbs and will when responding to requests.",
+  items: [
+    [
+      [bold("Turn off"), " the kitchen light. — Turn the kitchen light ", bold("off"), "."],
+      "With a noun object, place the noun either after the two-part verb or between the verb and particle.",
+      "Stress the main verb, the noun, and the particle when it carries contrast.",
+      "verb + particle + noun · verb + noun + particle",
+      undefined,
+      "Apague a luz da cozinha. — Apague a luz da cozinha.",
+      "With nouns",
+    ],
+    [
+      [bold("Pick up"), " the packages. — Pick the packages ", bold("up"), "."],
+      "A noun can come before or after the particle in a separable two-part verb.",
+      "Stress pick, packages, and up.",
+      "verb + particle + noun · verb + noun + particle",
+      undefined,
+      "Pegue os pacotes. — Pegue os pacotes.",
+      "With nouns",
+    ],
+    [
+      ["Turn ", bold("it"), " off. — Pick ", bold("them"), " up."],
+      "With a pronoun object, always place the pronoun between the verb and particle.",
+      "Keep the pronoun light and stress the verb or particle.",
+      "verb + pronoun + particle",
+      undefined,
+      "Apague-a. — Pegue-os.",
+      "With pronouns",
+    ],
+    [
+      ["Could you ", bold("turn off"), " the kitchen light? — Sure. I", bold("'ll turn"), " the kitchen light ", bold("off"), "."],
+      "Make a polite request, then use will to agree to do it.",
+      "Use a polite rising tone in the request and stress will in the response.",
+      "Could you + two-part verb? · I'll + two-part verb",
+      undefined,
+      "Você poderia apagar a luz da cozinha? — Claro. Vou apagar a luz da cozinha.",
+      "Requests and responses",
+    ],
+    [
+      ["Please ", bold("pick up"), " the packages. — Okay. I", bold("'ll pick them up"), "."],
+      "Use please with an imperative for a polite request and will in the response.",
+      "Stress please, packages, and pick them up.",
+      "Please + two-part verb + noun · I'll + verb + pronoun + particle",
+      undefined,
+      "Por favor, pegue os pacotes. — Certo. Vou pegá-los.",
+      "Requests and responses",
+    ],
+    [
+      ["Can you ", bold("put away"), " the groceries? — All right. I", bold("'ll put them away"), "."],
+      "Use can you for a request and respond with will plus the pronoun in the middle of the two-part verb.",
+      "Stress groceries and put them away.",
+      "Can you + two-part verb + noun? · I'll + verb + pronoun + particle",
+      undefined,
+      "Você pode guardar as compras? — Tudo bem. Vou guardá-las.",
+      "Requests and responses",
+    ],
+  ],
+} satisfies LanguageFocusData;

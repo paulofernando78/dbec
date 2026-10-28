@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Use can and can't to talk about abilities.",
+  items: [
+    [
+      ["I ", bold("can play"), " the guitar. — I ", bold("can't play"), " the piano."],
+      "Use can plus the base verb for an ability. Use can't for something you are not able to do.",
+      "Stress can, can't, guitar, and piano.",
+      "subject + can/can't + base verb",
+      undefined,
+      "Eu sei tocar violão. — Eu não sei tocar piano.",
+      "Can for ability",
+    ],
+    [
+      ["She ", bold("can dance"), " very well. — He ", bold("can't dance"), " at all."],
+      "Can has the same form with I, you, he, she, we, and they.",
+      "Stress dance, very well, and at all.",
+      "he/she + can/can't + base verb",
+      undefined,
+      "Ela sabe dançar muito bem. — Ele não sabe dançar.",
+      "Can for ability",
+    ],
+    [
+      ["We ", bold("can draw"), ". — They ", bold("can't paint"), "."],
+      "Do not add -s or to after can.",
+      "Stress draw and paint.",
+      "can + base verb",
+      undefined,
+      "Nós sabemos desenhar. — Eles não sabem pintar.",
+      "Can for ability",
+    ],
+    [
+      [bold("Can you swim"), "? — Yes, I can. / No, I can't."],
+      "Put can before the subject to make a yes/no question.",
+      "Use rising intonation in the question. Stress yes or no in the answer.",
+      "Can + subject + base verb? · Yes, subject + can. · No, subject + can't.",
+      undefined,
+      "Você sabe nadar? — Sim. / Não.",
+      "Questions and short answers",
+    ],
+    [
+      [bold("What can Leo do"), "? — He can cook."],
+      "Use what to ask about a person's ability.",
+      "Stress what, Leo, and cook.",
+      "What + can + subject + do?",
+      undefined,
+      "O que Leo sabe fazer? — Ele sabe cozinhar.",
+      "What questions with can",
+    ],
+    [
+      [bold("Who can speak French"), "? — Maya can."],
+      "Use who to ask which person has an ability.",
+      "Stress who, French, and Maya.",
+      "Who + can + base verb? · Name + can.",
+      undefined,
+      "Quem sabe falar francês? — Maya sabe.",
+      "Who questions with can",
+    ],
+  ],
+} satisfies LanguageFocusData;

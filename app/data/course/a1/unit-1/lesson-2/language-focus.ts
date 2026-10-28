@@ -1,0 +1,76 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { TheNumbers } from "@/features/TheNumbers";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  component: TheNumbers,
+  instruction: "Use subject pronouns and the verb be to introduce people and exchange contact information.",
+  items: [
+    [
+      [bold("I'm"), " Sofia Mendes."],
+      "Use I am, usually contracted to I'm, to identify yourself.",
+      "Stress Sofia Mendes. The contraction I'm is pronounced as one syllable.",
+      "I'm = I am",
+      undefined,
+      "Eu sou Sofia Mendes.",
+      "Affirmative statements",
+    ],
+    [
+      [bold("You're"), " in my contacts now."],
+      "Use you are, usually contracted to you're, to talk directly to another person.",
+      "Stress contacts and now.",
+      "You're = You are",
+      undefined,
+      "Você está nos meus contatos agora.",
+      "Affirmative statements",
+    ],
+    [
+      [bold("He's"), " my coworker. — ", bold("She's"), " our new designer."],
+      "Use he is for a man and she is for a woman.",
+      "Stress coworker and new designer.",
+      "He's = He is · She's = She is",
+      undefined,
+      "Ele é meu colega de trabalho. — Ela é nossa nova designer.",
+      "Affirmative statements",
+    ],
+    [
+      [bold("It's"), " my work number."],
+      "Use it is, usually contracted to it's, to identify a thing or piece of information.",
+      "Stress work number.",
+      "It's = It is",
+      undefined,
+      "É o número do meu trabalho.",
+      "Affirmative statements",
+    ],
+    [
+      [bold("How are you"), "? — ", bold("I'm great"), ", thanks."],
+      "Use How are you? to ask how someone is and I'm plus an adjective to answer.",
+      "Stress how, great, and thanks.",
+      "How + are + you? · I'm + adjective",
+      undefined,
+      "Como você está? — Estou ótimo, obrigado.",
+      "Questions and short answers",
+    ],
+    [
+      [bold("Are you"), " Daniel Costa? — Yes, ", bold("I am"), ". / No, ", bold("I'm not"), "."],
+      "Put are before you to form a yes-or-no question with be.",
+      "Use rising intonation in the question and stress yes or no in the answer.",
+      "Are + you + complement? · Yes, I am. · No, I'm not.",
+      undefined,
+      "Você é Daniel Costa? — Sim, sou. / Não, não sou.",
+      "Questions and short answers",
+    ],
+    [
+      [bold("What's your email address"), "? — It's sofia_mendes-work@example.com."],
+      "Ask What's your email address? to request an email. Say at for @, dot for ., dash for -, and underscore for _.",
+      "Say: sofia underscore mendes dash work at example dot com.",
+      "@ = at · . = dot · - = dash · _ = underscore",
+      undefined,
+      "Qual é o seu endereço de e-mail? — É sofia_mendes-work@example.com.",
+      "Contact information",
+    ],
+  ],
+} satisfies LanguageFocusData;

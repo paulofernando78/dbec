@@ -2,6 +2,11 @@ import { useState } from "react";
 import { LockKeyhole, LockKeyholeOpen, RotateCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
+import {
+  levelButtonClasses,
+  levelGradientClasses,
+  type LevelTheme,
+} from "@/utils/level-theme";
 
 export type ProgressCollectionItem = {
   id: string;
@@ -25,6 +30,7 @@ type ProgressCollectionCardProps = {
   items: ProgressCollectionItem[];
   className?: string;
   disableResetWhenEmpty?: boolean;
+  levelTheme?: LevelTheme;
 };
 
 export function ProgressCollectionCard({
@@ -39,6 +45,7 @@ export function ProgressCollectionCard({
   items,
   className = "",
   disableResetWhenEmpty = false,
+  levelTheme,
 }: ProgressCollectionCardProps) {
   const [isResetConfirmationOpen, setIsResetConfirmationOpen] = useState(false);
 
@@ -90,7 +97,14 @@ export function ProgressCollectionCard({
                 {index < items.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="absolute -bottom-5 left-6.5 top-13 z-0 w-2 bg-slate-300 dark:bg-slate-600"
+                    className={`absolute -bottom-5 left-6.5 top-13 z-0 w-2
+                      ${
+                        item.isCompleted
+                          ? levelTheme
+                            ? levelGradientClasses[levelTheme]
+                            : "bg-yellow-500 dark:bg-yellow-500"
+                          : "bg-slate-300 dark:bg-slate-600"
+                      }`}
                   />
                 )}
 
@@ -100,7 +114,11 @@ export function ProgressCollectionCard({
                     item.isCompleted ? <LockKeyholeOpen /> : <LockKeyhole />
                   }
                   onClick={item.onClick}
-                  className="z-10 size-[60px]!"
+                  className={`z-10 size-15! ${
+                    item.isCompleted && levelTheme
+                      ? levelButtonClasses[levelTheme]
+                      : ""
+                  }`}
                 />
 
                 <div className="min-w-0 pt-1">

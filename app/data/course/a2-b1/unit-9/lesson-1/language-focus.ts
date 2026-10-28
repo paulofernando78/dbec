@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Contrast the past, present, and future when describing changes over time.",
+  items: [
+    [
+      ["Ten years ago, the neighborhood ", bold("had"), " only one small market."],
+      "Use the simple past with a finished past-time expression.",
+      "Stress ten years ago, neighborhood, and one small market.",
+      "past-time expression + simple past",
+      undefined,
+      "Dez anos atrás, o bairro tinha apenas um pequeno mercado.",
+      "Past",
+    ],
+    [
+      ["We ", bold("used to walk"), " several blocks to buy groceries."],
+      "Use used to for a regular past action or situation that is no longer true.",
+      "Stress used to walk, several blocks, and groceries.",
+      "used to + base verb",
+      undefined,
+      "Nós costumávamos caminhar vários quarteirões para comprar mantimentos.",
+      "Past",
+    ],
+    [
+      ["These days, local farmers ", bold("are selling"), " produce at a weekly street market."],
+      "Use the present continuous for a developing or current situation.",
+      "Stress these days, local farmers, and street market.",
+      "present-time expression + present continuous",
+      undefined,
+      "Hoje em dia, agricultores locais estão vendendo produtos em uma feira semanal.",
+      "Present",
+    ],
+    [
+      ["Now, many residents ", bold("order"), " groceries through an app."],
+      "Use the simple present for a current habit or general situation.",
+      "Stress now, residents, order, and app.",
+      "present-time expression + simple present",
+      undefined,
+      "Agora, muitos moradores pedem mantimentos por um aplicativo.",
+      "Present",
+    ],
+    [
+      ["Next year, the city ", bold("will open"), " a larger public market."],
+      "Use will for a future prediction or announced future event.",
+      "Stress next year, city, and public market.",
+      "future-time expression + will + base verb",
+      undefined,
+      "No próximo ano, a cidade abrirá um mercado público maior.",
+      "Future",
+    ],
+    [
+      ["In the future, delivery robots ", bold("might become"), " common."],
+      "Use might for a future possibility.",
+      "Stress in the future, delivery robots, and common.",
+      "future-time expression + might + base verb",
+      undefined,
+      "No futuro, robôs de entrega poderão se tornar comuns.",
+      "Future",
+    ],
+  ],
+} satisfies LanguageFocusData;

@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Use present continuous Wh-questions to ask what people are doing now.",
+  items: [
+    [
+      [bold("What are you doing"), "? — I'm studying English."],
+      "Use What are you doing? to ask about the other person's activity now.",
+      "Stress what, doing, and studying.",
+      "What + are + you + doing? · I'm + verb-ing.",
+      undefined,
+      "O que você está fazendo? — Estou estudando inglês.",
+      "Present continuous Wh-questions",
+    ],
+    [
+      [bold("What's Eva doing"), "? — She's making breakfast."],
+      "Use What's plus one person's name to ask about that person's activity now.",
+      "What's means What is. Stress Eva, doing, and breakfast.",
+      "What is + name + doing? · She/He is + verb-ing.",
+      undefined,
+      "O que Eva está fazendo? — Ela está preparando o café da manhã.",
+      "Questions about one person",
+    ],
+    [
+      [bold("What's Omar doing"), "? — He's taking the bus."],
+      "Use he is in the answer when asking about a man or boy.",
+      "Stress Omar, doing, and bus.",
+      "What's + name + doing? · He's + verb-ing.",
+      undefined,
+      "O que Omar está fazendo? — Ele está pegando o ônibus.",
+      "Questions about one person",
+    ],
+    [
+      [bold("What are Mia and Leo doing"), "? — They're having dinner."],
+      "Use are with two or more people. Use they are in the answer.",
+      "Stress Mia, Leo, doing, and dinner.",
+      "What + are + names + doing? · They're + verb-ing.",
+      undefined,
+      "O que Mia e Leo estão fazendo? — Eles estão jantando.",
+      "Questions about two or more people",
+    ],
+    [
+      [bold("What are they doing"), "? — They're playing a game."],
+      "Use they for two or more people.",
+      "Stress they, doing, and game.",
+      "What + are + they + doing? · They're + verb-ing.",
+      undefined,
+      "O que eles estão fazendo? — Eles estão jogando.",
+      "Questions with they",
+    ],
+    [
+      [bold("read → reading"), " · ", bold("sit → sitting"), " · ", bold("make → making")],
+      "Usually add -ing. With a short verb like sit, double the last consonant. When a verb ends in e, remove the e.",
+      "Say the -ing ending clearly.",
+      "verb + ing · final consonant + ing · remove final e + ing",
+      undefined,
+      "read → reading · sit → sitting · make → making",
+      "Spelling with -ing",
+    ],
+  ],
+} satisfies LanguageFocusData;

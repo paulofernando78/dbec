@@ -163,6 +163,7 @@ export const InlineRichContent = ({ value }: InlineRichContentProps) => {
               <span className="inline-audio">
                 <Audio
                   src={part.audio}
+                  fallbackText={part.part}
                   className={`${styles.iconPosition} ${styles.iconPositionAudio}`}
                 />
               </span>

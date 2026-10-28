@@ -1,0 +1,65 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction: "Use expressions of permission, obligation, and prohibition to explain signs and rules.",
+  items: [
+    [
+      ["You ", bold("can take"), " photos in the lobby."],
+      "Use can to say that an action is permitted.",
+      "Stress can, take photos, and lobby.",
+      "can + base verb",
+      undefined,
+      "Você pode tirar fotos no saguão.",
+      "Permission",
+    ],
+    [
+      ["You're ", bold("allowed to use"), " the free lockers."],
+      "Use be allowed to for permission.",
+      "Stress allowed, use, and free lockers.",
+      "be allowed to + base verb",
+      undefined,
+      "Você tem permissão para usar os armários gratuitos.",
+      "Permission",
+    ],
+    [
+      ["You ", bold("have to leave"), " large backpacks downstairs."],
+      "Use have to for a rule or obligation.",
+      "Stress have to, leave, backpacks, and downstairs.",
+      "have to + base verb",
+      undefined,
+      "Você precisa deixar mochilas grandes no andar de baixo.",
+      "Obligation",
+    ],
+    [
+      ["You've ", bold("got to keep"), " your ticket until you exit."],
+      "Use have got to for a strong obligation.",
+      "Stress got to, keep, ticket, and exit.",
+      "have got to + base verb",
+      undefined,
+      "Você precisa guardar seu ingresso até sair.",
+      "Obligation",
+    ],
+    [
+      ["You ", bold("can't touch"), " the exhibits."],
+      "Use can't to say that an action is prohibited.",
+      "Stress can't, touch, and exhibits.",
+      "can't + base verb",
+      undefined,
+      "Você não pode tocar nas peças em exposição.",
+      "Prohibition",
+    ],
+    [
+      ["Drinks ", bold("aren't allowed"), " in the galleries."],
+      "Use be not allowed to state a prohibition with the prohibited item as the subject.",
+      "Stress drinks, aren't allowed, and galleries.",
+      "subject + be not allowed",
+      undefined,
+      "Bebidas não são permitidas nas galerias.",
+      "Prohibition",
+    ],
+  ],
+} satisfies LanguageFocusData;
