@@ -3,6 +3,7 @@ import { links } from "@/data/nav-bar-links";
 import { useEffect, useState, type ElementType } from "react";
 import { NotebookPen, User } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { GlobalSearch } from "./GlobalSearch";
 
 type NavBarProps = {
   closeNavBar: () => void;
@@ -67,6 +68,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
         overflow-y-auto
         "
     >
+      <GlobalSearch closeNavBar={closeNavBar} />
       {links.map((item) => {
         if ("group" in item) {
           return (

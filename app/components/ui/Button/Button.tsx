@@ -9,7 +9,7 @@ type ButtonProps = {
   onClick?: () => void;
   className?: string;
   style?: CSSProperties;
-  variant?: "default" | "check" | "answer" | "reset";
+  variant?: "default" | "check" | "answer" | "reset" | "list";
   type?: "button" | "submit" | "reset";
 };
 
@@ -23,12 +23,18 @@ export const Button = ({
   onClick,
   className = "",
   style,
+  variant = "default",
 }: ButtonProps) => {
   const hasText = children != null;
+  const isList = variant === "list";
   const baseClasses =
-    "group relative grid size-10 cursor-pointer place-items-center rounded-[12px] border border-[var(--button-border)] bg-linear-to-b from-[var(--button-outer-start)] to-[var(--button-outer-end)] p-[3px] text-[var(--button-text)] shadow-[0_1px_1px_rgba(0,0,0,0.3)] transition-[transform,box-shadow] duration-80 active:scale-[0.995] active:shadow-[0_0px_1px_rgba(0,0,0,0.5)] disabled:cursor-not-allowed disabled:opacity-55 disabled:brightness-[1.15]";
+    isList
+      ? "group relative block h-auto w-full cursor-pointer rounded-xl text-left text-[var(--text-color)] transition-colors hover:bg-[var(--background)] disabled:cursor-not-allowed disabled:opacity-55"
+      : "group relative grid size-10 cursor-pointer place-items-center rounded-[12px] border border-[var(--button-border)] bg-linear-to-b from-[var(--button-outer-start)] to-[var(--button-outer-end)] p-[3px] text-[var(--button-text)] shadow-[0_1px_1px_rgba(0,0,0,0.3)] transition-[transform,box-shadow] duration-80 active:scale-[0.995] active:shadow-[0_0px_1px_rgba(0,0,0,0.5)] disabled:cursor-not-allowed disabled:opacity-55 disabled:brightness-[1.15]";
   const textClasses = hasText
-    ? "!inline-flex !h-[60px] !w-fit !min-w-[60px] items-center justify-center whitespace-nowrap font-bold"
+    ? isList
+      ? ""
+      : "!inline-flex !h-[60px] !w-fit !min-w-[60px] items-center justify-center whitespace-nowrap font-bold"
     : "";
 
   return (
@@ -41,11 +47,7 @@ export const Button = ({
       onClick={onClick}
       disabled={disabled}
     >
-      <span
-        className={`${
-          hasText ? "h-full w-full px-4 py-2" : "absolute inset-1"
-        } grid place-items-center rounded-lg bg-linear-to-b from-[var(--button-inner-start)] to-[var(--button-inner-end)]`}
-      >
+      <span className={isList ? "block h-full w-full" : `${hasText ? "h-full w-full px-4 py-2" : "absolute inset-1"} grid place-items-center rounded-lg bg-linear-to-b from-[var(--button-inner-start)] to-[var(--button-inner-end)]`}>
         <span className="flex items-center gap-2 [&_svg]:size-4.5 [&_svg]:stroke-[var(--button-icon)]">
           {icon}
           {children}
