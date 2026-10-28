@@ -29,6 +29,23 @@ const lessonSteps = [
   { slug: "follow-up-discussion", label: "Follow-up discussion" },
 ] as const;
 
+const fullMonthNames: Record<string, string> = {
+  Jan: "January",
+  Feb: "February",
+  Mar: "March",
+  Apr: "April",
+  Jun: "June",
+  Jul: "July",
+  Aug: "August",
+  Sep: "September",
+  Oct: "October",
+  Nov: "November",
+  Dec: "December",
+};
+
+const expandMonthName = (date: string) =>
+  date.replace(/^([A-Z][a-z]{2})(?=\s)/, (month) => fullMonthNames[month] ?? month);
+
 export default function AuthenticContents() {
   const navigate = useNavigate();
   const { category, slug, step = "before-watching" } = useParams();
@@ -163,7 +180,7 @@ export default function AuthenticContents() {
             <p className="text-xs font-bold uppercase text-orange-700">
               TED-Ed
             </p>
-            <h2 className="text-xl font-black">{lessonCard.date}</h2>
+            <h2 className="text-xl font-black">{expandMonthName(lessonCard.date)}</h2>
             <p className="mt-1 flex items-center gap-2 text-sm text-slate-500">
               <CalendarDays size={18} /> Published lesson
             </p>

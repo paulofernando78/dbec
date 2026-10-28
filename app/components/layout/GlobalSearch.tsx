@@ -234,6 +234,7 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [shortcutLabel, setShortcutLabel] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
@@ -268,6 +269,27 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
   };
 
   useEffect(() => {
+    const browserNavigator = navigator as Navigator & {
+      userAgentData?: { mobile?: boolean; platform?: string };
+    };
+    const isTouchMac =
+      /Mac/.test(browserNavigator.platform) && browserNavigator.maxTouchPoints > 1;
+    const isMobile =
+      browserNavigator.userAgentData?.mobile === true ||
+      /Android|iPhone|iPad|iPod|Mobile/i.test(browserNavigator.userAgent) ||
+      isTouchMac;
+
+    if (isMobile) {
+      setShortcutLabel(null);
+      return;
+    }
+
+    const platform =
+      browserNavigator.userAgentData?.platform ?? browserNavigator.platform;
+    setShortcutLabel(/Mac/.test(platform) ? "⌘ K" : "Ctrl + K");
+  }, []);
+
+  useEffect(() => {
     const handleShortcut = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
@@ -289,7 +311,11 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
       <div className="mb-2 flex items-center gap-2">
         <Button ariaLabel="Search" icon={<Search />} onClick={() => setIsOpen(true)} className="size-10! p-0.75!" />
         <span className="font-bold uppercase">Search</span>
-        <kbd className="ml-auto rounded bg-[var(--background)] px-1.5 py-0.5 text-xs">⌘K</kbd>
+        {shortcutLabel && (
+          <kbd className="ml-auto rounded bg-[var(--background)] px-1.5 py-0.5 text-xs">
+            {shortcutLabel}
+          </kbd>
+        )}
       </div>
 
       {isOpen && typeof document !== "undefined" && createPortal(

@@ -1,4 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
+import { ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 
@@ -263,50 +264,56 @@ export const StudentForm = ({
           <label className="grid min-w-0 gap-1">
             <span className="text-sm font-semibold">Schedule</span>
 
-            <select
-              value={form.schedule}
-              onChange={(event) =>
-                setForm((current) => ({
-                  ...current,
-                  schedule: event.target.value,
-                }))
-              }
-              required
-              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-            >
-              <option value="">...</option>
+            <div className="relative min-w-0">
+              <select
+                value={form.schedule}
+                onChange={(event) =>
+                  setForm((current) => ({
+                    ...current,
+                    schedule: event.target.value,
+                  }))
+                }
+                required
+                className="w-full min-w-0 appearance-none rounded-lg border border-gray-300 bg-white py-2 pr-10 pl-3"
+              >
+                <option value="">...</option>
 
-              {scheduleOptions.map((schedule) => (
-                <option key={schedule} value={schedule}>
-                  {schedule}
-                </option>
-              ))}
-            </select>
+                {scheduleOptions.map((schedule) => (
+                  <option key={schedule} value={schedule}>
+                    {schedule}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-slate-500" />
+            </div>
           </label>
 
           {/* Time */}
           <label className="grid min-w-0 gap-1">
             <span className="text-sm font-semibold">Time</span>
 
-            <select
-              value={form.time}
-              onChange={(event) =>
-                setForm((current) => ({
-                  ...current,
-                  time: event.target.value,
-                }))
-              }
-              required
-              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
-            >
-              <option value="">...</option>
+            <div className="relative min-w-0">
+              <select
+                value={form.time}
+                onChange={(event) =>
+                  setForm((current) => ({
+                    ...current,
+                    time: event.target.value,
+                  }))
+                }
+                required
+                className="w-full min-w-0 appearance-none rounded-lg border border-gray-300 bg-white py-2 pr-10 pl-3"
+              >
+                <option value="">...</option>
 
-              {timeOptions.map((time) => (
-                <option key={time} value={time}>
-                  {time}
-                </option>
-              ))}
-            </select>
+                {timeOptions.map((time) => (
+                  <option key={time} value={time}>
+                    {time}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-slate-500" />
+            </div>
           </label>
         </div>
 

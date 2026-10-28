@@ -42,7 +42,7 @@ export function AuthenticDateCard({
         id: href,
         eyebrow: new Date(`${publishedAt}T00:00:00`).toLocaleDateString(
           "en-US",
-          { month: "short", day: "numeric" },
+          { month: "long", day: "numeric" },
         ),
         title: lesson.label,
         description: lesson.description,

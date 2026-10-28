@@ -16,7 +16,7 @@ export default function Layout() {
   return (
     <div className="relative grid h-full min-h-0 flex-1 grid-cols-[max-content_minmax(0,1fr)] gap-4 overflow-hidden max-[700px]:grid-cols-1!">
       <aside
-        className={`z-20 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute max-[700px]:w-65 max-[700px]:-translate-x-70 ${isNavBarOpen ? "max-[700px]:translate-x-0" : ""}`}
+        className={`z-20 h-full min-h-0 transition-transform duration-500 ease-in-out max-[700px]:absolute max-[700px]:w-65 max-[700px]:-translate-x-70 max-[390px]:w-full max-[390px]:-translate-x-full ${isNavBarOpen ? "max-[700px]:translate-x-0 max-[390px]:translate-x-0" : ""}`}
       >
         <NavBar
           closeNavBar={closeNavBar}
