@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useOutletContext } from "react-router";
+import { Outlet, useOutletContext } from "react-router";
 import { NavBar } from "@/components/layout/NavBar";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { StudentNotesPanel } from "@/components/content/StudentNotesPanel";
@@ -13,12 +13,6 @@ type LayoutContext = {
 export default function Layout() {
   const { isNavBarOpen, closeNavBar, isNotesOpen, toggleNotes } =
     useOutletContext<LayoutContext>();
-  const location = useLocation();
-  const hasNotes =
-    /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
-    /^\/travel\/unit\//.test(location.pathname) ||
-    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
-
   return (
     <div className="relative grid h-full min-h-0 flex-1 grid-cols-[max-content_minmax(0,1fr)] gap-4 overflow-hidden max-[700px]:grid-cols-1!">
       <aside
@@ -35,21 +29,14 @@ export default function Layout() {
           className="h-full min-h-0 overflow-x-hidden overflow-y-auto pb-1.25"
           data-scroll-container
         >
-          {hasNotes && (
-            <div
-              id="student-notes-panel-host"
-              className="pointer-events-none sticky top-0 z-40 mx-auto h-0 w-[calc(100%_-_0.1rem)] max-w-4xl max-[700px]:mr-auto max-[700px]:ml-[0.05rem] max-[700px]:w-[calc(100%_-_4.8rem)]"
-            />
-          )}
+          <div
+            id="student-notes-panel-host"
+            className="pointer-events-none sticky top-0 z-40 mx-auto h-0 w-[calc(100%_-_0.1rem)] max-w-4xl max-[700px]:mr-auto max-[700px]:ml-[0.05rem] max-[700px]:w-[calc(100%_-_4.8rem)]"
+          />
           <Outlet />
         </div>
         <ScrollToTop />
-        {hasNotes && (
-          <StudentNotesPanel
-            isOpen={isNotesOpen}
-            onClose={toggleNotes}
-          />
-        )}
+        <StudentNotesPanel isOpen={isNotesOpen} onClose={toggleNotes} />
       </main>
     </div>
   );

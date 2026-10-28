@@ -14,11 +14,6 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
   const [dashboardPath, setDashboardPath] = useState<string | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const hasNotes =
-    /^\/course\/[^/]+\/unit\//.test(location.pathname) ||
-    /^\/travel\/unit\//.test(location.pathname) ||
-    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
-
   useEffect(() => {
     fetch("/api/session")
       .then((response) => {
@@ -103,20 +98,19 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
               {renderNavigationButton(
                 dashboardPath,
                 "Dashboard",
-                User
+                User,
+                "mb-2"
               )}
-              {hasNotes && (
-                <div className="mb-2 flex items-center gap-2">
-                  <Button
-                    ariaLabel={isNotesOpen ? "Close notes" : "Open notes"}
-                    pressed={isNotesOpen}
-                    icon={<NotebookPen />}
-                    onClick={toggleNotes}
-                    className="size-10! p-0.75!"
-                  />
-                  <span className="font-bold uppercase">Notes</span>
-                </div>
-              )}
+              <div className="mb-2 flex items-center gap-2">
+                <Button
+                  ariaLabel={isNotesOpen ? "Close notes" : "Open notes"}
+                  pressed={isNotesOpen}
+                  icon={<NotebookPen />}
+                  onClick={toggleNotes}
+                  className="size-10! p-0.75!"
+                />
+                <span className="font-bold uppercase">Notes</span>
+              </div>
             </div>
           ) : null;
         }
