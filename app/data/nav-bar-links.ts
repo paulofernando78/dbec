@@ -8,6 +8,7 @@ import {
   Plane,
   BadgeHelp,
   BookMarked,
+  MessageSquareQuote,
   Music2,
 } from "lucide-react";
 
@@ -59,6 +60,11 @@ export const links: NavItem[] = [
         href: "/vocabulary",
         label: "vocabulary",
         icon: BookOpenText,
+      },
+      {
+        href: "/expressions",
+        label: "expressions",
+        icon: MessageSquareQuote,
       },
       {
         href: "/grammar",

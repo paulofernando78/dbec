@@ -19,6 +19,11 @@ const vocabularyTopics = [
     title: "Quick vs. Fast",
     description: "Learn the difference between something that takes little time and something that moves at high speed.",
   },
+  {
+    id: "frozen-vs-frostbite",
+    title: "Frozen vs. Frostbite",
+    description: "Understand the difference between being frozen and suffering an injury caused by extreme cold.",
+  },
 ];
 
 function Example({ english, portuguese }: { english: string; portuguese: string }) {
@@ -160,6 +165,43 @@ function TopicContent({ id }: { id: string }) {
           little time and <em>fast</em> for high speed. The adverb of <em>quick</em>
           is <em>quickly</em>, but <em>fast</em> is already an adverb—do not use
           <em> fastly</em>.
+        </p>
+      </div>
+    );
+  }
+
+  if (id === "frozen-vs-frostbite") {
+    return (
+      <div className="grid gap-4">
+        <p>
+          These words are related to extreme cold, but they have different
+          grammatical roles and meanings. <em>Frozen</em> describes a state;
+          <em> frostbite</em> names an injury.
+        </p>
+        <div className="flex flex-col gap-4">
+          <WordUsage
+            word="Frozen"
+            meaning="An adjective meaning turned into ice, preserved by freezing, or extremely cold. It is also the past participle of freeze."
+            pattern="be frozen · frozen + noun · freeze → froze → frozen"
+          >
+            <Example english="The lake is frozen." portuguese="O lago está congelado." />
+            <Example english="We bought frozen vegetables." portuguese="Compramos vegetais congelados." />
+            <Example english="My hands are freezing, but they aren't frozen." portuguese="Minhas mãos estão gelando, mas não estão congeladas." />
+          </WordUsage>
+          <WordUsage
+            word="Frostbite"
+            meaning="A noun for an injury to the skin and deeper tissue caused by exposure to extreme cold. The related adjective is frostbitten."
+            pattern="have / get / suffer from frostbite · frostbitten + body part"
+          >
+            <Example english="The climber suffered from frostbite." portuguese="O alpinista sofreu uma lesão causada pelo frio extremo." />
+            <Example english="Frostbite often affects the fingers and toes." portuguese="A lesão por congelamento frequentemente afeta os dedos das mãos e dos pés." />
+            <Example english="His frostbitten fingers needed medical treatment." portuguese="Seus dedos lesionados pelo frio precisaram de tratamento médico." />
+          </WordUsage>
+        </div>
+        <p className="rounded-xl bg-blue-50 p-3 text-blue-950 dark:bg-blue-950 dark:text-blue-100">
+          <strong>Quick rule:</strong> something can be <em>frozen</em>, but a
+          person <em>has frostbite</em>. To describe an injured body part, use
+          <em> frostbitten</em>: <em>frostbitten toes</em>.
         </p>
       </div>
     );

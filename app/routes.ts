@@ -50,6 +50,7 @@ export default [
     ),
 
     route("/vocabulary", "routes/vocabulary.tsx"),
+    route("/expressions", "routes/expressions.tsx"),
     route("/grammar", "routes/grammar.tsx"),
     route("/pronunciation", "routes/pronunciation.tsx"),
     route("/songs", "routes/songs.tsx"),
