@@ -1,5 +1,6 @@
 import { a1 } from "../a1";
 import type { LessonStepData } from "../lesson-step-types";
+import { a1GetReadyQuestions } from "./get-ready-questions";
 
 type LessonSeed = {
   unit: number;
@@ -252,10 +253,12 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       type: "get-ready",
       slug: "get-ready",
       label: "Get ready",
-      slides: phrases.slice(0, 3).map((quote) => ({
+      instruction: "Look at the picture, listen, and talk.",
+      slides: phrases.slice(0, 3).map((quote, index) => ({
         image: "",
         audio: "",
         quote,
+        questions: a1GetReadyQuestions[`${unit}/${lesson}`]?.[index] ?? [],
       })),
     },
     {

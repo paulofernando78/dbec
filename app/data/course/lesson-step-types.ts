@@ -7,14 +7,21 @@ type StepExtension = {
   component?: ComponentType;
 };
 
+export type GetReadyQuestion = {
+  prompt: string;
+  support?: readonly string[];
+};
+
 export type GetReadyData = StepExtension & {
   type: "get-ready";
   slug: string;
   label: string;
+  instruction?: string;
   slides: readonly {
     image?: string;
     audio?: string;
     quote: string;
+    questions?: readonly GetReadyQuestion[];
   }[];
 };
 

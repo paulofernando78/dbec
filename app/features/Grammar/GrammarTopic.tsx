@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/Card";
+import { Audio } from "@/components/ui/Audio";
 import { TriangleAlert } from "lucide-react";
 import {
   grammarTopicsById,
@@ -25,11 +26,21 @@ export function GrammarTopic({ topic }: { topic: GrammarTopicData }) {
             </p>
             <ul className="grid gap-2">
               {usage.examples.map((example) => (
-                <li key={example.english}>
-                  <span className="font-semibold text-[var(--text-color)]">
-                    {example.english}
-                  </span>{" "}
-                  <span className="text-slate-500">{example.portuguese}</span>
+                <li key={example.english} className="flex items-center gap-3">
+                  <Audio
+                    asButton
+                    src={example.english}
+                    fallbackText={example.english}
+                    speechLang="en-US"
+                    ariaLabel={`Play ${example.english}`}
+                    wrapperClassName="shrink-0"
+                  />
+                  <span>
+                    <span className="font-semibold text-[var(--text-color)]">
+                      {example.english}
+                    </span>{" "}
+                    <span className="text-slate-500">{example.portuguese}</span>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -48,9 +59,19 @@ export function GrammarTopic({ topic }: { topic: GrammarTopicData }) {
           <p className="mb-3">{warning.explanation}</p>
           <ul className="grid gap-1">
             {warning.examples.map((example) => (
-              <li key={example.english}>
-                <strong>{example.english}</strong>{" "}
-                <span className="opacity-75">{example.portuguese}</span>
+              <li key={example.english} className="flex items-center gap-3">
+                <Audio
+                  asButton
+                  src={example.english}
+                  fallbackText={example.english}
+                  speechLang="en-US"
+                  ariaLabel={`Play ${example.english}`}
+                  wrapperClassName="shrink-0"
+                />
+                <span>
+                  <strong>{example.english}</strong>{" "}
+                  <span className="opacity-75">{example.portuguese}</span>
+                </span>
               </li>
             ))}
           </ul>

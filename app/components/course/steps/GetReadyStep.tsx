@@ -43,6 +43,9 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
 
   return (
     <div className="rounded-2xl bg-[var(--surface)] p-4 pb-5.5">
+      {data.instruction ? (
+        <h3 className="mb-4 text-lg font-bold">{data.instruction}</h3>
+      ) : null}
       <div
         ref={carouselRef}
         className="flex cursor-grab snap-x snap-mandatory overflow-x-auto rounded-xl select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -101,6 +104,23 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
         />
         <p>“{data.slides[currentImage].quote}”</p>
       </div>
+      {data.slides[currentImage].questions?.length ? (
+        <div className="mt-4 rounded-xl bg-[var(--background)] p-4">
+          <h4 className="mb-2 font-black">Discuss</h4>
+          <ul className="grid gap-3">
+            {data.slides[currentImage].questions.map((question) => (
+              <li key={question.prompt}>
+                <p className="font-semibold">{question.prompt}</p>
+                {question.support?.length ? (
+                  <p className="mt-1 text-sm text-slate-500">
+                    {question.support.join(" / ")}
+                  </p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 }
