@@ -210,14 +210,11 @@ export const Header = () => {
                 <h2 id="login-title" className="text-xl font-bold">
                   Login
                 </h2>
-                <button
-                  type="button"
+                <Button
                   onClick={() => setIsLoginOpen(false)}
-                  className="cursor-pointer"
-                  aria-label="Fechar login"
-                >
-                  <X />
-                </button>
+                  ariaLabel="Fechar login"
+                  icon={<X />}
+                />
               </div>
 
               <label className="mb-3 block">
@@ -250,13 +247,14 @@ export const Header = () => {
                 </p>
               )}
 
-              <button
+              <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded bg-gray-900 px-4 py-2 font-bold text-white hover:bg-gray-700 disabled:opacity-60"
+                variant="list"
+                className="w-full! bg-gray-900! px-4 py-2 font-bold text-white! hover:bg-gray-700! [&>span>span]:justify-center"
               >
                 {isSubmitting ? "Entrando…" : "Entrar"}
-              </button>
+              </Button>
             </form>
           </div>
         </div>

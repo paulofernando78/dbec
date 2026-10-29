@@ -16,9 +16,8 @@ import "./app.css";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { MoonStar, Sun } from "@/components/Icons";
 import { Button } from "@/components/ui/Button/Button";
-import { House, Info, LogIn, LogOut, Menu } from "lucide-react";
+import { House, Info, LogIn, LogOut, Menu, MoonStar, Sun } from "lucide-react";
 import { BrandLogo } from "./components/layout/BrandLogo";
 import { Card } from "./components/ui/Card";
 
@@ -161,14 +160,12 @@ export default function App() {
               ariaLabel={isDarkMode ? "Light mode" : "Dark mode"}
               icon={isDarkMode ? <Sun /> : <MoonStar />}
               onClick={() => setIsDarkMode((current) => !current)}
-              className="size-10! p-[3px]!"
             />
             {!isPresentationPage && (
               <Button
                 ariaLabel={isAuthenticated ? "Log out" : "Log in"}
                 icon={isAuthenticated ? <LogOut /> : <LogIn />}
                 onClick={handleAuthentication}
-                className="size-10! p-[3px]!"
               />
             )}
           </div>

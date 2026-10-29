@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/content/PageHeader";
 import { PageSections } from "@/components/content/PageSections";
 import { Card } from "@/components/ui/Card";
+import { Audio } from "@/components/ui/Audio";
 import { Section } from "@/components/ui/Section";
 
 type Expression = {
@@ -170,17 +171,40 @@ const expressionThemes: readonly ExpressionTheme[] = [
 
 function ExpressionCard({ expression, meaning, examples }: Expression) {
   return (
-    <Card title={expression}>
+    <section className="rounded-xl bg-[var(--background)] p-4">
+      <div className="mb-4 flex items-center gap-3">
+        <Audio
+          asButton
+          src={expression}
+          fallbackText={expression}
+          speechLang="en-US"
+          ariaLabel={`Play ${expression}`}
+        />
+        <h3 className="text-xl font-black text-[var(--text-color)]">
+          {expression}
+        </h3>
+      </div>
       <p className="mb-4 text-slate-500">{meaning}</p>
       <ul className="grid gap-3">
         {examples.map((example) => (
-          <li key={example.english}>
-            <p className="font-semibold text-[var(--text-color)]">{example.english}</p>
-            <p className="text-slate-500">{example.portuguese}</p>
+          <li key={example.english} className="flex items-start gap-3">
+            <Audio
+              asButton
+              src={example.english}
+              fallbackText={example.english}
+              speechLang="en-US"
+              ariaLabel={`Play ${example.english}`}
+            />
+            <div className="min-w-0 pt-1">
+              <p className="font-semibold text-[var(--text-color)]">
+                {example.english}
+              </p>
+              <p className="text-slate-500">{example.portuguese}</p>
+            </div>
           </li>
         ))}
       </ul>
-    </Card>
+    </section>
   );
 }
 
@@ -191,12 +215,27 @@ export default function Expressions() {
 
       <PageSections subtitle="Expressions by theme">
         {expressionThemes.map((theme) => (
-          <Section key={theme.id} id={theme.id} label={theme.title} heading={2} className="mb-4">
-            <div className="grid gap-4">
-              {theme.expressions.map((expression) => (
-                <ExpressionCard key={expression.expression} {...expression} />
-              ))}
-            </div>
+          <Section
+            key={theme.id}
+            id={theme.id}
+            label={theme.title}
+            heading={2}
+            showHeader={false}
+            className="mb-4"
+          >
+            <Card title={theme.title}>
+              <div className="grid gap-4">
+                {[...theme.expressions]
+                  .sort((a, b) =>
+                    a.expression.localeCompare(b.expression, "en", {
+                      sensitivity: "base",
+                    }),
+                  )
+                  .map((expression) => (
+                  <ExpressionCard key={expression.expression} {...expression} />
+                  ))}
+              </div>
+            </Card>
           </Section>
         ))}
       </PageSections>

@@ -6,7 +6,6 @@ import {
   Gamepad2,
   AudioLines,
   Plane,
-  BadgeHelp,
   BookMarked,
   MessageSquareQuote,
   Music2,
@@ -28,11 +27,6 @@ export type NavGroup = {
 export type NavItem = NavLinkItem | NavGroup;
 
 export const links: NavItem[] = [
-  {
-    href: "/guide",
-    label: "guide",
-    icon: BadgeHelp,
-  },
   {
     href: "/dashboard",
     label: "dashboard",

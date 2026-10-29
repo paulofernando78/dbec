@@ -1,11 +1,14 @@
 import { Fragment, type ElementType, type ReactNode } from "react";
+import { useNavigate } from "react-router";
 import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { RichContent } from "@/helpers/content";
 
 type TableOfContentsItem = {
   title?: RichContent | string;
   href?: string;
+  to?: string;
   id?: string;
   label?: RichContent | string;
   iconClassName?: string;
@@ -30,6 +33,7 @@ export const TableOfContents = ({
   headerIconClassName = "text-gray-400",
   itemIconClassName = "text-gray-400",
 }: TableOfContentsProps) => {
+  const navigate = useNavigate();
   const toValue = (value: RichContent | string): RichContent =>
     Array.isArray(value) ? value : [value];
 
@@ -53,7 +57,7 @@ export const TableOfContents = ({
       <nav>
         <ul>
           {items.map((item, index) => {
-            const key = item.href || item.id || `item-${index}`;
+            const key = item.href || item.to || item.id || `item-${index}`;
 
             return (
               <Fragment key={key}>
@@ -80,6 +84,31 @@ export const TableOfContents = ({
                         <InlineRichContent value={toValue(item.label)} />
                       )}
                     </a>
+                  </li>
+                )}
+
+                {item.to && (
+                  <li
+                    className={`flex items-center gap-2 ml-4 ${item.className ?? ""}`}
+                  >
+                    {ItemIcon ? (
+                      <ItemIcon
+                        aria-hidden="true"
+                        className={`size-4 shrink-0 ${item.iconClassName ?? itemIconClassName}`}
+                      />
+                    ) : (
+                      <span className="font-bold">•</span>
+                    )}
+                    <Button
+                      variant="list"
+                      ariaLabel={typeof item.label === "string" ? item.label : "Open page"}
+                      className="w-auto! rounded-none! hover:bg-transparent!"
+                      onClick={() => navigate(item.to!)}
+                    >
+                      {item.label && (
+                        <InlineRichContent value={toValue(item.label)} />
+                      )}
+                    </Button>
                   </li>
                 )}
 

@@ -69,7 +69,6 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
         overflow-y-auto
         "
     >
-      <GlobalSearch closeNavBar={closeNavBar} />
       {links.map((item) => {
         if ("group" in item) {
           return (
@@ -104,6 +103,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
                 User,
                 "mb-2"
               )}
+              <GlobalSearch closeNavBar={closeNavBar} />
               <div className="mb-2 flex items-center gap-2">
                 <Button
                   ariaLabel={isNotesOpen ? "Close notes" : "Open notes"}

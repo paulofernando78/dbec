@@ -140,6 +140,7 @@ export default function Dashboard() {
       />
       <TableOfContents
         items={[
+          { to: "/guide", label: "Guide" },
           { href: "progress", label: "Progress" },
           { href: "calendar", label: "Calendar" },
           { href: "notes", label: "Notes" },
