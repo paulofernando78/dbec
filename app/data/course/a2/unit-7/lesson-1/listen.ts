@@ -19,9 +19,9 @@ export const listen = {
     ["Mia", ["Yes, I did. We had a lot of fun."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What did Noah buy?",
-  options: ["A bicycle", "A video game", "A phone"],
-  answer: "A video game",
+  question: "Noah talks about:",
+  options: ["Last weekend's activities", "Tomorrow's plans", "His daily routine"],
+  answer: "Last weekend's activities",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "When did Noah work?", answer: "He worked on Saturday." },

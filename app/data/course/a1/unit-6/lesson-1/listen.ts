@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two friends talk about their families and transportation.",
+  instruction: "First listen: Luis talks about family transportation. Listen for his transport.",
   audio: "/media/audio/course/a1/unit-6/lesson-1-getting-around/listen/listen.mp3",
   dialogue: [
     ["A", ["How do you get to work, Luis?"]],
@@ -22,29 +22,29 @@ export const listen = {
     ["B", [mark("We walk together"), ". We don't need a car."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "How does Luis get to work?",
+  question: "Luis’s transport:",
   options: ["By train", "By bus", "By car"],
   answer: "By train",
-  followUpInstruction: "Answer the questions.",
+  followUpInstruction: "Listen again. Match each person and transport.",
   followUp: [
     {
-      question: "How does Luis's wife travel?",
+      question: "Luis’s wife:",
       answer: "By bus.",
     },
     {
-      question: "How does Luis's son go to school?",
+      question: "Luis’s son:",
       answer: "By bike.",
     },
     {
-      question: "Who walks to school with Luis's daughter?",
+      question: "Luis’s daughter walks with:",
       answer: "Her brother.",
     },
     {
-      question: "How do Luis's parents get around?",
+      question: "Luis’s parents:",
       answer: "By subway.",
     },
     {
-      question: "What do Luis and his wife do on weekends?",
+      question: "Luis and his wife on weekends:",
       answer: "They walk together.",
     },
   ],

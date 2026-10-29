@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Describe routines and manage energy using reduced time clauses and phrasal verbs related to alertness, rest, and stress.",
+  items: [
+    [
+      [bold("After finishing"), " my workout, I head to the office."],
+      "When both clauses have the same subject, a time clause with after can be reduced by removing the subject and changing the verb to an -ing form.",
+      "Pause briefly after the reduced clause and stress the main action.",
+      "after + subject + verb → after + verb-ing",
+      undefined,
+      "Depois de terminar meu treino, vou para o escritório.",
+      "Reduced time clauses",
+    ],
+    [
+      [bold("While taking"), " my lunch break, I often sneak a five-minute nap."],
+      "Reduce a while clause when its subject is the same as the subject of the main clause.",
+      "Keep while light and emphasize the important actions.",
+      "while + subject + be + verb-ing → while + verb-ing",
+      undefined,
+      "Durante meu intervalo de almoço, muitas vezes tiro uma soneca de cinco minutos.",
+      "Reduced time clauses",
+    ],
+    [
+      ["I'm not very approachable ", bold("right after waking up"), "."],
+      "Right before and right after can be followed by a gerund when the understood subject matches the main-clause subject.",
+      "Stress right to emphasize that something happens immediately.",
+      "right before/right after + verb-ing",
+      undefined,
+      "Não sou muito acessível logo depois de acordar.",
+      "Immediate sequence",
+    ],
+    [
+      [bold("As soon as I get up"), ", I race off to the gym."],
+      "Time clauses with as soon as, ever since, until, and whenever normally retain their subject and finite verb.",
+      "Use a small rise in the time clause and a fall in the main clause.",
+      "as soon as/ever since/until/whenever + subject + verb",
+      undefined,
+      "Assim que me levanto, corro para a academia.",
+      "Full time clauses",
+    ],
+    [
+      ["Too much work can make you ", bold("burn out"), ", so take time to ", bold("calm down"), "."],
+      "Use energy-related phrasal verbs to describe losing energy and becoming calm.",
+      "Stress the particle in burn OUT and calm DOWN.",
+      "burn out = lose all your energy · calm down = become calm",
+      undefined,
+      "Trabalho demais pode levar você à exaustão, então reserve um tempo para se acalmar.",
+      "Energy and stress",
+    ],
+    [
+      ["I sometimes ", bold("doze off"), " after lunch, but a short walk helps me ", bold("perk up"), "."],
+      "Use doze off for briefly falling asleep and perk up for gaining energy.",
+      "Stress the particles: doze OFF and perk UP.",
+      "doze off = fall asleep briefly · perk up = get more energy",
+      undefined,
+      "Às vezes cochilo depois do almoço, mas uma caminhada curta ajuda a me animar.",
+      "Alertness",
+    ],
+    [
+      ["I ", bold("chill out"), " in the evening and ", bold("turn in"), " before eleven."],
+      "Use chill out for relaxing and turn in for going to bed; race off means leave quickly and sleep over means stay overnight.",
+      "Stress the particles in each phrasal verb.",
+      "chill out · race off · sleep over · turn in",
+      undefined,
+      "Eu relaxo à noite e vou dormir antes das onze.",
+      "Routine phrasal verbs",
+    ],
+  ],
+} satisfies LanguageFocusData;

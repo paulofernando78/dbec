@@ -9,12 +9,12 @@ export const languageFocus = {
     "Describe recently completed and incomplete activities using the present perfect, already, and yet.",
   items: [
     [
-      [bold("Have"), " you ", bold("been"), " to a jazz club? — Yes, I ", bold("have"), ". I've been to several."],
-      "Form the present perfect with have or has + past participle. Use have with I, you, we, and they.",
+      [bold("Have"), " you ", bold("finished"), " the report? — Yes, I ", bold("have"), ". I've sent it."],
+      "Form the present perfect with have + past participle for I, you, we, and they.",
       "Have is usually unstressed in the question. Stress the participle and new information.",
       "I/you/we/they + have + past participle · I've = I have · you've = you have · we've = we have · they've = they have",
       undefined,
-      "Você já foi a um clube de jazz? — Sim. Já fui a vários.",
+      "Você terminou o relatório? — Sim. Eu o enviei.",
     ],
     [
       [bold("Has"), " Carlos ", bold("visited"), " the theme parks? — Yes, he has. / No, he ", bold("hasn't"), "."],
@@ -36,7 +36,7 @@ export const languageFocus = {
       ["We have ", bold("visited"), " a space center, ", bold("eaten"), " Cuban food, and ", bold("seen"), " an alligator."],
       "Regular past participles usually end in -ed. Irregular participles have special forms.",
       "Stress the participle and activity or place.",
-      "visit → visited · like → liked · stop → stopped · try → tried · be → been · do → done · eat → eaten · go → gone · have → had · see → seen",
+      "visit → visited · try → tried · be → been · eat → eaten · go → gone · see → seen",
       undefined,
       "Visitamos um centro espacial, comemos comida cubana e vimos um jacaré.",
     ],

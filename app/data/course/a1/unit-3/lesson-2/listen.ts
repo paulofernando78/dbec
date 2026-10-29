@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two people talk in an international class.",
+  instruction: "First listen: Lucas talks about people in his class. Listen for Nina.",
   audio: "/media/audio/course/a1/unit-3/lesson-2-what-are-they-like/listen/listen.mp3",
   dialogue: [
     ["A", [mark("What's your name"), "?"]],
@@ -28,29 +28,29 @@ export const listen = {
     ["B", ["It's big and busy."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where is Lucas from?",
+  question: "Lucas’s city:",
   options: ["Recife", "Santiago", "Lima"],
   answer: "Recife",
-  followUpInstruction: "Answer the questions.",
+  followUpInstruction: "Listen again. Find the details.",
   followUp: [
     {
-      question: "Who is Nina?",
+      question: "Nina:",
       answer: "Lucas's cousin.",
     },
     {
-      question: "How old is Nina?",
+      question: "Nina’s age:",
       answer: "Twenty-four.",
     },
     {
-      question: "What is Nina like?",
+      question: "Nina’s personality:",
       answer: "Friendly and quiet.",
     },
     {
-      question: "Where are Nina's friends from?",
+      question: "Friends’ country:",
       answer: "Chile.",
     },
     {
-      question: "What is Santiago like?",
+      question: "Santiago:",
       answer: "Big and busy.",
     },
   ],

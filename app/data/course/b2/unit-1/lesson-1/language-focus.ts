@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Describe personality, likes and dislikes, and personal change using personality collocations and verbs followed by gerunds or infinitives.",
+  items: [
+    [
+      ["I'm friendly and outgoing, but my sister is ", bold("shy and reserved"), "."],
+      "Use common adjective pairs to give a balanced, natural description of personality.",
+      "Stress both adjectives in each pair and reduce and to /ən/ in fluent speech.",
+      "friendly and outgoing · strong and independent · laid-back and relaxed · kind and generous · honest and sincere · shy and reserved · wild and crazy · calm and cool · neat and tidy",
+      undefined,
+      "Sou amigável e extrovertido, mas minha irmã é tímida e reservada.",
+      "Personality traits",
+    ],
+    [
+      ["I ", bold("enjoy meeting"), " new people."],
+      "Use a gerund after verbs such as enjoy, avoid, and don't mind.",
+      "Link the verb to the -ing form and stress the main activity.",
+      "enjoy/avoid/don't mind + verb-ing",
+      undefined,
+      "Gosto de conhecer pessoas novas.",
+      "Gerunds",
+    ],
+    [
+      ["I ", bold("avoid expressing"), " my feelings in public."],
+      "Avoid is followed by a gerund, not an infinitive.",
+      "Keep avoid unstressed and emphasize expressing and feelings.",
+      "avoid + verb-ing",
+      undefined,
+      "Evito expressar meus sentimentos em público.",
+      "Gerunds",
+    ],
+    [
+      ["I ", bold("insist on making"), " my own decisions."],
+      "After an expression ending in a preposition, use a gerund.",
+      "Link on to making and stress own decisions.",
+      "expression + preposition + verb-ing · insist on · feel like · be into",
+      undefined,
+      "Insisto em tomar minhas próprias decisões.",
+      "Gerunds after prepositions",
+    ],
+    [
+      ["I ", bold("love taking / love to take"), " my friends to new places."],
+      "Love, like, hate, and can't stand may be followed by a gerund or an infinitive, often with little change in meaning.",
+      "Use smooth linking before taking or to take; stress the activity.",
+      "love/like/hate/can't stand + verb-ing or to + base verb",
+      undefined,
+      "Adoro levar meus amigos a lugares novos.",
+      "Gerund or infinitive",
+    ],
+    [
+      ["I used to be reserved, but ", bold("I've become more outgoing"), "."],
+      "Contrast a past characteristic with a present change using used to and the present perfect.",
+      "Stress reserved and more outgoing to make the contrast clear.",
+      "used to be + adjective, but have/has become + comparative adjective",
+      undefined,
+      "Eu costumava ser reservado, mas me tornei mais extrovertido.",
+      "Describing change",
+    ],
+    [
+      [bold("I'd like to be more spontaneous"), "."],
+      "Use would like plus an infinitive to describe a change you want to make.",
+      "Contract I would to I'd and stress spontaneous.",
+      "would like + to + base verb · be interested in + verb-ing",
+      undefined,
+      "Eu gostaria de ser mais espontâneo.",
+      "Desired change",
+    ],
+  ],
+} satisfies LanguageFocusData;

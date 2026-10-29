@@ -32,12 +32,12 @@ export const languageFocus = {
       "O que devo ver lá? — Você deveria visitar o Museu Nacional de Antropologia.",
     ],
     [
-      ["You ", bold("shouldn't miss"), " the Diego Rivera murals. You ", bold("shouldn't visit"), " at the busiest time."],
-      "Use shouldn't for negative recommendations or advice about what to avoid.",
+      ["You ", bold("shouldn't go"), " too late. You ", bold("shouldn't visit"), " at the busiest time."],
+      "Use shouldn't for advice about actions or times that are better to avoid.",
       "The t in shouldn't is not strongly pronounced in natural speech.",
       "shouldn't + base verb",
       undefined,
-      "Você não deveria perder os murais de Diego Rivera. Não deveria visitar no horário mais movimentado.",
+      "Você não deveria ir muito tarde. Não deveria visitar no horário mais movimentado.",
     ],
     [
       ["You can visit ", bold("the Louvre"), ", ", bold("the Grand Canyon"), ", or ", bold("the Colosseum"), "."],

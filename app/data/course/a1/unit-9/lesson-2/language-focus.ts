@@ -36,7 +36,7 @@ export const languageFocus = {
     ],
     [
       ["I ", bold("sometimes"), " make pasta. — ", bold("Sometimes"), " I make pasta."],
-      "Sometimes can go before the main verb or at the beginning of the sentence.",
+      "Sometimes goes before the main verb or at the beginning of the sentence.",
       "Stress sometimes and pasta.",
       "subject + sometimes + verb · Sometimes + subject + verb",
       undefined,

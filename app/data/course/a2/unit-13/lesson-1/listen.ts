@@ -19,9 +19,9 @@ export const listen = {
     ["Nina", ["So do I. We have the same taste!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Which food can Nina eat?",
-  options: ["Very spicy food", "Very salty food", "Greasy food"],
-  answer: "Very spicy food",
+  question: "The speakers compare:",
+  options: ["Food preferences", "Travel experiences", "Work routines"],
+  answer: "Food preferences",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Do both speakers like sushi?", answer: "Yes, they do." },

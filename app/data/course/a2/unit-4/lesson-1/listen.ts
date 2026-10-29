@@ -19,9 +19,9 @@ export const listen = {
     ["Jade", ["My sister likes them, too. I prefer game shows."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What kind of movies does Marco like?",
-  options: ["Musicals", "Science fiction", "Horror"],
-  answer: "Science fiction",
+  question: "Conversation topic:",
+  options: ["Entertainment preferences", "Work schedules", "Health advice"],
+  answer: "Entertainment preferences",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Does Marco like rap?", answer: "No, he doesn't." },

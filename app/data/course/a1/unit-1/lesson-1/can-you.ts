@@ -3,12 +3,12 @@ import type { CanYouData } from "../../../lesson-step-types";
 export const canYou = {
   type: "can-you",
   slug: "can-you",
-  label: "Can you…?",
-  instruction: "Check your progress.",
+  label: "Your progress",
+  instruction: "Mini-conversation without the model. Check each success.",
   checks: [
-    "Can you say hello?",
-    "Can you say your name?",
-    "Can you ask someone’s name?",
-    "Can you say “Nice to meet you”?",
+    "Hello / Hi",
+    "I’m… / My name is…",
+    "What’s your name?",
+    "Nice to meet you, too.",
   ],
 } satisfies CanYouData;

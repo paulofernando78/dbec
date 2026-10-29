@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Tell engaging stories using present perfect forms, past narrative tenses, sequencing adverbs, and expressions that organize a story.",
+  items: [
+    [
+      ["A dog ", bold("has been stealing"), " attention all afternoon."],
+      "Use the present perfect continuous for a temporary action that started in the past and continues now or has a visible current result.",
+      "Stress the ongoing activity and duration; reduce has been in fluent speech.",
+      "has/have been + verb-ing",
+      undefined,
+      "Um cachorro vem roubando a atenção a tarde inteira.",
+      "Present perfect continuous",
+    ],
+    [
+      ["I've ", bold("always loved"), " animals, and I've ", bold("locked"), " my keys in the car."],
+      "Use the present perfect, not the continuous, with stative verbs, permanent situations, passive forms, and recently completed actions.",
+      "Stress the state or completed result.",
+      "has/have + past participle · stative verb or completed result",
+      undefined,
+      "Sempre amei animais e tranquei minhas chaves dentro do carro.",
+      "Present perfect",
+    ],
+    [
+      ["I ", bold("had been waiting"), " for nearly an hour when everyone else left."],
+      "Use the past perfect continuous for an activity continuing up to another point in the past.",
+      "Stress the duration and the later event.",
+      "had been + verb-ing + when + simple past",
+      undefined,
+      "Eu estava esperando havia quase uma hora quando todos os outros foram embora.",
+      "Past perfect continuous",
+    ],
+    [
+      ["Up until then, I ", bold("had never lost"), " anything important."],
+      "Use the past perfect for a state or completed event that was true before another past event.",
+      "Stress never and the past participle.",
+      "before/up until then + subject + had + past participle",
+      undefined,
+      "Até então, eu nunca tinha perdido nada importante.",
+      "Past perfect",
+    ],
+    [
+      [bold("Afterwards"), ", we laughed about it. ", bold("Meanwhile"), ", an employee was calling my name."],
+      "Use afterwards, later, or the next day with the simple past for a later event; use meanwhile for events happening at the same time.",
+      "Pause after the sequencing adverb and stress the new event.",
+      "later: afterwards/later/the next day + simple past · simultaneous: when/as soon as/the moment/meanwhile + past event",
+      undefined,
+      "Depois, rimos disso. Enquanto isso, uma funcionária chamava meu nome.",
+      "Sequencing events",
+    ],
+    [
+      [bold("I'll never forget the time"), " I waited at the wrong carousel. ", bold("The next thing I knew"), ", everyone had gone."],
+      "Use a strong opening to establish the story and a sequencing expression to move the action forward.",
+      "Use expressive stress on never forget and next thing.",
+      "beginning: I'll never forget the time…; I've got to tell you about… · continuing: What happened was…; The next thing I knew…; Meanwhile…",
+      undefined,
+      "Nunca vou esquecer a vez em que esperei na esteira errada. Quando me dei conta, todos tinham ido embora.",
+      "Beginning and continuing a story",
+    ],
+    [
+      [bold("The thing you have to know is"), " that I was in the wrong terminal. ", bold("In the end"), ", I found my suitcase."],
+      "Use a going-back expression to add necessary context and an ending expression to resolve or summarize the story.",
+      "Pause after the organizing phrase and emphasize the important revelation or result.",
+      "going back: The thing you have to know is…; I forgot to mention that…; That reminds me of when… · ending: In the end…; So finally…; To make a long story short…",
+      undefined,
+      "O que você precisa saber é que eu estava no terminal errado. No fim, encontrei minha mala.",
+      "Organizing a story",
+    ],
+  ],
+} satisfies LanguageFocusData;

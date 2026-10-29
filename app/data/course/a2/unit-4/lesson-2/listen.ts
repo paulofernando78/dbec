@@ -25,7 +25,7 @@ export const listen = {
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Does Marco accept the invitation?", answer: "Yes. He'd love to go." },
-    { question: "Why probably can't Jade's sister go?", answer: "She has to work late." },
+    { question: "Why can't Jade's sister go?", answer: "She has to work late." },
     { question: "What does Jade need to do first?", answer: "She needs to buy the tickets." },
   ],
 } satisfies ListenData;

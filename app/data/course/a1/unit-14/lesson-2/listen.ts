@@ -22,9 +22,9 @@ export const listen = {
     ["B", ["Yes. I ", mark("bought some souvenirs"), "."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where did Maya go?",
-  options: ["Recife", "Salvador", "Rio de Janeiro"],
-  answer: "Recife",
+  question: "Maya's vacation:",
+  options: ["She enjoyed it", "She didn't enjoy it", "She stayed home"],
+  answer: "She enjoyed it",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {

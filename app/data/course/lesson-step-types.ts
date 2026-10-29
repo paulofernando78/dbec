@@ -50,6 +50,19 @@ export type LanguageFocusData = StepExtension & {
   ])[];
 };
 
+export type ConceptCheckData = StepExtension & {
+  type: "concept-check";
+  slug: string;
+  label: string;
+  instruction: string;
+  questions: readonly {
+    context?: string;
+    question: string;
+    options: readonly string[];
+    answer: string;
+  }[];
+};
+
 export type TryItData = StepExtension & {
   type: "try-it";
   slug: string;
@@ -82,6 +95,7 @@ export type LessonStepData =
   | GetReadyData
   | ListenData
   | LanguageFocusData
+  | ConceptCheckData
   | TryItData
   | UseItData
   | CanYouData;

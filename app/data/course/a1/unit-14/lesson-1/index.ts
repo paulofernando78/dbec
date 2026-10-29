@@ -3,12 +3,16 @@ import { languageFocus } from "./language-focus";
 import { listen } from "./listen";
 
 const baseLesson = a1SkeletonLessons["14/1"];
+const focusedLanguage = {
+  ...languageFocus,
+  items: [languageFocus.items[0], languageFocus.items[1], languageFocus.items[5], languageFocus.items[6]],
+};
 
 export const a1Unit14Lesson1 = {
   ...baseLesson,
   steps: baseLesson.steps.map((step) => {
     if (step.type === "listen") return listen;
-    if (step.type === "language-focus") return languageFocus;
+    if (step.type === "language-focus") return focusedLanguage;
     return step;
   }),
 };

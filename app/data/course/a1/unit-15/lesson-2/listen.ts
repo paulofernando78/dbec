@@ -22,9 +22,9 @@ export const listen = {
     ["B", ["Because I needed it for work."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where did Daniel grow up?",
-  options: ["Curitiba", "São Paulo", "Manaus"],
-  answer: "Curitiba",
+  question: "Conversation topic:",
+  options: ["Childhood and school", "Food and shopping", "Directions"],
+  answer: "Childhood and school",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {

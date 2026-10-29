@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two coworkers talk about their daily routines.",
+  instruction: "First listen: Sara talks about a weekday. Listen for her wake-up time.",
   audio: "/media/audio/course/a1/unit-6/lesson-2-every-day/listen/listen.mp3",
   dialogue: [
     ["A", [mark("What time do you get up"), ", Sara?"]],
@@ -22,29 +22,29 @@ export const listen = {
     ["B", ["We visit them ", mark("on Sundays"), "."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What time does Sara get up?",
+  question: "Sara’s wake-up time:",
   options: ["6:30", "7:00", "7:45"],
   answer: "6:30",
-  followUpInstruction: "Answer the questions.",
+  followUpInstruction: "Listen again. Find the routine details.",
   followUp: [
     {
-      question: "Where does Sara eat breakfast?",
+      question: "Breakfast place:",
       answer: "At home.",
     },
     {
-      question: "What time does Sara leave home?",
+      question: "Leave-home time:",
       answer: "At 7:45.",
     },
     {
-      question: "How does Sara travel to work?",
+      question: "Sara’s transport:",
       answer: "By bus.",
     },
     {
-      question: "How does Sara's husband travel?",
+      question: "Husband’s transport:",
       answer: "By bike.",
     },
     {
-      question: "When do they visit Sara's parents?",
+      question: "Parents’ visit:",
       answer: "On Sundays.",
     },
   ],

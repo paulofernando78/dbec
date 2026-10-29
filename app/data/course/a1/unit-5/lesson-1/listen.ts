@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two friends compare the time in different cities.",
+  instruction: "First listen: two friends in different cities. Listen for the topic.",
   audio: "/media/audio/course/a1/unit-5/lesson-1-what-time-is-it-there/listen/listen.mp3",
   dialogue: [
     ["A", ["Hi, Nina. Where are you now?"]],
@@ -20,29 +20,29 @@ export const listen = {
     ["B", ["Great. Talk to you later!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What time is it in London?",
-  options: ["10:45", "6:45", "11:00"],
-  answer: "10:45",
-  followUpInstruction: "Answer the questions.",
+  question: "Topic:",
+  options: ["Times in two cities", "Weather in two cities", "Transport in two cities"],
+  answer: "Times in two cities",
+  followUpInstruction: "Listen again. Find each time.",
   followUp: [
     {
-      question: "Where is speaker A?",
+      question: "Speaker A’s city:",
       answer: "In São Paulo.",
     },
     {
-      question: "What time is it in São Paulo?",
+      question: "São Paulo time:",
       answer: "6:45 A.M.",
     },
     {
-      question: "What time is Nina's meeting?",
+      question: "Nina’s meeting:",
       answer: "11:00 A.M.",
     },
     {
-      question: "What time is speaker A's class?",
+      question: "Class time:",
       answer: "7:15 A.M.",
     },
     {
-      question: "What time is lunch?",
+      question: "Lunch time:",
       answer: "12:30 P.M.",
     },
   ],

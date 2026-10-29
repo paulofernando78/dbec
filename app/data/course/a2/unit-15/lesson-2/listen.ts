@@ -18,9 +18,9 @@ export const listen = {
     ["Caller", ["Thanks very much."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Why is the caller contacting Ana?",
-  options: ["To invite her to an event", "To leave a class message", "To change a restaurant reservation"],
-  answer: "To leave a class message",
+  question: "The caller wants to:",
+  options: ["Pass on a message", "Order a meal", "Describe a vacation"],
+  answer: "Pass on a message",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Is Ana available?", answer: "No, she isn't." },

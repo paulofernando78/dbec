@@ -32,12 +32,12 @@ export const languageFocus = {
       "Trabalho durante a semana. Faço exercícios aos sábados.",
     ],
     [
-      ["I arrive ", bold("early"), ". I have lunch ", bold("around noon"), " and work ", bold("until six"), "."],
-      "Use early, late, around, before, after, and until to give less exact or relative time information.",
-      "Stress the expression that explains when the activity happens.",
-      "early/late · around + time · before/after + time · until + time",
+      ["I have lunch ", bold("around noon"), " and work ", bold("until six"), "."],
+      "Use around for an approximate time. Use until for the time an activity stops.",
+      "Stress noon and six. Around and until are normally unstressed.",
+      "around + time · until + time",
       undefined,
-      "Chego cedo. Almoço por volta do meio-dia e trabalho até as seis.",
+      "Almoço por volta do meio-dia e trabalho até as seis.",
     ],
   ],
 } satisfies LanguageFocusData;

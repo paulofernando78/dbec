@@ -26,9 +26,9 @@ export const languageFocus = {
     ],
     [
       [bold("How long have"), " you lived in Orlando? — I've lived here ", bold("for three years"), "."],
-      "Use for with a length of time to describe a situation that began in the past and continues now.",
+      "Use present perfect + for when a situation continues now. Use simple past + for when the finished duration is clear from context.",
       "Stress the length of time after for.",
-      "present perfect + for + two weeks/a few months/several years/a long time",
+      "present perfect + for + duration (continues now) · simple past + for + duration (finished)",
       undefined,
       "Há quanto tempo você mora em Orlando? — Moro aqui há três anos.",
     ],

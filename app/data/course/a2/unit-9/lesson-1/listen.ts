@@ -19,9 +19,9 @@ export const listen = {
     ["Ava", ["I think I saw her this morning."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What kind of hair does Lena have?",
-  options: ["Short blond hair", "Long curly brown hair", "Straight black hair"],
-  answer: "Long curly brown hair",
+  question: "The speakers describe:",
+  options: ["People's appearance", "People's jobs", "People's routines"],
+  answer: "People's appearance",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Does Lena wear glasses?", answer: "No. She wears contacts." },

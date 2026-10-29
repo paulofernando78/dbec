@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Comment on social behavior and manage small talk using infinitive and gerund phrases and natural conversation openers and closers.",
+  items: [
+    [
+      [bold("It's rude to ignore your conversation partner"), "."],
+      "Use it plus be plus an adjective or noun plus an infinitive phrase to comment on behavior.",
+      "Stress the evaluative adjective and the main action.",
+      "It + be + adjective/noun + to + base verb",
+      undefined,
+      "É falta de educação ignorar a pessoa com quem você conversa.",
+      "Infinitive phrases",
+    ],
+    [
+      [bold("Ignoring your conversation partner is rude"), "."],
+      "A gerund phrase can function as the subject and express the same general judgment.",
+      "Stress the gerund phrase and the final evaluation.",
+      "verb-ing phrase + be + adjective/noun",
+      undefined,
+      "Ignorar a pessoa com quem você conversa é falta de educação.",
+      "Gerund phrases",
+    ],
+    [
+      [bold("It's considered impolite to interrupt people"), "."],
+      "Use considered after be to describe behavior according to a social norm.",
+      "Keep is considered linked and stress impolite and interrupt.",
+      "It + be + considered + adjective + to + base verb",
+      undefined,
+      "É considerado indelicado interromper as pessoas.",
+      "Social norms",
+    ],
+    [
+      [bold("Interrupting people is considered impolite"), "."],
+      "A gerund subject can be followed by be considered plus an adjective.",
+      "Use a smooth rhythm through is considered and emphasize impolite.",
+      "verb-ing phrase + be + considered + adjective",
+      undefined,
+      "Interromper as pessoas é considerado indelicado.",
+      "Social norms",
+    ],
+    [
+      [bold("It's customary for the complimenter to say something positive"), "."],
+      "Use for plus a person or pronoun to identify who performs the action in an infinitive phrase.",
+      "Stress customary, the person, and the main action.",
+      "It + be + adjective + for + person + to + base verb",
+      undefined,
+      "É habitual que a pessoa que elogia diga algo positivo.",
+      "Infinitive subjects",
+    ],
+    [
+      [bold("Do you know many people here?"), " / ", bold("Can you believe this weather?"), " / ", bold("How's it going?")],
+      "Use a question about the immediate situation, a shared observation, or a general greeting to open a conversation naturally.",
+      "Use friendly rising intonation and stress the topic word.",
+      "conversation opener + follow-up question",
+      undefined,
+      "Você conhece muitas pessoas aqui? / Dá para acreditar neste tempo? / Como vão as coisas?",
+      "Conversation openers",
+    ],
+    [
+      [bold("Sorry, I've got to run. It was great meeting you. See you later"), "."],
+      "Use a reason for leaving, a positive closing comment, and a farewell to end a conversation politely.",
+      "Use falling intonation and a warm tone; reduce got to in informal speech.",
+      "softener + reason for leaving + positive comment + farewell",
+      undefined,
+      "Desculpe, preciso ir. Foi ótimo conhecer você. Até mais.",
+      "Conversation closers",
+    ],
+  ],
+} satisfies LanguageFocusData;

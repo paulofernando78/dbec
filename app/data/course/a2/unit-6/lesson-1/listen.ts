@@ -18,9 +18,9 @@ export const listen = {
     ["Aaron", ["That's a very active weekend, Riley!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where does Riley go jogging?",
-  options: ["At the gym", "In the park", "At school"],
-  answer: "In the park",
+  question: "Conversation topic:",
+  options: ["Exercise habits", "Vacation plans", "Shopping choices"],
+  answer: "Exercise habits",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What sport does Aaron play?", answer: "He plays soccer." },

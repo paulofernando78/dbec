@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two people organize their family's clothes.",
+  instruction: "First listen: two people and family clothes. Listen for the situation.",
   audio: "/media/audio/course/a1/unit-4/lesson-1-whose-is-it/listen/listen.mp3",
   dialogue: [
     ["A", ["Let's put the clothes in the right bags."]],
@@ -25,29 +25,29 @@ export const listen = {
     ["A", ["They're Mia's."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Whose shoes are they?",
-  options: ["Ben's", "Leo's", "James's"],
-  answer: "Ben's",
-  followUpInstruction: "Answer the questions.",
+  question: "Situation:",
+  options: ["Organizing clothes", "Buying clothes", "Washing clothes"],
+  answer: "Organizing clothes",
+  followUpInstruction: "Listen again. Match each item and owner.",
   followUp: [
     {
-      question: "Whose bag is it?",
+      question: "Bag:",
       answer: "Eva's.",
     },
     {
-      question: "Who owns the hats?",
+      question: "Hats:",
       answer: "Tom and Lily.",
     },
     {
-      question: "Whose umbrella is it?",
+      question: "Umbrella:",
       answer: "Ana's.",
     },
     {
-      question: "Whose jacket is it?",
+      question: "Jacket:",
       answer: "Leo's.",
     },
     {
-      question: "Whose gloves are they?",
+      question: "Gloves:",
       answer: "Mia's.",
     },
   ],

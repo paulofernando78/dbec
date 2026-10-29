@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">An email address</title><desc id="desc">An envelope and the email address julia@example.com.</desc>
+  <rect width="800" height="450" fill="#dbeafe"/><rect x="110" y="95" width="580" height="260" rx="26" fill="#fff" stroke="#2563eb" stroke-width="10"/><path d="M120 115l280 180 280-180" fill="none" stroke="#2563eb" stroke-width="10" stroke-linejoin="round"/><text x="400" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172033">julia@example.com</text>
+</svg>

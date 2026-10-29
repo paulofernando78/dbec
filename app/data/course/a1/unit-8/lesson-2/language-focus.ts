@@ -18,7 +18,7 @@ export const languageFocus = {
     ],
     [
       ["A taxi driver's job ", bold("is tiring"), ". — A taxi driver has a ", bold("tiring job"), "."],
-      "Use is plus an adjective to describe the job. You can also put the adjective before job.",
+      "Use is plus an adjective to describe the job. Another pattern puts the adjective before job.",
       "Stress tiring and taxi driver.",
       "job + is + adjective · a/an + adjective + job",
       undefined,

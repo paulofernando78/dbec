@@ -18,9 +18,9 @@ export const listen = {
     ["Guide", ["No. You can walk easily, but you shouldn't go too late."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What shouldn't the visitor miss?",
-  options: ["The street-food market", "The business district", "The train station"],
-  answer: "The street-food market",
+  question: "The conversation gives:",
+  options: ["Travel recommendations", "Medical advice", "Shopping prices"],
+  answer: "Travel recommendations",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What should the visitor see?", answer: "The history museum and the old town." },

@@ -19,9 +19,9 @@ export const listen = {
     ["Nina", ["No, that's all, thanks."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What does Nina order to eat?",
-  options: ["A veggie burger and mango salad", "Soup and a sandwich", "Sushi and French fries"],
-  answer: "A veggie burger and mango salad",
+  question: "The conversation happens:",
+  options: ["At a restaurant", "At a pharmacy", "At a station"],
+  answer: "At a restaurant",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What does Leo order to eat?", answer: "The soup of the day and a sandwich." },

@@ -32,12 +32,12 @@ export const languageFocus = {
       "Faço musculação na academia. Também caminho na esteira.",
     ],
     [
-      ["You have a lot of energy, ", bold("Riley"), ". — You look tired, ", bold("Aaron"), "."],
-      "Use a person's name in direct address when speaking directly to them.",
-      "Direct address usually has falling intonation and a short pause before the name.",
-      "statement + comma + person's name",
+      [bold("Do"), " you exercise at home? — Yes, I do. ", bold("What do"), " you do at the gym? — I do weight training."],
+      "Use a yes/no question to confirm a habit and a Wh-question to ask for the specific activity.",
+      "Use rising intonation in the yes/no question and falling intonation in the Wh-question.",
+      "Do + you + base verb? · What + do + you + base verb?",
       undefined,
-      "Você tem muita energia, Riley. — Você parece cansado, Aaron.",
+      "Você se exercita em casa? — Sim. O que você faz na academia? — Faço musculação.",
     ],
   ],
 } satisfies LanguageFocusData;

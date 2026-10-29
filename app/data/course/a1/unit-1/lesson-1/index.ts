@@ -1,4 +1,5 @@
 import { canYou } from "./can-you";
+import { conceptCheck } from "./concept-check";
 import { getReady } from "./get-ready";
 import { languageFocus } from "./language-focus";
 import { listen } from "./listen";
@@ -9,5 +10,13 @@ export const a1Unit1Lesson1 = {
   level: "a1",
   unit: { number: 1, title: "Meeting People" },
   lesson: { number: 1, title: "Hello" },
-  steps: [getReady, listen, languageFocus, tryIt, useIt, canYou],
+  steps: [
+    getReady,
+    listen,
+    languageFocus,
+    conceptCheck,
+    tryIt,
+    useIt,
+    canYou,
+  ],
 };

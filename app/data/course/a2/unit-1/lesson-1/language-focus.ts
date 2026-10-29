@@ -25,12 +25,12 @@ export const languageFocus = {
       "Esta é a minha turma. Ana é nossa professora, e Leo é aluno dela.",
     ],
     [
-      [bold("What's"), " your name? — ", bold("My"), " name's Maya. What do people call you? — They call me May."],
-      "Ask someone's name when you meet. Use What do people call you? to ask about a preferred name or nickname.",
+      [bold("What's"), " your name? — ", bold("My"), " name's Maya."],
+      "Use What's your name? to ask for a person's name in a first meeting.",
       "In natural speech, What's your often sounds like /wʌtsjər/.",
-      "What is your name? · What's your name? · What do people call you?",
+      "What is your name? → What's your name? · My name is ... → My name's ...",
       undefined,
-      "Qual é o seu nome? — Meu nome é Maya. Como as pessoas chamam você? — Elas me chamam de May.",
+      "Qual é o seu nome? — Meu nome é Maya.",
     ],
     [
       [bold("Where are"), " you from? — We're from Brazil. ", bold("Who's"), " your friend? — He's my classmate."],

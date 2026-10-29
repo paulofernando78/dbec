@@ -19,9 +19,9 @@ export const listen = {
     ["Carlos", ["Yes. I've already gone twice!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Which activity hasn't Nora done yet?",
-  options: ["Visit the space center", "See an alligator", "Visit the theme park"],
-  answer: "Visit the theme park",
+  question: "Nora talks about:",
+  options: ["Activities on a trip", "Her daily routine", "A new job"],
+  answer: "Activities on a trip",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Has Nora visited the space center?", answer: "Yes, she has." },

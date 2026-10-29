@@ -19,9 +19,9 @@ export const listen = {
     ["Nina", ["Yes, she does. She studies web design at night."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is Alex's part-time job?",
-  options: ["Fitness instructor", "Office assistant", "Web designer"],
-  answer: "Fitness instructor",
+  question: "Conversation topic:",
+  options: ["Work and studies", "Shopping", "Family vacation"],
+  answer: "Work and studies",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Where does Alex work?", answer: "He works at a gym." },

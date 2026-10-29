@@ -18,9 +18,9 @@ export const listen = {
     ["Ben", ["Thanks. I'll go home and rest."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Which problems does Ben have?",
-  options: ["A cough and a cold", "A headache, sore muscles, and insomnia", "A toothache and a fever"],
-  answer: "A headache, sore muscles, and insomnia",
+  question: "Ben and Maya discuss:",
+  options: ["Health problems and advice", "Travel plans", "Food preferences"],
+  answer: "Health problems and advice",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Does Ben have a fever?", answer: "No, he doesn't." },

@@ -22,9 +22,9 @@ export const listen = {
     ["B", ["Yes, ", mark("they were"), "."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where was Sofia born?",
-  options: ["Recife", "Fortaleza", "A small town"],
-  answer: "Recife",
+  question: "Conversation topic:",
+  options: ["Family history", "Weekend plans", "A new apartment"],
+  answer: "Family history",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {

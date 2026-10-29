@@ -1,14 +1,22 @@
-import { a1SkeletonLessons } from "../../../a1/skeleton-lessons";
+import { canYou } from "./can-you";
+import { conceptCheck } from "./concept-check";
+import { getReady } from "./get-ready";
 import { languageFocus } from "./language-focus";
 import { listen } from "./listen";
-
-const baseLesson = a1SkeletonLessons["1/2"];
+import { tryIt } from "./try-it";
+import { useIt } from "./use-it";
 
 export const a1Unit1Lesson2 = {
-  ...baseLesson,
-  steps: baseLesson.steps.map((step) => {
-    if (step.type === "listen") return listen;
-    if (step.type === "language-focus") return languageFocus;
-    return step;
-  }),
+  level: "a1",
+  unit: { number: 1, title: "Meeting People" },
+  lesson: { number: 2, title: "Stay in Touch" },
+  steps: [
+    getReady,
+    listen,
+    languageFocus,
+    conceptCheck,
+    tryIt,
+    useIt,
+    canYou,
+  ],
 };

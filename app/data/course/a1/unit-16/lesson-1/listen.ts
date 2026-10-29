@@ -21,29 +21,29 @@ export const listen = {
     ["A", ["Sure. Goodbye."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where is Ana?",
+  question: "Ana's location:",
   options: ["At work", "At home", "At school"],
   answer: "At work",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {
-      question: "Who does Leo want to speak to?",
+      question: "Leo wants to speak to:",
       answer: "Ana.",
     },
     {
-      question: "What does Leo leave?",
+      question: "Leo leaves:",
       answer: "A message.",
     },
     {
-      question: "Does Ana have Leo's number?",
-      answer: "Yes, she does.",
+      question: "Ana has Leo's number: yes or no?",
+      answer: "Yes.",
     },
     {
-      question: "What should Ana do after work?",
+      question: "After work, Ana:",
       answer: "Call Leo.",
     },
     {
-      question: "How else can the other person contact Leo?",
+      question: "Other contact:",
       answer: "By text.",
     },
   ],

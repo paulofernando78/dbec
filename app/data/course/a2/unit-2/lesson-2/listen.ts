@@ -20,9 +20,9 @@ export const listen = {
     ["Alex", ["I work on Saturdays, but I sleep late on Sundays."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "When does Alex have classes?",
-  options: ["In the morning", "In the afternoon", "At night"],
-  answer: "In the afternoon",
+  question: "Alex describes:",
+  options: ["A typical busy day", "A vacation day", "A shopping trip"],
+  answer: "A typical busy day",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What time does Alex get up?", answer: "He gets up at 6:30 in the morning." },

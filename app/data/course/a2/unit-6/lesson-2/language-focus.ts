@@ -20,7 +20,7 @@ export const languageFocus = {
       ["I ", bold("always"), " exercise before work. I ", bold("sometimes"), " watch TV before bed. I ", bold("never"), " skip breakfast."],
       "Put most adverbs of frequency before the main verb. Usually and sometimes may also begin a sentence.",
       "Stress the frequency adverb when correcting or emphasizing a habit.",
-      "always · almost always · usually · often · sometimes · hardly ever · almost never · never",
+      "always · usually · sometimes · never",
       undefined,
       "Sempre me exercito antes do trabalho. Às vezes vejo TV antes de dormir. Nunca pulo o café da manhã.",
     ],

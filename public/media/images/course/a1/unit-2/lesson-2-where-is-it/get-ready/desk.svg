@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Objects in and around an office desk</title><desc id="desc">Keys on a desk, a card in a drawer, a charger under a monitor, and folders next to a printer.</desc>
+  <rect width="800" height="450" fill="#f0fdf4"/><rect x="55" y="260" width="690" height="40" rx="8" fill="#9a643d"/><rect x="90" y="300" width="30" height="130" fill="#75472d"/><rect x="680" y="300" width="30" height="130" fill="#75472d"/>
+  <rect x="255" y="80" width="250" height="150" rx="10" fill="#1e293b"/><rect x="270" y="95" width="220" height="120" fill="#bae6fd"/><rect x="365" y="230" width="30" height="30" fill="#475569"/>
+  <circle cx="155" cy="238" r="15" fill="none" stroke="#475569" stroke-width="8"/><path d="M170 238h80m-28 0v22m18-22v16" stroke="#475569" stroke-width="8" stroke-linecap="round"/>
+  <rect x="295" y="320" width="130" height="50" rx="10" fill="#fff" stroke="#64748b" stroke-width="6"/><path d="M425 345h45" stroke="#64748b" stroke-width="8"/>
+  <rect x="545" y="150" width="120" height="105" rx="10" fill="#e2e8f0" stroke="#64748b" stroke-width="7"/><rect x="560" y="125" width="90" height="55" fill="#fff" stroke="#64748b" stroke-width="5"/>
+  <rect x="685" y="185" width="38" height="70" fill="#f97316"/><rect x="655" y="192" width="38" height="63" fill="#8b5cf6"/>
+  <rect x="70" y="315" width="180" height="75" fill="#a16207"/><rect x="82" y="325" width="156" height="52" fill="#fef3c7"/><rect x="120" y="342" width="78" height="40" rx="5" fill="#3b82f6"/>
+</svg>

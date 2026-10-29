@@ -19,9 +19,9 @@ export const listen = {
     ["Sara", ["You've made a lot of changes!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Which recent change has Evan made?",
-  options: ["He has started a new job", "He has retired", "He has changed schools"],
-  answer: "He has started a new job",
+  question: "Evan describes:",
+  options: ["Changes in his life", "A restaurant meal", "A school subject"],
+  answer: "Changes in his life",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "How has Evan's appearance changed?", answer: "He wears contacts and has grown a beard." },

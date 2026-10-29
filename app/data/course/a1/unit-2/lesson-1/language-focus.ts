@@ -5,7 +5,7 @@ export const languageFocus = {
   type: "language-focus",
   slug: "language-focus",
   label: "Language focus",
-  instruction: "Use this, these, it, and they to identify one or more objects at work.",
+  instruction: "Listen, repeat, and notice how we identify one object or more than one.",
   items: [
     [
       [bold("This is"), " a tablet. — ", bold("It's"), " your work tablet."],
@@ -19,7 +19,7 @@ export const languageFocus = {
     [
       [bold("What's this"), "? — ", bold("It's an"), " adapter."],
       "Ask What's this? about one thing. Use an before adapter.",
-      "Use rising intonation in the question and stress adapter.",
+      "Stress WHAT and ADAPter. Use falling intonation.",
       "What's = What is · an + vowel sound",
       undefined,
       "O que é isto? — É um adaptador.",
@@ -37,7 +37,7 @@ export const languageFocus = {
     [
       [bold("What are these"), "? — ", bold("They're"), " headphones."],
       "Ask What are these? about two or more things.",
-      "Use rising intonation in the question and stress headphones.",
+      "Stress WHAT and HEADphones. Use falling intonation.",
       "What + are + these? · They are + plural noun",
       undefined,
       "O que são estes? — São fones de ouvido.",

@@ -19,9 +19,9 @@ export const listen = {
     ["Rita", ["Your family is doing a lot!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Who is living with Leo's parents?",
-  options: ["His sister Carla", "His niece Mia", "His cousin Ben"],
-  answer: "His niece Mia",
+  question: "Leo describes:",
+  options: ["A family photo", "A work meeting", "A neighborhood"],
+  answer: "A family photo",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Where is Carla working?", answer: "She's working in another city." },

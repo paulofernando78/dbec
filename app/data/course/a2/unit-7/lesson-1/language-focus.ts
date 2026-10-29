@@ -33,12 +33,12 @@ export const languageFocus = {
       "Trabalhamos, convidamos amigos, estudamos e paramos para jantar.",
     ],
     [
-      ["I ", bold("bought"), " a game, ", bold("went"), " dancing, and ", bold("saw"), " a movie."],
+      ["I ", bold("bought"), " a game, ", bold("went"), " shopping, ", bold("had"), " lunch, and ", bold("took"), " a bike ride."],
       "Irregular verbs have special past forms that must be learned.",
       "Stress the irregular past verb and the important object or activity.",
-      "buy → bought · do → did · drive → drove · have → had · go → went · sing → sang · see → saw · spend → spent",
+      "buy → bought · go → went · have → had · take → took",
       undefined,
-      "Comprei um jogo, fui dançar e vi um filme.",
+      "Comprei um jogo, fui às compras, almocei e dei uma volta de bicicleta.",
     ],
     [
       ["I ", bold("did chores"), ", ", bold("went shopping"), ", ", bold("had a good time"), ", ", bold("made a video"), ", and ", bold("took a bike ride"), "."],

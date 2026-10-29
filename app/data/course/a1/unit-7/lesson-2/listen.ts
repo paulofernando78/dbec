@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two friends talk about a new house.",
+  instruction: "First listen: two friends describe a house. Listen for the topic.",
   audio: "/media/audio/course/a1/unit-7/lesson-2-dream-home/listen/listen.mp3",
   dialogue: [
     ["A", ["Tell me about your new house, Kim."]],
@@ -22,10 +22,10 @@ export const listen = {
     ["B", [mark("There are some pictures"), ", but there are no curtains."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is in the living room?",
-  options: ["A large sofa", "Two beds", "A new stove"],
-  answer: "A large sofa",
-  followUpInstruction: "Answer the questions.",
+  question: "Topic:",
+  options: ["Rooms and furniture", "Jobs and workplaces", "Food and drinks"],
+  answer: "Rooms and furniture",
+  followUpInstruction: "Listen again. Find the room details.",
   followUp: [
     {
       question: "Is there a coffee table?",

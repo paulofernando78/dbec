@@ -21,29 +21,29 @@ export const listen = {
     ["A", ["Great. Thank you!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where can speaker A buy cold medicine?",
+  question: "Cold medicine:",
   options: ["At the drugstore", "At the bookstore", "At the supermarket"],
   answer: "At the drugstore",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {
-      question: "What street is the bookstore on?",
+      question: "Bookstore street:",
       answer: "Pine Street.",
     },
     {
-      question: "Where is the post office?",
+      question: "Post office location:",
       answer: "Between the bank and the coffee shop.",
     },
     {
-      question: "What is across from the supermarket?",
+      question: "Across from the supermarket:",
       answer: "The bank.",
     },
     {
-      question: "Where is the coffee shop?",
+      question: "Coffee shop location:",
       answer: "On the corner of Pine and First.",
     },
     {
-      question: "What does speaker A need from the post office?",
+      question: "Post office item:",
       answer: "Stamps.",
     },
   ],

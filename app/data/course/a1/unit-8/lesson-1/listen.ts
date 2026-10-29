@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two people talk at a job event.",
+  instruction: "First listen: two people at a job event. Listen for the topic.",
   audio: "/media/audio/course/a1/unit-8/lesson-1-at-work/listen/listen.mp3",
   dialogue: [
     ["A", ["Hi. I'm Nina. ", mark("What do you do"), "?"]],
@@ -23,10 +23,10 @@ export const listen = {
     ["A", ["They're ", mark("accountants"), ". They work in an office."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is speaker B's job?",
-  options: ["Front desk clerk", "Police officer", "Accountant"],
-  answer: "Front desk clerk",
-  followUpInstruction: "Answer the questions.",
+  question: "Topic:",
+  options: ["Jobs and workplaces", "Homes and furniture", "Food and habits"],
+  answer: "Jobs and workplaces",
+  followUpInstruction: "Listen again. Match people, jobs, and workplaces.",
   followUp: [
     {
       question: "Where does speaker B work?",

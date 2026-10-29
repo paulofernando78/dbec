@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two friends give opinions about jobs.",
+  instruction: "First listen: two friends describe different jobs. Listen for the topic.",
   audio: "/media/audio/course/a1/unit-8/lesson-2-job-talk/listen/listen.mp3",
   dialogue: [
     ["A", ["Your sister is a nurse, right?"]],
@@ -22,10 +22,10 @@ export const listen = {
     ["B", ["Yes, I do. The people are friendly."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is speaker B's job?",
-  options: ["Office manager", "Nurse", "Cashier"],
-  answer: "Office manager",
-  followUpInstruction: "Answer the questions.",
+  question: "Topic:",
+  options: ["Opinions about jobs", "Directions to work", "Work schedules"],
+  answer: "Opinions about jobs",
+  followUpInstruction: "Listen again. Match each person and job description.",
   followUp: [
     {
       question: "What does speaker B's sister do?",

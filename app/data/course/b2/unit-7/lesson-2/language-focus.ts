@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Express and support opinions about communication using negative and tag questions, formal connectors, and media vocabulary.",
+  items: [
+    [
+      [bold("Isn't it strange"), " how often people check their phones?"],
+      "Use a negative question to offer an opinion and invite the listener to react or agree.",
+      "Use rising intonation when genuinely inviting a response and falling intonation when expecting agreement.",
+      "negative auxiliary + subject + complement?",
+      undefined,
+      "Não é estranho como as pessoas verificam o celular com frequência?",
+      "Negative opinion questions",
+    ],
+    [
+      ["Phones help us stay connected, ", bold("don't they"), "?"],
+      "Use a negative tag after an affirmative statement and an affirmative tag after a negative statement.",
+      "Use rising intonation for a real question and falling intonation when seeking confirmation.",
+      "affirmative statement + negative tag · negative statement + affirmative tag",
+      undefined,
+      "Os celulares nos ajudam a permanecer conectados, não ajudam?",
+      "Tag questions",
+    ],
+    [
+      [bold("Don't you think"), " platforms should take more responsibility?"],
+      "Use don't you think before a clause to frame an opinion as a question.",
+      "Keep don't you think relatively light and emphasize the opinion that follows.",
+      "Don't you think + subject + should/could/would + verb?",
+      undefined,
+      "Você não acha que as plataformas deveriam assumir mais responsabilidade?",
+      "Inviting opinions",
+    ],
+    [
+      ["Online tools are useful. ", bold("Furthermore"), ", they improve access. ", bold("Nevertheless"), ", they can be distracting."],
+      "Use formal connectors to add information or introduce comparison and contrast.",
+      "Pause after each sentence connector and stress the new point.",
+      "add: additionally, furthermore · compare: likewise, similarly · contrast: nevertheless, on the other hand",
+      undefined,
+      "Ferramentas online são úteis. Além disso, melhoram o acesso. Mesmo assim, podem distrair.",
+      "Formal connectors",
+    ],
+    [
+      ["Misinformation spreads quickly. ", bold("For instance"), ", false headlines are often shared without verification. ", bold("Therefore"), ", users need reliable sources."],
+      "Use connectors to introduce examples, emphasize facts, or show results.",
+      "Use clear pauses around connectors and falling intonation on the conclusion.",
+      "example: for example, for instance · emphasis: in fact, as a matter of fact · result: as a result, therefore",
+      undefined,
+      "A desinformação se espalha rapidamente. Por exemplo, manchetes falsas são compartilhadas sem verificação. Portanto, os usuários precisam de fontes confiáveis.",
+      "Examples and results",
+    ],
+    [
+      [bold("If you ask me"), ", the way we use technology matters most. ", bold("That may be true, but"), " platforms also influence behavior."],
+      "Use an opinion opener, a polite disagreement, and a reason to structure a balanced response.",
+      "Stress the key opinion after the introductory expression and emphasize but in disagreement.",
+      "opinion: If you ask me; The way I see it · disagreement: That may be true, but; I see your point, but · reason: That's why; The reason for that is",
+      undefined,
+      "Na minha opinião, a maneira como usamos a tecnologia é o mais importante. Isso pode ser verdade, mas as plataformas também influenciam o comportamento.",
+      "Discussing opinions",
+    ],
+    [
+      ["We encounter ", bold("banner ads, pop-up ads, spam, text messages, infomercials"), ", and ", bold("voice mail"), " every day."],
+      "Classify forms of communication according to where people encounter them: television, the Internet, phones, or public spaces.",
+      "Stress the first element in compound media terms.",
+      "television: crawls, infomercials · Internet: banner/pop-up ads, spam · phone: text messages, telemarketing, voice mail · streets/highways: billboards, bumper stickers, bus wraps",
+      undefined,
+      "Encontramos banners, anúncios pop-up, spam, mensagens de texto, infomerciais e correio de voz todos os dias.",
+      "Forms of communication",
+    ],
+  ],
+} satisfies LanguageFocusData;

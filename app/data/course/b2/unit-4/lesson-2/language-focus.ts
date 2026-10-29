@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Discuss sleep habits and explain reasons and conditions using sleep expressions and advanced adverb clauses.",
+  items: [
+    [
+      ["I sometimes lie awake at night, ", bold("even if I'm really tired"), "."],
+      "Even if introduces a condition that does not change the result in the main clause.",
+      "Stress even and the unexpected contrast.",
+      "main clause + even if + condition",
+      undefined,
+      "Às vezes fico acordado à noite, mesmo quando estou muito cansado.",
+      "Concession",
+    ],
+    [
+      [bold("Considering that"), " most adults need sufficient sleep, five hours is rarely enough."],
+      "Considering that introduces a reason or fact that explains the main clause.",
+      "Use a slight rise through the reason and a fall in the conclusion.",
+      "considering that + reason, main clause",
+      undefined,
+      "Considerando que a maioria dos adultos precisa dormir o suficiente, cinco horas raramente bastam.",
+      "Reasons",
+    ],
+    [
+      ["I can function well ", bold("as long as I maintain a regular routine"), "."],
+      "As long as introduces a condition on which the result depends.",
+      "Stress the key condition rather than the connector.",
+      "main clause + as long as + condition",
+      undefined,
+      "Consigo funcionar bem desde que mantenha uma rotina regular.",
+      "Conditions",
+    ],
+    [
+      [bold("Unless I get enough sleep"), ", I feel drowsy all day."],
+      "Unless means if not and introduces the condition needed to avoid a consequence.",
+      "Use a slight rise in the unless clause and a fall in the result.",
+      "unless + positive clause = if + negative clause",
+      undefined,
+      "A menos que eu durma o suficiente, sinto sono o dia inteiro.",
+      "Negative conditions",
+    ],
+    [
+      ["I silence my phone ", bold("just in case a client calls"), "."],
+      "In case or just in case introduces an undesirable possibility that you prepare for.",
+      "Stress just when emphasizing extra caution.",
+      "action + (just) in case + possible circumstance",
+      undefined,
+      "Silencio meu telefone para o caso de um cliente ligar.",
+      "Precaution",
+    ],
+    [
+      ["I wake up early ", bold("only if I have somewhere to be"), "."],
+      "Only if introduces a necessary condition. Only can also appear in the main clause for emphasis.",
+      "Stress only and the necessary condition.",
+      "main clause + only if + condition · only + main clause + if + condition",
+      undefined,
+      "Só acordo cedo se tiver algum lugar para ir.",
+      "Necessary conditions",
+    ],
+    [
+      ["After a sleepless night, I may ", bold("nod off"), "; after a good night, I ", bold("sleep like a log"), "."],
+      "Use specific expressions to distinguish difficulty sleeping, falling asleep, short sleep, and deep sleep.",
+      "Stress the key words in each fixed expression.",
+      "trouble: be wide awake, have a sleepless night, toss and turn · falling asleep: feel drowsy, drift off · short sleep: nod off, take a power nap · deep sleep: be fast/sound asleep, sleep like a log",
+      undefined,
+      "Depois de uma noite sem dormir, posso cochilar; depois de uma boa noite, durmo profundamente.",
+      "Sleep expressions",
+    ],
+  ],
+} satisfies LanguageFocusData;

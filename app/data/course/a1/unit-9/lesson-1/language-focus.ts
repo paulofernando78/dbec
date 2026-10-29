@@ -11,7 +11,7 @@ export const languageFocus = {
   items: [
     [
       [bold("a carrot → carrots"), " · ", bold("an orange → oranges")],
-      "Count nouns are things you can count. Use a or an with one and a plural form with two or more.",
+      "Count nouns have singular and plural forms. Use a or an with one and a plural form with two or more.",
       "Stress carrot, carrots, orange, and oranges.",
       "a/an + singular count noun · plural count noun",
       undefined,

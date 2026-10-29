@@ -18,9 +18,9 @@ export const listen = {
     ["Student", ["It's about 605 square kilometers."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "How high is Mount Everest?",
-  options: ["3,700 meters", "8,848 meters", "1,828 meters"],
-  answer: "8,848 meters",
+  question: "Conversation topic:",
+  options: ["Measurements in geography", "Future plans", "Family history"],
+  answer: "Measurements in geography",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "How long is the Mississippi River?", answer: "About 3,700 kilometers." },

@@ -19,9 +19,9 @@ export const listen = {
     ["Resident", ["No, there isn't much. It's a quiet neighborhood."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Why does the resident like the suburbs?",
-  options: ["There is little traffic", "There are many restaurants", "It is close to downtown"],
-  answer: "There is little traffic",
+  question: "The resident compares:",
+  options: ["Two neighborhoods", "Two jobs", "Two vacations"],
+  answer: "Two neighborhoods",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Are there many restaurants in the suburbs?", answer: "No, there aren't." },

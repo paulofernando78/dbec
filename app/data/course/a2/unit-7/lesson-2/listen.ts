@@ -20,9 +20,9 @@ export const listen = {
     ["Mia", ["Yes, it was. The vacation was excellent."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Who was on vacation with Mia?",
-  options: ["Her parents", "Her cousin", "Her friend"],
-  answer: "Her cousin",
+  question: "Mia describes:",
+  options: ["A past vacation", "A future trip", "A normal workday"],
+  answer: "A past vacation",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Where was Mia?", answer: "She was in California." },

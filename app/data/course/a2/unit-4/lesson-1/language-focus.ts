@@ -41,12 +41,12 @@ export const languageFocus = {
       "Você gosta desta música? — Sim, adoro. Você gosta do Imagine Dragons? — Sim, gosto muito deles.",
     ],
     [
-      ["I like ", bold("science fiction"), " movies, ", bold("game shows"), ", and ", bold("reggae"), "."],
+      ["I like ", bold("science fiction"), " movies, ", bold("documentaries"), ", and ", bold("reggae"), "."],
       "Use entertainment vocabulary to identify and discuss movies, TV shows, and music.",
       "Stress the main content word in each genre or category.",
-      "Movies: action, horror, musical, science fiction · TV: game show, reality show, soap opera, talk show · Music: electronic, rap, reggae, salsa",
+      "Movies: comedy, documentary, science fiction · Music: electronic, rap, reggae",
       undefined,
-      "Gosto de filmes de ficção científica, programas de competição e reggae.",
+      "Gosto de filmes de ficção científica, documentários e reggae.",
     ],
   ],
 } satisfies LanguageFocusData;

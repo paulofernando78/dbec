@@ -21,7 +21,7 @@ export const listen = {
     ["A", ["Thanks. I'm going to rest now."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What should speaker A do today?",
+  question: "Best advice today:",
   options: ["Rest at home", "Go to work", "Exercise"],
   answer: "Rest at home",
   followUpInstruction: "Answer the questions.",
@@ -31,19 +31,19 @@ export const listen = {
       answer: "A cold and a cough.",
     },
     {
-      question: "What should speaker A drink?",
+      question: "Drink:",
       answer: "Warm chamomile tea.",
     },
     {
-      question: "Should speaker A go to work?",
+      question: "Work today: yes or no?",
       answer: "No.",
     },
     {
-      question: "Should speaker A exercise with a fever?",
+      question: "Exercise with a fever: yes or no?",
       answer: "No.",
     },
     {
-      question: "Which spray should speaker A use?",
+      question: "Spray:",
       answer: "Nasal spray.",
     },
   ],

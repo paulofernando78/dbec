@@ -18,9 +18,9 @@ export const listen = {
     ["Evan", ["Those sound like great goals."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What does Evan hope to get?",
-  options: ["A driver's license", "A pay raise", "A new apartment"],
-  answer: "A pay raise",
+  question: "Evan talks about:",
+  options: ["Future goals", "Past mistakes", "Health advice"],
+  answer: "Future goals",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What does Evan plan to finish?", answer: "His online course." },

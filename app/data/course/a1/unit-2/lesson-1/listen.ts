@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two coworkers talk about things in an office.",
+  instruction: "First listen: a new employee sees a desk. Listen for the place.",
   audio: "/media/audio/course/a1/unit-2/lesson-1-whats-this/listen/listen.mp3",
   dialogue: [
     ["A", ["Welcome to the office. This is your desk."]],
@@ -22,30 +22,26 @@ export const listen = {
     ["B", ["Great. Thank you."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where are the speakers?",
+  question: "Place:",
   options: ["In an office", "In a store", "At home"],
   answer: "In an office",
-  followUpInstruction: "Answer the questions.",
+  followUpInstruction: "Listen again. Identify the objects.",
   followUp: [
     {
-      question: "What is on the desk?",
+      question: "Object on the desk:",
       answer: "A work tablet.",
     },
     {
-      question: "What is next to the tablet?",
+      question: "Object next to the tablet:",
       answer: "An adapter.",
     },
     {
-      question: "Are the notebooks new?",
-      answer: "Yes, they are.",
+      question: "Objects on the shelf:",
+      answer: "Notebooks.",
     },
     {
-      question: "What color are speaker B's headphones?",
-      answer: "Blue.",
-    },
-    {
-      question: "How many keys are there?",
-      answer: "Three.",
+      question: "Blue objects:",
+      answer: "Headphones.",
     },
   ],
 } satisfies ListenData;

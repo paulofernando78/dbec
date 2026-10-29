@@ -18,9 +18,9 @@ export const listen = {
     ["Tom", ["Great. I'm going to the video game tournament next week."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is Lia doing tonight?",
-  options: ["Going to a soccer game", "Seeing a musical", "Going to a barbecue"],
-  answer: "Seeing a musical",
+  question: "Lia discusses:",
+  options: ["Future arrangements", "Past vacations", "Daily habits"],
+  answer: "Future arrangements",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What is Tom doing tonight?", answer: "He's going to a soccer game." },

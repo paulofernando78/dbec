@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two people talk about the weather and clothes.",
+  instruction: "First listen: two people talk about today. Listen for the weather.",
   audio: "/media/audio/course/a1/unit-4/lesson-2-weather-watch/listen/listen.mp3",
   dialogue: [
     ["A", [mark("It's raining"), ", ", mark("and"), " it's windy."]],
@@ -25,29 +25,29 @@ export const listen = {
     ["A", ["Today ", mark("it's raining"), ", ", mark("so"), " I have an umbrella."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is speaker A wearing?",
-  options: ["A raincoat", "A sweater", "A scarf"],
-  answer: "A raincoat",
-  followUpInstruction: "Answer the questions.",
+  question: "Weather now:",
+  options: ["Rainy and windy", "Snowy and cold", "Sunny and warm"],
+  answer: "Rainy and windy",
+  followUpInstruction: "Listen again. Match people and clothes.",
   followUp: [
     {
-      question: "What is Maya wearing?",
+      question: "Maya:",
       answer: "A sweater.",
     },
     {
-      question: "What is Leo wearing?",
+      question: "Leo:",
       answer: "Gloves.",
     },
     {
-      question: "What are the speakers waiting for?",
+      question: "The speakers:",
       answer: "A taxi.",
     },
     {
-      question: "Where are Tom and Lia standing?",
+      question: "Tom and Lia:",
       answer: "By the door.",
     },
     {
-      question: "What is the weather like tomorrow?",
+      question: "Tomorrow’s weather:",
       answer: "Cold but sunny.",
     },
   ],

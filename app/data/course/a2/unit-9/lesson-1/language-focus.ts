@@ -25,12 +25,12 @@ export const languageFocus = {
       "Ele usa óculos? — Não, usa lentes de contato. Ele tem bigode e barba.",
     ],
     [
-      [bold("How tall"), " is she? — She's one meter seventy-eight. / She's five foot ten."],
-      "Use How tall to ask about height. Give a metric or U.S. measurement.",
+      [bold("How tall"), " is she? — She's one meter seventy-eight."],
+      "Use How tall to ask about height. Give the answer in meters or centimeters.",
       "Stress the numbers in the answer.",
-      "one meter seventy-eight · 178 centimeters · five foot ten · 5'10\"",
+      "one meter seventy-eight · 178 centimeters",
       undefined,
-      "Qual é a altura dela? — Ela tem um metro e setenta e oito. / Cinco pés e dez polegadas.",
+      "Qual é a altura dela? — Ela tem um metro e setenta e oito.",
     ],
     [
       [bold("How long"), " is her hair? — It's pretty short. What color is it? — It's dark brown."],

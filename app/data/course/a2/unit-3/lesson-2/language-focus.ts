@@ -9,12 +9,12 @@ export const languageFocus = {
     "Describe materials, express preferences, and compare products with adjectives.",
   items: [
     [
-      ["What's the belt made of? — It's made of ", bold("leather"), ". The shirt is ", bold("cotton"), "."],
+      ["What's the bracelet made of? — It's made of ", bold("silver"), ". The scarf is ", bold("silk"), "."],
       "Use material words to describe what clothes, accessories, and other products are made of.",
       "Stress the material word because it carries the main information.",
-      "cotton · gold · leather · plastic · rubber · silk · silver · wool",
+      "plastic · silk · silver · wool",
       undefined,
-      "Do que é feito o cinto? — É feito de couro. A camisa é de algodão.",
+      "Do que é feita a pulseira? — É feita de prata. O cachecol é de seda.",
     ],
     [
       ["Which dress do you ", bold("prefer"), "? — I prefer the blue one."],
@@ -36,7 +36,7 @@ export const languageFocus = {
       ["The blue dress is ", bold("nicer than"), " the black one. It's ", bold("lighter than"), " the black one."],
       "Use adjective + -er + than to compare most short adjectives.",
       "Stress the comparative adjective and the two items being contrasted.",
-      "cheap → cheaper · nice → nicer · big → bigger · pretty → prettier · adjective-er + than",
+      "light → lighter · cheap → cheaper · nice → nicer · adjective-er + than",
       undefined,
       "O vestido azul é mais bonito que o preto. É mais leve que o preto.",
     ],

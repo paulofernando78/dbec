@@ -56,7 +56,7 @@ export const languageFocus = {
     ],
     [
       [bold("Don't exercise"), " with a fever."],
-      "Use don't before the action the person should avoid.",
+      "Use don't before an action to avoid.",
       "Stress don't, exercise, and fever.",
       "don't + base verb",
       undefined,

@@ -19,9 +19,9 @@ export const listen = {
     ["Nora", ["Last summer. My cousin rented one for a day."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "How long did Carlos live in Miami?",
-  options: ["For two years", "For four years", "Since 2022"],
-  answer: "For four years",
+  question: "Carlos talks about:",
+  options: ["Life experiences", "A restaurant order", "Health problems"],
+  answer: "Life experiences",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "When did Carlos ride a motorcycle?", answer: "When he lived in Miami." },

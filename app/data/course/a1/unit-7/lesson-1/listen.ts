@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two friends talk about a new apartment.",
+  instruction: "First listen: Rosa talks about a new apartment. Listen for the topic.",
   audio: "/media/audio/course/a1/unit-7/lesson-1-home-tour/listen/listen.mp3",
   dialogue: [
     ["A", ["Do you like your new apartment, Rosa?"]],
@@ -22,10 +22,10 @@ export const listen = {
     ["B", ["Yes, ", mark("it does"), ". The apartment is on the third floor."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Does Rosa like her new apartment?",
-  options: ["Yes, she does", "No, she doesn't", "We don't know"],
-  answer: "Yes, she does",
-  followUpInstruction: "Answer the questions.",
+  question: "Topic:",
+  options: ["A new apartment", "A new job", "A new school"],
+  answer: "A new apartment",
+  followUpInstruction: "Listen again. Find the home details.",
   followUp: [
     {
       question: "Does the apartment have a balcony?",

@@ -18,9 +18,9 @@ export const listen = {
     ["Visitor", ["It sounds like a nice place to visit."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is the downtown area like?",
-  options: ["Quiet and spacious", "Lively and crowded", "Ugly and polluted"],
-  answer: "Lively and crowded",
+  question: "The speaker gives:",
+  options: ["A hometown guide", "A work schedule", "A family history"],
+  answer: "A hometown guide",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What are the parks like?", answer: "They're quiet and spacious." },

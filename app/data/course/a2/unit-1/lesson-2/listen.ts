@@ -19,9 +19,9 @@ export const listen = {
     ["Daniel", ["No, they aren't. They're in the afternoon."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is Maya's favorite subject?",
-  options: ["Geography", "Biology", "History"],
-  answer: "Biology",
+  question: "Why are Maya and Daniel talking?",
+  options: ["To get to know each other", "To order food", "To plan a vacation"],
+  answer: "To get to know each other",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Is Maya free after class?", answer: "Yes, she is." },

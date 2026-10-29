@@ -19,9 +19,9 @@ export const listen = {
     ["Ava", ["Thanks. Now I see everyone."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is Rob wearing?",
-  options: ["A red shirt", "A black shirt", "A blue shirt"],
-  answer: "A black shirt",
+  question: "The speakers are trying to:",
+  options: ["Identify people", "Choose clothes", "Plan a party"],
+  answer: "Identify people",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What is Lena doing?", answer: "She's talking to Rob." },

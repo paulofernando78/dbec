@@ -18,9 +18,9 @@ export const listen = {
     ["Customer", ["Great. I'll take the cream, the heating pad, and the pills."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What problem does the customer have?",
-  options: ["A cough", "A backache", "A toothache"],
-  answer: "A backache",
+  question: "The conversation happens:",
+  options: ["At a pharmacy", "At a restaurant", "At a school"],
+  answer: "At a pharmacy",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "What does the pharmacist first suggest?", answer: "A new cream." },

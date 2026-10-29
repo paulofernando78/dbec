@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two people meet at an international event.",
+  instruction: "First listen: two people at an international event. Listen for speaker B’s city.",
   audio: "/media/audio/course/a1/unit-3/lesson-1-where-are-you-from/listen/listen.mp3",
   dialogue: [
     ["A", ["Hello. ", mark("Are you"), " from Bogotá?"]],
@@ -24,29 +24,29 @@ export const listen = {
     ["B", ["No, ", mark("they're not"), ". They're from Austria."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where is speaker B from?",
+  question: "Speaker B’s city:",
   options: ["Quito", "Bogotá", "Madrid"],
   answer: "Quito",
-  followUpInstruction: "Answer the questions.",
+  followUpInstruction: "Listen again. Match people and places.",
   followUp: [
     {
-      question: "Is speaker A late?",
+      question: "Speaker A: early or late?",
       answer: "No, speaker A is early.",
     },
     {
-      question: "Where is the woman from?",
+      question: "Woman’s country:",
       answer: "Argentina.",
     },
     {
-      question: "Where is the man from?",
+      question: "Man’s country:",
       answer: "Spain.",
     },
     {
-      question: "Which room are the speakers in?",
+      question: "Room number:",
       answer: "Room 5.",
     },
     {
-      question: "Where are the two people from?",
+      question: "Two people’s country:",
       answer: "Austria.",
     },
   ],

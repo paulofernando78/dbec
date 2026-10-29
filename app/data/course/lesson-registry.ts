@@ -44,6 +44,7 @@ import { a2Unit3Lesson2 } from "./a2/unit-3/lesson-2";
 import { a2Unit4Lesson1 } from "./a2/unit-4/lesson-1";
 import { a2Unit4Lesson2 } from "./a2/unit-4/lesson-2";
 import { a2Unit5Lesson1 } from "./a2/unit-5/lesson-1";
+import { a2Unit5Lesson2 } from "./a2/unit-5/lesson-2";
 import { a2Unit6Lesson1 } from "./a2/unit-6/lesson-1";
 import { a2Unit6Lesson2 } from "./a2/unit-6/lesson-2";
 import { a2Unit7Lesson1 } from "./a2/unit-7/lesson-1";
@@ -133,6 +134,30 @@ import { b1Unit15Lesson2 } from "./b1/unit-15/lesson-2";
 import { b1Unit16Lesson1 } from "./b1/unit-16/lesson-1";
 import { b1Unit16Lesson2 } from "./b1/unit-16/lesson-2";
 import { b2SkeletonLessons } from "./b2/skeleton-lessons";
+import { b2Unit1Lesson1 } from "./b2/unit-1/lesson-1";
+import { b2Unit1Lesson2 } from "./b2/unit-1/lesson-2";
+import { b2Unit2Lesson1 } from "./b2/unit-2/lesson-1";
+import { b2Unit2Lesson2 } from "./b2/unit-2/lesson-2";
+import { b2Unit3Lesson1 } from "./b2/unit-3/lesson-1";
+import { b2Unit3Lesson2 } from "./b2/unit-3/lesson-2";
+import { b2Unit4Lesson1 } from "./b2/unit-4/lesson-1";
+import { b2Unit4Lesson2 } from "./b2/unit-4/lesson-2";
+import { b2Unit5Lesson1 } from "./b2/unit-5/lesson-1";
+import { b2Unit5Lesson2 } from "./b2/unit-5/lesson-2";
+import { b2Unit6Lesson1 } from "./b2/unit-6/lesson-1";
+import { b2Unit6Lesson2 } from "./b2/unit-6/lesson-2";
+import { b2Unit7Lesson1 } from "./b2/unit-7/lesson-1";
+import { b2Unit7Lesson2 } from "./b2/unit-7/lesson-2";
+import { b2Unit8Lesson1 } from "./b2/unit-8/lesson-1";
+import { b2Unit8Lesson2 } from "./b2/unit-8/lesson-2";
+import { b2Unit9Lesson1 } from "./b2/unit-9/lesson-1";
+import { b2Unit9Lesson2 } from "./b2/unit-9/lesson-2";
+import { b2Unit10Lesson1 } from "./b2/unit-10/lesson-1";
+import { b2Unit10Lesson2 } from "./b2/unit-10/lesson-2";
+import { b2Unit11Lesson1 } from "./b2/unit-11/lesson-1";
+import { b2Unit11Lesson2 } from "./b2/unit-11/lesson-2";
+import { b2Unit12Lesson1 } from "./b2/unit-12/lesson-1";
+import { b2Unit12Lesson2 } from "./b2/unit-12/lesson-2";
 import { c1SkeletonLessons } from "./c1/skeleton-lessons";
 import { travelLessons } from "@/data/travel/lessons";
 
@@ -159,6 +184,7 @@ export const lessonRegistry: Record<string, LessonContent> = {
   "a2/4/1": a2Unit4Lesson1,
   "a2/4/2": a2Unit4Lesson2,
   "a2/5/1": a2Unit5Lesson1,
+  "a2/5/2": a2Unit5Lesson2,
   "a2/6/1": a2Unit6Lesson1,
   "a2/6/2": a2Unit6Lesson2,
   "a2/7/1": a2Unit7Lesson1,
@@ -231,6 +257,30 @@ export const lessonRegistry: Record<string, LessonContent> = {
       lesson,
     ]),
   ),
+  "b2/1/1": b2Unit1Lesson1,
+  "b2/1/2": b2Unit1Lesson2,
+  "b2/2/1": b2Unit2Lesson1,
+  "b2/2/2": b2Unit2Lesson2,
+  "b2/3/1": b2Unit3Lesson1,
+  "b2/3/2": b2Unit3Lesson2,
+  "b2/4/1": b2Unit4Lesson1,
+  "b2/4/2": b2Unit4Lesson2,
+  "b2/5/1": b2Unit5Lesson1,
+  "b2/5/2": b2Unit5Lesson2,
+  "b2/6/1": b2Unit6Lesson1,
+  "b2/6/2": b2Unit6Lesson2,
+  "b2/7/1": b2Unit7Lesson1,
+  "b2/7/2": b2Unit7Lesson2,
+  "b2/8/1": b2Unit8Lesson1,
+  "b2/8/2": b2Unit8Lesson2,
+  "b2/9/1": b2Unit9Lesson1,
+  "b2/9/2": b2Unit9Lesson2,
+  "b2/10/1": b2Unit10Lesson1,
+  "b2/10/2": b2Unit10Lesson2,
+  "b2/11/1": b2Unit11Lesson1,
+  "b2/11/2": b2Unit11Lesson2,
+  "b2/12/1": b2Unit12Lesson1,
+  "b2/12/2": b2Unit12Lesson2,
   ...Object.fromEntries(
     Object.entries(c1SkeletonLessons).map(([key, lesson]) => [
       `c1/${key}`,

@@ -21,9 +21,9 @@ export const listen = {
     ["A", ["Wow! That was a busy weekend."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What did Leo do on Saturday morning?",
-  options: ["Cleaned the house", "Visited relatives", "Studied English"],
-  answer: "Cleaned the house",
+  question: "Leo's weekend:",
+  options: ["Busy", "Quiet", "Bad"],
+  answer: "Busy",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {

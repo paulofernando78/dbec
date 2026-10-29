@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Speculate about past events and express certainty, possibility, obligation, advice, and opinions using modal perfect forms and verbs of belief.",
+  items: [
+    [
+      ["They ", bold("must have seen"), " something unusual."],
+      "Use must have plus a past participle for a strong logical conclusion about the past.",
+      "Reduce have to /əv/ and stress must and the past participle.",
+      "must have + past participle",
+      undefined,
+      "Eles devem ter visto algo incomum.",
+      "Past certainty",
+    ],
+    [
+      ["The lights ", bold("may/might/could have come"), " from a drone."],
+      "Use may have, might have, or could have to describe a possible explanation for a past event.",
+      "Keep have weak and stress the key explanation.",
+      "may/might/could have + past participle",
+      undefined,
+      "As luzes podem ter vindo de um drone.",
+      "Past possibility",
+    ],
+    [
+      ["The authorities ", bold("can't/couldn't have missed"), " it."],
+      "Use can't have or couldn't have for a past event you believe was impossible.",
+      "Stress can't or couldn't and missed to show disbelief.",
+      "can't/couldn't have + past participle",
+      undefined,
+      "As autoridades não podem ter deixado de perceber isso.",
+      "Past impossibility",
+    ],
+    [
+      ["They ", bold("might have been testing"), " military equipment."],
+      "Use a modal perfect continuous form to speculate about an activity that was in progress in the past.",
+      "Link have been smoothly and stress testing.",
+      "modal + have been + verb-ing",
+      undefined,
+      "Eles podem ter estado testando equipamentos militares.",
+      "Past continuous speculation",
+    ],
+    [
+      ["The video ", bold("might have been edited"), " before it was posted."],
+      "Use a modal perfect passive when the focus is on what may have happened to the subject.",
+      "Keep have been light and stress edited.",
+      "modal + have been + past participle",
+      undefined,
+      "O vídeo pode ter sido editado antes de ser publicado.",
+      "Past passive speculation",
+    ],
+    [
+      ["The organizers ", bold("shouldn't have allowed"), " people into the area."],
+      "Use should or shouldn't have for past obligation, advice, criticism, or opinion—not for logical certainty.",
+      "Stress shouldn't and allowed; reduce have.",
+      "should/shouldn't have + past participle",
+      undefined,
+      "Os organizadores não deveriam ter permitido a entrada de pessoas na área.",
+      "Past advice and opinion",
+    ],
+    [
+      ["I ", bold("assume"), " it was a drone, but I don't ", bold("know for a fact"), "."],
+      "Choose verbs and expressions of belief according to how certain you are.",
+      "Stress the belief verb and use contrastive stress on fact.",
+      "certain: be positive, be certain, be sure, know for a fact · not certain: assume, bet, doubt, figure, guess, have a hunch, suppose, suspect",
+      undefined,
+      "Presumo que fosse um drone, mas não sei disso com certeza.",
+      "Verbs of belief",
+    ],
+  ],
+} satisfies LanguageFocusData;

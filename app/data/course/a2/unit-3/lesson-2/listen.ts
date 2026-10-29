@@ -19,9 +19,9 @@ export const listen = {
     ["Lena", ["Good choice. Let's get that one."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Which scarf does Omar like better?",
-  options: ["The blue silk scarf", "The gray wool scarf", "The plastic scarf"],
-  answer: "The blue silk scarf",
+  question: "Lena and Omar are:",
+  options: ["Choosing a gift", "Planning a trip", "Discussing a movie"],
+  answer: "Choosing a gift",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Which bracelet does Omar prefer?", answer: "He prefers the silver one." },

@@ -19,9 +19,9 @@ export const listen = {
     ["Aaron", ["That's OK. You're a great runner, Riley."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "How often does Aaron play soccer?",
-  options: ["Every day", "Twice a week", "Three times a week"],
-  answer: "Twice a week",
+  question: "The speakers compare:",
+  options: ["Free-time routines", "Family sizes", "Workplaces"],
+  answer: "Free-time routines",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "How often does Riley go jogging?", answer: "Usually three times a week." },

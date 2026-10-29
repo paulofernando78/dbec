@@ -41,12 +41,12 @@ export const languageFocus = {
       "Eu trabalho em uma academia. Meu irmão trabalha em um escritório. Ele estuda à noite.",
     ],
     [
-      ["She's a ", bold("fitness instructor"), ". He's an ", bold("office assistant"), ". They're ", bold("tutors"), "."],
-      "Use job titles to identify occupations and group them by workplace or industry.",
+      ["She's a ", bold("fitness instructor"), ". He's an ", bold("office assistant"), ". She's a ", bold("web designer"), "."],
+      "Use a/an before a singular job title. Use an before a vowel sound, as in an office assistant.",
       "Stress the main syllable in each job title.",
-      "Office work: accountant, receptionist, office assistant · Food service: chef, cashier, server · Travel: pilot, flight attendant, tour guide · Entertainment: dancer, musician, singer",
+      "a fitness instructor · an office assistant · a web designer",
       undefined,
-      "Ela é instrutora de academia. Ele é assistente de escritório. Eles são tutores.",
+      "Ela é instrutora de academia. Ele é assistente de escritório. Ela é web designer.",
     ],
   ],
 } satisfies LanguageFocusData;

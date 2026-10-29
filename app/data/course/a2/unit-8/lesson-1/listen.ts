@@ -18,9 +18,9 @@ export const listen = {
     ["Neighbor", ["Yes. It's between the post office and the drugstore."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where is the laundromat?",
-  options: ["Across from the shopping center", "Behind the library", "Next to the post office"],
-  answer: "Across from the shopping center",
+  question: "The speakers discuss:",
+  options: ["Places nearby", "A family photo", "A restaurant order"],
+  answer: "Places nearby",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Where are the grocery stores?", answer: "They're on Pine Street." },

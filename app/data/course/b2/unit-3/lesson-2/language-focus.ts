@@ -1,0 +1,75 @@
+import type { LanguageFocusData } from "../../../lesson-step-types";
+import { bold } from "@/helpers/content";
+
+export const languageFocus = {
+  type: "language-focus",
+  slug: "language-focus",
+  label: "Language focus",
+  instruction:
+    "Describe and compare towns using compound terms, correctly ordered modifiers, and expressions that connect contrasting ideas.",
+  items: [
+    [
+      ["Harbor Point is a busy ", bold("port town"), ", while Greenfield is a quiet ", bold("suburban town"), "."],
+      "Use compound town terms to classify a place by its location, function, population, or character.",
+      "Place the main stress on the first word of the compound: PORT town, SUBURBAN town.",
+      "border town · coastal town · college town · industrial town · mountain town · port town · resort town · rural town · suburban town · tourist town",
+      undefined,
+      "Harbor Point é uma cidade portuária movimentada, enquanto Greenfield é uma cidade suburbana tranquila.",
+      "Types of towns",
+    ],
+    [
+      ["It's ", bold("an exciting large modern city"), " with excellent public transportation."],
+      "When several modifiers come before a noun, English normally follows a conventional order.",
+      "Give the strongest stress to the noun and use lighter stress on the preceding modifiers.",
+      "determiner + quality + size + age + type + noun + descriptive phrase",
+      undefined,
+      "É uma cidade moderna, grande e empolgante, com excelente transporte público.",
+      "Order of modifiers",
+    ],
+    [
+      ["It's ", bold("a picturesque little resort town with year-round outdoor activities"), "."],
+      "Place an opinion or quality before size, followed by type and the head noun; add longer descriptive information afterward.",
+      "Chunk the modifiers before town and pause lightly before the descriptive phrase.",
+      "a + quality + size + type + noun + descriptive phrase",
+      undefined,
+      "É uma pequena e pitoresca cidade turística com atividades ao ar livre durante o ano inteiro.",
+      "Order of modifiers",
+    ],
+    [
+      [bold("Although"), " Greenfield is quieter, it has a growing job market."],
+      "Use although or even though before a clause to introduce a contrast with the main statement.",
+      "Use a slight rise through the contrast clause and a fall in the main clause.",
+      "although/even though + clause, main clause",
+      undefined,
+      "Embora Greenfield seja mais tranquila, ela tem um mercado de trabalho em crescimento.",
+      "Contrasting clauses",
+    ],
+    [
+      ["Harbor Point is attractive. ", bold("However"), ", housing is expensive."],
+      "Use however or nevertheless to connect two contrasting independent ideas. Separate the connector with punctuation.",
+      "Pause before and after the connector and emphasize the contrasting point.",
+      "sentence. However/Nevertheless, sentence.",
+      undefined,
+      "Harbor Point é atraente. No entanto, a moradia é cara.",
+      "Contrasting sentences",
+    ],
+    [
+      [bold("Despite"), " its smaller size, Greenfield offers a better quality of life."],
+      "Use despite or in spite of before a noun phrase or gerund, not a complete finite clause.",
+      "Stress the contrast after the introductory phrase.",
+      "despite/in spite of + noun phrase or verb-ing, main clause",
+      undefined,
+      "Apesar de seu tamanho menor, Greenfield oferece uma qualidade de vida melhor.",
+      "Contrasting phrases",
+    ],
+    [
+      ["Harbor Point has more character. ", bold("On the other hand"), ", Greenfield is more practical."],
+      "Use on the other hand to present a different side of a comparison.",
+      "Pause around the connector and stress the two qualities being contrasted.",
+      "statement. On the other hand, contrasting statement.",
+      undefined,
+      "Harbor Point tem mais personalidade. Por outro lado, Greenfield é mais prática.",
+      "Comparing alternatives",
+    ],
+  ],
+} satisfies LanguageFocusData;

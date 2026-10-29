@@ -18,9 +18,9 @@ export const listen = {
     ["Sales associate", ["Of course. What size do you need?"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Which item does the customer want to try on?",
-  options: ["The blue T-shirt", "The white sneakers", "The gray sneakers"],
-  answer: "The gray sneakers",
+  question: "The customer is:",
+  options: ["Comparing prices", "Returning a gift", "Ordering food"],
+  answer: "Comparing prices",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "How much is the green T-shirt?", answer: "It's $28.99." },

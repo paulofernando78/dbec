@@ -19,14 +19,14 @@ const seeds: readonly LessonSeed[] = [
   { unit: 2, lesson: 1, phrases: ["What's this?", "It's a notebook.", "What are these?", "They're keys."] },
   { unit: 2, lesson: 2, phrases: ["Where is the phone?", "It's on the desk.", "Is it under the chair?", "Yes, it is."] },
   { unit: 3, lesson: 1, phrases: ["Where are you from?", "I'm from Brazil.", "Are you Brazilian?", "Yes, I am."] },
-  { unit: 3, lesson: 2, phrases: ["What does she look like?", "She's tall and friendly.", "How old is he?", "He's twenty-five years old."] },
-  { unit: 4, lesson: 1, phrases: ["Whose jacket is this?", "It's mine.", "Is this Ana's scarf?", "No, hers is blue."] },
-  { unit: 4, lesson: 2, phrases: ["What's the weather like?", "It's cold and windy.", "What are you wearing?", "I'm wearing a warm coat."] },
-  { unit: 5, lesson: 1, phrases: ["What time is it there?", "It's nine o'clock.", "Is it morning in Tokyo?", "No, it's evening."] },
-  { unit: 5, lesson: 2, phrases: ["What are they doing?", "They're having lunch.", "Is he working now?", "No, he's taking a break."] },
-  { unit: 6, lesson: 1, phrases: ["How do you get to work?", "I take the bus.", "My sister drives to school.", "We walk home together."] },
+  { unit: 3, lesson: 2, phrases: ["Who's that?", "She's my cousin.", "What's she like?", "She's tall and friendly."] },
+  { unit: 4, lesson: 1, phrases: ["Whose jacket is this?", "It's Leo's.", "This is my jacket.", "The jacket is mine."] },
+  { unit: 4, lesson: 2, phrases: ["Are you wearing a raincoat?", "Yes, I am.", "It's raining.", "It isn't snowing."] },
+  { unit: 5, lesson: 1, phrases: ["What time is it?", "It's nine o'clock.", "It's seven fifteen A.M.", "It's noon."] },
+  { unit: 5, lesson: 2, phrases: ["What are you doing?", "I'm studying English.", "What's Eva doing?", "She's sleeping."] },
+  { unit: 6, lesson: 1, phrases: ["I take the train.", "She goes by bus.", "He rides his bike.", "They use the subway."] },
   { unit: 6, lesson: 2, phrases: ["What time do you get up?", "I get up at seven.", "Do you study every day?", "Yes, I do."] },
-  { unit: 7, lesson: 1, phrases: ["Do you live in a house?", "No, I live in an apartment.", "How many bedrooms are there?", "There are two bedrooms."] },
+  { unit: 7, lesson: 1, phrases: ["Do you live in a house?", "No, I don't.", "Does it have a balcony?", "Yes, it does."] },
   { unit: 7, lesson: 2, phrases: ["There is a sofa in the living room.", "There are two lamps by the bed.", "Is there a dishwasher?", "Yes, there is."] },
   { unit: 8, lesson: 1, phrases: ["What do you do?", "I'm a designer.", "Where do you work?", "I work in an office."] },
   { unit: 8, lesson: 2, phrases: ["Being a nurse is rewarding.", "It's a stressful job.", "The hours are flexible.", "That sounds interesting."] },
@@ -48,134 +48,197 @@ const seeds: readonly LessonSeed[] = [
   { unit: 16, lesson: 2, phrases: ["Would you like to come to my party?", "I'd love to.", "Do you want to have dinner on Friday?", "Sorry, I can't make it."] },
 ];
 
-const ccqs: Record<string, readonly { question: string; answer: string }[]> = {
+const ccqs: Record<string, readonly { context?: string; question: string; answer: string }[]> = {
   "1/2": [
-    { question: "Are the speakers ending their conversation?", answer: "Yes." },
-    { question: "Do they want to contact each other again?", answer: "Yes." },
+    { context: "Goodbye. See you soon.", question: "Start or end?", answer: "End" },
+    { context: "What’s your phone number?", question: "Name or number?", answer: "Number" },
   ],
   "2/1": [
-    { question: "Does “this” refer to one thing?", answer: "Yes." },
-    { question: "Does “these” refer to more than one thing?", answer: "Yes." },
+    { context: "this", question: "One or more than one?", answer: "One" },
+    { context: "these", question: "One or more than one?", answer: "More than one" },
   ],
   "2/2": [
-    { question: "Is the phone on top of the desk?", answer: "Yes." },
-    { question: "Does “under” mean lower than something?", answer: "Yes." },
+    { context: "on the desk", question: "On top or below?", answer: "On top" },
+    { context: "under the chair", question: "Above or below?", answer: "Below" },
   ],
   "3/1": [
-    { question: "Is Brazil the speaker's country of origin?", answer: "Yes." },
-    { question: "Does “Brazilian” describe nationality?", answer: "Yes." },
+    { context: "I’m from Brazil.", question: "Country?", answer: "Brazil" },
+    { context: "I’m Brazilian.", question: "Country or nationality?", answer: "Nationality" },
   ],
   "3/2": [
-    { question: "Does “What does she look like?” ask about appearance?", answer: "Yes." },
-    { question: "Does “How old” ask about age?", answer: "Yes." },
+    { context: "What’s she like?", question: "Name or description?", answer: "Description" },
+    { context: "How old is he?", question: "Appearance or age?", answer: "Age" },
   ],
   "4/1": [
-    { question: "Does “mine” mean it belongs to me?", answer: "Yes." },
-    { question: "Does “hers” mean it belongs to a woman or girl?", answer: "Yes." },
+    { context: "It’s mine.", question: "My jacket or another person’s jacket?", answer: "My jacket" },
+    { context: "It’s Leo’s.", question: "Owner?", answer: "Leo" },
   ],
   "4/2": [
-    { question: "Is the weather cold now?", answer: "Yes." },
-    { question: "Is the person wearing the coat now?", answer: "Yes." },
+    { context: "It’s cold and windy.", question: "Weather now or yesterday?", answer: "Now" },
+    { context: "I’m wearing a coat.", question: "Now or every day?", answer: "Now" },
   ],
   "5/1": [
-    { question: "Are the speakers asking about the present time?", answer: "Yes." },
-    { question: "Can it be morning in one city and evening in another?", answer: "Yes." },
+    { context: "What time is it?", question: "Time now or yesterday?", answer: "Now" },
+    { context: "Tokyo: 9 p.m.", question: "Morning or evening?", answer: "Evening" },
   ],
   "5/2": [
-    { question: "Are the activities happening now?", answer: "Yes." },
-    { question: "Is he working at this moment?", answer: "No." },
+    { context: "They’re having lunch.", question: "Now or every day?", answer: "Now" },
+    { context: "He’s taking a break.", question: "Working or not working now?", answer: "Not working" },
   ],
   "6/1": [
-    { question: "Does the speaker regularly use the bus?", answer: "Yes." },
-    { question: "Does the sister travel by car?", answer: "Yes." },
+    { context: "I take the bus.", question: "Transport?", answer: "Bus" },
+    { context: "My sister drives.", question: "Bus or car?", answer: "Car" },
   ],
   "6/2": [
-    { question: "Is getting up at seven a routine?", answer: "Yes." },
-    { question: "Does “every day” mean only once?", answer: "No." },
+    { context: "I get up at seven every day.", question: "One time or routine?", answer: "Routine" },
+    { context: "every day", question: "One day or all days?", answer: "All days" },
   ],
   "7/1": [
-    { question: "Does the speaker live in a house?", answer: "No." },
-    { question: "Are there two bedrooms in the apartment?", answer: "Yes." },
+    { context: "I live in an apartment.", question: "House or apartment?", answer: "Apartment" },
+    { context: "There are two bedrooms.", question: "One or two?", answer: "Two" },
   ],
   "7/2": [
-    { question: "Do we use “there is” for one sofa?", answer: "Yes." },
-    { question: "Do we use “there are” for two lamps?", answer: "Yes." },
+    { context: "There is a sofa.", question: "One or more than one?", answer: "One" },
+    { context: "There are two lamps.", question: "One or more than one?", answer: "More than one" },
   ],
   "8/1": [
-    { question: "Does “What do you do?” ask about a job?", answer: "Yes." },
-    { question: "Does the designer work in an office?", answer: "Yes." },
+    { context: "What do you do?", question: "Job or name?", answer: "Job" },
+    { context: "I work in an office.", question: "Workplace?", answer: "Office" },
   ],
   "8/2": [
-    { question: "Does the speaker think nursing has a positive result?", answer: "Yes." },
-    { question: "Does “stressful” describe a relaxed job?", answer: "No." },
+    { context: "Being a nurse is rewarding.", question: "Positive or negative?", answer: "Positive" },
+    { context: "It’s stressful.", question: "Relaxed or under pressure?", answer: "Under pressure" },
   ],
   "9/1": [
-    { question: "Is there milk in the kitchen?", answer: "Yes." },
-    { question: "Is there rice available?", answer: "No." },
+    { context: "There is some milk.", question: "Milk available?", answer: "Yes" },
+    { context: "I don’t have any rice.", question: "Rice available?", answer: "No" },
   ],
   "9/2": [
-    { question: "Does “usually” mean most of the time?", answer: "Yes." },
-    { question: "Does “never” mean zero times?", answer: "Yes." },
+    { context: "usually", question: "Most days or zero days?", answer: "Most days" },
+    { context: "never", question: "Some days or zero days?", answer: "Zero days" },
   ],
   "10/1": [
-    { question: "Does the speaker participate in volleyball?", answer: "Yes." },
-    { question: "Does the speaker watch soccer regularly?", answer: "Yes." },
+    { context: "I play volleyball.", question: "Play or watch?", answer: "Play" },
+    { context: "I watch soccer every weekend.", question: "Play or watch?", answer: "Watch" },
   ],
   "10/2": [
-    { question: "Does “can” express an ability here?", answer: "Yes." },
-    { question: "Is the speaker able to draw?", answer: "No." },
+    { context: "I can play the guitar.", question: "Ability: yes or no?", answer: "Yes" },
+    { context: "I can’t draw.", question: "Ability: yes or no?", answer: "No" },
   ],
   "11/1": [
-    { question: "Are these plans for the future?", answer: "Yes." },
-    { question: "Has the speaker decided to watch a movie?", answer: "Yes." },
+    { context: "I’m going to watch a movie tonight.", question: "Past, now, or future?", answer: "Future" },
+    { context: "I’m going to watch a movie.", question: "Plan or surprise?", answer: "Plan" },
   ],
   "11/2": [
-    { question: "Is the party a future plan?", answer: "Yes." },
-    { question: "Are friends and family expected to attend?", answer: "Yes." },
+    { context: "We’re going to have a party.", question: "Past or future?", answer: "Future" },
+    { context: "Friends and family are coming.", question: "Guests?", answer: "Friends and family" },
   ],
   "12/1": [
-    { question: "Does the speaker feel completely well?", answer: "No." },
-    { question: "Is a headache a problem with the head?", answer: "Yes." },
+    { context: "I have a headache.", question: "Well or sick?", answer: "Sick" },
+    { context: "a headache", question: "Head or back?", answer: "Head" },
   ],
   "12/2": [
-    { question: "Are these sentences giving advice?", answer: "Yes." },
-    { question: "Does “Don't go” tell someone to avoid going?", answer: "Yes." },
+    { context: "Get some rest.", question: "Problem or advice?", answer: "Advice" },
+    { context: "Don’t go to work.", question: "Go or stay home?", answer: "Stay home" },
   ],
   "13/1": [
-    { question: "Can the speaker buy a charger at the electronics store?", answer: "Yes." },
-    { question: "Is the pharmacy beside the supermarket?", answer: "Yes." },
+    { context: "a charger", question: "Electronics store or pharmacy?", answer: "Electronics store" },
+    { context: "The pharmacy is next to the supermarket.", question: "Near or far?", answer: "Near" },
   ],
   "13/2": [
-    { question: "Should the person continue forward first?", answer: "Yes." },
-    { question: "Should the person turn right at the corner?", answer: "No." },
+    { context: "Go straight.", question: "Forward or back?", answer: "Forward" },
+    { context: "Turn left.", question: "Left or right?", answer: "Left" },
   ],
   "14/1": [
-    { question: "Are the speakers talking about a finished weekend?", answer: "Yes." },
-    { question: "Did the visit happen in the past?", answer: "Yes." },
+    { context: "I visited my grandparents last weekend.", question: "Past or future?", answer: "Past" },
+    { context: "last weekend", question: "Finished or not finished?", answer: "Finished" },
   ],
   "14/2": [
-    { question: "Is the vacation finished?", answer: "Yes." },
-    { question: "Did they stay at a large hotel?", answer: "No." },
+    { context: "Did you enjoy your vacation?", question: "Vacation: finished or future?", answer: "Finished" },
+    { context: "a small hotel", question: "Small or large?", answer: "Small" },
   ],
   "15/1": [
-    { question: "Is the speaker talking about their birthplace?", answer: "Yes." },
-    { question: "Are the grandparents farmers now?", answer: "We don't know." },
+    { context: "I was born in Recife.", question: "Birthplace?", answer: "Recife" },
+    { context: "My grandparents were farmers.", question: "Past or present?", answer: "Past" },
   ],
   "15/2": [
-    { question: "Is the speaker describing school in the past?", answer: "Yes." },
-    { question: "Were the teachers unkind?", answer: "No." },
+    { context: "My favorite subject was history.", question: "Past or present?", answer: "Past" },
+    { context: "The teachers were kind.", question: "Kind or unkind?", answer: "Kind" },
   ],
   "16/1": [
-    { question: "Is Julia available to speak now?", answer: "No." },
-    { question: "Does the caller want Julia to call later?", answer: "Yes." },
+    { context: "She’s not here right now.", question: "Julia available now?", answer: "No" },
+    { context: "Please ask her to call me.", question: "Call now or later?", answer: "Later" },
   ],
   "16/2": [
-    { question: "Is the first sentence an invitation?", answer: "Yes." },
-    { question: "Does “I can't make it” decline an invitation?", answer: "Yes." },
+    { context: "Would you like to come to my party?", question: "Invitation or information?", answer: "Invitation" },
+    { context: "Sorry, I can’t make it.", question: "Accept or decline?", answer: "Decline" },
   ],
 };
 
 const words = (sentence: string) => sentence.split(" ");
+
+const ccqPairs: Record<string, readonly string[]> = {
+  End: ["Start", "End"],
+  Number: ["Name", "Number"],
+  One: ["One", "More than one"],
+  "More than one": ["One", "More than one"],
+  "On top": ["On top", "Below"],
+  Below: ["Above", "Below"],
+  Brazil: ["Brazil", "Mexico"],
+  Nationality: ["Country", "Nationality"],
+  Appearance: ["Appearance", "Age"],
+  Description: ["Name", "Description"],
+  Age: ["Appearance", "Age"],
+  "My jacket": ["My jacket", "Another person’s jacket"],
+  "A woman’s scarf": ["A woman’s scarf", "A man’s scarf"],
+  Leo: ["Leo", "Mia"],
+  Now: ["Now", "Yesterday"],
+  Evening: ["Morning", "Evening"],
+  "Not working": ["Working", "Not working"],
+  Bus: ["Bus", "Car"],
+  Car: ["Bus", "Car"],
+  Routine: ["One time", "Routine"],
+  "All days": ["One day", "All days"],
+  Apartment: ["House", "Apartment"],
+  Two: ["One", "Two"],
+  Job: ["Job", "Name"],
+  Office: ["Office", "Home"],
+  Positive: ["Positive", "Negative"],
+  "Under pressure": ["Relaxed", "Under pressure"],
+  "Most days": ["Most days", "Zero days"],
+  "Zero days": ["Some days", "Zero days"],
+  Play: ["Play", "Watch"],
+  Watch: ["Play", "Watch"],
+  Future: ["Past", "Now", "Future"],
+  Plan: ["Plan", "Surprise"],
+  "Friends and family": ["Friends and family", "Nobody"],
+  Sick: ["Well", "Sick"],
+  Head: ["Head", "Back"],
+  Advice: ["Problem", "Advice"],
+  "Stay home": ["Go", "Stay home"],
+  "Electronics store": ["Electronics store", "Pharmacy"],
+  Near: ["Near", "Far"],
+  Forward: ["Forward", "Back"],
+  Left: ["Left", "Right"],
+  Past: ["Past", "Present"],
+  Finished: ["Finished", "Not finished"],
+  Small: ["Small", "Large"],
+  Recife: ["Recife", "Rio"],
+  Kind: ["Kind", "Unkind"],
+  Later: ["Now", "Later"],
+  Invitation: ["Invitation", "Information"],
+  Decline: ["Accept", "Decline"],
+};
+
+const ccqOptions = (answer: string) => {
+  const plainAnswer = answer.replace(/\.$/, "");
+  if (plainAnswer === "Yes") return ["Yes", "No"];
+  if (plainAnswer === "No") return ["Yes", "No"];
+  if (plainAnswer === "We don't know") return ["Yes", "No", "We don't know"];
+  const options = ccqPairs[plainAnswer];
+  if (!options) throw new Error(`Missing planned CCQ options for: ${plainAnswer}`);
+  return options;
+};
 
 const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
   const unitData = a1.units[unit - 1];
@@ -229,6 +292,20 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       ] as const),
     },
     {
+      type: "concept-check",
+      slug: "check-meaning",
+      label: "Check meaning",
+      instruction: "Choose the answer. Use the examples to help you.",
+      questions: (ccqs[`${unit}/${lesson}`] ?? []).map(
+        ({ context, question, answer }) => ({
+          context,
+          question,
+          options: ccqOptions(answer),
+          answer: answer.replace(/\.$/, ""),
+        }),
+      ),
+    },
+    {
       type: "try-it",
       slug: "try-it",
       label: "Try it",
@@ -242,25 +319,21 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       type: "use-it",
       slug: "use-it",
       label: "Use it",
-      instruction: `Practice ${lessonData.title.toLowerCase()} with a partner.`,
+      instruction: "Use the model. Change the details. Then speak without the model.",
       prompts: [
-        `Share your own ideas about ${lessonData.title.toLowerCase()}.`,
-        "Use at least two expressions from this lesson.",
-        "Change the details to make the conversation true for you.",
+        "Read the model once.",
+        "Change the names, places, objects, or times.",
+        "Change roles.",
+        "Repeat without the model.",
       ],
       model: phrases.map((line, index) => [index % 2 === 0 ? "A" : "B", line] as const),
     },
     {
       type: "can-you",
       slug: "can-you",
-      label: "Can you…?",
-      instruction: "Check your progress.",
-      checks: [
-        `Can you ${lessonObjective}`,
-        `Can you understand key expressions about ${lessonData.title.toLowerCase()}?`,
-        "Can you ask and answer a simple question about this topic?",
-        "Can you use the lesson language in a short conversation?",
-      ],
+      label: "Your progress",
+      instruction: "Complete the mini-task without the model. Check each expression you use.",
+      checks: [...phrases],
     },
   ];
 

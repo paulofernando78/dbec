@@ -18,9 +18,9 @@ export const listen = {
     ["Student", ["The Pacific is the largest ocean in the world."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Which desert is drier?",
-  options: ["The Sahara", "The Atacama", "The Gobi"],
-  answer: "The Atacama",
+  question: "The speakers compare:",
+  options: ["Geographical places", "Restaurants", "People's appearance"],
+  answer: "Geographical places",
   followUpInstruction: "Answer the questions.",
   followUp: [
     { question: "Which lake is larger?", answer: "Lake Superior." },

@@ -5,7 +5,7 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "Listen to two friends talk about what their family is doing now.",
+  instruction: "First listen: Ben talks about family members in different cities. Listen for the topic.",
   audio: "/media/audio/course/a1/unit-5/lesson-2-what-are-they-doing/listen/listen.mp3",
   dialogue: [
     ["A", ["Hi, Ben. ", mark("What are you doing"), "?"]],
@@ -22,29 +22,29 @@ export const listen = {
     ["B", [mark("They're working"), ". They're in New York."]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "What is Ben doing?",
-  options: ["Studying English", "Sleeping", "Watching TV"],
-  answer: "Studying English",
-  followUpInstruction: "Answer the questions.",
+  question: "Topic:",
+  options: ["Activities now", "Daily routines", "Clothes and colors"],
+  answer: "Activities now",
+  followUpInstruction: "Listen again. Match each person and activity.",
   followUp: [
     {
-      question: "Where is Ben?",
+      question: "Ben’s city:",
       answer: "In Lima.",
     },
     {
-      question: "What is Eva doing?",
+      question: "Eva:",
       answer: "She is sleeping.",
     },
     {
-      question: "What is Omar doing?",
+      question: "Omar:",
       answer: "He is having lunch.",
     },
     {
-      question: "What are Mia and Leo doing?",
+      question: "Mia and Leo:",
       answer: "They are watching TV.",
     },
     {
-      question: "What are Ben's parents doing?",
+      question: "Ben’s parents:",
       answer: "They are working.",
     },
   ],

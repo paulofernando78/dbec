@@ -21,29 +21,29 @@ export const listen = {
     ["A", ["Excellent. See you on Sunday!"]],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Why can't Nina go to the concert?",
-  options: ["She has to work", "She has to study", "She is sick"],
-  answer: "She has to work",
+  question: "Saturday plan:",
+  options: ["Nina works", "Nina studies", "Nina goes to the concert"],
+  answer: "Nina works",
   followUpInstruction: "Answer the questions.",
   followUp: [
     {
-      question: "When is Nina free?",
+      question: "Nina is free:",
       answer: "On Sunday.",
     },
     {
-      question: "What invitation does Nina accept?",
+      question: "Accepted invitation:",
       answer: "Lunch on Sunday.",
     },
     {
-      question: "What kind of restaurant are they going to try?",
+      question: "Restaurant:",
       answer: "An Italian restaurant.",
     },
     {
-      question: "What time are they going to meet?",
+      question: "Meeting time:",
       answer: "At 1:00.",
     },
     {
-      question: "What does Nina need to do on Sunday morning?",
+      question: "Sunday morning:",
       answer: "Study.",
     },
   ],

@@ -1,5 +1,6 @@
 import type { LessonStepData } from "@/data/course/lesson-step-types";
 import { CanYouStep } from "./CanYouStep";
+import { ConceptCheckStep } from "./ConceptCheckStep";
 import { GetReadyStep } from "./GetReadyStep";
 import { LanguageFocusStep } from "./LanguageFocusStep";
 import { ListenStep } from "./ListenStep";
@@ -19,6 +20,9 @@ export function StepRenderer({ data }: { data: LessonStepData }) {
       break;
     case "language-focus":
       step = <LanguageFocusStep data={data} />;
+      break;
+    case "concept-check":
+      step = <ConceptCheckStep data={data} />;
       break;
     case "try-it":
       step = <TryItStep data={data} />;
