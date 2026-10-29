@@ -2,7 +2,7 @@
 
 import { useRef, useState, type ReactNode } from "react";
 
-import { LoaderCircle, Play, Square } from "lucide-react";
+import { LoaderCircle, Play, Rabbit, Square, Turtle } from "lucide-react";
 import { Button } from "@/components/ui/Button/Button";
 
 type AudioSource = string | { src: string; fallbackText?: string };
@@ -109,10 +109,12 @@ export const Audio = ({
   const fallbackStartedRef = useRef(false);
   const speechFullTextRef = useRef("");
   const speechCompleteRef = useRef<(() => void) | undefined>(undefined);
+  const playbackRateRef = useRef<1 | 0.75>(1);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [playbackRate, setPlaybackRate] = useState<1 | 0.75>(1);
 
   const sources = (typeof src === "string" ? [src] : [...src]).map((source) =>
     typeof source === "string" ? { src: source } : source,
@@ -202,7 +204,7 @@ export const Audio = ({
 
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = speechLang;
-    utterance.rate = 0.92;
+    utterance.rate = playbackRateRef.current === 1 ? 0.92 : 0.72;
     utterance.pitch = 1;
     utterance.volume = 1;
 
@@ -413,6 +415,31 @@ export const Audio = ({
     setProgress(value);
   };
 
+  const togglePlaybackRate = () => {
+    const nextRate = playbackRate === 1 ? 0.75 : 1;
+    playbackRateRef.current = nextRate;
+    setPlaybackRate(nextRate);
+
+    if (audioRef.current) {
+      audioRef.current.playbackRate = nextRate;
+    }
+
+    if (utteranceRef.current) {
+      const fullText = speechFullTextRef.current;
+      const startOffset = Math.round(progress);
+      const remainingText = fullText.slice(startOffset).trim();
+
+      if (remainingText) {
+        void playSpeech(
+          remainingText,
+          speechCompleteRef.current,
+          fullText,
+          startOffset,
+        );
+      }
+    }
+  };
+
   const icon = loading ? (
         <LoaderCircle
           size={16}
@@ -450,6 +477,7 @@ export const Audio = ({
           }}
           onCanPlay={() => setLoading(false)}
           onLoadedMetadata={(event) => {
+            event.currentTarget.playbackRate = playbackRateRef.current;
             setDuration(Number.isFinite(event.currentTarget.duration) ? event.currentTarget.duration : 0);
           }}
           onTimeUpdate={(event) => setProgress(event.currentTarget.currentTime)}
@@ -497,6 +525,12 @@ export const Audio = ({
             onChange={(event) => handleSeek(Number(event.currentTarget.value))}
             aria-label="Audio progress"
             className="h-2 min-w-0 flex-1 cursor-pointer appearance-none rounded-full bg-slate-300 [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-slate-400 [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-slate-400"
+          />
+          <Button
+            onClick={togglePlaybackRate}
+            pressed={playbackRate === 0.75}
+            ariaLabel={`Playback speed: ${playbackRate === 1 ? "normal" : "slow"}. Click to switch to ${playbackRate === 1 ? "slow" : "normal"}.`}
+            icon={playbackRate === 1 ? <Rabbit /> : <Turtle />}
           />
         </div>
   );

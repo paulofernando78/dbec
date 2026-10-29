@@ -37,7 +37,7 @@ export const links: NavItem[] = [
     children: [
       {
         href: "/course",
-        label: "course",
+        label: "course (A1-C1)",
         icon: BookOpenCheck,
       },
       {
