@@ -249,10 +249,13 @@ export const Carousel = ({
   ) : null;
 
   const paginationElement = (
-    <div className="mt-2 flex justify-center gap-2 mb-4">
+    <div className="mt-3 mb-4 flex justify-center gap-2">
       {finalWords.map((_, index) => (
         <button
           key={index}
+          type="button"
+          aria-label={`Show image ${index + 1}`}
+          aria-current={currentIndex === index}
           onClick={() => {
             setCurrentIndex(index);
             cardRef.current[index]?.scrollIntoView({
@@ -261,18 +264,12 @@ export const Carousel = ({
             });
           }}
           className={`
-            aspect-square
-            w-[1.6rem]
+            size-2
             cursor-pointer
-            rounded-[5px]
-            border
-            border-slate-400
-            text-[0.9rem]
-            ${currentIndex === index ? "bg-slate-300" : "bg-slate-100"}
+            rounded-full
+            ${currentIndex === index ? "bg-black" : "bg-slate-300"}
           `}
-        >
-          {index + 1}
-        </button>
+        />
       ))}
     </div>
   );
@@ -281,7 +278,6 @@ export const Carousel = ({
     <>
       <p className="font-bold mb-4">{instruction}</p>
       {aspectRatio !== "square" && matchingContentElement}
-      {paginationElement}
       <div
         className={`
         relative
@@ -432,6 +428,7 @@ export const Carousel = ({
           <Arrow className="block rotate-180 -translate-x-1.5" />
         </button>
       </div>
+      {paginationElement}
       {aspectRatio === "square" && currentContentElement}
       {aspectRatio === "square" && matchingContentElement}
       {aspectRatio !== "square" && currentContentElement}
