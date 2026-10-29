@@ -1,45 +1,12 @@
-import { useEffect, useRef, useState, type PointerEvent } from "react";
-import { Play, Square } from "lucide-react";
+import { useRef, useState, type PointerEvent } from "react";
 
-import { Button } from "@/components/ui/Button";
+import { Audio } from "@/components/ui/Audio";
 import type { GetReadyData } from "@/data/course/lesson-step-types";
 
 export function GetReadyStep({ data }: { data: GetReadyData }) {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const audioRef = useRef<HTMLAudioElement>(null);
   const drag = useRef({ active: false, startX: 0, scrollLeft: 0 });
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    audio.pause();
-    audio.currentTime = 0;
-    audio.load();
-    setIsPlaying(false);
-  }, [currentImage]);
-
-  const toggleAudio = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (!audio.paused) {
-      audio.pause();
-      audio.currentTime = 0;
-      setIsPlaying(false);
-      return;
-    }
-
-    try {
-      await audio.play();
-      setIsPlaying(true);
-    } catch (error) {
-      console.error("Não foi possível tocar o áudio:", error);
-      setIsPlaying(false);
-    }
-  };
 
   const showImage = (index: number) => {
     const carousel = carouselRef.current;
@@ -123,36 +90,16 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
         ))}
       </div>
       <div className="mt-4 flex items-center gap-3">
-        <Button
-          ariaLabel={isPlaying ? "Stop introduction" : "Play introduction"}
-          icon={
-            isPlaying ? (
-              <Square
-                fill="currentColor"
-                stroke="none"
-                style={{ stroke: "none" }}
-              />
-            ) : (
-              <Play
-                fill="currentColor"
-                stroke="none"
-                style={{ stroke: "none" }}
-              />
-            )
-          }
-          onClick={toggleAudio}
-          disabled={!data.slides[currentImage].audio}
+        <Audio
+          key={`${currentImage}-${data.slides[currentImage].audio ?? "synth"}`}
+          asButton
+          src={data.slides[currentImage].audio ?? ""}
+          fallbackText={data.slides[currentImage].quote}
+          speechLang="en-US"
+          ariaLabel={`Play ${data.slides[currentImage].quote}`}
+          wrapperClassName="shrink-0"
         />
         <p>“{data.slides[currentImage].quote}”</p>
-        {data.slides[currentImage].audio && (
-          <audio
-            ref={audioRef}
-            src={data.slides[currentImage].audio}
-            preload="metadata"
-            onEnded={() => setIsPlaying(false)}
-            onPause={() => setIsPlaying(false)}
-          />
-        )}
       </div>
     </div>
   );

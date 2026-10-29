@@ -18,6 +18,7 @@ type AudioProps = {
   asButton?: boolean;
   pauseAfterFirstMs?: number;
   fallbackText?: string;
+  showPlayerControls?: boolean;
 };
 
 let currentGlobalAudio: HTMLAudioElement | null = null;
@@ -97,6 +98,7 @@ export const Audio = ({
   asButton = false,
   pauseAfterFirstMs = 0,
   fallbackText,
+  showPlayerControls = false,
 }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -105,8 +107,12 @@ export const Audio = ({
   const playbackRequestRef = useRef(0);
   const playbackActiveRef = useRef(false);
   const fallbackStartedRef = useRef(false);
+  const speechFullTextRef = useRef("");
+  const speechCompleteRef = useRef<(() => void) | undefined>(undefined);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const sources = (typeof src === "string" ? [src] : [...src]).map((source) =>
     typeof source === "string" ? { src: source } : source,
@@ -178,7 +184,12 @@ export const Audio = ({
     }
   };
 
-  const playSpeech = async (text: string, onComplete?: () => void) => {
+  const playSpeech = async (
+    text: string,
+    onComplete?: () => void,
+    fullText = text,
+    startOffset = 0,
+  ) => {
     stopCurrentSpeech();
 
     if (currentGlobalAudio) {
@@ -194,6 +205,16 @@ export const Audio = ({
     utterance.rate = 0.92;
     utterance.pitch = 1;
     utterance.volume = 1;
+
+    speechFullTextRef.current = fullText;
+    speechCompleteRef.current = onComplete;
+    setProgress(startOffset);
+    setDuration(Math.max(fullText.length, 1));
+    utterance.onboundary = (event) => {
+      if (event.name === "word" || event.charIndex > 0) {
+        setProgress(startOffset + event.charIndex);
+      }
+    };
 
     const voices = await waitForVoices();
 
@@ -213,6 +234,7 @@ export const Audio = ({
       utteranceRef.current = null;
       setLoading(false);
       setPlaying(false);
+      setProgress(fullText.length);
       onComplete?.();
     };
     utterance.onerror = (event) => {
@@ -263,7 +285,11 @@ export const Audio = ({
     e?.stopPropagation();
 
     if (!isAudioFile) {
-      await playSpeech(primarySource);
+      const speechText = primarySource.trim() || defaultFallbackText;
+
+      if (speechText) {
+        await playSpeech(speechText);
+      }
       return;
     }
 
@@ -329,6 +355,7 @@ export const Audio = ({
     }
 
     setPlaying(false);
+    setProgress(0);
   };
 
   const handleEnded = () => {
@@ -350,6 +377,40 @@ export const Audio = ({
 
     setLoading(false);
     setPlaying(false);
+  };
+
+  const handleSeek = (value: number) => {
+    const el = audioRef.current;
+
+    if (!isAudioFile) {
+      const fullText =
+        speechFullTextRef.current ||
+        primarySource.trim() ||
+        defaultFallbackText ||
+        "";
+      if (!fullText) return;
+
+      const requestedIndex = Math.round(value);
+      const nextSpace = fullText.indexOf(" ", requestedIndex);
+      const startOffset = nextSpace === -1 ? requestedIndex : nextSpace + 1;
+      const remainingText = fullText.slice(startOffset).trim();
+
+      setProgress(startOffset);
+      if (remainingText) {
+        void playSpeech(
+          remainingText,
+          speechCompleteRef.current,
+          fullText,
+          startOffset,
+        );
+      }
+      return;
+    }
+
+    if (!el || !Number.isFinite(el.duration)) return;
+
+    el.currentTime = value;
+    setProgress(value);
   };
 
   const icon = loading ? (
@@ -376,12 +437,7 @@ export const Audio = ({
         />
       );
 
-  const content = (
-    <>
-      {showIcon && icon}
-      {children}
-
-      {isAudioFile && (
+  const audioElement = isAudioFile ? (
         <audio
           ref={audioRef}
           src={primarySource}
@@ -393,15 +449,79 @@ export const Audio = ({
             setPlaying(true);
           }}
           onCanPlay={() => setLoading(false)}
+          onLoadedMetadata={(event) => {
+            setDuration(Number.isFinite(event.currentTarget.duration) ? event.currentTarget.duration : 0);
+          }}
+          onTimeUpdate={(event) => setProgress(event.currentTarget.currentTime)}
           onEnded={handleEnded}
           onPause={handlePause}
           onError={() => {
             playCurrentSourceFallback();
           }}
         />
-      )}
+      ) : null;
+
+  const speechDurationText =
+    speechFullTextRef.current || primarySource.trim() || defaultFallbackText || "";
+  const estimatedSpeechDuration = Math.max(
+    1,
+    Math.ceil(
+      (speechDurationText.trim().split(/\s+/).filter(Boolean).length / 138) *
+        60,
+    ),
+  );
+  const displayedDuration = isAudioFile ? duration : estimatedSpeechDuration;
+  const displayedProgress = isAudioFile
+    ? progress
+    : duration > 0
+      ? (progress / duration) * estimatedSpeechDuration
+      : 0;
+  const formatTime = (seconds: number) => {
+    const safeSeconds = Number.isFinite(seconds) ? Math.max(0, seconds) : 0;
+    const minutes = Math.floor(safeSeconds / 60);
+    const remainingSeconds = Math.floor(safeSeconds % 60);
+    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+  };
+
+  const playerControls = (
+    <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
+          <span className="shrink-0 whitespace-nowrap text-xs font-semibold tabular-nums text-slate-500 sm:text-sm">
+            {formatTime(displayedProgress)} / {formatTime(displayedDuration)}
+          </span>
+          <input
+            type="range"
+            min={0}
+            max={Math.max(duration, 1)}
+            step={isAudioFile ? 0.1 : 1}
+            value={Math.min(progress, Math.max(duration, 1))}
+            onChange={(event) => handleSeek(Number(event.currentTarget.value))}
+            aria-label="Audio progress"
+            className="h-2 min-w-0 flex-1 cursor-pointer appearance-none rounded-full bg-slate-300 [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-slate-400 [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-slate-400"
+          />
+        </div>
+  );
+
+  const content = (
+    <>
+      {showIcon && icon}
+      {children}
+      {audioElement}
     </>
   );
+
+  if (showPlayerControls) {
+    return (
+      <div className={`flex items-center gap-3 ${wrapperClassName ?? ""}`}>
+        <Button
+          ariaLabel={ariaLabel}
+          icon={icon}
+          onClick={loading || playing ? handleStop : handlePlay}
+        />
+        {playerControls}
+        {audioElement}
+      </div>
+    );
+  }
 
   if (children) {
     return (

@@ -1,6 +1,6 @@
 import { b2 } from "../b2";
 import type { LessonContent } from "../a1/skeleton-lessons";
-import type { LessonStepData } from "../lesson-step-types";
+import type { ConceptCheckData, LessonStepData } from "../lesson-step-types";
 
 type LessonSeed = {
   unit: number;
@@ -36,6 +36,132 @@ const seeds: readonly LessonSeed[] = [
 ];
 
 const words = (sentence: string) => sentence.split(" ");
+
+const outcomes: Record<string, string> = {
+  "1/1": "Produce a nuanced four-trait personal profile supported by observed behavior and change over time.",
+  "1/2": "Create a balanced family comparison with two similarities, two differences, and a qualified conclusion.",
+  "2/1": "Produce an incident review identifying expectation, failure, responsibility, and corrective action.",
+  "2/2": "Rank three explanations for a mystery by certainty and identify the missing evidence.",
+  "3/1": "Select one destination and document three relevant features and one reservation.",
+  "3/2": "Produce a weighted city comparison and a qualified final recommendation.",
+  "4/1": "Create a four-part energy-management plan with anticipated effects.",
+  "4/2": "Produce a conditional sleep plan linking causes, conditions, and likely outcomes.",
+  "5/1": "Complete two contrasting networking scenarios and record the most effective opening and follow-up.",
+  "5/2": "Produce an accurate reported account distinguishing confirmed information, rumor, warning, and promise.",
+  "6/1": "Produce a sourced news timeline separating finished events from developments relevant now.",
+  "6/2": "Tell a structured five-stage story and record the turning point and final significance.",
+  "7/1": "Produce a technology forecast with three passive developments and one implication for people.",
+  "7/2": "Record a debate conclusion supported by two formal connections and one acknowledged counterargument.",
+  "8/1": "Select a candidate for a creative role and justify the decision with four evidenced qualities.",
+  "8/2": "Produce a problem-solution analysis identifying impact, feasibility, and one broader consequence.",
+  "9/1": "Create a qualified customs comparison with two contrasts, one exception, and one shared principle.",
+  "9/2": "Produce an adaptation plan connecting past habits, repeated responses, and current strategies.",
+  "10/1": "Produce an annoyance profile distinguishing trigger, emotional response, recurrence, and impact.",
+  "10/2": "Resolve a formal complaint and record the cause, remedy, prevention measure, and agreed follow-up.",
+  "11/1": "Reach and justify decisions for two ethical dilemmas while testing exceptions and conditions.",
+  "11/2": "Produce a values statement supported by one wish, one regret, and one present principle.",
+  "12/1": "Create a future adaptation forecast including achievement, duration, support, and uncertainty.",
+  "12/2": "Produce a travel decision that connects a past cause to a present result and evaluates an alternative.",
+};
+
+const ccqs: Record<string, ConceptCheckData["questions"]> = {
+  "1/1": [
+    { context: "She tends to bring out the best in people.", question: "Does this describe a usual tendency?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "He's become far more assertive.", question: "Has his behavior changed?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "1/2": [
+    { context: "What sets my family apart is...", question: "Does this introduce a distinctive feature?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "What can be challenging is balancing expectations.", question: "Does this foreground the difficulty?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "2/1": [
+    { context: "We were supposed to back up the files.", question: "Was backing up expected?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "I should have spoken up.", question: "Did the speaker speak up?", options: ["Yes", "No"], answer: "No" },
+  ],
+  "2/2": [
+    { context: "The lights might have been caused by an aircraft.", question: "Is this explanation certain?", options: ["Yes", "No"], answer: "No" },
+    { context: "There must be a logical explanation.", question: "Does the speaker express strong certainty?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "3/1": [
+    { context: "Lisbon, which is known for its hills, ...", question: "Is the clause additional information about Lisbon?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "a city whose neighborhoods have distinct characters", question: "Does whose connect the neighborhoods to the city?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "3/2": [
+    { context: "Although housing is competitive, costs are manageable.", question: "Does although signal contrast?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "On the other hand, opportunities are limited.", question: "Does this introduce a contrasting disadvantage?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "4/1": [
+    { context: "Once fully awake, I do demanding tasks.", question: "Does once refer to after becoming fully awake?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "Cutting back on caffeine has helped.", question: "Does cut back mean reduce?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "4/2": [
+    { context: "I sleep poorly unless I've exercised.", question: "Is exercise presented as a condition for better sleep?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "Provided that I avoid screens, I fall asleep quickly.", question: "Must the screen condition be met?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "5/1": [
+    { context: "Approaching someone new can feel awkward.", question: "Is the activity the topic of the statement?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "To keep a conversation going, build on their point.", question: "Does the opening phrase express purpose?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "5/2": [
+    { context: "She admitted that she had underestimated the issue.", question: "Is the speaker reporting her admission?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "They warned us not to disclose it.", question: "Did they advise against disclosure?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "6/1": [
+    { context: "The investigation began last month, but findings have just emerged.", question: "Did the beginning occur at a finished past time?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "Since the story broke, experts have questioned the evidence.", question: "Does the questioning connect the past event to now?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "6/2": [
+    { context: "I'd been trying for hours when I noticed one detail.", question: "Which began first?", options: ["Trying", "Noticing"], answer: "Trying" },
+    { context: "By then, everyone else had left.", question: "Had they left before that point?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "7/1": [
+    { context: "AI is being integrated into services.", question: "Is the integration ongoing?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "Personal data have been collected.", question: "Is the present result important?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "7/2": [
+    { context: "Isn't connectivity making concentration harder?", question: "Does the speaker invite a reaction to an opinion?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "Platforms encourage participation; nevertheless, they amplify claims.", question: "Does nevertheless introduce contrast?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "8/1": [
+    { context: "People driven by curiosity...", question: "Are the people driven by curiosity?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "A designer working across disciplines...", question: "Is the designer currently described by the activity?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "8/2": [
+    { context: "The device reduces waste, which makes it valuable.", question: "Does which comment on the whole previous idea?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "The team came up with a solution.", question: "Did the team create an idea?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "9/1": [
+    { context: "Although punctuality is valued, times are flexible.", question: "Are the two ideas contrasted?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "Apart from formal occasions, dress codes are less restrictive.", question: "Are formal occasions an exception?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "9/2": [
+    { context: "I used to resist unfamiliar situations.", question: "Was this a past habit or state?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "She would keep focused when setbacks occurred.", question: "Does this describe repeated past behavior?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "10/1": [
+    { context: "What drives me mad is being transferred repeatedly.", question: "Does this identify the cause of annoyance?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "I get frustrated when companies make it difficult.", question: "Does frustrated describe the speaker's feeling?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "10/2": [
+    { context: "Could you clarify why the charge wasn't disclosed?", question: "Is this a direct command or a polite indirect question?", options: ["Direct command", "Polite indirect question"], answer: "Polite indirect question" },
+    { context: "I'd appreciate it if you could explain.", question: "Is the register polite and formal?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "11/1": [
+    { context: "Even if nobody discovered it, I wouldn't take credit.", question: "Would discovery change the decision?", options: ["Yes", "No"], answer: "No" },
+    { context: "Unless the evidence were convincing, I'd avoid an accusation.", question: "Is convincing evidence required for an accusation?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "11/2": [
+    { context: "I wish I'd questioned the advice.", question: "Did the speaker question it enough?", options: ["Yes", "No"], answer: "No" },
+    { context: "If only the company had acknowledged the mistake.", question: "Did the company acknowledge it at the desired time?", options: ["Yes", "No"], answer: "No" },
+  ],
+  "12/1": [
+    { context: "By next summer, I'll have been working abroad...", question: "Does the speaker emphasize duration up to a future point?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "By the time I've lived there for a year, I'll have developed...", question: "Will the development be achieved by that future point?", options: ["Yes", "No"], answer: "Yes" },
+  ],
+  "12/2": [
+    { context: "If I'd planned better, I wouldn't be dealing with this now.", question: "Does a past decision affect the present?", options: ["Yes", "No"], answer: "Yes" },
+    { context: "Had we checked the forecast, we'd have packed better.", question: "Did we check the forecast?", options: ["Yes", "No"], answer: "No" },
+  ],
+};
 
 const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
   const unitData = b2.units[unit - 1];
@@ -86,6 +212,13 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       ] as const),
     },
     {
+      type: "concept-check",
+      slug: "check-meaning",
+      label: "Check meaning",
+      instruction: "Choose the answer. Use meaning, stance, and context—not only the grammar form.",
+      questions: ccqs[`${unit}/${lesson}`],
+    },
+    {
       type: "try-it",
       slug: "try-it",
       label: "Try it",
@@ -99,24 +232,25 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       type: "use-it",
       slug: "use-it",
       label: "Use it",
-      instruction: `Discuss and evaluate different perspectives on ${lessonData.title.toLowerCase()}.`,
+      instruction: `Discuss, evaluate, and reach a documented conclusion about ${lessonData.title.toLowerCase()}.`,
       prompts: [
-        `Develop a clear position on ${lessonData.title.toLowerCase()}.`,
-        "Develop your position with reasons, evidence, and a relevant example.",
-        "Respond to another perspective, acknowledge a valid point, and clarify your conclusion.",
+        "Round 1: use the model to develop a position with a reason, evidence, and an example.",
+        "Respond to the other position, acknowledge one valid point, and qualify your own claim.",
+        "Round 2: close the model and discuss a new case using your own or supplied evidence.",
+        outcomes[`${unit}/${lesson}`],
       ],
       model: phrases.map((line, index) => [index % 2 === 0 ? "A" : "B", line] as const),
     },
     {
       type: "can-you",
       slug: "can-you",
-      label: "Can you…?",
+      label: "Your progress",
       instruction: "Evaluate your communicative performance.",
       checks: [
-        `Can you ${lessonObjective}`,
-        `Can you identify attitudes, supporting details, and implications in a discussion about ${lessonData.title.toLowerCase()}?`,
-        "Can you use the target language accurately and appropriately for the register?",
-        "Can you defend a position while engaging constructively with another perspective?",
+        `Target: ${outcomes[`${unit}/${lesson}`]}`,
+        `I identify attitudes, supporting details, and implications in a discussion about ${lessonData.title.toLowerCase()}.`,
+        "I use the target language accurately and appropriately for the register.",
+        "I defend and qualify a position, engage with another view, and record a conclusion.",
       ],
     },
   ];

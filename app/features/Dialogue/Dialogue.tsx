@@ -14,17 +14,35 @@ type DialogueProps = {
   lines: DialogueLine[];
 };
 
+const lineToSpeech = (line: RichContent) =>
+  line
+    .map((part) => (typeof part === "string" ? part : (part.part ?? "")))
+    .join("")
+    .replace(/\s+/g, " ")
+    .trim();
+
 export const Dialogue = ({
   instruction,
   audioSrc,
   lines = [],
 }: DialogueProps) => {
+  const speechText = lines
+    .map(({ line }) => lineToSpeech(line))
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <div className="space-y-4 mb-4">
       <div className="flex items-center gap-2">
         <b><InlineRichContent value={instruction}/></b>
       </div>
-      {audioSrc && <AudioPlayer src={audioSrc} />}
+      {(audioSrc || speechText) && (
+        <AudioPlayer
+          src={audioSrc}
+          fallbackText={speechText}
+          ariaLabel="Play dialogue"
+        />
+      )}
       {lines.map((line, index) => (
         <p key={index}>
           {line.speaker && (
