@@ -223,7 +223,6 @@ function SentenceBuilder({
         <WordContainer
           id="answer"
           tokens={answer}
-          placeholder="Drag or tap the words to build the sentence."
           onTokenClick={(token) => moveToken(token, "answer", "bank")}
         />
       </DndContext>

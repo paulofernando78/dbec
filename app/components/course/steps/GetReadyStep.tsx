@@ -3,6 +3,8 @@ import { useRef, useState, type PointerEvent } from "react";
 import { Audio } from "@/components/ui/Audio";
 import type { GetReadyData } from "@/data/course/lesson-step-types";
 
+const GET_READY_INSTRUCTION = "Look at the picture.";
+
 export function GetReadyStep({ data }: { data: GetReadyData }) {
   const [currentImage, setCurrentImage] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -43,9 +45,7 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
 
   return (
     <div className="rounded-2xl bg-[var(--surface)] p-4 pb-5.5">
-      {data.instruction ? (
-        <h3 className="mb-4 text-lg font-bold">{data.instruction}</h3>
-      ) : null}
+      <h3 className="mb-4 text-lg font-bold">{GET_READY_INSTRUCTION}</h3>
       <div
         ref={carouselRef}
         className="flex cursor-grab snap-x snap-mandatory overflow-x-auto rounded-xl select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"

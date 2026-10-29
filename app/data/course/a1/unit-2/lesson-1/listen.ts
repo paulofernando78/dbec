@@ -6,6 +6,8 @@ export const listen = {
   slug: "listen",
   label: "Listen",
   instruction: "First listen: a new employee sees a desk. Listen for the place.",
+  image: "/media/images/course/a1/unit-2/lesson-1-whats-this/get-ready/tablet.avif",
+  imageAlt: "A tablet on a desk in a bright office",
   audio: "/media/audio/course/a1/unit-2/lesson-1-whats-this/listen/listen.mp3",
   dialogue: [
     ["A", ["Welcome to the office. This is your desk."]],

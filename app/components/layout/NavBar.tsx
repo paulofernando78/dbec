@@ -77,14 +77,33 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
                 {item.group}
               </p>
               <div className="space-y-2 pl-2">
-                {item.children.map(
-                  ({ href, label, icon: Icon }) =>
-                    Icon && (
-                      <div key={href}>
-                        {renderNavigationButton(href, label, Icon)}
+                {item.children.map((child) => {
+                  if ("subgroup" in child) {
+                    return (
+                      <div key={child.subgroup} className="pt-2 first:pt-0">
+                        <p className="mb-2 text-xs font-black uppercase tracking-wider text-gray-400">
+                          {child.subgroup}
+                        </p>
+                        <div className="space-y-2 pl-2">
+                          {child.children.map(({ href, label, icon: Icon }) =>
+                            Icon ? (
+                              <div key={href}>
+                                {renderNavigationButton(href, label, Icon)}
+                              </div>
+                            ) : null,
+                          )}
+                        </div>
                       </div>
-                    ),
-                )}
+                    );
+                  }
+
+                  const { href, label, icon: Icon } = child;
+                  return Icon ? (
+                    <div key={href}>
+                      {renderNavigationButton(href, label, Icon)}
+                    </div>
+                  ) : null;
+                })}
               </div>
             </div>
           );
@@ -97,13 +116,13 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
         if (href === "/dashboard") {
           return dashboardPath ? (
             <div key={href}>
+              <GlobalSearch closeNavBar={closeNavBar} />
               {renderNavigationButton(
                 dashboardPath,
                 "Dashboard",
                 User,
                 "mb-2"
               )}
-              <GlobalSearch closeNavBar={closeNavBar} />
               <div className="mb-2 flex items-center gap-2">
                 <Button
                   ariaLabel={isNotesOpen ? "Close notes" : "Open notes"}

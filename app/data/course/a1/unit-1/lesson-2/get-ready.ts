@@ -5,7 +5,6 @@ export const getReady = {
   type: "get-ready",
   slug: "get-ready",
   label: "Get ready",
-  instruction: "Look at the picture, listen, and talk.",
   slides: [
     {
       image:

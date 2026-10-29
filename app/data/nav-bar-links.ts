@@ -9,6 +9,10 @@ import {
   BookMarked,
   MessageSquareQuote,
   Music2,
+  Headphones,
+  Mic2,
+  BookOpen,
+  PenLine,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -21,6 +25,11 @@ export type NavLinkItem = {
 
 export type NavGroup = {
   group: string;
+  children: Array<NavLinkItem | NavSubgroup>;
+};
+
+export type NavSubgroup = {
+  subgroup: string;
   children: NavLinkItem[];
 };
 
@@ -33,54 +42,9 @@ export const links: NavItem[] = [
     icon: CircleUserRound,
   },
   {
-    group: "path",
-    children: [
-      {
-        href: "/course",
-        label: "course (A1-C1)",
-        icon: BookOpenCheck,
-      },
-      {
-        href: "/authentic-content",
-        label: "authentic content",
-        icon: AuthenticContent,
-      },
-    ],
-  },
-  {
-    group: "extra",
-    children: [
-      {
-        href: "/vocabulary",
-        label: "vocabulary",
-        icon: BookOpenText,
-      },
-      {
-        href: "/expressions",
-        label: "expressions",
-        icon: MessageSquareQuote,
-      },
-      {
-        href: "/grammar",
-        label: "grammar",
-        icon: BookMarked,
-      },
-      {
-        href: "/pronunciation",
-        label: "Pronunciation",
-        icon: AudioLines,
-      },
-      {
-        href: "/songs",
-        label: "songs",
-        icon: Music2,
-      },
-      {
-        href: "/games",
-        label: "games",
-        icon: Gamepad2,
-      },
-    ],
+    href: "/course",
+    label: "course (A1-C1)",
+    icon: BookOpenCheck,
   },
   {
     group: "specific purposes",
@@ -89,6 +53,37 @@ export const links: NavItem[] = [
         href: "/travel",
         label: "travel",
         icon: Plane,
+      },
+    ],
+  },
+  {
+    group: "keep learning",
+    children: [
+      {
+        subgroup: "language",
+        children: [
+          { href: "/vocabulary", label: "vocabulary", icon: BookOpenText },
+          { href: "/expressions", label: "expressions", icon: MessageSquareQuote },
+          { href: "/grammar", label: "grammar", icon: BookMarked },
+          { href: "/pronunciation", label: "pronunciation", icon: AudioLines },
+        ],
+      },
+      {
+        subgroup: "skills",
+        children: [
+          { href: "/skills/listening", label: "listening", icon: Headphones },
+          { href: "/skills/speaking", label: "speaking", icon: Mic2 },
+          { href: "/skills/reading", label: "reading", icon: BookOpen },
+          { href: "/skills/writing", label: "writing", icon: PenLine },
+        ],
+      },
+      {
+        subgroup: "content",
+        children: [
+          { href: "/authentic-content", label: "TED-Ed", icon: AuthenticContent },
+          { href: "/songs", label: "songs", icon: Music2 },
+          { href: "/games", label: "games", icon: Gamepad2 },
+        ],
       },
     ],
   },

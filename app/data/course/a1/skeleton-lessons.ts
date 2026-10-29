@@ -253,7 +253,6 @@ const createLesson = ({ unit, lesson, phrases }: LessonSeed): LessonContent => {
       type: "get-ready",
       slug: "get-ready",
       label: "Get ready",
-      instruction: "Look at the picture, listen, and talk.",
       slides: phrases.slice(0, 3).map((quote, index) => ({
         image: "",
         audio: "",

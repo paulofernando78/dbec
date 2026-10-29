@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Eye, EyeClosed } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
+import { Image } from "@/components/ui/Image";
 import type { ListenData } from "@/data/course/lesson-step-types";
 import { Dialogue } from "@/features/Dialogue";
 import { Radio } from "@/features/exercises/Radio";
@@ -11,6 +12,21 @@ export function ListenStep({ data }: { data: ListenData }) {
 
   return (
     <div className="space-y-4 rounded-2xl bg-[var(--surface)] p-4">
+      {data.image ? (
+        <Image
+          src={data.image}
+          alt={data.imageAlt ?? "Listening context"}
+          className="aspect-video object-cover"
+        />
+      ) : (
+        <div
+          role="img"
+          aria-label="Listening image placeholder"
+          className="grid aspect-video w-full place-items-center rounded-lg bg-linear-to-r from-slate-300 via-slate-200 to-slate-300 text-sm font-bold uppercase text-slate-500"
+        >
+          Listen image placeholder
+        </div>
+      )}
       <section className="rounded-xl bg-[var(--background)] p-4">
         <Dialogue
           instruction={data.instruction}

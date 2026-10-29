@@ -16,7 +16,6 @@ export type GetReadyData = StepExtension & {
   type: "get-ready";
   slug: string;
   label: string;
-  instruction?: string;
   slides: readonly {
     image?: string;
     audio?: string;
@@ -30,6 +29,8 @@ export type ListenData = StepExtension & {
   slug: string;
   label: string;
   instruction: string;
+  image?: string;
+  imageAlt?: string;
   audio: string;
   dialogue: readonly (readonly [speaker: string, text: RichContent])[];
   questionInstruction: string;

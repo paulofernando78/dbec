@@ -4,8 +4,7 @@ export const tryIt = {
   type: "try-it",
   slug: "try-it",
   label: "Try it",
-  instruction:
-    "Build the sentences. Start with two words, then build the complete exchange.",
+  instruction: "Drag or tap the words to build the sentence.",
   items: [
     { words: ["Laura.", "I'm"], answer: ["I'm", "Laura."] },
     { words: ["name", "My", "Eric.", "is"], answer: ["My", "name", "is", "Eric."] },

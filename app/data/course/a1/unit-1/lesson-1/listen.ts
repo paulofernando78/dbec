@@ -7,6 +7,8 @@ export const listen = {
   label: "Listen",
   instruction:
     "First listen: Laura and Eric meet at work. Listen for their names only.",
+  image: "/media/images/course/a1/unit-1/lesson-1-hello/listen/meeting.avif?v=3",
+  imageAlt: "Laura and Eric greeting each other with a handshake",
   audio: "/media/audio/course/a1/unit-1/lesson-1-hello/listen/listen.mp3",
   dialogue: [
     ["Laura",[mark("Hello. My name is Laura Palmer."), " ", mark("What's your name?")]],
