@@ -63,8 +63,8 @@ const pageItems: readonly SearchItem[] = [
   { title: "Speak vs. Say vs. Tell", category: "Vocabulary", description: "Speaking and giving information.", href: "/vocabulary#speak-vs-say-vs-tell", keywords: "falar dizer contar" },
   { title: "Quick vs. Fast", category: "Vocabulary", description: "Short duration versus high speed.", href: "/vocabulary#quick-vs-fast", keywords: "quickly fastly rápido velocidade" },
   { title: "Frozen vs. Frostbite", category: "Vocabulary", description: "Being frozen versus an injury caused by extreme cold.", href: "/vocabulary#frozen-vs-frostbite", keywords: "frostbitten congelado frio lesão" },
-  { title: "Will vs. Be going to", category: "Grammar", description: "Spontaneous decisions, plans, and predictions.", href: "/grammar#will-vs-going-to", keywords: "future futuro" },
-  { title: "Maybe vs. May be", category: "Grammar", description: "An adverb versus the modal may followed by be.", href: "/grammar#maybe-vs-may-be", keywords: "perhaps might possibility possibilidade" },
+  { title: "Future Forms", category: "Grammar", description: "Will, be going to, and the present continuous.", href: "/grammar#future-forms", keywords: "will going to future futuro" },
+  { title: "Maybe vs. May be", category: "Grammar", description: "An adverb versus the modal may followed by be.", href: "/grammar#modal-verbs", keywords: "perhaps might possibility possibilidade" },
 ];
 
 const expressionData = [

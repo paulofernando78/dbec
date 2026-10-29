@@ -1,5 +1,7 @@
 import type { RichContent } from "@/helpers/content";
 import type { ComponentType } from "react";
+import type { GrammarTopicId } from "@/data/grammar";
+import type { VocabularyTopicId } from "@/data/vocabulary";
 
 type StepExtension = {
   component?: ComponentType;
@@ -39,6 +41,8 @@ export type LanguageFocusData = StepExtension & {
   slug: string;
   label: string;
   instruction: string;
+  relatedGrammar?: readonly GrammarTopicId[];
+  relatedVocabulary?: readonly VocabularyTopicId[];
   items: readonly (readonly [
     title: RichContent | string,
     meaning: string,

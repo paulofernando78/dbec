@@ -6,6 +6,7 @@ export const languageFocus = {
   slug: "language-focus",
   label: "Language focus",
   instruction: "Use be going to for decided plans and will for possible plans before a decision.",
+  relatedGrammar: ["future-forms"],
   items: [
     [
       ["What ", bold("are"), " you ", bold("going to do"), " during spring break? — I", bold("'m going to visit"), " my cousin in Florianópolis."],

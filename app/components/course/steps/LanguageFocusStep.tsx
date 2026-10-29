@@ -4,6 +4,8 @@ import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { LanguageFocusData } from "@/data/course/lesson-step-types";
+import { GrammarTopicCards } from "@/features/Grammar";
+import { VocabularyTopicCards } from "@/features/Vocabulary";
 
 type Accent = "us" | "uk";
 
@@ -108,6 +110,18 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
           },
         )}
       </div>
+      {data.relatedGrammar?.length ? (
+        <section className="mt-6" aria-label="Related grammar">
+          <h3 className="mb-4 text-lg font-black">Related grammar</h3>
+          <GrammarTopicCards topicIds={data.relatedGrammar} />
+        </section>
+      ) : null}
+      {data.relatedVocabulary?.length ? (
+        <section className="mt-6" aria-label="Related vocabulary">
+          <h3 className="mb-4 text-lg font-black">Related vocabulary</h3>
+          <VocabularyTopicCards topicIds={data.relatedVocabulary} />
+        </section>
+      ) : null}
     </div>
   );
 }

@@ -16,6 +16,7 @@ type SectionElementProps = {
   iconClassName?: string;
   tocItemClassName?: string;
   tocContentAfter?: ReactNode;
+  showInTableOfContents?: boolean;
 };
 
 type PageSectionsProps = {
@@ -49,7 +50,7 @@ export const PageSections = ({
         return false;
       }
 
-      return (
+      return child.props.showInTableOfContents !== false && (
         "displayName" in child.type && child.type.displayName === "Section"
       );
     })

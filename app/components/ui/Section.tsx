@@ -12,6 +12,7 @@ type SectionProps = {
   iconClassName?: string;
   tocItemClassName?: string;
   tocContentAfter?: ReactNode;
+  showInTableOfContents?: boolean;
   heading?: 1 | 2 | 3 | 4 | 5 | 6;
   showHeader?: boolean;
   children: ReactNode;
