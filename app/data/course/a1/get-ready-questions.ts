@@ -1,10 +1,6 @@
 import type { GetReadyQuestion } from "../lesson-step-types";
 
-type LessonQuestions = readonly [
-  readonly GetReadyQuestion[],
-  readonly GetReadyQuestion[],
-  readonly GetReadyQuestion[],
-];
+type LessonQuestions = readonly (readonly GetReadyQuestion[])[];
 
 export const a1GetReadyQuestions: Record<string, LessonQuestions> = {
   "1/1": [
@@ -18,9 +14,11 @@ export const a1GetReadyQuestions: Record<string, LessonQuestions> = {
     [{ prompt: "Hello or goodbye?", support: ["Hello.", "Goodbye."] }],
   ],
   "2/1": [
-    [{ prompt: "What’s this?", support: ["It’s a tablet.", "It’s a phone."] }],
+    [{ prompt: "What’s this?", support: ["It’s a laptop computer.", "It’s a phone."] }],
     [{ prompt: "What’s this?", support: ["It’s an adapter.", "It’s a charger."] }],
     [{ prompt: "What are these?", support: ["They’re notebooks.", "They’re folders."] }],
+    [{ prompt: "What are these?", support: ["They’re keys.", "They’re notebooks."] }],
+    [{ prompt: "What’s this?", support: ["It’s a headset.", "It’s a phone."] }],
   ],
   "2/2": [
     [{ prompt: "Where is the phone?", support: ["On the desk.", "Under the desk."] }],

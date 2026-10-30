@@ -8,14 +8,14 @@ export const getReady = {
   slides: [
     {
       image:
-        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/phone.avif",
+        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/phone-number.avif?v=1",
       quote: "What’s your phone number?",
       questions: a1GetReadyQuestions["1/2"][0],
     },
     {
       image:
-        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/email.avif",
-      quote: "What’s your email address?",
+        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/email.avif?v=2",
+      quote: "Here’s my card.",
       questions: a1GetReadyQuestions["1/2"][1],
     },
     {

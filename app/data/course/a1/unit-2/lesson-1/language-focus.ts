@@ -8,12 +8,12 @@ export const languageFocus = {
   instruction: "Listen, repeat, and notice how we identify one object or more than one.",
   items: [
     [
-      [bold("This is"), " a tablet. — ", bold("It's"), " your work tablet."],
+      [bold("This is"), " a laptop computer. — ", bold("It's"), " your work laptop."],
       "Use this for one thing. Use it to talk about the same thing again.",
-      "Stress this, tablet, and it's.",
+      "Stress this, laptop, and it's.",
       "this + is + a + singular noun · It's = It is",
       undefined,
-      "Isto é um tablet. — É o seu tablet de trabalho.",
+      "Isto é um laptop. — É o seu laptop de trabalho.",
       "One object",
     ],
     [
@@ -35,13 +35,13 @@ export const languageFocus = {
       "More than one object",
     ],
     [
-      [bold("What are these"), "? — ", bold("They're"), " headphones."],
-      "Ask What are these? about two or more things.",
-      "Stress WHAT and HEADphones. Use falling intonation.",
-      "What + are + these? · They are + plural noun",
+      [bold("What's this"), "? — ", bold("It's a"), " headset."],
+      "Ask What's this? about one thing.",
+      "Stress WHAT and HEADset. Use falling intonation.",
+      "What + is + this? · It is + a + singular noun",
       undefined,
-      "O que são estes? — São fones de ouvido.",
-      "More than one object",
+      "O que é isto? — É um headset.",
+      "One object",
     ],
     [
       ["This is one ", bold("key"), ". — These are two ", bold("keys"), "."],

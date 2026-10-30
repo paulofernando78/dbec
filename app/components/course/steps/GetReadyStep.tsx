@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState, type PointerEvent } from "react";
 
 import { Audio } from "@/components/ui/Audio";
@@ -18,6 +19,12 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
       left: index * carousel.clientWidth,
       behavior: "smooth",
     });
+  };
+
+  const changeImage = (direction: -1 | 1) => {
+    const nextImage =
+      (currentImage + direction + data.slides.length) % data.slides.length;
+    showImage(nextImage);
   };
 
   const startDrag = (event: PointerEvent<HTMLDivElement>) => {
@@ -46,39 +53,61 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
   return (
     <div className="rounded-2xl bg-[var(--surface)] p-4 pb-5.5">
       <h3 className="mb-4 text-lg font-bold">{GET_READY_INSTRUCTION}</h3>
-      <div
-        ref={carouselRef}
-        className="flex cursor-grab snap-x snap-mandatory overflow-x-auto rounded-xl select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        onScroll={(event) => {
-          const carousel = event.currentTarget;
-          setCurrentImage(
-            Math.round(carousel.scrollLeft / carousel.clientWidth),
-          );
-        }}
-        onPointerDown={startDrag}
-        onPointerMove={moveDrag}
-        onPointerUp={stopDrag}
-        onPointerCancel={stopDrag}
-      >
-        {data.slides.map((slide, index) => (
-          <div
-            key={`${index}-${slide.quote}`}
-            className="aspect-video w-full shrink-0 snap-center overflow-hidden bg-linear-to-r from-slate-300 via-slate-200 to-slate-300"
-          >
-            {slide.image ? (
-              <img
-                src={slide.image}
-                alt={`Lesson scene ${index + 1}`}
-                draggable={false}
-                className="size-full object-cover"
-              />
-            ) : (
-              <div className="grid size-full place-items-center text-sm font-bold uppercase text-slate-500">
-                Image placeholder {index + 1}
-              </div>
-            )}
-          </div>
-        ))}
+      <div className="relative">
+        <div
+          ref={carouselRef}
+          className="flex cursor-grab snap-x snap-mandatory overflow-x-auto rounded-xl select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          onScroll={(event) => {
+            const carousel = event.currentTarget;
+            setCurrentImage(
+              Math.round(carousel.scrollLeft / carousel.clientWidth),
+            );
+          }}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={stopDrag}
+          onPointerCancel={stopDrag}
+        >
+          {data.slides.map((slide, index) => (
+            <div
+              key={`${index}-${slide.quote}`}
+              className="aspect-video w-full shrink-0 snap-center overflow-hidden bg-linear-to-r from-slate-300 via-slate-200 to-slate-300"
+            >
+              {slide.image ? (
+                <img
+                  src={slide.image}
+                  alt={`Lesson scene ${index + 1}`}
+                  draggable={false}
+                  className="size-full object-cover"
+                />
+              ) : (
+                <div className="grid size-full place-items-center text-sm font-bold uppercase text-slate-500">
+                  Image placeholder {index + 1}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        {data.slides.length > 1 ? (
+          <>
+            <button
+              type="button"
+              aria-label="Show previous image"
+              onClick={() => changeImage(-1)}
+              className="absolute top-1/2 left-3 z-10 grid size-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/70 bg-white/85 text-slate-700 shadow-md backdrop-blur-sm transition hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
+            >
+              <ChevronLeft aria-hidden="true" className="size-6" />
+            </button>
+            <button
+              type="button"
+              aria-label="Show next image"
+              onClick={() => changeImage(1)}
+              className="absolute top-1/2 right-3 z-10 grid size-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/70 bg-white/85 text-slate-700 shadow-md backdrop-blur-sm transition hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
+            >
+              <ChevronRight aria-hidden="true" className="size-6" />
+            </button>
+          </>
+        ) : null}
       </div>
       <div className="mt-4 flex justify-center gap-2">
         {data.slides.map((slide, index) => (

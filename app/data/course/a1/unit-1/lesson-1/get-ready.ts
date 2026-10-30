@@ -15,5 +15,13 @@ export const getReady = {
       audio: "/media/audio/course/a1/unit-1/lesson-1-hello/get-ready/audio-2.mp3",
       quote: "Hello, I’m Eric.",
     },
+    {
+      image: "/media/images/course/a1/unit-1/lesson-1-hello/get-ready/tony-manager.avif?v=2",
+      quote: "This is Tony. He’s the manager.",
+    },
+    {
+      image: "/media/images/course/a1/unit-1/lesson-1-hello/get-ready/kate-receptionist.avif?v=1",
+      quote: "This is Kate. She’s the receptionist.",
+    },
   ],
 } satisfies GetReadyData;
