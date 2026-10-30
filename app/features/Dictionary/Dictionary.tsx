@@ -3,9 +3,7 @@
 import styles from "./Dictionary.module.css";
 
 import { Button } from "@/components/ui/Button";
-import { Portuguese } from "@/components/content/Portuguese";
-import { Image } from "@/components/ui/Image";
-import { dictionary } from "@/helpers/content";
+import { DictionaryWordCard } from "./DictionaryWordCard";
 import {
   flattenDictionaryDefinitions,
   loadDictionaryLetter,
@@ -14,7 +12,7 @@ import {
 
 import { useState, useEffect, type KeyboardEvent } from "react";
 // import { Search, Close } from "@/lib/svg-imports";
-import { Search, X, Keyboard, Dot } from "lucide-react";
+import { Search, X, Keyboard } from "lucide-react";
 
 export const Dictionary = () => {
   const [open, setOpen] = useState(false);
@@ -114,104 +112,7 @@ export const Dictionary = () => {
         <div className={styles.results}>
           {searchedWord.length > 0 ? (
             searchedWord.map((item, index) => (
-              <div key={index} className={`${styles.wordCard} line-break`}>
-                <div>
-                  <div>
-                    <span className={styles.word}>{item.word}</span>
-                    <span className={styles.partOfSpeech}>
-                      {item.partOfSpeech}
-                    </span>
-                    <span className={styles.phonetics}>{item.phonetics}</span>
-                  </div>
-                  <div>
-                    {item.enDefinition && (
-                      <span className={styles.enDefinition}>
-                        {item.enDefinition}
-                      </span>
-                    )}
-                    {item.ptDefinition && (
-                      <span className={styles.ptDefinition}>
-                        <Portuguese>{item.ptDefinition}</Portuguese>
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div>
-                  {item.examples?.map((example, index) => (
-                    <div key={index} className={styles.example}>
-                      <Dot />
-                      <span className={styles.enExample}>
-                        {example.enExample}
-                      </span>
-                      <span className={styles.ptExample}>
-                        <Portuguese>{example.ptExample}</Portuguese>
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  {item.synonyms && (
-                    <div>
-                      <span className={styles.synomyms}>synonyms:</span>
-                      <span>
-                        {Array.isArray(item.synonyms)
-                          ? item.synonyms.join(", ")
-                          : item.synonyms}
-                      </span>
-                    </div>
-                  )}
-                  {item.antonyms && (
-                    <div>
-                      <span className={styles.antonyms}>antonyms:</span>
-                      <span>
-                        {Array.isArray(item.antonyms)
-                          ? item.antonyms.join(", ")
-                          : item.antonyms}
-                      </span>
-                    </div>
-                  )}
-                  {item.seeAlso && (
-                    <div>
-                      <span className={styles.seeAlso}>see also:</span>
-                      <span>
-                        {Array.isArray(item.seeAlso)
-                          ? item.seeAlso.join(", ")
-                          : item.seeAlso}
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {item.notes && (
-                  <div>
-                    <span className={styles.notes}>notes:</span>
-                    {item.notes.map((note, index) => (
-                      <span key={index}>
-                        <span className={styles.enNote}> {note.enNote}</span>
-                        <span>
-                          <Portuguese>{note.ptNote}</Portuguese>
-                        </span>
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                {item.imgs && (
-                  <div className={styles.images}>
-                    {item.imgs
-                      .filter((img) => Boolean(img.src))
-                      .map((img, index) => (
-                        <Image
-                          key={index}
-                          src={dictionary(img.src!)}
-                          alt={img.alt || item.word || `image-${index}`}
-                          width={270}
-                          height={270}
-                        />
-                      ))}
-                  </div>
-                )}
-              </div>
+              <DictionaryWordCard key={`${item.word}-${index}`} entry={item} />
             ))
           ) : (
             <div className={styles.emptyState}>

@@ -33,17 +33,17 @@ type DictionaryEntry = {
 
 const dictionaryLetters = import.meta.glob<unknown>(
   "../data/dictionary/*.json",
-  { eager: true, import: "default" },
-);
+  { import: "default" },
+) as Record<string, () => Promise<unknown>>;
 
 export const loadDictionaryLetter = async (
   letter: string,
 ): Promise<unknown> => {
   const normalizedLetter = letter.toLowerCase();
-  const data = dictionaryLetters[`../data/dictionary/${normalizedLetter}.json`];
+  const loadData = dictionaryLetters[`../data/dictionary/${normalizedLetter}.json`];
 
-  if (!data) throw new Error(`Dictionary letter not found: ${normalizedLetter}`);
-  return data;
+  if (!loadData) throw new Error(`Dictionary letter not found: ${normalizedLetter}`);
+  return loadData();
 };
 
 export const flattenDictionaryDefinitions = (

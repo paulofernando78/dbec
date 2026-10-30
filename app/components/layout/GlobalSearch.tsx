@@ -8,6 +8,12 @@ import { levels } from "@/data/course";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
 import { lessonRegistry } from "@/data/course/lesson-registry";
+import { DictionaryWordCard } from "@/features/Dictionary/DictionaryWordCard";
+import {
+  flattenDictionaryDefinitions,
+  loadDictionaryLetter,
+  type DictionaryDefinition,
+} from "@/utils/loadDictionaryWord";
 
 type SearchItem = {
   title: string;
@@ -235,8 +241,45 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [shortcutLabel, setShortcutLabel] = useState<string | null>(null);
+  const [dictionaryEntry, setDictionaryEntry] =
+    useState<DictionaryDefinition | null>(null);
+  const [isDictionaryLoading, setIsDictionaryLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const searchedWord = normalize(query).trim();
+    const firstLetter = searchedWord[0];
+
+    if (!searchedWord || !firstLetter || !/[a-z]/.test(firstLetter)) {
+      setDictionaryEntry(null);
+      setIsDictionaryLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+    setIsDictionaryLoading(true);
+
+    loadDictionaryLetter(firstLetter)
+      .then((data) => {
+        if (cancelled) return;
+
+        const exactMatch = flattenDictionaryDefinitions(data).find(
+          (entry) => normalize(entry.word).trim() === searchedWord,
+        );
+        setDictionaryEntry(exactMatch ?? null);
+      })
+      .catch(() => {
+        if (!cancelled) setDictionaryEntry(null);
+      })
+      .finally(() => {
+        if (!cancelled) setIsDictionaryLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [query]);
 
   const results = useMemo<SearchResult[]>(() => {
     const terms = normalize(query).trim().split(/\s+/).filter(Boolean);
@@ -260,6 +303,7 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
     setIsOpen(false);
     setQuery("");
     setActiveIndex(0);
+    setDictionaryEntry(null);
   };
 
   const selectResult = (item: SearchItem) => {
@@ -368,7 +412,25 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
             </div>
             <div className="min-h-0 flex-1 overflow-y-auto p-2">
               {!query.trim() && <p className="p-6 text-center text-slate-500">Type any word to search across the site.</p>}
-              {query.trim() && !results.length && <p className="p-6 text-center text-slate-500">No results found.</p>}
+              {query.trim() && isDictionaryLoading && (
+                <p className="px-4 py-2 text-sm text-slate-500">Checking Dictionary…</p>
+              )}
+              {dictionaryEntry && (
+                <section className="mb-3">
+                  <h2 className="px-2 pb-2 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                    Dictionary
+                  </h2>
+                  <DictionaryWordCard entry={dictionaryEntry} />
+                </section>
+              )}
+              {query.trim() && !isDictionaryLoading && !dictionaryEntry && !results.length && (
+                <p className="p-6 text-center text-slate-500">No results found.</p>
+              )}
+              {!!results.length && (
+                <h2 className="px-2 pb-1 pt-2 text-xs font-black uppercase tracking-wider text-slate-500">
+                  Pages and lessons
+                </h2>
+              )}
               {results.map((item, index) => (
                 <Button
                   key={`${item.href}-${item.category}-${item.title}-${index}`}
