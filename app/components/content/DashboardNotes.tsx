@@ -1,4 +1,4 @@
-import { TextArea } from "@/components/ui/TextArea";
+import { RichTextArea } from "@/components/ui/RichTextArea";
 
 type DashboardNotesProps = {
   title: string;
@@ -17,16 +17,11 @@ export const DashboardNotes = ({
 }: DashboardNotesProps) => {
   return (
     <div className="w-full min-w-0 rounded-xl bg-(--background) p-4">
-      <h3 className="mb-4 text-lg font-bold">{title}</h3>
-      <TextArea
-        rows={10}
+      <h3 className="mb-2 text-lg font-bold">{title}</h3>
+      <RichTextArea
         value={value}
         readOnly={readOnly}
-        lang="en"
-        spellCheck={!readOnly}
-        autoCorrect="on"
-        autoCapitalize="sentences"
-        onChange={(event) => onChange(event.target.value)}
+        onChange={onChange}
         onBlur={onSave}
       />
     </div>

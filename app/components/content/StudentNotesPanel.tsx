@@ -5,7 +5,7 @@ import { useLocation } from "react-router";
 
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { TextArea } from "@/components/ui/TextArea";
+import { RichTextArea } from "@/components/ui/RichTextArea";
 import { useNotesRealtime } from "@/hooks/useNotesRealtime";
 
 type Session = {
@@ -165,16 +165,10 @@ export function StudentNotesPanel({
           {studentId && (
             <div className="grid grid-cols-2 gap-3 max-[930px]:grid-cols-1">
               <Card title="Teacher's Notes" className="bg-[var(--background)]">
-                <TextArea
-                  rows={8}
+                <RichTextArea
                   value={notes.teacher}
                   readOnly={session.role !== "teacher"}
-                  lang="en"
-                  spellCheck={session.role === "teacher"}
-                  autoCorrect="on"
-                  autoCapitalize="sentences"
-                  onChange={(event) => {
-                    const content = event.target.value;
+                  onChange={(content) => {
                     setNotes((current) => ({ ...current, teacher: content }));
                     sendNote("teacher", content);
                   }}
@@ -183,20 +177,12 @@ export function StudentNotesPanel({
               </Card>
 
               <Card title="Student's Notes" className="bg-[var(--background)]">
-                <TextArea
-                  rows={8}
+                <RichTextArea
                   value={notes.student}
                   readOnly={
                     session.role !== "teacher" && session.role !== "student"
                   }
-                  lang="en"
-                  spellCheck={
-                    session.role === "teacher" || session.role === "student"
-                  }
-                  autoCorrect="on"
-                  autoCapitalize="sentences"
-                  onChange={(event) => {
-                    const content = event.target.value;
+                  onChange={(content) => {
                     setNotes((current) => ({ ...current, student: content }));
                     sendNote("student", content);
                   }}

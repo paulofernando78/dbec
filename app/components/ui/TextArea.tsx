@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string;
   storageKey?: string;
 };
 
-export const TextArea = ({
+export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(function TextArea({
   className = "",
   storageKey,
   ...props
-}: TextareaProps) => {
+}, ref) {
   const [value, setValue] = useState(() => {
     if (typeof window === "undefined" || !storageKey) {
       return "";
@@ -26,6 +26,7 @@ export const TextArea = ({
 
   return (
     <textarea
+      ref={ref}
       value={storageKey ? value : props.value}
       onChange={(event) => {
         setValue(event.target.value);
@@ -47,4 +48,4 @@ export const TextArea = ({
       {...props}
     />
   );
-};
+});

@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, MouseEventHandler, ReactNode } from "react";
 
 type ButtonProps = {
   ariaLabel?: string;
@@ -7,6 +7,7 @@ type ButtonProps = {
   disabled?: boolean;
   pressed?: boolean;
   onClick?: () => void;
+  onMouseDown?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
   style?: CSSProperties;
   variant?: "default" | "check" | "answer" | "reset" | "list";
@@ -21,6 +22,7 @@ export const Button = ({
   disabled,
   pressed,
   onClick,
+  onMouseDown,
   className = "",
   style,
   variant = "default",
@@ -45,6 +47,7 @@ export const Button = ({
       style={style}
       className={`${baseClasses} ${textClasses} ${className} shrink-0`}
       onClick={onClick}
+      onMouseDown={onMouseDown}
       disabled={disabled}
     >
       <span className={isList ? "block h-full w-full" : `${hasText ? "h-full w-full px-4 py-2" : "absolute inset-1"} grid place-items-center rounded-lg bg-linear-to-b from-[var(--button-inner-start)] to-[var(--button-inner-end)]`}>
