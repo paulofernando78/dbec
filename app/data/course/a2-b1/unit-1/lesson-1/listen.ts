@@ -6,19 +6,25 @@ export const listen = {
   slug: "listen",
   label: "Listen",
   instruction: "Listen to two people talking about the past.",
+  image:
+    "/media/images/course/a2-b1/unit-1/lesson-1-asking-about-the-past/listen/laura-eric-park-conversation.avif?v=1",
+  imageAlt: "Laura and Eric talking on a bench in a city park",
   audio:
     "/media/audio/course/a2-b1/unit-1/lesson-1-asking-about-the-past/listen/listen.mp3",
   dialogue: [
-    ["A", ["Where ", mark("were"), " you born?"]],
-    ["B", ["I ", mark("was"), " born in Argentina."]],
-    ["A", [mark("Were"), " you born in Buenos Aires?"]],
+    ["Eric", ["Where ", mark("were"), " you born?"]],
+    ["Laura", ["I ", mark("was"), " born in Argentina."]],
+    ["Eric", [mark("Were"), " you born in Buenos Aires?"]],
     [
-      "B",
+      "Laura",
       ["No, I ", mark("wasn't"), ". I ", mark("was"), " born in Córdoba."],
     ],
-    ["A", ["When ", mark("did"), " you ", mark("move"), " to Los Angeles?"]],
     [
-      "B",
+      "Eric",
+      ["When ", mark("did"), " you ", mark("move"), " to Los Angeles?"],
+    ],
+    [
+      "Laura",
       [
         "I ",
         mark("moved"),
@@ -28,11 +34,11 @@ export const listen = {
       ],
     ],
     [
-      "A",
+      "Eric",
       [mark("Did"), " you ", mark("take"), " English classes in Argentina?"],
     ],
     [
-      "B",
+      "Laura",
       [
         "Yes, I ",
         mark("did"),
@@ -45,22 +51,59 @@ export const listen = {
     ],
   ],
   questionInstruction: "Choose the correct answer.",
-  question: "Where was speaker B born?",
+  question: "Where was Laura born?",
   options: ["Buenos Aires", "Córdoba", "Los Angeles"],
   answer: "Córdoba",
-  followUpInstruction: "Answer the questions.",
+  followUpInstruction: "Listen for details. Answer the questions.",
   followUp: [
     {
-      question: "When did speaker B move to Los Angeles?",
-      answer: "Speaker B moved there ten years ago.",
+      question: "When did Laura move to Los Angeles?",
+      answer: "Laura moved there ten years ago.",
     },
     {
-      question: "Did speaker B speak English after moving?",
-      answer: "No, speaker B didn't.",
+      question: "Did Laura speak English after moving?",
+      answer: "No, Laura didn't.",
     },
     {
-      question: "Who taught speaker B English at home?",
-      answer: "Speaker B's aunt taught them at home.",
+      question: "Who taught Laura English at home?",
+      answer: "Laura's aunt taught her at home.",
     },
   ],
+  extraDialogue: {
+    instruction: "Listen to another conversation about the past.",
+    audio:
+      "/media/audio/course/a2-b1/unit-1/lesson-1-asking-about-the-past/listen/laura-eric-second-dialogue.mp3",
+    dialogue: [
+      ["Laura", ["Where ", mark("did"), " you grow up?"]],
+      ["Eric", ["I ", mark("grew up"), " in São Paulo."]],
+      ["Laura", ["What ", mark("was"), " your first job?"]],
+      [
+        "Eric",
+        ["I ", mark("worked"), " in a small design studio."],
+      ],
+      [
+        "Laura",
+        ["When ", mark("did"), " you ", mark("move"), " to Los Angeles?"],
+      ],
+      ["Eric", ["I ", mark("moved"), " here six years ago."]],
+      ["Laura", [mark("Did"), " you know anyone here?"]],
+      [
+        "Eric",
+        [
+          "Yes. My cousin ",
+          mark("lived"),
+          " here and ",
+          mark("helped"),
+          " me find an apartment.",
+        ],
+      ],
+    ],
+    questionInstruction: "Listen for details. Answer the questions.",
+    questions: [
+      "Where did Eric grow up?",
+      "What was Eric's first job?",
+      "When did Eric move to Los Angeles?",
+      "Who helped Eric find an apartment?",
+    ],
+  },
 } satisfies ListenData;

@@ -137,14 +137,14 @@ export default function App() {
                 icon={<House />}
                 pressed={location.pathname === "/"}
                 onClick={() => navigate("/")}
-                className="size-10! p-[3px]!"
+                className="size-10! p-0.75!"
               />
               <Button
                 ariaLabel="About"
                 icon={<Info />}
                 pressed={location.pathname === "/about"}
                 onClick={() => navigate("/about")}
-                className="size-10! p-[3px]!"
+                className="size-10! p-0.75!"
               />
             </div>
           )}

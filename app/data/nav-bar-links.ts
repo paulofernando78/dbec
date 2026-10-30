@@ -46,26 +46,31 @@ export const links: NavItem[] = [
     label: "course (A1-C1)",
     icon: BookOpenCheck,
   },
-  {
-    group: "specific purposes",
-    children: [
-      {
-        href: "/travel",
-        label: "travel",
-        icon: Plane,
-      },
-    ],
-  },
+
   {
     group: "keep learning",
     children: [
       {
+        subgroup: "specific purposes",
+        children: [
+          {
+            href: "/travel",
+            label: "travel",
+            icon: Plane,
+          },
+        ],
+      },
+      {
         subgroup: "language",
         children: [
           { href: "/vocabulary", label: "vocabulary", icon: BookOpenText },
-          { href: "/expressions", label: "expressions", icon: MessageSquareQuote },
           { href: "/grammar", label: "grammar", icon: BookMarked },
           { href: "/pronunciation", label: "pronunciation", icon: AudioLines },
+          {
+            href: "/expressions",
+            label: "expressions",
+            icon: MessageSquareQuote,
+          },
         ],
       },
       {
@@ -80,7 +85,11 @@ export const links: NavItem[] = [
       {
         subgroup: "content",
         children: [
-          { href: "/authentic-content", label: "TED-Ed", icon: AuthenticContent },
+          {
+            href: "/authentic-content",
+            label: "TED-Ed",
+            icon: AuthenticContent,
+          },
           { href: "/songs", label: "songs", icon: Music2 },
           { href: "/games", label: "games", icon: Gamepad2 },
         ],

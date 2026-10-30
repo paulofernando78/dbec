@@ -1,4 +1,5 @@
 import { a2B1SkeletonLessons } from "../../skeleton-lessons";
+import { getReady } from "./get-ready";
 import { languageFocus } from "./language-focus";
 import { listen } from "./listen";
 
@@ -8,6 +9,7 @@ const focusedLanguage = { ...languageFocus, items: languageFocus.items.slice(0, 
 export const a2B1Unit1Lesson1 = {
   ...baseLesson,
   steps: baseLesson.steps.map((step) => {
+    if (step.type === "get-ready") return getReady;
     if (step.type === "listen") {
       return {
         ...listen,

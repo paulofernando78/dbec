@@ -12,14 +12,21 @@ export type GetReadyQuestion = {
   support?: readonly string[];
 };
 
+export type GetReadyActivity = {
+  interaction?: readonly ("pairs" | "teacher-class")[];
+  questions: readonly GetReadyQuestion[];
+};
+
 export type GetReadyData = StepExtension & {
   type: "get-ready";
   slug: string;
   label: string;
   slides: readonly {
     image?: string;
-    audio?: string;
+    audio?: string | false;
     quote: string;
+    answer?: GetReadyActivity;
+    discuss?: GetReadyActivity;
     questions?: readonly GetReadyQuestion[];
   }[];
 };
@@ -42,6 +49,13 @@ export type ListenData = StepExtension & {
     question: string;
     answer: string;
   }[];
+  extraDialogue?: {
+    instruction: string;
+    audio: string;
+    dialogue: readonly (readonly [speaker: string, text: RichContent])[];
+    questionInstruction: string;
+    questions: readonly string[];
+  };
 };
 
 export type LanguageFocusData = StepExtension & {
@@ -49,13 +63,21 @@ export type LanguageFocusData = StepExtension & {
   slug: string;
   label: string;
   instruction: string;
+  supportLanguage?: "pt-BR";
   relatedGrammar?: readonly GrammarTopicId[];
   relatedVocabulary?: readonly VocabularyTopicId[];
   items: readonly (readonly [
     title: RichContent | string,
     meaning: string,
     pronunciation: string,
-    form: string,
+    form:
+      | string
+      | readonly {
+          columns: readonly {
+            header: string;
+            example: string;
+          }[];
+        }[],
     audio?: { us?: string; uk?: string },
     translationPt?: string,
     group?: string,

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Eye, EyeClosed } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
+import { AudioPlayer } from "@/components/ui/AudioPlayer";
+import { InlineRichContent } from "@/components/content/InlineRichContent";
 import { Image } from "@/components/ui/Image";
 import type { ListenData } from "@/data/course/lesson-step-types";
 import { Dialogue } from "@/features/Dialogue";
@@ -9,6 +11,17 @@ import { Radio } from "@/features/exercises/Radio";
 
 export function ListenStep({ data }: { data: ListenData }) {
   const [showAnswers, setShowAnswers] = useState(false);
+  const [showExtraConversation, setShowExtraConversation] = useState(false);
+  const extraDialogueSpeech = data.extraDialogue?.dialogue
+    .map(([, line]) =>
+      line
+        .map((part) => (typeof part === "string" ? part : (part.part ?? "")))
+        .join("")
+        .replace(/\s+/g, " ")
+        .trim(),
+    )
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className="space-y-4 rounded-2xl bg-[var(--surface)] p-4">
@@ -51,8 +64,10 @@ export function ListenStep({ data }: { data: ListenData }) {
             ],
           }}
         />
+      </section>
 
-        <div className="mt-4">
+      <section className="rounded-xl bg-[var(--background)] p-4">
+        <div>
           {data.followUpInstruction && (
             <h4 className="mb-2 font-bold">{data.followUpInstruction}</h4>
           )}
@@ -77,6 +92,57 @@ export function ListenStep({ data }: { data: ListenData }) {
           />
         </div>
       </section>
+
+      {data.extraDialogue && (
+        <section className="rounded-xl bg-[var(--background)] p-4">
+          <h4 className="mb-4 font-bold">{data.extraDialogue.instruction}</h4>
+
+          <AudioPlayer
+            src={data.extraDialogue.audio}
+            fallbackText={extraDialogueSpeech}
+            ariaLabel="Play second dialogue"
+          />
+
+          <div className="mt-4">
+            <h4 className="mb-2 font-bold">
+              {data.extraDialogue.questionInstruction}
+            </h4>
+            {data.extraDialogue.questions.map((question, index) => (
+              <p key={question}>
+                <span className="font-black">{index + 1}.</span> {question}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-3">
+            <Button
+              ariaLabel={
+                showExtraConversation
+                  ? "Hide second conversation"
+                  : "Show second conversation"
+              }
+              pressed={showExtraConversation}
+              icon={showExtraConversation ? <EyeClosed /> : <Eye />}
+              onClick={() =>
+                setShowExtraConversation((current) => !current)
+              }
+            />
+          </div>
+
+          {showExtraConversation && (
+            <div className="mt-4 space-y-3 rounded-xl bg-[var(--surface)] p-4">
+              {data.extraDialogue.dialogue.map(([speaker, line], index) => (
+                <p key={`${speaker}-${index}`}>
+                  <b className="rounded-lg border border-gray-400 px-1 py-1">
+                    {speaker}
+                  </b>{" "}
+                  <InlineRichContent value={line} />
+                </p>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
     </div>
   );
 }

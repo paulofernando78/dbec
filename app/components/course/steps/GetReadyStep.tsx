@@ -1,10 +1,138 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState, type PointerEvent } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  EyeOff,
+  Presentation,
+  Users,
+} from "lucide-react";
+import { Fragment, useRef, useState, type PointerEvent } from "react";
 
 import { Audio } from "@/components/ui/Audio";
-import type { GetReadyData } from "@/data/course/lesson-step-types";
+import { Button } from "@/components/ui/Button";
+import type {
+  GetReadyActivity,
+  GetReadyData,
+} from "@/data/course/lesson-step-types";
 
 const GET_READY_INSTRUCTION = "Look at the picture.";
+
+function ActivityBlock({
+  title,
+  activity,
+}: {
+  title: "Answer" | "Discuss";
+  activity: GetReadyActivity;
+}) {
+  const [visibleAnswers, setVisibleAnswers] = useState<Set<string>>(new Set());
+  const interactionDetails = {
+    pairs: {
+      label: "Pairs or small groups",
+      Icon: Users,
+    },
+    "teacher-class": {
+      label: "Teacher and class",
+      Icon: Presentation,
+    },
+  } as const;
+
+  return (
+    <section className="rounded-xl bg-[var(--background)] p-4">
+      <div className="mb-4 flex items-center gap-4">
+        <h4 className="font-black uppercase tracking-wide">{title}</h4>
+        {activity.interaction?.length ? (
+          <div className="flex items-center gap-1.5" aria-label="Interaction">
+            {activity.interaction.map((interaction, index) => {
+              const { label, Icon } = interactionDetails[interaction];
+              const tooltipId = `get-ready-${title.toLowerCase()}-${interaction}`;
+              return (
+                <div key={interaction} className="flex items-center gap-1.5">
+                  {index > 0 ? (
+                    <ChevronRight
+                      aria-hidden="true"
+                      className="size-3.5 text-slate-400"
+                    />
+                  ) : null}
+                  <span className="group relative">
+                    <span
+                      tabIndex={0}
+                      aria-label={label}
+                      aria-describedby={tooltipId}
+                      className="grid size-7 place-items-center rounded-full bg-slate-200 text-slate-600 outline-none transition-colors hover:bg-slate-300 focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2"
+                    >
+                      <Icon aria-hidden="true" className="size-4" />
+                    </span>
+                    <span
+                      id={tooltipId}
+                      role="tooltip"
+                      className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 rounded-md bg-slate-800 px-2 py-1 text-xs font-semibold whitespace-nowrap text-white opacity-0 shadow-md transition-opacity duration-100 group-hover:opacity-100 group-focus-within:opacity-100"
+                    >
+                      {label}
+                    </span>
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
+      </div>
+      <ul className="grid gap-3">
+        {activity.questions.map((question, index) => {
+          const answerIsVisible = visibleAnswers.has(question.prompt);
+          return (
+            <Fragment key={question.prompt}>
+              <li className="rounded-xl bg-white text-slate-800">
+                <div className="grid grid-cols-[auto_1fr] items-center gap-x-3">
+                  <Audio
+                    asButton
+                    src=""
+                    fallbackText={question.prompt}
+                    speechLang="en-US"
+                    ariaLabel={`Play ${question.prompt}`}
+                  />
+                  <p className="font-semibold">{question.prompt}</p>
+                  {question.support?.length ? (
+                    <Button
+                      ariaLabel={
+                        answerIsVisible ? "Hide answer" : "Show answer"
+                      }
+                      pressed={answerIsVisible}
+                      onClick={() => {
+                        setVisibleAnswers((current) => {
+                          const next = new Set(current);
+                          if (answerIsVisible) next.delete(question.prompt);
+                          else next.add(question.prompt);
+                          return next;
+                        });
+                      }}
+                      icon={
+                        answerIsVisible ? (
+                          <EyeOff aria-hidden="true" />
+                        ) : (
+                          <Eye aria-hidden="true" />
+                        )
+                      }
+                    />
+                  ) : null}
+                  {answerIsVisible && question.support?.length ? (
+                    <p className="font-normal">
+                      {question.support.join(" / ")}
+                    </p>
+                  ) : (
+                    <span aria-hidden="true" />
+                  )}
+                </div>
+              </li>
+              {title === "Answer" && index < activity.questions.length - 1 ? (
+                <hr className="border-0 bg-slate-200 h-px" />
+              ) : null}
+            </Fragment>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}
 
 export function GetReadyStep({ data }: { data: GetReadyData }) {
   const [currentImage, setCurrentImage] = useState(0);
@@ -122,17 +250,35 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
         ))}
       </div>
       <div className="mt-4 flex items-center gap-3">
-        <Audio
-          key={`${currentImage}-${data.slides[currentImage].audio ?? "synth"}`}
-          asButton
-          src={data.slides[currentImage].audio ?? ""}
-          fallbackText={data.slides[currentImage].quote}
-          speechLang="en-US"
-          ariaLabel={`Play ${data.slides[currentImage].quote}`}
-          wrapperClassName="shrink-0"
-        />
+        {data.slides[currentImage].audio !== false ? (
+          <Audio
+            key={`${currentImage}-${data.slides[currentImage].audio ?? "synth"}`}
+            asButton
+            src={data.slides[currentImage].audio ?? ""}
+            fallbackText={data.slides[currentImage].quote}
+            speechLang="en-US"
+            ariaLabel={`Play ${data.slides[currentImage].quote}`}
+            wrapperClassName="shrink-0"
+          />
+        ) : null}
         <p>“{data.slides[currentImage].quote}”</p>
       </div>
+      {data.slides[currentImage].answer || data.slides[currentImage].discuss ? (
+        <div className="mt-4 grid gap-4">
+          {data.slides[currentImage].answer ? (
+            <ActivityBlock
+              title="Answer"
+              activity={data.slides[currentImage].answer}
+            />
+          ) : null}
+          {data.slides[currentImage].discuss ? (
+            <ActivityBlock
+              title="Discuss"
+              activity={data.slides[currentImage].discuss}
+            />
+          ) : null}
+        </div>
+      ) : null}
       {data.slides[currentImage].questions?.length ? (
         <div className="mt-4 rounded-xl bg-[var(--background)] p-4">
           <h4 className="mb-2 font-black">Discuss</h4>
