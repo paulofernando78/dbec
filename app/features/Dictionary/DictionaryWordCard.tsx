@@ -20,7 +20,7 @@ export function DictionaryWordCard({
   return (
     <article className="rounded-xl bg-[var(--background)] p-4 text-[var(--text-color)] ring-1 ring-slate-200 dark:ring-slate-700">
       <header className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-        <h3 className="text-xl font-black">{entry.word}</h3>
+        <h3 className="font-black">{entry.word}</h3>
         {entry.partOfSpeech && (
           <span className="font-serif italic text-slate-500">
             {entry.partOfSpeech}

@@ -38,7 +38,7 @@ export const TableOfContents = ({
     Array.isArray(value) ? value : [value];
 
   return (
-    <Card className="mb-4 font-oswald text-lg">
+    <Card className="mb-4 bg-[var(--surface)] font-oswald text-lg">
       <div
         className="
         flex
@@ -53,8 +53,8 @@ export const TableOfContents = ({
         )}
         <h2 className="mb-4 text-2xl font-bold">Table of Contents</h2>
       </div>
-      {subtitle && <div className="mb-2 font-bold">{subtitle}</div>}
-      <nav>
+      <nav className="rounded-xl bg-[var(--background)] p-4">
+        {subtitle && <div className="mb-2 font-bold">{subtitle}</div>}
         <ul>
           {items.map((item, index) => {
             const key = item.href || item.to || item.id || `item-${index}`;
@@ -68,9 +68,7 @@ export const TableOfContents = ({
                 )}
 
                 {item.href && (
-                  <li
-                    className={`flex items-center gap-2 ml-4 ${item.className ?? ""}`}
-                  >
+                  <li className={`flex items-center gap-2 ${item.className ?? ""}`}>
                     {ItemIcon ? (
                       <ItemIcon
                         aria-hidden="true"
@@ -88,9 +86,7 @@ export const TableOfContents = ({
                 )}
 
                 {item.to && (
-                  <li
-                    className={`flex items-center gap-2 ml-4 ${item.className ?? ""}`}
-                  >
+                  <li className={`flex items-center gap-2 ${item.className ?? ""}`}>
                     {ItemIcon ? (
                       <ItemIcon
                         aria-hidden="true"
