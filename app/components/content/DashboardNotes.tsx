@@ -22,6 +22,10 @@ export const DashboardNotes = ({
         rows={10}
         value={value}
         readOnly={readOnly}
+        lang="en"
+        spellCheck={!readOnly}
+        autoCorrect="on"
+        autoCapitalize="sentences"
         onChange={(event) => onChange(event.target.value)}
         onBlur={onSave}
       />

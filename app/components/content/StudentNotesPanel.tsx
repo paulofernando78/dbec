@@ -169,6 +169,10 @@ export function StudentNotesPanel({
                   rows={8}
                   value={notes.teacher}
                   readOnly={session.role !== "teacher"}
+                  lang="en"
+                  spellCheck={session.role === "teacher"}
+                  autoCorrect="on"
+                  autoCapitalize="sentences"
                   onChange={(event) => {
                     const content = event.target.value;
                     setNotes((current) => ({ ...current, teacher: content }));
@@ -185,6 +189,12 @@ export function StudentNotesPanel({
                   readOnly={
                     session.role !== "teacher" && session.role !== "student"
                   }
+                  lang="en"
+                  spellCheck={
+                    session.role === "teacher" || session.role === "student"
+                  }
+                  autoCorrect="on"
+                  autoCapitalize="sentences"
                   onChange={(event) => {
                     const content = event.target.value;
                     setNotes((current) => ({ ...current, student: content }));
