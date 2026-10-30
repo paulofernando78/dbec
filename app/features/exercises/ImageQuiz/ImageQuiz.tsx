@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { InlineRichContent } from "@/components/content/InlineRichContent";
-import { audio, content, phonetics } from "@/helpers/content";
+import { Audio } from "@/components/ui/Audio";
+import { Phonetics } from "@/components/content/Phonetics";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { shuffle } from "@/utils/shuffle";
 
@@ -246,7 +246,15 @@ export const ImageQuiz = ({
         <>
           <div className="grid items-start gap-6 md:grid-cols-2">
             <div>
-              <div className="mb-4 flex justify-center gap-2">
+              <div className="aspect-square w-full overflow-hidden rounded-lg border border-gray-300 bg-white">
+                <img
+                  src={currentQuestion.imgSrc}
+                  alt={currentQuestion.imgAlt ?? ""}
+                  className="block h-full w-full object-contain"
+                />
+              </div>
+
+              <div className="mt-3 flex justify-center gap-2">
                 {questions.map((question, index) => (
                   <button
                     key={`${question.word}-${index}`}
@@ -254,28 +262,17 @@ export const ImageQuiz = ({
                     aria-label={`Question ${index + 1}`}
                     aria-current={currentIndex === index ? "step" : undefined}
                     onClick={() => goToQuestion(index)}
-                    className={`
-                      aspect-square
-                      w-[1.6rem]
-                      cursor-pointer
-                      rounded-[5px]
-                      border
-                      border-slate-400
-                      text-[0.9rem]
-                      ${currentIndex === index ? "bg-slate-300" : "bg-slate-100"}
-                    `}
+                    className="grid size-4 cursor-pointer place-items-center rounded-full"
                   >
-                    {index + 1}
+                    <span
+                      className={`block size-2 rounded-full transition-colors ${
+                        currentIndex === index
+                          ? "bg-slate-700"
+                          : "bg-slate-300"
+                      }`}
+                    />
                   </button>
                 ))}
-              </div>
-
-              <div className="aspect-square w-full overflow-hidden rounded-lg border border-gray-300 bg-white">
-                <img
-                  src={currentQuestion.imgSrc}
-                  alt={currentQuestion.imgAlt ?? ""}
-                  className="block h-full w-full object-contain"
-                />
               </div>
 
               {meaning && (
@@ -297,13 +294,10 @@ export const ImageQuiz = ({
                   const selectedWrong = isSelected && !option.isCorrect;
 
                   return (
-                    <button
+                    <div
                       key={`${option.option}-${optionIndex}`}
-                      type="button"
-                      disabled={isCorrect}
-                      onClick={() => selectOption(optionIndex)}
                       className={[
-                        "w-full cursor-pointer rounded-lg border p-3 text-left transition-colors",
+                        "flex w-full items-center gap-3 rounded-lg border p-3 text-left transition-colors",
                         selectedCorrect
                           ? "border-green-700 bg-green-50 text-green-800"
                           : selectedWrong
@@ -313,25 +307,26 @@ export const ImageQuiz = ({
                         .filter(Boolean)
                         .join(" ")}
                     >
-                      <InlineRichContent
-                        value={content({
-                          parts: [
-                            audio(option.option),
-                            option.option,
-                            ...(optionPhonetics[option.option.toLowerCase()]
-                              ? [
-                                  " ",
-                                  phonetics(
-                                    optionPhonetics[
-                                      option.option.toLowerCase()
-                                    ],
-                                  ),
-                                ]
-                              : []),
-                          ],
-                        })}
+                      <Audio
+                        src={option.option}
+                        fallbackText={option.option}
+                        ariaLabel={`Play ${option.option}`}
+                        asButton
                       />
-                    </button>
+                      <button
+                        type="button"
+                        disabled={isCorrect}
+                        onClick={() => selectOption(optionIndex)}
+                        className="flex min-w-0 flex-1 cursor-pointer flex-col items-start justify-center disabled:cursor-not-allowed"
+                      >
+                        <span>{option.option}</span>
+                        {optionPhonetics[option.option.toLowerCase()] && (
+                          <Phonetics>
+                            {optionPhonetics[option.option.toLowerCase()]}
+                          </Phonetics>
+                        )}
+                      </button>
+                    </div>
                   );
                 })}
               </div>

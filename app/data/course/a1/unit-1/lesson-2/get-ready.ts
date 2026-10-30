@@ -8,19 +8,19 @@ export const getReady = {
   slides: [
     {
       image:
-        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/phone.svg",
+        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/phone.avif",
       quote: "What’s your phone number?",
       questions: a1GetReadyQuestions["1/2"][0],
     },
     {
       image:
-        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/email.svg",
+        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/email.avif",
       quote: "What’s your email address?",
       questions: a1GetReadyQuestions["1/2"][1],
     },
     {
       image:
-        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/goodbye.svg",
+        "/media/images/course/a1/unit-1/lesson-2-stay-in-touch/get-ready/goodbye.avif",
       quote: "Goodbye. See you soon.",
       questions: a1GetReadyQuestions["1/2"][2],
     },
