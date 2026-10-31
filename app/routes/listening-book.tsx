@@ -35,7 +35,7 @@ function ParagraphImage({ paragraph }: { paragraph: ListeningParagraph }) {
 export default function ListeningBookPage() {
   const { book } = useParams();
   if (book !== newZealandAdventure.slug) {
-    return <Navigate to="/skills/listening" replace />;
+    return <Navigate to="/audiobooks" replace />;
   }
 
   const storyText = newZealandAdventure.paragraphs
@@ -86,7 +86,7 @@ export default function ListeningBookPage() {
 
       <div className="sticky top-2 z-20">
         <AudioPlayer
-          src="/media/audio/skills/listening/a-new-zealand-adventure.mp3"
+          src="/media/audio/audiobooks/a-new-zealand-adventure.mp3"
           fallbackText={storyText}
           ariaLabel={`Play ${newZealandAdventure.title}`}
         />

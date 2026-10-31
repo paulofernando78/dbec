@@ -9,10 +9,7 @@ import {
   BookMarked,
   MessageSquareQuote,
   Music2,
-  Headphones,
-  Mic2,
   BookOpen,
-  PenLine,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -74,17 +71,9 @@ export const links: NavItem[] = [
         ],
       },
       {
-        subgroup: "skills",
-        children: [
-          { href: "/skills/listening", label: "listening", icon: Headphones },
-          { href: "/skills/speaking", label: "speaking", icon: Mic2 },
-          { href: "/skills/reading", label: "reading", icon: BookOpen },
-          { href: "/skills/writing", label: "writing", icon: PenLine },
-        ],
-      },
-      {
         subgroup: "content",
         children: [
+          { href: "/audiobooks", label: "audiobooks", icon: BookOpen },
           {
             href: "/authentic-content",
             label: "TED-Ed",
