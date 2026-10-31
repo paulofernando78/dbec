@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { GripVertical, Highlighter, Link, Underline } from "lucide-react";
+import { createPortal } from "react-dom";
+import { GripVertical, Highlighter, Link, Underline, X } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 
@@ -91,6 +92,9 @@ export function RichTextArea({
   const [draggedBlockId, setDraggedBlockId] = useState<string | null>(null);
   const [dropTargetBlockId, setDropTargetBlockId] = useState<string | null>(null);
   const [openPalette, setOpenPalette] = useState<"text" | "highlight" | null>(null);
+  const [isLinkDialogOpen, setIsLinkDialogOpen] = useState(false);
+  const [linkUrl, setLinkUrl] = useState("https://");
+  const [linkError, setLinkError] = useState("");
 
   useEffect(() => {
     if (
@@ -150,20 +154,70 @@ export function RichTextArea({
     editor.focus();
     restoreSelection();
     document.execCommand(command, false, commandValue);
-    onChange(editor.innerHTML);
+    emitBlocks();
+  };
+
+  const openLinkDialog = () => {
+    const editor = activeBlockRef.current;
+    if (!editor || readOnly) return;
+
+    setLinkUrl("https://");
+    setLinkError("");
+    setIsLinkDialogOpen(true);
   };
 
   const addLink = () => {
     const editor = activeBlockRef.current;
     if (!editor || readOnly) return;
 
-    const url = window.prompt("Enter the link URL:", "https://");
-    if (!url) return;
+    const trimmedUrl = linkUrl.trim();
+    let normalizedUrl = trimmedUrl;
+
+    if (!/^[a-z][a-z\d+.-]*:/i.test(normalizedUrl)) {
+      normalizedUrl = `https://${normalizedUrl}`;
+    }
+
+    try {
+      const parsedUrl = new URL(normalizedUrl);
+      if (!new Set(["http:", "https:", "mailto:"]).has(parsedUrl.protocol)) {
+        throw new Error("Unsupported protocol");
+      }
+    } catch {
+      setLinkError("Enter a valid web address.");
+      return;
+    }
 
     editor.focus();
     restoreSelection();
-    document.execCommand("createLink", false, url);
-    onChange(editor.innerHTML);
+    const selection = window.getSelection();
+    const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+
+    if (range?.collapsed) {
+      const anchor = document.createElement("a");
+      anchor.href = normalizedUrl;
+      anchor.target = "_blank";
+      anchor.rel = "noreferrer noopener";
+      anchor.textContent = normalizedUrl;
+      range.insertNode(anchor);
+      range.setStartAfter(anchor);
+      range.collapse(true);
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+    } else {
+      document.execCommand("createLink", false, normalizedUrl);
+      const anchorNode = selection?.anchorNode;
+      const anchorElement =
+        anchorNode instanceof Element ? anchorNode : anchorNode?.parentElement;
+      const anchor = anchorElement?.closest("a");
+      if (anchor) {
+        anchor.target = "_blank";
+        anchor.rel = "noreferrer noopener";
+      }
+    }
+
+    emitBlocks();
+    setIsLinkDialogOpen(false);
+    setLinkError("");
   };
 
   const colorPalette = (
@@ -228,6 +282,31 @@ export function RichTextArea({
         : blockRefs.current[nextBlocks[0]?.id];
       previousEditor?.focus();
     });
+  };
+
+  const deleteBlock = (blockId: string) => {
+    const currentBlocks = blocksFromDom();
+
+    if (currentBlocks.length === 1) {
+      const clearedBlock = { ...currentBlocks[0], html: "" };
+      setBlocks([clearedBlock]);
+      emitBlocks([clearedBlock]);
+
+      requestAnimationFrame(() => {
+        const editor = blockRefs.current[clearedBlock.id];
+        if (editor) editor.innerHTML = "";
+        editor?.focus();
+      });
+      return;
+    }
+
+    const deletedIndex = currentBlocks.findIndex((block) => block.id === blockId);
+    const nextBlocks = currentBlocks.filter((block) => block.id !== blockId);
+    const focusBlock = nextBlocks[Math.max(0, deletedIndex - 1)];
+    setBlocks(nextBlocks);
+    emitBlocks(nextBlocks);
+
+    requestAnimationFrame(() => blockRefs.current[focusBlock.id]?.focus());
   };
 
   const moveBlock = (targetBlockId: string) => {
@@ -339,7 +418,7 @@ export function RichTextArea({
             event.preventDefault();
             saveSelection();
           }}
-          onClick={addLink}
+          onClick={openLinkDialog}
           className="size-8! p-[3px]!"
         />
       </div>
@@ -436,8 +515,29 @@ export function RichTextArea({
                   event.clipboardData.getData("text/plain"),
                 );
               }}
-              className="min-h-7 min-w-0 flex-1 whitespace-pre-wrap px-1 py-0.5 outline-none"
+              onClick={(event) => {
+                const target = event.target;
+                const anchor =
+                  target instanceof Element ? target.closest("a") : null;
+                if (!anchor?.href) return;
+
+                event.preventDefault();
+                window.open(anchor.href, "_blank", "noopener,noreferrer");
+              }}
+              className="min-h-7 min-w-0 flex-1 whitespace-pre-wrap px-1 py-0.5 outline-none [&_a]:cursor-pointer [&_a]:text-blue-600 [&_a]:underline dark:[&_a]:text-blue-400"
             />
+            {!readOnly && (
+              <button
+                type="button"
+                aria-label="Delete note block"
+                title="Delete block"
+                onMouseDown={(event) => event.preventDefault()}
+                onClick={() => deleteBlock(block.id)}
+                className="mt-0.5 grid size-6 shrink-0 cursor-pointer place-items-center rounded text-slate-400 opacity-0 transition-opacity hover:bg-red-100 hover:text-red-600 group-hover:opacity-100 focus:opacity-100"
+              >
+                <X className="size-3.5" />
+              </button>
+            )}
             {draggedBlockId && dropTargetBlockId === block.id && (
               <span
                 aria-hidden="true"
@@ -447,6 +547,63 @@ export function RichTextArea({
           </div>
         ))}
       </div>
+      {isLinkDialogOpen &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 p-4 backdrop-blur-[2px]"
+            role="presentation"
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) {
+                setIsLinkDialogOpen(false);
+              }
+            }}
+          >
+            <form
+              className="w-full max-w-sm rounded-xl bg-[var(--background)] p-4 text-[var(--text-color)] shadow-xl"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="add-note-link-title"
+              onSubmit={(event) => {
+                event.preventDefault();
+                addLink();
+              }}
+            >
+              <h2 id="add-note-link-title" className="text-xl font-black">
+                Add link
+              </h2>
+              <p className="mt-2 text-slate-500">
+                Enter the web address for the selected text.
+              </p>
+              <input
+                autoFocus
+                type="text"
+                inputMode="url"
+                value={linkUrl}
+                onChange={(event) => {
+                  setLinkUrl(event.target.value);
+                  setLinkError("");
+                }}
+                className="mt-4 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                aria-label="Link URL"
+              />
+              {linkError && (
+                <p className="mt-2 text-sm font-semibold text-red-600">
+                  {linkError}
+                </p>
+              )}
+              <div className="mt-4 flex justify-end gap-3">
+                <Button onClick={() => setIsLinkDialogOpen(false)}>
+                  Cancel
+                </Button>
+                <Button type="submit" disabled={!linkUrl.trim()}>
+                  Add link
+                </Button>
+              </div>
+            </form>
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
