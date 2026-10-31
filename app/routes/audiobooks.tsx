@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { ProgressCollectionCard } from "@/components/content/ProgressCollectionCard";
+import { audiobooks } from "@/data/skills/audiobooks";
 import { listeningLevels } from "@/data/skills/listening";
 
 export default function Audiobooks() {
@@ -31,7 +32,7 @@ export default function Audiobooks() {
               isCompleted: false,
               ariaLabel: `${item.title} is locked`,
               onClick:
-                level.slug === "starter-beginner" && index === 0
+                item.slug in audiobooks
                   ? () => navigate(`/audiobooks/${item.slug}`)
                   : undefined,
             }))}
