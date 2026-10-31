@@ -218,22 +218,18 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
         </div>
         {data.slides.length > 1 ? (
           <>
-            <button
-              type="button"
-              aria-label="Show previous image"
+            <Button
+              ariaLabel="Show previous image"
+              icon={<ChevronLeft aria-hidden="true" />}
               onClick={() => changeImage(-1)}
-              className="absolute top-1/2 left-3 z-10 grid size-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/70 bg-white/85 text-slate-700 shadow-md backdrop-blur-sm transition hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
-            >
-              <ChevronLeft aria-hidden="true" className="size-6" />
-            </button>
-            <button
-              type="button"
-              aria-label="Show next image"
+              className="absolute! top-1/2 left-3 z-10 size-10! -translate-y-1/2 rounded-full! p-[3px]! opacity-75 transition-opacity hover:opacity-100 [&>span]:rounded-full!"
+            />
+            <Button
+              ariaLabel="Show next image"
+              icon={<ChevronRight aria-hidden="true" />}
               onClick={() => changeImage(1)}
-              className="absolute top-1/2 right-3 z-10 grid size-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-white/70 bg-white/85 text-slate-700 shadow-md backdrop-blur-sm transition hover:scale-105 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
-            >
-              <ChevronRight aria-hidden="true" className="size-6" />
-            </button>
+              className="absolute! top-1/2 right-3 z-10 size-10! -translate-y-1/2 rounded-full! p-[3px]! opacity-75 transition-opacity hover:opacity-100 [&>span]:rounded-full!"
+            />
           </>
         ) : null}
       </div>
