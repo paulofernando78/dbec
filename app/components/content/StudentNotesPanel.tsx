@@ -140,7 +140,7 @@ export function StudentNotesPanel({
   if (!session || !isOpen || !panelHost) return null;
 
   return createPortal(
-        <div className="pointer-events-auto w-full translate-y-[0.05rem] rounded-xl bg-(--surface) p-3 shadow-2xl ring-1 ring-slate-300">
+        <div className="pointer-events-auto max-h-full w-full translate-y-[0.05rem] touch-pan-y overflow-x-hidden overflow-y-auto overscroll-contain rounded-xl bg-(--surface) p-3 shadow-2xl ring-1 ring-slate-300 [-webkit-overflow-scrolling:touch]">
           <div className="mb-3 flex items-center justify-between gap-3">
             <div>
               <h2 className="text-lg font-black">Notes</h2>
