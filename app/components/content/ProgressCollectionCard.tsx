@@ -74,7 +74,7 @@ export function ProgressCollectionCard({
             )}
           </div>
 
-          <div className="flex shrink-0 flex-col items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3">
             <span className="rounded-lg border border-gray-300 bg-white px-2 py-1 text-xs text-black dark:bg-[var(--background)] dark:text-[var(--text-color)]">
               {completedCount} / {totalCount}
             </span>

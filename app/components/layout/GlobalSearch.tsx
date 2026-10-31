@@ -264,10 +264,14 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
       .then((data) => {
         if (cancelled) return;
 
-        const exactMatch = flattenDictionaryDefinitions(data).find(
+        const definitions = flattenDictionaryDefinitions(data);
+        const exactMatch = definitions.find(
           (entry) => normalize(entry.word).trim() === searchedWord,
         );
-        setDictionaryEntry(exactMatch ?? null);
+        const prefixMatch = definitions.find((entry) =>
+          normalize(entry.word).trim().startsWith(searchedWord),
+        );
+        setDictionaryEntry(exactMatch ?? prefixMatch ?? null);
       })
       .catch(() => {
         if (!cancelled) setDictionaryEntry(null);

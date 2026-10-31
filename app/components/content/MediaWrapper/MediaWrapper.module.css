@@ -18,3 +18,9 @@
 .left {
   flex-direction: row;
 }
+
+@media (max-width: 640px) {
+  .wrapper {
+    flex-direction: column-reverse;
+  }
+}

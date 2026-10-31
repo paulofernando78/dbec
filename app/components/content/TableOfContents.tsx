@@ -7,6 +7,7 @@ import type { RichContent } from "@/helpers/content";
 
 type TableOfContentsItem = {
   title?: RichContent | string;
+  description?: RichContent | string;
   href?: string;
   to?: string;
   id?: string;
@@ -67,8 +68,14 @@ export const TableOfContents = ({
                   </span>
                 )}
 
+                {item.description && !item.to && (
+                  <span className="mb-2 block whitespace-pre-line text-sm uppercase">
+                    <InlineRichContent value={toValue(item.description)} />
+                  </span>
+                )}
+
                 {item.href && (
-                  <li className={`flex items-center gap-2 ${item.className ?? ""}`}>
+                  <li className={`flex items-start gap-2 ${item.className ?? ""}`}>
                     {ItemIcon ? (
                       <ItemIcon
                         aria-hidden="true"
@@ -86,7 +93,7 @@ export const TableOfContents = ({
                 )}
 
                 {item.to && (
-                  <li className={`flex items-center gap-2 ${item.className ?? ""}`}>
+                  <li className={`flex items-start gap-2 ${item.className ?? ""}`}>
                     {ItemIcon ? (
                       <ItemIcon
                         aria-hidden="true"
@@ -95,16 +102,23 @@ export const TableOfContents = ({
                     ) : (
                       <span className="font-bold">•</span>
                     )}
-                    <Button
-                      variant="list"
-                      ariaLabel={typeof item.label === "string" ? item.label : "Open page"}
-                      className="w-auto! rounded-none! hover:bg-transparent!"
-                      onClick={() => navigate(item.to!)}
-                    >
-                      {item.label && (
-                        <InlineRichContent value={toValue(item.label)} />
+                    <div>
+                      <Button
+                        variant="list"
+                        ariaLabel={typeof item.label === "string" ? item.label : "Open page"}
+                        className="w-auto! rounded-none! hover:bg-transparent!"
+                        onClick={() => navigate(item.to!)}
+                      >
+                        {item.label && (
+                          <InlineRichContent value={toValue(item.label)} />
+                        )}
+                      </Button>
+                      {item.description && (
+                        <span className="block text-sm uppercase text-slate-500">
+                          <InlineRichContent value={toValue(item.description)} />
+                        </span>
                       )}
-                    </Button>
+                    </div>
                   </li>
                 )}
 
