@@ -7,17 +7,14 @@ import {
 } from "@/helpers/content";
 import { loadDictionaryWord } from "@/utils/loadDictionaryWord";
 import { Text } from "@/components/content/Text";
-import { Dot } from "lucide-react";
+import { ChevronLeft, ChevronRight, Dot } from "lucide-react";
 import { Image } from "@/components/ui/Image";
+import { Button } from "@/components/ui/Button";
 
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { RichContent } from "@/helpers/content";
 
 import { useState, useRef, useEffect } from "react";
-
-type ArrowProps = {
-  className?: string;
-};
 
 type CarouselWord = {
   src?: string;
@@ -61,19 +58,6 @@ type CarouselProps = {
   imgs?: CarouselWord[];
   aspectRatio?: "square" | "wide";
 };
-
-const Arrow = ({ className }: ArrowProps) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 -960 960 960"
-    width="1em"
-    height="1em"
-    fill="#e3e3e3"
-    className={className}
-  >
-    <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
-  </svg>
-);
 
 export const Carousel = ({
   instruction,
@@ -283,31 +267,15 @@ export const Carousel = ({
         relative
         mx-auto
         ${aspectRatio === "wide" ? "max-w-180" : "max-w-100"}
-        px-[1.6rem]
         `}
       >
-        <button
-          className="
-          w-6
-          h-full
-          absolute
-          left-0
-          top-1/2
-          text-[1.7rem]
-          flex
-          cursor-pointer
-          items-center
-          justify-center
-          rounded-l-[5px]
-          bg-gray-400
-          hover:bg-slate-500
-          -translate-y-1/2
-          z-10
-        "
+        <Button
+          ariaLabel="Previous image"
+          icon={<ChevronLeft />}
+          disabled={currentIndex === 0}
           onClick={scrollLeft}
-        >
-          <Arrow className="block translate-x-1.5" />
-        </button>
+          className="absolute left-3 top-1/2 z-10 size-10! -translate-y-1/2 rounded-full! p-[3px]! opacity-75 transition-opacity hover:opacity-100 [&>span]:rounded-full!"
+        />
 
         <div
           className={`
@@ -405,28 +373,13 @@ export const Carousel = ({
           })}
         </div>
 
-        <button
-          className="
-          absolute
-          right-0
-          top-1/2
-          -translate-y-1/2
-          z-10
-          flex
-          h-full
-          w-6
-          cursor-pointer
-          items-center
-          justify-center
-          rounded-r-[5px]
-          bg-gray-400
-          text-[1.7rem]
-          hover:bg-slate-500
-        "
+        <Button
+          ariaLabel="Next image"
+          icon={<ChevronRight />}
+          disabled={currentIndex === finalWords.length - 1}
           onClick={scrollRight}
-        >
-          <Arrow className="block rotate-180 -translate-x-1.5" />
-        </button>
+          className="absolute right-3 top-1/2 z-10 size-10! -translate-y-1/2 rounded-full! p-[3px]! opacity-75 transition-opacity hover:opacity-100 [&>span]:rounded-full!"
+        />
       </div>
       {paginationElement}
       {aspectRatio === "square" && currentContentElement}
