@@ -130,9 +130,12 @@ export const Audio = ({
     );
 
   useEffect(() => {
-    setReady(false);
+    if (isAudioFile) {
+      setReady(true);
+      return;
+    }
 
-    if (isAudioFile) return;
+    setReady(false);
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
       setReady(true);
       return;
@@ -503,7 +506,7 @@ export const Audio = ({
         <audio
           ref={audioRef}
           src={primarySource}
-          preload="metadata"
+          preload="none"
           onWaiting={() => setLoading(true)}
           onPlaying={() => {
             advancingPlaylistRef.current = false;

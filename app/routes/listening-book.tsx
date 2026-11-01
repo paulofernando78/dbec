@@ -65,10 +65,6 @@ export default function ListeningBookPage() {
     return <Navigate to="/audiobooks" replace />;
   }
 
-  const storyText = audiobook.sections
-    .filter((section) => section.id !== "summary")
-    .map((section) => section.text)
-    .join(" ");
   const [summary, ...sections] = audiobook.sections;
 
   const renderSection = (section: AudiobookSection) => {
@@ -96,11 +92,11 @@ export default function ListeningBookPage() {
             </MediaWrapper.Item>
           )}
           <MediaWrapper.Content className="flex-1">
-            {section.id === "summary" && (
+            {section.r2Audio && (
               <AudioPlayer
-                src={audiobook.audio}
-                fallbackText={storyText}
-                ariaLabel={`Play ${audiobook.title}`}
+                src={section.r2Audio}
+                fallbackText={section.text}
+                ariaLabel={`Play ${audiobook.title}: ${section.title}`}
                 background="background"
               />
             )}

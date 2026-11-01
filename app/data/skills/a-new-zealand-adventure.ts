@@ -8,6 +8,8 @@ export type AudiobookSection = {
   r2?: string;
   imageAlt?: string;
   mediaPosition?: "left" | "right" | "top" | "bottom";
+  localAudio?: string;
+  r2Audio?: string;
 };
 
 const imageBase =
@@ -60,19 +62,19 @@ export const newZealandAdventure = {
     },
     {
       id: "paragraph-6", title: "Paragraph 6", timestamp: "2:59",
-      text: `At the Sky Tower, the girls can't see Michael. “He isn't here,” Sarah says. A woman bungy jumps from the tower. “I can do that,” she says. “Are you coming, Jessica?” “No,” Jessica answers. “But I can watch you from here.” “Please watch my bag too,” Sarah says. She gives her bag to Jessica and she goes up the tower.`,
+      text: `At the Sky Tower, the girls can't see Michael. “He isn't here,” Sarah says. A woman bungy jumps from the tower. “I can do that,” she says. “Are you coming, Jessica?” “No,” Jessica answers. “But I can watch you from here.” “Please watch my bag, too,” Sarah says. She gives her bag to Jessica and she goes up the tower.`,
       questions: ["What does Sarah want to do at the Sky Tower?", "Who watches her bag?"],
       localMedia: `local-media/images/audiobooks/starter-beginner/a-new-zealand-adventure/paragraph-6.avif`, r2: `${imageBase}/paragraph-6.avif`, imageAlt: "Sarah and Jessica at Auckland's Sky Tower.", mediaPosition: "left",
     },
     {
       id: "paragraph-7", title: "Paragraph 7", timestamp: "3:34",
-      text: `Sarah jumps. It is a very long jump. She comes down near the street and she sees Michael. Jessica sees him too. “Michael! Come back! We've got your mobile!” she calls to him. But Michael is walking away. She runs after him. She doesn't take Sarah's bag. “Jessica! My bag!” Sarah calls.`,
+      text: `Sarah jumps. It is a very long jump. She comes down near the street and she sees Michael. Jessica sees him, too. “Michael! Come back! We've got your mobile!” she calls to him. But Michael is walking away. She runs after him. She doesn't take Sarah's bag. “Jessica! My bag!” Sarah calls.`,
       questions: ["Who do the girls see?", "Why does Jessica run after him?", "What does she forget?"],
       localMedia: `local-media/images/audiobooks/starter-beginner/a-new-zealand-adventure/paragraph-7.avif`, r2: `${imageBase}/paragraph-7.avif`, imageAlt: "Sarah bungy jumping from the Sky Tower.", mediaPosition: "left",
     },
     {
       id: "paragraph-8", title: "Paragraph 8", timestamp: "4:10",
-      text: `Jessica and Sarah are very unhappy. They can't find Michael and they can't find Sarah's bag. Sarah has no money now. “Sorry,” Jessica says. “But I've got some money — and we've got tickets for the glow-worm caves.” “OK. Let's go there tomorrow,” Sarah says. “Michael is going too. We can look for him there.”`,
+      text: `Jessica and Sarah are very unhappy. They can't find Michael and they can't find Sarah's bag. Sarah has no money now. “Sorry,” Jessica says. “But I've got some money — and we've got tickets for the glow-worm caves.” “OK. Let's go there tomorrow,” Sarah says. “Michael is going, too. We can look for him there.”`,
       questions: ["Why are the girls unhappy?", "Where will they look for Michael next?"],
       localMedia: `local-media/images/audiobooks/starter-beginner/a-new-zealand-adventure/paragraph-8.avif`, r2: `${imageBase}/paragraph-8.avif`, imageAlt: "Sarah and Jessica in their room planning the next day.", mediaPosition: "left",
     },
@@ -108,7 +110,7 @@ export const newZealandAdventure = {
     },
     {
       id: "paragraph-14", title: "Paragraph 14", timestamp: "7:35",
-      text: `“Thank you for my mobile,” Michael says to the girls. “Thank you for the surprise,” Jessica says. She is very excited. “Do you like the whales?” Michael asks. “I love them,” Jessica answers. “They're beautiful.” “Yes, and New Zealand is beautiful too,” Sarah says. “This is an adventure!”`,
+      text: `“Thank you for my mobile,” Michael says to the girls. “Thank you for the surprise,” Jessica says. She is very excited. “Do you like the whales?” Michael asks. “I love them,” Jessica answers. “They're beautiful.” “Yes, and New Zealand is beautiful, too,” Sarah says. “This is an adventure!”`,
       questions: ["What does Michael thank the girls for?", "What surprise does he give them?", "How does Sarah describe New Zealand?"],
       localMedia: `local-media/images/audiobooks/starter-beginner/a-new-zealand-adventure/paragraph-14.avif`, r2: `${imageBase}/paragraph-14.avif`, imageAlt: "The friends enjoying a whale-watching trip.", mediaPosition: "left",
     },

@@ -9,17 +9,33 @@ import { theLeopardAndTheLighthouse } from "./the-leopard-and-the-lighthouse";
 import { thePearlGirl } from "./the-pearl-girl";
 import { whoWantsToBeAStar } from "./who-wants-to-be-a-star";
 
+const withSectionAudioPaths = <
+  T extends {
+    slug: string;
+    sections: readonly { id: string }[];
+  },
+>(audiobook: T) => ({
+  ...audiobook,
+  sections: audiobook.sections.map((section) => ({
+    ...section,
+    localAudio: `local-media/audio/audiobooks/starter/${audiobook.slug}/${section.id}.mp3`,
+    r2Audio: `/media/audio/audiobooks/starter/${audiobook.slug}/${section.id}.mp3`,
+  })),
+});
+
 export const audiobooks = {
-  [newZealandAdventure.slug]: newZealandAdventure,
-  [flyingHome.slug]: flyingHome,
-  [marcelAndTheWhiteStar.slug]: marcelAndTheWhiteStar,
-  [newspaperChase.slug]: newspaperChase,
-  [simonAndTheSpy.slug]: simonAndTheSpy,
-  [theFireboy.slug]: theFireboy,
-  [theLastPhoto.slug]: theLastPhoto,
-  [theLeopardAndTheLighthouse.slug]: theLeopardAndTheLighthouse,
-  [thePearlGirl.slug]: thePearlGirl,
-  [whoWantsToBeAStar.slug]: whoWantsToBeAStar,
+  [newZealandAdventure.slug]: withSectionAudioPaths(newZealandAdventure),
+  [flyingHome.slug]: withSectionAudioPaths(flyingHome),
+  [marcelAndTheWhiteStar.slug]: withSectionAudioPaths(marcelAndTheWhiteStar),
+  [newspaperChase.slug]: withSectionAudioPaths(newspaperChase),
+  [simonAndTheSpy.slug]: withSectionAudioPaths(simonAndTheSpy),
+  [theFireboy.slug]: withSectionAudioPaths(theFireboy),
+  [theLastPhoto.slug]: withSectionAudioPaths(theLastPhoto),
+  [theLeopardAndTheLighthouse.slug]: withSectionAudioPaths(
+    theLeopardAndTheLighthouse,
+  ),
+  [thePearlGirl.slug]: withSectionAudioPaths(thePearlGirl),
+  [whoWantsToBeAStar.slug]: withSectionAudioPaths(whoWantsToBeAStar),
 };
 
 export type AudiobookSlug = keyof typeof audiobooks;
