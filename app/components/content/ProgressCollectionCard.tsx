@@ -10,9 +10,10 @@ import {
 
 export type ProgressCollectionItem = {
   id: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description: string;
+  meta?: string;
   isCompleted: boolean;
   ariaLabel: string;
   onClick?: () => void;
@@ -31,6 +32,7 @@ type ProgressCollectionCardProps = {
   className?: string;
   disableResetWhenEmpty?: boolean;
   levelTheme?: LevelTheme;
+  emptyMessage?: string;
 };
 
 export function ProgressCollectionCard({
@@ -46,6 +48,7 @@ export function ProgressCollectionCard({
   className = "",
   disableResetWhenEmpty = false,
   levelTheme,
+  emptyMessage,
 }: ProgressCollectionCardProps) {
   const [isResetConfirmationOpen, setIsResetConfirmationOpen] = useState(false);
 
@@ -102,7 +105,7 @@ export function ProgressCollectionCard({
                         item.isCompleted
                           ? levelTheme
                             ? levelGradientClasses[levelTheme]
-                            : "bg-yellow-500 dark:bg-yellow-500"
+                            : "bg-slate-400 dark:bg-slate-500"
                           : "bg-slate-300 dark:bg-slate-600"
                       }`}
                   />
@@ -115,24 +118,35 @@ export function ProgressCollectionCard({
                   }
                   onClick={item.onClick}
                   className={`z-10 size-15! ${
-                    item.isCompleted && levelTheme
-                      ? levelButtonClasses[levelTheme]
+                    item.isCompleted
+                      ? levelTheme
+                        ? levelButtonClasses[levelTheme]
+                        : "brightness-90"
                       : ""
                   }`}
                 />
 
                 <div className="min-w-0 pt-1">
-                  <p className="text-xs font-bold uppercase text-orange-700!">
-                    {item.eyebrow}
-                  </p>
+                  {item.eyebrow && (
+                    <p className="text-xs font-bold uppercase text-orange-700!">
+                      {item.eyebrow}
+                    </p>
+                  )}
                   <h3 className="text-xl font-black text-black dark:text-[var(--text-color)]">
                     {item.title}
                   </h3>
-                  <p className="text-lg text-slate-500">{item.description}</p>
+                  <p className="text-base md:text-lg">{item.description}</p>
+                  {item.meta && (
+                    <p className="text-lg text-slate-500">{item.meta}</p>
+                  )}
                 </div>
               </li>
             ))}
           </ol>
+        )}
+
+        {items.length === 0 && emptyMessage && (
+          <p className="px-4 py-5 text-slate-500">{emptyMessage}</p>
         )}
       </article>
 

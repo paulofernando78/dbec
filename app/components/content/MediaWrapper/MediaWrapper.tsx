@@ -20,12 +20,13 @@ export const MediaWrapper = ({
 
 MediaWrapper.Item = function MediaWrapperItem({
   children,
+  className = "",
 }: {
   children: ReactNode;
+  className?: string;
 }) {
   return (
-    <div
-    >
+    <div className={className}>
       {children}
     </div>
   );
@@ -33,8 +34,10 @@ MediaWrapper.Item = function MediaWrapperItem({
 
 MediaWrapper.Content = function MediaWrapperContent({
   children,
+  className = "",
 }: {
   children: ReactNode;
+  className?: string;
 }) {
-  return <div>{children}</div>;
+  return <div className={className}>{children}</div>;
 };

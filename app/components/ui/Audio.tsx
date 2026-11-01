@@ -1,6 +1,6 @@
 // import styles from "";
 
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { LoaderCircle, Play, Rabbit, Square, Turtle } from "lucide-react";
 import { Button } from "@/components/ui/Button/Button";
@@ -112,6 +112,7 @@ export const Audio = ({
   const playbackRateRef = useRef<1 | 0.75>(1);
   const [playing, setPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [ready, setReady] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [playbackRate, setPlaybackRate] = useState<1 | 0.75>(1);
@@ -127,6 +128,39 @@ export const Audio = ({
     sources.every(({ src: source }) =>
       /\.(mp3|wav|ogg)(?:[?#]|$)/i.test(source),
     );
+
+  useEffect(() => {
+    setReady(false);
+
+    if (isAudioFile) return;
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+      setReady(true);
+      return;
+    }
+
+    let active = true;
+    const markReady = () => {
+      if (active) setReady(true);
+    };
+
+    if (window.speechSynthesis.getVoices().length > 0) {
+      markReady();
+      return () => {
+        active = false;
+      };
+    }
+
+    window.speechSynthesis.addEventListener("voiceschanged", markReady, {
+      once: true,
+    });
+    const timeout = window.setTimeout(markReady, 750);
+
+    return () => {
+      active = false;
+      window.clearTimeout(timeout);
+      window.speechSynthesis.removeEventListener("voiceschanged", markReady);
+    };
+  }, [isAudioFile, primarySource]);
 
   const finishPlaylist = () => {
     const el = audioRef.current;
@@ -193,6 +227,7 @@ export const Audio = ({
     startOffset = 0,
   ) => {
     stopCurrentSpeech();
+    setLoading(true);
 
     if (currentGlobalAudio) {
       currentGlobalAudio.pause();
@@ -440,7 +475,7 @@ export const Audio = ({
     }
   };
 
-  const icon = loading ? (
+  const icon = loading || !ready ? (
         <LoaderCircle
           size={16}
           className={`${className ?? ""} animate-spin`}
@@ -479,11 +514,13 @@ export const Audio = ({
           onLoadedMetadata={(event) => {
             event.currentTarget.playbackRate = playbackRateRef.current;
             setDuration(Number.isFinite(event.currentTarget.duration) ? event.currentTarget.duration : 0);
+            setReady(true);
           }}
           onTimeUpdate={(event) => setProgress(event.currentTarget.currentTime)}
           onEnded={handleEnded}
           onPause={handlePause}
           onError={() => {
+            setReady(true);
             playCurrentSourceFallback();
           }}
         />

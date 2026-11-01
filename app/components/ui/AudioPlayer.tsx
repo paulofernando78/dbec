@@ -4,15 +4,23 @@ type AudioPlayerProps = {
   src: string;
   fallbackText?: string;
   ariaLabel?: string;
+  withBottomMargin?: boolean;
+  withBottomPadding?: boolean;
+  background?: "surface" | "background";
 };
 
 export const AudioPlayer = ({
   src,
   fallbackText,
   ariaLabel = "Play audio",
+  withBottomMargin = true,
+  withBottomPadding = true,
+  background = "surface",
 }: AudioPlayerProps) => {
   return (
-    <div className="mb-4 rounded-xl bg-[var(--surface)] p-2.5 sm:p-3">
+    <div
+      className={`${withBottomMargin ? "mb-4" : ""} ${withBottomPadding ? "p-2.5 sm:p-3" : "px-2.5 pt-2.5 sm:px-3 sm:pt-3"} ${background === "background" ? "bg-[var(--background)]" : "bg-[var(--surface)]"} rounded-xl`}
+    >
       <Audio
         key={`${src || "synth"}-${fallbackText ?? ""}`}
         asButton

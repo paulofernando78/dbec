@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navigate, useParams } from "react-router";
 
 import { MediaWrapper } from "@/components/content/MediaWrapper";
@@ -6,9 +6,11 @@ import { PageHeader } from "@/components/content/PageHeader";
 import { TableOfContents } from "@/components/content/TableOfContents";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { audiobooks } from "@/data/skills/audiobooks";
+import { audiobookQuestions } from "@/data/skills/audiobook-questions";
 import {
   type AudiobookSection,
 } from "@/data/skills/a-new-zealand-adventure";
+import { completeAudiobook } from "@/utils/audiobook-progress";
 
 function SectionImage({ section }: { section: AudiobookSection }) {
   const [missing, setMissing] = useState(false);
@@ -39,6 +41,25 @@ function SectionImage({ section }: { section: AudiobookSection }) {
 export default function ListeningBookPage() {
   const { book } = useParams();
   const audiobook = book ? audiobooks[book as keyof typeof audiobooks] : undefined;
+  const completionSentinelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const sentinel = completionSentinelRef.current;
+    if (!audiobook || !sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          completeAudiobook(audiobook.slug);
+          observer.disconnect();
+        }
+      },
+      { threshold: 1 },
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [audiobook]);
 
   if (!audiobook) {
     return <Navigate to="/audiobooks" replace />;
@@ -50,7 +71,11 @@ export default function ListeningBookPage() {
     .join(" ");
   const [summary, ...sections] = audiobook.sections;
 
-  const renderSection = (section: AudiobookSection) => (
+  const renderSection = (section: AudiobookSection) => {
+    const questions =
+      section.questions ?? audiobookQuestions[audiobook.slug]?.[section.id] ?? [];
+
+    return (
     <article
       key={section.id}
       id={section.id}
@@ -63,27 +88,49 @@ export default function ListeningBookPage() {
         )}
       </header>
 
-      <div className="rounded-lg bg-[var(--background)] p-3">
+      <div>
         <MediaWrapper mediaPosition={section.mediaPosition ?? "right"}>
           {section.r2 && (
             <MediaWrapper.Item>
               <SectionImage section={section} />
             </MediaWrapper.Item>
           )}
-          <MediaWrapper.Content>
-            <p className="text-lg leading-8">{section.text}</p>
+          <MediaWrapper.Content className="flex-1">
+            {section.id === "summary" && (
+              <AudioPlayer
+                src={audiobook.audio}
+                fallbackText={storyText}
+                ariaLabel={`Play ${audiobook.title}`}
+                background="background"
+              />
+            )}
+            <div
+              className="rounded-lg bg-(--background) p-3"
+            >
+              <p className="text-lg leading-8">{section.text}</p>
+            </div>
+            {questions.length > 0 && (
+              <div className="mt-3 rounded-lg bg-(--background) p-3">
+                <h3 className="mb-2 text-lg font-black">Answer</h3>
+                <ul className="space-y-1">
+                  {questions.map((question) => (
+                    <li key={question}>{question}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </MediaWrapper.Content>
         </MediaWrapper>
       </div>
     </article>
-  );
+    );
+  };
 
   return (
     <div>
       <PageHeader title={audiobook.title} />
 
       <TableOfContents
-        subtitle="Story"
         items={audiobook.sections.map((section) => ({
           href: section.id,
           label: section.title,
@@ -92,17 +139,11 @@ export default function ListeningBookPage() {
 
       {summary && <div className="mb-4">{renderSection(summary)}</div>}
 
-      <div className="sticky top-2 z-20">
-        <AudioPlayer
-          src={audiobook.audio}
-          fallbackText={storyText}
-          ariaLabel={`Play ${audiobook.title}`}
-        />
-      </div>
-
       <div className="grid gap-4">
         {sections.map(renderSection)}
       </div>
+
+      <div ref={completionSentinelRef} className="h-px" aria-hidden="true" />
     </div>
   );
 }
