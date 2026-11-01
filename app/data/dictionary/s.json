@@ -2062,6 +2062,26 @@
         "antonyms": ["starvation", "deprivation"],
         "seeAlso": ["sustain", "nourish", "nutrition"],
         "imgs": [{ "src": "sustenance.avif", "alt": "A butterfly and a male mosquito feeding on flower nectar for sustenance." }]
+      },
+      {
+        "word": "so far, so good",
+        "partOfSpeech": "expression",
+        "enDefinition": "everything has been going well up to this point",
+        "ptDefinition": "até agora, tudo está indo bem",
+        "examples": [
+          { "enExample": "How is your new job? So far, so good.", "ptExample": "Como está seu novo emprego? Até agora, tudo bem." },
+          { "enExample": "We've finished half the project. So far, so good.", "ptExample": "Terminamos metade do projeto. Até agora, tudo está indo bem." }
+        ]
+      },
+      {
+        "word": "speak of the devil",
+        "partOfSpeech": "idiom",
+        "enDefinition": "said when the person you were just talking about appears",
+        "ptDefinition": "usada quando a pessoa de quem você estava falando aparece",
+        "examples": [
+          { "enExample": "We were just talking about you. Speak of the devil!", "ptExample": "Estávamos falando de você agora mesmo. Falando no diabo!" },
+          { "enExample": "Speak of the devil—here comes Lucas now.", "ptExample": "Falando nele—o Lucas está chegando agora." }
+        ]
       }
       ,{
         "word": "saliva",

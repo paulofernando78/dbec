@@ -1416,6 +1416,16 @@
             "ptNote": "Este termo vem da guerra de guerrilha, destacando ações não convencionais e estratégicas."
           }
         ]
+      },
+      {
+        "word": "give someone the benefit of the doubt",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to believe someone when there is not enough evidence against them",
+        "ptDefinition": "acreditar na pessoa quando não há provas suficientes contra ela",
+        "examples": [
+          { "enExample": "I'll give him the benefit of the doubt this time.", "ptExample": "Vou dar a ele o benefício da dúvida desta vez." },
+          { "enExample": "She was late, but let's give her the benefit of the doubt.", "ptExample": "Ela se atrasou, mas vamos presumir que teve um bom motivo." }
+        ]
       }
     ]
   }

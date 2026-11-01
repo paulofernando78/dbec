@@ -1719,6 +1719,36 @@
         "synonyms": ["balance", "reach equilibrium", "make no profit or loss"],
         "antonyms": ["lose money", "make a profit"],
         "seeAlso": ["in the black", "in the red"]
+      },
+      {
+        "word": "better late than never",
+        "partOfSpeech": "proverb",
+        "enDefinition": "it is better to do something late than not to do it at all",
+        "ptDefinition": "é melhor fazer algo com atraso do que nunca fazer",
+        "examples": [
+          { "enExample": "I finally started exercising. Better late than never!", "ptExample": "Finalmente comecei a me exercitar. Antes tarde do que nunca!" },
+          { "enExample": "He apologized after a month, but better late than never.", "ptExample": "Ele pediu desculpas depois de um mês, mas antes tarde do que nunca." }
+        ]
+      },
+      {
+        "word": "back to square one",
+        "partOfSpeech": "idiom",
+        "enDefinition": "back at the beginning because an attempt did not work",
+        "ptDefinition": "voltar ao início porque uma tentativa não funcionou",
+        "examples": [
+          { "enExample": "The plan failed, so we're back to square one.", "ptExample": "O plano fracassou, então voltamos à estaca zero." },
+          { "enExample": "If this doesn't work, it will be back to square one.", "ptExample": "Se isso não funcionar, será preciso começar tudo de novo." }
+        ]
+      },
+      {
+        "word": "break the ice",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to start a conversation and make people feel more comfortable",
+        "ptDefinition": "iniciar uma conversa para deixar as pessoas mais à vontade",
+        "examples": [
+          { "enExample": "He told a joke to break the ice.", "ptExample": "Ele contou uma piada para quebrar o gelo." },
+          { "enExample": "A simple question can help break the ice.", "ptExample": "Uma pergunta simples pode ajudar a quebrar o gelo." }
+        ]
       }
       ,{
         "word": "blood-brain barrier",

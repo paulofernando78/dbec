@@ -10,7 +10,7 @@ type UnitCardProps = {
   unit: Unit;
   levelSlug: string;
   levelTheme?: LevelTheme;
-  isAuthenticated: boolean;
+  isAuthenticated: boolean | null;
   basePath?: string;
 };
 
@@ -57,12 +57,24 @@ export function UnitCard({
       onReset={resetUnit}
       levelTheme={levelTheme}
       items={unit.lessons.map((lesson, index) => ({
+        ...(() => {
+          const lessonNumber = index + 1;
+          const isCompleted = completedLessons.has(lessonNumber);
+          const isFreeLesson = levelSlug === "a1" && unit.number <= 3;
+          const isLocked = isAuthenticated === false && !isFreeLesson;
+
+          return {
+            isCompleted,
+            isLocked,
+            ariaLabel: `${
+              isLocked ? "Locked" : isCompleted ? "Completed" : "Open"
+            } lesson ${lessonNumber}`,
+          };
+        })(),
         id: `${unit.number}-${index}`,
         eyebrow: `Lesson ${index + 1}`,
         title: lesson.title,
         description: lesson.description,
-        isCompleted: completedLessons.has(index + 1),
-        ariaLabel: `${completedLessons.has(index + 1) ? "Completed" : "Open"} lesson ${index + 1}`,
         onClick:
           index < 2
             ? () => {

@@ -355,6 +355,16 @@
           }
         ],
         "synonyms": ["blackout"]
+      },
+      {
+        "word": "on the same wavelength",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to have similar thoughts, feelings, or opinions",
+        "ptDefinition": "ter pensamentos, sentimentos ou opiniões semelhantes",
+        "examples": [
+          { "enExample": "My business partner and I are on the same wavelength.", "ptExample": "Meu sócio e eu estamos em sintonia." },
+          { "enExample": "We work well together because we're on the same wavelength.", "ptExample": "Trabalhamos bem juntos porque pensamos da mesma forma." }
+        ]
       }
     ]
   }

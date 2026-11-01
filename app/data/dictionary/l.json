@@ -808,6 +808,16 @@
         "antonyms": ["highbrow", "refined", "intellectual"],
         "seeAlso": ["highbrow", "prestige", "popular culture"],
         "imgs": [{ "src": "low-brow.avif", "alt": "An elegant theater entrance contrasting with a humble street-food cart outside." }]
+      },
+      {
+        "word": "learn the ropes",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to learn how a job or activity works",
+        "ptDefinition": "aprender como um trabalho ou atividade funciona",
+        "examples": [
+          { "enExample": "It took me a few weeks to learn the ropes.", "ptExample": "Levei algumas semanas para aprender como tudo funcionava." },
+          { "enExample": "Maria will help you learn the ropes.", "ptExample": "A Maria ajudará você a pegar o jeito do trabalho." }
+        ]
       }
     ]
   }

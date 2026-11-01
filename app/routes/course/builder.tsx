@@ -8,7 +8,7 @@ import { levels } from "@/data/course";
 export default function LevelBuilder() {
   const { level: levelSlug } = useParams();
   const level = levels[levelSlug as keyof typeof levels];
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
   useEffect(() => {
     let active = true;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LockKeyhole, LockKeyholeOpen, RotateCcw } from "lucide-react";
+import { BookOpen, Check, LockKeyhole, RotateCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import {
@@ -15,6 +15,7 @@ export type ProgressCollectionItem = {
   description: string;
   meta?: string;
   isCompleted: boolean;
+  isLocked?: boolean;
   ariaLabel: string;
   onClick?: () => void;
 };
@@ -102,7 +103,7 @@ export function ProgressCollectionCard({
                     aria-hidden="true"
                     className={`absolute -bottom-5 left-6.5 top-13 z-0 w-2
                       ${
-                        item.isCompleted
+                        item.isCompleted && !item.isLocked
                           ? levelTheme
                             ? levelGradientClasses[levelTheme]
                             : "bg-slate-400 dark:bg-slate-500"
@@ -114,11 +115,17 @@ export function ProgressCollectionCard({
                 <Button
                   ariaLabel={item.ariaLabel}
                   icon={
-                    item.isCompleted ? <LockKeyholeOpen /> : <LockKeyhole />
+                    item.isLocked ? (
+                      <LockKeyhole aria-hidden="true" />
+                    ) : item.isCompleted ? (
+                      <Check aria-hidden="true" />
+                    ) : (
+                      <BookOpen aria-hidden="true" />
+                    )
                   }
                   onClick={item.onClick}
                   className={`z-10 size-15! ${
-                    item.isCompleted
+                    item.isCompleted && !item.isLocked
                       ? levelTheme
                         ? levelButtonClasses[levelTheme]
                         : "brightness-90"

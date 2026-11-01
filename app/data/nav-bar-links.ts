@@ -10,6 +10,7 @@ import {
   MessageSquareQuote,
   Music2,
   BookOpen,
+  Headphones
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -39,14 +40,19 @@ export const links: NavItem[] = [
     icon: CircleUserRound,
   },
   {
-    href: "/course",
-    label: "course (A1-C1)",
-    icon: BookOpenCheck,
-  },
-
-  {
-    group: "keep learning",
+    group: "learn",
     children: [
+      {
+        href: "/course",
+        label: "course (A1-C1)",
+        icon: BookOpenCheck,
+      },
+      {
+        href: "/authentic-content",
+        label: "TED-Ed",
+        icon: BookOpenCheck,
+      },
+      { href: "/audiobooks", label: "audiobooks", icon: Headphones },
       {
         subgroup: "specific purposes",
         children: [
@@ -57,6 +63,11 @@ export const links: NavItem[] = [
           },
         ],
       },
+    ],
+  },
+  {
+    group: "practice",
+    children: [
       {
         subgroup: "language",
         children: [
@@ -73,12 +84,6 @@ export const links: NavItem[] = [
       {
         subgroup: "content",
         children: [
-          { href: "/audiobooks", label: "audiobooks", icon: BookOpen },
-          {
-            href: "/authentic-content",
-            label: "TED-Ed",
-            icon: AuthenticContent,
-          },
           { href: "/songs", label: "songs", icon: Music2 },
           { href: "/games", label: "games", icon: Gamepad2 },
         ],

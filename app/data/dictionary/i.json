@@ -624,6 +624,26 @@
             "ptExample": "um jornal israelense"
           }
         ]
+      },
+      {
+        "word": "if the shoe fits, wear it",
+        "partOfSpeech": "idiom",
+        "enDefinition": "if a criticism or description applies to you, accept it",
+        "ptDefinition": "se uma crítica ou descrição se aplica a você, aceite-a",
+        "examples": [
+          { "enExample": "Are you saying I'm impatient? If the shoe fits, wear it.", "ptExample": "Você está dizendo que sou impaciente? Se a carapuça serve, vista-a." },
+          { "enExample": "I didn't mention anyone, but if the shoe fits...", "ptExample": "Eu não mencionei ninguém, mas se a carapuça serviu..." }
+        ]
+      },
+      {
+        "word": "it's not the end of the world",
+        "partOfSpeech": "expression",
+        "enDefinition": "the problem is not as serious as it seems",
+        "ptDefinition": "o problema não é tão grave quanto parece",
+        "examples": [
+          { "enExample": "You made a mistake, but it's not the end of the world.", "ptExample": "Você cometeu um erro, mas não é o fim do mundo." },
+          { "enExample": "If we miss this bus, it's not the end of the world.", "ptExample": "Se perdermos este ônibus, não será o fim do mundo." }
+        ]
       }
     ]
   }

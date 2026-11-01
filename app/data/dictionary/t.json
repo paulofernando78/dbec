@@ -1868,6 +1868,16 @@
         "antonyms": [],
         "seeAlso": ["maize", "domestication", "selective breeding"],
         "imgs": [{ "src": "teosinte.avif", "alt": "A teosinte plant beside modern maize showing their evolutionary relationship." }]
+      },
+      {
+        "word": "to each their own",
+        "partOfSpeech": "expression",
+        "enDefinition": "each person has their own tastes and preferences",
+        "ptDefinition": "cada pessoa tem seus próprios gostos e preferências",
+        "examples": [
+          { "enExample": "I don't enjoy camping, but to each their own.", "ptExample": "Não gosto de acampar, mas cada um com seu gosto." },
+          { "enExample": "She loves working at night. To each their own.", "ptExample": "Ela adora trabalhar à noite. Cada um sabe de si." }
+        ]
       }
     ]
   }
