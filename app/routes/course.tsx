@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { Presentation } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/Button";
 
@@ -113,7 +113,7 @@ export default function Levels() {
                     ariaLabel={`Access ${item.level} ${item.name}`}
                     disabled={!item.href}
                     onClick={() => item.href && navigate(item.href)}
-                    icon={<Presentation />}
+                    icon={<BookOpen />}
                   />
                   <p className="font-semibold">
                     {item.unitCount ?? 16} units

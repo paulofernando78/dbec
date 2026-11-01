@@ -9,8 +9,7 @@ import {
   BookMarked,
   MessageSquareQuote,
   Music2,
-  BookOpen,
-  Headphones
+  Headphones,
 } from "lucide-react";
 
 import { AuthenticContent } from "@/components/Icons";
@@ -52,7 +51,6 @@ export const links: NavItem[] = [
         label: "TED-Ed",
         icon: BookOpenCheck,
       },
-      { href: "/audiobooks", label: "audiobooks", icon: Headphones },
       {
         subgroup: "specific purposes",
         children: [
@@ -69,9 +67,15 @@ export const links: NavItem[] = [
     group: "practice",
     children: [
       {
+        subgroup: "listening",
+        children: [
+          { href: "/audiobooks", label: "audiobooks", icon: Headphones },
+        ],
+      },
+      {
         subgroup: "language",
         children: [
-          { href: "/vocabulary", label: "vocabulary", icon: BookOpenText },
+          { href: "/vocabulary", label: "vocabulary", icon: BookMarked },
           { href: "/grammar", label: "grammar", icon: BookMarked },
           { href: "/pronunciation", label: "pronunciation", icon: AudioLines },
           {
