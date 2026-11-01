@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import { LoaderCircle, Play, Rabbit, Square, Turtle } from "lucide-react";
+import { LoaderCircle, Pause, Play, Rabbit, Turtle } from "lucide-react";
 import { Button } from "@/components/ui/Button/Button";
 
 type AudioSource = string | { src: string; fallbackText?: string };
@@ -398,6 +398,20 @@ export const Audio = ({
     setProgress(0);
   };
 
+  const handlePauseButton = (e?: React.MouseEvent<Element>) => {
+    e?.stopPropagation();
+
+    if (!isAudioFile) {
+      handleStop(e);
+      return;
+    }
+
+    setLoading(false);
+    playbackActiveRef.current = false;
+    fallbackStartedRef.current = false;
+    audioRef.current?.pause();
+  };
+
   const handleEnded = () => {
     void playNextSource();
   };
@@ -485,12 +499,10 @@ export const Audio = ({
           color="var(--button-icon)"
         />
       ) : playing ? (
-        <Square
+        <Pause
           size={16}
           className={className}
           fill="var(--button-icon)"
-          stroke="none"
-          style={{ stroke: "none" }}
         />
       ) : (
         <Play
@@ -589,7 +601,7 @@ export const Audio = ({
         <Button
           ariaLabel={ariaLabel}
           icon={icon}
-          onClick={loading || playing ? handleStop : handlePlay}
+          onClick={loading ? handleStop : playing ? handlePauseButton : handlePlay}
         />
         {playerControls}
         {audioElement}
@@ -602,7 +614,7 @@ export const Audio = ({
       <Button
         ariaLabel={ariaLabel}
         className={wrapperClassName}
-        onClick={loading || playing ? handleStop : handlePlay}
+        onClick={loading ? handleStop : playing ? handlePauseButton : handlePlay}
       >
         {content}
       </Button>
@@ -615,7 +627,7 @@ export const Audio = ({
         ariaLabel={ariaLabel}
         className={wrapperClassName}
         icon={content}
-        onClick={loading || playing ? handleStop : handlePlay}
+        onClick={loading ? handleStop : playing ? handlePauseButton : handlePlay}
       />
     );
   }
@@ -623,7 +635,7 @@ export const Audio = ({
   return (
     <span
       className={`inline-flex cursor-pointer ${wrapperClassName ?? ""}`}
-      onClick={loading || playing ? handleStop : handlePlay}
+      onClick={loading ? handleStop : playing ? handlePauseButton : handlePlay}
     >
       {content}
     </span>
