@@ -36,7 +36,10 @@ const ignoredContentKeys = new Set([
   "video",
 ]);
 
-const extractText = (value: unknown, seen = new WeakSet<object>()): string[] => {
+const extractText = (
+  value: unknown,
+  seen = new WeakSet<object>(),
+): string[] => {
   if (typeof value === "string") return [value];
   if (value == null || typeof value !== "object") return [];
   if (seen.has(value)) return [];
@@ -55,40 +58,218 @@ const cleanText = (parts: readonly string[]) =>
   parts.join(" ").replace(/\s+/g, " ").trim();
 
 const pageItems: readonly SearchItem[] = [
-  { title: "Course", category: "Page", description: "English courses from A1 to C1.", href: "/course", keywords: "levels lessons units" },
-  { title: "Authentic Content", category: "Page", description: "Authentic videos and real-world topics.", href: "/authentic-content" },
-  { title: "Travel", category: "Page", description: "English for common travel situations.", href: "/travel" },
-  { title: "Vocabulary", category: "Page", description: "Commonly confused English words.", href: "/vocabulary" },
-  { title: "Expressions", category: "Page", description: "Common English expressions organized by theme.", href: "/expressions" },
-  { title: "Grammar", category: "Page", description: "English grammar forms and structures.", href: "/grammar" },
-  { title: "Pronunciation", category: "Page", description: "English sounds, stress, and intonation.", href: "/pronunciation" },
-  { title: "Songs", category: "Page", description: "Learn English through songs.", href: "/songs" },
-  { title: "Games", category: "Page", description: "Learn and explore through games.", href: "/games" },
-  { title: "CEFR", category: "Page", description: "The Common European Framework of Reference.", href: "/cefr" },
-  { title: "Hear vs. Listen", category: "Vocabulary", description: "Receiving a sound versus paying attention to it.", href: "/vocabulary#hear-vs-listen", keywords: "ouvir escutar sound" },
-  { title: "Speak vs. Say vs. Tell", category: "Vocabulary", description: "Speaking and giving information.", href: "/vocabulary#speak-vs-say-vs-tell", keywords: "falar dizer contar" },
-  { title: "Quick vs. Fast", category: "Vocabulary", description: "Short duration versus high speed.", href: "/vocabulary#quick-vs-fast", keywords: "quickly fastly rápido velocidade" },
-  { title: "Frozen vs. Frostbite", category: "Vocabulary", description: "Being frozen versus an injury caused by extreme cold.", href: "/vocabulary#frozen-vs-frostbite", keywords: "frostbitten congelado frio lesão" },
-  { title: "Future Forms", category: "Grammar", description: "Will, be going to, and the present continuous.", href: "/grammar#future-forms", keywords: "will going to future futuro" },
-  { title: "Maybe vs. May be", category: "Grammar", description: "An adverb versus the modal may followed by be.", href: "/grammar#modal-verbs", keywords: "perhaps might possibility possibilidade" },
+  {
+    title: "Course (A1-C1)",
+    category: "Learn",
+    description: "English courses from A1 to C1.",
+    href: "/course",
+    keywords: "levels lessons units",
+  },
+  {
+    title: "TED-Ed",
+    category: "Learn",
+    description: "Authentic videos and real-world topics.",
+    href: "/authentic-content",
+    keywords: "authentic content",
+  },
+  {
+    title: "Travel",
+    category: "Learn · Specific purposes",
+    description: "English for common travel situations.",
+    href: "/travel",
+  },
+  {
+    title: "Audiobooks",
+    category: "Skills · Listening",
+    description: "Practice listening with graded stories.",
+    href: "/audiobooks",
+    keywords: "audio books listening",
+  },
+  {
+    title: "Which one?",
+    category: "Language · Vocabulary",
+    description: "Commonly confused English words.",
+    href: "/vocabulary",
+    keywords: "vocabulary",
+  },
+  {
+    title: "Grammar",
+    category: "Language",
+    description: "English grammar forms and structures.",
+    href: "/grammar/present-perfect",
+  },
+  {
+    title: "Phonetics",
+    category: "Language",
+    description: "English vowel and consonant sounds.",
+    href: "/pronunciation/phonetics",
+    keywords: "pronunciation sounds",
+  },
+  {
+    title: "Linking Sounds",
+    category: "Language · Pronunciation",
+    description: "How sounds connect across words in spoken English.",
+    href: "/pronunciation/linking-sounds",
+  },
+  {
+    title: "Expressions",
+    category: "Language",
+    description: "Common English expressions organized by theme.",
+    href: "/expressions",
+  },
+  {
+    title: "Songs",
+    category: "Content",
+    description: "Learn English through songs.",
+    href: "/songs",
+  },
+  {
+    title: "Games",
+    category: "Content",
+    description: "Learn and explore through games.",
+    href: "/games",
+  },
+  {
+    title: "CEFR",
+    category: "Page",
+    description: "The Common European Framework of Reference.",
+    href: "/cefr",
+  },
+  {
+    title: "Hear vs. Listen",
+    category: "Vocabulary",
+    description: "Receiving a sound versus paying attention to it.",
+    href: "/vocabulary#hear-vs-listen",
+    keywords: "ouvir escutar sound",
+  },
+  {
+    title: "Speak vs. Say vs. Tell",
+    category: "Vocabulary",
+    description: "Speaking and giving information.",
+    href: "/vocabulary#speak-vs-say-vs-tell",
+    keywords: "falar dizer contar",
+  },
+  {
+    title: "Quick vs. Fast",
+    category: "Vocabulary",
+    description: "Short duration versus high speed.",
+    href: "/vocabulary#quick-vs-fast",
+    keywords: "quickly fastly rápido velocidade",
+  },
+  {
+    title: "Frozen vs. Frostbite",
+    category: "Vocabulary",
+    description: "Being frozen versus an injury caused by extreme cold.",
+    href: "/vocabulary#frozen-vs-frostbite",
+    keywords: "frostbitten congelado frio lesão",
+  },
+  {
+    title: "Future Forms",
+    category: "Grammar",
+    description: "Will, be going to, and the present continuous.",
+    href: "/grammar/future-forms",
+    keywords: "will going to future futuro",
+  },
+  {
+    title: "Maybe vs. May be",
+    category: "Grammar",
+    description: "An adverb versus the modal may followed by be.",
+    href: "/grammar/modal-verbs",
+    keywords: "perhaps might possibility possibilidade",
+  },
 ];
 
 const expressionData = [
-  ["Better late than never", "É melhor fazer algo com atraso do que nunca fazer.", "everyday-conversation", "antes tarde do que nunca"],
-  ["So far, so good", "Até agora, tudo está indo bem.", "everyday-conversation", "até agora tudo bem"],
-  ["Speak of the devil", "Usada quando a pessoa de quem você falava aparece.", "everyday-conversation", "falando no diabo falando nele"],
-  ["If the shoe fits, wear it", "Se uma crítica se aplica a você, aceite-a.", "opinions-and-agreement", "se a carapuça serve"],
-  ["You can say that again", "Concordo totalmente.", "opinions-and-agreement", "nem me fale com certeza"],
-  ["To each their own", "Cada pessoa tem seus próprios gostos.", "opinions-and-agreement", "cada um com seu gosto"],
-  ["Bite the bullet", "Enfrentar uma situação difícil com coragem.", "problems-and-decisions", "encarar enfrentar"],
-  ["Back to square one", "Voltar ao início após uma tentativa falhar.", "problems-and-decisions", "estaca zero recomeçar"],
-  ["It's not the end of the world", "O problema não é tão grave quanto parece.", "problems-and-decisions", "não é o fim do mundo"],
-  ["Get the ball rolling", "Começar uma atividade ou processo.", "work-and-progress", "começar dar início"],
-  ["Learn the ropes", "Aprender como um trabalho funciona.", "work-and-progress", "aprender pegar o jeito"],
-  ["Go the extra mile", "Fazer mais do que o esperado.", "work-and-progress", "esforço extra"],
-  ["Break the ice", "Iniciar uma conversa e deixar as pessoas à vontade.", "feelings-and-relationships", "quebrar o gelo"],
-  ["On the same wavelength", "Ter pensamentos ou opiniões semelhantes.", "feelings-and-relationships", "estar em sintonia"],
-  ["Give someone the benefit of the doubt", "Acreditar na pessoa quando não há provas contra ela.", "feelings-and-relationships", "benefício da dúvida"],
+  [
+    "Better late than never",
+    "É melhor fazer algo com atraso do que nunca fazer.",
+    "everyday-conversation",
+    "antes tarde do que nunca",
+  ],
+  [
+    "So far, so good",
+    "Até agora, tudo está indo bem.",
+    "everyday-conversation",
+    "até agora tudo bem",
+  ],
+  [
+    "Speak of the devil",
+    "Usada quando a pessoa de quem você falava aparece.",
+    "everyday-conversation",
+    "falando no diabo falando nele",
+  ],
+  [
+    "If the shoe fits, wear it",
+    "Se uma crítica se aplica a você, aceite-a.",
+    "opinions-and-agreement",
+    "se a carapuça serve",
+  ],
+  [
+    "You can say that again",
+    "Concordo totalmente.",
+    "opinions-and-agreement",
+    "nem me fale com certeza",
+  ],
+  [
+    "To each their own",
+    "Cada pessoa tem seus próprios gostos.",
+    "opinions-and-agreement",
+    "cada um com seu gosto",
+  ],
+  [
+    "Bite the bullet",
+    "Enfrentar uma situação difícil com coragem.",
+    "problems-and-decisions",
+    "encarar enfrentar",
+  ],
+  [
+    "Back to square one",
+    "Voltar ao início após uma tentativa falhar.",
+    "problems-and-decisions",
+    "estaca zero recomeçar",
+  ],
+  [
+    "It's not the end of the world",
+    "O problema não é tão grave quanto parece.",
+    "problems-and-decisions",
+    "não é o fim do mundo",
+  ],
+  [
+    "Get the ball rolling",
+    "Começar uma atividade ou processo.",
+    "work-and-progress",
+    "começar dar início",
+  ],
+  [
+    "Learn the ropes",
+    "Aprender como um trabalho funciona.",
+    "work-and-progress",
+    "aprender pegar o jeito",
+  ],
+  [
+    "Go the extra mile",
+    "Fazer mais do que o esperado.",
+    "work-and-progress",
+    "esforço extra",
+  ],
+  [
+    "Break the ice",
+    "Iniciar uma conversa e deixar as pessoas à vontade.",
+    "feelings-and-relationships",
+    "quebrar o gelo",
+  ],
+  [
+    "On the same wavelength",
+    "Ter pensamentos ou opiniões semelhantes.",
+    "feelings-and-relationships",
+    "estar em sintonia",
+  ],
+  [
+    "Give someone the benefit of the doubt",
+    "Acreditar na pessoa quando não há provas contra ela.",
+    "feelings-and-relationships",
+    "benefício da dúvida",
+  ],
 ] as const;
 
 const expressionItems: readonly SearchItem[] = expressionData.map(
@@ -117,23 +298,24 @@ const authenticContentItems: readonly SearchItem[] =
     ].join(" "),
   }));
 
-const courseItems: readonly SearchItem[] = Object.values(levels).flatMap((level) =>
-  level.units.flatMap((unit) => [
-    {
-      title: `${level.code} · Unit ${unit.number}: ${unit.title}`,
-      category: "Course unit",
-      description: unit.description,
-      href: `/course/${level.slug}`,
-      keywords: `${level.name} ${level.subtitle}`,
-    },
-    ...unit.lessons.slice(0, 2).map((lesson, index) => ({
-      title: lesson.title,
-      category: `${level.code} · Unit ${unit.number} · Lesson ${index + 1}`,
-      description: lesson.description,
-      href: `/course/${level.slug}/unit/${unit.number}/lesson/${index + 1}`,
-      keywords: `${unit.title} ${unit.description}`,
-    })),
-  ]),
+const courseItems: readonly SearchItem[] = Object.values(levels).flatMap(
+  (level) =>
+    level.units.flatMap((unit) => [
+      {
+        title: `${level.code} · Unit ${unit.number}: ${unit.title}`,
+        category: "Course unit",
+        description: unit.description,
+        href: `/course/${level.slug}`,
+        keywords: `${level.name} ${level.subtitle}`,
+      },
+      ...unit.lessons.slice(0, 2).map((lesson, index) => ({
+        title: lesson.title,
+        category: `${level.code} · Unit ${unit.number} · Lesson ${index + 1}`,
+        description: lesson.description,
+        href: `/course/${level.slug}/unit/${unit.number}/lesson/${index + 1}`,
+        keywords: `${unit.title} ${unit.description}`,
+      })),
+    ]),
 );
 
 const courseStepItems: readonly SearchItem[] = Object.entries(lessonRegistry)
@@ -199,7 +381,10 @@ const searchItems = [
   ...courseStepItems,
 ];
 const normalize = (value: string) =>
-  value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 
 const createSnippet = (text: string, terms: readonly string[]) => {
   const normalizedText = normalize(text);
@@ -290,7 +475,9 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
     if (!terms.length) return [];
     return searchItems
       .filter((item) => {
-        const text = normalize(`${item.title} ${item.category} ${item.fullText ?? item.description} ${item.keywords ?? ""}`);
+        const text = normalize(
+          `${item.title} ${item.category} ${item.fullText ?? item.description} ${item.keywords ?? ""}`,
+        );
         return terms.every((term) => text.includes(term));
       })
       .map((item) => ({
@@ -321,7 +508,8 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
       userAgentData?: { mobile?: boolean; platform?: string };
     };
     const isTouchMac =
-      /Mac/.test(browserNavigator.platform) && browserNavigator.maxTouchPoints > 1;
+      /Mac/.test(browserNavigator.platform) &&
+      browserNavigator.maxTouchPoints > 1;
     const isMobile =
       browserNavigator.userAgentData?.mobile === true ||
       /Android|iPhone|iPad|iPod|Mobile/i.test(browserNavigator.userAgent) ||
@@ -357,7 +545,12 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
   return (
     <>
       <div className="mb-2 flex items-center gap-2">
-        <Button ariaLabel="Search" icon={<Search />} onClick={() => setIsOpen(true)} className="size-10! p-0.75!" />
+        <Button
+          ariaLabel="Search"
+          icon={<Search />}
+          onClick={() => setIsOpen(true)}
+          className="size-10! p-0.75!"
+        />
         <span className="font-bold uppercase">Search</span>
         {shortcutLabel && (
           <kbd className="ml-auto rounded bg-[var(--background)] px-1.5 py-0.5 text-xs">
@@ -366,97 +559,128 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
         )}
       </div>
 
-      {isOpen && typeof document !== "undefined" && createPortal(
-        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/45 p-4 backdrop-blur-[2px]">
-          <section
-            role="dialog"
-            aria-modal="true"
-            aria-label="Global search"
-            className="flex h-[min(70vh,600px)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl bg-[var(--surface)] shadow-2xl ring-1 ring-slate-300"
-            onKeyDown={(event) => {
-              if (event.key === "Escape") {
-                if (query) {
-                  setQuery("");
-                  inputRef.current?.focus();
-                } else {
-                  close();
-                }
-              }
-              if (event.key === "ArrowDown") {
-                event.preventDefault();
-                setActiveIndex((index) => Math.min(index + 1, results.length - 1));
-              }
-              if (event.key === "ArrowUp") {
-                event.preventDefault();
-                setActiveIndex((index) => Math.max(index - 1, 0));
-              }
-              if (event.key === "Enter" && results[activeIndex]) selectResult(results[activeIndex]);
-            }}
-          >
-            <div className="flex items-center gap-3 border-b border-slate-200 p-3 dark:border-slate-700">
-              <Search className="size-5 shrink-0 text-slate-400" />
-              <input ref={inputRef} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search lessons, vocabulary, expressions..." aria-label="Search all content" className="min-w-0 flex-1 bg-transparent py-2 text-lg outline-none placeholder:text-slate-400" />
-              {query && (
-                <Button
-                  ariaLabel="Clear search"
-                  icon={<CircleX />}
-                  onClick={() => {
+      {isOpen &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/45 p-4 backdrop-blur-[2px]">
+            <section
+              role="dialog"
+              aria-modal="true"
+              aria-label="Global search"
+              className="flex h-[min(70vh,600px)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl bg-[var(--surface)] shadow-2xl ring-1 ring-slate-300"
+              onKeyDown={(event) => {
+                if (event.key === "Escape") {
+                  if (query) {
                     setQuery("");
                     inputRef.current?.focus();
-                  }}
+                  } else {
+                    close();
+                  }
+                }
+                if (event.key === "ArrowDown") {
+                  event.preventDefault();
+                  setActiveIndex((index) =>
+                    Math.min(index + 1, results.length - 1),
+                  );
+                }
+                if (event.key === "ArrowUp") {
+                  event.preventDefault();
+                  setActiveIndex((index) => Math.max(index - 1, 0));
+                }
+                if (event.key === "Enter" && results[activeIndex])
+                  selectResult(results[activeIndex]);
+              }}
+            >
+              <div className="flex items-center gap-3 border-b border-slate-200 p-3 dark:border-slate-700">
+                <Search className="size-5 shrink-0 text-slate-400" />
+                <input
+                  ref={inputRef}
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Search lessons, vocabulary, expressions..."
+                  aria-label="Search all content"
+                  className="min-w-0 flex-1 bg-transparent py-2 text-lg outline-none placeholder:text-slate-400"
+                />
+                {query && (
+                  <Button
+                    ariaLabel="Clear search"
+                    icon={<CircleX />}
+                    onClick={() => {
+                      setQuery("");
+                      inputRef.current?.focus();
+                    }}
+                    className="size-10! p-0.75!"
+                  />
+                )}
+                <Button
+                  ariaLabel="Close search"
+                  icon={<X />}
+                  onClick={close}
                   className="size-10! p-0.75!"
                 />
-              )}
-              <Button
-                ariaLabel="Close search"
-                icon={<X />}
-                onClick={close}
-                className="size-10! p-0.75!"
-              />
-            </div>
-            <div className="min-h-0 flex-1 overflow-y-auto p-2">
-              {!query.trim() && <p className="p-6 text-center text-slate-500">Type any word to search across the site.</p>}
-              {query.trim() && isDictionaryLoading && (
-                <p className="px-4 py-2 text-sm text-slate-500">Checking Dictionary…</p>
-              )}
-              {dictionaryEntry && (
-                <section className="mb-3">
-                  <h2 className="px-2 pb-2 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400">
-                    Dictionary
+              </div>
+              <div className="min-h-0 flex-1 overflow-y-auto p-2">
+                {!query.trim() && (
+                  <p className="p-6 text-center text-slate-500">
+                    Type any word to search across the site.
+                  </p>
+                )}
+                {query.trim() && isDictionaryLoading && (
+                  <p className="px-4 py-2 text-sm text-slate-500">
+                    Checking Dictionary…
+                  </p>
+                )}
+                {dictionaryEntry && (
+                  <section className="mb-3">
+                    <h2 className="px-2 pb-2 text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                      Dictionary
+                    </h2>
+                    <DictionaryWordCard entry={dictionaryEntry} />
+                  </section>
+                )}
+                {query.trim() &&
+                  !isDictionaryLoading &&
+                  !dictionaryEntry &&
+                  !results.length && (
+                    <p className="p-6 text-center text-slate-500">
+                      No results found.
+                    </p>
+                  )}
+                {!!results.length && (
+                  <h2 className="px-2 pb-1 pt-2 text-xs font-black uppercase tracking-wider text-slate-500">
+                    Pages and lessons
                   </h2>
-                  <DictionaryWordCard entry={dictionaryEntry} />
-                </section>
-              )}
-              {query.trim() && !isDictionaryLoading && !dictionaryEntry && !results.length && (
-                <p className="p-6 text-center text-slate-500">No results found.</p>
-              )}
-              {!!results.length && (
-                <h2 className="px-2 pb-1 pt-2 text-xs font-black uppercase tracking-wider text-slate-500">
-                  Pages and lessons
-                </h2>
-              )}
-              {results.map((item, index) => (
-                <Button
-                  key={`${item.href}-${item.category}-${item.title}-${index}`}
-                  ariaLabel={`Open ${item.title}`}
-                  variant="list"
-                  pressed={index === activeIndex}
-                  onClick={() => selectResult(item)}
-                  className={`p-3! ${index === activeIndex ? "bg-[var(--background)]" : ""}`}
-                >
-                  <span onMouseEnter={() => setActiveIndex(index)} className="block w-full">
-                    <span className="mb-1 block text-xs font-black uppercase tracking-wide text-blue-600 dark:text-blue-400">{item.category}</span>
-                    <span className="block font-black text-[var(--text-color)]">{item.title}</span>
-                    <span className="mt-1 block text-sm font-normal whitespace-normal text-slate-500">
-                      <HighlightedSnippet text={item.snippet} query={query} />
+                )}
+                {results.map((item, index) => (
+                  <Button
+                    key={`${item.href}-${item.category}-${item.title}-${index}`}
+                    ariaLabel={`Open ${item.title}`}
+                    variant="list"
+                    pressed={index === activeIndex}
+                    onClick={() => selectResult(item)}
+                    className={`p-3! ${index === activeIndex ? "bg-[var(--background)]" : ""}`}
+                  >
+                    <span
+                      onMouseEnter={() => setActiveIndex(index)}
+                      className="block w-full"
+                    >
+                      <span className="mb-1 block text-xs font-black uppercase tracking-wide text-blue-600 dark:text-blue-400">
+                        {item.category}
+                      </span>
+                      <span className="block font-black text-[var(--text-color)]">
+                        {item.title}
+                      </span>
+                      <span className="mt-1 block text-sm font-normal whitespace-normal text-slate-500">
+                        <HighlightedSnippet text={item.snippet} query={query} />
+                      </span>
                     </span>
-                  </span>
-                </Button>
-              ))}
-            </div>
-          </section>
-        </div>, document.body,
-      )}
+                  </Button>
+                ))}
+              </div>
+            </section>
+          </div>,
+          document.body,
+        )}
     </>
   );
 }

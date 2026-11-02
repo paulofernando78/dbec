@@ -1,46 +1,29 @@
 import { PageHeader } from "@/components/content/PageHeader";
-import { PageSections } from "@/components/content/PageSections";
 import { Card } from "@/components/ui/Card";
-import { Section } from "@/components/ui/Section";
-import { coreGrammarTopics } from "@/data/grammar";
+import { grammarTopicsById, type GrammarTopicId } from "@/data/grammar";
 import { GrammarTopic } from "@/features/Grammar";
+import { Navigate, useParams } from "react-router";
 
 export default function Grammar() {
+  const { topic: topicId } = useParams();
+
+  if (!topicId) {
+    return <Navigate to="/grammar/present-perfect" replace />;
+  }
+
+  const topic = grammarTopicsById[topicId as GrammarTopicId];
+
+  if (!topic) {
+    return <Navigate to="/grammar/present-perfect" replace />;
+  }
+
   return (
     <div>
-      <PageHeader title="Grammar" />
-
-      <PageSections
-        subtitle={
-          <>
-            <ul className="mb-4 font-normal">
-              {coreGrammarTopics.map((topic) => (
-                <li key={topic.id} className="ml-4 flex items-center gap-2">
-                  <span className="font-bold">•</span>
-                  <a href={`#${topic.id}`}>{topic.title}</a>
-                </li>
-              ))}
-            </ul>
-          </>
-        }
-      >
-        {coreGrammarTopics.map((topic) => (
-          <Section
-            key={topic.id}
-            id={topic.id}
-            label={topic.title}
-            heading={2}
-            showHeader={false}
-            showInTableOfContents={false}
-            className="mb-4"
-          >
-            <Card title={topic.title}>
-              <p className="mb-4 text-slate-500">{topic.description}</p>
-              <GrammarTopic topic={topic} />
-            </Card>
-          </Section>
-        ))}
-      </PageSections>
+      <PageHeader title={topic.title} />
+      <Card title={topic.title}>
+        <p className="mb-4 text-slate-500">{topic.description}</p>
+        <GrammarTopic topic={topic} />
+      </Card>
     </div>
   );
 }

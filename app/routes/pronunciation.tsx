@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Plus } from "lucide-react";
+import { Navigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { PageSections } from "@/components/content/PageSections";
@@ -143,24 +144,36 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
 }
 
 export default function Pronunciation() {
+  const { topic } = useParams();
+
+  if (!topic) {
+    return <Navigate to="/pronunciation/phonetics" replace />;
+  }
+
+  const isPhonetics = topic === "phonetics";
+  const isLinkingSounds = topic === "linking-sounds";
+
+  if (!isPhonetics && !isLinkingSounds) {
+    return <Navigate to="/pronunciation/phonetics" replace />;
+  }
+
   return (
     <div>
       <PageHeader
-        title="Pronunciation"
-        subtitle="Linking Sounds"
-        description="Understand how native speakers sound"
+        title={isPhonetics ? "Phonetics" : "Linking Sounds"}
+        description={
+          isPhonetics
+            ? "Learn English vowel and consonant sounds"
+            : "Understand how native speakers connect words"
+        }
       />
 
       <PageSections>
-        {phoneticSections.map((section, sectionIndex) => (
+        {isPhonetics && phoneticSections.map((section) => (
           <Section
             key={section.title}
             id={`phonetics-${section.title.toLowerCase()}`}
             label={section.title}
-            tocTitle={sectionIndex === 0 ? "Phonetics" : undefined}
-            tocItemClassName={
-              sectionIndex === phoneticSections.length - 1 ? "mb-4" : undefined
-            }
             heading={2}
             showHeader={false}
             className="mb-4"
@@ -170,12 +183,11 @@ export default function Pronunciation() {
             </Card>
           </Section>
         ))}
-        {pronunciationSections.map((section, sectionIndex) => (
+        {isLinkingSounds && pronunciationSections.map((section) => (
           <Section
             key={section.title}
             id={section.title.toLowerCase().replaceAll(" + ", "-").replaceAll(" ", "-")}
             label={section.title}
-            tocTitle={sectionIndex === 0 ? "Linking Sounds" : undefined}
             heading={2}
             showHeader={false}
             className="mb-4"

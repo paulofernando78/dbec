@@ -37,25 +37,32 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
     label: string,
     Icon: ElementType,
     className = "",
-  ) => (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <Button
-        ariaLabel={label}
-        pressed={
-          href === dashboardPath
-            ? location.pathname.startsWith(href)
-            : location.pathname === href
-        }
-        icon={<Icon />}
-        onClick={() => {
-          navigate(href);
-          closeNavBar();
-        }}
-        className="size-10! p-0.75!"
-      />
-      <span className="font-bold uppercase">{label}</span>
-    </div>
-  );
+  ) => {
+    const [hrefPath, hrefHash = ""] = href.split("#");
+    const isCurrentDestination =
+      location.pathname === hrefPath &&
+      (!hrefHash || location.hash === `#${hrefHash}`);
+
+    return (
+      <div className={`flex items-center gap-2 ${className}`}>
+        <Button
+          ariaLabel={label}
+          pressed={
+            href === dashboardPath
+              ? location.pathname.startsWith(hrefPath)
+              : isCurrentDestination
+          }
+          icon={<Icon />}
+          onClick={() => {
+            navigate(href);
+            closeNavBar();
+          }}
+          className="size-10! p-0.75!"
+        />
+        <span className="font-bold uppercase">{label}</span>
+      </div>
+    );
+  };
 
   return (
     <nav
@@ -117,12 +124,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
           return dashboardPath ? (
             <div key={href}>
               <GlobalSearch closeNavBar={closeNavBar} />
-              {renderNavigationButton(
-                dashboardPath,
-                "Dashboard",
-                User,
-                "mb-2"
-              )}
+              {renderNavigationButton(dashboardPath, "Dashboard", User, "mb-2")}
               <div className="mb-2 flex items-center gap-2">
                 <Button
                   ariaLabel={isNotesOpen ? "Close notes" : "Open notes"}
@@ -142,12 +144,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
             {resolvedHref &&
               Icon &&
               (!isAuthenticatedLink || dashboardPath) &&
-              renderNavigationButton(
-                resolvedHref,
-                label,
-                Icon,
-                "mb-2",
-              )}
+              renderNavigationButton(resolvedHref, label, Icon, "mb-2")}
           </div>
         );
       })}

@@ -2,17 +2,13 @@ import type { ElementType } from "react";
 import {
   CircleUserRound,
   BookOpenCheck,
-  BookOpenText,
   Gamepad2,
-  AudioLines,
   Plane,
   BookMarked,
   MessageSquareQuote,
   Music2,
   Headphones,
 } from "lucide-react";
-
-import { AuthenticContent } from "@/components/Icons";
 
 export type NavLinkItem = {
   href: string;
@@ -64,7 +60,7 @@ export const links: NavItem[] = [
     ],
   },
   {
-    group: "practice",
+    group: "Skills",
     children: [
       {
         subgroup: "listening",
@@ -72,26 +68,80 @@ export const links: NavItem[] = [
           { href: "/audiobooks", label: "audiobooks", icon: Headphones },
         ],
       },
+    ],
+  },
+  {
+    group: "language",
+    children: [
       {
-        subgroup: "language",
+        subgroup: "vocabulary",
         children: [
-          { href: "/vocabulary", label: "vocabulary", icon: BookMarked },
-          { href: "/grammar", label: "grammar", icon: BookMarked },
-          { href: "/pronunciation", label: "pronunciation", icon: AudioLines },
+          { href: "/vocabulary", label: "which one?", icon: BookMarked },
+        ],
+      },
+      {
+        subgroup: "grammar",
+        children: [
           {
-            href: "/expressions",
-            label: "expressions",
-            icon: MessageSquareQuote,
+            href: "/grammar/present-perfect",
+            label: "present perfect",
+            icon: BookMarked,
+          },
+          {
+            href: "/grammar/present-perfect-progressive",
+            label: "present perfect p.",
+            icon: BookMarked,
+          },
+          {
+            href: "/grammar/past-perfect",
+            label: "past perfect",
+            icon: BookMarked,
+          },
+          {
+            href: "/grammar/past-perfect-progressive",
+            label: "past perfect p.",
+            icon: BookMarked,
+          },
+          {
+            href: "/grammar/conditionals",
+            label: "conditionals",
+            icon: BookMarked,
+          },
+          {
+            href: "/grammar/modal-verbs",
+            label: "modal verbs",
+            icon: BookMarked,
           },
         ],
       },
       {
-        subgroup: "content",
+        subgroup: "pronunciation",
         children: [
-          { href: "/songs", label: "songs", icon: Music2 },
-          { href: "/games", label: "games", icon: Gamepad2 },
+          {
+            href: "/pronunciation/phonetics",
+            label: "phonetics",
+            icon: BookMarked,
+          },
+          {
+            href: "/pronunciation/linking-sounds",
+            label: "linking sounds",
+            icon: BookMarked,
+          },
         ],
       },
+
+      {
+        href: "/expressions",
+        label: "expressions",
+        icon: MessageSquareQuote,
+      },
+    ],
+  },
+  {
+    group: "content",
+    children: [
+      { href: "/songs", label: "songs", icon: Music2 },
+      { href: "/games", label: "games", icon: Gamepad2 },
     ],
   },
 ];

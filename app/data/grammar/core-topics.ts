@@ -401,4 +401,88 @@ export const coreGrammarTopics = [
     quickRule:
       "Say something, but tell someone something; reported questions use statement order.",
   },
+  {
+    id: "present-perfect-progressive",
+    title: "Present Perfect Progressive",
+    description: "Describe actions that began in the past and continue or have a result now.",
+    introduction:
+      "The present perfect progressive uses have or has been plus a verb ending in -ing.",
+    usages: [
+      {
+        title: "Actions continuing until now",
+        meaning: "Use it when an activity started in the past and is still in progress.",
+        pattern: "subject + have/has been + verb-ing + since/for",
+        examples: [
+          { english: "I've been studying for two hours.", portuguese: "Estou estudando há duas horas." },
+          { english: "She's been working here since May.", portuguese: "Ela trabalha aqui desde maio." },
+        ],
+      },
+      {
+        title: "Recent activity with a present result",
+        meaning: "Use it when a recent activity explains what we can see now.",
+        pattern: "subject + have/has been + verb-ing",
+        examples: [
+          { english: "It's been raining.", portuguese: "Tem chovido." },
+          { english: "You've been running.", portuguese: "Você esteve correndo." },
+        ],
+      },
+    ],
+    quickRule: "Use have/has been + verb-ing and focus on the activity or its duration.",
+  },
+  {
+    id: "past-perfect",
+    title: "Past Perfect",
+    description: "Show that one past action happened before another past action or time.",
+    introduction:
+      "The past perfect uses had plus the past participle to make the earlier past event clear.",
+    usages: [
+      {
+        title: "Earlier past action",
+        meaning: "Use it for an action completed before another action in the past.",
+        pattern: "subject + had + past participle",
+        examples: [
+          { english: "The train had left before we arrived.", portuguese: "O trem tinha partido antes de chegarmos." },
+          { english: "She had finished when I called.", portuguese: "Ela já tinha terminado quando liguei." },
+        ],
+      },
+      {
+        title: "Past cause or explanation",
+        meaning: "Use it to explain the earlier cause of a past situation.",
+        pattern: "past result + because + subject + had + past participle",
+        examples: [
+          { english: "He was tired because he hadn't slept.", portuguese: "Ele estava cansado porque não tinha dormido." },
+          { english: "They knew the city because they had visited it before.", portuguese: "Eles conheciam a cidade porque já a tinham visitado." },
+        ],
+      },
+    ],
+    quickRule: "Use had + past participle for the earlier of two past events.",
+  },
+  {
+    id: "past-perfect-progressive",
+    title: "Past Perfect Progressive",
+    description: "Emphasize the duration of an activity before another point in the past.",
+    introduction:
+      "The past perfect progressive uses had been plus a verb ending in -ing.",
+    usages: [
+      {
+        title: "Activity continuing before a past event",
+        meaning: "Use it for an activity that continued up to another moment in the past.",
+        pattern: "subject + had been + verb-ing + since/for",
+        examples: [
+          { english: "They had been waiting for an hour when the bus arrived.", portuguese: "Eles estavam esperando havia uma hora quando o ônibus chegou." },
+          { english: "I'd been working there since January.", portuguese: "Eu trabalhava lá desde janeiro." },
+        ],
+      },
+      {
+        title: "Past activity with a visible result",
+        meaning: "Use it when an earlier activity explains a later past condition.",
+        pattern: "past result + because + subject + had been + verb-ing",
+        examples: [
+          { english: "The ground was wet because it had been raining.", portuguese: "O chão estava molhado porque tinha chovido." },
+          { english: "She was tired because she had been studying.", portuguese: "Ela estava cansada porque estava estudando." },
+        ],
+      },
+    ],
+    quickRule: "Use had been + verb-ing to emphasize duration before a past point.",
+  },
 ] as const satisfies readonly GrammarTopic[];

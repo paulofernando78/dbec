@@ -51,8 +51,8 @@ export default [
 
     route("/vocabulary", "routes/vocabulary.tsx"),
     route("/expressions", "routes/expressions.tsx"),
-    route("/grammar", "routes/grammar.tsx"),
-    route("/pronunciation", "routes/pronunciation.tsx"),
+    route("/grammar/:topic?", "routes/grammar.tsx"),
+    route("/pronunciation/:topic?", "routes/pronunciation.tsx"),
     route("/audiobooks", "routes/audiobooks.tsx"),
     route("/audiobooks/:book", "routes/listening-book.tsx"),
     route("/songs", "routes/songs.tsx"),
