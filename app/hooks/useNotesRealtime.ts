@@ -29,6 +29,7 @@ export function useNotesRealtime(
   const saveTimersRef = useRef<Partial<Record<NoteType, number>>>({});
   const pendingNotesRef = useRef<Partial<Record<NoteType, string>>>({});
   const lastReceivedRef = useRef<Partial<Record<NoteType, string>>>({});
+  const lastLocalEditRef = useRef<Partial<Record<NoteType, number>>>({});
   const [connectionState, setConnectionState] =
     useState<ConnectionState>("disconnected");
 
@@ -62,8 +63,11 @@ export function useNotesRealtime(
         const result = (await response.json()) as NotesResponse;
         for (const noteType of ["teacher", "student"] as const) {
           const content = result.notes?.[noteType];
+          const wasRecentlyEdited =
+            Date.now() - (lastLocalEditRef.current[noteType] ?? 0) < 2_500;
           if (
             typeof content === "string" &&
+            !wasRecentlyEdited &&
             pendingNotesRef.current[noteType] === undefined &&
             lastReceivedRef.current[noteType] !== content
           ) {
@@ -156,6 +160,7 @@ export function useNotesRealtime(
 
       if (!canEditNote || !studentId) return;
 
+      lastLocalEditRef.current[noteType] = Date.now();
       pendingNotesRef.current[noteType] = content;
       const currentTimer = saveTimersRef.current[noteType];
       if (currentTimer) window.clearTimeout(currentTimer);

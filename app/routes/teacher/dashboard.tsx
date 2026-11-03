@@ -72,7 +72,11 @@ export default function TeacherDashboard() {
     studentId,
     "teacher",
     (noteType, content) => {
-      setNotes((current) => ({ ...current, [noteType]: content }));
+      setNotes((current) =>
+        current[noteType] === content
+          ? current
+          : { ...current, [noteType]: content },
+      );
     },
   );
 

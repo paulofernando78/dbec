@@ -31,7 +31,11 @@ export default function Dashboard() {
     studentId,
     "student",
     (noteType, content) => {
-      setNotes((current) => ({ ...current, [noteType]: content }));
+      setNotes((current) =>
+        current[noteType] === content
+          ? current
+          : { ...current, [noteType]: content },
+      );
     },
   );
 

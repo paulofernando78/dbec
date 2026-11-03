@@ -15,9 +15,20 @@ export const DateTimeCard = ({
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
-    const intervalId = window.setInterval(() => setNow(new Date()), 1_000);
+    let intervalId: number | undefined;
+    const currentTime = new Date();
+    const millisecondsUntilNextMinute =
+      (60 - currentTime.getSeconds()) * 1_000 -
+      currentTime.getMilliseconds();
+    const timeoutId = window.setTimeout(() => {
+      setNow(new Date());
+      intervalId = window.setInterval(() => setNow(new Date()), 60_000);
+    }, millisecondsUntilNextMinute);
 
-    return () => window.clearInterval(intervalId);
+    return () => {
+      window.clearTimeout(timeoutId);
+      if (intervalId) window.clearInterval(intervalId);
+    };
   }, []);
 
   const fullDate = new Intl.DateTimeFormat("en-US", {
