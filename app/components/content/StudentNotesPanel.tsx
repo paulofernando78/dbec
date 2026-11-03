@@ -5,6 +5,7 @@ import { useLocation } from "react-router";
 
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { DateTimeCard } from "@/components/content/DateTimeCard";
 import { RichTextArea } from "@/components/ui/RichTextArea";
 import { useNotesRealtime } from "@/hooks/useNotesRealtime";
 
@@ -148,7 +149,11 @@ export function StudentNotesPanel({
                 <p className="text-sm text-slate-500">{studentName}</p>
               )}
               <p className="text-xs text-slate-400">
-                {connectionState === "connected" ? "Live" : "Reconnecting…"}
+                {connectionState === "connected"
+                  ? "Live"
+                  : connectionState === "polling"
+                    ? "Live sync"
+                    : "Reconnecting…"}
               </p>
             </div>
             {isLoading && <LoaderCircle className="animate-spin text-slate-400" />}
@@ -159,6 +164,8 @@ export function StudentNotesPanel({
               className="size-10! p-[3px]!"
             />
           </div>
+
+          <DateTimeCard className="mb-3 bg-[var(--background)]" compact />
 
           {error && <p className="mb-3 text-sm font-semibold text-red-600">{error}</p>}
 

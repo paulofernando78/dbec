@@ -287,13 +287,15 @@ const localAuth = (): Plugin => ({
           localSession.role === "teacher"
             ? studentId
             : localSession.studentId;
-        const allowedNoteType =
-          localSession.role === "teacher" ? "teacher" : "student";
+        const canEditNote =
+          localSession.role === "teacher"
+            ? noteType === "teacher" || noteType === "student"
+            : noteType === "student";
 
         if (
           !allowedStudentId ||
           !localStudents.has(allowedStudentId) ||
-          noteType !== allowedNoteType ||
+          !canEditNote ||
           typeof content !== "string"
         ) {
           response.statusCode = 403;
