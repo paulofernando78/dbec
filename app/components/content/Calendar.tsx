@@ -1,5 +1,7 @@
 import { Card } from "@/components/ui/Card";
 import { useDraggableScroll } from "@/utils/useDraggableScroll";
+import { CalendarDays, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const statusOptions = [
   {
@@ -176,6 +178,45 @@ type CalendarProps = {
   ) => void;
 };
 
+const CalendarDateTime = () => {
+  const [now, setNow] = useState(() => new Date());
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => setNow(new Date()), 1_000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  const fullDate = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "full",
+  }).format(now);
+  const fullTime = new Intl.DateTimeFormat("en-US", {
+    timeStyle: "short",
+  }).format(now);
+
+  return (
+    <Card
+      title="Date & Time"
+      className="mt-4"
+      contentClassName="flex flex-wrap items-center gap-x-8 gap-y-3"
+      inset
+    >
+      <div className="flex items-center gap-3">
+        <CalendarDays size={22} className="shrink-0 text-gray-500" />
+        <time dateTime={now.toISOString()} className="font-semibold">
+          {fullDate}
+        </time>
+      </div>
+      <div className="flex items-center gap-3 tabular-nums">
+        <Clock size={22} className="shrink-0 text-gray-500" />
+        <time dateTime={now.toISOString()} className="font-semibold">
+          {fullTime}
+        </time>
+      </div>
+    </Card>
+  );
+};
+
 export const Calendar = ({
   statuses = {},
   replacementDates = {},
@@ -228,6 +269,8 @@ export const Calendar = ({
           </ul>
         </Card>
       </Card>
+
+      <CalendarDateTime />
 
       <Card
         title="Calendar"
