@@ -107,10 +107,12 @@ export default function ListeningBookPage() {
             </div>
             {questions.length > 0 && (
               <div className="mt-3 rounded-lg bg-(--background) p-3">
-                <h3 className="mb-2 text-lg font-black">Answer</h3>
+                <h3 className="mb-2 text-lg font-black">Ask and answer.</h3>
                 <ul className="space-y-1">
-                  {questions.map((question) => (
-                    <li key={question}>{question}</li>
+                  {questions.map((question, index) => (
+                    <li key={question}>
+                      {index + 1}. {question}
+                    </li>
                   ))}
                 </ul>
               </div>
