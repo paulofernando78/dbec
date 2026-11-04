@@ -520,7 +520,7 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
       userAgentData?: { mobile?: boolean; platform?: string };
     };
     const isTouchMac =
-      /Mac/.test(browserNavigator.platform) &&
+      /mac/i.test(browserNavigator.platform) &&
       browserNavigator.maxTouchPoints > 1;
     const isMobile =
       browserNavigator.userAgentData?.mobile === true ||
@@ -534,7 +534,7 @@ export function GlobalSearch({ closeNavBar }: { closeNavBar: () => void }) {
 
     const platform =
       browserNavigator.userAgentData?.platform ?? browserNavigator.platform;
-    setShortcutLabel(/Mac/.test(platform) ? "⌘ K" : "Ctrl + K");
+    setShortcutLabel(/mac/i.test(platform) ? "⌘ K" : "Ctrl + K");
   }, []);
 
   useEffect(() => {

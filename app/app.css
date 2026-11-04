@@ -92,34 +92,30 @@ body {
 
 @keyframes uno-turn-attention {
   0%,
-  22%,
+  6%,
+  12%,
+  18%,
   100% {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 0 0 rgb(250 204 21 / 0);
+    color: inherit;
+    text-shadow: none;
   }
 
-  7% {
-    transform: translateY(-2px) scale(1.006);
-    box-shadow:
-      0 0 0 4px rgb(250 204 21 / 0.8),
-      0 0 28px 5px rgb(250 204 21 / 0.45);
-  }
-
-  14% {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 0 2px rgb(250 204 21 / 0.25);
+  3%,
+  9%,
+  15% {
+    color: #ff3b30;
+    text-shadow: 0 0 10px rgb(255 59 48 / 0.85);
   }
 }
 
 .uno-turn-attention {
-  animation: uno-turn-attention 4s ease-in-out infinite;
-  transform-origin: center;
+  animation: uno-turn-attention 4s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .uno-turn-attention {
     animation: none;
-    box-shadow: 0 0 0 3px rgb(250 204 21 / 0.75);
+    color: #ff3b30;
   }
 }
 

@@ -260,7 +260,15 @@ export default function Uno() {
               </ul>
             </Card>
 
-            <Card title={room.status === "lobby" ? "Waiting for players" : room.status === "finished" ? "Game over" : isMyTurn ? "Your turn" : `${room.players.find((player) => player.isCurrent)?.name ?? "Player"}'s turn`} className={`flex min-h-[28rem] flex-col bg-emerald-800 text-white ${isMyTurn && room.status === "playing" ? "uno-turn-attention" : ""}`}>
+            <Card
+              title={
+                room.status === "lobby" ? "Waiting for players" :
+                room.status === "finished" ? "Game over" :
+                isMyTurn ? <span className="uno-turn-attention">Your turn</span> :
+                `${room.players.find((player) => player.isCurrent)?.name ?? "Player"}'s turn`
+              }
+              className="flex min-h-[28rem] flex-col bg-emerald-800 text-white"
+            >
               {room.status === "lobby" && <div className="grid min-h-80 place-items-center text-center"><div><Users className="mx-auto mb-3 size-12" /><p className="text-xl font-bold">Share code {roomCode}</p><p className="mt-2 text-emerald-100">The host can start with two or more players.</p></div></div>}
               {room.game && (
                 <>

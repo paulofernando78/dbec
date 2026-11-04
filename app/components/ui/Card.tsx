@@ -1,7 +1,7 @@
 import { Children, Fragment, isValidElement, type ReactNode } from "react";
 
 type CardProps = {
-  title?: string;
+  title?: ReactNode;
   children: ReactNode;
   className?: string;
   contentClassName?: string;
