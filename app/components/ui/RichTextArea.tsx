@@ -251,16 +251,123 @@ export function RichTextArea({
     </div>
   );
 
-  const addBlockAfter = (blockId: string) => {
+  const addBlockAfter = (blockId: string, editor: HTMLDivElement) => {
     const currentBlocks = blocksFromDom();
     const currentIndex = currentBlocks.findIndex((block) => block.id === blockId);
-    const nextBlock = createBlock();
+    const selection = window.getSelection();
+    const selectedRange = selection?.rangeCount ? selection.getRangeAt(0) : null;
+    const rangeIsInEditor =
+      selectedRange &&
+      editor.contains(selectedRange.startContainer) &&
+      editor.contains(selectedRange.endContainer);
+
+    let currentHtml = editor.innerHTML;
+    let nextHtml = "";
+
+    if (selectedRange && rangeIsInEditor) {
+      const splitRange = selectedRange.cloneRange();
+      splitRange.deleteContents();
+
+      const beforeRange = document.createRange();
+      beforeRange.selectNodeContents(editor);
+      beforeRange.setEnd(splitRange.startContainer, splitRange.startOffset);
+
+      const afterRange = document.createRange();
+      afterRange.selectNodeContents(editor);
+      afterRange.setStart(splitRange.startContainer, splitRange.startOffset);
+
+      const container = document.createElement("div");
+      container.append(beforeRange.cloneContents());
+      currentHtml = container.innerHTML;
+
+      container.replaceChildren(afterRange.cloneContents());
+      nextHtml = container.innerHTML;
+    }
+
+    const normalizedCurrentHtml = currentHtml === "<br>" ? "" : currentHtml;
+    const normalizedNextHtml = nextHtml === "<br>" ? "" : nextHtml;
+    const nextBlock = createBlock(normalizedNextHtml);
     const nextBlocks = [...currentBlocks];
+    nextBlocks[currentIndex] = {
+      ...nextBlocks[currentIndex],
+      html: normalizedCurrentHtml,
+    };
     nextBlocks.splice(currentIndex + 1, 0, nextBlock);
     setBlocks(nextBlocks);
     emitBlocks(nextBlocks);
 
-    requestAnimationFrame(() => blockRefs.current[nextBlock.id]?.focus());
+    editor.innerHTML = normalizedCurrentHtml;
+
+    requestAnimationFrame(() => {
+      const nextEditor = blockRefs.current[nextBlock.id];
+      if (!nextEditor) return;
+
+      nextEditor.focus();
+      const nextSelection = window.getSelection();
+      const nextRange = document.createRange();
+      nextRange.selectNodeContents(nextEditor);
+      nextRange.collapse(true);
+      nextSelection?.removeAllRanges();
+      nextSelection?.addRange(nextRange);
+    });
+  };
+
+  const getCaretOffset = (editor: HTMLDivElement) => {
+    const selection = window.getSelection();
+    if (!selection?.rangeCount) return 0;
+
+    const range = selection.getRangeAt(0);
+    if (!range.collapsed || !editor.contains(range.startContainer)) return 0;
+
+    const beforeCaret = range.cloneRange();
+    beforeCaret.selectNodeContents(editor);
+    beforeCaret.setEnd(range.startContainer, range.startOffset);
+    return beforeCaret.toString().length;
+  };
+
+  const placeCaretAtOffset = (editor: HTMLDivElement, offset: number) => {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    const walker = document.createTreeWalker(editor, NodeFilter.SHOW_TEXT);
+    let remainingOffset = offset;
+    let textNode = walker.nextNode();
+
+    while (textNode) {
+      const textLength = textNode.textContent?.length ?? 0;
+      if (remainingOffset <= textLength) {
+        range.setStart(textNode, remainingOffset);
+        range.collapse(true);
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+        return;
+      }
+
+      remainingOffset -= textLength;
+      textNode = walker.nextNode();
+    }
+
+    range.selectNodeContents(editor);
+    range.collapse(false);
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+  };
+
+  const moveCaretToBlock = (
+    blockId: string,
+    editor: HTMLDivElement,
+    direction: -1 | 1,
+  ) => {
+    const currentIndex = blocks.findIndex((block) => block.id === blockId);
+    const targetBlock = blocks[currentIndex + direction];
+    if (!targetBlock) return false;
+
+    const caretOffset = getCaretOffset(editor);
+    const targetEditor = blockRefs.current[targetBlock.id];
+    if (!targetEditor) return false;
+
+    targetEditor.focus();
+    placeCaretAtOffset(targetEditor, caretOffset);
+    return true;
   };
 
   const removeEmptyBlock = (blockId: string) => {
@@ -500,7 +607,19 @@ export function RichTextArea({
               onKeyDown={(event) => {
                 if (event.key === "Enter" && !event.shiftKey) {
                   event.preventDefault();
-                  addBlockAfter(block.id);
+                  addBlockAfter(block.id, event.currentTarget);
+                }
+                if (
+                  event.key === "ArrowUp" &&
+                  moveCaretToBlock(block.id, event.currentTarget, -1)
+                ) {
+                  event.preventDefault();
+                }
+                if (
+                  event.key === "ArrowDown" &&
+                  moveCaretToBlock(block.id, event.currentTarget, 1)
+                ) {
+                  event.preventDefault();
                 }
                 if (event.key === "Backspace" && !event.currentTarget.textContent) {
                   event.preventDefault();
