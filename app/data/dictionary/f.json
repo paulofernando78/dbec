@@ -985,6 +985,26 @@
           }
         ],
         "synonyms": ["adjust, concentrate"]
+      },
+      {
+        "word": "fuel",
+        "phonetics": "/ˈfjuː.əl/",
+        "partOfSpeech": "noun / verb",
+        "enDefinition": "a substance used to produce energy, or to make a situation, feeling, or activity stronger",
+        "ptDefinition": "combustível; alimentar, intensificar ou fortalecer uma situação, sentimento ou atividade",
+        "examples": [
+          {
+            "enExample": "The company is trying to reduce its fuel costs.",
+            "ptExample": "A empresa está tentando reduzir seus custos com combustível."
+          },
+          {
+            "enExample": "The announcement fueled rumors about the merger.",
+            "ptExample": "O anúncio alimentou rumores sobre a fusão."
+          }
+        ],
+        "synonyms": ["energy source", "power", "feed", "intensify"],
+        "antonyms": ["extinguish", "weaken", "discourage"],
+        "seeAlso": ["fossil fuel", "gasoline", "energy"]
       }
     ]
   }

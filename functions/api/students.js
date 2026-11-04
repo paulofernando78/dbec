@@ -35,7 +35,7 @@ const validateStudentInput = (input) => {
 
   // Essa validação será executada também no servidor. A validação do formulário no React, sozinha, não é suficiente porque pode ser ignorada pelo navegador.
 
-  const { name, username, password, schedule, time, plan } = input;
+  const { name, email, phone, username, password, schedule, time, plan } = input;
 
   if (typeof name !== "string" || name.trim().length < 3) {
     return "Informe o nome do aluno.";
@@ -43,6 +43,17 @@ const validateStudentInput = (input) => {
 
   if (typeof username !== "string" || username.trim().length < 3) {
     return "Informe um usuário com pelo menos 3 caracteres.";
+  }
+
+  if (
+    typeof email !== "string" ||
+    (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
+  ) {
+    return "Informe um email válido.";
+  }
+
+  if (typeof phone !== "string") {
+    return "Informe um telefone válido.";
   }
 
   if (typeof password !== "string" || password.length < 8) {
@@ -86,6 +97,8 @@ export async function onRequestGet(context) {
       student_slug AS studentId,
       username,
       display_name AS name,
+      COALESCE(email, '') AS email,
+      COALESCE(phone, '') AS phone,
       schedule,
       class_time AS time,
       plan,
@@ -136,6 +149,8 @@ export async function onRequestPost(context) {
   }
 
   const name = input.name.trim();
+  const email = input.email.trim();
+  const phone = input.phone.trim();
   const username = input.username.trim().toLowerCase();
   const studentId = createStudentSlug(name);
   const { hash, salt } = await createPassword(input.password);
@@ -146,6 +161,8 @@ export async function onRequestPost(context) {
         username,
         student_slug,
         display_name,
+        email,
+        phone,
         schedule,
         class_time,
         plan,
@@ -153,12 +170,14 @@ export async function onRequestPost(context) {
         password_salt,
         role
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'student')`,
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'student')`,
     )
       .bind(
         username,
         studentId,
         name,
+        email,
+        phone,
         input.schedule,
         input.time,
         input.plan,
@@ -174,6 +193,8 @@ export async function onRequestPost(context) {
           studentId,
           username,
           name,
+          email,
+          phone,
           schedule: input.schedule,
           time: input.time,
           plan: input.plan,
@@ -222,6 +243,8 @@ export async function onRequestPut(context) {
   const studentId = input?.studentId;
   const name = input?.name?.trim();
   const username = input?.username?.trim().toLowerCase();
+  const email = input?.email?.trim();
+  const phone = input?.phone?.trim();
   const password = input?.password;
   const schedule = input?.schedule;
   const time = input?.time;
@@ -231,12 +254,21 @@ export async function onRequestPut(context) {
     !studentId ||
     !name ||
     !username ||
+    typeof email !== "string" ||
+    typeof phone !== "string" ||
     !schedule ||
     !time ||
     (plan !== "free" && plan !== "plus")
   ) {
     return Response.json(
       { error: "Preencha os dados do aluno." },
+      { status: 400, headers: noStoreHeaders },
+    );
+  }
+
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return Response.json(
+      { error: "Informe um email válido." },
       { status: 400, headers: noStoreHeaders },
     );
   }
@@ -272,19 +304,19 @@ export async function onRequestPut(context) {
 
       result = await context.env.DB.prepare(
         `UPDATE users
-         SET display_name = ?, username = ?, schedule = ?, class_time = ?, plan = ?,
+         SET display_name = ?, username = ?, email = ?, phone = ?, schedule = ?, class_time = ?, plan = ?,
              password_hash = ?, password_salt = ?
          WHERE student_slug = ? AND role = 'student'`,
       )
-        .bind(name, username, schedule, time, plan, hash, salt, studentId)
+        .bind(name, username, email, phone, schedule, time, plan, hash, salt, studentId)
         .run();
     } else {
       result = await context.env.DB.prepare(
         `UPDATE users
-         SET display_name = ?, username = ?, schedule = ?, class_time = ?, plan = ?
+         SET display_name = ?, username = ?, email = ?, phone = ?, schedule = ?, class_time = ?, plan = ?
          WHERE student_slug = ? AND role = 'student'`,
       )
-        .bind(name, username, schedule, time, plan, studentId)
+        .bind(name, username, email, phone, schedule, time, plan, studentId)
         .run();
     }
   } catch (error) {

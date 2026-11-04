@@ -16,6 +16,8 @@ type Student = {
   studentId: string;
   username: string;
   name: string;
+  email: string;
+  phone: string;
   schedule: string;
   time: string;
   plan: StudentPlan;
@@ -23,6 +25,8 @@ type Student = {
 
 type StudentFormState = {
   name: string;
+  email: string;
+  phone: string;
   username: string;
   password: string;
   schedule: string;
@@ -77,6 +81,8 @@ const timeOptions = [
 
 const initialForm: StudentFormState = {
   name: "",
+  email: "",
+  phone: "",
   username: "",
   password: "",
   schedule: "",
@@ -108,6 +114,8 @@ export const StudentForm = ({
       student
         ? {
             name: student.name,
+            email: student.email ?? "",
+            phone: student.phone ?? "",
             username: student.username,
             password: "",
             schedule: student.schedule,
@@ -216,6 +224,40 @@ export const StudentForm = ({
             className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
           />
         </label>
+
+        <div className="grid grid-cols-2 gap-4 max-[950px]:grid-cols-1">
+          <label className="grid min-w-0 gap-1">
+            <span className="text-sm font-semibold">Email</span>
+            <input
+              type="email"
+              value={form.email}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  email: event.target.value,
+                }))
+              }
+              autoComplete="email"
+              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+            />
+          </label>
+
+          <label className="grid min-w-0 gap-1">
+            <span className="text-sm font-semibold">Phone</span>
+            <input
+              type="tel"
+              value={form.phone}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  phone: event.target.value,
+                }))
+              }
+              autoComplete="tel"
+              className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
+            />
+          </label>
+        </div>
 
         <div className="grid grid-cols-2 gap-4 max-[950px]:grid-cols-1">
           {/* Username */}

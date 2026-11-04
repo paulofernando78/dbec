@@ -1757,6 +1757,26 @@
         "enDefinition": "A protective boundary that controls which substances can pass from the blood into the brain.",
         "ptDefinition": "Barreira hematoencefálica; limite protetor que controla a passagem de substâncias do sangue para o cérebro.",
         "imgs": [{ "src": "blood-brain-barrier.avif", "alt": "A cross-section of the protective barrier between blood and brain tissue" }]
+      },
+      {
+        "word": "blame",
+        "phonetics": "/bleɪm/",
+        "partOfSpeech": "noun / verb",
+        "enDefinition": "responsibility for something bad, or to say that someone or something is responsible for it",
+        "ptDefinition": "culpa; culpar ou responsabilizar alguém ou alguma coisa por algo ruim",
+        "examples": [
+          {
+            "enExample": "The manager took the blame for the failed project.",
+            "ptExample": "O gerente assumiu a culpa pelo projeto fracassado."
+          },
+          {
+            "enExample": "Don't blame your co-workers for your mistake.",
+            "ptExample": "Não culpe seus colegas pelo seu erro."
+          }
+        ],
+        "synonyms": ["fault", "responsibility", "accuse"],
+        "antonyms": ["credit", "praise", "absolve"],
+        "seeAlso": ["take the blame", "shift the blame", "blame game"]
       }
     ]
   }

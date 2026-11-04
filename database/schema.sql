@@ -3,6 +3,8 @@ CREATE TABLE IF NOT EXISTS users (
   username TEXT NOT NULL UNIQUE,
   student_slug TEXT UNIQUE,
   display_name TEXT NOT NULL,
+  email TEXT,
+  phone TEXT,
   schedule TEXT,
   class_time TEXT,
   password_hash TEXT,

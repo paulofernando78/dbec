@@ -32,7 +32,7 @@ type DictionaryEntry = {
 };
 
 const dictionaryLetters = import.meta.glob<unknown>(
-  "../data/dictionary/*.json",
+  "../data/dictionary/[a-z].json",
   { import: "default" },
 ) as Record<string, () => Promise<unknown>>;
 
