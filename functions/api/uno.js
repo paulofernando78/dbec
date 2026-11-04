@@ -36,6 +36,12 @@ export async function onRequestPost(context) {
       "X-DBEC-Role": session.role,
     },
   });
-  if (!response.ok) return Response.json({ error: "The room could not be created." }, { status: 500 });
+  if (!response.ok) {
+    const result = await response.json().catch(() => null);
+    return Response.json(
+      { error: result?.error ?? "The room could not be created." },
+      { status: response.status },
+    );
+  }
   return Response.json({ code });
 }
