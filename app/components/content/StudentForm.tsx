@@ -90,6 +90,20 @@ const initialForm: StudentFormState = {
   plan: "free",
 };
 
+const formatBrazilianPhone = (value: string) => {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  if (!digits) return "";
+  if (digits.length < 3) return `(${digits}`;
+
+  const areaCode = digits.slice(0, 2);
+  const number = digits.slice(2);
+  const prefixLength = number.length > 8 ? 5 : 4;
+  const prefix = number.slice(0, prefixLength);
+  const suffix = number.slice(prefixLength);
+
+  return `(${areaCode}) ${prefix}${suffix ? `-${suffix}` : ""}`;
+};
+
 export const StudentForm = ({
   students,
   selectedStudentId,
@@ -115,7 +129,7 @@ export const StudentForm = ({
         ? {
             name: student.name,
             email: student.email ?? "",
-            phone: student.phone ?? "",
+            phone: formatBrazilianPhone(student.phone ?? ""),
             username: student.username,
             password: "",
             schedule: student.schedule,
@@ -250,9 +264,12 @@ export const StudentForm = ({
               onChange={(event) =>
                 setForm((current) => ({
                   ...current,
-                  phone: event.target.value,
+                  phone: formatBrazilianPhone(event.target.value),
                 }))
               }
+              placeholder="(  ) _____-____"
+              inputMode="numeric"
+              maxLength={15}
               autoComplete="tel"
               className="w-full min-w-0 rounded-lg border border-gray-300 bg-white px-3 py-2"
             />

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { AccountSummary } from "@/components/layout/AccountSummary";
 
 type Color = "red" | "yellow" | "green" | "blue" | "wild";
 type UnoCard = { id: string; color: Color; value: string };
@@ -30,7 +31,12 @@ type RoomState = {
     drawCount: number;
   };
 };
-type Session = { username: string; role: "teacher" | "student"; studentId?: string };
+type Session = {
+  username: string;
+  displayName: string;
+  role: "teacher" | "student";
+  studentId?: string;
+};
 
 const colorStyles: Record<Color, string> = {
   red: "bg-red-600",
@@ -197,6 +203,14 @@ export default function Uno() {
             className="size-11! p-1!"
           />
         </header>
+        {session && (
+          <div className="mb-4 rounded-xl bg-(--surface) p-4 shadow-sm">
+            <AccountSummary
+              name={session.displayName}
+              subtitle={session.role === "student" ? "Full access" : "Teacher"}
+            />
+          </div>
+        )}
       {!room ? (
         <Card title="Online classroom game" className="mx-auto max-w-xl bg-(--surface)">
           <p className="mb-5 text-slate-500">Create a room and share its code. Each player should open this page on their own device.</p>
