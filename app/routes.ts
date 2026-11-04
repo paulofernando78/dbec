@@ -69,6 +69,8 @@ export default [
 
     route("/games", "routes/game.tsx"),
 
+    route("/games/uno", "routes/uno.tsx"),
+
     route("/games/:developer/:slug", "routes/games/builder.tsx"),
   ]),
 ] satisfies RouteConfig;

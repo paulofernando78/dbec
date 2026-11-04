@@ -8,6 +8,10 @@
       {
         "name": "NOTES_REALTIME",
         "class_name": "NotesRoom"
+      },
+      {
+        "name": "UNO_REALTIME",
+        "class_name": "UnoRoom"
       }
     ]
   },
@@ -15,6 +19,10 @@
     {
       "tag": "v1",
       "new_sqlite_classes": ["NotesRoom"]
+    },
+    {
+      "tag": "v2",
+      "new_sqlite_classes": ["UnoRoom"]
     }
   ]
 }

@@ -151,7 +151,13 @@ export const links: NavItem[] = [
     group: "content",
     children: [
       { href: "/songs", label: "songs", icon: Music2 },
-      { href: "/games", label: "games", icon: Gamepad2 },
+      {
+        subgroup: "games",
+        children: [
+          { href: "/games/uno", label: "UNO", icon: Gamepad2 },
+          { href: "/games", label: "old PC games", icon: Gamepad2 },
+        ],
+      },
     ],
   },
 ];
