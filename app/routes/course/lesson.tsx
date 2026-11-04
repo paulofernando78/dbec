@@ -1,10 +1,9 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
+import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { StepRenderer } from "@/components/course/steps/StepRenderer";
-import { Button } from "@/components/ui/Button";
 import { levels } from "@/data/course";
 import { lessonRegistry } from "@/data/course/lesson-registry";
 import { travel } from "@/data/travel";
@@ -114,27 +113,13 @@ export default function LessonPage() {
 
       <StepRenderer data={current} />
 
-      <nav
-        className="mt-4 mx-1 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
-        aria-label="Lesson steps"
-      >
-        <Button
-          ariaLabel="Previous step"
-          onClick={() => (previous ? go(previous.slug) : navigate(sectionPath))}
-          icon={<ChevronLeft />}
-          className=""
-        />
-        <b>{previous?.label ?? `${levelData.code} ${levelData.name}`}</b>
-        <b className="text-right">
-          {next?.label ?? (isTravel ? "Travel" : "Course")}
-        </b>
-        <Button
-          ariaLabel="Next step"
-          onClick={() => (next ? go(next.slug) : finish())}
-          icon={<ChevronRight />}
-          className=""
-        />
-      </nav>
+      <SequenceNavigation
+        previousLabel={previous?.label ?? `${levelData.code} ${levelData.name}`}
+        nextLabel={next?.label ?? (isTravel ? "Travel" : "Course")}
+        onPrevious={() => (previous ? go(previous.slug) : navigate(sectionPath))}
+        onNext={() => (next ? go(next.slug) : finish())}
+        ariaLabel="Lesson steps"
+      />
     </div>
   );
 }

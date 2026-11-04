@@ -1,0 +1,2910 @@
+[
+  {
+    "definitions": [
+      {
+        "word": "24/7",
+        "partOfSpeech": "idiom",
+        "enDefinition": "all day and every day",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 4."
+          }
+        ]
+      },
+      {
+        "word": "a tagline",
+        "partOfSpeech": "noun",
+        "enDefinition": "a short, memorable phrase or slogan used to convey the essence of a brand, product, or company, often used in marketing and advertising",
+        "ptDefinition": "uma frase curta e memorável usada para transmitir a essência de uma marca, produto ou empresa, frequentemente utilizada em marketing e publicidade",
+        "examples": [
+          {
+            "enExample": "The tagline 'Just Do It' has become synonymous with Nike's brand identity.",
+            "ptExample": "'Just Do It' se tornou sinônimo da identidade da marca Nike."
+          },
+          {
+            "enExample": "A strong tagline can capture the essence of a business and leave a lasting impression on customers.",
+            "ptExample": "Uma boa tagline pode capturar a essência de um negócio e deixar uma impressão duradoura nos clientes."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 4."
+          }
+        ]
+      },
+      {
+        "word": "an arm and a leg",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To be extremely expensive; to cost a lot of money.",
+        "ptDefinition": "Ser extremamente caro; custar muito dinheiro.",
+        "examples": [
+          {
+            "enExample": "That luxury car cost him an arm and a leg.",
+            "ptExample": "Aquele carro de luxo custou muito caro para ele."
+          },
+          {
+            "enExample": "Going to college in the U.S. can cost an arm and a leg.",
+            "ptExample": "Fazer faculdade nos Estados Unidos pode custar uma fortuna."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "at our expense",
+        "partOfSpeech": "idiom",
+        "enDefinition": "causing us a loss or disadvantage",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 20."
+          }
+        ]
+      },
+      {
+        "word": "at the top of my game",
+        "partOfSpeech": "idiom",
+        "enDefinition": "performing at my highest level",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "back and forth",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to move or happen in one direction and then the opposite, repeatedly or alternately",
+        "ptDefinition": "mover-se ou acontecer em uma direção e depois na direção oposta, repetidamente ou alternadamente",
+        "examples": [
+          {
+            "enExample": "We had a back-and-forth discussion about the best way to handle the project.",
+            "ptExample": "Tivemos uma discussão de vai-e-vem sobre a melhor forma de lidar com o projeto."
+          },
+          {
+            "enExample": "The negotiations went back and forth for hours before a deal was finally reached.",
+            "ptExample": "As negociações se arrastaram por horas antes que um acordo fosse finalmente alcançado."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 8."
+          }
+        ]
+      },
+      {
+        "word": "back to the drawing board",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to start planning something again because the previous attempt failed",
+        "ptDefinition": "voltar ao início do planejamento porque a tentativa anterior falhou",
+        "examples": [
+          {
+            "enExample": "Our proposal was rejected, so it's back to the drawing board.",
+            "ptExample": "Nossa proposta foi rejeitada, então temos que voltar à estaca zero."
+          },
+          {
+            "enExample": "The prototype didn't work, so the engineers had to go back to the drawing board.",
+            "ptExample": "O protótipo não funcionou, então os engenheiros tiveram que começar do zero novamente."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 23."
+          }
+        ]
+      },
+      {
+        "word": "bigwigs",
+        "partOfSpeech": "noun",
+        "enDefinition": "an important or influential person, especially in a particular organization or industry",
+        "ptDefinition": "uma pessoa importante ou influente, especialmente em uma organização ou setor específico",
+        "examples": [
+          {
+            "enExample": "The company invited all the bigwigs from the tech industry to the launch event.",
+            "ptExample": "A empresa convidou todas as figuras importantes da indústria de tecnologia para o evento de lançamento."
+          },
+          {
+            "enExample": "As a bigwig in the financial sector, he had the power to influence major decisions.",
+            "ptExample": "Como uma figura importante no setor financeiro, ele tinha o poder de influenciar grandes decisões."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 10."
+          }
+        ]
+      },
+      {
+        "word": "blows my mind",
+        "partOfSpeech": "idiom",
+        "enDefinition": "amazes or shocks me greatly",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 2."
+          }
+        ]
+      },
+      {
+        "word": "bought out",
+        "partOfSpeech": "idiom",
+        "enDefinition": "purchased and taken over by another company",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 28."
+          }
+        ]
+      },
+      {
+        "word": "brainstorming",
+        "partOfSpeech": "idiom",
+        "enDefinition": "generating many possible ideas",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "break my budget",
+        "partOfSpeech": "idiom",
+        "enDefinition": "cost more than I can afford",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 24."
+          }
+        ]
+      },
+      {
+        "word": "breaking the news",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to tell someone important or surprising information, often bad news",
+        "ptDefinition": "contar a alguém uma informação importante ou surpreendente, muitas vezes uma má notícia",
+        "examples": [
+          {
+            "enExample": "She had to break the news to her parents about the accident.",
+            "ptExample": "Ela teve que contar aos pais sobre o acidente."
+          },
+          {
+            "enExample": "He didn't know how to break the news of the company's closure to the employees.",
+            "ptExample": "Ele não sabia como dar a notícia do fechamento da empresa aos funcionários."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "build this company from the ground up",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to create something completely from the beginning, often with great effort",
+        "ptDefinition": "criar algo totalmente do zero, geralmente com muito esforço",
+        "examples": [
+          {
+            "enExample": "They built the company from the ground up with no outside help.",
+            "ptExample": "Eles construíram a empresa do zero sem ajuda externa."
+          },
+          {
+            "enExample": "This house was built from the ground up after the fire.",
+            "ptExample": "Esta casa foi construída do zero depois do incêndio."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "burn your bridges",
+        "partOfSpeech": "idiom",
+        "enDefinition": "destroy relationships or options you may need later",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "burned out",
+        "partOfSpeech": "adjective phrase",
+        "enDefinition": "feeling extremely tired or stressed, especially due to work or prolonged effort",
+        "ptDefinition": "sentir-se extremamente cansado ou estressado, especialmente devido ao trabalho ou esforço prolongado",
+        "examples": [
+          {
+            "enExample": "After months of overtime, she felt completely burned out.",
+            "ptExample": "Depois de meses fazendo horas extras, ela se sentiu completamente exausta."
+          },
+          {
+            "enExample": "Many professionals suffer from being burned out in high-pressure jobs.",
+            "ptExample": "Muitos profissionais sofrem de esgotamento em empregos de alta pressão."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "burned the midnight oil",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to stay up late working on a project or task",
+        "ptDefinition": "ficar acordado até tarde trabalhando em um projeto ou tarefa",
+        "examples": [
+          {
+            "enExample": "She had to burn the midnight oil to finish the report on time.",
+            "ptExample": "Ela teve que queimar o óleo da meia-noite para terminar o relatório a tempo."
+          },
+          {
+            "enExample": "He often burns the midnight oil to meet his deadlines.",
+            "ptExample": "Ele frequentemente queima o óleo da meia-noite para cumprir seus prazos."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 14."
+          }
+        ]
+      },
+      {
+        "word": "called in sick",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to notify your employer that you will not come to work because you are ill",
+        "ptDefinition": "avisar seu empregador que você não irá trabalhar porque está doente",
+        "examples": [
+          {
+            "enExample": "I had to call in sick because of a severe headache.",
+            "ptExample": "Eu tive que avisar que estava doente por causa de uma forte dor de cabeça."
+          },
+          {
+            "enExample": "She called in sick and stayed home all day.",
+            "ptExample": "Ela avisou que estava doente e ficou em casa o dia todo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 22."
+          }
+        ]
+      },
+      {
+        "word": "can't afford to",
+        "partOfSpeech": "modal verb phrase",
+        "enDefinition": "to not have enough money or resources to do something; to not be able to risk or allow something to happen, often due to serious consequences or limitations",
+        "ptDefinition": "não ter dinheiro ou recursos suficientes para fazer algo; não poder correr o risco ou permitir que algo aconteça, frequentemente por causa de consequências sérias ou limitações",
+        "examples": [
+          {
+            "enExample": "I can’t afford to buy a new car right now.",
+            "ptExample": "Eu não posso comprar um carro novo agora."
+          },
+          {
+            "enExample": "She can’t afford to take a vacation this year.",
+            "ptExample": "Ela não pode tirar férias este ano."
+          },
+          {
+            "enExample": "She can’t afford to lose this client.",
+            "ptExample": "Ela não pode se dar ao luxo de perder este cliente."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 22."
+          }
+        ]
+      },
+      {
+        "word": "carved out a niche",
+        "partOfSpeech": "idiom",
+        "enDefinition": "created a specialized and successful position",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "cashing in on",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to take advantage of a situation or opportunity to make a profit or gain some benefit",
+        "ptDefinition": "aproveitar uma situação ou oportunidade para lucrar ou obter algum benefício",
+        "examples": [
+          {
+            "enExample": "The company cashed in on the holiday season by launching a special promotion.",
+            "ptExample": "A empresa aproveitou a temporada de festas para lançar uma promoção especial."
+          },
+          {
+            "enExample": "She cashed in on her popularity by signing a lucrative endorsement deal.",
+            "ptExample": "Ela aproveitou sua popularidade para assinar um contrato lucrativo de patrocínio."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 7."
+          }
+        ]
+      },
+      {
+        "word": "chip on his shoulder",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to seem angry or easily offended because of something that happened in the past, often acting as if one is constantly ready to argue or fight",
+        "ptDefinition": "demonstrar ressentimento ou estar sempre na defensiva por causa de algo do passado, agindo como se estivesse constantemente pronto para discutir ou brigar",
+        "examples": [
+          {
+            "enExample": "He has a chip on his shoulder about not getting promoted last year.",
+            "ptExample": "Ele está ressentido por não ter sido promovido no ano passado."
+          },
+          {
+            "enExample": "She walks around with a chip on her shoulder, like the world owes her something.",
+            "ptExample": "Ela anda por aí como se estivesse com raiva do mundo, como se o mundo devesse algo a ela."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "comes with the territory",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to be an unavoidable part of a particular situation or job",
+        "ptDefinition": "ser uma parte inevitável de uma situação ou trabalho específico",
+        "examples": [
+          {
+            "enExample": "Long hours and high stress levels come with the territory of being a doctor.",
+            "ptExample": "Longas horas e altos níveis de estresse fazem parte do trabalho de ser médico."
+          },
+          {
+            "enExample": "Criticism comes with the territory when you're a public figure.",
+            "ptExample": "Críticas fazem parte do território quando você é uma figura pública."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 14."
+          }
+        ]
+      },
+      {
+        "word": "comparing apples to oranges",
+        "partOfSpeech": "idiom",
+        "enDefinition": "comparing things that are too different",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 23."
+          }
+        ]
+      },
+      {
+        "word": "cover yourself",
+        "partOfSpeech": "idiom",
+        "enDefinition": "protect yourself from blame or risk",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "cut back",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to reduce the amount or quantity of something",
+        "ptDefinition": "reduzir a quantidade de algo",
+        "examples": [
+          {
+            "enExample": "We need to cut back on our expenses this month.",
+            "ptExample": "Precisamos reduzir nossas despesas este mês."
+          },
+          {
+            "enExample": "The doctor advised him to cut back on sugar.",
+            "ptExample": "O médico o aconselhou a reduzir o consumo de açúcar."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 16."
+          }
+        ]
+      },
+      {
+        "word": "cut me some slack",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to be less critical or give someone more freedom or leniency than usual, especially because they are having difficulties",
+        "ptDefinition": "ser menos crítico ou dar mais liberdade ou tolerância a alguém do que o habitual, especialmente porque a pessoa está passando por dificuldades",
+        "examples": [
+          {
+            "enExample": "She’s been under a lot of stress lately, so cut her some slack.",
+            "ptExample": "Ela tem passado por muito estresse ultimamente, então pegue leve com ela."
+          },
+          {
+            "enExample": "I know I made a mistake, but could you cut me some slack this time?",
+            "ptExample": "Eu sei que cometi um erro, mas você pode pegar leve comigo desta vez?"
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "cutting it a little close",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to leave very little time or margin for error when completing a task or reaching a deadline",
+        "ptDefinition": "deixar muito pouco tempo ou margem para erros ao concluir uma tarefa ou cumprir um prazo",
+        "examples": [
+          {
+            "enExample": "We’re cutting it a little close, but I think we’ll finish the project on time.",
+            "ptExample": "Estamos no limite, mas acho que vamos terminar o projeto a tempo."
+          },
+          {
+            "enExample": "If we don’t leave now, we’ll be cutting it too close to catch the train.",
+            "ptExample": "Se não sairmos agora, vamos arriscar perder o trem por pouco."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 4."
+          }
+        ]
+      },
+      {
+        "word": "did a 180",
+        "partOfSpeech": "idiom",
+        "enDefinition": "changed completely in the opposite direction",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 25."
+          }
+        ]
+      },
+      {
+        "word": "didn't lift a finger",
+        "partOfSpeech": "idiom",
+        "enDefinition": "made no effort to help",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "don't push your luck",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a warning not to take unnecessary risks or rely too much on good fortune",
+        "ptDefinition": "um aviso para não correr riscos desnecessários ou depender demais da sorte",
+        "examples": [
+          {
+            "enExample": "You've already won twice today, don't push your luck.",
+            "ptExample": "Você já ganhou duas vezes hoje, não force a sorte."
+          },
+          {
+            "enExample": "I fixed the car, but don't push your luck by driving too fast.",
+            "ptExample": "Eu consertei o carro, mas não force a sorte dirigindo rápido demais."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "don't see eye-to-eye",
+        "partOfSpeech": "idiom",
+        "enDefinition": "do not agree",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 12, Lesson 16."
+          }
+        ]
+      },
+      {
+        "word": "don't waste your breath",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to tell someone not to bother trying to persuade or explain something to someone else because it will have no effect",
+        "ptDefinition": "usado para dizer a alguém que não adianta tentar convencer ou explicar algo para outra pessoa porque não terá efeito",
+        "examples": [
+          {
+            "enExample": "Don’t waste your breath trying to change his mind—he never listens.",
+            "ptExample": "Não perca seu tempo tentando convencê-lo — ele nunca escuta."
+          },
+          {
+            "enExample": "She told me not to waste my breath arguing with the manager.",
+            "ptExample": "Ela me disse para não perder tempo discutindo com o gerente."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "down to business",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To start focusing on the most important or serious part of something, usually after preliminary or less important tasks have been completed.",
+        "ptDefinition": "Começar a focar na parte mais importante ou séria de algo, geralmente depois que tarefas preliminares ou menos importantes foram concluídas.",
+        "examples": [
+          {
+            "enExample": "After a brief introduction, the meeting finally got down to business and started discussing the main project goals.",
+            "ptExample": "Depois de uma breve introdução, a reunião finalmente entrou no assunto e começou a discutir os principais objetivos do projeto."
+          },
+          {
+            "enExample": "Let's get down to business and figure out how to solve this issue as quickly as possible.",
+            "ptExample": "Vamos nos concentrar no trabalho e descobrir como resolver esse problema o mais rápido possível."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 11."
+          }
+        ]
+      },
+      {
+        "word": "drawing a blank",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to fail to get an answer or result; to be unable to remember something",
+        "ptDefinition": "não conseguir lembrar ou obter uma resposta ou resultado",
+        "examples": [
+          {
+            "enExample": "I tried to remember his name, but I completely drew a blank.",
+            "ptExample": "Tentei lembrar o nome dele, mas deu um branco total."
+          },
+          {
+            "enExample": "The police drew a blank in their search for the suspect.",
+            "ptExample": "A polícia não conseguiu nenhum resultado na busca pelo suspeito."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 28."
+          }
+        ]
+      },
+      {
+        "word": "dreamed up",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to imagine or invent something, especially something creative or unusual",
+        "ptDefinition": "imaginar ou inventar algo, especialmente algo criativo ou incomum",
+        "examples": [
+          {
+            "enExample": "She managed to dream up an innovative solution to the problem.",
+            "ptExample": "Ela conseguiu imaginar uma solução inovadora para o problema."
+          },
+          {
+            "enExample": "The advertising team dreamed up a catchy slogan for the new product.",
+            "ptExample": "A equipe de publicidade inventou um slogan chamativo para o novo produto."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6."
+          }
+        ]
+      },
+      {
+        "word": "drive a hard bargain",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to negotiate skillfully and firmly to get the best possible deal",
+        "ptDefinition": "negociar com habilidade e firmeza para conseguir o melhor acordo possível",
+        "examples": [
+          {
+            "enExample": "She really knows how to drive a bargain when shopping for clothes.",
+            "ptExample": "Ela realmente sabe negociar quando compra roupas."
+          },
+          {
+            "enExample": "The car dealer drove a hard bargain, but he finally gave us a discount.",
+            "ptExample": "O vendedor de carros negociou duro, mas finalmente nos deu um desconto."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "dropped the ball",
+        "partOfSpeech": "idiom",
+        "enDefinition": "made a mistake or failed a responsibility",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 13."
+          }
+        ]
+      },
+      {
+        "word": "drum up a lot of business",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to generate or increase business, often through activities like advertising, networking, or promotions",
+        "ptDefinition": "aumentar ou gerar negócios, muitas vezes por meio de atividades como publicidade, networking ou promoções",
+        "examples": [
+          {
+            "enExample": "The company is working hard to drum up business by offering discounts to new customers.",
+            "ptExample": "A empresa está se esforçando para atrair mais negócios oferecendo descontos para novos clientes."
+          },
+          {
+            "enExample": "They organized a special event to drum up business for their new store.",
+            "ptExample": "Eles organizaram um evento especial para atrair mais clientes para a nova loja."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6."
+          }
+        ]
+      },
+      {
+        "word": "dumped me",
+        "partOfSpeech": "idiom",
+        "enDefinition": "ended a romantic relationship with me",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "earned your keep",
+        "partOfSpeech": "idiom",
+        "enDefinition": "proved that your work is worth what you receive",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "eating our lunch",
+        "partOfSpeech": "idiom",
+        "enDefinition": "taking our customers or business",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 7."
+          }
+        ]
+      },
+      {
+        "word": "fast track this project",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to make a project a high priority; to speed up the time frame of a project",
+        "ptDefinition": "dar alta prioridade a um projeto; acelerar o cronograma de um projeto",
+        "examples": [
+          {
+            "enExample": "Let's fast track this project. We've heard rumors that our competitors are developing similar products.",
+            "ptExample": "Vamos acelerar este projeto. Ouvimos rumores de que nossos concorrentes estão desenvolvendo produtos semelhantes."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 1."
+          }
+        ]
+      },
+      {
+        "word": "first thing in the morning",
+        "partOfSpeech": "idiom",
+        "enDefinition": "at the very beginning of the morning",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "flesh it out",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to add more detail, substance, or development to an idea, plan, or concept, often to make it more complete or well-rounded",
+        "ptDefinition": "adicionar mais detalhes, substância ou desenvolvimento a uma ideia, plano ou conceito, geralmente para torná-lo mais completo ou consistente",
+        "examples": [
+          {
+            "enExample": "The initial proposal was just a rough outline, but we need to flesh it out before presenting it to the client.",
+            "ptExample": "A proposta inicial era apenas um esboço, mas precisamos detalhá-la antes de apresentá-la ao cliente."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "for the record",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to clarify or emphasize a fact, often to ensure there is no misunderstanding",
+        "ptDefinition": "usado para esclarecer ou enfatizar um fato, geralmente para evitar mal-entendidos",
+        "examples": [
+          {
+            "enExample": "Just for the record, I never agreed to those terms.",
+            "ptExample": "Só para deixar claro, eu nunca concordei com esses termos."
+          },
+          {
+            "enExample": "Just for the record, the project deadline is next Friday, not this Friday.",
+            "ptExample": "Só para constar, o prazo do projeto é na próxima sexta, não nesta."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "gave me an earful",
+        "partOfSpeech": "idiom",
+        "enDefinition": "criticized or complained to me at length",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "get buy-in",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to gain approval, support, or agreement from others, especially in a business or organizational context",
+        "ptDefinition": "obter aprovação, apoio ou concordância de outras pessoas, especialmente em um contexto empresarial ou organizacional",
+        "examples": [
+          {
+            "enExample": "We need to get buy-in from the team before we can proceed with the project.",
+            "ptExample": "Precisamos obter o apoio da equipe antes de podermos prosseguir com o projeto."
+          },
+          {
+            "enExample": "The manager worked hard to get buy-in from the stakeholders for the new initiative.",
+            "ptExample": "O gerente trabalhou duro para obter a aprovação dos envolvidos para a nova iniciativa."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 5."
+          }
+        ]
+      },
+      {
+        "word": "get right on that",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to start doing something immediately or with great focus and attention",
+        "ptDefinition": "começar a fazer algo imediatamente ou com grande foco e atenção",
+        "examples": [
+          {
+            "enExample": "I'll get right on the report as soon as I finish this task.",
+            "ptExample": "Eu vou começar o relatório assim que terminar essa tarefa."
+          },
+          {
+            "enExample": "We need to get right on this project to meet the deadline.",
+            "ptExample": "Precisamos começar este projeto imediatamente para cumprir o prazo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 9."
+          }
+        ]
+      },
+      {
+        "word": "get to the bottom of",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to find out the real cause or reason for something, often by thoroughly investigating",
+        "ptDefinition": "descobrir a verdadeira causa ou razão de algo, geralmente por meio de uma investigação detalhada",
+        "examples": [
+          {
+            "enExample": "The manager is determined to get to the bottom of the issue with the delayed shipments.",
+            "ptExample": "O gerente está determinado a descobrir a causa do problema com os atrasos nas entregas."
+          },
+          {
+            "enExample": "We need to get to the bottom of why sales have been declining over the past few months.",
+            "ptExample": "Precisamos entender de fato por que as vendas têm diminuído nos últimos meses."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 7."
+          }
+        ]
+      },
+      {
+        "word": "get to the bottom of it",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to find out the real cause or reason for something, often by thoroughly investigating",
+        "ptDefinition": "descobrir a verdadeira causa ou razão de algo, geralmente por meio de uma investigação detalhada",
+        "examples": [
+          {
+            "enExample": "The manager is determined to get to the bottom of the issue with the delayed shipments.",
+            "ptExample": "O gerente está determinado a descobrir a causa do problema com os atrasos nas entregas."
+          },
+          {
+            "enExample": "We need to get to the bottom of why sales have been declining over the past few months.",
+            "ptExample": "Precisamos entender de fato por que as vendas têm diminuído nos últimos meses."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 18."
+          }
+        ]
+      },
+      {
+        "word": "get your foot in the door",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to achieve an initial opportunity that can lead to further success",
+        "ptDefinition": "conseguir uma oportunidade inicial que pode levar a mais sucesso no futuro",
+        "examples": [
+          {
+            "enExample": "Internships are a great way to get your foot in the door of the industry.",
+            "ptExample": "Estágios são uma ótima maneira de conseguir uma oportunidade inicial na indústria."
+          },
+          {
+            "enExample": "He got his foot in the door by volunteering at the company.",
+            "ptExample": "Ele conseguiu uma chance inicial ao fazer trabalho voluntário na empresa."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 28."
+          }
+        ]
+      },
+      {
+        "word": "gets under my skin",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To irritate or bother someone deeply; to affect someone emotionally, either in a negative or intense way.",
+        "ptDefinition": "Irritar profundamente alguém ou mexer com alguém emocionalmente, de forma negativa ou intensa.",
+        "examples": [
+          {
+            "enExample": "Her constant criticism really gets under my skin.",
+            "ptExample": "As críticas constantes dela realmente me tiram do sério."
+          },
+          {
+            "enExample": "He’s really gotten under her skin — she can’t stop thinking about him.",
+            "ptExample": "Ele realmente mexeu com ela — ela não consegue parar de pensar nele."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "getting this project off the ground",
+        "partOfSpeech": "idiom",
+        "enDefinition": "successfully starting and developing this project",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 1."
+          }
+        ]
+      },
+      {
+        "word": "give it our best shot",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to try one's hardest or put forth maximum effort in an attempt to succeed",
+        "ptDefinition": "tentar o máximo possível ou dar o melhor de si para ter sucesso",
+        "examples": [
+          {
+            "enExample": "Even though it was a tough challenge, he gave it his best shot and passed the exam.",
+            "ptExample": "Embora fosse um desafio difícil, ele deu o melhor de si e passou na prova."
+          },
+          {
+            "enExample": "She gave it her best shot, but the performance still didn't go as planned.",
+            "ptExample": "Ela deu o melhor de si, mas a apresentação ainda não saiu como o planejado."
+          },
+          {
+            "enExample": "I'm not sure if I can do it, but I'll give it my best shot.",
+            "ptExample": "Não tenho certeza se consigo fazer, mas vou dar o meu melhor."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 10."
+          }
+        ]
+      },
+      {
+        "word": "give this project the green light",
+        "partOfSpeech": "idiom",
+        "enDefinition": "officially approve this project",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 2."
+          }
+        ]
+      },
+      {
+        "word": "given his walking papers",
+        "partOfSpeech": "idiom",
+        "enDefinition": "officially dismissed from his job",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "going belly up",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to fail completely, especially used when a business goes bankrupt",
+        "ptDefinition": "fracassar completamente; falir (especialmente usado para empresas)",
+        "examples": [
+          {
+            "enExample": "The company went belly up after just six months in business.",
+            "ptExample": "A empresa faliu depois de apenas seis meses de operação."
+          },
+          {
+            "enExample": "Their investment plan went belly up during the market crash.",
+            "ptExample": "O plano de investimento deles quebrou durante a crise do mercado."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "got a knack for",
+        "partOfSpeech": "idiom",
+        "enDefinition": "has a natural talent for",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 25."
+          }
+        ]
+      },
+      {
+        "word": "got bent out of shape",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to become very angry, upset, or agitated, often over something minor or trivial",
+        "ptDefinition": "ficar muito irritado, chateado ou agitado, geralmente por algo pequeno ou trivial",
+        "examples": [
+          {
+            "enExample": "Don't get bent out of shape over a simple mistake.",
+            "ptExample": "Não fique tão irritado por um simples erro."
+          },
+          {
+            "enExample": "She got bent out of shape when she found out her meeting was rescheduled.",
+            "ptExample": "Ela ficou muito chateada quando descobriu que sua reunião foi remarcada."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "got nailed",
+        "partOfSpeech": "idiom",
+        "enDefinition": "was caught and punished",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 18."
+          }
+        ]
+      },
+      {
+        "word": "got that out of my system",
+        "partOfSpeech": "idiom",
+        "enDefinition": "satisfied an urge and no longer want to do it",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "gotten out of hand",
+        "partOfSpeech": "idiom",
+        "enDefinition": "become uncontrolled",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 12."
+          }
+        ]
+      },
+      {
+        "word": "great new products to market",
+        "partOfSpeech": "idiom",
+        "enDefinition": "successful new products available for sale",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 7."
+          }
+        ]
+      },
+      {
+        "word": "had a rough night",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to experience a night that is difficult, unpleasant, or filled with problems such as lack of sleep, stress, or discomfort",
+        "ptDefinition": "passar por uma noite difícil, desagradável ou cheia de problemas, como falta de sono, estresse ou desconforto",
+        "examples": [
+          {
+            "enExample": "I had a rough night and barely got any sleep.",
+            "ptExample": "Tive uma noite difícil e mal consegui dormir."
+          },
+          {
+            "enExample": "She looked tired because she had a rough night with the baby.",
+            "ptExample": "Ela parecia cansada porque teve uma noite difícil com o bebê."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "have a lot on your plate",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To have many tasks or responsibilities to deal with.",
+        "ptDefinition": "Ter muitas tarefas ou responsabilidades para lidar.",
+        "examples": [
+          {
+            "enExample": "She has a lot on her plate right now with work and family commitments.",
+            "ptExample": "Ela está com muitas coisas para resolver agora, com trabalho e compromissos familiares."
+          },
+          {
+            "enExample": "I can’t take on more projects; I already have a lot on my plate.",
+            "ptExample": "Não posso assumir mais projetos; já tenho muitas responsabilidades."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 21."
+          }
+        ]
+      },
+      {
+        "word": "he does have issues",
+        "partOfSpeech": "idiom",
+        "enDefinition": "he has personal or behavioral problems",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "heads on the chopping block",
+        "partOfSpeech": "idiom",
+        "enDefinition": "in a position where one is at risk of being criticized, blamed, or punished for something",
+        "ptDefinition": "em uma posição de risco de ser criticado, culpado ou punido por algo",
+        "examples": [
+          {
+            "enExample": "If this project fails, it's my head on the chopping block.",
+            "ptExample": "Se este projeto falhar, será a minha cabeça na guilhotina."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 2."
+          }
+        ]
+      },
+      {
+        "word": "hunkered down",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to settle in a place for a long period of time, especially for protection or to wait for something to happen",
+        "ptDefinition": "se estabelecer em um lugar por um longo período de tempo, especialmente para proteção ou para esperar que algo aconteça",
+        "examples": [
+          {
+            "enExample": "We decided to hunker down and wait out the storm.",
+            "ptExample": "Decidimos nos abrigar e esperar a tempestade passar."
+          },
+          {
+            "enExample": "The soldiers hunkered down in their trenches.",
+            "ptExample": "Os soldados se agacharam em suas trincheiras."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 14."
+          }
+        ]
+      },
+      {
+        "word": "i don't know whether i'm coming or going",
+        "partOfSpeech": "idiom / expression",
+        "enDefinition": "used to say that you're very confused or overwhelmed, often because of being very busy or stressed",
+        "ptDefinition": "usado para dizer que você está muito confuso ou sobrecarregado, geralmente por estar muito ocupado ou estressado",
+        "examples": [
+          {
+            "enExample": "There’s so much going on at work—I don’t know whether I’m coming or going.",
+            "ptExample": "Tem tanta coisa acontecendo no trabalho que eu não sei se estou indo ou vindo."
+          },
+          {
+            "enExample": "After moving to a new city and starting a new job, she didn’t know whether she was coming or going.",
+            "ptExample": "Depois de se mudar para uma nova cidade e começar um novo emprego, ela não sabia se estava indo ou vindo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 21."
+          }
+        ]
+      },
+      {
+        "word": "i hear what you're saying",
+        "partOfSpeech": "idiom",
+        "enDefinition": "I understand your point",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "it's a deal",
+        "partOfSpeech": "idiom",
+        "enDefinition": "I accept the agreement",
+        "ptDefinition": "uma pergunta usada para pedir explicação ou esclarecimento sobre uma situação, evento ou comportamento de alguém; também pode expressar curiosidade, confusão ou ceticismo",
+        "examples": [
+          {
+            "enExample": "What’s the deal with all the noise next door?",
+            "ptExample": "Qual é o motivo de tanto barulho ao lado?"
+          },
+          {
+            "enExample": "You’ve been acting strange lately — what’s the deal?",
+            "ptExample": "Você tem agido estranho ultimamente—o que está acontecendo?"
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 24."
+          }
+        ]
+      },
+      {
+        "word": "it's not all it's cracked up to be",
+        "partOfSpeech": "idiom",
+        "enDefinition": "not as good as people say or expect",
+        "ptDefinition": "não é tão bom quanto dizem ou quanto se esperava",
+        "examples": [
+          {
+            "enExample": "The movie wasn’t all it’s cracked up to be — I found it boring.",
+            "ptExample": "O filme não era tudo isso — achei bem chato."
+          },
+          {
+            "enExample": "Living abroad is not always all it’s cracked up to be.",
+            "ptExample": "Viver no exterior nem sempre é tão bom quanto dizem."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "jumped the gun",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to do something too soon, especially without thinking carefully about it",
+        "ptDefinition": "agir precipitadamente",
+        "examples": [
+          {
+            "enExample": "They've only just met - isn't it jumping the gun to be talking about marriage already?",
+            "ptExample": "Eles acabaram de se conhecer - não é precipitado já estarem falando sobre casamento?"
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 12."
+          }
+        ]
+      },
+      {
+        "word": "just for the record",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to clarify or emphasize a fact, often to ensure there is no misunderstanding",
+        "ptDefinition": "usado para esclarecer ou enfatizar um fato, geralmente para evitar mal-entendidos",
+        "examples": [
+          {
+            "enExample": "Just for the record, I never agreed to those terms.",
+            "ptExample": "Só para deixar claro, eu nunca concordei com esses termos."
+          },
+          {
+            "enExample": "Just for the record, the project deadline is next Friday, not this Friday.",
+            "ptExample": "Só para constar, o prazo do projeto é na próxima sexta, não nesta."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 4."
+          }
+        ]
+      },
+      {
+        "word": "keep it under wraps",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to keep something secret or hidden from others; to not reveal information.",
+        "ptDefinition": "manter algo em segredo ou escondido dos outros; não revelar informações.",
+        "examples": [
+          {
+            "enExample": "They managed to keep the new product under wraps until the official launch.",
+            "ptExample": "Eles conseguiram manter o novo produto em segredo até o lançamento oficial."
+          },
+          {
+            "enExample": "The company is keeping the details of the merger under wraps.",
+            "ptExample": "A empresa está mantendo os detalhes da fusão em segredo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 1."
+          }
+        ]
+      },
+      {
+        "word": "keep my head above water",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to manage to survive, especially in difficult financial or personal situations",
+        "ptDefinition": "conseguir sobreviver, especialmente em situações financeiras ou pessoais difíceis",
+        "examples": [
+          {
+            "enExample": "Despite all the debts, they managed to keep their heads above water.",
+            "ptExample": "Apesar de todas as dívidas, eles conseguiram se manter à tona."
+          },
+          {
+            "enExample": "During tough times, she just tries to keep her head above water.",
+            "ptExample": "Durante os tempos difíceis, ela apenas tenta se manter."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 21."
+          }
+        ]
+      },
+      {
+        "word": "keep your nose to the grindstone",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to work hard and continuously without distraction",
+        "ptDefinition": "trabalhar duro e continuamente, sem distrações",
+        "examples": [
+          {
+            "enExample": "If you keep your nose to the grindstone, you'll finish the project on time.",
+            "ptExample": "Se você mantiver o foco, vai terminar o projeto no prazo."
+          },
+          {
+            "enExample": "She kept her nose to the grindstone to pass all her exams.",
+            "ptExample": "Ela trabalhou duro para passar em todas as provas."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 21."
+          }
+        ]
+      },
+      {
+        "word": "keeping people in the loop",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to keep someone informed about something",
+        "ptDefinition": "manter alguém informado sobre algo",
+        "examples": [
+          {
+            "enExample": "Please keep me in the loop about any changes to the schedule.",
+            "ptExample": "Por favor, me mantenha informado sobre quaisquer mudanças no cronograma."
+          },
+          {
+            "enExample": "We need to keep the client in the loop throughout the project.",
+            "ptExample": "Precisamos manter o cliente informado durante todo o projeto."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 25."
+          }
+        ]
+      },
+      {
+        "word": "kept my eye on the prize",
+        "partOfSpeech": "idiom",
+        "enDefinition": "stayed focused on the main goal",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 14."
+          }
+        ]
+      },
+      {
+        "word": "kissing up",
+        "partOfSpeech": "idiom",
+        "enDefinition": "flattering someone powerful for personal advantage",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 20."
+          }
+        ]
+      },
+      {
+        "word": "know the franchise business inside and out",
+        "partOfSpeech": "idiom",
+        "enDefinition": "know every detail of the franchise business",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 23."
+          }
+        ]
+      },
+      {
+        "word": "kudos to",
+        "partOfSpeech": "noun",
+        "enDefinition": "praise, recognition, or respect given for an achievement or good work",
+        "ptDefinition": "elogios, reconhecimento ou respeito dado por uma conquista ou bom trabalho",
+        "examples": [
+          {
+            "enExample": "Kudos to the team for delivering the project ahead of schedule.",
+            "ptExample": "Parabéns à equipe por entregar o projeto antes do prazo."
+          },
+          {
+            "enExample": "She received kudos from her colleagues for her innovative ideas.",
+            "ptExample": "Ela recebeu elogios dos colegas por suas ideias inovadoras."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6."
+          }
+        ]
+      },
+      {
+        "word": "leapfrog our competitors",
+        "partOfSpeech": "idiom",
+        "enDefinition": "move ahead of our competitors quickly",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 5."
+          }
+        ]
+      },
+      {
+        "word": "leaving us",
+        "partOfSpeech": "idiom",
+        "enDefinition": "departing from the company",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "lesser of two evils",
+        "partOfSpeech": "idiom",
+        "enDefinition": "the less unpleasant or undesirable of two poor choices or possibilities",
+        "ptDefinition": "a opção menos desagradável ou indesejável entre duas escolhas ruins ou possibilidades",
+        "examples": [
+          {
+            "enExample": "Neither candidate was ideal, but we had to choose the lesser of two evils.",
+            "ptExample": "Nenhum dos candidatos era ideal, mas tivemos que escolher o menor dos males."
+          },
+          {
+            "enExample": "Taking the longer route was the lesser of two evils compared to sitting in traffic for hours.",
+            "ptExample": "Tomar o caminho mais longo era o menor dos males comparado a ficar preso no trânsito por horas."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 16."
+          }
+        ]
+      },
+      {
+        "word": "let you go",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to release or stop holding something; to stop thinking about or worrying over something; to dismiss someone from a job",
+        "ptDefinition": "soltar ou deixar de segurar algo; parar de pensar ou se preocupar com algo; demitir alguém de um emprego",
+        "examples": [
+          {
+            "enExample": "She let go of the rope and fell into the water.",
+            "ptExample": "Ela soltou a corda e caiu na água."
+          },
+          {
+            "enExample": "You need to let go of your anger to move on.",
+            "ptExample": "Você precisa deixar de lado sua raiva para seguir em frente."
+          },
+          {
+            "enExample": "The company had to let go several employees due to budget cuts.",
+            "ptExample": "A empresa teve que demitir vários funcionários devido a cortes no orçamento."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "let's just agree to disagree",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a phrase used to end a discussion when both parties cannot reach an agreement but wish to remain cordial",
+        "ptDefinition": "uma frase usada para encerrar uma discussão quando ambas as partes não conseguem chegar a um acordo mas desejam manter a cordialidade",
+        "examples": [
+          {
+            "enExample": "We clearly have different views on this political issue, so let's agree to disagree.",
+            "ptExample": "Claramente temos visões diferentes sobre esta questão política, então vamos concordar em discordar."
+          },
+          {
+            "enExample": "After debating for hours, they decided to agree to disagree about the best approach.",
+            "ptExample": "Depois de debater por horas, eles decidiram concordar em discordar sobre a melhor abordagem."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 16."
+          }
+        ]
+      },
+      {
+        "word": "likely story. i wasn't born yesterday",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to say that you're not easily fooled because you're not naive or inexperienced",
+        "ptDefinition": "usado para dizer que você não é facilmente enganado porque não é ingênuo ou inexperiente",
+        "examples": [
+          {
+            "enExample": "You expect me to believe that? I wasn’t born yesterday.",
+            "ptExample": "Você espera que eu acredite nisso? Eu não nasci ontem."
+          },
+          {
+            "enExample": "Don’t try to trick me – I wasn’t born yesterday.",
+            "ptExample": "Não tente me enganar – eu não nasci ontem."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 20."
+          }
+        ]
+      },
+      {
+        "word": "look at myself in the mirror",
+        "partOfSpeech": "idiom",
+        "enDefinition": "To reflect honestly on one's own behavior, actions, or character.",
+        "ptDefinition": "Refletir honestamente sobre o próprio comportamento, ações ou caráter.",
+        "examples": [
+          {
+            "enExample": "Before blaming others, you should look at yourself in the mirror.",
+            "ptExample": "Antes de culpar os outros, você deveria se olhar no espelho."
+          },
+          {
+            "enExample": "She needed to look at herself in the mirror and recognize her mistakes.",
+            "ptExample": "Ela precisava se olhar no espelho e reconhecer seus erros."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 20."
+          }
+        ]
+      },
+      {
+        "word": "losing his shirt",
+        "partOfSpeech": "idiom",
+        "enDefinition": "losing a great deal of money",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "made a pass at",
+        "partOfSpeech": "idiom",
+        "enDefinition": "showed romantic or sexual interest in",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 18."
+          }
+        ]
+      },
+      {
+        "word": "made the grade",
+        "partOfSpeech": "idiom",
+        "enDefinition": "met the required standard",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "make heads or tails of",
+        "partOfSpeech": "idiom",
+        "enDefinition": "understand",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 25."
+          }
+        ]
+      },
+      {
+        "word": "make you an offer",
+        "partOfSpeech": "verb phrase",
+        "enDefinition": "to propose a price or terms for buying or agreeing on something; fazer uma proposta",
+        "ptDefinition": "propor um preço ou condições para comprar ou concordar com algo",
+        "examples": [
+          {
+            "enExample": "They made an offer on the house last week.",
+            "ptExample": "Eles fizeram uma proposta pela casa na semana passada."
+          },
+          {
+            "enExample": "She decided to make an offer after seeing the car.",
+            "ptExample": "Ela decidiu fazer uma proposta depois de ver o carro."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "making money hand over fist",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to earn a lot of money very quickly and easily",
+        "ptDefinition": "ganhar muito dinheiro de forma rápida e fácil",
+        "examples": [
+          {
+            "enExample": "Since launching the app, they've been making money hand over fist.",
+            "ptExample": "Desde que lançaram o aplicativo, eles estão ganhando dinheiro aos montes."
+          },
+          {
+            "enExample": "During the real estate boom, she made money hand over fist.",
+            "ptExample": "Durante o boom imobiliário, ela ganhou dinheiro sem parar."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "messed around",
+        "partOfSpeech": "idiom",
+        "enDefinition": "wasted time instead of working seriously",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 9."
+          }
+        ]
+      },
+      {
+        "word": "micro-managed",
+        "partOfSpeech": "idiom",
+        "enDefinition": "controlled in excessive detail",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 28."
+          }
+        ]
+      },
+      {
+        "word": "missing the point",
+        "partOfSpeech": "idiom",
+        "enDefinition": "failing to understand the main idea",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 23."
+          }
+        ]
+      },
+      {
+        "word": "my stomach is killing me",
+        "partOfSpeech": "idiom",
+        "enDefinition": "my stomach hurts very badly",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 22."
+          }
+        ]
+      },
+      {
+        "word": "need this extra work like a hole in the head",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to emphasize that something is completely unnecessary or undesirable",
+        "ptDefinition": "usado para enfatizar que algo é completamente desnecessário ou indesejado",
+        "examples": [
+          {
+            "enExample": "I need more paperwork like a hole in the head.",
+            "ptExample": "Eu preciso de mais papelada \"como de um buraco na cabeça.\""
+          },
+          {
+            "enExample": "He says he needs another meeting like a hole in the head.",
+            "ptExample": "Ele diz que precisa de mais uma reunião \"como de um buraco na cabeça.\""
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 10."
+          }
+        ]
+      },
+      {
+        "word": "not feeling so hot",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to feel unwell or sick",
+        "ptDefinition": "sentir-se mal ou doente",
+        "examples": [
+          {
+            "enExample": "I didn’t go to work because I was not feeling so hot.",
+            "ptExample": "Eu não fui trabalhar porque não estava me sentindo bem."
+          },
+          {
+            "enExample": "She’s not feeling so hot after eating that seafood.",
+            "ptExample": "Ela não está se sentindo bem depois de comer aqueles frutos do mar."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 22."
+          }
+        ]
+      },
+      {
+        "word": "nothing is set in stone",
+        "partOfSpeech": "idiom",
+        "enDefinition": "nothing has been finally decided",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "on his high horse",
+        "partOfSpeech": "idiom",
+        "enDefinition": "acting morally superior or arrogant",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "out for himself",
+        "partOfSpeech": "idiom",
+        "enDefinition": "concerned only with his own benefit",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 20."
+          }
+        ]
+      },
+      {
+        "word": "out of our range",
+        "partOfSpeech": "idiom",
+        "enDefinition": "beyond what we can afford or accept",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "out of their minds",
+        "partOfSpeech": "idiom",
+        "enDefinition": "behaving or thinking irrationally",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 10."
+          }
+        ]
+      },
+      {
+        "word": "panned out",
+        "partOfSpeech": "idiom",
+        "enDefinition": "developed successfully",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6."
+          }
+        ]
+      },
+      {
+        "word": "play your cards right",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to act in a way that will lead to success or advantage",
+        "ptDefinition": "agir de maneira que leve ao sucesso ou vantagem",
+        "examples": [
+          {
+            "enExample": "If you play your cards right, you might get a promotion.",
+            "ptExample": "Se você agir da forma correta, pode conseguir uma promoção."
+          },
+          {
+            "enExample": "She played her cards right and got the deal done.",
+            "ptExample": "Ela soube agir estrategicamente e fechou o negócio."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "plug our product",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to promote or advertise a product, often in a way that draws attention or generates interest, typically in a casual or informal manner",
+        "ptDefinition": "divulgar ou promover um produto, geralmente de forma informal e chamando a atenção de maneira descontraída",
+        "examples": [
+          {
+            "enExample": "During the interview, the CEO took a moment to plug their latest product, encouraging viewers to check it out.",
+            "ptExample": "Durante a entrevista, o CEO aproveitou para divulgar o lançamento do seu mais novo produto, incentivando os telespectadores a conhecerem."
+          },
+          {
+            "enExample": "We need to plug our product at the event to get more attention and attract potential customers.",
+            "ptExample": "Precisamos promover nosso produto no evento para chamar mais atenção e atrair clientes em potencial."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "pointing fingers at each other",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to blame or accuse someone of something",
+        "ptDefinition": "culpar ou acusar alguém de algo",
+        "examples": [
+          {
+            "enExample": "It's easy to point fingers at others when things go wrong.",
+            "ptExample": "É fácil culpar os outros quando as coisas dão errado."
+          },
+          {
+            "enExample": "Instead of finding a solution, they just pointed fingers at each other.",
+            "ptExample": "Em vez de encontrar uma solução, eles apenas culparam uns aos outros."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "pride myself on",
+        "partOfSpeech": "idiom",
+        "enDefinition": "take satisfaction in my ability to",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 25."
+          }
+        ]
+      },
+      {
+        "word": "pull that off",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to succeed in doing something difficult or unexpected",
+        "ptDefinition": "conseguir fazer algo difícil ou inesperado",
+        "examples": [
+          {
+            "enExample": "No one thought he could win the race, but he pulled it off.",
+            "ptExample": "Ninguém achou que ele poderia vencer a corrida, mas ele conseguiu."
+          },
+          {
+            "enExample": "She pulled off a brilliant performance despite the challenges.",
+            "ptExample": "Ela conseguiu uma performance brilhante apesar dos desafios."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 14, Lesson 16."
+          }
+        ]
+      },
+      {
+        "word": "pull the wool over my eyes",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to deceive or trick someone into believing something that is not true",
+        "ptDefinition": "enganar ou iludir alguém, fazendo com que acredite em algo que não é verdade",
+        "examples": [
+          {
+            "enExample": "he tried to pull the wool over my eyes, but I saw through his plan",
+            "ptExample": "Ele tentou me enganar, mas eu percebi o plano dele."
+          },
+          {
+            "enExample": "The salesman pulled the wool over her eyes, convincing her to buy the expensive item.",
+            "ptExample": "O vendedor a enganou, convencendo-a a comprar o item caro."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 9."
+          }
+        ]
+      },
+      {
+        "word": "pulled out all the stops",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to do everything possible to achieve something, often by using all available resources or effort",
+        "ptDefinition": "fazer tudo o que é possível para alcançar algo, muitas vezes usando todos os recursos ou esforço disponíveis",
+        "examples": [
+          {
+            "enExample": "The team pulled out all the stops to win the championship.",
+            "ptExample": "A equipe fez de tudo para ganhar o campeonato."
+          },
+          {
+            "enExample": "They pulled out all the stops for their wedding to make it unforgettable.",
+            "ptExample": "Eles fizeram tudo para que o casamento fosse inesquecível."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 9."
+          }
+        ]
+      },
+      {
+        "word": "pulling your weight",
+        "partOfSpeech": "idiom",
+        "enDefinition": "doing your fair share of the work",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "push your buttons",
+        "partOfSpeech": "idiom",
+        "enDefinition": "deliberately provoke or annoy you",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "pushing the envelope",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to go beyond the usual or expected limits, especially in a creative or innovative way",
+        "ptDefinition": "ir além dos limites usuais ou esperados, especialmente de maneira criativa ou inovadora",
+        "examples": [
+          {
+            "enExample": "The company is known for pushing the envelope in terms of technology and design.",
+            "ptExample": "A empresa é conhecida por ir além dos limites em termos de tecnologia e design."
+          },
+          {
+            "enExample": "The director pushed the envelope with his latest film, exploring new and controversial themes.",
+            "ptExample": "O diretor foi além dos limites com seu último filme, explorando temas novos e controversos."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 14."
+          }
+        ]
+      },
+      {
+        "word": "put in my two cents",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to offer one's opinion or thoughts on a matter, often unsolicited or unwelcome",
+        "ptDefinition": "dar a sua opinião sobre um assunto, muitas vezes sem ser solicitado ou bem-vindo",
+        "examples": [
+          {
+            "enExample": "I know you didn't ask for my advice, but I just had to put in my two cents.",
+            "ptExample": "Eu sei que você não pediu meu conselho, mas eu tive que dar minha opinião."
+          },
+          {
+            "enExample": "She always puts in her two cents, even when no one asks for it.",
+            "ptExample": "Ela sempre dá sua opinião, mesmo quando ninguém pede."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 12."
+          }
+        ]
+      },
+      {
+        "word": "put our minds to it",
+        "partOfSpeech": "idiom",
+        "enDefinition": "focus our effort and determination on it",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 10."
+          }
+        ]
+      },
+      {
+        "word": "reading between the lines",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to understand a hidden or implied meaning in something that is said or written",
+        "ptDefinition": "entender um significado oculto ou implícito em algo que foi dito ou escrito",
+        "examples": [
+          {
+            "enExample": "She didn’t say it directly, but I could read between the lines that she was upset.",
+            "ptExample": "Ela não disse diretamente, mas deu para entender nas entrelinhas que ela estava chateada."
+          },
+          {
+            "enExample": "Reading between the lines, it seems the company is planning layoffs.",
+            "ptExample": "Lendo nas entrelinhas, parece que a empresa está planejando demissões."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "rest on our laurels",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to be complacent or stop putting in effort because of past achievements, rather than continuing to work hard or strive for further success",
+        "ptDefinition": "ficar complacente ou parar de se esforçar devido a conquistas passadas, em vez de continuar a trabalhar arduamente ou buscar mais sucesso",
+        "examples": [
+          {
+            "enExample": "After winning the award, he decided to rest on his laurels instead of working on new projects.",
+            "ptExample": "Depois de ganhar o prêmio, ele decidiu descansar sobre os seus louros em vez de trabalhar em novos projetos."
+          },
+          {
+            "enExample": "Don't rest on your laurels; there’s still much to achieve.",
+            "ptExample": "Não descanse sobre os seus louros; ainda há muito a ser conquistado."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 11."
+          }
+        ]
+      },
+      {
+        "word": "review your offer",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "to carefully examine a proposal or offer before making a decision",
+        "ptDefinition": "analisar cuidadosamente uma proposta antes de tomar uma decisão",
+        "examples": [
+          {
+            "enExample": "The hiring manager will review the offer before approving it.",
+            "ptExample": "O gerente de contratação vai analisar a proposta antes de aprová-la."
+          },
+          {
+            "enExample": "Take your time to review the offer before signing the contract.",
+            "ptExample": "Tire seu tempo para analisar a proposta antes de assinar o contrato."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "rip it off",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to copy an idea; to steal",
+        "ptDefinition": "copiar / roubar uma ideia",
+        "examples": [
+          {
+            "enExample": "Why doesn't the Donox Company ever think up any original ideas? All they ever do is rip off their competitors!",
+            "ptExample": "Por que a Donox Company nunca tem ideias originais? Tudo o que eles fazem é copiar seus concorrentes!"
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 1."
+          }
+        ]
+      },
+      {
+        "word": "roll up my sleeves",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to prepare to work hard or to take on a task that requires effort",
+        "ptDefinition": "preparar-se para trabalhar duro ou assumir uma tarefa que exige esforço",
+        "examples": [
+          {
+            "enExample": "She rolled up her sleeves and got to work on the challenging project.",
+            "ptExample": "Ela arregaçou as mangas e começou a trabalhar no projeto desafiador."
+          },
+          {
+            "enExample": "It's time to roll up our sleeves and get this done before the deadline.",
+            "ptExample": "É hora de arregaçar as mangas e terminar isso antes do prazo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 11."
+          }
+        ]
+      },
+      {
+        "word": "roll up our sleeves",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to prepare to work hard or to take on a task that requires effort",
+        "ptDefinition": "preparar-se para trabalhar duro ou assumir uma tarefa que exige esforço",
+        "examples": [
+          {
+            "enExample": "She rolled up her sleeves and got to work on the challenging project.",
+            "ptExample": "Ela arregaçou as mangas e começou a trabalhar no projeto desafiador."
+          },
+          {
+            "enExample": "It's time to roll up our sleeves and get this done before the deadline.",
+            "ptExample": "É hora de arregaçar as mangas e terminar isso antes do prazo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 10."
+          }
+        ]
+      },
+      {
+        "word": "run for their money",
+        "partOfSpeech": "idiom",
+        "enDefinition": "strong competition",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6."
+          }
+        ]
+      },
+      {
+        "word": "run numbers",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to perform calculations or analyze numerical data, usually to evaluate a situation or make a decision",
+        "ptDefinition": "realizar cálculos ou analisar dados numéricos, geralmente para avaliar uma situação ou tomar uma decisão",
+        "examples": [
+          {
+            "enExample": "Before we finalize the project, let's run the numbers to ensure it's financially viable.",
+            "ptExample": "Antes de finalizarmos o projeto, vamos verificar os números para garantir que ele seja financeiramente viável."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 2."
+          }
+        ]
+      },
+      {
+        "word": "run some ideas by",
+        "partOfSpeech": "idiom",
+        "enDefinition": "present some ideas to someone for feedback",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "run with the idea",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to take an idea and develop it further, often with enthusiasm and energy, or to proceed with it without hesitation",
+        "ptDefinition": "pegar uma ideia e desenvolvê-la, geralmente com entusiasmo e energia, ou seguir com ela sem hesitação",
+        "examples": [
+          {
+            "enExample": "Once the team heard the new proposal, they were eager to run with the idea and start working on it right away.",
+            "ptExample": "Assim que a equipe ouviu a nova proposta, ficaram animados para desenvolver a ideia e começar a trabalhar nela imediatamente."
+          },
+          {
+            "enExample": "She came up with a creative concept, and we decided to run with the idea for our next marketing campaign.",
+            "ptExample": "Ela teve uma ideia criativa, e decidimos desenvolvê-la para nossa próxima campanha de marketing."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "running behind",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to be delayed or not progressing as quickly as planned; to be late in relation to a schedule or deadline",
+        "ptDefinition": "estar atrasado ou não progredindo tão rapidamente quanto o planejado; estar atrasado em relação a um cronograma ou prazo",
+        "examples": [
+          {
+            "enExample": "Sorry, I'm running behind this morning and will be late to the meeting.",
+            "ptExample": "Desculpe, estou atrasado esta manhã e vou me atrasar para a reunião."
+          },
+          {
+            "enExample": "The project is running behind because of unexpected technical issues.",
+            "ptExample": "O projeto está atrasado devido a problemas técnicos inesperados."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "running in place",
+        "partOfSpeech": "idiom",
+        "enDefinition": "working without making progress",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 7."
+          }
+        ]
+      },
+      {
+        "word": "running your own show",
+        "partOfSpeech": "idiom",
+        "enDefinition": "managing your own business or activity",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "scale back my hours",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to reduce the number of hours one works or spends on an activity",
+        "ptDefinition": "reduzir o número de horas que se trabalha ou dedica a uma atividade",
+        "examples": [
+          {
+            "enExample": "After the baby was born, she decided to scale back her hours at work.",
+            "ptExample": "Depois que o bebê nasceu, ela decidiu reduzir suas horas de trabalho."
+          },
+          {
+            "enExample": "Many companies scale back employees’ hours during economic downturns.",
+            "ptExample": "Muitas empresas reduzem as horas dos funcionários durante crises econômicas."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 21."
+          }
+        ]
+      },
+      {
+        "word": "sharing the credit",
+        "partOfSpeech": "idiom",
+        "enDefinition": "recognizing another person's contribution",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6."
+          }
+        ]
+      },
+      {
+        "word": "shelling out",
+        "partOfSpeech": "phrasal verb",
+        "enDefinition": "to pay a large amount of money for something, often reluctantly",
+        "ptDefinition": "pagar uma grande quantia de dinheiro por algo, muitas vezes com relutância",
+        "examples": [
+          {
+            "enExample": "I had to shell out $200 for a new phone.",
+            "ptExample": "Tive que desembolsar $200 por um novo telefone."
+          },
+          {
+            "enExample": "They shelled out a lot of money for their vacation.",
+            "ptExample": "Eles desembolsaram muito dinheiro para as férias."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "sick and tired",
+        "partOfSpeech": "idiom",
+        "enDefinition": "extremely annoyed with or bored by something that has been happening for a long time; fed up",
+        "ptDefinition": "extremamente irritado ou cansado de algo que tem acontecido por muito tempo; de saco cheio",
+        "examples": [
+          {
+            "enExample": "I'm sick and tired of hearing the same excuses every day.",
+            "ptExample": "Estou de saco cheio de ouvir as mesmas desculpas todos os dias."
+          },
+          {
+            "enExample": "She was sick and tired of waiting for him to change.",
+            "ptExample": "Ela estava cansada de esperar que ele mudasse."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "signed on 800 new customers",
+        "partOfSpeech": "idiom",
+        "enDefinition": "enrolled 800 new customers",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 6."
+          }
+        ]
+      },
+      {
+        "word": "slipped my mind",
+        "partOfSpeech": "idiom",
+        "enDefinition": "I forgot it",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 21."
+          }
+        ]
+      },
+      {
+        "word": "snapped up",
+        "partOfSpeech": "idiom",
+        "enDefinition": "bought or obtained quickly",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "spare us the sob story",
+        "partOfSpeech": "idiom",
+        "enDefinition": "used to tell someone to stop giving excuses or telling a sad story to gain sympathy, especially when it is seen as exaggerated or manipulative",
+        "ptDefinition": "usado para pedir que alguém pare de dar desculpas ou contar uma história triste para ganhar simpatia, especialmente quando é visto como exagerado ou manipulador",
+        "examples": [
+          {
+            "enExample": "Oh, spare us the sob story and just admit you forgot to do your work.",
+            "ptExample": "Ah, poupe-nos da história triste e apenas admita que você esqueceu de fazer seu trabalho."
+          },
+          {
+            "enExample": "He tried to explain why he was late, but the boss said, 'Spare me the sob story.'",
+            "ptExample": "Ele tentou explicar por que estava atrasado, mas o chefe disse: 'Poupe-me da história triste.'"
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "sparked your interest",
+        "partOfSpeech": "idiom",
+        "enDefinition": "caused you to become interested",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 28."
+          }
+        ]
+      },
+      {
+        "word": "stand my ground",
+        "partOfSpeech": "idiom",
+        "enDefinition": "refuse to change my position",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "standing firm",
+        "partOfSpeech": "phrasal verb / idiom",
+        "enDefinition": "to refuse to change your decision or opinion, even when others try to persuade you",
+        "ptDefinition": "recusar-se a mudar sua decisão ou opinião, mesmo quando os outros tentam persuadi-lo",
+        "examples": [
+          {
+            "enExample": "She stood firm on her decision to leave the company.",
+            "ptExample": "Ela manteve firme sua decisão de deixar a empresa."
+          },
+          {
+            "enExample": "Despite the criticism, he stood firm in his beliefs.",
+            "ptExample": "Apesar das críticas, ele se manteve firme em suas crenças."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 24."
+          }
+        ]
+      },
+      {
+        "word": "start-ups",
+        "partOfSpeech": "noun",
+        "enDefinition": "a newly established business, typically in the early stages and often focused on innovation and growth",
+        "ptDefinition": "uma empresa recém-criada, geralmente em estágio inicial e com foco em inovação e crescimento",
+        "examples": [
+          {
+            "enExample": "She founded a tech start-up that develops AI tools for education.",
+            "ptExample": "Ela fundou uma start-up de tecnologia que desenvolve ferramentas de IA para educação."
+          },
+          {
+            "enExample": "Many start-ups struggle to survive beyond their first year.",
+            "ptExample": "Muitas start-ups enfrentam dificuldades para sobreviver após o primeiro ano."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 29."
+          }
+        ]
+      },
+      {
+        "word": "steer clear of him",
+        "partOfSpeech": "idiom",
+        "enDefinition": "avoid him",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 19."
+          }
+        ]
+      },
+      {
+        "word": "struck gold",
+        "partOfSpeech": "idiom",
+        "enDefinition": "found something very valuable or successful",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "take a crack at it",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to attempt or try something, often for the first time",
+        "ptDefinition": "tentar ou fazer uma tentativa em algo, muitas vezes pela primeira vez",
+        "examples": [
+          {
+            "enExample": "I'm going to take a crack at fixing the car this weekend.",
+            "ptExample": "Vou tentar consertar o carro neste fim de semana."
+          },
+          {
+            "enExample": "He decided to take a crack at painting, even though he had no experience.",
+            "ptExample": "Ele decidiu tentar pintar, mesmo sem experiência."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 10."
+          }
+        ]
+      },
+      {
+        "word": "take credit for",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to accept praise or recognition for something, whether or not you actually deserve it",
+        "ptDefinition": "aceitar elogios ou reconhecimento por algo, mesmo que você não mereça",
+        "examples": [
+          {
+            "enExample": "He took credit for the project even though others did most of the work.",
+            "ptExample": "Ele aceitou os méritos pelo projeto, embora outros tenham feito a maior parte do trabalho."
+          },
+          {
+            "enExample": "She didn’t want to take credit for the success alone.",
+            "ptExample": "Ela não quis assumir todo o crédito pelo sucesso sozinha."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "take it easy",
+        "partOfSpeech": "idiom",
+        "enDefinition": "rest and avoid too much effort",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 22."
+          }
+        ]
+      },
+      {
+        "word": "take you into my confidence",
+        "partOfSpeech": "idiom",
+        "enDefinition": "share private information with you",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 26."
+          }
+        ]
+      },
+      {
+        "word": "takes the cake",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to be the most remarkable or outstanding example of something, often in a negative or surprising way",
+        "ptDefinition": "ser o exemplo mais notável ou surpreendente de algo, geralmente de forma negativa",
+        "examples": [
+          {
+            "enExample": "I've heard some strange excuses before, but that one really takes the cake.",
+            "ptExample": "Já ouvi algumas desculpas estranhas antes, mas essa realmente supera todas."
+          },
+          {
+            "enExample": "The service was bad, but the rude manager took the cake.",
+            "ptExample": "O atendimento foi ruim, mas o gerente grosseiro foi o pior de tudo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 18."
+          }
+        ]
+      },
+      {
+        "word": "talk about trying to butter up the boss",
+        "partOfSpeech": "idiom",
+        "enDefinition": "an obvious attempt to flatter the boss",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 20."
+          }
+        ]
+      },
+      {
+        "word": "talk me into",
+        "partOfSpeech": "idiom",
+        "enDefinition": "persuade me to do something",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "that's putting it lightly",
+        "partOfSpeech": "idiom",
+        "enDefinition": "the reality is more extreme than that description",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 12."
+          }
+        ]
+      },
+      {
+        "word": "the hard sell",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a method of selling that is very direct and often pressure-based",
+        "ptDefinition": "uma técnica de venda muito direta e frequentemente baseada em pressão",
+        "examples": [
+          {
+            "enExample": "The salesman was really pushy — definitely a hard sell.",
+            "ptExample": "O vendedor foi muito insistente — sem dúvida, uma venda forçada."
+          },
+          {
+            "enExample": "Their advertising campaign was a hard sell and turned many customers away.",
+            "ptExample": "A campanha publicitária foi muito agressiva e afastou muitos clientes."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 24."
+          }
+        ]
+      },
+      {
+        "word": "the latest dirt",
+        "partOfSpeech": "idiom",
+        "enDefinition": "the newest gossip or scandal",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 18."
+          }
+        ]
+      },
+      {
+        "word": "there's something going around",
+        "partOfSpeech": "idiom / expression",
+        "enDefinition": "an illness or problem that is spreading among people",
+        "ptDefinition": "uma doença ou problema que está se espalhando entre as pessoas",
+        "examples": [
+          {
+            "enExample": "I think there’s something going around because several people at work are sick.",
+            "ptExample": "Eu acho que tem alguma coisa rolando porque várias pessoas no trabalho estão doentes."
+          },
+          {
+            "enExample": "There’s something going around that’s making everyone tired.",
+            "ptExample": "Está circulando algo que está deixando todo mundo cansado."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 22."
+          }
+        ]
+      },
+      {
+        "word": "throw cold water on",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to discourage or dampen enthusiasm, ideas, or plans, often by highlighting potential problems or obstacles",
+        "ptDefinition": "desanimar ou esfriar o entusiasmo de alguém, geralmente ao apontar dificuldades ou problemas que podem surgir",
+        "examples": [
+          {
+            "enExample": "While some team members were excited about the new project, one manager threw cold water on it by pointing out the risks.",
+            "ptExample": "Embora alguns membros da equipe estivessem empolgados com o novo projeto, um gerente acabou desmotivando a todos ao destacar os riscos envolvidos."
+          },
+          {
+            "enExample": "It's important to consider feedback, but you don't want to throw cold water on every new idea.",
+            "ptExample": "É importante levar em conta o feedback, mas não se deve desmotivar todas as novas ideias que surgem."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "throw that in at no extra charge",
+        "partOfSpeech": "idiom",
+        "enDefinition": "without requiring additional payment; free of extra cost",
+        "ptDefinition": "sem custo adicional; gratuitamente",
+        "examples": [
+          {
+            "enExample": "The delivery is available at no extra charge.",
+            "ptExample": "A entrega está disponível sem custo adicional."
+          },
+          {
+            "enExample": "You can get an extra blanket at no extra charge.",
+            "ptExample": "Você pode pegar um cobertor extra sem custo adicional."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 24."
+          }
+        ]
+      },
+      {
+        "word": "to soften the blow",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to make a bad or unpleasant situation less severe or easier to accept",
+        "ptDefinition": "tornar uma situação ruim ou desagradável menos severa ou mais fácil de aceitar",
+        "examples": [
+          {
+            "enExample": "She tried to soften the blow by explaining the reasons behind the layoffs.",
+            "ptExample": "Ela tentou amenizar o impacto explicando as razões por trás das demissões."
+          },
+          {
+            "enExample": "Giving a small gift can help soften the blow of disappointing news.",
+            "ptExample": "Dar um presente pequeno pode ajudar a amenizar a notícia decepcionante."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      },
+      {
+        "word": "touch base with",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to make contact or communicate briefly with someone, often to exchange information or check in on progress",
+        "ptDefinition": "entrar em contato ou se comunicar brevemente com alguém, geralmente para trocar informações ou acompanhar o andamento de algo",
+        "examples": [
+          {
+            "enExample": "I'll touch base with the team to see if they need anything before the meeting.",
+            "ptExample": "Vou entrar em contato com a equipe para ver se eles precisam de algo antes da reunião."
+          },
+          {
+            "enExample": "We should touch base with the client next week to ensure everything is on track with the project.",
+            "ptExample": "Devemos entrar em contato com o cliente na próxima semana para garantir que o projeto esteja no caminho certo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "track down that woman",
+        "partOfSpeech": "idiom",
+        "enDefinition": "find that woman after searching",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "turn around our business",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to improve or change the direction of a business or organization that is struggling or underperforming, typically by implementing new strategies or making major adjustments",
+        "ptDefinition": "melhorar ou mudar a direção de um negócio ou organização que está lutando ou tendo um desempenho insatisfatório, geralmente por meio da implementação de novas estratégias ou fazendo ajustes importantes",
+        "examples": [
+          {
+            "enExample": "After months of low sales, the company decided to turn around its business by launching a new marketing campaign.",
+            "ptExample": "Depois de meses de vendas baixas, a empresa decidiu reverter o seu negócio lançando uma nova campanha de marketing."
+          },
+          {
+            "enExample": "With a fresh approach and new leadership, the company was able to turn around its business within a year.",
+            "ptExample": "Com uma abordagem nova e uma nova liderança, a empresa conseguiu reverter o seu negócio em um ano."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 11."
+          }
+        ]
+      },
+      {
+        "word": "turning a blind eye",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to deliberately ignore something, especially something wrong or illegal, instead of taking action",
+        "ptDefinition": "ignorar deliberadamente algo, especialmente algo errado ou ilegal, em vez de tomar uma atitude",
+        "examples": [
+          {
+            "enExample": "The manager turned a blind eye to the employee's misconduct.",
+            "ptExample": "O gerente fez vista grossa ao mau comportamento do funcionário."
+          },
+          {
+            "enExample": "Many governments turn a blind eye to environmental violations.",
+            "ptExample": "Muitos governos fazem vista grossa para violações ambientais."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "twisted my arm",
+        "partOfSpeech": "idiom",
+        "enDefinition": "persuaded me despite my initial reluctance",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 3."
+          }
+        ]
+      },
+      {
+        "word": "under your belt",
+        "partOfSpeech": "idiom",
+        "enDefinition": "already achieved or experienced",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 23."
+          }
+        ]
+      },
+      {
+        "word": "up to his old tricks",
+        "partOfSpeech": "idiom",
+        "enDefinition": "behaving in the same mischievous or deceitful way as before; repeating one's usual bad or annoying behavior",
+        "ptDefinition": "agindo da mesma forma travessa ou enganosa de antes; repetindo o comportamento ruim ou irritante de costume",
+        "examples": [
+          {
+            "enExample": "Don't trust him—he's up to his old tricks again.",
+            "ptExample": "Não confie nele — ele está aprontando de novo."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 18, Lesson 20."
+          }
+        ]
+      },
+      {
+        "word": "wash your hands",
+        "partOfSpeech": "idiom",
+        "enDefinition": "refuse further responsibility for something",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 15."
+          }
+        ]
+      },
+      {
+        "word": "we're blue in the face",
+        "partOfSpeech": "idiom",
+        "enDefinition": "we have continued until exhausted without success",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 16."
+          }
+        ]
+      },
+      {
+        "word": "we've been down before, but we always come back fighting",
+        "partOfSpeech": "idiom",
+        "enDefinition": "we have faced setbacks before and recovered strongly",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 11."
+          }
+        ]
+      },
+      {
+        "word": "weigh in on the issue at hand",
+        "partOfSpeech": "idiom",
+        "enDefinition": "give an opinion about the current issue",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 12."
+          }
+        ]
+      },
+      {
+        "word": "weighing another offer",
+        "partOfSpeech": "idiom",
+        "enDefinition": "to evaluate or consider a different proposal or offer before making a decision",
+        "ptDefinition": "avaliar ou considerar uma proposta diferente antes de tomar uma decisão",
+        "examples": [
+          {
+            "enExample": "Before accepting the job, she wanted to weigh another offer.",
+            "ptExample": "Antes de aceitar o emprego, ela quis avaliar outra proposta."
+          },
+          {
+            "enExample": "They’re still weighing other offers before deciding on the partnership.",
+            "ptExample": "Eles ainda estão avaliando outras propostas antes de decidir sobre a parceria."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 30."
+          }
+        ]
+      },
+      {
+        "word": "went all out",
+        "partOfSpeech": "idiom",
+        "enDefinition": "made the greatest possible effort",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 9."
+          }
+        ]
+      },
+      {
+        "word": "what goes around comes around. one day, he'll get his",
+        "partOfSpeech": "idiom",
+        "enDefinition": "bad actions eventually bring bad consequences",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 18."
+          }
+        ]
+      },
+      {
+        "word": "what's the deal",
+        "partOfSpeech": "idiom",
+        "enDefinition": "a question used to ask for an explanation or clarification about a situation, event, or someone's behavior; can also express curiosity, confusion, or skepticism",
+        "ptDefinition": "uma pergunta usada para pedir explicação ou esclarecimento sobre uma situação, evento ou comportamento de alguém; também pode expressar curiosidade, confusão ou ceticismo",
+        "examples": [
+          {
+            "enExample": "What’s the deal with all the noise next door?",
+            "ptExample": "Qual é o motivo de tanto barulho ao lado?"
+          },
+          {
+            "enExample": "You’ve been acting strange lately — what’s the deal?",
+            "ptExample": "Você tem agido estranho ultimamente—o que está acontecendo?"
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 17."
+          }
+        ]
+      },
+      {
+        "word": "what's up",
+        "partOfSpeech": "idiom / informal greeting",
+        "enDefinition": "used as an informal greeting to ask how someone is or what is happening",
+        "ptDefinition": "e aí?; o que está acontecendo?; tudo bem? (cumprimento informal)",
+        "examples": [
+          {
+            "enExample": "Hey, what’s up?",
+            "ptExample": "E aí?"
+          },
+          {
+            "enExample": "You look worried. What’s up?",
+            "ptExample": "Você parece preocupado. O que houve?"
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 22."
+          }
+        ]
+      },
+      {
+        "word": "wore many hats",
+        "partOfSpeech": "idiom",
+        "enDefinition": "performed many different roles",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 28."
+          }
+        ]
+      },
+      {
+        "word": "worked my tail off",
+        "partOfSpeech": "idiomatic expression",
+        "enDefinition": "to work very hard, often to the point of exhaustion",
+        "ptDefinition": "trabalhar muito, geralmente até o ponto de exaustão",
+        "examples": [
+          {
+            "enExample": "She worked her tail off to finish the project on time.",
+            "ptExample": "Ela trabalhou muito para terminar o projeto a tempo."
+          },
+          {
+            "enExample": "He's been working his tail off all week to get ahead in his job.",
+            "ptExample": "Ele tem trabalhado muito a semana toda para se destacar no trabalho."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 14."
+          }
+        ]
+      },
+      {
+        "word": "working down to the wire",
+        "partOfSpeech": "idiom",
+        "enDefinition": "working on something until the very last moment, typically because of a tight deadline",
+        "ptDefinition": "trabalhar em algo até o último momento, geralmente devido a um prazo apertado",
+        "examples": [
+          {
+            "enExample": "We’re working down to the wire to finalize the presentation before the meeting tomorrow.",
+            "ptExample": "Estamos trabalhando até o último segundo para finalizar a apresentação antes da reunião de amanhã."
+          },
+          {
+            "enExample": "They were still adjusting the software features, working down to the wire before the product launch.",
+            "ptExample": "Eles ainda estavam ajustando as funcionalidades do software, trabalhando até o limite antes do lançamento do produto."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 4."
+          }
+        ]
+      },
+      {
+        "word": "working our tails off",
+        "partOfSpeech": "idiomatic expression",
+        "enDefinition": "to work very hard, often to the point of exhaustion",
+        "ptDefinition": "trabalhar muito, geralmente até o ponto de exaustão",
+        "examples": [
+          {
+            "enExample": "She worked her tail off to finish the project on time.",
+            "ptExample": "Ela trabalhou muito para terminar o projeto a tempo."
+          },
+          {
+            "enExample": "He's been working his tail off all week to get ahead in his job.",
+            "ptExample": "Ele tem trabalhado muito a semana toda para se destacar no trabalho."
+          }
+        ],
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 11."
+          }
+        ]
+      },
+      {
+        "word": "your work has slipped",
+        "partOfSpeech": "idiom",
+        "enDefinition": "the quality of your work has declined",
+        "notes": [
+          {
+            "enNote": "Used in Business 1, Lesson 27."
+          }
+        ]
+      }
+    ]
+  }
+]

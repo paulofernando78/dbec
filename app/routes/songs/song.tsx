@@ -1,13 +1,15 @@
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { Video } from "lucide-react";
 
 import { PageHeader } from "@/components/content/PageHeader";
+import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 import { findBand, findSong } from "@/data/songs/index";
 
 export default function SongsSong() {
+  const navigate = useNavigate();
   const { band: bandSlug, song: songSlug } = useParams();
   const band = findBand(bandSlug);
   const song = band ? findSong(band, songSlug) : undefined;
@@ -21,6 +23,10 @@ export default function SongsSong() {
       </Card>
     );
   }
+
+  const songIndex = band.songs.findIndex((item) => item.slug === song.slug);
+  const previousSong = band.songs[songIndex - 1];
+  const nextSong = band.songs[songIndex + 1];
 
   return (
     <div>
@@ -66,6 +72,13 @@ export default function SongsSong() {
           )}
         </section>
       </Card>
+      <SequenceNavigation
+        previousLabel={previousSong?.title ?? band.name}
+        nextLabel={nextSong?.title ?? band.name}
+        onPrevious={() => navigate(previousSong ? `/songs/${band.slug}/${previousSong.slug}` : `/songs/${band.slug}`)}
+        onNext={() => navigate(nextSong ? `/songs/${band.slug}/${nextSong.slug}` : `/songs/${band.slug}`)}
+        ariaLabel={`${band.name} songs`}
+      />
     </div>
   );
 }

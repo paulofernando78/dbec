@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router";
 import type { ComponentProps } from "react";
-import { CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 
 import { template } from "@/data/authentic-content/template";
 
@@ -9,7 +9,7 @@ import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { PageHeader } from "@/components/content/PageHeader";
-import { Button } from "@/components/ui/Button";
+import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { Card } from "@/components/ui/Card";
 import { List } from "@/components/content/List";
 import { ImageQuiz } from "@/features/exercises/ImageQuiz";
@@ -201,25 +201,13 @@ export default function AuthenticContents() {
 
       {stepContent}
 
-      <nav
-        className="mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
-        aria-label="Lesson steps"
-      >
-        <Button
-          ariaLabel="Previous step"
-          onClick={() =>
-            previous ? go(previous.slug) : navigate("/authentic-content")
-          }
-          icon={<ChevronLeft />}
-        />
-        <b>{previous?.label ?? "Authentic Content"}</b>
-        <b className="text-right">{next?.label ?? "Authentic Content"}</b>
-        <Button
-          ariaLabel="Next step"
-          onClick={() => (next ? go(next.slug) : void finish())}
-          icon={<ChevronRight />}
-        />
-      </nav>
+      <SequenceNavigation
+        previousLabel={previous?.label ?? "Authentic Content"}
+        nextLabel={next?.label ?? "Authentic Content"}
+        onPrevious={() => previous ? go(previous.slug) : navigate("/authentic-content")}
+        onNext={() => next ? go(next.slug) : void finish()}
+        ariaLabel="Lesson steps"
+      />
     </div>
   );
 }

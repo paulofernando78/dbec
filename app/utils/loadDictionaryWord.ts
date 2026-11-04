@@ -43,7 +43,17 @@ export const loadDictionaryLetter = async (
   const loadData = dictionaryLetters[`../data/dictionary/${normalizedLetter}.json`];
 
   if (!loadData) throw new Error(`Dictionary letter not found: ${normalizedLetter}`);
-  return loadData();
+  const baseData = await loadData();
+  const supplementalDefinitions = flattenDictionaryDefinitions(
+    businessOneDictionary,
+  ).filter((definition) =>
+    definition.word.toLowerCase().startsWith(normalizedLetter),
+  );
+
+  return [
+    ...(Array.isArray(baseData) ? baseData : [baseData]),
+    { definitions: supplementalDefinitions },
+  ];
 };
 
 export const flattenDictionaryDefinitions = (
@@ -73,3 +83,5 @@ export const loadDictionaryWord = async (
     ) || null
   );
 };
+import businessOneDictionary from "@/data/dictionary/business-1.generated.json";
+

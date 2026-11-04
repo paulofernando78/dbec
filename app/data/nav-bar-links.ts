@@ -140,7 +140,7 @@ export const links: NavItem[] = [
           },
           {
             href: "/expressions/business",
-            label: "business",
+            label: "business 1",
             icon: MessageSquareQuote,
           },
         ],

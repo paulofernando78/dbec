@@ -1,10 +1,24 @@
-import { Navigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
+import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { Card } from "@/components/ui/Card";
 import { Dialogue } from "@/features/Dialogue";
 import { Radio } from "@/features/exercises/Radio";
 import { italic, mark } from "@/helpers/content";
+
+const businessLessonTitles: readonly string[] = [
+  "Talking About a New Project", "Talking About Financial Issues", "Discussing a New Ad Campaign",
+  "Talking About Manufacturing", "Talking About Company Strategy", "Discussing Good Results",
+  "Discussing Bad Results", "Discussing a Difficult Decision", "Dealing With a Dissatisfied Customer",
+  "Discussing a Difficult Request", "Motivating Co-Workers", "Running a Meeting", "Discussing a Mistake",
+  "Taking Credit for Good Results", "Shifting Blame", "Politely Disagreeing With Someone",
+  "Telling Somebody Off", "Discussing Office Scandals", "Complaining About a Co-Worker",
+  "Talking About a Brown-Noser", "Explaining That You're Feeling Overworked", "Calling In Sick",
+  "Requesting a Bank Loan", "Negotiating a Purchase", "Conducting a Performance Review",
+  "Promoting an Employee", "Firing Somebody", "Job Interview 1", "Job Interview 2",
+  "Negotiating a Salary Offer",
+];
 
 const lessonOneExercise = {
   questions: [
@@ -1554,6 +1568,7 @@ const lessonThirtyLines = [
 ];
 
 export default function BusinessExpression() {
+  const navigate = useNavigate();
   const { lesson } = useParams();
 
   if (!["lesson-1", "lesson-2", "lesson-3", "lesson-4", "lesson-5", "lesson-6", "lesson-7", "lesson-8", "lesson-9", "lesson-10", "lesson-11", "lesson-12", "lesson-13", "lesson-14", "lesson-15", "lesson-16", "lesson-17", "lesson-18", "lesson-19", "lesson-20", "lesson-21", "lesson-22", "lesson-23", "lesson-24", "lesson-25", "lesson-26", "lesson-27", "lesson-28", "lesson-29", "lesson-30"].includes(lesson ?? "")) {
@@ -1772,7 +1787,7 @@ export default function BusinessExpression() {
   return (
     <div>
       <PageHeader
-        eyebrow={`Business expressions · Lesson ${lessonNumber}`}
+        eyebrow={`Business 1 · Lesson ${lessonNumber}`}
         title={title}
       />
 
@@ -1780,7 +1795,7 @@ export default function BusinessExpression() {
         <section>
           <Dialogue
             instruction="Listen to the..."
-            audioSrc=""
+            audioSrc={`/media/audio/language/expressions/business-1/lesson-${lessonNumber}.mp3`}
             context={context}
             lines={lines}
             segmented
@@ -2048,6 +2063,34 @@ export default function BusinessExpression() {
       {isLessonThirty && (
         <Card className="mt-4"><h2 className="mb-2 text-xl font-black">Practice the Idioms</h2><Radio instruction="Choose the best substitute for the phrase or sentence highlighted." exercise={lessonThirtyExercise} questionClassName="rounded-xl bg-(--background) p-4" /></Card>
       )}
+
+      <SequenceNavigation
+        previousLabel={
+          lessonNumber > 1
+            ? (businessLessonTitles[lessonNumber - 2] ?? "Business 1")
+            : "Business 1"
+        }
+        nextLabel={
+          lessonNumber < businessLessonTitles.length
+            ? (businessLessonTitles[lessonNumber] ?? "Business 1")
+            : "Business 1"
+        }
+        onPrevious={() =>
+          navigate(
+            lessonNumber > 1
+              ? `/expressions/business/lesson-${lessonNumber - 1}`
+              : "/expressions/business",
+          )
+        }
+        onNext={() =>
+          navigate(
+            lessonNumber < businessLessonTitles.length
+              ? `/expressions/business/lesson-${lessonNumber + 1}`
+              : "/expressions/business",
+          )
+        }
+        ariaLabel="Business 1 lessons"
+      />
     </div>
   );
 }

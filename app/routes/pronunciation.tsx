@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import { Plus } from "lucide-react";
-import { Navigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
+import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { PageSections } from "@/components/content/PageSections";
 import { InlineRichContent } from "@/components/content/InlineRichContent";
 import { Phonetics } from "@/components/content/Phonetics";
@@ -144,6 +145,7 @@ function PronunciationRow({ item }: { item: PronunciationItem }) {
 }
 
 export default function Pronunciation() {
+  const navigate = useNavigate();
   const { topic } = useParams();
 
   if (!topic) {
@@ -218,6 +220,13 @@ export default function Pronunciation() {
           </Section>
         ))}
       </PageSections>
+      <SequenceNavigation
+        previousLabel={isPhonetics ? "Pronunciation" : "Phonetics"}
+        nextLabel={isPhonetics ? "Linking Sounds" : "Pronunciation"}
+        onPrevious={() => navigate(isPhonetics ? "/pronunciation/phonetics" : "/pronunciation/phonetics")}
+        onNext={() => navigate(isPhonetics ? "/pronunciation/linking-sounds" : "/pronunciation/phonetics")}
+        ariaLabel="Pronunciation topics"
+      />
     </div>
   );
 }

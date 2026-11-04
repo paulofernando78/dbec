@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Navigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 
 import { MediaWrapper } from "@/components/content/MediaWrapper";
 import { PageHeader } from "@/components/content/PageHeader";
+import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { TableOfContents } from "@/components/content/TableOfContents";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { audiobooks } from "@/data/skills/audiobooks";
@@ -39,6 +40,7 @@ function SectionImage({ section }: { section: AudiobookSection }) {
 }
 
 export default function ListeningBookPage() {
+  const navigate = useNavigate();
   const { book } = useParams();
   const audiobook = book ? audiobooks[book as keyof typeof audiobooks] : undefined;
   const completionSentinelRef = useRef<HTMLDivElement>(null);
@@ -66,6 +68,10 @@ export default function ListeningBookPage() {
   }
 
   const [summary, ...sections] = audiobook.sections;
+  const audiobookList = Object.values(audiobooks);
+  const audiobookIndex = audiobookList.findIndex((item) => item.slug === audiobook.slug);
+  const previousAudiobook = audiobookList[audiobookIndex - 1];
+  const nextAudiobook = audiobookList[audiobookIndex + 1];
 
   const renderSection = (section: AudiobookSection) => {
     const questions =
@@ -142,6 +148,14 @@ export default function ListeningBookPage() {
       </div>
 
       <div ref={completionSentinelRef} className="h-px" aria-hidden="true" />
+
+      <SequenceNavigation
+        previousLabel={previousAudiobook?.title ?? "Audiobooks"}
+        nextLabel={nextAudiobook?.title ?? "Audiobooks"}
+        onPrevious={() => navigate(previousAudiobook ? `/audiobooks/${previousAudiobook.slug}` : "/audiobooks")}
+        onNext={() => navigate(nextAudiobook ? `/audiobooks/${nextAudiobook.slug}` : "/audiobooks")}
+        ariaLabel="Audiobooks"
+      />
     </div>
   );
 }

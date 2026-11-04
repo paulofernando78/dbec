@@ -188,7 +188,7 @@ export default function Expressions() {
 
     return (
       <div>
-        <PageHeader title="Business expressions" />
+        <PageHeader title="Business 1" />
         <div className="grid gap-4">
           {businessExpressionGroups.map((group) => (
             <ProgressCollectionCard

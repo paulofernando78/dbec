@@ -8,6 +8,7 @@ import { levels } from "@/data/course";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
 import { lessonRegistry } from "@/data/course/lesson-registry";
+import businessOneLessons from "@/data/business-1-search.generated.json";
 import { DictionaryWordCard } from "@/features/Dictionary/DictionaryWordCard";
 import {
   flattenDictionaryDefinitions,
@@ -282,6 +283,16 @@ const expressionItems: readonly SearchItem[] = expressionData.map(
   }),
 );
 
+const businessExpressionItems: readonly SearchItem[] = businessOneLessons.map(
+  ({ lesson, title, terms }) => ({
+    title: `Lesson ${lesson} · ${title}`,
+    category: "Language · Expressions · Business 1",
+    description: terms.join(" · "),
+    fullText: terms.join(" "),
+    href: `/expressions/business/lesson-${lesson}`,
+  }),
+);
+
 const authenticContentItems: readonly SearchItem[] =
   authenticContentTedEdLessons.map((lesson) => ({
     title: lesson.label,
@@ -375,6 +386,7 @@ const authenticStepItems: readonly SearchItem[] = Object.entries(
 const searchItems = [
   ...pageItems,
   ...expressionItems,
+  ...businessExpressionItems,
   ...authenticContentItems,
   ...authenticStepItems,
   ...courseItems,
