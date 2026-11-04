@@ -131,9 +131,19 @@ export const links: NavItem[] = [
       },
 
       {
-        href: "/expressions",
-        label: "expressions",
-        icon: MessageSquareQuote,
+        subgroup: "expressions",
+        children: [
+          {
+            href: "/expressions",
+            label: "common",
+            icon: MessageSquareQuote,
+          },
+          {
+            href: "/expressions/business",
+            label: "business",
+            icon: MessageSquareQuote,
+          },
+        ],
       },
     ],
   },

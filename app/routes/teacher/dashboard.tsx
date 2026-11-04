@@ -274,19 +274,6 @@ export default function TeacherDashboard() {
       <PageHeader title="Teacher's Dashboard" variant="dashboard" />
 
       <div className="grid gap-4">
-        <TableOfContents
-          items={[
-            { href: "student-registration", label: "Student Registration" },
-            ...(student && studentId
-              ? [
-                  { href: "progress", label: "Progress" },
-                  { href: "calendar", label: "Calendar" },
-                  { href: "notes", label: "Notes" },
-                ]
-              : []),
-          ]}
-        />
-
         <div id="student-registration" className="scroll-mt-4">
           <Card title="Student Registration">
             <StudentForm
@@ -297,6 +284,16 @@ export default function TeacherDashboard() {
             />
           </Card>
         </div>
+
+        {student && studentId && (
+          <TableOfContents
+            items={[
+              { href: "progress", label: "Progress" },
+              { href: "calendar", label: "Calendar" },
+              { href: "notes", label: "Notes" },
+            ]}
+          />
+        )}
   
         {isLoadingStudent && studentId && (
           <p className="text-gray-500">Carregando aluno…</p>

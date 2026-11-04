@@ -30,6 +30,7 @@ type RadioProps = {
   exercise?: RadioExercise;
   score?: boolean;
   className?: string;
+  questionClassName?: string;
 };
 
 const RadioComponent = ({
@@ -37,6 +38,7 @@ const RadioComponent = ({
   exercise = {},
   score = true,
   className,
+  questionClassName,
 }: RadioProps) => {
   const [selected, setSelected] = useState<Record<number, number>>({});
   const [checked, setChecked] = useState(false);
@@ -77,6 +79,7 @@ const RadioComponent = ({
           className={[
             "flex flex-col items-start gap-4 min-[500px]:flex-row",
             qIndex < questions.length - 1 && "mb-4",
+            questionClassName,
           ]
             .filter(Boolean)
             .join(" ")}

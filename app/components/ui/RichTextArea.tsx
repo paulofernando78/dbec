@@ -342,7 +342,7 @@ export function RichTextArea({
             saveSelection();
           }}
           onClick={() => applyFormat("bold")}
-          className="size-8! p-[3px]!"
+          className="size-8! p-[3px]! text-gray-500! [&_svg]:stroke-gray-500!"
         />
         <Button
           ariaLabel="Italicize selected text"
@@ -357,7 +357,7 @@ export function RichTextArea({
             saveSelection();
           }}
           onClick={() => applyFormat("italic")}
-          className="size-8! p-[3px]!"
+          className="size-8! p-[3px]! text-gray-500! [&_svg]:stroke-gray-500!"
         />
         <Button
           ariaLabel="Underline selected text"
@@ -368,7 +368,7 @@ export function RichTextArea({
             saveSelection();
           }}
           onClick={() => applyFormat("underline")}
-          className="size-8! p-[3px]!"
+          className="size-8! p-[3px]! text-gray-500! [&_svg]:stroke-gray-500!"
         />
         <span className="mx-1 h-5 w-px bg-gray-300" aria-hidden="true" />
         <div className="relative size-8">
@@ -387,7 +387,7 @@ export function RichTextArea({
               saveSelection();
             }}
             onClick={() => setOpenPalette((current) => current === "text" ? null : "text")}
-            className="size-8! p-[3px]!"
+            className="size-8! p-[3px]! text-gray-500! [&_svg]:stroke-gray-500!"
           />
           {openPalette === "text" && colorPalette("text", textColors)}
         </div>
@@ -404,7 +404,7 @@ export function RichTextArea({
             onClick={() =>
               setOpenPalette((current) => current === "highlight" ? null : "highlight")
             }
-            className="size-8! p-[3px]!"
+            className="size-8! p-[3px]! text-gray-500! [&_svg]:stroke-gray-500!"
           />
           {openPalette === "highlight" &&
             colorPalette("highlight", highlightColors)}
@@ -419,7 +419,7 @@ export function RichTextArea({
             saveSelection();
           }}
           onClick={openLinkDialog}
-          className="size-8! p-[3px]!"
+          className="size-8! p-[3px]! text-gray-500! [&_svg]:stroke-gray-500!"
         />
       </div>
       <div
