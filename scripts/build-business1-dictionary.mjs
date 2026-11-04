@@ -13,13 +13,35 @@ const titles = [
   "Promoting an Employee", "Firing Somebody", "Job Interview 1", "Job Interview 2", "Negotiating a Salary Offer",
 ];
 
-const lineStarts = [...source.matchAll(/const lesson(?:One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|TwentyOne|TwentyTwo|TwentyThree|TwentyFour|TwentyFive|TwentySix|TwentySeven|TwentyEight|TwentyNine|Thirty)Lines\s*=\s*\[/g)];
-const lessons = lineStarts.map((match, index) => {
-  const end = lineStarts[index + 1]?.index ?? source.indexOf("export default function BusinessExpression");
-  const block = source.slice(match.index, end);
-  const terms = [...new Set([...block.matchAll(/mark\("((?:[^"\\]|\\.)*)"\)/g)].map((item) => normalize(JSON.parse(`"${item[1]}"`))))];
-  return { lesson: index + 1, title: titles[index], terms };
+const lessonName = "(?:One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|TwentyOne|TwentyTwo|TwentyThree|TwentyFour|TwentyFive|TwentySix|TwentySeven|TwentyEight|TwentyNine|Thirty)";
+const collectTerms = (block) => [
+  ...[...block.matchAll(/mark\("((?:[^"\\]|\\.)*)"\)/g)].map((item) => ({
+    term: normalize(JSON.parse(`"${item[1]}"`)),
+    kind: "idiom",
+  })),
+  ...[...block.matchAll(/italic\("((?:[^"\\]|\\.)*)"\)/g)].map((item) => ({
+    term: normalize(JSON.parse(`"${item[1]}"`)),
+    kind: "business term",
+  })),
+];
+const extractBlocks = (suffix, finalIndex) => {
+  const starts = [...source.matchAll(new RegExp(`const lesson${lessonName}${suffix}\\s*=`, "g"))];
+  return starts.map((match, index) => {
+    const end = starts[index + 1]?.index ?? finalIndex;
+    return collectTerms(source.slice(match.index, end));
+  });
+};
+const firstDialogueIndex = source.search(new RegExp(`const lesson${lessonName}Lines\\s*=`));
+const exercises = extractBlocks("Exercise", firstDialogueIndex);
+const dialogues = extractBlocks("Lines", source.indexOf("export default function BusinessExpression"));
+const lessons = titles.map((title, index) => {
+  const items = [...(exercises[index] ?? []), ...(dialogues[index] ?? [])];
+  const unique = new Map(items.map((item) => [item.term, item]));
+  return { lesson: index + 1, title, terms: [...unique.values()].map((item) => item.term) };
 });
+const termKinds = new Map(
+  [...exercises.flat(), ...dialogues.flat()].map((item) => [item.term, item.kind]),
+);
 
 const dictionaryDir = path.join(root, "app/data/dictionary");
 const existing = [];
@@ -40,10 +62,64 @@ const closest = (term) => {
     const nextScore = union ? intersection / union : 0;
     if (nextScore > score) { score = nextScore; winner = entry; }
   }
-  return score >= 0.6 ? winner : undefined;
+  return score >= 0.4 ? winner : undefined;
 };
 
 const meanings = {
+  "ripped it off from an inventor": "stole or copied the idea from an inventor",
+  "made a killing": "made a very large profit",
+  "get its project off the ground": "successfully start its project",
+  "got wind of": "learned or heard about something, often indirectly",
+  "plugging products": "advertising or promoting products",
+  "let's run with it": "let's accept the idea and proceed with it",
+  "it's time for a reality check": "it is time to consider the situation realistically",
+  "that sounds like a real dog": "that sounds like a very unsuccessful product or idea",
+  "lived to regret her decision": "later became sorry about her decision",
+  "i need another business card holder like a hole in the head": "I have absolutely no need for another business card holder",
+  "gave it my best shot": "made the greatest effort I could",
+  "cutting back": "reducing spending, activity, or use",
+  "messing around": "wasting time instead of working seriously",
+  "bat around": "discuss informally and consider different possibilities",
+  "get nailed": "be caught and punished",
+  "has issues with": "has problems or difficulty with",
+  "i don't know how she can keep her head above water": "I do not know how she manages all her responsibilities",
+  "killing me": "causing me severe pain or distress",
+  "get some experience under his belt": "gain some useful experience",
+  "stood firm": "refused to change a position or decision",
+  "made a splash": "attracted a lot of attention or made a strong impression",
+  "prides herself on being a good baker": "takes satisfaction in her ability as a baker",
+  "done a 180": "changed completely to the opposite position or behavior",
+  "we can't make heads or tails of them": "we cannot understand them at all",
+  "she's got a knack for graphic design": "she has a natural talent for graphic design",
+  "slipped": "declined in quality or performance",
+  "he's a real people person": "he naturally relates to and works well with people",
+  "stepping stone to a better position": "a stage that helps someone reach a better position",
+  "struck it rich": "suddenly became very wealthy",
+  "lose your shirt": "lose a great deal of money",
+  "went belly up": "failed financially or went out of business",
+  "drove a hard bargain": "negotiated very firmly to obtain favorable terms",
+  "give the green light": "officially approve a plan or project",
+  "nothing is set in stone yet": "nothing has been finally decided yet",
+  "don't see eye-to-eye": "do not agree",
+  "dropped the ball": "made a mistake or failed to fulfill a responsibility",
+  "struck gold": "found something highly valuable or successful",
+  "made a pass at": "showed romantic or sexual interest in someone",
+  "steer clear of her": "avoid her",
+  "on her high horse": "acting as though she is morally superior to others",
+  "she has a lot on her plate right now": "she currently has many responsibilities",
+  "take it easy": "rest and avoid too much effort",
+  "comparing the two is like comparing apples to oranges": "the two things are too different to compare fairly",
+  "launch": "the introduction of a new product, service, or project",
+  "product line": "a related group of products sold by the same company",
+  "figure": "a number or amount, especially one used in business calculations",
+  "double-check": "check something again to make sure it is correct",
+  "market demand": "the amount of a product or service that customers want to buy",
+  "forecasts": "predictions about future business conditions or results",
+  "ad campaign": "a coordinated series of advertisements for a product or brand",
+  "mascot": "a person, animal, or character used to represent an organization or brand",
+  "associate our brand with": "connect our brand mentally with a quality, image, or idea",
+  "brand equity": "the commercial value created by customers' perception of a brand",
+  "endorsement": "public approval or support for a product, person, or organization",
   "getting this project off the ground": "successfully starting and developing this project",
   "blows my mind": "amazes or shocks me greatly", "give this project the green light": "officially approve this project",
   "run some ideas by": "present some ideas to someone for feedback", "nothing is set in stone": "nothing has been finally decided",
@@ -84,19 +160,26 @@ for (const lesson of lessons) for (const term of lesson.terms) {
   const list = termLessons.get(term) ?? []; list.push(lesson.lesson); termLessons.set(term, list);
 }
 const generated = [];
+const missingDefinitions = [];
 for (const [term, lessonNumbers] of termLessons) {
   if (existingByWord.has(term)) continue;
   const base = closest(term);
   const enDefinition = meanings[term] ?? base?.enDefinition;
-  if (!enDefinition) throw new Error(`Missing definition for: ${term}`);
+  if (!enDefinition) {
+    missingDefinitions.push(term);
+    continue;
+  }
   generated.push({
     word: term,
-    partOfSpeech: base?.partOfSpeech ?? "idiom",
+    partOfSpeech: base?.partOfSpeech ?? termKinds.get(term) ?? "idiom",
     enDefinition,
     ...(base?.ptDefinition ? { ptDefinition: base.ptDefinition } : {}),
     ...(base?.examples ? { examples: base.examples } : {}),
     notes: [{ enNote: `Used in Business 1, ${lessonNumbers.map((number) => `Lesson ${number}`).join(", ")}.` }],
   });
+}
+if (missingDefinitions.length) {
+  throw new Error(`Missing definitions for:\n${missingDefinitions.join("\n")}`);
 }
 generated.sort((a, b) => a.word.localeCompare(b.word));
 fs.writeFileSync(path.join(dictionaryDir, "business-1.generated.json"), `${JSON.stringify([{ definitions: generated }], null, 2)}\n`);

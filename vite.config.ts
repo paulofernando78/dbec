@@ -4,7 +4,6 @@ import { createReadStream } from "node:fs";
 import { readFile, stat } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { defineConfig, type Plugin } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 import { students as developmentStudents } from "./app/data/students";
 
@@ -498,7 +497,6 @@ export default defineConfig({
     localAuth(),
     tailwindcss(),
     reactRouter(),
-    tsconfigPaths(),
   ],
   resolve: {
     tsconfigPaths: true,
