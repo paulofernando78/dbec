@@ -225,7 +225,7 @@ export function RichTextArea({
     colors: readonly (readonly [string, string])[],
   ) => (
     <div
-      className="absolute left-0 top-full z-30 mt-1 grid w-40 grid-cols-5 place-items-center gap-1 rounded-lg border border-gray-300 bg-[var(--surface)] p-2 shadow-xl"
+      className="absolute left-0 top-full z-30 mt-1 grid w-40 grid-cols-5 place-items-center gap-1 rounded-lg border border-gray-300 bg-(--surface) p-2 shadow-xl"
       role="group"
       aria-label={type === "text" ? "Text colors" : "Highlight colors"}
     >
@@ -342,7 +342,7 @@ export function RichTextArea({
             saveSelection();
           }}
           onClick={() => applyFormat("bold")}
-          className="size-8! p-[3px]! text-gray-500! [&_svg]:stroke-gray-500!"
+          className="size-8! p-0.75! text-gray-500! [&_svg]:stroke-gray-500!"
         />
         <Button
           ariaLabel="Italicize selected text"
@@ -424,7 +424,7 @@ export function RichTextArea({
       </div>
       <div
         ref={editorAreaRef}
-        className="min-h-60 w-full overflow-auto rounded-md border border-gray-300 bg-white px-1 py-2 text-[var(--text-color)] focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500"
+        className="w-full min-h-60 max-h-60 overflow-auto rounded-md border border-gray-300 bg-white px-1 py-2 text-(--text-color) focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500"
       >
         {blocks.map((block) => (
           <div

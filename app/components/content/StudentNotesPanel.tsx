@@ -165,17 +165,17 @@ export function StudentNotesPanel({
               ariaLabel="Close notes"
               onClick={onClose}
               icon={<X />}
-              className="size-10! p-[3px]!"
+              className="size-10! p-0.75!"
             />
           </div>
 
-          <DateTimeCard className="mb-3 bg-[var(--background)]" compact />
+          <DateTimeCard className="mb-3 bg-(--background)" compact />
 
           {error && <p className="mb-3 text-sm font-semibold text-red-600">{error}</p>}
 
           {studentId && (
             <div className="grid grid-cols-2 gap-3 max-[930px]:grid-cols-1">
-              <Card title="Teacher's Notes" className="bg-[var(--background)]">
+              <Card title="Teacher's Notes" className="bg-(--background)">
                 <RichTextArea
                   value={notes.teacher}
                   readOnly={session.role !== "teacher"}
@@ -187,7 +187,7 @@ export function StudentNotesPanel({
                 />
               </Card>
 
-              <Card title="Student's Notes" className="bg-[var(--background)]">
+              <Card title="Student's Notes" className="bg-(--background)">
                 <RichTextArea
                   value={notes.student}
                   readOnly={

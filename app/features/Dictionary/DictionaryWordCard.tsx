@@ -1,6 +1,5 @@
-import { Dot } from "lucide-react";
-
 import { Portuguese } from "@/components/content/Portuguese";
+import { Audio } from "@/components/ui/Audio";
 import { Image } from "@/components/ui/Image";
 import { dictionary } from "@/helpers/content";
 import type { DictionaryDefinition } from "@/utils/loadDictionaryWord";
@@ -19,8 +18,18 @@ export function DictionaryWordCard({
 }: DictionaryWordCardProps) {
   return (
     <article className="rounded-xl bg-[var(--background)] p-4 text-[var(--text-color)] ring-1 ring-slate-200 dark:ring-slate-700">
-      <header className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-        <h3 className="font-black">{entry.word}</h3>
+      <header className="flex flex-wrap items-center gap-x-2 gap-y-1">
+        <div className="flex items-center gap-2">
+          <Audio
+            asButton
+            src={entry.word}
+            fallbackText={entry.word}
+            speechLang="en-US"
+            ariaLabel={`Play ${entry.word}`}
+            wrapperClassName="shrink-0"
+          />
+          <h3 className="font-black">{entry.word}</h3>
+        </div>
         {entry.partOfSpeech && (
           <span className="font-serif italic text-slate-500">
             {entry.partOfSpeech}
@@ -45,10 +54,21 @@ export function DictionaryWordCard({
       {entry.examples?.length ? (
         <div className="mt-3 grid gap-2">
           {entry.examples.slice(0, compact ? 2 : undefined).map((example, index) => (
-            <div key={index} className="flex items-start gap-1 text-sm">
-              <Dot className="mt-0.5 size-4 shrink-0" />
-              <div>
-                {example.enExample && <p>{example.enExample}</p>}
+            <div key={index} className="flex items-start gap-2 text-sm">
+              {example.enExample && (
+                <Audio
+                  asButton
+                  src={example.enExample}
+                  fallbackText={example.enExample}
+                  speechLang="en-US"
+                  ariaLabel={`Play example: ${example.enExample}`}
+                  wrapperClassName="shrink-0"
+                />
+              )}
+              <div className="min-w-0 flex-1">
+                {example.enExample && (
+                  <p>{example.enExample}</p>
+                )}
                 {example.ptExample && (
                   <Portuguese>{example.ptExample}</Portuguese>
                 )}
