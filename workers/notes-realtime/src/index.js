@@ -314,6 +314,22 @@ export class UnoRoom {
     const room = await this.getRoom();
     if (room && playerId) {
       const stillConnected = this.state.getWebSockets().some((candidate) => candidate !== socket && candidate.deserializeAttachment()?.playerId === playerId);
+      if (playerId === room.hostId && !stillConnected) {
+        const closedMessage = JSON.stringify({
+          type: "room:closed",
+          message: "The host closed the room.",
+        });
+        for (const connectedSocket of this.state.getWebSockets()) {
+          if (connectedSocket === socket) continue;
+          try {
+            connectedSocket.send(closedMessage);
+            connectedSocket.close(1000, "Host closed the room");
+          } catch {}
+        }
+        await this.state.storage.delete("room");
+        socket.close(code, reason);
+        return;
+      }
       const player = room.players.find((candidate) => candidate.id === playerId);
       if (player && !stillConnected) player.connected = false;
       await this.saveRoom(room);

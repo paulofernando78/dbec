@@ -74,6 +74,7 @@ export default function Uno() {
   const [connection, setConnection] = useState<"idle" | "connecting" | "connected">("idle");
   const [error, setError] = useState("");
   const [wildCard, setWildCard] = useState<UnoCard | null>(null);
+  const [isRoomClosed, setIsRoomClosed] = useState(false);
 
   useEffect(() => {
     fetch("/api/session")
@@ -97,6 +98,7 @@ export default function Uno() {
     socketRef.current?.close();
     setError("");
     setRoom(null);
+    setIsRoomClosed(false);
     setRoomCode(normalizedCode);
     setConnection("connecting");
     history.replaceState(null, "", `/games/uno?room=${normalizedCode}`);
@@ -108,6 +110,10 @@ export default function Uno() {
       const message = JSON.parse(event.data);
       if (message.type === "room:state") setRoom(message);
       if (message.type === "error") setError(message.error);
+      if (message.type === "room:closed") {
+        setIsRoomClosed(true);
+        setConnection("idle");
+      }
     });
     socket.addEventListener("close", (event) => {
       if (socketRef.current !== socket) return;
@@ -257,6 +263,29 @@ export default function Uno() {
               {(["red", "yellow", "green", "blue"] as const).map((color) => <button key={color} type="button" onClick={() => { send({ type: "card:play", cardId: wildCard.id, color }); setWildCard(null); }} className={`h-24 rounded-xl border-4 border-white font-black uppercase text-white shadow-lg ${colorStyles[color]}`}>{color}</button>)}
             </div>
             <Button onClick={() => setWildCard(null)} className="mt-4">Cancel</Button>
+          </div>
+        </div>
+      )}
+      {isRoomClosed && (
+        <div
+          className="fixed inset-0 z-120 grid place-items-center bg-black/75 p-4 backdrop-blur-sm"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="uno-room-closed-title"
+        >
+          <div className="w-full max-w-md rounded-2xl bg-white p-6 text-center text-slate-900 shadow-2xl">
+            <div className="mx-auto grid size-14 place-items-center rounded-full bg-red-100 text-red-600">
+              <X className="size-8" />
+            </div>
+            <h2 id="uno-room-closed-title" className="mt-4 text-2xl font-black">
+              The host closed the room.
+            </h2>
+            <p className="mt-2 text-slate-500">
+              This game is no longer available.
+            </p>
+            <Button onClick={closeGame} className="mt-6 w-full!">
+              Return to dashboard
+            </Button>
           </div>
         </div>
       )}
