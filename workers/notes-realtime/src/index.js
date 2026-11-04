@@ -131,7 +131,11 @@ export class UnoRoom {
     };
 
     if (request.method === "POST" && url.pathname === "/create") {
-      if (!player.id || player.role !== "teacher") {
+      if (
+        !player.id ||
+        !player.name ||
+        !["teacher", "student"].includes(player.role)
+      ) {
         return Response.json({ error: "Unauthorized." }, { status: 401 });
       }
       const existing = await this.getRoom();
@@ -266,7 +270,7 @@ export class UnoRoom {
         if (playerId !== room.hostId || room.players.length < 2) throw new Error("At least two connected players are required.");
         await this.startGame(room);
       } else if (message.type === "game:restart") {
-        if (playerId !== room.hostId) throw new Error("Only the teacher can restart.");
+        if (playerId !== room.hostId) throw new Error("Only the host can restart.");
         await this.startGame(room);
       } else if (message.type === "card:draw") {
         if (room.status !== "playing" || room.players[room.game.currentPlayerIndex]?.id !== playerId) throw new Error("It is not your turn.");

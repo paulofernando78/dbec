@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Copy, LogIn, Plus, RefreshCw, Users, X } from "lucide-react";
+import { Copy, LogIn, LogOut, Plus, RefreshCw, Users, X } from "lucide-react";
 import { useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button";
@@ -82,7 +82,7 @@ export default function Uno() {
     fetch("/api/session")
       .then((response) => response.ok ? response.json() : null)
       .then(setSession)
-      .catch(() => setError("Faça login para jogar UNO."));
+      .catch(() => setError("Sign in to play UNO."));
     return () => socketRef.current?.close();
   }, []);
 
@@ -100,7 +100,7 @@ export default function Uno() {
   const connect = (code: string) => {
     const normalizedCode = code.trim().toUpperCase();
     if (!/^[A-Z2-9]{5}$/.test(normalizedCode)) {
-      setError("Digite um código de sala válido com 5 caracteres.");
+      setError("Enter a valid five-character room code.");
       return;
     }
     socketRef.current?.close();
@@ -132,7 +132,7 @@ export default function Uno() {
     socket.addEventListener("close", (event) => {
       if (socketRef.current !== socket) return;
       setConnection("idle");
-      if (!event.wasClean) setError("Não foi possível entrar na sala. Confira o código e tente novamente.");
+      if (!event.wasClean) setError("Unable to join the room. Check the code and try again.");
     });
     socket.addEventListener("error", () => socket.close());
   };
@@ -142,7 +142,7 @@ export default function Uno() {
     const response = await fetch("/api/uno", { method: "POST" });
     const result = await response.json();
     if (!response.ok) {
-      setError(result.error ?? "Não foi possível criar a sala.");
+      setError(result.error ?? "The room could not be created.");
       return;
     }
     connect(result.code);
@@ -199,8 +199,8 @@ export default function Uno() {
         </header>
       {!room ? (
         <Card title="Online classroom game" className="mx-auto max-w-xl bg-(--surface)">
-          <p className="mb-5 text-slate-500">Crie uma sala e compartilhe o código. Cada jogador deve abrir esta página em seu próprio dispositivo.</p>
-          {session?.role === "teacher" && (
+          <p className="mb-5 text-slate-500">Create a room and share its code. Each player should open this page on their own device.</p>
+          {session && (
             <Button onClick={() => void createRoom()} icon={<Plus />} className="mb-5 w-full!">Create room</Button>
           )}
           <div className="flex gap-2">
@@ -247,7 +247,7 @@ export default function Uno() {
             </Card>
 
             <Card title={room.status === "lobby" ? "Waiting for players" : room.status === "finished" ? "Game over" : isMyTurn ? "Your turn" : `${room.players.find((player) => player.isCurrent)?.name ?? "Player"}'s turn`} className={`flex min-h-[28rem] flex-col bg-emerald-800 text-white ${isMyTurn && room.status === "playing" ? "uno-turn-attention" : ""}`}>
-              {room.status === "lobby" && <div className="grid min-h-80 place-items-center text-center"><div><Users className="mx-auto mb-3 size-12" /><p className="text-xl font-bold">Share code {roomCode}</p><p className="mt-2 text-emerald-100">The teacher can start with two or more players.</p></div></div>}
+              {room.status === "lobby" && <div className="grid min-h-80 place-items-center text-center"><div><Users className="mx-auto mb-3 size-12" /><p className="text-xl font-bold">Share code {roomCode}</p><p className="mt-2 text-emerald-100">The host can start with two or more players.</p></div></div>}
               {room.game && (
                 <>
                   <div className="flex min-h-52 items-center justify-center gap-8">
@@ -320,22 +320,33 @@ export default function Uno() {
           aria-labelledby="uno-exit-confirm-title"
           aria-describedby="uno-exit-confirm-description"
         >
-          <div className="w-full max-w-md rounded-2xl bg-white p-6 text-center text-slate-900 shadow-2xl">
-            <h2 id="uno-exit-confirm-title" className="text-2xl font-black">
+          <div className="w-full max-w-sm rounded-3xl bg-white p-7 text-center text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
+            <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-red-50 text-red-600">
+              <LogOut className="size-7" aria-hidden="true" />
+            </div>
+            <h2 id="uno-exit-confirm-title" className="mt-5 text-2xl font-black">
               Leave the room?
             </h2>
-            <p id="uno-exit-confirm-description" className="mt-3 text-slate-500">
+            <p id="uno-exit-confirm-description" className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-500">
               {isHost
                 ? "Leaving will close the room for every player."
                 : "You will leave the game and your cards will be removed."}
             </p>
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              <Button onClick={() => setIsExitConfirmOpen(false)}>
+            <div className="mt-7 grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setIsExitConfirmOpen(false)}
+                className="h-12 cursor-pointer rounded-xl border border-slate-300 bg-white px-4 font-bold text-slate-700 shadow-sm transition hover:bg-slate-50 active:scale-[0.98]"
+              >
                 Stay
-              </Button>
-              <Button onClick={closeGame} className="bg-red-600! text-white!">
+              </button>
+              <button
+                type="button"
+                onClick={closeGame}
+                className="h-12 cursor-pointer rounded-xl bg-red-600 px-4 font-bold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-700 active:scale-[0.98]"
+              >
                 {isHost ? "Close room" : "Leave room"}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
