@@ -39,30 +39,65 @@ type Session = {
 };
 
 const colorStyles: Record<Color, string> = {
-  red: "bg-red-600",
-  yellow: "bg-yellow-400 text-slate-950",
-  green: "bg-green-600",
-  blue: "bg-blue-600",
-  wild: "bg-[conic-gradient(#dc2626_0_25%,#eab308_0_50%,#16a34a_0_75%,#2563eb_0)]",
+  red: "bg-[linear-gradient(145deg,#ef4444_0%,#dc2626_52%,#991b1b_100%)]",
+  yellow: "bg-[linear-gradient(145deg,#fde047_0%,#facc15_52%,#ca8a04_100%)]",
+  green: "bg-[linear-gradient(145deg,#22c55e_0%,#16a34a_52%,#166534_100%)]",
+  blue: "bg-[linear-gradient(145deg,#3b82f6_0%,#2563eb_52%,#1e40af_100%)]",
+  wild: "bg-[conic-gradient(from_35deg,#dc2626_0_25%,#eab308_0_50%,#16a34a_0_75%,#2563eb_0)]",
+};
+
+const cardInkStyles: Record<Color, string> = {
+  red: "text-red-600",
+  yellow: "text-amber-500",
+  green: "text-green-600",
+  blue: "text-blue-600",
+  wild: "text-slate-950",
 };
 
 const cardLabel = (value: string) =>
   ({ skip: "⊘", reverse: "↻", draw2: "+2", wild: "WILD", wild4: "+4" })[value] ?? value;
 
-function PlayingCard({ card, disabled, onClick }: { card: UnoCard; disabled?: boolean; onClick?: () => void }) {
+function PlayingCard({ card, disabled, dimmed, onClick }: { card: UnoCard; disabled?: boolean; dimmed?: boolean; onClick?: () => void }) {
+  const label = cardLabel(card.value);
   return (
     <button
       type="button"
       disabled={disabled}
       onClick={onClick}
       aria-label={`${card.color} ${card.value}`}
-      className={`relative h-32 w-20 shrink-0 rounded-xl border-4 border-white p-1 text-white shadow-lg transition enabled:hover:-translate-y-3 enabled:hover:rotate-1 disabled:cursor-not-allowed disabled:opacity-55 ${colorStyles[card.color]}`}
+      className={`group relative h-36 w-24 shrink-0 overflow-hidden rounded-[0.9rem] border-[3px] border-white p-1 text-white shadow-[0_10px_18px_rgba(15,23,42,0.38),inset_0_0_0_1px_rgba(15,23,42,0.22)] transition duration-200 enabled:hover:-translate-y-3 enabled:hover:rotate-1 enabled:hover:shadow-[0_16px_24px_rgba(15,23,42,0.45)] disabled:cursor-not-allowed ${dimmed ? "opacity-45 saturate-50" : ""} ${colorStyles[card.color]}`}
     >
-      <span className="absolute left-1.5 top-0.5 text-sm font-black">{cardLabel(card.value)}</span>
-      <span className="grid h-full place-items-center rounded-[50%] bg-white/90 px-1 text-center text-2xl font-black italic text-slate-900 shadow-inner">
-        {cardLabel(card.value)}
+      <span className="pointer-events-none absolute inset-1 rounded-[0.65rem] border border-white/30" />
+      <span className="absolute left-2 top-1.5 z-10 text-[0.95rem] font-black leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.55)]">
+        {label}
       </span>
-      <span className="absolute bottom-0.5 right-1.5 rotate-180 text-sm font-black">{cardLabel(card.value)}</span>
+      <span className="absolute left-1/2 top-1/2 grid h-[72%] w-[70%] -translate-x-1/2 -translate-y-1/2 -rotate-12 place-items-center rounded-[50%] border border-slate-200/80 bg-[linear-gradient(145deg,#ffffff_0%,#f8fafc_55%,#dbe4ef_100%)] shadow-[inset_0_2px_5px_rgba(15,23,42,0.2),0_2px_4px_rgba(15,23,42,0.25)]">
+        <span className={`rotate-12 px-1 text-center text-[1.8rem] font-black italic leading-none drop-shadow-[0_2px_0_rgba(15,23,42,0.15)] ${cardInkStyles[card.color]}`}>
+          {label}
+        </span>
+      </span>
+      <span className="absolute bottom-1.5 right-2 z-10 rotate-180 text-[0.95rem] font-black leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.55)]">
+        {label}
+      </span>
+      <span className="pointer-events-none absolute inset-x-3 top-1 h-5 rounded-full bg-white/15 blur-sm" />
+    </button>
+  );
+}
+
+function CardBack({ disabled, onClick }: { disabled?: boolean; onClick?: () => void }) {
+  return (
+    <button
+      type="button"
+      disabled={disabled}
+      onClick={onClick}
+      aria-label="Draw a card"
+      className="group relative h-36 w-24 shrink-0 overflow-hidden rounded-[0.9rem] border-[3px] border-white bg-[linear-gradient(145deg,#18233b,#070d1c)] shadow-[0_10px_18px_rgba(15,23,42,0.45),inset_0_0_0_1px_rgba(255,255,255,0.12)] transition duration-200 enabled:hover:-translate-y-2 enabled:hover:shadow-[0_15px_24px_rgba(15,23,42,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      <span className="absolute inset-1 rounded-[0.65rem] border border-white/25 bg-[repeating-linear-gradient(45deg,transparent_0_6px,rgba(255,255,255,0.035)_6px_8px)]" />
+      <span className="absolute left-1/2 top-1/2 grid h-[72%] w-[70%] -translate-x-1/2 -translate-y-1/2 -rotate-12 place-items-center rounded-[50%] bg-[linear-gradient(145deg,#ef4444,#b91c1c)] shadow-[0_0_0_2px_#facc15,0_4px_8px_rgba(0,0,0,0.45)]">
+        <span className="rotate-12 text-xl font-black italic tracking-tight text-white drop-shadow-[0_2px_1px_rgba(0,0,0,0.55)]">UNO</span>
+      </span>
+      <span className="pointer-events-none absolute inset-x-3 top-1 h-5 rounded-full bg-white/10 blur-sm" />
     </button>
   );
 }
@@ -276,14 +311,17 @@ export default function Uno() {
               {room.game && (
                 <>
                   <div className="flex min-h-52 items-center justify-center gap-8">
-                    <button type="button" disabled={!isMyTurn || room.status !== "playing"} onClick={() => send({ type: "card:draw" })} className="grid h-32 w-20 place-items-center rounded-xl border-4 border-white bg-slate-900 text-2xl font-black shadow-xl disabled:opacity-60">UNO</button>
+                    <CardBack disabled={!isMyTurn || room.status !== "playing"} onClick={() => send({ type: "card:draw" })} />
                     <div className="relative">
                       <PlayingCard card={room.game.topCard} disabled />
                       {room.game.topCard.color === "wild" && <span className={`absolute -bottom-3 left-1/2 h-5 w-12 -translate-x-1/2 rounded-full border-2 border-white ${colorStyles[room.game.currentColor]}`} />}
                     </div>
                   </div>
                   <div className="mt-5 flex gap-2 overflow-x-auto px-2 pb-4 pt-4">
-                    {room.game.hand.map((card) => <PlayingCard key={card.id} card={card} disabled={room.status !== "playing" || !canPlay(card)} onClick={() => playCard(card)} />)}
+                    {room.game.hand.map((card) => {
+                      const isDisabled = room.status !== "playing" || !canPlay(card);
+                      return <PlayingCard key={card.id} card={card} disabled={isDisabled} dimmed={isDisabled} onClick={() => playCard(card)} />;
+                    })}
                   </div>
                 </>
               )}
