@@ -224,7 +224,7 @@ export default function Uno() {
               onKeyDown={(event) => event.key === "Enter" && connect(roomCode)}
               placeholder="ROOM CODE"
               aria-label="Room code"
-              className="min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-4 py-3 text-center text-xl font-black uppercase tracking-[0.3em] text-slate-900"
+              className="min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-[clamp(0.5rem,2vw,1rem)] py-3 text-center text-[clamp(0.75rem,4vw,1.25rem)] font-black uppercase tracking-[clamp(0.08em,1.2vw,0.3em)] text-slate-900"
             />
             <Button onClick={() => connect(roomCode)} icon={<LogIn />}>Join</Button>
           </div>
