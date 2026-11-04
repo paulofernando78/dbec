@@ -331,7 +331,52 @@ export class UnoRoom {
         return;
       }
       const player = room.players.find((candidate) => candidate.id === playerId);
-      if (player && !stillConnected) player.connected = false;
+      if (player && !stillConnected) {
+        const wasConnected = player.connected;
+        const leavingIndex = room.players.findIndex(
+          (candidate) => candidate.id === playerId,
+        );
+        const wasCurrentPlayer =
+          room.game?.currentPlayerIndex === leavingIndex;
+
+        room.players.splice(leavingIndex, 1);
+
+        if (room.game) {
+          delete room.game.hands[playerId];
+          room.game.playerCount = room.players.length;
+
+          if (room.players.length === 1 && room.status === "playing") {
+            room.status = "finished";
+            room.winnerId = room.players[0].id;
+            room.game.currentPlayerIndex = 0;
+          } else if (room.players.length > 0) {
+            if (leavingIndex < room.game.currentPlayerIndex) {
+              room.game.currentPlayerIndex -= 1;
+            } else if (wasCurrentPlayer) {
+              room.game.currentPlayerIndex =
+                room.game.direction === 1
+                  ? leavingIndex % room.players.length
+                  : (leavingIndex - 1 + room.players.length) %
+                    room.players.length;
+            }
+          }
+        }
+
+        if (wasConnected) {
+          const leftMessage = JSON.stringify({
+            type: "player:left",
+            playerId: player.id,
+            playerName: player.name,
+            message: `${player.name} left the room.`,
+          });
+          for (const connectedSocket of this.state.getWebSockets()) {
+            if (connectedSocket === socket) continue;
+            try {
+              connectedSocket.send(leftMessage);
+            } catch {}
+          }
+        }
+      }
       await this.saveRoom(room);
       await this.broadcast(room);
     }

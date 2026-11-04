@@ -90,6 +90,39 @@ body {
   color: var(--color-blue-500);
 }
 
+@keyframes uno-turn-attention {
+  0%,
+  22%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 0 rgb(250 204 21 / 0);
+  }
+
+  7% {
+    transform: translateY(-2px) scale(1.006);
+    box-shadow:
+      0 0 0 4px rgb(250 204 21 / 0.8),
+      0 0 28px 5px rgb(250 204 21 / 0.45);
+  }
+
+  14% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 2px rgb(250 204 21 / 0.25);
+  }
+}
+
+.uno-turn-attention {
+  animation: uno-turn-attention 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uno-turn-attention {
+    animation: none;
+    box-shadow: 0 0 0 3px rgb(250 204 21 / 0.75);
+  }
+}
+
 /*
  * Expandable content uses a grid transition as a cross-browser fallback.
  * Browsers that support intrinsic-size interpolation animate height: 0 → auto.

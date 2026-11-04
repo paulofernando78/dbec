@@ -75,6 +75,8 @@ export default function Uno() {
   const [error, setError] = useState("");
   const [wildCard, setWildCard] = useState<UnoCard | null>(null);
   const [isRoomClosed, setIsRoomClosed] = useState(false);
+  const [playerNotice, setPlayerNotice] = useState("");
+  const [isExitConfirmOpen, setIsExitConfirmOpen] = useState(false);
 
   useEffect(() => {
     fetch("/api/session")
@@ -83,6 +85,12 @@ export default function Uno() {
       .catch(() => setError("Faça login para jogar UNO."));
     return () => socketRef.current?.close();
   }, []);
+
+  useEffect(() => {
+    if (!playerNotice) return;
+    const timer = window.setTimeout(() => setPlayerNotice(""), 5_000);
+    return () => window.clearTimeout(timer);
+  }, [playerNotice]);
 
   const myId = session?.role === "teacher" ? `teacher:${session.username}` : `student:${session?.studentId}`;
   const isHost = room?.hostId === myId;
@@ -113,6 +121,12 @@ export default function Uno() {
       if (message.type === "room:closed") {
         setIsRoomClosed(true);
         setConnection("idle");
+      }
+      if (
+        message.type === "player:left" &&
+        typeof message.playerName === "string"
+      ) {
+        setPlayerNotice(`${message.playerName} left the room.`);
       }
     });
     socket.addEventListener("close", (event) => {
@@ -179,7 +193,7 @@ export default function Uno() {
           <Button
             ariaLabel="Close UNO"
             icon={<X />}
-            onClick={closeGame}
+            onClick={() => setIsExitConfirmOpen(true)}
             className="size-11! p-1!"
           />
         </header>
@@ -232,7 +246,7 @@ export default function Uno() {
               </ul>
             </Card>
 
-            <Card title={room.status === "lobby" ? "Waiting for players" : room.status === "finished" ? "Game over" : isMyTurn ? "Your turn" : `${room.players.find((player) => player.isCurrent)?.name ?? "Player"}'s turn`} className="min-h-[28rem] bg-emerald-800 text-white">
+            <Card title={room.status === "lobby" ? "Waiting for players" : room.status === "finished" ? "Game over" : isMyTurn ? "Your turn" : `${room.players.find((player) => player.isCurrent)?.name ?? "Player"}'s turn`} className={`flex min-h-[28rem] flex-col bg-emerald-800 text-white ${isMyTurn && room.status === "playing" ? "uno-turn-attention" : ""}`}>
               {room.status === "lobby" && <div className="grid min-h-80 place-items-center text-center"><div><Users className="mx-auto mb-3 size-12" /><p className="text-xl font-bold">Share code {roomCode}</p><p className="mt-2 text-emerald-100">The teacher can start with two or more players.</p></div></div>}
               {room.game && (
                 <>
@@ -248,7 +262,7 @@ export default function Uno() {
                   </div>
                 </>
               )}
-              {room.status === "finished" && <div className="mt-5 rounded-xl bg-white/15 p-5 text-center text-2xl font-black">{room.players.find((player) => player.id === room.winnerId)?.name} wins! 🎉</div>}
+              {room.status === "finished" && <div className="mt-auto rounded-xl bg-white/15 p-5 text-center text-2xl font-black">{room.players.find((player) => player.id === room.winnerId)?.name} wins! 🎉</div>}
               {error && <p className="mt-3 rounded-lg bg-red-950/60 p-3 font-semibold text-white">{error}</p>}
             </Card>
           </div>
@@ -286,6 +300,43 @@ export default function Uno() {
             <Button onClick={closeGame} className="mt-6 w-full!">
               Return to dashboard
             </Button>
+          </div>
+        </div>
+      )}
+      {playerNotice && !isRoomClosed && (
+        <div
+          className="fixed bottom-6 left-1/2 z-120 w-[calc(100%_-_2rem)] max-w-md -translate-x-1/2 rounded-xl border border-amber-300 bg-slate-950 px-5 py-4 text-center font-bold text-white shadow-2xl"
+          role="status"
+          aria-live="polite"
+        >
+          {playerNotice}
+        </div>
+      )}
+      {isExitConfirmOpen && !isRoomClosed && (
+        <div
+          className="fixed inset-0 z-120 grid place-items-center bg-black/75 p-4 backdrop-blur-sm"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="uno-exit-confirm-title"
+          aria-describedby="uno-exit-confirm-description"
+        >
+          <div className="w-full max-w-md rounded-2xl bg-white p-6 text-center text-slate-900 shadow-2xl">
+            <h2 id="uno-exit-confirm-title" className="text-2xl font-black">
+              Leave the room?
+            </h2>
+            <p id="uno-exit-confirm-description" className="mt-3 text-slate-500">
+              {isHost
+                ? "Leaving will close the room for every player."
+                : "You will leave the game and your cards will be removed."}
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <Button onClick={() => setIsExitConfirmOpen(false)}>
+                Stay
+              </Button>
+              <Button onClick={closeGame} className="bg-red-600! text-white!">
+                {isHost ? "Close room" : "Leave room"}
+              </Button>
+            </div>
           </div>
         </div>
       )}
