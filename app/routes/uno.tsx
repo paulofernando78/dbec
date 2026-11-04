@@ -105,8 +105,8 @@ export default function Uno() {
 
   const connect = (code: string) => {
     const normalizedCode = code.trim().toUpperCase();
-    if (!/^[A-Z2-9]{5}$/.test(normalizedCode)) {
-      setError("Enter a valid five-character room code.");
+    if (!/^\d{5}$/.test(normalizedCode)) {
+      setError("Enter a valid five-digit room code.");
       return;
     }
     socketRef.current?.close();
@@ -220,10 +220,13 @@ export default function Uno() {
           <div className="flex gap-2">
             <input
               value={roomCode}
-              onChange={(event) => setRoomCode(event.target.value.toUpperCase().replace(/[^A-Z2-9]/g, "").slice(0, 5))}
+              onChange={(event) => setRoomCode(event.target.value.replace(/\D/g, "").slice(0, 5))}
               onKeyDown={(event) => event.key === "Enter" && connect(roomCode)}
               placeholder="ROOM CODE"
               aria-label="Room code"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              autoComplete="one-time-code"
               className="min-w-0 flex-1 rounded-lg border border-slate-300 bg-white px-[clamp(0.5rem,2vw,1rem)] py-3 text-center text-[clamp(0.75rem,4vw,1.25rem)] font-black uppercase tracking-[clamp(0.08em,1.2vw,0.3em)] text-slate-900"
             />
             <Button onClick={() => connect(roomCode)} icon={<LogIn />}>Join</Button>

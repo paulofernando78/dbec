@@ -1,9 +1,8 @@
 import { readCookie, verifySession } from "../_auth.js";
 
 const roomCode = () => {
-  const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  const bytes = crypto.getRandomValues(new Uint8Array(5));
-  return Array.from(bytes, (byte) => alphabet[byte % alphabet.length]).join("");
+  const [randomNumber] = crypto.getRandomValues(new Uint32Array(1));
+  return String(10_000 + (randomNumber % 90_000));
 };
 
 export async function onRequestPost(context) {

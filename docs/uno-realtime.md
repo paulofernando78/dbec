@@ -27,7 +27,7 @@ Redeploy the Pages project after adding the binding.
 ## How a game works
 
 1. The authenticated teacher opens `/games/uno` and creates a room.
-2. The teacher shares the five-character room code.
+2. The host shares the five-digit room code.
 3. Authenticated students open `/games/uno`, enter the code, and join.
 4. The teacher starts the game when at least two players are connected.
 

@@ -5,7 +5,7 @@ export async function onRequest(context) {
   const token = readCookie(context.request, "dbec_session");
   const session = await verifySession(token, context.env.SESSION_SECRET);
   const code = new URL(context.request.url).searchParams.get("room")?.trim().toUpperCase();
-  if (!session || !code || !/^[A-Z2-9]{5}$/.test(code)) return new Response("Unauthorized.", { status: 401 });
+  if (!session || !code || !/^\d{5}$/.test(code)) return new Response("Unauthorized.", { status: 401 });
   if (!context.env.UNO_REALTIME) return new Response("UNO_REALTIME binding is not configured.", { status: 503 });
 
   const playerId = session.role === "teacher" ? `teacher:${session.username}` : `student:${session.studentId}`;
