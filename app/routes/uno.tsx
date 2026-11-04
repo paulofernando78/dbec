@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Copy, LogIn, Plus, RefreshCw, Users } from "lucide-react";
+import { Copy, LogIn, Plus, RefreshCw, Users, X } from "lucide-react";
+import { useNavigate } from "react-router";
 
-import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
@@ -62,6 +62,7 @@ function PlayingCard({ card, disabled, onClick }: { card: UnoCard; disabled?: bo
 }
 
 export default function Uno() {
+  const navigate = useNavigate();
   const socketRef = useRef<WebSocket | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [roomCode, setRoomCode] = useState(() =>
@@ -143,9 +144,39 @@ export default function Uno() {
     return card.color === room.game.currentColor || card.value === room.game.topCard.value;
   };
 
+  const closeGame = () => {
+    socketRef.current?.close(1000, "Game closed");
+    navigate(
+      session?.role === "teacher"
+        ? "/teacher/dashboard"
+        : session?.studentId
+          ? `/dashboard/${encodeURIComponent(session.studentId)}`
+          : "/",
+    );
+  };
+
   return (
-    <div className="mx-auto w-full max-w-6xl pb-10">
-      <PageHeader title="UNO" />
+    <div
+      className="fixed inset-0 z-100 overflow-y-auto bg-(--background) text-(--text-color)"
+      role="dialog"
+      aria-modal="true"
+      aria-label="UNO online game"
+    >
+      <div className="mx-auto min-h-full w-full max-w-7xl p-4 sm:p-6">
+        <header className="mb-4 flex items-center justify-between rounded-xl bg-(--surface) p-4 shadow-sm">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-slate-400">
+              Online classroom game
+            </p>
+            <h1 className="text-4xl font-black">UNO</h1>
+          </div>
+          <Button
+            ariaLabel="Close UNO"
+            icon={<X />}
+            onClick={closeGame}
+            className="size-11! p-1!"
+          />
+        </header>
       {!room ? (
         <Card title="Online classroom game" className="mx-auto max-w-xl bg-(--surface)">
           <p className="mb-5 text-slate-500">Crie uma sala e compartilhe o código. Cada jogador deve abrir esta página em seu próprio dispositivo.</p>
@@ -219,7 +250,7 @@ export default function Uno() {
       )}
 
       {wildCard && (
-        <div className="fixed inset-0 z-100 grid place-items-center bg-black/70 p-4" role="dialog" aria-modal="true" aria-label="Choose a color">
+        <div className="fixed inset-0 z-110 grid place-items-center bg-black/70 p-4" role="dialog" aria-modal="true" aria-label="Choose a color">
           <div className="w-full max-w-sm rounded-2xl bg-white p-6 text-center text-slate-900 shadow-2xl">
             <h2 className="text-2xl font-black">Choose a color</h2>
             <div className="mt-5 grid grid-cols-2 gap-3">
@@ -229,6 +260,7 @@ export default function Uno() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
