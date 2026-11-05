@@ -30,22 +30,5 @@ export async function onRequestPut(context) {
      DO UPDATE SET content = excluded.content, updated_at = CURRENT_TIMESTAMP`,
   ).bind(student.id, noteType, content).run();
 
-  // Confirm the saved value through the real-time room as well. The browser
-  // already broadcasts while typing; this second delivery recovers an update
-  // lost during a short WebSocket/proxy transition.
-  if (context.env.NOTES_REALTIME) {
-    try {
-      const id = context.env.NOTES_REALTIME.idFromName(allowedStudentId);
-      const room = context.env.NOTES_REALTIME.get(id);
-      await room.fetch("https://notes.internal/broadcast", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "note:update", noteType, content }),
-      });
-    } catch (error) {
-      console.error("Failed to confirm note through real-time room.", error);
-    }
-  }
-
   return Response.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
 }
