@@ -235,6 +235,42 @@ export class UnoRoom {
     }
   }
 
+  removePlayer(room, targetPlayerId) {
+    const leavingIndex = room.players.findIndex(
+      (candidate) => candidate.id === targetPlayerId,
+    );
+    if (leavingIndex < 0) return null;
+
+    const player = room.players[leavingIndex];
+    const wasCurrentPlayer = room.game?.currentPlayerIndex === leavingIndex;
+    room.players.splice(leavingIndex, 1);
+
+    if (room.game) {
+      const returnedCards = room.game.hands[targetPlayerId] ?? [];
+      delete room.game.hands[targetPlayerId];
+      room.game.drawPile = shuffle([...room.game.drawPile, ...returnedCards]);
+      room.game.playerCount = room.players.length;
+
+      if (room.winnerId === targetPlayerId) room.winnerId = null;
+      if (room.players.length === 1 && room.status === "playing") {
+        room.status = "finished";
+        room.winnerId = room.players[0].id;
+        room.game.currentPlayerIndex = 0;
+      } else if (room.players.length > 0) {
+        if (leavingIndex < room.game.currentPlayerIndex) {
+          room.game.currentPlayerIndex -= 1;
+        } else if (wasCurrentPlayer) {
+          room.game.currentPlayerIndex =
+            room.game.direction === 1
+              ? leavingIndex % room.players.length
+              : (leavingIndex - 1 + room.players.length) % room.players.length;
+        }
+      }
+    }
+
+    return player;
+  }
+
   async startGame(room) {
     const deck = shuffle(createUnoDeck());
     const hands = Object.fromEntries(room.players.map((player) => [player.id, []]));
@@ -272,6 +308,29 @@ export class UnoRoom {
       } else if (message.type === "game:restart") {
         if (playerId !== room.hostId) throw new Error("Only the host can restart.");
         await this.startGame(room);
+      } else if (message.type === "player:remove") {
+        if (playerId !== room.hostId) throw new Error("Only the host can remove players.");
+        if (typeof message.playerId !== "string" || message.playerId === room.hostId) {
+          throw new Error("That player cannot be removed.");
+        }
+        const removedPlayer = this.removePlayer(room, message.playerId);
+        if (!removedPlayer) throw new Error("Player not found.");
+
+        const removedMessage = JSON.stringify({
+          type: "player:removed",
+          playerId: removedPlayer.id,
+          playerName: removedPlayer.name,
+          message: `You were removed from the room by the host.`,
+        });
+        room.updatedAt = Date.now();
+        await this.saveRoom(room);
+        for (const connectedSocket of this.state.getWebSockets()) {
+          if (connectedSocket.deserializeAttachment()?.playerId !== removedPlayer.id) continue;
+          try {
+            connectedSocket.send(removedMessage);
+            connectedSocket.close(1000, "Removed by host");
+          } catch {}
+        }
       } else if (message.type === "card:draw") {
         if (room.status !== "playing" || room.players[room.game.currentPlayerIndex]?.id !== playerId) throw new Error("It is not your turn.");
         this.drawCards(room.game, playerId, 1);

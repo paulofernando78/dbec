@@ -89,7 +89,7 @@ function CardFaceSymbol({ card }: { card: UnoCard }) {
     );
   }
 
-  return <span className="text-[3.4rem] font-black italic leading-none" style={{ color: ink }}>{card.value}</span>;
+  return <span className="text-[3.4rem] font-black leading-none" style={{ color: ink }}>{card.value}</span>;
 }
 
 function PlayingCard({ card, disabled, dimmed, onClick }: { card: UnoCard; disabled?: boolean; dimmed?: boolean; onClick?: () => void }) {
@@ -100,7 +100,7 @@ function PlayingCard({ card, disabled, dimmed, onClick }: { card: UnoCard; disab
       disabled={disabled}
       onClick={onClick}
       aria-label={`${card.color} ${card.value}`}
-      className={`group relative h-36 w-24 shrink-0 overflow-hidden rounded-[1rem] border-[5px] border-white p-1 text-white outline outline-1 outline-slate-900/25 shadow-[0_5px_0_#d7dde5,0_12px_20px_rgba(15,23,42,0.4),inset_0_0_0_2px_rgba(15,23,42,0.2)] transition duration-200 enabled:hover:-translate-y-3 enabled:hover:rotate-1 enabled:hover:shadow-[0_6px_0_#d7dde5,0_18px_26px_rgba(15,23,42,0.45)] disabled:cursor-not-allowed ${dimmed ? "opacity-45 saturate-50" : ""} ${colorStyles[card.color]}`}
+      className={`group relative h-36 w-24 shrink-0 overflow-hidden rounded-[1rem] border-[5px] border-white p-1 text-white outline outline-1 outline-slate-900/25 shadow-[0_8px_14px_rgba(15,23,42,0.32),inset_0_0_0_2px_rgba(15,23,42,0.2)] transition duration-200 enabled:hover:-translate-y-3 enabled:hover:rotate-1 enabled:hover:shadow-[0_14px_22px_rgba(15,23,42,0.4)] disabled:cursor-not-allowed ${dimmed ? "opacity-45 saturate-50" : ""} ${colorStyles[card.color]}`}
     >
       <span className="pointer-events-none absolute inset-[3px] rounded-[0.65rem] border border-white/45" />
       <span className="absolute left-2 top-1.5 z-10 text-base font-black italic leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.65)]">
@@ -121,19 +121,23 @@ function PlayingCard({ card, disabled, dimmed, onClick }: { card: UnoCard; disab
 
 function CardBack({ disabled, onClick }: { disabled?: boolean; onClick?: () => void }) {
   return (
-    <button
-      type="button"
-      disabled={disabled}
-      onClick={onClick}
-      aria-label="Draw a card"
-      className="group relative h-36 w-24 shrink-0 overflow-hidden rounded-[1rem] border-[5px] border-white bg-[linear-gradient(145deg,#151515,#020617)] outline outline-1 outline-slate-900/25 shadow-[0_5px_0_#d7dde5,0_12px_20px_rgba(15,23,42,0.45),inset_0_0_0_1px_rgba(255,255,255,0.12)] transition duration-200 enabled:hover:-translate-y-2 enabled:hover:shadow-[0_6px_0_#d7dde5,0_17px_25px_rgba(15,23,42,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
-    >
-      <span className="absolute inset-1 rounded-[0.65rem] border border-white/25 bg-[repeating-linear-gradient(45deg,transparent_0_6px,rgba(255,255,255,0.035)_6px_8px)]" />
-      <span className="absolute left-1/2 top-1/2 grid h-[76%] w-[72%] -translate-x-1/2 -translate-y-1/2 -rotate-[28deg] place-items-center rounded-[50%] bg-[linear-gradient(145deg,#ef4444,#b91c1c)] shadow-[0_0_0_2px_#facc15,0_4px_8px_rgba(0,0,0,0.45)]">
-        <span className="rotate-[28deg] text-xl font-black italic tracking-[-0.08em] text-yellow-300 drop-shadow-[0_2px_0_#7f1d1d,1px_0_0_#fff,-1px_0_0_#fff]">UNO</span>
-      </span>
-      <span className="pointer-events-none absolute inset-x-3 top-1 h-5 rounded-full bg-white/10 blur-sm" />
-    </button>
+    <div className="relative h-[9.5rem] w-24 shrink-0">
+      <span className="pointer-events-none absolute inset-x-1 bottom-0 top-3 rounded-[1rem] border-[4px] border-slate-200 bg-slate-300 shadow-sm" />
+      <span className="pointer-events-none absolute inset-x-0.5 bottom-1 top-2 rounded-[1rem] border-[4px] border-slate-100 bg-slate-200 shadow-sm" />
+      <button
+        type="button"
+        disabled={disabled}
+        onClick={onClick}
+        aria-label="Draw a card"
+        className="group relative z-10 h-36 w-24 overflow-hidden rounded-[1rem] border-[5px] border-white bg-[linear-gradient(145deg,#151515,#020617)] outline outline-1 outline-slate-900/25 shadow-[0_8px_14px_rgba(15,23,42,0.36),inset_0_0_0_1px_rgba(255,255,255,0.12)] transition duration-200 enabled:hover:-translate-y-2 enabled:hover:shadow-[0_14px_22px_rgba(15,23,42,0.44)] disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        <span className="absolute inset-1 rounded-[0.65rem] border border-white/25 bg-[repeating-linear-gradient(45deg,transparent_0_6px,rgba(255,255,255,0.035)_6px_8px)]" />
+        <span className="absolute left-1/2 top-1/2 grid h-[76%] w-[72%] -translate-x-1/2 -translate-y-1/2 -rotate-[28deg] place-items-center rounded-[50%] bg-[linear-gradient(145deg,#ef4444,#b91c1c)] shadow-[0_0_0_2px_#facc15,0_4px_8px_rgba(0,0,0,0.45)]">
+          <span className="rotate-[28deg] text-xl font-black italic tracking-[-0.08em] text-yellow-300 drop-shadow-[0_2px_0_#7f1d1d,1px_0_0_#fff,-1px_0_0_#fff]">UNO</span>
+        </span>
+        <span className="pointer-events-none absolute inset-x-3 top-1 h-5 rounded-full bg-white/10 blur-sm" />
+      </button>
+    </div>
   );
 }
 
@@ -154,6 +158,8 @@ export default function Uno() {
   const [roomClosedBy, setRoomClosedBy] = useState("");
   const [disconnectedPlayerName, setDisconnectedPlayerName] = useState("");
   const [isExitConfirmOpen, setIsExitConfirmOpen] = useState(false);
+  const [playerToRemove, setPlayerToRemove] = useState<Player | null>(null);
+  const [wasRemoved, setWasRemoved] = useState(false);
 
   useEffect(() => {
     fetch("/api/session")
@@ -204,6 +210,11 @@ export default function Uno() {
       ) {
         setDisconnectedPlayerName(message.playerName);
       }
+      if (message.type === "player:removed") {
+        setWasRemoved(true);
+        setRoom(null);
+        setConnection("idle");
+      }
     });
     socket.addEventListener("close", (event) => {
       if (socketRef.current !== socket) return;
@@ -251,6 +262,8 @@ export default function Uno() {
     setRoomClosedBy("");
     setDisconnectedPlayerName("");
     setIsExitConfirmOpen(false);
+    setPlayerToRemove(null);
+    setWasRemoved(false);
     navigate(
       session?.role === "teacher"
         ? "/teacher/dashboard"
@@ -335,8 +348,26 @@ export default function Uno() {
               <ul className="space-y-2">
                 {room.players.map((player) => (
                   <li key={player.id} className={`rounded-lg p-2 ${player.isCurrent ? "bg-amber-100 text-slate-900 ring-2 ring-amber-400" : "bg-(--background)"}`}>
-                    <div className="flex items-center justify-between gap-2"><span className="font-bold">{player.name}{player.id === myId ? " (you)" : ""}</span><span className={`size-2 rounded-full ${player.connected ? "bg-green-500" : "bg-slate-300"}`} /></div>
-                    <span className="text-xs text-slate-500">{player.cardCount} cards{player.cardCount === 1 ? " · UNO!" : ""}</span>
+                    <div className="flex items-center gap-2">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="truncate font-bold">{player.name}{player.id === myId ? " (you)" : ""}</span>
+                          <span className={`size-2 shrink-0 rounded-full ${player.connected ? "bg-green-500" : "bg-slate-300"}`} />
+                        </div>
+                        <span className="text-xs text-slate-500">{player.cardCount} cards{player.cardCount === 1 ? " · UNO!" : ""}</span>
+                      </div>
+                      {isHost && player.id !== myId && (
+                        <button
+                          type="button"
+                          onClick={() => setPlayerToRemove(player)}
+                          aria-label={`Remove ${player.name} from the room`}
+                          title={`Remove ${player.name}`}
+                          className="grid size-8 shrink-0 cursor-pointer place-items-center rounded-lg text-slate-400 transition hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+                        >
+                          <UserX className="size-4" aria-hidden="true" />
+                        </button>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -433,6 +464,69 @@ export default function Uno() {
               className="mt-7 w-full!"
             >
               Continue
+            </Button>
+          </div>
+        </div>
+      )}
+      {playerToRemove && !isRoomClosed && (
+        <div
+          className="fixed inset-0 z-120 grid place-items-center bg-black/75 p-4 backdrop-blur-sm"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="uno-remove-player-title"
+          aria-describedby="uno-remove-player-description"
+        >
+          <div className="w-full max-w-sm rounded-3xl bg-white p-7 text-center text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
+            <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-red-50 text-red-600">
+              <UserX className="size-7" aria-hidden="true" />
+            </div>
+            <h2 id="uno-remove-player-title" className="mt-5 text-2xl font-black">
+              Remove player?
+            </h2>
+            <p id="uno-remove-player-description" className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-500">
+              <strong className="font-bold text-slate-900">{playerToRemove.name}</strong> will leave the room and their cards will return to the draw pile.
+            </p>
+            <div className="mt-7 grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setPlayerToRemove(null)}
+                className="h-12 cursor-pointer rounded-xl border border-slate-300 bg-white px-4 font-bold text-slate-700 shadow-sm transition hover:bg-slate-50 active:scale-[0.98]"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  send({ type: "player:remove", playerId: playerToRemove.id });
+                  setPlayerToRemove(null);
+                }}
+                className="h-12 cursor-pointer rounded-xl bg-red-600 px-4 font-bold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-700 active:scale-[0.98]"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {wasRemoved && (
+        <div
+          className="fixed inset-0 z-130 grid place-items-center bg-black/75 p-4 backdrop-blur-sm"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="uno-removed-title"
+        >
+          <div className="w-full max-w-sm rounded-3xl bg-white p-7 text-center text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
+            <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-red-50 text-red-600">
+              <UserX className="size-7" aria-hidden="true" />
+            </div>
+            <h2 id="uno-removed-title" className="mt-5 text-2xl font-black">
+              Removed from room
+            </h2>
+            <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-500">
+              The teacher removed you from this UNO room.
+            </p>
+            <Button onClick={closeGame} className="mt-7 w-full!">
+              Return to dashboard
             </Button>
           </div>
         </div>
