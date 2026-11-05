@@ -215,7 +215,7 @@ export const FillInTheBlanks = ({
         </Card>
       )}
 
-      <div>
+      <div className="grid gap-2">
         {blocks.map((bs, bsIndex) => {
           const blankIndex = (bs.block || []).findIndex((item) => item.blank);
 
@@ -236,8 +236,8 @@ export const FillInTheBlanks = ({
             .join("");
 
           return (
-            <div key={bsIndex} className={bs.lineBreak ? "block" : "inline"}>
-              <div className="flex items-start gap-1 mb-2">
+            <div key={bsIndex} className="block">
+              <div className="flex items-start gap-1 rounded-xl bg-white p-4">
                 {checked && results[blankKey] && audioSentence && (
                   <Audio src={audioSentence} className="mt-[0.38rem]" />
                 )}
