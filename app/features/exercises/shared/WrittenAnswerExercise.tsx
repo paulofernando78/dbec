@@ -98,7 +98,7 @@ export function WrittenAnswerExercise({
               className={[
                 "mt-3 w-full rounded-lg border px-3 py-2 font-mono text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400",
                 showAnswers
-                  ? "border-blue-300 bg-blue-50"
+                  ? "border-green-300 bg-green-100"
                   : checked
                   ? results[index]
                     ? "border-green-300 bg-green-100"

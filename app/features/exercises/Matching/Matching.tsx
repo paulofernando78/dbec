@@ -116,10 +116,6 @@ export function Matching({
             const connectedLeft = Object.entries(matches).find(
               ([, rightIndex]) => rightIndex === pairIndex,
             )?.[0];
-            const displayedLeft = showAnswers
-              ? String(pairIndex)
-              : connectedLeft;
-
             return (
               <button
                 key={`${pairs[pairIndex]?.right}-${pairIndex}`}
@@ -129,13 +125,13 @@ export function Matching({
                 className={[
                   "min-h-14 rounded-xl border p-3 text-left disabled:cursor-not-allowed",
                   showAnswers
-                    ? "border-blue-300 bg-blue-50"
+                    ? "border-green-300 bg-green-100"
                     : "border-slate-300 bg-[var(--background)] disabled:opacity-70",
                 ].join(" ")}
               >
-                {displayedLeft !== undefined && (
+                {!showAnswers && connectedLeft !== undefined && (
                   <span className="mr-2 inline-grid size-6 place-items-center rounded-full bg-blue-600 text-sm font-black text-white">
-                    {Number(displayedLeft) + 1}
+                    {Number(connectedLeft) + 1}
                   </span>
                 )}
                 {pairs[pairIndex]?.right}
