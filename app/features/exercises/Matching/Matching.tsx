@@ -77,7 +77,7 @@ export function Matching({
   return (
     <div className="mb-4 grid gap-4">
       <p className="font-bold">{instruction}</p>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div className="grid content-start gap-2">
           {pairs.map((pair, index) => {
             const isSelected = selectedLeft === index;

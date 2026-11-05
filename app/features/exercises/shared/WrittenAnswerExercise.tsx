@@ -22,7 +22,8 @@ const normalizeAnswer = (value: string) =>
     .replaceAll("’", "'")
     .replaceAll("‘", "'")
     .replace(/\s+/g, " ")
-    .replace(/\s+([,.!?;:])/g, "$1");
+    .replace(/\s+([,.!?;:])/g, "$1")
+    .replace(/[.!?]+$/g, "");
 
 export function WrittenAnswerExercise({
   instruction,

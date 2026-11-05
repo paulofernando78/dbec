@@ -2,7 +2,7 @@ import { PageHeader } from "@/components/content/PageHeader";
 import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { Card } from "@/components/ui/Card";
 import { allGrammarTopics, grammarTopicsById, type GrammarTopicId } from "@/data/grammar";
-import { GrammarTopic } from "@/features/Grammar";
+import { GrammarExercises, GrammarTopic } from "@/features/Grammar";
 import { Navigate, useNavigate, useParams } from "react-router";
 
 export default function Grammar() {
@@ -30,6 +30,7 @@ export default function Grammar() {
         <p className="mb-4 text-slate-500">{topic.description}</p>
         <GrammarTopic topic={topic} />
       </Card>
+      <GrammarExercises topicId={topic.id} />
       <SequenceNavigation
         previousLabel={previousTopic?.title ?? "Grammar"}
         nextLabel={nextTopic?.title ?? "Grammar"}
