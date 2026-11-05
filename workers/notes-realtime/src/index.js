@@ -4,6 +4,33 @@ export class NotesRoom {
   }
 
   async fetch(request) {
+    const url = new URL(request.url);
+
+    if (request.method === "POST" && url.pathname === "/broadcast") {
+      const message = await request.json().catch(() => null);
+      if (
+        message?.type !== "note:update" ||
+        (message.noteType !== "teacher" && message.noteType !== "student") ||
+        typeof message.content !== "string" ||
+        message.content.length > 100_000
+      ) {
+        return new Response("Invalid update.", { status: 400 });
+      }
+
+      const update = JSON.stringify({
+        type: "note:update",
+        noteType: message.noteType,
+        content: message.content,
+        updatedAt: Date.now(),
+      });
+
+      for (const connectedSocket of this.state.getWebSockets()) {
+        connectedSocket.send(update);
+      }
+
+      return Response.json({ ok: true });
+    }
+
     if (request.headers.get("Upgrade") !== "websocket") {
       return new Response("WebSocket upgrade required.", { status: 426 });
     }

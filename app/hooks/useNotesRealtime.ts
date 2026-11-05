@@ -80,11 +80,10 @@ export function useNotesRealtime(
       }
     };
 
-    const startPolling = () => {
+    const startPolling = (interval = 1_500) => {
       if (disposed || pollingTimer) return;
-      setConnectionState("polling");
       void pollNotes();
-      pollingTimer = window.setInterval(() => void pollNotes(), 1_500);
+      pollingTimer = window.setInterval(() => void pollNotes(), interval);
     };
 
     const connect = () => {
@@ -100,6 +99,10 @@ export function useNotesRealtime(
       socket.addEventListener("open", () => {
         if (!disposed) {
           stopPolling();
+          // WebSocket updates are immediate. This slower reconciliation catches
+          // a message lost during a proxy/network transition without requiring
+          // the user to refresh the page.
+          startPolling(30_000);
           setConnectionState("connected");
         }
       });
@@ -124,6 +127,8 @@ export function useNotesRealtime(
         if (socketRef.current === socket) socketRef.current = null;
         if (disposed) return;
 
+        stopPolling();
+        setConnectionState("polling");
         startPolling();
         reconnectTimer = window.setTimeout(connect, 2000);
       });

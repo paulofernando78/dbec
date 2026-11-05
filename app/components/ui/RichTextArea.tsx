@@ -88,6 +88,7 @@ export function RichTextArea({
   const activeBlockRef = useRef<HTMLDivElement | null>(null);
   const savedSelectionRef = useRef<Range | null>(null);
   const lastEmittedValueRef = useRef(value);
+  const pendingExternalValueRef = useRef<string | null>(null);
   const [blocks, setBlocks] = useState<NoteBlock[]>(() => parseBlocks(value));
   const [draggedBlockId, setDraggedBlockId] = useState<string | null>(null);
   const [dropTargetBlockId, setDropTargetBlockId] = useState<string | null>(null);
@@ -97,13 +98,15 @@ export function RichTextArea({
   const [linkError, setLinkError] = useState("");
 
   useEffect(() => {
-    if (
-      value === lastEmittedValueRef.current ||
-      editorAreaRef.current?.contains(document.activeElement)
-    ) {
+    if (value === lastEmittedValueRef.current) return;
+
+    if (editorAreaRef.current?.contains(document.activeElement)) {
+      pendingExternalValueRef.current = value;
       return;
     }
 
+    lastEmittedValueRef.current = value;
+    pendingExternalValueRef.current = null;
     setBlocks(parseBlocks(value));
   }, [value]);
 
@@ -124,8 +127,18 @@ export function RichTextArea({
 
   const emitBlocks = (nextBlocks = blocksFromDom()) => {
     const serialized = serializeBlocks(nextBlocks);
+    pendingExternalValueRef.current = null;
     lastEmittedValueRef.current = serialized;
     onChange(serialized);
+  };
+
+  const applyPendingExternalValue = () => {
+    const pendingValue = pendingExternalValueRef.current;
+    if (pendingValue === null) return;
+
+    pendingExternalValueRef.current = null;
+    lastEmittedValueRef.current = pendingValue;
+    setBlocks(parseBlocks(pendingValue));
   };
 
   const saveSelection = () => {
@@ -649,7 +662,10 @@ export function RichTextArea({
                 );
               }}
               onBlur={(event) => {
-                if (!editorAreaRef.current?.contains(event.relatedTarget)) onBlur();
+                if (!editorAreaRef.current?.contains(event.relatedTarget)) {
+                  onBlur();
+                  applyPendingExternalValue();
+                }
               }}
               onKeyDown={(event) => {
                 if (event.key === "Enter" && !event.shiftKey) {
