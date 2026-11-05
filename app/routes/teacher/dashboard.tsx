@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 import { DashboardNotes } from "@/components/content/DashboardNotes";
+import { AiTutor } from "@/components/content/AiTutor";
 import { DashboardProgress } from "@/components/content/DashboardProgress";
 import { Calendar } from "@/components/content/Calendar";
 import { PageHeader } from "@/components/content/PageHeader";
@@ -353,6 +354,7 @@ export default function TeacherDashboard() {
                     onSave={saveStudentNote}
                   />
                 </div>
+                <AiTutor />
               </Card>
             </div>
           </div>

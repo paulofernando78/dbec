@@ -391,6 +391,53 @@ export function RichTextArea({
     });
   };
 
+  const mergeBlockWithPrevious = (
+    blockId: string,
+    editor: HTMLDivElement,
+  ) => {
+    const selection = window.getSelection();
+    const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+    if (
+      !range?.collapsed ||
+      !editor.contains(range.startContainer) ||
+      getCaretOffset(editor) !== 0
+    ) {
+      return false;
+    }
+
+    const currentBlocks = blocksFromDom();
+    const currentIndex = currentBlocks.findIndex(
+      (block) => block.id === blockId,
+    );
+    if (currentIndex <= 0) return false;
+
+    const previousBlock = currentBlocks[currentIndex - 1];
+    const currentBlock = currentBlocks[currentIndex];
+    const previousEditor = blockRefs.current[previousBlock.id];
+    const caretOffset = previousEditor?.textContent?.length ?? 0;
+    const previousHtml =
+      previousBlock.html === "<br>" ? "" : previousBlock.html;
+    const currentHtml = currentBlock.html === "<br>" ? "" : currentBlock.html;
+    const mergedBlock = {
+      ...previousBlock,
+      html: `${previousHtml}${currentHtml}`,
+    };
+    const nextBlocks = [...currentBlocks];
+    nextBlocks.splice(currentIndex - 1, 2, mergedBlock);
+    setBlocks(nextBlocks);
+    emitBlocks(nextBlocks);
+
+    requestAnimationFrame(() => {
+      const mergedEditor = blockRefs.current[mergedBlock.id];
+      if (!mergedEditor) return;
+
+      mergedEditor.innerHTML = mergedBlock.html;
+      mergedEditor.focus();
+      placeCaretAtOffset(mergedEditor, caretOffset);
+    });
+    return true;
+  };
+
   const deleteBlock = (blockId: string) => {
     const currentBlocks = blocksFromDom();
 
@@ -621,9 +668,15 @@ export function RichTextArea({
                 ) {
                   event.preventDefault();
                 }
-                if (event.key === "Backspace" && !event.currentTarget.textContent) {
-                  event.preventDefault();
-                  removeEmptyBlock(block.id);
+                if (event.key === "Backspace") {
+                  if (
+                    mergeBlockWithPrevious(block.id, event.currentTarget)
+                  ) {
+                    event.preventDefault();
+                  } else if (!event.currentTarget.textContent) {
+                    event.preventDefault();
+                    removeEmptyBlock(block.id);
+                  }
                 }
               }}
               onPaste={(event) => {
