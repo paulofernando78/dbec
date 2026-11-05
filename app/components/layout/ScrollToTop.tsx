@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-
+import { createPortal } from "react-dom";
 import { CircleArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const ScrollToTop = () => {
   const location = useLocation();
   const [visible, setVisible] = useState(false);
-  const isLessonPage =
-    /^\/course\/[^/]+\/unit\/[^/]+\/lesson\/[^/]+/.test(location.pathname) ||
-    /^\/travel\/unit\/[^/]+\/lesson\/[^/]+/.test(location.pathname) ||
-    /^\/authentic-content\/[^/]+\/[^/]+/.test(location.pathname);
+  const [navigationSlot, setNavigationSlot] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setNavigationSlot(
+      document.querySelector<HTMLElement>("[data-scroll-to-top-slot]"),
+    );
+  }, [location.pathname]);
 
   useEffect(() => {
     const containers = [
@@ -62,9 +65,11 @@ export const ScrollToTop = () => {
     />
   );
 
+  if (navigationSlot) return createPortal(button, navigationSlot);
+
   return (
     <div
-      className={`absolute right-[calc(0.6vw+0.25rem)] z-50 ${isLessonPage ? "bottom-15" : "bottom-1"}`}
+      className="absolute right-[calc(0.6vw+0.25rem)] bottom-1 z-50"
     >
       {button}
     </div>

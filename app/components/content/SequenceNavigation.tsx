@@ -19,7 +19,7 @@ export function SequenceNavigation({
 }: SequenceNavigationProps) {
   return (
     <nav
-      className="mx-1 mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
+      className="relative mx-1 mt-4 grid grid-cols-[auto_1fr_1fr_auto] items-center gap-3"
       aria-label={ariaLabel}
     >
       <Button
@@ -29,6 +29,7 @@ export function SequenceNavigation({
       />
       <b>{previousLabel}</b>
       <b className="text-right">{nextLabel}</b>
+      <div data-scroll-to-top-slot className="absolute right-0 bottom-13 z-10 size-10" />
       <Button
         ariaLabel={`Next: ${nextLabel}`}
         onClick={onNext}
