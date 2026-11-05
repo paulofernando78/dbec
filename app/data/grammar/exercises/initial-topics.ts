@@ -57,11 +57,11 @@ export const initialGrammarExercises = {
       instruction: "Complete com a forma correta do present progressive.",
       showWordBank: false,
       blocks: [
-        { block: [{ text: "Lucas " }, { blank: ["is studying", "'s studying"] }, { text: " for the exam now." }] },
-        { block: [{ text: "We " }, { blank: ["are not watching", "aren't watching"] }, { text: " television at the moment." }] },
-        { block: [{ blank: ["Are they waiting"] }, { text: " for the bus?" }] },
-        { block: [{ text: "I " }, { blank: ["am writing", "'m writing"] }, { text: " an email to my teacher." }] },
-        { block: [{ text: "The climate " }, { blank: ["is changing", "'s changing"] }, { text: " rapidly." }] },
+        { block: [{ text: "Lucas " }, { blank: ["is studying", "'s studying"] }, { text: " for the exam now. (study)" }] },
+        { block: [{ text: "We " }, { blank: ["are not watching", "aren't watching"] }, { text: " television at the moment. (not watch)" }] },
+        { block: [{ blank: ["Are they waiting"] }, { text: " for the bus? (they / wait)" }] },
+        { block: [{ text: "I " }, { blank: ["am writing", "'m writing"] }, { text: " an email to my teacher. (write)" }] },
+        { block: [{ text: "The climate " }, { blank: ["is changing", "'s changing"] }, { text: " rapidly. (change)" }] },
       ],
     },
     {
@@ -180,11 +180,11 @@ export const initialGrammarExercises = {
       instruction: "Complete com will, won't ou a forma correta de be going to.",
       showWordBank: false,
       blocks: [
-        { block: [{ text: "I promise I " }, { blank: ["will call", "'ll call"] }, { text: " you after the exam." }] },
-        { block: [{ text: "They have a plan. They " }, { blank: ["are going to open", "'re going to open"] }, { text: " a new store." }] },
-        { block: [{ text: "She " }, { blank: ["will not forget", "won't forget"] }, { text: " your message." }] },
-        { block: [{ blank: ["Are you going to study"] }, { text: " tonight?" }] },
-        { block: [{ text: "I think technology " }, { blank: ["will change", "'ll change"] }, { text: " education." }] },
+        { block: [{ text: "I promise I " }, { blank: ["will call", "'ll call"] }, { text: " you after the exam. (call)" }] },
+        { block: [{ text: "They have a plan. They " }, { blank: ["are going to open", "'re going to open"] }, { text: " a new store. (open)" }] },
+        { block: [{ text: "She " }, { blank: ["will not forget", "won't forget"] }, { text: " your message. (not forget)" }] },
+        { block: [{ blank: ["Are you going to study"] }, { text: " tonight? (you / study)" }] },
+        { block: [{ text: "I think technology " }, { blank: ["will change", "'ll change"] }, { text: " education. (change)" }] },
       ],
     },
     {

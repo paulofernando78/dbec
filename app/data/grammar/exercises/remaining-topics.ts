@@ -16,10 +16,10 @@ export const remainingGrammarExercises = {
       id: "be-form", title: "2. Formação", type: "fill", showWordBank: false,
       instruction: "Complete com am, is, are, was ou were. Use a forma negativa quando necessário.",
       blocks: [
-        { block: [{ text: "Julia " }, { blank: "is" }, { text: " my best friend." }] },
-        { block: [{ text: "We " }, { blank: ["were not", "weren't"] }, { text: " at school yesterday." }] },
-        { block: [{ blank: "Are" }, { text: " you ready for the exam?" }] },
-        { block: [{ text: "The books " }, { blank: "were" }, { text: " on the desk this morning." }] },
+        { block: [{ text: "Julia " }, { blank: "is" }, { text: " my best friend. (be)" }] },
+        { block: [{ text: "We " }, { blank: ["were not", "weren't"] }, { text: " at school yesterday. (not be)" }] },
+        { block: [{ blank: "Are" }, { text: " you ready for the exam? (be)" }] },
+        { block: [{ text: "The books " }, { blank: "were" }, { text: " on the desk this morning. (be)" }] },
       ],
     },
     {
