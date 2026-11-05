@@ -27,6 +27,7 @@ export function DictionaryWordCard({
             asButton
             src={dictionaryTts(entry.word)}
             fallbackText={entry.word}
+            allowSpeechFallback={false}
             speechLang="en-US"
             ariaLabel={`Play ${entry.word}`}
             wrapperClassName="shrink-0"
@@ -63,6 +64,7 @@ export function DictionaryWordCard({
                   asButton
                   src={dictionaryTts(example.enExample)}
                   fallbackText={example.enExample}
+                  allowSpeechFallback={false}
                   speechLang="en-US"
                   ariaLabel={`Play example: ${example.enExample}`}
                   wrapperClassName="shrink-0"

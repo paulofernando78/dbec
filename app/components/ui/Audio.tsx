@@ -18,6 +18,7 @@ type AudioProps = {
   asButton?: boolean;
   pauseAfterFirstMs?: number;
   fallbackText?: string;
+  allowSpeechFallback?: boolean;
   showPlayerControls?: boolean;
 };
 
@@ -98,6 +99,7 @@ export const Audio = ({
   asButton = false,
   pauseAfterFirstMs = 0,
   fallbackText,
+  allowSpeechFallback = true,
   showPlayerControls = false,
 }: AudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -309,6 +311,10 @@ export const Audio = ({
     if (!playbackActiveRef.current || fallbackStartedRef.current) return;
 
     fallbackStartedRef.current = true;
+    if (!allowSpeechFallback) {
+      finishPlaylist();
+      return;
+    }
     const sourceFallbackText =
       sources[playlistIndexRef.current]?.fallbackText ??
       (playlistIndexRef.current === 0 ? defaultFallbackText : undefined);
