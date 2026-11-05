@@ -273,6 +273,23 @@ export default function Uno() {
     );
   };
 
+  const returnToUnoLobby = () => {
+    socketRef.current?.close(1000, "Return to UNO lobby");
+    socketRef.current = null;
+    setRoom(null);
+    setRoomCode("");
+    setConnection("idle");
+    setError("");
+    setWildCard(null);
+    setIsRoomClosed(false);
+    setRoomClosedBy("");
+    setDisconnectedPlayerName("");
+    setIsExitConfirmOpen(false);
+    setPlayerToRemove(null);
+    setWasRemoved(false);
+    history.replaceState(null, "", "/games/uno");
+  };
+
   return (
     <div
       className="fixed inset-0 z-100 overflow-y-auto bg-(--background) text-(--text-color)"
@@ -353,21 +370,18 @@ export default function Uno() {
                     <div className="flex items-center gap-2">
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="truncate font-bold">{player.name}{player.id === myId ? " (you)" : ""}</span>
                           <span className={`size-2 shrink-0 rounded-full ${player.connected ? "bg-green-500" : "bg-slate-300"}`} />
+                          <span className="truncate font-bold">{player.name}{player.id === myId ? " (you)" : ""}</span>
                         </div>
                         <span className="text-xs text-slate-500">{player.cardCount} cards{player.cardCount === 1 ? " · UNO!" : ""}</span>
                       </div>
                       {isHost && player.id !== myId && (
-                        <button
-                          type="button"
+                        <Button
                           onClick={() => setPlayerToRemove(player)}
-                          aria-label={`Remove ${player.name} from the room`}
-                          title={`Remove ${player.name}`}
-                          className="grid size-8 shrink-0 cursor-pointer place-items-center rounded-lg text-slate-400 transition hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
-                        >
-                          <UserX className="size-4" aria-hidden="true" />
-                        </button>
+                          ariaLabel={`Remove ${player.name} from the room`}
+                          icon={<UserX aria-hidden="true" />}
+                          className="size-8! p-1! [--button-icon:#dc2626]"
+                        />
                       )}
                     </div>
                   </li>
@@ -432,13 +446,13 @@ export default function Uno() {
               <X className="size-8" />
             </div>
             <h2 id="uno-room-closed-title" className="mt-4 text-2xl font-black">
-              {roomClosedBy || "The room creator"} closed the room.
+              Game disconnected
             </h2>
             <p className="mt-2 text-slate-500">
-              This game is no longer available.
+              <strong className="font-bold text-slate-900">{roomClosedBy || "The host"}</strong> disconnected and the UNO room was closed.
             </p>
-            <Button onClick={closeGame} className="mt-6 w-full!">
-              Return to dashboard
+            <Button onClick={returnToUnoLobby} className="mt-6 w-full!">
+              Back to UNO
             </Button>
           </div>
         </div>
