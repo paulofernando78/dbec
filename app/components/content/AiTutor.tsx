@@ -17,6 +17,7 @@ export function AiTutor() {
   const [messages, setMessages] = useState<ChatMessage[]>([welcomeMessage]);
   const [draft, setDraft] = useState("");
   const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
   const [isSending, setIsSending] = useState(false);
   const messagesRef = useRef<HTMLDivElement>(null);
 
@@ -36,6 +37,7 @@ export function AiTutor() {
     setMessages(nextMessages);
     setDraft("");
     setError("");
+    setNotice("");
     setIsSending(true);
 
     try {
@@ -52,6 +54,7 @@ export function AiTutor() {
         ...current,
         { role: "model", text: result.message },
       ]);
+      setNotice(result.fallbackNotice ?? "");
     } catch (requestError) {
       setMessages(messages);
       setDraft(text);
@@ -117,6 +120,11 @@ export function AiTutor() {
         {error && (
           <p role="alert" className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-sm font-semibold text-red-700">
             {error}
+          </p>
+        )}
+        {notice && (
+          <p role="status" className="mb-2 rounded-lg bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800">
+            {notice}
           </p>
         )}
         <div className="flex w-full items-end gap-2">

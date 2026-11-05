@@ -172,36 +172,83 @@ export async function onRequestPost(context) {
     );
   }
 
-  const model = context.env.GEMINI_MODEL || "gemini-3.8-flash";
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
-  let geminiResponse;
-  try {
-    geminiResponse = await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": context.env.GEMINI_API_KEY,
-      },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: systemInstruction }] },
-        contents: messages.map((message) => ({
-          role: message.role,
-          parts: [{ text: message.text.trim() }],
-        })),
-        generationConfig: { maxOutputTokens: 800 },
-      }),
-    });
-  } catch (error) {
+  const models = (
+    context.env.GEMINI_MODELS ||
+    context.env.GEMINI_MODEL ||
+    "gemini-3.8-flash"
+  )
+    .split(",")
+    .map((model) => model.trim())
+    .filter(Boolean);
+  const requestBody = JSON.stringify({
+    systemInstruction: { parts: [{ text: systemInstruction }] },
+    contents: messages.map((message) => ({
+      role: message.role,
+      parts: [{ text: message.text.trim() }],
+    })),
+    generationConfig: { maxOutputTokens: 800 },
+  });
+
+  let result = null;
+  let usedModel = null;
+  const skippedModels = [];
+  const rateLimitedModels = [];
+
+  for (const model of models) {
+    let geminiResponse;
+    try {
+      geminiResponse = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-goog-api-key": context.env.GEMINI_API_KEY,
+          },
+          body: requestBody,
+        },
+      );
+    } catch (error) {
+      console.error("Gemini API request failed", model, error);
+      skippedModels.push(model);
+      continue;
+    }
+
+    const candidateResult = await geminiResponse.json().catch(() => null);
+    if (geminiResponse.ok) {
+      result = candidateResult;
+      usedModel = model;
+      break;
+    }
+
+    console.error(
+      "Gemini API error",
+      model,
+      geminiResponse.status,
+      candidateResult?.error?.message,
+    );
+
+    if (geminiResponse.status === 429 || geminiResponse.status >= 500) {
+      skippedModels.push(model);
+      if (geminiResponse.status === 429) rateLimitedModels.push(model);
+      continue;
+    }
+
     await releaseRequest(context.env.DB, reservation.id);
-    console.error("Gemini API request failed", error);
-    return json({ error: "O tutor não conseguiu responder agora." }, 502);
+    return json({ error: "The tutor could not answer right now." }, 502);
   }
 
-  const result = await geminiResponse.json().catch(() => null);
-  if (!geminiResponse.ok) {
+  if (!result || !usedModel) {
     await releaseRequest(context.env.DB, reservation.id);
-    console.error("Gemini API error", geminiResponse.status, result?.error?.message);
-    return json({ error: "O tutor não conseguiu responder agora." }, 502);
+    return json(
+      {
+        error:
+          rateLimitedModels.length === models.length
+            ? "All available AI models have reached their usage limits. Please try again later."
+            : "The AI service is temporarily unavailable. Please try again later.",
+      },
+      503,
+    );
   }
 
   const message = result?.candidates?.[0]?.content?.parts
@@ -220,5 +267,14 @@ export async function onRequestPost(context) {
       .bind(Date.now() - 24 * RATE_LIMIT_WINDOW_MS)
       .run(),
   );
-  return json({ message });
+  return json({
+    message,
+    model: usedModel,
+    fallbackNotice:
+      rateLimitedModels.length > 0
+        ? `Some AI models have reached their usage limits. Your request was automatically completed using ${usedModel}.`
+        : skippedModels.length > 0
+          ? `Some AI models were temporarily unavailable. Your request was automatically completed using ${usedModel}.`
+        : null,
+  });
 }

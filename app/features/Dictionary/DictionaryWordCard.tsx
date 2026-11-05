@@ -12,6 +12,9 @@ type DictionaryWordCardProps = {
 const list = (value?: string[] | string) =>
   Array.isArray(value) ? value.filter(Boolean).join(", ") : value;
 
+const dictionaryTts = (text: string) =>
+  `/api/dictionary-tts.wav?text=${encodeURIComponent(text)}`;
+
 export function DictionaryWordCard({
   entry,
   compact = false,
@@ -22,7 +25,7 @@ export function DictionaryWordCard({
         <div className="flex items-center gap-2">
           <Audio
             asButton
-            src={entry.word}
+            src={dictionaryTts(entry.word)}
             fallbackText={entry.word}
             speechLang="en-US"
             ariaLabel={`Play ${entry.word}`}
@@ -58,7 +61,7 @@ export function DictionaryWordCard({
               {example.enExample && (
                 <Audio
                   asButton
-                  src={example.enExample}
+                  src={dictionaryTts(example.enExample)}
                   fallbackText={example.enExample}
                   speechLang="en-US"
                   ariaLabel={`Play example: ${example.enExample}`}
