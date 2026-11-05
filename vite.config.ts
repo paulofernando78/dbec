@@ -9,6 +9,7 @@ import { students as developmentStudents } from "./app/data/students";
 
 const localLessonCompletion = new Map<string, boolean>();
 const localNotes = new Map<string, { teacher: string; student: string }>();
+const localAiTutorRequests = new Map<string, number[]>();
 let localSession: { username: string; role: string; studentId?: string } | null =
   null;
 
@@ -238,6 +239,7 @@ const localAuth = (): Plugin => ({
         return;
       }
 
+      let localReservation: { userKey: string; createdAt: number } | null = null;
       try {
         const variables = await readFile(resolve(process.cwd(), ".dev.vars"), "utf8");
         const apiKey = variables.match(/^GEMINI_API_KEY=(.*)$/m)?.[1]?.trim();
@@ -275,6 +277,47 @@ const localAuth = (): Plugin => ({
           return;
         }
 
+        const userKey =
+          localSession.role === "student"
+            ? `student:${localSession.studentId}`
+            : `teacher:${localSession.username}`;
+        const now = Date.now();
+        const recentRequests = (localAiTutorRequests.get(userKey) ?? []).filter(
+          (createdAt) => createdAt > now - 60 * 60 * 1_000,
+        );
+        const lastRequestAt = recentRequests.at(-1) ?? 0;
+        if (lastRequestAt > now - 10_000) {
+          const retryAfterSeconds = Math.max(
+            1,
+            Math.ceil((lastRequestAt + 10_000 - now) / 1_000),
+          );
+          response.statusCode = 429;
+          response.end(
+            JSON.stringify({
+              error: `Aguarde ${retryAfterSeconds} segundos antes de enviar outra pergunta.`,
+              retryAfterSeconds,
+            }),
+          );
+          return;
+        }
+        if (recentRequests.length >= 10) {
+          const retryAfterSeconds = Math.max(
+            1,
+            Math.ceil((recentRequests[0] + 60 * 60 * 1_000 - now) / 1_000),
+          );
+          response.statusCode = 429;
+          response.end(
+            JSON.stringify({
+              error: `Você atingiu o limite de 10 perguntas por hora. Tente novamente em cerca de ${Math.max(1, Math.ceil(retryAfterSeconds / 60))} minutos.`,
+              retryAfterSeconds,
+            }),
+          );
+          return;
+        }
+        recentRequests.push(now);
+        localAiTutorRequests.set(userKey, recentRequests);
+        localReservation = { userKey, createdAt: now };
+
         const geminiResponse = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
           {
@@ -293,7 +336,7 @@ const localAuth = (): Plugin => ({
                   parts: [{ text: message.text.trim() }],
                 }),
               ),
-              generationConfig: { temperature: 0.4, maxOutputTokens: 800 },
+              generationConfig: { maxOutputTokens: 800 },
             }),
           },
         );
@@ -304,6 +347,10 @@ const localAuth = (): Plugin => ({
           }>;
         };
         if (!geminiResponse.ok) {
+          localAiTutorRequests.set(
+            userKey,
+            recentRequests.filter((createdAt) => createdAt !== now),
+          );
           console.error("Gemini API error", geminiResponse.status, result.error?.message);
           response.statusCode = 502;
           response.end(JSON.stringify({ error: "O tutor não conseguiu responder agora." }));
@@ -316,6 +363,10 @@ const localAuth = (): Plugin => ({
           .join("\n")
           .trim();
         if (!message) {
+          localAiTutorRequests.set(
+            userKey,
+            recentRequests.filter((createdAt) => createdAt !== now),
+          );
           response.statusCode = 502;
           response.end(JSON.stringify({ error: "O tutor não gerou uma resposta." }));
           return;
@@ -324,6 +375,15 @@ const localAuth = (): Plugin => ({
         response.statusCode = 200;
         response.end(JSON.stringify({ message }));
       } catch (error) {
+        if (localReservation) {
+          const { userKey, createdAt } = localReservation;
+          localAiTutorRequests.set(
+            userKey,
+            (localAiTutorRequests.get(userKey) ?? []).filter(
+              (requestAt) => requestAt !== createdAt,
+            ),
+          );
+        }
         console.error("Local AI Tutor error", error);
         response.statusCode = 500;
         response.end(JSON.stringify({ error: "Não foi possível acessar o AI Tutor." }));

@@ -53,6 +53,8 @@ export function AiTutor() {
         { role: "model", text: result.message },
       ]);
     } catch (requestError) {
+      setMessages(messages);
+      setDraft(text);
       setError(
         requestError instanceof Error
           ? requestError.message

@@ -2,6 +2,10 @@ import { readCookie, verifySession } from "../_auth.js";
 
 const MAX_MESSAGES = 12;
 const MAX_MESSAGE_LENGTH = 2_000;
+const MAX_REQUESTS_PER_HOUR = 10;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1_000;
+const MIN_REQUEST_INTERVAL_MS = 10 * 1_000;
+let rateLimitStorageReady;
 
 const systemInstruction = `You are DBEC's friendly English tutor.
 Help teachers and English learners with:
@@ -19,6 +23,105 @@ const json = (body, status = 200) =>
     headers: { "Cache-Control": "no-store" },
   });
 
+const userKeyFor = (session) =>
+  session.role === "student"
+    ? `student:${session.studentId}`
+    : `teacher:${session.username}`;
+
+const ensureRateLimitStorage = (db) => {
+  rateLimitStorageReady ??= db.exec(
+    `CREATE TABLE IF NOT EXISTS ai_tutor_requests (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       user_key TEXT NOT NULL,
+       created_at INTEGER NOT NULL
+     );
+     CREATE INDEX IF NOT EXISTS idx_ai_tutor_requests_user_created
+       ON ai_tutor_requests (user_key, created_at);`,
+  );
+  return rateLimitStorageReady;
+};
+
+const reserveRequest = async (db, userKey) => {
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW_MS;
+  const cooldownStart = now - MIN_REQUEST_INTERVAL_MS;
+  const reservation = await db
+    .prepare(
+      `INSERT INTO ai_tutor_requests (user_key, created_at)
+       SELECT ?, ?
+       WHERE NOT EXISTS (
+         SELECT 1 FROM ai_tutor_requests
+         WHERE user_key = ? AND created_at > ?
+       )
+       AND (
+         SELECT COUNT(*) FROM ai_tutor_requests
+         WHERE user_key = ? AND created_at > ?
+       ) < ?
+       RETURNING id`,
+    )
+    .bind(
+      userKey,
+      now,
+      userKey,
+      cooldownStart,
+      userKey,
+      windowStart,
+      MAX_REQUESTS_PER_HOUR,
+    )
+    .first();
+
+  if (reservation?.id) return { id: reservation.id };
+
+  const usage = await db
+    .prepare(
+      `SELECT COUNT(*) AS request_count,
+              MAX(created_at) AS last_request_at,
+              MIN(created_at) AS first_request_at
+       FROM ai_tutor_requests
+       WHERE user_key = ? AND created_at > ?`,
+    )
+    .bind(userKey, windowStart)
+    .first();
+
+  const requestCount = Number(usage?.request_count ?? 0);
+  const lastRequestAt = Number(usage?.last_request_at ?? 0);
+  const firstRequestAt = Number(usage?.first_request_at ?? now);
+  if (lastRequestAt > cooldownStart) {
+    return {
+      error: `Aguarde ${Math.max(1, Math.ceil((lastRequestAt + MIN_REQUEST_INTERVAL_MS - now) / 1_000))} segundos antes de enviar outra pergunta.`,
+      retryAfterSeconds: Math.max(
+        1,
+        Math.ceil((lastRequestAt + MIN_REQUEST_INTERVAL_MS - now) / 1_000),
+      ),
+    };
+  }
+
+  if (requestCount >= MAX_REQUESTS_PER_HOUR) {
+    const retryAfterSeconds = Math.max(
+      1,
+      Math.ceil((firstRequestAt + RATE_LIMIT_WINDOW_MS - now) / 1_000),
+    );
+    const minutes = Math.max(1, Math.ceil(retryAfterSeconds / 60));
+    return {
+      error: `Você atingiu o limite de 10 perguntas por hora. Tente novamente em cerca de ${minutes} minutos.`,
+      retryAfterSeconds,
+    };
+  }
+
+  return {
+    error: "Espere alguns segundos e tente novamente.",
+    retryAfterSeconds: 10,
+  };
+};
+
+const releaseRequest = async (db, reservationId) => {
+  if (!reservationId) return;
+  await db
+    .prepare("DELETE FROM ai_tutor_requests WHERE id = ?")
+    .bind(reservationId)
+    .run();
+};
+
 export async function onRequestPost(context) {
   const session = await verifySession(
     readCookie(context.request, "dbec_session"),
@@ -28,6 +131,10 @@ export async function onRequestPost(context) {
   if (!context.env.GEMINI_API_KEY) {
     return json({ error: "O AI Tutor ainda não foi configurado." }, 503);
   }
+  if (!context.env.DB) {
+    return json({ error: "O controle de uso do AI Tutor não está configurado." }, 503);
+  }
+  await ensureRateLimitStorage(context.env.DB);
 
   let input;
   try {
@@ -54,29 +161,45 @@ export async function onRequestPost(context) {
 
   if (!isValid) return json({ error: "Mensagem inválida." }, 400);
 
+  const reservation = await reserveRequest(context.env.DB, userKeyFor(session));
+  if (reservation.error) {
+    return json(
+      {
+        error: reservation.error,
+        retryAfterSeconds: reservation.retryAfterSeconds,
+      },
+      429,
+    );
+  }
+
   const model = context.env.GEMINI_MODEL || "gemini-3.8-flash";
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
-  const geminiResponse = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-goog-api-key": context.env.GEMINI_API_KEY,
-    },
-    body: JSON.stringify({
-      systemInstruction: { parts: [{ text: systemInstruction }] },
-      contents: messages.map((message) => ({
-        role: message.role,
-        parts: [{ text: message.text.trim() }],
-      })),
-      generationConfig: {
-        temperature: 0.4,
-        maxOutputTokens: 800,
+  let geminiResponse;
+  try {
+    geminiResponse = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": context.env.GEMINI_API_KEY,
       },
-    }),
-  });
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: systemInstruction }] },
+        contents: messages.map((message) => ({
+          role: message.role,
+          parts: [{ text: message.text.trim() }],
+        })),
+        generationConfig: { maxOutputTokens: 800 },
+      }),
+    });
+  } catch (error) {
+    await releaseRequest(context.env.DB, reservation.id);
+    console.error("Gemini API request failed", error);
+    return json({ error: "O tutor não conseguiu responder agora." }, 502);
+  }
 
   const result = await geminiResponse.json().catch(() => null);
   if (!geminiResponse.ok) {
+    await releaseRequest(context.env.DB, reservation.id);
     console.error("Gemini API error", geminiResponse.status, result?.error?.message);
     return json({ error: "O tutor não conseguiu responder agora." }, 502);
   }
@@ -87,6 +210,15 @@ export async function onRequestPost(context) {
     .join("\n")
     .trim();
 
-  if (!message) return json({ error: "O tutor não gerou uma resposta." }, 502);
+  if (!message) {
+    await releaseRequest(context.env.DB, reservation.id);
+    return json({ error: "O tutor não gerou uma resposta." }, 502);
+  }
+
+  context.waitUntil(
+    context.env.DB.prepare("DELETE FROM ai_tutor_requests WHERE created_at < ?")
+      .bind(Date.now() - 24 * RATE_LIMIT_WINDOW_MS)
+      .run(),
+  );
   return json({ message });
 }

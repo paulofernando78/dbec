@@ -60,3 +60,12 @@ CREATE TABLE IF NOT EXISTS lesson_progress (
 
 CREATE INDEX IF NOT EXISTS idx_lesson_progress_user
   ON lesson_progress (user_id);
+
+CREATE TABLE IF NOT EXISTS ai_tutor_requests (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_key TEXT NOT NULL,
+  created_at INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_ai_tutor_requests_user_created
+  ON ai_tutor_requests (user_key, created_at);
