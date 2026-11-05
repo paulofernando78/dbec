@@ -44,10 +44,10 @@ export const coreGrammarTopics = [
   },
   {
     id: "present-continuous",
-    title: "Present Continuous",
-    description: "Talk about actions in progress, temporary situations, and arrangements.",
+    title: "Present Progressive",
+    description: "Talk about actions in progress, temporary situations, changes, and future arrangements.",
     introduction:
-      "The present continuous combines the present form of be with a verb ending in -ing.",
+      "The present progressive, also called the present continuous, combines am, is, or are with a verb ending in -ing.",
     usages: [
       {
         title: "Actions happening now",
@@ -68,6 +68,15 @@ export const coreGrammarTopics = [
         ],
       },
       {
+        title: "Changes happening over time",
+        meaning: "Use it for developing or changing situations.",
+        pattern: "subject + be + verb-ing",
+        examples: [
+          { english: "The weather is getting warmer.", portuguese: "O clima está ficando mais quente." },
+          { english: "Your English is improving.", portuguese: "Seu inglês está melhorando." },
+        ],
+      },
+      {
         title: "Future arrangements",
         meaning: "Use it for a future plan that has already been arranged.",
         pattern: "subject + be + verb-ing + future time",
@@ -76,9 +85,29 @@ export const coreGrammarTopics = [
           { english: "We're flying on Friday.", portuguese: "Vamos viajar de avião na sexta-feira." },
         ],
       },
+      {
+        title: "Negatives and questions",
+        meaning: "Add not after be for negatives. Move be before the subject for questions.",
+        pattern: "subject + be + not + verb-ing · be + subject + verb-ing?",
+        examples: [
+          { english: "She isn't working today.", portuguese: "Ela não está trabalhando hoje." },
+          { english: "Are you waiting for someone?", portuguese: "Você está esperando alguém?" },
+        ],
+      },
+    ],
+    warnings: [
+      {
+        title: "Stative verbs",
+        explanation:
+          "Verbs that describe states, such as know, want, need, believe, and understand, do not normally use the progressive form.",
+        examples: [
+          { english: "I understand the question.", portuguese: "Eu entendo a pergunta." },
+          { english: "She wants a new phone.", portuguese: "Ela quer um celular novo." },
+        ],
+      },
     ],
     quickRule:
-      "Use be before the -ing form: She is working, not She working.",
+      "Always use am, is, or are before the -ing form: She is working, not She working.",
   },
   {
     id: "simple-present",
@@ -196,13 +225,13 @@ export const coreGrammarTopics = [
   },
   {
     id: "future-forms",
-    title: "Future Forms",
-    description: "Choose between will, be going to, and the present continuous.",
+    title: "Simple Future: Will and Going To",
+    description: "Choose between will and be going to for decisions, intentions, promises, and predictions.",
     introduction:
-      "English uses different forms for future decisions, intentions, predictions, and arrangements.",
+      "English commonly uses will or be going to to talk about the future. The best form depends on whether the idea is a spontaneous decision, an earlier plan, a promise, or a prediction.",
     usages: [
       {
-        title: "Will",
+        title: "Will: decisions, offers, and promises",
         meaning: "Use will for decisions made now, offers, promises, and opinion-based predictions.",
         pattern: "subject + will + base verb",
         examples: [
@@ -211,7 +240,7 @@ export const coreGrammarTopics = [
         ],
       },
       {
-        title: "Be going to",
+        title: "Be going to: plans and evidence",
         meaning: "Use it for prior intentions and predictions based on present evidence.",
         pattern: "subject + be + going to + base verb",
         examples: [
@@ -220,17 +249,95 @@ export const coreGrammarTopics = [
         ],
       },
       {
-        title: "Present continuous",
-        meaning: "Use it for arrangements with a specific time or place.",
-        pattern: "subject + be + verb-ing + future time",
+        title: "Negatives",
+        meaning: "Put not after will or after the correct form of be. Will not usually contracts to won't.",
+        pattern: "subject + won't + base verb · subject + be + not + going to + base verb",
         examples: [
-          { english: "I'm seeing the dentist at three.", portuguese: "Vou ao dentista às três." },
-          { english: "They're arriving on Monday.", portuguese: "Eles chegam na segunda-feira." },
+          { english: "I won't forget your birthday.", portuguese: "Não vou esquecer seu aniversário." },
+          { english: "She isn't going to buy it.", portuguese: "Ela não vai comprar isso." },
+        ],
+      },
+      {
+        title: "Questions",
+        meaning: "Place will or the correct form of be before the subject.",
+        pattern: "will + subject + base verb? · be + subject + going to + base verb?",
+        examples: [
+          { english: "Will you call me later?", portuguese: "Você vai me ligar mais tarde?" },
+          { english: "Are they going to travel?", portuguese: "Eles vão viajar?" },
+        ],
+      },
+    ],
+    warnings: [
+      {
+        title: "Will and going to are not always interchangeable",
+        explanation:
+          "Use will for a decision made at the moment of speaking. Use going to when the plan existed before the conversation or when present evidence supports a prediction.",
+        examples: [
+          { english: "The phone is ringing. I'll answer it.", portuguese: "O telefone está tocando. Eu vou atender." },
+          { english: "I've bought the tickets. We're going to travel in July.", portuguese: "Comprei as passagens. Vamos viajar em julho." },
         ],
       },
     ],
     quickRule:
-      "Ask whether the future is a decision now, an intention/evidence, or a fixed arrangement.",
+      "Use will for a decision now or an opinion; use going to for an earlier intention or visible evidence.",
+  },
+  {
+    id: "prefixes-suffixes",
+    title: "Prefixes and Suffixes",
+    description: "Build and understand words by adding meaningful parts before or after a base word.",
+    introduction:
+      "A prefix comes before a base word and usually changes its meaning. A suffix comes after a base word and often changes its meaning or grammatical class.",
+    usages: [
+      {
+        title: "Negative and opposite prefixes",
+        meaning: "Prefixes such as un-, in-, im-, il-, ir-, and dis- can give a word a negative or opposite meaning.",
+        pattern: "negative prefix + base word",
+        examples: [
+          { english: "This answer is incorrect.", portuguese: "Esta resposta está incorreta." },
+          { english: "They disagreed with the decision.", portuguese: "Eles discordaram da decisão." },
+        ],
+      },
+      {
+        title: "Prefixes for time, repetition, and degree",
+        meaning: "Common prefixes include pre- (before), re- (again), over- (too much), and under- (not enough or below).",
+        pattern: "pre-/re-/over-/under- + base word",
+        examples: [
+          { english: "Please rewrite the sentence.", portuguese: "Por favor, reescreva a frase." },
+          { english: "The meat is undercooked.", portuguese: "A carne está malpassada." },
+        ],
+      },
+      {
+        title: "Noun and adjective suffixes",
+        meaning: "Suffixes such as -ness, -ment, and -tion often form nouns; -ful, -less, -able, and -ous often form adjectives.",
+        pattern: "base word + noun/adjective suffix",
+        examples: [
+          { english: "Her kindness made everyone feel welcome.", portuguese: "A gentileza dela fez todos se sentirem bem-vindos." },
+          { english: "This information is useful.", portuguese: "Esta informação é útil." },
+        ],
+      },
+      {
+        title: "Verb and adverb suffixes",
+        meaning: "Suffixes such as -ize and -ify can form verbs, while -ly commonly forms adverbs.",
+        pattern: "base word + -ize/-ify/-ly",
+        examples: [
+          { english: "We need to simplify the instructions.", portuguese: "Precisamos simplificar as instruções." },
+          { english: "She explained it clearly.", portuguese: "Ela explicou isso claramente." },
+        ],
+      },
+    ],
+    warnings: [
+      {
+        title: "Spelling can change",
+        explanation:
+          "Adding a suffix can change the final letters of the base word. Learn the complete derived word instead of attaching every suffix mechanically.",
+        examples: [
+          { english: "happy → happiness", portuguese: "feliz → felicidade" },
+          { english: "possible → possibility", portuguese: "possível → possibilidade" },
+        ],
+      },
+    ],
+    quickRule:
+      "Look at the position: prefixes come before the base; suffixes come after it. Then identify how that part changes meaning or word class.",
   },
   {
     id: "modal-verbs",

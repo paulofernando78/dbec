@@ -83,6 +83,21 @@ export const links: NavItem[] = [
         subgroup: "grammar",
         children: [
           {
+            href: "/grammar/future-forms",
+            label: "will & going to",
+            icon: BookMarked,
+          },
+          {
+            href: "/grammar/present-continuous",
+            label: "present progressive",
+            icon: BookMarked,
+          },
+          {
+            href: "/grammar/prefixes-suffixes",
+            label: "prefixes & suffixes",
+            icon: BookMarked,
+          },
+          {
             href: "/grammar/present-perfect",
             label: "present perfect",
             icon: BookMarked,
