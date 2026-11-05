@@ -46,16 +46,51 @@ const colorStyles: Record<Color, string> = {
   wild: "bg-[conic-gradient(from_35deg,#dc2626_0_25%,#eab308_0_50%,#16a34a_0_75%,#2563eb_0)]",
 };
 
-const cardInkStyles: Record<Color, string> = {
-  red: "text-red-600",
-  yellow: "text-amber-500",
-  green: "text-green-600",
-  blue: "text-blue-600",
-  wild: "text-slate-950",
-};
-
 const cardLabel = (value: string) =>
-  ({ skip: "⊘", reverse: "↻", draw2: "+2", wild: "WILD", wild4: "+4" })[value] ?? value;
+  ({ skip: "⊘", reverse: "⇄", draw2: "+2", wild: "W", wild4: "+4" })[value] ?? value;
+
+function CardFaceSymbol({ card }: { card: UnoCard }) {
+  const ink = card.color === "yellow" ? "#eab308" : card.color === "green" ? "#16a34a" : card.color === "blue" ? "#0284c7" : "#dc2626";
+
+  if (card.value === "skip") {
+    return (
+      <span className="relative block size-11 rounded-full border-[0.48rem]" style={{ borderColor: ink }}>
+        <span className="absolute left-1/2 top-1/2 h-[0.48rem] w-12 -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full" style={{ backgroundColor: ink }} />
+      </span>
+    );
+  }
+
+  if (card.value === "reverse") {
+    return (
+      <span className="relative block h-12 w-14" style={{ color: ink }}>
+        <span className="absolute left-0 top-1 text-[2rem] font-black leading-none">➜</span>
+        <span className="absolute bottom-1 right-0 rotate-180 text-[2rem] font-black leading-none">➜</span>
+      </span>
+    );
+  }
+
+  if (card.value === "draw2") {
+    return (
+      <span className="relative block h-14 w-14">
+        <span className="absolute left-1 top-0 h-10 w-7 -rotate-12 rounded-md border-[3px] border-white shadow-[0_2px_3px_rgba(15,23,42,.35)]" style={{ backgroundColor: ink }} />
+        <span className="absolute bottom-0 right-1 h-10 w-7 rotate-12 rounded-md border-[3px] border-white shadow-[0_2px_3px_rgba(15,23,42,.35)]" style={{ backgroundColor: ink }} />
+      </span>
+    );
+  }
+
+  if (card.value === "wild" || card.value === "wild4") {
+    return (
+      <span className="relative block h-14 w-14">
+        {card.value === "wild4" && <span className="absolute -top-4 left-1/2 z-10 -translate-x-1/2 text-xl font-black not-italic text-slate-950">+4</span>}
+        <span className="absolute inset-1 rotate-45 overflow-hidden rounded-md border-[3px] border-white shadow-[0_2px_4px_rgba(15,23,42,.35)]">
+          <span className="absolute inset-0 bg-[conic-gradient(from_0deg,#eab308_0_25%,#16a34a_0_50%,#2563eb_0_75%,#dc2626_0)]" />
+        </span>
+      </span>
+    );
+  }
+
+  return <span className="text-[3.4rem] font-black italic leading-none" style={{ color: ink }}>{card.value}</span>;
+}
 
 function PlayingCard({ card, disabled, dimmed, onClick }: { card: UnoCard; disabled?: boolean; dimmed?: boolean; onClick?: () => void }) {
   const label = cardLabel(card.value);
@@ -65,21 +100,21 @@ function PlayingCard({ card, disabled, dimmed, onClick }: { card: UnoCard; disab
       disabled={disabled}
       onClick={onClick}
       aria-label={`${card.color} ${card.value}`}
-      className={`group relative h-36 w-24 shrink-0 overflow-hidden rounded-[0.9rem] border-[3px] border-white p-1 text-white shadow-[0_10px_18px_rgba(15,23,42,0.38),inset_0_0_0_1px_rgba(15,23,42,0.22)] transition duration-200 enabled:hover:-translate-y-3 enabled:hover:rotate-1 enabled:hover:shadow-[0_16px_24px_rgba(15,23,42,0.45)] disabled:cursor-not-allowed ${dimmed ? "opacity-45 saturate-50" : ""} ${colorStyles[card.color]}`}
+      className={`group relative h-36 w-24 shrink-0 overflow-hidden rounded-[1rem] border-[5px] border-white p-1 text-white outline outline-1 outline-slate-900/25 shadow-[0_5px_0_#d7dde5,0_12px_20px_rgba(15,23,42,0.4),inset_0_0_0_2px_rgba(15,23,42,0.2)] transition duration-200 enabled:hover:-translate-y-3 enabled:hover:rotate-1 enabled:hover:shadow-[0_6px_0_#d7dde5,0_18px_26px_rgba(15,23,42,0.45)] disabled:cursor-not-allowed ${dimmed ? "opacity-45 saturate-50" : ""} ${colorStyles[card.color]}`}
     >
-      <span className="pointer-events-none absolute inset-1 rounded-[0.65rem] border border-white/30" />
-      <span className="absolute left-2 top-1.5 z-10 text-[0.95rem] font-black leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.55)]">
+      <span className="pointer-events-none absolute inset-[3px] rounded-[0.65rem] border border-white/45" />
+      <span className="absolute left-2 top-1.5 z-10 text-base font-black italic leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.65)]">
         {label}
       </span>
-      <span className="absolute left-1/2 top-1/2 grid h-[72%] w-[70%] -translate-x-1/2 -translate-y-1/2 -rotate-12 place-items-center rounded-[50%] border border-slate-200/80 bg-[linear-gradient(145deg,#ffffff_0%,#f8fafc_55%,#dbe4ef_100%)] shadow-[inset_0_2px_5px_rgba(15,23,42,0.2),0_2px_4px_rgba(15,23,42,0.25)]">
-        <span className={`rotate-12 px-1 text-center text-[1.8rem] font-black italic leading-none drop-shadow-[0_2px_0_rgba(15,23,42,0.15)] ${cardInkStyles[card.color]}`}>
-          {label}
+      <span className="absolute left-1/2 top-1/2 grid h-[78%] w-[74%] -translate-x-1/2 -translate-y-1/2 -rotate-[28deg] place-items-center rounded-[50%] bg-white shadow-[inset_0_0_0_1px_rgba(15,23,42,.08),0_2px_5px_rgba(15,23,42,.28)]">
+        <span className="rotate-[28deg] drop-shadow-[0_2px_0_rgba(15,23,42,0.15)]">
+          <CardFaceSymbol card={card} />
         </span>
       </span>
-      <span className="absolute bottom-1.5 right-2 z-10 rotate-180 text-[0.95rem] font-black leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.55)]">
+      <span className="absolute bottom-1.5 right-2 z-10 rotate-180 text-base font-black italic leading-none drop-shadow-[0_1px_1px_rgba(0,0,0,0.65)]">
         {label}
       </span>
-      <span className="pointer-events-none absolute inset-x-3 top-1 h-5 rounded-full bg-white/15 blur-sm" />
+      <span className="pointer-events-none absolute inset-x-3 top-1 h-5 rounded-full bg-white/20 blur-sm" />
     </button>
   );
 }
@@ -91,11 +126,11 @@ function CardBack({ disabled, onClick }: { disabled?: boolean; onClick?: () => v
       disabled={disabled}
       onClick={onClick}
       aria-label="Draw a card"
-      className="group relative h-36 w-24 shrink-0 overflow-hidden rounded-[0.9rem] border-[3px] border-white bg-[linear-gradient(145deg,#18233b,#070d1c)] shadow-[0_10px_18px_rgba(15,23,42,0.45),inset_0_0_0_1px_rgba(255,255,255,0.12)] transition duration-200 enabled:hover:-translate-y-2 enabled:hover:shadow-[0_15px_24px_rgba(15,23,42,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
+      className="group relative h-36 w-24 shrink-0 overflow-hidden rounded-[1rem] border-[5px] border-white bg-[linear-gradient(145deg,#151515,#020617)] outline outline-1 outline-slate-900/25 shadow-[0_5px_0_#d7dde5,0_12px_20px_rgba(15,23,42,0.45),inset_0_0_0_1px_rgba(255,255,255,0.12)] transition duration-200 enabled:hover:-translate-y-2 enabled:hover:shadow-[0_6px_0_#d7dde5,0_17px_25px_rgba(15,23,42,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
     >
       <span className="absolute inset-1 rounded-[0.65rem] border border-white/25 bg-[repeating-linear-gradient(45deg,transparent_0_6px,rgba(255,255,255,0.035)_6px_8px)]" />
-      <span className="absolute left-1/2 top-1/2 grid h-[72%] w-[70%] -translate-x-1/2 -translate-y-1/2 -rotate-12 place-items-center rounded-[50%] bg-[linear-gradient(145deg,#ef4444,#b91c1c)] shadow-[0_0_0_2px_#facc15,0_4px_8px_rgba(0,0,0,0.45)]">
-        <span className="rotate-12 text-xl font-black italic tracking-tight text-white drop-shadow-[0_2px_1px_rgba(0,0,0,0.55)]">UNO</span>
+      <span className="absolute left-1/2 top-1/2 grid h-[76%] w-[72%] -translate-x-1/2 -translate-y-1/2 -rotate-[28deg] place-items-center rounded-[50%] bg-[linear-gradient(145deg,#ef4444,#b91c1c)] shadow-[0_0_0_2px_#facc15,0_4px_8px_rgba(0,0,0,0.45)]">
+        <span className="rotate-[28deg] text-xl font-black italic tracking-[-0.08em] text-yellow-300 drop-shadow-[0_2px_0_#7f1d1d,1px_0_0_#fff,-1px_0_0_#fff]">UNO</span>
       </span>
       <span className="pointer-events-none absolute inset-x-3 top-1 h-5 rounded-full bg-white/10 blur-sm" />
     </button>
