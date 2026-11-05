@@ -321,7 +321,7 @@ const localAuth = (): Plugin => ({
                   body: JSON.stringify({
                     contents: [{
                       parts: [{
-                        text: `Read the following text exactly as written in clear, natural American English for an English learner. Do not add or remove words: ${text}`,
+                        text,
                       }],
                     }],
                     generationConfig: {

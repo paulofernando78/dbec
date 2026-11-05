@@ -13,7 +13,7 @@ const list = (value?: string[] | string) =>
   Array.isArray(value) ? value.filter(Boolean).join(", ") : value;
 
 const dictionaryTts = (text: string) =>
-  `/api/dictionary-tts.wav?text=${encodeURIComponent(text)}`;
+  `/api/dictionary-tts.wav?v=2&text=${encodeURIComponent(text)}`;
 
 export function DictionaryWordCard({
   entry,
