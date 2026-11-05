@@ -86,7 +86,7 @@ export function WrittenAnswerExercise({
             )}
             <input
               type="text"
-              value={responses[index] ?? ""}
+              value={showAnswers ? item.answers[0] : responses[index] || ""}
               disabled={checked}
               aria-label={`Resposta ${index + 1}`}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -97,22 +97,20 @@ export function WrittenAnswerExercise({
               }
               className={[
                 "mt-3 w-full rounded-lg border px-3 py-2 font-mono text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400",
-                checked
+                showAnswers
+                  ? "border-blue-300 bg-blue-50"
+                  : checked
                   ? results[index]
                     ? "border-green-300 bg-green-100"
                     : "border-red-300 bg-red-100"
                   : "border-slate-300 bg-white",
               ].join(" ")}
+              readOnly={showAnswers}
             />
-            {showAnswers && (
-              <div className="mt-2 text-sm">
-                <p>
-                  <strong>Resposta:</strong> {item.answers[0]}
-                </p>
-                {item.explanation && (
-                  <p className="mt-1 text-slate-500">{item.explanation}</p>
-                )}
-              </div>
+            {showAnswers && item.explanation && (
+              <p className="mt-2 text-sm text-slate-500">
+                {item.explanation}
+              </p>
             )}
           </li>
         ))}

@@ -73,6 +73,9 @@ export function Matching({
     (total, _, index) => total + (matches[index] === index ? 1 : 0),
     0,
   );
+  const displayedRightOrder = showAnswers
+    ? pairs.map((_, index) => index)
+    : rightOrder;
 
   return (
     <div className="mb-4 grid gap-4">
@@ -88,7 +91,7 @@ export function Matching({
               <button
                 key={`${pair.left}-${index}`}
                 type="button"
-                disabled={checked}
+                disabled={checked || showAnswers}
                 aria-pressed={isSelected}
                 onClick={() => setSelectedLeft(index)}
                 className={[
@@ -109,22 +112,30 @@ export function Matching({
         </div>
 
         <div className="grid content-start gap-2">
-          {rightOrder.map((pairIndex) => {
+          {displayedRightOrder.map((pairIndex) => {
             const connectedLeft = Object.entries(matches).find(
               ([, rightIndex]) => rightIndex === pairIndex,
             )?.[0];
+            const displayedLeft = showAnswers
+              ? String(pairIndex)
+              : connectedLeft;
 
             return (
               <button
                 key={`${pairs[pairIndex]?.right}-${pairIndex}`}
                 type="button"
-                disabled={checked || selectedLeft === null}
+                disabled={checked || showAnswers || selectedLeft === null}
                 onClick={() => connectRight(pairIndex)}
-                className="min-h-14 rounded-xl border border-slate-300 bg-[var(--background)] p-3 text-left disabled:cursor-not-allowed disabled:opacity-70"
+                className={[
+                  "min-h-14 rounded-xl border p-3 text-left disabled:cursor-not-allowed",
+                  showAnswers
+                    ? "border-blue-300 bg-blue-50"
+                    : "border-slate-300 bg-[var(--background)] disabled:opacity-70",
+                ].join(" ")}
               >
-                {connectedLeft !== undefined && (
+                {displayedLeft !== undefined && (
                   <span className="mr-2 inline-grid size-6 place-items-center rounded-full bg-blue-600 text-sm font-black text-white">
-                    {Number(connectedLeft) + 1}
+                    {Number(displayedLeft) + 1}
                   </span>
                 )}
                 {pairs[pairIndex]?.right}
@@ -133,16 +144,6 @@ export function Matching({
           })}
         </div>
       </div>
-
-      {showAnswers && (
-        <ul className="grid gap-1 text-sm text-slate-500">
-          {pairs.map((pair, index) => (
-            <li key={`${pair.left}-answer-${index}`}>
-              <strong>{pair.left}</strong> → {pair.right}
-            </li>
-          ))}
-        </ul>
-      )}
 
       {checked && (
         <p>
