@@ -145,11 +145,7 @@ export default function Uno() {
   const navigate = useNavigate();
   const socketRef = useRef<WebSocket | null>(null);
   const [session, setSession] = useState<Session | null>(null);
-  const [roomCode, setRoomCode] = useState(() =>
-    typeof window === "undefined"
-      ? ""
-      : new URLSearchParams(window.location.search).get("room") ?? "",
-  );
+  const [roomCode, setRoomCode] = useState("");
   const [room, setRoom] = useState<RoomState | null>(null);
   const [connection, setConnection] = useState<"idle" | "connecting" | "connected">("idle");
   const [error, setError] = useState("");
@@ -162,6 +158,7 @@ export default function Uno() {
   const [wasRemoved, setWasRemoved] = useState(false);
 
   useEffect(() => {
+    if (location.search) history.replaceState(null, "", "/games/uno");
     fetch("/api/session")
       .then((response) => response.ok ? response.json() : null)
       .then(setSession)
@@ -219,6 +216,8 @@ export default function Uno() {
     socket.addEventListener("close", (event) => {
       if (socketRef.current !== socket) return;
       setConnection("idle");
+      setRoomCode("");
+      history.replaceState(null, "", "/games/uno");
       if (!event.wasClean) setError("Unable to join the room. Check the code and try again.");
     });
     socket.addEventListener("error", () => socket.close());
@@ -298,30 +297,32 @@ export default function Uno() {
       aria-label="UNO online game"
     >
       <div className="mx-auto min-h-full w-full max-w-7xl p-4 sm:p-6">
-        <header className="mb-4 flex items-center justify-between rounded-xl bg-(--surface) p-4 shadow-sm">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-slate-400">
-              Online classroom game
-            </p>
-            <h1 className="text-4xl font-black">UNO</h1>
-          </div>
-          <Button
-            ariaLabel="Close UNO"
-            icon={<X />}
-            onClick={() => setIsExitConfirmOpen(true)}
-            className="size-11! p-1!"
-          />
-        </header>
+        <Card className="mb-4 shadow-sm">
+          <header className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.25em] text-slate-400">
+                Online classroom game
+              </p>
+              <h1 className="text-4xl font-black">UNO</h1>
+            </div>
+            <Button
+              ariaLabel="Close UNO"
+              icon={<X />}
+              onClick={() => setIsExitConfirmOpen(true)}
+              className="size-11! p-1!"
+            />
+          </header>
+        </Card>
         {session && (
-          <div className="mb-4 rounded-xl bg-(--surface) p-4 shadow-sm">
+          <Card className="mb-4 shadow-sm">
             <AccountSummary
               name={session.displayName}
               subtitle={session.role === "student" ? "Full access" : "Teacher"}
             />
-          </div>
+          </Card>
         )}
       {!room ? (
-        <Card title="Online classroom game" className="mx-auto max-w-xl bg-(--surface)">
+        <Card title="Online classroom game" className="mx-auto max-w-xl bg-(--surface) shadow-sm">
           <p className="mb-5 text-slate-500">Create a room and share its code. Each player should open this page on their own device.</p>
           {session && (
             <Button onClick={() => void createRoom()} icon={<Plus />} className="mb-5 w-full!">Create room</Button>
@@ -345,7 +346,7 @@ export default function Uno() {
         </Card>
       ) : (
         <div className="space-y-4">
-          <Card className="bg-(--surface)">
+          <Card className="bg-(--surface) shadow-sm">
             <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 min-[420px]:items-start lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-xs font-black uppercase text-slate-400">Room</p>
@@ -363,7 +364,7 @@ export default function Uno() {
           </Card>
 
           <div className="grid gap-4 lg:grid-cols-[15rem_1fr]">
-            <Card title="Players" className="bg-(--surface)">
+            <Card title="Players" className="bg-(--surface) shadow-sm">
               <ul className="space-y-2">
                 {room.players.map((player) => (
                   <li key={player.id} className={`rounded-lg p-2 ${player.isCurrent ? "bg-amber-100 text-slate-900 ring-2 ring-amber-400" : "bg-(--background)"}`}>
@@ -396,7 +397,7 @@ export default function Uno() {
                 isMyTurn ? <span className="uno-turn-attention">Your turn</span> :
                 `${room.players.find((player) => player.isCurrent)?.name ?? "Player"}'s turn`
               }
-              className="flex min-h-[28rem] flex-col bg-emerald-800 text-white"
+              className="flex min-h-[28rem] flex-col bg-emerald-800 text-white shadow-sm"
             >
               {room.status === "lobby" && <div className="grid min-h-80 place-items-center text-center"><div><Users className="mx-auto mb-3 size-12" /><p className="text-xl font-bold">Share code {roomCode}</p><p className="mt-2 text-emerald-100">{hostName} can start with two or more players.</p></div></div>}
               {room.game && (
