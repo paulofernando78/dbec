@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
 
-import { Check, RotateCcw } from "lucide-react";
+import { Check, Eye, EyeClosed, RotateCcw } from "lucide-react";
 
 type FillBlankBlockItem = {
   text?: string;
@@ -90,6 +90,7 @@ export const FillInTheBlanks = ({
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [results, setResults] = useState<Record<string, boolean>>({});
   const [checked, setChecked] = useState(false);
+  const [showAnswers, setShowAnswers] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
   const [description, setDescription] = useState<string>("");
   const [crossWords, setCrossWords] = useState<string[]>([]);
@@ -107,6 +108,7 @@ export const FillInTheBlanks = ({
     setAnswers({});
     setResults({});
     setChecked(false);
+    setShowAnswers(false);
     setTotalScore(0);
     setCrossWords([]);
     setDescription(
@@ -171,6 +173,7 @@ export const FillInTheBlanks = ({
     setAnswers({});
     setResults({});
     setChecked(false);
+    setShowAnswers(false);
     setTotalScore(0);
     setCrossWords([]);
     setDescription(
@@ -264,7 +267,14 @@ export const FillInTheBlanks = ({
                           <input
                             type="text"
                             placeholder={b.placeholder}
-                            value={answers[key] || ""}
+                            value={
+                              showAnswers
+                                ? Array.isArray(b.blank)
+                                  ? b.blank[0]
+                                  : b.blank
+                                : answers[key] || ""
+                            }
+                            readOnly={showAnswers}
                             onChange={(event: ChangeEvent<HTMLInputElement>) =>
                               setAnswers((previous) => ({
                                 ...previous,
@@ -274,7 +284,9 @@ export const FillInTheBlanks = ({
                             className={[
                               "font-mono text-gray-900 box-content mx-1.25 mb-0.5 px-1 py-0.5 border rounded-lg",
                               "focus:outline-none focus:border-slate-400",
-                              checked
+                              showAnswers
+                                ? "border-green-300 bg-green-100"
+                                : checked
                                 ? results[key]
                                   ? "border-green-200 bg-green-100"
                                   : "border-red-200 bg-red-100"
@@ -301,6 +313,12 @@ export const FillInTheBlanks = ({
 
       <div className="flex gap-2 mb-2">
         <Button variant="check" icon={<Check />} onClick={handleCheck} />
+        <Button
+          variant="answer"
+          ariaLabel={showAnswers ? "Ocultar respostas" : "Mostrar respostas"}
+          icon={showAnswers ? <EyeClosed /> : <Eye />}
+          onClick={() => setShowAnswers((current) => !current)}
+        />
         <Button variant="reset" icon={<RotateCcw />} onClick={handleReset} />
       </div>
     </div>
