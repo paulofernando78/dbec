@@ -3,6 +3,7 @@ import { links } from "@/data/nav-bar-links";
 import { useEffect, useState, type ElementType } from "react";
 import { NotebookPen, User } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { AiTutor } from "./AiTutor";
 import { GlobalSearch } from "./GlobalSearch";
 
 type NavBarProps = {
@@ -124,6 +125,7 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
           return dashboardPath ? (
             <div key={href}>
               <GlobalSearch closeNavBar={closeNavBar} />
+              <AiTutor />
               {renderNavigationButton(dashboardPath, "Dashboard", User, "mb-2")}
               <div className="mb-2 flex items-center gap-2">
                 <Button

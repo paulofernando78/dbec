@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Copy, LogIn, LogOut, Plus, RefreshCw, Users, X } from "lucide-react";
+import { Copy, LogIn, LogOut, Plus, RefreshCw, UserX, Users, X } from "lucide-react";
 import { useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button";
@@ -116,7 +116,8 @@ export default function Uno() {
   const [error, setError] = useState("");
   const [wildCard, setWildCard] = useState<UnoCard | null>(null);
   const [isRoomClosed, setIsRoomClosed] = useState(false);
-  const [playerNotice, setPlayerNotice] = useState("");
+  const [roomClosedBy, setRoomClosedBy] = useState("");
+  const [disconnectedPlayerName, setDisconnectedPlayerName] = useState("");
   const [isExitConfirmOpen, setIsExitConfirmOpen] = useState(false);
 
   useEffect(() => {
@@ -127,14 +128,9 @@ export default function Uno() {
     return () => socketRef.current?.close();
   }, []);
 
-  useEffect(() => {
-    if (!playerNotice) return;
-    const timer = window.setTimeout(() => setPlayerNotice(""), 5_000);
-    return () => window.clearTimeout(timer);
-  }, [playerNotice]);
-
   const myId = session?.role === "teacher" ? `teacher:${session.username}` : `student:${session?.studentId}`;
   const isHost = room?.hostId === myId;
+  const hostName = room?.players.find((player) => player.id === room.hostId)?.name ?? "The room creator";
   const isMyTurn = room?.game?.currentPlayerId === myId;
   const connectedPlayerCount = room?.players.filter((player) => player.connected).length ?? 0;
 
@@ -148,6 +144,7 @@ export default function Uno() {
     setError("");
     setRoom(null);
     setIsRoomClosed(false);
+    setRoomClosedBy("");
     setRoomCode(normalizedCode);
     setConnection("connecting");
     history.replaceState(null, "", `/games/uno?room=${normalizedCode}`);
@@ -160,6 +157,9 @@ export default function Uno() {
       if (message.type === "room:state") setRoom(message);
       if (message.type === "error") setError(message.error);
       if (message.type === "room:closed") {
+        setRoomClosedBy(
+          typeof message.hostName === "string" ? message.hostName : hostName,
+        );
         setIsRoomClosed(true);
         setConnection("idle");
       }
@@ -167,7 +167,7 @@ export default function Uno() {
         message.type === "player:left" &&
         typeof message.playerName === "string"
       ) {
-        setPlayerNotice(`${message.playerName} left the room.`);
+        setDisconnectedPlayerName(message.playerName);
       }
     });
     socket.addEventListener("close", (event) => {
@@ -207,6 +207,15 @@ export default function Uno() {
 
   const closeGame = () => {
     socketRef.current?.close(1000, "Game closed");
+    socketRef.current = null;
+    setRoom(null);
+    setRoomCode("");
+    setConnection("idle");
+    setError("");
+    setIsRoomClosed(false);
+    setRoomClosedBy("");
+    setDisconnectedPlayerName("");
+    setIsExitConfirmOpen(false);
     navigate(
       session?.role === "teacher"
         ? "/teacher/dashboard"
@@ -307,7 +316,7 @@ export default function Uno() {
               }
               className="flex min-h-[28rem] flex-col bg-emerald-800 text-white"
             >
-              {room.status === "lobby" && <div className="grid min-h-80 place-items-center text-center"><div><Users className="mx-auto mb-3 size-12" /><p className="text-xl font-bold">Share code {roomCode}</p><p className="mt-2 text-emerald-100">The host can start with two or more players.</p></div></div>}
+              {room.status === "lobby" && <div className="grid min-h-80 place-items-center text-center"><div><Users className="mx-auto mb-3 size-12" /><p className="text-xl font-bold">Share code {roomCode}</p><p className="mt-2 text-emerald-100">{hostName} can start with two or more players.</p></div></div>}
               {room.game && (
                 <>
                   <div className="flex min-h-52 items-center justify-center gap-8">
@@ -355,7 +364,7 @@ export default function Uno() {
               <X className="size-8" />
             </div>
             <h2 id="uno-room-closed-title" className="mt-4 text-2xl font-black">
-              The host closed the room.
+              {roomClosedBy || "The room creator"} closed the room.
             </h2>
             <p className="mt-2 text-slate-500">
               This game is no longer available.
@@ -366,13 +375,31 @@ export default function Uno() {
           </div>
         </div>
       )}
-      {playerNotice && !isRoomClosed && (
+      {disconnectedPlayerName && !isRoomClosed && (
         <div
-          className="fixed bottom-6 left-1/2 z-120 w-[calc(100%_-_2rem)] max-w-md -translate-x-1/2 rounded-xl border border-amber-300 bg-slate-950 px-5 py-4 text-center font-bold text-white shadow-2xl"
-          role="status"
-          aria-live="polite"
+          className="fixed inset-0 z-120 grid place-items-center bg-black/75 p-4 backdrop-blur-sm"
+          role="alertdialog"
+          aria-modal="true"
+          aria-labelledby="uno-player-disconnected-title"
+          aria-describedby="uno-player-disconnected-description"
         >
-          {playerNotice}
+          <div className="w-full max-w-sm rounded-3xl bg-white p-7 text-center text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
+            <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-amber-50 text-amber-600">
+              <UserX className="size-7" aria-hidden="true" />
+            </div>
+            <h2 id="uno-player-disconnected-title" className="mt-5 text-2xl font-black">
+              Player disconnected
+            </h2>
+            <p id="uno-player-disconnected-description" className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-500">
+              <strong className="font-bold text-slate-900">{disconnectedPlayerName}</strong> was disconnected from the room.
+            </p>
+            <Button
+              onClick={() => setDisconnectedPlayerName("")}
+              className="mt-7 w-full!"
+            >
+              Continue
+            </Button>
+          </div>
         </div>
       )}
       {isExitConfirmOpen && !isRoomClosed && (

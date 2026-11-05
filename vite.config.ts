@@ -12,6 +12,10 @@ const localNotes = new Map<string, { teacher: string; student: string }>();
 let localSession: { username: string; role: string; studentId?: string } | null =
   null;
 
+const aiTutorSystemInstruction = `You are DBEC's friendly English tutor.
+Help teachers and English learners explain words and expressions, check grammar and spelling, explain corrections politely, give short examples, and practice age-appropriate conversation.
+Reply in Portuguese unless the user asks for English. Keep answers concise and encouraging. Do not complete tests or graded assignments; teach the reasoning instead.`;
+
 type LocalStudent = {
   studentId: string;
   username: string;
@@ -220,6 +224,110 @@ const localAuth = (): Plugin => ({
           plan: student?.plan ?? null,
         }),
       );
+    });
+
+    server.middlewares.use("/api/ai-chat", async (request, response, next) => {
+      if (request.method !== "POST") return next();
+
+      response.setHeader("Content-Type", "application/json");
+      response.setHeader("Cache-Control", "no-store");
+
+      if (!localSession) {
+        response.statusCode = 401;
+        response.end(JSON.stringify({ error: "Não autorizado." }));
+        return;
+      }
+
+      try {
+        const variables = await readFile(resolve(process.cwd(), ".dev.vars"), "utf8");
+        const apiKey = variables.match(/^GEMINI_API_KEY=(.*)$/m)?.[1]?.trim();
+        const model =
+          variables.match(/^GEMINI_MODEL=(.*)$/m)?.[1]?.trim() ||
+          "gemini-3.8-flash";
+        if (!apiKey) {
+          response.statusCode = 503;
+          response.end(
+            JSON.stringify({ error: "Adicione GEMINI_API_KEY ao arquivo .dev.vars." }),
+          );
+          return;
+        }
+
+        request.setEncoding("utf8");
+        let body = "";
+        for await (const chunk of request) body += chunk;
+        const input = JSON.parse(body);
+        const messages = Array.isArray(input.messages)
+          ? input.messages.slice(-12)
+          : [];
+        const isValid =
+          messages.length > 0 &&
+          messages.every(
+            (message: { role?: unknown; text?: unknown }) =>
+              (message?.role === "user" || message?.role === "model") &&
+              typeof message.text === "string" &&
+              message.text.trim().length > 0 &&
+              message.text.length <= 2_000,
+          ) &&
+          messages.at(-1)?.role === "user";
+        if (!isValid) {
+          response.statusCode = 400;
+          response.end(JSON.stringify({ error: "Mensagem inválida." }));
+          return;
+        }
+
+        const geminiResponse = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-goog-api-key": apiKey,
+            },
+            body: JSON.stringify({
+              systemInstruction: {
+                parts: [{ text: aiTutorSystemInstruction }],
+              },
+              contents: messages.map(
+                (message: { role: "user" | "model"; text: string }) => ({
+                  role: message.role,
+                  parts: [{ text: message.text.trim() }],
+                }),
+              ),
+              generationConfig: { temperature: 0.4, maxOutputTokens: 800 },
+            }),
+          },
+        );
+        const result = await geminiResponse.json() as {
+          error?: { message?: string };
+          candidates?: Array<{
+            content?: { parts?: Array<{ text?: string }> };
+          }>;
+        };
+        if (!geminiResponse.ok) {
+          console.error("Gemini API error", geminiResponse.status, result.error?.message);
+          response.statusCode = 502;
+          response.end(JSON.stringify({ error: "O tutor não conseguiu responder agora." }));
+          return;
+        }
+
+        const message = result.candidates?.[0]?.content?.parts
+          ?.map((part) => part.text)
+          .filter(Boolean)
+          .join("\n")
+          .trim();
+        if (!message) {
+          response.statusCode = 502;
+          response.end(JSON.stringify({ error: "O tutor não gerou uma resposta." }));
+          return;
+        }
+
+        response.statusCode = 200;
+        response.end(JSON.stringify({ message }));
+      } catch (error) {
+        console.error("Local AI Tutor error", error);
+        response.statusCode = 500;
+        response.end(JSON.stringify({ error: "Não foi possível acessar o AI Tutor." }));
+      }
     });
 
     server.middlewares.use("/api/dashboard", (request, response, next) => {
