@@ -102,7 +102,7 @@ export function useNotesRealtime(
           // WebSocket updates are immediate. This slower reconciliation catches
           // a message lost during a proxy/network transition without requiring
           // the user to refresh the page.
-          startPolling(30_000);
+          startPolling(10_000);
           setConnectionState("connected");
         }
       });

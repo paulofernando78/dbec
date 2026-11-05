@@ -45,7 +45,7 @@ export function StudentNotesPanel({
   }, []);
 
   const { connectionState, sendNote } = useNotesRealtime(
-    studentId,
+    isOpen ? studentId : undefined,
     session?.role,
     (noteType, content) => {
       setNotes((current) =>
