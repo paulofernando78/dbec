@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Copy, LogIn, LogOut, Plus, RefreshCw, UserX, Users, X } from "lucide-react";
+import { Copy, LogIn, Plus, RefreshCw, UserX, Users, X } from "lucide-react";
 import { useNavigate } from "react-router";
 
 import { Button } from "@/components/ui/Button";
@@ -557,10 +557,7 @@ export default function Uno() {
           aria-describedby="uno-exit-confirm-description"
         >
           <div className="w-full max-w-sm rounded-3xl bg-white p-7 text-center text-slate-900 shadow-[0_24px_80px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
-            <div className="mx-auto grid size-14 place-items-center rounded-2xl bg-red-50 text-red-600">
-              <LogOut className="size-7" aria-hidden="true" />
-            </div>
-            <h2 id="uno-exit-confirm-title" className="mt-5 text-2xl font-black">
+            <h2 id="uno-exit-confirm-title" className="text-2xl font-black">
               Leave the room?
             </h2>
             <p id="uno-exit-confirm-description" className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-500">
@@ -569,20 +566,18 @@ export default function Uno() {
                 : "You will leave the game and your cards will be removed."}
             </p>
             <div className="mt-7 grid grid-cols-2 gap-3">
-              <button
-                type="button"
+              <Button
                 onClick={() => setIsExitConfirmOpen(false)}
-                className="h-12 cursor-pointer rounded-xl border border-slate-300 bg-white px-4 font-bold text-slate-700 shadow-sm transition hover:bg-slate-50 active:scale-[0.98]"
+                className="w-full!"
               >
                 Stay
-              </button>
-              <button
-                type="button"
+              </Button>
+              <Button
                 onClick={closeGame}
-                className="h-12 cursor-pointer rounded-xl bg-red-600 px-4 font-bold text-white shadow-lg shadow-red-600/25 transition hover:bg-red-700 active:scale-[0.98]"
+                className="w-full! [--button-border:#b91c1c] [--button-inner-end:#ef4444] [--button-inner-start:#dc2626] [--button-outer-end:#b91c1c] [--button-outer-start:#ef4444] [--button-text:#fff]"
               >
                 {isHost ? "Close room" : "Leave room"}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
