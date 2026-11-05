@@ -13,8 +13,8 @@ export const getReady = {
       quote: "Where are you from?",
       questions: [
         {
-          prompt: "What kind of event is this?",
-          support: ["An international event.", "A local event."],
+          prompt: "What can you see?",
+          support: ["A world map."],
         },
       ],
     },
