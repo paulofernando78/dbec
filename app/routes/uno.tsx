@@ -329,7 +329,7 @@ export default function Uno() {
       ) : (
         <div className="space-y-4">
           <Card className="bg-(--surface)">
-            <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 min-[420px]:items-start lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-xs font-black uppercase text-slate-400">Room</p>
                 <div className="flex items-center gap-2">
@@ -337,9 +337,11 @@ export default function Uno() {
                   <Button ariaLabel="Copy room code" icon={<Copy />} onClick={() => void navigator.clipboard.writeText(roomCode)} className="size-9! p-1!" />
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-sm font-bold"><Users className="size-4" /> {room.players.length} players · {connection}</div>
-              {isHost && room.status === "lobby" && <Button disabled={connectedPlayerCount < 2} onClick={() => send({ type: "game:start" })}>Start game</Button>}
-              {isHost && room.status === "finished" && <Button icon={<RefreshCw />} onClick={() => send({ type: "game:restart" })}>Play again</Button>}
+              <div className="flex flex-col items-start gap-3 min-[420px]:items-end lg:flex-row lg:items-center">
+                <div className="flex items-center gap-2 whitespace-nowrap text-sm font-bold"><Users className="size-4" /> {room.players.length} players · {connection}</div>
+                {isHost && room.status === "lobby" && <Button disabled={connectedPlayerCount < 2} onClick={() => send({ type: "game:start" })}>Start game</Button>}
+                {isHost && room.status === "finished" && <Button icon={<RefreshCw />} onClick={() => send({ type: "game:restart" })}>Play again</Button>}
+              </div>
             </div>
           </Card>
 
