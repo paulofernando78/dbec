@@ -78,7 +78,7 @@ export function GrammarTopic({ topic }: { topic: GrammarTopicData }) {
         </aside>
       ))}
       <p className="rounded-xl bg-blue-50 p-3 text-blue-950 dark:bg-blue-950 dark:text-blue-100">
-        <strong>Quick rule:</strong> {topic.quickRule}
+        <strong>Regra rápida:</strong> {topic.quickRule}
       </p>
     </div>
   );
