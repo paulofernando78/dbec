@@ -6,6 +6,7 @@ import { useLocation } from "react-router";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { DateTimeCard } from "@/components/content/DateTimeCard";
+import { AiTutor } from "@/components/content/AiTutor";
 import { RichTextArea } from "@/components/ui/RichTextArea";
 import { useNotesRealtime } from "@/hooks/useNotesRealtime";
 
@@ -174,33 +175,36 @@ export function StudentNotesPanel({
           {error && <p className="mb-3 text-sm font-semibold text-red-600">{error}</p>}
 
           {studentId && (
-            <div className="grid grid-cols-2 gap-3 max-[930px]:grid-cols-1">
-              <Card title="Teacher's Notes" className="bg-(--background)">
-                <RichTextArea
-                  value={notes.teacher}
-                  readOnly={session.role !== "teacher"}
-                  onChange={(content) => {
-                    setNotes((current) => ({ ...current, teacher: content }));
-                    sendNote("teacher", content);
-                  }}
-                  onBlur={() => void saveNote("teacher")}
-                />
-              </Card>
+            <>
+              <div className="grid grid-cols-2 gap-3 max-[930px]:grid-cols-1">
+                <Card title="Teacher's Notes" className="bg-(--background)">
+                  <RichTextArea
+                    value={notes.teacher}
+                    readOnly={session.role !== "teacher"}
+                    onChange={(content) => {
+                      setNotes((current) => ({ ...current, teacher: content }));
+                      sendNote("teacher", content);
+                    }}
+                    onBlur={() => void saveNote("teacher")}
+                  />
+                </Card>
 
-              <Card title="Student's Notes" className="bg-(--background)">
-                <RichTextArea
-                  value={notes.student}
-                  readOnly={
-                    session.role !== "teacher" && session.role !== "student"
-                  }
-                  onChange={(content) => {
-                    setNotes((current) => ({ ...current, student: content }));
-                    sendNote("student", content);
-                  }}
-                  onBlur={() => void saveNote("student")}
-                />
-              </Card>
-            </div>
+                <Card title="Student's Notes" className="bg-(--background)">
+                  <RichTextArea
+                    value={notes.student}
+                    readOnly={
+                      session.role !== "teacher" && session.role !== "student"
+                    }
+                    onChange={(content) => {
+                      setNotes((current) => ({ ...current, student: content }));
+                      sendNote("student", content);
+                    }}
+                    onBlur={() => void saveNote("student")}
+                  />
+                </Card>
+              </div>
+              <AiTutor />
+            </>
           )}
         </div>,
         panelHost,
