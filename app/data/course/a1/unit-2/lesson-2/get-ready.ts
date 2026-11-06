@@ -1,13 +1,36 @@
 import type { GetReadyData } from "../../../lesson-step-types";
-import { a1GetReadyQuestions } from "../../get-ready-questions";
 
-const image = "/media/images/course/a1/unit-2/lesson-2-where-is-it/get-ready/office-desk.avif?v=1";
+const image =
+  "/media/images/course/a1/unit-2/lesson-2-where-is-it/get-ready/office-desk.avif?v=1";
+const mobileImage =
+  "/media/images/course/a1/unit-2/lesson-2-where-is-it/get-ready/office-desk-mobile.avif?v=1";
 
 export const getReady = {
-  type: "get-ready", slug: "get-ready", label: "Get ready",
+  type: "get-ready",
+  slug: "get-ready",
+  label: "Get ready",
   slides: [
-    { image, quote: "The keys are on the desk.", questions: a1GetReadyQuestions["2/2"][0] },
-    { image, quote: "The charger is under the monitor.", questions: a1GetReadyQuestions["2/2"][1] },
-    { image, quote: "The folders are next to the printer.", questions: a1GetReadyQuestions["2/2"][2] },
+    {
+      image: mobileImage,
+      audio: false,
+      quote: "",
+      questions: [
+        {
+          prompt: "What objects are on the desk?",
+          support: [
+            "mobile phone",
+            "keys",
+            "keyboard",
+            "mouse",
+            "phone adapter",
+            "pens",
+            "monitor",
+            "printer",
+            "folders",
+          ],
+          supportDisplay: "bullets",
+        },
+      ],
+    },
   ],
 } satisfies GetReadyData;

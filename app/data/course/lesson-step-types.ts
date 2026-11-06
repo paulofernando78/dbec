@@ -10,6 +10,7 @@ type StepExtension = {
 export type GetReadyQuestion = {
   prompt: string;
   support?: readonly string[];
+  supportDisplay?: "inline" | "bullets";
 };
 
 export type GetReadyActivity = {

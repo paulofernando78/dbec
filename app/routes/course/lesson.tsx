@@ -79,7 +79,7 @@ export default function LessonPage() {
   };
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div className="w-full">
       <PageHeader
         title={`${levelData.code} ${levelData.name}`}
         subtitle={levelData.subtitle}

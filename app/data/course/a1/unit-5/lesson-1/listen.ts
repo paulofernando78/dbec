@@ -5,19 +5,23 @@ export const listen = {
   type: "listen",
   slug: "listen",
   label: "Listen",
-  instruction: "First listen: two friends in different cities. Listen for the topic.",
+  instruction: "First listen: Pedro is in Brazil and Eric is in England. Listen for the topic.",
+  image:
+    "/media/images/course/a1/unit-5/lesson-1-what-time-is-it-there/listen/pedro-eric-phone-call.avif?v=2",
+  imageAlt:
+    "Pedro in São Paulo and Eric in London talking to each other on their phones",
   audio: "/media/audio/course/a1/unit-5/lesson-1-what-time-is-it-there/listen/listen.mp3",
   dialogue: [
-    ["A", ["Hi, Nina. Where are you now?"]],
-    ["B", ["I'm in London. Where are you?"]],
-    ["A", ["I'm in São Paulo. ", mark("What time is it"), " in London?"]],
-    ["B", ["It's ", mark("ten forty-five A.M."), ". It's a quarter to eleven in the morning."]],
-    ["A", ["It's ", mark("six forty-five A.M."), " here. It's morning in São Paulo."]],
-    ["B", ["My meeting is at ", mark("eleven o'clock A.M."), "."]],
-    ["A", ["My class is at ", mark("seven fifteen A.M."), ". That's a quarter after seven."]],
-    ["B", ["And lunch?"]],
-    ["A", ["Lunch is at ", mark("twelve thirty P.M."), ". It's in the afternoon."]],
-    ["B", ["Great. Talk to you later!"]],
+    ["Pedro", ["Hi, Eric. Where are you now?"]],
+    ["Eric", ["I'm in London, England. Where are you?"]],
+    ["Pedro", ["I'm in São Paulo, Brazil. ", mark("What time is it"), " in London?"]],
+    ["Eric", ["It's ", mark("ten forty-five A.M."), ". It's a quarter to eleven in the morning."]],
+    ["Pedro", ["It's ", mark("six forty-five A.M."), " here. It's morning in São Paulo."]],
+    ["Eric", ["My meeting is at ", mark("eleven o'clock A.M."), "."]],
+    ["Pedro", ["My class is at ", mark("seven fifteen A.M."), ". That's a quarter after seven."]],
+    ["Eric", ["And what time is lunch?"]],
+    ["Pedro", ["Lunch is at ", mark("twelve thirty P.M."), ". It's in the afternoon."]],
+    ["Eric", ["Great. Talk to you later!"]],
   ],
   questionInstruction: "Choose the correct answer.",
   question: "Topic:",
@@ -26,7 +30,7 @@ export const listen = {
   followUpInstruction: "Listen again. Find each time.",
   followUp: [
     {
-      question: "Speaker A’s city:",
+      question: "Pedro’s city:",
       answer: "In São Paulo.",
     },
     {
@@ -34,7 +38,7 @@ export const listen = {
       answer: "6:45 A.M.",
     },
     {
-      question: "Nina’s meeting:",
+      question: "Eric’s meeting:",
       answer: "11:00 A.M.",
     },
     {

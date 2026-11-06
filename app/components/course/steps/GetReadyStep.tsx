@@ -245,20 +245,22 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
           />
         ))}
       </div>
-      <div className="mt-4 flex items-center gap-3">
-        {data.slides[currentImage].audio !== false ? (
-          <Audio
-            key={`${currentImage}-${data.slides[currentImage].audio ?? "synth"}`}
-            asButton
-            src={data.slides[currentImage].audio ?? ""}
-            fallbackText={data.slides[currentImage].quote}
-            speechLang="en-US"
-            ariaLabel={`Play ${data.slides[currentImage].quote}`}
-            wrapperClassName="shrink-0"
-          />
-        ) : null}
-        <p>“{data.slides[currentImage].quote}”</p>
-      </div>
+      {data.slides[currentImage].quote ? (
+        <div className="mt-4 flex items-center gap-3">
+          {data.slides[currentImage].audio !== false ? (
+            <Audio
+              key={`${currentImage}-${data.slides[currentImage].audio ?? "synth"}`}
+              asButton
+              src={data.slides[currentImage].audio ?? ""}
+              fallbackText={data.slides[currentImage].quote}
+              speechLang="en-US"
+              ariaLabel={`Play ${data.slides[currentImage].quote}`}
+              wrapperClassName="shrink-0"
+            />
+          ) : null}
+          <p>“{data.slides[currentImage].quote}”</p>
+        </div>
+      ) : null}
       {data.slides[currentImage].answer || data.slides[currentImage].discuss ? (
         <div className="mt-4 grid gap-4">
           {data.slides[currentImage].answer ? (
@@ -276,13 +278,20 @@ export function GetReadyStep({ data }: { data: GetReadyData }) {
         </div>
       ) : null}
       {data.slides[currentImage].questions?.length ? (
-        <div className="mt-4 rounded-xl bg-[var(--background)] p-4">
+        <div className="mt-4 rounded-xl bg-white p-4 text-slate-800">
           <h4 className="mb-2 font-black">Discuss</h4>
           <ul className="grid gap-3">
             {data.slides[currentImage].questions.map((question) => (
               <li key={question.prompt}>
                 <p className="font-semibold">{question.prompt}</p>
-                {question.support?.length ? (
+                {question.support?.length &&
+                question.supportDisplay === "bullets" ? (
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-500">
+                    {question.support.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                ) : question.support?.length ? (
                   <p className="mt-1 text-sm text-slate-500">
                     {question.support.join(" / ")}
                   </p>

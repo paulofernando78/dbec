@@ -9,7 +9,7 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imageRoot}/seven-oclock.avif?v=1`,
+      image: `${imageRoot}/seven-oclock.avif?v=2`,
       quote: "What time is it? — It’s seven o’clock.",
       questions: [
         {
