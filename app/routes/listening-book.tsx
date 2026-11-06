@@ -6,7 +6,11 @@ import { PageHeader } from "@/components/content/PageHeader";
 import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { TableOfContents } from "@/components/content/TableOfContents";
 import { AudioPlayer } from "@/components/ui/AudioPlayer";
-import { audiobooks } from "@/data/skills/audiobooks";
+import {
+  audiobooks,
+  availableAudiobookSlugs,
+  type AudiobookSlug,
+} from "@/data/skills/audiobooks";
 import { audiobookQuestions } from "@/data/skills/audiobook-questions";
 import {
   type AudiobookSection,
@@ -63,12 +67,17 @@ export default function ListeningBookPage() {
     return () => observer.disconnect();
   }, [audiobook]);
 
-  if (!audiobook) {
+  if (
+    !audiobook ||
+    !availableAudiobookSlugs.has(audiobook.slug as AudiobookSlug)
+  ) {
     return <Navigate to="/audiobooks" replace />;
   }
 
   const [summary, ...sections] = audiobook.sections;
-  const audiobookList = Object.values(audiobooks);
+  const audiobookList = Object.values(audiobooks).filter((item) =>
+    availableAudiobookSlugs.has(item.slug as AudiobookSlug),
+  );
   const audiobookIndex = audiobookList.findIndex((item) => item.slug === audiobook.slug);
   const previousAudiobook = audiobookList[audiobookIndex - 1];
   const nextAudiobook = audiobookList[audiobookIndex + 1];

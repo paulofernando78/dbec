@@ -114,6 +114,7 @@ export function ProgressCollectionCard({
 
                 <Button
                   ariaLabel={item.ariaLabel}
+                  ariaDisabled={item.isLocked}
                   icon={
                     item.isLocked ? (
                       <LockKeyhole aria-hidden="true" />

@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 import type { ComponentProps } from "react";
 import { CalendarDays } from "lucide-react";
 
@@ -6,7 +6,10 @@ import { template } from "@/data/authentic-content/template";
 
 // Content routes
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
-import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
+import {
+  authenticContentTedEdLessons,
+  availableTedEdLessonHrefs,
+} from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { SequenceNavigation } from "@/components/content/SequenceNavigation";
@@ -54,6 +57,8 @@ export default function AuthenticContents() {
     category === "ted-ed"
       ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
       : undefined;
+  const isAvailable =
+    category === "template" || availableTedEdLessonHrefs.has(lessonHref);
 
   let content;
 
@@ -75,8 +80,8 @@ export default function AuthenticContents() {
       slug && contents ? contents[slug as keyof typeof contents] : undefined;
   }
 
-  if (!content) {
-    return <h1>Authentic content not found.</h1>;
+  if (!content || !isAvailable) {
+    return <Navigate to="/authentic-content" replace />;
   }
 
   const guessFillInTheBlanks = (
@@ -170,7 +175,7 @@ export default function AuthenticContents() {
   return (
     <div className="mx-auto max-w-4xl">
       <PageHeader
-        title="Authentic Content"
+        title="TED-Ed"
         description="Learn English with authentic videos and real-world topics."
       />
 
@@ -202,8 +207,8 @@ export default function AuthenticContents() {
       {stepContent}
 
       <SequenceNavigation
-        previousLabel={previous?.label ?? "Authentic Content"}
-        nextLabel={next?.label ?? "Authentic Content"}
+        previousLabel={previous?.label ?? "TED-Ed"}
+        nextLabel={next?.label ?? "TED-Ed"}
         onPrevious={() => previous ? go(previous.slug) : navigate("/authentic-content")}
         onNext={() => next ? go(next.slug) : void finish()}
         ariaLabel="Lesson steps"

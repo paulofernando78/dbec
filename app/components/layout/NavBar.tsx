@@ -59,21 +59,18 @@ export function NavBar({ closeNavBar, isNotesOpen, toggleNotes }: NavBarProps) {
           }}
           className="size-10! p-0.75!"
         />
-        <span className="font-bold uppercase">{label}</span>
+        <span
+          className={`font-bold ${label === "TED-Ed" ? "normal-case" : "uppercase"}`}
+        >
+          {label}
+        </span>
       </div>
     );
   };
 
   return (
     <nav
-      className="
-        w-max max-[390px]:w-full
-        h-[calc(100%_-_0rem)]
-        p-4
-        text-gray-500
-        bg-(--surface)
-        rounded-xl
-        overflow-y-auto
+      className="w-max max-[390px]:w-full h-[calc(100%_-_0rem)] p-4 text-gray-500 bg-(--surface) rounded-xl overflow-y-auto
         "
     >
       {links.map((item) => {

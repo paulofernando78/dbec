@@ -3,7 +3,11 @@ import { useNavigate } from "react-router";
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { ProgressCollectionCard } from "@/components/content/ProgressCollectionCard";
-import { audiobooks } from "@/data/skills/audiobooks";
+import {
+  audiobooks,
+  availableAudiobookSlugs,
+  type AudiobookSlug,
+} from "@/data/skills/audiobooks";
 import { listeningLevels } from "@/data/skills/listening";
 import {
   isAudiobookCompleted,
@@ -35,10 +39,15 @@ export default function Audiobooks() {
       <div className="grid gap-4">
         {listeningLevels.map((level) => {
           const completedCount = level.titles.filter((item) =>
+            availableAudiobookSlugs.has(item.slug as AudiobookSlug) &&
             completedAudiobooks.has(item.slug),
           ).length;
           const resetLevel = () => {
-            level.titles.forEach((item) => resetAudiobook(item.slug));
+            level.titles.forEach((item) => {
+              if (availableAudiobookSlugs.has(item.slug as AudiobookSlug)) {
+                resetAudiobook(item.slug);
+              }
+            });
             setCompletedAudiobooks((current) => {
               const next = new Set(current);
               level.titles.forEach((item) => next.delete(item.slug));
@@ -58,18 +67,27 @@ export default function Audiobooks() {
             onReset={resetLevel}
             disableResetWhenEmpty
             emptyMessage="Books coming soon."
-            items={level.titles.map((item) => ({
-              id: item.slug,
-              title: item.title,
-              description: item.description,
-              meta: item.duration,
-              isCompleted: completedAudiobooks.has(item.slug),
-              ariaLabel: `${completedAudiobooks.has(item.slug) ? "Completed" : "Open"} ${item.title}`,
-              onClick:
-                item.slug in audiobooks
-                  ? () => navigate(`/audiobooks/${item.slug}`)
-                  : undefined,
-            }))}
+            items={level.titles.map((item) => {
+              const isAvailable = availableAudiobookSlugs.has(
+                item.slug as AudiobookSlug,
+              );
+              const isCompleted =
+                isAvailable && completedAudiobooks.has(item.slug);
+
+              return {
+                id: item.slug,
+                title: item.title,
+                description: item.description,
+                meta: item.duration,
+                isCompleted,
+                isLocked: !isAvailable,
+                ariaLabel: `${isAvailable ? (isCompleted ? "Completed" : "Open") : "Locked"} ${item.title}`,
+                onClick:
+                  isAvailable && item.slug in audiobooks
+                    ? () => navigate(`/audiobooks/${item.slug}`)
+                    : undefined,
+              };
+            })}
           />
           );
         })}

@@ -4,7 +4,6 @@ import { PageHeader } from "@/components/content/PageHeader";
 import { PageSections } from "@/components/content/PageSections";
 import { AuthenticDateCard } from "@/components/authentic-content/AuthenticDateCard";
 import { AuthenticContent as AuthenticContentIcon } from "@/components/Icons";
-import { Section } from "@/components/ui/Section";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 const tedEdYearGroups = authenticContentTedEdLessons.reduce<
@@ -63,13 +62,13 @@ export default function AuthenticContent() {
 
   return (
     <div>
-      <PageHeader title="Authentic Content" />
+      <PageHeader title="TED-Ed" />
       <PageSections
         showTableOfContents={false}
-        subtitle="AUTHENTIC CONTENT"
+        subtitle="TED-Ed"
         headerIcon={AuthenticContentIcon}
       >
-        <Section id="ted-ed" label="TED-Ed">
+        <div id="ted-ed">
           {tedEdYearGroups.map((group) => (
             <AuthenticDateCard
               key={group.year}
@@ -79,7 +78,7 @@ export default function AuthenticContent() {
               onLessonCompletionChange={saveLessonCompletion}
             />
           ))}
-        </Section>
+        </div>
       </PageSections>
     </div>
   );

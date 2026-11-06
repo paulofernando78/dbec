@@ -39,3 +39,7 @@ export const audiobooks = {
 };
 
 export type AudiobookSlug = keyof typeof audiobooks;
+
+export const availableAudiobookSlugs: ReadonlySet<AudiobookSlug> = new Set([
+  "a-new-zealand-adventure",
+]);

@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router";
 
 import { ProgressCollectionCard } from "@/components/content/ProgressCollectionCard";
-import type { AuthenticContentTedEdLesson } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
+import {
+  availableTedEdLessonHrefs,
+  type AuthenticContentTedEdLesson,
+} from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 type AuthenticDateCardProps = {
   year: string;
@@ -18,12 +21,17 @@ export function AuthenticDateCard({
 }: AuthenticDateCardProps) {
   const navigate = useNavigate();
   const completedLessons = lessons.filter(
-    (lesson) => lessonCompletion[lesson.href],
+    (lesson) =>
+      availableTedEdLessonHrefs.has(lesson.href) &&
+      lessonCompletion[lesson.href],
   ).length;
 
   const resetDate = () => {
     lessons.forEach((lesson) => {
-      if (lessonCompletion[lesson.href]) {
+      if (
+        availableTedEdLessonHrefs.has(lesson.href) &&
+        lessonCompletion[lesson.href]
+      ) {
         onLessonCompletionChange(lesson.href, false);
       }
     });
@@ -38,18 +46,24 @@ export function AuthenticDateCard({
       resetAriaLabel={`Reset progress for ${year}`}
       onReset={resetDate}
       disableResetWhenEmpty
-      items={lessons.map(({ publishedAt, href, ...lesson }) => ({
-        id: href,
-        eyebrow: new Date(`${publishedAt}T00:00:00`).toLocaleDateString(
-          "en-US",
-          { month: "long", day: "numeric" },
-        ),
-        title: lesson.label,
-        description: lesson.description,
-        isCompleted: lessonCompletion[href] ?? false,
-        ariaLabel: `Open ${lesson.label}`,
-        onClick: () => navigate(href),
-      }))}
+      items={lessons.map(({ publishedAt, href, ...lesson }) => {
+        const isAvailable = availableTedEdLessonHrefs.has(href);
+        const isCompleted = isAvailable && (lessonCompletion[href] ?? false);
+
+        return {
+          id: href,
+          eyebrow: new Date(`${publishedAt}T00:00:00`).toLocaleDateString(
+            "en-US",
+            { month: "long", day: "numeric" },
+          ),
+          title: lesson.label,
+          description: lesson.description,
+          isCompleted,
+          isLocked: !isAvailable,
+          ariaLabel: `${isAvailable ? (isCompleted ? "Completed" : "Open") : "Locked"} ${lesson.label}`,
+          onClick: isAvailable ? () => navigate(href) : undefined,
+        };
+      })}
     />
   );
 }

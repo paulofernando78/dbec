@@ -5,6 +5,7 @@ type ButtonProps = {
   icon?: ReactNode | string;
   children?: ReactNode;
   disabled?: boolean;
+  ariaDisabled?: boolean;
   pressed?: boolean;
   onClick?: () => void;
   onMouseDown?: MouseEventHandler<HTMLButtonElement>;
@@ -20,6 +21,7 @@ export const Button = ({
   icon,
   children,
   disabled,
+  ariaDisabled,
   pressed,
   onClick,
   onMouseDown,
@@ -43,6 +45,7 @@ export const Button = ({
     <button
       type={type}
       aria-label={ariaLabel}
+      aria-disabled={ariaDisabled}
       aria-pressed={pressed}
       style={style}
       className={`${baseClasses} ${textClasses} ${className} shrink-0`}
