@@ -1,7 +1,7 @@
 import type { GetReadyData } from "../../../lesson-step-types";
 import { a1GetReadyQuestions } from "../../get-ready-questions";
 
-const image = "/media/images/course/a1/unit-2/lesson-2-where-is-it/get-ready/office-desk.avif";
+const image = "/media/images/course/a1/unit-2/lesson-2-where-is-it/get-ready/office-desk.avif?v=1";
 
 export const getReady = {
   type: "get-ready", slug: "get-ready", label: "Get ready",

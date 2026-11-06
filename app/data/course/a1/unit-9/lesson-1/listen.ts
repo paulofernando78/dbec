@@ -7,7 +7,7 @@ export const listen = {
   label: "Listen",
   instruction: "Listen to two people make a shopping list.",
   image:
-    "/media/images/course/a1/unit-9/lesson-1-whats-in-the-kitchen/listen/making-a-shopping-list.png?v=2",
+    "/media/images/course/a1/unit-9/lesson-1-whats-in-the-kitchen/listen/making-a-shopping-list.avif?v=1",
   imageAlt: "Laura and her mother making a grocery shopping list in their kitchen",
   audio: "/media/audio/course/a1/unit-9/lesson-1-whats-in-the-kitchen/listen/listen.mp3",
   dialogue: [

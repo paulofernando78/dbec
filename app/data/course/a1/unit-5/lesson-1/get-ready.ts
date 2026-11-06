@@ -9,7 +9,7 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imageRoot}/seven-oclock.avif`,
+      image: `${imageRoot}/seven-oclock.avif?v=1`,
       quote: "What time is it? — It’s seven o’clock.",
       questions: [
         {
@@ -19,7 +19,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/sao-paulo-london.avif`,
+      image: `${imageRoot}/sao-paulo-london.avif?v=1`,
       quote: "It’s 6:45 A.M. in São Paulo. It’s 10:45 A.M. in London.",
       questions: [
         {
@@ -29,7 +29,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/lunch-at-twelve-thirty.avif`,
+      image: `${imageRoot}/lunch-at-twelve-thirty.avif?v=1`,
       quote: "Lunch is at 12:30 P.M.",
       questions: [
         {

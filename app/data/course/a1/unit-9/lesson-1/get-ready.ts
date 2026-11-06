@@ -10,17 +10,17 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imagePath}/checking-for-milk.png?v=2`,
+      image: `${imagePath}/checking-for-milk.avif?v=1`,
       quote: "Is there any milk?",
       questions: a1GetReadyQuestions["9/1"][0],
     },
     {
-      image: `${imagePath}/some-milk.png?v=2`,
+      image: `${imagePath}/some-milk.avif?v=1`,
       quote: "Yes, there is some milk.",
       questions: a1GetReadyQuestions["9/1"][1],
     },
     {
-      image: `${imagePath}/a-few-tomatoes.png?v=2`,
+      image: `${imagePath}/a-few-tomatoes.avif?v=1`,
       quote: "We need a few tomatoes.",
       questions: a1GetReadyQuestions["9/1"][2],
     },

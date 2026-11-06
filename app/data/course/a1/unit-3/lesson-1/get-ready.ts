@@ -9,7 +9,7 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imageRoot}/international-event.avif`,
+      image: `${imageRoot}/international-event.avif?v=1`,
       quote: "Where are you from?",
       questions: [
         {
@@ -19,17 +19,23 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/quito-ecuador.avif`,
-      quote: "I’m from Quito, Ecuador.",
+      image: `${imageRoot}/laura-pedro-eric-naomi.avif?v=2`,
+      quote:
+        "Laura is from Los Angeles. Pedro is from São Paulo. Eric is from London. Naomi is from Tokyo.",
       questions: [
         {
-          prompt: "Is Quito a city or a country?",
-          support: ["It’s a city.", "It’s a country."],
+          prompt: "Where are they from?",
+          support: [
+            "Laura is from the United States.",
+            "Pedro is from Brazil.",
+            "Eric is from England.",
+            "Naomi is from Japan.",
+          ],
         },
       ],
     },
     {
-      image: `${imageRoot}/brazilian-participant.avif`,
+      image: `${imageRoot}/brazilian-participant.avif?v=1`,
       quote: "Are you Brazilian? — Yes, I am.",
       questions: [
         {
