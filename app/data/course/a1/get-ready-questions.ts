@@ -36,9 +36,9 @@ export const a1GetReadyQuestions: Record<string, LessonQuestions> = {
     [{ prompt: "Tall or short?", support: ["Tall.", "Short."] }],
   ],
   "4/1": [
-    [{ prompt: "Whose jacket is this?", support: ["It’s Leo’s.", "It’s Mia’s."] }],
-    [{ prompt: "Is this your jacket?", support: ["Yes, it’s mine.", "No, it isn’t."] }],
-    [{ prompt: "Blue or black?", support: ["Blue.", "Black."] }],
+    [{ prompt: "Whose jacket is this?", support: ["It’s Eric’s.", "It’s Laura’s."] }],
+    [{ prompt: "Is this your scarf?", support: ["Yes, it’s mine.", "No, it isn’t."] }],
+    [{ prompt: "Whose gloves are these?", support: ["They’re Laura’s.", "They’re Naomi’s."] }],
   ],
   "4/2": [
     [{ prompt: "Is it raining?", support: ["Yes, it is.", "No, it isn’t."] }],

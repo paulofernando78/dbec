@@ -20,9 +20,9 @@ export const listen = {
     ["B", ["Yes. Those are ", mark("their"), " hats. Those hats are ", mark("theirs"), "."]],
     ["A", ["This is ", mark("Ana's"), " umbrella. These are ", mark("James's"), " gloves."]],
     ["B", [mark("Whose jacket is this"), "?"]],
-    ["A", ["It's Leo's."]],
+    ["A", ["It's Eric's."]],
     ["B", [mark("Whose gloves are these"), "?"]],
-    ["A", ["They're Mia's."]],
+    ["A", ["They're Laura's."]],
   ],
   questionInstruction: "Choose the correct answer.",
   question: "Situation:",
@@ -44,11 +44,11 @@ export const listen = {
     },
     {
       question: "Jacket:",
-      answer: "Leo's.",
+      answer: "Eric's.",
     },
     {
       question: "Gloves:",
-      answer: "Mia's.",
+      answer: "Laura's.",
     },
   ],
 } satisfies ListenData;

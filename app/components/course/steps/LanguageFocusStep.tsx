@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { Audio } from "@/components/ui/Audio";
 import { Button } from "@/components/ui/Button";
-import { InlineRichContent } from "@/components/content/InlineRichContent";
 import type { LanguageFocusData } from "@/data/course/lesson-step-types";
 import { GrammarTopicCards } from "@/features/Grammar";
 import { VocabularyTopicCards } from "@/features/Vocabulary";
@@ -24,37 +23,110 @@ const accents: { id: Accent; label: string; image: string }[] = [
 
 const brazilFlag = "https://img.icons8.com/stickers/100/brazil.png";
 
-const stressPattern = /(\*\*[^*]+\*\*|[A-ZÀ-ÖØ-Þ]{2,}(?:[’'][A-ZÀ-ÖØ-Þ]+)?)/g;
-const stressedPartPattern = /^[A-ZÀ-ÖØ-Þ]{2,}(?:[’'][A-ZÀ-ÖØ-Þ]+)?$/;
+const normalizeStressWord = (value: string) =>
+  value.replaceAll("’", "'").replaceAll("**", "").toLocaleLowerCase();
 
-const renderPronunciation = (pronunciation: string) => {
-  const parts = pronunciation.split(stressPattern);
+const stressWordPattern = /[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[’'][A-Za-zÀ-ÖØ-öø-ÿ]+)?/g;
+const splitStressWordPattern =
+  /([A-Za-zÀ-ÖØ-öø-ÿ]+(?:[’'][A-Za-zÀ-ÖØ-öø-ÿ]+)?)/g;
 
-  return parts.map((part, index) => {
-    const isExplicitStress = part.startsWith("**");
-    const isLegacyStress = stressedPartPattern.test(part);
+const stressInstructionWords = new Set([
+  "a",
+  "an",
+  "and",
+  "each",
+  "for",
+  "in",
+  "main",
+  "of",
+  "on",
+  "or",
+  "the",
+  "to",
+  "with",
+]);
 
-    if (!isExplicitStress && !isLegacyStress) return part;
+const getPronunciationStress = (model: string, pronunciation: string) => {
+  const safeModel = model ?? "";
+  const safePronunciation = pronunciation ?? "";
+  const modelWords = new Map(
+    (safeModel.match(stressWordPattern) ?? []).map((word) => [
+      normalizeStressWord(word),
+      word,
+    ]),
+  );
+  const stressedWords = new Set<string>();
 
-    const previousText = parts.slice(0, index).join("").trimEnd();
-    const nextPart = parts[index + 1] ?? "";
-    const startsSentence = !previousText || /[.!?]$/.test(previousText);
-    const rawText = isExplicitStress ? part.slice(2, -2) : part;
-    const normalizedText = isExplicitStress
-      ? rawText
-      : startsSentence || /^[a-zà-öø-ÿ]/.test(nextPart)
-        ? `${rawText.charAt(0)}${rawText.slice(1).toLowerCase()}`
-        : rawText.toLowerCase();
+  for (const match of safePronunciation.matchAll(
+    /\bstress(?:ed|es|ing)?(?:\s+on)?\s+([^.;]+)/gi,
+  )) {
+    for (const word of match[1].match(stressWordPattern) ?? []) {
+      const normalizedWord = normalizeStressWord(word);
 
-    return (
-      <mark
-        key={`${part}-${index}`}
-        className="rounded bg-yellow-300 px-0.5 text-[1em] font-[inherit] leading-[inherit] text-gray-900"
-      >
-        {normalizedText}
-      </mark>
+      if (
+        modelWords.has(normalizedWord) &&
+        !stressInstructionWords.has(normalizedWord)
+      ) {
+        stressedWords.add(normalizedWord);
+      }
+    }
+  }
+
+  for (const match of safePronunciation.matchAll(/\*\*([^*]+)\*\*/g)) {
+    for (const word of match[1].match(stressWordPattern) ?? []) {
+      const normalizedWord = normalizeStressWord(word);
+      if (modelWords.has(normalizedWord)) stressedWords.add(normalizedWord);
+    }
+  }
+
+  return { modelWords, stressedWords };
+};
+
+const renderPronunciation = (pronunciation: string, model: string) => {
+  const { modelWords, stressedWords } = getPronunciationStress(
+    model,
+    pronunciation,
+  );
+
+  return pronunciation
+    .replaceAll("**", "")
+    .split(splitStressWordPattern)
+    .map((part, index) => {
+      const normalizedPart = normalizeStressWord(part);
+      if (!stressedWords.has(normalizedPart)) return part;
+
+      const displayedPart = /^[A-ZÀ-ÖØ-Þ]{2}/.test(part)
+        ? (modelWords.get(normalizedPart) ?? part.toLowerCase())
+        : part;
+
+      return (
+        <mark
+          key={`${part}-${index}`}
+          className="rounded bg-yellow-300 px-0.5 text-[1em] font-[inherit] leading-[inherit] text-gray-900"
+        >
+          {displayedPart}
+        </mark>
+      );
+    });
+};
+
+const renderPronunciationModel = (model: string, pronunciation: string) => {
+  const { stressedWords } = getPronunciationStress(model, pronunciation);
+
+  return model
+    .split(splitStressWordPattern)
+    .map((part, index) =>
+      stressedWords.has(normalizeStressWord(part)) ? (
+        <mark
+          key={`${part}-${index}`}
+          className="rounded bg-yellow-300 px-0.5 font-[inherit] text-gray-900"
+        >
+          {part}
+        </mark>
+      ) : (
+        part
+      ),
     );
-  });
 };
 
 type FormBlock =
@@ -306,10 +378,8 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                 )}
                 <article className="space-y-4 rounded-xl bg-[var(--background)] p-4">
                 <div>
-                  <h4
-                    className={`text-xl ${typeof title === "string" ? "font-black" : "font-normal"}`}
-                  >
-                    <InlineRichContent value={title} />
+                  <h4 className="text-xl font-normal">
+                    {titleText}
                     {showPortuguese && translationPt ? (
                       <span className="font-normal text-gray-500">
                         {" "}
@@ -334,6 +404,9 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                   >
                     {usesPortugueseSupport ? "Pronúncia" : "Pronunciation"}
                   </h5>
+                  <p className="mb-2 text-base leading-6 text-gray-500">
+                    {renderPronunciation(pronunciation, titleText)}
+                  </p>
                   <div className="flex items-center gap-3">
                     <Audio
                       asButton
@@ -345,10 +418,8 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
                       className="stroke-0!"
                       wrapperClassName="shrink-0"
                     />
-                    <p
-                      className="text-xl font-black leading-7 text-[var(--text-color)]"
-                    >
-                      {renderPronunciation(pronunciation)}
+                    <p className="text-xl leading-7 text-[var(--text-color)]">
+                      {renderPronunciationModel(titleText, pronunciation)}
                     </p>
                   </div>
                 </section>

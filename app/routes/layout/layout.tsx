@@ -30,7 +30,7 @@ export default function Layout() {
           className="pointer-events-none absolute inset-y-0 left-1/2 z-40 w-[calc(100%_-_0.1rem)] max-w-4xl -translate-x-1/2 max-[700px]:inset-x-0 max-[700px]:w-full max-[700px]:translate-x-0"
         />
         <div
-          className="h-full min-h-0 overflow-x-hidden overflow-y-auto"
+          className="h-full min-h-0 overflow-x-hidden overflow-y-auto pb-1"
           data-scroll-container
         >
           <Outlet />

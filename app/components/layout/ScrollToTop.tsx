@@ -69,7 +69,7 @@ export const ScrollToTop = () => {
 
   return (
     <div
-      className="absolute right-[calc(0.6vw+0.25rem)] bottom-1 z-50"
+      className="absolute right-[calc(0.6vw+0.25rem)] bottom-15 z-50"
     >
       {button}
     </div>

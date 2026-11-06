@@ -21,7 +21,7 @@ const seeds: readonly LessonSeed[] = [
   { unit: 2, lesson: 2, phrases: ["Where is the phone?", "It's on the desk.", "Is it under the chair?", "Yes, it is."] },
   { unit: 3, lesson: 1, phrases: ["Where are you from?", "I'm from Brazil.", "Are you Brazilian?", "Yes, I am."] },
   { unit: 3, lesson: 2, phrases: ["Who's that?", "She's my cousin.", "What's she like?", "She's tall and friendly."] },
-  { unit: 4, lesson: 1, phrases: ["Whose jacket is this?", "It's Leo's.", "This is my jacket.", "The jacket is mine."] },
+  { unit: 4, lesson: 1, phrases: ["Whose jacket is this?", "It's Eric's.", "This is my jacket.", "The jacket is mine."] },
   { unit: 4, lesson: 2, phrases: ["Are you wearing a raincoat?", "Yes, I am.", "It's raining.", "It isn't snowing."] },
   { unit: 5, lesson: 1, phrases: ["What time is it?", "It's nine o'clock.", "It's seven fifteen A.M.", "It's noon."] },
   { unit: 5, lesson: 2, phrases: ["What are you doing?", "I'm studying English.", "What's Eva doing?", "She's sleeping."] },
@@ -72,7 +72,7 @@ const ccqs: Record<string, readonly { context?: string; question: string; answer
   ],
   "4/1": [
     { context: "It’s mine.", question: "My jacket or another person’s jacket?", answer: "My jacket" },
-    { context: "It’s Leo’s.", question: "Owner?", answer: "Leo" },
+    { context: "It’s Eric’s.", question: "Owner?", answer: "Eric" },
   ],
   "4/2": [
     { context: "It’s cold and windy.", question: "Weather now or yesterday?", answer: "Now" },
@@ -192,7 +192,7 @@ const ccqPairs: Record<string, readonly string[]> = {
   Age: ["Appearance", "Age"],
   "My jacket": ["My jacket", "Another person’s jacket"],
   "A woman’s scarf": ["A woman’s scarf", "A man’s scarf"],
-  Leo: ["Leo", "Mia"],
+  Eric: ["Eric", "Laura"],
   Now: ["Now", "Yesterday"],
   Evening: ["Morning", "Evening"],
   "Not working": ["Working", "Not working"],
