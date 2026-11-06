@@ -35,7 +35,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/brazilian-participant.avif?v=1`,
+      image: `${imageRoot}/brazilian-participant.avif?v=3`,
       quote: "Are you Brazilian? — Yes, I am.",
       questions: [
         {
