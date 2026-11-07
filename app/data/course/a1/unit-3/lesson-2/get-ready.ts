@@ -9,17 +9,17 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imageRoot}/lucas-points-to-nina.avif?v=1`,
-      quote: "Who’s that? — She’s my cousin, Nina.",
+      image: `${imageRoot}/pedro-points-to-camila.avif?v=1`,
+      quote: "Who’s that? — She’s my cousin, Camila.",
       questions: [
         {
-          prompt: "What does Nina look like?",
+          prompt: "What does Camila look like?",
           support: ["She’s tall.", "She has long, curly hair."],
         },
       ],
     },
     {
-      image: `${imageRoot}/how-old-is-nina.avif?v=1`,
+      image: `${imageRoot}/how-old-is-camila.avif?v=1`,
       quote: "How old is she? — She’s twenty-four.",
       questions: [
         {
@@ -29,7 +29,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/nina-friendly-and-quiet.avif?v=1`,
+      image: `${imageRoot}/camila-friendly-and-quiet.avif?v=1`,
       quote: "What’s she like? — She’s friendly and quiet.",
       questions: [
         {
