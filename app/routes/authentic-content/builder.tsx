@@ -6,10 +6,7 @@ import { template } from "@/data/authentic-content/template";
 
 // Content routes
 import { authenticContentsTedEdRoutes } from "@/data/authentic-content/ted-ed";
-import {
-  authenticContentTedEdLessons,
-  availableTedEdLessonHrefs,
-} from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
+import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
 
 import { PageHeader } from "@/components/content/PageHeader";
 import { SequenceNavigation } from "@/components/content/SequenceNavigation";
@@ -23,7 +20,6 @@ import { Radio } from "@/features/exercises/Radio";
 import { Guess } from "@/features/exercises/Guess";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
-import { useLocalOwnerAccess } from "@/hooks/useLocalOwnerAccess";
 
 const lessonSteps = [
   { slug: "before-watching", label: "Before watching" },
@@ -53,18 +49,12 @@ const expandMonthName = (date: string) =>
 
 export default function AuthenticContents() {
   const navigate = useNavigate();
-  const localOwnerAccess = useLocalOwnerAccess();
   const { category, slug, step = "before-watching" } = useParams();
   const lessonHref = `/authentic-content/${category}/${slug}`;
   const lessonCard =
     category === "ted-ed"
       ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
       : undefined;
-  const isAvailable =
-    category === "template" ||
-    availableTedEdLessonHrefs.has(lessonHref) ||
-    localOwnerAccess === true;
-
   let content;
 
   if (category === "template") {
@@ -85,11 +75,9 @@ export default function AuthenticContents() {
       slug && contents ? contents[slug as keyof typeof contents] : undefined;
   }
 
-  if (!content || (!isAvailable && localOwnerAccess === false)) {
+  if (!content) {
     return <Navigate to="/authentic-content" replace />;
   }
-
-  if (!isAvailable) return null;
 
   const guessFillInTheBlanks = (
     content.sections.practice as typeof content.sections.practice & {

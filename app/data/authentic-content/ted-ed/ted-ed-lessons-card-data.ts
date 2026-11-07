@@ -212,9 +212,5 @@ export const authenticContentTedEdLessons = Object.values(
     firstLesson.publishedAt.localeCompare(secondLesson.publishedAt),
   );
 
-export const availableTedEdLessonHrefs: ReadonlySet<string> = new Set([
-  "/authentic-content/ted-ed/the-bodys-hidden-balance",
-]);
-
 export type AuthenticContentTedEdLesson =
   (typeof authenticContentTedEdLessons)[number];
