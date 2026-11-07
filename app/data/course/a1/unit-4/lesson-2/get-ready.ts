@@ -9,7 +9,7 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imageRoot}/rainy-morning.avif?v=4`,
+      image: `${imageRoot}/rainy-morning-eric.avif?v=1`,
       quote: "Laura and Eric are wearing coats.",
       questions: [
         {
@@ -23,7 +23,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/cold-windy-day.avif?v=3`,
+      image: `${imageRoot}/cold-windy-day-eric.avif?v=1`,
       quote: "It’s cold and windy. Eric is wearing a coat and a scarf.",
       questions: [
         {
