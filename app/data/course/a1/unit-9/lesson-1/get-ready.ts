@@ -9,14 +9,14 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imagePath}/checking-for-milk.avif?v=1`,
+      image: `${imagePath}/checking-for-milk.avif?v=2`,
       quote: "Is there any milk?",
       questions: [
         { prompt: "What food can you see?", support: ["I can see …"] },
       ],
     },
     {
-      image: `${imagePath}/some-milk.avif?v=1`,
+      image: `${imagePath}/some-milk.avif?v=2`,
       quote: "Yes, there is some milk.",
       questions: [
         {
@@ -26,7 +26,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imagePath}/a-few-tomatoes.avif?v=1`,
+      image: `${imagePath}/a-few-tomatoes.avif?v=2`,
       quote: "We need a few tomatoes.",
       questions: [{ prompt: "What do we need?", support: ["We need …"] }],
     },
