@@ -2,6 +2,38 @@
   {
     "definitions": [
       {
+        "word": "salmonella",
+        "phonetics": "/ˌsæl.məˈnel.ə/",
+        "partOfSpeech": "noun",
+        "enDefinition": "A type of bacteria that can contaminate food and cause an intestinal infection, commonly through undercooked eggs, poultry, meat, or contaminated produce.",
+        "ptDefinition": "Salmonela; um tipo de bactéria que pode contaminar alimentos e causar uma infecção intestinal, geralmente por meio de ovos, aves ou carnes malpassadas e produtos contaminados.",
+        "examples": [
+          {
+            "enExample": "Raw eggs may carry salmonella if they are contaminated.",
+            "ptExample": "Ovos crus podem conter salmonela se estiverem contaminados."
+          },
+          {
+            "enExample": "Cooking poultry thoroughly helps reduce the risk of salmonella infection.",
+            "ptExample": "Cozinhar bem as aves ajuda a reduzir o risco de infecção por salmonela."
+          }
+        ],
+        "synonyms": ["Salmonella bacteria"],
+        "antonyms": [],
+        "seeAlso": [
+          "bacteria",
+          "contamination",
+          "food poisoning",
+          "foodborne disease",
+          "salmonellosis"
+        ],
+        "notes": [
+          {
+            "enNote": "Salmonella is the bacterium; salmonellosis is the illness caused by a Salmonella infection. The scientific genus name is capitalized and italicized, but everyday uses of salmonella are often lowercase.",
+            "ptNote": "Salmonella é a bactéria; salmonellosis é a doença causada pela infecção. O nome científico do gênero é escrito com inicial maiúscula e em itálico, mas no uso cotidiano salmonella costuma aparecer em minúsculas."
+          }
+        ]
+      },
+      {
         "word": "shade",
         "phonetics": "/ʃeɪd/",
         "partOfSpeech": "noun, verb",
