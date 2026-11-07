@@ -30,6 +30,9 @@ export const howToManageEmotions = {
   sections: {
     beforeWatching: {
       type: "ol" as const,
+      image:
+        "/media/images/authentic-content/ted-ed/how-to-manage-emotions/before-watching/lead-in.avif?v=1",
+      imageAlt: "Travelers reacting differently while waiting at an airport.",
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {

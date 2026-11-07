@@ -29,6 +29,9 @@ export const theSilentRaceToTheBrain = {
   sections: {
     beforeWatching: {
       type: "ol" as const,
+      image:
+        "/media/images/authentic-content/ted-ed/the-silent-race-to-the-brain/before-watching/lead-in.avif?v=1",
+      imageAlt: "Hikers deciding what to do after an unexpected encounter with a wild animal.",
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {

@@ -426,19 +426,34 @@ const localAuth = (): Plugin => ({
       let localReservation: { userKey: string; createdAt: number } | null = null;
       try {
         const variables = await readFile(resolve(process.cwd(), ".dev.vars"), "utf8");
-        const apiKey = variables.match(/^GEMINI_API_KEY=(.*)$/m)?.[1]?.trim();
+        const apiKey = variables
+          .match(/^OPENROUTER_API_KEY=(.*)$/m)?.[1]
+          ?.trim();
         const configuredModels =
-          variables.match(/^GEMINI_MODELS=(.*)$/m)?.[1]?.trim() ||
-          variables.match(/^GEMINI_MODEL=(.*)$/m)?.[1]?.trim() ||
-          "gemini-3.8-flash";
+          variables.match(/^OPENROUTER_MODELS=(.*)$/m)?.[1]?.trim() ||
+          "openrouter/free";
         const models = configuredModels
           .split(",")
           .map((model) => model.trim())
-          .filter(Boolean);
+          .filter(
+            (model) => model === "openrouter/free" || model.endsWith(":free"),
+          );
         if (!apiKey) {
           response.statusCode = 503;
           response.end(
-            JSON.stringify({ error: "Adicione GEMINI_API_KEY ao arquivo .dev.vars." }),
+            JSON.stringify({
+              error: "Adicione OPENROUTER_API_KEY ao arquivo .dev.vars.",
+            }),
+          );
+          return;
+        }
+        if (models.length === 0) {
+          response.statusCode = 503;
+          response.end(
+            JSON.stringify({
+              error:
+                "OPENROUTER_MODELS deve conter apenas openrouter/free ou modelos terminados em :free.",
+            }),
           );
           return;
         }
@@ -507,67 +522,84 @@ const localAuth = (): Plugin => ({
         localAiTutorRequests.set(userKey, recentRequests);
         localReservation = { userKey, createdAt: now };
 
-        const requestBody = JSON.stringify({
-          systemInstruction: {
-            parts: [{ text: aiTutorSystemInstruction }],
-          },
-          contents: messages.map(
-            (message: { role: "user" | "model"; text: string }) => ({
-              role: message.role,
-              parts: [{ text: message.text.trim() }],
-            }),
-          ),
-          generationConfig: { maxOutputTokens: 800 },
-        });
-        type GeminiTextResult = {
+        type OpenRouterTextResult = {
+          model?: string;
           error?: { message?: string };
-          candidates?: Array<{
-            content?: { parts?: Array<{ text?: string }> };
+          choices?: Array<{
+            message?: {
+              content?:
+                | string
+                | Array<{ type?: string; text?: string }>;
+            };
           }>;
         };
-        let result: GeminiTextResult | null = null;
+        let result: OpenRouterTextResult | null = null;
         let usedModel = "";
         const skippedModels: string[] = [];
         const rateLimitedModels: string[] = [];
 
         for (const model of models) {
-          let geminiResponse;
+          let openRouterResponse;
           try {
-            geminiResponse = await fetch(
-              `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+            openRouterResponse = await fetch(
+              "https://openrouter.ai/api/v1/chat/completions",
               {
                 method: "POST",
                 headers: {
+                  Authorization: `Bearer ${apiKey}`,
                   "Content-Type": "application/json",
-                  "x-goog-api-key": apiKey,
+                  "HTTP-Referer": "http://localhost:5173",
+                  "X-Title": "Daily Basis English Course",
                 },
-                body: requestBody,
+                body: JSON.stringify({
+                  model,
+                  messages: [
+                    { role: "system", content: aiTutorSystemInstruction },
+                    ...messages.map(
+                      (message: {
+                        role: "user" | "model";
+                        text: string;
+                      }) => ({
+                        role: message.role === "model" ? "assistant" : "user",
+                        content: message.text.trim(),
+                      }),
+                    ),
+                  ],
+                  max_tokens: 800,
+                }),
               },
             );
           } catch (error) {
-            console.error("Gemini API request failed", model, error);
+            console.error("OpenRouter API request failed", model, error);
             skippedModels.push(model);
             continue;
           }
 
-          const candidateResult = await geminiResponse.json().catch(() => null) as
-            | GeminiTextResult
+          const candidateResult = await openRouterResponse
+            .json()
+            .catch(() => null) as
+            | OpenRouterTextResult
             | null;
-          if (geminiResponse.ok) {
+          if (openRouterResponse.ok) {
             result = candidateResult;
-            usedModel = model;
+            usedModel = candidateResult?.model ?? model;
             break;
           }
 
           console.error(
-            "Gemini API error",
+            "OpenRouter API error",
             model,
-            geminiResponse.status,
+            openRouterResponse.status,
             candidateResult?.error?.message,
           );
-          if (geminiResponse.status === 429 || geminiResponse.status >= 500) {
+          if (
+            openRouterResponse.status === 429 ||
+            openRouterResponse.status >= 500
+          ) {
             skippedModels.push(model);
-            if (geminiResponse.status === 429) rateLimitedModels.push(model);
+            if (openRouterResponse.status === 429) {
+              rateLimitedModels.push(model);
+            }
             continue;
           }
           break;
@@ -588,11 +620,15 @@ const localAuth = (): Plugin => ({
           return;
         }
 
-        const message = result.candidates?.[0]?.content?.parts
-          ?.map((part) => part.text)
-          .filter(Boolean)
-          .join("\n")
-          .trim();
+        const rawContent = result.choices?.[0]?.message?.content;
+        const message = (
+          typeof rawContent === "string"
+            ? rawContent
+            : rawContent
+                ?.map((part) => part.text)
+                .filter(Boolean)
+                .join("\n")
+        )?.trim();
         if (!message) {
           localAiTutorRequests.set(
             userKey,

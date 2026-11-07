@@ -38,6 +38,9 @@ export const whatCausesConstipation = {
   sections: {
     beforeWatching: {
       type: "ol" as const,
+      image:
+        "/media/images/authentic-content/ted-ed/what-causes-constipation/before-watching/lead-in.avif?v=1",
+      imageAlt: "Friends discussing different meals, routines, and everyday wellness habits.",
       instruction: "Discuss the questions below.",
       items: [
         {

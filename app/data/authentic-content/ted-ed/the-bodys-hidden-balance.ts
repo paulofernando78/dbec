@@ -29,6 +29,9 @@ export const theBodysHiddenBalance = {
   sections: {
     beforeWatching: {
       type: "ol" as const,
+      image:
+        "/media/images/authentic-content/ted-ed/the-bodys-hidden-balance/before-watching/lead-in.avif?v=1",
+      imageAlt: "People with different routines comparing food and drink choices.",
       instruction: "Discuss the questions below before watching the video.",
       items: [
         {

@@ -14,6 +14,7 @@ import {
 import { PageHeader } from "@/components/content/PageHeader";
 import { SequenceNavigation } from "@/components/content/SequenceNavigation";
 import { Card } from "@/components/ui/Card";
+import { Image } from "@/components/ui/Image";
 import { List } from "@/components/content/List";
 import { ImageQuiz } from "@/features/exercises/ImageQuiz";
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
@@ -22,6 +23,7 @@ import { Radio } from "@/features/exercises/Radio";
 import { Guess } from "@/features/exercises/Guess";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
+import { useLocalOwnerAccess } from "@/hooks/useLocalOwnerAccess";
 
 const lessonSteps = [
   { slug: "before-watching", label: "Before watching" },
@@ -51,6 +53,7 @@ const expandMonthName = (date: string) =>
 
 export default function AuthenticContents() {
   const navigate = useNavigate();
+  const localOwnerAccess = useLocalOwnerAccess();
   const { category, slug, step = "before-watching" } = useParams();
   const lessonHref = `/authentic-content/${category}/${slug}`;
   const lessonCard =
@@ -58,7 +61,9 @@ export default function AuthenticContents() {
       ? authenticContentTedEdLessons.find((card) => card.href === lessonHref)
       : undefined;
   const isAvailable =
-    category === "template" || availableTedEdLessonHrefs.has(lessonHref);
+    category === "template" ||
+    availableTedEdLessonHrefs.has(lessonHref) ||
+    localOwnerAccess === true;
 
   let content;
 
@@ -80,15 +85,23 @@ export default function AuthenticContents() {
       slug && contents ? contents[slug as keyof typeof contents] : undefined;
   }
 
-  if (!content || !isAvailable) {
+  if (!content || (!isAvailable && localOwnerAccess === false)) {
     return <Navigate to="/authentic-content" replace />;
   }
+
+  if (!isAvailable) return null;
 
   const guessFillInTheBlanks = (
     content.sections.practice as typeof content.sections.practice & {
       guessFillInTheBlanks?: ComponentProps<typeof FillInTheBlanks>;
     }
   ).guessFillInTheBlanks;
+  const beforeWatching = content.sections.beforeWatching as ComponentProps<
+    typeof List
+  > & {
+    image?: string;
+    imageAlt?: string;
+  };
 
   const stepIndex = Math.max(
     0,
@@ -118,8 +131,17 @@ export default function AuthenticContents() {
 
   const stepContent = {
     "before-watching": (
-      <Card inset>
-        <List {...content.sections.beforeWatching} />
+      <Card className="grid gap-4">
+        {beforeWatching.image && (
+          <Image
+            src={beforeWatching.image}
+            alt={beforeWatching.imageAlt ?? "Before watching context"}
+            className="aspect-video object-cover"
+          />
+        )}
+        <div className="rounded-xl bg-(--background) p-4">
+          <List {...beforeWatching} />
+        </div>
       </Card>
     ),
     vocabulary: (

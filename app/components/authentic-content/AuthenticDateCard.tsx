@@ -5,12 +5,12 @@ import {
   availableTedEdLessonHrefs,
   type AuthenticContentTedEdLesson,
 } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
-
 type AuthenticDateCardProps = {
   year: string;
   lessons: AuthenticContentTedEdLesson[];
   lessonCompletion: Record<string, boolean>;
   onLessonCompletionChange: (lessonId: string, completed: boolean) => void;
+  hasLocalOwnerAccess: boolean;
 };
 
 export function AuthenticDateCard({
@@ -18,18 +18,19 @@ export function AuthenticDateCard({
   lessons,
   lessonCompletion,
   onLessonCompletionChange,
+  hasLocalOwnerAccess,
 }: AuthenticDateCardProps) {
   const navigate = useNavigate();
   const completedLessons = lessons.filter(
     (lesson) =>
-      availableTedEdLessonHrefs.has(lesson.href) &&
+      (hasLocalOwnerAccess || availableTedEdLessonHrefs.has(lesson.href)) &&
       lessonCompletion[lesson.href],
   ).length;
 
   const resetDate = () => {
     lessons.forEach((lesson) => {
       if (
-        availableTedEdLessonHrefs.has(lesson.href) &&
+        (hasLocalOwnerAccess || availableTedEdLessonHrefs.has(lesson.href)) &&
         lessonCompletion[lesson.href]
       ) {
         onLessonCompletionChange(lesson.href, false);
@@ -47,7 +48,8 @@ export function AuthenticDateCard({
       onReset={resetDate}
       disableResetWhenEmpty
       items={lessons.map(({ publishedAt, href, ...lesson }) => {
-        const isAvailable = availableTedEdLessonHrefs.has(href);
+        const isAvailable =
+          hasLocalOwnerAccess || availableTedEdLessonHrefs.has(href);
         const isCompleted = isAvailable && (lessonCompletion[href] ?? false);
 
         return {

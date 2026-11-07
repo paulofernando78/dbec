@@ -34,6 +34,9 @@ export const whenWillTheNextIceAgeHappen = {
   sections: {
     beforeWatching: {
       type: "ol" as const,
+      image:
+        "/media/images/authentic-content/ted-ed/when-will-the-next-ice-age-happen/before-watching/lead-in.avif?v=1",
+      imageAlt: "Researchers examining natural evidence at a mountain field station.",
       instruction: "Discuss the questions below.",
       items: [
         { content: ["What do you know about Ice Ages?"] },

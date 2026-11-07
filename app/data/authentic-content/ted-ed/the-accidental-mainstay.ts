@@ -25,6 +25,9 @@ export const theAccidentalMainstay = {
   sections: {
     beforeWatching: {
       type: "ol" as const,
+      image:
+        "/media/images/authentic-content/ted-ed/the-accidental-mainstay/before-watching/lead-in.avif?v=1",
+      imageAlt: "Cinema visitors choosing among everyday products at a concession counter.",
       instruction: "Discuss the questions below before watching the video.",
       items: [
         { content: ["Which everyday products have become strongly associated with a particular place or activity?"] },

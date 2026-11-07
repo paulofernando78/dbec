@@ -5,6 +5,7 @@ import { PageSections } from "@/components/content/PageSections";
 import { AuthenticDateCard } from "@/components/authentic-content/AuthenticDateCard";
 import { AuthenticContent as AuthenticContentIcon } from "@/components/Icons";
 import { authenticContentTedEdLessons } from "@/data/authentic-content/ted-ed/ted-ed-lessons-card-data";
+import { useLocalOwnerAccess } from "@/hooks/useLocalOwnerAccess";
 
 const tedEdYearGroups = authenticContentTedEdLessons.reduce<
   Array<{
@@ -28,6 +29,7 @@ const tedEdYearGroups = authenticContentTedEdLessons.reduce<
 }, []);
 
 export default function AuthenticContent() {
+  const hasLocalOwnerAccess = useLocalOwnerAccess() === true;
   const [lessonCompletion, setLessonCompletion] = useState<
     Record<string, boolean>
   >({});
@@ -76,6 +78,7 @@ export default function AuthenticContent() {
               lessons={group.lessons}
               lessonCompletion={lessonCompletion}
               onLessonCompletionChange={saveLessonCompletion}
+              hasLocalOwnerAccess={hasLocalOwnerAccess}
             />
           ))}
         </div>

@@ -30,6 +30,8 @@ export const template = {
   sections: {
     beforeWatching: {
       type: "ol" as const,
+      image: "...",
+      imageAlt: "...",
       instruction: "Discuss the questions below before watching the video.",
       content: [
         {
