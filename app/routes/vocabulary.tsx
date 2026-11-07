@@ -10,7 +10,7 @@ export default function Vocabulary() {
     <div>
       <PageHeader title="Vocabulary" />
 
-      <PageSections subtitle="Which One?">
+      <PageSections>
         {vocabularyTopics.map((topic) => (
           <Section
             key={topic.id}
