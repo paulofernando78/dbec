@@ -310,6 +310,28 @@ export function LanguageFocusStep({ data }: { data: LanguageFocusData }) {
 
   return (
     <div className="rounded-2xl bg-[var(--surface)] p-4">
+      {data.visuals?.length ? (
+        <section className="mb-6" aria-label="Target language visuals">
+          <h3 className="mb-3 text-lg font-black">Target language</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {data.visuals.map(({ image, caption }) => (
+              <figure
+                key={`${image}-${caption}`}
+                className="overflow-hidden rounded-xl bg-[var(--background)]"
+              >
+                <img
+                  src={image}
+                  alt={caption}
+                  className="aspect-video w-full object-cover"
+                />
+                {caption ? (
+                  <figcaption className="p-3 font-semibold">{caption}</figcaption>
+                ) : null}
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
       <div
         className="mb-4 flex gap-2"
         aria-label="Pronunciation and translation options"

@@ -161,8 +161,70 @@ import { b2Unit12Lesson2 } from "./b2/unit-12/lesson-2";
 import { c1SkeletonLessons } from "./c1/skeleton-lessons";
 import { travelLessons } from "@/data/travel/lessons";
 
+const a1DiscussionImageIndex: Readonly<Record<string, number>> = {
+  "1/2": 1,
+  "5/1": 1,
+  "13/1": 1,
+};
+
+const auditA1LessonImages = (key: string, lesson: LessonContent): LessonContent => {
+  const getReady = lesson.steps.find((step) => step.type === "get-ready");
+  if (!getReady?.slides.length) return lesson;
+
+  const selectedIndex = Math.min(
+    a1DiscussionImageIndex[key] ?? 0,
+    getReady.slides.length - 1,
+  );
+  const selectedSlide = getReady.slides[selectedIndex];
+  const targetLanguageVisuals = getReady.slides
+    .filter((slide, index) => index !== selectedIndex && slide.image)
+    .map((slide) => ({
+      image: slide.image as string,
+      caption: slide.quote,
+    }));
+
+  return {
+    ...lesson,
+    steps: lesson.steps.map((step) => {
+      if (step.type === "get-ready") {
+        return {
+          ...step,
+          slides: [
+            {
+              ...selectedSlide,
+              audio: false,
+              quote: "",
+              answer: undefined,
+              questions: undefined,
+              discuss: {
+                interaction: ["pairs", "teacher-class"],
+                questions: [
+                  {
+                    prompt: "What do you notice in the picture?",
+                    support: ["I can see ..."],
+                  },
+                  {
+                    prompt: "What do you think is happening?",
+                    support: ["I think ..."],
+                  },
+                ],
+              },
+            },
+          ],
+        };
+      }
+
+      if (step.type === "language-focus" && targetLanguageVisuals.length) {
+        return { ...step, visuals: targetLanguageVisuals };
+      }
+
+      return step;
+    }),
+  };
+};
+
 export const lessonRegistry: Record<string, LessonContent> = {
-  "a1/1/1": a1Unit1Lesson1,
+  "a1/1/1": auditA1LessonImages("1/1", a1Unit1Lesson1),
   ...Object.fromEntries(
     Object.entries(a1SkeletonLessons).map(([key, lesson]) => [
       `a1/${key}`,
@@ -325,35 +387,35 @@ export const lessonRegistry: Record<string, LessonContent> = {
   "a2-b1/15/2": a2B1Unit15Lesson2,
   "a2-b1/16/1": a2B1Unit16Lesson1,
   "a2-b1/16/2": a2B1Unit16Lesson2,
-  "a1/1/2": a1Unit1Lesson2,
-  "a1/2/1": a1Unit2Lesson1,
-  "a1/2/2": a1Unit2Lesson2,
-  "a1/3/1": a1Unit3Lesson1,
-  "a1/3/2": a1Unit3Lesson2,
-  "a1/4/1": a1Unit4Lesson1,
-  "a1/4/2": a1Unit4Lesson2,
-  "a1/5/1": a1Unit5Lesson1,
-  "a1/5/2": a1Unit5Lesson2,
-  "a1/6/1": a1Unit6Lesson1,
-  "a1/6/2": a1Unit6Lesson2,
-  "a1/7/1": a1Unit7Lesson1,
-  "a1/7/2": a1Unit7Lesson2,
-  "a1/8/1": a1Unit8Lesson1,
-  "a1/8/2": a1Unit8Lesson2,
-  "a1/9/1": a1Unit9Lesson1,
-  "a1/9/2": a1Unit9Lesson2,
-  "a1/10/1": a1Unit10Lesson1,
-  "a1/10/2": a1Unit10Lesson2,
-  "a1/11/1": a1Unit11Lesson1,
-  "a1/11/2": a1Unit11Lesson2,
-  "a1/12/1": a1Unit12Lesson1,
-  "a1/12/2": a1Unit12Lesson2,
-  "a1/13/1": a1Unit13Lesson1,
-  "a1/13/2": a1Unit13Lesson2,
-  "a1/14/1": a1Unit14Lesson1,
-  "a1/14/2": a1Unit14Lesson2,
-  "a1/15/1": a1Unit15Lesson1,
-  "a1/15/2": a1Unit15Lesson2,
-  "a1/16/1": a1Unit16Lesson1,
-  "a1/16/2": a1Unit16Lesson2,
+  "a1/1/2": auditA1LessonImages("1/2", a1Unit1Lesson2),
+  "a1/2/1": auditA1LessonImages("2/1", a1Unit2Lesson1),
+  "a1/2/2": auditA1LessonImages("2/2", a1Unit2Lesson2),
+  "a1/3/1": auditA1LessonImages("3/1", a1Unit3Lesson1),
+  "a1/3/2": auditA1LessonImages("3/2", a1Unit3Lesson2),
+  "a1/4/1": auditA1LessonImages("4/1", a1Unit4Lesson1),
+  "a1/4/2": auditA1LessonImages("4/2", a1Unit4Lesson2),
+  "a1/5/1": auditA1LessonImages("5/1", a1Unit5Lesson1),
+  "a1/5/2": auditA1LessonImages("5/2", a1Unit5Lesson2),
+  "a1/6/1": auditA1LessonImages("6/1", a1Unit6Lesson1),
+  "a1/6/2": auditA1LessonImages("6/2", a1Unit6Lesson2),
+  "a1/7/1": auditA1LessonImages("7/1", a1Unit7Lesson1),
+  "a1/7/2": auditA1LessonImages("7/2", a1Unit7Lesson2),
+  "a1/8/1": auditA1LessonImages("8/1", a1Unit8Lesson1),
+  "a1/8/2": auditA1LessonImages("8/2", a1Unit8Lesson2),
+  "a1/9/1": auditA1LessonImages("9/1", a1Unit9Lesson1),
+  "a1/9/2": auditA1LessonImages("9/2", a1Unit9Lesson2),
+  "a1/10/1": auditA1LessonImages("10/1", a1Unit10Lesson1),
+  "a1/10/2": auditA1LessonImages("10/2", a1Unit10Lesson2),
+  "a1/11/1": auditA1LessonImages("11/1", a1Unit11Lesson1),
+  "a1/11/2": auditA1LessonImages("11/2", a1Unit11Lesson2),
+  "a1/12/1": auditA1LessonImages("12/1", a1Unit12Lesson1),
+  "a1/12/2": auditA1LessonImages("12/2", a1Unit12Lesson2),
+  "a1/13/1": auditA1LessonImages("13/1", a1Unit13Lesson1),
+  "a1/13/2": auditA1LessonImages("13/2", a1Unit13Lesson2),
+  "a1/14/1": auditA1LessonImages("14/1", a1Unit14Lesson1),
+  "a1/14/2": auditA1LessonImages("14/2", a1Unit14Lesson2),
+  "a1/15/1": auditA1LessonImages("15/1", a1Unit15Lesson1),
+  "a1/15/2": auditA1LessonImages("15/2", a1Unit15Lesson2),
+  "a1/16/1": auditA1LessonImages("16/1", a1Unit16Lesson1),
+  "a1/16/2": auditA1LessonImages("16/2", a1Unit16Lesson2),
 };

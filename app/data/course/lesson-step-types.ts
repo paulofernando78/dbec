@@ -67,6 +67,10 @@ export type LanguageFocusData = StepExtension & {
   supportLanguage?: "pt-BR";
   relatedGrammar?: readonly GrammarTopicId[];
   relatedVocabulary?: readonly VocabularyTopicId[];
+  visuals?: readonly {
+    image: string;
+    caption: string;
+  }[];
   items: readonly (readonly [
     title: RichContent | string,
     meaning: string,
