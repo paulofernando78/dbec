@@ -322,4 +322,88 @@ export const initialGrammarExercises = {
       ],
     },
   ],
+
+  "latin-plurals": [
+    {
+      id: "latin-plural-matching",
+      title: "1. Singular e plural",
+      type: "matching",
+      instruction: "Associe cada forma singular ao plural mais adequado.",
+      pairs: [
+        { left: "campus", right: "campuses" },
+        { left: "cactus", right: "cacti / cactuses" },
+        { left: "nucleus", right: "nuclei" },
+        { left: "stimulus", right: "stimuli" },
+        { left: "virus", right: "viruses" },
+        { left: "octopus", right: "octopuses" },
+      ],
+    },
+    {
+      id: "latin-plural-choice",
+      title: "2. Escolha a forma correta",
+      type: "radio",
+      instruction: "Escolha o plural mais adequado no inglês atual.",
+      questions: [
+        {
+          question: "The university has two ___.",
+          options: [
+            { option: "campi" },
+            { option: "campuses", isCorrect: true },
+            { option: "campus" },
+          ],
+        },
+        {
+          question: "The laboratory examined the cell ___.",
+          options: [
+            { option: "nucleuses" },
+            { option: "nuclei", isCorrect: true },
+            { option: "nucleus" },
+          ],
+        },
+        {
+          question: "Which two plurals are both accepted?",
+          options: [
+            { option: "cacti and cactuses", isCorrect: true },
+            { option: "viri and viruses" },
+            { option: "stati and statuses" },
+          ],
+        },
+        {
+          question: "Which plural is the safest standard choice?",
+          options: [
+            { option: "octopi" },
+            { option: "octopuses", isCorrect: true },
+            { option: "octopus" },
+          ],
+        },
+      ],
+    },
+    {
+      id: "latin-plural-correction",
+      title: "3. Correção de erros",
+      type: "error-correction",
+      items: [
+        {
+          sentence: "Our company has offices on three campi.",
+          answer: "Our company has offices on three campuses.",
+          explanation: "Em inglês padrão, o plural de campus é campuses.",
+        },
+        {
+          sentence: "These computer viri are dangerous.",
+          answer: "These computer viruses are dangerous.",
+          explanation: "O plural inglês de virus é viruses, não viri.",
+        },
+        {
+          sentence: "The experiment used several stimuluses.",
+          answer: "The experiment used several stimuli.",
+          explanation: "Stimulus normalmente preserva o plural latino stimuli.",
+        },
+        {
+          sentence: "The report compares the current stati of the projects.",
+          answer: "The report compares the current statuses of the projects.",
+          explanation: "O plural padrão de status é statuses.",
+        },
+      ],
+    },
+  ],
 } as const satisfies Record<string, readonly GrammarExercise[]>;

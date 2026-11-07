@@ -340,6 +340,71 @@ export const coreGrammarTopics = [
       "Observe a posição: prefixos vêm antes da base; sufixos vêm depois. Em seguida, identifique como o elemento altera o sentido ou a classe gramatical.",
   },
   {
+    id: "latin-plurals",
+    title: "Latin Plurals",
+    description:
+      "Aprenda quando palavras terminadas em -us formam o plural em -i e quando seguem o plural regular do inglês.",
+    introduction:
+      "Algumas palavras que chegaram ao inglês pelo latim preservam um plural latino, mas outras usam -es. Em vários casos, as duas formas são aceitas. Por isso, não transforme automaticamente toda palavra terminada em -us em uma forma terminada em -i.",
+    usages: [
+      {
+        title: "Formas latinas comuns: -us → -i",
+        meaning:
+          "Algumas palavras latinas masculinas preservam o plural em -i no inglês formal e acadêmico.",
+        pattern: "-us → -i",
+        examples: [
+          { english: "one alumnus → two alumni", portuguese: "um ex-aluno → dois ex-alunos" },
+          { english: "one nucleus → several nuclei", portuguese: "um núcleo → vários núcleos" },
+          { english: "one stimulus → many stimuli", portuguese: "um estímulo → muitos estímulos" },
+        ],
+      },
+      {
+        title: "Duas formas aceitas",
+        meaning:
+          "Algumas palavras aceitam tanto o plural latino quanto o plural regular do inglês. A preferência depende do contexto e do estilo.",
+        pattern: "-us → -i ou -uses",
+        examples: [
+          { english: "cactus → cacti / cactuses", portuguese: "cacto → cactos" },
+          { english: "fungus → fungi / funguses", portuguese: "fungo → fungos" },
+          { english: "syllabus → syllabi / syllabuses", portuguese: "programa de curso → programas de curso" },
+        ],
+      },
+      {
+        title: "Plural regular em -es",
+        meaning:
+          "Muitas palavras terminadas em -us já pertencem plenamente ao vocabulário inglês e formam o plural regularmente com -es.",
+        pattern: "-us → -uses",
+        examples: [
+          { english: "campus → campuses", portuguese: "campus → campi ou campus" },
+          { english: "virus → viruses", portuguese: "vírus → vírus" },
+          { english: "status → statuses", portuguese: "status → status" },
+        ],
+      },
+    ],
+    warnings: [
+      {
+        title: "Campus não vira campi em inglês padrão",
+        explanation:
+          "Embora campus tivesse campi como plural em latim, o plural normal em inglês é campuses. Campi pode aparecer em textos sobre latim, mas não é a escolha padrão para universidades modernas.",
+        examples: [
+          { english: "The university has three campuses.", portuguese: "A universidade tem três campi." },
+          { english: "Not: The university has three campi.", portuguese: "Evite campi nessa frase em inglês." },
+        ],
+      },
+      {
+        title: "Não aplique -i a qualquer palavra terminada em -us",
+        explanation:
+          "Virus forma viruses e status forma statuses. Octopus veio do grego: octopuses é a forma inglesa mais segura; octopi é comum, mas não é um plural latino historicamente regular.",
+        examples: [
+          { english: "Computer viruses spread quickly.", portuguese: "Vírus de computador se espalham rapidamente." },
+          { english: "We saw two octopuses.", portuguese: "Vimos dois polvos." },
+        ],
+      },
+    ],
+    quickRule:
+      "Memorize cada palavra: use alumni, nuclei e stimuli; aceite cacti/cactuses e fungi/funguses; use campuses, viruses, statuses e, de preferência, octopuses.",
+  },
+  {
     id: "modal-verbs",
     title: "Modal Verbs",
     description: "Expresse capacidade, possibilidade, permissão, conselho e obrigação.",

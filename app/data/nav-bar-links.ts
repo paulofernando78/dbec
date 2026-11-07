@@ -98,6 +98,11 @@ export const links: NavItem[] = [
             icon: BookMarked,
           },
           {
+            href: "/grammar/latin-plurals",
+            label: "latin plurals",
+            icon: BookMarked,
+          },
+          {
             href: "/grammar/present-perfect",
             label: "present perfect",
             icon: BookMarked,
