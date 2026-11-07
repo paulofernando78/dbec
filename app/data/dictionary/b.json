@@ -66,6 +66,38 @@
         ]
       },
       {
+        "word": "borne disease",
+        "phonetics": "/ˈbɔːrn dɪˌziːz/",
+        "partOfSpeech": "noun phrase",
+        "enDefinition": "A disease transmitted by a particular carrier or route. Borne is normally combined with a word that identifies how the disease spreads, such as mosquito-borne, animal-borne, foodborne, or waterborne.",
+        "ptDefinition": "Doença transmitida por um determinado agente ou meio. Borne normalmente aparece combinado com uma palavra que indica como a doença é transmitida, como por mosquito, animal, alimento ou água.",
+        "examples": [
+          {
+            "enExample": "Rabies is an animal-borne disease that can affect humans.",
+            "ptExample": "A raiva é uma doença transmitida por animais que pode afetar seres humanos."
+          },
+          {
+            "enExample": "Mosquito-borne diseases are more common in some tropical regions.",
+            "ptExample": "Doenças transmitidas por mosquitos são mais comuns em algumas regiões tropicais."
+          }
+        ],
+        "synonyms": ["transmitted disease", "carrier-borne disease"],
+        "antonyms": ["noncommunicable disease"],
+        "seeAlso": [
+          "animal-borne",
+          "foodborne",
+          "mosquito-borne",
+          "vector-borne",
+          "waterborne"
+        ],
+        "notes": [
+          {
+            "enNote": "Borne means carried or transmitted. Before a noun, it is usually part of a compound: animal-borne disease and mosquito-borne disease are hyphenated, while foodborne and waterborne are commonly written as single words.",
+            "ptNote": "Borne significa carregado ou transmitido. Antes de um substantivo, geralmente faz parte de uma palavra composta: animal-borne disease e mosquito-borne disease levam hífen, enquanto foodborne e waterborne costumam ser escritos como uma única palavra."
+          }
+        ]
+      },
+      {
         "word": "brewery",
         "phonetics": "/ˈbruː.ər.i/",
         "partOfSpeech": "noun",
