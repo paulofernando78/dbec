@@ -70,8 +70,9 @@ export function AiTutor() {
 
   return (
     <section
+      id="ai-tutor"
       aria-labelledby="ai-tutor-title"
-      className="mt-3 flex w-full flex-col overflow-hidden rounded-xl bg-(--background) ring-1 ring-slate-200"
+      className="mt-3 flex w-full scroll-mt-4 flex-col overflow-hidden rounded-xl bg-(--background) ring-1 ring-slate-200"
     >
       <header className="flex items-center gap-3 border-b border-slate-200 px-4 py-3">
         <div className="grid size-9 place-items-center rounded-xl bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">

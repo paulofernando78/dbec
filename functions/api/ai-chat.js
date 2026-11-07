@@ -128,7 +128,7 @@ export async function onRequestPost(context) {
     context.env.SESSION_SECRET,
   );
   if (!session) return json({ error: "Não autorizado." }, 401);
-  if (!context.env.GEMINI_API_KEY) {
+  if (!context.env.OPENROUTER_API_KEY) {
     return json({ error: "O AI Tutor ainda não foi configurado." }, 503);
   }
   if (!context.env.DB) {
@@ -172,22 +172,22 @@ export async function onRequestPost(context) {
     );
   }
 
-  const models = (
-    context.env.GEMINI_MODELS ||
-    context.env.GEMINI_MODEL ||
-    "gemini-3.8-flash"
-  )
+  const models = (context.env.OPENROUTER_MODELS || "openrouter/free")
     .split(",")
     .map((model) => model.trim())
-    .filter(Boolean);
-  const requestBody = JSON.stringify({
-    systemInstruction: { parts: [{ text: systemInstruction }] },
-    contents: messages.map((message) => ({
-      role: message.role,
-      parts: [{ text: message.text.trim() }],
-    })),
-    generationConfig: { maxOutputTokens: 800 },
-  });
+    .filter(
+      (model) => model === "openrouter/free" || model.endsWith(":free"),
+    );
+  if (models.length === 0) {
+    await releaseRequest(context.env.DB, reservation.id);
+    return json(
+      {
+        error:
+          "OPENROUTER_MODELS deve conter apenas openrouter/free ou modelos terminados em :free.",
+      },
+      503,
+    );
+  }
 
   let result = null;
   let usedModel = null;
@@ -195,47 +195,60 @@ export async function onRequestPost(context) {
   const rateLimitedModels = [];
 
   for (const model of models) {
-    let geminiResponse;
+    let openRouterResponse;
     try {
-      geminiResponse = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+      openRouterResponse = await fetch(
+        "https://openrouter.ai/api/v1/chat/completions",
         {
           method: "POST",
           headers: {
+            Authorization: `Bearer ${context.env.OPENROUTER_API_KEY}`,
             "Content-Type": "application/json",
-            "x-goog-api-key": context.env.GEMINI_API_KEY,
+            "HTTP-Referer": "https://dbec.com.br",
+            "X-Title": "Daily Basis English Course",
           },
-          body: requestBody,
+          body: JSON.stringify({
+            model,
+            messages: [
+              { role: "system", content: systemInstruction },
+              ...messages.map((message) => ({
+                role: message.role === "model" ? "assistant" : "user",
+                content: message.text.trim(),
+              })),
+            ],
+            max_tokens: 800,
+          }),
         },
       );
     } catch (error) {
-      console.error("Gemini API request failed", model, error);
+      console.error("OpenRouter API request failed", model, error);
       skippedModels.push(model);
       continue;
     }
 
-    const candidateResult = await geminiResponse.json().catch(() => null);
-    if (geminiResponse.ok) {
+    const candidateResult = await openRouterResponse.json().catch(() => null);
+    if (openRouterResponse.ok) {
       result = candidateResult;
-      usedModel = model;
+      usedModel = candidateResult?.model ?? model;
       break;
     }
 
     console.error(
-      "Gemini API error",
+      "OpenRouter API error",
       model,
-      geminiResponse.status,
+      openRouterResponse.status,
       candidateResult?.error?.message,
     );
 
-    if (geminiResponse.status === 429 || geminiResponse.status >= 500) {
+    if (
+      openRouterResponse.status === 429 ||
+      openRouterResponse.status >= 500
+    ) {
       skippedModels.push(model);
-      if (geminiResponse.status === 429) rateLimitedModels.push(model);
+      if (openRouterResponse.status === 429) rateLimitedModels.push(model);
       continue;
     }
-
-    await releaseRequest(context.env.DB, reservation.id);
-    return json({ error: "The tutor could not answer right now." }, 502);
+    break;
   }
 
   if (!result || !usedModel) {
@@ -251,11 +264,15 @@ export async function onRequestPost(context) {
     );
   }
 
-  const message = result?.candidates?.[0]?.content?.parts
-    ?.map((part) => part.text)
-    .filter(Boolean)
-    .join("\n")
-    .trim();
+  const rawContent = result?.choices?.[0]?.message?.content;
+  const message = (
+    typeof rawContent === "string"
+      ? rawContent
+      : rawContent
+          ?.map((part) => part.text)
+          .filter(Boolean)
+          .join("\n")
+  )?.trim();
 
   if (!message) {
     await releaseRequest(context.env.DB, reservation.id);

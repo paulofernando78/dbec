@@ -292,6 +292,7 @@ export default function TeacherDashboard() {
               { href: "progress", label: "Progress" },
               { href: "calendar", label: "Calendar" },
               { href: "notes", label: "Notes" },
+              { href: "ai-tutor", label: "AI Tutor" },
             ]}
           />
         )}

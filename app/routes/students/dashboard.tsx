@@ -149,6 +149,7 @@ export default function Dashboard() {
           { href: "progress", label: "Progress" },
           { href: "calendar", label: "Calendar" },
           { href: "notes", label: "Notes" },
+          { href: "ai-tutor", label: "AI Tutor" },
         ]}
       />
       {progress && (
