@@ -14,6 +14,7 @@ const gameStudios = [
   },
   {
     studio: "LucasArts",
+    image: "/media/images/content/old-pc-games/lucas-arts.png?v=1",
     games: Object.values(gamesLucasArtsCardData),
   },
 ];
@@ -60,6 +61,7 @@ export default function Game() {
             <GameStudioCard
               key={group.studio}
               studio={group.studio}
+              image={group.image}
               games={group.games}
               gameCompletion={gameCompletion}
               onGameCompletionChange={saveGameCompletion}

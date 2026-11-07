@@ -11,6 +11,7 @@ export type StudioGame = {
 
 type GameStudioCardProps = {
   studio: string;
+  image?: string;
   games: StudioGame[];
   gameCompletion: Record<string, boolean>;
   onGameCompletionChange: (gameId: string, completed: boolean) => void;
@@ -18,6 +19,7 @@ type GameStudioCardProps = {
 
 export function GameStudioCard({
   studio,
+  image,
   games,
   gameCompletion,
   onGameCompletionChange,
@@ -39,6 +41,8 @@ export function GameStudioCard({
     <ProgressCollectionCard
       className="mb-4"
       title={studio}
+      headerImage={image}
+      headerImageAlt={image ? `${studio} characters` : undefined}
       completedCount={completedGames}
       totalCount={games.length}
       resetAriaLabel={`Reset progress for ${studio}`}

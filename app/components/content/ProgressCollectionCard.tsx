@@ -22,6 +22,8 @@ export type ProgressCollectionItem = {
 
 type ProgressCollectionCardProps = {
   title: string;
+  headerImage?: string;
+  headerImageAlt?: string;
   eyebrow?: string;
   description?: string;
   completedCount: number;
@@ -38,6 +40,8 @@ type ProgressCollectionCardProps = {
 
 export function ProgressCollectionCard({
   title,
+  headerImage,
+  headerImageAlt = "",
   eyebrow,
   description,
   completedCount,
@@ -73,6 +77,13 @@ export function ProgressCollectionCard({
             <h2 className="text-2xl font-black text-black dark:text-[var(--text-color)]">
               {title}
             </h2>
+            {headerImage && (
+              <img
+                src={headerImage}
+                alt={headerImageAlt}
+                className="mt-3 h-auto max-h-28 max-w-full object-contain object-left [image-rendering:pixelated]"
+              />
+            )}
             {description && (
               <p className="text-lg text-slate-500">{description}</p>
             )}
