@@ -111,6 +111,31 @@
         ]
       },
       {
+        "word": "kibbeh",
+        "phonetics": "/ˈkɪb.e/ or /ˈkɪb.i/",
+        "partOfSpeech": "noun",
+        "enDefinition": "a Middle Eastern dish made with bulgur wheat, ground meat, herbs, and spices, often shaped and fried, baked, or served raw",
+        "ptDefinition": "quibe; prato do Oriente Médio feito com trigo para quibe, carne moída, ervas e especiarias, geralmente frito, assado ou servido cru",
+        "examples": [
+          {
+            "enExample": "We ordered fried kibbeh as an appetizer.",
+            "ptExample": "Pedimos quibe frito como entrada."
+          },
+          {
+            "enExample": "Her family prepares baked kibbeh for special occasions.",
+            "ptExample": "A família dela prepara quibe assado em ocasiões especiais."
+          }
+        ],
+        "synonyms": ["kibbe", "kibbi", "kubbeh"],
+        "seeAlso": ["bulgur", "Middle Eastern cuisine", "ground meat"],
+        "notes": [
+          {
+            "enNote": "The spelling and preparation vary by region. In Brazilian Portuguese, the dish is commonly called 'quibe'.",
+            "ptNote": "A grafia e o modo de preparo variam conforme a região. No português brasileiro, o prato é chamado de 'quibe'."
+          }
+        ]
+      },
+      {
         "word": "key",
         "phonetics": "/kiː/",
         "partOfSpeech": "noun, adjective",
