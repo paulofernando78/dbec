@@ -29,7 +29,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/lunch-at-twelve-thirty.avif?v=1`,
+      image: `${imageRoot}/lunch-at-twelve-thirty.avif?v=2`,
       quote: "Lunch is at 12:30 P.M.",
       questions: [
         {

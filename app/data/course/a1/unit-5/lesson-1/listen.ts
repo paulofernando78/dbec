@@ -7,7 +7,7 @@ export const listen = {
   label: "Listen",
   instruction: "First listen: Pedro is in Brazil and Eric is in England. Listen for the topic.",
   image:
-    "/media/images/course/a1/unit-5/lesson-1-what-time-is-it-there/listen/pedro-eric-phone-call.avif?v=2",
+    "/media/images/course/a1/unit-5/lesson-1-what-time-is-it-there/listen/pedro-eric-phone-call.avif?v=3",
   imageAlt:
     "Pedro in São Paulo and Eric in London talking to each other on their phones",
   audio: "/media/audio/course/a1/unit-5/lesson-1-what-time-is-it-there/listen/listen.mp3",

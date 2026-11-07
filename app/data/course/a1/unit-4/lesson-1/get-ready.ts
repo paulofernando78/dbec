@@ -9,7 +9,7 @@ export const getReady = {
   label: "Get ready",
   slides: [
     {
-      image: `${imageRoot}/whose-blue-jacket.avif?v=2`,
+      image: `${imageRoot}/whose-blue-jacket.avif?v=3`,
       quote: "Whose jacket is this? — It’s Eric’s.",
       questions: [
         {
@@ -19,7 +19,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/is-this-your-scarf.avif?v=1`,
+      image: `${imageRoot}/is-this-your-scarf.avif?v=2`,
       quote: "Is this your scarf? — Yes, it’s mine.",
       questions: [
         {
@@ -29,7 +29,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/whose-gloves.avif?v=1`,
+      image: `${imageRoot}/whose-gloves.avif?v=2`,
       quote: "Whose gloves are these? — They’re Laura’s.",
       questions: [
         {
