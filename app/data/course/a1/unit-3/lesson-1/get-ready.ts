@@ -19,7 +19,7 @@ export const getReady = {
       ],
     },
     {
-      image: `${imageRoot}/laura-pedro-eric-naomi-clean-shaven.avif?v=2`,
+      image: `${imageRoot}/laura-pedro-eric-naomi-clean-shaven.avif?v=3`,
       quote:
         "Laura is from Los Angeles. Pedro is from São Paulo. Eric is from London. Naomi is from Tokyo.",
       questions: [
