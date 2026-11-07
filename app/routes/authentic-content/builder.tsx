@@ -20,12 +20,14 @@ import { Radio } from "@/features/exercises/Radio";
 import { Guess } from "@/features/exercises/Guess";
 import { FillInTheBlanks } from "@/features/exercises/FillInTheBlanks";
 import { Unscramble } from "@/features/exercises/Unscramble";
+import { VocabularyReview } from "@/components/authentic-content/VocabularyReview";
 
 const lessonSteps = [
   { slug: "before-watching", label: "Before watching" },
   { slug: "vocabulary", label: "Vocabulary" },
   { slug: "gist", label: "Gist" },
   { slug: "details", label: "Details" },
+  { slug: "review", label: "Review" },
   { slug: "practice", label: "Practice" },
   { slug: "follow-up-discussion", label: "Follow-up discussion" },
 ] as const;
@@ -155,6 +157,11 @@ export default function AuthenticContents() {
         <div className="rounded-xl bg-(--background) p-4">
           <Script {...content.sections.script} />
         </div>
+      </Card>
+    ),
+    review: (
+      <Card inset>
+        <VocabularyReview words={content.sections.vocabulary.words} />
       </Card>
     ),
     practice: (
